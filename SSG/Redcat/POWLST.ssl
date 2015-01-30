@@ -1,0 +1,120 @@
+[group]POW_MA
+[note]wordwrap
+なんつか、同人とは思えない完成度ですね(^^;　フルボイスなんですが、プロ声優でかなり名前の売れた方が声充ててます。驚いたｗ
+[/note]
+
+[subject]ＳＬＧパート関連:dir
+	[subject]敵側一撃死/実行/_:b_toggle,0x463A6D,POWLST->POW_a,real
+	[subject]敵行動ターン封印化/実行/_:b_toggle,0x4627C8,POWLST->POW_b,real
+	[subject]ターン毎味方ＨＰ全快/実行/_:toggle,0x4627E3,EB00,7E03
+	[subject]時間進行停止/実行/_:toggle,0x4627A9,EB00,03D7
+[/group]
+
+
+[group]POW_PR
+[subject]好感度確認調整:dir
+ [size]4
+	[repeat]POWLST->POWREP1,0,3,1
+ [/size]
+[back]
+[subject]ＡＤＶパート時能力編集:dir
+	[repeat]POWLST->POWREP2,0,4,1
+[back]
+[subject]ＳＬＧパート時能力編集:dir
+	[repeat]POWLST->POWREP3,0,4,1
+[/group]
+
+
+[group]POW_CG
+[subject]ＣＧモード:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,_[:0x5057D4:]+0x32778,FDFBDBE77FC1FDFF
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,_[:0x5057D4:]+0x32778,0000000000000000
+[/group]
+
+
+[group]POWREP1
+[subject][! @POWLST->LST_a,$Val !]/現在値/_:calc,_[:0x5057D4:]+0x3F6E0+0x[! 0x04*$Val !],0x00,0xFF,unsigned
+[/group]
+
+
+[group]POWREP2
+[subject][! @POWLST->LST_b,$Val !]:dir
+	[replace]_[:0x5057D4:]+0x3FB14+0x[! 0x11C*$Val !],POWLST->POW_c
+[back]
+[/group]
+
+
+[group]POWREP3
+[subject][! @POWLST->LST_c,$Val !]:dir
+	[replace]_[:[:0x507164:]+0xE0:]+0x48+0x[! 0x160*$Val !],POWLST->POW_c
+[back]
+[/group]
+
+
+[group]LST_a
+西園寺雨音
+舞岡翔子
+西園寺ラキ
+[/group]
+
+
+[group]LST_b
+不破和也
+西園寺雨音
+舞岡翔子
+西園寺ラキ
+[/group]
+
+
+[group]LST_c
+１人目
+２人目
+３人目
+４人目
+[/group]
+
+
+[group]POW_a
+0x463A6D,E9CEFC,83F864
+0x463A70,0600,7D03
+0x4D3740,817F6C02000000,00000000000000
+0x4D3747,7409,0000
+0x4D3749,83F864,000000
+0x4D374C,0F8D2303F9FF,000000000000
+0x4D3752,8B6F48,000000
+0x4D3755,E91803F9FF90,0000000000
+[/group]
+
+
+[group]POW_b
+0x4627C8,E9550F,0FAFC7
+0x4627CB,07,99
+0x4627CC,0090,03EF
+0x4D3722,0FAFC7,000000
+0x4D3725,99,00
+0x4D3726,81791801000000,00000000000000
+0x4D372D,7404,0000
+0x4D372F,33ED,0000
+0x4D3731,EB02,0000
+0x4D3733,03EF,0000
+0x4D3735,E994F0F8FF90,000000000000
+[/group]
+
+
+[group]POW_c
+[io_fep] $Val*0x64, $Val/0x64
+ [subject]現在ＨＰ/現在値/_:calc,0x00,0x00,0x3E3,unsigned
+ [subject]最大ＨＰ/現在値/_:calc,0x08,0x00,0x3E3,unsigned
+[/io_fep]
+[subject]初期ＡＰ/現在値/_:calc,0x0C,0x00,0x64,unsigned
+[e_with],0x00,0xFF,unsigned
+ [subject]攻撃力/現在値/_:calc,0x10
+ [subject]防御力/現在値/_:calc,0x14
+ [subject]機動力/現在値/_:calc,0x18
+ [subject]治癒力/現在値/_:calc,0x1C
+ [subject]技巧度/現在値/_:calc,0x20
+[size]4
+ [subject]撃破数/現在値/_:calc,0x2C
+[/size]
+[/e_with]
+[/group]
