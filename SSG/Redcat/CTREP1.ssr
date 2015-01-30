@@ -1,0 +1,2 @@
+[subject][! @CTLST->LST_a,$Val !]:dir
+[replace]0x[! 0x45C078+$Val*0xA4 !],CT_e
