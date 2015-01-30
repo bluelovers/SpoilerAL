@@ -95,53 +95,10 @@
 [subject]ÇoÇbëÃóÕÅïÉ{ÉÄñ≥èåèé©ìÆâÒïú/é¿çs/_:b_toggle,0x01C6,ESMLST->ESM_a,offset
 [subject]ÇoÇbóÏóÕñ≥å¿âªÅ{ÉøÅEâ¸/é¿çs/_:b_toggle,0x44326E,ESMLST->ESM_3b,real
 [subject]ÇoÇbïÑóÕë¶ç≈ëÂâªÅ{Éø/é¿çs/_:toggle,0x451F96,80B9CD020000007427EB02,D81D0C086200DFE0F6C405
-[subject]ÇoÇbÉJÅ[Éhêßå¿éûä‘å∏ÇÁÇ»Ç¢/é¿çs/_:toggle,0x451E4E,00,02
+[subject]ÇoÇbÉJÅ[Éhêßå¿éûä‘å∏ÇÁÇ»Ç¢/é¿çs/_:toggle,0x451E4E,00,02 150
 [subject]ÇbÇoÇtÉJÅ[ÉhÉ{Å[ÉiÉXå∏ÇÁÇ»Ç¢/é¿çs/_:toggle,0x451EA2,EB059090909090,2B849130040000
 [subject]ÉXÉgÅ[ÉäÅ[ÉÇÅ[ÉhÇoÇbécã@êî/åªç›íl/_:calc,0x63791E,0x00,0x05,unsigned
 
-[back]
-
-[subject]ver1.10:dir
-
-[enabled] [:0x658778:] != 0x00000000
-[subject]ÇPÇoå¬ï ê›íË:dir
-	[replace]_[:0x658778:],ESMLST->ESM_3PR
-[back]
-[subject]ÇQÇoå¬ï ê›íË:dir
-	[replace]_[:0x65877C:],ESMLST->ESM_3PR
-[back]
-[/enabled]
-[subject]ÇoÇbìñÇΩÇËîªíËâèú/é¿çs/_:b_toggle,0x442C44,ESMLST->ESM_5d,real
-[subject]ÇoÇbçUåÇóÕÇWî{âªÅEâ¸/é¿çs/_:b_toggle,0x4555C4,ESMLST->ESM_3e,real
-[subject]ÇoÇbÉIÅ[ÉgÉKÅ[Éhâª/é¿çs/_:b_toggle,0x0940,ESMLST->ESM_c,offset
-[subject]ÇoÇbëÃóÕÅïÉ{ÉÄñ≥èåèé©ìÆâÒïú/é¿çs/_:b_toggle,0x43C550,ESMLST->ESM_2a,real
-[subject]ÇoÇbóÏóÕñ≥å¿âªÅ{Éø/é¿çs/_:b_toggle,0x46CF5A,ESMLST->ESM_4b,real
-[subject]ÇoÇbïÑóÕë¶ç≈ëÂâªÅ{Éø/é¿çs/_:toggle,0x4526A3,80BACD020000017527EB02,D81D0C186400DFE0F6C405
-[subject]ÇoÇbÉJÅ[Éhêßå¿éûä‘å∏ÇÁÇ»Ç¢/é¿çs/_:toggle,0x45255B,00,02
-[subject]ÇbÇoÇtÉJÅ[ÉhÉ{Å[ÉiÉXå∏ÇÁÇ»Ç¢/é¿çs/_:toggle,0x4525AF,EB059090909090,2B8C8230040000
-[subject]ÉXÉgÅ[ÉäÅ[ÉÇÅ[ÉhÇoÇbécã@êî/åªç›íl/_:calc,0x658982,0x00,0x05,unsigned
-
-[back]
-
-[subject]ver1.11:dir
-
-[enabled] [:0x671418:] != 0x00000000
-[subject]ÇPÇoå¬ï ê›íË:dir
-	[replace]_[:0x671418:],ESMLST->ESM_3PR
-[back]
-[subject]ÇQÇoå¬ï ê›íË:dir
-	[replace]_[:0x67141C:],ESMLST->ESM_3PR
-[back]
-[/enabled]
-[subject]ÇoÇbìñÇΩÇËîªíËâèú/é¿çs/_:b_toggle,0x00,ESMLST->ESM_6d,offset
-[subject]ÇoÇbçUåÇóÕÇWî{âªÅEâ¸/é¿çs/_:b_toggle,0x00,ESMLST->ESM_4e,real
-[subject]ÇoÇbÉIÅ[ÉgÉKÅ[Éhâª/é¿çs/_:b_toggle,0x09F0,ESMLST->ESM_c,offset
-[subject]ÇoÇbëÃóÕÅïÉ{ÉÄñ≥èåèé©ìÆâÒïú/é¿çs/_:b_toggle,0xA0,ESMLST->ESM_2a,offset
-[subject]ÇoÇbóÏóÕñ≥å¿âªÅ{Éø/é¿çs/_:b_toggle,0xB0,ESMLST->ESM_4b,offset
-[subject]ÇoÇbïÑóÕë¶ç≈ëÂâªÅ{Éø/é¿çs/_:toggle,0x452753,80BACD020000017527EB02,D81D2C786500DFE0F6C405
-[subject]ÇoÇbÉJÅ[Éhêßå¿éûä‘å∏ÇÁÇ»Ç¢/é¿çs/_:toggle,0x45260B,00,02
-[subject]ÇbÇoÇtÉJÅ[ÉhÉ{Å[ÉiÉXå∏ÇÁÇ»Ç¢/é¿çs/_:toggle,0x45265F,EB059090909090,2B8C8230040000
-[subject]ÉXÉgÅ[ÉäÅ[ÉÇÅ[ÉhÇoÇbécã@êî/åªç›íl/_:calc,0x671622,0x00,0x05,unsigned
 [back]
 
 [/group]
@@ -175,25 +132,6 @@
 [/group]
 
 
-[group]ESM_3PR
-[size]2
- [subject]åªç›ëÃóÕíl/åªç›íl/å≈íË:calc,0x0324,0x0000,0x2710,unsigned
- [subject]åªç›óÏóÕíl/åªç›íl/å≈íË:calc,0x03B0,0x0000,0x03E8,unsigned
-[/size]
- [subject]åªç›ïÑóÕíl/åªç›íl/å≈íË:f_calc,0x036C,0,900,float
-[/size]
-[size]1
- [subject]ëÃóÕÉoÅ[écÇËñ{êî/åªç›íl/_:calc,0x039D,0x01,0x09,unsigned
-[/size]
-[size]2
- [e_with],ESMLST->LST_a,0x00,0x01
-  [subject]àÎïÑéÌóﬁïœçX/_:list,0x0398
-  [subject]ìÛïÑéÌóﬁïœçX/_:list,0x039A
- [/e_with]
-[/size]
-[/group]
-
-
 [group]LST_a
 ÉC
 Éç
@@ -205,13 +143,6 @@
 0x43BC5A,EB0490909090,0F85A2000000
 0x43BC86,8A88CD02000084C9756D8BC8EB0590,0FBF486083F9327D6E8B55F08B45EC
 0x43BCD5,EB1F90909090,D9996C030000
-[/group]
-
-
-[group]ESM_2a
-0x43C550,EB0490909090,0F85A2000000
-0x43C57C,8A88CD02000084C9756D8BC8EB0590,0FBF486083F9327D6E8B55F08B45EC
-0x43C5CB,EB1F90909090,D9996C030000
 [/group]
 
 
@@ -234,14 +165,6 @@
 0x44327D,8A91CD02000084D2741490,0FBF91B003000085D27F13
 0x46C79D,CD02????????74,B603????????7E
 0x46C7B6,33C966B9E803EB029090,0FBF88B00300002B4D08
-[/group]
-
-
-[group]ESM_4b
-0x46CF5A,8A88CD02000090,0FBF88B6030000
-0x46CF61,84,85
-0x46CF63,74,7E
-0x46CF76,B9E8030000EB03,0FBF88B0030000
 [/group]
 
 
@@ -298,28 +221,6 @@
 [/group]
 
 
-[group]ESM_5d
-0x442C44,E9E7E11F0090,8B55A483CA01
-0x640E30,8B5510,000000
-0x640E33,80BACD02000000,00000000000000
-0x640E3A,0F84371EE0FF,000000000000
-0x640E40,8B55A4,000000
-0x640E43,83CA01,000000
-0x640E46,E9FF1DE0FF,0000000000
-[/group]
-
-
-[group]ESM_6d
-0x442CE4,E92742210090,8B55A483CA01
-0x656F10,8B5510,000000
-0x656F13,80BACD02000000,00000000000000
-0x656F1A,0F84F7BDDEFF,000000000000
-0x656F20,8B55A4,000000
-0x656F23,83CA01,000000
-0x656F26,E9BFBDDEFF90,000000000000
-[/group]
-
-
 [group]ESM_e
 0x454CF4,E957AE1C0090,8B91AC000000
 0x454D7D,E9AEAD1C009090909090,8B88AC0000000FBF5110
@@ -351,40 +252,4 @@
 0x61FD86,0FBF4210,00000000
 0x61FD8A,C1E003,000000
 0x61FD8D,E93C51E3FF,0000000000
-[/group]
-
-
-[group]ESM_3e
-0x4555C4,E9B7B81E009090909090,8B91AC0000000FBF4210
-0x45564D,E9FEB71E009090909090,8B88AC0000000FBF5110
-0x640E50,8B45FC,000000
-0x640E53,8B88E8020000,000000000000
-0x640E59,80B9CD02000001,00000000000000
-0x640E60,8B88AC000000,000000000000
-0x640E66,0FBF5110,00000000
-0x640E6A,7503,0000
-0x640E6C,C1E203,0000
-0x640E6F,E9E347E1FF,0000000000
-0x640E80,8B91AC000000,000000000000
-0x640E86,0FBF4210,00000000
-0x640E8A,C1E003,000000
-0x640E8D,E93C47E1FF,0000000000
-[/group]
-
-
-[group]ESM_4e
-0x455674,E9E71820009090909090,8B91AC0000000FBF4210
-0x4556FD,E92E1820009090909090,8B88AC0000000FBF5110
-0x656F30,8B45FC,000000
-0x656F33,8B88E8020000,000000000000
-0x656F39,80B9CD02000001,00000000000000
-0x656F40,8B88AC000000,000000000000
-0x656F46,0FBF5110,00000000
-0x656F4A,7503,0000
-0x656F4C,C1E203,0000
-0x656F4F,E9B3E7DFFF,0000000000
-0x656F60,8B91AC000000,000000000000
-0x656F66,0FBF4210,00000000
-0x656F6A,C1E003,000000
-0x656F6D,E90CE7DFFF90,000000000000
 [/group]
