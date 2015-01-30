@@ -110,6 +110,11 @@
 [group]gen2REP1
 [subject][! @GENV2LST->LST_a,$Val !]:dir
 	[replace]_[:[:0x489080:]+0x2CD44:]+0x[! $Val*0x04 !]+0x07AA1C,GENV2LST->gen2_b
+	[replace]_[:[:0x489080:]+0x2CD44:]+0x[! $Val*0x14 !]+0x07AA1C+0x00,GENV2LST->gen2_b4SLV 
+	[replace]_[:[:0x489080:]+0x2CD44:]+0x[! $Val*0x14 !]+0x07AA1C+0x04,GENV2LST->gen2_b4SLV 
+	[replace]_[:[:0x489080:]+0x2CD44:]+0x[! $Val*0x14 !]+0x07AA1C+0x08,GENV2LST->gen2_b4SLV 
+	[replace]_[:[:0x489080:]+0x2CD44:]+0x[! $Val*0x14 !]+0x07AA1C+0x0C,GENV2LST->gen2_b4SLV 
+	[replace]_[:[:0x489080:]+0x2CD44:]+0x[! $Val*0x14 !]+0x07AA1C+0x10,GENV2LST->gen2_b4SLV 
 [back]
 [/group]
 
@@ -132,6 +137,9 @@
 [subject][! @GENV2LST->LST_a,$Val !]/_:d_list,_[:[:0x489080:]+0x2CD44:]+0x[! $Val*0x04 !]+0x7A7EC,GENV2LST->LST_e,0x00000000,0xFFFFFFFF,GENV2LST->LST_f,offset
 [/group]
 
+[group]gen2_b4SLV
+[subject]Skill LV/åªç›íl+1/_:calc,-0x19470,0x00,0x04,unsigned
+[/group]
 
 [group]gen2_b
 [subject]LV/åªç›íl/_:calc,0x00,0x01,0x63,unsigned
