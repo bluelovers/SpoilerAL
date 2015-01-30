@@ -1,0 +1,3 @@
+[subject]好感度編集/現在値/_:calc,0x00,0x00,0x9F
+[subject]パートナーフラグＯＮ／ＯＦＦ/ＯＮ/_:toggle,0x18,01,00
+[back]
