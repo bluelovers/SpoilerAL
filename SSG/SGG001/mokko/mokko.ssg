@@ -1,0 +1,327 @@
+SSG for SpoilerAL ver 3.1
+
+[script]
+[title]モナークモナーク
+[process]LM_WIN.EXE
+[maker]Falcom
+[creator]MOKKO
+[note]wordwrap
+はじめましてMOKKOです。
+私もみそさんと同じく初めてこういう作業をさせていただきました。
+さて、このモナモナですがモナくんってほんとかわいいですよね。
+（個人的にピカチュウよりも私は好きかな）
+そういえば、無料配布されていたCD,通信セット,ラブリィ絵本の内、この絵本だけが入手できなかったのは、ほんとに悔しかったです。
+私と同じ思いの方は、結構いるんじゃないですか？
+今回の作業のことですが「モナモナ」って、ゲーム中ひっきりなしに数値が変化するじゃないですか。
+だから、はっきりいって苦労しました。（みそさん程ではありませんが・・・。）まぁ名人目指して頑張ってみましょう。
+また機会があればそのときはよろしくお願いします。
+
+注:
+Ｘ段目というのは、戦闘ＭＡＰ時に上部に表示されているのメーターを示すので、１段目は自軍となる。
+城のDFは数値上では最強の値になるが、元のＨＰの４００より以上の値を入力すれば、一発で壊れます。
+確認がとれていませんが０だと無敵です。
+ただし、この方法はなるべく王様より真正面からやりましょう。
+時々このＳＳＧを使ってゲーム中、強制終了がかかることがあります。
+これは例としてやたら変なところから橋を架けたりする時に起こるので、もし強制終了がかかったらモナモナをまた再起動してみて下さい。
+すると中間ファイルを読み込んでくれるのでそこからさっきやった方法（ここでは橋を架けること）と違う方法でゲームを進めれば大丈夫です。
+
+※これは、1998年10月30日に発売された「モナ―クモナーク」対応であって近日発売された「みんなのモナモナ」対応かどうかは、まったく分かりませんのでご了承下さい。
+[/note]
+[subject]所持金:dir
+	[subject]自軍:calc,0x4B5920,0x0,0x01869F,signed,little_e
+	[subject]２段目:calc,0x4B5950,0x0,0x01869F,signed,little_e
+	[subject]３段目:calc,0x4B5980,0x0,0x01869F,signed,little_e
+	[subject]４段目:calc,0x4B59B0,0x0,0x01869F,signed,little_e
+[back]
+[subject]日数:dir
+	[subject]合計繰り越し日数:calc,0x4ADDE0,0x0,0xF423F,signed,little_e
+	[subject]最大経過日数:calc,0x4B5B18,0x0,0xF423F,signed,little_e
+	[subject]経過日数:calc,0x4B5B14,0x0,0xF423F,signed,little_e
+[back]
+[subject]城のDF:dir
+	[subject]自軍:calc,0x4B593C,0x0,0x270F,signed,little_e
+	[subject]２段目:calc,0x4B596C,0x0,0x270F,signed,little_e
+	[subject]３段目:calc,0x4B599C,0x0,0x270F,signed,little_e
+	[subject]４段目:calc,0x4B59CC,0x0,0x270F,signed,little_e
+[back]
+[subject]王様のＨＰ:dir
+	[subject]自軍:calc,0x4B09B4,0x0,0x1869F,signed,little_e
+	[subject]２段目:calc,0x4B0ADC,0x0,0x1869F,signed,little_e
+	[subject]３段目:calc,0x4B0C04,0x0,0x1869F,signed,little_e
+	[subject]４段目:calc,0x4B0D2C,0x0,0x1869F,signed,little_e
+[back]
+[/script]
+
+[script]
+[title]ザ・コンビニ ～あの町を独占せよ～　(Ver 1.20)
+[process]KING.EXE
+[maker]Masterpiece
+[creator]MOKKO
+[note]wordwrap
+注:
+資金と１日の売上金は、現在のSpoilerAL（ver3.1）が、0xFFFFFFFFの範囲までしか対応していないため、最大\999999999です。ご了承下さい。
+（それだけあれば十分やっていけます。）
+１日の売上金（本店～２９号店）は、あくまで一つも売却せずに、店舗を購入したときの値ですので、途中、店舗を売却したときは、それに応じて書き換える場所を変える必要があります。
+
+例：
+本店～２９号店までを購入したとき、３０号店目は店舗を１つ売却しなければならない。
+そのため、５号店を売却して３０号店を購入した場合、３０号店を書き換えたいときは、「５号店」の所を書き換えて下さい。
+また、本店～５号店までを購入したとして、４号店だけを売却し、また新しく６号店を購入した場合、６号店を書き換えるときは「４号店」を書き換えて下さい。
+よく分からない人は、上段の書き換えボックスから現在の値を見て、書き換えたいものと見比べながらやるといいでしょう。
+
+経営は金さえあれば無敵ですが、なぜか売上金額を上げてばかりいると、倒産って事もあります。
+以上を注意して頑張ってやって下さい。
+
+それにしても、
+「いらっしゃいませ」
+「ありがとうございました」
+と時々店員さんが言うことがありますが、男の人だけ（宇宙人の 雨中 聖人さん含む）を働かせている時も、女の人の声で聞こえるのはなぜだろう？　
+まさか・・・。(!o!)
+[/note]
+	[subject]資金:calc,0x478D28,0xC4653601,0x3B9AC9FF,signed,little_e
+[subject]１日の売上金:dir
+	[subject]本　店:calc,0x48BD28,0xC4653601,0x3B9AC9FF,signed,little_e
+	[subject]２号店:calc,0x48F9A8,0xC4653601,0x3B9AC9FF,signed,little_e
+	[subject]３号店:calc,0x4917E8,0xC4653601,0x3B9AC9FF,signed,little_e
+	[subject]４号店:calc,0x493628,0xC4653601,0x3B9AC9FF,signed,little_e
+	[subject]５号店:calc,0x495468,0xC4653601,0x3B9AC9FF,signed,little_e
+	[subject]６号店:calc,0x4972A8,0xC4653601,0x3B9AC9FF,signed,little_e
+	[subject]７号店:calc,0x4990E8,0xC4653601,0x3B9AC9FF,signed,little_e
+	[subject]８号店:calc,0x49AF28,0xC4653601,0x3B9AC9FF,signed,little_e
+	[subject]９号店:calc,0x49CD68,0xC4653601,0x3B9AC9FF,signed,little_e
+	[subject]１０号店:calc,0x49EBA8,0xC4653601,0x3B9AC9FF,signed,little_e
+	[subject]１１号店:calc,0x4A09E8,0xC4653601,0x3B9AC9FF,signed,little_e
+	[subject]１２号店:calc,0x4A2828,0xC4653601,0x3B9AC9FF,signed,little_e
+	[subject]１３号店:calc,0x4A4668,0xC4653601,0x3B9AC9FF,signed,little_e
+	[subject]１４号店:calc,0x4A64A8,0xC4653601,0x3B9AC9FF,signed,little_e
+	[subject]１５号店:calc,0x4A82E8,0xC4653601,0x3B9AC9FF,signed,little_e
+	[subject]１６号店:calc,0x4AA128,0xC4653601,0x3B9AC9FF,signed,little_e
+	[subject]１７号店:calc,0x4ABF68,0xC4653601,0x3B9AC9FF,signed,little_e
+	[subject]１８号店:calc,0x4ADDA8,0xC4653601,0x3B9AC9FF,signed,little_e
+	[subject]１９号店:calc,0x4AFBE8,0xC4653601,0x3B9AC9FF,signed,little_e
+	[subject]２０号店:calc,0x4B1A28,0xC4653601,0x3B9AC9FF,signed,little_e
+	[subject]２１号店:calc,0x4B3868,0xC4653601,0x3B9AC9FF,signed,little_e
+	[subject]２２号店:calc,0x4B56A8,0xC4653601,0x3B9AC9FF,signed,little_e
+	[subject]２３号店:calc,0x4B74E8,0xC4653601,0x3B9AC9FF,signed,little_e
+	[subject]２４号店:calc,0x4B9328,0xC4653601,0x3B9AC9FF,signed,little_e
+	[subject]２５号店:calc,0x4BB168,0xC4653601,0x3B9AC9FF,signed,little_e
+	[subject]２６号店:calc,0x4BCFA8,0xC4653601,0x3B9AC9FF,signed,little_e
+	[subject]２７号店:calc,0x4BEDE8,0xC4653601,0x3B9AC9FF,signed,little_e
+	[subject]２８号店:calc,0x4C0C28,0xC4653601,0x3B9AC9FF,signed,little_e
+	[subject]２９号店:calc,0x4C2A68,0xC4653601,0x3B9AC9FF,signed,little_e
+[back]
+[/script]
+
+[script]
+[title]ファーランド オデッセイ ～伝説を継ぐ者～
+[process]FO.EXE
+[maker]TGL
+[creator]MOKKO
+[note]wordwrap
+ファーランド系の最新作ファーランドオデッセイです。
+私がファーランド系のゲームをやったのはこれが初めてです。
+ところで、こんなにも町が広いとは思っていなかったので、初めてゲームをプレイしたときは、びっくりしました。
+ドラクエⅣ第１章の、バトランド城からイムルの村までの距離と同じくらいあるんじゃないかとも思いました。（なんちゅう例えでしょうかね。)
+まあ、これからバージョンアップさせていこうと思っております。
+それまで、待っててください。
+[/note]
+[subject]アーク:dir
+	[subject]HP:calc,0x79BCCC,0x0,0x03E7,signed,little_e
+	[subject]所持金:calc,0x5162A8,0x0,0x01869F,signed,little_e
+[back]
+[/script]
+
+[script]
+[title]GLOCAL HEXCITE　(Ver 1.01)
+[process]HEXCITE.EXE
+[maker]NECインターチャネル
+[creator]MOKKO
+[note]wordwrap
+この前2が発売されちゃいましたが、「GLOCAL HEXCITE」です。
+
+※これは、以前（Windows98が発売され、省スペースモデルが発売された頃）のNECのパソコンに、付属アプリケーションとして入っていたバージョンなので、製品版対応かどうかは分かりません。
+
+右プレイヤー、左プレイヤーとは正面から見て右プレイヤーと左プレイヤーを示します。
+フリーカードは配られる枚数のことです。
+あと、得点書き換えなので、「やばい、（自分が）負けそうだ。」というときに使って下さい。
+相手がコンピューターなら堂々と書き換えてもよいですが、相手が人間だった場合、ばれないように書き換えて下さい。
+例えば、相手がトイレへ行っている途中にとか・・・。
+とにかく、ケンカにならぬよう楽しんでやって下さい。
+[/note]
+[subject]フリーカード:dir
+	[subject]左プレイヤー:calc,0x41FB74,0,4,signed,little_e
+	[subject]右プレイヤー:calc,0x41FBC4,0,4,signed,little_e
+[back]
+//[subject]総合点:dir
+//	[subject]左プレイヤー:calc,0x41FB2C,0x0,0xFFFF,signed,little_e
+//	[subject]右プレイヤー:calc,0x41FB80,0x0,0xFFFF,signed,little_e
+//[back]
+[subject]点数:dir
+	[subject]左プレイヤー:dir
+		[subject]１回戦:calc,0x41FB30,-995,995,signed,little_e
+		[subject]２回戦:calc,0x41FB34,-995,995,signed,little_e
+		[subject]３回戦:calc,0x41FB38,-995,995,signed,little_e
+		[subject]４回戦:calc,0x41FB3C,-995,995,signed,little_e
+		[subject]５回戦:calc,0x41FB40,-995,995,signed,little_e
+		[subject]６回戦:calc,0x41FB44,-995,995,signed,little_e
+		[subject]７回戦:calc,0x41FB48,-995,995,signed,little_e
+		[subject]８回戦:calc,0x41FB4C,-995,995,signed,little_e
+		[subject]９回戦:calc,0x41FB50,-995,995,signed,little_e
+		[subject]１０回戦:calc,0x41FB54,-995,995,signed,little_e
+	[back]
+	[subject]右プレイヤー:dir
+		[subject]１回戦:calc,0x41FB7C,-995,995,signed,little_e
+		[subject]２回戦:calc,0x41FB80,-995,995,signed,little_e
+		[subject]３回戦:calc,0x41FB84,-995,995,signed,little_e
+		[subject]４回戦:calc,0x41FB88,-995,995,signed,little_e
+		[subject]５回戦:calc,0x41FB8C,-995,995,signed,little_e
+		[subject]６回戦:calc,0x41FB90,-995,995,signed,little_e
+		[subject]７回戦:calc,0x41FB94,-995,995,signed,little_e
+		[subject]８回戦:calc,0x41FB98,-995,995,signed,little_e
+		[subject]９回戦:calc,0x41FB9C,-995,995,signed,little_e
+		[subject]１０回戦:calc,0x41FBA0,-995,995,signed,little_e
+[root]
+[/script]
+
+[script]
+[title]future ZERO
+[process]ZERO.EXE
+[maker]オーシス
+[creator]MOKKO
+[note]wordwrap
+リアルロボット系とスーパーロボット系の２つのシナリオができ、なおかつ、有名な声優陣がでてくる「future ZERO」です。
+ロボット物が好きな私には、このゲームは最高です。そして現在、リアルロボット系のシナリオを進めているので、一応キャラクターの名前書き換えだけをできるようにしました。
+「ファーランド オデッセイ」と同じくこれからバージョンアップさせていこうと思っております。それまで、待っててください。
+
+注:
+[Tab]+[Alt]キーで最小化して使って下さい。
+最小化して元に戻すと、画面が真っ白になることがありますがプログラムはきちんと動作しているので、大丈夫です。どうしようと思ったら、ひたすらマウスをクリックしてみましょう。
+[/note]
+[subject]リアルロボット系:dir
+	[subject]名前:dir
+		[subject]佐々木 瞬:string,0x6A7948,13,null
+		[subject]ｶﾙﾛｽ･ｽﾄﾗｰﾀﾞ:string,0x6A7970,13,null
+		[subject]ﾅﾀｰｼｬ･ﾊｼﾞﾘｺﾌ:string,0x6A7998,13,null
+		[subject]ﾘﾝﾀﾞ･ﾈｽ:string,0x6A79C0,13,null
+		[subject]ｱﾏﾝﾀﾞ･ｼﾞｬﾚｯﾄ:string,0x6A79E8,13,null
+		[subject]ｶﾄﾘｰﾇ･ｽﾌｨｱ:string,0x6A7A10,13,null
+		[subject]孫 爛香:string,0x6A7A38,13,null
+		[subject]藤波 小夜:string,0x6A7A60,13,null
+		[subject]里中 零羅:string,0x6A7A88,13,null
+		[subject]ｽﾘｰｼﾞｪｲ:string,0x6A7AB0,13,null
+		[subject]ｹｲﾃｨ･ｹｲﾃｨ:string,0x6A7AD8,13,null
+		[subject]ｶｰｻ･ｼｭﾄﾛﾃｯｸ:string,0x6A7B00,13,null
+[back]
+[/script]
+
+[script]
+[title]あいこっち２　(Ver 1.20)
+[process]ICT2.EXE
+[maker]AGE Entertainment
+[creator]MOKKO
+[note]wordwrap
+ＳＷ版あいこっち２です。
+製品版がこの前ワゴンセールで、１０００円で売られていたのを見てびっくりしました。
+あいこっちやアイコンバトラーがセットで、１０００円なんてお得だなと思いました。あぁ、買えばよかったと後悔しています。
+
+さて、この「あいこっち２」ですが、これで道具を増やすことにより、いろいろなことができます。
+コツコツとクイズなどでお金を貯めなくても、例えば、携帯電話で世界中の「あいこっち」達と仲良くするも良し、レッズアウトで遊ぶも良し、とにかくあなたの育てているあいこっちをかわいがって下さい。
+
+一つの道具につき、１バイトで管理しているため最高２５５個までなので、お金の方を１０円、５０円、１００円を全てＭＡＸにするとあいこっちショップでの持ち金が最高４０８００円までということになります。
+ただし、あいこっちショップで物を買っているとお金がいくらあっても足らないので、そういうときは道具で欲しい品物を書き換えて数を増やして下さい。
+
+最後に、これは製品版対応かどうかは分かりません。
+[/note]
+[subject]道具:dir
+	[subject]１０円:calc,0x42BAC1,0,255,signed,little_e
+	[subject]５０円:calc,0x42BAC2,0,255,signed,little_e
+	[subject]１００円:calc,0x42BAC3,0,255,signed,little_e
+	[subject]携帯電話:calc,0x42BAC4,0,255,signed,little_e
+	[subject]フライパン:calc,0x42BAC5,0,255,signed,little_e
+	[subject]のこぎり:calc,0x42BAC6,0,255,signed,little_e
+	[subject]植木鉢:calc,0x42BAC7,0,255,signed,little_e
+	[subject]ネジ:calc,0x42BAC8,0,255,signed,little_e
+	[subject]木の杖:calc,0x42BAC9,0,255,signed,little_e
+	[subject]ロッド:calc,0x42BACA,0,255,signed,little_e
+	[subject]聴診器:calc,0x42BACB,0,255,signed,little_e
+	[subject]あいこっちの花:0x42BACC,0,255,signed,little_e
+	[subject]機械の部品:calc,0x42BAD1,0,255,signed,little_e
+	[subject]つるぎ:calc,0x42BACE,0,255,signed,little_e
+	[subject]弓矢:calc,0x42BACF,0,255,signed,little_e
+	[subject]アドレス帳:calc,0x42BAD0,0,255,signed,little_e
+	[subject]かばん:calc,0x42BAD1,0,255,signed,little_e
+	[subject]バッテリー:calc,0x42BAD2,0,255,signed,little_e
+	[subject]あらいぐま:calc,0x42BAD3,0,255,signed,little_e
+	[subject]お地蔵さん:calc,0x42BAD4,0,255,signed,little_e
+	[subject]とら:calc,0x42BAD5,0,255,signed,little_e
+	[subject]レッズアウト:calc,0x42BAD6,0,255,signed,little_e
+	[subject]工具:calc,0x42BAD7,0,255,signed,little_e
+	[subject]油差し:calc,0x42BAD8,0,255,signed,little_e
+	[subject]ペンギン:calc,0x42BAD9,0,255,signed,little_e
+	[subject]ライオン:calc,0x42BADA,0,255,signed,little_e
+	[subject]車:calc,0x42BADB,0,255,signed,little_e
+	[subject]イルカ:calc,0x42BADC,0,255,signed,little_e
+	[subject]うさちゃん:calc,0x42BADD,0,255,signed,little_e
+	[subject]プードル:calc,0x42BADE,0,255,signed,little_e
+	[subject]くまさん:calc,0x42BADF,0,255,signed,little_e
+	[subject]お馬さん:calc,0x42BAE0,0,255,signed,little_e
+	[subject]３人のこびと:calc,0x42BAE1,0,255,signed,little_e
+	[subject]２人のこびと:calc,0x42BAE2,0,255,signed,little_e
+	[subject]赤いこびと:calc,0x42BAE3,0,255,signed,little_e
+	[subject]青いこびと:calc,0x42BAE4,0,255,signed,little_e
+[back]
+[/script]
+
+[script]
+[title]タイムコマンドー
+[process]TIMEWIN.EXE
+[maker]Adeline Software International
+[creator]MOKKO
+[note]wordwrap
+これは、２年前のNECのパソコン（まだ、MMX pentiumの時代でVALUESTARが発売される少し前の頃）に、付属アプリケーションとして入っていた「タイムコマンドー」です。
+結構懐かしく思う人もいることでしょう。あるいは、クソゲーと思う人もいることでしょう。私は、はっきり言って当時はまってプレイしていました。
+今、思うと西部開拓時代以降は武器が銃やライフルばかりなので、まるでバイオハザードのゾンビでなく人間バージョンみたいだなと思いました。（どこがだと思う方すみません）
+
+さて、メモリチップとは青いウイルス除去チップのことで、ウイルスでやられたという人にとって助かります。
+あとは、残り人数を増やすことにより無敵になれることでしょう。
+ベリーイージーやイージーしかクリアしていない人にとっては、ノーマルやハードの世界をこれできっとクリアできます。
+
+フル画面表示なので、「Tab」+「Alt」で最小化して使ってください。
+[/note]
+	[subject]メモリチップ(ブルーチップ):calc,0x463251,0,255,signed,little_e
+	[subject]残り人数:calc,0x463718,0,255,signed,little_e
+[back]
+[/script]
+
+[script]
+[title]イース エターナル
+[process]YS1_WIN.EXE
+[maker]Falcom
+[creator]MOKKO
+[note]wordwrap
+今度、Ⅱが発売されるらしいけれど、一体いつ発売されるのでしょうか。そこで、「イース エターナル」です。
+イースといえば、あの主人公の赤い髪の毛とフィールドの時の音楽がかっこいいですね。なんと言っても、体当たりで敵を倒すのは本当に気持ちがいいものです。
+
+分かると思いますが、念のために・・・
+
+H.P　：ヒットポイント
+Exp　：経験値
+Gold ：所持金
+AGE　：年齢
+LV　 ：レベル
+M.H.P：最大ヒットポイント
+STR　：攻撃力
+DEF　：守備力
+
+ところで、「AGE：年齢」って書き換えたところで何かなるのでしょうか。分からないので、一応付けておきました。
+[/note]
+	[subject]H.P:calc,0x52FABC,0,255,signed,little_e
+	[subject]Exp:calc,0x52FAD0,0,99999,signed,little_e
+	[subject]Gold:calc,0x52FACC,0,65550,signed,little_e
+	[subject]AGE:calc,0x52FADC,0,255,signed,little_e
+	[subject]LV:calc,0x52FAD4,0,10,signed,little_e
+	[subject]M.H.P:calc,0x52FAC0,0,255,signed,little_e
+	[subject]STR:calc,0x52FAC4,0,999,signed,little_e
+	[subject]DEF:calc,0x52FAC8,0,999,signed,little_e
+[back]
+[/script]
