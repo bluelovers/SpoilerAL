@@ -1,0 +1,365 @@
+[group]CH_MA
+[note]wordwrap
+以下、少々補足です
+
+■戦闘関連
+両機能は排他なので、一時には片方しか使用できません。
+
+■ＡＤＶパート関連
+所持金ＭＡＸ化：
+所持金９９９９９になりますがカンストしてくれません(TT且つ、以上になると「討伐」で落ちる…。パラメータ関連の方の所持金項目で適当な値にする方がよいです。
+
+■パラメータ関連
+ステータス:カンスト値５０。
+
+存在フラグ:ＯＮでチェック付。ＯＦＦでチェック無。
+祐樹＆華乃と御門＆梨葉はルートに併せて排他。
+
+■フラグ関連
+必須フラグ設定：ＯＮでチェック付。ＯＦＦでチェック無。任意設定他確認用。不整合でイベント後落ちる危険性有。
+[/note]
+
+[subject]戦闘関連:dir
+	[subject]ダメージ時…:dir
+		[subject]敵側一撃死、味方ＨＰＭＡＸ/実行/_:b_toggle,0x401B19,CHLST->CH_a,real
+	[back]
+	[subject]毎ターン…:dir
+		[subject]味方ＭＰＭＡＸ回復、敵軍０/実行/_:b_toggle,0x401B45,CHLST->CH_b,real
+[/group]
+
+
+[group]CH_MA2
+[subject]インターミッション時…:dir
+	[subject]無限行動可能化/実行/_:b_toggle,0x41C334,CHLST->CH_c,real
+	[subject]次面シナリオセレクト/_:d_list,0x4D00F0,CHLST->CH_h,0x00,0x27,CH_j
+	[subject]購入・召還時所持金ＭＡＸ化/実行/_:b_toggle,0x41D3FD,CHLST->CH_d,real
+	[subject]ポイント使用時ＭＡＸ化/実行/_:b_toggle,0x41E28F,CHLST->CH_e,real
+	[subject]振り分け時能力ＭＡＸ化/実行/_:b_toggle,0x41E2A5,CHLST->CH_f,real
+[/group]
+
+
+[group]CH_PR
+[subject]所持金/現在値/_:calc,0x4CE408,0x000000,0x01869F,unsigned
+[repeat]CHLST->CHREP1,0,12,1
+[/group]
+
+
+[group]CH_F1
+[subject]攻略必須フラグ設定:dir
+	[subject]ＬＯＷルート:dir
+		[subject]野沢華乃:dir
+			[replace]0x4CF310,CHLST->CH_k,offset
+		[subject]舞鶴結:dir
+			[replace]0x4CF338,CHLST->CH_l,offset
+		[subject]睦月遥香＆未来:dir
+			[replace]0x4CF360,CHLST->CH_m,offset
+		[subject]松浦真理子:dir
+			[replace]0x4CF3A0,CHLST->CH_l,offset
+		[subject]水城彩菜:dir
+			[replace]0x4CF3D8,CHLST->CH_n,offset
+	[back]
+	[subject]ＣＨＡＯＳルート:dir
+		[subject]野沢梨葉:dir
+			[replace]0x4CF2E8,CHLST->CH_k,offset
+		[subject]魔矢:dir
+			[replace]0x4CF400,CHLST->CH_o,offset
+		[subject]久遠寺鈴:dir
+			[replace]0x4CF428,CHLST->CH_n,offset
+		[subject]森野なつめ:dir
+			[replace]0x4CF450,CHLST->CH_n,offset
+	[back]
+[back]
+[subject]所持カード操作:dir
+	[subject]全アイテムカードＭＡＸ所持/実行/_:toggle,0x4CECF4,0x4CEE54-0900000001000000
+	[subject]全モンスターカードＭＡＸ所持/実行/_:toggle,0x4CEE5C,0x4CEFBC-0900000001000000
+	[subject]全魔法カードＭＡＸ所持/実行/_:toggle,0x4CEFC4,0x4CF124-0900000001000000
+[/group]
+
+
+[group]CH_CG
+[subject]ＣＧモード:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x4CDBD8,0x4CDD8C-01000000
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x4CDBD8,0x4CDD8C-00000000
+[back]
+[subject]カードギャラリー:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x4CDE44,0x4CE05C-01000000
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x4CDE44,0x4CE05C-00000000
+[back]
+[subject]シーンリプレイ:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x4CE060,0x4CE0FC-01000000
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x4CE060,0x4CE0FC-00000000
+[/group]
+
+
+[group]CHREP1
+[subject][! @CHLST->LST_a,$Val !]:dir
+[replace]0x4CE40C+0x[! $Val*0x0A0 !],CHLST->CH_i
+[/group]
+
+
+[group]LST_a
+宮本祐樹
+橘御門
+野沢梨葉
+野沢華乃
+舞鶴結
+睦月遥香
+睦月未来
+松浦真理子
+水城彩菜
+魔矢
+久遠寺鈴
+森野なつめ
+[/group]
+
+
+[group]CH_a
+0x401B19,8B542450,90909090
+0x401B1D,EB08,9090
+0x401B23,89C2EB1E,8B542404
+0x401B45,80B9800000005C,90909090909090
+0x401B4C,75CB,9090
+0x401B4E,EBD7,9090
+[/group]
+
+
+[group]CH_b
+0x401B45,80B9800000003C,90909090909090
+0x401B4C,7409,9090
+0x401B4E,EB25,9090
+0x401B53,89C2EBEE,8B542404
+0x401B75,8B542460,90909090
+0x401B79,EBDC,9090
+[/group]
+
+
+[group]CH_c
+0x41C334,18,08
+0x41D3FC,18,08
+0x41E30E,39,11
+0x421B00,18,08
+[/group]
+
+
+[group]CH_d
+0x41D3FD,B89F860100EB0190,A108E44C0083E832
+0x421B01,B89F860100EB0190,A108E44C0083E832
+[/group]
+
+
+[group]CH_e
+0x41E28F,B8E703000090,8B8284000000
+0x41E2AB,EB00,2BC7
+[/group]
+
+
+[group]CH_f
+0x41E2A5,EB0490909090,0F8D8A000000
+0x41E2C2,C70032000000,8B0C8A418908
+[/group]
+
+
+[group]CH_g
+0x40690B,EB00,7E06
+0x40690E,E703,3200
+0x406920,BA63000000EB00,8B14B514094800
+0x40692A,BB63000000,992BC2D1F8
+0x406930,59,41
+0x406943,59,51
+0x40694D,59,51
+0x406955,59,41
+0x406966,59,41
+0x406982,59,51
+0x406984,BB00000000C3,C39090909090
+[/group]
+
+
+[group]CH_h
+「伝説」「目覚め」（共通）
+「The Teacher」（↓ＬＯＷ汎用）
+「聖域」
+「ふたり」
+「春風の少女」
+「Midnight Picnic」
+「抗争（前編）」
+「抗争（後編）」
+「逆撃の一手」
+「Secret Girl」
+「生と死と」「梨葉と華乃」
+「月下の微笑み」
+「絶対防衛圏」
+「Complex End」
+「敵影」
+「汚された心」
+「血塗られた展開」
+「前夜」
+「Red Line」
+「He is…」
+「ゆらぎ」（↓華乃専用）
+「結界」
+「孤立」
+「The Iced Heart」
+「消えない波紋」
+「血塗られた展開」
+「別れの刻限」
+「Red Line」
+「He is…」
+「The Wolf and The Girl」（↓ＣＨＡＯＳ汎用）
+「沈黙の聖女」
+「狩人」
+「Lover's Trap」
+「風に吹かれて」
+「介入」
+「望まない忠誠」
+「巡礼者」
+「狂気の来訪」
+「The Bloodred Moon」「梨葉と華乃」
+「仕組まれた病」
+「籠の鳥」
+「innocent Sheep」
+「予兆」
+「制裁の行方」
+「零落の途上」
+「消えゆく炎」
+「Red Line」
+「He is…」
+「もつれた糸」（↓梨葉専用）
+「Memory in Photograph」
+「Little My Sister」
+「Parting Point」
+「戻れない関係」
+「末路の始まり」
+「こころのありか」
+「Red Line」
+「He is…」
+[/group]
+
+
+[group]CH_i
+[subject]Body/現在値/_:calc,0x00,0x00,0x32,unsigned
+[subject]Mental/現在値/_:calc,0x04,0x00,0x32,unsigned
+[subject]Agility/現在値/_:calc,0x08,0x00,0x32,unsigned
+[subject]Skill/現在値/_:calc,0x0C,0x00,0x32,unsigned
+[subject]Point/現在値/_:calc,0x84,0x00,0x3E7,unsigned
+[subject]存在フラグＯＮ/実行/_:toggle,0x88,01,00
+[back]
+[/group]
+
+
+[group]CH_j
+0x00
+0x01
+0x02
+0x03
+0x04
+0x05
+0x06
+0x07
+0x08
+0x09
+0x0A
+0x0B
+0x0C
+0x0D
+0x0E
+0x0F
+0x10
+0x11
+0x12
+0x13
+0x1F
+0x20
+0x21
+0x22
+0x23
+0x24
+0x25
+0x26
+0x27
+0x33
+0x34
+0x35
+0x36
+0x37
+0x38
+0x39
+0x3A
+0x3B
+0x3C
+0x3D
+0x3E
+0x3F
+0x40
+0x41
+0x42
+0x43
+0x44
+0x45
+0x51
+0x52
+0x53
+0x54
+0x55
+0x56
+0x57
+0x58
+0x59
+[/group]
+
+
+[group]CH_k
+[subject]フラグ１ ＯＮ／ＯＦＦ/実行/_:toggle,0x00,01,00
+[subject]フラグ２ ＯＮ／ＯＦＦ/実行/_:toggle,0x04,01,00
+[subject]フラグ３ ＯＮ／ＯＦＦ/実行/_:toggle,0x08,01,00
+[subject]フラグ４ ＯＮ／ＯＦＦ/実行/_:toggle,0x0C,01,00
+[back]
+[/group]
+
+
+[group]CH_l
+[subject]フラグ１ ＯＮ／ＯＦＦ/実行/_:toggle,0x00,01,00
+[subject]フラグ２ ＯＮ／ＯＦＦ/実行/_:toggle,0x04,01,00
+[subject]フラグ３ ＯＮ／ＯＦＦ/実行/_:toggle,0x08,01,00
+[subject]フラグ４ ＯＮ／ＯＦＦ/実行/_:toggle,0x0C,01,00
+[subject]フラグ５ ＯＮ／ＯＦＦ/実行/_:toggle,0x10,01,00
+[back]
+[/group]
+
+
+[group]CH_m
+[subject]フラグ１ ＯＮ／ＯＦＦ/実行/_:toggle,0x00,01,00
+[subject]フラグ２ ＯＮ／ＯＦＦ/実行/_:toggle,0x04,01,00
+[subject]フラグ３ ＯＮ／ＯＦＦ/実行/_:toggle,0x08,01,00
+[subject]フラグ４ ＯＮ／ＯＦＦ/実行/_:toggle,0x0C,01,00
+[subject]フラグ５ ＯＮ／ＯＦＦ/実行/_:toggle,0x10,01,00
+[subject]フラグ６ ＯＮ／ＯＦＦ/実行/_:toggle,0x14,01,00
+[subject]フラグ７ ＯＮ／ＯＦＦ/実行/_:toggle,0x18,01,00
+[subject]フラグ８ ＯＮ／ＯＦＦ/実行/_:toggle,0x1C,01,00
+[subject]フラグ９ ＯＮ／ＯＦＦ/実行/_:toggle,0x20,01,00
+[subject]フラグ10 ＯＮ／ＯＦＦ/実行/_:toggle,0x24,01,00
+[back]
+[/group]
+
+
+[group]CH_n
+[subject]フラグ１ ＯＮ／ＯＦＦ/実行/_:toggle,0x00,01,00
+[subject]フラグ２ ＯＮ／ＯＦＦ/実行/_:toggle,0x04,01,00
+[subject]フラグ３ ＯＮ／ＯＦＦ/実行/_:toggle,0x08,01,00
+[subject]フラグ４ ＯＮ／ＯＦＦ/実行/_:toggle,0x0C,01,00
+[subject]フラグ５ ＯＮ／ＯＦＦ/実行/_:toggle,0x10,01,00
+[subject]フラグ６ ＯＮ／ＯＦＦ/実行/_:toggle,0x14,01,00
+[back]
+[/group]
+
+
+[group]CH_o
+[subject]フラグ１ ＯＮ／ＯＦＦ/実行/_:toggle,0x00,01,00
+[subject]フラグ２ ＯＮ／ＯＦＦ/実行/_:toggle,0x04,01,00
+[subject]フラグ３ ＯＮ／ＯＦＦ/実行/_:toggle,0x08,01,00
+[subject]フラグ４ ＯＮ／ＯＦＦ/実行/_:toggle,0x0C,01,00
+[subject]フラグ５ ＯＮ／ＯＦＦ/実行/_:toggle,0x10,01,00
+[subject]フラグ６ ＯＮ／ＯＦＦ/実行/_:toggle,0x14,01,00
+[subject]フラグ７ ＯＮ／ＯＦＦ/実行/_:toggle,0x18,01,00
+[subject]フラグ８ ＯＮ／ＯＦＦ/実行/_:toggle,0x1C,01,00
+[back]
+[/group]
