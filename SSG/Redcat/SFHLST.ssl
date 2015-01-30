@@ -1,0 +1,277 @@
+[group]SFH_SSG
+[note]wordwrap
+※ver1.01に関する情報提供
+The Third さん　感謝
+
+エンディング設定：
+ラスボス撃破後くらいが変更の目安
+[/note]
+
+[subject]ver1.00:dir
+
+[subject]ＡＶＧパート関連:dir
+ [subject]能力限界値899→9999/実行/_:b_toggle,0x00,SFHLST->SFH_a,offset
+ [subject]授業中ストレス増えない/実行/_:b_toggle,0x00,SFHLST->SFH_d,offset
+ [subject]魔法習得時ＡＰ不要/実行/_:b_toggle,0x00,SFHLST->SFH_b,offset
+ [subject]ノーダメージ化＋敵一撃死化/実行/_:b_toggle,0x00,SFHLST->SFH_c,offset
+[back]
+
+[subject]パラメータ関連:dir
+[subject]合成材料全種所持/実行/_:toggle,0x57844C,0x5784BF-63000000
+[subject]パンツ全種所持/実行/_:toggle,0x578980,0x578A6F-01000000
+ [repeat]SFHLST->SFHREP2,0,13,1
+[back]
+
+[subject]フラグ関連:dir
+[subject]ヒロイン設定/_:d_list,0x400000,SFHLST->LST_b,0x00,0x0F,SFHLST->LST_c,offset
+ [subject]好感度確認調整:dir
+  [repeat]SFHLST->SFHREP1,0,5,1
+ [back]
+[back]
+
+[subject]ＣＧモード関連:dir
+ [subject]ギャラリーALL/ＯＮ／ＯＦＦ/_:toggle,0x55DD14,FFFF0FF8FFFEC0FFFF03FEFFFFFFE17F80FFFFFFFFFF1FE0FFFF03,000000000000000000000000000000000000000000000000000000
+ [subject]イベント回想ALL/ＯＮ／ＯＦＦ/_:toggle,0x55DD04,FFFFFFFF01,0000000000
+[back]
+
+[back]
+
+[subject]ver1.01:dir
+
+[subject]ＡＶＧパート関連:dir
+ [subject]能力限界値899→9999/実行/_:b_toggle,0x00,SFHLST->SFH_2a,offset
+ [subject]授業中ストレス増えない/実行/_:b_toggle,0x00,SFHLST->SFH_2d,offset
+ [subject]魔法習得時ＡＰ不要/実行/_:b_toggle,0x00,SFHLST->SFH_2b,offset
+ [subject]ブースター個数制限回避/実行/_:b_toggle,0x00,SFHLST->SFH_2e,offset
+ [subject]ノーダメージ化＋敵一撃死化/実行/_:b_toggle,0x00,SFHLST->SFH_2c,offset
+ [subject]スタッフロールスキップ/実行/_:toggle,0x45C00A,E92C14000090,0F842B140000
+[back]
+
+[subject]パラメータ関連:dir
+[subject]合成材料全種所持/実行/_:toggle,0x57846C,0x5784DF-63000000
+[subject]パンツ全種所持/実行/_:toggle,0x5789A0,0x578A8F-01000000
+ [repeat]SFHLST->SFHREP22,0,13,1
+[back]
+
+[subject]フラグ関連:dir
+[subject]ヒロイン設定(1)/_:d_list,0x400020,SFHLST->LST_b,0x00,0x0F,SFHLST->LST_c,offset
+[subject]エンディング設定(2)/_:d_list,0x400000,SFHLST->LST_f,0x00,0x0F,SFHLST->LST_g,offset
+ [subject]好感度確認調整:dir
+  [repeat]SFHLST->SFHREP21,0,5,1
+ [back]
+[back]
+
+[subject]ＣＧモード関連:dir
+ [subject]ギャラリーALL/ＯＮ／ＯＦＦ/_:toggle,0x55DD34,FFFF0FF8FFFEC0FFFF03FEFFFFFFE17F80FFFFFFFFFF1FE0FFFF03,000000000000000000000000000000000000000000000000000000
+ [subject]イベント回想ALL/ＯＮ／ＯＦＦ/_:toggle,0x55DD24,FFFFFFFF01,0000000000
+[back]
+
+[back]
+
+[/group]
+
+
+[group]SFH_a
+0x409C7D,0F27,8303
+0x40CDFC,0F27,8303
+0x40CE49,0F27,8303
+0x40CEA1,0F27,8303
+0x40CECD,0F27,8303
+0x40CEF2,0F27,8303
+0x40CF17,0F27,8303
+0x40CF3C,0F27,8303
+0x427654,0F27,8303
+0x479358,0F27,8303
+[/group]
+
+
+[group]SFH_2a
+0x409C7D,0F27,8303
+0x40CDFC,0F27,8303
+0x40CE49,0F27,8303
+0x40CEA1,0F27,8303
+0x40CECD,0F27,8303
+0x40CEF2,0F27,8303
+0x40CF17,0F27,8303
+0x40CF3C,0F27,8303
+0x427444,0F27,8303
+0x479498,0F27,8303
+[/group]
+
+
+[group]SFH_b
+0x456DFE,EB0490909090,0F849B000000
+0x457335,B00190,0F9DC0
+0x4573BD,33C9EB00,8B4C2464
+0x457425,33C9EB00,8B4C2464
+[/group]
+
+
+[group]SFH_2b
+0x456E2E,EB0490909090,0F849B000000
+0x457365,B00190,0F9DC0
+0x45745B,33D2EB00,8B542468
+0x457532,33D2EB00,8B542468
+[/group]
+
+
+[group]SFH_c
+0x43DFD9,E94ADD090090,8B8EB8000000
+0x4DBD28,8B8EB8000000,000000000000
+0x4DBD2E,83BE8C00000000,00000000000000
+0x4DBD35,7404,0000
+0x4DBD37,87D1,0000
+0x4DBD39,EB02,0000
+0x4DBD3B,33D2,0000
+0x4DBD3D,89542414,00000000
+0x4DBD41,E99922F6FF,0000000000
+[/group]
+
+
+[group]SFH_2c
+0x43DDF9,E96AE0090090,8B8EB8000000
+0x4DBE68,8B8EB8000000,000000000000
+0x4DBE6E,83BE8C00000000,00000000000000
+0x4DBE75,7404,0000
+0x4DBE77,87D1,0000
+0x4DBE79,EB02,0000
+0x4DBE7B,33D2,0000
+0x4DBE7D,89542414,00000000
+0x4DBE81,E9791FF6FF,0000000000
+[/group]
+
+
+[group]SFH_d
+0x4793AC,33C0??44,7D04??7C
+0x409CE1,EB00,7D08
+[/group]
+
+
+[group]SFH_2d
+0x4794EC,33C0??44,7D04??7C
+0x409CE1,EB00,7D08
+[/group]
+
+
+[group]SFH_2e
+0x47B7A9,EB00,7D47
+0x47B7BD,EB00,7D33
+[/group]
+
+
+[group]SFHREP1
+[subject][! @SFHLST->LST_a,$Val !]'+'［'+'_mem,_0x579794+0x[! 0x04*$Val !],4,num,<Nodata>,%d'+'］/現在値/_:calc,_0x579794+0x[! 0x04*$Val !],0x0000,0x03E7,unsigned
+[/group]
+
+
+[group]SFHREP21
+[subject][! @SFHLST->LST_a,$Val !]'+'［'+'_mem,_0x5797B4+0x[! 0x04*$Val !],4,num,<Nodata>,%d'+'］/現在値/_:calc,_0x5797B4+0x[! 0x04*$Val !],0x0000,0x03E7,unsigned
+[/group]
+
+
+[group]SFHREP2
+[subject][! @SFHLST->LST_d,$Val !]:dir
+ [replace]_0x577B9C+0x[! 0x8C*$Val !],SFHLST->SFH_PR
+[back]
+[/group]
+
+
+[group]SFHREP22
+[subject][! @SFHLST->LST_d,$Val !]:dir
+ [replace]_0x577BBC+0x[! 0x8C*$Val !],SFHLST->SFH_10PR
+[back]
+[/group]
+
+
+[group]SFHREP3
+[subject][! @SFHLST->LST_e,$Val !]'+'［'+'_mem,0x[! 0x04*$Val !],4,num,<Nodata>,%d'+'］/現在値/_:calc,0x[! 0x04*$Val !],0x0000,0x03E7,unsigned
+[/group]
+
+
+[group]SFH_PR
+[subject]一括極大化/実行/_:toggle,0x00,0x1F-$4 [:0x479358:] $$
+[repeat]SFHLST->SFHREP3,0,9,1
+[/group]
+
+
+[group]SFH_10PR
+[subject]一括極大化/実行/_:toggle,0x00,0x1F-$4 [:0x479498:] $$
+[repeat]SFHLST->SFHREP3,0,9,1
+[/group]
+
+
+[group]LST_a
+アリス
+ションマオ
+うるし
+マリオン
+ミリオン
+[/group]
+
+
+[group]LST_b
+ミルフィー
+ミオリ
+ノエル
+リュミエール
+アルエット
+恋人はいない
+[/group]
+
+
+[group]LST_c
+,0x17854E=04,0x1787F0=00
+,0x17854E=08,0x1787F0=01
+,0x17854E=10,0x1787F0=02
+,0x17854E=20,0x1787F0=03
+,0x17854E=40,0x1787F0=04
+,0x17854E=80,0x1787F0=05
+[/group]
+
+
+[group]LST_d
+アリス
+ションマオ
+うるし
+マリオン
+ミリア
+ミリオン
+ミルフィー
+ミオリ
+ノエル
+リュミエール
+アルエット
+ウィルＡ
+ウィルＢ
+[/group]
+
+
+[group]LST_e
+ＨＰ
+最大ＨＰ
+ＭＰ
+最大ＭＰ
+ＡＰ
+魔力
+精神力
+詠唱
+ストレス
+[/group]
+
+
+[group]LST_f
+アリス
+ションマオ
+うるし
+マリオン
+シルフィーネ
+[/group]
+
+
+[group]LST_g
+,0x178589=4000
+,0x178589=8000
+,0x178589=0001
+,0x178589=0002
+,0x178589=0000
+[/group]
