@@ -1,0 +1,49 @@
+[group]SR_SSG
+[note]wordwrap
+アリエッタエンドが無ければ、keyから派生した三流AVGで終ったかも。そうならなかったのはよかったけど。一般ものなのに主人公がヒロイン１人陵辱してるあたりが工画堂らしいといえばらしいw
+
+デバッグ設定各種
+
+ShowFPS：
+ＦＰＳ表示
+MusicForceAuto：
+自動完全演奏モード
+コンフィグと異なり適用制限無し
+MusicSongAll
+無条件でFreePlayの曲目全て出現
+
+他は不明
+
+ver1.00 CRC32/
+SR.EXE=1863C805
+[/note]
+
+[subject]環境関連:dir
+	[subject]デバッグ設定各種/_:d_toggle,0x57DD6C,SRLST->LST_a,SRLST->LST_b,offset
+[root]
+
+[subject]ＣＧモード関連:dir
+	[subject]ENDING Check ALL/ON／OFF/_:toggle,0x5DCB8A,F0BF,0000
+	[subject]Album ALLON/実行/_:toggle,0x5DCB8C,0x5DCB96-FF
+	[subject]Album ALLOFF/実行/_:toggle,0x5DCB8C,0x5DCB96-00
+[root]
+
+[/group]
+
+
+[group]LST_a
+ShowFPS
+CapEnable
+MusicForceAuto
+MusicMemorySave
+MusicSongAll
+[/group]
+
+
+[group]LST_b
+0x00=01/00
+0x01=01/00
+0x02=01/00
+0x03=01/00
+0x04=01/00
+[/group]
