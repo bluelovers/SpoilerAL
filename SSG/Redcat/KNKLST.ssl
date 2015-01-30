@@ -1,0 +1,43 @@
+[group]KNK_SSG
+[note]wordwrap
+ループものですね。ただしループしてたのは主人公じゃなくて…ってとこがポイントですか?
+
+OPTIONS出現：
+必要なフラグ書き込みがクリア時の時だけなので、一時的なものとなりますが、
+１）タイトル画面よりLOAD画面に入る
+２）OPTIONS出現機能を実行
+３）タイトル画面に戻るで即効利用可能
+
+ＣＧモード関連：
+フラグ書き換えを反映させるには、STARTで始め、各種機能を実行。その後最初の佐倉の立ち絵を見ればセーブデータに書きこまれます。OPTIONSに入ってから機能実行すれば一次的なALL化となります。
+[/note]
+
+[subject]ＣＧモード関連:dir
+	[replace]_[:(MName::SYSTEM.UNT)+0x0345BC):],KNKLST->KNK_CG
+[root]
+
+[/group]
+
+
+[group]KNK_CG
+[subject]OPTIONS出現/実行/固定:toggle,0x00A9,01
+[subject]GRAPHIC LIBRARY:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:b_toggle,0x00,KNKLST->KNK_a,offset
+	[subject]ＡＬＬ ＯＦＦ/実行/_:b_toggle,0x00,KNKLST->KNK_b,offset
+[back]
+[subject]SCENE RECOLLCTION:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x90C,0x90F-01
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x90C,0x90F-00
+[/group]
+
+
+[group]KNK_a
+0x7E0,0x805-01
+0x8A8,0x8B1-01
+[/group]
+
+
+[group]KNK_b
+0x7E0,0x805-00
+0x8A8,0x8B1-00
+[/group]
