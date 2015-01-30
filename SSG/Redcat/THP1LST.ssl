@@ -1,0 +1,35 @@
+[group]THP1_SSG
+
+[subject]ノベルパート:dir
+ [subject]好感度確認調整:dir
+  [size]2
+	[repeat]THP1LST->THP1REP1,0,8,1
+	[subject]雛山理緒/現在値/_:calc,0x491A9A,0x00,0xFF,unsigned
+	[subject]来栖川綾香/現在値/_:calc,0x491A72,0x00,0xFF,unsigned
+  [/size]
+ [subject]ここまで:split,roll,-2,-,100
+[back]
+[subject]クリアフラグＡＬＬ/実行/_:toggle,0x491BE4,FF0007
+[subject]おまけＡＬＬ/実行/_:toggle,0x491BF0,7F
+[subject]ここまで:split,line,-1,100,5
+[back]
+[root]
+
+[/group]
+
+
+[group]LST_a
+神岸あかり
+来栖川芹香
+保科智子
+長岡志保
+松原葵
+マルチ
+姫川琴音
+宮内レミィ
+[/group]
+
+
+[group]THP1REP1
+[subject][! @THP1LST->LST_a,$Val !]/現在値/_:calc,_0x491A88+0x[! 0x02*$Val !],0x00,0xFF,unsigned
+[/group]
