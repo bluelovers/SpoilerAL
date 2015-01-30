@@ -1,0 +1,20 @@
+	[subject]気力:calc,0x00,0,65535,unsigned,little_e
+	[subject]最大気力:calc,0x02,0,65535,unsigned,little_e
+	[subject]攻撃力:calc,0x04,0,255,unsigned,little_e
+	[subject]耐久力:calc,0x05,0,255,unsigned,little_e
+	[subject]霊力:calc,0x06,0,255,unsigned,little_e
+	[subject]集中力:calc,0x0E,0,255,unsigned,little_e
+	[subject]属性:list,0x07,遙属,0,1
+	[subject]装備:dir
+		[subject]1つ目:d_list,0x12,遙装備1,0x00,0x36,遙装備2,offset
+		[subject]2つ目:d_list,0x13,遙装備1,0x00,0x36,遙装備2,offset
+	[back]
+	[subject]状態異常:dir
+		[subject]状態異常解消:toggle,0x08,000000????????0000,??
+		[subject]瘴気残りターン数:calc,0x08,0,255,unsigned,little_e
+		[subject]束縛残りターン数:calc,0x09,0,255,unsigned,little_e
+		[subject]禁呪残りターン数:calc,0x0A,0,255,unsigned,little_e
+		[subject]混乱残りターン数:calc,0x0F,0,255,unsigned,little_e
+		[subject]憑依残りターン数:calc,0x10,0,255,unsigned,little_e
+	[back]
+[back] 
