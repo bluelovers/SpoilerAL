@@ -1,0 +1,2273 @@
+[group]ED6_SSG
+[note]wordwrap
+なんつかエステルのダメっぽさが楽しいw
+
+☆イベントで詰まったように思える状況の対処例
+
+以下よく見受けられる例
+１）遊撃士試験中橋の上での戦闘で固まる場合
+この戦闘は、戦闘開始前ＣＰが９７以下の場合９８に設定→戦闘中１００以上になったらＳブレイクイベント発動という構成なので、戦闘開始時にＣＰが２００ある場合と、先のＣＰ９８設定時ＣＰ即ＭＡＸ化機能で２００にしてしまった場合だとイベント進行不可能になります。戦闘開始までに現在ＣＰを９７以下に減らし、イベント終了（最初のＳブレイク発動）まではＣＰ即ＭＡＸ化機能を外すようにしてください。
+
+２）終章開始寸前くらいにツァイス発着場にいこうとすると、アイテムを届けるようなことをヨシュアが言い出し、戻されてしまい進めない。
+アイテム個別エディットで件のアイテムを消去するか、緊急脱出用座標変換機能でイベントポイント（発着場のゲート部分）を迂回する。
+
+開発側は、基本的に改造されることを前提にイベントを組んでいるわけではありません。イベント進行の異常は大体において利用者の状況判断による他機能の利用や一時的利用回避により対処が可能です。
+
+
+全オーバルアーツ無条件使用可能：
+アーツ実装状況が表示されない箇所で機能実行し、実行後アーツ実装状況表示等を行い値を反映させること。
+
+パラメータ極大化系：
+パラメータ表示されない箇所で機能実行し、実行後ステータス表示等を行い値を反映させること。今回は固定データなので、任意のパラメータ値のデータ保存は不可能です。保存されるのは経験値とＬＶ、ポイント等。
+
+キャンプ画面に入ると…：
+キャンプ画面外で実行しておくこと。
+
+アイテムエディタ：
+同じアイテムスロットの存在重複は避けること。ソートが暴走する可能性があります。
+
+Playtime：
+値は秒単位指定になります。
+
+LV・経験値：
+NEXTLVより経験値が多くなると以後LVUPしなくなります。NEXTLVはLVにあわせて変化するので、EXPはそれ以下にすること。データ上のLV上限値は59です。
+
+入手・購入アイテム最大個数化：
+機能実行後より、宝箱や戦闘で入手或いは購入したアイテムの所持数が９９個になる機能。９９個になると持てない制限も解除済みなので取りこぼしが無くて済む。ただし、イベント入手アイテムにも効果が及ぶことに留意すること。
+
+戦闘中敵攻撃完全無効化：
+攻撃種・命中結果を問はず敵の攻撃がミスる機能。味方は二次効果として、アーツでしか倒せない敵にも直接攻撃ダメージが通るようになる。
+
+雑魚敵戦闘発生しない：
+キャンプ画面で実行しておくこと。マップ上の敵シンボルに触れても戦闘にならない機能。追尾型の敵に重なるとたまに当たり判定も重なって逃げられなくなることがあるのでその時は諦めて戦闘すべし。
+
+移動速度設定変更：
+ポイント位置を無視して移動速度を固定化できる機能。自動移動設定も可能。ちなみにここではシステム上の最高速が「高速（１倍速）」扱い。
+
+緊急脱出用ＸＹ座標変更：
+扱いが単精度浮動小数なので、まずは値と座票位置との距離感に慣れておくのが賢明。この機能で通行止めを跳び越して進んだ場合等は、シナリオ整合の保障は不可能。名称通り脱出用に使う程度が良い。
+
+依頼の期限切れ状態解除：
+次の依頼がクリアされるまで、既に期限切れしていた依頼を期限（短）に戻す機能。ただし、依頼によっては発生条件に期限だけでなくメインシナリオフラグが関わる（依頼人にメインシナリオ用の科白や役割があり、そちらが優先されるため依頼が発生しなくなる）ものがあることに注意。
+
+ステータス設定変更：
+MAXEPとRNGを除く現在LV相当の基本設定値の操作が可能。本来ステータスの任意書き換えの反映ができないこのソフトでの、一時的なパラメータエディット機能と同義と考えて差し支えない。ソフトの起動中のみ有効。
+
+[/note]
+
+[subject]ver1.00:dir
+
+[subject]ＲＰＧパート関連:dir
+	[subject]クォーツ装備属性及び重複制限解除/実行/_:b_toggle,0x46AD4F,ED6LST->ED6_c,real
+	[subject]全オーバルアーツ無条件使用可能/実行/_:b_toggle,0x4ACC05,ED6LST->ED6_d,real
+	[subject]戦闘中敵攻撃完全無効化/実行/_:toggle,0x41D3FD,90803F067C,F646040274
+	[subject]オーバルアーツ使用時EP減らない/実行/_:b_toggle,0x434ACC,ED6LST->ED6_h,real
+	[subject]雑魚敵戦闘発生しない/実行/_:toggle,0x4ABB3C,E96401000090,0F8463010000
+	[subject]全戦闘経験値システム上の最大化/実行/_:toggle,0x4083B4,EB,7C
+	[subject]戦闘中CP即最大化/実行/_:toggle,0x434B45,EB,7D
+	[subject]キャンプ画面に入ると現在HP&EP無条件回復/実行/_:toggle,0x4A75E0,EB00,7410
+	[subject]キャンプ画面に入るとCP無条件最大化/実行/_:toggle,0x4A75F2,66C7460AC8005E5BC3,5E5BC3909090909090
+	[subject]入手・購入アイテム最大個数化/実行/_:b_toggle,0x4A97E9,ED6LST->ED6_f,real
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]パラメータ極大化系:dir
+	[subject]全パラメータ無条件極大化/実行/_:b_toggle,0x4A7536,ED6LST->ED6_e,real
+	[subject]無条件でMAXLV時のパラメータ/実行/_:toggle,0x4A74D2,33C9B13B,8B4C240C
+	[subject]EP最大値無条件極大化/実行/_:toggle,0x4A75A5,0F27,3200
+	[subject]RNG無条件極大化/実行/_:toggle,0x4A759C,08,00
+ [back]
+ [subject]通貨・ポイント類:dir
+  [e_with],0x00000000,0x05F5E0FF,unsigned
+	[subject]ミラ貨/現在値/_:calc,0x016FB3C8
+	[subject]ブレイサーポイント/現在値/_:calc,0x016FB3CC
+  [/e_with]
+	[repeat]ED6LST->ED6REP1,0,7,1
+ [back]
+ [subject]LV・経験値:dir
+	[repeat]ED6LST->ED6REP2,0,8,1
+ [back]
+ [subject]アイテムエディタ:dir
+	[subject]一括所持数の指定/現在値/_:calc,0x50A444,0x00,0x63,unsigned
+	[subject]所持アイテム一括数量変更/実行/_:toggle,0x016FA3C8,0x016FAA03-*{0000????::00000000::????$2[:0x50A444:2]$$*}
+  [subject]個別所持指定:dir
+   [io_fep]$Val-1, $Val+1
+	[subject]アイテム格納スロット選択/現在値/_:calc,0x50A440,0x0000,0x018F,unsigned
+   [/io_fep]
+   [size]2
+	[subject]_mem,_([\:0x50A440\:]*0x04)=>temp;[\:0x016FA3C8+$temp\:2]=>temp;[\:[\:0x01940768\:]+$temp*2\:2]=>temp;[\:[\:0x01940768\:]+$temp\:2]=>temp;[\:0x01940768\:]+$temp,20,00,アイテム'+'の種類変更/_:d_list,_([:0x50A440:]*0x04)=>temp;0x016FA3C8+$temp,ED6LST->LST_e,0x0000,0xFFFF,ED6LST->LST_c,offset
+	[subject]_mem,_([\:0x50A440\:]*0x04)=>temp;[\:0x016FA3C8+$temp\:2]=>temp;[\:[\:0x01940768\:]+$temp*2\:2]=>temp;[\:[\:0x01940768\:]+$temp\:2]=>temp;[\:0x01940768\:]+$temp,20,00,アイテム'+'の個数変更/現在値/_:calc,_([:0x50A440:]*0x04)=>temp;0x016FA3CA+$temp,0x0000,0x0063,unsigned
+   [/size]
+  [back]
+ [back]
+[back]
+
+[subject]フラグ関連:dir
+	[subject]依頼の期限切れ状態解除/実行/_:toggle,0x016FB41C,0x016FB892-*{????42??????????????????::????02??????????????????*}
+	[subject]レシピ手帳ＡＬＬ化/実行/_:toggle,0x016FBC00,FFFFFFFFFFFFFFFF07,000000000000000000
+[back]
+
+[subject]環境関連:dir
+	[subject]移動速度設定変更/_:d_list,0x00,ED6LST->LST_f,0x00000000,0xFFFFFFFF,ED6LST->LST_g,offset
+	 [e_with],-255,255,float
+	  [subject]緊急脱出用Ｘ座標変更/現在値/_:f_calc,0x16D59BC
+	  [subject]緊急脱出用Ｙ座標変更/現在値/_:f_calc,0x16D59C4
+	 [/e_with]
+	[subject]Playtimeリセット/実行/_:b_toggle,0x019B2158,ED6LST->ED6_a,real
+ [io_fep]$Val*0x03E8, $Val/0x03E8
+	[subject]Playtime変更/現在値/_:b_calc,0x019B2158,ED6LST->ED6_b,real,0x00000000,0x00418937,unsigned
+ [/io_fep]
+[back]
+
+[root]
+
+[subject]ver1.02:dir
+
+[subject]ＲＰＧパート関連:dir
+	[subject]クォーツ装備属性及び重複制限解除/実行/_:b_toggle,0x46AE0F,ED6LST->ED6_2c,real
+	[subject]全オーバルアーツ無条件使用可能/実行/_:b_toggle,0x4ACD85,ED6LST->ED6_2d,real
+	[subject]戦闘中敵攻撃完全無効化/実行/_:toggle,0x41D40D,90803F067C,F646040274
+	[subject]オーバルアーツ使用時EP減らない/実行/_:b_toggle,0x434A9C,ED6LST->ED6_2h,real
+	[subject]雑魚敵戦闘発生しない/実行/_:toggle,0x4ABCBC,E96401000090,0F8463010000
+	[subject]全戦闘経験値システム上の最大化/実行/_:toggle,0x4083E4,EB,7C
+	[subject]戦闘中CP即最大化/実行/_:toggle,0x434B15,EB,7D
+	[subject]キャンプ画面に入ると現在HP&EP無条件回復/実行/_:toggle,0x4A7760,EB00,7410
+	[subject]キャンプ画面に入るとCP無条件最大化/実行/_:toggle,0x4A7772,66C7460AC8005E5BC3,5E5BC3909090909090
+	[subject]入手・購入アイテム最大個数化/実行/_:b_toggle,0x48D029,ED6LST->ED6_2f,real
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]パラメータ極大化系:dir
+	[subject]全パラメータ無条件極大化/実行/_:b_toggle,0x4A76B6,ED6LST->ED6_2e,real
+	[subject]無条件でMAXLV時のパラメータ/実行/_:toggle,0x4A7652,33C9B13B,8B4C240C
+	[subject]EP最大値無条件極大化/実行/_:toggle,0x4A7725,0F27,3200
+	[subject]RNG無条件極大化/実行/_:toggle,0x4A771C,08,00
+ [back]
+ [subject]通貨・ポイント類:dir
+  [e_with],0x00000000,0x05F5E0FF,unsigned
+	[subject]ミラ貨/現在値/_:calc,0x016FB458
+	[subject]ブレイサーポイント/現在値/_:calc,0x016FB45C
+  [/e_with]
+	[repeat]ED6LST->ED6REP21,0,7,1
+ [back]
+ [subject]LV・経験値:dir
+	[repeat]ED6LST->ED6REP22,0,8,1
+ [back]
+ [subject]アイテムエディタ:dir
+	[subject]一括所持数の指定/現在値/_:calc,0x50A604,0x00,0x63,unsigned
+	[subject]所持アイテム一括数量変更/実行/_:toggle,0x016FA458,0x016FAA93-*{0000????::00000000::????$2[:0x50A604:2]$$*}
+  [subject]個別所持指定:dir
+   [io_fep]$Val-1, $Val+1
+	[subject]アイテム格納スロット選択/現在値/_:calc,0x50A600,0x0000,0x018F,unsigned
+   [/io_fep]
+   [size]2
+	[subject]_mem,_([\:0x50A600\:]*0x04)=>temp;[\:0x016FA458+$temp\:2]=>temp;[\:[\:0x019407F8\:]+$temp*2\:2]=>temp;[\:[\:0x019407F8\:]+$temp\:2]=>temp;[\:0x019407F8\:]+$temp,20,00,アイテム'+'の種類変更/_:d_list,_([:0x50A600:]*0x04)=>temp;0x016FA458+$temp,ED6LST->LST_e,0x0000,0xFFFF,ED6LST->LST_c,offset
+	[subject]_mem,_([\:0x50A600\:]*0x04)=>temp;[\:0x016FA458+$temp\:2]=>temp;[\:[\:0x019407F8\:]+$temp*2\:2]=>temp;[\:[\:0x019407F8\:]+$temp\:2]=>temp;[\:0x019407F8\:]+$temp,20,00,アイテム'+'の個数変更/現在値/_:calc,_([:0x50A600:]*0x04)=>temp;0x016FA45A+$temp,0x0000,0x0063,unsigned
+   [/size]
+  [back]
+ [back]
+[back]
+
+[subject]フラグ関連:dir
+	[subject]依頼の期限切れ状態解除/実行/_:toggle,0x016FB4AC,0x016FB922-*{????42??????????????????::????02??????????????????*}
+	[subject]逃走・戦闘不能戦績リセット/実行/_:b_toggle,0x016FBE88,ED6LST->ED6_2i,real
+	[subject]レシピ手帳ＡＬＬ化/実行/_:toggle,0x016FBC90,FFFFFFFFFFFFFFFF07,000000000000000000
+[back]
+
+[subject]環境関連:dir
+	[subject]移動速度設定変更/_:d_list,0x00,ED6LST->LST_f,0x00000000,0xFFFFFFFF,ED6LST->LST_2g,offset
+	 [e_with],-255,255,float
+	  [subject]緊急脱出用Ｘ座標変更/現在値/_:f_calc,0x016D5A4C
+	  [subject]緊急脱出用Ｙ座標変更/現在値/_:f_calc,0x016D5A54
+	 [/e_with]
+	[subject]Playtimeリセット/実行/_:b_toggle,0x019B21E8,ED6LST->ED6_2a,real
+ [io_fep]$Val*0x03E8, $Val/0x03E8
+	[subject]Playtime変更/現在値/_:b_calc,0x019B21E8,ED6LST->ED6_2b,real,0x00000000,0x00418937,unsigned
+ [/io_fep]
+[back]
+
+[root]
+
+[subject]ver1.031:dir
+
+[subject]ＲＰＧパート関連:dir
+	[subject]クォーツ装備属性及び重複制限解除/実行/_:b_toggle,0x46B4AF,ED6LST->ED6_3c,real
+	[subject]全オーバルアーツ無条件使用可能/実行/_:b_toggle,0x4AD825,ED6LST->ED6_3d,real
+	[subject]戦闘中敵攻撃完全無効化/実行/_:toggle,0x41D40D,90803F067C,F646040274
+	[subject]味方攻撃時CRITICAL+SEPITHUP+STRUP1&2+HPHEAL2効果自動発動/実行/_:b_toggle,0x402D7C,ED6LST->ED6_3j,real
+	[subject]オーバルアーツ使用時EP減らない/実行/_:b_toggle,0x434AEC,ED6LST->ED6_3h,real
+	[subject]雑魚敵戦闘発生しない/実行/_:toggle,0x4AC70D,E96401000090,0F8463010000
+	[subject]全戦闘経験値システム上の最大化/実行/_:toggle,0x4083E4,EB,7C
+	[subject]戦闘中CP即最大化/実行/_:toggle,0x434B65,EB,7D
+	[subject]キャンプ画面に入ると現在HP&EP無条件回復/実行/_:toggle,0x4A8170,EB00,7410
+	[subject]キャンプ画面に入るとCP無条件最大化/実行/_:toggle,0x4A8182,66C7460AC8005E5BC3,5E5BC3909090909090
+	[subject]入手・購入アイテム最大個数化/実行/_:b_toggle,0x48D379,ED6LST->ED6_3f,real
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]パラメータ極大化系:dir
+	[subject]全パラメータ無条件極大化/実行/_:b_toggle,0x4A80C6,ED6LST->ED6_3e,real
+	[subject]無条件でMAXLV時のパラメータ/実行/_:toggle,0x4A8062,33C9B13B,8B4C240C
+	[subject]EP最大値無条件極大化/実行/_:toggle,0x4A8135,401F,3200
+	[subject]RNG無条件極大化/実行/_:toggle,0x4A812C,08,00
+ [back]
+ [subject]通貨・ポイント類:dir
+  [e_with],0x00000000,0x05F5E0FF,unsigned
+	[subject]ミラ貨/現在値/_:calc,0x016FC578
+	[subject]ブレイサーポイント/現在値/_:calc,0x016FC57C
+  [/e_with]
+	[repeat]ED6LST->ED6REP31,0,7,1
+ [back]
+ [subject]LV・経験値:dir
+	[repeat]ED6LST->ED6REP32,0,8,1
+ [back]
+ [subject]現在LVのステータス設定変更:dir
+	[repeat]ED6LST->ED6REP33,0,8,1
+ [back]
+ [subject]アイテムエディタ:dir
+	[subject]一括所持数の指定/現在値/_:calc,0x50B03C,0x00,0x63,unsigned
+	[subject]所持アイテム一括数量変更/実行/_:toggle,0x016FB578,0x016FBBC3-*{0000????::00000000::????$2[:0x50B03C:2]$$*}
+  [subject]個別所持指定:dir
+   [io_fep]$Val-1, $Val+1
+	[subject]アイテム格納スロット選択/現在値/_:calc,0x50B038,0x0000,0x018F,unsigned
+   [/io_fep]
+   [size]2
+	[subject]_mem,_([\:0x50B038\:]*0x04)=>temp;[\:0x016FB578+$temp\:2]=>temp;[\:[\:0x01941920\:]+$temp*2\:2]=>temp;[\:[\:0x01941920\:]+$temp\:2]=>temp;[\:0x01941920\:]+$temp,20,00,アイテム'+'の種類変更/_:d_list,_([:0x50B038:]*0x04)=>temp;0x016FB578+$temp,ED6LST->LST_e,0x0000,0xFFFF,ED6LST->LST_c,offset
+	[subject]_mem,_([\:0x50B038\:]*0x04)=>temp;[\:0x016FB578+$temp\:2]=>temp;[\:[\:0x01941920\:]+$temp*2\:2]=>temp;[\:[\:0x01941920\:]+$temp\:2]=>temp;[\:0x01941920\:]+$temp,20,00,アイテム'+'の個数変更/現在値/_:calc,_([:0x50B038:]*0x04)=>temp;0x016FB57A+$temp,0x0000,0x0063,unsigned
+   [/size]
+  [back]
+ [back]
+[back]
+
+[subject]フラグ関連:dir
+	[subject]依頼の期限切れ状態解除/実行/_:toggle,0x016FC5CC,0x016FCA42-*{????42??????????????????::????02??????????????????*}
+	[subject]逃走・戦闘不能戦績リセット/実行/_:b_toggle,0x016FCFA8,ED6LST->ED6_3i,real
+	[subject]レシピ手帳ＡＬＬ化/実行/_:toggle,0x016FCDB0,FFFFFFFFFFFFFFFF07,000000000000000000
+[back]
+
+[subject]環境関連:dir
+	[subject]移動速度設定変更/_:d_list,0x00,ED6LST->LST_f,0x00000000,0xFFFFFFFF,ED6LST->LST_3g,offset
+	 [e_with],-255,255,float
+	  [subject]緊急脱出用Ｘ座標変更/現在値/_:f_calc,0x016D6B6C
+	  [subject]緊急脱出用Ｙ座標変更/現在値/_:f_calc,0x016D6B74
+	 [/e_with]
+	[subject]Playtimeリセット/実行/_:b_toggle,0x019B3310,ED6LST->ED6_3a,real
+ [io_fep]$Val*0x03E8, $Val/0x03E8
+	[subject]Playtime変更/現在値/_:b_calc,0x019B3310,ED6LST->ED6_3b,real,0x00000000,0x00418937,unsigned
+ [/io_fep]
+[back]
+
+[root]
+
+[subject]ver1.032:dir
+
+[subject]ＲＰＧパート関連:dir
+	[subject]クォーツ装備属性及び重複制限解除/実行/_:b_toggle,0x46B43F,ED6LST->ED6_4c,real
+	[subject]全オーバルアーツ無条件使用可能/実行/_:b_toggle,0x4AD845,ED6LST->ED6_4d,real
+	[subject]戦闘中敵攻撃完全無効化/実行/_:toggle,0x41D40D,90803F067C,F646040274
+	[subject]味方攻撃時CRITICAL+SEPITHUP+STRUP1&2+HPHEAL2効果自動発動/実行/_:b_toggle,0x402D7C,ED6LST->ED6_3j,real
+	[subject]オーバルアーツ使用時EP減らない/実行/_:b_toggle,0x434A4C,ED6LST->ED6_4h,real
+	[subject]雑魚敵戦闘発生しない/実行/_:toggle,0x4AC72D,E96401000090,0F8463010000
+	[subject]全戦闘経験値システム上の最大化/実行/_:toggle,0x4083E4,EB,7C
+	[subject]戦闘中CP即最大化/実行/_:toggle,0x434AC5,EB,7D
+	[subject]キャンプ画面に入ると現在HP&EP無条件回復/実行/_:toggle,0x4A8190,EB00,7410
+	[subject]キャンプ画面に入るとCP無条件最大化/実行/_:toggle,0x4A81A2,66C7460AC8005E5BC3,5E5BC3909090909090
+	[subject]入手・購入アイテム最大個数化/実行/_:b_toggle,0x48D329,ED6LST->ED6_4f,real
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]パラメータ極大化系:dir
+	[subject]全パラメータ無条件極大化/実行/_:b_toggle,0x4A80E6,ED6LST->ED6_4e,real
+	[subject]無条件でMAXLV時のパラメータ/実行/_:toggle,0x4A8082,33C9B13B,8B4C240C
+	[subject]EP最大値無条件極大化/実行/_:toggle,0x4A8155,401F,3200
+	[subject]RNG無条件極大化/実行/_:toggle,0x4A814C,08,00
+ [back]
+ [subject]通貨・ポイント類:dir
+  [e_with],0x00000000,0x05F5E0FF,unsigned
+	[subject]ミラ貨/現在値/_:calc,0x016FC578
+	[subject]ブレイサーポイント/現在値/_:calc,0x016FC57C
+  [/e_with]
+	[repeat]ED6LST->ED6REP31,0,7,1
+ [back]
+ [subject]LV・経験値:dir
+	[repeat]ED6LST->ED6REP32,0,8,1
+ [back]
+ [subject]現在LVのステータス設定変更:dir
+	[repeat]ED6LST->ED6REP33,0,8,1
+ [back]
+ [subject]アイテムエディタ:dir
+	[subject]一括所持数の指定/現在値/_:calc,0x50B03C,0x00,0x63,unsigned
+	[subject]所持アイテム一括数量変更/実行/_:toggle,0x016FB578,0x016FBBC3-*{0000????::00000000::????$2[:0x50B03C:2]$$*}
+  [subject]個別所持指定:dir
+   [io_fep]$Val-1, $Val+1
+	[subject]アイテム格納スロット選択/現在値/_:calc,0x50B038,0x0000,0x018F,unsigned
+   [/io_fep]
+   [size]2
+	[subject]_mem,_([\:0x50B038\:]*0x04)=>temp;[\:0x016FB578+$temp\:2]=>temp;[\:[\:0x01941920\:]+$temp*2\:2]=>temp;[\:[\:0x01941920\:]+$temp\:2]=>temp;[\:0x01941920\:]+$temp,20,00,アイテム'+'の種類変更/_:d_list,_([:0x50B038:]*0x04)=>temp;0x016FB578+$temp,ED6LST->LST_e,0x0000,0xFFFF,ED6LST->LST_c,offset
+	[subject]_mem,_([\:0x50B038\:]*0x04)=>temp;[\:0x016FB578+$temp\:2]=>temp;[\:[\:0x01941920\:]+$temp*2\:2]=>temp;[\:[\:0x01941920\:]+$temp\:2]=>temp;[\:0x01941920\:]+$temp,20,00,アイテム'+'の個数変更/現在値/_:calc,_([:0x50B038:]*0x04)=>temp;0x016FB57A+$temp,0x0000,0x0063,unsigned
+   [/size]
+  [back]
+ [back]
+[back]
+
+[subject]フラグ関連:dir
+	[subject]依頼の期限切れ状態解除/実行/_:toggle,0x016FC5CC,0x016FCA42-*{????42??????????????????::????02??????????????????*}
+	[subject]逃走・戦闘不能戦績リセット/実行/_:b_toggle,0x016FCFA8,ED6LST->ED6_3i,real
+	[subject]レシピ手帳ＡＬＬ化/実行/_:toggle,0x016FCDB0,FFFFFFFFFFFFFFFF07,000000000000000000
+[back]
+
+[subject]環境関連:dir
+	[subject]移動速度設定変更/_:d_list,0x00,ED6LST->LST_f,0x00000000,0xFFFFFFFF,ED6LST->LST_4g,offset
+	 [e_with],-255,255,float
+	  [subject]緊急脱出用Ｘ座標変更/現在値/_:f_calc,0x016D6B6C
+	  [subject]緊急脱出用Ｙ座標変更/現在値/_:f_calc,0x016D6B74
+	 [/e_with]
+	[subject]Playtimeリセット/実行/_:b_toggle,0x019B3310,ED6LST->ED6_3a,real
+ [io_fep]$Val*0x03E8, $Val/0x03E8
+	[subject]Playtime変更/現在値/_:b_calc,0x019B3310,ED6LST->ED6_3b,real,0x00000000,0x00418937,unsigned
+ [/io_fep]
+[back]
+
+[root]
+
+[subject]ver1.034:dir
+
+[subject]ＲＰＧパート関連:dir
+	[subject]クォーツ装備属性及び重複制限解除/実行/_:b_toggle,0x46B2EF,ED6LST->ED6_5c,real
+	[subject]全オーバルアーツ無条件使用可能/実行/_:b_toggle,0x4AD4A5,ED6LST->ED6_5d,real
+	[subject]戦闘中敵攻撃完全無効化/実行/_:toggle,0x41D42D,90803F067C,F646040274
+	[subject]味方攻撃時CRITICAL+SEPITHUP+STRUP1&2+HPHEAL2効果自動発動/実行/_:b_toggle,0x402D6A,ED6LST->ED6_4j,real
+	[subject]オーバルアーツ使用時EP減らない/実行/_:b_toggle,0x4349EC,ED6LST->ED6_5h,real
+	[subject]雑魚敵戦闘発生しない/実行/_:toggle,0x4AC38D,E96401000090,0F8463010000
+	[subject]全戦闘経験値システム上の最大化/実行/_:toggle,0x408404,EB,7C
+	[subject]戦闘中CP即最大化/実行/_:toggle,0x434A65,EB,7D
+	[subject]キャンプ画面に入ると現在HP&EP無条件回復/実行/_:toggle,0x4A7DF0,EB00,7410
+	[subject]キャンプ画面に入るとCP無条件最大化/実行/_:toggle,0x4A7E02,66C7460AC8005E5BC3,5E5BC3909090909090
+	[subject]入手・購入アイテム最大個数化/実行/_:b_toggle,0x48D7B9,ED6LST->ED6_5f,real
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]パラメータ極大化系:dir
+	[subject]全パラメータ無条件極大化/実行/_:b_toggle,0x4A7D46,ED6LST->ED6_5e,real
+	[subject]無条件でMAXLV時のパラメータ/実行/_:toggle,0x4A7CE2,33C9B13B,8B4C240C
+	[subject]EP最大値無条件極大化/実行/_:toggle,0x4A7DB5,401F,3200
+	[subject]RNG無条件極大化/実行/_:toggle,0x4A7DAC,08,00
+ [back]
+ [subject]通貨・ポイント類:dir
+  [e_with],0x00000000,0x05F5E0FF,unsigned
+	[subject]ミラ貨/現在値/_:calc,0x016FB630
+	[subject]ブレイサーポイント/現在値/_:calc,0x016FB634
+  [/e_with]
+	[repeat]ED6LST->ED6REP41,0,7,1
+ [back]
+ [subject]LV・経験値:dir
+	[repeat]ED6LST->ED6REP42,0,8,1
+ [back]
+ [subject]現在LVのステータス設定変更:dir
+	[repeat]ED6LST->ED6REP43,0,8,1
+ [back]
+ [subject]アイテムエディタ:dir
+	[subject]一括所持数の指定/現在値/_:calc,0x50A73C,0x00,0x63,unsigned
+	[subject]所持アイテム一括数量変更/実行/_:toggle,0x016FA630,0x016FAC7B-*{0000????::00000000::????$2[:0x50A73C:2]$$*}
+  [subject]個別所持指定:dir
+   [io_fep]$Val-1, $Val+1
+	[subject]アイテム格納スロット選択/現在値/_:calc,0x50A738,0x0000,0x018F,unsigned
+   [/io_fep]
+   [size]2
+	[subject]_mem,_([\:0x50A738\:]*0x04)=>temp;[\:0x016FA630+$temp\:2]=>temp;[\:[\:0x019409A0\:]+$temp*2\:2]=>temp;[\:[\:0x019409A0\:]+$temp\:2]=>temp;[\:0x019409A0\:]+$temp,20,00,アイテム'+'の種類変更/_:d_list,_([:0x50A738:]*0x04)=>temp;0x016FA630+$temp,ED6LST->LST_e,0x0000,0xFFFF,ED6LST->LST_c,offset
+	[subject]_mem,_([\:0x50A738\:]*0x04)=>temp;[\:0x016FA630+$temp\:2]=>temp;[\:[\:0x019409A0\:]+$temp*2\:2]=>temp;[\:[\:0x019409A0\:]+$temp\:2]=>temp;[\:0x019409A0\:]+$temp,20,00,アイテム'+'の個数変更/現在値/_:calc,_([:0x50A738:]*0x04)=>temp;0x016FA632+$temp,0x0000,0x0063,unsigned
+   [/size]
+  [back]
+ [back]
+[back]
+
+[subject]フラグ関連:dir
+	[subject]依頼の期限切れ状態解除/実行/_:toggle,0x016FB660,0x016FBAD8-*{????42??????????????????::????02??????????????????*}
+	[subject]逃走・戦闘不能戦績リセット/実行/_:b_toggle,0x016FC05C,ED6LST->ED6_4i,real
+	[subject]レシピ手帳ＡＬＬ化/実行/_:toggle,0x016FBE68,FFFFFFFFFFFFFFFF07,000000000000000000
+[back]
+
+[subject]環境関連:dir
+	[subject]移動速度設定変更/_:d_list,0x4976EC,ED6LST->LST_f,0x00000000,0xFFFFFFFF,ED6LST->LST_5g,real
+	 [e_with],-255,255,float
+	  [subject]緊急脱出用Ｘ座標変更/現在値/_:f_calc,0x016D5C24
+	  [subject]緊急脱出用Ｙ座標変更/現在値/_:f_calc,0x016D5C2C
+	 [/e_with]
+	[subject]Playtimeリセット/実行/_:b_toggle,0x019B2390,ED6LST->ED6_4a,offset
+ [io_fep]$Val*0x03E8, $Val/0x03E8
+	[subject]Playtime変更/現在値/_:b_calc,0x019B2390,ED6LST->ED6_4b,offset,0x00000000,0x00418937,unsigned
+ [/io_fep]
+[back]
+
+[back]
+
+[subject]ＦＣ（完全版）:dir
+
+[subject]ＲＰＧパート関連:dir
+	[subject]クォーツ装備属性及び重複制限解除/実行/_:b_toggle,0x46B2EF,ED6LST->ED6_6c,real
+	[subject]全オーバルアーツ無条件使用可能/実行/_:b_toggle,0x4AD425,ED6LST->ED6_6d,real
+	[subject]戦闘中敵攻撃完全無効化/実行/_:toggle,0x41D41D,90803F067C,F646040274
+	[subject]味方攻撃時CRITICAL+SEPITHUP+STRUP1&2+HPHEAL2効果自動発動/実行/_:b_toggle,0x402D7A,ED6LST->ED6_5j,real
+	[subject]オーバルアーツ使用時EP減らない/実行/_:b_toggle,0x434A4C,ED6LST->ED6_6h,real
+	[subject]雑魚敵戦闘発生しない/実行/_:toggle,0x4AC30D,E96401000090,0F8463010000
+	[subject]全戦闘経験値システム上の最大化/実行/_:toggle,0x4083F4,EB,7C
+	[subject]戦闘中CP即最大化/実行/_:toggle,0x434AC5,EB,7D
+	[subject]キャンプ画面に入ると現在HP&EP無条件回復/実行/_:toggle,0x4A7D00,EB00,7410
+	[subject]キャンプ画面に入るとCP無条件最大化/実行/_:toggle,0x4A7D12,66C7460AC8005E5BC3,5E5BC3909090909090
+	[subject]入手・購入アイテム最大個数化/実行/_:b_toggle,0x48DF0C,ED6LST->ED6_6f,real
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]パラメータ極大化系:dir
+	[subject]全パラメータ無条件極大化/実行/_:b_toggle,0x4A7C56,ED6LST->ED6_6e,real
+	[subject]無条件でMAXLV時のパラメータ/実行/_:toggle,0x4A7BF2,33C9B13B,8B4C240C
+	[subject]EP最大値無条件極大化/実行/_:toggle,0x4A7CC5,401F,3200
+	[subject]RNG無条件極大化/実行/_:toggle,0x4A7CBC,08,00
+ [back]
+ [subject]通貨・ポイント類:dir
+  [e_with],0x00000000,0x05F5E0FF,unsigned
+	[subject]ミラ貨/現在値/_:calc,0x016FB630
+	[subject]ブレイサーポイント/現在値/_:calc,0x016FB634
+  [/e_with]
+	[repeat]ED6LST->ED6REP41,0,7,1
+ [back]
+ [subject]LV・経験値:dir
+	[repeat]ED6LST->ED6REP42,0,8,1
+ [back]
+ [subject]現在LVのステータス設定変更:dir
+	[repeat]ED6LST->ED6REP43,0,8,1
+ [back]
+ [subject]アイテムエディタ:dir
+	[subject]一括所持数の指定/現在値/_:calc,0x50A77C,0x00,0x63,unsigned
+	[subject]所持アイテム一括数量変更/実行/_:toggle,0x016FA630,0x016FAC7B-*{0000????::00000000::????$2[:0x50A77C:2]$$*}
+  [subject]個別所持指定:dir
+	[subject]始点スロット選択/現在値/_:calc,0x50A778,0x0000,0x017C,unsigned
+	[repeat]ED6LST->ED6REP83,0,20,1
+  [back]
+ [back]
+[back]
+
+[subject]フラグ関連:dir
+	[subject]依頼の期限切れ状態解除/実行/_:toggle,0x016FB660,0x016FBAD8-*{????42??????????????????::????02??????????????????*}
+	[subject]逃走・戦闘不能戦績リセット/実行/_:b_toggle,0x016FC05C,ED6LST->ED6_4i,real
+	[subject]レシピ手帳ＡＬＬ化/実行/_:toggle,0x016FBE68,FFFFFFFFFFFFFFFF07,000000000000000000
+[back]
+
+[subject]環境関連:dir
+	[subject]移動速度設定変更/_:d_list,0x4975FC,ED6LST->LST_f,0x00000000,0xFFFFFFFF,ED6LST->LST_6g,real
+	 [e_with],-255,255,float
+	  [subject]緊急脱出用Ｘ座標変更/現在値/_:f_calc,0x016D5C24
+	  [subject]緊急脱出用Ｙ座標変更/現在値/_:f_calc,0x016D5C2C
+	 [/e_with]
+	[subject]Playtimeリセット/実行/_:b_toggle,0x019B2390,ED6LST->ED6_4a,offset
+ [io_fep]$Val*0x03E8, $Val/0x03E8
+	[subject]Playtime変更/現在値/_:b_calc,0x019B2390,ED6LST->ED6_4b,offset,0x00000000,0x00418937,unsigned
+ [/io_fep]
+[back]
+
+[back]
+
+[subject]ver1.046:dir
+
+[subject]ＲＰＧパート関連:dir
+	[subject]クォーツ装備属性及び重複制限解除/実行/_:b_toggle,0x46B3EF,ED6LST->ED6_7c,real
+	[subject]全オーバルアーツ無条件使用可能/実行/_:b_toggle,0x4AD6B5,ED6LST->ED6_7d,real
+	[subject]戦闘中敵攻撃完全無効化/実行/_:toggle,0x41D46D,90803F067C,F646040274
+	[subject]味方攻撃時CRITICAL+SEPITHUP+STRUP1&2+HPHEAL2効果自動発動/実行/_:b_toggle,0x402D7A,ED6LST->ED6_6j,real
+	[subject]オーバルアーツ使用時EP減らない/実行/_:b_toggle,0x434B2C,ED6LST->ED6_7h,real
+	[subject]雑魚敵戦闘発生しない/実行/_:toggle,0x4AC59D,E96401000090,0F8463010000
+	[subject]全戦闘経験値システム上の最大化/実行/_:toggle,0x4083F9,EB,7C
+	[subject]戦闘中CP即最大化/実行/_:toggle,0x434BA5,EB,7D
+	[subject]キャンプ画面に入ると現在HP&EP無条件回復/実行/_:toggle,0x4A7EE0,EB00,7410
+	[subject]キャンプ画面に入るとCP無条件最大化/実行/_:toggle,0x4A7EF2,66C7460AC8005E5BC3,5E5BC3909090909090
+	[subject]入手・購入アイテム最大個数化/実行/_:b_toggle,0x48DF0C,ED6LST->ED6_7f,real
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]パラメータ極大化系:dir
+	[subject]全パラメータ無条件極大化/実行/_:b_toggle,0x4A7E36,ED6LST->ED6_7e,real
+	[subject]無条件でMAXLV時のパラメータ/実行/_:toggle,0x4A7DD2,33C9B13B,8B4C240C
+	[subject]EP最大値無条件極大化/実行/_:toggle,0x4A7EA5,401F,3200
+	[subject]RNG無条件極大化/実行/_:toggle,0x4A7E9C,08,00
+ [back]
+ [subject]通貨・ポイント類:dir
+  [e_with],0x00000000,0x05F5E0FF,unsigned
+	[subject]ミラ貨/現在値/_:calc,0x016FB640
+	[subject]ブレイサーポイント/現在値/_:calc,0x016FB644
+  [/e_with]
+	[repeat]ED6LST->ED6REP51,0,7,1
+ [back]
+ [subject]LV・経験値:dir
+	[repeat]ED6LST->ED6REP52,0,8,1
+ [back]
+ [subject]現在LVのステータス設定変更:dir
+	[repeat]ED6LST->ED6REP53,0,8,1
+ [back]
+ [subject]アイテムエディタ:dir
+	[subject]一括所持数の指定/現在値/_:calc,0x50A93C,0x00,0x63,unsigned
+	[subject]所持アイテム一括数量変更/実行/_:toggle,0x016FA640,0x016FAC8B-*{0000????::00000000::????$2[:0x50A93C:2]$$*}
+  [subject]個別所持指定:dir
+	[subject]始点スロット選択/現在値/_:calc,0x50A938,0x0000,0x017C,unsigned
+	[repeat]ED6LST->ED6REP93,0,20,1
+  [back]
+ [back]
+[back]
+
+[subject]フラグ関連:dir
+	[subject]依頼の期限切れ状態解除/実行/_:toggle,0x016FB670,0x016FBAE8-*{????42??????????????????::????02??????????????????*}
+	[subject]逃走・戦闘不能戦績リセット/実行/_:b_toggle,0x10,ED6LST->ED6_4i,offset
+	[subject]レシピ手帳ＡＬＬ化/実行/_:toggle,0x016FBE78,FFFFFFFFFFFFFFFF07,000000000000000000
+[back]
+
+[subject]環境関連:dir
+	[subject]移動速度設定変更/_:d_list,0x4975FC,ED6LST->LST_f,0x00000000,0xFFFFFFFF,ED6LST->LST_7g,real
+	 [e_with],-255,255,float
+	  [subject]緊急脱出用Ｘ座標変更/現在値/_:f_calc,0x016D5C34
+	  [subject]緊急脱出用Ｙ座標変更/現在値/_:f_calc,0x016D5C3C
+	 [/e_with]
+	[subject]Playtimeリセット/実行/_:b_toggle,0x019B23A0,ED6LST->ED6_4a,offset
+ [io_fep]$Val*0x03E8, $Val/0x03E8
+	[subject]Playtime変更/現在値/_:b_calc,0x019B23A0,ED6LST->ED6_4b,offset,0x00000000,0x00418937,unsigned
+ [/io_fep]
+[back]
+
+[back]
+
+[subject]ver1.046(the3rdコンプリート):dir
+
+[subject]ＲＰＧパート関連:dir
+ [subject]クォーツ装備属性及び重複制限解除/実行/_:b_toggle,0xC0,ED6LST->ED6_7c,offset
+ [subject]全オーバルアーツ無条件使用可能/実行/_:b_toggle,0xC0,ED6LST->ED6_7d,offset
+ [subject]戦闘中敵攻撃完全無効化/実行/_:toggle,0x41D46D,90803F067C,F646040274
+ [subject]味方攻撃時CRITICAL+SEPITHUP+STRUP1&2+HPHEAL2効果自動発動/実行/_:b_toggle,0x402D7A,ED6LST->ED6_7j,real
+ [subject]オーバルアーツ使用時EP減らない/実行/_:b_toggle,0x434B2C,ED6LST->ED6_8h,real
+ [subject]雑魚敵戦闘発生しない/実行/_:toggle,0x4AC65D,E96401000090,0F8463010000
+ [subject]全戦闘経験値システム上の最大化/実行/_:toggle,0x408409,EB,7C
+ [subject]戦闘中CP即最大化/実行/_:toggle,0x434B85,EB,7D
+ [subject]キャンプ画面に入ると現在HP&EP無条件回復/実行/_:toggle,0x4A7FA0,EB00,7410
+ [subject]キャンプ画面に入るとCP無条件最大化/実行/_:toggle,0x4A7FB2,66C7460AC8005E5BC3,5E5BC3909090909090
+ [subject]入手・購入アイテム最大個数化/実行/_:b_toggle,0x48DF0C,ED6LST->ED6_8f,real
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]パラメータ極大化系:dir
+ [subject]全パラメータ無条件極大化/実行/_:b_toggle,0x4A7E36,ED6LST->ED6_8e,real
+ [subject]無条件でMAXLV時のパラメータ/実行/_:toggle,0x4A7E92,33C9B13B,8B4C240C
+ [subject]EP最大値無条件極大化/実行/_:toggle,0x4A7F65,401F,3200
+ [subject]RNG無条件極大化/実行/_:toggle,0x4A7F5C,08,00
+ [back]
+ [subject]通貨・ポイント類:dir
+  [e_with],0x00000000,0x05F5E0FF,unsigned
+   [subject]ミラ貨/現在値/_:calc,0x016FB640
+   [subject]ブレイサーポイント/現在値/_:calc,0x016FB644
+  [/e_with]
+  [repeat]ED6LST->ED6REP51,0,7,1
+ [back]
+ [subject]LV・経験値:dir
+  [repeat]ED6LST->ED6REP52,0,8,1
+ [back]
+ [subject]現在LVのステータス設定変更:dir
+  [repeat]ED6LST->ED6REP53,0,8,1
+ [back]
+ [subject]アイテムエディタ:dir
+ [subject]一括所持数の指定/現在値/_:calc,0x50A9FC,0x00,0x63,unsigned
+ [subject]所持アイテム一括数量変更/実行/_:toggle,0x016FA640,0x016FAC8B-*{0000????::00000000::????$2[:0x50A9FC:2]$$*}
+  [subject]個別所持指定:dir
+  [subject]始点スロット選択/現在値/_:calc,0x50A9F8,0x0000,0x017C,unsigned
+  [repeat]ED6LST->ED6REPA3,0,20,1
+  [back]
+ [back]
+[back]
+
+[subject]フラグ関連:dir
+ [subject]依頼の期限切れ状態解除/実行/_:toggle,0x016FB670,0x016FBAE8-*{????42??????????????????::????02??????????????????*}
+ [subject]逃走・戦闘不能戦績リセット/実行/_:b_toggle,0x10,ED6LST->ED6_4i,offset
+ [subject]レシピ手帳ＡＬＬ化/実行/_:toggle,0x016FBE78,FFFFFFFFFFFFFFFF07,000000000000000000
+[back]
+
+[subject]環境関連:dir
+ [subject]移動速度設定変更/_:d_list,0x400000,ED6LST->LST_2f,0x00000000,0xFFFFFFFF,ED6LST->LST_8g,offset
+ [e_with],-255,255,float
+  [subject]緊急脱出用Ｘ座標変更/現在値/_:f_calc,0x016D5C34
+  [subject]緊急脱出用Ｙ座標変更/現在値/_:f_calc,0x016D5C3C
+ [/e_with]
+ [subject]Playtimeリセット/実行/_:b_toggle,0x019B23A0,ED6LST->ED6_4a,offset
+ [io_fep]$Val*0x03E8, $Val/0x03E8
+ [subject]Playtime変更/現在値/_:b_calc,0x019B23A0,ED6LST->ED6_4b,offset,0x00000000,0x00418937,unsigned
+ [/io_fep]
+[back]
+
+[back]
+
+
+[subject]ver1.047:dir
+
+[subject]ＲＰＧパート関連:dir
+ [subject]クォーツ装備属性及び重複制限解除/実行/_:b_toggle,0x00,ED6LST->ED6_8c,offset
+ [subject]全オーバルアーツ無条件使用可能/実行/_:b_toggle,0x0440,ED6LST->ED6_7d,offset
+ [subject]戦闘中敵攻撃完全無効化/実行/_:toggle,0x41D45D,90803F067C,F646040274
+ [subject]味方攻撃時CRITICAL+SEPITHUP+STRUP1&2+HPHEAL2効果自動発動/実行/_:b_toggle,0x00,ED6LST->ED6_8j,offset
+ [subject]オーバルアーツ使用時EP減らない/実行/_:b_toggle,0x00,ED6LST->ED6_9h,offset
+ [subject]雑魚敵戦闘発生しない/実行/_:toggle,0x4AC9DD,E96401000090,0F8463010000
+ [subject]全戦闘経験値システム上の最大化/実行/_:toggle,0x4083E9,EB,7C
+ [subject]戦闘中CP即最大化/実行/_:toggle,0x434B15,EB,7D
+ [subject]キャンプ画面に入ると現在HP&EP無条件回復/実行/_:toggle,0x4A8310,EB00,7410
+ [subject]キャンプ画面に入るとCP無条件最大化/実行/_:toggle,0x4A8322,66C7460AC8005E5BC3,5E5BC3909090909090
+ [subject]入手・購入アイテム最大個数化/実行/_:b_toggle,0x00,ED6LST->ED6_9f,offset
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]パラメータ極大化系:dir
+ [subject]全パラメータ無条件極大化/実行/_:b_toggle,0x4A8266,ED6LST->ED6_9e,real
+ [subject]無条件でMAXLV時のパラメータ/実行/_:toggle,0x4A8202,33C9B13B,8B4C240C
+ [subject]EP最大値無条件極大化/実行/_:toggle,0x4A82D5,401F,3200
+ [subject]RNG無条件極大化/実行/_:toggle,0x4A82CC,08,00
+ [back]
+ [subject]通貨・ポイント類:dir
+  [e_with],0x00000000,0x05F5E0FF,unsigned
+   [subject]ミラ貨/現在値/_:calc,0x016FB748
+   [subject]ブレイサーポイント/現在値/_:calc,0x016FB74C
+  [/e_with]
+  [repeat]ED6LST->ED6REP61,0,7,1
+ [back]
+ [subject]LV・経験値:dir
+  [repeat]ED6LST->ED6REP62,0,8,1
+ [back]
+ [subject]現在LVのステータス設定変更:dir
+  [repeat]ED6LST->ED6REP63,0,8,1
+ [back]
+ [subject]アイテムエディタ:dir
+ [subject]一括所持数の指定/現在値/_:calc,0x50AD78,0x00,0x63,unsigned
+ [subject]所持アイテム一括数量変更/実行/_:toggle,0x016FA748,0x016FAD93-*{0000????::00000000::????$2[:0x50AD78:2]$$*}
+  [subject]個別所持指定:dir
+  [subject]始点スロット選択/現在値/_:calc,0x50AD7C,0x0000,0x017C,unsigned
+  [repeat]ED6LST->ED6REPB3,0,20,1
+  [back]
+ [back]
+[back]
+
+[subject]フラグ関連:dir
+ [subject]依頼の期限切れ状態解除/実行/_:toggle,0x016FB778,0x016FBBF0-*{????42??????????????????::????02??????????????????*}
+ [subject]逃走・戦闘不能戦績リセット/実行/_:b_toggle,0x00,ED6LST->ED6_5i,offset
+ [subject]レシピ手帳ＡＬＬ化/実行/_:toggle,0x016FBF80,FFFFFFFFFFFFFFFF07,000000000000000000
+[back]
+
+[subject]環境関連:dir
+ [subject]移動速度設定変更/_:d_list,0x400000,ED6LST->LST_2f,0x00000000,0xFFFFFFFF,ED6LST->LST_9g,offset
+ [e_with],-255,255,float
+  [subject]緊急脱出用Ｘ座標変更/現在値/_:f_calc,0x016D5D3C
+  [subject]緊急脱出用Ｙ座標変更/現在値/_:f_calc,0x016D5D44
+ [/e_with]
+ [subject]Playtimeリセット/実行/_:b_toggle,0x019B25A8,ED6LST->ED6_4a,offset
+ [io_fep]$Val*0x03E8, $Val/0x03E8
+ [subject]Playtime変更/現在値/_:b_calc,0x019B25A8,ED6LST->ED6_4b,offset,0x00000000,0x00418937,unsigned
+ [/io_fep]
+[back]
+
+[back]
+
+[/group]
+
+
+[group]LST_f
+デフォルト
+移動高速固定
+移動２倍速固定
+移動４倍速固定
+自動移動低速固定
+自動移動高速固定
+自動移動２倍速固定
+自動移動４倍速固定
+[/group]
+
+
+[group]LST_2f
+デフォルト
+等速固定
+２倍速固定
+４倍速固定
+[/group]
+
+
+[group]LST_5g
+,0x4976EC=EB00,0x4976F1=CDCCCC3D,0x497746=00000000
+,0x4976EC=EB00,0x4976F1=CDCCCC3D,0x497746=00000000
+,0x4976EC=EB00,0x4976F1=CDCC4C3E,0x497746=00000000
+,0x4976EC=EB00,0x4976F1=CDCCCC3E,0x497746=00000000
+,0x4976EC=EB00,0x4976F1=CDCC4C3D,0x497746=CDCC4C3D
+,0x4976EC=EB00,0x4976F1=CDCCCC3D,0x497746=CDCCCC3D
+,0x4976EC=EB00,0x4976F1=CDCC4C3E,0x497746=CDCC4C3E
+,0x4976EC=EB00,0x4976F1=CDCCCC3E,0x497746=CDCCCC3E
+[/group]
+
+
+[group]LST_6g
+,0x4975FC=7507,0x497601=CDCCCC3D,0x497656=00000000
+,0x4975FC=EB00,0x497601=CDCCCC3D,0x497656=00000000
+,0x4975FC=EB00,0x497601=CDCC4C3E,0x497656=00000000
+,0x4975FC=EB00,0x497601=CDCCCC3E,0x497656=00000000
+,0x4975FC=EB00,0x497601=CDCC4C3D,0x497656=CDCC4C3D
+,0x4975FC=EB00,0x497601=CDCCCC3D,0x497656=CDCCCC3D
+,0x4975FC=EB00,0x497601=CDCC4C3E,0x497656=CDCC4C3E
+,0x4975FC=EB00,0x497601=CDCCCC3E,0x497656=CDCCCC3E
+[/group]
+
+
+[group]LST_7g
+,0x4977DC=7507,0x4977E1=CDCCCC3D,0x497836=00000000
+,0x4977DC=EB00,0x4977E1=CDCCCC3D,0x497836=00000000
+,0x4977DC=EB00,0x4977E1=CDCC4C3E,0x497836=00000000
+,0x4977DC=EB00,0x4977E1=CDCCCC3E,0x497836=00000000
+,0x4977DC=EB00,0x4977E1=CDCC4C3D,0x497836=CDCC4C3D
+,0x4977DC=EB00,0x4977E1=CDCCCC3D,0x497836=CDCCCC3D
+,0x4977DC=EB00,0x4977E1=CDCC4C3E,0x497836=CDCC4C3E
+,0x4977DC=EB00,0x4977E1=CDCCCC3E,0x497836=CDCCCC3E
+[/group]
+
+
+[group]LST_8g
+,0x09789C=7507??????CDCCCC3D,0x0977B6=741B,0x0977E1=CDCCCC3D,0x0975E2=740D,0x0975EB=CDCCCC3D
+,0x09789C=EB00??????CDCCCC3D,0x0977B6=EB22,0x0977E1=CDCCCC3D,0x0975E2=EB04,0x0975EB=CDCCCC3D
+,0x09789C=EB00??????CDCC4C3E,0x0977B6=EB22,0x0977E1=CDCC4C3E,0x0975E2=EB04,0x0975EB=CDCC4C3E
+,0x09789C=EB00??????CDCCCC3E,0x0977B6=EB22,0x0977E1=CDCCCC3E,0x0975E2=EB04,0x0975EB=CDCCCC3E
+[/group]
+
+
+[group]LST_9g
+,0x097B6C=7507??????CDCCCC3D,0x097A86=741B,0x097AB1=CDCCCC3D,0x0978B2=740D,0x0978BB=CDCCCC3D
+,0x097B6C=EB00??????CDCCCC3D,0x097A86=EB22,0x097AB1=CDCCCC3D,0x0978B2=EB04,0x0978BB=CDCCCC3D
+,0x097B6C=EB00??????CDCC4C3E,0x097A86=EB22,0x097AB1=CDCC4C3E,0x0978B2=EB04,0x0978BB=CDCC4C3E
+,0x097B6C=EB00??????CDCCCC3E,0x097A86=EB22,0x097AB1=CDCCCC3E,0x0978B2=EB04,0x0978BB=CDCCCC3E
+[/group]
+
+
+[group]ED6_a
+0x019B2158,00000000
+0x019B2164,00000000
+[/group]
+
+
+[group]ED6_2a
+0x019B21E8,00000000
+0x019B21F4,00000000
+[/group]
+
+
+[group]ED6_3a
+0x019B3310,00000000
+0x019B331C,00000000
+[/group]
+
+
+[group]ED6_4a
+0x00,00000000
+0x0C,00000000
+[/group]
+
+
+[group]ED6_b
+0x19B2158
+0x19B2164
+[/group]
+
+
+[group]ED6_2b
+0x019B21E8
+0x019B21F4
+[/group]
+
+
+[group]ED6_3b
+0x019B3310
+0x019B331C
+[/group]
+
+
+[group]ED6_4b
+0x00
+0x0C
+[/group]
+
+
+[group]ED6_c
+0x46AD4F,EB00,740F
+0x4AA1E8,00,93
+0x4AA21E,E9A200000090,0F84A1000000
+[/group]
+
+
+[group]ED6_2c
+0x46AE0F,EB00,740F
+0x4AA368,00,93
+0x4AA39E,E9A200000090,0F84A1000000
+[/group]
+
+
+[group]ED6_3c
+0x46B4AF,EB00,740F
+0x4AAD76,EB0490909090,0F8593000000
+0x4AADAE,E9A200000090,0F84A1000000
+[/group]
+
+
+[group]ED6_4c
+0x46B43F,EB00,740F
+0x4AAD96,EB0490909090,0F8593000000
+0x4AADCE,E9A200000090,0F84A1000000
+[/group]
+
+
+[group]ED6_5c
+0x46B2EF,EB00,740F
+0x4AA9F6,EB0490909090,0F8593000000
+0x4AAA2E,E9A200000090,0F84A1000000
+[/group]
+
+
+[group]ED6_6c
+0x46B2EF,EB00,740F
+0x4AA976,EB0490909090,0F8593000000
+0x4AA9AE,E9A200000090,0F84A1000000
+[/group]
+
+
+[group]ED6_7c
+0x46B3EF,EB00,740F
+0x4AAC06,EB0490909090,0F8593000000
+0x4AAC3E,E9A200000090,0F84A1000000
+[/group]
+
+
+[group]ED6_8c
+0x46B53F,EB00,740F
+0x4AB036,EB0490909090,0F8593000000
+0x4AB06E,E9A200000090,0F84A1000000
+[/group]
+
+
+[group]ED6_d
+0x4ACC05,668178020800,668B50023BD5
+0x4ACC12,668178040800,668B50043BD5
+0x4ACC1F,668178060800,668B50063BD5
+0x4ACC2C,668178080800,668B50083BD5
+0x4ACC39,6681780A0B00,668B500A3BD5
+0x4ACC46,6681780C0800,668B500C3BD5
+0x4ACC54,6681FA0800,8B46183BD0
+[/group]
+
+
+[group]ED6_2d
+0x4ACD85,668178020800,668B50023BD5
+0x4ACD92,668178040800,668B50043BD5
+0x4ACD9F,668178060800,668B50063BD5
+0x4ACDAC,668178080800,668B50083BD5
+0x4ACDB9,6681780A0B00,668B500A3BD5
+0x4ACDC6,6681780C0800,668B500C3BD5
+0x4ACDD4,6681FA0800,8B46183BD0
+[/group]
+
+
+[group]ED6_3d
+0x4AD825,668178020800,668B50023BD5
+0x4AD832,668178040800,668B50043BD5
+0x4AD83F,668178060800,668B50063BD5
+0x4AD84C,668178080800,668B50083BD5
+0x4AD859,6681780A0B00,668B500A3BD5
+0x4AD866,6681780C0800,668B500C3BD5
+0x4AD874,6681FA0800,8B46183BD0
+[/group]
+
+
+[group]ED6_4d
+0x4AD845,668178020800,668B50023BD5
+0x4AD852,668178040800,668B50043BD5
+0x4AD85F,668178060800,668B50063BD5
+0x4AD86C,668178080800,668B50083BD5
+0x4AD879,6681780A0B00,668B500A3BD5
+0x4AD886,6681780C0800,668B500C3BD5
+0x4AD894,6681FA0800,8B46183BD0
+[/group]
+
+
+[group]ED6_5d
+0x4AD4A5,668178020800,668B50023BD5
+0x4AD4B2,668178040800,668B50043BD5
+0x4AD4BF,668178060800,668B50063BD5
+0x4AD4CC,668178080800,668B50083BD5
+0x4AD4D9,6681780A0B00,668B500A3BD5
+0x4AD4E6,6681780C0800,668B500C3BD5
+0x4AD4F4,6681FA0800,8B46183BD0
+[/group]
+
+
+[group]ED6_6d
+0x4AD425,668178020800,668B50023BD5
+0x4AD432,668178040800,668B50043BD5
+0x4AD43F,668178060800,668B50063BD5
+0x4AD44C,668178080800,668B50083BD5
+0x4AD459,6681780A0B00,668B500A3BD5
+0x4AD466,6681780C0800,668B500C3BD5
+0x4AD474,6681FA0800,8B46183BD0
+[/group]
+
+
+[group]ED6_7d
+0x4AD6B5,668178020800,668B50023BD5
+0x4AD6C2,668178040800,668B50043BD5
+0x4AD6CF,668178060800,668B50063BD5
+0x4AD6DC,668178080800,668B50083BD5
+0x4AD6E9,6681780A0B00,668B500A3BD5
+0x4AD6F6,6681780C0800,668B500C3BD5
+0x4AD704,6681FA0800,8B46183BD0
+[/group]
+
+
+[group]ED6_e
+0x4A7536,E9E52E0600,33C0668B06
+0x50A400,3B000F2700000F270F270F270F270F270F2714006400,00000000000000000000000000000000000000000000
+0x50A420,33C0,0000
+0x50A422,668B06,000000
+0x50A425,BF00A45000,0000000000
+0x50A42A,E90CD1F9FF90,000000000000
+[/group]
+
+
+[group]ED6_2e
+0x4A76B6,E9752F0600,33C0668B06
+0x50A610,3B00401F0000401F401F401F401F401F401F14006400,00000000000000000000000000000000000000000000
+0x50A630,33C0,0000
+0x50A632,668B06,000000
+0x50A635,BF10A65000,0000000000
+0x50A63A,E97CD0F9FF90,000000000000
+[/group]
+
+
+[group]ED6_3e
+0x4A80C6,E9952F0600,33C0668B06
+0x50B040,3B00401F0000401F401F401F401F401F401F14006400,00000000000000000000000000000000000000000000
+0x50B060,33C0,0000
+0x50B062,668B06,000000
+0x50B065,BF40B05000,0000000000
+0x50B06A,E95CD0F9FF90,000000000000
+[/group]
+
+
+[group]ED6_4e
+0x4A80E6,E9752F0600,33C0668B06
+0x50B040,3B00401F0000401F401F401F401F401F401F14006400,00000000000000000000000000000000000000000000
+0x50B060,33C0,0000
+0x50B062,668B06,000000
+0x50B065,BF40B05000,0000000000
+0x50B06A,E97CD0F9FF90,000000000000
+[/group]
+
+
+[group]ED6_5e
+0x4A7D46,E9152B0600,33C0668B06
+0x50A840,3B00401F0000401F401F401F401F401F401F14006400,00000000000000000000000000000000000000000000
+0x50A860,33C0,0000
+0x50A862,668B06,000000
+0x50A865,BF40A85000,0000000000
+0x50A86A,E9DCD4F9FF90,000000000000
+[/group]
+
+
+[group]ED6_6e
+0x4A7C56,E9452B0600,33C0668B06
+0x50A780,3B00401F0000401F401F401F401F401F401F14006400,00000000000000000000000000000000000000000000
+0x50A7A0,33C0,0000
+0x50A7A2,668B06,000000
+0x50A7A5,BF80A75000,0000000000
+0x50A7AA,E9ACD4F9FF90,000000000000
+[/group]
+
+
+[group]ED6_7e
+0x4A7E36,E9252B0600,33C0668B06
+0x50A940,3B00401F0000401F401F401F401F401F401F14006400,00000000000000000000000000000000000000000000
+0x50A960,33C0,0000
+0x50A962,668B06,000000
+0x50A965,BF40A95000,0000000000
+0x50A96A,E9CCD4F9FF90,000000000000
+[/group]
+
+
+[group]ED6_8e
+0x4A7EF6,E9252B0600,33C0668B06
+0x50AA00,3B00401F0000401F401F401F401F401F401F14006400,00000000000000000000000000000000000000000000
+0x50AA20,33C0,0000
+0x50AA22,668B06,000000
+0x50AA25,BF00AA5000,0000000000
+0x50AA2A,E9CCD4F9FF90,000000000000
+[/group]
+
+
+[group]ED6_9e
+0x4A8266,E9352B0600,33C0668B06
+0x50AD80,3B00401F0000401F401F401F401F401F401F14006400,00000000000000000000000000000000000000000000
+0x50ADA0,33C0,0000
+0x50ADA2,668B06,000000
+0x50ADA5,BF80AD5000,0000000000
+0x50ADAA,E9BCD4F9FF90,000000000000
+[/group]
+
+
+[group]ED6_f
+0x4A97E9,EB00,7D5A
+0x4A97EF,EB00,7C0C
+0x4A9829,EB00,7C0C
+0x48CF29,EB,7F
+[/group]
+
+
+[group]ED6_2f
+0x48D029,EB,7F
+0x4A9969,EB00,7D5A
+0x4A996F,EB00,7C0C
+0x4A99A9,EB00,7C0C
+[/group]
+
+
+[group]ED6_3f
+0x48D379,EB,7F
+0x4AA379,EB00,7D5A
+0x4AA37F,EB00,7C0C
+0x4AA3B9,EB00,7C0C
+[/group]
+
+
+[group]ED6_4f
+0x48D329,EB,7F
+0x4AA399,EB00,7D5A
+0x4AA39F,EB00,7C0C
+0x4AA3D9,EB00,7C0C
+[/group]
+
+
+[group]ED6_5f
+0x48D7B9,EB,7F
+0x4A9FF9,EB00,7D5A
+0x4A9FFF,EB00,7C0C
+0x4AA039,EB00,7C0C
+[/group]
+
+
+[group]ED6_6f
+0x48D2C9,EB,7F
+0x4A9F79,EB00,7D5A
+0x4A9F7F,EB00,7C0C
+0x4A9FB9,EB00,7C0C
+[/group]
+
+
+[group]ED6_7f
+0x48D859,EB,7F
+0x4AA209,EB00,7D5A
+0x4AA20F,EB00,7C0C
+0x4AA249,EB00,7C0C
+[/group]
+
+
+[group]ED6_8f
+0x48D939,EB,7F
+0x4AA2C9,EB00,7D5A
+0x4AA2CF,EB00,7C0C
+0x4AA309,EB00,7C0C
+[/group]
+
+
+[group]ED6_9f
+0x48D559,EB,7F
+0x4AA639,EB00,7D5A
+0x4AA63F,EB00,7C0C
+0x4AA679,EB00,7C0C
+[/group]
+
+
+[group]ED6_g
+[subject]LV/現在値/_:calc,0x00,0x03,0x3B,unsigned
+[subject]現在CP/現在値/_:calc,0x0A,0x0000,0x00C8,unsigned
+[subject]EXP/現在値/_:calc,0x0C,0x000000,0x01869F,unsigned
+[/group]
+
+
+[group]ED6_2g
+[e_with],0x0000,0x270F,unsigned
+[subject]MAXHP/現在値/_:calc,0x02
+[subject]STR/現在値/_:calc,0x06
+[subject]DEF/現在値/_:calc,0x08
+[subject]ATS/現在値/_:calc,0x0A
+[subject]ADF/現在値/_:calc,0x0C
+[subject]DEX/現在値/_:calc,0x0E
+[subject]AGL/現在値/_:calc,0x10
+[subject]MOV/現在値/_:calc,0x12
+[subject]SPD/現在値/_:calc,0x14
+[/e_with]
+[/group]
+
+
+[group]ED6_h
+0x434ACC,06,08
+0x434AD8,EB0D,7D07
+[/group]
+
+
+[group]ED6_2h
+0x434A9C,06,08
+0x434AA8,EB0D,7D07
+[/group]
+
+
+[group]ED6_3h
+0x434AEC,06,08
+0x434AF8,EB0D,7D07
+[/group]
+
+
+[group]ED6_4h
+0x434A4C,06,08
+0x434A58,EB0D,7D07
+[/group]
+
+
+[group]ED6_5h
+0x4349EC,06,08
+0x4349F8,EB0D,7D07
+[/group]
+
+
+[group]ED6_6h
+0x434A4C,06,08
+0x434A58,EB0D,7D07
+[/group]
+
+
+[group]ED6_7h
+0x434B2C,06,08
+0x434B38,EB0D,7D07
+[/group]
+
+
+[group]ED6_8h
+0x434B0C,06,08
+0x434B18,EB0D,7D07
+[/group]
+
+
+[group]ED6_9h
+0x434A9C,06,08
+0x434AA8,EB0D,7D07
+[/group]
+
+
+[group]ED6_2i
+0x016FBE88,$2[:0x016FBE84:2]$$
+0x016FBE86,0000
+0x016FBE8C,0000
+[/group]
+
+
+[group]ED6_3i
+0x016FCFA8,$2[:0x016FCFA4:2]$$
+0x016FCFA6,0000
+0x016FCFAC,0000
+[/group]
+
+
+[group]ED6_4i
+0x016FC060,$2[:0x016FC06C:2]$$
+0x016FC05E,0000
+0x016FC064,0000
+[/group]
+
+
+[group]ED6_5i
+0x016FC178,$2[:0x016FC174:2]$$
+0x016FC176,0000
+0x016FC17C,0000
+[/group]
+
+
+[group]ED6_3j
+0x402D7A,B00C803F04900F8F,84C08844240C0F84
+0x402D86,EB029090,8B44240C
+0x402E38,EB00,7567
+0x402F3C,EB00,7516
+0x404E1C,803B047F25EB029090,E85F4202003C077521
+0x404E4B,803B047F2BEB029090,E8304202003C087527
+0x4052E1,803B047F0CEB029090,E89A3D02003C0C7508
+0x407E18,803E067F0CEB029090,E8631202003C0B7408
+[/group]
+
+
+[group]ED6_4j
+0x402D6A,B00C803F04900F8F,84C08844240C0F84
+0x402D76,EB029090,8B44240C
+0x402E28,EB00,7567
+0x402F2C,EB00,7516
+0x404E0C,803B047F25EB029090,E88F4202003C077521
+0x404E3B,803B047F2BEB029090,E8604202003C087527
+0x4052D1,803B047F0CEB029090,E8CA3D02003C0C7508
+0x407E38,803E067F0CEB029090,E8631202003C0B7408
+[/group]
+
+
+[group]ED6_5j
+0x402D7A,B00C803F04900F8F,84C08844240C0F84
+0x402D86,EB029090,8B44240C
+0x402E38,EB00,7567
+0x402F3C,EB00,7516
+0x404E1C,803B047F25EB029090,E87F4202003C077521
+0x404E4B,803B047F2BEB029090,E8504202003C087527
+0x4052E1,803B047F0CEB029090,E8BA3D02003C0C7508
+0x407E28,803E067F0CEB029090,E8731202003C0B7408
+[/group]
+
+
+[group]ED6_6j
+0x402D7A,B00C803F04900F8F,84C08844240C0F84
+0x402D86,EB029090,8B44240C
+0x402E38,EB00,7567
+0x402F3C,EB00,7516
+0x404E1C,803B047F25EB029090,E8BF4202003C077521
+0x404E4B,803B047F2BEB029090,E8904202003C087527
+0x4052E1,803B047F0CEB029090,E8FA3D02003C0C7508
+0x407E18,803E067F0CEB029090,E8C31202003C0B7408
+[/group]
+
+
+[group]ED6_7j
+0x402D7A,B00C803F05900F8F,84C08844240C0F84
+0x402D86,EB029090,8B44240C
+0x402E38,EB00,7567
+0x402F3C,EB00,7516
+0x404E1C,803B057F25EB029090,E8BF4202003C077521
+0x404E4B,803B057F2BEB029090,E8904202003C087527
+0x4052E1,803B057F0CEB029090,E8FA3D02003C0C7508
+0x407E28,803E057F0CEB029090,E8B31202003C0B7408
+[/group]
+
+
+[group]ED6_8j
+0x402D6A,B00C803F05900F8F,84C08844240C0F84
+0x402D76,EB029090,8B44240C
+0x402E28,EB00,7567
+0x402F2C,EB00,7516
+0x404E0C,803B057F25EB029090,E8DF4202003C077521
+0x404E3B,803B057F2BEB029090,E8B04202003C087527
+0x4052D1,803B057F0CEB029090,E81A3E02003C0C7508
+0x407E08,803E057F0CEB029090,E8E31202003C0B7408
+[/group]
+
+
+[group]ED6REP1
+[subject][! @ED6LST->LST_a,$Val !]/現在値/_:calc,_0x016FB3D0+0x[! 0x04*$Val !],0x0000,0x270F,unsigned
+[/group]
+
+
+[group]ED6REP21
+[subject][! @ED6LST->LST_a,$Val !]/現在値/_:calc,_0x016FB460+0x[! 0x04*$Val !],0x0000,0x270F,unsigned
+[/group]
+
+
+[group]ED6REP31
+[subject][! @ED6LST->LST_a,$Val !]/現在値/_:calc,_0x016FC580+0x[! 0x04*$Val !],0x0000,0x270F,unsigned
+[/group]
+
+
+[group]ED6REP41
+[subject][! @ED6LST->LST_a,$Val !]/現在値/_:calc,_0x016FB638+0x[! 0x04*$Val !],0x0000,0x270F,unsigned
+[/group]
+
+
+[group]ED6REP51
+[subject][! @ED6LST->LST_a,$Val !]/現在値/_:calc,_0x016FB648+0x[! 0x04*$Val !],0x0000,0x270F,unsigned
+[/group]
+
+
+[group]ED6REP61
+[subject][! @ED6LST->LST_a,$Val !]/現在値/_:calc,_0x016FB750+0x[! 0x04*$Val !],0x0000,0x270F,unsigned
+[/group]
+
+
+[group]ED6REP2
+[subject][! @ED6LST->LST_d,$Val !]:dir
+	[replace]_0x016F9598+0x[! 0x34*$Val !],ED6LST->ED6_g
+[back]
+[/group]
+
+
+[group]ED6REP22
+[subject][! @ED6LST->LST_d,$Val !]:dir
+	[replace]_0x016F9628+0x[! 0x34*$Val !],ED6LST->ED6_g
+[back]
+[/group]
+
+
+[group]ED6REP32
+[subject][! @ED6LST->LST_d,$Val !]:dir
+	[replace]_0x016FA748+0x[! 0x34*$Val !],ED6LST->ED6_g
+[back]
+[/group]
+
+
+[group]ED6REP42
+[subject][! @ED6LST->LST_d,$Val !]:dir
+	[replace]_0x016F9800+0x[! 0x34*$Val !],ED6LST->ED6_g
+[back]
+[/group]
+
+
+[group]ED6REP52
+[subject][! @ED6LST->LST_d,$Val !]:dir
+	[replace]_0x016F9810+0x[! 0x34*$Val !],ED6LST->ED6_g
+[back]
+[/group]
+
+
+[group]ED6REP62
+[subject][! @ED6LST->LST_d,$Val !]:dir
+	[replace]_0x016F9918+0x[! 0x34*$Val !],ED6LST->ED6_g
+[back]
+[/group]
+
+
+[group]ED6REP33
+[subject][! @ED6LST->LST_d,$Val !]:dir
+	[replace]_0x[! $Val*0x34 !]=>temp;[:0x16FA748+$temp:1]=>temp;[:0x01941780:]+$temp*0x16+0x[! $Val*0x0528 !]+0x10,ED6LST->ED6_2g
+[back]
+[/group]
+
+
+[group]ED6REP43
+[subject][! @ED6LST->LST_d,$Val !]:dir
+	[replace]_0x[! $Val*0x34 !]=>temp;[:0x16F9800+$temp:1]=>temp;[:0x01940800:]+$temp*0x16+0x[! $Val*0x0528 !]+0x10,ED6LST->ED6_2g
+[back]
+[/group]
+
+
+[group]ED6REP53
+[subject][! @ED6LST->LST_d,$Val !]:dir
+	[replace]_0x[! $Val*0x34 !]=>temp;[:0x16F9810+$temp:1]=>temp;[:0x01940810:]+$temp*0x16+0x[! $Val*0x0528 !]+0x10,ED6LST->ED6_2g
+[back]
+[/group]
+
+
+[group]ED6REP63
+[subject][! @ED6LST->LST_d,$Val !]:dir
+	[replace]_0x[! $Val*0x34 !]=>temp;[:0x16F9918+$temp:1]=>temp;[:0x01940A18:]+$temp*0x16+0x[! $Val*0x0528 !]+0x10,ED6LST->ED6_2g
+[back]
+[/group]
+
+
+[group]ED6REP83
+[subject]_mem,_([\:0x50A778\:]+0x[! $Val !])*0x04=>temp;[\:0x016FA630+$temp\:2]=>temp;[\:[\:0x019409A0\:]+$temp*2\:2]=>temp;[\:[\:0x019409A0\:]+$temp\:2]=>temp;[\:0x019409A0\:]+$temp,20,00,<NoData>/_:dir
+[size]2
+ [subject]種類変更/_:d_list,_([:0x50A778:]+0x[! $Val !])*0x04=>temp;0x016FA630+$temp,ED6LST->LST_e,0x0000,0xFFFF,ED6LST->LST_c,offset
+ [subject]個数変更/現在値/_:calc,_([:0x50A778:]+0x[! $Val !])*0x04=>temp;0x016FA632+$temp,0x0000,0x0063,unsigned
+[/size]
+[back]
+[/group]
+
+
+[group]ED6REP93
+[subject]_mem,_([\:0x50A938\:]+0x[! $Val !])*0x04=>temp;[\:0x016FA640+$temp\:2]=>temp;[\:[\:0x019409B0\:]+$temp*2\:2]=>temp;[\:[\:0x019409B0\:]+$temp\:2]=>temp;[\:0x019409B0\:]+$temp,20,00,<NoData>/_:dir
+[size]2
+ [subject]種類変更/_:d_list,_([:0x50A938:]+0x[! $Val !])*0x04=>temp;0x016FA640+$temp,ED6LST->LST_e,0x0000,0xFFFF,ED6LST->LST_c,offset
+ [subject]個数変更/現在値/_:calc,_([:0x50A938:]+0x[! $Val !])*0x04=>temp;0x016FA642+$temp,0x0000,0x0063,unsigned
+[/size]
+[back]
+[/group]
+
+
+[group]ED6REPA3
+[subject]_mem,_([\:0x50A9F8\:]+0x[! $Val !])*0x04=>temp;[\:0x016FA640+$temp\:2]=>temp;[\:[\:0x019409B0\:]+$temp*2\:2]=>temp;[\:[\:0x019409B0\:]+$temp\:2]=>temp;[\:0x019409B0\:]+$temp,20,00,<NoData>/_:dir
+[size]2
+ [subject]種類変更/_:d_list,_([:0x50A9F8:]+0x[! $Val !])*0x04=>temp;0x016FA640+$temp,ED6LST->LST_e,0x0000,0xFFFF,ED6LST->LST_c,offset
+ [subject]個数変更/現在値/_:calc,_([:0x50A9F8:]+0x[! $Val !])*0x04=>temp;0x016FA642+$temp,0x0000,0x0063,unsigned
+[/size]
+[back]
+[/group]
+
+
+[group]ED6REPB3
+[subject]_mem,_([\:0x50AD7C\:]+0x[! $Val !])*0x04=>temp;[\:0x016FA748+$temp\:2]=>temp;[\:[\:0x01940BB8\:]+$temp*2\:2]=>temp;[\:[\:0x01940BB8\:]+$temp\:2]=>temp;[\:0x01940BB8\:]+$temp,20,00,<NoData>/_:dir
+[size]2
+ [subject]種類変更/_:d_list,_([:0x50AD7C:]+0x[! $Val !])*0x04=>temp;0x016FA748+$temp,ED6LST->LST_e,0x0000,0xFFFF,ED6LST->LST_c,offset
+ [subject]個数変更/現在値/_:calc,_([:0x50AD7C:]+0x[! $Val !])*0x04=>temp;0x016FA74A+$temp,0x0000,0x0063,unsigned
+[/size]
+[back]
+[/group]
+
+
+[group]LST_a
+地のセピス
+水のセピス
+火のセピス
+風のセピス
+時のセピス
+空のセピス
+幻のセピス
+[/group]
+
+
+[group]LST_d
+エステル
+ヨシュア
+シェラザード
+オリビエ
+クローゼ
+アガット
+ティータ
+ジン
+[/group]
+
+
+[group]LST_g
+,0x496CCB=7507,0x496CD0=CDCCCC3D,0x496D25=00000000
+,0x496CCB=EB00,0x496CD0=CDCCCC3D,0x496D25=00000000
+,0x496CCB=EB00,0x496CD0=CDCC4C3E,0x496D25=00000000
+,0x496CCB=EB00,0x496CD0=CDCCCC3E,0x496D25=00000000
+,0x496CCB=EB00,0x496CD0=CDCC4C3D,0x496D25=CDCC4C3D
+,0x496CCB=EB00,0x496CD0=CDCCCC3D,0x496D25=CDCCCC3D
+,0x496CCB=EB00,0x496CD0=CDCC4C3E,0x496D25=CDCC4C3E
+,0x496CCB=EB00,0x496CD0=CDCCCC3E,0x496D25=CDCCCC3E
+[/group]
+
+
+[group]LST_2g
+,0x496DFB=7507,0x496E00=CDCCCC3D,0x496E55=00000000
+,0x496DFB=EB00,0x496E00=CDCCCC3D,0x496E55=00000000
+,0x496DFB=EB00,0x496E00=CDCC4C3E,0x496E55=00000000
+,0x496DFB=EB00,0x496E00=CDCCCC3E,0x496E55=00000000
+,0x496DFB=EB00,0x496E00=CDCC4C3D,0x496E55=CDCC4C3D
+,0x496DFB=EB00,0x496E00=CDCCCC3D,0x496E55=CDCCCC3D
+,0x496DFB=EB00,0x496E00=CDCC4C3E,0x496E55=CDCC4C3E
+,0x496DFB=EB00,0x496E00=CDCCCC3E,0x496E55=CDCCCC3E
+[/group]
+
+
+[group]LST_3g
+,0x49778C=7507,0x497791=CDCCCC3D,0x4977E6=00000000
+,0x49778C=EB00,0x497791=CDCCCC3D,0x4977E6=00000000
+,0x49778C=EB00,0x497791=CDCC4C3E,0x4977E6=00000000
+,0x49778C=EB00,0x497791=CDCCCC3E,0x4977E6=00000000
+,0x49778C=EB00,0x497791=CDCC4C3D,0x4977E6=CDCC4C3D
+,0x49778C=EB00,0x497791=CDCCCC3D,0x4977E6=CDCCCC3D
+,0x49778C=EB00,0x497791=CDCC4C3E,0x4977E6=CDCC4C3E
+,0x49778C=EB00,0x497791=CDCCCC3E,0x4977E6=CDCCCC3E
+[/group]
+
+
+[group]LST_4g
+,0x4977AC=7507,0x4977B1=CDCCCC3D,0x497806=00000000
+,0x4977AC=EB00,0x4977B1=CDCCCC3D,0x497806=00000000
+,0x4977AC=EB00,0x4977B1=CDCC4C3E,0x497806=00000000
+,0x4977AC=EB00,0x4977B1=CDCCCC3E,0x497806=00000000
+,0x4977AC=EB00,0x4977B1=CDCC4C3D,0x497806=CDCC4C3D
+,0x4977AC=EB00,0x4977B1=CDCCCC3D,0x497806=CDCCCC3D
+,0x4977AC=EB00,0x4977B1=CDCC4C3E,0x497806=CDCC4C3E
+,0x4977AC=EB00,0x4977B1=CDCCCC3E,0x497806=CDCCCC3E
+[/group]
+
+
+[group]LST_e
+なし
+白木の杖
+パイルロッド
+スタンロッド
+六角棍
+スパイクロッド
+錫杖
+八角棍
+バトルスタッフ
+アークロッド
+物干し竿
+太極棍
+ダーク
+クナイ
+レイザー
+カタール
+バゼラード
+シュナイダー
+ククリ
+デミハンダー
+エルベブレード
+スカルダガー
+果物ナイフ
+黒千鳥・白千鳥
+バイパー
+ブリッツ
+スコルピオン
+サイドワインダー
+ナインテイルズ
+ニードラー
+ホークアイ
+スティンガー
+シルバースター
+ベア・アサルト
+マジェスター
+試・零式導力銃
+レイピア
+サーブル
+フランベルク
+エストック
+オートクレール
+ブロードエッジ
+クレイモア
+バスタードエッジ
+ツヴァイハンダー
+ロムパイア
+斬馬刀
+ベルゼルガー
+Ｐ－０３
+クラフトカノン
+Ｐ－０５
+Ｇ－インパクト
+トールハンマー
+ブラスナックル
+獣皮の籠手
+セスタス
+黒鉄の籠手
+ダイダロスアーム
+レザーベスト
+アーマーベスト
+レザージャケット
+シールドベスト
+メタルジャケット
+シールドコート
+獣皮のツナギ
+鎖かたびら
+バトルスーツ
+ブラックコート
+リフレクター
+作業用ツナギ
+ロイヤルガード
+バルキリードレス
+レザーブーツ
+スパイク
+ワークブーツ
+ダブルスパイク
+クラフトシューズ
+コンポジット
+編み上げ靴
+ストレガーＲ
+軍用ブーツ
+ストレガーＧ
+アトラスギア
+シルフェンブーツ
+穴あき長靴
+ストレガーα
+ストレガーβ
+ストレガーＪ
+作業用安全靴
+シルバーピアス
+フレイムジッポー
+ミラージュリング
+ブラックバングル
+グラムチョーカー
+ホワイトブレス
+パールイヤリング
+リリーネックレス
+フェザーブローチ
+スカルペンダント
+Ｔ－アンクレット
+クレストチャーム
+グラールロケット
+--属性情報１
+--属性情報２
+--広域探知
+--認識霍乱
+--強制認識
+--認識遮断
+--認識遮断②
+琥耀石の護符
+蒼耀石の護符
+紅耀石の護符
+翠耀石の護符
+身代わりマペット
+闘魂ハチマキ
+闘魂ベルト
+作業用ヘルメット
+レッドスカーフ
+もこもこニット帽
+作業用グローブ
+貴石の指輪
+ロングバレル
+メイプルクッキー
+スイートカステラ
+サラダサンド
+小魚の塩釜焼き
+ミルクレープ
+リフレッシュパイ
+コーヒーアイス
+フライドポテト
+にがトマトサンド
+アゼリア・ロゼ
+フラワリィソーダ
+濃縮エスプレッソ
+フルマウススープ
+カーマイン・アイ
+朝摘みハーブティ
+レッドテールスープ
+特製卵酒
+絞りきりジュース
+黒胡椒スープ
+ミックスカクテル
+ドリルミートボール
+うずまきパスタ
+呪いの目ン玉焼き
+かみつきスペアリブ
+夢見る甲羅焼き
+ビーストステーキ
+魔獣魚の活き造り
+灼熱フライドチキン
+虹色ゼリービーンズ
+フラワリィゼリー
+卵の地獄焼き
+魚卵の酒蒸し
+穴空きポップコーン
+旬のフルーツタルト
+カサギの天ぷら
+フナの味噌煮
+レインボウの塩焼き
+オロショの串焼き
+サモーナのムニエル
+携帯ブイヤベース
+ふっくら温泉卵
+オレンジアイス
+アップルアイス
+ロイヤルクレープ
+ゴージャスクレープ
+スペシャルアイス
+フルーツ牛乳
+ティアの薬
+ティアラの薬
+ティア・オルの薬
+パームの薬
+ソールの薬
+絶縁テープ
+キュリアの薬
+セラスの薬
+アセラスの薬
+ＥＰチャージ
+ＥＰチャージ改
+リーベの薬
+ブレイサー手帳
+レシピ手帳
+カーネリア　１巻
+カーネリア　２巻
+カーネリア　３巻
+カーネリア　４巻
+カーネリア　５巻
+カーネリア　６巻
+カーネリア　７巻
+カーネリア　８巻
+カーネリア　９巻
+カーネリア　10巻
+カーネリア　11巻
+ＨＰ１
+ＨＰ２
+ＨＰ３
+ＥＰ１
+ＥＰ２
+ＥＰ３
+攻撃１
+攻撃２
+攻撃３
+防御１
+防御２
+防御３
+精神１
+精神２
+精神３
+魔防１
+魔防２
+魔防３
+命中１
+命中２
+命中３
+回避１
+回避２
+回避３
+移動１
+移動２
+移動３
+行動力１
+行動力２
+行動力３
+範囲１
+毒の刃
+凍結の刃
+石化の刃
+睡眠の刃
+封魔の刃
+闇の刃
+封技の刃
+混沌の刃
+必殺の刃
+死の刃１
+死の刃２
+物理反射
+魔法反射
+物理吸収
+魔法吸収
+情報
+妨害１
+妨害２
+妨害３
+駆動１
+駆動２
+省ＥＰ１
+省ＥＰ２
+省ＥＰ３
+美臭
+鷹目
+陽炎
+葉隠
+治癒
+100%死の刃
+100%必殺の刃
+100%毒の刃
+100%凍結の刃
+100%石化の刃
+100%睡眠の刃
+100%封魔の刃
+100%闇の刃
+100%封技の刃
+100%混沌の刃
+100%気絶の刃 
+ギルドの紹介状
+市長の紹介状
+エレベーターの鍵
+セプチウムの結晶
+ギルドの紹介状
+クオーツの欠片
+整備用カバン
+オーブメント灯
+--アゼリア・ロゼ
+教区長の親書
+セルベの葉
+--すごいクオーツ（仮）
+メイベル市長の手紙
+廃坑の鍵
+通行許可証
+正遊撃士資格の推薦状
+実録・百日戦役
+プログレロッド
+正遊撃士資格の推薦状
+倉庫の鍵
+海図の切れ端
+カシウス宛の手紙
+--花束
+黒いノート
+正遊撃士資格の推薦状
+正遊撃士資格の推薦状
+正遊撃士資格の推薦状
+特製ランチボックス
+ルーアン経済史・上
+ルーアン経済史・中
+ルーアン経済史・下
+猫語日常会話入門
+明日の料理
+結晶光学論集
+エルベキツツキの生態
+ハーツ少年の冒険・下
+３１本の糸杉
+駆動用オーブメント
+リベール通信　第１号
+リベール通信　第２号
+リベール通信　第３号
+リベール通信　第４号
+リベール通信　第５号
+リベール通信　第６号
+リベール通信　第７号
+リベール通信　第８号
+リベール通信　第９号
+リベール通信　特別号
+--リベール通信11
+--リベール通信12
+--リベール通信13
+--リベール通信14
+--リベール通信15
+奥の部屋の鍵
+地下水路の地図
+ドロシーの写真
+レイストン要塞概略図
+レイストン要塞概略図
+黒いオーブメント
+準遊撃士の紋章
+正遊撃士の紋章
+フェイへの手紙
+リベール王国地図
+工房長への紹介状
+アイテム865
+感知妨害器
+■要塞概略図■ボツ
+演算オーブメント
+ゼムリア苔
+アルヴの霊薬
+ガソリンタンク
+内燃機関ユニット
+ポンプ小屋の鍵
+乗船券
+観戦チケット
+ユリアの紹介状
+地下水路の鍵Ａ
+地下水路の鍵Ｂ
+スペアキー
+乗船券
+招待状
+選手登録カード
+小箱
+ハーツ少年の冒険・上
+２０２号室の鍵
+ルックの日記
+ホタル茸
+にがトマト
+ベアズクロー
+三色玄米
+十年味噌
+百年古酒
+新鮮ミルク
+とれたて卵
+できたてチーズ
+情熱オレンジ
+完熟リンゴ
+アゼリアの実
+挽きたて小麦粉
+辛口アンチョビ
+霜降りヒレ肉
+ほっくりポテト
+しゃっきり玉ネギ
+泥付きニンジン
+メイプルシュガー
+粗挽き岩塩
+オリーブオイル
+フレッシュハーブ
+ドラゴンビーンズ
+ロイヤルリーフ
+ブラックペッパー
+レッドペッパー
+魔獣の角
+魔獣の羽
+魔獣の尻尾
+魔獣の骨
+魔獣の目玉
+魔獣の牙
+魔獣の甲羅
+魔獣の獣肉
+魔獣の魚肉
+魔獣の鳥肉
+魔獣のゼラチン
+魔獣の鳥卵
+魔獣の魚卵
+魔獣の種
+カサギ
+リベールブナ
+レインボウ
+オロショ
+サモーナ
+練習用武器
+[/group]
+
+
+[group]LST_c
+0x0000
+0x0001
+0x0002
+0x0003
+0x0004
+0x0005
+0x0006
+0x0007
+0x0008
+0x000A
+0x0010
+0x0011
+0x001F
+0x0020
+0x0021
+0x0022
+0x0023
+0x0024
+0x0027
+0x0028
+0x0029
+0x002D
+0x002F
+0x0030
+0x003D
+0x003E
+0x003F
+0x0040
+0x0041
+0x005C
+0x005D
+0x005E
+0x005F
+0x0060
+0x0062
+0x0067
+0x0079
+0x007A
+0x007B
+0x007C
+0x0080
+0x0097
+0x0098
+0x0099
+0x009A
+0x009B
+0x009C
+0x009D
+0x00B5
+0x00B7
+0x00B8
+0x00B9
+0x00BB
+0x00D3
+0x00D4
+0x00D5
+0x00D6
+0x00D9
+0x00F1
+0x00F2
+0x00F3
+0x00F4
+0x00F5
+0x00F6
+0x00F7
+0x00F8
+0x00F9
+0x00FA
+0x00FB
+0x00FC
+0x00FD
+0x00FE
+0x010F
+0x0110
+0x0111
+0x0112
+0x0113
+0x0114
+0x0115
+0x0116
+0x0117
+0x0118
+0x0119
+0x011A
+0x011B
+0x011C
+0x011D
+0x011E
+0x011F
+0x012D
+0x012E
+0x012F
+0x0130
+0x0131
+0x0132
+0x0133
+0x0134
+0x0135
+0x0136
+0x0137
+0x0138
+0x0139
+0x013A
+0x013B
+0x013C
+0x013D
+0x013E
+0x013F
+0x0140
+0x0141
+0x0142
+0x0143
+0x0144
+0x0145
+0x0146
+0x0147
+0x0148
+0x0149
+0x014A
+0x014D
+0x014E
+0x014F
+0x0191
+0x0192
+0x0193
+0x0194
+0x0195
+0x0196
+0x0197
+0x0198
+0x0199
+0x019A
+0x019B
+0x019C
+0x019D
+0x019E
+0x019F
+0x01A0
+0x01A1
+0x01A2
+0x01A3
+0x01A4
+0x01A5
+0x01A6
+0x01A7
+0x01A8
+0x01A9
+0x01AA
+0x01AB
+0x01AC
+0x01AD
+0x01AE
+0x01AF
+0x01B0
+0x01B1
+0x01B2
+0x01B3
+0x01B4
+0x01B5
+0x01B6
+0x01B7
+0x01B8
+0x01B9
+0x01BA
+0x01BB
+0x01BC
+0x01BD
+0x01BE
+0x01BF
+0x01F5
+0x01F6
+0x01F7
+0x01F8
+0x01F9
+0x01FA
+0x01FB
+0x01FC
+0x01FD
+0x01FE
+0x01FF
+0x0200
+0x0208
+0x020D
+0x0212
+0x0213
+0x0214
+0x0215
+0x0216
+0x0217
+0x0218
+0x0219
+0x021A
+0x021B
+0x021C
+0x0258
+0x0259
+0x025A
+0x025B
+0x025C
+0x025D
+0x025E
+0x025F
+0x0260
+0x0261
+0x0262
+0x0263
+0x0264
+0x0265
+0x0266
+0x0267
+0x0268
+0x0269
+0x026A
+0x026B
+0x026C
+0x026D
+0x026E
+0x026F
+0x0270
+0x0271
+0x0272
+0x0273
+0x0274
+0x0275
+0x0276
+0x027D
+0x027E
+0x027F
+0x0280
+0x0281
+0x0282
+0x0283
+0x0284
+0x0285
+0x0286
+0x0287
+0x028A
+0x028B
+0x028E
+0x028F
+0x0291
+0x02C1
+0x02C2
+0x02C3
+0x02C6
+0x02C7
+0x02C8
+0x02C9
+0x02CA
+0x02D0
+0x02D1
+0x02D2
+0x02D3
+0x02D4
+0x0315
+0x0316
+0x0317
+0x0318
+0x0319
+0x031A
+0x031B
+0x031C
+0x031D
+0x031E
+0x031F
+0x0320
+0x0321
+0x0322
+0x0323
+0x0324
+0x0325
+0x0326
+0x0327
+0x0328
+0x0329
+0x032A
+0x032B
+0x032C
+0x032E
+0x032F
+0x0330
+0x0331
+0x0332
+0x0333
+0x0334
+0x0335
+0x0336
+0x0337
+0x0338
+0x0339
+0x033A
+0x033B
+0x033C
+0x033D
+0x033E
+0x033F
+0x0340
+0x0341
+0x0342
+0x0343
+0x0344
+0x0345
+0x0346
+0x0347
+0x0348
+0x0349
+0x034A
+0x034B
+0x034C
+0x034D
+0x034E
+0x034F
+0x0350
+0x0351
+0x0352
+0x0353
+0x0354
+0x0355
+0x0356
+0x0357
+0x0358
+0x0359
+0x035A
+0x035B
+0x035C
+0x035D
+0x035E
+0x035F
+0x0360
+0x0361
+0x0362
+0x0363
+0x0364
+0x0365
+0x0366
+0x0367
+0x0368
+0x0369
+0x036A
+0x036B
+0x036C
+0x036D
+0x036E
+0x036F
+0x0370
+0x0371
+0x0372
+0x0373
+0x0374
+0x0375
+0x0376
+0x0384
+0x0385
+0x0386
+0x0387
+0x0388
+0x0389
+0x038A
+0x038B
+0x038C
+0x038D
+0x038E
+0x038F
+0x0390
+0x0391
+0x0392
+0x0393
+0x0394
+0x0395
+0x0396
+0x0397
+0x0398
+0x0399
+0x039A
+0x039B
+0x039C
+0x039D
+0x039E
+0x039F
+0x03A0
+0x03A1
+0x03A2
+0x03A3
+0x03A4
+0x03A5
+0x03A6
+0x03A7
+0x03A8
+0x03A9
+0x03AA
+0x03AB
+0x03AC
+0x03AD
+0x03AE
+0x03AF
+0x03B0
+0x03E8
+[/group]
