@@ -1,0 +1,12 @@
+[subject]‘‘‹à:dir
+[subject]©¨—Í:calc,0x572724,0x0,0xF4240,unsigned
+[subject]‘¼¨—Í1:calc,0x5729A4,0x0,0xF4240,unsigned
+[subject]‘¼¨—Í2:calc,0x572C24,0x0,0xF4240,unsigned
+[subject]‘¼¨—Í3:calc,0x572EA4,0x0,0xF4240,unsigned
+[root]
+[subject]ŠÍ‘D«”\:dir
+[replace]0x4BC7F0,16shipname,offset
+[root]
+[subject]“ss:dir
+[replace]0x596B80,16cityname,offset
+[root]
