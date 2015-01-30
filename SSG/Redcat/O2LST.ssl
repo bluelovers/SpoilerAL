@@ -1,0 +1,17 @@
+[group]O2_CG
+[note]wordwrap
+プログラム組みなおしたおかげで色々快適になっててよし(^ω^)　追加された久遠シナリオもなかなかのデキなのでお勧めです。永遠の世界へ去ってしまった遥が、主人公恋しさに彼を同じ世界に引きずり込もうとするシーンは必見かと。
+[/note]
+
+[subject]ＣＧモード関連:dir
+	[subject]ＣＧ鑑賞・シーン回想・おまけ出現/実行/_:toggle,0x40,01,00
+	 [subject]ＣＧ鑑賞:dir
+ 		[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x0044,0x02D7-0100000
+ 		[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x004C,0x02D7-00
+	 [subject]ここまで:split,roll,-2,-,100
+	[back]
+	[subject]シーン回想:dir
+ 		[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x02D8,0x02F3-01000000
+ 		[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x02D8,0x02F3-00
+	[back]
+[/group]
