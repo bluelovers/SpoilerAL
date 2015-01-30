@@ -1,0 +1,7 @@
+	[subject]g—p‰ñ”:calc,0x00,0x0000,0xFFFF,signed,little_e
+	[subject]í“¬‰ñ”:calc,0x04,0x0000,0xFFFF,signed,little_e
+	[subject]”s–k‰ñ”:calc,0x08,0x0000,0xFFFF,signed,little_e
+	[subject]MAX HIT:calc,0x0C,0x0000,0xFFFF,signed,little_e
+	[subject]MAX DAMAGE:calc,0x10,0x0000,0xFFFF,signed,little_e
+	[subject]BEST RECORD:calc,0x14,0x0000,0xFFFF,signed,little_e
+[back]
