@@ -1,0 +1,318 @@
+[group]JSO_SSG
+[note]wordwrap
+キングストーンの中に魔王ハタヤマがあると思ってたのに、こはくスリッパとは…(^^;
+
+＊このＳＳＧファイルは、ＯＨＰの修正ファイル適用後のものが対象となります。
+
+■■パラメータ関連
+このソフトは、実データ、セーブデータ反映用、表示用の３種類の配列で構成されていますが、この機能は実データに変更を加えます。他２種への反映は任意のシナリオ切り替え時や戦闘開始時に行われます。つまり書き換え直後に保存しても反映されないし表示も変わらないが、ゲーム内部での判定や参照には即効があります。
+
+ジュエルガイスト別基本能力の設定：
+ソフト起動毎に設定する必要があり、また敵味方を問はず効果が反映されます。ヤクトカイゼル等敵専用ジェエルガイストは味方用の背面ＣＧが無いので、ダミーが割り当てられているようです（戦闘エフェクトは正常）。また行動設定の変更は数と組み合わせが多いので、全てを検証できたわけでは無いため確実な安全性は保障できません。御注意を。
+
+ver1.01 CRC32/
+JEWELS.EXE=4AB68DC1
+
+ver1.02 CRC32/
+JEWELS.EXE=1DC43EA6
+[/note]
+
+[subject]ver1.01:dir
+
+[subject]パラメータ関連:dir
+ [e_with],0x0000,0x03E7,unsigned
+	[subject]MP限界値/現在値/_:calc,_[:0x4AA02C:]+0x854
+	[subject]MAXMP/現在値/_:calc,_[:0x4AA02C:]+0x858
+ [/e_with]
+ [subject]所持ジュエルガイスト設定変更:dir
+	[subject]全所持ジュエルガイストの初期BT値MAX化/実行/_:toggle,_[:0x4AA02C:]+0x085C,_[:0x4AA02C:]+0x08BF-*{00000000::00000000::??????64*}
+	[subject]全所持ジュエルガイストのLV極大化/実行/_:toggle,_[:0x4AA02C:]+0x085C,_[:0x4AA02C:]+0x08BF-*{00000000::00000000::??63????*}
+  [io_fep]$Val-1,$Val+1
+	[subject]スロット番号/現在値/_:calc,0x486C30,0x01,0x19,unsigned
+  [/io_fep]
+ [subject]対象スロットの設定変更:dir
+	[replace]_[:0x4AA02C:]+([:0x486C30:]*0x04)+0x085C,JSOLST->JSO_a
+  [back]
+ [back]
+ [subject]ジュエルガイスト別基本能力の設定:dir
+  [subject]変更ジュエルガイストの選択/_:list,0x486C34,JSOLST->LST_c,0x00,0x01
+	[subject]_mem,_[\:0x4AB070\:]+([\:0x486C34\:]*0x96),16,00,<NoCharacter1>'+'_mem,_[\:0x4AB070\:]+([\:0x486C34\:]*0x96)+0x0C,16,00,<NoCharacter2>'+'の設定変更:dir
+	[subject]_mem,_[\:0x4AB070\:]+([\:0x486C34\:]*0x96)+0x0C,16,00,<NoCharacter2>'+'の全能力極大化/実行/_:toggle,_[:0x4AB070:]+([:0x486C34:]*0x96)+0x26,01000000E7030000E7030000E7030000E7030000E7030000
+	[subject]_mem,_[\:0x4AB070\:]+([\:0x486C34\:]*0x96)+0x0C,16,00,<NoCharacter2>'+'の全能力最小化/実行/_:toggle,_[:0x4AB070:]+([:0x486C34:]*0x96)+0x26,010000000100000001000000010000000100000001000000
+	[replace]_[:0x4AB070:]+([:0x486C34:]*0x96),JSOLST->JSO_b
+  [back]
+ [back]
+ [subject]好感度確認調整:dir
+	[repeat]JSOLST->JSOREP1,0,7,1
+[back]
+[back]
+
+[subject]ＣＧモード関連:dir
+	[replace]_[:0x4CC6AC:],JSOLST->JSO_CG
+[back]
+
+[back]
+
+[subject]ver1.02:dir
+
+[subject]パラメータ関連:dir
+ [e_with],0x0000,0x03E7,unsigned
+	[subject]MP限界値/現在値/_:calc,_[:0x4B012C:]+0x854
+	[subject]MAXMP/現在値/_:calc,_[:0x4B012C:]+0x858
+ [/e_with]
+ [subject]所持ジュエルガイスト設定変更:dir
+	[subject]全所持ジュエルガイストの初期BT値MAX化/実行/_:toggle,_[:0x4B012C:]+0x085C,_[:0x4B012C:]+0x08BF-*{00000000::00000000::??????64*}
+	[subject]全所持ジュエルガイストのLV極大化/実行/_:toggle,_[:0x4B012C:]+0x085C,_[:0x4B012C:]+0x08BF-*{00000000::00000000::??63????*}
+  [io_fep]$Val-1,$Val+1
+	[subject]スロット番号/現在値/_:calc,0x48C500,0x01,0x19,unsigned
+  [/io_fep]
+ [subject]対象スロットの設定変更:dir
+	[replace]_[:0x4B012C:]+([:0x48C500:]*0x04)+0x085C,JSOLST->JSO_a
+  [back]
+ [back]
+ [subject]ジュエルガイスト別基本能力の設定:dir
+  [subject]変更ジュエルガイストの選択/_:list,0x48C504,JSOLST->LST_c,0x00,0x01
+	[subject]_mem,_[\:0x4B1170\:]+([\:0x48C504\:]*0x96),16,00,<NoCharacter1>'+'_mem,_[\:0x4B1170\:]+([\:0x48C504\:]*0x96)+0x0C,16,00,<NoCharacter2>'+'の設定変更:dir
+	[subject]_mem,_[\:0x4B1170\:]+([\:0x48C504\:]*0x96)+0x0C,16,00,<NoCharacter2>'+'の全能力極大化/実行/_:toggle,_[:0x4B1170:]+([:0x48C504:]*0x96)+0x26,01000000E7030000E7030000E7030000E7030000E7030000
+	[subject]_mem,_[\:0x4B1170\:]+([\:0x48C504\:]*0x96)+0x0C,16,00,<NoCharacter2>'+'の全能力最小化/実行/_:toggle,_[:0x4B1170:]+([:0x48C504:]*0x96)+0x26,010000000100000001000000010000000100000001000000
+	[replace]_[:0x4B1170:]+([:0x48C504:]*0x96),JSOLST->JSO_b
+  [back]
+ [back]
+ [subject]好感度確認調整:dir
+	[repeat]JSOLST->JSOREP2,0,7,1
+[back]
+[back]
+
+[subject]ＣＧモード関連:dir
+	[replace]_[:0x4D27AC:],JSOLST->JSO_CG
+[back]
+
+[back]
+
+[/group]
+
+
+[group]JSO_CG
+[subject]クリアフラグALL/実行/_:toggle,0x218E,FF,00
+ [subject]ＣＧ:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x200F,0x207A-01
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x200F,0x207A-00
+ [back]
+ [subject]回想:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x210E,0x211F-FF
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x210E,0x211F-00
+ [back]
+ [subject]ジュエルガイスト図鑑:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x219A,FFFFFF1F
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x219A,00000000
+ [back]
+[/group]
+
+
+[group]JSOREP1
+[subject][! @JSOLST->LST_a,$Val !]/現在値/_:calc,_[:0x4AA02C:]+0x[! 0x04*$Val !]+0x0430,0x00,0x14,unsigned
+[/group]
+
+
+[group]JSOREP2
+[subject][! @JSOLST->LST_a,$Val !]/現在値/_:calc,_[:0x4B012C:]+0x[! 0x04*$Val !]+0x0430,0x00,0x14,unsigned
+[/group]
+
+
+[group]LST_a
+花月洸
+天原すせり
+草壁真珠
+琴代輝蘭
+武原こはく
+八坂野るり
+武原亮一
+[/group]
+
+
+[group]LST_b
+葦原武流召喚可能
+天原すせり召喚可能
+[/group]
+
+
+[group]JSO_a
+[subject]召喚者設定/_:bitlist,0x00,JSOLST->LST_b,1
+[subject]ジュエルガイストLV/現在値/_:calc,0x01,0x00,0x63,unsigned
+[subject]ジュエルガイスト種類/_:list,0x02,JSOLST->LST_c,0x00,0x01
+[subject]初期BT値/現在値/_:calc,0x03,0x00,0x64,unsigned
+[/group]
+
+
+[group]JSO_b
+[e_with],0x0000,0x3E7,unsigned
+[subject]召喚MP/現在値/_:calc,0x26
+[subject]MAXHP/現在値/_:calc,0x2A
+[subject]MAXSP/現在値/_:calc,0x2E
+[subject]STR/現在値/_:calc,0x32
+[subject]DEF/現在値/_:calc,0x36
+[subject]DEX/現在値/_:calc,0x3A
+[/e_with]
+[e_with],0x00,0x63,unsigned
+[subject]召喚MPLV補正値/現在値/_:calc,0x28
+[subject]MAXHPLV補正値/現在値/_:calc,0x2C
+[subject]MAXSPLV補正値/現在値/_:calc,0x30
+[subject]STRLV補正値/現在値/_:calc,0x34
+[subject]DEFLV補正値/現在値/_:calc,0x38
+[subject]DEXLV補正値/現在値/_:calc,0x3C
+[/e_with]
+[e_with],JSOLST->LST_d,0x00,0x01
+[subject]行動設定１/_:list,0x3E
+[subject]行動設定２/_:list,0x40
+[subject]行動設定３/_:list,0x42
+[subject]行動設定４/_:list,0x44
+[/e_with]
+[/group]
+
+
+[group]LST_c
+駄獣モデケ
+兵魔レギオン
+鎧鬼トリオップス
+幼竜アルテミオス
+水精ロピラ
+破邪鬼絶影
+魔童鬼タリスベイブ
+天翔鬼ギガノフレイ
+黒龍王シグルトバルム
+騎魔レギノス
+凡獣モサク
+水神ロードピラード
+大蜘蛛ヴァルドスパイド
+薔薇姫Ａクイーン
+魍魎鬼アビスモール
+月花鳥白鳳
+蒼武天スサノオ
+紅武天マルドゥーク
+金剛羅百鉄鬼
+孔雀天マユゥリ
+龍骸鬼アセドエンペル
+死屍王ケスカトリポカ
+白龍王サヴァンティル
+月華王鬼百影
+究極神龍ジ・アダモス
+武神鬼帝ヤクトカイゼル
+[/group]
+
+
+[group]LST_d
+アタック
+ガードポイント
+バリアポイント
+食べる
+斬撃
+チャージ
+ＢＴブレイク
+一文字突き
+アタック
+マヒ触手
+ガードポイント
+ぶちかまし
+噛みつき
+デクスト
+ストロト
+龍の怒り
+ろけっとパンチ
+キュアズ
+バリアポイント
+自己再生
+ランサー
+ＢＴブレイカー
+ベレク
+一文字突き
+アタック
+くしゃみ
+無敵の壁
+食べる
+ふぁんねる
+キュアルズ
+呪いのダンス
+みんな元気
+影からの一撃
+宵風
+オーバーキル
+絶対の一撃
+ガラガラ
+超音波
+ベレク
+呪詛の子守歌
+マヒの牙
+病原菌
+ガードネット
+スパイドネット
+切り裂く爪
+旋風斬
+病原菌
+旋風波
+ウィップ
+ストロト
+キュアルズ
+イバラの狂戦士
+アタック
+腐敗の毒霧
+フルアタック
+ＢＴチャージャー
+竜の毒爪
+マヒの邪眼
+火炎弾
+黒炎十字弾
+炎のクチバシ
+白炎の守り
+鳳の奇跡
+炎の舞い
+パワーアタック
+雷撃
+フルパワー
+突進
+毒蛇の牙
+呪詛
+不可視の炎
+毒砂の嵐
+斬馬刀
+鉄壁
+大地激震
+斬馬刀・横一文字
+天誅
+封印
+慈愛
+光魔破敵剣
+病み爪
+毒ゲロ
+不死身の力
+メギドの火
+呪いの錫杖
+疫病蔓延
+冥界送り
+不死者の防壁
+パライズファング
+ＥＸキュージョン
+神威
+滅びの業火
+一閃
+月華の守り
+滅多斬り
+オメガカノン
+グングニール
+黒炎十字弾
+滅びの業火
+ファイナルヘヴン
+斬馬刀・毒刃
+武神の威
+無双三神撃
+グラビトロン
+アタック
+石化ブレス
+アンキュア
+復活
+右手の一撃
+ストロト
+Ｇグラビトロン
+左手の一撃
+キュアズ
+ＧＸキュージョン
+[/group]
