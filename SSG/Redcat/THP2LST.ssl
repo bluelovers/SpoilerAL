@@ -1,0 +1,105 @@
+[group]THP2_SSG
+[note]wordwrap
+動作制御系はタイトル画面で、パラメータ系はプレイ中に任意のタイミングで使用してください。
+
+補足：
+Heart By Heart の各機能は１Ｐ側にのみ効果があります。また、移動速２倍化機能は、自機の２倍化に加え、以外の移動速を１／４にしてあります。
+[/note]
+
+[subject]お嬢様は魔女 ver1.01:dir
+ [subject]動作制御系:dir
+	[subject]自機当たり判定回避/実行/_:b_toggle,0x523CCD,THP2LST->THP2_a,real
+	[subject]レーザー出力即最大化/実行/_:b_toggle,0x527BD4,THP2LST->THP2_b,real
+	[subject]ボム無限化/実行/_:b_toggle,0x527A7E,THP2LST->THP2_c,real
+	[subject]全ショットパワー即最大化/実行/_:b_toggle,0x527A7E,THP2LST->THP2_d,real
+	[subject]一撃でMAXHIT化/実行/_:toggle,0x52396F,EB00,760A
+ [subject]ここまで:split,roll,-2,-,100
+[back]
+[subject]パラメータ系:dir
+	[subject]残機数/現在値/固定:calc,0xC72A14,0x00,0x08,unsigned
+	[io_fep] $Val/0x0A, $Val*0x0A
+	[subject]得点/現在値/_:calc,0xD03978,0x00000000,0x3B9AC9FF
+	[/io_fep]
+[back]
+[subject]ここまで:split,line,-1,100,5
+[root]
+
+[subject]Heart By Heart ver1.01:dir
+ [subject]動作制御系:dir
+	[subject]無敵効果永続化/実行/_:b_toggle,0x456192,THP2LST->THP2_e,real
+	[subject]無条件移動２倍速化/実行/_:b_toggle,0x456ACB,THP2LST->THP2_f,real
+	[subject]溜めショット即発射可能/実行/_:b_toggle,0x457314,THP2LST->THP2_g,real
+	[subject]残り時間減らない/実行/_:toggle,0x44E332,EB03909090,2D44040000
+ [subject]ここまで:split,roll,-2,-,100
+[back]
+[subject]パラメータ系:dir
+	[subject]自機数/現在値/固定:calc,0x682A3A,0x00,0x05,unsigned
+	[subject]得点/現在値/_:calc,0x682A4C,0x00000000,0x05F5E09C,unsigned
+	[subject]面数/現在値/_:calc,0x682A42,0x01,0x1D,unsigned
+[back]
+[subject]ここまで:split,line,-1,100,5
+[root]
+
+[/group]
+
+
+[group]THP2_a
+0x523CCD,E91102000090,0F8410020000
+0x523F93,EB00,7C11
+[/group]
+
+
+[group]THP2_b
+0x527BD4,EB00,7C09
+0x527BE0,BE680190EB05,81FE68017C0C
+[/group]
+
+
+[group]THP2_c
+0x527A7E,EB00,7433
+0x527A87,EB059090909090,66FF0D9A2DD000
+0xD02D9A,08
+[/group]
+
+
+[group]THP2_d
+0x5241AD,B904000400890D,668B88F4B2C500
+0x5241B4,F4B2C500,6683F904
+0x5241B8,9090,7D53
+0x5241BA,90,41
+0x5241BF,0DF8,88F4
+[/group]
+
+
+[group]THP2_e
+0x456192,E9F9421B,F6460C01
+0x456196,009090909090,0F8496010000
+0x60A490,800D76DD830004,CCCCCCCCCCCCCC
+0x60A497,F6460C01,CCCCCCCC
+0x60A49B,0F8491BEE4FF,CCCCCCCCCCCC
+0x60A4A1,E9F6BCE4FF,CCCCCCCCCC
+[/group]
+
+
+[group]THP2_f
+0x456ACB,E9D839,C1E008
+0x456ACE,1B00,03C8
+0x60A4A8,81FE74DD8300,CCCCCCCCCCCC
+0x60A4AE,7505,CCCC
+0x60A4B0,C1E009,CCCCCC
+0x60A4B3,EB03,CCCC
+0x60A4B5,C1E006,CCCCCC
+0x60A4B8,03C8,CCCC
+0x60A4BA,E911C6E4FF,CCCCCCCCCC
+[/group]
+
+
+[group]THP2_g
+0x457314,E9A7311B,66394604
+0x457318,009090909090,0F8EF1040000
+0x60A4C0,81FE74DD8300,CCCCCCCCCCCC
+0x60A4C6,740A,CCCC
+0x60A4C8,66394604,CCCCCCCC
+0x60A4CC,0F8E3DD3E4FF,CCCCCCCCCCCC
+0x60A4D2,E947CEE4FF,CCCCCCCCCC
+[/group]
