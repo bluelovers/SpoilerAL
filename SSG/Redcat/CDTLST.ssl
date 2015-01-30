@@ -1,0 +1,39 @@
+[group]CDT_SSG
+[note]wordwrap
+主人公とレニーの回想シーンは必見。…笑えるって意味でｗ
+[/note]
+
+[subject]パラメータ関連:dir
+	[subject]調教回数ポイント/現在値/_:calc,0x0F8C,0x00,0x0A,unsigned
+	[subject]選択ルート/_:list,0x12AC,CDTLST->LST_a,0x00,0x01
+[subject]ここまで:split,roll,-1,-,100
+	[subject]好感度確認調整:dir
+		[subject]御佐倉かなた/現在値/_:calc,0x12B0,0x00,0x0A,unsigned
+		[subject]レニー・藤島・ゴールドマン/現在値/_:calc,0x12B4,0x00,0x0A,unsigned
+	[back]
+[subject]ここまで:split,line,-1,100,5
+[root]
+
+[subject]ＣＧモード関連:dir
+	[subject]OptionScenario出現/実行/_:toggle,0x658,*_???1????
+[subject]ここまで:split,roll,-1,-,100
+	[subject]Album:dir
+		[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x069A,0x06AF-FF
+		[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x069A,0x06AF-00
+	[subject]ここまで:split,roll,-2,-,100
+[back]
+	[subject]Memory:dir
+		[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x0665,0x0675-FF
+		[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x0665,0x0675-00
+	[back]
+[subject]ここまで:split,line,-1,100,5
+[root]
+
+[/group]
+
+
+[group]LST_a
+かなた
+レニー
+ハーレム
+[/group]
