@@ -1,0 +1,13 @@
+	[subject]種族:list,0x00,MofM_madou,0x1,0x1
+	[subject]レベル:calc,0x15,0x00,0x63,unsigned,little_e
+	[subject]EXP:calc,0x16,0x00,0x64,unsigned,little_e
+	[subject]MP（分母）:calc,0x17,0x00,0x63,unsigned,little_e
+	[subject]MP（分子）:calc,0x18,0x00,0x63,unsigned,little_e
+	[subject]HP（分母）:calc,0x19,0x0000,0x03E7,unsigned,little_e
+	[subject]HP（分子）:calc,0x1B,0x0000,0x03E7,unsigned,little_e
+	[subject]INT（次ターンの値）:calc,0x1D,0x0000,0x03E7,unsigned,little_e
+	[subject]INT（現在値）:calc,0x1F,0x0000,0x03E7,unsigned,little_e
+	[subject]AGI:calc,0x24,0x00,0x63,unsigned,little_e
+       [subject]未行動ON:toggle,0x11,00,80
+[back]
+
