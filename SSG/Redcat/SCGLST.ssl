@@ -1,0 +1,123 @@
+[group]SCG_MA
+[note]wordwrap
+廉価版対応です。
+
+毎ターン自動ＭＡＸ化：
+現在の工業力・資金力を無視し、毎ターン自動的に最大化。
+
+ドック内最強艦隊配備：
+ドック内の全艦をブランギゼ級異生艦に変換します。
+[/note]
+
+[subject]ＳＬＧパート関連:dir
+	[subject]艦隊無限行動可能:dir
+	[enabled][:0x4F631C:] != 0xFFFFFFFF
+		[subject]第１艦隊/実行/固定必須:toggle,0x4F6320,0000
+	[/enabled]
+	[enabled][:0x4F633C:] != 0xFFFFFFFF
+		[subject]第２艦隊/実行/固定必須:toggle,0x4F6340,0000
+	[/enabled]
+	[enabled][:0x4F635C:] != 0xFFFFFFFF
+		[subject]第３艦隊/実行/固定必須:toggle,0x4F6360,0000
+	[/enabled]
+	[enabled][:0x4F637C:] != 0xFFFFFFFF
+		[subject]第４艦隊/実行/固定必須:toggle,0x4F6380,0000
+	[/enabled]
+[back]
+[subject]毎ターン総合所持金＆工業力自動ＭＡＸ化/実行/_:b_toggle,0x496806,SCGLST->SCG_a,real
+[subject]全ドック内最強艦隊配備/実行/_:toggle,0x4F14C8,0x4F2A27-0F2700000F2700000F2700000F2700000F2700000F2700006300000063000000630000006300000063000000FF000000000000000000000019000000000000000000000000000000
+[/group]
+
+
+[group]SCG_a
+0x496806,B89F86010051,8B85F4F6FFFF
+0x49680C,5233C9,0345FC
+0x49680F,33D2B10E8904,0385E8F6FFFF
+0x496815,95B8044F00,A3C8044F00
+0x49681A,4249E0F5595A,8B85F8F6FFFF
+0x496820,EB6290909090,0385E4F6FFFF
+[/group]
+
+
+[group]SCG_PR
+[subject]司令官能力:dir
+	[repeat]SCGLST->SCGREP1,0,19,1
+[back]
+[subject]対レインローグ友好度:dir
+	[repeat]SCGLST->SCGREP2,0,13,1
+[/group]
+
+
+[group]SCGREP1
+[subject][! @SCGLST->LST_a,$Val !]:dir
+[replace]_0x4F0054+0x[! 0x38*$Val !],SCGLST->SCG_b
+[/group]
+
+
+[group]SCGREP2
+[subject][! @SCGLST->LST_b,$Val !]/現在値/_:calc,_0x4F05C8+0x[! 0xF4*$Val !],0x00,0x64,unsigned
+[/group]
+
+
+[group]LST_a
+ヴァイカート
+アクロフォース
+シェンカー
+モンゴメリ
+リングライン
+プラム
+バルデ
+リーゼ
+ラーティ
+ドルドラン
+フォッセー
+ゼンガン
+ガイアミクーロ
+フォルク
+ファー
+ラザルス
+ペネロピ
+メネメネ
+ルカ
+[/group]
+
+
+[group]SCG_b
+[subject]存在フラグ/ＯＮ/_:toggle,0x20,0100,0000
+[subject]ＬＶ/現在値/_:calc,0x00,0x01,0x63,unsigned
+[subject]経験値/現在値/_:calc,0x04,0x0000,0x7FFF,unsigned
+[e_with],0x0000,0x7FFF,unsigned
+[subject]開発/現在値/_:calc,0x0C
+[subject]造船/現在値/_:calc,0x0E
+[subject]外交/現在値/_:calc,0x10
+[subject]政治/現在値/_:calc,0x12
+[subject]指揮/現在値/_:calc,0x14
+[/e_with]
+[size]2
+[e_with],0xFF80,0x007F
+[subject]開発成長率/現在値/_:calc,0x16
+[subject]造船成長率/現在値/_:calc,0x18
+[subject]外交成長率/現在値/_:calc,0x1A
+[subject]政治成長率/現在値/_:calc,0x1C
+[subject]指揮成長率/現在値/_:calc,0x1E
+[/e_with]
+[/size]
+[back]
+[/group]
+
+
+[group]LST_b
+イクスランド
+ヤンゴン
+ズィーガー
+トリア・ノア
+アケボノ
+オヌール
+バーグ
+ラ・サリュ
+昇華連邦
+リッシュ
+オルグージョ
+アングラ公国
+エヴァ絶対皇国
+[/group]
