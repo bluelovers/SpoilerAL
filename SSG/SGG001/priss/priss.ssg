@@ -1,0 +1,168 @@
+SSG for SpoilerAL ver 3.4
+
+// SpoilerAL ver3.4用 SSGデータ by Priss
+//
+
+[script]
+[title]Beasts and Bumpkins 日本語版
+[process]BEASTS.EXE
+[maker]Maxis
+[creator]Priss
+[note]
+一部シナリオによっては所持金が
+クリアー条件となっていますので
+お金を増やしたとたんにクリアー
+となります(^^;
+[/note]
+[subject]お金:calc,0x552BFE,0x00,0x0DBBA0,signed,little_e
+[/script]
+
+[script]
+[title]錬金術の娘(ITEM)
+[process]DAWIN.EXE
+[maker]BlackPackage
+[creator]Priss
+[note]
+所持金・アイテム数変更
+[/note]
+[subject]お金:calc,0x721FE0,0x00,0x0186A0,signed,little_e
+
+[subject]宝石:dir
+	[subject]アメシスト:calc,0x722148,0x00,0x63,signed,little_e
+	[subject]アクアマリン:calc,0x72214C,0x00,0x63,signed,little_e
+	[subject]オブシディアン:calc,0x722150,0x00,0x63,signed,little_e
+	[subject]ジェイド:calc,0x722154,0x00,0x63,signed,little_e
+	[subject]エメラルド:calc,0x722158,0x00,0x63,signed,little_e
+	[subject]サファイア:calc,0x72215C,0x00,0x63,signed,little_e
+	[subject]ガーネット:calc,0x722160,0x00,0x63,signed,little_e
+	[subject]アゲイト:calc,0x722164,0x00,0x63,signed,little_e
+	[subject]アンバー:calc,0x722168,0x00,0x63,signed,little_e
+	[subject]オニキス:calc,0x72216C,0x00,0x63,signed,little_e
+	[subject]ラピスラズリ:calc,0x722170,0x00,0x63,signed,little_e
+	[subject]オパール:calc,0x722174,0x00,0x63,signed,little_e
+	[subject]クリスタル:calc,0x722178,0x00,0x63,signed,little_e
+	[subject]トパーズ:calc,0x72217C,0x00,0x63,signed,little_e
+	[subject]ルビー:calc,0x722180,0x00,0x63,signed,little_e
+	[subject]ダイヤモンド:calc,0x722184,0x00,0x63,signed,little_e
+[back]
+
+[subject]生成アイテム:dir
+	[subject]変な塊:calc,0x7222D8,0x00,0x63,signed,little_e
+	[subject]木の杖:calc,0x7222DC,0x00,0x63,signed,little_e
+	[subject]鉄のフライパン:calc,0x7222E0,0x00,0x63,signed,little_e
+	[subject]ショートソード:calc,0x7222E4,0x00,0x63,signed,little_e
+	[subject]カオスワンド:calc,0x7222E8,0x00,0x63,signed,little_e
+	[subject]ジュピタースタッフ:calc,0x7222EC,0x00,0x63,signed,little_e
+	[subject]ビッグサイズ:calc,0x7222F0,0x00,0x63,signed,little_e
+	[subject]ホーリーケトル:calc,0x7222F4,0x00,0x63,signed,little_e
+	[subject]鷲のはばたき:calc,0x7222F8,0x00,0x63,signed,little_e
+	[subject]アルケミッククラウン:calc,0x7222FC,0x00,0x63,signed,little_e
+	[subject]フラワーデストロイヤー:calc,0x722300,0x00,0x63,signed,little_e
+	[subject]インザベッド:calc,0x722304,0x00,0x63,signed,little_e
+	[subject]マーズトーチ:calc,0x722308,0x00,0x63,signed,little_e
+	[subject]フォーススクウェア:calc,0x72230C,0x00,0x63,signed,little_e
+	[subject]ポセイドンアドベンチャー:calc,0x722310,0x00,0x63,signed,little_e
+	[subject]クライムザマウンテン:calc,0x722314,0x00,0x63,signed,little_e
+	[subject]愛の鉄槌:calc,0x722318,0x00,0x63,signed,little_e
+	[subject]ヒートローズ:calc,0x72231C,0x00,0x63,signed,little_e
+	[subject]ししの地響き:calc,0x722320,0x00,0x63,signed,little_e
+	[subject]ヘル・恵み:calc,0x722324,0x00,0x63,signed,little_e
+	[subject]ローズスノー:calc,0x722328,0x00,0x63,signed,little_e
+	[subject]アルケミックマリッジ:calc,0x72232C,0x00,0x63,signed,little_e
+	[subject]パワーキャンディー:calc,0x722330,0x00,0x63,signed,little_e
+	[subject]聖なる凝結の雨:calc,0x722334,0x00,0x63,signed,little_e
+	[subject]原質の泉:calc,0x722338,0x00,0x63,signed,little_e
+	[subject]アルケミックトライアングル:calc,0x72233C,0x00,0x63,signed,little_e
+	[subject]マーキュリードロップ:calc,0x722340,0x00,0x63,signed,little_e
+	[subject]天に昇る鳥:calc,0x722344,0x00,0x63,signed,little_e
+	[subject]白鳥が導く昇華:calc,0x722348,0x00,0x63,signed,little_e
+	[subject]豊穣の太陽:calc,0x72234C,0x00,0x63,signed,little_e
+	[subject]ラブアンドゲーム:calc,0x722350,0x00,0x63,signed,little_e
+	[subject]天の憤怒:calc,0x722354,0x00,0x63,signed,little_e
+	[subject]ヴィーナスの抱擁:calc,0x722358,0x00,0x63,signed,little_e
+	[subject]フィロソフィールム:calc,0x72235C,0x00,0x63,signed,little_e
+	[subject]天使の羽毛:calc,0x722360,0x00,0x63,signed,little_e
+	[subject]ベビーフェイス:calc,0x722364,0x00,0x63,signed,little_e
+[back]
+[/script]
+
+[script]
+[title]虜２パラメータ変更
+[process]TORIKO2.EXE
+[maker]D.O.
+[creator]Priss
+[note]
+
+・安定は省きました
+変えても再計算される模様
+
+・データが２個所の
+アドレスでチェックされてる？
+
+面倒ですが両方書き換えて下さい（汗
+
+[/note]
+
+[subject]理香子:dir
+	[subject]意識１:calc,0x8E0304,0x00,0x0063,signed,little_e
+	[subject]意識２:calc,0x9F0530,0x00,0x0063,signed,little_e
+	[subject]体力１:calc,0x8E0306,0x00,0x012C,signed,little_e
+	[subject]体力２:calc,0x9F0532,0x00,0x012C,signed,little_e
+	[subject]理性１:calc,0x8E0308,0x00,0x012C,signed,little_e
+	[subject]理性２:calc,0x9F0534,0x00,0x012C,signed,little_e
+	[subject]従順１:calc,0x8E030A,0x00,0x03E7,signed,little_e
+	[subject]従順２:calc,0x9F0536,0x00,0x03E7,signed,little_e
+	[subject]快楽１:calc,0x8E030E,0x00,0x03E7,signed,little_e
+	[subject]快楽２:calc,0x9F053A,0x00,0x03E7,signed,little_e
+	[subject]恥虐１:calc,0x8E0310,0x00,0x03E7,signed,little_e
+	[subject]恥虐２:calc,0x9F053C,0x00,0x03E7,signed,little_e
+	[subject]被虐１:calc,0x8E0312,0x00,0x03E7,signed,little_e
+	[subject]被虐２:calc,0x9F053E,0x00,0x03E7,signed,little_e
+	[subject]経験１:calc,0x8E0314,0x00,0x0063,signed,little_e
+	[subject]経験２:calc,0x9F0540,0x00,0x0063,signed,little_e
+	[subject]アナル１:calc,0x8E0316,0x00,0x63,signed,little_e
+	[subject]アナル２:calc,0x9F0542,0x00,0x63,signed,little_e
+[back]
+
+[subject]綾乃:dir
+	[subject]意識１:calc,0x8E03B4,0x00,0x0063,signed,little_e
+	[subject]意識２:calc,0x9F05D0,0x00,0x0063,signed,little_e
+	[subject]体力１:calc,0x8E03B6,0x00,0x012C,signed,little_e
+	[subject]体力２:calc,0x9F05D2,0x00,0x012C,signed,little_e
+	[subject]理性１:calc,0x8E03B8,0x00,0x012C,signed,little_e
+	[subject]理性２:calc,0x9F05D4,0x00,0x012C,signed,little_e
+	[subject]従順１:calc,0x8E03BA,0x00,0x03E7,signed,little_e
+	[subject]従順２:calc,0x9F05D6,0x00,0x03E7,signed,little_e
+	[subject]快楽１:calc,0x8E03BE,0x00,0x03E7,signed,little_e
+	[subject]快楽２:calc,0x9F05DA,0x00,0x03E7,signed,little_e
+	[subject]恥虐１:calc,0x8E03C0,0x00,0x03E7,signed,little_e
+	[subject]恥虐２:calc,0x9F05DC,0x00,0x03E7,signed,little_e
+	[subject]被虐１:calc,0x8E03C2,0x00,0x03E7,signed,little_e
+	[subject]被虐２:calc,0x9F05DE,0x00,0x03E7,signed,little_e
+	[subject]経験１:calc,0x8E03C4,0x00,0x0063,signed,little_e
+	[subject]経験２:calc,0x9F05E0,0x00,0x0063,signed,little_e
+	[subject]アナル１:calc,0x8E03C6,0x00,0x63,signed,little_e	
+	[subject]アナル２:calc,0x9F05E2,0x00,0x63,signed,little_e
+[back]
+
+[subject]由紀子:dir
+	[subject]意識１:calc,0x8E0464,0x00,0x0063,signed,little_e
+	[subject]意識２:calc,0x9F0620,0x00,0x0063,signed,little_e
+	[subject]体力１:calc,0x8E0466,0x00,0x012C,signed,little_e
+	[subject]体力２:calc,0x9F0622,0x00,0x012C,signed,little_e
+	[subject]理性１:calc,0x8E0468,0x00,0x012C,signed,little_e
+	[subject]理性２:calc,0x9F0624,0x00,0x012C,signed,little_e
+	[subject]従順１:calc,0x8E046A,0x00,0x03E7,signed,little_e
+	[subject]従順２:calc,0x9F0626,0x00,0x03E7,signed,little_e
+	[subject]快楽１:calc,0x8E046E,0x00,0x03E7,signed,little_e
+	[subject]快楽２:calc,0x9F062A,0x00,0x03E7,signed,little_e
+	[subject]恥虐１:calc,0x8E0470,0x00,0x03E7,signed,little_e
+	[subject]恥虐２:calc,0x9F062C,0x00,0x03E7,signed,little_e
+	[subject]被虐１:calc,0x8E0472,0x00,0x03E7,signed,little_e
+	[subject]被虐２:calc,0x9F062E,0x00,0x03E7,signed,little_e
+	[subject]経験１:calc,0x8E0474,0x00,0x0063,signed,little_e
+	[subject]経験２:calc,0x9F0630,0x00,0x0063,signed,little_e
+	[subject]アナル１:calc,0x8E0476,0x00,0x63,signed,little_e
+	[subject]アナル２:calc,0x9F0632,0x00,0x63,signed,little_e
+[back]
+[/script]
