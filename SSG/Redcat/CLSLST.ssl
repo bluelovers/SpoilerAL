@@ -1,0 +1,166 @@
+[group]CLS_SSG
+[note]wordwrap
+※ジャンプ関係機能は、無敵化を併せて実行していないと意味がありません。
+※嵌ってしまったら、無敵化を一旦解除して死んでください。
+※特殊地形＝本来ミスになる針山・落とし穴の底等。無敵化と特殊地形からでもジャンプ可能機能で脱出可能になります。
+
+ver1.03以降は
+claspe_ver10X.exeをclaspe.exeにリネームするか、本体メニューのメモリ・プロセス→対象プロセスの追加→claspe_ver10X.exeとしてください。
+[/note]
+
+[subject]ver1.00:dir
+
+[subject]アクションパート関連:dir
+ [subject]無敵化/実行/_:toggle,0x416990,33C98BC18904B5C43E6400B10690E9F200000090,8B04B5C43E6400B9060000003BC10F85F1000000
+ [subject]攻撃威力・射程大幅強化/実行/_:toggle,0x416E47,33D2B2C833C9B1963E890C85586F6400B5FF,8B8C94800000008B549440890C85586F6400
+ [subject]無限多段ジャンプ化/実行/_:b_toggle,0x416891,CLSLST->CLS_b,real
+ [subject]ロングジャンプ化/実行/_:toggle,0x43DCA0,0x43DCBF-04000000,0C000000
+ [subject]特殊地形からでもジャンプ可能/実行/_:toggle,0x416854,EB0490909090,0F85E8000000
+ [subject]移動２倍速化（ことみ基準）/実行/_:toggle,0x415E74,B80200000090,8B8094446600
+ [subject]○○減らない/_:d_toggle,0x00,CLSLST->LST_a,CLSLST->LST_b,offset
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]体力/現在値/_:calc,0x057474F0,0x0000,0x03E7,unsigned
+ [e_with],0x0000,0x03E7,unsigned
+  [subject]爆弾/現在値/_:calc,0x663F94
+  [subject]赤い鍵/現在値/_:calc,0x663F98
+  [subject]青い鍵/現在値/_:calc,0x663F9C
+  [subject]照明弾/現在値/_:calc,0x663FA4
+  [subject]コイン/現在値/_:calc,0x663FC0
+ [/e_with]
+[back]
+
+[subject]フラグ関連:dir
+ [subject]全能選択肢出現/実行/_:toggle,0x66503C,01000000,00000000
+ [subject]全宝物出現/実行/_:b_toggle,0x663FE4,CLSLST->CLS_c,real
+ [subject]全隠しキャラ出現/実行/_:toggle,0x66455C,0x664583-01000000
+[back]
+
+[back]
+
+[subject]ver1.03/1.04:dir
+
+[subject]アクションパート関連:dir
+ [subject]無敵化/実行/_:toggle,0x416A00,33C98BC18904B5C43E6400B10690E9F200000090,8B04B5C43E6400B9060000003BC10F85F1000000
+ [subject]攻撃威力・射程大幅強化/実行/_:toggle,0x416EB7,33D2B2C833C9B1963E890C85586F6400B5FF,8B8C94800000008B549440890C85586F6400
+ [subject]無限多段ジャンプ化/実行/_:b_toggle,0x70,CLSLST->CLS_b,offset
+ [subject]ロングジャンプ化/実行/_:toggle,0x43DCA0,0x43DCBF-04000000,0C000000
+ [subject]特殊地形からでもジャンプ可能/実行/_:toggle,0x4168C4,EB0490909090,0F85E8000000
+ [subject]移動２倍速化（ことみ基準）/実行/_:toggle,0x415EE4,B80200000090,8B8094446600
+ [subject]○○減らない/_:d_toggle,0x00,CLSLST->LST_a,CLSLST->LST_2b,offset
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]体力/現在値/_:calc,0x057474F0,0x0000,0x03E7,unsigned
+ [e_with],0x0000,0x03E7,unsigned
+  [subject]爆弾/現在値/_:calc,0x663F94
+  [subject]赤い鍵/現在値/_:calc,0x663F98
+  [subject]青い鍵/現在値/_:calc,0x663F9C
+  [subject]照明弾/現在値/_:calc,0x663FA4
+  [subject]コイン/現在値/_:calc,0x663FC0
+ [/e_with]
+[back]
+
+[subject]フラグ関連:dir
+ [subject]全能選択肢出現/実行/_:toggle,0x66503C,01000000,00000000
+ [subject]全宝物出現/実行/_:b_toggle,0x663FE4,CLSLST->CLS_c,real
+ [subject]全隠しキャラ出現/実行/_:toggle,0x66455C,0x664583-01000000
+[back]
+
+[back]
+
+[subject]ver1.05:dir
+
+[subject]アクションパート関連:dir
+ [subject]無敵化/実行/_:toggle,0x4168D0,33C98BC18904B5843E6400B10690E9F200000090,8B04B5843E6400B9060000003BC10F85F1000000
+ [subject]攻撃威力・射程大幅強化/実行/_:toggle,0x416D87,33D2B2C833C9B1963E890C85186F6400B5FF,8B8C94800000008B549440890C85186F6400
+ [subject]無限多段ジャンプ化/実行/_:b_toggle,0x00,CLSLST->CLS_2b,offset
+ [subject]ロングジャンプ化/実行/_:toggle,0x43DCA0,0x43DCBF-04000000,0C000000
+ [subject]特殊地形からでもジャンプ可能/実行/_:toggle,0x416794,EB0490909090,0F85E8000000
+ [subject]移動２倍速化（ことみ基準）/実行/_:toggle,0x415DB4,B80200000090,8B8054446600
+ [subject]○○減らない/_:d_toggle,0x00,CLSLST->LST_a,CLSLST->LST_3b,offset
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]体力/現在値/_:calc,0x057474B0,0x0000,0x03E7,unsigned
+ [e_with],0x0000,0x03E7,unsigned
+  [subject]爆弾/現在値/_:calc,0x663F54
+  [subject]赤い鍵/現在値/_:calc,0x663F58
+  [subject]青い鍵/現在値/_:calc,0x663F5C
+  [subject]照明弾/現在値/_:calc,0x663F64
+  [subject]コイン/現在値/_:calc,0x663F80
+ [/e_with]
+[back]
+
+[subject]フラグ関連:dir
+ [subject]全能選択肢出現/実行/_:toggle,0x664FFC,01000000,00000000
+ [subject]全宝物出現/実行/_:b_toggle,0x663FE4,CLSLST->CLS_2c,real
+ [subject]全隠しキャラ出現/実行/_:toggle,0x66451C,0x664543-01000000
+[back]
+
+[back]
+
+[/group]
+
+
+[group]CLS_a
+0x412ECB,EB0490909090,0F8F9A000000
+0x415A9A,EB0490909090,0F89B8000000
+[/group]
+
+
+[group]CLS_b
+0x416891,33C990909090,8B0D1CD18C05
+0x4168A5,EB0490909090,0F8C9C000000
+[/group]
+
+
+[group]CLS_2b
+0x4167D1,33C990909090,8B0DDCD08C05
+0x4167E5,EB0490909090,0F8C9C000000
+[/group]
+
+
+[group]CLS_c
+0x663FE4,0x6640A3-01000000,00
+0x664764,0x664823-01000000,00
+[/group]
+
+
+[group]CLS_2c
+0x663FA4,0x664063-01000000,00
+0x664724,0x664823-01000000,00
+[/group]
+
+
+[group]LST_a
+体力減らない
+爆弾減らない
+鍵二種減らない
+照明弾減らない
+[/group]
+
+
+[group]LST_b
+0x4169E9=90/49
+0x41815C=90/4F
+0x41DEA8=90/48
+0x4181AC=90/48
+[/group]
+
+
+[group]LST_2b
+0x416A59=90/49
+0x4181CC=90/4F
+0x41DF68=90/48
+0x41821C=90/48
+[/group]
+
+
+[group]LST_3b
+0x416929=90/49
+0x41809C=90/4F
+0x41DE08=90/48
+0x4180EC=90/48
+[/group]
