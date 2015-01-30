@@ -1,0 +1,221 @@
+«||||||||| Power DoLLS 5 & 5X |||||||||«
+[group]PD5-skill
+			[subject]AP:calc,0x00,0,70,unsigned,little_e
+			[subject]‘Î’n•â³:calc,0x01,0,99,unsigned,little_e
+			[subject]‘Î‹ó•â³:calc,0x02,0,99,unsigned,little_e
+			[subject]”’•º•â³:calc,0x03,0,99,unsigned,little_e
+			[subject]–hŒä•â³:calc,0x04,0,99,unsigned,little_e
+		[back]
+[/group]
+
+[group]PD5-PLD
+			[subject]X5 ‘•b•à•º:		calc,0x00,0,99,unsigned,little_e
+			[subject]X5+ ‘•b•à•º:		calc,0x01,0,99,unsigned,little_e
+			[subject]X5R ‘•bõ“G•à•º:	calc,0x02,0,99,unsigned,little_e
+			[subject]X5RR ‘•bõ“G•à•º:	calc,0x03,0,99,unsigned,little_e
+			[subject]X5C ‘•b‹­P•à•º:	calc,0x04,0,99,unsigned,little_e
+			[subject]X5+C ‘•b‹­P•à•º:	calc,0x05,0,99,unsigned,little_e
+			[subject]X5S ‘•b•à•º:		calc,0x06,0,99,unsigned,little_e
+			[subject]XB-10 ‘•b•à•º:	calc,0x07,0,99,unsigned,little_e
+			[subject]XD-10 ‘•b‰B–§•à•º:	calc,0x08,0,99,unsigned,little_e
+			[subject]XE-10 ‘•bx‰‡•à•º:	calc,0x09,0,99,unsigned,little_e
+			[subject]XC-10 ‘•bŠi“¬•à•º:	calc,0x0A,0,99,unsigned,little_e
+			[subject]XF-10 ‘•b‘_Œ‚—Â•º:	calc,0x0B,0,99,unsigned,little_e
+			[subject]M6RS ©‘–ƒƒPƒbƒg–C:	calc,0x0E,0,99,unsigned,little_e
+[/group]
+
+
+[group]PD5-S_WPN
+			[subject]GS4-30C ƒKƒgƒŠƒ“ƒO–C:	calc,0x0A,0,99,unsigned,little_e
+			[subject]GS5-35A ƒKƒgƒŠƒ“ƒO–C:	calc,0x0B,0,99,unsigned,little_e
+			[subject]NGS-30 ƒKƒgƒŠƒ“ƒO–C:	calc,0x0C,0,99,unsigned,little_e
+			[subject]MC2-4B ˜A‘•‹@ŠÖ–C:	calc,0x0D,0,99,unsigned,little_e
+
+			[subject]NCS-88M ƒLƒƒƒmƒ“:	calc,0x11,0,99,unsigned,little_e
+			[subject]CS6-105 ƒLƒƒƒmƒ“:	calc,0x13,0,99,unsigned,little_e
+			[subject]CS7-120 ƒLƒƒƒmƒ“:	calc,0x16,0,99,unsigned,little_e
+			[subject]CSX-175 ƒLƒƒƒmƒ“:	calc,0x19,0,99,unsigned,little_e
+			[subject]GCX-210 EHC:		calc,0x1A,0,99,unsigned,little_e
+
+			[subject]GL10 ƒOƒŒƒl[ƒh:	calc,0x1F,0,99,unsigned,little_e
+			[subject]GL12 ƒOƒŒƒl[ƒh:	calc,0x20,0,99,unsigned,little_e
+			[subject]NGL-23 ƒOƒŒƒl[ƒh:	calc,0x21,0,99,unsigned,little_e
+
+			[subject]TMS8 ‘ÎíÔƒ~ƒTƒCƒ‹:	calc,0x23,0,99,unsigned,little_e
+			[subject]TMS16 ‘ÎíÔƒ~ƒTƒCƒ‹:	calc,0x24,0,99,unsigned,little_e
+			[subject]MMS3 —¼—pƒ~ƒTƒCƒ‹:	calc,0x2B,0,99,unsigned,little_e
+			[subject]MMS6 ˜A‘•—¼—pƒ~ƒTƒCƒ‹:	calc,0x2C,0,99,unsigned,little_e
+			[subject]NMS-2 —¼—pƒ~ƒTƒCƒ‹:	calc,0x2D,0,99,unsigned,little_e
+			[subject]RS4-9 ƒƒPƒbƒgƒRƒ“ƒeƒi:calc,0x2E,0,99,unsigned,little_e
+[/group]
+
+
+[group]PD5-H_WPN
+			[subject]AL-4 ƒAƒTƒ‹ƒgƒ‰ƒCƒtƒ‹:		calc,0x00,0,99,unsigned,little_e
+			[subject]AL-5 ƒAƒTƒ‹ƒgƒ‰ƒCƒtƒ‹:		calc,0x01,0,99,unsigned,little_e
+			[subject]CP3 SMG:			calc,0x05,0,99,unsigned,little_e
+			[subject]CP1J10 SMG:			calc,0x06,0,99,unsigned,little_e
+			[subject]M7A5 ƒKƒgƒŠƒ“ƒO–C:		calc,0x08,0,99,unsigned,little_e
+			[subject]M9A ƒKƒgƒŠƒ“ƒO–C:		calc,0x09,0,99,unsigned,little_e
+
+			[subject]M-S602 ƒXƒiƒCƒp[ƒ‰ƒCƒtƒ‹:	calc,0x0F,0,99,unsigned,little_e
+			[subject]M-S636 ƒXƒiƒCƒp[ƒ‰ƒCƒtƒ‹:	calc,0x10,0,99,unsigned,little_e
+			[subject]H-K105 ƒnƒ“ƒhƒLƒƒƒmƒ“:		calc,0x12,0,99,unsigned,little_e
+			[subject]H-K120 ƒnƒ“ƒhƒLƒƒƒmƒ“:		calc,0x15,0,99,unsigned,little_e
+			[subject]H-K155 ƒnƒ“ƒhƒLƒƒƒmƒ“:		calc,0x18,0,99,unsigned,little_e
+
+			[subject]AGR-04 ƒOƒŒƒl[ƒh:		calc,0x1B,0,99,unsigned,little_e
+			[subject]M60 ƒOƒŒƒl[ƒh:		calc,0x1D,0,99,unsigned,little_e
+			[subject]M60 ƒƒ“ƒOƒOƒŒƒl[ƒh:		calc,0x1E,0,99,unsigned,little_e
+			[subject]AMS-3 Œgsƒ~ƒTƒCƒ‹:		calc,0x22,0,99,unsigned,little_e
+
+			[subject]SC608 ƒ}ƒ‹ƒ`ƒZƒ“ƒT:		b_calc,0x3D,fugetsu-XP->double-SNS,offset,0,99,unsigned,little_e
+			[subject]SC642 ƒ}ƒ‹ƒ`ƒZƒ“ƒT:		b_calc,0x3E,fugetsu-XP->double-SNS,offset,0,99,unsigned,little_e
+
+			[subject]NCS-1 ƒXƒpƒ“ƒJ[:		calc,0x75,0,99,unsigned,little_e
+			[subject]SV-DR ƒXƒiƒCƒp[ƒ‰ƒCƒtƒ‹:	calc,0x76,0,99,unsigned,little_e
+[/group]
+
+[group]PD5-RCT
+			[subject]R250mm ƒƒPƒbƒg:	b_calc,0x31,fugetsu-XP->double-RCT,offset,0,99,unsigned,little_e
+			[subject]R250mm ‰Œ–‹’e:		b_calc,0x32,fugetsu-XP->double-RCT,offset,0,99,unsigned,little_e
+			[subject]R320mm ƒƒPƒbƒg:	b_calc,0x33,fugetsu-XP->double-RCT,offset,0,99,unsigned,little_e
+			[subject]R320mm ‰Œ–‹’e:		b_calc,0x34,fugetsu-XP->double-RCT,offset,0,99,unsigned,little_e
+			[subject]R400mm ƒƒPƒbƒg:	b_calc,0x35,fugetsu-XP->double-RCT,offset,0,99,unsigned,little_e
+			[subject]R400mm ‰Œ–‹’e:		b_calc,0x36,fugetsu-XP->double-RCT,offset,0,99,unsigned,little_e
+[/group]
+
+[group]double-SNS
+	0x00
+	0x7D
+[/group]
+
+[group]double-RCT
+	0x00
+	0x7A
+[/group]
+
+[group]PD5-BLT
+			[subject]‹@ŠÖe’e:dir
+				[subject]20mm ’Êí’e:	calc,0x00,0,99,unsigned,little_e
+				[subject]20mm ‚‘¬’e:	calc,0x01,0,99,unsigned,little_e
+				[subject].80 ’Êí’e:	calc,0x0B,0,99,unsigned,little_e
+				[subject]30mm ’Êí’e:	calc,0x05,0,99,unsigned,little_e
+				[subject]35mm ’Êí’e:	calc,0x07,0,99,unsigned,little_e
+				[subject]35mm ‚‘¬’e:	calc,0x08,0,99,unsigned,little_e
+				[subject]40mm ’Êí’e:	calc,0x09,0,99,unsigned,little_e
+				[subject]40mm ‚‘¬’e:	calc,0x0A,0,99,unsigned,little_e
+				[subject]155mm C-HESH:	calc,0x4F,0,99,unsigned,little_e
+			[back]
+
+			[subject]ƒXƒiƒCƒp[ƒ‰ƒCƒtƒ‹:dir
+				[subject].80C ‚‘¬’e:	calc,0x0C,0,99,unsigned,little_e
+				[subject].80E “dá’e:	calc,0x0D,0,99,unsigned,little_e
+				[subject].80C2 ‚‘¬’e:	calc,0x0E,0,99,unsigned,little_e
+				[subject].80H2E “dá’e:	calc,0x0F,0,99,unsigned,little_e
+				[subject]76mm APFSDS:	calc,0x50,0,99,unsigned,little_e
+			[back]
+
+			[subject]ƒLƒƒƒmƒ“:dir
+				[subject]88mm ƒLƒƒƒmƒ“:dir
+					[subject]88mm “Ob’e:	calc,0x10,0,99,unsigned,little_e
+					[subject]88mm ÖU’e:	calc,0x11,0,99,unsigned,little_e
+					[subject]88mm ”­‰Œ’e:	calc,0x12,0,99,unsigned,little_e
+				[back]
+				[subject]105mm ƒLƒƒƒmƒ“:dir
+					[subject]105mm “Ob’e:	calc,0x13,0,99,unsigned,little_e
+					[subject]105mm ÖU’e:	calc,0x14,0,99,unsigned,little_e
+					[subject]105mm ”­‰Œ’e:	calc,0x15,0,99,unsigned,little_e
+				[back]
+				[subject]120mm ƒLƒƒƒmƒ“:dir
+					[subject]120mm “Ob’e:	calc,0x16,0,99,unsigned,little_e
+					[subject]120mm ÖU’e:	calc,0x17,0,99,unsigned,little_e
+					[subject]120mm ”­‰Œ’e:	calc,0x18,0,99,unsigned,little_e
+				[back]
+				[subject]155mm ƒLƒƒƒmƒ“:dir
+					[subject]155mm “Ob’e:	calc,0x19,0,99,unsigned,little_e
+					[subject]155mm ÖU’e:	calc,0x1A,0,99,unsigned,little_e
+					[subject]155mm ”­‰Œ’e:	calc,0x1B,0,99,unsigned,little_e
+				[back]
+				[subject]175mm ƒLƒƒƒmƒ“:dir
+					[subject]175mm “Ob’e:	calc,0x1C,0,99,unsigned,little_e
+					[subject]175mm ÖU’e:	calc,0x1D,0,99,unsigned,little_e
+					[subject]175mm ”­‰Œ’e:	calc,0x1E,0,99,unsigned,little_e
+				[back]
+				[subject]210mm ƒLƒƒƒmƒ“:dir
+					[subject]210mm “ObÖ’e:	calc,0x1F,0,99,unsigned,little_e
+					[subject]210mm ”­‰Œ’e:	calc,0x20,0,99,unsigned,little_e
+				[back]
+			[back]
+
+			[subject]ƒOƒŒƒl[ƒh’e:dir
+				[subject]G2HF ƒOƒŒƒl[ƒh’e:	calc,0x23,0,99,unsigned,little_e
+				[subject]G2HS ”­‰Œ’e:		calc,0x24,0,99,unsigned,little_e
+				[subject]G23F ƒOƒŒƒl[ƒh’e:	calc,0x21,0,99,unsigned,little_e
+				[subject]G23S ”­‰Œ’e:		calc,0x22,0,99,unsigned,little_e
+			[back]
+
+			[subject]ƒ~ƒTƒCƒ‹’e“ª:dir
+				[subject]Mk11 ‘ÎíÔ’e“ªiAMS-3ETMS8j	:calc,0x28,0,99,unsigned,little_e
+				[subject]Mk9 ‘ÎíÔ’e“ªiTMS-16j	:calc,0x27,0,99,unsigned,little_e
+				[subject]Mk7M —¼—p’e“ªiMMM3EMMS-2j	:calc,0x30,0,99,unsigned,little_e
+				[subject]Mk7C —¼—p’e“ªiMMS6j		:calc,0x2F,0,99,unsigned,little_e
+				[subject]Mk4C ‘½’e“ª’eiRS4-9j		:calc,0x33,0,99,unsigned,little_e
+			[back]
+[/group]
+
+[group]PD5-item
+			[subject]DD5 èÖ’e:		calc,0x00,0,99,unsigned,little_e
+			[subject]DD5 ”­‰Œ’e:		calc,0x01,0,99,unsigned,little_e
+			[subject]DD6 èÖ’e:		calc,0x02,0,99,unsigned,little_e
+			[subject]DD6 ”­‰Œ’e:		calc,0x03,0,99,unsigned,little_e
+			[subject]DM5 ƒfƒRƒC:		calc,0x04,0,99,unsigned,little_e
+			[subject]DM6 ƒfƒRƒC:		calc,0x05,0,99,unsigned,little_e
+
+			[subject]SC38 ƒ}ƒ‹ƒ`ƒZƒ“ƒT:	calc,0x0A,0,99,unsigned,little_e
+			[subject]SC39 ƒ}ƒ‹ƒ`ƒZƒ“ƒT:	calc,0x0B,0,99,unsigned,little_e
+			[subject]SCR10 ƒvƒ[ƒu:	calc,0x0C,0,99,unsigned,little_e
+			[subject]SCR11 ƒvƒ[ƒu:	calc,0x0D,0,99,unsigned,little_e
+			[subject]LE300 ƒpƒbƒVƒuƒZƒ“ƒT:	calc,0x0E,0,99,unsigned,little_e
+			[subject]SX5 ƒXƒ^ƒ“ƒ|ƒbƒh:	calc,0x0F,0,99,unsigned,little_e
+			[subject]SX6 ƒXƒ^ƒ“ƒ|ƒbƒh:	calc,0x10,0,99,unsigned,little_e
+			[subject]TX58 ‚«”\”š–ò:	calc,0x11,0,99,unsigned,little_e
+
+[/group]
+
+[group]PD5-AIR
+			[subject]C637 í—ª—A‘—‹@:	calc,0x00,0,99,unsigned,little_e
+			[subject]AC157 íp—A‘—‹@:	calc,0x01,0,99,unsigned,little_e
+			[subject]F261 í“¬UŒ‚‹@:	calc,0x02,0,99,unsigned,little_e
+			[subject]VC213 —A‘—‹@:		calc,0x03,0,99,unsigned,little_e
+[/group]
+
+[group]PD5-AirWPN
+			[subject]TMS18 ‘ÎíÔƒ~ƒTƒCƒ‹:	calc,0x00,0,99,unsigned,little_e
+			[subject]TMS19 ‘ÎíÔƒ~ƒTƒCƒ‹:	calc,0x01,0,99,unsigned,little_e
+			[subject]AIM36C ’·‹——£AAM:	calc,0x02,0,99,unsigned,little_e
+			[subject]AIM23 ’†‹——£AAM:	calc,0x03,0,99,unsigned,little_e
+			[subject]AIM611G ’Z‹——£AAM:	calc,0x04,0,99,unsigned,little_e
+			[subject]ARCL 50mm ƒƒPƒbƒg:	calc,0x0A,0,99,unsigned,little_e
+			[subject]ARCL 60mm ƒƒPƒbƒg:	calc,0x0B,0,99,unsigned,little_e
+			[subject]Mk2R ”š’e:		calc,0x12,0,99,unsigned,little_e
+			[subject]Mk2L ”š’e:		calc,0x13,0,99,unsigned,little_e
+			[subject]Mk2R5 ”š’e:		calc,0x14,0,99,unsigned,little_e
+			[subject]Mk2L5 ”š’e:		calc,0x15,0,99,unsigned,little_e
+			[subject]MK5L ”š’e:		calc,0x16,0,99,unsigned,little_e
+			[subject]MK5R ”š’e:		calc,0x17,0,99,unsigned,little_e
+[/group]
+
+[group]PD5-AirBLT
+			[subject]Mk18 ‘ÎíÔ’e“ª(TMS18):calc,0x00,0,99,unsigned,little_e
+			[subject]Mk19 ‘ÎíÔ’e“ª(TMS19):calc,0x01,0,99,unsigned,little_e
+			[subject]Mk36 ‘Î‹ó’e“ª(AIM36C): calc,0x06,0,99,unsigned,little_e
+			[subject]Mk23 ‘Î‹ó’e“ª(AIM23): 	calc,0x04,0,99,unsigned,little_e
+			[subject]Mk6 ‘Î‹ó’e“ª(AIM611G):	calc,0x03,0,99,unsigned,little_e
+			[subject]50mm ƒƒPƒbƒg’e:	calc,0x08,0,99,unsigned,little_e
+			[subject]60mm ƒƒPƒbƒg’e:	calc,0x09,0,99,unsigned,little_e
+			[subject]200Kg ”š’e(Mk2R Mk2L):	calc,0x12,0,99,unsigned,little_e
+			[subject]250Kg ”š’e(Mk2R5 Mk2L5):calc,0x13,0,99,unsigned,little_e
+			[subject]400Kg ”š’e(Mk5L Mk5R):	calc,0x14,0,99,unsigned,little_e
+[/group]
+ª||||||||| Power DoLLS 5 & 5X |||||||||ª
