@@ -1,0 +1,11 @@
+[subject]”NŒ:dir
+[subject]¼—ï:calc,0x58800E,0x60F,0x7CF,unsigned
+[subject]Œ:calc,0x588016,0x1,0xC,unsigned
+[back]
+[subject]•«”\—Í:dir
+[replace]0x588090,n7busyouname,offset
+[replace]0x588090,n7busyouname2,offset
+[back]
+[subject]é”’l:dir
+[replace]0x5CB0B0,n7shironame,offset
+[root]
