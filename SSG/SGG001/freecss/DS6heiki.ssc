@@ -1,0 +1,98 @@
+[subject]•ºŠí–¼:string,0x00,0x16,NULL
+//[subject]¬‘à\¬”:calc,0x26,0x00,0xFF,unsigned,little_e
+[subject]‘Ï‹v“xi‚P‹@E‘ä“–‚½‚èj:calc,0x27,0x00,0xFF,unsigned,little_e
+[subject]‰Šú”ï—p:calc,0x72,0x000000,0xFFFFFF,unsigned,little_e
+[subject]“‹Ú:dir
+[subject]“‹Úí—Ş:d_list,0x2F,DS6tousaiSyu_d,0x00,0xFF,DS6tousaiNo_d
+[subject]“‹Ú—e—Ê:calc,0x76,0x0000,0xFFFF,unsigned,little_e
+[back]
+[subject]“‹æ:dir
+[subject]ŠÍÚ ON:toggle,0x24,04,00
+[subject]VTOL ON:toggle,0x87,04,00
+[subject]“‹æ—e—Ê:calc,0x78,0x0000,0xFFFF,unsigned,little_e
+[back]
+[subject]‘¬“x:calc,0x7E,0x00,0xFF,unsigned,little_e
+[subject]–hŒä—ÍE‰B•ÁEõ“G”\—Í:dir
+[subject]‘S”\—ÍˆêŠ‡MAX:b_toggle,0x1A,DS6bismax,offset
+[subject]–hŒä—Í:dir
+	[subject]–hŒä—Íi‚j:calc,0x1A,0x00,0x64,unsigned,little_e
+	[subject]–hŒä—Íi’†j:calc,0x1B,0x00,0x64,unsigned,little_e
+	[subject]–hŒä—Íi’áj:calc,0x1C,0x00,0x64,unsigned,little_e
+	[subject]–hŒä—ÍiÔj:calc,0x1D,0x00,0x64,unsigned,little_e
+	[subject]–hŒä—Íi•ºj:calc,0x1E,0x00,0x64,unsigned,little_e
+	[subject]–hŒä—Íiij:calc,0x1F,0x00,0x64,unsigned,little_e
+	[subject]–hŒä—ÍiŠÍj:calc,0x20,0x00,0x64,unsigned,little_e
+	[subject]–hŒä—Íiöj:calc,0x21,0x00,0x64,unsigned,little_e
+	[subject]–hŒä—Íiƒ~j:calc,0x22,0x00,0x64,unsigned,little_e
+	[subject]–hŒä—Íiİj:calc,0x23,0x00,0x64,unsigned,little_e
+[back]
+[subject]‰B•Á”\—Í:dir
+	[subject]‰B•Á”\—Íi‘Ò‹@j:calc,0x28,0x00,0x64,unsigned,little_e
+	[subject]‰B•Á”\—Íis“®j:calc,0x29,0x00,0x64,unsigned,little_e
+[back]
+[subject]õ“G”\—Í:dir
+	[subject]q‹óiƒŒ[ƒ_[j:calc,0x2A,0x00,0x14,unsigned,little_e
+	[subject]ƒwƒŠiƒŒ[ƒ_[j:calc,0x2B,0x00,0x14,unsigned,little_e
+	[subject]—¤ãiƒŒ[ƒ_[j:calc,0x2C,0x00,0x14,unsigned,little_e
+	[subject]ŠCãiƒŒ[ƒ_[j:calc,0x2D,0x00,0x14,unsigned,little_e
+	[subject]ŠC’†iƒŒ[ƒ_[j:calc,0x2E,0x00,0x14,unsigned,little_e
+[back]
+[back]
+[subject]•‘•í—Ş:dir
+	[subject]‚v‚P:list,0x32,DS6busou,0x1,0x1
+	[subject]‚v‚Q:list,0x34,DS6busou,0x1,0x1
+	[subject]‚v‚R:list,0x36,DS6busou,0x1,0x1
+	[subject]‚v‚S:list,0x38,DS6busou,0x1,0x1
+	[subject]‚v‚T:list,0x3A,DS6busou,0x1,0x1
+	[subject]‚v‚U:list,0x3C,DS6busou,0x1,0x1
+[back]
+[subject]•Ší’e”:dir
+[subject]‘SPackˆêŠ‡MAX:b_toggle,0x3E,DS6packmax,offset
+[subject]Pack‚P:dir
+	[subject]W‚P:calc,0x3E,0x00,0xFF,unsigned,little_e
+	[subject]W‚Q:calc,0x3F,0x00,0xFF,unsigned,little_e
+	[subject]W‚R:calc,0x40,0x00,0xFF,unsigned,little_e
+	[subject]W‚S:calc,0x41,0x00,0xFF,unsigned,little_e
+	[subject]W‚T:calc,0x42,0x00,0xFF,unsigned,little_e
+	[subject]W‚U:calc,0x43,0x00,0xFF,unsigned,little_e
+	[subject]ƒ^ƒ“ƒN:calc,0x45,0x00,0xFF,unsigned,little_e
+	[subject]ECM:calc,0x46,0x00,0xFF,unsigned,little_e
+	[subject]”R—¿:calc,0x48,0x0000,0xFFFF,unsigned,little_e
+[back]
+[subject]Pack‚Q:dir
+	[subject]W‚P:calc,0x4A,0x00,0xFF,unsigned,little_e
+	[subject]W‚Q:calc,0x4B,0x00,0xFF,unsigned,little_e
+	[subject]W‚R:calc,0x4C,0x00,0xFF,unsigned,little_e
+	[subject]W‚S:calc,0x4D,0x00,0xFF,unsigned,little_e
+	[subject]W‚T:calc,0x4E,0x00,0xFF,unsigned,little_e
+	[subject]W‚U:calc,0x4F,0x00,0xFF,unsigned,little_e
+	[subject]ƒ^ƒ“ƒN:calc,0x51,0x00,0xFF,unsigned,little_e
+	[subject]ECM:calc,0x52,0x00,0xFF,unsigned,little_e
+	[subject]”R—¿:calc,0x54,0x0000,0xFFFF,unsigned,little_e
+[back]
+[subject]Pack‚R:dir
+	[subject]W‚P:calc,0x56,0x00,0xFF,unsigned,little_e
+	[subject]W‚Q:calc,0x57,0x00,0xFF,unsigned,little_e
+	[subject]W‚R:calc,0x58,0x00,0xFF,unsigned,little_e
+	[subject]W‚S:calc,0x59,0x00,0xFF,unsigned,little_e
+	[subject]W‚T:calc,0x5A,0x00,0xFF,unsigned,little_e
+	[subject]W‚U:calc,0x5B,0x00,0xFF,unsigned,little_e
+	[subject]ƒ^ƒ“ƒN:calc,0x5D,0x00,0xFF,unsigned,little_e
+	[subject]ECM:calc,0x5E,0x00,0xFF,unsigned,little_e
+	[subject]”R—¿:calc,0x60,0x0000,0xFFFF,unsigned,little_e
+[back]
+[subject]Pack‚S:dir
+	[subject]W‚P:calc,0x62,0x00,0xFF,unsigned,little_e
+	[subject]W‚Q:calc,0x63,0x00,0xFF,unsigned,little_e
+	[subject]W‚R:calc,0x64,0x00,0xFF,unsigned,little_e
+	[subject]W‚S:calc,0x65,0x00,0xFF,unsigned,little_e
+	[subject]W‚T:calc,0x66,0x00,0xFF,unsigned,little_e
+	[subject]W‚U:calc,0x67,0x00,0xFF,unsigned,little_e
+	[subject]ƒ^ƒ“ƒN:calc,0x69,0x00,0xFF,unsigned,little_e
+	[subject]ECM:calc,0x6A,0x00,0xFF,unsigned,little_e
+	[subject]”R—¿:calc,0x6C,0x0000,0xFFFF,unsigned,little_e
+[back]
+[back]
+
+[back]
+
