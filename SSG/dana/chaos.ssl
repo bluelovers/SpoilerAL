@@ -1,0 +1,56 @@
+[group]chaos_ssg
+[note]wordwrap
+LIFEやSOUL等で(表示)とあるのは、画面上部に表示されているバーを指します。
+一方、(表示)がついていないのは、ステータス画面で確認できるものです。
+
+ATTACK、DEFENSE、全レギオン存在、全レギオンLVMAXはONにした後、チェックを外しても、ONにする前の状態に戻るわけではありません。
+一度ONにしたら、チェックを外さないようにしてください。
+
+LIFE減らない、敵一撃死はジーク、アーシア共通です。
+[/note]
+
+[subject]ジーク:dir
+[subject]LIFE(表示):calc,0xADBD34,0,1000
+[subject]LIFEMAX(表示):calc,0xAD9B8A,0,1000
+[subject]SOUL(表示):calc,0xAD9B44,0,1500
+[subject]SOULMAX(表示):calc,0xAD9B46,0,1500
+[subject]SOUL減らない/オン/_:toggle,0x47ACB7,*{ 740E :: 7400 *},*{ 7400 :: 740E *}
+[subject]LIFE:calc,0xAD9B88,0,1000
+[subject]SOUL:calc,0xAD9B48,0,1500
+[subject]ATTACK/MAX/_:toggle,0xAD9B8C,0050,0000
+[subject]DEFENSE/MAX/_:toggle,0xAD9B90,0000,0050
+[subject]全レギオン存在/ON/_:toggle,0xAD9B35,F7,01
+[subject]全レギオンLVMAX/ON/_:b_toggle,0,chaos->chaos1,real
+[back]
+
+[subject]アーシア:dir
+[subject]LIFE(表示):calc,0xADBD34,0,1000
+[subject]LIFEMAX(表示):calc,0xAD9BA2,0,1000
+[subject]LIFEMAX:calc,0xAD9BA0,0,1000
+[subject]ATTACK/MAX/_:toggle,0xAD9BA5,50,00
+[subject]DEFENSE/MAX/_:toggle,0xAD9BA9,00,50
+[subject]SP.BULLETMAX:calc,0xAD9B43,0,10
+[subject]SP.BULLET:calc,0xAD9B42,0,10
+[subject]SP.BULLET減らない/オン/_:toggle,0x456565,*{ FEC8 :: 9090 *},*{ 9090 :: FEC8 *}
+[back]
+
+[subject]LIFE減らない/オン/_:toggle,0x422270,*{ 66833D34BDAD00007E58 :: C70534BDAD00E8030000 *},*{ C70534BDAD00E8030000 :: 66833D34BDAD00007E58 *}
+[subject]一撃死(自分は無敵)/オン/_:b_toggle,0,chaos->chaos2,real
+[subject]一撃死(自分も敵も)/オン/_:toggle,0xAD9B31,01,00
+
+
+[/group]
+
+
+[group]chaos1
+0xAD9B50,7707777777077777,0000000000000000
+0xAD9B58,220222222202222222022222,000000000000000000000000
+[/group]
+
+[group]chaos2
+0x478A37,*{ 6639960C1E0000 :: 6689960C1E0000 *},*{ 6689960C1E0000 :: 6639960C1E0000 *}
+0x478A3E,*{ 0F8F4F02000033C05566 :: C70534BDAD00E7030000 *},*{ C70534BDAD00E7030000 :: 0F8F4F02000033C05566 *}
+0x478A48,*{ 8B86CE0100 :: E946020000 *},*{ E946020000 :: 8B86CE0100 *}
+[/group]
+
+
