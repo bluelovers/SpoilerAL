@@ -1,0 +1,30 @@
+[group]TER_SSG
+[note]wordwrap
+性能強化：
+配置される際に効果。リスト上部10機が対象。固定値なので、データロード等すると戻ります。
+[/note]
+
+[replace]_[:[:[:(MName::Sys42VM.dll)+0x060D28:]+0x9C:]+0x10:],TERLST->TER_Work01
+[replace]_[:[:[:(MName::Sys42VM.dll)+0x060D28:]+0x02D4:]+0x10:],TERLST->TER_Work02
+[subject]基本性能強化:dir
+ [replace]_[:[:[:(MName::Sys42VM.dll)+0x060D28:]+0x18:]+0x10:]=>temp;([:$temp:])*0x04+0x04=>temp;[:[:[:(MName::Sys42VM.dll)+0x060D28:]+$temp:]+0x10:],TERLST->R2
+ [repeat]TERLST->TEREP1,0,9,1
+[back]
+
+[/group]
+
+[group]TEREP1
+[replace]_0x[! 0x04+0x04*$Val !]=>temp;[:[:[:(MName::Sys42VM.dll)+0x060D28:]+0xA4:]+0x10:]+$temp=>temp;([:$temp:])*0x04+0x04=>temp;[:[:[:(MName::Sys42VM.dll)+0x060D28:]+$temp:]+0x10:],TERLST->R2
+[/group]
+
+[group]R2
+[subject]_mem,_([\:[.0.]\:])*0x04=>temp;[\:[\:[\:(MName\:\:Sys42VM.dll)+0x060D28\:]+$temp\:]+0x10\:],20,00,<NoData>'+'　性能強化/実行/固定:toggle,_([:[.0x0C.]:])*0x04=>temp;[:[:[:(MName::Sys42VM.dll)+0x060D28:]+$temp:]+0x10:]+0x50,63000000060000006300000063000000630000000A00000032000000
+[/group]
+
+[group]TER_Work01
+[subject]物資［'+'_mem,0x40,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x40,0x00000000,0x3B9AC9FF,unsigned
+[/group]
+
+[group]TER_Work02
+[subject]撃破［'+'_mem,0x00,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x00,0x00000000,0x270F,unsigned
+[/group]
