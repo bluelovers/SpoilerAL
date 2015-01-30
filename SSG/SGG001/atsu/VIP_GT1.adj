@@ -1,0 +1,14 @@
+[note]
+自宅や行動時に表示される各パラメータを、
+全て入力して下さいな。
+表示は容姿・知力の順ですが、
+入力は知力・容姿であることにも注意！
+
+16進/10進に注意して下さいね(^^)
+[/note]
+[val]*. *+0104 *. *+0104 *. *+0104 *. *+0104 *. *+0104
+[calc]所持金,no,0,0xFFFFFFFF,unsigned
+[calc]体力,no,0,0xFFFFFFFF,unsigned
+[calc]知力,no,0,0xFFFFFFFF,unsigned
+[calc]容姿,no,0,0xFFFFFFFF,unsigned
+[calc]ストレス,no,0,0xFFFFFFFF,unsigned
