@@ -1,0 +1,14 @@
+[e_with],0x0000,0x03E7,unsigned
+[subject]最大体力/現在値/_:calc,0x00
+[subject]最大気力/現在値/_:calc,0x02
+[subject]敏捷/現在値/_:calc,0x04
+[subject]攻撃力/現在値/_:calc,0x06
+[subject]仙力/現在値/_:calc,0x08
+[subject]防御力/現在値/_:calc,0x0A
+[subject]抵抗力/現在値/_:calc,0x0C
+[subject]格上昇まで…/現在値/_:calc,0x0E
+[subject]格/現在値/_:calc,0x12
+[subject]現在体力/現在値/_:calc,0x14
+[subject]現在気力/現在値/_:calc,0x16
+[/e_with]
+[back]
