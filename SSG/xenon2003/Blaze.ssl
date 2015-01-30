@@ -1,0 +1,47 @@
+[group]ステータス3
+	[subject]LV: calc,0x00,00,99
+	[subject]EXP: calc,0x02,00,65000
+	[subject]HP(最高): calc,0x04,00,65000
+	[subject]TP(最高): calc,0x06,00,9999
+	[subject]Attack: calc,0x08,00,9999
+	[subject]Skill: calc,0x0A,00,9999
+	[subject]Def: calc,0x0C,00,9999
+	[subject]Agi: calc,0x0E,00,9999
+	[subject]Speed: calc,0x10,00,9999
+	[subject]Move: calc,0x12,00,9999
+	[subject]Climb: calc,0x14,00,9999
+[/group]
+
+[group]ステータス2
+    [subject][! @Blaze->キャラLIST, $Val !]:dir
+        [replace]0x[! 0x45BEA0+ $Val *64 !], Blaze->ステータス3
+    [back]
+[/group]
+
+[/group]
+[group]ステータス1
+    [subject][! @Blaze->キャラLIST, $Val !]:dir
+        [replace]0x[! 0x45BEA0+ $Val *64 !], Blaze->ステータス3
+    [back]
+[/group]
+[group]キャラLIST
+ディーン
+--
+レナ
+マクシミリアン
+ソリア
+リノア
+キルレイン
+エカテリーナ
+ライラ
+ウォレス
+アメリア
+ミザリィ
+クラックル
+エレンシア
+シェラ
+グラハム
+[/group]
+
+lv48D9A0/hp48D9D8/tp48D9DC
+lv48DAB8/hp48DAC0
