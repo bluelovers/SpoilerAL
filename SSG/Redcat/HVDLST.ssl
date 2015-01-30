@@ -1,0 +1,518 @@
+[group]HVD_SSG
+[note]wordwrap
+※必要の無い限りガイドフォームは外しておいてください。
+※ソフト同封パッチ適応のもの(ver1.10/1.20)対応です。
+※機能の中には反映が必要なものもあります。大抵は戦闘に入ったり１ターン経過すればＯＫ。
+
+コマンド使用済状態解除：
+固定しておくと、略奪・破壊・療養・繁殖を何度も実行できます。
+
+全指揮官の行動済状態解除：
+固定しておくと、略奪や破壊を一度に行えます。
+
+※双方組み合わせることでより効果が上がります。
+
+
+■■■メイシアとセレスの捕縛条件についての考察ver1.10
+
+
+メイシアを捕縛する方法：
+「邂逅イベント１・２が成立した状態」且つ『セレスの邂逅イベント１及び繁殖可能（捕縛済み）フラグが双方起っていない』状態で、ク・ケンズ大聖堂を制圧。
+
+
+セレスを捕縛する方法：
+「邂逅イベント１・２及び３か４のいずれかが成立した状態」且つ『メイシアの邂逅イベント１及び繁殖可能（捕縛済み）フラグが双方起っていない』状態で、再度勇者討伐でフェルザー自身がセレスを倒す。
+
+
+片方が捕縛されてる状態でもう片方を捕縛する方法：
+捕縛した方の邂逅イベント１及び繁殖可能（捕縛済み）フラグを一時落とせば可能。捕縛後落としたフラグを戻さないと繁殖できないので注意。
+
+
+※ver1.10と1.20の違い：邂逅イベント１が最初に発生しなかった方にも同フラグが起つようになった。捕縛時に互いの邂逅イベント１フラグによる排他制限がなくなった。
+
+※無論あり得ない状況を作る以上、好ましくない不都合が発生するかもしれません。データのバックアップは忘れずに。
+[/note]
+
+[subject]SLGパート関連:dir
+	[subject]戦闘中SPLVMAX化/実行/固定:toggle,_[:[:0x4DFC64:]+0x4B:]+0x014A,050000000
+	[subject]コマンド使用済状態解除/実行/固定:toggle,_[:[:0x4DFC64:]+0x81:]+0x1BDA,?0
+	[subject]全指揮官の行動済状態解除/実行/固定:b_toggle,_[:[:[:0x4DFC64:]+0x11:],HVDLST->HVD_e,offset
+[back]
+
+[subject]パラメータ関連:dir
+	[replace]_[:[:0x4DFC64:]+0x81:],HVDLST->HVD_d,offset
+ [subject]指揮官ステータス:dir
+	[repeat]HVDLST->HVDREP1,0,29,1
+ [back]
+ [subject]子供のステータス:dir
+	[repeat]HVDLST->HVDREP2,30,60,1
+ [back]
+ [subject]好感度確認調整:dir
+	[replace]_[:[:0x4DFC64:]+0x81:],HVDLST->HVD_test
+ [back]
+[back]
+
+[subject]アイテム関連:dir
+ [subject]装備品:dir
+  [size]1
+	[subject]所持数指定/実行/_:calc,0x49FD68,0x00,0x63,unsigned
+	[subject]全種指定数所持/実行／全破棄/_:b_toggle,0x00,HVDLST->HVD_b,offset
+	[subject]個別変化指定アイテム/_:list,0x49FD6C,HVDLST->LST_e,0x00,0x01
+ 	[subject]_mem,_0x49FD6C,1,list,<NoData>,HVDLST->LST_e,0x00,0x01'+'の数量/現在値/_:b_calc,0x00,HVDLST->HVD_c,offset,0x00,0x63,unsigned
+  [/size]
+ [back]
+ [subject]イベント及び消費アイテム:dir
+  [size]1
+ 	[subject]所持数指定/実行/_:calc,0x49FD60,0x00,0x63,unsigned
+ 	[subject]全種指定数所持/実行／全破棄/_:toggle,_[:[:0x4DFC64:]+0x68:]+0x01,_[:[:0x4DFC64:]+0x68:]+0x58-$1 [:0x49FD60:1] $$,00
+ 	[subject]個別変化指定アイテム/_:list,0x49FD64,HVDLST->LST_d,0x00,0x01
+ 	[subject]_mem,0x49FD64,1,list,<NoData>,HVDLST->LST_d,0x00,0x01'+'の数量/現在値/_:calc,_[:[:0x4DFC64:]+0x68:]+[:0x49FD64:1],0x00,0x63,unsigned
+  [/size]
+ [back]
+[back]
+
+[subject]フラグ関連:dir
+	[subject]メイシア捕縛確定フラグ/_:d_toggle,_[:[:0x4DFC64:]+0x81:],HVDLST->MS1,HVDLST->MS2,offset
+	[subject]セレス捕縛確定フラグ/_:d_toggle,_[:[:0x4DFC64:]+0x81:],HVDLST->CL1,HVDLST->CL2,offset
+[back]
+
+[subject]ＣＧモード関連:dir
+	[replace]_[:0x5AA25C:],HVDLST->HVD_CG
+[back]
+
+[/group]
+
+
+[group]HVD_CG
+[subject]ADDITION出現/ＯＮ／ＯＦＦ/_:toggle,0x21B2,01,00
+[subject]CG RECOLLECTION ALL/ＯＮ／ＯＦＦ/_:toggle,0x2032,0x2045-FF,00
+[subject]SCENE RECOLLECTION ALL/ＯＮ／ＯＦＦ/_:toggle,0x2161,0x2171-FF,00
+[/group]
+
+
+[group]HVDREP1
+[replace]_0x[! 0x52*$Val !]=>temp;[:[:[:0x4DFC64:]+0x11:]+$temp+0x0A:],HVDLST->HVD_1PR
+[replace]_[:[:0x4DFC64:]+0x11:]+0x[! 0x52*$Val !],HVDLST->HVD_2PR
+[replace]_[:[:0x4E01DC:]+0x0105:]+0x3F47+0x[! 0x20*$Val !],HVDLST->HVD_3PR
+[/group]
+
+
+[group]HVDREP2
+[replace]_0x[! 0x52*$Val !]=>temp;[:[:[:0x4DFC64:]+0x11:]+$temp+0x0A:],HVDLST->HVD_4PR
+[replace]_[:[:0x4DFC64:]+0x11:]+0x[! 0x52*$Val !],HVDLST->HVD_5PR
+[replace]_[:[:0x4E01DC:]+0x0105:]+0x3F47+0x[! 0x20*$Val !],HVDLST->HVD_6PR
+[/group]
+
+
+[group]HVD_1PR
+[subject]_mem,0x00,16,00,<NoData>:dir
+ [subject]ゲーム上参照データ:dir
+ [size]1
+  [subject]基本出産数/現在値/_:calc,0x30,0x01,0x09,unsigned
+  [subject]基本出産ターン数/現在値/_:calc,0x31,0x01,0x09,unsigned
+ [/size]
+[/group]
+
+
+[group]HVD_4PR
+[subject]_mem,0x00,16,00,<NoData>:dir
+ [subject]ゲーム上参照データ:dir
+[/group]
+
+
+[group]HVD_2PR
+[subject]行動済状態リセット/実行/固定:toggle,0x00,00
+[subject]能力のみ一括強化/実行/_:b_toggle,0x00,HVDLST->HVD_a,offset
+[size]1
+ [io_fep]$Val-1, $Val+1
+  [subject]ＬＶ/現在値/_:calc,0x02,0x00,0x31,unsigned
+ [/io_fep]
+[subject]消費ＭＰ/現在値/_:calc,0x05,0x00,0x03,unsigned
+[subject]属性/_:list,0x0E,HVDLST->LST_a,0x00,0x01
+[/size]
+[size]4
+ [subject]経験値/現在値/_:calc,0x06,0x00000000,0x0F423F,unsigned
+[/size]
+[size]2
+ [subject]現在ＨＰ/現在値/_:calc,0x10,0x0000,0x03E7,unsigned
+ [subject]最大ＨＰ/現在値/_:calc,0x12,0x0001,0x03E7,unsigned
+ [subject]攻撃/現在値/_:calc,0x14,0x01,0x63,unsigned
+ [subject]防御/現在値/_:calc,0x16,0x01,0x63,unsigned
+ [subject]指揮/現在値/_:calc,0x1C,0x01,0x09,unsigned
+ [subject]必殺技/_:list,0x1E,HVDLST->LST_b,0x00,0x01
+ [subject]特殊能力/_:list,0x22,HVDLST->LST_c,0x00,0x01
+ [subject]装備/_:list,0x20,HVDLST->LST_e,0x00,0x01
+ [subject]戦闘回数/現在値/_:calc,0x4A,0x0000,0x03E7,unsigned
+ [subject]戦闘不能回数/現在値/_:calc,0x4C,0x0000,0x03E7,unsigned
+ [subject]繁殖回数/現在値/_:calc,0x4E,0x0000,0x03E7,unsigned
+ [subject]出産回数/現在値/_:calc,0x50,0x0000,0x03E7,unsigned
+[/size]
+[back]
+[/group]
+
+
+[group]HVD_5PR
+[subject]能力のみ一括強化/実行/_:b_toggle,0x00,HVDLST->HVD_2a,offset
+[size]1
+ [io_fep]$Val-1, $Val+1
+  [subject]ＬＶ/現在値/_:calc,0x02,0x00,0x31,unsigned
+ [/io_fep]
+[subject]属性/_:list,0x0E,HVDLST->LST_a,0x00,0x01
+[/size]
+[size]2
+ [subject]現在ＨＰ/現在値/_:calc,0x10,0x0000,0x03E7,unsigned
+ [subject]最大ＨＰ/現在値/_:calc,0x12,0x0001,0x03E7,unsigned
+ [subject]攻撃/現在値/_:calc,0x14,0x01,0x63,unsigned
+ [subject]防御/現在値/_:calc,0x16,0x01,0x63,unsigned
+ [subject]特殊能力/_:list,0x22,HVDLST->LST_c,0x00,0x01
+[/size]
+[back]
+[/group]
+
+
+[group]HVD_3PR
+[subject]データ保存用参照データ:dir
+[size]1
+ [io_fep]$Val-1, $Val+1
+  [subject]ＬＶ/現在値/_:calc,0x02,0x00,0x31,unsigned
+ [/io_fep]
+[/size]
+[size]4
+ [subject]経験値/現在値/_:calc,0x03,0x00000000,0x2710,unsigned
+[/size]
+[size]2
+ [subject]現在ＨＰ/現在値/_:calc,0x07,0x0000,0x03E7,unsigned
+ [subject]最大ＨＰ/現在値/_:calc,0x09,0x0001,0x03E7,unsigned
+ [subject]攻撃/現在値/_:calc,0x0B,0x00,0x63,unsigned
+ [subject]防御/現在値/_:calc,0x0D,0x00,0x63,unsigned
+[/size]
+[size]1
+ [subject]特殊能力/_:list,0x0F,HVDLST->LST_c,0x00,0x01
+ [subject]装備/_:list,0x10,HVDLST->LST_e,0x00,0x01
+[/size]
+[size]2
+ [subject]戦闘回数/現在値/_:calc,0x19,0x0000,0x03E7,unsigned
+ [subject]戦闘不能回数/現在値/_:calc,0x1B,0x0000,0x03E7,unsigned
+ [subject]繁殖回数/現在値/_:calc,0x1D,0x0000,0x03E7,unsigned
+ [subject]出産回数/現在値/_:calc,0x1F,0x0000,0x03E7,unsigned
+[/size]
+[back]
+[back]
+[/group]
+
+
+[group]HVD_6PR
+[subject]データ保存用参照データ:dir
+[size]1
+ [io_fep]$Val-1, $Val+1
+  [subject]ＬＶ/現在値/_:calc,0x02,0x00,0x31,unsigned
+ [/io_fep]
+[/size]
+[size]2
+ [subject]現在ＨＰ/現在値/_:calc,0x07,0x0000,0x03E7,unsigned
+ [subject]最大ＨＰ/現在値/_:calc,0x09,0x0001,0x03E7,unsigned
+ [subject]攻撃/現在値/_:calc,0x0B,0x00,0x63,unsigned
+ [subject]防御/現在値/_:calc,0x0D,0x00,0x63,unsigned
+[/size]
+[size]1
+ [subject]特殊能力/_:list,0x0F,HVDLST->LST_c,0x00,0x01
+[/size]
+[back]
+[back]
+[/group]
+
+
+[group]HVD_test
+[subject]アンディオス/現在値/_:calc,0x0DD4,0x0000,0x03E7,unsigned
+[subject]アレット/現在値/_:calc,0x0DD8,0x0000,0x03E7,unsigned
+[subject]ディーネ/現在値/_:calc,0x0DDC,0x0000,0x03E7,unsigned
+[subject]ファオラ/現在値/_:calc,0x0DE0,0x0000,0x03E7,unsigned
+[subject]ノイシス/現在値/_:calc,0x0DF0,0x0000,0x03E7,unsigned
+[subject]メイシア/現在値/_:calc,0x0DF4,0x0000,0x03E7,unsigned
+[subject]モモ/現在値/_:calc,0x0DF8,0x0000,0x03E7,unsigned
+[subject]カルデリーズ/現在値/_:calc,0x0E00,0x0000,0x03E7,unsigned
+[subject]セレス/現在値/_:calc,0x0E04,0x0000,0x03E7,unsigned
+[subject]雪音/現在値/_:calc,0x0E08,0x0000,0x03E7,unsigned
+[/group]
+
+
+[group]HVD_a
+0x05,00
+0x10,E703
+0x12,E703
+0x14,E703
+0x16,E703
+0x1C,09
+[/group]
+
+
+[group]HVD_2a
+0x10,E703
+0x12,E703
+0x14,E703
+0x16,E703
+[/group]
+
+
+[group]HVD_b
+_[:[:0x4DFC64:]+0x2E:]+0x01,_[:[:0x4DFC64:]+0x2E:]+0x31-$1 [:0x49FD68:] $$,00
+_[:[:0x4DFC64:]+0x4B:]+0x01,_[:[:0x4DFC64:]+0x4B:]+0x31-$1 [:0x49FD68:] $$,00
+[/group]
+
+
+[group]HVD_c
+_[:[:0x4DFC64:]+0x2E:]+[:0x49FD6C:1]
+_[:[:0x4DFC64:]+0x4B:]+[:0x49FD6C:1]
+[/group]
+
+
+[group]HVD_d
+[subject]ターン数/現在値/_:calc,0x1B80,0x0001,0x03E7,unsigned
+[subject]最大魔力/現在値/_:calc,0x1BD5,0x00,0x14,unsigned
+[subject]現在魔力/現在値/固定:calc,0x1BD4,0x00,0x14,unsigned
+[subject]Limit turn 巻き戻し/実行/固定:toggle,0x3C20,00
+[/group]
+
+
+[group]HVD_e
+0x00,00
+0x52,00
+0xA4,00
+0xF6,00
+0x0148,00
+0x019A,00
+0x01EC,00
+0x023E,00
+0x0290,00
+0x02E2,00
+0x0334,00
+0x0386,00
+0x03D8,00
+0x042A,00
+0x047C,00
+0x04CE,00
+0x0520,00
+0x0572,00
+0x05C4,00
+0x0616,00
+0x0668,00
+0x06BA,00
+0x070C,00
+0x075E,00
+0x07B0,00
+0x0802,00
+0x0854,00
+0x08A6,00
+0x08F8,00
+0x094A,00
+0x099C,00
+[/group]
+
+
+[group]MS1
+邂逅イベント１
+邂逅イベント２
+繁殖可能（セレスイベント進行停止）
+[/group]
+
+
+[group]MS2
+0x0F68=01000000/00000000
+0x0F6C=01000000/00000000
+0x0F14=01000000/00000000
+[/group]
+
+
+[group]CL1
+邂逅イベント１
+邂逅イベント２
+邂逅イベント３
+邂逅イベント４
+繁殖可能（メイシアイベント進行停止）
+[/group]
+
+
+[group]CL2
+0x0F70=01000000/00000000
+0x0F74=01000000/00000000
+0x0F78=01000000/00000000
+0x0F7C=01000000/00000000
+0x0F20=01000000/00000000
+[/group]
+
+
+[group]LST_a
+ソルジャー
+マジシャン
+アーチャー
+[/group]
+
+
+[group]LST_b
+無し
+リングエッジ
+バイスイ－プ
+キュア
+キュアルズ
+ストレイズ
+ソウルライズ
+エビルミスト
+レイズエッジ
+パワーライズ
+ガードライズ
+[/group]
+
+
+[group]LST_c
+無し
+回復
+攻撃ＵＰ
+防御ＵＰ
+命中ＵＰ
+回避ＵＰ
+回復・改
+攻撃ＵＰ・改
+防御ＵＰ・改
+命中ＵＰ・改
+回避ＵＰ・改
+反射
+麻痺
+ＳＰダウン
+サーチ
+バーサク
+スタン
+貫通撃
+シャッフル
+ポイズン
+[/group]
+
+
+[group]LST_d
+無し
+速培の籠
+速培の籠Lv２
+速培の籠Lv３
+増培の籠
+増培の籠Lv２
+増培の籠Lv３
+混培の籠
+畏怖の像
+畏怖の像Lv２
+畏怖の像Lv３
+鷹の目
+奇跡の目
+奇跡の目Lv２
+奇跡の目Lv３
+力の種
+回復薬・小
+回復薬・中
+回復薬・大
+回復薬・全
+生命の果実
+回復
+攻撃ＵＰ
+防御ＵＰ
+命中ＵＰ
+回避ＵＰ
+回復・改
+攻撃ＵＰ・改
+防御ＵＰ・改
+命中ＵＰ・改
+回避ＵＰ・改
+反射
+麻痺
+ＳＰダウン
+サーチ
+バーサク
+スタン
+貫通撃
+シャッフル
+ポイズン
+破壊の種
+長寿の果実
+輝きの目
+輝きの目Lv２
+輝きの目Lv３
+銀の指輪
+翡翠の瞳
+ぬいぐるみ？
+ぬいぐるみ
+首輪
+大聖堂の聖典
+えろい辞典
+緑の絵本
+ガレフの毛
+スレイヤー花
+黒王石
+白王石
+[/group]
+
+
+[group]LST_e
+無し
+力の指輪
+怪力の指輪
+破壊の指輪
+生命の指輪
+延命の指輪
+長寿の指輪
+指揮の指輪
+ショートソード
+魔族のナイフ
+ライトソード
+レイピア
+闇の剣
+ロングソード
+バトルソード
+邪悪の剣
+魔剣士の剣
+審判の刃
+ショートロッド
+魔族の杖
+ツインロッド
+黒水晶の杖
+闇の杖
+シルバーロッド
+バトルロッド
+邪悪の杖
+魔司祭の杖
+魔教皇の杖
+ショートボウ
+魔族の弓
+ライトボウ
+クロスボウ
+闇の弓
+ロングボウ
+バトルボウ
+邪悪の弓
+堕天使の弓
+魔界神の弓
+真の魔剣
+真の聖剣
+永久氷塊
+魔獣の牙
+雷帝の賢石
+ジュラーの剣
+偽りの魔剣
+ボスの盾1
+ボスの盾2
+古代の指輪
+魔王の証
+ボスの盾3
+[/group]
+
+
+[group]LST_f
+聖アヴァド湖
+ジークラフ王国
+海中城
+古代都市ヘテス
+ク・ケンズ大聖堂
+白の国
+ザルニウムの森
+ホンハース峡谷
+ネーノイス教会
+チャムリ草原
+エルディナート
+フィーリス
+[/group]
