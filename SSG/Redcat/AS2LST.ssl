@@ -1,0 +1,83 @@
+[group]AS2SSG
+[note]wordwrap
+攻略サイトと改造組み合わせて排他考慮しつつ全イベント回収パターンとってるのに、フィアとサーリアルートに入れないんで既に３度挫折してます。なんか難しい(^^;
+[/note]
+
+	[replace]0x00,AS2LST->AS_MA
+[root]
+	
+[subject]パラメータ関連:dir
+	[replace]0x00,AS2LST->AS_PR
+[root]
+
+[subject]ＣＧモード関連:dir
+	[replace]0x00,AS2LST->AS_CG
+[root]
+
+[/group]
+
+[group]AS_MA
+
+[subject]環境関連:dir
+[subject]デバッグ機能各種設定/_:d_toggle,0x59D2F3,AS2LST->AS_b,AS2LST->AS_c,offset
+[subject]ＡＰリジェネレート化/実行/_:b_toggle,0x45EB94,AS2LST->AS_a,real
+[/group]
+
+[group]AS_PR
+[subject]好感度確認調整:dir
+ [size]4
+	[e_with],0xFFFFFF01,0x000000FF,signed
+		[subject]ラスティ＝ファースン/現在値/_:calc,0x600B60
+		[subject]アルテ＝セーマ/現在値/_:calc,0x600B64
+		[subject]フィア＝ノート/現在値/_:calc,0x600B68
+		[subject]サーリア＝ウィネス/現在値/_:calc,0x600B6C
+ [/size]
+	[/e_with]
+[back]
+[subject]クラビスの能力:dir
+[e_with],0x00,0xFF,unsigned
+	[subject]ＡＣＴＩＯＮ ＰＯＩＮＴ/現在値/_:calc,0x600CCC
+	[subject]ＣＯＭＰＯＳＥ/現在値/_:calc,0x600CD4
+	[subject]人気/現在値/_:calc,0x600CD0
+[/e_with]
+[back]
+[subject]ＧＯＬＤＡ/現在値/_:calc,0x600C60,0x000000,0x0F423F,unsigned
+[subject]結界の魔法薬最大数所持/実行/固定:toggle,0x600C84,63
+[/group]
+
+[group]AS_CG
+[subject]ＡＬＢＵＭ ＭＯＤＥ:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x5FD35C,0x5FD368-FF
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x5FD35C,0x5FD368-00
+[back]
+[subject]ＴＲＡＤＩＮＧ ＢＲＯＭＩＤＥ:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x5FD37C,0x5FD48B-63
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x5FD37C,0x5FD48B-00
+[/group]
+
+
+[group]AS_a
+0x45EB94,33,85
+0x45EB96,B2FF,7E19
+0x45EB98,8815,FF0D
+[/group]
+
+
+[group]AS_b
+ShowFPS
+CapEnable
+MusicForceAuto
+MusicMemorySave
+MusicSongAll
+AcconvAllow
+[/group]
+
+
+[group]AS_c
+0x00=01/00
+0x01=01/00
+0x02=01/00
+0x03=01/00
+0x04=01/00
+0x05=01/00
+[/group]
