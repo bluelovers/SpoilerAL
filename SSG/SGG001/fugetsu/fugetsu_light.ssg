@@ -1,0 +1,265 @@
+SSG for SpoilerAL ver 5.41
+
+[script]
+	[title]POWER DoLLS 4
+	[process]PD4.EXE
+	[maker]工画堂 うさぎさんチーム
+	[creator]風月
+[note]
+※この作品の注意点※
+POWER DoLLS 4 の兵器は、「兵器の在庫」と「弾薬の在庫」がそろって始めて使用可能となります。
+よって、ミサイルは勿論、マルチセンサのような弾倉交換が存在しないようなものでも弾倉の数を設定する必要があります。
+但し、航空部隊の武器は兵装・弾薬が 1:1 で対応しているため、一括処理しています。
+
+いや、ミサイルとかセンサも一括でできるんですが・・・アドレスが中途半端で難しいので見逃してください（￣▽￣；
+[/note]
+	[subject]隊員能力:dir
+		[subject]フェイエン・ノール:dir
+			[replace]0x5061CA,fugetsu-lst->PD4-skill,offset
+
+		[subject]ロザリア・チャペック:dir
+			[replace]0x5062DE,fugetsu-lst->PD4-skill,offset
+
+		[subject]イネス・フェイロン:dir
+			[replace]0x5063F2,fugetsu-lst->PD4-skill,offset
+
+		[subject]ニナ・ラーマン:dir
+			[replace]0x506506,fugetsu-lst->PD4-skill,offset
+
+		[subject]アニー・ウィルキンズ:dir
+			[replace]0x50661A,fugetsu-lst->PD4-skill,offset
+
+		[subject]メアリー・アプルトン:dir
+			[replace]0x50672E,fugetsu-lst->PD4-skill,offset
+
+		[subject]レンレン・ミャオ:dir
+			[replace]0x506842,fugetsu-lst->PD4-skill,offset
+
+		[subject]ナリス・エリクソン:dir
+			[replace]0x506956,fugetsu-lst->PD4-skill,offset
+
+		[subject]ソイニ・イェルム:dir
+			[replace]0x506A6A,fugetsu-lst->PD4-skill,offset
+
+		[subject]エディタ・ヴェルネル:dir
+			[replace]0x506B7E,fugetsu-lst->PD4-skill,offset
+
+		[subject]キャロル・マクガイア:dir
+			[replace]0x506C92,fugetsu-lst->PD4-skill,offset
+
+		[subject]エレン・シュターミツ:dir
+			[replace]0x506DA6,fugetsu-lst->PD4-skill,offset
+
+		[subject]アイザワ・モモ:dir
+			[replace]0x506EBA,fugetsu-lst->PD4-skill,offset
+
+		[subject]トリッシュ・ラティーニ:dir
+			[replace]0x506FCE,fugetsu-lst->PD4-skill,offset
+
+		[subject]リーユン・ウェルゲラン:dir
+	        	[replace]0x5070E2,fugetsu-lst->PD4-skill,offset
+
+		[subject]リー・メイファ:dir
+			[replace]0x5071F6,fugetsu-lst->PD4-skill,offset
+
+		[subject]マハティ・ラーケーシュ:dir
+			[replace]0x50730A,fugetsu-lst->PD4-skill,offset
+
+		[subject]マチルダ・メッテルニヒ:dir
+			[replace]0x50741E,fugetsu-lst->PD4-skill,offset
+
+		[subject]メラニー・ブレア:dir
+			[replace]0x507532,fugetsu-lst->PD4-skill,offset
+
+		[subject]ジェニファー・メルビル:dir
+			[replace]0x507646,fugetsu-lst->PD4-skill,offset
+
+		[subject]ナム・ヨンジュ:dir
+			[replace]0x50775A,fugetsu-lst->PD4-skill,offset
+
+		[subject]ソニア・カミンスキー:dir
+			[replace]0x50786E,fugetsu-lst->PD4-skill,offset
+
+		[subject]フランシス・ル・ベリエ:dir
+			[replace]0x507982,fugetsu-lst->PD4-skill,offset
+
+		[subject]サンディ・クーリッジ:dir
+			[replace]0x507A96,fugetsu-lst->PD4-skill,offset
+
+		[subject]ホリィ・タカス:dir
+			[replace]0x507BAA,fugetsu-lst->PD4-skill,offset
+
+		[subject]ナンシー・ウォルコット:dir
+			[replace]0x507CBE,fugetsu-lst->PD4-skill,offset
+
+		[subject]セルシュ・ルジチカ:dir
+			[replace]0x507DD2,fugetsu-lst->PD4-skill,offset
+	[root]
+
+	[subject]DoLLS:dir
+		[subject]搭乗機体:dir
+			[subject]X5 装甲歩兵:dir
+				[replace]0x5371BC,fugetsu-lst->PD4-PLD,offset
+
+			[subject]X5C 装甲強襲歩兵:dir
+				[replace]0x5371C0,fugetsu-lst->PD4-PLD,offset
+
+			[subject]X5R 装甲索敵歩兵:dir
+				[replace]0x5371C4,fugetsu-lst->PD4-PLD,offset
+
+			[subject]X5+ 装甲歩兵:dir
+				[replace]0x5371C8,fugetsu-lst->PD4-PLD,offset
+
+			[subject]X5+C 装甲強襲歩兵:dir
+				[replace]0x5371CC,fugetsu-lst->PD4-PLD,offset,
+
+			[subject]X5RR 装甲索敵歩兵:dir
+				[replace]0x5371D0,fugetsu-lst->PD4-PLD,offset
+
+			[subject]X5S 装甲歩兵:dir
+				[replace]0x5371D4,fugetsu-lst->PD4-PLD,offset
+
+			[subject]XB-10 装甲歩兵:dir
+				[replace]0x5371D8,fugetsu-lst->PD4-PLD,offset
+
+			[subject]XD-10 装甲隠密歩兵:dir
+				[replace]0x5371DC,fugetsu-lst->PD4-PLD,offset
+
+			[subject]XE-10 装甲支援歩兵:dir
+				[replace]0x5371E0,fugetsu-lst->PD4-PLD,offset
+
+			[subject]M6RS 自走ロケット砲:dir
+				[replace]0x5371E4,fugetsu-lst->PD4-PLD,offset
+		[back]
+
+		[subject]全武器存在:b_toggle,0,fugetsu-lst->PD4-WPN-Flag,real
+
+		[subject]肩兵装:dir
+			[replace]0x5372E0,fugetsu-lst->PD4-S_WPN,offset
+		[back]
+
+		[subject]腕兵装:dir
+			[replace]0x537280,fugetsu-lst->PD4-H_WPN,offset
+		[back]
+
+		[subject]支援砲撃ロケット:dir
+			[replace]0x537588,fugetsu-lst->PD4-RCT,offset
+		[back]
+
+		[subject]弾薬:dir
+			[replace]0x5374A0,fugetsu-lst->PD4-BLT,offset
+	[root]
+-
+	[subject]DoLLS Wing:dir
+		[subject]F261 戦闘攻撃機:dir
+			[replace]0x5371E8,fugetsu-lst->PD4-PLD,offset
+
+		[subject]AC157 戦術輸送機:dir
+			[replace]0x5371EC,fugetsu-lst->PD4-PLD,offset
+
+		[subject]C637 戦略輸送機:dir
+			[replace]0x5371F0,fugetsu-lst->PD4-PLD,offset
+
+		[subject]兵装:dir
+			[replace]0x537330,fugetsu-lst->PD4-AIR,offset
+	[root]
+
+	[subject]補助兵装:dir
+		[replace]0x537600,fugetsu-lst->PD4-item,offset
+	[root]
+
+[/script]
+
+
+[script]
+	[title]指極星
+	[process]PS1.EXE
+	[maker]工画堂 うさぎさんチーム
+	[creator]風月
+
+[note]wordwrap
+キャラに不完全な（全員そろっていない）部分はありますが、
+事実上、殆ど問題はないかと思います。
+
+※ターンについて
+  この作品のターンは、表示上ではカウントダウン式になっていますが、実際のところ、内部ではカウントアップ（変数が規定値になるまで戦闘処理を反復）する形式になっています。
+  故に、ターンカウントを戦闘開始時に戻す際は「０」を入力してください。
+[/note]
+
+	[subject]軍資金:calc,0x10B82B4,0,999999,unsigned,little_e
+	[subject]ターン:calc,0x10B82BA,0,2000,unsigned,little_e
+
+	[subject]ステータス:dir
+		[subject]セレーネ:dir
+			[replace]0x10B9FF0,fugetsu-lst->PointersStates,offset
+
+		[subject]シリウス:dir
+			[replace]0x10B9064,fugetsu-lst->PointersStates,offset
+
+		[subject]ミルファク:dir
+			[replace]0x10B90D8,fugetsu-lst->PointersStates,offset
+
+		[subject]フェアト:dir
+			[replace]0x10B91C0,fugetsu-lst->PointersStates,offset
+
+		[subject]ステラ:dir
+			[replace]0x10B914C,fugetsu-lst->PointersStates,offset
+
+		[subject]シャウラ:dir
+			[replace]0x10B9234,fugetsu-lst->PointersStates,offset
+
+		[subject]アウストラリス:dir
+			[replace]0x10B988C,fugetsu-lst->PointersStates,offset
+
+		[subject]アルドラ:dir
+			[replace]0x10B99E8,fugetsu-lst->PointersStates,offset
+	[root]
+
+	[replace]0x10CC2C0,fugetsu-lst->PointersItem,offset
+[/script]
+
+
+[script]
+	[title]Zinc
+	[process]COMICPLY.EXE
+	[maker]PsychiqueMedicament／藤堂宇廻
+	[creator]風月
+
+[note]wordwrap
+このSSG はver 1.4用です。
+・・・なので1.5＆1.6で動作するかどうかは未検証です。
+（なぜかアップデートが動作しないんです・・・）
+ただ1.4の場合、ミラ姐さんは動作しないみたいです。
+
+なお、このSSGではアイテムは一つしか持てない仕様に
+なっていますのでご注意を。
+（元々、二股が無理なので何ら影響はないんですが・・・）
+
+・・・因みに、攻略のヒントを少々。
+この作品は各キャラとも少し深入りした時点で
+二度と抜け出せなくなります。
+なので、目当ての相手以外は冷たくあしらってください。
+人並みに心配したせいで、のっけから漢につかまった
+奴からの助言です。
+[/note]
+	[subject]名前:string,0x24E588C,6
+	[subject]ステータス:dir
+		[subject]日付:calc,0xC2F010,0,60,signed,little_e
+		[subject]所持金:calc,0xC2F0A0,0,99999,signed,little_e
+	[back]
+
+	[subject]好意:dir
+		[subject]カミル:calc,0xC2F020,0,999,signed,little_e
+		[subject]ミラ:calc,0xC2F028,0,999,signed,little_e
+		[subject]ローザ:calc,0xC2F030,0,999,signed,little_e
+		[subject]ロゼ:calc,0xC2F038,0,999,signed,little_e
+		[subject]レイ:calc,0xC2F040,0,999,signed,little_e
+		[subject]アルセイン:calc,0xC2F048,0,0xFF,signed,little_e
+	[back]
+
+	[subject]アイテム:dir
+		[subject]花束:toggle,0xC2F0F0,0x0A,0
+		[subject]菓子:toggle,0xC2F0F8,0x3E8,0
+		[subject]珈琲豆:toggle,0xC2F0F8,0x64,0
+	[back]
+[/script]
