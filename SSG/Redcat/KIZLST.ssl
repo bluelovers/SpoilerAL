@@ -1,0 +1,69 @@
+[group]KIZ_MA
+[note]wordwrap
+やはり千鶴さんのシナリオは良いな～と再認識するも、当時は気付かなかったシナリオ構成のシンプルさに愕然。
+
+以下、補足です。
+■■環境関連
+デバッグモード：
+起動中であれば、いつでも出現させられます。
+
+Ｆ→ＦＰＵ表示
+Ｇ→フラグモニタ
+Ｆ１～→エフェクトテスト
+Ｆ１２→リスタート
+
+他にもあるかもしれません。
+
+スタッフロール自動排除：
+スタッフロールを自動ですっ跳ばしてくれる機能。
+
+■■フラグ・ＣＧモード関連
+基本的にプレイ中にフラグを書き換え、タイトル画面に戻ると効果が出ます。ただし、回想に関しては出現と同時にセーブデータの方も書き換えられてしまうため、起動中にしか効果の出ないものとなります。
+[/note]
+
+[subject]環境関連:dir
+	[subject]デバッグモード/実行/_:b_toggle,0x490F07,KIZLST->KIZ_a,real
+	[subject]スタッフロール自動排除/実行/_:b_toggle,0x483783,KIZLST->KIZ_b,real
+[/group]
+
+
+[group]KIZ_a
+0x490F07,EB0490909090,0F84BB010000
+0x4C5D40,01,00
+[/group]
+
+
+[group]KIZ_b
+0x483783,EB0490909090,0F84A7020000
+0x483795,EB0490909090,0F8495020000
+[/group]
+
+
+[group]KIZ_F12
+[subject]全メニュー使用可能/実行/_:toggle,0xB803F0,01
+[subject]ＥＮＤフラグＡＬＬ/実行/_:toggle,0xB803F0,0xB8043F-01000000
+[/group]
+
+
+[group]KIZ_CG
+[subject]画像鑑賞:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:b_toggle,0xC1D850,KIZLST->KIZ_c,real
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0xC1D850,0xC1E09F-00
+[back]
+[subject]回想:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0xC1E214,0xC1E222-01
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0xC1E214,0xC1E222-00
+[/group]
+
+
+[group]KIZ_c
+0xC1D850,0xC1D881-8020080200
+0xC1D882,80000C000080200802
+0xC1DDAF,0xC1DDB5-8020080200
+0xC1DE2C,0xC1DE35-8020080200
+0xC1DEA9,0xC1DEB2-8020080200
+0xC1DF26,0xC1DF2D-8020080200
+0xC1DFA3,80200802
+0xC1E020,80200802
+0xC1E09D,802008
+[/group]
