@@ -1,0 +1,92 @@
+[group]パラメータ
+	[subject]正体（笑）:list,0x0,PYTHIAN->正体,1,1
+	[subject]ステータス:dir
+		[subject]レベル:calc,0x2,0,99,signed,little_e
+		[subject]経験値:calc,0xE,0,100,signed,little_e
+		[subject]最大体力:calc,0x16,0,999,signed,little_e
+		[subject]最大行動力:calc,0x18,0,999,signed,little_e
+		[subject]腕力:calc,0x1A,0,999,signed,little_e
+		[subject]知力:calc,0x1C,0,999,signed,little_e
+		[subject]敏捷度:calc,0x1E,0,999,signed,little_e
+		[subject]命中力:calc,0x20,0,999,signed,little_e
+		[subject]現在体力:calc,0x46,0,999,signed,little_e
+		[subject]現在行動力:calc,0x48,0,999,signed,little_e
+	[back]
+	[subject]その他:dir
+		[subject]Ｘ座標（＼線上）:calc,0x4,0,255,signed,little_e
+		[subject]Ｙ座標（／線上）:calc,0x6,0,255,signed,little_e
+		[subject]向き:list,0x8,PYTHIAN->向き,0,1
+		[subject]私は味方です（笑）:toggle,0xC,00,01
+		[subject]移動時消費AP:calc,0x3C,0,255,signed,little_e
+[root]
+[/group]
+
+[group]正体
+ヒルドゥレイ
+ゼッセンディーテ
+ピュティア（ストレート）
+ピュティア（ポニーテール）
+ヴェリーヌ
+ヴェリーヌ（羽付）
+シェザリエ
+クーストル
+エリスィカ
+メイフィート
+ベイマンド（敵）
+ベイマンド（敵）
+ワード（敵）
+サーカス（敵）
+パレード（敵）
+カーニバル（敵）
+オグマドア（敵）
+カリス（敵）
+ラ・ヴェンタ（敵）
+サムワイザー（敵）
+始末屋（敵）
+ダルダーラ（敵）
+モアレーン（敵）
+セイズ（敵）
+すずめ（敵）
+特攻すずめ（敵）
+シュトリンム（敵）
+ミルカリバー（敵）
+ディボすずめ（敵）
+ギュルグドゥ（敵）
+ファイファンドラ（敵）
+グルジュファン（敵）
+ダムンド（敵）
+かまびと（敵）
+デルライフ（敵）
+ギロチン（敵）
+バレンタイン（敵）
+ラヴァー（敵）
+暴徒（敵）
+武装暴徒（敵）
+衛兵（敵）
+看守（敵）
+警備隊員（敵）
+教徒（敵）
+教徒（敵）
+シェイカー（敵）
+シェイカー（敵）
+プリン（敵）
+プリンmkⅡ（敵）
+プリンmkⅢ（敵）
+プリンＥＸ（敵）
+ノヴァ（敵）
+ノヴァⅡ（敵）
+スーパーノヴァ（敵）
+ジェギト・レオ（敵）
+ブラッド1（敵）
+ブラッド2（敵）
+リーヌ（敵）
+メイフィート（敵）
+クーストル
+[/group]
+
+[group]向き
+右
+後
+前
+左
+[/group]
