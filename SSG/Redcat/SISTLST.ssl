@@ -1,0 +1,16 @@
+[group]SIST_SSG
+[note]wordwrap
+—Ç‚­‚àˆ«‚­‚à…‰Ä‚RÍ‚Ìlc(^^;
+[/note]
+
+[subject]‚b‚fƒ‚[ƒhŠÖ˜A:dir
+ [subject]CG:dir
+	[subject]‚`‚k‚k ‚n‚m/Às/_:toggle,0x79801A,0x79803F-FF
+	[subject]‚`‚k‚k ‚n‚e‚e/Às/_:toggle,0x79801A,0x79803F-00
+ [back]
+ [subject]SCENE:dir
+	[subject]‚`‚k‚k ‚n‚m/Às/_:toggle,0x797F9C,0x797FA3-FF
+	[subject]‚`‚k‚k ‚n‚e‚e/Às/_:toggle,0x797F9C,0x797FA3-00
+[root]
+
+[/group]
