@@ -1,0 +1,84 @@
+[group]DC_MA
+[note]wordwrap
+Circusファンとしては、音夢ｲｲ！…ってとこなんですが、冷静に眺めるとパーツ総とっかえした完成度の低い"Infantaria"って印象が否めないですね。しかも根本ネタは"〇ｉ〇ｄ"と殆ど同じだし。致命的なのが、体験版相当部分ないし、体験版部分を再録してないにも関わらず、それを見越した出だしにしたところ。体験版やってない人は何これ？どうしてこうなるの？って思うかもしれないです。如何なる理由を並べたとしても、商品企画としては完全に失敗作。…ワタシ、Circus信者なんですけどねぇ。えぇ、音夢やことりはｲｲものですよ、ホントに（笑）
+
+未読制限解除：
+おなじみの"デバグ自動早"機能はあったのですが、コンフィグＵＩの仕様上使い難いと判断したので、視点を変えて近い機能に変更してみました。
+
+システムメニュー（開発側用）：
+余興ネタ。起動時のシステムメニューで使用します。意味がわからない方は無闇にチェックしないで下さい。
+＊チェックはＳＳＧのことではなく、システムメニュー自体の方のこと。
+
+高速化強化版：
+フェード処理のみならず、ブレンド及び特殊ワイプ処理にもエフェクトカットを反映させます。
+
+テスト成績：
+水越眞子イベント用。
+
+"Ｄ.Ｃ."出現：
+タイトル画面にエピローグシナリオ"Ｄ.Ｃ."が出現します。また仕様上、天枷美春・鷺澤美咲シナリオの分岐選択肢も出現するようになります。っつか、美春はオマケですかい。…音夢の次に狙って攻略失敗した理由がこれとは(^^;
+[/note]
+
+[subject]環境関連:dir
+	[subject]未読制限解除/実行/_:b_toggle,0x403828,DCLST->DC_a,real
+	[subject]ＡＶＧパート高速化強化版/実行/_:b_toggle,0x409F2F,DCLST->DC_c,real
+	[subject]システムメニュー（開発側用）/実行/_:b_toggle,0x41AF6B,DCLST->DC_b,real
+[/group]
+
+
+[group]DC_PR
+[subject]好感度確認調整:dir
+	[repeat]DCLST->DCREP1,0,4,1
+[/group]
+
+
+[group]DCREP1
+[subject][! @DCLST->LST_a,$Val !]/現在値/_:calc,0x[! 0xBAD910+$Val*4 !],0x00,0x64,unsigned
+[/group]
+
+
+[group]DC_F12
+[subject]"Ｄ.Ｃ."出現/実行/_:toggle,0xBAB438,0xBAB43F-01
+[subject]テストの成績/現在値/_:calc,0xBAD93C,0x00,0x0A,unsigned
+[/group]
+
+
+[group]DC_CG
+[subject]ＥＸＴＲＡ:dir
+[subject]ＣＧ ＭＯＤＥ:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0xBAAF7C,0xBAB30B-01000000
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0xBAAF7C,0xBAB30B-00
+[back]
+[subject]ＳＣＥＮＥ ＲＥＰＬＡＹ:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0xBA9FE0,0xBAA9E3-01000000
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0xBA9FE0,0xBAA9E3-00
+[/group]
+
+
+[group]LST_a
+朝倉音夢
+白河ことり
+水越萌
+芳乃さくら
+[/group]
+
+
+[group]DC_a
+0x403828,EB00,7410
+0x404456,EB00,7415
+0x404461,EB00,740A
+0x40467C,EB00,7415
+0x404687,EB00,740A
+[/group]
+
+
+[group]DC_b
+0x41AF6B,6A,89
+0x41AF7F,6A,8A
+[/group]
+
+
+[group]DC_c
+0x409F2F,EB00,7405
+0x416835,EB00,746F
+[/group]
