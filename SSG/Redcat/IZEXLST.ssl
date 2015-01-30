@@ -1,0 +1,515 @@
+[group]IZEX_SSG
+[note]wordwrap
+IZUMOとIZUMO2は装備品のアクセサリ名が同じものが多いですね。つまり、美由紀＝琴乃ってことに…。あ、成る程w
+
+敵攻撃完全無効化：
+敵の攻撃が一律ミス扱いになる機能。
+
+LV調整用ダイアログ出現：
+ソフトに元から仕組まれているデバッグ機能。手軽にレベルの増減が可能。
+
+AVGパート高速化強化版：
+デフォルトのエフェクトカットにブレンドとウエイト要素も削ったものと同等。
+
+ＣＧモード関連：
+扱いはIZUMO2と同じだが、こちらは実データ改竄型なので見た目の変化が極めて掴みづらい。御注意を。
+
+エンディングセレクト：
+ヨモツオオカミ戦直後まで有効。エンディングの変更が可能。
+
+[/note]
+
+[subject]ver1.10／1.11:dir
+
+[subject]ＲＰＧパート関連:dir
+	[subject]敵攻撃完全無効化/実行/_:b_toggle,0x41D036,IZEXLST->IZ_b,real
+	[subject]霊力減らない/実行/_:b_toggle,0x445405,IZEXLST->IZ_c,real
+	[subject]戦闘入手経験値Ｘ倍化/_:d_list,0x00,IZEXLST->LST_c,0x00,0xFFFFFFFF,IZEXLST->LST_d,offset
+	[subject]エンカウンター操作/_:d_list,0x00,IZEXLST->LST_a,0x00,0xFFFFFFFF,IZEXLST->LST_b,offset
+	[subject]エンディングセレクト/_:d_list,0x560954,IZEXLST->LST_f,0x0000,0x0006,IZEXLST->LST_g,offset
+[back]
+
+[subject]環境関連:dir
+	[subject]LV調整用ダイアログ出現/実行/_:toggle,0x421F54,EB00,743A
+	[subject]AVGパート高速化強化版/実行/_:b_toggle,0x4BB306,IZEXLST->IZ_a,real
+[back]
+
+[subject]パラメータ関連:dir
+[subject]勾玉全種最大数所持/ＯＮ／全消去/_:b_toggle,0x543318,IZEXLST->IZ_PR3,real
+ [subject]イベント関与勾玉個別指定数量変化:dir
+ 	[subject]変更イベント関与勾玉指定/_:list,0x510418,IZEXLST->LST_h,0x00,0x01
+ 	[subject]_mem,_([\:0x510418\:])*0x0176=>temp;[\:0x5430C4\:]+0x160C+$temp,16,00,<ReadError>'+'の数量/現在値/_:calc,_([:0x510418:]*0x04)=>temp;0x54335A+$temp,0x0000,0x03E7,unsigned
+ [back]
+ [subject]アイテムエディタ:dir
+	[subject]数量指定/現在値/_:calc,0x510410,0x00,0x63,unsigned
+	[subject]一括変更/実行/_:toggle,0x5430E6,0x54323F-$2[:0x510410:]$$
+  [subject]個別指定数量変化:dir
+	[subject]変更アイテム指定/_:list,0x510414,IZEXLST->LST_e,0x00,0x01
+	[subject]_mem,_([\:0x510414\:])*0xBA=>temp;[\:0x543314\:]+$temp+0x02,16,00,<ReadError>'+'の数量/現在値/_:calc,_([:0x510414:])*0xBA=>temp;[:[:0x543314:]+$temp:2]=>temp;0x5430E4+$temp*2,0x00,0x63,unsigned
+  [back]
+ [back]
+ [subject]仲間のステータス:dir
+  [subject]塔馬ヒカル:dir
+	[subject]基本ステータス:dir
+	[replace]_[:[:0x54330C:]:],IZEXLST->IZ_PR1
+	[subject]現在ステータス:dir
+	[replace]_[:[:0x54330C:]:],IZEXLST->IZ_PR2
+  [back]
+  [subject]水瀬七海:dir
+	[subject]基本ステータス:dir
+	[replace]_[:[:[:0x54330C:]:]:],IZEXLST->IZ_PR1
+	[subject]現在ステータス:dir
+	[replace]_[:[:[:0x54330C:]:]:],IZEXLST->IZ_PR2
+  [back]
+  [subject]橘綾香:dir
+	[subject]基本ステータス:dir
+	[replace]_[:[:[:[:0x54330C:]:]:]:],IZEXLST->IZ_PR1
+	[subject]現在ステータス:dir
+	[replace]_[:[:[:[:0x54330C:]:]:]:],IZEXLST->IZ_PR2
+  [back]
+  [subject]倉島渚:dir
+	[subject]基本ステータス:dir
+	[replace]_[:[:[:[:[:0x54330C:]:]:]:]:],IZEXLST->IZ_PR1
+	[subject]現在ステータス:dir
+	[replace]_[:[:[:[:[:0x54330C:]:]:]:]:],IZEXLST->IZ_PR2
+  [back]
+  [subject]天照:dir
+	[subject]基本ステータス:dir
+	[replace]_[:[:[:[:[:[:0x54330C:]:]:]:]:]:],IZEXLST->IZ_PR1
+	[subject]現在ステータス:dir
+	[replace]_[:[:[:[:[:[:0x54330C:]:]:]:]:]:],IZEXLST->IZ_PR2
+  [back]
+  [subject]塔馬美由紀:dir
+	[subject]基本ステータス:dir
+	[replace]_[:[:[:[:[:[:[:0x54330C:]:]:]:]:]:]:],IZEXLST->IZ_PR1
+	[subject]現在ステータス:dir
+	[replace]_[:[:[:[:[:[:[:0x54330C:]:]:]:]:]:]:],IZEXLST->IZ_PR2
+  [back]
+ [back]
+[back]
+
+[subject]ＣＧモード関連:dir
+	[replace]_[:0x56B8E4:],IZEXLST->IZ_CG
+[back]
+
+[back]
+
+[subject]学園狂想曲同梱版(ver1.13):dir
+
+[subject]ＲＰＧパート関連:dir
+	[subject]敵攻撃完全無効化/実行/_:b_toggle,0x41D141,IZEXLST->IZ_2b,real
+	[subject]霊力減らない/実行/_:b_toggle,0x445A16,IZEXLST->IZ_2c,real
+	[subject]戦闘入手経験値Ｘ倍化/_:d_list,0x421087,IZEXLST->LST_c,0x00,0xFFFFFFFF,IZEXLST->LST_2d,offset
+	[subject]エンカウンター操作/_:d_list,0x4AC232,IZEXLST->LST_a,0x00,0xFFFFFFFF,IZEXLST->LST_2b,offset
+	[subject]エンディングセレクト/_:d_list,0x55EAB4,IZEXLST->LST_f,0x0000,0x0006,IZEXLST->LST_g,offset
+[back]
+
+[subject]環境関連:dir
+	[subject]LV調整用ダイアログ出現/実行/_:toggle,0x42208B,EB00,743A
+	[subject]AVGパート高速化強化版/実行/_:b_toggle,0x1200,IZEXLST->IZ_a,offset
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]勾玉全種最大数所持/ＯＮ／全消去/_:b_toggle,0x541478,IZEXLST->IZ_PR23,real
+ [subject]イベント関与勾玉個別指定数量変化:dir
+ 	[subject]変更イベント関与勾玉指定/_:list,0x510B68,IZEXLST->LST_h,0x00,0x01
+ 	[subject]_mem,_([\:0x510B68\:])*0x0176=>temp;[\:0x541224\:]+0x160C+$temp,16,00,<ReadError>'+'の数量/現在値/_:calc,_([:0x510B68:]*0x04)=>temp;0x5414BA+$temp,0x0000,0x03E7,unsigned
+ [back]
+ [subject]アイテムエディタ:dir
+	[subject]数量指定/現在値/_:calc,0x510B60,0x00,0x63,unsigned
+	[subject]一括変更/実行/_:toggle,0x541244,0x54139F-$2[:0x510B60:]$$
+  [subject]個別指定数量変化:dir
+	[subject]変更アイテム指定/_:list,0x510B64,IZEXLST->LST_e,0x00,0x01
+	[subject]_mem,_([\:0x510B64\:])*0xBA=>temp;[\:0x541474\:]+$temp+0x02,16,00,<ReadError>'+'の数量/現在値/_:calc,_([:0x510B64:])*0xBA=>temp;[:[:0x541474:]+$temp:2]=>temp;0x541244+$temp*2,0x00,0x63,unsigned
+  [back]
+ [back]
+ [subject]仲間のステータス:dir
+  [subject]塔馬ヒカル:dir
+	[subject]基本ステータス:dir
+	[replace]_[:[:0x54146C:]:],IZEXLST->IZ_PR1
+	[subject]現在ステータス:dir
+	[replace]_[:[:0x54146C:]:],IZEXLST->IZ_PR2
+  [back]
+  [subject]水瀬七海:dir
+	[subject]基本ステータス:dir
+	[replace]_[:[:[:0x54146C:]:]:],IZEXLST->IZ_PR1
+	[subject]現在ステータス:dir
+	[replace]_[:[:[:0x54146C:]:]:],IZEXLST->IZ_PR2
+  [back]
+  [subject]橘綾香:dir
+	[subject]基本ステータス:dir
+	[replace]_[:[:[:[:0x54146C:]:]:]:],IZEXLST->IZ_PR1
+	[subject]現在ステータス:dir
+	[replace]_[:[:[:[:0x54146C:]:]:]:],IZEXLST->IZ_PR2
+  [back]
+  [subject]倉島渚:dir
+	[subject]基本ステータス:dir
+	[replace]_[:[:[:[:[:0x54146C:]:]:]:]:],IZEXLST->IZ_PR1
+	[subject]現在ステータス:dir
+	[replace]_[:[:[:[:[:0x54146C:]:]:]:]:],IZEXLST->IZ_PR2
+  [back]
+  [subject]天照:dir
+	[subject]基本ステータス:dir
+	[replace]_[:[:[:[:[:[:0x54146C:]:]:]:]:]:],IZEXLST->IZ_PR1
+	[subject]現在ステータス:dir
+	[replace]_[:[:[:[:[:[:0x54146C:]:]:]:]:]:],IZEXLST->IZ_PR2
+  [back]
+  [subject]塔馬美由紀:dir
+	[subject]基本ステータス:dir
+	[replace]_[:[:[:[:[:[:[:0x54146C:]:]:]:]:]:]:],IZEXLST->IZ_PR1
+	[subject]現在ステータス:dir
+	[replace]_[:[:[:[:[:[:[:0x54146C:]:]:]:]:]:]:],IZEXLST->IZ_PR2
+  [back]
+ [back]
+[back]
+
+[subject]ＣＧモード関連:dir
+	[replace]_[:0x569A44:],IZEXLST->IZ_CG
+[back]
+
+[back]
+
+
+[subject]IZUMO3同梱版(ver1.14):dir
+
+[subject]ＲＰＧパート関連:dir
+ [subject]敵攻撃完全無効化/実行/_:b_toggle,0x41D141,IZEXLST->IZ_2b,real
+ [subject]霊力減らない/実行/_:b_toggle,0x445A16,IZEXLST->IZ_2c,real
+ [subject]戦闘入手経験値Ｘ倍化/_:d_list,0x421087,IZEXLST->LST_c,0x00,0xFFFFFFFF,IZEXLST->LST_2d,offset
+ [subject]エンカウンター操作/_:d_list,0x4AC232,IZEXLST->LST_a,0x00,0xFFFFFFFF,IZEXLST->LST_2b,offset
+ [subject]エンディングセレクト/_:d_list,0x55FBB4,IZEXLST->LST_f,0x0000,0x0006,IZEXLST->LST_g,offset
+[back]
+
+[subject]環境関連:dir
+ [subject]LV調整用ダイアログ出現/実行/_:toggle,0x42208B,EB00,743A
+ [subject]AVGパート高速化強化版/実行/_:b_toggle,0x1190,IZEXLST->IZ_a,offset
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]勾玉全種最大数所持/ＯＮ／全消去/_:b_toggle,0x1100,IZEXLST->IZ_PR23,offset
+ [subject]イベント関与勾玉個別指定数量変化:dir
+  [subject]変更イベント関与勾玉指定/_:list,0x511038,IZEXLST->LST_h,0x00,0x01
+  [subject]_mem,_([\:0x511038\:])*0x0176=>temp;[\:0x542324\:]+0x160C+$temp,16,00,<ReadError>'+'の数量/現在値/_:calc,_([:0x511038:]*0x04)=>temp;0x5425BA+$temp,0x0000,0x03E7,unsigned
+ [back]
+ [subject]アイテムエディタ:dir
+  [subject]数量指定/現在値/_:calc,0x511030,0x00,0x63,unsigned
+  [subject]一括変更/実行/_:toggle,0x542344,0x54249F-$2[:0x511030:]$$
+  [subject]個別指定数量変化:dir
+   [subject]変更アイテム指定/_:list,0x511034,IZEXLST->LST_e,0x00,0x01
+   [subject]_mem,_([\:0x511034\:])*0xBA=>temp;[\:0x542574\:]+$temp+0x02,16,00,<ReadError>'+'の数量/現在値/_:calc,_([:0x511034:])*0xBA=>temp;[:[:0x542574:]+$temp:2]=>temp;0x542344+$temp*2,0x00,0x63,unsigned
+  [back]
+ [back]
+ [subject]仲間のステータス:dir
+  [subject]塔馬ヒカル:dir
+   [subject]基本ステータス:dir
+   [replace]_[:[:0x54256C:]:],IZEXLST->IZ_PR1
+   [subject]現在ステータス:dir
+   [replace]_[:[:0x54256C:]:],IZEXLST->IZ_PR2
+  [back]
+  [subject]水瀬七海:dir
+   [subject]基本ステータス:dir
+   [replace]_[:[:[:0x54256C:]:]:],IZEXLST->IZ_PR1
+   [subject]現在ステータス:dir
+   [replace]_[:[:[:0x54256C:]:]:],IZEXLST->IZ_PR2
+  [back]
+  [subject]橘綾香:dir
+   [subject]基本ステータス:dir
+   [replace]_[:[:[:[:0x54256C:]:]:]:],IZEXLST->IZ_PR1
+   [subject]現在ステータス:dir
+   [replace]_[:[:[:[:0x54256C:]:]:]:],IZEXLST->IZ_PR2
+  [back]
+  [subject]倉島渚:dir
+   [subject]基本ステータス:dir
+   [replace]_[:[:[:[:[:0x54256C:]:]:]:]:],IZEXLST->IZ_PR1
+   [subject]現在ステータス:dir
+   [replace]_[:[:[:[:[:0x54256C:]:]:]:]:],IZEXLST->IZ_PR2
+  [back]
+  [subject]天照:dir
+   [subject]基本ステータス:dir
+   [replace]_[:[:[:[:[:[:0x54256C:]:]:]:]:]:],IZEXLST->IZ_PR1
+   [subject]現在ステータス:dir
+   [replace]_[:[:[:[:[:[:0x54256C:]:]:]:]:]:],IZEXLST->IZ_PR2
+  [back]
+  [subject]塔馬美由紀:dir
+   [subject]基本ステータス:dir
+   [replace]_[:[:[:[:[:[:[:0x54256C:]:]:]:]:]:]:],IZEXLST->IZ_PR1
+   [subject]現在ステータス:dir
+   [replace]_[:[:[:[:[:[:[:0x54256C:]:]:]:]:]:]:],IZEXLST->IZ_PR2
+  [back]
+ [back]
+[back]
+
+[subject]ＣＧモード関連:dir
+ [replace]_[:0x56AB44:],IZEXLST->IZ_CG
+[back]
+
+[back]
+
+[/group]
+
+
+[group]IZ_a
+0x4BB306,EB,75
+0x4BC922,EB00,740A
+0x4BCB43,EB00,740C
+0x4BE342,EB00,7409
+0x4C0A3E,EB00,740A
+[/group]
+
+
+[group]IZ_b
+0x41D036,8B0983792C067F27EB029090,8B8DD0FCFFFF83792C007423
+0x41D061,16,14
+[/group]
+
+
+[group]IZ_2b
+0x41D141,8B0983792C067F27EB029090,8B8DD0FCFFFF83792C007423
+0x41D16C,20,1E
+[/group]
+
+111
+[group]IZ_c
+0x445405,34EB00,582BD0
+0x445AF2,34EB00,582BC8
+0x446185,34EB00,582BD0
+[/group]
+
+
+[group]IZ_2c
+0x445A16,34EB00,582BD0
+0x446103,34EB00,582BC8
+0x446796,34EB00,582BD0
+[/group]
+
+
+[group]IZ_PR1
+[subject]ＬＶ/現在値/_:calc,0x0C,0x01,0x63,unsigned
+[subject]経験値/現在値/_:calc,0x10,0x00000000,0x7FFFFFFF
+[subject]一括最大化/実行/_:toggle,0x14,0x60-0F270000
+[e_with],0x0000,0x270F,unsigned
+ [subject]最大体力/現在値/_:calc,0x14
+ [subject]最大霊力/現在値/_:calc,0x18
+ [subject]腕力/現在値/_:calc,0x1C
+ [subject]精神力/現在値/_:calc,0x20
+ [subject]素早さ/現在値/_:calc,0x24
+ [subject]命中率/現在値/_:calc,0x28
+ [subject]回避/現在値/_:calc,0x2C
+ [subject]物理防御/現在値/_:calc,0x30
+ [subject]呪法防御/現在値/_:calc,0x34
+[/e_with]
+[subject]全呪法ＬＶ最大化/実行/_:toggle,0x6C,0xE7-02000000DE930400
+[back]
+[/group]
+
+
+[group]IZ_PR2
+[e_with],0x0000,0x270F,unsigned
+ [subject]最大体力/現在値/_:calc,0x38
+ [subject]最大霊力/現在値/_:calc,0x3C
+ [subject]現在体力/現在値/固定:calc,0x5C
+ [subject]現在霊力/現在値/固定:calc,0x60
+ [subject]腕力/現在値/_:calc,0x40
+ [subject]精神力/現在値/_:calc,0x44
+ [subject]素早さ/現在値/_:calc,0x48
+ [subject]命中率/現在値/_:calc,0x4C
+ [subject]回避/現在値/_:calc,0x50
+ [subject]物理防御/現在値/_:calc,0x54
+ [subject]呪法防御/現在値/_:calc,0x58
+[/e_with]
+[back]
+[/group]
+
+
+[group]IZ_CG
+[subject]ＣＧ１枚目ＯＦＦ/実行/_:toggle,0x04,10
+[subject]ＣＧＡＬＬ/実行/_:toggle,0x04,0x98-*{00::00::20*},*{00::00::10*}
+[subject]回想ＡＬＬ/実行/_:toggle,0xB4,0xCD-*{00::00::2F*},*{00::00::10*}
+[/group]
+
+
+[group]LST_a
+デフォルト
+完全回避（雑魚敵戦闘遮断）
+強制化（歩く度に戦闘）
+[/group]
+
+
+[group]LST_b
+,0x4AB03D=83C201,0x4AB058=7D6C
+,0x4AB03D=33D290,0x4AB058=EB6C
+,0x4AB03D=83C201,0x4AB058=EB00
+[/group]
+
+
+[group]LST_2b
+,0x00=83C201,0x1B=7D6C
+,0x00=33D290,0x1B=EB6C
+,0x00=83C201,0x1B=EB00
+[/group]
+
+
+[group]LST_c
+デフォルト
+８倍化
+１６倍化
+２５６倍化
+[/group]
+
+
+[group]LST_d
+,0x420F52=3B55947E068B
+,0x420F52=C1E20389D089
+,0x420F52=C1E20489D089
+,0x420F52=C1E20889D089
+[/group]
+
+
+[group]LST_2d
+,0x00=3B4D947E068B
+,0x00=C1E10389CA89
+,0x00=C1E10489CA89
+,0x00=C1E10889CA89
+[/group]
+
+
+[group]IZ_PR3
+0x543318,0x543359-E703,0000
+0x54335A,0x543377-E7030000,00000000
+[/group]
+
+
+[group]IZ_PR23
+0x541478,0x5414B9-E703,0000
+0x5414BA,0x5414D7-E7030000,00000000
+[/group]
+
+
+[group]LST_e
+木刀
+武蔵
+柳生
+十拳
+生太刀
+天叢雲
+実技
+練心
+直心
+清芳
+生弓
+麻迦古
+ヘアスプレー
+火炎スプレー
+火炎放射器
+モデルガン
+ショットガン
+発破
+フルーレ
+エペ
+レイピア
+サーベル
+エクスカリバー
+短槍
+長槍
+方天戟
+蛇矛
+天沼矛
+グローブ
+メリケンサック
+ゴッドハンド
+制服
+武道着
+皮鎧
+鎖かたびら
+板金鎧
+武者鎧
+弓道着
+胸当て
+無地袴
+刺繍袴
+長尺小紋
+朱袴
+スーツ
+白衣
+ボンテージ
+巫女服
+ナース服
+メイド服
+制服
+ベスト
+ジャケット
+プロテクター
+チェインメイル
+ミスリルコート
+麻衣
+綿衣
+絹衣
+疾風之衣
+天之羽衣
+白帯
+茶帯
+黒帯
+ベルト
+編みベルト
+高級革ベルト
+ライダーベルト
+トゲ付きベルト
+チャンピオン
+白いリボン
+ひらひらリボン
+ピンクのリボン
+真っ赤なリボン
+黄色いリボン
+レースのリボン
+ストッキング
+ネグリジェ
+コルセット
+ガーター
+ビスチェ
+Ｔバック
+リング
+シルバーリング
+プラチナリング
+風のリング
+ミスリルリング
+腕輪
+鉄の腕輪
+ヒスイの腕輪
+トゲ付きバンド
+銀の腕輪
+バンダナ
+スカーフ
+カチューシャ
+[/group]
+
+
+[group]LST_f
+未確定
+水瀬七海
+橘綾香
+倉島渚
+天照
+塔馬美由紀
+[/group]
+
+
+[group]LST_g
+,0x00=0000
+,0x00=0200
+,0x00=0300
+,0x00=0400
+,0x00=0500
+,0x00=0600
+[/group]
+
+
+[group]LST_h
+楓
+桃花
+青龍
+玄武
+白虎
+朱雀
+月読
+玉藻
+[/group]
