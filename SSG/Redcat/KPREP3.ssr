@@ -1,0 +1,2 @@
+[subject][! @KPLST->LST_e,$Val !]:dir
+[replace]0x[! 0x4934A8+$Val*0x58 !],KP_f
