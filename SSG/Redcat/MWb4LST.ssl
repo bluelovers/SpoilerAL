@@ -1,0 +1,262 @@
+[group]MWb4_SSG
+[note]wordwrap
+MAW4特典版収録のver1.51に対応しています。
+※MAW3特典版収録分はver1.50になります。
+[/note]
+
+[subject]ＡＤＶパート関連:dir
+ [subject]買い物で所持金＋個数最大化/実行/_:b_toggle,0x46E277,MWb4LST->MWb4_a,real
+ [subject]時間帯任意指定/実行/_:d_list,0x54E102,MWb4LST->LST_f,0x01,0x09,MWb4LST->LST_g,offset
+[back]
+
+[subject]戦闘関連:dir
+ [subject]味方ノーダメージ化/実行/_:b_toggle,0x47D73F,MWb4LST->MWb4_d,real
+ [subject]敵側一撃死化/実行/_:b_toggle,0x47D744,MWb4LST->MWb4_e,real
+ [subject]戦闘ターン毎全補助属性付与＋状態異常全快/実行/_:toggle,0x4886CA,32C9B5FF6689484CEB0190,83E10485C90F8595000000
+ [subject]戦闘ターン毎ＨＰ・フォース全回復/実行/_:b_toggle,0x46F914,MWb4LST->MWb4_c,real
+ [subject]アイテム使っても減らない/実行/_:b_toggle,0x46EB65,MWb4LST->MWb4_b,real
+ [subject]エネミーエンカウント操作/_:d_list,0x400000,MWb4LST->LST_h,0x00,0xFF,MWb4LST->LST_i,offset
+[back]
+
+[size]2
+
+[subject]パラメータ関連:dir
+ [subject]所持金/現在値/_:calc,0x54E0F0,0x0000,0x7D00,unsigned
+ [repeat]MWb4LST->MWb4REP1,0,8,1
+[back]
+
+[/size]
+
+[subject]ＣＧモード関連:dir
+ [subject]クリアフラグ編集/_:d_toggle,0x54E0E4,MWb4LST->LST_a,MWb4LST->LST_b,offset
+ [subject]GALLERY ALL/ ＯＮ／ＯＦＦ/_:toggle,0x574550,0x574727-01000000,00
+ [subject]MEMORY ALL/ ＯＮ／ＯＦＦ/_:toggle,0x574730,0x5747E7-01000000,00
+[back]
+
+[/group]
+
+
+[group]MWb4_a
+0x46E278,54,50
+0x4B91FC,B8007D,2B4232
+[/group]
+
+
+[group]MWb4_b
+0x46EB65,BAE703EB06909090909090,8B144DC87554006683EA01
+0x47F8E1,B9E703EB06909090909090,8B0C45C87554006683E901
+[/group]
+
+
+[group]MWb4_c
+0x46F914,52,4E
+0x46F925,54,50
+0x488764,5152,55CC
+0x4887F9,5154,55CC
+0x488E0E,52,4E
+0x488E1F,54,50
+[/group]
+
+
+[group]MWb4_d
+0x47D73F,E99CA10500,83C40403F0
+0x4D78E0,83C404,000000
+0x4D78E3,03F0,0000
+0x4D78E5,8B551C,000000
+0x4D78E8,66817A020800,000000000000
+0x4D78EE,7D02,0000
+0x4D78F0,33F6,0000
+0x4D78F2,E94D5EFAFF90,000000000000
+[/group]
+
+
+[group]MWb4_e
+0x47D744,E9AFA1050090,8975E08B551C
+0x4D78F8,8B551C,000000
+0x4D78FB,66817A020800,000000000000
+0x4D7901,7C04,0000
+0x4D7903,668B7252,00000000
+0x4D7907,8975E0,000000
+0x4D790A,E93B5EFAFF90,000000000000
+[/group]
+
+
+[group]MWb4REP1
+[subject][! @MWb4LST->LST_c,$Val !]:dir
+	[replace]0x[! 0x54799A+$Val*0x28 !],MWb4LST->MWb4_PR
+[/group]
+
+
+[group]MWb4_PR
+[subject]パーティー内存在フラグ/ＯＮ／ＯＦＦ/_:toggle,0x00,01,00
+ [subject]一般ステータス:dir
+ [subject]現在体力/現在値/固定:calc,0x02,0x0000,0x03E7,unsigned
+ [subject]現在フォース/現在値/固定:calc,0x04,0x00,0x50,unsigned
+ [subject]最大体力/現在値/_:calc,0x06,0x0000,0x03E7,unsigned
+ [subject]最大フォース/現在値/_:calc,0x08,0x00,0x50,unsigned
+ [e_with],0x00,0x19,unsigned
+  [subject]攻撃/現在値/_:calc,0x0A
+  [subject]防御/現在値/_:calc,0x0C
+  [subject]敏捷/現在値/_:calc,0x0E
+  [subject]生命/現在値/_:calc,0x10
+  [subject]根性/現在値/_:calc,0x12
+ [/e_with]
+ [subject]ＬＶ/現在値/_:calc,0x14,0x01,0x63,unsigned
+ [subject]単位/現在値/_:calc,0x16,0x00,0x63,unsigned
+ [subject]経験値/現在値/_:calc,0x18,0x00,0x7D00,unsigned
+ [back]
+ [subject]キャラクター装備:dir
+ [e_with],MWb4LST->LST_d,0x00,0x3B,MWb4LST->LST_e,offset
+  [subject]手/_:d_list,0x1E
+  [subject]体/_:d_list,0x20
+  [subject]足/_:d_list,0x22
+  [/e_with]
+ [back]
+[back]
+[/group]
+
+
+[group]LST_a
+ミーナ
+ルシィ
+キティ
+葵
+シェリル
+[/group]
+
+
+[group]LST_b
+0x00=0100/0000
+0x02=0100/0000
+0x04=0100/0000
+0x06=0100/0000
+0x08=0100/0000
+[/group]
+
+
+[group]LST_c
+クリフ
+ミーナ
+シェリル
+葵
+ルシィ
+キティ
+ウィル
+アイリ
+[/group]
+
+
+[group]LST_d
+なし
+耳栓
+はちまき
+手鏡
+守りの腕輪
+疾風の靴
+マスク
+ゴム長
+防火服
+カイロ
+スパイク
+護符
+マフラー
+ミトン
+鍋つかみ
+すね当て
+サングラス
+魔寄せの鈴
+魔除けの鈴
+ゴム手袋
+数珠
+ナックル
+天使の羽
+アーク
+黒装束
+リボン
+分厚い聖書
+サンダル
+ポプリ
+赤い靴
+回復の指輪
+羽付きブーツ
+ご神体
+雨ガッパ
+ハイヒール
+[/group]
+
+
+[group]LST_e
+0x00
+0x01
+0x02
+0x03
+0x04
+0x05
+0x06
+0x07
+0x08
+0x09
+0x0A
+0x0B
+0x0C
+0x0D
+0x0E
+0x0F
+0x10
+0x11
+0x12
+0x13
+0x14
+0x15
+0x16
+0x17
+0x18
+0x32
+0x33
+0x34
+0x35
+0x36
+0x37
+0x38
+0x39
+0x3A
+0x3B
+[/group]
+
+
+[group]LST_f
+朝１０時
+昼１２時
+昼３時
+夕方５時
+夜７時
+夜８時
+夜９時
+夜１０時
+[/group]
+
+
+[group]LST_g
+,0x00=0100
+,0x00=0200
+,0x00=0300
+,0x00=0400
+,0x00=0600
+,0x00=0700
+,0x00=0800
+,0x00=0900
+[/group]
+
+
+[group]LST_h
+デフォルト
+完全回避
+強制化
+[/group]
+
+
+[group]LST_i
+,0x0A5DE2=83C001,0x0A5E04=0F8D80000000
+,0x0A5DE2=33C090,0x0A5E04=E98100000090
+,0x0A5DE2=83C000,0x0A5E04=EB0490909090
+[/group]
