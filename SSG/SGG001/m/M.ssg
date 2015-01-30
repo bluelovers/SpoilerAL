@@ -1,0 +1,79 @@
+SSG for SpoilerAL ver 5.4
+
+[script]
+[title]ANGELIUM
+[creator]M.
+[maker]Terios
+[process]ANGELIUM.EXE
+[note]wordwrap
+初めて作ったSSGです。まだまだ初心者ですのであまり大した物は作れませんが、よろしくお願いします。
+補足
+効果が現れないときは値の固定を使って少しゲームを進めてください
+
+<サーチ環境>
+OS:Win98
+ゲームver:1.01
+[/note]
+[subject]ヘラメーター:calc,0x008087E4,0x00,0x63,signed,little_e　
+[subject]ゴッドリサーチ:toggle,0x00808828,05,01
+[subject]資金変更:calc,0x008087F0,0x00,0x05F5E0FF,signed,little_e
+[subject]日数変更:dir
+[subject]月:calc,0x008087E8,01,03
+[subject]日付:calc,0x008087EC,01,31
+[back]
+[subject]ステータス:dir
+[subject]ユウ:dir
+[subject]徳:calc,0x00808758,00,99
+[subject]包容力:calc,0x0080875C,00,99
+[subject]根性:calc,0x00808760,00,99
+[subject]知性:calc,0x00808764,00,99
+[subject]疲労:calc,0x00808778,00,99
+[subject]好感度:calc,0x00808780,00,99
+[subject]GOD:calc,0x0080877C,00,99
+[back]
+[subject]美喜:dir
+[subject]徳:calc,0x00808784,00,99
+[subject]包容力:calc,0x00808788,00,99
+[subject]根性:calc,0x0080878C,00,99
+[subject]知性:calc,0x00808790,00,99
+[subject]疲労:calc,0x008087A4,00,99
+[subject]好感度:calc,0x008087AC,00,99
+[subject]GOD:calc,0x008087A8,00,99
+[back]
+[subject]チャド子:dir
+[subject]徳:calc,0x008087B0,00,99
+[subject]包容力:calc,0x008087B4,00,99
+[subject]根性:calc,0x008087B8,00,99
+[subject]知性:calc,0x008087BC,00,99
+[subject]疲労:calc,0x008087D0,00,99
+[subject]好感度:calc,0x008087D8,00,99
+[subject]GOD:calc,0x008087D4,00,99
+[root]
+[/script]
+
+
+[script]
+[title]はぴベルラヴ×２　ハネムーン
+[process]LOV_HANE.EXE
+[maker]Terios
+[creator]M.
+[note]wordwrap
+クイズの残りライフは一度間違えると2個に減りますが、値の固定がしてあればそのまま減りません
+ゲームよりも先にSpoilerを起動させてゲームを始めないと効果が出ないことがあります。
+値の固定を使う場合は、ミニゲームが始まってから使用しないとゲームが強制終了するので注意してください。
+朋乃１５は減っていくタイマーを固定する方法がわからないので出来ませんでした。
+
+<サーチ環境>
+OS:Win98
+
+[/note]
+[subject]クイズの残りライフ:toggle,0x008E140C,03,01,signed,little_e
+[subject]ミニゲーム:dir
+[subject]椎子の１分お料理教室　ポイント変更:calc,0x007D4305,00,999,signed,little_e
+[subject]THEカッくんDANCE　ポイント変更:calc,0x007D4621,00,10,signed,little_e
+[subject]THEカッくんDANCE　レベル変更:calc,0x007D461D,01,10,signed,little_e
+[subject]天晴！智之介　ポイント変更:calc,0x007D4335,00,9999,signed,little_e
+[subject]天晴！智之介　念波ゲージ:toggle,0x007D4339,172,00,signed,little_e
+[subject]とぶ　さいけデリ子　ポイント変更:calc,0x007D4329,00,9999,signed,little_e
+[subject]クライシス！ヴィスクヴィート　ポイント変更:calc,0x007D437D,00,999,signed,little_e
+[/script]
