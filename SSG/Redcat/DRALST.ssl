@@ -1,0 +1,388 @@
+[group]DRA_SSG
+[note]wordwrap
+おまけシナリオのボツ科白集に「他人のセーブデータでクイズを楽しんではダメですよ」ってのがあります。
+
+…無くてもできてしまったり、他人どころか各自データの生成自体可能なのは、このSSG利用者同士の秘密ということでw
+
+＊モードの切り替え等は一度ゲームからタイトルへ戻る等反映作業を要します。また、ＣＧＡＬＬで埋まりきらないもの（ゲームオーバー用ＣＧ）はおまけシナリオをＡＬＬ化すれば埋まります。
+[/note]
+
+[subject]ver1.00:dir
+
+[subject]SLGパート関連:dir
+	[subject]戦闘１回で部下LVMAX化/実行/_:toggle,0x40D4AC,8B4C2404909090,8B8C10D8AA0000
+	[subject]部下召喚時部下種類一括指定/_:d_list,0x00,DRALST->LST_e,0x000000000000000000,0xFFFFFFFFFFFFFFFFFF,DRALST->LST_f,offset
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]基本パラメータ:dir
+	[replace]_[:[:[:[:[:(MName::AGS.DLL)+0x02AD3C:]+0x0138:]+0x24:]+0x0C:]+0x28:]+0x20,DRALST->DRA_PR
+ [subject]部下の能力調整確認:dir
+  [io_fep]$Val-1,$Val+1
+	[subject]スロット番号選択/現在値/_:calc,0x4413F0,0x0001,0x01F3,unsigned
+  [/io_fep]
+ [subject]_mem,_([\:0x4413F0\:]*0x01E8)=>temp;[\:[\:[\:[\:[\:(MName\:\:AGS.DLL)+0x02AD3C\:]+0x0138\:]+0x24\:]+0x0C\:]+0x28\:]+$temp+0x33C0,16,00,<Nocharacter>'+'の能力:dir
+	[replace]_([:0x4413F0:]*0x01E8)=>temp;[:[:[:[:[:(MName::AGS.DLL)+0x02AD3C:]+0x0138:]+0x24:]+0x0C:]+0x28:]+$temp+0x33C0,DRALST->DRA_PR2
+ [back]
+[back]
+[back]
+
+[subject]ＣＧモード関連:dir
+	[replace]_[:[:[:[:[:(MName::AGS.DLL)+0x02AD3C:]+0x0138:]+0x24:]+0x0C:]+0x28:]+0x20,DRALST->DRA_CG
+[nback]
+
+[root]
+
+[subject]ver1.01:dir
+
+[subject]SLGパート関連:dir
+	[subject]戦闘１回で部下LVMAX化/実行/_:toggle,0x40D4AC,8B4C2404909090,8B8C10D8AA0000
+	[subject]部下召喚時部下種類一括指定/_:d_list,0x00,DRALST->LST_e,0x000000000000000000,0xFFFFFFFFFFFFFFFFFF,DRALST->LST_f,offset
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]基本パラメータ:dir
+	[replace]_[:[:[:[:[:(MName::AGS.DLL)+0x02AD6C:]+0x0138:]+0x24:]+0x0C:]+0x28:]+0x20,DRALST->DRA_PR
+ [subject]部下の能力調整確認:dir
+  [io_fep]$Val-1,$Val+1
+	[subject]スロット番号選択/現在値/_:calc,0x4413F0,0x0001,0x01F3,unsigned
+  [/io_fep]
+ [subject]_mem,_([\:0x4413F0\:]*0x01E8)=>temp;[\:[\:[\:[\:[\:(MName\:\:AGS.DLL)+0x02AD6C\:]+0x0138\:]+0x24\:]+0x0C\:]+0x28\:]+$temp+0x33C0,16,00,<Nocharacter>'+'の能力:dir
+	[replace]_([:0x4413F0:]*0x01E8)=>temp;[:[:[:[:[:(MName::AGS.DLL)+0x02AD6C:]+0x0138:]+0x24:]+0x0C:]+0x28:]+$temp+0x33C0,DRALST->DRA_PR2
+ [back]
+[back]
+[back]
+
+[subject]ＣＧモード関連:dir
+	[replace]_[:[:[:[:[:(MName::AGS.DLL)+0x02AD6C:]+0x0138:]+0x24:]+0x0C:]+0x28:]+0x20,DRALST->DRA_CG
+[back]
+
+[root]
+
+[subject]ver1.02:dir
+
+[subject]SLGパート関連:dir
+	[subject]戦闘１回で部下LVMAX化/実行/_:toggle,0x40D4AC,8B4C2404909090,8B8C10D8AA0000
+	[subject]部下召喚時部下種類一括指定/_:d_list,0x00,DRALST->LST_e,0x000000000000000000,0xFFFFFFFFFFFFFFFFFF,DRALST->LST_f,offset
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]基本パラメータ:dir
+	[replace]_[:[:[:[:[:(MName::AGS.DLL)+0x02AD4C:]+0x0138:]+0x24:]+0x0C:]+0x28:]+0x20,DRALST->DRA_PR
+ [subject]部下の能力調整確認:dir
+  [io_fep]$Val-1,$Val+1
+	[subject]スロット番号選択/現在値/_:calc,0x4413F0,0x0001,0x01F3,unsigned
+  [/io_fep]
+ [subject]_mem,_([\:0x4413F0\:]*0x01E8)=>temp;[\:[\:[\:[\:[\:(MName\:\:AGS.DLL)+0x02AD4C\:]+0x0138\:]+0x24\:]+0x0C\:]+0x28\:]+$temp+0x33C0,16,00,<Nocharacter>'+'の能力:dir
+	[replace]_([:0x4413F0:]*0x01E8)=>temp;[:[:[:[:[:(MName::AGS.DLL)+0x02AD4C:]+0x0138:]+0x24:]+0x0C:]+0x28:]+$temp+0x33C0,DRALST->DRA_PR2
+ [back]
+[back]
+[back]
+
+[subject]ＣＧモード関連:dir
+	[replace]_[:[:[:[:[:(MName::AGS.DLL)+0x02AD4C:]+0x0138:]+0x24:]+0x0C:]+0x28:]+0x20,DRALST->DRA_CG
+[back]
+
+[root]
+
+[/group]
+
+
+[group]DRA_PR
+[io_fep]$Val-1,$Val+1
+ [subject]週数/現在値/_:calc,0x046E54,0x0000,0x03E7,unsigned
+[/io_fep]
+[subject]財力/現在値/_:calc,0x046E58,0x00000000,0x3B9AC9FF,unsigned
+[subject]財力下６桁/現在値/_:calc,0x046E5C,0x00000000,0x000F423F,unsigned
+[subject]Ｈ/現在値/_:calc,0x046E74,0x0000,0x03E7,unsigned
+[e_with],0x00000000,0x0BEBC200,unsigned
+ [subject]魔力/現在値/_:calc,0x046E60
+ [subject]恐怖/現在値/_:calc,0x046E64
+[/e_with]
+ [subject]捕虜数/現在値/_:calc,0x046E68,0x0000,0x270F,unsigned
+ [subject]巣豪華度/現在値/_:calc,0x046E6C,0x0000,0x03E7,unsigned
+[back]
+[subject]会話回数確認調整:dir
+[e_with],0x00000000,0x00000063,unigned
+ [subject]ユメ/現在値/_:calc,0x4737C
+ [subject]フェイ/現在値/_:calc,0x47380
+ [subject]ルクル/現在値/_:calc,0x47384
+[/e_with]
+[back]
+[/group]
+
+
+[group]DRA_PR2
+[subject]LV/現在値/_:calc,0x14,0x01,0x63,unsigned
+[subject]EXP/現在値/_:calc,0x18,0x0000,0x26AC,unsigned
+[e_with],0x0000,0x270F,unsigned
+ [subject]HP/現在値/_:calc,0x1C
+ [subject]MAXHP/現在値/_:calc,0x20
+[/e_with]
+[e_with],0x0000,0x03E7,unsigned
+ [subject]攻撃/現在値/_:calc,0x24
+ [subject]防御/現在値/_:calc,0x28
+[/e_with]
+[e_with],DRALST->LST_c,0x000000000000000000,0xFFFFFFFFFFFFFFFFFF,DRALST->LST_d,offset
+ [subject]スキル１/_:d_list,0x2C
+ [subject]スキル２/_:d_list,0x37
+ [subject]スキル３/_:d_list,0x42
+ [subject]スキル４/_:d_list,0x4D
+[/e_with]
+[subject]一括極大化/実行/_:toggle,0x1C,0F2700000F270000E7030000E7030000
+[subject]一括最弱化/実行/_:toggle,0x1C,01000000010000000100000001000000
+[/group]
+
+
+[group]DRA_CG
+[subject]おまけ出現/ＯＮ／ＯＦＦ/_:b_toggle,0x00,DRALST->DRA_b,offset
+[subject]モード切り替え/_:d_list,0x01CE,DRALST->LST_a,0x0000,0xFFFF,DRALST->LST_b,offset
+[subject]ＣＧ鑑賞ＡＬＬ/ＯＮ／ＯＦＦ/_:toggle,0x02C8,0x0390-01,00
+[subject]イベント回想ＡＬＬ/ＯＮ／ＯＦＦ/_:toggle,0x026D,0x02B9-FF,00
+[subject]おまけシナリオＡＬＬ/ＯＮ／ＯＦＦ/_:b_toggle,0x00,DRALST->DRA_a,offset
+[subject]部下一覧ＡＬＬ/ＯＮ／ＯＦＦ/_:toggle,0x0200,0x022F-01,00
+[/group]
+
+
+[group]DRA_a
+0x019C,01,00
+0x0260,0x026C-FF,00
+[/group]
+
+
+[group]DRA_b
+0x01A1,FF,00
+0x01C4,FFFFFFFFFFFF,000000000000
+[/group]
+
+
+[group]LST_a
+通常
+ブラッドモード
+リュミスモード
+[/group]
+
+
+[group]LST_b
+,0x00=0000
+,0x00=FF00
+,0x00=FFFF
+[/group]
+
+
+[group]LST_c
+スキルなし
+魔眼の矢
+疾風迅雷
+二回攻撃
+奇襲心得
+必殺無効
+策士
+知者
+賢者
+隊列
+群
+飛行
+猛者
+熟練者
+必殺投げ
+必殺突き
+必殺斬り
+強打
+狂戦士
+銀の武器
+魔法武器
+悪魔武器
+伝説武器
+鉄の体
+銀の防具
+魔法防具
+悪魔防具
+伝説防具
+竜の加護
+魔法障壁
+炎ブレス
+氷ブレス
+毒ブレス
+光ブレス
+弓矢
+炎の魔法
+水の魔法
+氷の魔法
+光の魔法
+究極魔法
+不死身
+回復
+超回復
+再生肉体
+毒の空気
+高速魔法
+鬼の気迫
+乾坤一擲
+竜の化身
+罠知識
+強運
+幸運の星
+[/group]
+
+
+[group]LST_d
+,0x00=2A0000000000000000
+,0x00=96828AE182CC96EE00
+,0x00=8EBE95979076978B00
+,0x00=93F189F18D558C8200
+,0x00=8AEF8F50905393BE00
+,0x00=954B8E4596B38CF800
+,0x00=8DF48E6D0000000000
+,0x00=926D8ED20000000000
+,0x00=8CAB8ED20000000000
+,0x00=91E097F10000000000
+,0x00=8C5100000000000000
+,0x00=94F28D730000000000
+,0x00=96D28ED20000000000
+,0x00=8F6E97FB8ED2000000
+,0x00=954B8E45938A82B000
+,0x00=954B8E4593CB82AB00
+,0x00=954B8E458E6182E800
+,0x00=8BAD91C50000000000
+,0x00=8BB690ED8E6D000000
+,0x00=8BE282CC95908AED00
+,0x00=9682964095908AED00
+,0x00=88AB968295908AED00
+,0x00=936090E095908AED00
+,0x00=935382CC91CC000000
+,0x00=8BE282CC96688BEF00
+,0x00=9682964096688BEF00
+,0x00=88AB968296688BEF00
+,0x00=936090E096688BEF00
+,0x00=97B382CC89C18CEC00
+,0x00=968296408FE195C700
+,0x00=898A8375838C835800
+,0x00=95588375838C835800
+,0x00=93C58375838C835800
+,0x00=8CF58375838C835800
+,0x00=8B7C96EE0000000000
+,0x00=898A82CC9682964000
+,0x00=908582CC9682964000
+,0x00=955882CC9682964000
+,0x00=8CF582CC9682964000
+,0x00=8B868BC99682964000
+,0x00=95738E809067000000
+,0x00=89F1959C0000000000
+,0x00=92B489F1959C000000
+,0x00=8DC490B693F791CC00
+,0x00=93C582CC8BF38B4300
+,0x00=8D8291AC9682964000
+,0x00=8B5382CC8B43949700
+,0x00=8AA38DA388EA9DB100
+,0x00=97B382CC89BB906700
+,0x00=E3A9926D8EAF000000
+,0x00=8BAD895E0000000000
+,0x00=8D4B895E82CC90AF00
+[/group]
+
+
+[group]LST_e
+デフォルト設定
+ベト１
+ベト２
+ベト３
+突然変異ベト
+リトルハット１
+リトルハット２
+リトルハット３
+マッドキラー１
+マッドキラー２
+マッドキラー３
+ダークマン
+モエルモン
+突撃アイ
+デーモンスピア
+レッドスピア
+ナメッド
+フェイス
+ダークマジシャン
+ダークウィザード
+ファニードラ
+ベビードラ
+ゴウン
+シザービートル
+ヘビサンマン
+ヘビサンウーマン
+忍・ザ・ブラック
+忍・ザ・ゴールド
+暗黒騎士
+漆黒騎士
+イモモ
+ミックス
+ファットデビル
+ハラミボディ
+ハンマースイング
+竜警護隊
+竜親衛隊
+キャラ
+クマン
+スコルピオ
+タラン
+トウフ君
+ネト
+ホーンちゃん
+レイリン
+白ヘビ様
+冥土さん
+ブラッド
+フェイ
+[/group]
+
+
+[group]LST_f
+,0x416861=0F8DBA0200008B550C
+,0x416861=C6450C008B550C9090
+,0x416861=C6450C018B550C9090
+,0x416861=C6450C028B550C9090
+,0x416861=C6450C038B550C9090
+,0x416861=C6450C048B550C9090
+,0x416861=C6450C058B550C9090
+,0x416861=C6450C068B550C9090
+,0x416861=C6450C078B550C9090
+,0x416861=C6450C088B550C9090
+,0x416861=C6450C098B550C9090
+,0x416861=C6450C0A8B550C9090
+,0x416861=C6450C0B8B550C9090
+,0x416861=C6450C0C8B550C9090
+,0x416861=C6450C0D8B550C9090
+,0x416861=C6450C0E8B550C9090
+,0x416861=C6450C0F8B550C9090
+,0x416861=C6450C108B550C9090
+,0x416861=C6450C118B550C9090
+,0x416861=C6450C128B550C9090
+,0x416861=C6450C138B550C9090
+,0x416861=C6450C148B550C9090
+,0x416861=C6450C158B550C9090
+,0x416861=C6450C168B550C9090
+,0x416861=C6450C178B550C9090
+,0x416861=C6450C188B550C9090
+,0x416861=C6450C198B550C9090
+,0x416861=C6450C1A8B550C9090
+,0x416861=C6450C1B8B550C9090
+,0x416861=C6450C1C8B550C9090
+,0x416861=C6450C1D8B550C9090
+,0x416861=C6450C1E8B550C9090
+,0x416861=C6450C1F8B550C9090
+,0x416861=C6450C208B550C9090
+,0x416861=C6450C218B550C9090
+,0x416861=C6450C228B550C9090
+,0x416861=C6450C238B550C9090
+,0x416861=C6450C248B550C9090
+,0x416861=C6450C258B550C9090
+,0x416861=C6450C268B550C9090
+,0x416861=C6450C278B550C9090
+,0x416861=C6450C288B550C9090
+,0x416861=C6450C298B550C9090
+,0x416861=C6450C2A8B550C9090
+,0x416861=C6450C2B8B550C9090
+,0x416861=C6450C2C8B550C9090
+,0x416861=C6450C2D8B550C9090
+,0x416861=C6450C2E8B550C9090
+,0x416861=C6450C2F8B550C9090
+[/group]
