@@ -1,0 +1,687 @@
+//最近対処を緩めたら、先日の某タイトルで早速盗用した人がいたので前置き。
+//同対象の他ツール・プラグインへの盗用は禁止。
+//当然ですがSSGファイルだろうと例外にはなりません。
+
+[group]IZ2_SSG
+[note]wordwrap
+パラメータ関連に関して：
+多くのパラメータが、小数点以下を一定の法則で変化（暗号化ではない）させることによりメモリサーチ等の解析行為を阻害している節があります。ただし、実際の数量判断では小数点以下は無視されますので、書き換えに関しては気にする必要はありません。またキャラクターのステータス配列は不規則に入れ替わることが頻繁にありますので、現在の目当てのキャラの位置を間違えないように気をつけるべし。デフォルトでは一切許可していませんが、値の固定は避けた方がよいです。
+
+パラメータの簡易な変更方法：
+通常データは普段有効ですが、ＬＶＵＰやセーブ＆ロードには効果がでません。基幹となる実データが更新されていないためです。ただし、実データも特定の状況でなければ更新されません。そこで最も簡易と思われるパラメータ変更方法ですが、
+
+１.実データの値を変更する
+２.任意の装備を違うものに換える
+
+これで、実データの呼び出しと通常データへの反映が同時に行われます。
+
+無条件戦闘勝利スキップ：
+エンカウンター操作では回避不可能なイベントバトル等にも有効。戦闘中に実行することも可能。エンカウンター操作と組み合わせるとAVGパートのみ楽しめます。
+
+無条件で勾玉スロット全開：
+機能使用時点は表示のみで装着効果がでません。機能使用後に装備を換えた時やデータをロードした際、現在の装備に対して有効になります。
+
+AVGパート高速化：
+AVGパート時立ちキャラの表示や背景処理他それらのウエイトを外します。
+
+ＣＧモード関連：
+隠しＣＧ？のみデータがないせいか落ちてしまうので現状は１枚出ていません。ＡＬＬ化の反映は新出の時だけなので、ＡＬＬ化→１枚目ＯＦＦ機能で最初のＣＧを落した後、最初から始めて最初のＣＧを見れば作業完了。
+
+エンディングセレクト：
+ラストの剛戦直前まで有効。エンディングの変更が可能。
+
+防御修正について：
+システム上の上限値が300%なのは攻撃修正と同じなのですが、防御修正は100%以上になるとマイナス方向に働くことがあるようです。御注意を。
+
+ステータス上限変更：
+起動毎に設定する必要があります。未設定だと更新時にデフォルトの値に戻されてしまいます。
+
+無条件拡張開封：
+拡張パッチがあたっている状態を偽装する機能。隠しＣＧ枠が出現し、特定の回想シーンがシナリオ拡張されます。なお、この拡張の骨子となるとあるＣＧデータ自体は存在しませんので、それを見ることは不可能。他のＣＧと差し換えることで、通常フラグを起てた状態で件のＣＧを表示しようとすると発生する強制終了を回避しています。ただし、拡張回想に付随する分岐シナリオ部分や差分データ自体は見ることが可能です。対象は佐久夜の回想１回目「桜に包まれて…」。無論ゲームシナリオ内のそれも拡張されます。
+
+＊先程述べたように、拡張パッチを充てていない状態で、このＳＳＧを使用せずに件のＣＧを表示しようとすると確実に強制終了します。拡張されていない利用者は、この無条件開封機能未使用時には保険要素として「拡張ＣＧ対象枠ＯＮ」のチェックを外して、フラグを落すことをお勧めします。これは某所のグローバルセーブデータを利用している方にも効果があります。対象となる人はこのチェックを一度入れてから再度外すようにしてください。
+
+[/note]
+
+[subject]ver1.00:dir
+
+[subject]ＲＰＧパート関連:dir
+	[subject]無条件戦闘勝利スキップ/実行/_:b_toggle,0x41D49C,IZ2LST->IZ2_c,real
+	[subject]戦闘入手経験値Ｘ倍化/_:d_list,0x42B5BB,IZ2LST->LST_e,0x00,0xFFFFFFFF,IZ2LST->LST_f,offset
+	[subject]エンカウンター操作/_:d_list,0x40A065,IZ2LST->LST_c,0x00,0xFFFFFFFF,IZ2LST->LST_d,offset
+	[subject]無条件で勾玉スロット全開/実行/_:b_toggle,0x402BB6,IZ2LST->IZ2_a,real
+	[subject]エンディングセレクト/_:d_list,_[:0x6E4B2C:]+0xA4,IZ2LST->LST_g,0x0000,0x0006,IZ2LST->LST_h,offset
+[back]
+
+[subject]環境関連:dir
+	[subject]AVGパート高速化/実行/_:b_toggle,0x56C4B0,IZ2LST->IZ2_b,real
+[back]
+
+[subject]パラメータ関連:dir
+	[subject]勾玉全種類最大数所持/所持／抹消/_:b_toggle,0x00,IZ2LST->PR_e,offset
+	 [subject]アイテムエディタ:dir
+		[subject]変更アイテム指定/_:list,0x667864,IZ2LST->LST_b,0x00,0x01
+		[subject]_mem,_([\:0x667864\:])*0x150=>temp;[\:0x6D1A10\:]+$temp+0x10,32,00,<ReadError>'+'の数量変更/現在値/_:f_calc,_([:0x667864:])*0x150=>temp;[:[:0x6D1A10:]+$temp:]=>temp;[:0x6D17FE:]+$temp*0x04,0,99,float
+	 [back]
+ [subject]仲間のステータス:dir
+	[repeat]IZ2LST->IZ2REP1,0,6,1
+ [back]
+[back]
+
+[subject]ＣＧモード関連:dir
+	[replace]_[:0x6E4BA0:],IZ2LST->IZ2_CG
+[back]
+
+[root]
+
+[subject]ver1.01:dir
+
+[subject]ＲＰＧパート関連:dir
+	[subject]無条件戦闘勝利スキップ/実行/_:b_toggle,0x41D29C,IZ2LST->IZ2_2c,real
+	[subject]戦闘入手経験値Ｘ倍化/_:d_list,0x42B3BB,IZ2LST->LST_e,0x00,0xFFFFFFFF,IZ2LST->LST_f,offset
+	[subject]エンカウンター操作/_:d_list,0x40A135,IZ2LST->LST_c,0x00,0xFFFFFFFF,IZ2LST->LST_d,offset
+	[subject]無条件で勾玉スロット全開/実行/_:b_toggle,0x402BB6,IZ2LST->IZ2_2a,real
+	[subject]エンディングセレクト/_:d_list,_[:0x6E4B3C:]+0xA4,IZ2LST->LST_g,0x0000,0x0006,IZ2LST->LST_h,offset
+[back]
+
+[subject]環境関連:dir
+	[subject]AVGパート高速化/実行/_:b_toggle,0x569843,IZ2LST->IZ2_2b,real
+[back]
+
+[subject]パラメータ関連:dir
+	[subject]勾玉全種類最大数所持/所持／抹消/_:b_toggle,0x00,IZ2LST->PR_e,offset
+	 [subject]アイテムエディタ:dir
+		[subject]変更アイテム指定/_:list,0x667EE4,IZ2LST->LST_b,0x00,0x01
+		[subject]_mem,_([\:0x667EE4\:])*0x150=>temp;[\:0x6D1A10\:]+$temp+0x10,32,00,<ReadError>'+'の数量変更/現在値/_:f_calc,_([:0x667EE4:])*0x150=>temp;[:[:0x6D1A10:]+$temp:]=>temp;[:0x6D17FE:]+$temp*0x04,0,99,float
+	 [back]
+ [subject]仲間のステータス:dir
+	[repeat]IZ2LST->IZ2REP1,0,6,1
+ [back]
+[back]
+
+[subject]ＣＧモード関連:dir
+	[replace]_[:0x6E4BB0:],IZ2LST->IZ2_CG
+[back]
+
+[root]
+
+[subject]ver1.02:dir
+
+[subject]ＲＰＧパート関連:dir
+	[subject]無条件戦闘勝利スキップ/実行/_:b_toggle,0x41D3BC,IZ2LST->IZ2_3c,real
+	[subject]戦闘入手経験値Ｘ倍化/_:d_list,0x42B4DB,IZ2LST->LST_e,0x00,0xFFFFFFFF,IZ2LST->LST_f,offset
+	[subject]エンカウンター操作/_:d_list,0x40A125,IZ2LST->LST_c,0x00,0xFFFFFFFF,IZ2LST->LST_2d,offset
+	[subject]無条件で勾玉スロット全開/実行/_:b_toggle,0x402BB6,IZ2LST->IZ2_3a,real
+	[subject]エンディングセレクト/_:d_list,_[:0x6E5B3C:]+0xA4,IZ2LST->LST_g,0x0000,0x0006,IZ2LST->LST_h,offset
+[back]
+
+[subject]環境関連:dir
+	[subject]AVGパート高速化/実行/_:b_toggle,0x5696E3,IZ2LST->IZ2_3b,real
+	[subject]無条件拡張開封/実行/_:b_toggle,0x56C01B,IZ2LST->IZ2_3d,real
+	[subject]拡張ＣＧ対象枠ＯＮ/ＯＮ／ＯＦＦ/_:toggle,_[:0x6E5BB0:]+0x83,06,05
+[back]
+
+[subject]パラメータ関連:dir
+	[subject]勾玉全種類最大数所持/所持／抹消/_:b_toggle,0x00,IZ2LST->PR_2e,offset
+	 [subject]アイテムエディタ:dir
+		[subject]変更アイテム指定/_:list,0x668154,IZ2LST->LST_b,0x00,0x01
+		[subject]_mem,_([\:0x668154\:])*0x150=>temp;[\:0x6D2A10\:]+$temp+0x10,32,00,<ReadError>'+'の数量変更/現在値/_:f_calc,_([:0x668154:])*0x150=>temp;[:[:0x6D2A10:]+$temp:]=>temp;[:0x6D27FE:]+$temp*0x04,0,99,float
+	 [back]
+ [subject]ステータス上限値変更:dir
+	[replace]0x6D2B20,IZ2LST->PR_3b
+ [back]
+ [subject]仲間のステータス:dir
+	[repeat]IZ2LST->IZ2REP21,0,6,1
+ [back]
+[back]
+
+[subject]ＣＧモード関連:dir
+	[replace]_[:0x6E5BB0:],IZ2LST->IZ2_CG
+[back]
+
+[root]
+
+[subject]学園狂想曲同梱版(ver1.03):dir
+
+[subject]ＲＰＧパート関連:dir
+	[subject]無条件戦闘勝利スキップ/実行/_:b_toggle,0x41D2CC,IZ2LST->IZ2_4c,real
+	[subject]戦闘入手経験値Ｘ倍化/_:d_list,0x42B3FF,IZ2LST->LST_e,0x00,0xFFFFFFFF,IZ2LST->LST_f,offset
+	[subject]エンカウンター操作/_:d_list,0x40A0C5,IZ2LST->LST_c,0x00,0xFFFFFFFF,IZ2LST->LST_2d,offset
+	[subject]無条件で勾玉スロット全開/実行/_:b_toggle,0x402BB6,IZ2LST->IZ2_4a,real
+	[subject]エンディングセレクト/_:d_list,_[:0x6E5B3C:]+0xA4,IZ2LST->LST_g,0x0000,0x0006,IZ2LST->LST_h,offset
+[back]
+
+[subject]環境関連:dir
+	[subject]AVGパート高速化/実行/_:b_toggle,0x0500,IZ2LST->IZ2_3b,offset
+[back]
+
+[subject]パラメータ関連:dir
+	[subject]勾玉全種類最大数所持/所持／抹消/_:b_toggle,0x00,IZ2LST->PR_2e,offset
+	 [subject]アイテムエディタ:dir
+		[subject]変更アイテム指定/_:list,0x6685A4,IZ2LST->LST_b,0x00,0x01
+		[subject]_mem,_([\:0x6685A4\:])*0x150=>temp;[\:0x6D2A10\:]+$temp+0x10,32,00,<ReadError>'+'の数量変更/現在値/_:f_calc,_([:0x6685A4:])*0x150=>temp;[:[:0x6D2A10:]+$temp:]=>temp;[:0x6D27FE:]+$temp*0x04,0,99,float
+	 [back]
+ [subject]ステータス上限値変更:dir
+	[replace]0x6D2B20,IZ2LST->PR_3b
+ [back]
+ [subject]仲間のステータス:dir
+	[repeat]IZ2LST->IZ2REP21,0,6,1
+ [back]
+[back]
+
+[subject]ＣＧモード関連:dir
+	[replace]_[:0x6E5BB0:],IZ2LST->IZ2_CG
+[back]
+
+[root]
+
+[subject]IZUMO3同梱版(ver1.05):dir
+
+[subject]ＲＰＧパート関連:dir
+ [subject]無条件戦闘勝利スキップ/実行/_:b_toggle,0x41D2CC,IZ2LST->IZ2_4c,real
+ [subject]戦闘入手経験値Ｘ倍化/_:d_list,0x42B3FF,IZ2LST->LST_e,0x00,0xFFFFFFFF,IZ2LST->LST_f,offset
+ [subject]エンカウンター操作/_:d_list,0x40A0C5,IZ2LST->LST_c,0x00,0xFFFFFFFF,IZ2LST->LST_2d,offset
+ [subject]無条件で勾玉スロット全開/実行/_:b_toggle,0x402BB6,IZ2LST->IZ2_4a,real
+ [subject]エンディングセレクト/_:d_list,_[:0x6E5B3C:]+0xA4,IZ2LST->LST_g,0x0000,0x0006,IZ2LST->LST_h,offset
+[back]
+
+[subject]環境関連:dir
+ [subject]AVGパート高速化/実行/_:b_toggle,0x0510,IZ2LST->IZ2_3b,offset
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]勾玉全種類最大数所持/所持／抹消/_:b_toggle,0x00,IZ2LST->PR_2e,offset
+ [subject]アイテムエディタ:dir
+  [subject]変更アイテム指定/_:list,0x668CF4,IZ2LST->LST_b,0x00,0x01
+  [subject]_mem,_([\:0x668CF4\:])*0x150=>temp;[\:0x6D2A10\:]+$temp+0x10,32,00,<ReadError>'+'の数量変更/現在値/_:f_calc,_([:0x668CF4:])*0x150=>temp;[:[:0x6D2A10:]+$temp:]=>temp;[:0x6D27FE:]+$temp*0x04,0,99,float
+ [back]
+ [subject]ステータス上限値変更:dir
+  [replace]0x6D2B20,IZ2LST->PR_3b
+ [back]
+ [subject]仲間のステータス:dir
+  [repeat]IZ2LST->IZ2REP21,0,6,1
+ [back]
+[back]
+
+[subject]ＣＧモード関連:dir
+ [replace]_[:0x6E5BB0:],IZ2LST->IZ2_2CG
+[back]
+
+[root]
+
+[/group]
+
+
+[group]IZ2REP1
+[subject]_mem,_0x[!0x04*$Val!]=>temp;[\:[\:[\:0x6D17C9\:]+$temp\:]+0x0C\:],1,free_list,<ReadError>,IZ2LST->LST_a:dir
+	[replace]_0x[!0x04*$Val!]=>temp;[:[:0x6D17C9:]+$temp:],IZ2LST->PR_a
+	[subject]全呪法LV最大化/実行/_:toggle,_0x[!0x04*$Val!]=>temp;[:[:[:0x6D17C9:]+$temp:]+0x26D:],_0x[!0x04*$Val!]=>temp;[:[:[:0x6D17C9:]+$temp:]+0x26D:]+0x5F-00004040
+[back]
+[/group]
+
+
+[group]IZ2REP21
+[subject]_mem,_0x[!0x04*$Val!]=>temp;[\:[\:[\:0x6D27C9\:]+$temp\:]+0x0C\:],1,free_list,<ReadError>,IZ2LST->LST_a:dir
+	[replace]_0x[!0x04*$Val!]=>temp;[:[:0x6D27C9:]+$temp:],IZ2LST->PR_2a
+	[subject]全呪法LV最大化/実行/_:toggle,_0x[!0x04*$Val!]=>temp;[:[:[:0x6D27C9:]+$temp:]+0x26D:],_0x[!0x04*$Val!]=>temp;[:[:[:0x6D27C9:]+$temp:]+0x26D:]+0x5F-00004040
+[back]
+[/group]
+
+
+[group]PR_a
+[subject]存在フラグ/ＯＮ／ＯＦＦ/_:toggle,0x028D,01,00
+[subject]現在体力/現在値/_:f_calc,0x0244,0,9999,float
+[subject]現在霊力/現在値/_:f_calc,0x0248,0,999,float
+[subject]経験値/現在値/_:f_calc,0x0285,0,99999999,double
+[subject]基本能力（実データ）:dir
+	[replace]0x00,IZ2LST->PR_b
+[back]
+[subject]基本能力（通常データ）:dir
+	[replace]0x01B0,IZ2LST->PR_b
+[back]
+[/group]
+
+
+[group]PR_2a
+[subject]存在フラグ/ＯＮ／ＯＦＦ/_:toggle,0x028D,01,00
+[subject]現在体力/現在値/_:f_calc,0x0244,0,9999,float
+[subject]現在霊力/現在値/_:f_calc,0x0248,0,9999,float
+[subject]経験値/現在値/_:f_calc,0x0285,0,99999999,double
+[subject]基本能力（実データ）:dir
+	[replace]0x00,IZ2LST->PR_2b
+[back]
+[subject]基本能力（通常データ）:dir
+	[replace]0x01B0,IZ2LST->PR_2b
+[back]
+[/group]
+
+
+[group]PR_b
+[subject]一括最大化/実行/_:b_toggle,0x00,IZ2LST->PR_c,offset
+[subject]最大体力/現在値/_:f_calc,0x2C,0,9999,float
+[e_with],0,999,float
+ [subject]最大霊力/現在値/_:f_calc,0x30
+ [subject]腕力/現在値/_:f_calc,0x38
+ [subject]精神力/現在値/_:f_calc,0x3C
+ [subject]素早さ/現在値/_:f_calc,0x40
+ [subject]命中率/現在値/_:f_calc,0x44
+ [subject]回避率/現在値/_:f_calc,0x48
+ [subject]物理防御/現在値/_:f_calc,0x4C
+ [subject]呪法防御/現在値/_:f_calc,0x50
+[/e_with]
+[subject]攻撃修正:dir
+[subject]一律300%化/実行/_:toggle,0x5C,0000964300009643000096430000964300009643
+[e_with],0,300,float
+ [subject]火/現在値/_:f_calc,0x5C
+ [subject]土/現在値/_:f_calc,0x60
+ [subject]金/現在値/_:f_calc,0x64
+ [subject]水/現在値/_:f_calc,0x68
+ [subject]木/現在値/_:f_calc,0x6C
+[/e_with]
+[back]
+[subject]防御修正:dir
+[subject]一律100%化/実行/_:toggle,0x78,0000C8420000C8420000C8420000C8420000C842
+[e_with],0,300,float
+ [subject]火/現在値/_:f_calc,0x78
+ [subject]土/現在値/_:f_calc,0x7C
+ [subject]金/現在値/_:f_calc,0x80
+ [subject]水/現在値/_:f_calc,0x84
+ [subject]木/現在値/_:f_calc,0x88
+[/e_with]
+[back]
+[/group]
+
+
+[group]PR_2b
+[subject]一括最大化/実行/_:b_toggle,0x00,IZ2LST->PR_c,offset
+[subject]一括最大化（上限変更用）/実行/_:b_toggle,0x00,IZ2LST->PR_2c,offset
+[e_with],0,9999,float
+ [subject]最大体力/現在値/_:f_calc,0x2C
+ [subject]最大霊力/現在値/_:f_calc,0x30
+ [subject]腕力/現在値/_:f_calc,0x38
+ [subject]精神力/現在値/_:f_calc,0x3C
+ [subject]素早さ/現在値/_:f_calc,0x40
+ [subject]命中率/現在値/_:f_calc,0x44
+ [subject]回避率/現在値/_:f_calc,0x48
+ [subject]物理防御/現在値/_:f_calc,0x4C
+ [subject]呪法防御/現在値/_:f_calc,0x50
+[/e_with]
+[subject]攻撃修正:dir
+[subject]一律9900%化/実行/_:toggle,0x5C,00B01A4600B01A4600B01A4600B01A4600B01A46
+[subject]一律300%化/実行/_:toggle,0x5C,0000964300009643000096430000964300009643
+[e_with],0,9900,float
+ [subject]火/現在値/_:f_calc,0x5C
+ [subject]土/現在値/_:f_calc,0x60
+ [subject]金/現在値/_:f_calc,0x64
+ [subject]水/現在値/_:f_calc,0x68
+ [subject]木/現在値/_:f_calc,0x6C
+[/e_with]
+[back]
+[subject]防御修正:dir
+[subject]一律9900%化/実行/_:toggle,0x78,00B01A4600B01A4600B01A4600B01A4600B01A46
+[subject]一律100%化/実行/_:toggle,0x78,0000C8420000C8420000C8420000C8420000C842
+[e_with],0,9900,float
+ [subject]火/現在値/_:f_calc,0x78
+ [subject]土/現在値/_:f_calc,0x7C
+ [subject]金/現在値/_:f_calc,0x80
+ [subject]水/現在値/_:f_calc,0x84
+ [subject]木/現在値/_:f_calc,0x88
+[/e_with]
+[back]
+[/group]
+
+
+[group]PR_3b
+[subject]一括最大化/実行/_:b_toggle,0x00,IZ2LST->PR_2c,offset
+[e_with],0,9999,float
+ [subject]最大体力/現在値/_:f_calc,0x2C
+ [subject]最大霊力/現在値/_:f_calc,0x30
+ [subject]腕力/現在値/_:f_calc,0x38
+ [subject]精神力/現在値/_:f_calc,0x3C
+ [subject]素早さ/現在値/_:f_calc,0x40
+ [subject]命中率/現在値/_:f_calc,0x44
+ [subject]回避率/現在値/_:f_calc,0x48
+ [subject]物理防御/現在値/_:f_calc,0x4C
+ [subject]呪法防御/現在値/_:f_calc,0x50
+[/e_with]
+[subject]攻撃修正:dir
+[e_with],0,9900,float
+ [subject]火/現在値/_:f_calc,0x5C
+ [subject]土/現在値/_:f_calc,0x60
+ [subject]金/現在値/_:f_calc,0x64
+ [subject]水/現在値/_:f_calc,0x68
+ [subject]木/現在値/_:f_calc,0x6C
+[/e_with]
+[back]
+[subject]防御修正:dir
+[e_with],0,9900,float
+ [subject]火/現在値/_:f_calc,0x78
+ [subject]土/現在値/_:f_calc,0x7C
+ [subject]金/現在値/_:f_calc,0x80
+ [subject]水/現在値/_:f_calc,0x84
+ [subject]木/現在値/_:f_calc,0x88
+[/e_with]
+[back]
+[/group]
+
+
+[group]PR_c
+0x2C,003C1C4600C07944
+0x38,00C0794400C0794400C0794400C0794400C0794400C0794400C07944
+0x5C,0000964300009643000096430000964300009643
+0x78,0000C8420000C8420000C8420000C8420000C842
+[/group]
+
+
+[group]PR_2c
+0x2C,003C1C46003C1C46
+0x38,003C1C46003C1C46003C1C46003C1C46003C1C46003C1C46003C1C46
+0x5C,00B01A4600B01A4600B01A4600B01A4600B01A46
+0x78,0000C8420000C8420000C8420000C8420000C842
+[/group]
+
+
+[group]PR_e
+_[:0x6D1816:]+0x04,_[:0x6D1816:]+0x5F-00C07944
+_[:0x6D182E:]+0x04,_[:0x6D182E:]+0x5F-00C07944
+[/group]
+
+
+[group]PR_2e
+_[:0x6D2816:]+0x04,_[:0x6D2816:]+0x5F-00C07944
+_[:0x6D282E:]+0x04,_[:0x6D282E:]+0x5F-00C07944
+[/group]
+
+
+[group]IZ2_CG
+[subject]ＣＧ１枚目ＯＦＦ/実行/_:toggle,0x00,01
+[subject]ＣＧＡＬＬ/ＯＮ／ＯＦＦ/_:b_toggle,0x00,IZ2LST->IZ2_zc,offset
+[subject]回想ＡＬＬ/ＯＮ／ＯＦＦ/_:toggle,0xB0,0xC6-02,01
+[/group]
+
+
+[group]IZ2_2CG
+[subject]ＣＧ１枚目ＯＦＦ/実行/_:toggle,0x00,01
+[subject]ＣＧＡＬＬ/ＯＮ／ＯＦＦ/_:b_toggle,0x00,IZ2LST->IZ2_2zc,offset
+[subject]回想ＡＬＬ/ＯＮ／ＯＦＦ/_:toggle,0xB0,0xC6-02,01
+[/group]
+
+
+[group]IZ2_zc
+0x00,0x4B-02,01
+0x50,0x81-02,01
+0x82,02,05
+[/group]
+
+
+[group]IZ2_2zc
+0x00,0x4B-02,01
+0x50,0x82-02,01
+0x83,02,05
+[/group]
+
+
+[group]IZ2_a
+0x402BB6,B90500000090,038AF4000000
+0x402BFA,81F905000000,3B88F0000000
+0x492BF8,B8050000009033C9EB029090,8B82F00000008B8AF4000000
+[/group]
+
+
+[group]IZ2_b
+0x56C4B0,EB,75
+0x566BD3,EB00,7410
+0x56D9DA,EB,75
+[/group]
+
+
+[group]IZ2_c
+0x41D49C,EB00,7531
+0x41D4A1,33C98948584190,837858000F94C1
+0x41D8A1,EB00,7413
+[/group]
+
+
+[group]IZ2_2a
+0x402BB6,B90500000090,038AF4000000
+0x402BFA,81F905000000,3B88F0000000
+0x493168,B8050000009033C9EB029090,8B82F00000008B8AF4000000
+[/group]
+
+
+[group]IZ2_2b
+0x569843,EB00,7410
+0x56F120,EB,75
+0x5705EA,EB,75
+0x57064A,EB,75
+[/group]
+
+
+[group]IZ2_2c
+0x41D29C,EB00,7531
+0x41D2A1,33C98948584190,837858000F94C1
+0x41D6A1,EB00,7413
+[/group]
+
+
+[group]IZ2_3a
+0x402BB6,B90500000090,038AF4000000
+0x402BFA,81F905000000,3B88F0000000
+0x4934F8,B8050000009033C9EB029090,8B82F00000008B8AF4000000
+[/group]
+
+
+[group]IZ2_4a
+0x402BB6,B90500000090,038AF4000000
+0x402BFA,81F905000000,3B88F0000000
+0x493458,B8050000009033C9EB029090,8B82F00000008B8AF4000000
+[/group]
+
+
+[group]IZ2_3b
+0x5696E3,EB00,7410
+0x56EFC0,EB,75
+0x57048A,EB,75
+0x5704EA,EB,75
+[/group]
+
+
+[group]IZ2_3c
+0x41D3BC,EB00,7531
+0x41D3C1,33C98948584190,837858000F94C1
+0x41D7C1,EB00,7413
+[/group]
+
+
+[group]IZ2_4c
+0x41D2CC,EB00,7531
+0x41D2D1,33C98948584190,837858000F94C1
+0x41D6D1,EB00,7413
+[/group]
+
+
+[group]IZ2_3d
+0x56C01B,03,04
+0x649244,E927EF01009090,660FB6010FB6D0
+0x6492BE,E9CDEE01009090,660FB6010FB6D0
+0x668170,8079FF76,00000000
+0x668174,750E,0000
+0x668176,813931343061,000000000000
+0x66817C,7506,0000
+0x66817E,C70131333461,000000000000
+0x668184,660FB601,00000000
+0x668188,0FB6D0,000000
+0x66818B,E9BB10FEFF,0000000000
+0x668190,8079FF76,00000000
+0x668194,750E,0000
+0x668196,813931343061,000000000000
+0x66819C,7506,0000
+0x66819E,C70131333461,000000000000
+0x6681A4,660FB601,00000000
+0x6681A8,0FB6D0,000000
+0x6681AB,E91511FEFF,0000000000
+0x6E5BD0,01,00
+[/group]
+
+
+[group]LST_c
+デフォルト
+完全回避（雑魚敵戦闘遮断）
+強制化（歩く度に戦闘）
+[/group]
+
+
+[group]LST_d
+,0x00=7D63C70520F76C0000000000
+,0x00=C70520F76C0000000000EB59
+,0x00=EB00C70520F76C0000000000
+[/group]
+
+
+[group]LST_2d
+,0x00=7D63C70520076D0000000000
+,0x00=C70520076D0000000000EB59
+,0x00=EB00C70520076D0000000000
+[/group]
+
+
+[group]LST_e
+デフォルト
+８倍化
+１６倍化
+２５６倍化
+[/group]
+
+
+[group]LST_f
+,0x00=0F8E890000008B559C8B82690200008B88E0000000
+,0x00=8B559C8B82690200008B88E0000000C1E103EB0190
+,0x00=8B559C8B82690200008B88E0000000C1E104EB0190
+,0x00=8B559C8B82690200008B88E0000000C1E108EB0190
+[/group]
+
+
+[group]LST_a
+1=八岐猛
+2=逢須芹
+3=白鳥明日香
+4=北河麻衣
+5=佐久夜
+6=白鳥琴乃
+[/group]
+
+
+[group]LST_b
+木刀
+太刀
+八握剣
+十拳剣
+生太刀
+天叢雲
+グローブ
+ナックル
+メリケンサック
+セスタス
+バクナグ
+ゴッドハンド
+実技
+練心
+直心
+清芳
+生弓
+麻迦古
+長槍
+薙刀
+巴御前
+静御前
+天沼矛
+舞扇
+鉄扇
+芭蕉扇
+紅
+横笛
+リラ
+パンフルート
+ギャラルホルン
+法螺貝
+制服
+拳法着
+皮鎧
+鎖帷子
+胴丸
+武者鎧
+制服
+ベスト
+ジャケット
+プロテクター
+チェインメイル
+ミスリルコート
+弓道着
+胸当て
+無地袴
+刺繍袴
+長尺小紋
+朱袴
+制服
+忍袴
+乱破
+羅漢
+阿修羅
+麻の衣
+綿の衣
+絹の衣
+天之羽衣
+制服
+チュニック
+エプロン
+ベルト
+編みベルト
+革ベルト
+ライダーベルト
+トゲ付きベルト
+チャンピオンベルト
+下着
+しましまパンツ
+水玉パンツ
+クマさんパンツ
+さらし
+勝負下着
+白いリボン
+ひらひらリボン
+ピンクのリボン
+真っ赤なリボン
+黄色いリボン
+レースのリボン
+ハンカチ
+宝手拭
+蛇比礼
+蜂比礼
+品物比礼
+腕輪
+ヒスイの腕輪
+トゲ付きバンド
+銀の腕輪
+髪留め
+スカーフ
+カチューシャ
+[/group]
+
+
+[group]LST_g
+未確定
+逢須芹
+白鳥明日香
+北河麻衣
+佐久夜
+白鳥琴乃
+[/group]
+
+
+[group]LST_h
+,0x00=0000
+,0x00=0200
+,0x00=0300
+,0x00=0400
+,0x00=0500
+,0x00=0600
+[/group]
