@@ -1,0 +1,145 @@
+[group]MT_MA
+[note]wordwrap
+初代のＰＣエンジン版をプレイした経験があったので、懐かしくて購入してみたらリメイク版でした(^^;　色々変わってましたが、エンカウントバランスが酷いのは相変わらずみたいで（笑）
+
+フルスクリーン固定仕様ですので、ALT+TAB切り替えや、ＡＬ本体の極前面機能等を利用しつつ御使用下さい。以下、少々補足です。
+
+■■パラメータ関連
+アイテムエディタ：
+所持アイテムの順番と、アイテム番号（種類）を任意変更するエディタ方式です。いくつか欠番があり、欠番に変更するとリスト表示がバグりますので、その時は普通に表示される他のアイテムに変更して
+下さい。欠番がアイテム欄にある状態で移動すると、かなりの確率で落ちます(^^;
+
+■■フラグ関連
+乗り物関係：
+乗り物は出現させるだけでなく、座標を定める必要があります。七夕舟はこの機能実行後におりひめの笛で召喚すればよく、筋斗雲はデフォで桃太郎の家の真下に座標変動するようにしてあります。
+[/note]
+
+[subject]ＲＰＧパート関連:dir
+	[subject]戦闘１回でＬＶＭＡＸ化/実行/_:toggle,0x4542EB,EB00,7C12
+	[subject]ザコ敵エンカウント完全回避/実行/_:toggle,0x4858D8,E98B00000090,0F858A000000
+	[subject]フィールド移動高速化/実行/_:b_toggle,0x485837,MTLST->MT_c,real
+	[subject]常時絶好調モード発動/実行/_:b_toggle,0x48503E,MTLST->MT_d,real
+	[subject]浮遊状態永続化/実行/_:b_toggle,0x48507B,MTLST->MT_e,real
+[/group]
+
+
+[group]MT_PR
+[subject]所持金/現在値/_:calc,0x549628,0x00000000,0x05F5E0FF,unsigned
+[subject]パーティステータス:dir
+	[repeat]MTLST->MTREP1,0,4,1
+[back]
+[subject]経験値編集:dir
+	[repeat]MTLST->MTREP2,0,4,1
+[back]
+[subject]アイテムエディタ:dir
+	[io_fep]$Val+1, $Val-1
+		[subject]所持アイテム順/番目/_:calc,0x4C7E56,0x00,0x20,unsigned
+	[/io_fep]
+	[subject]アイテム種類番号/_:calc,0x549682+[:0x4C7E56:]*0x06,0x0001,0x010C,unsigned
+[/group]
+
+
+[group]MT_F1
+[subject]存在フラグ編集/_:d_toggle,0x549658,MTLST->LST_e,MTLST->LST_f,offset
+[subject]乗り物関係:dir
+	[subject]七夕船出現/実行/_:toggle,0x54967C,0100,0000
+	[subject]筋斗雲出現/実行/_:b_toggle,0x54967E,MTLST->MT_b,real
+[back]
+[subject]ひえんでいける場所ＡＬＬ/実行/_:toggle,0x549C70,FFFF3F
+[subject]五種の宝物所持状況/_:bitlist,0x549C1E,MTLST->LST_d,0x01
+[subject]トレーディングカード全種所持/実行/_:toggle,0x5499C6,0x549C1D-0A00
+[/group]
+
+
+[group]MTREP1
+[subject][! @MTLST->LST_a,$Val !]:dir
+	[replace]0x[! 0x549592+0x02*$Val !],MTLST->MT_a
+[/group]
+
+
+[group]MTREP2
+[subject][! @MTLST->LST_a,$Val !]/現在値/_:calc,0x[! 0x549630+0x04*$Val !],0x000000,0x0F423F,unsigned
+[/group]
+
+
+[group]MT_a
+[subject]ＬＶ/現在値/_:calc,0x00,0x01,0x3C,unsigned
+[e_with],0x0000,0x03E7,unsigned
+	[subject]現在体力/現在値/_:calc,0x08
+	[subject]最大体力/現在値/_:calc,0x10
+	[subject]現在技数/現在値/_:calc,0x18
+	[subject]最大技数/現在値/_:calc,0x20
+	[subject]攻撃力/現在値/_:calc,0x28
+	[subject]防御力/現在値/_:calc,0x30
+	[subject]素早さ/現在値/_:calc,0x38
+[back]
+[/group]
+
+
+[group]MT_b
+0x54967E,0100,0000
+0x549C3E,1A00EF00,00000000
+[/group]
+
+
+[group]MT_c
+0x485837,EB00,7426
+0x485843,EB,7508
+0x485857,EB00,7506
+0x48585D,02,04
+0x493A71,EB00,7426
+0x493A7D,EB,7508
+0x493A91,EB00,7506
+0x493A97,02,04
+[/group]
+
+
+[group]MT_d
+0x48503E,EB029090,662D0100
+0x549C74,0x549C7B-FF00
+[/group]
+
+
+[group]MT_e
+0x48507B,EB029090,662D0100
+0x549C6E,FF00
+[/group]
+
+
+[group]LST_a
+桃太郎
+金太郎
+浦島
+夜叉姫
+[/group]
+
+
+[group]LST_d
+竜の首飾り
+仏のお鉢
+金色の毛皮
+ほうらいの玉
+つばめの子安貝
+[/group]
+
+
+[group]LST_e
+桃太郎
+金太郎
+浦島
+夜叉姫
+イヌ
+サル
+キジ
+[/group]
+
+
+[group]LST_f
+,0x00=0100/0000
+,0x02=0100/0000
+,0x04=0100/0000
+,0x06=0100/0000
+,0x08=0100/0000
+,0x0A=0100/0000
+,0x0C=0100/0000
+[/group]
