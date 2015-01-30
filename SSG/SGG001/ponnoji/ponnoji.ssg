@@ -1,0 +1,366 @@
+SSG for SpoilerAL ver 3.4
+
+[script]
+[title]ＥＸＩＬＥ　～ＢＬＯＯＤ　ＲＯＹＡＬ２～
+[process]EXILE.EXE
+[maker]ちぇりーそふと
+[creator]ポンの字
+[note]
+2000/11/23
+　初めて作りました。
+　取り敢えず、二人の
+　お姫様からですね。
+2000/11/24
+　アンジェが調教可能
+　になったので追加で
+　す。
+　『好意』の項目追加。
+2000/11/25
+　『魔王度』、
+　『日数』、
+　『週』の項目追加。
+
+＊注意！！
+　・アンジェが調教可能
+　　になっていない場合
+　　、アンジェの数値は
+　　いじらない方がいい
+　　かもしれません。
+　　試していませんが、
+　　ゲームが正常に進行
+　　しない可能性があり
+　　ます。
+
+　・日数と週は連動して
+　　いるようです。適当
+　　な数値に書き替える
+　　事によって、ゲーム
+　　が正常に進行しなく
+　　なる場合があります
+　　。
+　　書き換えの際にはよ
+　　く注意してください
+　　。
+
+　・魔王度の最大値は
+　　１００です。１００
+　　になるとゲームが終
+　　了してしまいますの
+　　で、注意してくださ
+　　い。
+
+Ver0.03
+[/note]
+[subject]カレン:dir
+	[replace]0x456560,exile_obj,offset
+[subject]桜:dir
+	[replace]0x4566f0,exile_obj,offset
+[subject]アンジェ:dir
+	[replace]0x456880,exile_obj,offset
+[subject]魔王度:calc,0x4563e0,0x0,0x64,signed,little_e
+[subject]日数:calc,0x4563d4,0x1,0x32,signed,little_e
+[subject]週:calc,0x4563d8,0x1,0x9,signed,little_e
+[back]
+[/script]
+
+[script]
+[title]姉妹いじり～散ル花　二輪～
+[process]SIMAI.EXE
+[maker]にくきゅう
+[creator]ポンの字
+[note]
+2001/01/14
+　初版
+　元々ExSTANDで動作
+　させていたものを
+　SpoilerAL用に
+　移植。
+
+Ver0.01
+[/note]
+[subject]残り日数:calc,0x56983c,0x0,0x3c,signed,little_e
+[subject]所持金　:calc,0x569844,0x0,0x03e7,signed,little_e
+[subject]アイテム:dir
+	[replace]0x48cd1c,simai_item,offset
+[subject]紫:dir
+	[replace]0x5697fc,simai_obj,offset
+[subject]美紅:dir
+	[replace]0x569818,simai_obj,offset
+[back]
+[/script]
+
+[script]
+[title]綾波育成計画
+[process]REI02.EXE
+[maker]ガイナックス
+[creator]ポンの字
+[note]
+2001/05/20
+　初版 snymさんの物
+　を基に、アドレスが
+　若干違う場合にも使
+　えるように作成。
+　（一応、新規で書い
+　　てますが・・・）
+
+Ver0.01
+[/note]
+[subject]肉体強度:calc,0xd8b580,0x0,0x01f4,unsigned,little_e
+[subject]知能指数:calc,0xd8b550,0x0,0x01f4,unsigned,little_e
+[subject]精神防壁:calc,0xd8b520,0x0,0x01f4,unsigned,little_e
+[subject]Ph分泌:calc,0xd8b4f0,0x0,0x01f4,unsigned,little_e
+[subject]基本語彙:calc,0xd8b4c0,0x0,0x01f4,unsigned,little_e
+[subject]社会適応:calc,0xd8b490,0x0,0x01f4,unsigned,little_e
+[subject]道徳感覚:calc,0xd8b460,0x0,0x01f4,unsigned,little_e
+[subject]感受能力:calc,0xd8b430,0x0,0x01f4,unsigned,little_e
+[subject]疲労係数:calc,0xd8b400,0x0,0x01f4,unsigned,little_e
+[subject]シンクロ率:calc,0xd8b3d0,0x0,0x64,unsigned,little_e
+[subject]ATフィールド:calc,0xd8b3a0,0x0,0x64,unsigned,little_e
+[subject]所持金:calc,0xd70a20,0x0,0x05f5e0ff,unsigned,little_e
+[back]
+[/script]
+
+[script]
+[title]ユナイブ～恋・はじまるよっ～
+[process]UNIV.EXE
+[maker]カクテルソフト
+[creator]ポンの字
+[adjustment]heap,heap2=0x6b0000>0x6affff
+[note]
+2001/05/31
+　初版作成
+　取り敢えず、ExST
+　ANDで見つけた物
+　をコンバート。
+
+Ver0.01
+[/note]
+[subject]所持金:calc,0x6d1b44,0x0,0x3b9ac99c,unsigned,little_e
+[subject]SIT最大値:calc,0x6c2118,0x0,0x270f,unsigned,little_e
+[back]
+[/script]
+
+[script]
+[title]DAWN*SLAVE～期せず檎とされた姫の處と心と拠～
+[process]DAWNSLAVE.EXE
+[maker]U-MeSOFT
+[creator]ポンの字
+[note]
+2001/??/??
+　既存のSSGで動作し
+　なかった為に、ア
+　ドレス修正を加え
+　たもの・・・だっ
+　たと思います。
+
+Ver0.01
+[/note]
+[subject]姫:dir
+	[subject]体力:calc,0xc88475,0x0,0x64,unsigned
+	[subject]自尊心:calc,0xc88474,0x0,0x64,unsigned
+	[subject]精神力:calc,0xc88476,0x0,0x64,unsigned
+	[subject]好意:calc,0xc88479,0x0,0x64,unsigned
+	[subject]好色度:calc,0xc88477,0x0,0x64,unsigned
+	[subject]性欲:calc,0xc88478,0x0,0x64,unsigned
+	[subject]変態度:calc,0xc8847a,0x0,0x64,unsigned
+	[subject]性技:calc,0xc8847b,0x0,0x64,unsigned
+	[subject]膣:calc,0xc8847d,0x0,0x64,unsigned
+	[subject]肛門:calc,0xc8847c,0x0,0x64,unsigned
+[back]
+[subject]感情:list,0xc8846c,感情,0x0,0x1
+[subject]薬:dir
+         [subject]鎮静剤:calc,0xc884ce,0x0,0x3,unsigned
+         [subject]興奮剤:calc,0xc884d0,0x0,0x3,unsigned
+         [subject]強壮薬:calc,0xc884d2,0x0,0x3,unsigned
+         [subject]治癒薬:calc,0xc884d4,0x0,0x3,unsigned
+[back]
+[/script]
+[script]
+[title]虜２
+[process]TORIKO2.EXE
+[maker]Ｄ．Ｏ．
+[creator]ポンの字
+[note]
+2001/??/??
+　ちょっとうろ覚え・
+　・・確か既存のSSG
+　で対応していなかっ
+　たので、調整したも
+　のです。
+　なお、パラメータを
+　調整する際に必ず、
+　各項目の１と２を同
+　じ数値にして下さい
+　。
+
+Ver0.01
+[/note]
+[subject]理香子:dir
+	[replace]0x7d0304,toriko2_para_1,offset
+	[replace]0x8e0720,toriko2_para_2,offset
+[back]
+[subject]綾乃:dir
+	[replace]0x7d03b4,toriko2_para_1,offset
+	[replace]0x8e0770,toriko2_para_2,offset
+[back]
+[subject]由紀子:dir
+	[replace]0x7d0464,toriko2_para_1,offset
+	[replace]0x8e07c0,toriko2_para_2,offset
+[back]
+[subject]自分の体力:calc,0x8D0DAC,0x00,0x78,signed,little_e
+[/script]
+
+[script]
+[title]Ｂｒｉｇｈｔｉａ
+[process]brightia.exe
+[maker]Cronus
+[creator]ポンの字
+[note]
+2001/10/07
+　初版作成
+　取り敢えず、パラメ
+　ータいじり。なお、
+　登場していないキャ
+　ラクターのパラメー
+　ターを変更する事で
+　正常にゲームが進行
+　しなくなる可能性が
+　有ります。注意して
+　ください。
+
+2001/10/08
+　『調教道具』、
+　『調教書物』、
+　『その他のもの』
+　のON/OFFを追加。
+　（但し未完成。一部未解
+　　析有り。）
+
+・現在確認出来ている症状
+　として、初日からコマン
+　ド回数を固定もしくは最
+　大にしていると、コマン
+　ド回数を使い切るまで同
+　じ内容を繰り返します。
+　調教終了を選べないので
+　注意が必要です。
+
+Ver0.02
+[/note]
+[subject]現在調教コマンド回数:calc,0x456468,0x00,0x07,signed,little_e
+[subject]最大調教コマンド回数:calc,0x456464,0x00,0x07,signed,little_e
+[subject]自分の体力:calc,0x4563dc,0x00,0x64,signed,little_e
+[subject]日付:calc,0x4563d4,0x01,0x1e,signed,little_e
+[subject]現在フェイズ数:calc,0x4563d8,0x00,0x03,signed,little_e
+[subject]プラチナ:dir
+	[replace]0x456564,brightia_obj,offset
+[back]
+[subject]ライム:dir
+	[replace]0x4566f4,brightia_obj,offset
+[back]
+[subject]ダリア:dir
+	[replace]0x456884,brightia_obj,offset
+[back]
+[subject]スカーレット:dir
+	[replace]0x456a14,brightia_obj,offset
+[back]
+[subject]調教道具:dir
+	[subject]『悪魔用潅腸器材』:toggle,0x456ba4,01,00
+	[subject]『悪魔用ア◎ル開発道具』:toggle,0x456ba8,01,00
+	[subject]『悪魔調伏鞭』:toggle,0x456bac,01,00
+	[subject]『悪魔更正蝋』:toggle,0x456bb0,01,00
+[back]
+[subject]調教書物:dir
+	[subject]『公爵家の一族』:toggle,0x456bf4,01,00
+	[subject]『スライム大全』:toggle,0x456bf8,01,00
+	[subject]『ダブラベイズ複製録』:toggle,0x456bfc,01,00
+	[subject]『熾血の引＜無人の章＞』:toggle,0x456c00,01,00
+	[subject]『生きている木馬の書』:toggle,0x456c04,01,00
+	[subject]『雷世紀の妖精の書』:toggle,0x456c08,01,00
+	[subject]『異界万聖霊書』:toggle,0x456c0c,01,00
+	[subject]『ローパーの書』:toggle,0x456c10,01,00
+	[subject]『無垢の芽生え』:toggle,0x456c14,01,00
+	[subject]『Ｂ式魔紋辞典』:toggle,0x456c18,01,00
+	[subject]『左手の書』:toggle,0x456c1c,01,00
+	[subject]『狂母性の書』:toggle,0x456c20,01,00
+[back]
+[subject]その他のもの:dir
+	[subject]『廻しの書』:toggle,0x456bb4,01,00
+	[subject]『イミティション＃７』:toggle,0x456bb8,01,00
+[back]
+[/script]
+
+[script]
+[title]ＤＡＷＮ＊ＳＬＡＶＥ２
+[process]DS2.EXE
+[maker]U-Me Soft
+[creator]ポンの字
+[note]
+DS2.EXE Ver1.0.1.3
+作成日時 1999/08/26 11:51:31
+更新日時 1999/08/30 12:31:40
+のもので検証。
+2001/10/13
+　初版作成開始
+2001/10/14
+　取り敢えず目につく所は
+　入れたつもり。
+Ver0.02
+[/note]
+[subject]日付:calc,0xd33a7c,1,30,signed,little_e
+[subject]所持金:calc,0xd33a7d,0,9999999,signed,little_e
+[subject]オリガ:dir
+	[subject]身長:calc,0xd33a85,16000,20000,signed,little_e
+	[subject]体重:calc,0xd33a89,43000,70000,signed,little_e
+	[subject]サイズ(B):calc,0xd33a8d,8300,12000,signed,little_e
+	[subject]サイズ(W):calc,0xd33a91,5700,8000,signed,little_e
+	[subject]サイズ(H):calc,0xd33a95,8400,12000,signed,little_e
+	[subject]依頼心:calc,0xd33abd,0,100,signed,little_e
+	[subject]好意:calc,0xd33ab5,0,100,signed,little_e
+	[subject]活力:calc,0xd33aa5,0,100,signed,little_e
+	[subject]体力:calc,0xd33aa1,0,100,signed,little_e
+	[subject]精神力:calc,0xd33ab9,0,100,signed,little_e
+	[subject]好色:calc,0xd33aa9,0,100,signed,little_e
+	[subject]羞恥:calc,0xd33ac1,0,100,signed,little_e
+	[subject]知識:calc,0xd33ac5,0,100,signed,little_e
+	[subject]感度:calc,0xd33ad9,0,100,signed,little_e
+	[subject]口技:calc,0xd33ac9,0,100,signed,little_e
+	[subject]手技:calc,0xd33acd,0,100,signed,little_e
+	[subject]膣:calc,0xd33ad1,0,100,signed,little_e
+	[subject]肛門:calc,0xd33ad5,0,100,signed,little_e
+	[subject]投薬回数:calc,0xd33add,0,200,signed,little_e
+	[subject]本番回数:calc,0xd33ae9,0,200,signed,little_e
+	[subject]肛姦回数:calc,0xd33aed,0,200,signed,little_e
+	[subject]唇淫回数:calc,0xd33af1,0,200,signed,little_e
+	[subject]絶頂回数:calc,0xd33b0d,0,200,signed,little_e
+	[subject]排泄回数:calc,0xd33ae1,0,200,signed,little_e
+	[subject]媚薬期間:calc,0xd33aad,0,16,signed,little_e
+[back]
+[subject]タチアナ:dir
+	[subject]身長:calc,0xd33c0d,14900,18000,signed,little_e
+	[subject]体重:calc,0xd33c11,34000,60000,signed,little_e
+	[subject]サイズ(B):calc,0xd33c15,7700,10000,signed,little_e
+	[subject]サイズ(W):calc,0xd33c19,5900,8000,signed,little_e
+	[subject]サイズ(H):calc,0xd33c1d,7800,10000,signed,little_e
+	[subject]依頼心:calc,0xd33c45,0,100,signed,little_e
+	[subject]好意:calc,0xd33c3d,0,100,signed,little_e
+	[subject]活力:calc,0xd33c2d,0,100,signed,little_e
+	[subject]体力:calc,0xd33c29,0,100,signed,little_e
+	[subject]精神力:calc,0xd33c41,0,100,signed,little_e
+	[subject]好色:calc,0xd33c31,0,100,signed,little_e
+	[subject]羞恥:calc,0xd33c49,0,100,signed,little_e
+	[subject]知識:calc,0xd33c4d,0,100,signed,little_e
+	[subject]感度:calc,0xd33c61,0,100,signed,little_e
+	[subject]口技:calc,0xd33c51,0,100,signed,little_e
+	[subject]手技:calc,0xd33c55,0,100,signed,little_e
+	[subject]膣:calc,0xd33c59,0,100,signed,little_e
+	[subject]肛門:calc,0xd33c5d,0,100,signed,little_e
+	[subject]投薬回数:calc,0xd33c65,0,200,signed,little_e
+	[subject]本番回数:calc,0xd33c71,0,200,signed,little_e
+	[subject]肛姦回数:calc,0xd33c75,0,200,signed,little_e
+	[subject]唇淫回数:calc,0xd33c79,0,200,signed,little_e
+	[subject]絶頂回数:calc,0xd33c95,0,200,signed,little_e
+	[subject]排泄回数:calc,0xd33c69,0,200,signed,little_e
+	[subject]媚薬期間:calc,0xd33c35,0,16,signed,little_e
+[back]
+[/script]
