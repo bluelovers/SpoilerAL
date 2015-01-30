@@ -1,0 +1,286 @@
+[group]HDB_SSG
+[note]wordwrap
+【通信・対人対戦時は改造しないでください】
+
+マナー違反はもとより、双方のマシン上でデータが一致しなくなるため（相手側のメモリ上をも改造できるものではありませんし、オンラインＲＰＧとは構造が全く違います。）、問題が起こる可能性があります。また開発側が改造されることを想定して、プログラムを組む義理もありません。
+当データはソロプレイ専用に作成したものです。以外の状況での動作確認はしておりませんし、今後もいたしません。ご注意ください。
+
+ver1.06への対応予定はありません。
+
+
+アクションパート関連の利用方法
+・効果設定のチェックをしないと、各機能を実行しても効果が出ません。
+・弾数減らないは現状全員に効果が出ます。
+・部活中に実行する場合は、一端ポーズをかけてから実行してください。
+
+[/note]
+
+[subject]ver1.00:dir
+
+[subject]アクションパート関連:dir
+ [subject]効果設定/_:d_toggle,0x600000,HDBLST->LST_c,HDBLST->LST_d,offset
+ [subject]無敵化/実行/_:b_toggle,0x00,HDBLST->HDB_a,offset
+ [subject]LV2チャージ一瞬で完了/実行/_:b_toggle,0x00,HDBLST->HDB_b,offset
+ [subject]常時オヤシロモード化/実行/_:b_toggle,0x00,HDBLST->HDB_c,offset
+ [subject]弾数減らない/実行/_:toggle,0x440176,00,01
+[back]
+
+[enabled] [:0x65BE14:] != 0x00000000
+
+[subject]パラメータ関連:dir
+ [repeat]HDBLST->HDBREP1,0,4,1
+[back]
+
+[/enabled]
+
+[back]
+
+[subject]ver1.03:dir
+
+[subject]アクションパート関連:dir
+ [subject]効果設定/_:d_toggle,0x600000,HDBLST->LST_c,HDBLST->LST_2d,offset
+ [subject]無敵化/実行/_:b_toggle,0x00,HDBLST->HDB_2a,offset
+ [subject]LV2チャージ一瞬で完了/実行/_:b_toggle,0x00,HDBLST->HDB_2b,offset
+ [subject]常時オヤシロモード化/実行/_:b_toggle,0x00,HDBLST->HDB_2c,offset
+ [subject]弾数減らない/実行/_:toggle,0x4402C6,00,01
+[back]
+
+[enabled] [:0x646E20:] != 0x00000000
+
+[subject]パラメータ関連:dir
+ [repeat]HDBLST->HDBREP21,0,4,1
+[back]
+
+[/enabled]
+
+[back]
+
+[subject]ver1.05:dir
+
+[subject]アクションパート関連:dir
+ [subject]効果設定/_:d_toggle,0x500000,HDBLST->LST_c,HDBLST->LST_3d,offset
+ [subject]無敵化/実行/_:b_toggle,0x00,HDBLST->HDB_3a,offset
+ [subject]LV2チャージ一瞬で完了/実行/_:b_toggle,0x00,HDBLST->HDB_3b,offset
+ [subject]常時オヤシロモード化/実行/_:b_toggle,0x00,HDBLST->HDB_3c,offset
+ [subject]弾数減らない/実行/_:toggle,0x430556,00,01
+[back]
+
+[enabled] [:0x5CFCE8:] != 0x00000000
+
+[subject]パラメータ関連:dir
+ [repeat]HDBLST->HDBREP31,0,4,1
+[back]
+
+[/enabled]
+
+[back]
+
+[subject]ここまで:split,label,root,※通信・対人対戦時は使用厳禁,100
+
+[/group]
+
+
+[group]HDBREP1
+[subject]_mem,_0x65F674+0x[! 0x04*$Val !],1,list,<NpData>,HDBLST->LST_b,0x00,0x01'+' ：'+'_mem,_0x65F694+0x[! 0x04*$Val !],1,list,<NpData>,HDBLST->LST_a,0x00,0x01:dir
+ [replace]_0x65BE14+0x[! 0x04*$Val !]=>temp;[:$temp:],HDBLST->HDB_PR
+[back]
+[/group]
+
+
+[group]HDBREP21
+[subject]_mem,_0x64A680+0x[! 0x04*$Val !],1,list,<NpData>,HDBLST->LST_b,0x00,0x01'+' ：'+'_mem,_0x64A6A0+0x[! 0x04*$Val !],1,list,<NpData>,HDBLST->LST_a,0x00,0x01:dir
+ [replace]_0x646E20+0x[! 0x04*$Val !]=>temp;[:$temp:],HDBLST->HDB_PR
+[back]
+[/group]
+
+
+[group]HDBREP31
+[subject]_mem,_0x5D3548+0x[! 0x04*$Val !],1,list,<NpData>,HDBLST->LST_b,0x00,0x01'+' ：'+'_mem,_0x5D3568+0x[! 0x04*$Val !],1,list,<NpData>,HDBLST->LST_a,0x00,0x01:dir
+ [replace]_0x5CFCE8+0x[! 0x04*$Val !]=>temp;[:$temp:],HDBLST->HDB_PR
+[back]
+[/group]
+
+
+[group]HDB_PR
+[subject]ＨＰ'+'［'+'_mem,0x4074,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x4074,0x0000,0x2710,unsigned
+[subject]メイン弾数'+'［'+'_mem,0x3FB0,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x3FB0,0x00,0x63,unsigned
+[subject]チャージ弾数'+'［'+'_mem,0x3FF4,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x3FF4,0x00,0x63,unsigned
+[subject]スタミナ'+'［'+'_mem,0x40FC,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x40FC,0x0000,0x03E8,unsigned
+[subject]オヤシロゲージ'+'［'+'_mem,0x4100,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x4100,0x0000,0x03E8,unsigned
+[/group]
+
+
+[group]HDB_a
+0x5B5131,E94A520700909090,C645EB00C645AB00
+0x62A380,8B450C,000000
+0x62A383,8B4008,000000
+0x62A386,80B870A3620001,00000000000000
+0x62A38D,0F845BBFF8FF,000000000000
+0x62A393,C645EB00,00000000
+0x62A397,C645AB00,00000000
+0x62A39B,E999ADF8FF,0000000000
+[/group]
+
+
+[group]HDB_2a
+0x59FF11,E99A530700909090,C645EB00C645AB00
+0x6152B0,8B450C,000000
+0x6152B3,8B4008,000000
+0x6152B6,80B8A052610001,00000000000000
+0x6152BD,0F840BBEF8FF,000000000000
+0x6152C3,C645EB00,00000000
+0x6152C7,C645AB00,00000000
+0x6152CB,E949ACF8FF,0000000000
+[/group]
+
+
+[group]HDB_3a
+0x54A991,E9CAAB0500909090,C645EB00C645AB00
+0x5A5560,8B450C,000000
+0x5A5563,8B4008,000000
+0x5A5566,80B850555A0001,00000000000000
+0x5A556D,0F84DB65FAFF,000000000000
+0x5A5573,C645EB00,00000000
+0x5A5577,C645AB00,00000000
+0x5A557B,E91954FAFF,0000000000
+[/group]
+
+
+[group]HDB_b
+0x44CA0A,E9C1D91D0090,8B4DFC8B5120
+0x62A3D0,8B4D0C,000000
+0x62A3D3,8B4908,000000
+0x62A3D6,80B970A3620000,00000000000000
+0x62A3DD,8B4DFC,000000
+0x62A3E0,7405,0000
+0x62A3E2,8B5124,000000
+0x62A3E5,EB03,0000
+0x62A3E7,8B5120,000000
+0x62A3EA,E92126E2FF,0000000000
+[/group]
+
+
+[group]HDB_2b
+0x44CB5A,E9A1871C0090,8B4DFC8B5120
+0x615300,8B4D0C,000000
+0x615303,8B4908,000000
+0x615306,80B9A052610000,00000000000000
+0x61530D,8B4DFC,000000
+0x615310,7405,0000
+0x615312,8B5124,000000
+0x615315,EB03,0000
+0x615317,8B5120,000000
+0x61531A,E94178E3FF,0000000000
+[/group]
+
+
+[group]HDB_3b
+0x43A66A,E921AF160090,8B4DFC8B5120
+0x5A5590,8B4D0C,000000
+0x5A5593,8B4908,000000
+0x5A5596,80B950555A0000,00000000000000
+0x5A559D,8B4DFC,000000
+0x5A55A0,7405,0000
+0x5A55A2,8B5124,000000
+0x5A55A5,EB03,0000
+0x5A55A7,8B5120,000000
+0x5A55AA,E9C150E9FF,0000000000
+[/group]
+
+
+[group]HDB_c
+0x5B3102,E9A17207009090,8B8C8A8C120000
+0x62A3A8,8B4808,000000
+0x62A3AB,80B970A3620000,00000000000000
+0x62A3B2,7413,0000
+0x62A3B4,83B80841000001,00000000000000
+0x62A3BB,7F0A,0000
+0x62A3BD,C78000410000E8030000,00000000000000000000
+0x62A3C7,8BC8,0000
+0x62A3C9,E93B8DF8FF,0000000000
+[/group]
+
+
+[group]HDB_2c
+0x59DEB2,E9217407009090,8B8C8A8C120000
+0x6152D8,8B4808,000000
+0x6152DB,80B9A052610000,00000000000000
+0x6152E2,7413,0000
+0x6152E4,83B80841000001,00000000000000
+0x6152EB,7F0A,0000
+0x6152ED,C78000410000E8030000,00000000000000000000
+0x6152F7,8BC8,0000
+0x6152F9,E9BB8BF8FF,0000000000
+[/group]
+
+
+[group]HDB_3c
+0x548932,E981CC05009090,8B8C8A8C120000
+0x5A55B8,8B4808,000000
+0x5A55BB,80B950555A0000,00000000000000
+0x5A55C2,7413,0000
+0x5A55C4,83B80841000001,00000000000000
+0x5A55CB,7F0A,0000
+0x5A55CD,C78000410000E8030000,00000000000000000000
+0x5A55D7,8BC8,0000
+0x5A55D9,E95B33FAFF,0000000000
+[/group]
+
+
+[group]LST_a
+竜宮レナ
+園崎魅音
+前原圭一
+北条沙都子
+古手梨花
+園崎詩音
+富竹ジロウ
+鷹野三四
+大石蔵人
+赤坂衛
+入江京介
+知恵留美子
+葛西辰由
+園崎茜
+[/group]
+
+
+[group]LST_b
+1P
+2P
+3P
+4P
+COM
+[/group]
+
+
+[group]LST_c
+青組１人目
+青組２人目
+赤組１人目
+赤組２人目
+[/group]
+
+
+[group]LST_d
+0x02A370=01/00
+0x02A371=01/00
+0x02A372=01/00
+0x02A373=01/00
+[/group]
+
+
+[group]LST_2d
+0x0152A0=01/00
+0x0152A1=01/00
+0x0152A2=01/00
+0x0152A3=01/00
+[/group]
+
+
+[group]LST_3d
+0x0A5550=01/00
+0x0A5551=01/00
+0x0A5552=01/00
+0x0A5553=01/00
+[/group]
