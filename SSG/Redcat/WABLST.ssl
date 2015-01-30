@@ -1,0 +1,305 @@
+[group]WAB_SSG
+[note]wordwrap
+育成画面のものは、インターミッションでMETAMOS選択後、何か１ポイントでも上昇させると有効になる。値は即時に見えないが、ADVパートの方が楽。
+[/note]
+
+[subject]ver1.00:dir
+
+[subject]RPGパート関連:dir
+ [subject]ノーダメージ化/実行/_:toggle,0x41BBEE,80??14????????75,83??00????????7D
+ [subject]敵一撃死化/実行/_:toggle,0x41BE49,33C9EB029090,2B8D00FFFFFF
+ [subject]育成時能力限界値一律999化/実行/_:toggle,0x42E05A,3DE703000090,8B55FC3B0491
+ [subject]METAMOS選択時MSMAX化/実行/_:toggle,0x42F6A6,EB00,7E0D
+ [subject]育成時MS減らない/実行/_:toggle,0x42E0A8,00,01
+[back]
+
+[subject]パラメータ関連:dir
+[subject]MS/現在値/_:calc,0x554F58,0x0000,0x270F
+ [subject]ADVパート時:dir
+  [repeat]WABLST->WABREP4,0,3,1
+ [back]
+ [subject]育成画面時:dir
+  [enabled] [:0x5696F4:] != 0x00000000
+   [repeat]WABLST->WABREP1,0,3,1
+  [/enabled]
+ [back]
+[back]
+
+[subject]フラグ関連:dir
+ [subject]好感度確認調整:dir
+  [repeat]WABLST->WABREP3,0,4,1
+ [back]
+[back]
+
+[subject]ＣＧモード関連:dir
+ [subject]CG ALL/ＯＮ／ＯＦＦ/_:toggle,0x4EF0F4,0x4EF17F-01,00
+ [subject]EVENT ALL/ＯＮ／ＯＦＦ/_:toggle,0x4EF1F4,0x4EF1FA-01,00
+ [subject]MOVIE ALL/ＯＮ／ＯＦＦ/_:b_toggle,0x00,WABLST->WAB_a,offset
+[back]
+
+[back]
+
+[subject]ver1.02:dir
+
+[subject]RPGパート関連:dir
+ [subject]ノーダメージ化/実行/_:toggle,0x41BD0F,80??14????????75,83??00????????7D
+ [subject]敵一撃死化/実行/_:toggle,0x41BF6A,33C9EB029090,2B8D00FFFFFF
+ [subject]育成時能力限界値一律999化/実行/_:toggle,0x42E55A,3DE703000090,8B55FC3B0491
+ [subject]METAMOS選択時MSMAX化/実行/_:toggle,0x42FBA6,EB00,7E0D
+ [subject]育成時MS減らない/実行/_:toggle,0x42E5A8,00,01
+[back]
+
+[subject]パラメータ関連:dir
+[subject]MS/現在値/_:calc,0x554F68,0x0000,0x270F
+ [subject]ADVパート時:dir
+  [repeat]WABLST->WABREP42,0,3,1
+ [back]
+ [subject]育成画面時:dir
+  [enabled] [:0x569704:] != 0x00000000
+   [repeat]WABLST->WABREP12,0,3,1
+  [/enabled]
+ [back]
+[back]
+
+[subject]フラグ関連:dir
+ [subject]好感度確認調整:dir
+  [repeat]WABLST->WABREP32,0,4,1
+ [back]
+[back]
+
+[subject]ＣＧモード関連:dir
+ [subject]CG ALL/ＯＮ／ＯＦＦ/_:toggle,0x4EF104,0x4EF18F-01,00
+ [subject]EVENT ALL/ＯＮ／ＯＦＦ/_:toggle,0x4EF204,0x4EF20A-01,00
+ [subject]MOVIE ALL/ＯＮ／ＯＦＦ/_:b_toggle,0x10,WABLST->WAB_a,offset
+[back]
+
+[back]
+
+[subject]ver1.03:dir
+
+[subject]RPGパート関連:dir
+ [subject]ノーダメージ化/実行/_:toggle,0x41BD8F,80??14????????75,83??00????????7D
+ [subject]敵一撃死化/実行/_:toggle,0x41BFEA,33C9EB029090,2B8D00FFFFFF
+ [subject]育成時能力限界値一律999化/実行/_:toggle,0x42E5DA,3DE703000090,8B55FC3B0491
+ [subject]METAMOS選択時MSMAX化/実行/_:toggle,0x42FC26,EB00,7E0D
+ [subject]育成時MS減らない/実行/_:toggle,0x42E628,00,01
+[back]
+
+[subject]パラメータ関連:dir
+[subject]MS/現在値/_:calc,0x55BF98,0x0000,0x270F
+ [subject]ADVパート時:dir
+  [repeat]WABLST->WABREP43,0,3,1
+ [back]
+ [subject]育成画面時:dir
+  [enabled] [:0x570734:] != 0x00000000
+   [repeat]WABLST->WABREP13,0,3,1
+  [/enabled]
+ [back]
+[back]
+
+[subject]フラグ関連:dir
+ [subject]好感度確認調整:dir
+  [repeat]WABLST->WABREP33,0,4,1
+ [back]
+[back]
+
+[subject]ＣＧモード関連:dir
+ [subject]CG ALL/ＯＮ／ＯＦＦ/_:toggle,0x4F6134,0x4F61BF-01,00
+ [subject]EVENT ALL/ＯＮ／ＯＦＦ/_:toggle,0x4F6234,0x4F623A-01,00
+ [subject]MOVIE ALL/ＯＮ／ＯＦＦ/_:b_toggle,0x7040,WABLST->WAB_a,offset
+[back]
+
+[back]
+
+[subject]ver1.05:dir
+
+[subject]RPGパート関連:dir
+ [subject]ノーダメージ化/実行/_:toggle,0x41C0EF,80??14????????75,83??00????????7D
+ [subject]敵一撃死化/実行/_:toggle,0x41C34A,33C9EB029090,2B8D00FFFFFF
+ [subject]育成時能力限界値一律999化/実行/_:toggle,0x42E9CA,3DE703000090,8B55FC3B0491
+ [subject]METAMOS選択時MSMAX化/実行/_:toggle,0x430016,EB00,7E0D
+ [subject]育成時MS減らない/実行/_:toggle,0x42EA18,00,01
+[back]
+
+[subject]パラメータ関連:dir
+[subject]MS/現在値/_:calc,0x55CFF8,0x0000,0x270F
+ [subject]ADVパート時:dir
+  [repeat]WABLST->WABREP44,0,3,1
+ [back]
+ [subject]育成画面時:dir
+  [enabled] [:0x571794:] != 0x00000000
+   [repeat]WABLST->WABREP14,0,3,1
+  [/enabled]
+ [back]
+[back]
+
+[subject]フラグ関連:dir
+ [subject]好感度確認調整:dir
+  [repeat]WABLST->WABREP34,0,4,1
+ [back]
+[back]
+
+[subject]ＣＧモード関連:dir
+ [subject]CG ALL/ＯＮ／ＯＦＦ/_:toggle,0x4F7194,0x4F721F-01,00
+ [subject]EVENT ALL/ＯＮ／ＯＦＦ/_:toggle,0x4F7294,0x4F729A-01,00
+ [subject]MOVIE ALL/ＯＮ／ＯＦＦ/_:b_toggle,0x80A0,WABLST->WAB_a,offset
+[back]
+
+[back]
+
+[back]
+
+[/group]
+
+
+[group]WAB_a
+0x4EF274,0x4EF28F-01000000,00
+0x542020,0x54203B-01000000,00
+[/group]
+
+
+[group]WABREP1
+[subject][! @WABLST->LST_a,$Val !]:dir
+ [replace]_[:0x5696F4:]+0x[! 0x20*$Val !]+0x0170,WABLST->WAB_PR
+ [replace]_[:0x5696F4:]+0x0294+0x[! 0x0C*$Val !],WABLST->WAB_3PR
+[back]
+[/group]
+
+
+[group]WABREP12
+[subject][! @WABLST->LST_a,$Val !]:dir
+ [replace]_[:0x569704:]+0x[! 0x20*$Val !]+0x0170,WABLST->WAB_PR
+ [replace]_[:0x569704:]+0x0294+0x[! 0x0C*$Val !],WABLST->WAB_3PR
+[back]
+[/group]
+
+
+[group]WABREP13
+[subject][! @WABLST->LST_a,$Val !]:dir
+ [replace]_[:0x570734:]+0x[! 0x20*$Val !]+0x0170,WABLST->WAB_PR
+ [replace]_[:0x570734:]+0x0294+0x[! 0x0C*$Val !],WABLST->WAB_3PR
+[back]
+[/group]
+
+
+[group]WABREP14
+[subject][! @WABLST->LST_a,$Val !]:dir
+ [replace]_[:0x571794:]+0x[! 0x20*$Val !]+0x0170,WABLST->WAB_PR
+ [replace]_[:0x571794:]+0x0294+0x[! 0x0C*$Val !],WABLST->WAB_3PR
+[back]
+[/group]
+
+
+[group]WAB_PR
+[repeat]WABLST->WABREP2,0,5,1
+[repeat]WABLST->WABREP2b,5,8,1
+[/group]
+
+
+[group]WAB_3PR
+[e_with],0x00,0x09,unsigned
+ [subject]武装1LV/現在値/_:calc,0x00
+ [subject]武装2LV/現在値/_:calc,0x04
+ [subject]武装3LV/現在値/_:calc,0x08
+[/e_with]
+[/group]
+
+
+[group]WABREP2
+[subject][! @WABLST->LST_b,$Val !]基本値/現在値/_:calc,0x[! 0x04*$Val !],0x0000,0x03E7,unsigned
+[/group]
+
+
+[group]WABREP2b
+[subject][! @WABLST->LST_b,$Val !]基本値/現在値/_:calc,0x[! 0x04*$Val !],0x00,0x63,unsigned
+[/group]
+
+
+[group]WABREP5
+[subject][! @WABLST->LST_2b,$Val !]基本値/現在値/_:calc,,0x00,0x09,unsigned
+[/group]
+
+
+[group]WABREP3
+[subject][! @WABLST->LST_a,$Val !]/現在値/_:calc,_0x54209C+0x[! 0x04*$Val !],0x0000,0x03E7,unsigned
+[/group]
+
+
+[group]WABREP32
+[subject][! @WABLST->LST_a,$Val !]/現在値/_:calc,_0x5420AC+0x[! 0x04*$Val !],0x0000,0x03E7,unsigned
+[/group]
+
+
+[group]WABREP33
+[subject][! @WABLST->LST_a,$Val !]/現在値/_:calc,_0x5490DC+0x[! 0x04*$Val !],0x0000,0x03E7,unsigned
+[/group]
+
+
+[group]WABREP34
+[subject][! @WABLST->LST_a,$Val !]/現在値/_:calc,_0x54A13C+0x[! 0x04*$Val !],0x0000,0x03E7,unsigned
+[/group]
+
+
+[group]WABREP4
+[subject][! @WABLST->LST_a,$Val !]:dir
+ [replace]_0x554BA4+0x[! 0xD4*$Val !],WABLST->WAB_2PR
+[back]
+[/group]
+
+
+[group]WABREP42
+[subject][! @WABLST->LST_a,$Val !]:dir
+ [replace]_0x554BB4+0x[! 0xD4*$Val !],WABLST->WAB_2PR
+[back]
+[/group]
+
+
+[group]WABREP43
+[subject][! @WABLST->LST_a,$Val !]:dir
+ [replace]_0x55BBE4+0x[! 0xD4*$Val !],WABLST->WAB_2PR
+[back]
+[/group]
+
+
+[group]WABREP44
+[subject][! @WABLST->LST_a,$Val !]:dir
+ [replace]_0x55CC44+0x[! 0xD4*$Val !],WABLST->WAB_2PR
+[back]
+[/group]
+
+
+[group]LST_a
+鈴音
+真弓
+柚梨
+はるな
+[/group]
+
+
+[group]LST_b
+HYPER ROTER
+GENERATOR
+REFLECTOR
+TRANSMISSION
+F.C.S.
+武装1投資MS
+武装2投資MS
+武装3投資MS
+[/group]
+
+
+[group]WAB_2PR
+[e_with],0x0000,0x03E7,unsigned
+ [subject]HYPER ROTER/現在値/_:calc,0x00
+ [subject]GENERATOR/現在値/_:calc,0x04
+ [subject]REFLECTOR/現在値/_:calc,0x08
+ [subject]TRANSMISSION/現在値/_:calc,0x0C
+ [subject]F.C.S./現在値/_:calc,0x10
+[/e_with]
+[subject]武装1LV/現在値/_:calc,0x54,0x00,0x09,unsigned
+[subject]武装1投資MS/現在値/_:calc,0x58,0x00,0x63,unsigned
+[subject]武装2LV/現在値/_:calc,0x60,0x00,0x09,unsigned
+[subject]武装2投資MS/現在値/_:calc,0x64,0x00,0x63,unsigned
+[subject]武装3LV/現在値/_:calc,0x6C,0x00,0x09,unsigned
+[subject]武装3投資MS/現在値/_:calc,0x70,0x00,0x63,unsigned
+[/group]
