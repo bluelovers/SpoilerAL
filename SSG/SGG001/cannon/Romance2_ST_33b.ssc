@@ -1,0 +1,14 @@
+[subject]HP		:calc,0x00,0,999,signed,little_e
+[subject]HPMAX		:calc,0x04,0,999,signed,little_e
+[subject]MP		:calc,0x0C,0,999,signed,little_e
+[subject]MPMAX		:calc,0x10,0,999,signed,little_e
+[subject]筋力		:calc,0x18,0,999,signed,little_e
+[subject]知力		:calc,0x20,0,999,signed,little_e
+[subject]器用		:calc,0x28,0,999,signed,little_e
+[subject]防御		:calc,0x30,0,999,signed,little_e
+[subject]魔防		:calc,0x38,0,999,signed,little_e
+[subject]移動		:calc,0x40,0,999,signed,little_e
+[subject]好感度		:calc,0x4C,0,999,signed,little_e
+//[subject]属性		:toggle,0x0114,80FFFF0D,????????
+[subject]属性		:bitlist,0x0114,Romance2_Zo,4
+[back]
