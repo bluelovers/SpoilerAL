@@ -1,0 +1,68 @@
+[group]KF_MA
+[note]wordwrap
+以下、少々補足です。
+
+永続スキップ：
+マウスクリックしない間、無条件スキップします。
+
+フラグショップ：
+椎奈、悠歌の分岐用が主。
+[/note]
+
+[subject]環境関連:dir
+	[subject]永続文章スキップ/実行/_:b_toggle,0x41C05E,KFLST->KF_a,real
+[/group]
+
+
+[group]KF_F1
+[subject]進行ルート/_:list,0x4AF990,KFLST->LST_a,0x00,0x01
+[subject]霞好感度/現在値/_:calc,0x4AF9BC,0x00,0x08,unsigned
+[subject]フラグショップ/_:d_toggle,0x4AF994,KFLST->LST_b,KFLST->LST_c,offset
+[/group]
+
+
+[group]KF_CG
+[subject]ＣＧモード:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x4D129D,0x4D12AC-FF
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x4D129D,0x4D12AC-00
+[back]
+[subject]シーン回想:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x4D12B6,0x4D12BB-FF
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x4D12B6,0x4D12BB-00
+[back]
+[subject]エンディング回想:dir
+	[subject]ＡＬＬ＆"ＧＥＮＥＳＩＳ"出現/実行/_:toggle,0x4B07A4,0x4B07B0-01000000
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x4B07A4,0x4B07B3-00000000
+[/group]
+
+
+[group]LST_a
+未定
+飛鳥井霞
+柚木式子
+守里椎奈
+神沢悠歌
+[/group]
+
+
+[group]LST_b
+フラグ１
+フラグ２
+フラグ３
+フラグ４
+[/group]
+
+
+[group]LST_c
+0x00=01/00
+0x04=01/00
+0x08=01/00
+0x0C=01/00
+[/group]
+
+
+[group]KF_a
+0x41C05E,EB00,7435
+0x41C067,EB00,742C
+0x41C070,EB00,7523
+[/group]
