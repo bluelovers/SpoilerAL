@@ -1,0 +1,111 @@
+[group]S1_SSG
+[note]wordwrap
+１と２の機能を逆に使うことのないようご注意を。
+
+※１のシーン回想は台詞違いの５パターンに対応可能。リストから対応パターン選択後、ＡＬＬ化機能実行でＯＫ。２の方は中盤戦の回想に一部追加等があるパターンがある模様。検証は２～３人のみで厳密には確認してません。
+[/note]
+
+[subject]シャングリラ:dir
+
+[subject]SLGパート関連:dir
+ [subject]統率力無限化/実行/_:toggle,0x45EA03,33ED4D90,8B6C2420
+ [subject]無限行動可能化/実行/_:b_toggle,0x00,S1LST->S1_a,offset
+ [subject]勝利時経験値即MAX化/実行/_:toggle,0x4626C0,33C0F64160017402EB,0FB641684083F8197C
+ [subject]マウスオーバー時能力極大化/実行/_:b_toggle,0x00,S1LST->S1_b,offset
+[back]
+
+[subject]ＣＧモード関連:dir
+ [replace]_[:[:[:0x4B8DB0:]+0x0C:]+0x04:]=>temp;[:[:0x4B8DB0:]+$temp+0x04B564:],S1LST->S1_CG
+[back]
+
+[back]
+
+[subject]シャングリラ２:dir
+
+[subject]SLGパート関連:dir
+ [subject]統率力無限化/実行/_:toggle,0x46A1A5,33FF4F90,8B7C2410
+ [subject]無限行動可能化/実行/_:b_toggle,0x00,S1LST->S2_a,offset
+ [subject]勝利時経験値即MAX化/実行/_:toggle,0x46F988,F6416001905E7510,0FB6F03BD65E720D
+ [subject]マウスオーバー時能力極大化/実行/_:b_toggle,0x00,S1LST->S2_b,offset
+[back]
+
+[subject]ＣＧモード関連:dir
+ [replace]_[:[:[:0x4CB150:]+0x0C:]+0x04:]=>temp;[:[:0x4CB150:]+$temp+0x04B564:],S1LST->S2_CG
+[back]
+
+[back]
+
+[/group]
+
+
+[group]S1_a
+0x4626BA,01,02
+0x468F77,EB,75
+0x469105,E99200000090,0F8591000000
+0x45F764,EB0490909090,0F841A030000
+[/group]
+
+
+[group]S2_a
+0x46B594,EB0490909090,0F841A030000
+0x46F91A,01,02
+0x476B96,EB,75
+0x476D1B,E99200000090,0F8591000000
+[/group]
+
+
+[group]S1_b
+0x4627E4,E9D7700300,C3CCCCCCCC
+0x4998C0,F6416001,00000000
+0x4998C4,7513,0000
+0x4998C6,C74102FAFA0609,00000000000000
+0x4998CD,C6410814,00000000
+0x4998D1,C6410A09,00000000
+0x4998D5,C6416408,00000000
+0x4998D9,C3,00
+[/group]
+
+
+[group]S2_b
+0x479B80,E9BBF8020090,8B41640FBF09
+0x4A9440,F6416001,00000000
+0x4A9444,7521,0000
+0x4A9446,B8E7030000,0000000000
+0x4A944B,8901,0000
+0x4A944D,894164,000000
+0x4A9450,C74102FAFA0709,00000000000000
+0x4A9457,C6410601,00000000
+0x4A945B,C6410814,00000000
+0x4A945F,C6410A09,00000000
+0x4A9463,C64111FA,00000000
+0x4A9467,8B4164,000000
+0x4A946A,0FBF09,000000
+0x4A946D,E91407FDFF,0000000000
+[/group]
+
+
+[group]S1_CG
+[subject]おまけモード開封/ＯＮ／ＯＦＦ/_:toggle,0x02D8,010101,000000
+[subject]ＣＧ鑑賞ALL/ＯＮ／ＯＦＦ/_:toggle,0x0210,0x024C-01,00
+[subject]ＢＧＭ鑑賞ALL/ＯＮ／ＯＦＦ/_:toggle,0x0256,0x0261-01,00
+[subject]シーンパターン選択/_:list,_0x4998E0-[_0_],S1LST->LST_a,0x00,0x01
+[subject]シーン鑑賞ALL（指定パターンで統一）/ＯＮ／ＯＦＦ/_:toggle,0x0274,0x027D-01*+0109$1 [:0x4998E0:]+0x01 $$*+04FFFFFFF6,00*+010900*+04FFFFFFF6
+[/group]
+
+
+[group]S2_CG
+[subject]おまけモード開封/ＯＮ／ＯＦＦ/_:toggle,0x02D8,010101,000000
+[subject]ＣＧ鑑賞ALL/ＯＮ／ＯＦＦ/_:toggle,0x0210,0x026E-01,00
+[subject]ＢＧＭ鑑賞ALL/ＯＮ／ＯＦＦ/_:toggle,0x02A6,0x02B6-01,00
+[subject]シーン鑑賞パターン１ALL/ＯＮ／ＯＦＦ/_:toggle,0x0274,0x0282-01*+010E00*+04FFFFFFF1,00*+010E00*+04FFFFFFF1
+[subject]シーン鑑賞パターン２ALL/ＯＮ／ＯＦＦ/_:toggle,0x0274,0x0282-01*+010E01*+04FFFFFFF1,00*+010E00*+04FFFFFFF1
+[/group]
+
+
+[group]LST_a
+パターン１
+パターン２
+パターン３
+パターン４
+パターン５
+[/group]
