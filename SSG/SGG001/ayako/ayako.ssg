@@ -1,0 +1,915 @@
+SSG for SpoilerAL ver 3.4
+[script]
+[title]ザ・コンビニ～アナザーワールド～
+[process]KINGAW.EXE
+[maker]？
+[creator]亜也虎
+[note]wordwrap
+ダウンロードありがとうございます。
+これは私が初めて作成したssgです。
+総資金の最大値はどれくらいかよくわからないので、適当なところで止めてあります。
+
+☆改造をおこなう時は、必ずセーブデータのバックアップをしてください。
+
+[/note]
+[subject]総資金:calc,0x491390,0x0,0x7FFFFFFF,signed
+[/script]
+
+[script]
+[title]鋼鉄の咆哮
+[process]BCS.ICD
+[maker]光栄
+[creator]亜也虎
+[note]wordwrap
+ダウンロードありがとうございます。
+
+注意！！
+・「お金」と「得点」は、実際の数値とは異なります。
+・「お金」と「得点」に最大値を入力すると、表示される数値が表示可能範囲を超えます。
+・面クリア、部品購入等をすると、正常な表示になります。
+・最大値での値の固定は絶対にしないでください。
+・最大値で正常に作動しない場合は、16進数で「E8」と入力してください。
+・技術力が実際に反映されるようにするには、一度技術開発ウインドを開き、「決定」ボタンを押す必要があります。
+・全エリア選択は、ある条件を満たすとボーナスステージも選択可能になります。
+
+☆改造をおこなう時は、必ずセーブデータのバックアップをしてください。
+
+[/note]
+[subject]お金:calc,0x5DFBFA,0x0,0xE9,unsigned
+[subject]得点:calc,0x5DFBF2,0x0,0xE9,unsigned
+[subject]技術力:dir
+	[subject]航空技術:calc,0x5E2F6A,0x0,0x63,unsigned
+	[subject]機関技術:calc,0x5E2F6C,0x0,0x63,unsigned
+	[subject]鋼材技術:calc,0x5E2F6E,0x0,0x63,unsigned
+	[subject]兵器技術:calc,0x5E2F70,0x0,0x63,unsigned
+	[subject]電気技術:calc,0x5E2F72,0x0,0x63,unsigned
+[root]
+[subject]全エリア選択可能:toggle,0x5DFC08,0x5DFC11-01,00
+[root]
+[/script]
+
+[script]
+[title]トランスポートタイクーンDX
+[process]TTDX.EXE
+[maker]アンバランス
+[creator]亜也虎
+[note]wordwrap
+
+ダウンロードありがとうございます。
+
+注意！！
+機関車や貨車の性能変化は新規購入に限って有効です。
+改造列車を走らせたいときは、(Alt+Esc等を使って)予め数値を入力してから車両を新規購入してください。
+艦船と車両の速力は、入力した数字の1/2（kmの場合）です。
+
+☆改造をおこなう時は、必ずセーブデータのバックアップをしてください。
+
+☆★スペシャルサンクス　Rakyumさん★☆
+
+[/note]
+[subject]総資金:calc,0x4B7952,0x0,0x0FFFFFFF,signed
+[subject]鉄道性能:dir
+	[subject]KPT(SL):dir
+		[replace]0x457002,ttdx機関車,offset
+	[subject]Chaney Jubilee(SL):dir
+		[replace]0x457012,ttdx機関車,offset
+	[subject]Ginzu-A4(SL):dir
+		[replace]0x457014,ttdx機関車,offset
+	[subject]SH-8P(SL):dir
+		[replace]0x457016,ttdx機関車,offset
+	[subject]Manley DMU（ディーゼル）:dir
+		[replace]0x457018,ttdx機関車,offset
+	[subject]SH-40(電気):dir
+		[replace]0x457032,ttdx機関車,offset
+	[subject]全て時速6590km:toggle,0x457002,0x457036-9919,6400
+	[subject]全て馬力32767:toggle,0x4570EA,0x45711E-FF7F,FF00
+[root]
+[subject]貨車積載量:dir
+	[subject]客車:calc,0x457519,0x0,0xFF,unsigned
+	[subject]郵便車:calc,0x45751A,0x0,0xFF,unsigned
+	[subject]石炭車:calc,0x45751B,0x0,0xFF,unsigned
+	[subject]タンカー:calc,0x45751C,0x0,0xFF,unsigned
+	[subject]家畜車:calc,0x45751D,0x0,0xFF,unsigned
+	[subject]工業製品車:calc,0x45751E,0x0,0xFF,unsigned
+	[subject]穀物車:calc,0x45751F,0x0,0xFF,unsigned
+	[subject]木材車:calc,0x457520,0x0,0xFF,unsigned
+	[subject]鉄鉱石車:calc,0x457521,0x0,0xFF,unsigned
+	[subject]鋼材車:calc,0x457522,0x0,0xFF,unsigned
+	[subject]有蓋貨車:calc,0x457523,0x0,0xFF,unsigned
+	[subject]積載量全て255:toggle,0x457519,0x457523-FF,64
+[root]
+[subject]車両性能:dir
+	[subject]MPSバス:dir
+		[replace]0x432822,ttdx車両性能,offset
+	[subject]バス2:dir
+		[replace]0x432823,ttdx車両性能,offset
+	[subject]バス3:dir
+		[replace]0x432824,ttdx車両性能,offset
+	[subject]バス4:dir
+		[replace]0x432825,ttdx車両性能,offset
+	[subject]バス5:dir
+		[replace]0x432826,ttdx車両性能,offset
+	[subject]バス6:dir
+		[replace]0x432827,ttdx車両性能,offset
+	[subject]バス7:dir
+		[replace]0x432828,ttdx車両性能,offset
+	[subject]石炭トラック1:dir
+		[replace]0x432829,ttdx車両性能,offset
+	[subject]郵便トラック1:dir
+		[replace]0x43282C,ttdx車両性能,offset
+	[subject]速力全て時速127km:toggle,0x432822,0x43284D-FF,64
+	[subject]積載量全て255:toggle,0x432A8A,0x432AB5-FF,64
+[root]
+[subject]航空機性能:dir
+	[subject]sampson U52:dir
+		[subject]乗客定員:calc,0x44C907,0x0,0x7FFF,unsigned
+		[replace]0x44C88C,ttdx航空機性能,offset
+	[back]
+	[subject]Coleman Count:dir
+		[subject]乗客定員:calc,0x44C909,0x0,0x7FFF,unsigned
+		[replace]0x44C88D,ttdx航空機性能,offset
+	[back]
+	[subject]Tricario Helicopter:dir
+		[subject]乗客定員:calc,0x44C953,0x0,0x7FFF,unsigned
+		[replace]0x44C8B2,ttdx航空機性能,offset
+	[back]
+	[subject]乗客定員全て32767:toggle,0x44C907,0x44C957-FF7F,6400
+	[subject]郵便袋全て255袋:toggle,0x44C959,0x44C981-FF,64
+	[subject]速力全て最大:toggle,0x44C88C,0x44C8B4-FF,64
+[root]
+[subject]船性能:dir
+	[subject]MPSタンカー:dir
+		[replace]0x44F080,ttdx船性能,offset
+		[subject]積載量:calc,0x44F0A1,0x0,0x7FFF,unsigned
+	[back]
+	[subject]MPSフェリー:dir
+		[replace]0x44F082,ttdx船性能,offset
+		[subject]積載量:calc,0x44F0A5,0x0,0x7FFF,unsigned
+	[back]
+	[subject]Yate貨物船:dir
+		[replace]0x44F087,ttdx船性能,offset
+		[subject]積載量:calc,0x44F0AF,0x0,0x7FFF,unsigned
+	[back]
+	[subject]建造費全て0:toggle,0x44F080,0x44F08A-00,10
+	[subject]維持費全て0:toggle,0x44F0B7,0x44F0C1-00,10
+	[subject]速力全て最大:toggle,0x44F08B,0x44F095-FF,64
+	[subject]積載量全て最大:toggle,0x44F0A1,0x44F0B5-FF7F,6400
+[root]
+[/script]
+
+[script]
+[title]大航海時代3
+[process]CDS95.EXE
+[maker]光栄
+[creator]すてら＆亜也虎
+[note]wordwrap
+
+ダウンロードありがとうございます。
+資金以外にも、年月日や初期能力、艦船等を色々と改造できます。
+
+☆改造をおこなう時は、必ずセーブデータのバックアップをしてください。
+
+必ずお読みください。
+・変更する項目によっては、入力後すぐに結果が反映されないことがあります。
+・アイテムの変更は、何らかのアイテムを所持した状態で行ってください。また、なるだけ所持品画面で確認しながら変更してください。
+・アイテムの順番は、見かけと違う場合があります。
+・交易品を変更するときは、何らかの商品を搭載した状態で行ってください。
+・交易所に入った状態で変更しようとしても、できない場合があります。
+・都市の特産品を変更する場合、未発見の交易品は販売されません。ただし、自艦隊の交易品に関しては売却可能です。
+・艦船の数値、種類を変更する時は、必ず船を手に入れてからにしてください。
+・砲数、大砲種類を変更する場合は、どれでもいいので最低でも1門以上大砲を積んでください。
+・乗組員数および必要乗組員数は、その船の最大乗組員数を超えないようにしてください。
+・速力は200くらいが適当な値です。
+・旗艦とは言っても、実際には一番最初に手に入れた船のことです。同様に、二番艦以降もその船を手に入れた順番です。
+・できるだけ、値の固定は使わないでください。また、スポイラーALで改造する場合、艦船の保管、売却、旗艦の変更はできるだけしないでください。
+・画面を切り替えると止まる場合は、必ずアップデートをしてください。
+・海戦で敵艦と衝突した場合、耐久度が999でも沈没してしまう時があります。原因は今のところ不明です。
+・主人公能力の実際の値は、入力した数値に＋1したものです。
+・マスクデータとは、ゲーム画面で表示されることのない隠しパラメータのことです。「生命力」が0の状態で寄港すると、主人公が死亡します。
+・「酒豪レベル」とは、亜也虎がかってにつけた名前です。この数値を上げると、お酒に強くなるようですが、動作がおかしくなるようなら、ここの改造はしないでください。
+・主人公の顔の変更については、（人物情報ウインドウを開閉するなどして）ゲーム中での変化を確認しつつ、電卓の数値を入力してください。
+
+[/note]
+[subject]ボーナスポイント:dir
+	[subject]能力値ポイント:calc,0x86FBD4,0x0,0x64,unsigned
+	[subject]スキルポイント:calc,0x86FCC0,0x0,0x64,unsigned
+[root]
+[subject]主人公:dir
+	[subject]一発最強、一発最弱:b_toggle,0x0,dk3saikyou,offset
+	[subject]能力:dir
+		[subject]体力:calc,0x58DD58,0x0,0x63,unsigned
+		[subject]知力:calc,0x58DD5C,0x0,0x63,unsigned
+		[subject]武力:calc,0x58DD60,0x0,0x63,unsigned
+		[subject]魅力:calc,0x58DD64,0x0,0x63,unsigned
+		[subject]運:calc,0x58DD68,0x0,0x63,unsigned
+	[back]
+	[subject]技術:dir
+		[subject]航海術:calc,0x58DD78,0x0,0x3,unsigned
+		[subject]運用術:calc,0x58DD7C,0x0,0x3,unsigned
+		[subject]剣術:calc,0x58DD80,0x0,0x3,unsigned
+		[subject]砲術:calc,0x58DD84,0x0,0x3,unsigned
+		[subject]射撃術:calc,0x58DD88,0x0,0x3,unsigned
+		[subject]医学:calc,0x58DD8C,0x0,0x3,unsigned
+		[subject]弁論:calc,0x58DD90,0x0,0x3,unsigned
+		[subject]測量:calc,0x58DD94,0x0,0x3,unsigned
+		[subject]歴史学:calc,0x58DD98,0x0,0x3,unsigned
+		[subject]会計:calc,0x58DD9C,0x0,0x3,unsigned
+		[subject]造船技術:calc,0x58DDA0,0x0,0x3,unsigned
+		[subject]神学:calc,0x58DDA4,0x0,0x3,unsigned
+		[subject]科学:calc,0x58DDA8,0x0,0x3,unsigned
+	[back]
+	[subject]言語:dir
+		[subject]スペイン語:calc,0x58DDAC,0x0,0x3,unsigned
+		[subject]ポルトガル語:calc,0x58DDB0,0x0,0x3,unsigned
+		[subject]ロマンス語:calc,0x58DDB4,0x0,0x3,unsigned
+		[subject]ゲルマン語:calc,0x58DDB8,0x0,0x3,unsigned
+		[subject]スラブ・ギリシャ語:calc,0x58DDBC,0x0,0x3,unsigned
+		[subject]アラビア語:calc,0x58DDC0,0x0,0x3,unsigned
+		[subject]ペルシャ語:calc,0x58DDC4,0x0,0x3,unsigned
+		[subject]中国語:calc,0x58DDC8,0x0,0x3,unsigned
+		[subject]ヒンディー語:calc,0x58DDCC,0x0,0x3,unsigned
+		[subject]ウイグル語:calc,0x58DDD0,0x0,0x3,unsigned
+		[subject]アフリカ土着語:calc,0x58DDD4,0x0,0x3,unsigned
+		[subject]中南米土着語:calc,0x58DDD8,0x0,0x3,unsigned
+		[subject]東南アジア土着語:calc,0x58DDDC,0x0,0x3,unsigned
+		[subject]東アジア土着語:calc,0x58DDE0,0x0,0x3,unsigned
+	[back]
+	[subject]知名度:dir
+		[subject]名声値:calc,0x58DDE4,0x0,0x1869F,unsigned
+		[subject]悪名値:calc,0x58DDE8,0x0,0x1869F,unsigned
+	[back]
+	[subject]マスクデータ:dir
+		[subject]生命力:calc,0x58DD70,0x0,0x7D0,unsigned
+		[subject]酒豪レベル:calc,0x58DD74,0x0,0x7D0,unsigned
+	[back]
+	[subject]生年月日:dir
+		[subject]誕生年:calc,0x58DE20,0x0,0x7D0,unsigned
+		[subject]誕生月:calc,0x58DE24,0x1,0xC,unsigned
+		[subject]誕生日:calc,0x58DE28,0x1,0x1C,unsigned
+	[back]
+	[subject]属性:dir
+		[subject]顔:calc,0x58DD40,0x0,0xFF,unsigned
+		[subject]国籍:list,0x58DD4C,Dk3count,0x00,0x01
+		[subject]血液型:list,0x58DD50,dk3血液型,0x00,0x01
+		[subject]職業:list,0x58DD54,dk3職業,0x00,0x01
+[root]
+[subject]アイテム:dir
+	[subject]1つ目:list,0x58DE50,dk3アイテム,0x0,0x1
+	[subject]2つ目:list,0x58DE54,dk3アイテム,0x0,0x1
+	[subject]3つ目:list,0x58DE58,dk3アイテム,0x0,0x1
+	[subject]4つ目:list,0x58DE5C,dk3アイテム,0x0,0x1
+	[subject]5つ目:list,0x58DE60,dk3アイテム,0x0,0x1
+	[subject]6つ目:list,0x58DE64,dk3アイテム,0x0,0x1
+	[subject]7つ目:list,0x58DE68,dk3アイテム,0x0,0x1
+	[subject]8つ目:list,0x58DE6C,dk3アイテム,0x0,0x1
+	[subject]9つ目:list,0x58DE70,dk3アイテム,0x0,0x1
+	[subject]10つ目:list,0x58DE74,dk3アイテム,0x0,0x1
+	[subject]11つ目:list,0x58DE78,dk3アイテム,0x0,0x1
+	[subject]12つ目:list,0x58DE7C,dk3アイテム,0x0,0x1
+	[subject]13つ目:list,0x58DE80,dk3アイテム,0x0,0x1
+	[subject]14つ目:list,0x58DE84,dk3アイテム,0x0,0x1
+	[subject]15つ目:list,0x58DE88,dk3アイテム,0x0,0x1
+	[subject]16つ目:list,0x58DE8C,dk3アイテム,0x0,0x1
+[root]
+[subject]お金:dir
+	[subject]所持金:calc,0x58DE2C,0x0,0xF4240,unsigned
+	[subject]貯金:calc,0x0058DE30,0x0,0xF4240,unsigned
+	[subject]契約金（合計）:calc,0x58DE34,0x00,0x7FFFFFFF,unsigned,little_e
+[root]
+[subject]年月日:dir
+	[subject]西暦:calc,0x571058,0x5C8,0x7D0,unsigned
+	[subject]月:calc,0x57105C,0x1,0xC,unsigned
+	[subject]日:calc,0x571060,0x1,0x1C,unsigned
+[root]
+[subject]艦隊ステータス:dir
+	[subject]船員疲労度:calc,0x58E098,0x0,0x64,unsigned
+	[subject]船員士気:calc,0x58E09C,0x0,0x64,unsigned
+	[subject]水:calc,0x58E0A4,0x0,0xEA60,unsigned
+	[subject]食料:calc,0x58E0A8,0x0,0xEA60,unsigned
+	[subject]資材:calc,0x58E0AC,0x0,0xEA60,unsigned
+	[subject]弾薬:calc,0x58E0B0,0x0,0xEA60,unsigned
+[root]
+[subject]商品:dir
+	[subject]1つ目:dir
+		[replace]0x58E0C4,dk3商品,offset
+	[subject]2つ目:dir
+		[replace]0x58E0D4,dk3商品,offset
+	[subject]3つ目:dir
+		[replace]0x58E0E4,dk3商品,offset
+	[subject]4つ目:dir
+		[replace]0x58E0F4,dk3商品,offset
+	[subject]5つ目:dir
+		[replace]0x58E104,dk3商品,offset
+	[subject]6つ目:dir
+		[replace]0x58E114,dk3商品,offset
+	[subject]7つ目:dir
+		[replace]0x58E124,dk3商品,offset
+	[subject]8つ目:dir
+		[replace]0x58E134,dk3商品,offset
+[root]
+[subject]全商品販売許可:toggle,0x60F450,0x60F567-01000000,00000000
+[root]
+[subject]艦船性能:dir
+	[subject]旗艦:dir
+		[subject]艦名:string,0x5710A0,0x28,null
+		[replace]0x5710C8,dk3艦船性能,offset
+	[subject]二番艦:dir
+		[subject]艦名:string,0x57110C,0x28,null
+		[replace]0x571134,dk3艦船性能,offset
+	[subject]三番艦:dir
+		[subject]艦名:string,0x571178,0x28,null
+		[replace]0x5711A0,dk3艦船性能,offset
+	[subject]四番艦:dir
+		[subject]艦名:string,0x5711E4,0x28,null
+		[replace]0x57120C,dk3艦船性能,offset
+	[subject]五番艦:dir
+		[subject]艦名:string,0x571250,0x28,null
+		[replace]0x571278,dk3艦船性能,offset
+	[subject]六番艦:dir
+		[subject]艦名:string,0x5712BC,0x28,null
+		[replace]0x5712E4,dk3艦船性能,offset
+	[subject]七番艦:dir
+		[subject]艦名:string,0x571328,0x28,null
+		[replace]0x571350,dk3艦船性能,offset
+	[subject]八番艦:dir
+		[subject]艦名:string,0x571394,0x28,null
+		[replace]0x5713BC,dk3艦船性能,offset
+	[subject]九番艦:dir
+		[subject]艦名:string,0x571400,0x28,null
+		[replace]0x571428,dk3艦船性能,offset
+	[subject]十番艦:dir
+		[subject]艦名:string,0x57146C,0x28,null
+		[replace]0x571494,dk3艦船性能,offset
+	[subject]十一番艦:dir
+		[subject]艦名:string,0x5714D8,0x28,null
+		[replace]0x571500,dk3艦船性能,offset
+	[subject]十二番艦:dir
+		[subject]艦名:string,0x571544,0x28,null
+		[replace]0x57156C,dk3艦船性能,offset
+	[subject]十三番艦:dir
+		[subject]艦名:string,0x5715B0,0x28,null
+		[replace]0x5715D8,dk3艦船性能,offset
+	[subject]十四番艦:dir
+		[subject]艦名:string,0x57161C,0x28,null
+		[replace]0x571644,dk3艦船性能,offset
+	[subject]十五番艦:dir
+		[subject]艦名:string,0x571688,0x28,null
+		[replace]0x5716B0,dk3艦船性能,offset
+	[subject]十六番艦:dir
+		[subject]艦名:string,0x5716F4,0x28,null
+		[replace]0x57171C,dk3艦船性能,offset
+	[subject]十七番艦:dir
+		[subject]艦名:string,0x571760,0x28,null
+		[replace]0x571788,dk3艦船性能,offset
+	[subject]十八番艦:dir
+		[subject]艦名:string,0x5717CC,0x28,null
+		[replace]0x5717F4,dk3艦船性能,offset
+[root]
+[subject]陸戦隊人数:dir
+	[subject]自軍:dir
+		[subject]第一部隊:calc,0x5FF32C,0x0,0x12C,unsigned
+		[subject]第二部隊:calc,0x5FF354,0x0,0x12C,unsigned
+		[subject]第三部隊:calc,0x5FF37C,0x0,0x12C,unsigned
+		[subject]第四部隊:calc,0x5FF3A4,0x0,0x12C,unsigned
+		[subject]第五部隊:calc,0x5FF3CC,0x0,0x12D,unsigned
+		[subject]第六部隊:calc,0x5FF3F4,0x0,0x12C,unsigned
+	[back]
+	[subject]敵軍:dir
+		[subject]第一部隊:calc,0x5FF41C,0x1,0x3E7,unsigned
+		[subject]第二部隊:calc,0x5FF444,0x1,0x3E7,unsigned
+		[subject]第三部隊:calc,0x5FF46C,0x1,0x3E7,unsigned
+		[subject]第四部隊:calc,0x5FF494,0x1,0x3E7,unsigned
+		[subject]第五部隊:calc,0x5FF4BC,0x1,0x3E7,unsigned
+		[subject]第六部隊:calc,0x5FF4E4,0x1,0x3E7,unsigned
+[root]
+[subject]街情報:dir
+	[replace]0x0,dk3cityname,offset
+[root]
+[subject]スポンサー情報:dir
+	[replace]0x0,dk3sponname,offset
+[root]
+[subject]大砲性能:dir
+	[replace]0x0,dk3cannonname,offset
+[root]
+[subject]酒場女:dir
+	[replace]0x593388,dk3onnaname,offset
+[root]
+[subject]艦隊の所在（使用注意！）:dir
+[subject]艦隊および揚陸部隊:dir
+	[subject]経度:calc,0x58E048,0x0000,0x9C3F,unsigned
+	[subject]緯度:calc,0x58E04C,0x0000,0x4E1F,unsigned
+[back]
+[subject]留守艦隊（揚陸中）:dir
+	[subject]経度:calc,0x58E050,0x0000,0x9C3F,unsigned
+	[subject]緯度:calc,0x58E054,0x0000,0x4E1F,unsigned
+[root]
+[subject]バカコードショウ:dir
+	[subject]スエズ運河？:dir
+		[subject]スエズ運河地中海側:toggle,0x58E040,B9050000990100002C5C00007B190000,B9050000990100002C5C00007B190000
+		[subject]スエズ運河紅海側:toggle,0x58E040,B90500008C010000205C0000001A0000,B90500008C010000205C0000001A0000
+	[back]
+	[subject]パナマ運河？:dir
+		[subject]パナマ運河カリブ海側:toggle,0x58E048,DA2B0000FF220000,DA2B0000FF220000
+		[subject]パナマ運河太平洋側:toggle,0x58E048,D82B000020230000,D82B000020230000
+	[back]
+	[subject]井の中の蛙:toggle,0x58E040,0906000058010000D061000040160000,0906000058010000D061000040160000
+[root]
+[/script]
+[script]
+[title]風来のシレン（DL版）
+[process]SHIREN.EXE
+[maker]チュンソフト
+[creator]亜也虎
+[note]wordwrap
+
+ダウンロードありがとうございます。
+ふぶきさんがすでにSSGを作成されているのですが、DL版ではメモリのアドレスが違うので作成しました。
+よって、パッケージ版ではこのSSGが使用できません。
+なお、このSSGに使用したアドレスは亜也虎が独自に解析したものです。
+
+[/note]
+[subject]現在体力:calc,0x4DCACA,0x1,0xFA,unsigned
+[subject]最大体力:calc,0x4DCACC,0x1,0xFA,unsigned
+[subject]現在満腹度:calc,0x4DCADA,0x0,0xFA0,unsigned
+[subject]最大満腹度:calc,0x4DCADC,0x0,0xFA0,unsigned
+[subject]現在力:calc,0x4DCAD2,0x0,0x63,unsigned
+[subject]最大力:calc,0x4DCAD4,0x0,0x63,unsigned
+[subject]ギタン:calc,0x4DCB30,0x0,0xF423F,unsigned
+[subject]経験値:calc,0x4DCB2C,0x0,0xF423F,unsigned
+[/script]
+
+[script]
+[title]風来のシレン(パッケージ版1.01）
+[process]SHIREN.EXE
+[maker]チュンソフト
+[creator]亜也虎
+[note]wordwrap
+
+ダウンロードありがとうございます。
+ふぶきさんがすでにSSGを作成されているのですが、アップグレードした後ではアドレスが違うようなので作成しました。
+よって、アップグレードしていなければ、このSSGは使用することができません。
+なお、このSSGに使用したアドレスは亜也虎が独自に解析したものです。
+
+[/note]
+[subject]現在体力:calc,0x4DCA5A,0x1,0xFA,unsigned
+[subject]最大体力:calc,0x4DCA5C,0x1,0xFA,unsigned
+[subject]現在満腹度:calc,0x4DCA6A,0x0,0xFA0,unsigned
+[subject]最大満腹度:calc,0x4DCA6C,0x0,0xFA0,unsigned
+[subject]現在力:calc,0x4DCA62,0x0,0x63,unsigned
+[subject]最大力:calc,0x4DCA64,0x0,0x63,unsigned
+[subject]ギタン:calc,0x4DCAC0,0x0,0xF423F,unsigned
+[subject]経験値:calc,0x4DCABC,0x0,0xF423F,unsigned
+[/script]
+
+[script]
+[title]信長の野望　天翔記パワーアップキット
+[process]TENSHOU.EXE
+[maker]光栄
+[creator]亜也虎
+[note]wordwrap
+
+ダウンロードありがとうございます。
+現在は毛利家のみ改造可能です。
+なお、このSSGはシナリオ１「信長の誕生」のみに対応しております。
+他のシナリオでの動作は保証しません。
+☆セーブデータのバックアップは必ず行って下さい。
+
+注意！！
+・「test家」及び「test」について、現在のところ開発中のため、できるだけ使用は避けて下さい。
+[/note]
+[subject]毛利家:dir
+	[replace]0x4BE28C,nobuten家,offset
+[root]
+[subject]test家:dir
+[replace]0x4be06a,nobuten家,offset
+[root]
+[subject]test:dir
+[replace]0x4c6500,test,offset
+[root]
+[/script]
+
+[script]
+[title]リバティータウン
+[process]RIVER.EXE
+[maker]アートディンク
+[creator]亜也虎
+[note]wordwrap
+
+ダウンロードありがとうございます。
+場合によって正常に動作しない場合があります。
+うまく動作しない時は、再起動をしてみてください。
+☆セーブデータのバックアップは必ず行って下さい。
+
+注意！！
+・「ダムすぐに完成」は建設を開始しない限り、完成しません。
+・ダムの魚道を後から建設した場合、魚道はすぐには建設されません。
+
+[/note]
+[subject]総資金:calc,0xBA1288,0x0,0x7FFFFFFF,unsigned
+[subject]ダムすぐに完成:toggle,0xBA5A9C,FFFFFF7F,00000000
+[root]
+[/script]
+
+[script]
+[title]東京都第24区トキオ
+[process]TOKIOWIN.EXE
+[maker]アートディンク
+[creator]亜也虎
+[note]wordwrap
+
+ダウンロードありがとうございます。
+今回はPC－9801時代の名作、「トキオ」です。
+
+☆セーブデータのバックアップは必ず行って下さい。
+
+・予算の上限は適当なところで止めてあります。
+・予算をあまり高くしすぎると、支持率がどんどん下がるので注意しましょう。
+・支持率の改造は、見せ掛けだけの支持率しか変更できません。制御区の酸素還元率等も同様です。
+・制御区の改造は、現在のところミラー破損率のみ有効です。
+・全食料輸入の改造は、できるだけ輸送能力範囲内のものを使用してください。
+・輸送能力を超えたものを使用する場合は、決して個別の輸送量決定ウインドウを開かないでください。
+・「バカコードショウ」を使用した場合は、絶対にセーブをしないでください。
+・「バカコードショウ」を使用する場合は、必ず「必須」とその「値の固定」をチェックした状態で使用してください。
+・「バカコードショウ」は、いかなる損害が発生するか全くわからないため、危険を避けたい方は絶対に使用しないでください。
+
+[/note]
+[subject]予算:calc,0x6E6E52,0x0,0x7FFFFFFF
+[subject]支出:calc,0x6E6E5A,0x0,0x7FFFFFFF
+[subject]資材:calc,0x6EACF8,0x0,0x7FFFFFFF
+[subject]配属課余剰人員:calc,0x6E71EC,0x0,0x64,unsigned
+[subject]支持率:dir
+	[subject]中央町:calc,0x6E771E,0x0,0x64,unsigned
+[root]
+[subject]制御区:dir
+	[subject]酸素還元率:calc,0x6EAA44,0x0,0x3E7,unsigned
+	[subject]大気人工浄化率:calc,0x6EAA46,0x0,0x3E7,unsigned
+	[subject]大気自然浄化率:calc,0x6EAA48,0x0,0x3E7,unsigned
+	[subject]ミラー破損率:calc,0x6EAA54,0x0,0x64,unsigned
+[root]
+[subject]研究開発:dir
+	[subject]制御装置レベル:calc,0x6EAA60,0x0,0x0FFF,unsigned
+	[subject]バイオ農場レベル:calc,0x6EAA62,0x0,0x0FFF,unsigned
+[root]
+[subject]産業振興:dir
+	[subject]農業:calc,0x6E7338,0x0,0x7FFFFFFF,unsigned
+	[subject]魚介類養殖業:calc,0x6E733C,0x0,0x7FFFFFFF,unsigned
+	[subject]牧畜産業:calc,0x6E7340,0x0,0x7FFFFFFF,unsigned
+	[subject]機械産業:calc,0x6E7344,0x0,0x7FFFFFFF,unsigned
+	[subject]酒造産業:calc,0x6E7348,0x0,0x7FFFFFFF,unsigned
+	[subject]精密機器:calc,0x6E734C,0x0,0x7FFFFFFF,unsigned
+	[subject]繊維産業:calc,0x6E7350,0x0,0x7FFFFFFF,unsigned
+	[subject]化学産業:calc,0x6E7354,0x0,0x7FFFFFFF,unsigned
+	[subject]リサイクル産業:calc,0x6E7358,0x0,0x7FFFFFFF,unsigned
+	[subject]観光産業:calc,0x6E735C,0x0,0x7FFFFFFF,unsigned
+[root]
+[subject]条例施行:dir
+	[subject]注文したご飯は残さず食べる:toggle,0x6EB378,01,00
+	[subject]転んでも泣かない:toggle,0x6EB37A,01,00
+	[subject]日曜日は全て晴れにする:toggle,0x6EB37C,01,00
+	[subject]乗用車は休日以外使用禁止:toggle,0x6EB37E,01,00
+	[subject]所得税の廃止:toggle,0x6EB380,01,00
+	[subject]法人税の廃止:toggle,0x6EB382,01,00
+	[subject]酸素税の廃止:toggle,0x6EB384,01,00
+	[subject]毎月のお祭を禁止する:toggle,0x6EB386,01,00
+	[subject]子供をたくさんつくる:toggle,0x6EB388,01,00
+	[subject]公共事業による強制立退き:toggle,0x6EB38A,01,00
+[root]
+[subject]食料輸送量一括変更:dir
+	[subject]全食料1トン輸入:toggle,0x6EAF2C,0x6EB02A-0100,0000
+	[subject]全食料2トン輸入:toggle,0x6EAF2C,0x6EB02A-0200,0000
+	[subject]全食料3トン輸入:toggle,0x6EAF2C,0x6EB02A-0300,0000
+	[subject]全食料4トン輸入:toggle,0x6EAF2C,0x6EB02A-0400,0000
+	[subject]全食料5トン輸入:toggle,0x6EAF2C,0x6EB02A-0500,0000
+	[subject]全食料6トン輸入:toggle,0x6EAF2C,0x6EB02A-0600,0000
+	[subject]全食料7トン輸入:toggle,0x6EAF2C,0x6EB02A-0700,0000
+	[subject]全食料999トン輸入（使用注意！）:toggle,0x6EAF2C,0x6EB02A-E703,0000
+[root]
+[subject]年月日、時間:dir
+	[subject]西暦:calc,0x6E698E,0x7CB,0x0FFF,unsigned
+	[subject]月:calc,0x6E6990,0x1,0xC,unsigned
+	[subject]日:calc,0x6E6992,0x1,0x1C,unsigned
+	[subject]時間:calc,0x6E6994,0x0,0x17,unsigned
+[root]
+[subject]バカコードショウ:dir
+	[subject]必須:toggle,0x706034,0x706043-AF,AF
+	[subject]中段:dir
+		[subject]建設高度全て2:toggle,0x701328,0x701BE7-02,00
+		[subject]全て小学校:toggle,0x7068F4,0x7071B3-2B,F2
+		[subject]全て老人ホーム:toggle,0x7068F4,0x7071B3-31,F2
+		[subject]全てスタジアム:toggle,0x7068F4,0x7071B3-2F,F2
+		[subject]建物高度全て3:toggle,0x701328,0x701BE7-03,00
+		[subject]全て中学校:toggle,0x7068F4,0x7071B3-2A,F2
+		[subject]建物高度全て4:toggle,0x701328,0x701BE7-04,00
+		[subject]全て高校:toggle,0x7068F4,0x7071B3-29,F2
+		[subject]全て大学:toggle,0x7068F4,0x7071B3-28,F2
+		[subject]全てデパート:toggle,0x7068F4,0x7071B3-42,F2
+	[back]
+	[subject]全て一戸建て住宅:toggle,0x706034,0x707A73-AF,AF
+	[subject]建物全て消滅:toggle,0x706044,0x707A73-F2,F2
+[root]
+[/script]
+
+[script]
+[title]戦士の決断
+[process]CF.EXE
+[maker]光栄
+[creator]亜也虎
+[note]wordwrap
+
+ダウンロードありがとうございます。
+今回は光栄「決断」シリーズ（？）「戦士の決断」です。
+不具合などありましたら、報告お願いいたします。
+…それにしても、このゲームってクサいですね…仲間が増えるとき…。
+
+☆★セーブデータは必ずバックアップを取ってください。★☆
+
+注意！！
+・能力の変更ができるのは、基本的にメインキャラクターのみで、いわゆる無名キャラクターについては、確認したもののみ追加します。
+・「一発最強」や「行動可能」を固定にし、研究コマンドなどを実行すると、キャラクターが消滅してしまいます。
+・同様に、「一括変換」の「人物全て最強」を固定にした場合も、キャラクターが消滅してしまいます。
+・「銃器性能」の「射程＆弾数」は、16進で1の位が弾数を表し、10の位が射程距離を表します。
+・兵器の性能を改造した場合、新しい兵器として獲得すると、「（Null兵器）」と表示されます。
+・バックアップを取った上で、こまめなセーブを行うことをお勧めします。
+
+[/note]
+[subject]総兵士数:calc,0xED0178,0x0,0xFDE8,unsigned
+[subject]総生産力:calc,0xED017C,0x0,0x30D40,unsigned
+[subject]人物能力:dir
+		[replace]0xED3E10,cf戦士の名前,offset
+[root]
+[subject]兵器性能:dir
+	[replace]0xED0BF8,cf兵器の名前,offset
+[root]
+[subject]銃器性能:dir
+	[replace]0xED0559,cf銃器の名前,offset
+[root]
+[subject]基地行動可能:dir
+	[subject]東京:toggle,0xED6593,00,10
+	[subject]上海:toggle,0xED6537,00,10
+	[subject]シンガポール:toggle,0xED64DB,01,11
+	[subject]カルカッタ:toggle,0xED647F,00,10
+	[subject]バクダッド:toggle,0xED636B,00,10
+	[subject]モスクワ:toggle,0xED630F,00,10
+	[subject]パリ:toggle,0xED62B3,00,10
+	[subject]ラゴス:toggle,0xED63C7,00,10
+	[subject]ケープタウン:toggle,0xED6423,00,10
+	[subject]ニューヤーク:toggle,0xED6143,00,10
+	[subject]ロスアンジェルス:toggle,0xED619F,00,10
+	[subject]真珠湾:toggle,0xED664B,01,11
+	[subject]パナマ:toggle,0xED61FB,00,10
+	[subject]ブエノスアイレス:toggle,0xED6257,00,10
+	[subject]シドニー:toggle,0xED65EF,00,10
+[root]
+[subject]一括変換コマンド:dir
+	[subject]人物全て最強:b_toggle,0xED3E10,cf戦士最強,offset
+	[subject]兵器全て最強:b_toggle,0xED0BF8,cf兵器最強,offset
+	[subject]銃器全て最強:b_toggle,0xED0559,cf銃器最強,offset
+[root]
+[/script]
+
+[script]
+[title]ブリッツシュトラーセ
+[process]CASTLE.EXE
+[maker]アートディンク
+[creator]亜也虎
+[note]wordwrap
+ダウンロードありがとうございます。
+現在、シナリオ1のみ対応しています。
+
+☆セーブデータのバックアップは必ず取りましょう☆
+なお、現在のところ注意事項は特にありません。
+不具合がございましたら、お手数ですが連絡してください。
+
+[/note]
+[subject]総資金:calc,0x857EE4,0x0,0x5F5E0FF,unsigned
+[subject]主人公強さ:dir
+	[subject]直接攻撃:calc,0x859C86,0x0,0x64,unsigned
+	[subject]間接攻撃:calc,0x859C87,0x0,0x64,unsigned
+	[subject]騎馬:calc,0x859C88,0x0,0x64,unsigned
+[root]
+[subject]都市データ:dir
+	[subject]ウォフォード:dir
+		[replace]0xF37E68,bc都市,offset
+	[subject]アンディーン:dir
+		[replace]0xF537EC,bc都市,offset
+	[subject]ランチェスター:dir
+		[replace]0xF6F170,bc都市,offset
+	[subject]プリストガム:dir
+		[replace]0xF8AAF4,bc都市,offset
+	[subject]ブライトンハム:dir
+		[replace]0xFA6478,bc都市,offset
+	[subject]ホイルクス:dir
+		[replace]0xD10094,bc都市,offset
+	[subject]ハイブシェク:dir
+		[replace]0xD2BA18,bc都市,offset
+	[subject]マニゾフ:dir
+		[replace]0xD4739C,bc都市,offset
+	[subject]クリンホフ:dir
+		[replace]0xD62D20,bc都市,offset
+	[subject]イラーニャ:dir
+		[replace]0xD7E6A4,bc都市,offset
+	[subject]リューベック:dir
+		[replace]0xD9A028,bc都市,offset
+[root]
+[/script]
+
+[script]
+[title]提督の決断3パワーアップキット（アップデート版のみ対応）
+[process]TK3PKW95.EXE
+[maker]光栄
+[creator]亜也虎
+[note]wordwrap
+ダウンロードありがとうございます。
+このゲーム用のSSGは、すでに幾つか作られていますが、アップデート済みのバージョンには対応していないので作成しました。
+☆セーブデータのバックアップは必ずとりましょう☆
+
+注意！！
+・各項目は、ゲーム中で示されている上限を超えないように設定してください。
+・なるべく常識内の数値の入力に留めてください。
+・航空機の生産ライン数に、上限を超えた数値を入力すると、ゲーム中での金曜日午前4時に強制終了してしまいます。
+・「バカコードショウ」の「愉快な艦橋」は、艦橋ウインドウを開いた状態で一度提督をクリックしてから使用してください。
+・「バカコードショウ」は、チェックをはずすと台詞、顔どちらも元に戻ります。
+・艦隊のワープを行うときは、必ず出港している状態で、なおかつ海上のみ座標を指定してください。
+[/note]
+[replace]0x0,tk3提督の決断3,offset
+[/script]
+
+[script]
+[title]セイントアイズ（アップデート版）
+[process]SAINTEYES.EXE
+[maker]TGL
+[creator]亜也虎
+[note]wordwrap
+ダウンロードありがとうございます。
+現在、自軍の軍資金及びキャラクターのパラメータを変更可能です。
+あと、色々楽しいバカコードショウもあります。
+☆セーブデータのバックアップは必ず取りましょう☆
+
+注意！！
+・項目の書き換えは編成、及びワールドマップ画面でのみ、「Esc＋Alt」等を使って行ってください。
+・SSG作者の都合上、アップデート版でのみ動作します。
+・アップデートファイルはTGLホームページにて入手可能です。
+・「全員～」コマンド、および「～戦士団」コマンドは自軍の50人を同時に書き換えます。
+
+項目の説明
+キャラクタ能力の項目では以下の項目が個別に変更可能です。
+HP…キャラクタの体力
+攻撃力…攻撃力
+防御力…防御力
+素早さ…移動速度
+索敵範囲…視界
+　　　　　※単に索敵を無効にしたい場合はバカコードショウをご利用下さい。
+　　　　　※全員の索敵範囲を最大にすると動作が極端に遅くなる場合があります。
+遊撃範囲…各個の判断で敵を攻撃する範囲
+攻撃開始距離…敵に攻撃を開始する距離
+敵との間合…敵との間合をどれだけとるか。標的がこの距離より近づくと撤退を開始する。
+職業…キャラクタの職業を確認、変更できる。ただし、メインキャラクタは転職不可。また、あくまでも職業が変わるだけで、パラメータまでは変化しない。
+
+「バカコードショウ」は、その名の通り、バカコードです。
+超時空戦士団…目にも止まらぬ移動速度で敵を翻弄します。ただし、このコマンドを実行した後、「全員最強」コマンドを実行すると効果がなくなるので、併用したい場合は「全員最強」コマンドを実行した後に実行してください。
+基本は素振り戦士団…遠距離攻撃ユニット以外は敵から離れた場所で素振りをします。
+脱兎腰抜け戦士団…敵の接近を感知するとひたすら逃げます。
+突進!!狂戦士団…「全員遊撃」コマンドと同じです。
+世界丸見え戦士団…マップ全体の敵の動きが丸見えになります。
+目隠しあっての福笑い戦士団…はい、まさに福笑い状態です。難易度を上げたい方はこちら。
+[/note]
+[replace]0x0,se,offset
+[/script]
+
+[script]
+[title]マイホームドリーム2
+[process]MHD2W.EXE
+[maker]プログレス
+[creator]亜也虎
+[note]wordwrap
+ダウンロードありがとうございます。
+皆さん、素敵な家を造ってますか？
+
+所持金…プレイヤーの所持金が変更できます。
+極度額…借入可能な金額を変更できます。
+バカコードショウ「借金王（シャッキング）！」
+………はい、ただの駄洒落です…。
+
+☆★バックアップは必ずとりましょう★☆
+[/note]
+[replace]0x0,mhd2w,offset
+[/script]
+[script]
+[title]信長の野望　将星録
+[process]NOBU7.EXE
+[maker]光栄
+[creator]亜也虎
+[note]wordwrap
+ダウンロードありがとうございます。
+
+もうパワーアップキットなんていらない！
+信長の野望　将星録　非公式パワーアップキットSSG、
+約700人の武将と全ての城のステータスを変更可能です。
+なお、動作確認はシナリオ1のみで行なっています。
+そのため、他のシナリオでは名前が変わっている部分もあります。
+☆★バックアップは必ずとりましょう★☆
+
+注意！！
+・官位を持っている武将が全スキル取得を使うと、官位がなくなってしまいます。
+・スキルを表す部分の構造が複雑なため、個別での選択は今のところ不可能です。
+・通常ではありえない範囲まで数値を上げることができますが、何らかの不具合を起こす可能性があります。
+・なるだけ通常範囲内でご使用ください。
+[/note]
+[replace]0x0,n7,offset
+[/script]
+[script]
+[title]信長の野望　将星録　パワーアップキット
+[process]NOBU7.EXE
+[maker]光栄
+[creator]亜也虎
+[note]wordwrap
+ダウンロードありがとうございます。
+
+もうパワーアップキットなんていらない！
+…けど作っちゃいました。
+約700人の武将と全ての城のステータスを変更可能です。
+その他、全くオリジナルのシナリオが楽しめます。
+
+佐渡金山…空前のゴールドラッシュ！佐渡島全体が金山になります。
+佐渡要塞1551…海を渡った蛎崎季広が辿りついた先は、難攻不落の大要塞と化した佐渡島だった！
+
+なお、動作確認はシナリオ1のみで行なっています。
+そのため、他のシナリオでは名前が変わっている部分もあります。
+☆★バックアップは必ずとりましょう★☆
+
+注意！！
+架空シナリオについて
+・架空シナリオを使用する場合、シナリオ1を始めた直後のみの使用をお願いします。
+・プレイヤーキャラクタが蛎崎季広以外の場合はコンピュータ用を使用してください。
+その他について
+・官位を持っている武将が全スキル取得を使うと、官位がなくなってしまいます。
+・スキルを表す部分の構造が複雑なため、個別での選択は今のところ不可能です。
+・通常ではありえない範囲まで数値を上げることができますが、何らかの不具合を起こす可能性があります。
+・なるだけ通常範囲内でご使用ください。
+
+[/note]
+[replace]0x0,n7puk,offset
+[/script]
+[script]
+[title]ブランディッシュ4
+[process]BR4_WIN.EXE
+[maker]FALCOM
+[creator]亜也虎
+[note]wordwrap
+ダウンロードありがとうございます。
+
+主人公のステータスと所持アイテム1～9つ目までの変更が可能です。
+☆★バックアップは必ずとりましょう★☆
+
+注意！！
+・主人公ステータスの上限が不明なため、適当なところで止めてあります。
+・アイテムの変更について、種類の変更はなるだけ行なわないでください。
+・存在しえないアイテム（未使用など）への変更、またそのアイテムの使用はしないで下さい。
+・数量の変更について、消耗品以外は全て1にしてください。
+[/note]
+[replace]0x0,br4,offset
+[/script]
+[script]
+[title]提督の決断4
+[process]TK4.ICD
+[maker]コーエー
+[creator]亜也虎
+[note]wordwrap
+ダウンロードありがとうございます。
+
+各国国力および艦船、航空機新規設計時の制限、新兵器の開発状況を変更することが可能です。
+☆★バックアップは必ずとりましょう★☆
+
+注意！！
+・一部の項目における最大値は適当な数値です。
+・最大値で使用すると、不具合が起きる可能性があります。
+・艦船、航空機の変更については、新規設計時の最大鋼材、および航空機の修正値（ほかに適当な呼び方がないので…）のみ変更可能です。
+・新兵器については、同時に二つ以上の項目（例：日本とドイツで全て開発済）を選択することはできません。
+[/note]
+[replace]0x0,tk4,offset
+[/script]
+[script]
+[title]Anno1602
+[process]1602.EXE
+[maker]不明
+[creator]亜也虎
+[note]wordwrap
+ダウンロードありがとうございます。
+
+このSSGでは、各勢力の総資金、艦船の性能、都市のステータスなどが変更可能です。
+但し！！
+「1999年1月27日付」のパッチファイルによるアップデートが行なわれている必要があります。
+また、OSに関しては、Win98でのみ動作を確認しており、その他のOSでは動作しないと思われます。
+
+☆★バックアップは必ずとりましょう★☆
+その他の注意
+・艦船の大砲は、その艦船のキャパシティーを越えない範囲で使用してください（例：大型戦艦最大14門）。
+・バリューコードセットは、自勢力が「赤」の場合のみ正常に動作します。
+・その他の動作確認についても、自勢力が「赤」の場合のみを行なっています。（赤勢力使用を推奨）
+・物資一括変更は、最大集積量を超えない範囲で使用してください。
+・艦船、都市ともに、名前の変更はゲーム画面上の艦船、都市の名前の所にカーソル（_）がないことを確認した上で行なってください。
+・艦船、都市ともに、全勢力を含めて、登場した順に、上からアドレスが割り振られています。
+・なお、アドレスはゲーム開始ごとに移動することがあります。
+[/note]
+[replace]0x0,1602,offset
+[/script]
