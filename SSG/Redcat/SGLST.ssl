@@ -1,0 +1,64 @@
+[group]SG_SSG
+[note]wordwrap
+相変わらず純米はヒロイン立ての上手さとどうでもいいシナリオのコントラストがなぁ(^^;
+
+分岐好感度とシナリオ好感度の違い：
+前者はだれのシナリオに入るか、後者はどのＥＮＤに分岐するかの判断に利用されます。ＥＮＤ分岐は、目安的にはくくり・絵麻・亜緒は６以上でTRUEEND、３～４程度でNORMALEND、
+０でBADEND。残り２人は５以上で２人同時ＥＮＤに流れます。
+[/note]
+
+[subject]パラメータ関連:dir
+ [subject]分岐好感度確認調整:dir
+	[repeat]SGLST->SGREP1,0,5,1
+  [subject]ここまで:split,roll,-2,-,100
+ [back]
+ [subject]シナリオ好感度確認調整:dir
+	[e_with],0x00,0x0A,unsigned
+	 [subject]榊原くくり/現在値/_:calc,0x484C74
+	 [subject]桐嶋絵麻/現在値/_:calc,0x484C8C
+	 [subject]堤亜緒/現在値/_:calc,0x484C88
+	 [subject]武野千尋/現在値/_:calc,0x484C5E
+	 [subject]古河芳生/現在値/_:calc,0x484C5E
+	[/e_with]
+ [back]
+[subject]ここまで:split,line,-1,100,5
+[root]
+
+
+[subject]ＣＧモード関連:dir
+  [subject]photo:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x484F24,0x484F42-FF
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x484F24,0x484F42-00
+   [subject]ここまで:split,roll,-2,-,100
+  [back]
+  [subject]acoustics:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x484F1C,03
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x484F1C,00
+   [subject]ここまで:split,roll,-2,-,100
+  [back]
+  [subject]memory:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x484F44,0x484F49-FF
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x484F44,0x484F49-00
+   [subject]ここまで:split,roll,-2,-,100
+  [back]
+  [subject]W.W.S:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x484F1D,1F
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x484F1D,00
+  [back]
+ [subject]ここまで:split,line,-1,100,5
+[root]
+[/group]
+
+
+[group]SGREP1
+[subject][! @SGLST->LST_a,$Val !]/現在値/_:calc,_0x484C4C+0x[! 0x02*$Val !],0x00,0x0A,unsigned
+[/group]
+
+
+[group]LST_a
+榊原くくり
+桐嶋絵麻
+堤亜緒
+武野千尋
+古河芳生
+[/group]
