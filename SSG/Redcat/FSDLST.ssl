@@ -128,66 +128,6 @@ http://onionimu.hp.infoseek.co.jp/usr/redcat/004/01.html
 
 [back]
 
-[subject]ver1.107:dir
-
-[subject]アクションパート関連:dir
- [subject]ＰＣ体力＆必殺技ゲージ自動回復/実行/_:b_toggle,0x689613,FSDLST->FSD_5a,real
- [subject]ＰＣ必殺技ゲージ自動回復（上記と排他）/実行/_:b_toggle,0x689619,FSDLST->FSD_5b,real
- [subject]ＰＣ当たり判定無効化/実行/_:b_toggle,0x6895C3,FSDLST->FSD_5c,real
- [subject]ＰＣオートガード化/実行/_:toggle,0x6834EA,??85????????EB1D9090909090,??8E????????833D80C91A0100
- [subject]ＰＣガードゲージ最大維持/実行/_:b_toggle,0x68DBDA,FSDLST->FSD_5d,real
- [subject]宝具無限使用可能化/実行/_:toggle,0x4E1160,EB12,7522
- [subject]無限多段ジャンプ化/実行/_:toggle,0x6A174D,EB0490909090,0F8552010000
- [subject]無限多段空中ダッシュ化/実行/_:toggle,0x45AB1E,EB00,7523
- [subject]UnlimitedBladeWorks速攻発動/実行/_:toggle,0x45F8A3,B00890,83C001
-[back]
-
-[subject]パラメータ関連:dir
- [subject]１Ｐ:dir
-	[replace]0x0000,FSDLST->FSD_3PR
- [back]
- [subject]２Ｐ:dir
-	[replace]0x0408,FSDLST->FSD_3PR
- [back]
-[back]
-
-[subject]フラグ関連:dir
- [subject]ギルガメッシュ使用可能/実行/_:toggle,0x01C32F08,0x01C32F27-01000000,00
- [subject]タイガー使用可能/実行/_:toggle,0x011DD6C8,0x011DD6E7-01000000,00
-[back]
-
-[back]
-
-[subject]ver1.200（誤字パッチ適用）/1.202:dir
-
-[subject]アクションパート関連:dir
- [subject]ＰＣ体力＆必殺技ゲージ自動回復/実行/_:b_toggle,0x6896F6,FSDLST->FSD_6a,real
- [subject]ＰＣ必殺技ゲージ自動回復（上記と排他）/実行/_:b_toggle,0x6896FC,FSDLST->FSD_6b,real
- [subject]ＰＣ当たり判定無効化/実行/_:b_toggle,0x6896A6,FSDLST->FSD_6c,real
- [subject]ＰＣオートガード化/実行/_:toggle,0x68354A,??85????????EB1D9090909090,??8E????????833D80C91A0100
- [subject]ＰＣガードゲージ最大維持/実行/_:b_toggle,0x1068DCBA,FSDLST->FSD_6d,real
- [subject]宝具無限使用可能化/実行/_:toggle,0x4E1160,EB12,7522
- [subject]無限多段ジャンプ化/実行/_:toggle,0x6A182D,EB0490909090,0F8552010000
- [subject]無限多段空中ダッシュ化/実行/_:toggle,0x45838C,EB00,7523
- [subject]UnlimitedBladeWorks速攻発動/実行/_:toggle,0x45F8A3,B00890,83C001
-[back]
-
-[subject]パラメータ関連:dir
- [subject]１Ｐ:dir
-	[replace]0x0000,FSDLST->FSD_3PR
- [back]
- [subject]２Ｐ:dir
-	[replace]0x0408,FSDLST->FSD_3PR
- [back]
-[back]
-
-[subject]フラグ関連:dir
- [subject]ギルガメッシュ使用可能/実行/_:toggle,0x01C32F08,0x01C32F27-01000000,00
- [subject]タイガー使用可能/実行/_:toggle,0x011DD6C8,0x011DD6E7-01000000,00
-[back]
-
-[back]
-
 [/group]
 
 
@@ -204,14 +144,6 @@ http://onionimu.hp.infoseek.co.jp/usr/redcat/004/01.html
 [subject]体力ゲージ（赤）/現在値/固定:f_calc,0x7B4C7C,0,26000,float
 [subject]必殺技ゲージ/現在値/固定:f_calc,0x7B4CD0,0,300,float
 [subject]ガードゲージ/現在値/固定:f_calc,0x7B4CD8,0,100,float
-[/group]
-
-
-[group]FSD_3PR
-[subject]体力ゲージ（緑）/現在値/固定:f_calc,0x7A4C64,0,26000,float
-[subject]体力ゲージ（赤）/現在値/固定:f_calc,0x7A4C7C,0,26000,float
-[subject]必殺技ゲージ/現在値/固定:f_calc,0x7A4CD0,0,300,float
-[subject]ガードゲージ/現在値/固定:f_calc,0x7A4CD8,0,100,float
 [/group]
 
 
@@ -239,18 +171,6 @@ http://onionimu.hp.infoseek.co.jp/usr/redcat/004/01.html
 [/group]
 
 
-[group]FSD_5a
-0x689613,BA404C7A00000F8F,3D80D91B01000F8E
-0x68972E,EB0490909090,0F8581000000
-[/group]
-
-
-[group]FSD_6a
-0x6896F6,BA404C7A00000F8F,3D80C91A01000F8E
-0x689811,EB0490909090,0F8581000000
-[/group]
-
-
 [group]FSD_b
 0x73DF10,E9E500000090,0F8E5F010000
 0x73DFFA,8B812028BC0085C08BC1756F8BC1EB029090,833D749E96010175728B45FC69C008040000
@@ -272,18 +192,6 @@ http://onionimu.hp.infoseek.co.jp/usr/redcat/004/01.html
 [group]FSD_4b
 0x6998A0,E90901000090,0F8E96010000
 0x6999AF,BA405C7B0000,3D1878310101
-[/group]
-
-
-[group]FSD_5b
-0x689619,E90901000090,0F8E96010000
-0x689728,BA404C7A0000,3D1868300101
-[/group]
-
-
-[group]FSD_6b
-0x6896FC,E90901000090,0F8E96010000
-0x68980B,BA404C7A0000,3D1868300101
 [/group]
 
 
@@ -351,36 +259,6 @@ http://onionimu.hp.infoseek.co.jp/usr/redcat/004/01.html
 [/group]
 
 
-[group]FSD_5c
-0x6895C3,E940C90E0090,69C908040000
-0x775F08,B8404C7A00,0000000000
-0x775F0D,33C9,0000
-0x775F0F,B102,0000
-0x775F11,833800,000000
-0x775F14,7507,0000
-0x775F16,C7406C01000000,00000000000000
-0x775F1D,0508040000,0000000000
-0x775F22,E0ED,0000
-0x775F24,69C908040000,000000000000
-0x775F2A,E99A36F1FF90,000000000000
-[/group]
-
-
-[group]FSD_6c
-0x6896A6,E98DA5110090,69C908040000
-0x7A3C38,B8404C7A00,0000000000
-0x7A3C3D,33C9,0000
-0x7A3C3F,B102,0000
-0x7A3C41,833800,000000
-0x7A3C44,7507,0000
-0x7A3C46,C7406C01000000,00000000000000
-0x7A3C4D,0508040000,0000000000
-0x7A3C52,E0ED,0000
-0x7A3C54,69C908040000,000000000000
-0x7A3C5A,E94D5AEEFF90,000000000000
-[/group]
-
-
 [group]FSD_d
 0x7435E6,E965911800,681F010000
 0x8CC750,B82028BC00,CCCCCCCCCC
@@ -444,38 +322,4 @@ http://onionimu.hp.infoseek.co.jp/usr/redcat/004/01.html
 0x786169,8BCA,0000
 0x78616B,681F010000,0000000000
 0x786170,E97A7CF1FF90,000000000000
-[/group]
-
-
-[group]FSD_5d
-0x68DBDA,E959830E00,681F010000
-0x775F38,B8404C7A00,0000000000
-0x775F3D,8BD1,0000
-0x775F3F,33C9,0000
-0x775F41,B102,0000
-0x775F43,833801,000000
-0x775F46,740A,0000
-0x775F48,C780980000000000C642,00000000000000000000
-0x775F52,0508040000,00000000
-0x775F57,E0EA,0000
-0x775F59,8BCA,0000
-0x775F5B,681F010000,0000000000
-0x775F60,E97A7CF1FF90,000000000000
-[/group]
-
-
-[group]FSD_6d
-0x68DCBA,E9495F1100,681F010000
-0x7A3C08,B8404C7A00,0000000000
-0x7A3C0D,8BD1,0000
-0x7A3C0F,33C9,0000
-0x7A3C11,B102,0000
-0x7A3C13,833801,000000
-0x7A3C16,740A,0000
-0x7A3C18,C780980000000000C642,00000000000000000000
-0x7A3C22,0508040000,00000000
-0x7A3C27,E0EA,0000
-0x7A3C29,8BCA,0000
-0x7A3C2B,681F010000,0000000000
-0x7A3C30,E98AA0EEFF,000000000000
 [/group]
