@@ -1,0 +1,8 @@
+	[subject]操縦能力:calc,0x1C,0x00,0x64,unsigned,little_e
+	[subject]射撃能力:calc,0x1E,0x00,0x64,unsigned,little_e
+	[subject]回避能力:calc,0x20,0x00,0x64,unsigned,little_e
+	[subject]ニュータイプレベル:calc,0x24,0x00,0x14,unsigned,little_e
+	[subject]コンディション:calc,0x26,0x00,0x03E8,unsigned,little_e
+	[subject]経験値:calc,0x2C,0x0000,0x02EE,unsigned,little_e
+[back]
+
