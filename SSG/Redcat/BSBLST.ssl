@@ -1,0 +1,86 @@
+[group]BSB_PR
+[note]wordwrap
+なんか奇をてらい過ぎてる気がする(^^;　
+
+ＡＬＬ化の手順は、
+
+１）サムキル処理を実行
+２）ＡＬＬ化の機能を実行
+３）何かイベントＣＧを見る（オープニングＣＧでＯＫ）
+
+＊３）実行時には「必ず」１）が実行されていることを確認して下さい。セーブデータのチェックサム照合処理が合致しない場合、以後同じデータでプレイ続行できなくなってます。
+
+
+
+
+
+
+
+
+
+
+
+…あとシナリオライター、シリアスな場面でまで2ch用語使うのはヤメレ。ウザイ（藁）
+[/note]
+
+[subject]パラメータ関連:dir
+ [subject]好感度確認調整:dir
+	[repeat]BSBLST->BSBREP1,0,4,1
+[/group]
+
+
+[group]BSB_CG
+[subject]サムキル処理/実行/_:b_toggle,0x413D07,BSBLST->BSB_a,real
+ [subject]eventCG:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:b_toggle,0xCF2B84,BSBLST->BSB_b,real
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,b_toggle,0xCF2B84,BSBLST->BSB_c,real
+[back]
+ [subject]recollection:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0xCF3994,0xCF39BC-01000000
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0xCF3994,0xCF39BC-00
+[/group]
+
+
+[group]BSB_a
+0x413D07,EB0490909090,0F8599300000
+0x414301,EB0490909090,0F859F2A0000
+[/group]
+
+
+[group]BSBREP1
+[subject][! @BSBLST->LST_a,$Val !]/現在値/_:calc,_0x72FC84+0x[! 0x04*$Val !],0x00,0x14,unsigned
+[/group]
+
+
+[group]LST_a
+三ツ葉風夏
+白石美砂
+佐木川恵奈
+一松香澄
+[/group]
+
+
+[group]BSB_b
+0xCF2B84,0xCF2CD0-01000000
+0xCF2DE0,0xCF2DEC-01000000
+0xCF2DF0,01000000
+0xCF2E18,01000000
+0xCF2E24,01000000
+0xCF2E38,01000000
+0xCF2F70,01000000
+0xCF2FC8,01000000
+0xCF3100,01000000
+[/group]
+
+
+[group]BSB_c
+0xCF2B84,0xCF2CD0-00
+0xCF2DE0,0xCF2DEC-00
+0xCF2DF0,00
+0xCF2E18,00
+0xCF2E24,00
+0xCF2E38,00
+0xCF2F70,00
+0xCF2FC8,00
+0xCF3100,00
+[/group]
