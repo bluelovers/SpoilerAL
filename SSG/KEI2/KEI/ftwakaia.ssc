@@ -1,0 +1,5 @@
+	[subject]ナデュー:calc,0x00,0x80000000,0x7FFFFFFF,signed,little_e
+	[subject]シトラ:calc,0x04,0x80000000,0x7FFFFFFF,signed,little_e
+	[subject]クレイドル:calc,0x08,0x80000000,0x7FFFFFFF,signed,little_e
+	[subject]ロキ:calc,0x0C,0x80000000,0x7FFFFFFF,signed,little_e
+[back]
