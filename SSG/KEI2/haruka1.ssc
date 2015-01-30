@@ -1,0 +1,12 @@
+	[subject]想う心:calc,0x00,0,1000,unsigned,little_e
+	[subject]源頼忠への信頼:calc,0x08,0,1000,unsigned,little_e
+	[subject]平勝真への信頼:calc,0x0C,0,1000,unsigned,little_e
+	[subject]イサトへの信頼:calc,0x10,0,1000,unsigned,little_e
+	[subject]彰紋への信頼:calc,0x14,0,1000,unsigned,little_e
+	[subject]藤原幸鷹への信頼:calc,0x18,0,1000,unsigned,little_e
+	[subject]翡翠への信頼:calc,0x1C,0,1000,unsigned,little_e
+	[subject]源泉水への信頼:calc,0x20,0,1000,unsigned,little_e
+	[subject]安部泰継への信頼:calc,0x24,0,1000,unsigned,little_e
+	[subject]心のかけら:calc,0x2B,0,4,unsigned,little_e
+	[subject]術全部:toggle,0x2C,03,??
+	[subject]メモ全部:toggle,0x38,FFFF,??
