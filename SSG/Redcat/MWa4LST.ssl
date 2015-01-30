@@ -1,0 +1,113 @@
+[group]MWa4_SSG
+[note]wordwrap
+MAW4特典版収録のver1.21に対応しています。
+※MAW3特典版収録分はver1.20になります。
+
+無条件合体技発動可能：
+パートナーがいない時は使用しないでください。
+[/note]
+
+[subject]ＡＤＶパート関連:dir
+ [subject]タダで買い物可能/実行/_:toggle,0x408875,33C090,034224
+ [subject]買い物時所持金・アイテムＭＡＸ化/実行/_:b_toggle,0x4080FE,MWa4LST->MWa4_a,real
+ [subject]時間帯任意調整/_:d_list,0x44D856,MWa4LST->LST_b,0x0D,0x1A,MWa4LST->LST_c
+[back]
+
+[subject]戦闘関連:dir
+ [subject]戦闘時ノーダメージ化/実行/_:b_toggle,0x41629F,MWa4LST->MWa4_b,real
+ [subject]戦闘毎に１ＬＶＵＰ/実行/_:b_toggle,0x40C32E,MWa4LST->MWa4_c,real
+ [subject]残りターン減らない/実行/_:toggle,0x40C928,EB0190,83E801
+ [subject]無条件合体技発動可能/実行/_:b_toggle,0x40CA8E,MWa4LST->MWa4_d,real
+[back]
+
+[size]2
+
+[subject]パラメータ関連:dir
+ [repeat]MWa4LST->MWa4REP1,0,6,1
+[back]
+
+[/size]
+
+[subject]ＣＧモード関連:dir
+ [subject]VISUAL ALL/ＯＮ／ＯＦＦ/_:toggle,0x44D1A8,0x44D1BD-FFFF0000,00
+ [subject]MEMORIAL ALL/ＯＮ／ＯＦＦ/_:toggle,0x44D1C8,0x44D1DC-FFFF0000,00
+[back]
+
+[/group]
+
+
+[group]MWa4_a
+0x4080FE,B9630000009090,030C9520754400
+0x408A12,BA7F96980090,8B1548834400
+[/group]
+
+
+[group]MWa4_b
+0x41629F,E934390200EB0190,668B55EC6689515C
+0x439BD8,668B55EC,00000000
+0x439BDC,83792007,00000000
+0x439BE0,7D0B,0000
+0x439BE2,6633D2,000000
+0x439BE5,668955F4,00000000
+0x439BE9,668B5154,00000000
+0x439BED,6689515C,00000000
+0x439BF1,E9B1C6FDFF90,000000000000
+[/group]
+
+
+[group]MWa4_c
+0x40C32E,BAFFFFFFFF90,03153CC94400
+0x40C372,B9FFFFFFFF90,030D3CC94400
+[/group]
+
+
+[group]MWa4_d
+0x40CA8E,EB00,7C0A
+0x40E9B8,01,00
+0x44C8F0,01,00
+[/group]
+
+
+[group]MWa4REP1
+[subject][! @MWa4LST->LST_a,$Val !]'+'［'+'_mem,_0x44D878+0x[! $Val*2 !],2,num,<Nodata>,%d'+'］/現在値/_:calc,_0x44D878+0x[! $Val*2 !],0x00,0xA0,unsigned
+[/group]
+
+
+[group]LST_a
+アイリ好感度
+ミスティ好感度
+レンシア好感度
+ティラ好感度
+アンナ好感度
+カルーア好感度
+[/group]
+
+
+[group]LST_b
+午後１時
+午後２時
+午後３時
+午後４時
+午後５時
+午後９時
+午後10時
+午後11時
+午前０時
+午前１時
+午前２時
+[/group]
+
+
+[group]LST_c
+0x0D
+0x0E
+0x0F
+0x10
+0x11
+0x15
+0x16
+0x17
+0x18
+0x19
+0x1A
+[/group]
