@@ -1,0 +1,232 @@
+[group]資金
+	[subject]資金:dir
+		[replace]0x00,LEVEL_JUSTICE->資金2
+	[back]
+	[subject]投資資金:dir
+		[replace]0x12C,LEVEL_JUSTICE->投資コイン
+	[back]
+	[subject]怪人開発資金:dir
+		[replace]0x8C,LEVEL_JUSTICE->コイン枚数
+	[back]
+[/group]
+
+[group]資金2
+	[subject]変換レート:dir
+		[replace]0x00,LEVEL_JUSTICE->コイン枚数
+	[back]
+	[subject]小コイン枚数:dir
+		[replace]0x28,LEVEL_JUSTICE->コイン枚数
+	[back]
+	[subject]大コイン枚数:dir
+		[replace]0x3C,LEVEL_JUSTICE->コイン枚数
+	[back]
+[/group]
+[group]コイン枚数
+	[subject]ALL(ON=900 OFF=10): toggle,0x00,0x0F-84030000,0A000000
+	[subject]資金: calc,0x00,00,999
+	[subject]資材: calc,0x04,00,999
+	[subject]人材: calc,0x08,00,999
+	[subject]技術: calc,0x0C,00,999
+[/group]
+[group]投資コイン
+	[subject]研究部 :dir
+		[replace]0x00,LEVEL_JUSTICE->コイン分配
+	[back]
+	[subject]作戦部:dir
+		[replace]0x14,LEVEL_JUSTICE->コイン分配
+	[back]
+	[subject]情報部:dir
+		[replace]0x28,LEVEL_JUSTICE->コイン分配
+	[back]
+	[subject]参謀部:dir
+		[replace]0x3C,LEVEL_JUSTICE->コイン分配
+	[back]
+	[subject]地域管理部:dir
+		[replace]0x50,LEVEL_JUSTICE->コイン分配
+	[back]
+	[subject]福利厚生部:dir
+		[replace]0x64,LEVEL_JUSTICE->コイン分配
+	[back]
+	[subject]敵組織:dir
+		[replace]0x78,LEVEL_JUSTICE->コイン分配
+	[back]
+[/group]
+[group]コイン分配
+	[subject]資金: calc,0x00,00,999
+	[subject]資材: calc,0x04,00,999
+	[subject]人材: calc,0x08,00,999
+	[subject]技術: calc,0x0C,00,999
+	[subject]合計: calc,0x10,00,999
+[/group]
+[group]イブシード
+	[subject]ALL(ON=全選択可 OFF=9): toggle,0x00,0xA7-??000000FFFFFFFF,09000000FFFFFFFF
+	[repeat]LEVEL_JUSTICE->イブシード2,0,21,1
+[/group]
+[group]イブシード2
+	[subject][! @LEVEL_JUSTICE->イブシード3, $Val !]: calc,0x[! $Val*0x8 !],0,9
+[/group]
+[group]イブシード3
+シンシアＥＳ
+ヘルオーＥＳ
+キリッサＥＳ
+葉月ＥＳ
+美香ＥＳ
+綾菜ＥＳ
+間崎ＥＳ
+リンザＥＳ
+ルトワーＥＳ
+学園生ＥＳ
+忍者ＥＳ
+女給仕ＥＳ
+乳エキス
+痴漢パワー
+変態の波動
+市民の怒り
+正義のパワー
+悪のパワー
+温泉エキス
+不確定ＥＳ
+革変ＥＳ
+[/group]
+[group]怪人
+	[repeat]LEVEL_JUSTICE->怪人ST,0,20,1
+[/group]
+[group]怪人ST
+	[subject]_mem,0x[! $Val *0x80 !],14,00,未開発:dir
+		[subject]ALL: toggle,0x[! 0x30+$Val*0x80 !],0x[! 0x43+$Val*0x80 !]-1400000032000000640000006300000063000000,
+		[subject]レベル: calc,0x[! 0x20+$Val*0x80 !],0,99
+		[subject]経験値: calc,0x[! 0x24+$Val*0x80 !],0,9999
+/		[subject]？: calc,0x[! 0x28+$Val*0x80 !],0,99
+/		[subject]？: calc,0x[! 0x2C+$Val*0x80 !],0,99
+		[subject]部下: calc,0x[! 0x30+$Val*0x80 !],0,20
+		[subject]戦闘力: calc,0x[! 0x34+$Val*0x80 !],0,50
+		[subject]生命力: calc,0x[! 0x38+$Val*0x80 !],0,100
+		[subject]行動力: calc,0x[! 0x3C+$Val*0x80 !],0,99
+		[subject]略奪力: calc,0x[! 0x40+$Val*0x80 !],0,99
+/		[subject]削除　100不可 80可能 : calc,0x[! 0x44+$Val*0x80 !],0,100
+/ＣＧ		[subject]mk_***.iph: string,0x[! 0x48+$Val*0x80 !],12,00
+/ＣＧ		[subject]cat_***.iph: string,0x[! 0x60+$Val*0x80 !],12,00
+	[back]
+[/group]
+
+[group]コゾーン
+	[subject]ALL(ON=全選択可 OFF=90): toggle,0x00,0xD3-FFFFFFFF??00000000000000,FFFFFFFF5A00000000000000
+	[repeat]LEVEL_JUSTICE->コゾーン2,0,18,1
+[/group]
+
+[group]コゾーン2
+	[subject][! @LEVEL_JUSTICE->コゾーン特技, $Val !]: calc,0x[! 0x04+$Val*0x0C !],00,99
+[/group]
+
+[group]コゾーン特技
+戦闘力
+行動力
+生命力
+略奪力
+隊長攻撃
+戦員攻撃
+必殺攻撃
+総攻撃
+小盾
+大盾
+身代
+戦員Ｃ
+隊長Ｃ
+必殺Ｃ
+総攻Ｃ
+Ｆ-無効
+Ｆ-二倍
+無
+[/group]
+
+[group]サーチ
+	[val]*.0000*.0000*.0000*.0000
+	[calc]変換レート：資金,no,0,999
+	[calc]変換レート：資材,no,0,999
+	[calc]変換レート：人材,no,0,999
+	[calc]変換レート：技術,no,0,999
+[/group]
+[group]サーチ2
+	[val]FFFFFFFFFFFFFFFF00000000*.00000000
+	[calc]回数,no,0,9
+[/group]
+[group]支配率
+	[subject]支配率:dir
+		[subject]ALL(ON=0  OFF=30): b_toggle,0x00,LEVEL_JUSTICE->地域4,offset
+		[subject]ALL(ON=75 OFF=100): b_toggle,0x00,LEVEL_JUSTICE->地域5,offset
+		[repeat]LEVEL_JUSTICE->地域2,0,10,1
+	[back]
+[/group]
+[group]警戒度
+	[subject]警戒度:dir
+		[subject]ALL(ON=0  OFF=30): b_toggle,0x00,LEVEL_JUSTICE->地域4,offset
+		[subject]ALL(ON=75 OFF=100): b_toggle,0x00,LEVEL_JUSTICE->地域5,offset
+		[repeat]LEVEL_JUSTICE->地域2,0,10,1
+	[back]
+[/group]
+
+[group]地域2
+	[subject][! @LEVEL_JUSTICE->地域3, $Val !]: calc,0x[! $Val*0x1594 !],00,125
+[/group]
+
+[group]地域3
+大窪区
+西橋区
+来島区
+北橋区
+中央区
+南橋区
+東橋区
+港区
+暮山区
+谷村区
+[/group]
+[group]地域4
+0x0000,00,1E
+0x1594,00,1E
+0x2B28,00,1E
+0x40BC,00,1E
+0x5650,00,1E
+0x6BE4,00,1E
+0x8178,00,1E
+0x970C,00,1E
+0xACA0,00,1E
+0xC234,00,1E
+0xD7C8,00,1E
+[/group]
+[group]地域5
+0x0000,4B,64
+0x1594,4B,64
+0x2B28,4B,64
+0x40BC,4B,64
+0x5650,4B,64
+0x6BE4,4B,64
+0x8178,4B,64
+0x970C,4B,64
+0xACA0,4B,64
+0xC234,4B,64
+0xD7C8,4B,64
+[/group]
+大窪：高層ビル・マンション
+西橋：高級住宅・公園
+来島：マンション・ビル(人材)
+北橋：工場
+中央：電気街・ビル(情報活動UP)
+南橋：住宅
+東橋：商店街・スーパー
+港：港・倉庫
+暮山：畑
+谷村：港
+
+隊長(130)+戦闘員(100)+戦闘員(100)
+戦闘員(120)+戦闘員(120)+隊長(100)
+戦闘員+隊長+戦闘員(140)
+戦闘員(130)+戦闘員(130)+戦闘員(130)
+
+研究部：怪人作成
+開発部：戦闘員増加・戦闘に有利
+情報部(技術)：町敵情報
+参謀部(資金)：特殊な作戦
+地域管理部：支配率維持・暴動鎮圧
+福利厚生部：交換レート低下
+
