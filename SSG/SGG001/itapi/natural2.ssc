@@ -1,0 +1,5 @@
+        [subject]Trust:calc,0x00,0x00,0x64,signed,little_e
+        [subject]Level:calc,0x18,0x00,0x64,signed,little_e
+        [subject]Body:calc,0x30,0x00,0x0A,signed,little_e
+        [subject]Soul:calc,0x48,0x00,0x0A,signed,little_e
+        [subject]Mental:calc,0x60,0x00,0x0A,signed,little_e
