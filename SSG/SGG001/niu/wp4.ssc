@@ -1,0 +1,10 @@
+[subject]能力:bitlist,0x11C44F0,wp4_h0,1
+[subject]スピード:bitlist,0x11C44F1,wp4_h1,1
+[subject]スタミナ:bitlist,0x11C44F2,wp4_h2,1
+[subject]頑丈さと年齢:bitlist,0x11C44F3,wp4_h3,1
+[subject]系統と毛色１:bitlist,0x11C44F4,wp4_h4,1
+[subject]毛色２と勝負根性と成長速度:bitlist,0x11C44F5,wp4_h5,1
+[subject]賢さと精神的な丈夫さと瞬発力:bitlist,0x11C44F6,wp4_h6,1
+[subject]気性と重馬場とダートと芝:bitlist,0x11C44F7,wp4_h7,1
+[subject]特徴:bitlist,0x11C44F8,wp4_h8,1
+[subject]必ず０ｘ００:calc,0x11C44F9,0x00,0x00,signed,little_e
