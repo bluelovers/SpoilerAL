@@ -1,0 +1,55 @@
+[group]SK_MA
+[note]wordwrap
+大変な作業とはわかっていても、使い回しばっかりなのはどうかなぁと。あと、ハンバーグって、いつから卵料理になったのでしょうか？（笑）
+
+以下、少々補足です。
+
+無限化：
+通常会話は使用している限り終了しませんので、御注意を。
+[/note]
+
+[subject]ＡＤＶパート関連:dir
+	[subject]通常会話無限化/実行/_:toggle,0x405A56,B90600000090,8B881C050000
+	[subject]デート時無限行動可能化/実行/_:b_toggle,0x4049BA,SKLST->sk_a,real
+[/group]
+
+
+[group]SK_PR
+[subject]好感度確認調整:dir
+	[e_with],0xFFFFFED4,0x0000012C,signed
+		[subject]檜扇あやめ/現在値/_:calc,0x1B8
+		[subject]入江蘭/現在値/_:calc,0x1BC
+		[subject]双葉カリン/現在値/_:calc,0x1C0
+	[/e_with]
+[/group]
+
+
+[group]SK_F1
+[subject]全ヒロインスイートトークＡＬＬ/実行/_:b_toggle,0x00,SKLST->sk_b,offset
+[/group]
+
+
+[group]SK_CG
+[subject]ＣＧ鑑賞:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x3E80,0x4073-01000000
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x3E80,0x4073-00
+[back]
+[subject]アニメ鑑賞:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x4088,0x40CF-01000000
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x4088,0x40CF-00
+[/group]
+
+
+[group]sk_a
+0x4049BA,E95695030090,8B9108050000
+0x43DF15,BA06000000,0000000000
+0x43DF1A,899108050000,000000000000
+0x43DF20,E99B6AFCFF90,000000000000
+[/group]
+
+
+[group]sk_b
+0x644,0x72F-01000000
+0x7D8,0x8BF-01000000
+0x960,0xA4F-01000000
+[/group]
