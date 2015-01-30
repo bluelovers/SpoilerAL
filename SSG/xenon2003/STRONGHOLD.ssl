@@ -1,0 +1,25 @@
+[group]STOCK
+/	[subject]資材(100): toggle,0x1C,6400000064000000640000000000000064000000
+	[subject]木: calc,0x1C,0,0xFFFFFF
+	[subject]ホップ: calc,0x20,0,0xFFFFFF
+	[subject]石: calc,0x24,0,0xFFFFFF
+	[subject]鉄: calc,0x2C,0,0xFFFFFF
+	[subject]タール: calc,0x30,0,0xFFFFFF
+	[subject]食料(100): toggle,0x3C,0x4F-64000000
+	[subject]パン: calc,0x3C,0,0xFFFFFF
+	[subject]チーズ: calc,0x40,0,0xFFFFFF
+	[subject]肉: calc,0x44,0,0xFFFFFF
+	[subject]果物: calc,0x48,0,0xFFFFFF
+	[subject]エール: calc,0x4C,0,0xFFFFFF
+	[subject]金: calc,0x50,0,0xFFFFFF
+	[subject]小麦: calc,0x54,0,0xFFFFFF
+/	[subject]武具(100): toggle,0x58,0x77-64000000
+	[subject]弓: calc,0x58,0,0xFFFFFF
+	[subject]石弓: calc,0x5C,0,0xFFFFFF
+	[subject]槍: calc,0x60,0,0xFFFFFF
+	[subject]斧: calc,0x64,0,0xFFFFFF
+	[subject]メイス: calc,0x68,0,0xFFFFFF
+	[subject]剣: calc,0x6C,0,0xFFFFFF
+	[subject]皮鎧: calc,0x70,0,0xFFFFFF
+	[subject]鉄鎧: calc,0x74,0,0xFFFFFF
+[/group]
