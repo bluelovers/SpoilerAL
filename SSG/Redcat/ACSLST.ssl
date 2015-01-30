@@ -1,0 +1,1556 @@
+[group]ACS_SSG
+[note]wordwrap
+基本的に過去のアセリア作品（DVD版とエクスパンション）準拠。
+大部分が最初のSLGパートまでで作成したものにつき、一部対応不十分な箇所があるかもしれません。時間の余裕が出来次第、プレイにあわせて修正対処します。
+
+主要メンバーエターナル化：
+現在、フラグを一度に起てるため、訓練関係の認識が微妙なことになります。
+[/note]
+
+[subject]ver1.00:dir
+
+[subject]SLGパート関連:dir
+ [subject]無敵化＋敵一撃死化/実行/_:b_toggle,0x00,ACSLST->ACS_b,real
+ [subject]スキル使用回数無限化/実行/_:toggle,0x442E70,807C24041B??8C,6683790A01??84
+ [subject]味方無限行動可能化/実行/_:toggle,0x480C46,33D23C067C0142EB0B90??????????EBEF909090,90909090909090909090??????????668B542408
+ [subject]毎ターン拠点効果/実行/_:toggle,0x456BBF,EB00,7426
+ [subject]訓練士・技術者無限行動可能化/実行/_:toggle,0x485E97,C7849120D40300FFFF0000EB029090,6639849122D403007405B801000000
+ [subject]建築工程超短縮化/実行/_:toggle,0x484E2F,EB00,7C3B
+[back]
+
+[subject]資材・非戦闘要員関連:dir
+ [replace]0x6D13E8,ACSLST->ACS_PR
+ [subject]全技術者・訓練士能力最大/実行/_:b_toggle,0x00,ACSLST->ACS_a,offset
+[back]
+
+[subject]パラメータ関連:dir
+ [replace]0x566880,ACSLST->ACS_3PR
+[back]
+
+[subject]フラグ関連:dir
+ [subject]主要メンバーエターナル化/ＯＮ／ＯＦＦ/_:toggle,0x70B12E,020002000400040006000600080008000A000A00,010001000300030005000500070007000900900
+// [subject]今日子・光陰説得条件/実行/_:toggle,0x70E850,*_?111????,*_?000????
+[back]
+
+[subject]ＣＧモード関連:dir
+ [subject]ＣＧギャラリー ALL/ＯＮ／ＯＦＦ/_:toggle,0x71196C,0x71198B-FF,00
+[back]
+
+[back]
+
+[subject]ver1.10:dir
+
+[subject]SLGパート関連:dir
+ [subject]無敵化＋敵一撃死化/実行/_:b_toggle,0x00,ACSLST->ACS_2b,real
+ [subject]スキル使用回数無限化/実行/_:toggle,0x443570,807C24041B??8C,6683790A01??84
+ [subject]味方無限行動可能化/実行/_:toggle,0x48152B,B001EB0C90??????????3C057FF233C06689,9090909090??????????8D04408D0480668B
+ [subject]毎ターン拠点効果/実行/_:toggle,0x45737F,EB00,7426
+ [subject]訓練士・技術者無限行動可能化/実行/_:toggle,0x486797,C7849120D40300FFFF0000EB029090,6639849122D403007405B801000000
+ [subject]建築工程超短縮化/実行/_:toggle,0x48576F,EB00,7C3B
+[back]
+
+[subject]資材・非戦闘要員関連:dir
+ [replace]0x6D15E8,ACSLST->ACS_PR
+ [subject]全技術者・訓練士能力最大/実行/_:b_toggle,0x0200,ACSLST->ACS_a,offset
+[back]
+
+[subject]パラメータ関連:dir
+ [replace]0x566A80,ACSLST->ACS_3PR
+[back]
+
+[subject]フラグ関連:dir
+ [subject]主要メンバーエターナル化/ＯＮ／ＯＦＦ/_:toggle,0x70B32E,020002000400040006000600080008000A000A00,010001000300030005000500070007000900900
+// [subject]今日子・光陰説得条件/実行/_:toggle,0x70E850,*_?111????,*_?000????
+[back]
+
+[subject]ＣＧモード関連:dir
+ [subject]ＣＧギャラリー ALL/ＯＮ／ＯＦＦ/_:toggle,0x711B6C,0x711B8B-FF,00
+[back]
+
+[back]
+
+
+[subject]ver1.20:dir
+
+[subject]SLGパート関連:dir
+ [subject]無敵化＋敵一撃死化/実行/_:b_toggle,0x00,ACSLST->ACS_3b,real
+ [subject]スキル使用回数無限化/実行/_:toggle,0x444020,807C24041B??8C,6683790A01??84
+ [subject]味方無限行動可能化/実行/_:toggle,0x481F8B,B001EB0C90??????????3C057FF233C06689,9090909090??????????8D04408D0480668B
+ [subject]毎ターン拠点効果/実行/_:toggle,0x457E6F,EB00,7426
+ [subject]訓練士・技術者無限行動可能化/実行/_:toggle,0x487227,C7849120D40300FFFF0000EB029090,6639849122D403007405B801000000
+ [subject]建築工程超短縮化/実行/_:toggle,0x4861FF,EB00,7C3B
+[back]
+
+[subject]資材・非戦闘要員関連:dir
+ [replace]0x6D27A8,ACSLST->ACS_PR
+ [subject]全技術者・訓練士能力最大/実行/_:b_toggle,0x13C0,ACSLST->ACS_a,offset
+[back]
+
+[subject]パラメータ関連:dir
+ [replace]0x567C40,ACSLST->ACS_3PR
+[back]
+
+[subject]フラグ関連:dir
+ [subject]主要メンバーエターナル化/ＯＮ／ＯＦＦ/_:toggle,0x70C4EE,020002000400040006000600080008000A000A00,010001000300030005000500070007000900900
+[back]
+
+[subject]ＣＧモード関連:dir
+ [subject]ＣＧギャラリー ALL/ＯＮ／ＯＦＦ/_:toggle,0x712D2C,0x712D4B-FF,00
+[back]
+
+[back]11c0
+
+[/group]
+
+
+[group]ACS_a
+0x60FD72,0x60FEB2-????????????????????63006300630063006300
+0x60FEC4,0x60FFA3-????????????????630063006300
+[/group]
+
+
+[group]ACS_b
+0x445C38,E90337080090,894C24108B01
+0x4C9340,894C2410,00000000
+0x4C9344,33FF,0000
+0x4C9346,8B41CC,000000
+0x4C9349,837C24301B,0000000000
+0x4C934E,7C01,0000
+0x4C9350,97,00
+0x4C9351,8901,0000
+0x4C9353,E9E6C8F7FF,0000000000
+[/group]
+
+
+[group]ACS_2b
+0x446338,E9033C0800,894C24108B01
+0x4C9F40,894C2410,00000000
+0x4C9F44,33FF,0000
+0x4C9F46,8B41CC,000000
+0x4C9F49,837C24301B,0000000000
+0x4C9F4E,7C01,0000
+0x4C9F50,97,00
+0x4C9F51,8901,0000
+0x4C9F53,E9E6C3F7FF,0000000000
+[/group]
+
+
+[group]ACS_3b
+0x446DE8,E9133E0800,894C24108B01
+0x4CAC00,894C2410,00000000
+0x4CAC04,33FF,0000
+0x4CAC06,8B41CC,000000
+0x4CAC09,837C24301B,0000000000
+0x4CAC0E,7C01,0000
+0x4CAC10,97,00
+0x4CAC11,8901,0000
+0x4CAC13,E9D6C1F7FF,0000000000
+[/group]
+
+
+[group]ACS_PR
+[subject]保有エーテル/現在値/固定:calc,0x03D308,0x000000,0x3B9AC9FF,unsigned
+[subject]ターン数/現在値/_:calc,0x03BF80,0x0000,0x03E7,unsigned
+[subject]総ターン数/現在値/_:calc,0x03BE5C,0x0000,0x03E7,unsigned
+[subject]技術者全出現/実行/_:toggle,0x03D318,0x03D337-0100,0000
+[subject]訓練士全出現/実行/_:toggle,0x03D33A,0x03D359-0100,0000
+[/group]
+
+
+[group]ACS_2PR
+[subject]高峰悠人:dir
+ [replace]_0x68*0x01,ACSLST->mainst
+[back]
+[subject]Ｅ悠人:dir
+ [replace]_0x68*0x02,ACSLST->mainst
+[back]
+[subject]アセリア:dir
+ [replace]_0x68*0x03,ACSLST->mainst
+[back]
+[subject]Ｅアセリア:dir
+ [replace]_0x68*0x04,ACSLST->mainst
+[back]
+[subject]オルファリル:dir
+ [replace]_0x68*0x05,ACSLST->mainst
+[back]
+[subject]Ｅオルファリル:dir
+ [replace]_0x68*0x06,ACSLST->mainst
+[back]
+[subject]エスペリア:dir
+ [replace]_0x68*0x07,ACSLST->mainst
+[back]
+[subject]Ｅエスペリア:dir
+ [replace]_0x68*0x08,ACSLST->mainst
+[back]
+[subject]ウルカ:dir
+ [replace]_0x68*0x09,ACSLST->mainst
+[back]
+[subject]Ｅウルカ:dir
+ [replace]_0x68*0x0A,ACSLST->mainst
+[back]
+[subject]岬今日子:dir
+ [replace]_0x68*0x0B,ACSLST->mainst
+[back]
+[subject]碧光陰:dir
+ [replace]_0x68*0x0C,ACSLST->mainst
+[back]
+[subject]倉橋時深:dir
+ [replace]_0x68*0x0D,ACSLST->mainst
+[back]
+[subject]ネリー:dir
+ [replace]_0x68*0x0E,ACSLST->mainst
+[back]
+[subject]シアー:dir
+ [replace]_0x68*0x0F,ACSLST->mainst
+[back]
+[subject]セリア:dir
+ [replace]_0x68*0x10,ACSLST->mainst
+[back]
+[subject]ナナルゥ:dir
+ [replace]_0x68*0x11,ACSLST->mainst
+[back]
+[subject]ヒミカ:dir
+ [replace]_0x68*0x12,ACSLST->mainst
+[back]
+[subject]ハリオン:dir
+ [replace]_0x68*0x13,ACSLST->mainst
+[back]
+[subject]ニムントール:dir
+ [replace]_0x68*0x14,ACSLST->mainst
+[back]
+[subject]ヘリオン:dir
+ [replace]_0x68*0x15,ACSLST->mainst
+[back]
+[subject]ファーレーン:dir
+ [replace]_0x68*0x16,ACSLST->mainst
+[back]
+[subject]高峰佳織:dir
+ [replace]_0x68*0x18,ACSLST->mainst
+[back]
+[subject]Ｅキョウコ:dir
+ [replace]_0x68*0x19,ACSLST->mainst
+[back]
+[/group]
+
+
+[group]2mainst
+[subject]マインド値［'+'_mem,0x0A,2,num,<Nodata>,%d'+'］/現在値/固定:calc,0x0A,0x00,0x64,unsigned
+[subject]好感度［'+'_mem,0x0C,2,num,<Nodata>,%d'+'］/現在値/固定:calc,0x0C,0x0000,0x03E7,unsigned
+[subject]レベル［'+'_mem,0x10,2,num,<Nodata>,%d'+'］/現在値/_:calc,0x10,0x01,0x63,unsigned
+[subject]最大ライフ［'+'_mem,0x14,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x14,0x000000,0x01869F,unsigned
+[subject]現在ライフ［'+'_mem,0x18,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x18,0x000000,0x01869F,unsigned
+[e_with],0x0001,0x03E7,unsigned
+ [subject]攻撃力［'+'_mem,0x1C,2,num,<Nodata>,%d'+'］/現在値/_:calc,0x1C
+ [subject]防御力［'+'_mem,0x1E,2,num,<Nodata>,%d'+'］/現在値/_:calc,0x1E
+ [subject]抵抗力［'+'_mem,0x20,2,num,<Nodata>,%d'+'］/現在値/_:calc,0x20
+[/e_with]
+[subject]スキル残数極大化/実行/固定:toggle,0x56,0x67-6300
+[subject]一括最大化/実行/_:b_toggle,0x00,ACSLST->EXTRA01,offset
+[/group]
+
+
+[group]EXTRA01
+0x10,63
+0x14,9F8601009F860100
+0x1C,E703E703E703
+0x56,0x67-6300
+0x56,0x67-6300
+[/group]
+
+
+[group]ACS_3PR
+[subject]高嶺悠人:dir
+ [replace]0x00,ACSLST->YUTO_PR
+[subject]Ｅ悠人:dir
+ [replace]0x68,ACSLST->YUTO_PR
+[subject]アセリア:dir
+ [replace]0xD0,ACSLST->ASELIA_PR
+[subject]Ｅアセリア:dir
+ [replace]0x138,ACSLST->ASELIA_PR
+[subject]オルファリル:dir
+ [replace]0x1A0,ACSLST->ORPHA_PR
+[subject]Ｅオルファリル:dir
+ [replace]0x208,ACSLST->ORPHA_PR
+[subject]エスペリア:dir
+ [replace]0x270,ACSLST->ESPELIA_PR
+[subject]Ｅエスペリア:dir
+ [replace]0x2D8,ACSLST->ESPELIA_PR
+[subject]ウルカ:dir
+ [replace]0x340,ACSLST->ULCA_PR
+[subject]Ｅウルカ:dir
+ [replace]0x3A8,ACSLST->ULCA_PR
+[subject]岬今日子:dir
+ [replace]0x410,ACSLST->KYOKO_PR
+[subject]碧光陰:dir
+ [replace]0x478,ACSLST->KOIN_PR
+[subject]倉橋時深:dir
+ [replace]0x4E0,ACSLST->TOKIMI_PR
+[subject]ネリー:dir
+ [replace]0x548,ACSLST->BLUE_PR
+[subject]シアー:dir
+ [replace]0x5B0,ACSLST->BLUE_PR
+[subject]セリア:dir
+ [replace]0x618,ACSLST->BLUE_PR
+[subject]ナナルゥ:dir
+ [replace]0x680,ACSLST->RED_PR
+[subject]ヒミカ:dir
+ [replace]0x6E8,ACSLST->RED_PR
+[subject]ハリオン:dir
+ [replace]0x750,ACSLST->GREEN_PR
+[subject]ニムントール:dir
+ [replace]0x7B8,ACSLST->GREEN_PR
+[subject]ヘリオン:dir
+ [replace]0x820,ACSLST->BLACK_PR
+[subject]ファーレーン:dir
+ [replace]0x888,ACSLST->BLACK_PR
+[subject]高峰佳織:dir
+ [replace]0x958,ACSLST->KIMO_PR
+[subject]Ｅキョウコ:dir
+ [replace]0x9C0,ACSLST->PLKYOKO_PR
+[subject]イオ:dir
+ [replace]0xA28,ACSLST->WHITE_PR
+[/group]
+
+
+[group]mainst
+[subject]マインド値［'+'_mem,0x02,2,num,<Nodata>,%d'+'］/現在値/固定:calc,0x02,0x00,0x64,unsigned
+[subject]好感度［'+'_mem,0x04,2,num,<Nodata>,%d'+'］/現在値/固定:calc,0x04,0x0000,0x03E7,unsigned
+[subject]レベル［'+'_mem,0x08,2,num,<Nodata>,%d'+'］/現在値/固定:calc,0x08,0x00,0x63,unsigned
+[subject]最大ライフ［'+'_mem,0x0C,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x0C,0x000000,0x01869F,unsigned
+[subject]現在ライフ［'+'_mem,0x10,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x10,0x000000,0x01869F,unsigned
+[e_with],0x0000,0x03E7,unsigned
+ [subject]攻撃力［'+'_mem,0x14,2,num,<Nodata>,%d'+'］/現在値/固定:calc,0x14
+ [subject]防御力［'+'_mem,0x16,2,num,<Nodata>,%d'+'］/現在値/固定:calc,0x16
+ [subject]抵抗力［'+'_mem,0x18,2,num,<Nodata>,%d'+'］/現在値/固定:calc,0x18
+[/e_with]
+[subject]一括極大化/実行/_:b_toggle,0x00,ACSLST->EXTRA04
+[/group]
+
+
+[group]EXTRA04
+0x02,6400
+0x08,6300
+0x0C,9F8601009F860100
+0x14,E703E703E703
+[/group]
+
+
+[group]YUTO_PR
+[subject]クラス/_:list,0x00,ACSLST->CLASS_ET,0x01,0x01
+[replace]0x00,ACSLST->mainst
+[size]2
+ [e_with],0x00,0x01
+  [subject]第１アタックスキル/_:list,0x3C,ACSLST->YUTO_AT
+  [subject]第２アタックスキル/_:list,0x3E,ACSLST->YUTO_AT
+  [subject]第３アタックスキル/_:list,0x40,ACSLST->YUTO_AT
+  [subject]第１ディフェンススキル/_:list,0x42,ACSLST->YUTO_DF
+  [subject]第２ディフェンススキル/_:list,0x44,ACSLST->YUTO_DF
+  [subject]第３ディフェンススキル/_:list,0x46,ACSLST->YUTO_DF
+  [subject]第１サポートスキル/_:list,0x48,ACSLST->YUTO_SP
+  [subject]第２サポートスキル/_:list,0x4A,ACSLST->YUTO_SP
+  [subject]第３サポートスキル/_:list,0x4C,ACSLST->YUTO_SP
+ [/e_with]
+[/size]
+[subject]スキル残数極大維持/実行/固定:toggle,0x4E,0x5F-6300
+[back]
+[/group]
+
+
+[group]ASELIA_PR
+[subject]クラス/_:list,0x00,ACSLST->CLASS_SP,0x01,0x01
+[replace]0x00,ACSLST->mainst
+[size]2
+ [e_with],0x00,0x01
+  [subject]第１アタックスキル/_:list,0x3C,ACSLST->ASELIA_AT
+  [subject]第２アタックスキル/_:list,0x3E,ACSLST->ASELIA_AT
+  [subject]第３アタックスキル/_:list,0x40,ACSLST->ASELIA_AT
+  [subject]第１ディフェンススキル/_:list,0x42,ACSLST->ASELIA_DF
+  [subject]第２ディフェンススキル/_:list,0x44,ACSLST->ASELIA_DF
+  [subject]第３ディフェンススキル/_:list,0x46,ACSLST->ASELIA_DF
+  [subject]第１サポートスキル/_:list,0x48,ACSLST->ASELIA_SP
+  [subject]第２サポートスキル/_:list,0x4A,ACSLST->ASELIA_SP
+  [subject]第３サポートスキル/_:list,0x4C,ACSLST->ASELIA_SP
+ [/e_with]
+[/size]
+[subject]スキル残数極大維持/実行/固定:toggle,0x4E,0x5F-6300
+[back]
+[/group]
+
+
+[group]ORPHA_PR
+[subject]クラス/_:list,0x00,ACSLST->CLASS_SP,0x01,0x01
+[replace]0x00,ACSLST->mainst
+[size]2
+ [e_with],0x00,0x01
+  [subject]第１アタックスキル/_:list,0x3C,ACSLST->ORPHA_AT
+  [subject]第２アタックスキル/_:list,0x3E,ACSLST->ORPHA_AT
+  [subject]第３アタックスキル/_:list,0x40,ACSLST->ORPHA_AT
+  [subject]第１ディフェンススキル/_:list,0x42,ACSLST->ORPHA_DF
+  [subject]第２ディフェンススキル/_:list,0x44,ACSLST->ORPHA_DF
+  [subject]第３ディフェンススキル/_:list,0x46,ACSLST->ORPHA_DF
+  [subject]第１サポートスキル/_:list,0x48,ACSLST->ORPHA_SP
+  [subject]第２サポートスキル/_:list,0x4A,ACSLST->ORPHA_SP
+  [subject]第３サポートスキル/_:list,0x4C,ACSLST->ORPHA_SP
+ [/e_with]
+[/size]
+[subject]スキル残数極大維持/実行/固定:toggle,0x4E,0x5F-6300
+[back]
+[/group]
+
+
+[group]ESPELIA_PR
+[subject]クラス/_:list,0x00,ACSLST->CLASS_SP,0x01,0x01
+[replace]0x00,ACSLST->mainst
+[size]2
+ [e_with],0x00,0x01
+  [subject]第１アタックスキル/_:list,0x3C,ACSLST->ESPELIA_AT
+  [subject]第２アタックスキル/_:list,0x3E,ACSLST->ESPELIA_AT
+  [subject]第３アタックスキル/_:list,0x40,ACSLST->ESPELIA_AT
+  [subject]第１ディフェンススキル/_:list,0x42,ACSLST->ESPELIA_DF
+  [subject]第２ディフェンススキル/_:list,0x44,ACSLST->ESPELIA_DF
+  [subject]第３ディフェンススキル/_:list,0x46,ACSLST->ESPELIA_DF
+  [subject]第１サポートスキル/_:list,0x48,ACSLST->ESPELIA_SP
+  [subject]第２サポートスキル/_:list,0x4A,ACSLST->ESPELIA_SP
+  [subject]第３サポートスキル/_:list,0x4C,ACSLST->ESPELIA_SP
+ [/e_with]
+[/size]
+[subject]スキル残数極大維持/実行/固定:toggle,0x4E,0x5F-6300
+[back]
+[/group]
+
+
+[group]ULCA_PR
+[subject]クラス/_:list,0x00,ACSLST->CLASS_SP,0x01,0x01
+[replace]0x00,ACSLST->mainst
+[size]2
+ [e_with],0x00,0x01
+  [subject]第１アタックスキル/_:list,0x3C,ACSLST->ULCA_AT
+  [subject]第２アタックスキル/_:list,0x3E,ACSLST->ULCA_AT
+  [subject]第３アタックスキル/_:list,0x40,ACSLST->ULCA_AT
+  [subject]第１ディフェンススキル/_:list,0x42,ACSLST->ULCA_DF
+  [subject]第２ディフェンススキル/_:list,0x44,ACSLST->ULCA_DF
+  [subject]第３ディフェンススキル/_:list,0x46,ACSLST->ULCA_DF
+  [subject]第１サポートスキル/_:list,0x48,ACSLST->ULCA_SP
+  [subject]第２サポートスキル/_:list,0x4A,ACSLST->ULCA_SP
+  [subject]第３サポートスキル/_:list,0x4C,ACSLST->ULCA_SP
+ [/e_with]
+[/size]
+[subject]スキル残数極大維持/実行/固定:toggle,0x4E,0x5F-6300
+[back]
+[/group]
+
+
+[group]KYOKO_PR
+[subject]クラス/_:list,0x00,ACSLST->CLASS_ET,0x01,0x01
+[replace]0x00,ACSLST->mainst
+[size]2
+ [e_with],0x00,0x01
+  [subject]第１アタックスキル/_:list,0x3C,ACSLST->KYOKO_AT
+  [subject]第２アタックスキル/_:list,0x3E,ACSLST->KYOKO_AT
+  [subject]第３アタックスキル/_:list,0x40,ACSLST->KYOKO_AT
+  [subject]第１ディフェンススキル/_:list,0x42,ACSLST->KYOKO_DF
+  [subject]第２ディフェンススキル/_:list,0x44,ACSLST->KYOKO_DF
+  [subject]第３ディフェンススキル/_:list,0x46,ACSLST->KYOKO_DF
+  [subject]第１サポートスキル/_:list,0x48,ACSLST->KYOKO_SP
+  [subject]第２サポートスキル/_:list,0x4A,ACSLST->KYOKO_SP
+  [subject]第３サポートスキル/_:list,0x4C,ACSLST->KYOKO_SP
+ [/e_with]
+[/size]
+[subject]スキル残数極大維持/実行/固定:toggle,0x4E,0x5F-6300
+[back]
+[/group]
+
+
+[group]KOIN_PR
+[subject]クラス/_:list,0x00,ACSLST->CLASS_ET,0x01,0x01
+[replace]0x00,ACSLST->mainst
+[size]2
+ [e_with],0x00,0x01
+  [subject]第１アタックスキル/_:list,0x3C,ACSLST->KOIN_AT
+  [subject]第２アタックスキル/_:list,0x3E,ACSLST->KOIN_AT
+  [subject]第３アタックスキル/_:list,0x40,ACSLST->KOIN_AT
+  [subject]第１ディフェンススキル/_:list,0x42,ACSLST->KYOKO_DF
+  [subject]第２ディフェンススキル/_:list,0x44,ACSLST->KYOKO_DF
+  [subject]第３ディフェンススキル/_:list,0x46,ACSLST->KYOKO_DF
+  [subject]第１サポートスキル/_:list,0x48,ACSLST->KOIN_SP,0x00
+  [subject]第２サポートスキル/_:list,0x4A,ACSLST->KOIN_SP,0x00
+  [subject]第３サポートスキル/_:list,0x4C,ACSLST->KOIN_SP,0x00
+ [/e_with]
+[/size]
+[subject]スキル残数極大維持/実行/固定:toggle,0x4E,0x5F-6300
+[back]
+[/group]
+
+
+[group]TOKIMI_PR
+[subject]クラス/_:list,0x00,ACSLST->CLASS_ET,0x01,0x01
+[replace]0x00,ACSLST->mainst
+[size]2
+ [e_with],0x00,0x01
+  [subject]第１アタックスキル/_:list,0x3C,ACSLST->TOKIMI_AT
+  [subject]第２アタックスキル/_:list,0x3E,ACSLST->TOKIMI_AT
+  [subject]第３アタックスキル/_:list,0x40,ACSLST->TOKIMI_AT
+  [subject]第１ディフェンススキル/_:list,0x42,ACSLST->TOKIMI_DF
+  [subject]第２ディフェンススキル/_:list,0x44,ACSLST->TOKIMI_DF
+  [subject]第３ディフェンススキル/_:list,0x46,ACSLST->TOKIMI_DF
+  [subject]第１サポートスキル/_:list,0x48,ACSLST->TOKIMI_SP
+  [subject]第２サポートスキル/_:list,0x4A,ACSLST->TOKIMI_SP
+  [subject]第３サポートスキル/_:list,0x4C,ACSLST->TOKIMI_SP
+ [/e_with]
+[/size]
+[subject]スキル残数極大維持/実行/固定:toggle,0x4E,0x5F-6300
+[back]
+[/group]
+
+
+[group]BLUE_PR
+[subject]クラス/_:list,0x00,ACSLST->CLASS_SP,0x01,0x01
+[replace]0x00,ACSLST->mainst
+[size]2
+ [e_with],0x00,0x01
+  [subject]第１アタックスキル/_:list,0x3C,ACSLST->BLUE_AT
+  [subject]第２アタックスキル/_:list,0x3E,ACSLST->BLUE_AT
+  [subject]第３アタックスキル/_:list,0x40,ACSLST->BLUE_AT
+  [subject]第１ディフェンススキル/_:list,0x42,ACSLST->BLUE_DF
+  [subject]第２ディフェンススキル/_:list,0x44,ACSLST->BLUE_DF
+  [subject]第３ディフェンススキル/_:list,0x46,ACSLST->BLUE_DF
+  [subject]第１サポートスキル/_:list,0x48,ACSLST->BLUE_SP
+  [subject]第２サポートスキル/_:list,0x4A,ACSLST->BLUE_SP
+  [subject]第３サポートスキル/_:list,0x4C,ACSLST->BLUE_SP
+ [/e_with]
+[/size]
+[subject]スキル残数極大維持/実行/固定:toggle,0x4E,0x5F-6300
+[back]
+[/group]
+
+
+[group]RED_PR
+[subject]クラス/_:list,0x00,ACSLST->CLASS_SP,0x01,0x01
+[replace]0x00,ACSLST->mainst
+[size]2
+ [e_with],0x00,0x01
+  [subject]第１アタックスキル/_:list,0x3C,ACSLST->RED_AT
+  [subject]第２アタックスキル/_:list,0x3E,ACSLST->RED_AT
+  [subject]第３アタックスキル/_:list,0x40,ACSLST->RED_AT
+  [subject]第１ディフェンススキル/_:list,0x42,ACSLST->RED_DF
+  [subject]第２ディフェンススキル/_:list,0x44,ACSLST->RED_DF
+  [subject]第３ディフェンススキル/_:list,0x46,ACSLST->RED_DF
+  [subject]第１サポートスキル/_:list,0x48,ACSLST->RED_SP
+  [subject]第２サポートスキル/_:list,0x4A,ACSLST->RED_SP
+  [subject]第３サポートスキル/_:list,0x4C,ACSLST->RED_SP
+ [/e_with]
+[/size]
+[subject]スキル残数極大維持/実行/固定:toggle,0x4E,0x5F-6300
+[back]
+[/group]
+
+
+[group]GREEN_PR
+[subject]クラス/_:list,0x00,ACSLST->CLASS_SP,0x01,0x01
+[replace]0x00,ACSLST->mainst
+[size]2
+ [e_with],0x00,0x01
+  [subject]第１アタックスキル/_:list,0x3C,ACSLST->GREEN_AT
+  [subject]第２アタックスキル/_:list,0x3E,ACSLST->GREEN_AT
+  [subject]第３アタックスキル/_:list,0x40,ACSLST->GREEN_AT
+  [subject]第１ディフェンススキル/_:list,0x42,ACSLST->GREEN_DF
+  [subject]第２ディフェンススキル/_:list,0x44,ACSLST->GREEN_DF
+  [subject]第３ディフェンススキル/_:list,0x46,ACSLST->GREEN_DF
+  [subject]第１サポートスキル/_:list,0x48,ACSLST->GREEN_SP
+  [subject]第２サポートスキル/_:list,0x4A,ACSLST->GREEN_SP
+  [subject]第３サポートスキル/_:list,0x4C,ACSLST->GREEN_SP
+ [/e_with]
+[/size]
+[subject]スキル残数極大維持/実行/固定:toggle,0x4E,0x5F-6300
+[back]
+[/group]
+
+
+[group]BLACK_PR
+[subject]クラス/_:list,0x00,ACSLST->CLASS_SP,0x01,0x01
+[replace]0x00,ACSLST->mainst
+[size]2
+ [e_with],0x00,0x01
+  [subject]第１アタックスキル/_:list,0x3C,ACSLST->BLACK_AT
+  [subject]第２アタックスキル/_:list,0x3E,ACSLST->BLACK_AT
+  [subject]第３アタックスキル/_:list,0x40,ACSLST->BLACK_AT
+  [subject]第１ディフェンススキル/_:list,0x42,ACSLST->BLACK_DF
+  [subject]第２ディフェンススキル/_:list,0x44,ACSLST->BLACK_DF
+  [subject]第３ディフェンススキル/_:list,0x46,ACSLST->BLACK_DF
+  [subject]第１サポートスキル/_:list,0x48,ACSLST->BLACK_SP
+  [subject]第２サポートスキル/_:list,0x4A,ACSLST->BLACK_SP
+  [subject]第３サポートスキル/_:list,0x4C,ACSLST->BLACK_SP
+ [/e_with]
+[/size]
+[subject]スキル残数極大維持/実行/固定:toggle,0x4E,0x5F-6300
+[back]
+[/group]
+
+
+[group]KIMO_PR
+[subject]クラス/_:list,0x00,ACSLST->CLASS_ET,0x01,0x01
+[replace]0x00,ACSLST->mainst
+[size]2
+ [e_with],0x00,0x01
+  [subject]第１アタックスキル/_:list,0x3C,ACSLST->KIMO_AT
+  [subject]第２アタックスキル/_:list,0x3E,ACSLST->KIMO_AT
+  [subject]第３アタックスキル/_:list,0x40,ACSLST->KIMO_AT
+  [subject]第１ディフェンススキル/_:list,0x42,ACSLST->KIMO_DF
+  [subject]第２ディフェンススキル/_:list,0x44,ACSLST->KIMO_DF
+  [subject]第３ディフェンススキル/_:list,0x46,ACSLST->KIMO_DF
+  [subject]第１サポートスキル/_:list,0x48,ACSLST->KIMO_SP
+  [subject]第２サポートスキル/_:list,0x4A,ACSLST->KIMO_SP
+  [subject]第３サポートスキル/_:list,0x4C,ACSLST->KIMO_SP
+ [/e_with]
+[/size]
+[subject]スキル残数極大維持/実行/固定:toggle,0x4E,0x5F-6300
+[back]
+[/group]
+
+
+[group]PLKYOKO_PR
+[subject]クラス/_:list,0x00,ACSLST->CLASS_ET,0x01,0x01
+[replace]0x00,ACSLST->mainst
+[size]2
+ [e_with],0x00,0x01
+  [subject]第１アタックスキル/_:list,0x3C,ACSLST->PLKYOKO_AT
+  [subject]第２アタックスキル/_:list,0x3E,ACSLST->PLKYOKO_AT
+  [subject]第３アタックスキル/_:list,0x40,ACSLST->PLKYOKO_AT
+  [subject]第１ディフェンススキル/_:list,0x42,ACSLST->PLKYOKO_DF
+  [subject]第２ディフェンススキル/_:list,0x44,ACSLST->PLKYOKO_DF
+  [subject]第３ディフェンススキル/_:list,0x46,ACSLST->PLKYOKO_DF
+  [subject]第１サポートスキル/_:list,0x48,ACSLST->PLKYOKO_SP
+  [subject]第２サポートスキル/_:list,0x4A,ACSLST->PLKYOKO_SP
+  [subject]第３サポートスキル/_:list,0x4C,ACSLST->PLKYOKO_SP
+ [/e_with]
+[/size]
+[subject]スキル残数極大維持/実行/固定:toggle,0x4E,0x5F-6300
+[back]
+[/group]
+
+
+[group]WHITE_PR
+[subject]クラス/_:list,0x00,ACSLST->CLASS_SP,0x01,0x01
+[replace]0x00,ACSLST->mainst
+[size]2
+ [e_with],0x00,0x01
+  [subject]第１アタックスキル/_:list,0x3C,ACSLST->WHITE_AT
+  [subject]第２アタックスキル/_:list,0x3E,ACSLST->WHITE_AT
+  [subject]第３アタックスキル/_:list,0x40,ACSLST->WHITE_AT
+  [subject]第１ディフェンススキル/_:list,0x42,ACSLST->WHITE_DF
+  [subject]第２ディフェンススキル/_:list,0x44,ACSLST->WHITE_DF
+  [subject]第３ディフェンススキル/_:list,0x46,ACSLST->WHITE_DF
+  [subject]第１サポートスキル/_:list,0x48,ACSLST->WHITE_SP
+  [subject]第２サポートスキル/_:list,0x4A,ACSLST->WHITE_SP
+  [subject]第３サポートスキル/_:list,0x4C,ACSLST->WHITE_SP
+ [/e_with]
+[/size]
+[subject]スキル残数極大維持/実行/固定:toggle,0x4E,0x5F-6300
+[back]
+[/group]
+
+
+[group]CLASS_ET
+エトランジェ
+ブレイブパーソン
+セイント
+エターナル
+ハイエターナル
+[/group]
+
+
+[group]CLASS_SP
+スピリット
+アウステート
+アムマハート
+ノカテート
+アノハート
+クマソナート
+ラナロサート
+カウート・クミネート
+エターナル
+ハイエターナル
+[/group]
+
+
+[group]YUTO_AT
+ヘビーアタックⅠ
+ヘビーアタックⅡ
+フレンジーⅠ
+フレンジーⅡ
+エクスプロードⅠ
+エクスプロードⅡ
+オーラフォトンブレードⅠ
+オーラフォトンブレードⅡ
+ヘビーアタックⅢ
+ヘビーアタックⅣ
+フレンジーⅢ
+フレンジーⅣ
+エクスプロードⅢ
+エクスプロードⅣ
+オーラフォトンブレードⅢ
+オーラフォトンブレードⅣ
+コネクティドウィル(N)
+コネクティドウィル(H)
+コネクティドウィル(SH)
+[/group]
+
+
+[group]YUTO_DF
+バイオレントブロックⅠ
+バイオレントブロックⅡ
+バイオレントブロックⅢ
+バイオレントブロックⅣ
+バイオレントブロックⅤ
+バイオレントブロックⅥ
+バイオレントブロックⅦ
+バイオレントブロックⅧ
+オーラフォトンバリアⅠ
+オーラフォトンバリアⅡ
+オーラフォトンバリアⅢ
+オーラフォトンバリアⅣ
+オーラフォトンバリアⅤ
+オーラフォトンバリアⅥ
+オーラフォトンバリアⅦ
+オーラフォトンバリアⅧ
+[/group]
+
+
+[group]YUTO_SP
+インスパイアⅠ
+レジストⅠ
+パッションⅠ
+コンセントレーションⅠ
+エレメンタルⅠ
+ホーリーⅠ
+オーラフォトンビームⅠ
+インスパイアⅡ
+レジストⅡ
+パッションⅡ
+コンセントレーションⅡ
+エレメンタルⅡ
+ホーリーⅡ
+オーラフォトンビームⅡ
+オーラフォトンノヴァ
+エターナル
+[/group]
+
+
+[group]ASELIA_AT
+リープアタックⅠ
+リープアタックⅡ
+インパルスブロウⅠ
+インパルスブロウⅡ
+フューリーⅠ
+ヘヴンズスウォードⅠ
+ヘヴンズスウォードⅡ
+リープアタックⅢ
+リープアタックⅣ
+インパルスブロウⅢ
+インパルスブロウⅣ
+フューリーⅡ
+フューリーⅢ
+ヘヴンズスウォードⅢ
+ヘヴンズスウォードⅣ
+ヘヴンズスウォードⅤ
+エタニティーリムーバー(N)
+エタニティーリムーバー(H)
+エタニティーリムーバー(SH)
+[/group]
+
+
+[group]ASELIA_DF
+ウォーターシールドⅠ
+ウォーターシールドⅡ
+ウォーターシールドⅢ
+ウォーターシールドⅣ
+ウォーターシールドⅤ
+ウォーターシールドⅥ
+ウォーターシールドⅦ
+ウォーターシールドⅧ
+フローズンアーマーⅠ
+フローズンアーマーⅡ
+フローズンアーマーⅢ
+フローズンアーマーⅣ
+フローズンアーマーⅤ
+フローズンアーマーⅥ
+フローズンアーマーⅦ
+フローズンアーマーⅧ
+オーラフォトンバリア(N)
+オーラフォトンバリア(H)
+オーラフォトンバリア(SH)
+[/group]
+
+
+[group]ASELIA_SP
+アイスバニッシャーⅠ
+アイスバニッシャーⅡ
+アイスバニッシャーⅢ
+エーテルシンクⅠ
+アイスバニッシャーⅣ
+エーテルシンクⅡ
+アイスバニッシャーⅤ
+エーテルシンクⅢ
+エーテルシンクⅣ
+アイスバニッシャーⅥ
+アイスバニッシャーⅦ
+エーテルシンクⅤ
+サイレントフィールドⅠ
+アイスバニッシャーⅧ
+アイスバニッシャーⅨ
+サイレントフィールドⅡ
+ポゼッション(N)
+ポゼッション(H)
+ポゼッション(SH)
+[/group]
+
+
+[group]ORPHA_AT
+おるふぁきっく
+おるふぁきっく改
+おるふぁあたっく
+おるふぁあたっくす～ぱ～
+おるふぁすくりゅ～
+おるふぁすくりゅ～Ｖ
+おるふぁきっく檄
+ふぁいあえんちゃんと
+おるふぁあたっくはいぱ～
+おるふぁすくりゅ～Ｚ
+ふぁいあえんちゃんと弐
+おるふぁきっく絶
+おるふぁあたっくみらくる
+ふぁいあえんちゃんと参
+おるふぁすくりゅ～Ω
+ふぁいあえんちゃんと四
+ぴぃたんばすたぁ(N)
+ぴぃたんばすたぁ(H)
+ぴぃたんばすたぁ(SH)
+[/group]
+
+
+[group]ORPHA_DF
+まいんどしーるどⅠ
+まいんどしーるどⅡ
+まいんどしーるどⅢ
+まいんどしーるどⅣ
+まいんどしーるどⅤ
+まいんどしーるどⅥ
+まいんどしーるどⅦ
+まいんどしーるどⅧ
+Excelふぁいあくろ～くⅠ
+ふぁいあくろ～くⅡ
+ふぁいあくろ～くⅢ
+ふぁいあくろ～くⅣ
+ふぁいあくろ～くⅤ
+ふぁいあくろ～くⅥ
+ふぁいあくろ～くⅦ
+ふぁいあくろ～くⅧ
+ぴぃたんぶろっく(N)
+ぴぃたんぶろっく(H)
+ぴぃたんぶろっく(SH)
+[/group]
+
+[group]ORPHA_SP
+ふぃあぼるとⅠ
+ふぁいあぼーるⅠ
+ふれいむしゃわ～
+らいとにんぐふぁいあⅠ
+いんふぇるの
+ふれいむれ～ざ～
+あ～くふれあ
+あぽかりぷすⅠ
+いんしねれ～と
+いぐにっしょん
+ひ～とふろあ
+らいとにんぐふぁいあⅡ
+ふぃあぼるとⅡ
+ふぁいあぼーるⅡ
+あぽかりぷすⅡ
+すた～だすと
+はいぺりおんすたーず(N)
+はいぺりおんすたーず(H)
+はいぺりおんすたーず(SH)
+[/group]
+
+
+[group]ESPELIA_AT
+ストライクⅠ
+ストライクⅡ
+パワーストライクⅠ
+パワーストライクⅡ
+ライトニングストライクⅠ
+ライトニングストライクⅡ
+ソニックストライクⅠ
+ソニックストライクⅡ
+ストライクⅢ
+ストライクⅣ
+パワーストライクⅢ
+パワーストライクⅣ
+ライトニングストライクⅢ
+ライトニングストライクⅣ
+ソニックストライクⅢ
+ソニックストライクⅣ
+ネイチャーフォース(N)
+ネイチャーフォース(H)
+ネイチャーフォース(SH)
+[/group]
+
+
+[group]ESPELIA_DF
+アキュレイトブロックⅠ
+アキュレイトブロックⅡ
+アキュレイトブロックⅢ
+アキュレイトブロックⅣ
+アキュレイトブロックⅤ
+アキュレイトブロックⅥ
+アキュレイトブロックⅦ
+アキュレイトブロックⅧ
+デボテッドブロックⅠ
+デボテッドブロックⅡ
+デボテッドブロックⅢ
+デボテッドブロックⅣ
+デボテッドブロックⅤ
+デボテッドブロックⅥ
+デボテッドブロックⅦ
+デボテッドブロックⅧ
+アブソリュート(N)
+アブソリュート(H)
+アブソリュート(SH)
+[/group]
+
+
+[group]ESPELIA_SP
+アースプライヤーⅠ
+ウインドウィスパーⅠ
+ハーベストⅠ
+アースプライヤーⅡ
+ウインドウィスパーⅡ
+ハーベストⅡ
+ウインドウィスパーⅢ
+リヴァイヴ
+ハーベストⅢ
+ガイアブレス
+アースプライヤーⅢ
+キュアーⅠ
+ウインドウィスパーⅣ
+ハーベストⅣ
+キュアーⅡ
+エレメンタルブラスト
+エンジェルプライヤー(N)
+エンジェルプライヤー(H)
+エンジェルプライヤー(SH)
+[/group]
+
+
+[group]ULCA_AT
+居合の太刀Ⅰ
+居合の太刀Ⅱ
+雲散霧消の太刀Ⅰ
+雲散霧消の太刀Ⅱ
+月輪の太刀Ⅰ
+月輪の太刀Ⅱ
+星火燎原の太刀Ⅰ
+星火燎原の太刀Ⅱ
+居合の太刀Ⅲ
+居合の太刀Ⅳ
+雲散霧消の太刀Ⅲ
+雲散霧消の太刀Ⅳ
+月輪の太刀Ⅲ
+月輪の太刀Ⅳ
+星火燎原の太刀Ⅲ
+星火燎原の太刀Ⅳ
+天壌無窮の太刀(N)
+天壌無窮の太刀(H)
+天壌無窮の太刀(SH)
+[/group]
+
+
+[group]ULCA_DF
+カウンターアタックⅠ
+カウンターアタックⅡ
+カウンターアタックⅢ
+カウンターアタックⅣ
+カウンターアタックⅤ
+カウンターアタックⅥ
+カウンターアタックⅦ
+カウンターアタックⅧ
+トリーズンブロックⅠ
+トリーズンブロックⅡ
+トリーズンブロックⅢ
+トリーズンブロックⅣ
+トリーズンブロックⅤ
+トリーズンブロックⅥ
+トリーズンブロックⅦ
+トリーズンブロックⅧ
+ダークフォトンバリア(N)
+ダークフォトンバリア(H)
+ダークフォトンバリア(SH)
+[/group]
+
+
+[group]ULCA_SP
+テラーⅠ
+ウイークン
+アイアンメイデンⅠ
+ダークインパクト
+ロウアーレジスト
+ブラッドラスト
+カオスインパクト
+ダークスプリング
+テラーⅡ
+マインドブレイク
+ディバインインパクト
+テラーⅢ
+アイアンメイデンⅡ
+イニシャライズ
+サクリファイス
+バニシングハイロウ
+プロファウンドパワー(N)
+プロファウンドパワー(H)
+プロファウンドパワー(SH)
+[/group]
+
+
+[group]KYOKO_AT
+ペネトレイトⅠ
+ペネトレイトⅡ
+ペネトレイトⅢ
+ペネトレイトⅣ
+ペネトレイトⅤ
+ペネトレイトⅥ
+ペネトレイトⅦ
+ペネトレイトⅧ
+イクシードⅠ
+イクシードⅡ
+イクシードⅢ
+イクシードⅣ
+イクシードⅤ
+イクシードⅥ
+イクシードⅦ
+イクシードⅧ
+[/group]
+
+
+[group]KYOKO_DF
+アキュレイトブロックⅠ
+アキュレイトブロックⅡ
+アキュレイトブロックⅢ
+アキュレイトブロックⅣ
+アキュレイトブロックⅤ
+アキュレイトブロックⅥ
+アキュレイトブロックⅦ
+アキュレイトブロックⅧ
+オーラフォトンバリアⅠ
+オーラフォトンバリアⅡ
+オーラフォトンバリアⅢ
+オーラフォトンバリアⅣ
+オーラフォトンバリアⅤ
+オーラフォトンバリアⅥ
+オーラフォトンバリアⅦ
+オーラフォトンバリアⅧ
+[/group]
+
+
+[group]KYOKO_SP
+ライトニングブラストⅠ
+サンダーストームⅠ
+エレクトリックⅠ
+ライトニングブラストⅡ
+サンダーストームⅡ
+エレクトリックⅡ
+ライトニングブラストⅢ
+サンダーストームⅢ
+エレクトリックⅢ
+ライトニングブラストⅣ
+サンダーストームⅣ
+エレクトリックⅣ
+ライトニングブラストⅤ
+サンダーストームⅤ
+エレクトリックⅤ
+ライトニングブラストⅥ
+[/group]
+
+
+[group]KOIN_AT
+ゲイルⅠ
+ゲイルⅡ
+ゲイルⅢ
+ゲイルⅣ
+ゲイルⅤ
+ゲイルⅥ
+ゲイルⅦ
+ゲイルⅧ
+ワールウインドⅠ
+ワールウインドⅡ
+ワールウインドⅢ
+ワールウインドⅣ
+ワールウインドⅤ
+ワールウインドⅥ
+ワールウインドⅦ
+ワールウインドⅧ
+[/group]
+
+
+[group]KOIN_SP
+トラスケードⅠ
+トラスケードⅡ
+トラスケードⅢ
+トラスケードⅣ
+トラスケードⅤ
+トラスケードⅥ
+トラスケードⅦ
+トラスケードⅧ
+プロテクションⅠ
+プロテクションⅡ
+プロテクションⅢ
+プロテクションⅣ
+プロテクションⅤ
+プロテクションⅥ
+プロテクションⅦ
+プロテクションⅧ
+[/group]
+
+
+[group]TOKIMI_AT
+スウォードダンスⅠ
+スウォードダンスⅡ
+タイムアクセラレイトⅠ
+タイムアクセラレイトⅡ
+スウォードダンスⅢ
+スウォードダンスⅣ
+タイムアクセラレイトⅢ
+クリティカルワンⅠ
+スウォードダンスⅤ
+スウォードダンスⅥ
+タイムアクセラレイトⅣ
+スウォードダンスⅦ
+タイムアクセラレイトⅤ
+スウォードダンスⅧ
+タイムアクセラレイトⅥ
+クリティカルワンⅡ
+[/group]
+
+
+[group]TOKIMI_DF
+オーラフォトンバリアⅠ
+オーラフォトンバリアⅡ
+タイムトリップファンⅠ
+オーラフォトンバリアⅢ
+オーラフォトンバリアⅣ
+タイムトリップファンⅡ
+オーラフォトンバリアⅤ
+タイムトリップファンⅢ
+タイムトリップファンⅣ
+オーラフォトンバリアⅥ
+オーラフォトンバリアⅦ
+オーラフォトンバリアⅧ
+タイムトリップファンⅤ
+タイムトリップファンⅥ
+タイムトリップファンⅦ
+タイムトリップファンⅧ
+[/group]
+
+
+[group]TOKIMI_SP
+ビジョンズⅠ
+ビジョンズⅡ
+タイムコンポーズⅠ
+タイムコンポーズⅡ
+ビジョンズⅢ
+ビジョンズⅣ
+タイムコンポーズⅢ
+タイムシフト
+ビジョンズⅤ
+ビジョンズⅥ
+タイムコンポーズⅣ
+ビジョンズⅦ
+タイムコンポーズⅤ
+ビジョンズⅧ
+タイムコンポーズⅥ
+タイムリープ
+[/group]
+
+
+[group]RED_AT
+スイングⅠ
+スイングⅡ
+ダブルスイングⅠ
+ダブルスイングⅡ
+トリプルスイングⅠ
+トリプルスイングⅡ
+スイングⅢ
+ファイアエンチャントⅠ
+ダブルスイングⅢ
+トリプルスイングⅢ
+ファイアエンチャントⅡ
+スイングⅣ
+ダブルスイングⅣ
+ファイアエンチャントⅢ
+トリプルスイングⅣ
+ファイアエンチャントⅣ
+[/group]
+
+
+[group]RED_DF
+マインドシールドⅠ
+マインドシールドⅡ
+マインドシールドⅢ
+マインドシールドⅣ
+マインドシールドⅤ
+マインドシールドⅥ
+マインドシールドⅦ
+マインドシールドⅧ
+ファイアクロークⅠ
+ファイアクロークⅡ
+ファイアクロークⅢ
+ファイアクロークⅣ
+ファイアクロークⅤ
+ファイアクロークⅥ
+ファイアクロークⅦ
+ファイアクロークⅧ
+[/group]
+
+
+[group]RED_SP
+ファイアボルトⅠ
+ファイアボールⅠ
+フレイムシャワー
+ライトニングファイアⅠ
+インフェルノ
+フレイムレーザー
+アークフレア
+アポカリプスⅠ
+インシネレート
+イグニッション
+ヒートフロア
+ライトニングファイアⅡ
+ファイアボルトⅡ
+ファイアボールⅡ
+アポカリプスⅡ
+スターダスト
+[/group]
+
+
+[group]BLUE_AT
+リープアタックⅠ
+リープアタックⅡ
+インパルスブロウⅠ
+インパルスブロウⅡ
+フューリーⅠ
+ヘヴンズスウォードⅠ
+ヘヴンズスウォードⅡ
+リープアタックⅢ
+リープアタックⅣ
+インパルスブロウⅢ
+インパルスブロウⅣ
+フューリーⅡ
+フューリーⅢ
+ヘヴンズスウォードⅢ
+ヘヴンズスウォードⅣ
+ヘヴンズスウォードⅤ
+[/group]
+
+
+[group]BLUE_DF
+ウォーターシールドⅠ
+ウォーターシールドⅡ
+ウォーターシールドⅢ
+ウォーターシールドⅣ
+ウォーターシールドⅤ
+ウォーターシールドⅥ
+ウォーターシールドⅦ
+ウォーターシールドⅧ
+フローズンアーマーⅠ
+フローズンアーマーⅡ
+フローズンアーマーⅢ
+フローズンアーマーⅣ
+フローズンアーマーⅤ
+フローズンアーマーⅥ
+フローズンアーマーⅦ
+フローズンアーマーⅧ
+[/group]
+
+
+[group]BLUE_SP
+アイスバニッシャーⅠ
+アイスバニッシャーⅡ
+アイスバニッシャーⅢ
+エーテルシンクⅠ
+アイスバニッシャーⅣ
+エーテルシンクⅡ
+アイスバニッシャーⅤ
+エーテルシンクⅢ
+エーテルシンクⅣ
+アイスバニッシャーⅥ
+アイスバニッシャーⅦ
+エーテルシンクⅤ
+サイレントフィールドⅠ
+アイスバニッシャーⅧ
+アイスバニッシャーⅨ
+サイレントフィールドⅡ
+[/group]
+
+
+[group]GREEN_AT
+ストライクⅠ
+ストライクⅡ
+パワーストライクⅠ
+パワーストライクⅡ
+ライトニングストライクⅠ
+ライトニングストライクⅡ
+ソニックストライクⅠ
+ソニックストライクⅡ
+ストライクⅢ
+ストライクⅣ
+パワーストライクⅢ
+パワーストライクⅣ
+ライトニングストライクⅢ
+ライトニングストライクⅣ
+ソニックストライクⅢ
+ソニックストライクⅣ
+[/group]
+
+
+[group]GREEN_DF
+アキュレイトブロックⅠ
+アキュレイトブロックⅡ
+アキュレイトブロックⅢ
+アキュレイトブロックⅣ
+アキュレイトブロックⅤ
+アキュレイトブロックⅥ
+アキュレイトブロックⅦ
+アキュレイトブロックⅧ
+デボテッドブロックⅠ
+デボテッドブロックⅡ
+デボテッドブロックⅢ
+デボテッドブロックⅣ
+デボテッドブロックⅤ
+デボテッドブロックⅥ
+デボテッドブロックⅦ
+デボテッドブロックⅧ
+[/group]
+
+
+[group]GREEN_SP
+アースプライヤーⅠ
+ウインドウィスパーⅠ
+ハーベストⅠ
+アースプライヤーⅡ
+ウインドウィスパーⅡ
+ハーベストⅡ
+ウインドウィスパーⅢ
+リヴァイヴ
+ハーベストⅢ
+ガイアブレス
+アースプライヤーⅢ
+キュアーⅠ
+ウインドウィスパーⅣ
+ハーベストⅣ
+キュアーⅡ
+エレメンタルブラスト
+[/group]
+
+
+[group]BLACK_AT
+居合の太刀Ⅰ
+居合の太刀Ⅱ
+雲散霧消の太刀Ⅰ
+雲散霧消の太刀Ⅱ
+月輪の太刀Ⅰ
+月輪の太刀Ⅱ
+星火燎原の太刀Ⅰ
+星火燎原の太刀Ⅱ
+居合の太刀Ⅲ
+居合の太刀Ⅳ
+雲散霧消の太刀Ⅲ
+雲散霧消の太刀Ⅳ
+月輪の太刀Ⅲ
+月輪の太刀Ⅳ
+星火燎原の太刀Ⅲ
+星火燎原の太刀Ⅳ
+[/group]
+
+
+[group]BLACK_DF
+カウンターアタックⅠ
+カウンターアタックⅡ
+カウンターアタックⅢ
+カウンターアタックⅣ
+カウンターアタックⅤ
+カウンターアタックⅥ
+カウンターアタックⅦ
+カウンターアタックⅧ
+トリーズンブロックⅠ
+トリーズンブロックⅡ
+トリーズンブロックⅢ
+トリーズンブロックⅣ
+トリーズンブロックⅤ
+トリーズンブロックⅥ
+トリーズンブロックⅦ
+トリーズンブロックⅧ
+[/group]
+
+
+[group]BLACK_SP
+テラーⅠ
+ウイークン
+アイアンメイデンⅠ
+ダークインパクト
+ロウアーレジスト
+ブラッドラスト
+カオスインパクト
+ダークスプリング
+テラーⅡ
+マインドブレイク
+ディバインインパクト
+テラーⅢ
+アイアンメイデンⅡ
+イニシャライズ
+サクリファイス
+バニシングハイロウ
+[/group]
+
+
+[group]KIMO_AT
+ナポリたんラッシュＢ
+Ｄ・Ｋ・Ｂ
+[/group]
+
+
+[group]KIMO_DF
+オーラフォトンバリア
+[/group]
+
+
+[group]KIMO_SP
+オーラフォトンビーム
+健やかなる旋律
+[/group]
+
+
+[group]PLKYOKO_AT
+ペネトレイトⅠ
+ペネトレイトⅡ
+ペネトレイトⅢ
+ペネトレイトⅣ
+ペネトレイトⅤ
+ペネトレイトⅥ
+ペネトレイトⅦ
+ペネトレイトⅧ
+イクシードⅠ
+イクシードⅡ
+イクシードⅢ
+イクシードⅣ
+イクシードⅤ
+イクシードⅥ
+イクシードⅦ
+イクシードⅧ
+シャイニングブレイカー(N)
+シャイニングブレイカー(H)
+シャイニングブレイカー(SH)
+[/group]
+
+
+[group]PLKYOKO_DF
+アキュレイトブロックⅠ
+アキュレイトブロックⅡ
+アキュレイトブロックⅢ
+アキュレイトブロックⅣ
+アキュレイトブロックⅤ
+アキュレイトブロックⅥ
+アキュレイトブロックⅦ
+アキュレイトブロックⅧ
+オーラフォトンバリアⅠ
+オーラフォトンバリアⅡ
+オーラフォトンバリアⅢ
+オーラフォトンバリアⅣ
+オーラフォトンバリアⅤ
+オーラフォトンバリアⅥ
+オーラフォトンバリアⅦ
+オーラフォトンバリアⅧ
+スパークレシーブ(N)
+スパークレシーブ(H)
+スパークレシーブ(SH)
+[/group]
+
+
+[group]PLKYOKO_SP
+ライトニングブラストⅠ
+サンダーストームⅠ
+エレクトリックⅠ
+ライトニングブラストⅡ
+サンダーストームⅡ
+エレクトリックⅡ
+ライトニングブラストⅢ
+サンダーストームⅢ
+エレクトリックⅢ
+ライトニングブラストⅣ
+サンダーストームⅣ
+エレクトリックⅣ
+ライトニングブラストⅤ
+サンダーストームⅤ
+エレクトリックⅤ
+ライトニングブラストⅥ
+ボルトチャージ(N)
+ボルトチャージ(H)
+ボルトチャージ(SH)
+[/group]
+
+
+[group]WHITE_AT
+ハルシネイション
+ハルシネイション
+ハルシネイション
+へイルストライク
+ハルシネイション
+へイルストライク
+へイルストライク
+へイルストライク
+へイルストライク
+ハルシネイション
+ハルシネイション
+へイルストライク
+ハルシネイション
+へイルストライク
+ハルシネイション
+へイルストライク
+[/group]
+
+
+[group]WHITE_DF
+イオ味方防御１
+イオ味方防御１
+イオ味方防御１
+イオ味方防御１
+イオ味方防御１
+イオ味方防御２
+イオ味方防御２
+イオ味方防御２
+イオ味方防御２
+イオ味方防御２
+イオ味方防御３
+イオ味方防御３
+イオ味方防御３
+イオ味方防御３
+イオ味方防御３
+[/group]
+
+
+[group]WHITE_SP
+アイスクラスター
+アイスクラスター
+アイスクラスター
+アイスクラスター
+アイスクラスター
+パーチドジャッジメント
+パーチドジャッジメント
+パーチドジャッジメント
+パーチドジャッジメント
+パーチドジャッジメント
+パーチドジャッジメント
+パーチドジャッジメント
+パーチドジャッジメント
+パーチドジャッジメント
+パーチドジャッジメント
+パーチドジャッジメント
+[/group]
