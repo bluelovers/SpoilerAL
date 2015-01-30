@@ -1,0 +1,12 @@
+[subject]‚k‚u		:calc,0x38,0,99
+[subject]Œ»İ‚g‚o	:calc,0x00,0,999
+[subject]Å‘å‚g‚o	:calc,0x20,0,999
+[subject]Œ»İ‚r‚o	:calc,0x04,0,999
+[subject]Å‘å‚r‚o	:calc,0x24,0,999
+[subject]‚d‚w‚o		:calc,0x18,0,99999999
+[subject]‚m‚d‚w‚s	:calc,0x3C,0,99999999
+[subject]Šî–{’l		:dir
+	[replace]0x08,HB2_ST0,offset
+[subject]C³Œã		:dir
+	[replace]0x28,HB2_ST0,offset
+[back]
