@@ -1,0 +1,75 @@
+[group]TR_MA
+[note]wordwrap
+魔女編は二度とやる気が出ないです(^^;　しかし、天沼・中川・宮前って並べると…（笑）
+
+以下、少々補足です。
+
+永続スキップ：
+選択肢クリックや未読の制限を受けないスキップ機能。ＣＧ回収用他。
+
+クリアフラグＡＬＬ：
+ＣＧ・音楽鑑賞・シーン回想他、おまけ１～３を出現させます。
+[/note]
+
+[subject]環境関連:dir
+	[subject]永続文章スキップ/実行/_:b_toggle,0x40B855,TRLST->TR_a,real
+[/group]
+
+
+[group]TR_F1
+[subject]クリアフラグＡＬＬ/実行/_:toggle,0x4F6C5C,FFFFFFFF
+[/group]
+
+
+[group]TR_CG
+[subject]ＣＧ鑑賞:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x4F93DC,0x4F96BB-01000000
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x4F93DC,0x4F96BB-00
+[back]
+[subject]シーン回想（＋既読）:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x4F6C60,0x4F70E3-01000000
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x4F6C60,0x4F70E3-00
+[/group]
+
+
+[group]TR_a
+0x40B855,C705E4BC4F0001000000C3,C390909090909090909090
+0x428F2D,01,00
+0x42D10C,01,00
+[/group]
+
+
+[group]LST_a
+未選択
+あおば
+ななり
+[/group]
+
+
+[group]LST_b
+,0x00=00,0x05=00
+,0x00=01,0x05=00
+,0x00=00,0x05=01
+[/group]
+
+
+[group]LST_c
+はるの以外
+はるの
+[/group]
+
+
+[group]LST_d
+未選択
+あおば
+ななり
+みらい
+[/group]
+
+
+[group]LST_e
+,0x00=00,0x05=00,0x0A=00
+,0x00=01,0x05=00,0x0A=00
+,0x00=00,0x05=01,0x0A=00
+,0x00=00,0x05=00,0x0A=01
+[/group]
