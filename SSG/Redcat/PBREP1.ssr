@@ -1,0 +1,2 @@
+[subject][! @PBLST->LST_a,$Val !]:dir
+[replace]0x[! 0x43422E+$Val !],PB_c
