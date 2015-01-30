@@ -1,0 +1,165 @@
+[subject]ジェム		:calc,0x53A25E,0,999
+[subject]GOLD		:calc,0x524F94,0,999999999
+
+[subject]ステータス	:dir
+	[subject]MAX HP		:calc,0x524F74,0,999
+	[subject]MAX MP		:calc,0x524F76,0,999
+	[subject]経験値		:calc,0x524F90,0,99999999
+	[subject]基本値		:dir
+		[subject]STR	:calc,0x52586C,0,255,unsigned
+		[subject]INT	:calc,0x52586D,0,255,unsigned
+		[subject]VIT	:calc,0x52586E,0,255,unsigned
+		[subject]MEN	:calc,0x52586F,0,255,unsigned
+		[subject]DEX	:calc,0x525870,0,255,unsigned
+		[subject]AGI	:calc,0x525871,0,255,unsigned
+		[back]
+//	[subject]修正後		:dir
+//		[subject]STR	:calc,0x523F6C,0,255,unsigned
+//		[subject]INT	:calc,0x523F6D,0,255,unsigned
+//		[subject]VIT	:calc,0x523F6E,0,255,unsigned
+//		[subject]MAN	:calc,0x523F6F,0,255,unsigned
+//		[subject]DEX	:calc,0x523F70,0,255,unsigned
+//		[subject]AGI	:calc,0x523F82,0,255,unsigned
+//		[back]
+
+	[subject]アイテム効果	:dir
+		[subject]１個目		:list,0x525DDE,Dvine_Us,00,01
+		[subject]効果量		:calc,0x525DDF,-100,100,signed
+		[subject]２個目		:list,0x525DE4,Dvine_Us,00,01
+		[subject]効果量		:calc,0x525DE5,-100,100,signed
+		[subject]３個目		:list,0x525DEA,Dvine_Us,00,01
+		[subject]効果量		:calc,0x525DEB,-100,100,signed
+		[subject]４個目		:list,0x525DF0,Dvine_Us,00,01
+		[subject]効果量		:calc,0x525DF1,-100,100,signed
+		[subject]５個目		:list,0x525DF6,Dvine_Us,00,01
+		[subject]効果量		:calc,0x525DF7,-100,100,signed
+		[subject]６個目		:list,0x525DFC,Dvine_Us,00,01
+		[subject]効果量		:calc,0x525DFD,-100,100,signed
+		[subject]７個目		:list,0x525E02,Dvine_Us,00,01
+		[subject]効果量		:calc,0x525E03,-100,100,signed
+		[subject]８個目		:list,0x525E08,Dvine_Us,00,01
+		[subject]効果量		:calc,0x525E09,-100,100,signed
+		[subject]９個目		:list,0x525E0E,Dvine_Us,00,01
+		[subject]効果量		:calc,0x525E0F,-100,100,signed
+		[subject]10個目		:list,0x525E14,Dvine_Us,00,01
+		[subject]効果量		:calc,0x525E15,-100,100,signed
+		[subject]11個目		:list,0x525E1A,Dvine_Us,00,01
+		[subject]効果量		:calc,0x525E1B,-100,100,signed
+		[subject]12個目		:list,0x525E20,Dvine_Us,00,01
+		[subject]効果量		:calc,0x525E21,-100,100,signed
+		[subject]13個目		:list,0x525E26,Dvine_Us,00,01
+		[subject]効果量		:calc,0x525E27,-100,100,signed
+		[subject]14個目		:list,0x525E2C,Dvine_Us,00,01
+		[subject]効果量		:calc,0x525E2D,-100,100,signed
+		[subject]15個目		:list,0x525E32,Dvine_Us,00,01
+		[subject]効果量		:calc,0x525E33,-100,100,signed
+		[subject]16個目		:list,0x525E38,Dvine_Us,00,01
+		[subject]効果量		:calc,0x525E39,-100,100,signed
+		[back]
+	[back]
+
+[subject]装備		:dir
+	[subject]頭		:d_list,0x53A168,Dvine_IT1,0x0000,0xFFFF,Dvine_IT2
+	[subject]LV/LVUP/固定/回	:calc,0x53A1CA,0,3
+	[subject]体		:d_list,0x53A16A,Dvine_IT1,0x0000,0xFFFF,Dvine_IT2
+	[subject]LV/LVUP/固定/回	:calc,0x53A1CB,0,3
+	[subject]右手		:d_list,0x53A16C,Dvine_IT1,0x0000,0xFFFF,Dvine_IT2
+	[subject]LV/LVUP/固定/回	:calc,0x53ACCC,0,3
+	[subject]左手		:d_list,0x53A16E,Dvine_IT1,0x0000,0xFFFF,Dvine_IT2
+	[subject]LV/LVUP/固定/回	:calc,0x53A1CD,0,3
+	[subject]装飾品１	:d_list,0x53A170,Dvine_IT1,0x0000,0xFFFF,Dvine_IT2
+	[subject]LV/LVUP/固定/回	:calc,0x53A1CE,0,3
+	[subject]装飾品２	:d_list,0x53A172,Dvine_IT1,0x0000,0xFFFF,Dvine_IT2
+	[subject]LV/LVUP/固定/回	:calc,0x53A1CF,0,3
+	[back]
+
+[subject]アイテム	:dir
+	[subject]１個目		:d_list,0x53A148,Dvine_IT1,0x0000,0xFFFF,Dvine_IT2
+	[subject]LV/LVUP/固定/回	:calc,0x53A1BA,0,3
+	[subject]２個目		:d_list,0x53A14A,Dvine_IT1,0x0000,0xFFFF,Dvine_IT2
+	[subject]LV/LVUP/固定/回	:calc,0x53A1BB,0,3
+	[subject]３個目		:d_list,0x53A14C,Dvine_IT1,0x0000,0xFFFF,Dvine_IT2
+	[subject]LV/LVUP/固定/回	:calc,0x53A1BC,0,3
+	[subject]４個目		:d_list,0x53A14E,Dvine_IT1,0x0000,0xFFFF,Dvine_IT2
+	[subject]LV/LVUP/固定/回	:calc,0x53A1BD,0,3
+	[subject]５個目		:d_list,0x53A150,Dvine_IT1,0x0000,0xFFFF,Dvine_IT2
+	[subject]LV/LVUP/固定/回	:calc,0x53A1BE,0,3
+	[subject]６個目		:d_list,0x53A152,Dvine_IT1,0x0000,0xFFFF,Dvine_IT2
+	[subject]LV/LVUP/固定/回	:calc,0x53A1BF,0,3
+	[subject]７個目		:d_list,0x53A154,Dvine_IT1,0x0000,0xFFFF,Dvine_IT2
+	[subject]LV/LVUP/固定/回	:calc,0x53A1C0,0,3
+	[subject]８個目		:d_list,0x53A156,Dvine_IT1,0x0000,0xFFFF,Dvine_IT2
+	[subject]LV/LVUP/固定/回	:calc,0x53A1C1,0,3
+	[subject]９個目		:d_list,0x53A158,Dvine_IT1,0x0000,0xFFFF,Dvine_IT2
+	[subject]LV/LVUP/固定/回	:calc,0x53A1C2,0,3
+	[subject]10個目		:d_list,0x53A15A,Dvine_IT1,0x0000,0xFFFF,Dvine_IT2
+	[subject]LV/LVUP/固定/回	:calc,0x53A1C3,0,3
+	[subject]11個目		:d_list,0x53A15C,Dvine_IT1,0x0000,0xFFFF,Dvine_IT2
+	[subject]LV/LVUP/固定/回	:calc,0x53A1C4,0,3
+	[subject]12個目		:d_list,0x53A15E,Dvine_IT1,0x0000,0xFFFF,Dvine_IT2
+	[subject]LV/LVUP/固定/回	:calc,0x53A1C5,0,3
+	[subject]13個目		:d_list,0x53A160,Dvine_IT1,0x0000,0xFFFF,Dvine_IT2
+	[subject]LV/LVUP/固定/回	:calc,0x53A1C6,0,3
+	[subject]14個目		:d_list,0x53A162,Dvine_IT1,0x0000,0xFFFF,Dvine_IT2
+	[subject]LV/LVUP/固定/回	:calc,0x53A1C7,0,3
+	[subject]15個目		:d_list,0x53A164,Dvine_IT1,0x0000,0xFFFF,Dvine_IT2
+	[subject]LV/LVUP/固定/回	:calc,0x53A1C8,0,3
+	[subject]16個目		:d_list,0x53A166,Dvine_IT1,0x0000,0xFFFF,Dvine_IT2
+	[subject]LV/LVUP/固定/回	:calc,0x53A1C9,0,3
+	[back]
+[subject]イベント	:dir
+	[subject]１個目		:d_list,0x53A174,Dvine_EV1,0x0093,0xFFFF,Dvine_EV2
+	[subject]２個目		:d_list,0x53A176,Dvine_EV1,0x0093,0xFFFF,Dvine_EV2
+	[subject]３個目		:d_list,0x53A178,Dvine_EV1,0x0093,0xFFFF,Dvine_EV2
+	[subject]４個目		:d_list,0x53A17A,Dvine_EV1,0x0093,0xFFFF,Dvine_EV2
+	[subject]５個目		:d_list,0x53A17C,Dvine_EV1,0x0093,0xFFFF,Dvine_EV2
+	[subject]６個目		:d_list,0x53A17E,Dvine_EV1,0x0093,0xFFFF,Dvine_EV2
+	[subject]７個目		:d_list,0x53A180,Dvine_EV1,0x0093,0xFFFF,Dvine_EV2
+	[subject]８個目		:d_list,0x53A182,Dvine_EV1,0x0093,0xFFFF,Dvine_EV2
+	[subject]９個目		:d_list,0x53A184,Dvine_EV1,0x0093,0xFFFF,Dvine_EV2
+	[subject]10個目		:d_list,0x53A186,Dvine_EV1,0x0093,0xFFFF,Dvine_EV2
+	[subject]11個目		:d_list,0x53A188,Dvine_EV1,0x0093,0xFFFF,Dvine_EV2
+	[subject]12個目		:d_list,0x53A18A,Dvine_EV1,0x0093,0xFFFF,Dvine_EV2
+	[subject]13個目		:d_list,0x53A18C,Dvine_EV1,0x0093,0xFFFF,Dvine_EV2
+	[subject]14個目		:d_list,0x53A18E,Dvine_EV1,0x0093,0xFFFF,Dvine_EV2
+	[subject]15個目		:d_list,0x53A190,Dvine_EV1,0x0093,0xFFFF,Dvine_EV2
+	[subject]16個目		:d_list,0x53A192,Dvine_EV1,0x0093,0xFFFF,Dvine_EV2
+	[back]
+
+[subject]倉庫	:dir
+	[subject]拡張/拡張回数/固定/回	:calc,0x53E680,0,15
+	[subject]１ページ目	:dir
+		[replace]0x53E280,Dvine_So,offset
+	[subject]２ページ目	:dir
+		[replace]0x53E2C0,Dvine_So,offset
+	[subject]３ページ目	:dir
+		[replace]0x53E300,Dvine_So,offset
+	[subject]４ページ目	:dir
+		[replace]0x53E340,Dvine_So,offset
+	[subject]５ページ目	:dir
+		[replace]0x53E380,Dvine_So,offset
+	[subject]６ページ目	:dir
+		[replace]0x53E3C0,Dvine_So,offset
+	[subject]７ページ目	:dir
+		[replace]0x53E400,Dvine_So,offset
+	[subject]８ページ目	:dir
+		[replace]0x53E440,Dvine_So,offset
+	[subject]９ページ目	:dir
+		[replace]0x53E480,Dvine_So,offset
+	[subject]10ページ目	:dir
+		[replace]0x53E4C0,Dvine_So,offset
+	[subject]11ページ目	:dir
+		[replace]0x53E400,Dvine_So,offset
+	[subject]12ページ目	:dir
+		[replace]0x53E540,Dvine_So,offset
+	[subject]13ページ目	:dir
+		[replace]0x53E580,Dvine_So,offset
+	[subject]14ページ目	:dir
+		[replace]0x53E5C0,Dvine_So,offset
+	[subject]15ページ目	:dir
+		[replace]0x53E500,Dvine_So,offset
+	[subject]16ページ目	:dir
+		[replace]0x53E640,Dvine_So,offset
+
+[back]
+[back]
