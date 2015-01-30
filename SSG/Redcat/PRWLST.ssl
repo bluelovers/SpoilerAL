@@ -13,7 +13,7 @@ EX攻撃100%発動：
 [subject]戦闘関連:dir
  [subject]ターン中攻撃キャラ無限選択可能/実行/_:toggle,0x41E1B6,33C033F6909090??????????EB00,4081FE00000080??????????7406
  [subject]敵側行動封印化/実行/_:toggle,0x41C37D,E9160100009090,FF2495E0C44100
- [subject]EX攻撃100%発動/実行/_:toggle,0x41CEAA,01,64
+ [subject]EX攻撃100%発動/実行/_:b_toggle,0x41CEAB,PRWLST->PRW_b,real
  [subject]EX攻撃効果量倍増/実行/_:b_toggle,0x431EF0,PRWLST->PRW_e,real
  [subject]ノーダメージ化/実行/_:b_toggle,0x41D2CF,PRWLST->PRW_f,real
  [subject]ノーマル委員長全属性選択可能/実行/_:toggle,0x431347,E9AC000000,E814460000
@@ -86,6 +86,12 @@ EX攻撃100%発動：
 0x46620D,C741F068010000,00000000000000
 0x466214,C741E820000000,00000000000000
 0x46621B,E931DBFCFF90,000000000000
+[/group]
+
+
+[group]PRW_b
+0x41CEAB,EB2C,03F8
+0x41CED9,C1E00703F8EBCD,00000000000000
 [/group]
 
 
