@@ -1,0 +1,7 @@
+[subject]「Start」時「SELECT」項目出現/ＯＮ/_:toggle,0x2C,0000803F
+[subject]「SELECT」項目２頁目出現:dir
+[subject]「花見の朝から」項目出現/ＯＮ/_:toggle,0x30,0000803F
+[subject]那美攻略可能フラグＯＮ/ＯＮ/_:toggle,0xC8,0000803F
+[subject]忍攻略可能フラグＯＮ/ＯＮ/_:toggle,0xD0,0000803F
+[subject]おまけシナリオ出現/ＯＮ/_:toggle,0x14,0x1B-0000803F
+[subject]「ＣＭスポット」出現/ＯＮ/_:toggle,0x04,0x33-0000803F
