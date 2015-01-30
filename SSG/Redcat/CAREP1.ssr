@@ -1,0 +1,2 @@
+[subject][! @CALST->LST_a,$Val !]:dir
+[replace]0x[! 0x46AA6E+$Val*4 !],CA_a
