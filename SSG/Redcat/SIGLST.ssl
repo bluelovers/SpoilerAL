@@ -1,0 +1,190 @@
+[group]SIG_SSG
+[note]wordwrap
+ver1.02-1.03用
+
+篭城戦時弱小武将は必ず切腹＋α：
+統率・智謀いずれも9以下の武将は必ず切腹、他は降伏。「女に会う」対象武将も能力を問はず降伏するようになります。
+
+初期勢力の一門衆等一部重要武将は除外。
+
+引き抜き成功：
+敵君主等絶対不可状況は除外。
+[/note]
+
+[subject]ver1.04:dir
+
+[subject]SLGパート関連:dir
+ [subject]武将情報見ると自軍再行動可能/実行/_:toggle,0x4104EF,88,8A
+ [subject]篭城戦時弱小武将は必ず切腹＋α/実行/_:b_toggle,0x00,SIGLST->SIG_3a,offset
+ [subject]俸禄コマンドで一門衆化/実行/_:toggle,0x44BD59,66898212715D004088821B715D00EB4E90,8A8212715D0033C9668B0D0692660003C1
+ [subject]全国規模で豊作/実行/_:toggle,0x43E296,EB0490909090,0F8434010000
+ [subject]必ず引き抜き成功＋君主も実行可能/実行/_:b_toggle,0x00,SIGLST->SIG_2b,offset
+ [subject]野戦中無限行動可能化/実行/_:toggle,0x467817,00,01
+[back]
+
+[subject]パラメータ関連:dir
+ [replace]_([:0x6495E0:1]*0x024C)+0x61A720,SIGLST->SIGWork00
+ [subject]天城颯馬の能力:dir
+  [replace]0x604578,SIGLST->SIGWork01
+ [back]
+ [subject]自家武将エディタ:dir
+  [repeat]SIGLST->SIGREP1,0,100,1
+ [back]
+[back]
+
+[back]
+
+[subject]ver1.02／1.03:dir
+
+[subject]SLGパート関連:dir
+ [subject]武将情報見ると自軍再行動可能/実行/_:toggle,0x4104EF,88,8A
+ [subject]篭城戦時弱小武将は必ず切腹＋α/実行/_:b_toggle,0x00,SIGLST->SIG_2a,offset
+ [subject]俸禄コマンドで一門衆化/実行/_:toggle,0x44BD39,66898212715D004088821B715D00EB4E90,8A8212715D0033C9668B0D0692660003C1
+ [subject]全国規模で豊作/実行/_:toggle,0x43E276,EB0490909090,0F8434010000
+ [subject]必ず引き抜き成功＋君主も実行可能/実行/_:b_toggle,0x00,SIGLST->SIG_b,offset
+ [subject]野戦中無限行動可能化/実行/_:toggle,0x4676E7,00,01
+[back]
+
+[subject]パラメータ関連:dir
+ [replace]_([:0x6495E0:1]*0x024C)+0x61A720,SIGLST->SIGWork00
+ [subject]天城颯馬の能力:dir
+  [replace]0x604578,SIGLST->SIGWork01
+ [back]
+ [subject]自家武将エディタ:dir
+  [repeat]SIGLST->SIGREP1,0,100,1
+ [back]
+[back]
+
+[back]
+
+[/group]
+
+
+[group]SIGWork00
+[subject]_mem,0x00,20,00,<NoData>'+'家ＣＰ［'+'_mem,0x023C,1,num,<Nodata>,%d'+'］/現在値/固定:calc,0x023C,0x00,0x63,unsigned
+[subject]_mem,0x00,20,00,<NoData>'+'家軍資金［'+'_mem,0x32,2,num,<Nodata>,%d'+'］/現在値/固定:calc,0x32,0x0000,0xFDE8,unsigned
+[/group]
+
+
+[group]SIGWork01
+[e_with],0x00,0x32,unsigned
+ [subject]統率［'+'_mem,0x18,1,num,<Nodata>,%d'+'］/現在値/_:calc,0x18
+ [subject]智謀［'+'_mem,0x19,1,num,<Nodata>,%d'+'］/現在値/_:calc,0x19
+ [subject]兵数［'+'_mem,0x1C,1,num,<Nodata>,%d'+'］/現在値/固定:calc,0x1C
+ [subject]鉄砲［'+'_mem,0x1D,1,num,<Nodata>,%d'+'］/現在値/固定:calc,0x1D
+[/e_with]
+[subject]行動済みフラグ解除/実行/固定:toggle,0x22,00,01
+[/group]
+
+
+[group]SIGWork02
+[subject]_mem,0x06,24,00,<NoData>:dir
+ [e_with],0x00,0x32,unsigned
+  [subject]統率［'+'_mem,0x18,1,num,<Nodata>,%d'+'］/現在値/_:calc,0x18
+  [subject]智謀［'+'_mem,0x19,1,num,<Nodata>,%d'+'］/現在値/_:calc,0x19
+  [subject]兵数［'+'_mem,0x1C,1,num,<Nodata>,%d'+'］/現在値/固定:calc,0x1C
+  [subject]鉄砲［'+'_mem,0x1D,1,num,<Nodata>,%d'+'］/現在値/固定:calc,0x1D
+ [/e_with]
+ [subject]忠誠［'+'_mem,0x1A,1,num,<Nodata>,%d'+'］/現在値/固定:calc,0x1A,0x00,0x10,unsigned
+ [subject]俸禄［'+'_mem,0x1B,1,num,<Nodata>,%d'+'］/現在値/固定:calc,0x1B,0x00,0xFF,unsigned
+ [subject]行動済みフラグ解除/実行/固定:toggle,0x22,00,01
+ [subject]一門衆フラグ/ＯＮ／ＯＦＦ/_:toggle,0x23,01,00
+ [subject]ヒロインフラグ/_:list,0x24,SIGLST->LST_a,0,1
+[back]
+[/group]
+
+
+[group]SIGREP1
+[replace]_([:0x6495E0:1])*0x024C+0x61A754+0x[!0x02*$Val!]=>temp;([:$temp:2])*0x8A+0x5D70F8,SIGLST->SIGWork02
+[/group]
+
+
+[group]LST_a
+単純ユニット
+イベント武将
+ヒロイン
+[/group]
+
+
+[group]SIG_a
+0x46B79A,E961350A009090,668B881C715D00
+0x50ED00,80B810715D000A,CCCCCCCCCCCCCC
+0x50ED07,7C15,CCCC
+0x50ED09,80B811715D000A,CCCCCCCCCCCCCC
+0x50ED10,7C0C,CCCC
+0x50ED12,668B881C715D00,CCCCCCCCCCCCCC
+0x50ED19,E983CAF5FF,CCCCCCCCCC
+0x50ED1E,E9DECBF5FF,CCCCCCCCCC
+[/group]
+
+
+[group]SIG_2a
+0x46B504,E9F7370A009090,668B911C715D00
+0x50ED00,668B911C715D00,CCCCCCCCCCCCCC
+0x50ED07,33C0,CCCC
+0x50ED09,A0E0956400,CCCCCCCCCC
+0x50ED0E,3A05B4AA6600,CCCCCCCCCCCC
+0x50ED14,740E,CCCC
+0x50ED16,83FA01,CCCCCC
+0x50ED19,0F847FC8F5FF,CCCCCCCCCCCC
+0x50ED1F,E9F0C7F5FF,CCCCCCCCCC
+0x50ED24,83FA02,CCCCCC
+0x50ED27,74F6,CCCC
+0x50ED29,E9EBC8F5FF,CCCCCCCCCC
+0x46B79A,E9A1350A009090,668B881C715D00
+0x50ED40,668B881C715D00,CCCCCCCCCCCCCC
+0x50ED47,8A15E0956400,CCCCCCCCCCCC
+0x50ED4D,3A15B4AA6600,CCCCCCCCCCCC
+0x50ED53,751C,CCCC
+0x50ED55,80F901,CCCCCC
+0x50ED58,7417,CCCC
+0x50ED5A,80B810715D0009,CCCCCCCCCCCCCC
+0x50ED61,7F0E,CCCC
+0x50ED63,80B811715D0009,CCCCCCCCCCCCCC
+0x50ED6A,7F05,CCCC
+0x50ED6C,E990CBF5FF,CCCCCCCCCC
+0x50ED71,E92BCAF5FF,CCCCCCCCCC
+[/group]
+
+
+[group]SIG_3a
+0x46B634,E9C7380A009090,668B911C715D00
+0x50EF00,668B911C715D00,CCCCCCCCCCCCCC
+0x50EF07,33C0,CCCC
+0x50EF09,A0E0956400,CCCCCCCCCC
+0x50EF0E,3A05B8AA6600,CCCCCCCCCCCC
+0x50EF14,740E,CCCC
+0x50EF16,83FA01,CCCCCC
+0x50EF19,0F84AFC7F5FF,CCCCCCCCCCCC
+0x50EF1F,E920C7F5FF,CCCCCCCCCC
+0x50EF24,83FA02,CCCCCC
+0x50EF27,74F6,CCCC
+0x50EF29,E91BC8F5FF,CCCCCCCCCC
+0x46B8CA,E971360A009090,668B881C715D00
+0x50EF40,668B881C715D00,CCCCCCCCCCCCCC
+0x50EF47,8A15E0956400,CCCCCCCCCCCC
+0x50EF4D,3A15B8AA6600,CCCCCCCCCCCC
+0x50EF53,751C,CCCC
+0x50EF55,80F901,CCCCCC
+0x50EF58,7417,CCCC
+0x50EF5A,80B810715D0009,CCCCCCCCCCCCCC
+0x50EF61,7F0E,CCCC
+0x50EF63,80B811715D0009,CCCCCCCCCCCCCC
+0x50EF6A,7F05,CCCC
+0x50EF6C,E9C0CAF5FF,CCCCCCCCCC
+0x50EF71,E95BC9F5FF,CCCCCCCCCC
+[/group]
+
+
+[group]SIG_b
+0x429B72,EB,75
+0x459527,EB0490909090,0F85AA020000
+0x459C92,BA6400000090,8A9111715D00
+[/group]
+
+
+[group]SIG_2b
+0x429B72,EB,75
+0x459547,EB0490909090,0F85AA020000
+0x459CB2,BA6400000090,8A9111715D00
+[/group]
