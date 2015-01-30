@@ -1,0 +1,130 @@
+[group]PRW_SSG
+[note]wordwrap
+敵側行動封印化：
+敵側のカード配置直前に実行してあると効果有。「何もしない」を選択し続けます。現状敵のカード枚数がおかしくなることがありますが、使用されるのはプレイヤーと同じ数だけなので、プレイに問題はありません。
+
+EX攻撃100%発動：
+1%でも確率があれば必ず発動します。
+
+委員長ナターニア化：
+戦闘に入る前に実行していないと意味無し。全登場バトルで、あの「彼女」になります。攻撃性能が鬼化。
+[/note]
+
+[subject]戦闘関連:dir
+ [subject]ターン中攻撃キャラ無限選択可能/実行/_:toggle,0x41E1B6,33C033F6909090??????????EB00,4081FE00000080??????????7406
+ [subject]敵側行動封印化/実行/_:toggle,0x41C37D,E9160100009090,FF2495E0C44100
+ [subject]EX攻撃100%発動/実行/_:toggle,0x41CEAA,01,64
+ [subject]EX攻撃効果量倍増/実行/_:b_toggle,0x431EF0,PRWLST->PRW_e,real
+ [subject]ノーダメージ化/実行/_:b_toggle,0x41D2CF,PRWLST->PRW_f,real
+ [subject]ノーマル委員長全属性選択可能/実行/_:toggle,0x431347,E9AC000000,E814460000
+ [subject]委員長ナターニア化/実行/_:b_toggle,0x47C524,PRWLST->PRW_a,real
+[back]
+
+[subject]パラメータ関連:dir
+ [e_with],0x00000000,0x00002710,unsigned
+ [subject]敵のMAXHP/現在値/_:calc,0x4A41EC
+ [subject]味方のMAXHP/現在値/_:calc,0x4A41F0
+ [subject]敵の現在HP/現在値/_:calc,0x4A4248
+ [subject]味方の現在HP/現在値/_:calc,0x4A424C
+ [/e_with]
+ [subject]ごきげん度調整確認:dir
+  [subject]正義・真実編:dir
+	[repeat]PRWLST->PRWREP1,0,4,1
+  [back]
+  [subject]英雄編:dir
+	[repeat]PRWLST->PRWREP2,0,2,1
+  [back]
+ [back]
+[back]
+
+[subject]ＣＧモード関連:dir
+	[replace]0x51B148,PRWLST->PRW_CG
+	[subject]ＣＧ鑑賞ALL/ＯＮ／ＯＦＦ/_:toggle,_[:0x51CA38:]+0x08,_[:0x51CA38:]+0x09B0-FF,00
+[back]
+
+[/group]
+
+
+[group]PRWREP1
+[subject][! @PRWLST->LST_a,$Val !]/現在値/_:calc,_0x51A0C4+0x[! 0x04*$Val !],0x0000,0x03E7,unsigned
+[/group]
+
+
+[group]PRWREP2
+[subject][! @PRWLST->LST_b,$Val !]/現在値/_:calc,_0x51A100+0x[! 0x04*$Val !],0x0000,0x03E7,unsigned
+[/group]
+
+
+[group]PRW_CG
+[subject]おまけメニュー全出現/ＯＮ／ＯＦＦ/_:b_toggle,0x00,PRWLST->PRW_c,offset
+[subject]シーン鑑賞ALL/ＯＮ／ＯＦＦ/_:b_toggle,0x00,PRWLST->PRW_d,offset
+[subject]フリーバトルALL/ＯＮ／ＯＦＦ/_:toggle,0x084C,0x08A7-01000000,00
+[/group]
+
+
+[group]LST_a
+クルル
+委員長
+林檎
+かれん
+[/group]
+
+
+[group]LST_b
+クルル
+委員長
+[/group]
+
+
+[group]PRW_a
+0x47C524,20,10
+0x47C55C,2000,0010
+0x47C564,2000,0020
+0x433D17,E9E4240300,8B43208901
+0x466200,C70164000000,000000000000
+0x466206,C741F4EC040000,00000000000000
+0x46620D,C741F068010000,00000000000000
+0x466214,C741E820000000,00000000000000
+0x46621B,E931DBFCFF90,000000000000
+[/group]
+
+
+[group]PRW_c
+0x0E10,01000000,00000000
+0x0E38,0x0E57-01000000,00
+[/group]
+
+
+[group]PRW_d
+0x04B0,0x04C7-01000000,00
+0x04D8,0x04EB-01000000,00
+0x0500,0x050F-01000000,00
+0x0528,0x053B-01000000,00
+[/group]
+
+
+[group]PRW_e
+0x431EF0,EB05,7616
+0x431F2F,D1E090EB0190,EB048B442418
+0x431F65,EB05,7632
+0x431F98,28,2E
+0x431FC1,D1E090EB0190,EB048B442418
+0x431FEE,EB05,7619
+0x432008,0F,15
+0x432018,D1E790EB0190,EB048B7C2418
+0x43208B,EB05,7616
+0x4320A2,0D,13
+0x4320B0,D1E390EB0190,EB048B5C2418
+[/group]
+
+
+[group]PRW_f
+0x41D2CF,33C0EB029090,8B8298030000
+0x41D351,33C0EB029090,8B8298030000
+0x41D3D3,33C0EB029090,8B8298030000
+0x41D433,33C0EB029090,8B8298030000
+0x41D4AF,33C0EB029090,8B829C030000
+0x41D4FD,33C0EB029090,8B829C030000
+0x41D58F,33C0EB029090,8B829C030000
+0x41D60D,33C0EB029090,8B829C030000
+[/group]
