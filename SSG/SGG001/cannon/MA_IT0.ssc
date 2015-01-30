@@ -1,0 +1,25 @@
+[subject]‚PŒÂ–Ú		:dir
+	[replace]0x00,MA_IT,offset
+[subject]‚QŒÂ–Ú		:dir
+	[replace]0x10,MA_IT,offset
+[subject]‚RŒÂ–Ú		:dir
+	[replace]0x20,MA_IT,offset
+[subject]‚SŒÂ–Ú		:dir
+	[replace]0x30,MA_IT,offset
+[subject]‚TŒÂ–Ú		:dir
+	[replace]0x40,MA_IT,offset
+[subject]‚UŒÂ–Ú		:dir
+	[replace]0x50,MA_IT,offset
+[subject]‚VŒÂ–Ú		:dir
+	[replace]0x60,MA_IT,offset
+[subject]‚WŒÂ–Ú		:dir
+	[replace]0x70,MA_IT,offset
+[subject]‚XŒÂ–Ú		:dir
+	[replace]0x80,MA_IT,offset
+[subject]10ŒÂ–Ú		:dir
+	[replace]0x90,MA_IT,offset
+[subject]11ŒÂ–Ú		:dir
+	[replace]0xA0,MA_IT,offset
+[subject]12ŒÂ–Ú		:dir
+	[replace]0xB0,MA_IT,offset
+[back]
