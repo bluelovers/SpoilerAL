@@ -1,0 +1,18 @@
+[group]TY_CG
+[note]wordwrap
+研究中につき、暫定公開中。
+
+ＣＧモード関連は、シナリオ中に各項目をＯＮした後、任意のスロットにデータ保存することにより効果が出ます。『愛しの言霊』と同じパターンですね。
+[/note]
+
+[subject]フラグ・ＣＧモード関連:dir
+	[replace]_[:[:0x48190C:]+0x20:]+0x13F50,TYLST->TY_a
+[/group]
+
+
+[group]TY_a
+[subject]ＣＧ鑑賞ＡＬＬ/フラグ書き換え/_:toggle,0x939,0xA1D-01
+[subject]Ｈシーン鑑賞ＡＬＬ/フラグ書き換え/_:toggle,0xC59,0xC68-01
+[subject]音楽鑑賞ＡＬＬ/フラグ書き換え/_:toggle,0xC76,0xC8F-01
+[subject]エンディング鑑賞ＡＬＬ/フラグ書き換え/_:toggle,0xCF8,0xD1A-01
+[/group]
