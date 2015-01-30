@@ -1,0 +1,59 @@
+SSG for SpoilerAL ver 5.7
+
+[script]
+[title]大戦略マスターコンバット2
+[process]DSMC2.EXE
+[maker]systemsoft
+[creator]sep/11（仮）
+[note]wordwrap
+今はこれぐらいで勘弁してください。
+時間が空いたときに順次追加していきたいと思ってますので。
+[/note]
+[subject]金:calc,0x3fd787,0x0,0xf423f
+[/script]
+
+[script]
+[title]エムＭｘＳエス
+[process]MXS.EXE
+[maker]アボガドパワーズ
+[creator]sep/11（仮）
+[note]wordwrap
+　一応これだけあればプレイに支障は無いと思うのですが・・・
+
+　経験値は一日仕事をすればレベルアップすることで消化されます。レベルアップ時の能力上昇の傾向はランダムのようです。
+
+　なお、愛情度のＭＡＸが７９なのはそのキャラのルートに入っていないときの最高値だからです。
+これ以上は特定のキャラを口説くことで上げてください。
+[/note]
+[subject]総売上:calc,604674,0x0,0x1869f
+[subject]そあら:dir
+	[subject]経験値（ＥＸＰ）:calc,0x609bd8,0x0,0xf423f
+	[subject]愛情度:calc,0x609bcc,0x0,0x4f
+[back]
+[subject]かさね:dir
+	[subject]経験値（ＥＸＰ）:calc,0x609c14,0x0,0xf423f
+	[subject]愛情度:calc,0x609c08,0x0,0x4f
+[back]
+[subject]のどか:dir
+	[subject]経験値（ＥＸＰ）:calc,0x609c50,0x0,0xf423f
+	[subject]愛情度:calc,0x609c44,0x0,0x4f
+[back]
+[subject]はずむ:dir
+	[subject]経験値（ＥＸＰ）:calc,0x609c8c,0x0,0xf423f
+	[subject]愛情度:calc,0x609c80,0x0,0x4f
+[back]
+[subject]いほこ:dir
+	[subject]経験値（ＥＸＰ）:calc,0x609cc8,0x0,0xf423f
+	[subject]愛情度:calc,0x609cbc,0x0,0x4f
+[back]
+[subject]あかね:dir
+	[subject]経験値（ＥＸＰ）:calc,0x609d04,0x0,0xf423f
+	[subject]愛情度:calc,0x609cf8,0x0,0x4f
+[back]
+[/script]
+
+
+
+
+
+
