@@ -1,0 +1,1148 @@
+[group]WIG_SSG
+[note]wordwrap
+※パラメータ関連は、必須コードが実行されていないと効果が出ません。
+※教師人数はグリンスヴァール学園の構成人数の合計値。
+※ユニット基本値は実データなので、全勢力に適用されます。注意。
+※施設建設状況は1x1を単位とし、左上から右下へ向けて数値が増えます（未拡張の箇所も含みます）。
+
+解析データ提供：Foolさん（愚者の館）
+「建設時教師・資金不要化」の改造コードを提供して頂きました。ありがとうございます。
+
+
+ver1.01項目内「必須コードDW」に関しまして：
+当方の用意できうる２環境下では再現できませんが、２件ほどデバッグウインドウver1.01内の項目が使用できないとの報告を頂いています。が、詳細状況に関してはなんのデータも頂けなかったため、当方で問題の可能性が有りうる部分により安定性の高い処置を施すことにいたしました。公式パッチver1.01を適用しつつデバッグウインドウを出現させている方で、「デバッグウインドウ使用時ver1.01」内の数値項目が正常に表示されないという方は、「ver1.01項目内の"必須コードDW"」を実行してから、「ver1.01項目」の各機能をお試しください。
+[/note]
+
+
+[subject]ver1.00:dir
+
+[subject]必須コード/実行/_:toggle,0x43043C,33C08B55088942088B02A3DCDF4400EB059090,68FFFFFF7F6A01FF1500D343008B4D08894108
+
+[size]4
+
+[subject]パラメータ関連:dir
+ [replace]_[:0x44DFDC:],WIGLST->WIG_PR
+ [subject]ユニット基本能力:dir
+  [replace]_[:[:0x44DFDC:]+0x0117C4:],WIGLST->WIG_3PR
+ [back]
+[subject]ここまで:split,roll,-2,-,100
+[back]
+
+[subject]フラグ関連:dir
+ [replace]_[:0x44DFDC:],WIGLST->WIG_1F
+[subject]ここまで:split,roll,-2,-,100
+[back]
+
+[/size]
+
+[subject]ＣＧモード関連:dir
+ [replace]_[:0x44DFDC:],WIGLST->WIG_CG
+[back]
+
+[subject]ここまで:split,line,-1,100,5
+
+[back]
+
+
+[subject]ver1.01:dir
+
+[subject]必須コード/実行/_:toggle,0x43051C,33C08B55088942088B02A3DCDF4400EB059090,68FFFFFF7F6A01FF1500D343008B4D08894108
+[subject]必須コードDW/実行/_:b_toggle,0x00,WIGLST->Get5BaseAdress,offset
+
+[subject]学園経営関連:dir
+ [subject]収支・建築関係:dir
+  [subject]年数進まない/実行/_:toggle,0x41C907,00,01
+  [subject]毎年資金最大化/実行/_:toggle,0x428344,A1C2C4420090,03812C140000
+  [subject]無条件で全施設建設可能/実行/_:b_toggle,0x00,WIGLST->WIG_f,offset
+  [subject]建設時教師・資金不要化/実行/_:b_toggle,0x00,WIGLST->WIG_g,offset
+  [subject]施設速攻でLVUP/実行/_:toggle,0x418945,8B4C111089480CEB0490909090,8B400C3B4411100F8CB3000000
+ [back]
+ [subject]新入生数増加:dir
+  [subject]４勢力の新入生基準数10倍化/実行/_:toggle,0x429767,0A,01
+  [subject]その他新入生基準数+100化/実行/_:toggle,0x42982E,69??66,05??02
+ [back]
+ [subject]就職内容変更:dir
+  [subject]必ず卒業試験突破/実行/_:toggle,0x42ABD6,EB0490909090,0F849F050000
+  [subject]卒業時LV10固定/実行/_:toggle,0x42ACCB,0A,01
+  [subject]就職先統一/_:d_list,0x400000,WIGLST->LST_e,0x00,0xFF,WIGLST->LST_f,offset
+  [subject]職業統一/_:d_list,0x400000,WIGLST->LST_g,0x00,0xFF,WIGLST->LST_h,offset
+ [back]
+ [subject]戦争関係:dir
+  [subject]ランダム発生戦争制御/_:d_list,0x400000,WIGLST->LST_j,0x00,0xFF,WIGLST->LST_k,offset
+  [subject]敵軍弱体化（自軍楽勝）/実行/_:b_toggle,0x00,WIGLST->WIG_e,offset
+ [back]
+ [subject]ここまで:split,roll,-2,-,100
+[back]
+
+[size]4
+
+[subject]パラメータ関連:dir
+ [replace]_[:0x44DFDC:],WIGLST->WIG_PR
+ [subject]ユニット基本能力:dir
+  [replace]_[:[:0x44DFDC:]+0x0117C4:],WIGLST->WIG_3PR
+ [back]
+ [subject]施設建設状況:dir
+  [replace]_[:0x44DFDC:],WIGLST->WIG_9PR
+ [back]
+ [subject]施設基本能力:dir
+  [replace]_[:[:0x44DFDC:]+0x0117BC:],WIGLST->WIG_7PR
+ [back]
+[subject]ここまで:split,roll,-2,-,100
+[back]
+
+[subject]フラグ関連:dir
+ [replace]_[:0x44DFDC:],WIGLST->WIG_1F
+[subject]ここまで:split,roll,-2,-,100
+[back]
+
+[/size]
+
+[subject]ＣＧモード関連:dir
+ [replace]_[:0x44DFDC:],WIGLST->WIG_CG
+[back]
+
+[subject]ここまで:split,line,-1,100,5
+
+[back]
+
+
+[subject]デバッグウインドウ使用時ver1.00:dir
+
+[size]4
+
+[subject]パラメータ関連:dir
+ [replace]@WIGLST->GetBaseAdress,WIGLST->WIG_PR
+ [subject]ユニット基本能力:dir
+  [replace]@WIGLST->Get2BaseAdress,WIGLST->WIG_3PR
+ [back]
+[subject]ここまで:split,roll,-2,-,100
+[back]
+
+[subject]フラグ関連:dir
+ [replace]@WIGLST->GetBaseAdress,WIGLST->WIG_1F
+[subject]ここまで:split,roll,-2,-,100
+[back]
+
+[/size]
+
+[subject]ＣＧモード関連:dir
+ [replace]@WIGLST->GetBaseAdress,WIGLST->WIG_CG
+[back]
+
+[subject]ここまで:split,line,-1,100,5
+
+[back]
+
+
+[subject]デバッグウインドウ使用時ver1.01:dir
+
+[subject]学園経営関連:dir
+ [subject]収支・建築関係:dir
+  [subject]年数進まない/実行/_:toggle,0x41C907,00,01
+  [subject]毎年資金最大化/実行/_:toggle,0x428344,A1C2C4420090,03812C140000
+  [subject]無条件で全施設建設可能/実行/_:b_toggle,0x00,WIGLST->WIG_f,offset
+  [subject]建設時教師・資金不要化/実行/_:b_toggle,0x00,WIGLST->WIG_g,offset
+  [subject]施設速攻でLVUP/実行/_:toggle,0x418945,8B4C111089480CEB0490909090,8B400C3B4411100F8CB3000000
+ [back]
+ [subject]新入生数増加:dir
+  [subject]４勢力の新入生基準数10倍化/実行/_:toggle,0x429767,0A,01
+  [subject]その他新入生基準数+100化/実行/_:toggle,0x42982E,69??66,05??02
+ [back]
+ [subject]就職内容変更:dir
+  [subject]必ず卒業試験突破/実行/_:toggle,0x42ABD6,EB0490909090,0F849F050000
+  [subject]卒業時LV10固定/実行/_:toggle,0x42ACCB,0A,01
+  [subject]就職先統一/_:d_list,0x400000,WIGLST->LST_e,0x00,0xFF,WIGLST->LST_f,offset
+  [subject]職業統一/_:d_list,0x400000,WIGLST->LST_g,0x00,0xFF,WIGLST->LST_h,offset
+ [back]
+ [subject]戦争関係:dir
+  [subject]ランダム発生戦争制御/_:d_list,0x400000,WIGLST->LST_j,0x00,0xFF,WIGLST->LST_k,offset
+  [subject]敵軍弱体化（自軍楽勝）/実行/_:b_toggle,0x00,WIGLST->WIG_e,offset
+ [back]
+[subject]ここまで:split,roll,-2,-,100
+[back]
+
+[size]4
+
+[subject]パラメータ関連:dir
+ [replace]@WIGLST->GetBaseAdress,WIGLST->WIG_PR
+ [subject]ユニット基本能力:dir
+  [replace]@WIGLST->Get2BaseAdress,WIGLST->WIG_3PR
+ [back]
+ [subject]施設建設状況:dir
+  [replace]@WIGLST->GetBaseAdress,WIGLST->WIG_9PR
+ [back]
+ [subject]施設基本能力:dir
+  [replace]@WIGLST->02build,WIGLST->WIG_7PR
+ [back]
+[subject]ここまで:split,roll,-2,-,100
+[back]
+
+[subject]フラグ関連:dir
+ [replace]@WIGLST->GetBaseAdress,WIGLST->WIG_1F
+[subject]ここまで:split,roll,-2,-,100
+[back]
+
+[/size]
+
+[subject]ＣＧモード関連:dir
+ [replace]@WIGLST->GetBaseAdress,WIGLST->WIG_CG
+[back]
+
+[subject]ここまで:split,line,-1,100,5
+
+[back]
+
+[/group]
+
+
+[group]GetBaseAdress
+[:[:[:[:(MName::Ags.dll)+0x030FFC:]+0x013C:]+0x08:]+0x50:]=>temp;
+$temp&0xFFFF=>temp;
+[:[:[:[:(MName::Ags.dll)+0x030FFC:]+0x013C:]+0x04:]+$temp*0x6C+0x08:]+0x20
+[/group]
+
+
+[group]Get2BaseAdress
+[:[:[:[:(MName::Ags.dll)+0x030FFC:]+0x013C:]+0x08:]+0x50:]=>temp;
+$temp&0xFFFF=>temp;
+[:[:[:[:[:(MName::Ags.dll)+0x030FFC:]+0x013C:]+0x04:]+$temp*0x6C+0x08:]+0x0117E4:]
+[/group]
+
+
+[group]01Student
+[:[:[:[:(MName::Ags.dll)+0x030FFC:]+0x013C:]+0x08:]+0x50:]=>temp;
+$temp&0xFFFF=>temp;
+[:[:[:[:[:(MName::Ags.dll)+0x030FFC:]+0x013C:]+0x04:]+$temp*0x6C+0x08:]+0x1FBC:]
+[/group]
+
+
+[group]02build
+[:[:[:[:(MName::Ags.dll)+0x030FFC:]+0x013C:]+0x08:]+0x50:]=>temp;
+$temp&0xFFFF=>temp;
+[:[:[:[:[:(MName::Ags.dll)+0x030FFC:]+0x013C:]+0x04:]+$temp*0x6C+0x08:]+0x0117DC:]
+[/group]
+
+
+[group]Get3BaseAdress
+0x4303A2,E9B9C70000,8B45088B08
+0x43CB60,8B4508,000000
+0x43CB63,8B08,0000
+0x43CB65,83791C00,00000000
+0x43CB69,7507,0000
+0x43CB6B,C7400800000000,00000000000000
+0x43CB72,890DDCDF4400,000000000000
+0x43CB78,E92A38FFFF,0000000000
+[/group]
+
+
+[group]Get4BaseAdress
+0x430482,E9C9C70000,8B45088B08
+0x43CC50,8B4508,000000
+0x43CC53,8B08,0000
+0x43CC55,83791C00,00000000
+0x43CC59,7507,0000
+0x43CC5B,C7400800000000,00000000000000
+0x43CC62,890DDCDF4400,000000000000
+0x43CC68,E91A38FFFF,0000000000
+[/group]
+
+
+[group]Get5BaseAdress
+0x41F848,E9B2D4010090,8945F08B45F0
+0x43CCFF,A3DCDF4400,0000000000
+0x43CD04,8945F0,000000
+0x43CD07,8B45F0,000000
+0x43CD0A,E93F2BFEFF,0000000000
+[/group]
+
+
+[group]WIG_PR
+[subject]年度'+'［'+'_mem,0x010718,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x010718,0x0001,0x03E7,unsigned
+[subject]資金'+'［'+'_mem,0x01071C,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x01071C,0x000000,0x05F5E0FF,unsigned
+[subject]勢力別人員構成:dir
+ [repeat]WIGLST->WIGREP1,0,5,1
+[back]
+[subject]勢力別評価:dir
+ [repeat]WIGLST->WIGREP4,0,5,1
+[back]
+[/group]
+
+
+[group]WIG_2PR
+[repeat]WIGLST->WIGREP2,0,60,1
+[/group]
+
+
+[group]WIG_3PR
+[repeat]WIGLST->WIGREP3,0,60,1
+[/group]
+
+
+[group]WIG_5PR
+[subject]能力一括0化/実行/_:b_toggle,0x00,WIGLST->WIG_a,offset
+[subject]能力一括-99化/実行/_:b_toggle,0x00,WIGLST->WIG_b,offset
+[subject]能力一括99化/実行/_:b_toggle,0x00,WIGLST->WIG_c,offset
+[e_with],-999,999,signed
+ [subject]治安'+'［'+'_mem,0x48,4,num,<Nodata>,%d'+'］/現在数/_:calc,0x48
+ [subject]農業'+'［'+'_mem,0x58,4,num,<Nodata>,%d'+'］/現在数/_:calc,0x58
+ [subject]商業'+'［'+'_mem,0x5C,4,num,<Nodata>,%d'+'］/現在数/_:calc,0x5C
+ [subject]工業'+'［'+'_mem,0x60,4,num,<Nodata>,%d'+'］/現在数/_:calc,0x60
+ [subject]軍事'+'［'+'_mem,0x64,4,num,<Nodata>,%d'+'］/現在数/_:calc,0x64
+ [subject]学問'+'［'+'_mem,0x68,4,num,<Nodata>,%d'+'］/現在数/_:calc,0x68
+ [subject]芸術'+'［'+'_mem,0x6C,4,num,<Nodata>,%d'+'］/現在数/_:calc,0x6C
+ [subject]歓楽'+'［'+'_mem,0x70,4,num,<Nodata>,%d'+'］/現在数/_:calc,0x70
+ [subject]雑多'+'［'+'_mem,0x74,4,num,<Nodata>,%d'+'］/現在数/_:calc,0x74
+ [subject]風俗'+'［'+'_mem,0x78,4,num,<Nodata>,%d'+'］/現在数/_:calc,0x78
+[/e_with]
+[/group]
+
+
+[group]WIG_6PR
+[e_with],0x00,0x2710,unsigned
+ [subject]評価'+'［'+'_mem,-4,4,num,<Nodata>,%d'+'］/現在数/_:calc,-4
+ [subject]治安'+'［'+'_mem,0x00,4,num,<Nodata>,%d'+'］/現在数/_:calc,0x00
+ [subject]農業'+'［'+'_mem,0x20,4,num,<Nodata>,%d'+'］/現在数/_:calc,0x20
+ [subject]商業'+'［'+'_mem,0x28,4,num,<Nodata>,%d'+'］/現在数/_:calc,0x28
+ [subject]工業'+'［'+'_mem,0x30,4,num,<Nodata>,%d'+'］/現在数/_:calc,0x30
+ [subject]軍事'+'［'+'_mem,0x38,4,num,<Nodata>,%d'+'］/現在数/_:calc,0x38
+ [subject]学問'+'［'+'_mem,0x40,4,num,<Nodata>,%d'+'］/現在数/_:calc,0x40
+ [subject]芸術'+'［'+'_mem,0x48,4,num,<Nodata>,%d'+'］/現在数/_:calc,0x48
+ [subject]歓楽'+'［'+'_mem,0x50,4,num,<Nodata>,%d'+'］/現在数/_:calc,0x50
+ [subject]雑多'+'［'+'_mem,0x58,4,num,<Nodata>,%d'+'］/現在数/_:calc,0x58
+ [subject]風俗'+'［'+'_mem,0x60,4,num,<Nodata>,%d'+'］/現在数/_:calc,0x60
+[/e_with]
+[/group]
+
+
+[group]WIG_7PR
+ [repeat]WIGLST->WIGREP6,0,150,1
+[/group]
+
+
+[group]WIG_8PR
+[e_with],0x000001,0x01869F,unsigned
+ [subject]耐久力最大値'+'［'+'_mem,0x0C,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0C
+ [subject]LVUP必須経験値'+'［'+'_mem,0x10,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x10
+ [subject]必要教師人数'+'［'+'_mem,0x30,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x30
+[/e_with]
+[subject]建設制限数'+'［'+'_mem,0x34,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x34,0x0001,0x03E7,unsigned
+[subject]許容可能生徒数'+'［'+'_mem,0x40,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x40,0x000001,0x01869F,unsigned
+[subject]卒業難度'+'［'+'_mem,0x44,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x44,0x01,0x64,unsigned
+[/group]
+
+
+[group]WIG_9PR
+ [repeat]WIGLST->WIGREP7,0,124,1
+[/group]
+
+
+[group]WIG_APR
+[subject]現在生徒数'+'［'+'_mem,0x08,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x08,0x000000,0x01869F,unsigned
+[subject]現在経験値'+'［'+'_mem,0x0C,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0C,0x000000,0x01869F,unsigned
+[subject]現在LV'+'［'+'_mem,0x10,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x10,0x01,0x05,unsigned
+[subject]現在耐久力'+'［'+'_mem,0x14,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x14,0x000001,0x01869F,unsigned
+[/group]
+
+
+[group]WIG_a
+0x48,00000000
+0x58,0x7B-00000000
+[/group]
+
+
+[group]WIG_b
+0x48,9DFFFFFF
+0x58,0x7B-9DFFFFFF
+[/group]
+
+
+[group]WIG_c
+0x48,63000000
+0x58,0x7B-63000000
+[/group]
+
+
+[group]WIG_d
+0x019C,01,00
+0x0264,0x026B-01,00
+[/group]
+
+
+[group]WIG_e
+0x408841,E97A44030090,8B450C8B4D0C
+0x43CCC0,8B4D0C,000000
+0x43CCC3,8B81F4040000,000000000000
+0x43CCC9,83F845,000000
+0x43CCCC,7F0A,0000
+0x43CCCE,83F818,000000
+0x43CCD1,7C18,0000
+0x43CCD3,83F839,000000
+0x43CCD6,7F13,000000
+0x43CCD8,33C9,0000
+0x43CCDA,B10D,0000
+0x43CCDC,8B450C,000000
+0x43CCDF,BA01000000,0000000000
+0x43CCE4,8910,0000
+0x43CCE6,83C004,000000
+0x43CCE9,E0F9,0000
+0x43CCEB,8B450C,000000
+0x43CCEE,8BC8,0000
+0x43CCF0,E952BBFCFF,0000000000
+[/group]
+
+
+[group]WIG_f
+0x4103B5,EB00,7449
+0x410EC0,EB00,741C
+0x41196D,EB00,7420
+0x412F40,EB00,7422
+[/group]
+
+
+[group]WIG_g
+0x411BB0,BA00000400,8B122B5104
+0x411BCB,B90010000090,8B89AC0B0000
+0x4112BF,EB0190,895104
+0x4113FB,EB0490909090,8982B00B0000
+[/group]
+
+
+[group]WIG_1F
+[subject]臨時予算投入:dir
+ [subject]一括維持/実行/固定:toggle,0x01072C,0x01073F-64000000
+ [repeat]WIGLST->WIGREP5,0,5,1
+[back]
+[subject]コマンド実行回数:dir
+[e_with],0x0000,0x03E7,unsigned
+ [subject]教師生活'+'［'+'_mem,0x010BD4,4,num,<Nodata>,%d'+'］/現在数/_:calc,0x010BD4
+ [subject]研究没頭'+'［'+'_mem,0x010BD8,4,num,<Nodata>,%d'+'］/現在数/_:calc,0x010BD8
+ [subject]ヴィヴィアンと会話'+'［'+'_mem,0x010BDC,4,num,<Nodata>,%d'+'］/現在数/_:calc,0x010BDC
+ [subject]シャルロットと会話'+'［'+'_mem,0x010BE0,4,num,<Nodata>,%d'+'］/現在数/_:calc,0x010BE0
+ [subject]ニキと会話'+'［'+'_mem,0x010BE4,4,num,<Nodata>,%d'+'］/現在数/_:calc,0x010BE4
+ [subject]メルエと会話'+'［'+'_mem,0x010BE8,4,num,<Nodata>,%d'+'］/現在数/_:calc,0x010BE8
+ [subject]歌焔と会話'+'［'+'_mem,0x010BEC,4,num,<Nodata>,%d'+'］/現在数/_:calc,0x010BEC
+[/e_with]
+[back]
+[/group]
+
+
+[group]WIG_CG
+[subject]おまけメニュー出現/ＯＮ／ＯＦＦ/_:toggle,0x01A6,0101,0000
+[subject]ＣＧ鑑賞ＡＬＬ/ＯＮ／ＯＦＦ/_:toggle,0x032C,0x044C-01,00
+[subject]回想閲覧ＡＬＬ/ＯＮ／ＯＦＦ/_:toggle,0x01CF,0x0253-01,00
+[subject]おまけシナリオＡＬＬ/ＯＮ／ＯＦＦ/_:b_toggle,0x00,WIGLST->WIG_d,offset
+[/group]
+
+
+[group]WIGREP1
+[subject][! @WIGLST->LST_a,$Val !]:dir
+ [replace]0x[! 0x0FFC+0x0320*$Val !],WIGLST->WIG_2PR
+[back]
+[/group]
+
+
+[group]WIGREP2
+[subject][! @WIGLST->LST_b,$Val !]'+'［'+'_mem,0x[! 0x08*$Val !],4,num,<Nodata>,%d'+'］/現在数/_:calc,0x[! 0x08*$Val !],0x00000000,0x05F5E0FF,unsigned
+[/group]
+
+
+[group]WIGREP3
+[subject][! @WIGLST->LST_b,$Val !]:dir
+ [replace]0x[! 0x0124*$Val !],WIGLST->WIG_5PR
+[back]
+[/group]
+
+
+[group]WIGREP4
+[subject][! @WIGLST->LST_a,$Val !]:dir
+ [replace]0x[! 0x010884+0xA0*$Val !],WIGLST->WIG_6PR
+[back]
+[/group]
+
+
+[group]WIGREP5
+[subject][! @WIGLST->LST_d,$Val !]'+'［'+'_mem,0x[! 0x01072C+0x04*$Val !],4,num,<Nodata>,%d'+'］/現在値/_:calc,0x[! 0x01072C+0x04*$Val !],0x00,0x64,unsigned
+[/group]
+
+
+[group]WIGREP6
+[subject][! @WIGLST->LST_m,$Val !]:dir
+ [replace]0x[! 0x0140*$Val !],WIGLST->WIG_8PR
+[back]
+[/group]
+
+
+[group]WIGREP7
+[subject][! @WIGLST->LST_p,$Val !] '+'_mem,0x[! 0x0458+0x18*$Val !],2,list,<NoData>,WIGLST->LST_n,-1,1:dir
+ [replace]0x[! 0x0458+0x18*$Val !],WIGLST->WIG_APR
+[back]
+[/group]
+
+
+[group]LST_a
+グリンスヴァール学園
+グリンスヴァール王国
+レグルリア王国
+ライバー共和国
+ブレッドワード商国
+[/group]
+
+
+[group]LST_b
+パンプキン
+商人
+医者
+看護師
+職人
+研究者
+大道芸人
+歌手
+演奏家
+踊り手
+料理人
+発明家
+建築家
+小説家
+芸術家
+娼夫
+娼婦
+巫女
+執政官
+宗教者
+信徒
+男の子供
+女の子供
+犬
+猫
+中市民
+上市民
+主夫
+主婦
+家事手伝い
+市民
+学園生
+教師
+冒険者
+魔法使い
+東方魔術師
+僧侶
+歩兵
+弓兵士
+騎兵
+傭兵
+英雄
+魔法兵
+医療兵
+工兵
+将軍
+忍者
+メイド
+執事
+盗賊
+革命家
+魔物Ａ
+魔物Ｂ
+魔物Ｃ
+精霊喰らい
+ヴィヴィアン
+シャルロット
+ニキ
+メルエ
+歌焔
+[/group]
+
+
+[group]LST_d
+校舎維持
+教師教育
+生徒会
+森林維持
+学園警備
+[/group]
+
+
+[group]LST_e
+デフォルト
+グリンスヴァール学園
+グリンスヴァール王国
+レグルリア王国
+ライバー共和国
+ブレッドワード商国
+[/group]
+
+
+[group]LST_f
+,0x02AD91=755D,0x02ADC9=04??01
+,0x02AD91=EB35,0x02ADC9=00??00
+,0x02AD91=EB35,0x02ADC9=01??01
+,0x02AD91=EB35,0x02ADC9=02??02
+,0x02AD91=EB35,0x02ADC9=03??03
+,0x02AD91=EB35,0x02ADC9=04??04
+[/group]
+
+
+[group]LST_g
+デフォルト
+パンプキン
+商人
+医者
+看護師
+職人
+研究者
+大道芸人
+歌手
+演奏家
+踊り手
+料理人
+発明家
+建築家
+小説家
+芸術家
+娼夫
+娼婦
+巫女
+執政官
+宗教者
+信徒
+男の子供
+女の子供
+犬
+猫
+中市民
+上市民
+主夫
+主婦
+家事手伝い
+市民
+学園生
+教師
+冒険者
+魔法使い
+東方魔術師
+僧侶
+歩兵
+弓兵士
+騎兵
+傭兵
+英雄
+魔法兵
+医療兵
+工兵
+将軍
+忍者
+メイド
+執事
+盗賊
+革命家
+[/group]
+
+
+[group]LST_h
+,0x02ABEC=8B8538FEFFFF
+,0x02ABEC=B80000000090
+,0x02ABEC=B80100000090
+,0x02ABEC=B80200000090
+,0x02ABEC=B80300000090
+,0x02ABEC=B80400000090
+,0x02ABEC=B80500000090
+,0x02ABEC=B80600000090
+,0x02ABEC=B80700000090
+,0x02ABEC=B80800000090
+,0x02ABEC=B80900000090
+,0x02ABEC=B80A00000090
+,0x02ABEC=B80B00000090
+,0x02ABEC=B80C00000090
+,0x02ABEC=B80D00000090
+,0x02ABEC=B80E00000090
+,0x02ABEC=B80F00000090
+,0x02ABEC=B81000000090
+,0x02ABEC=B81100000090
+,0x02ABEC=B81200000090
+,0x02ABEC=B81300000090
+,0x02ABEC=B81400000090
+,0x02ABEC=B81500000090
+,0x02ABEC=B81600000090
+,0x02ABEC=B81700000090
+,0x02ABEC=B81800000090
+,0x02ABEC=B81900000090
+,0x02ABEC=B81A00000090
+,0x02ABEC=B81B00000090
+,0x02ABEC=B81C00000090
+,0x02ABEC=B81D00000090
+,0x02ABEC=B81E00000090
+,0x02ABEC=B81F00000090
+,0x02ABEC=B82000000090
+,0x02ABEC=B82100000090
+,0x02ABEC=B82200000090
+,0x02ABEC=B82300000090
+,0x02ABEC=B82400000090
+,0x02ABEC=B82500000090
+,0x02ABEC=B82600000090
+,0x02ABEC=B82700000090
+,0x02ABEC=B82800000090
+,0x02ABEC=B82900000090
+,0x02ABEC=B82A00000090
+,0x02ABEC=B82B00000090
+,0x02ABEC=B82C00000090
+,0x02ABEC=B82D00000090
+,0x02ABEC=B82E00000090
+,0x02ABEC=B82F00000090
+,0x02ABEC=B83000000090
+,0x02ABEC=B83100000090
+,0x02ABEC=B83200000090
+[/group]
+
+
+[group]LST_j
+デフォルト
+ランダム発生回避
+レグルリア侵攻
+革命軍侵攻
+盗賊侵攻
+[/group]
+
+
+[group]LST_k
+,0xC5A8=7C65,0xC639=7C67,0xC6CC=7C4D
+,0xC5A8=EB65,0xC639=EB67,0xC6CC=EB4D
+,0xC5A8=EB00,0xC639=EB67,0xC6CC=EB4D
+,0xC5A8=EB65,0xC639=EB00,0xC6CC=EB4D
+,0xC5A8=EB65,0xC639=EB67,0xC6CC=EB00
+[/group]
+
+
+[group]LST_m
+空き地
+森
+空き地
+空き地
+始まりの校舎
+中央校舎ＬＶ．１
+中央校舎ＬＶ．２
+中央校舎ＬＶ．３
+中央校舎ＬＶ．４
+中央校舎ＬＶ．５
+体育館ＬＶ．１
+体育館ＬＶ．２
+体育館ＬＶ．３
+体育館ＬＶ．４
+体育館ＬＶ．５
+グラウンドＬＶ．１
+グラウンドＬＶ．２
+グラウンドＬＶ．３
+グラウンドＬＶ．４
+グラウンドＬＶ．５
+寮ＬＶ．１
+寮ＬＶ．２
+寮ＬＶ．３
+寮ＬＶ．４
+寮ＬＶ．５
+学問校舎ＬＶ．１
+学問校舎ＬＶ．２
+学問校舎ＬＶ．３
+学問校舎ＬＶ．４
+学問校舎ＬＶ．５
+学問校舎ＬＶ．１
+学問校舎ＬＶ．２
+学問校舎ＬＶ．３
+学問校舎ＬＶ．４
+学問校舎ＬＶ．５
+魔法学校舎ＬＶ．１
+魔法学校舎ＬＶ．２
+魔法学校舎ＬＶ．３
+魔法学校舎ＬＶ．４
+魔法学校舎ＬＶ．５
+魔法学校舎ＬＶ．１
+魔法学校舎ＬＶ．２
+魔法学校舎ＬＶ．３
+魔法学校舎ＬＶ．４
+魔法学校舎ＬＶ．５
+兵学校舎ＬＶ．１
+兵学校舎ＬＶ．２
+兵学校舎ＬＶ．３
+兵学校舎ＬＶ．４
+兵学校舎ＬＶ．５
+兵学校舎ＬＶ．１
+兵学校舎ＬＶ．２
+兵学校舎ＬＶ．３
+兵学校舎ＬＶ．４
+兵学校舎ＬＶ．５
+産業校舎ＬＶ．１
+産業校舎ＬＶ．２
+産業校舎ＬＶ．３
+産業校舎ＬＶ．４
+産業校舎ＬＶ．５
+産業校舎ＬＶ．１
+産業校舎ＬＶ．２
+産業校舎ＬＶ．３
+産業校舎ＬＶ．４
+産業校舎ＬＶ．５
+専門校舎ＬＶ．１
+専門校舎ＬＶ．２
+専門校舎ＬＶ．３
+専門校舎ＬＶ．４
+専門校舎ＬＶ．５
+専門校舎ＬＶ．１
+専門校舎ＬＶ．２
+専門校舎ＬＶ．３
+専門校舎ＬＶ．４
+専門校舎ＬＶ．５
+生徒会
+生徒自治エリア
+クラブ棟
+公園
+清掃塔
+観測所
+病院
+牢獄
+商店街ＬＶ．１
+商店街ＬＶ．２
+商店街ＬＶ．３
+工場
+錬兵場
+遊技場
+大牢獄
+図書館
+美術館
+植物園
+闘技場
+魔法の塔ＬＶ．１
+魔法の塔ＬＶ．２
+魔法の塔ＬＶ．３
+東方研究所ＬＶ．１
+東方研究所ＬＶ．２
+東方研究所ＬＶ．３
+政治研究所ＬＶ．１
+政治研究所ＬＶ．２
+政治研究所ＬＶ．３
+神話研究所ＬＶ．１
+神話研究所ＬＶ．２
+神話研究所ＬＶ．３
+魔物研究所ＬＶ．１
+魔物研究所ＬＶ．２
+魔物研究所ＬＶ．３
+住居ＬＶ．１
+住居ＬＶ．２
+住居ＬＶ．３
+高級住居ＬＶ．１
+高級住居ＬＶ．２
+高級住居ＬＶ．３
+貴族館ＬＶ．１
+貴族館ＬＶ．２
+貴族館ＬＶ．３
+見張り塔ＬＶ．１
+見張り塔ＬＶ．２
+見張り塔ＬＶ．３
+防衛エリアＬＶ．１
+防衛エリアＬＶ．２
+防衛エリアＬＶ．３
+要塞ＬＶ．１
+要塞ＬＶ．２
+要塞ＬＶ．３
+謎の遺跡
+不思議空間
+森
+猟場
+伐採所
+田畑
+牧場
+森
+絶景
+遊泳場
+漁場
+発力所
+ダンジョン入り口
+森
+猟場
+伐採所
+田畑
+牧場
+森
+絶景
+遊泳場
+漁場
+発力所
+[/group]
+
+
+[group]LST_n
+未拡張
+空き地
+森
+空き地
+空き地
+始まりの校舎
+中央校舎ＬＶ．１
+中央校舎ＬＶ．２
+中央校舎ＬＶ．３
+中央校舎ＬＶ．４
+中央校舎ＬＶ．５
+体育館ＬＶ．１
+体育館ＬＶ．２
+体育館ＬＶ．３
+体育館ＬＶ．４
+体育館ＬＶ．５
+グラウンドＬＶ．１
+グラウンドＬＶ．２
+グラウンドＬＶ．３
+グラウンドＬＶ．４
+グラウンドＬＶ．５
+寮ＬＶ．１
+寮ＬＶ．２
+寮ＬＶ．３
+寮ＬＶ．４
+寮ＬＶ．５
+学問校舎ＬＶ．１
+学問校舎ＬＶ．２
+学問校舎ＬＶ．３
+学問校舎ＬＶ．４
+学問校舎ＬＶ．５
+学問校舎ＬＶ．１
+学問校舎ＬＶ．２
+学問校舎ＬＶ．３
+学問校舎ＬＶ．４
+学問校舎ＬＶ．５
+魔法学校舎ＬＶ．１
+魔法学校舎ＬＶ．２
+魔法学校舎ＬＶ．３
+魔法学校舎ＬＶ．４
+魔法学校舎ＬＶ．５
+魔法学校舎ＬＶ．１
+魔法学校舎ＬＶ．２
+魔法学校舎ＬＶ．３
+魔法学校舎ＬＶ．４
+魔法学校舎ＬＶ．５
+兵学校舎ＬＶ．１
+兵学校舎ＬＶ．２
+兵学校舎ＬＶ．３
+兵学校舎ＬＶ．４
+兵学校舎ＬＶ．５
+兵学校舎ＬＶ．１
+兵学校舎ＬＶ．２
+兵学校舎ＬＶ．３
+兵学校舎ＬＶ．４
+兵学校舎ＬＶ．５
+産業校舎ＬＶ．１
+産業校舎ＬＶ．２
+産業校舎ＬＶ．３
+産業校舎ＬＶ．４
+産業校舎ＬＶ．５
+産業校舎ＬＶ．１
+産業校舎ＬＶ．２
+産業校舎ＬＶ．３
+産業校舎ＬＶ．４
+産業校舎ＬＶ．５
+専門校舎ＬＶ．１
+専門校舎ＬＶ．２
+専門校舎ＬＶ．３
+専門校舎ＬＶ．４
+専門校舎ＬＶ．５
+専門校舎ＬＶ．１
+専門校舎ＬＶ．２
+専門校舎ＬＶ．３
+専門校舎ＬＶ．４
+専門校舎ＬＶ．５
+生徒会
+生徒自治エリア
+クラブ棟
+公園
+清掃塔
+観測所
+病院
+牢獄
+商店街ＬＶ．１
+商店街ＬＶ．２
+商店街ＬＶ．３
+工場
+錬兵場
+遊技場
+大牢獄
+図書館
+美術館
+植物園
+闘技場
+魔法の塔ＬＶ．１
+魔法の塔ＬＶ．２
+魔法の塔ＬＶ．３
+東方研究所ＬＶ．１
+東方研究所ＬＶ．２
+東方研究所ＬＶ．３
+政治研究所ＬＶ．１
+政治研究所ＬＶ．２
+政治研究所ＬＶ．３
+神話研究所ＬＶ．１
+神話研究所ＬＶ．２
+神話研究所ＬＶ．３
+魔物研究所ＬＶ．１
+魔物研究所ＬＶ．２
+魔物研究所ＬＶ．３
+住居ＬＶ．１
+住居ＬＶ．２
+住居ＬＶ．３
+高級住居ＬＶ．１
+高級住居ＬＶ．２
+高級住居ＬＶ．３
+貴族館ＬＶ．１
+貴族館ＬＶ．２
+貴族館ＬＶ．３
+見張り塔ＬＶ．１
+見張り塔ＬＶ．２
+見張り塔ＬＶ．３
+防衛エリアＬＶ．１
+防衛エリアＬＶ．２
+防衛エリアＬＶ．３
+要塞ＬＶ．１
+要塞ＬＶ．２
+要塞ＬＶ．３
+謎の遺跡
+不思議空間
+森
+猟場
+伐採所
+田畑
+牧場
+森
+絶景
+遊泳場
+漁場
+発力所
+ダンジョン入り口
+森
+猟場
+伐採所
+田畑
+牧場
+森
+絶景
+遊泳場
+漁場
+発力所
+[/group]
+
+
+[group]LST_p
+X01,Y01
+X02,Y01
+X03,Y01
+X04,Y01
+X05,Y01
+X06,Y01
+X07,Y01
+X08,Y01
+X09,Y01
+X10,Y01
+X11,Y01
+X12,Y01
+X01,Y02
+X02,Y02
+X03,Y02
+X04,Y02
+X05,Y02
+X06,Y02
+X07,Y02
+X08,Y02
+X09,Y02
+X10,Y02
+X11,Y02
+X12,Y02
+X01,Y03
+X02,Y03
+X03,Y03
+X04,Y03
+X05,Y03
+X06,Y03
+X07,Y03
+X08,Y03
+X09,Y03
+X10,Y03
+X11,Y03
+X12,Y03
+X01,Y04
+X02,Y04
+X03,Y04
+X04,Y04
+X05,Y04
+X06,Y04
+X07,Y04
+X08,Y04
+X09,Y04
+X10,Y04
+X11,Y04
+X12,Y04
+X01,Y05
+X02,Y05
+X03,Y05
+X04,Y05
+X05,Y05
+X06,Y05
+X07,Y05
+X08,Y05
+X09,Y05
+X10,Y05
+X11,Y05
+X12,Y05
+X01,Y06
+X02,Y06
+X03,Y06
+X04,Y06
+X05,Y06
+X06,Y06
+X07,Y06
+X08,Y06
+X09,Y06
+X10,Y06
+X11,Y06
+X12,Y06
+X01,Y07
+X02,Y07
+X03,Y07
+X04,Y07
+X05,Y07
+X06,Y07
+X07,Y07
+X08,Y07
+X09,Y07
+X10,Y07
+X11,Y07
+X12,Y07
+X01,Y08
+X02,Y08
+X03,Y08
+X04,Y08
+X05,Y08
+X06,Y08
+X07,Y08
+X08,Y08
+X09,Y08
+X10,Y08
+X11,Y08
+X12,Y08
+X01,Y09
+X02,Y09
+X03,Y09
+X04,Y09
+X05,Y09
+X06,Y09
+X07,Y09
+X08,Y09
+X09,Y09
+X10,Y09
+X11,Y09
+X12,Y09
+X01,Y10
+X02,Y10
+X03,Y10
+X04,Y10
+X05,Y10
+X06,Y10
+X07,Y10
+X08,Y10
+X09,Y10
+X10,Y10
+X11,Y10
+X12,Y10
+園外01
+園外02
+園外03
+園外04
+[/group]
