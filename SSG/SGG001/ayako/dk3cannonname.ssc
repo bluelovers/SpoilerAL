@@ -1,0 +1,9 @@
+[subject]セーカー砲:dir
+	[replace]0x52AED4,dk3cannon,offset
+[subject]カルバリン砲:dir
+	[replace]0x52AEE0,dk3cannon,offset
+[subject]ペリエ砲:dir
+	[replace]0x52AEEC,dk3cannon,offset
+[subject]カノン砲:dir
+	[replace]0x52AEF8,dk3cannon,offset
+[back]
