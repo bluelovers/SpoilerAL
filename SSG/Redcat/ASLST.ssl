@@ -1,0 +1,110 @@
+[group]AS_MA
+[note]wordwrap
+欲を言うなら、ステファＥＮＤがあったら良かったなぁと。あとテーマがテーマなだけに、コンサート部分以外でも音質を高くしないと。なんでＣＤ－ＤＡでないかなぁと、その辺が残念。
+
+以下、少々補足です。
+
+■■環境関連
+デバッグ機能各種：
+ウインドウモード起動は固定必須項目です。値を固定しながら、ＡＳを起動させて下さい。うまくいかない場合は、更新周期を小さくしてみて再試行を。また、起動後はマクロ処理による負担を無くすため、更新周期を戻し且つ固定チェックは外すことをお勧めします。他は、プレイ中任意に効果を設定できるものです。
+
+ＡＰリジェネレート化：
+移動画面時、１歩歩く毎にＡＰチェックが行われ、ＭＡＸ値でない場合自動的にＭＡＸ化します。
+
+■■パラメータ関連
+好感度：
+イベント発生の是非は、誰の好感度が最も高いか？を要点とする場合が多いので、同時攻略に使えます。
+
+＊「羽のブランケットにつつまれて」の出現条件は、１１／１６早朝・ＣＯＭＰＯＳＥ２５５・ラスティの好感度が最も高い…です。
+
+■■フラグ関連
+各ＥＮＤ阻止要因になりそうなのを集めました。フィアとサーリア（全員でも可）同時攻略が可能になります。日付に関しては、各値を変更した後に保存、ロードすることで反映させて下さい。
+[/note]
+
+[subject]環境関連:dir
+[subject]デバッグ機能各種:dir
+	[subject]ウインドウモードで起動/実行/固定必須:b_toggle,0x4014EB,ASLST->AS_a,real
+	[subject]他任意設定/_:d_toggle,0x52981A,ASLST->AS_b,ASLST->AS_c,offset
+[back]
+[subject]ＡＰリジェネレート化/実行/_:b_toggle,0x459C14,ASLST->AS_e,real
+[/group]
+
+
+[group]AS_PR
+[subject]好感度確認調整:dir
+	[e_with],0xFFFFFF01,0x000000FF,signed
+		[size]4
+		[subject]ラスティ＝ファースン/現在値/_:calc,0x553D4C
+		[subject]アルテ＝セーマ/現在値/_:calc,0x553D50
+		[subject]フィア＝ノート/現在値/_:calc,0x553D54
+		[subject]サーリア＝ウィネス/現在値/_:calc,0x553D58
+		[/size]
+	[/e_with]
+[back]
+[subject]クラビスの能力:dir
+[e_with],0x00,0xFF,unsigned
+	[subject]ＡＣＴＩＯＮ ＰＯＩＮＴ/現在値/_:calc,0x553EB8
+	[subject]ＣＯＭＰＯＳＥ/現在値/_:calc,0x553EC0
+	[subject]人気/現在値/_:calc,0x553EBC
+[/e_with]
+[back]
+[subject]ＧＯＬＤＡ/現在値/_:calc,0x553E4C,0x000000,0x0F423F,unsigned
+[subject]アイテム全種所持/実行/_:toggle,0x553E6C,0x553E80-01000000
+[subject]結界の魔法薬ＭＡＸ所持/実行/固定:toggle,0x553E70,63
+[/group]
+
+
+[group]AS_F12
+[subject]現在の日付・時間調整:dir
+	[subject]現在月数/現在値/_:calc,0x553E40,0x09,0x0C,unsigned
+	[subject]現在日数/現在値/_:calc,0x553E44,0x01,0x18,unsigned
+	[subject]現在時間帯/現在値/_:calc,0x553E48,0x0A,0x15,unsigned
+[back]
+[subject]フィア必須（サーリア封印）フラグ/ＯＮ／ＯＦＦ/_:toggle,0x553CE7,*_???1????,*_???0????
+[subject]サーリア必須（フィア封印）フラグ/ＯＮ／ＯＦＦ/_:toggle,0x553CE6,*_???1????,*_???0????
+[subject]サーリアＴＲＵＥＥＮＤ出現/実行/_:toggle,0x553213,*_1??????1,*_0??????0
+[subject]ラスティＴＲＵＥＥＮＤ出現/実行/_:toggle,0x553213,*_1??1????,*_0??0????
+[/group]
+
+
+[group]AS_CG
+[subject]ＡＬＢＵＭ ＭＯＤＥ:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x553214,0x553220-FF
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x553214,0x553220-00
+[back]
+[subject]ＴＲＡＤＩＮＧ ＢＲＯＭＩＤＥ:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x553234,0x55332D-63
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x553234,0x55332D-00
+[/group]
+
+
+[group]AS_a
+0x4014EB,EB00,7409
+0x403B0F,33D2EB0190,84C90F94C2
+0x41733C,EB00,7407
+[/group]
+
+
+[group]AS_b
+ＦＰＳ表示：ShowFPS
+無条件自動演奏：MusicForceAuto
+（不明）：MusicMemorySave
+CONTEST無条件出現：MusicAllOn
+[/group]
+
+
+[group]AS_c
+0x00=01/00
+0x01=01/00
+0x02=01/00
+0x03=01/00
+[/group]
+
+
+[group]AS_e
+0x459C14,EB03909090,83FA287C2A
+0x459C21,33C0,A1B8
+0x459C23,B0FF,3E55
+0x459C25,8805B83E5500,0085C07E19FF
+0x459C2B,EB03909090,0DB83E5500
+[/group]
