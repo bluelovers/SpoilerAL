@@ -1,0 +1,313 @@
+[group]SH4_SSG
+[note]wordwrap
+SchwarzschildⅢ＋Ⅳ収録のⅣ用です。
+
+戦艦データチェック無効化：
+戦艦データのうち、巡航速度等が不正な値になると処理を中断する正規処理を無効化します。
+
+戦艦データ改竄：
+起動中のみ有効。
+
+※クラーリンは？
+ＣＰＵとＰＣのデータ構造・引き出し方が別なうえ、ＣＰＵ側にしか件の引き出し処理が無いので却下。クラーリンもどきなら可能だけど、戦艦データ弄れるのでそれで勘弁。
+[/note]
+
+
+[subject]SLGパート関連:dir
+[subject]戦艦データチェック無効化/実行/_:b_toggle,0x00,SH4LST->SH4_a,offset
+[subject]戦闘中士気自動回復/実行/_:toggle,0x4375CE,EB00??????????????6400,7D09??????????????0000
+[subject]戦闘スキップ/実行/_:b_toggle,0x00,SH4LST->SH4_b,offset
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]国家データ:dir
+  [repeat]SH4LST->SH4REP1,0,16,1
+ [back]
+ [subject]指揮官データ:dir
+  [repeat]SH4LST->SH4REP2,0,21,1
+ [back]
+ [subject]ドックデータ:dir
+  [repeat]SH4LST->SH4REP3,0,82,1
+ [back]
+ [subject]戦艦データ:dir
+  [repeat]SH4LST->SH4REP4,0,56,1
+ [back]
+[back]
+
+[/group]
+
+
+[group]SH4_a
+0x439080,EB,72
+0x43AE93,EB,75
+0x43AFF8,EB,75
+[/group]
+
+
+[group]SH4_b
+0x437270,EB0490909090,0F8431040000
+0x437296,803A017406C60000EB0890,803800740D66833A017506
+[/group]
+
+
+[group]SH4_c
+0x00,0700
+0x02,*{09::07*}
+0x04,0064
+0x07,030303030303
+[/group]
+
+
+[group]SH4REP1
+[subject][! @SH4LST->LST_a,$Val !]:dir
+ [replace]_0x529740+0x[! 0x20*$Val !],SH4LST->SH4_PR1
+[back]
+[/group]
+
+
+[group]SH4REP2
+[subject][! @SH4LST->LST_b,$Val !]:dir
+ [replace]_0x529E40+0x[! 0x10*$Val !],SH4LST->SH4_PR2
+[back]
+[/group]
+
+
+[group]SH4REP3
+[subject]_mem,_0x52A0C8+0x[! 0x06*$Val !],1,list,<NoData>,SH4LST->LST_c,-1,1:dir
+ [replace]_0x52A0C8+0x[! 0x06*$Val !],SH4LST->SH4_PR3
+[back]
+[/group]
+
+
+[group]SH4REP4
+[subject]_mem,_0x52C460+0x[! 0x18*$Val !],1,list,<NoData>,SH4LST->LST_d,0x00,0x01:dir
+ [replace]_0x52C456+0x[! 0x18*$Val !],SH4LST->SH4_PR4
+[back]
+[/group]
+
+
+[group]SH4_PR1
+[e_with],0x000000,0x01869F,unsigned
+ [subject]資金/現在値/固定:calc,0x00
+ [subject]資源/現在値/固定:calc,0x04
+[/e_with]
+[e_with],0x00,0xFF,unsigned
+ [subject]対ヤングリーフ印象値/現在値/_:calc,0x08
+ [subject]対オーブリク印象値/現在値/_:calc,0x0A
+ [subject]対マべランツァ印象値/現在値/_:calc,0x0C
+[/e_with]
+[subject]アラインメント/現在値/_:calc,0x14,0x50,0xF0,unsigned
+[/group]
+
+
+[group]SH4_PR2
+[subject]一括強化/実行/_:b_toggle,0x00,SH4LST->SH4_c,offset
+[subject]階級/_:list,0x00,SH4LST->LST_2b,0x00,0x01
+[subject]未存在であれば出現/現在値/_:toggle,0x02,*{09::07*}
+[subject]経験値/現在値/_:calc,0x04,0x0000,0x6400,unsigned
+[e_with],-3,3,signed
+ [subject]惑星攻撃/現在値/_:calc,0x07
+ [subject]惑星防御/現在値/_:calc,0x08
+ [subject]要塞攻撃/現在値/_:calc,0x09
+ [subject]要塞防御/現在値/_:calc,0x0A
+ [subject]艦隊攻撃/現在値/_:calc,0x0B
+ [subject]艦隊防御/現在値/_:calc,0x0C
+[/e_with]
+[/group]
+
+
+[group]SH4_PR3
+[subject]戦艦種類変更/_:list,0x00,SH4LST->LST_c,-1,1
+[subject]現在耐久力/現在値/_:calc,0x01,0x00,0xFF,unsigned
+[/group]
+
+
+[group]SH4_PR4
+[subject]一括強化/実行/_:toggle,0x00,FFFFFFFF63FFFF630A????6300
+[subject]耐久力/現在値/_:calc,0x00,0x00,0xFF,unsigned
+[subject]防御値/現在値/_:calc,0x01,0x00,0xFF,unsigned
+[subject]攻撃力/現在値/_:calc,0x02,0x00,0xFF,unsigned
+[subject]惑星攻撃/現在値/_:calc,0x03,0x00,0xFF,unsigned
+[subject]攻撃範囲/現在値/_:calc,0x04,0x00,0x63,unsigned
+[subject]対空攻撃/現在値/_:calc,0x05,0x00,0xFF,unsigned
+[subject]対空防御/現在値/_:calc,0x06,0x00,0xFF,unsigned
+[subject]戦時速度/現在値/_:calc,0x07,0x00,0x63,unsigned
+[subject]充填速度/現在値/_:calc,0x08,0x00,0x63,unsigned
+[subject]艦載能力/現在値/_:calc,0x09,0x00,0xFF,unsigned
+[subject]巡航速度/現在値/_:calc,0x0B,0x00,0x63,unsigned
+[subject]重量/現在値/_:calc,0x0C,0x00,0xFF,unsigned
+[/group]
+
+
+[group]LST_a
+ヤングリーフ
+ウィルソード
+エセルフィン
+ビークノーズ
+メイヨーラ
+ヌイスハーマ
+オーブリク
+クルツ
+ケンヘイベン
+ユールメシド
+マベランツァ
+ナタルザート
+レビルレント
+ウルカフィ
+ベルセリア
+パーシオン
+[/group]
+
+
+[group]LST_b
+オリード
+マクマナス
+ドリスコル
+テクトマイヤー
+イーレフェルト
+ベルモント
+ノーマン
+ダルレー
+ヴォルフラム
+リッペルト
+フローロフ
+オブライエン
+コンドエイエフ
+メルテンス
+キュールゲン
+アイフェフィ
+アルベル
+テトロー
+キルパトリック
+ホワイト
+？
+[/group]
+
+
+[group]LST_2b
+少佐
+中佐
+大佐
+准将
+宙将
+中級宙将
+提督
+首領
+[/group]
+
+
+[group]LST_c
+未存在
+ベルセルク級駆逐艦
+エルディル級重巡洋艦
+ベストラ級軽巡洋艦
+グングニル級高速巡洋艦
+スレイプニル級戦艦
+エーギル級弩級戦艦
+ツァダイ級駆逐艦
+ヘイブル級巡洋艦
+カフザイン級重装駆逐艦
+ケスアイン級高速巡洋艦
+クオフギメル級戦艦
+レシュダレス級弩級戦艦
+ユクステイル級巡洋艦
+メレー級重装駆逐艦
+トゥルネイ級巡洋戦艦
+バッフルト級戦艦
+カンケル級巡洋艦
+ピスケス級重装駆逐艦
+リブラ級巡洋戦艦
+サギタリウス級戦艦
+セーウィアス級軽巡洋艦
+エスラス級装甲駆逐艦
+ウスキアス級重巡洋艦
+モーフィース級重装戦艦
+ヴァーリ級宇宙空母
+ヘルモーズ級宇宙空母
+ヴィーザル級宇宙空母
+ベスラメド級艦載機母艦
+タウヨッド級艦載機母艦
+ヴァウテス級艦載機母艦
+オーフリー級宇宙空母
+シュブラス級宇宙空母
+スペイクル級宇宙空母
+タウルス級宇宙空母
+アクアリウス級宇宙空母
+ウィルゴ級宇宙空母
+ネヴァン級艦載機母艦
+マーハ級艦載機母艦
+モリーアン級艦載機母艦
+ロスクヴァ級対地攻撃艦
+シャールヴィ級対地攻撃艦
+マグニ級対地攻撃艦
+アレフ級惑星攻撃艦
+シンサメク級惑星攻撃艦
+ヌーベス級惑星攻撃艦
+パンハイマ級惑星攻撃艦
+モナクス級惑星攻撃艦
+ロムパイア級惑星攻撃艦
+アリエス級対地攻撃艦
+レオ級対地攻撃艦
+スコルピウス級対地攻撃艦
+タラニス級対地攻撃艦
+エッサス級対地攻撃艦
+テウタテス級対地攻撃艦
+[/group]
+
+
+[group]LST_d
+ベルセルク級駆逐艦
+エルディル級重巡洋艦
+ベストラ級軽巡洋艦
+グングニル級高速巡洋艦
+スレイプニル級戦艦
+エーギル級弩級戦艦
+ツァダイ級駆逐艦
+ヘイブル級巡洋艦
+カフザイン級重装駆逐艦
+ケスアイン級高速巡洋艦
+クオフギメル級戦艦
+レシュダレス級弩級戦艦
+ユクステイル級巡洋艦
+メレー級重装駆逐艦
+トゥルネイ級巡洋戦艦
+バッフルト級戦艦
+カンケル級巡洋艦
+ピスケス級重装駆逐艦
+リブラ級巡洋戦艦
+サギタリウス級戦艦
+セーウィアス級軽巡洋艦
+エスラス級装甲駆逐艦
+ウスキアス級重巡洋艦
+モーフィース級重装戦艦
+ヴァーリ級宇宙空母
+ヘルモーズ級宇宙空母
+ヴィーザル級宇宙空母
+ベスラメド級艦載機母艦
+タウヨッド級艦載機母艦
+ヴァウテス級艦載機母艦
+オーフリー級宇宙空母
+シュブラス級宇宙空母
+スペイクル級宇宙空母
+タウルス級宇宙空母
+アクアリウス級宇宙空母
+ウィルゴ級宇宙空母
+ネヴァン級艦載機母艦
+マーハ級艦載機母艦
+モリーアン級艦載機母艦
+ロスクヴァ級対地攻撃艦
+シャールヴィ級対地攻撃艦
+マグニ級対地攻撃艦
+アレフ級惑星攻撃艦
+シンサメク級惑星攻撃艦
+ヌーベス級惑星攻撃艦
+パンハイマ級惑星攻撃艦
+モナクス級惑星攻撃艦
+ロムパイア級惑星攻撃艦
+アリエス級対地攻撃艦
+レオ級対地攻撃艦
+スコルピウス級対地攻撃艦
+タラニス級対地攻撃艦
+エッサス級対地攻撃艦
+テウタテス級対地攻撃艦
+[/group]
