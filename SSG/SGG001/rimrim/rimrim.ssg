@@ -1,0 +1,235 @@
+SSG for SpoilerAL ver 3.8
+
+[script]
+[title]ＶＩＣＴＩＭ～堕天使の契り～
+[creator]りむりむ
+[maker]AQUA HOUSE
+[process]SAISYS.EXE
+[note]
+このゲームの修正ファイルが出されてます。
+修正ファイルを入れてから
+起動してください。
+[/note]
+[subject]日付:calc,0x00C637F0,1,99,signed,little_e
+[subject]ジュエル数:calc,0x00C634C8,0,999,signed,little_e
+[/script]
+
+[script]
+[title]流星天使プリマヴｪール
+[creator]りむりむ
+[maker]Escu:de
+[process]PURIVE.EXE
+[note]
+私が始めてつくった物です（^-^;)
+恐らくちゃんと動くと・・・思います.
+なぜ今更プリマヴールとか言わないでね（笑）
+[/note]
+[subject]名前変更:string,0x00434084,6,null
+[subject]日にち:calc,0x00430B5C,0,75,signed,little_e
+[subject]洗脳ＺＫＣ（個):calc,0x00430B6C,0,999,signed,little_e
+[subject]所持金:calc,0x00430B68,0,99999999,signed,little_e
+[subject]作戦ポイント:calc,0x00430EE4,0,999999,signed,little_e
+[subject]調教タイム(進めない)     :toggle,0x00430A28,00,00
+[subject]主人公と純菜のステータス:dir
+[subject]服従心(0～250):calc,0x004309E8,00,250,unsigned,little_e
+[subject]愛情(0～250)  :calc,0x004309EC,00,250,unsigned,little_e
+[subject]？(0～250)    :calc,0x004309F0,00,250,unsigned,little_e
+[subject]主人公の体力現在(100):toggle,0x00430A18,63,00
+[subject]主人公の体力最大(100):toggle,0x00430A1C,63,00
+[subject]純菜の体力現在(100)  :toggle,0x00430A20,63,00
+[subject]純菜の体力最大(100)  :toggle,0x00430A24,63,00
+[subject]感情経験値(250)  :calc,0x004309F4,0,250,unsigned,little_e
+[subject]被虐性経験値(250):calc,0x00430A00,0,250,unsigned,little_e
+[subject]アナル経験値(250):calc,0x00430A0C,0,250,unsigned,little_e
+[back]
+[subject]戦闘員ステータス:dir
+[subject]戦闘員Ａ:dir
+[subject]迅速さ:calc,0x00430B74,0,100,unsigned,little_e
+[subject]堅実さ:calc,0x00430B78,0,100,unsigned,little_e
+[subject]運　　:calc,0x00430B7C,0,100,unsigned,little_e
+[subject]戦闘力:calc,0x00430B80,0,100,unsigned,little_e
+[subject]忠誠心:calc,0x00430B84,0,100,unsigned,little_e
+[subject]日当　:calc,0x00430B88,0,10,unsigned,little_e
+[back]
+[subject]戦闘員Ｂ子:dir
+[subject]迅速さ:calc,0x00430B94,0,100,unsigned,little_e
+[subject]堅実さ:calc,0x00430B98,0,100,unsigned,little_e
+[subject]運　　:calc,0x00430B9C,0,100,unsigned,little_e
+[subject]戦闘力:calc,0x00430BA0,0,100,unsigned,little_e
+[subject]忠誠心:calc,0x00430BA4,0,100,unsigned,little_e
+[subject]日当　:calc,0x00430BA8,0,10,unsigned,little_e
+[back]
+[subject]戦闘員Ｃ:dir
+[subject]迅速さ:calc,0x00430BB4,0,100,unsigned,little_e
+[subject]堅実さ:calc,0x00430BB8,0,100,unsigned,little_e
+[subject]運　　:calc,0x00430BBC,0,100,unsigned,little_e
+[subject]戦闘力:calc,0x00430BC0,0,100,unsigned,little_e
+[subject]忠誠心:calc,0x00430BC4,0,100,unsigned,little_e
+[subject]日当　:calc,0x00430BC8,0,10,unsigned,little_e
+[back]
+[subject]戦闘員Ｄ:dir
+[subject]迅速さ:calc,0x00430BD4,0,100,unsigned,little_e
+[subject]堅実さ:calc,0x00430BD8,0,100,unsigned,little_e
+[subject]運　　:calc,0x00430BDC,0,100,unsigned,little_e
+[subject]戦闘力:calc,0x00430BE0,0,100,unsigned,little_e
+[subject]忠誠心:calc,0x00430BE4,0,100,unsigned,little_e
+[subject]日当　:calc,0x00430BE8,0,10,unsigned,little_e
+[back]
+[subject]戦闘員Ｅ:dir
+[subject]迅速さ:calc,0x00430BF4,0,100,unsigned,little_e
+[subject]堅実さ:calc,0x00430BF8,0,100,unsigned,little_e
+[subject]運　　:calc,0x00430BFC,0,100,unsigned,little_e
+[subject]戦闘力:calc,0x00430C00,0,100,unsigned,little_e
+[subject]忠誠心:calc,0x00430C04,0,100,unsigned,little_e
+[subject]日当　:calc,0x00430C08,0,10,unsigned,little_e
+[back]
+[/script]
+
+[script]
+[title]BRIGHTIA
+[creator]りむりむ
+[maker]Cronus
+[process]BRIGHTIA.EXE
+[note]
+面白いですこのゲーム。
+声優さんもしっかりしてるし、
+エンディングも結構ある。
+Ｃｒｏｎｕｓさんのゲーム
+これから期待できそうです。
+あと注意してほしいのが「淫乱度」と「愛情度」です。
+ゲームでも言っているとおり「性奴」と「愛奴」
+どちらか一方にしかなれません。
+そこのとこ注意してください。
+[/note]
+[subject]日付:calc,0x004563E0,1,30,signed,little_e
+[subject]RESTACTION(個):calc,0x00456474,0,7,signed,little_e
+[subject]主人公の体力:calc,0x004563E8,0,100,signed,little_e
+[subject]プラチナのステータス:dir
+         [subject]体力:calc,0x00456570,0,100,signed,little_e
+         [subject]性感度:calc,0x00456574,0,100,signed,little_e
+         [subject]従順度:calc,0x00456578,0,100,signed,little_e
+         [subject]奉仕度:calc,0x0045657C,0,100,signed,little_e
+         [subject]被虐度:calc,0x00456580,0,100,signed,little_e
+         [subject]肛虐度:calc,0x00456584,0,100,signed,little_e
+         [subject]淫乱度:calc,0x00456588,0,100,signed,little_e
+         [subject]愛情度:calc,0x0045658C,0,100,signed,little_e
+[back]
+[subject]ライムのステータス:dir
+         [subject]体力:calc,0x00456700,0,100,signed,little_e
+         [subject]性感度:calc,0x00456704,0,100,signed,little_e
+         [subject]従順度:calc,0x00456708,0,100,signed,little_e
+         [subject]奉仕度:calc,0x0045670C,0,100,signed,little_e
+         [subject]被虐度:calc,0x00456710,0,100,signed,little_e
+         [subject]肛虐度:calc,0x00456714,0,100,signed,little_e
+         [subject]淫乱度:calc,0x00456718,0,100,signed,little_e
+         [subject]愛情度:calc,0x0045671C,0,100,signed,little_e
+[back]
+[subject]ダリアのステータス:dir
+         [subject]体力:calc,0x00456890,0,100,signed,little_e
+         [subject]性感度:calc,0x00456894,0,100,signed,little_e
+         [subject]従順度:calc,0x00456898,0,100,signed,little_e
+         [subject]奉仕度:calc,0x0045689C,0,100,signed,little_e
+         [subject]被虐度:calc,0x004568A0,0,100,signed,little_e
+         [subject]肛虐度:calc,0x004568A4,0,100,signed,little_e
+         [subject]淫乱度:calc,0x004568A8,0,100,signed,little_e
+         [subject]愛情度:calc,0x004568AC,0,100,signed,little_e
+[back]
+[subject]スカーレットのステータス:dir
+         [subject]体力:calc,0x00456A20,0,100,signed,little_e
+         [subject]性感度:calc,0x00456A24,0,100,signed,little_e
+         [subject]従順度:calc,0x00456A28,0,100,signed,little_e
+         [subject]奉仕度:calc,0x00456A2C,0,100,signed,little_e
+         [subject]被虐度:calc,0x00456A30,0,100,signed,little_e
+         [subject]肛虐度:calc,0x00456A34,0,100,signed,little_e
+         [subject]淫乱度:calc,0x00456A38,0,100,signed,little_e
+         [subject]愛情度:calc,0x00456A3C,0,100,signed,little_e
+[back]
+[/script]
+
+[script]
+[title]しゃぶり姫～陰の章～
+[creator]りむりむ
+[maker]ミンク
+[process]AVS.EXE
+[note]
+すごいタイトルですね・・・・・（^-^;)
+今更ですが、作ってみました。
+ちょっとこのゲームやりたかったので・・
+でも、すぐ殺されてしまう・・（^-^;)
+[/note]
+[subject]完成度:calc,0x0045A2E6,0,100,signed,little_e
+[subject]躾回数:calc,0x0045A2EA,0,99999,signed,little_e
+[subject]従順度:calc,0x0045A2EE,0,100,signed,little_e
+[subject]奉仕テクニック:calc,0x0045A2F2,0,100,signed,little_e
+[subject]性感度:calc,0x0045A2F6,0,100,signed,little_e
+[subject]色気:calc,0x0045A2FA,0,100,signed,little_e
+[/script]
+
+[script]
+[title]Ｄｏｌｌｓ　Ａｎｔｉｑｕｅ
+[creator]りむりむ
+[maker]ＴＯＵＣＨＡＢＬＥ
+[process]DA.EXE
+[note]
+ｗｉｎ98でサーチしてます。
+
+リニアの好感度は感情値を
+１００にするとＭＡＸになります（^-^;)
+つい作ってしまいました（^-^;)
+あと、ちょっと注意。
+「体力、精神力」はあまりいじらない方がいいです。
+おかしくなる可能性があるので・・。
+あと、「Ａ感覚、Ｖ感覚」は
+リニアとＨできるようになってから
+実行してください。
+[/note]
+[subject]好感度:dir
+[subject]ミウ（好感度ＭＡＸ）　:toggle,0x00521B10,3,3
+[subject]麗蘭（好感度ＭＡＸ）　:toggle,0x00521B1C,3,3
+[subject]綾華（好感度ＭＡＸ）　:toggle,0x00521B14,3,3
+[subject]コリア（好感度ＭＡＸ）:toggle,0x00521B18,3,3
+[subject]静姫（好感度ＭＡＸ）　:toggle,0x00521B20,3,3
+[back]
+[subject]リニアのステータス:dir
+[subject]体力:calc,0x00521AAC,0,100,signed,little_e
+[subject]精神値:calc,0x00521AB0,0,100,signed,little_e
+[subject]感情値:calc,0x00521ABC,0,100,signed,little_e
+[subject]性感値:calc,0x00521AC0,0,100,signed,little_e
+[subject]Ａ感覚:calc,0x00521AC4,0,100,signed,little_e
+[subject]Ｖ感覚:calc,0x00521AC8,0,100,signed,little_e
+[back]
+[/script]
+
+[script]
+[title]ゆかちゃんあそぼ
+[creator]りむりむ
+[maker]ねこぱんち
+[process]YUKA.EXE
+[note]
+すごいロリロリなげーむです（^-^;)
+私もつい買ってしまったのですが・・・（笑）
+前作とちがい少しはやり応えがあると・・思いますが・・（^-^;)
+
+p.sＷＩＮ98でサーチしています。
+[/note]
+[subject]日付:calc,0x00443728,0,31,signed,little_e
+[subject]時間:calc,0x00443730,0,24,signed,little_e
+[subject]主人公のステータス:dir
+         [subject]体力:calc,0x00443758,0,100,signed,little_e
+[back]
+[subject]ユカの状態:dir
+         [subject]体力:calc,0x00443864,0,100,signed,little_e
+         [subject]愛情度:calc,0x0044386C,0,999,signed,little_e
+         [subject]服従心:calc,0x00443870,0,999,signed,little_e
+         [subject]好奇心:calc,0x00443874,0,999,signed,little_e
+         [subject]羞恥心:calc,0x00443878,0,999,signed,little_e
+         [subject]感度:calc,0x0044387C,0,999,signed,little_e
+         [subject]アナル感度:calc,0x00443880,0,999,signed,little_e
+         [subject]Ｍ度:calc,0x00443884,0,999,signed,little_e
+         [subject]Ｈテク:calc,0x00443888,0,999,signed,little_e
+[/script]
+
+
+
+
+
