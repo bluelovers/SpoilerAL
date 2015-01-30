@@ -1,0 +1,246 @@
+[group]BTF_SSG
+[note]wordwrap
+※特に必要の無い限り、ガイドフォームは外すこと。
+※データ提供協力：Anfisbaenaさん　に感謝いたします。
+
+OSがWindows2000の方は、プロセス展開に失敗すると思われますので、以下を参考に対処してください。
+
+参考：SpoilerAL利用に関するよくある質問と回答例
+http://onionimu.hp.infoseek.co.jp/usr/redcat/004/01.html
+
+全回復＋移動性能向上：
+体力・気力全快、移動力９・移動属性空中化の効果
+[/note]
+
+[subject]ver1.0:dir
+
+[subject]SRPGパート関連:dir
+ [subject]戦闘毎に段位アップ/実行/_:toggle,0x42C189,EB00,7E08
+ [subject]味方ノーダメージ＋敵一撃死化/実行/_:toggle,0x4290B6,8A45033AC38B455474,8B45542BC789455479
+ [subject]味方ステータス表示時全回復＋移動性能向上/実行/_:b_toggle,0x42747C,BTFLST->BTF_c,real
+ [subject]SRPGパート速攻勝利化/実行/_:b_toggle,420A97,BTFLST->BTF_d,real
+[back]
+
+[subject]パラメータ関連:dir
+	[replace]_[:0x56FDB4:],BTFLST->BTF_PREX
+ [subject]移動画面上:dir
+	[repeat]BTFLST->BTFREP1,0,18,1
+ [back]
+ [subject]戦闘画面上:dir
+	[repeat]BTFLST->BTFREP2,0,26,1
+ [back]
+[back]
+
+[subject]ＣＧモード関連:dir
+	[replace]_[:0x56FDB4:]+0x0120,BTFLST->BTF_CG
+[back]
+
+[back]
+
+[subject]ver1.1:dir
+
+[subject]SRPGパート関連:dir
+ [subject]戦闘毎に段位アップ/実行/_:toggle,0x42C189,EB00,7E08
+ [subject]味方ノーダメージ＋敵一撃死化/実行/_:toggle,0x4290B6,8A45033AC38B455474,8B45542BC789455479
+ [subject]味方ステータス表示時全回復＋移動性能向上/実行/_:b_toggle,0x42747C,BTFLST->BTF_2c,real
+ [subject]SRPGパート速攻勝利化/実行/_:b_toggle,420A87,BTFLST->BTF_2d,real
+[back]
+
+[subject]パラメータ関連:dir
+	[replace]_[:0x56FDB4:],BTFLST->BTF_PREX
+ [subject]移動画面上:dir
+	[repeat]BTFLST->BTFREP1,0,18,1
+ [back]
+ [subject]戦闘画面上:dir
+	[repeat]BTFLST->BTFREP2,0,26,1
+ [back]
+[back]
+
+[subject]ＣＧモード関連:dir
+	[replace]_[:0x56FDB4:]+0x0120,BTFLST->BTF_CG
+[back]
+
+[back]
+
+[/group]
+
+
+[group]BTFREP1
+[subject]_mem,_[\:0x56FDB4\:]+0x01AFA8+0x[! 0x30*$Val !]=>temp;[\:$temp\:1]*0x04=>temp;[\:0x46B6A8+$temp\:],16,00,<No Data>:dir
+	[replace]_[:0x56FDB4:]+0x01AFA8+0x[! 0x30*$Val !],BTFLST->BTF_PR1
+[back]
+[/group]
+
+
+[group]BTFREP2
+[subject]_mem,_[\:0x56FDB4\:]+0x07A748+0x[! 0xC0*$Val !]=>temp;[\:$temp\:1]*0x04=>temp;[\:0x46B6A8+$temp\:],16,00,<No Data>:dir
+	[replace]_[:0x56FDB4:]+0x07A748+0x[! 0xC0*$Val !],BTFLST->BTF_PR2
+[back]
+[/group]
+
+
+[group]BTF_PREX
+[subject]共有修練/現在値/_:calc,0x01AF9C,0x000000,0x01869F,unsigned
+[e_with],0x00,0x63,unsigned
+[subject]地札/現在値/_:calc,0x01AFA1
+[subject]水札/現在値/_:calc,0x01AFA2
+[subject]火札/現在値/_:calc,0x01AFA3
+[subject]風札/現在値/_:calc,0x01AFA4
+[subject]空札/現在値/_:calc,0x01AFA5
+[/e_with]
+[/group]
+
+
+[group]BTF_PR1
+[subject]性別/_:list,0x01,BTFLST->LST_b,0x00,0x01
+[subject]段位/現在値/_:calc,0x02,0x01,0x63,unsigned
+[subject]存在フラグ/ＯＮ／ＯＦＦ/_:toggle,0x04,01,00
+[subject]修練/現在値/_:calc,0x06,0x00,0x63,unsigned
+[size]2
+ [subject]体力/現在値/_:calc,0x08,0x0001,0x270F,unsigned
+ [subject]気力/現在値/_:calc,0x0A,0x0001,0x270F,unsigned
+ [e_with],0x0000,0x03E7,unsigned
+  [subject]地/現在値/_:calc,0x0C
+  [subject]水/現在値/_:calc,0x0E
+  [subject]火/現在値/_:calc,0x10
+  [subject]風/現在値/_:calc,0x12
+  [subject]空/現在値/_:calc,0x14
+ [/e_with]
+ [/size]
+[subject]移動力/現在値/_:calc,0x16,0x01,0x09,unsigned
+[subject]移動属性/_:list,0x17,BTFLST->LST_c,0x02,0x01
+[subject]怒/現在値/_:calc,0x18,0x00,0x64,unsigned
+[subject]一括最大化/実行/_:b_toggle,0x00,BTFLST->BTF_a,offset
+[/group]
+
+
+[group]BTF_PR2
+[subject]段位/現在値/_:calc,0x02,0x01,0x63,unsigned
+[subject]修練/現在値/_:calc,0x06,0x00,0x63,unsigned
+[subject]最大体力/現在値/_:calc,0x08,0x0001,0x270F,unsigned
+[subject]現在体力/現在値/_:calc,0x54,0x00000001,0x0000270F,unsigned
+[subject]最大気力/現在値/_:calc,0x0A,0x0001,0x270F,unsigned
+[subject]現在気力/現在値/_:calc,0x58,0x00000001,0x0000270F,unsigned
+[size]2
+ [e_with],0x0000,0x03E7,unsigned
+  [subject]地/現在値/_:calc,0x0C
+  [subject]水/現在値/_:calc,0x0E
+  [subject]火/現在値/_:calc,0x10
+  [subject]風/現在値/_:calc,0x12
+  [subject]空/現在値/_:calc,0x14
+ [/e_with]
+ [/size]
+[subject]移動力/現在値/_:calc,0x16,0x01,0x09,unsigned
+[subject]移動属性/_:list,0x17,BTFLST->LST_c,0x02,0x01
+[subject]怒/現在値/_:calc,0x18,0x00,0x64,unsigned
+[subject]一括最大化/実行/_:b_toggle,0x00,BTFLST->BTF_b,offset
+[/group]
+
+
+[group]BTF_CG
+[subject]展観ＡＬＬ/実行/_:b_toggle,0x00,BTFLST->BTF_GR,offset
+[subject]想起ＡＬＬ/実行/_:b_toggle,0x00,BTFLST->BTF_HS,offset
+[subject]奏楽ＡＬＬ/実行/_:toggle,0x04,7FFFFF80,00000000
+[/group]
+
+
+[group]BTF_GR
+0x00,*_??1?????,*_??0?????
+0x08,0x12-FF,00
+[/group]
+
+
+[group]BTF_HS
+0x2D,7FFC,0000
+0x01A814,0x01ABBB-814081408140814081408140814081408F4397858ADB81408140814081408140F917EE0000000000000000000000000000000000F91FF920F921EE00000000000000000000000000,00
+[/group]
+
+
+[group]BTF_a
+0x08,0F27
+0x0A,0F27
+0x0C,E703
+0x0E,E703
+0x10,E703
+0x12,E703
+0x14,E703
+0x16,09
+0x17,03
+0x18,64
+[/group]
+
+
+[group]BTF_b
+0x08,0F27
+0x54,0F27
+0x0A,0F27
+0x58,0F27
+0x0C,E703
+0x0E,E703
+0x10,E703
+0x12,E703
+0x14,E703
+0x16,09
+0x17,03
+0x18,64
+[/group]
+
+
+[group]BTF_c
+0x42747C,E945DB0200,A120B24500
+0x454FC6,8A4703,000000
+0x454FC9,84C0,0000
+0x454FCB,751A,0000
+0x454FCD,0FBF4708,00000000
+0x454FD1,894754,000000
+0x454FD4,0FBF470A,00000000
+0x454FD8,894758,000000
+0x454FDB,C6471609,00000000
+0x454FDF,C6471703,00000000
+0x454FE3,C6471864,00000000
+0x454FE7,A120B24500,00000000000
+0x454FEC,E99024FDFF90,000000000000
+[/group]
+
+
+[group]BTF_2c
+0x42747C,E985040500,A120B24500
+0x477906,8A4703,000000
+0x477909,84C0,0000
+0x47790B,751A,0000
+0x47790D,0FBF4708,00000000
+0x477911,894754,000000
+0x477914,0FBF470A,00000000
+0x477918,894758,000000
+0x47791B,C6471609,00000000
+0x47791F,C6471703,00000000
+0x477923,C6471864,00000000
+0x477927,A120B24500,00000000000
+0x47792C,E950FBFAFF90,000000000000
+[/group]
+
+
+[group]BTF_d
+0x420A97,EB,75
+0x42BF7A,EB,74
+0x42E7FE,8A??03????74,8B??54????75
+[/group]
+
+
+[group]BTF_2d
+0x420A87,EB,75
+0x42BF7A,EB,74
+0x42E7FE,8A??03????74,8B??54????75
+[/group]
+
+
+[group]LST_b
+男性
+女性
+[/group]
+
+
+[group]LST_c
+徒歩
+空中
+[/group]
