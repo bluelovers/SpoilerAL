@@ -1,0 +1,45 @@
+[group]CaD_PR
+[note]wordwrap
+ƒVƒXƒeƒ€ƒ{ƒCƒX•t‚«‚¾‚Á‚½‚Ì‚ÅA‘‘¬g‚Á‚Ä‚İ‚½‚çc
+
+w’Å‘ù‚ªU‚ß‚Ä‚­‚é‚æ`x
+
+c‚®‚í(^^;
+
+•â‘«“I‚È•”•ª‚ÍCD”Å‚Æ“¯‚¶‚È‚Ì‚ÅÈ—ª‚µ‚Ü‚·B
+[/note]
+
+[subject]ƒpƒ‰ƒ[ƒ^ŠÖ˜A:dir
+[subject]DŠ´“xŠm”F’²®:dir
+	[repeat]CaDLST->CaDREP,0,6,1
+[/group]
+
+
+[group]CaDREP
+[subject][! @CaDLST->LST_a,$Val !]/Œ»İ’l/_:calc,_[:0x1003823C:]+0x[! 0xD80+$Val*4 !],0x1F4,0x5DC,unsigned
+[/group]
+
+
+[group]LST_a
+‹k“V‰¹
+Â‹{—I
+µé—Mq
+ŒN‰e•S‡“Ş
+÷’Ë—ö
+”üçÊ
+[/group]
+
+
+[group]CaD_F2
+[subject]‚n‚o‚s‚h‚n‚moŒ»/Às/_:toggle,0x98,01,00
+[subject]Â‹{—I••ˆó‰ğœ/Às/_:toggle,0x12C,01,00
+[subject]ëƒm‹{—•••ˆó‰ğœ/Às/_:toggle,0x271,01,00
+[subject]CONGRATURATIONS!/‚n‚m/_:toggle,0x672,01,00
+[/group]
+
+
+[group]CaD_CG
+[subject]‚b‚f ‚l‚n‚c‚dE‚q‚d‚o‚k‚`‚x:dir
+[subject]‚`‚k‚k ‚n‚m/Às/_:toggle,_[:0x1003823C:]+0x5DC,_[:0x1003823C:]+0x66B-01
+[subject]‚`‚k‚k ‚n‚e‚e/Às/_:toggle,_[:0x1003823C:]+0x5DC,_[:0x1003823C:]+0x66B-00
+[/group]
