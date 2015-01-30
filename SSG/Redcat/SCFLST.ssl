@@ -1,0 +1,518 @@
+[group]SCF_MA
+[note]wordwrap
+…とりあえず、シリーズ中最も無駄なデータの多い１作だったかなと。真王軍はもうやりたくないなぁ(^^;
+
+■戦闘パート関連
+戦闘パートスキップ化：
+コード入力時は、戦闘をせずに無条件勝利を得ることが可能。ただし、デスペラン等、イベントを経て倒すべきボスクラスの相手にも勝ってしまうので御注意を（笑）
+
+艦隊無敵化＆一撃必殺化：
+どの敵の攻撃ダメージも０にし、且つこちらの攻撃はＭＡＸダメージになる効果。ちなみに攻撃が外れても、相手は破壊されます(^^;
+
+無限行動可能化：
+任意の艦が攻撃するのを条件に、それまで行動終了している艦全てが再行動可能になります。
+
+司令官能力関係：
+能力値＝基本能力＋成長率×ＬＶです。
+
+艦隊能力関係：
+パーツ数が膨大すぎるので、艦種以外のパラメータ詳細に関しては、興味のある方が御自身でリスト作成して下さい。
+＊正直パラメータ調整するよりは、「戦闘パートスキップ」or「無敵＆一撃必殺」を利用した方が楽です。
+
+全開発プラン出現：
+現状、どのパーツがどの艦のものなのか把握しきれてない上穴明きデータなので、とりあえず「全て」出現させてます。
+[/note]
+
+[subject]戦闘パート関連:dir
+	[subject]戦闘パートスキップ化/実行/_:toggle,0x4828F6,33C08945BCEB10,8945BC837DBC00
+	[subject]自軍艦隊無敵＆一撃必殺化/実行/_:b_toggle,0x44BE80,SCFLST->SCF_a,real
+	[subject]艦隊無限行動可能化/実行/_:b_toggle,0x447C68,SCFLST->SCF_e,real
+	[subject]副兵装弾数減らない/実行/_:toggle,0x46D9F1,EB029090,FF4C9154
+	[subject]敵艦撃破時必ずＬＶＵＰ/実行/_:toggle,0x470902,BA640000009089,8B95E0FEFFFF01
+[/group]
+
+
+[group]SCF_a
+0x44BE96,E9394F1900,E86D000000
+0x5E0DD4,3BCA,0000
+0x5E0DD6,7407,0000
+0x5E0DD8,B89F860100,0000000000
+0x5E0DDD,EB02,0000
+0x5E0DDF,33C0,0000
+0x5E0DE1,8945DC,000000
+0x5E0DE4,E81FB1E6FF,0000000000
+0x5E0DE9,E9ADB0E6FF90,000000000000
+[/group]
+
+
+[group]SCF_b
+0x447C68,33D290,8B55DC
+0x46E7C1,33C090,8B450C
+[/group]
+
+
+[group]SCF_e
+0x447C68,33D290,8B55DC
+0x46E7C1,E92926,8B450C
+0x46E7C4,170090,8B5508
+0x5E0DEF,8B5508,000000
+0x5E0DF2,80BA8A00000000,00000000000000
+0x5E0DF9,7408,0000
+0x5E0DFB,8B450C,000000
+0x5E0DFE,83E008,000000
+0x5E0E01,EB02,0000
+0x5E0E03,33C0,0000
+0x5E0E05,E9BDD9E8FF90,000000000000
+[/group]
+
+
+[group]SCF_PR
+[subject]資金/現在値/_:calc,_[:[:0x661260:]+0x50C:]+0x968,0x000000,0x01869F,unsigned
+[subject]司令官能力任意編集:dir
+	[subject]クレア＝ヤングリーフ(1):dir
+		[replace]_[:[:0x661260:]+0x514:],SCFLST->SCF_c
+	[subject]クレア＝ヤングリーフ(2):dir
+		[replace]_[:[:0x661260:]+0x514:]+0x68,SCFLST->SCF_c
+	[subject]モリス＝ゴードン(1):dir
+		[replace]_[:[:0x661260:]+0x514:]+0x68*2,SCFLST->SCF_c
+	[subject]モリス＝ゴードン(2):dir
+		[replace]_[:[:0x661260:]+0x514:]+0x68*3,SCFLST->SCF_c
+	[subject]サダハル＝ムツ:dir
+		[replace]_[:[:0x661260:]+0x514:]+0x68*4,SCFLST->SCF_c
+	[subject]ラウラ＝カーラン:dir
+		[replace]_[:[:0x661260:]+0x514:]+0x68*5,SCFLST->SCF_c
+	[subject]ディウム:dir
+		[replace]_[:[:0x661260:]+0x514:]+0x68*6,SCFLST->SCF_c
+	[subject]ナホバ＝ビッグマウンテン:dir
+		[replace]_[:[:0x661260:]+0x514:]+0x68*7,SCFLST->SCF_c
+	[subject]ユーシス＝レインローグ:dir
+		[replace]_[:[:0x661260:]+0x514:]+0x68*8,SCFLST->SCF_c
+	[subject]ケ＝ガワハン:dir
+		[replace]_[:[:0x661260:]+0x514:]+0x68*9,SCFLST->SCF_c
+	[subject]リオ＝グレイプヴァイン:dir
+		[replace]_[:[:0x661260:]+0x514:]+0x68*10,SCFLST->SCF_c
+	[subject]ダーヴィッツ＝フィッカー:dir
+		[replace]_[:[:0x661260:]+0x514:]+0x68*11,SCFLST->SCF_c
+	[subject]マリー＝ド＝ビノシュ:dir
+		[replace]_[:[:0x661260:]+0x514:]+0x68*12,SCFLST->SCF_c
+	[subject]エーム:dir
+		[replace]_[:[:0x661260:]+0x514:]+0x68*13,SCFLST->SCF_c
+	[subject]アレックス＝ハン:dir
+		[replace]_[:[:0x661260:]+0x514:]+0x68*14,SCFLST->SCF_c
+[back]
+[subject]艦隊パラメータ任意編集:dir
+	[subject]第１艦隊:dir
+		[subject]司令官任意編集/_:d_list,_[:[:[:0x661260:]+0x50C:]+0x8D0:]+0x48,SCFLST->LST_a,0x00,0x35,SCFLST->LST_a1,offset
+		[subject]艦隊存在フラグ/実行/:toggle,_[:[:[:0x661260:]+0x50C:]+0x8D0:]+0x44,01000000,00000000
+		[subject]旗艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8D0:]:],SCFLST->SCF_e
+		[subject]１番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8D0:]+0x04:],SCFLST->SCF_e
+		[subject]２番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8D0:]+0x08:],SCFLST->SCF_e
+		[subject]３番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8D0:]+0x0C:],SCFLST->SCF_e
+		[subject]４番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8D0:]+0x10:],SCFLST->SCF_e
+		[subject]５番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8D0:]+0x14:],SCFLST->SCF_e
+	[back]
+	[subject]第２艦隊:dir
+		[subject]司令官任意編集/_:d_list,_[:[:[:0x661260:]+0x50C:]+0x8D4:]+0x48,SCFLST->LST_a,0x00,0x35,SCFLST->LST_a1,offset
+		[subject]艦隊存在フラグ/実行/:toggle,_[:[:[:0x661260:]+0x50C:]+0x8D4:]+0x44,01000000,00000000
+		[subject]旗艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8D4:]:],SCFLST->SCF_e
+		[subject]１番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8D4:]+0x04:],SCFLST->SCF_e
+		[subject]２番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8D4:]+0x08:],SCFLST->SCF_e
+		[subject]３番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8D4:]+0x0C:],SCFLST->SCF_e
+		[subject]４番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8D4:]+0x10:],SCFLST->SCF_e
+		[subject]５番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8D4:]+0x14:],SCFLST->SCF_e
+	[back]
+	[subject]第３艦隊:dir
+		[subject]司令官任意編集/_:d_list,_[:[:[:0x661260:]+0x50C:]+0x8D8:]+0x48,SCFLST->LST_a,0x00,0x35,SCFLST->LST_a1,offset
+		[subject]艦隊存在フラグ/実行/:toggle,_[:[:[:0x661260:]+0x50C:]+0x8D8:]+0x44,01000000,00000000
+		[subject]旗艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8D8:]:],SCFLST->SCF_e
+		[subject]１番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8D8:]+0x04:],SCFLST->SCF_e
+		[subject]２番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8D8:]+0x08:],SCFLST->SCF_e
+		[subject]３番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8D8:]+0x0C:],SCFLST->SCF_e
+		[subject]４番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8D8:]+0x10:],SCFLST->SCF_e
+		[subject]５番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8D8:]+0x14:],SCFLST->SCF_e
+	[back]
+	[subject]第４艦隊:dir
+		[subject]司令官任意編集/_:d_list,_[:[:[:0x661260:]+0x50C:]+0x8DC:]+0x48,SCFLST->LST_a,0x00,0x35,SCFLST->LST_a1,offset
+		[subject]艦隊存在フラグ/実行/:toggle,_[:[:[:0x661260:]+0x50C:]+0x8DC:]+0x44,01000000,00000000
+		[subject]旗艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8DC:]:],SCFLST->SCF_e
+		[subject]１番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8DC:]+0x04:],SCFLST->SCF_e
+		[subject]２番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8DC:]+0x08:],SCFLST->SCF_e
+		[subject]３番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8DC:]+0x0C:],SCFLST->SCF_e
+		[subject]４番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8DC:]+0x10:],SCFLST->SCF_e
+		[subject]５番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8DC:]+0x14:],SCFLST->SCF_e
+	[back]
+	[subject]第５艦隊:dir
+		[subject]司令官任意編集/_:d_list,_[:[:[:0x661260:]+0x50C:]+0x8E0:]+0x48,SCFLST->LST_a,0x00,0x35,SCFLST->LST_a1,offset
+		[subject]艦隊存在フラグ/実行/:toggle,_[:[:[:0x661260:]+0x50C:]+0x8E0:]+0x44,01000000,00000000
+		[subject]旗艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8E0:]:],SCFLST->SCF_e
+		[subject]１番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8E0:]+0x04:],SCFLST->SCF_e
+		[subject]２番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8E0:]+0x08:],SCFLST->SCF_e
+		[subject]３番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8E0:]+0x0C:],SCFLST->SCF_e
+		[subject]４番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8E0:]+0x10:],SCFLST->SCF_e
+		[subject]５番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8E0:]+0x14:],SCFLST->SCF_e
+	[back]
+	[subject]第６艦隊:dir
+		[subject]司令官任意編集/_:d_list,_[:[:[:0x661260:]+0x50C:]+0x8E4:]+0x48,SCFLST->LST_a,0x00,0x35,SCFLST->LST_a1,offset
+		[subject]艦隊存在フラグ/実行/:toggle,_[:[:[:0x661260:]+0x50C:]+0x8E4:]+0x44,01000000,00000000
+		[subject]旗艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8E4:]:],SCFLST->SCF_e
+		[subject]１番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8E4:]+0x04:],SCFLST->SCF_e
+		[subject]２番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8E4:]+0x08:],SCFLST->SCF_e
+		[subject]３番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8E4:]+0x0C:],SCFLST->SCF_e
+		[subject]４番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8E4:]+0x10:],SCFLST->SCF_e
+		[subject]５番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8E4:]+0x14:],SCFLST->SCF_e
+	[back]
+	[subject]第７艦隊:dir
+		[subject]司令官任意編集/_:d_list,_[:[:[:0x661260:]+0x50C:]+0x8E8:]+0x48,SCFLST->LST_a,0x00,0x35,SCFLST->LST_a1,offset
+		[subject]艦隊存在フラグ/実行/:toggle,_[:[:[:0x661260:]+0x50C:]+0x8E8:]+0x44,01000000,00000000
+		[subject]旗艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8E8:]:],SCFLST->SCF_e
+		[subject]１番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8E8:]+0x04:],SCFLST->SCF_e
+		[subject]２番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8E8:]+0x08:],SCFLST->SCF_d
+		[subject]３番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8E8:]+0x0C:],SCFLST->SCF_e
+		[subject]４番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8E8:]+0x10:],SCFLST->SCF_e
+		[subject]５番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8E8:]+0x14:],SCFLST->SCF_e
+	[back]
+	[subject]第８艦隊:dir
+		[subject]司令官任意編集/_:d_list,_[:[:[:0x661260:]+0x50C:]+0x8EC:]+0x48,SCFLST->LST_a,0x00,0x35,SCFLST->LST_a1,offset
+		[subject]艦隊存在フラグ/実行/:toggle,_[:[:[:0x661260:]+0x50C:]+0x8EC:]+0x44,01000000,00000000
+		[subject]旗艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8EC:]:],SCFLST->SCF_e
+		[subject]１番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8EC:]+0x04:],SCFLST->SCF_e
+		[subject]２番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8EC:]+0x08:],SCFLST->SCF_e
+		[subject]３番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8EC:]+0x0C:],SCFLST->SCF_e
+		[subject]４番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8EC:]+0x10:],SCFLST->SCF_e
+		[subject]５番艦:dir
+			[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8EC:]+0x14:],SCFLST->SCF_e
+	[back]
+[/group]
+
+
+[group]SCF_EX
+[subject]全開発プラン出現/実行/_:toggle,_[:[:[:0x661260:]+0x50C:]+0xAC4:]+0x2264,_[:[:[:0x661260:]+0x50C:]+0xAC4:]+0x27DC-01000000
+[/group]
+
+
+[group]SCFREP1
+[subject][! @SCFLST->LST_a,$Val !]:dir
+[replace]_[:[:0x661260:]+0x614:]+0x[! $Val*0x68 !],SCFLST->SCF_c
+[/group]
+//[replace]ポインタに[repeat]絡めるとうまくいかないらしい。残念(^^;
+
+
+[group]SCF_c
+[subject]基本能力:dir
+	[subject]ＬＶ/現在値/_:calc,0x04,0x01,0x63,unsigned
+	[e_with],0x80000000,0x7FFFFFFF
+		[subject]対艦/現在値/固定:calc,0x0C
+		[subject]対空/現在値/固定:calc,0x10
+		[subject]対惑星/現在値/固定:calc,0x14
+		[subject]防御/現在値/固定:calc,0x18
+	[/e_with]
+[back]
+[subject]成長率:dir
+	[e_with],0x80000000,0x7FFFFFFF
+	[subject]対艦/現在値/固定:calc,0x1C
+	[subject]対空/現在値/固定:calc,0x20
+	[subject]対惑星/現在値/固定:calc,0x24
+	[subject]防御/現在値/固定:calc,0x28
+	[/e_with]
+[back]
+[back]
+[/group]
+
+
+[group]SCFREP2
+[subject][! @SCFLST->LST_b,$Val !]:dir
+[replace]_[:[:[:[:0x661260:]+0x50C:]+0x8D0+0x[! 0x04*$Val !]:],SCFLST->SCF_d
+[/group]
+//[replace]ポインタに[repeat]絡めるとうまくいかないらしい。残念(^^;
+
+
+[group]LST_a2
+クレア＝ヤングリーフ
+クレア＝ヤングリーフ
+モリス＝ゴードン
+モリス＝ゴードン
+サダハル＝ムツ
+ラウラ＝カーラン
+ディウム
+ナホバ＝ビッグマウンテン
+ユーシス＝レインローグ
+ケ＝ガワハン
+リオ＝グレイプヴァイン
+ダーヴィッツ＝フィッカー
+マリー＝ド＝ビノシュ
+エーム
+アレックス＝ハン
+ミケーネ一般仕官
+ミケーネ一般仕官
+ミケーネ一般仕官
+サルマーギン＝カーロ
+ミケーネ一般仕官
+ミケーネ一般仕官
+ミケーネ一般仕官
+サルマーギン＝カーロ
+ポリックス一般仕官
+ポリックス一般仕官
+ポリックス一般仕官
+エーム
+ミケーネ一般仕官
+ミケーネ一般仕官
+ミケーネ一般仕官
+サルマーギン＝カーロ
+ポリックス一般仕官
+ポリックス一般仕官
+ポリックス一般仕官
+エーム
+ミケーネ一般仕官
+ミケーネ一般仕官
+ミケーネ一般仕官
+サルマーギン＝カーロ
+ポリックス一般仕官
+ポリックス一般仕官
+エーム
+"Ｅ"
+エグザス＝グラフツゥラー
+ハル＝グレイス＝サダフィ
+ヴェルヴェルフ
+アーサー＝モーゼス
+マスター・イル
+アシュリン
+エピクム
+シンシィ＝ルゥ
+アリサ＝メリーランド
+始皇帝
+アデル＝ロックフォード
+ガーベラ＝グリエンヌ
+アブ＝ビジ＝サロ
+リ＝ウンジュ
+ポリックス一般仕官
+[/group]
+
+
+[group]LST_a
+クレア＝ヤングリーフ
+クレア＝ヤングリーフ
+モリス＝ゴードン
+モリス＝ゴードン
+サダハル＝ムツ
+ラウラ＝カーラン
+ディウム
+ナホバ＝ビッグマウンテン
+ユーシス＝レインローグ
+ケ＝ガワハン
+リオ＝グレイプヴァイン
+ダーヴィッツ＝フィッカー
+マリー＝ド＝ビノシュ
+エーム
+アレックス＝ハン
+"Ｅ"
+エグザス＝グラフツゥラー
+ハル＝グレイス＝サダフィ
+ヴェルヴェルフ
+アーサー＝モーゼス
+マスター・イル
+アシュリン
+エピクム
+シンシィ＝ルゥ
+[/group]
+
+
+[group]LST_a1
+,0x00=00000000
+,0x00=01000000
+,0x00=02000000
+,0x00=03000000
+,0x00=04000000
+,0x00=05000000
+,0x00=06000000
+,0x00=07000000
+,0x00=08000000
+,0x00=09000000
+,0x00=0A000000
+,0x00=0B000000
+,0x00=0C000000
+,0x00=0D000000
+,0x00=0E000000
+,0x00=2B000000
+,0x00=2C000000
+,0x00=2D000000
+,0x00=2E000000
+,0x00=2F000000
+,0x00=30000000
+,0x00=31000000
+,0x00=32000000
+,0x00=33000000
+[/group]
+
+
+[group]LST_b
+第１艦隊
+第２艦隊
+第３艦隊
+第４艦隊
+第５艦隊
+第６艦隊
+第７艦隊
+第８艦隊
+[/group]
+
+
+[group]SCF_d
+[subject]旗艦:dir
+	[replace]_[:0x00:],SCFLST->SCF_e
+[subject]１番艦:dir
+	[replace]_[:0x04:],SCFLST->SCF_e
+[subject]２番艦:dir
+	[replace]_[:0x08:],SCFLST->SCF_e
+[subject]３番艦:dir
+	[replace]_[:0x0C:],SCFLST->SCF_e
+[subject]４番艦:dir
+	[replace]_[:0x10:],SCFLST->SCF_e
+[subject]５番艦:dir
+	[replace]_[:0x14:],SCFLST->SCF_e
+[back]
+[/group]
+
+
+[group]SCF_e
+[subject]移動力/現在値/固定:calc,0x04,0x01,0x63,unsigned
+[subject]シールド/現在値/固定:calc,0x08,0x0000,0x270F,unsigned
+[subject]防御力/現在値/固定:calc,0x0C,0x0000,0x270F,unsigned
+[e_with],0x00,0x64,unsigned
+[subject]回避率/現在値/固定:calc,0x14
+[subject]ステルス/現在値/固定:calc,0x1C
+[subject]索敵/現在値/固定:calc,0x20
+[subject]索敵範囲/現在値/固定:calc,0x24
+[/e_with]
+[subject]現在ＨＰ/現在値/固定:calc,0x38,0x0000,0x270F,unsigned
+[size]4
+[subject]船体番号変更/_:list,0x30,SCFLST->LST_c,0x00,0x01
+[subject]主兵装番号変更/_:calc,0x4C,0x0000,0x0158,unsigned
+[subject]副兵装番号変更/_:calc,0x50,0x0000,0x0158,unsigned
+[subject]オプション番号変更/_:calc,0x74,0x00,0xD2,unsigned
+[/size]
+[back]
+[/group]
+
+
+[group]LST_c
+シュレヒターⅠ級駆逐艦
+シュレヒターⅡ級駆逐艦
+シュレヒターⅢ級駆逐艦
+シュレヒターⅢ級軽駆逐艦
+シュレヒターⅣ級駆逐艦
+シュレヒターⅣ級軽駆逐艦
+ポネットⅠ級巡洋艦
+ポネットⅡ級巡洋艦
+ポネットⅢ級巡洋艦
+ポネットⅢ級重巡洋艦
+ポネットⅣ級巡洋艦
+ポネットⅣ級重巡洋艦
+エルダⅠ級空母
+エルダⅡ級空母
+エルダⅢ級空母
+エルダⅣ級空母
+スワガーⅠ級戦艦
+スワガーⅡ級戦艦
+スワガーⅢ級戦艦
+スワガーⅣ級戦艦
+ザラッシュ級空母
+ザラッシュⅡ級空母
+ファ・マデルⅢ級空母
+ファ・マデルⅣ級空母
+エルダ・グランデⅠ級空母
+エルダ・グランデⅡ級空母
+エルダ・グランデⅢ級空母
+フィロトⅠ級空母
+フィロトⅠ級高速空母
+フィロトⅡ級空母
+フィロト・シブルⅡ級空母
+フィロト・シブルⅢ級空母
+リオーヌ級戦艦
+リオーヌ級重装戦艦
+リオーヌⅡ級戦艦
+リオーヌⅡ級重装戦艦
+エルダ・プリエ級戦艦
+エルダ・プリエ級突撃艦
+エルダ・プリエⅡ級戦艦
+エルダ・プリエⅡ級突撃艦
+ダクーポⅠ級駆逐艦
+ダクーポⅡ級駆逐艦
+ダクーポⅢ級駆逐艦
+ダクーポⅣ級駆逐艦
+オルキディーアⅠ級巡洋艦
+オルキディーアⅡ級巡洋艦
+オルキディーアⅢ級巡洋艦
+オルキディーアⅣ級巡洋艦
+ゴッツェラーⅠ級戦艦
+ゴッツェラーⅡ級戦艦
+ゴッツェラーⅢ級戦艦
+ゴッツェラーⅣ級戦艦
+ロ・ガストムⅠ級駆逐艦
+ロ・ガストムⅡ級駆逐艦
+ロ・ガストムⅢ級駆逐艦
+ガウ・ランガⅠ級巡洋艦
+ガウ・ランガⅡ級巡洋艦
+ガウ・ランガⅢ級巡洋艦
+ゼラ・ドーズンⅠ級戦艦
+ゼラ・ドーズンⅡ級戦艦
+ゼラ・ドーズンⅢ級戦艦
+ゼラ・ドーズンⅢ級特攻艦
+ファ・マデルⅠ級空母
+ファ・マデルⅡ級空母
+ファ・マデルⅢ級空母
+ブミー級駆逐艦
+ビゴー級戦艦
+ビゴー級突撃艦
+ビゴー級突撃艦
+ゲイロン級空母
+ゼオ級移動要塞
+デスペラン(1)
+デスペラン(2)
+[/group]
