@@ -1,0 +1,182 @@
+[group]WOED_SSG
+[note]wordwrap
+蒼ざめた月の光のサントラ欲しさに購入しましたが、このブランドらしさが良く出てるので、一度エゴ作をやってみたい方はどうぞ。シナリオは期待しないでくださいw
+
+■■SLGパート関連その他
+ＡＶＧパート高速化強化版：
+仕様が以前のままなので改善。もっともVAGRANTSのそれよりかは余程ましですがw
+
+■■パラメータ関連
+プレイ上反映なので、起動後１回スケジュールを実行させてポインタを生成しないと利用できません。書き換えて１週送ると、書き換えた値にその週の効果が付加された結果になります。
+
+■■フラグ関連
+即時効果。
+
+■■ＣＧモード関連
+各機能でフラグを書き換えた後、イニシャルスタートで最初のイベントＣＧ「見知らぬ国を行く」を見れば作業完了。
+
+ver1.10 CRC32/
+MAID.EXE=AE83DCF7
+[/note]
+
+[subject]SLGパート関連その他:dir
+	[subject]各種自動回復処理群/_:d_toggle,0x42DBCE,WOEDLST->LST_a,WOEDLST->LST_b,real
+	[subject]ＡＶＧパート高速化強化版/実行/_:b_toggle,0x40C2F1,WOEDLST->WOED_a,real
+[root]
+
+[subject]パラメータ関連:dir
+ [enabled][:0x515F18:] != 0x00000000
+	[replace]_[:0x515F18:],WOEDLST->WOED_PR1
+ [/enabled]
+[root]
+
+[subject]フラグ関連:dir
+	[subject]調度品全種所持/実行/_:toggle,_[:0x515F18:]+0x250,_[:0x515F18:]+0x44F-01000000FFFFFFFFFFFFFFFF01000000
+	[subject]全課題リスト出現/実行/_:toggle,0x51018C,0x5101A7-*{0000::0200*}
+	[subject]ソフィー・ロザリー同時攻略可能/実行/_:b_toggle,0x510230,WOEDLST->WOED_b,real
+[root]
+
+[subject]ミニゲーム関連:dir
+ [subject]ヴァンタン:dir
+	[subject]１枚捨てると即上がり/実行/_:b_toggle,0x494448,WOEDLST->WOED_f,real
+	[subject]相手ターン封印化/実行/_:b_toggle,0x49B89E,WOEDLST->WOED_g,real
+ [back]
+ [subject]ビリヤード:dir
+	[subject]ビリヤードパートスキップ化（即勝利）/実行/_:b_toggle,0x4915E1,WOEDLST->WOED_c,real
+	[subject]相手ターン封印化/実行/_:b_toggle,0x49177D,WOEDLST->WOED_e,real
+	[subject]無条件フルショット化/実行/_:b_toggle,0x491EFD,WOEDLST->WOED_d,real
+[root]
+
+[subject]ＣＧモード関連:dir
+ [subject]ＯＦＦ化用オプション/実行/_:toggle,0x480078,10,20
+	[replace]_[:0x5191DC:],WOEDLST->WOED_CG
+[root]
+
+[/group]
+
+
+[group]WOED_CG
+[subject]Recreation Room出現/実行/_:toggle,_0x510140-[_0_],01,00
+[subject]クリアフラグ/実行/_:toggle,0xF4,01,00
+[subject]CG GALLERY:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x04,0xBF-*{10::20*}
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x04,0xBF-*{20::10*}
+[back]
+[subject]Memorial:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0xC4,0xEF-2F
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0xC4,0xEF-10
+[/group]
+
+
+[group]WOED_a
+0x40C2F1,EB,75
+0x40DD68,EB00,740A
+0x40DF8A,EB00,750A
+0x411DAD,EB00,740A
+[/group]
+
+
+[group]LST_a
+メイドの体力・勤勉さ自動最大回復
+メイドのグッドステータス維持
+クロード体力自動回復
+各場所清掃度常時最大化
+所持金自動最大回復
+クロード評価自動最大回復
+ロンサール人口自動最大回復
+[/group]
+
+
+[group]LST_b
+0x447B7A=EB00/7E09,0x447BD4=EB00/7E0C
+0x4477F1=EB/75
+0x447A92=EB00/7E09
+0x448122=B8640000009090/0384CADC000000,0x4494B8=33D2B164/8B082BCA
+0x447A2F=EB00/7E09
+0x44795D=EB/7D
+0x44789E=EB00/7509
+[/group]
+
+
+[group]WOED_PR1
+[subject]シャルロット・ヴェルレーヌ:dir
+	[replace]0x1E0,WOEDLST->WOED_PR2
+[subject]ミレーヌ・トラントゥール:dir
+	[replace]0x218,WOEDLST->WOED_PR2
+[subject]全部屋清掃度ＭＡＸ化/実行/_:toggle,0x0D8,0x143-64000000????????
+[subject]クロード体力/実行/_:calc,0xB8,0x00,0x64,unsigned
+[subject]所持金/現在値/_:calc,0xB0,0x0000,0xFFFF,unsigned
+[subject]評価/実行/_:f_calc,0xB4,0,100,float
+[subject]ロンサール人口/実行/_:f_calc,0xA8,0,999900,float
+[/group]
+
+
+[group]WOED_PR2
+[subject]体力/現在値/_:calc,0x00,0x00,0x64,unsigned
+[subject]勤勉さ/現在値/_:calc,0x04,0x00,0x64,unsigned
+[subject]料理ＬＶ/現在値/_:calc,0x08,0x01,0x09,unsigned
+[subject]清掃ＬＶ/現在値/_:calc,0x0C,0x01,0x09,unsigned
+[subject]料理ＥＸＰ/現在値/_:calc,0x10,0x0000,0x270F,unsigned
+[subject]清掃ＥＸＰ/現在値/_:calc,0x14,0x0000,0x270F,unsigned
+[back]
+[/group]
+
+
+[group]WOED_b
+0x510230,*_????1???
+0x510232,*_??????1?
+[/group]
+
+
+[group]WOED_c
+0x4915E1,0A,04
+0x49177D,0A,08
+[/group]
+
+
+[group]WOED_d
+0x491EFD,C701,8139
+0x491F03,B8E80300009090,7D0A8B55088B02
+[/group]
+
+
+[group]WOED_e
+0x49177D,04,08
+0x491C0F,50A1C0D84F0083,833DC4B8510000
+0x491C16,F809,7513
+0x491C18,587F10EB049090,833DC0D84F0007
+0x491C1F,9090,750A
+[/group]
+
+
+[group]WOED_f
+0x494448,E94BB6,8B55FC
+0x49444B,0400,8B02
+0x4DFA98,8B55FC,000000
+0x4DFA9B,89D1,0000
+0x4DFA9D,A148B95100,0000000000
+0x4DFAA2,3B4838,000000
+0x4DFAA5,750E,0000
+0x4DFAA7,8B8090000000,000000000000
+0x4DFAAD,85C0,0000
+0x4DFAAF,7504,0000
+0x4DFAB1,33C0,0000
+0x4DFAB3,EB03,0000
+0x4DFAB5,8B02,0000
+0x4DFAB7,48,00
+0x4DFAB8,E99349FBFF90,000000000000
+[/group]
+
+
+[group]WOED_g
+0x49B89E,E92542040090,898290000000
+0x4DFAC8,51,00
+0x4DFAC9,8B4A38,000000
+0x4DFACC,8B09,0000
+0x4DFACE,85C9,0000
+0x4DFAD0,59,00
+0x4DFAD1,7402,0000
+0x4DFAD3,33C0,0000
+0x4DFAD5,898290000000,000000000000
+0x4DFADB,E9C4BDFBFF90,000000000000
+[/group]
