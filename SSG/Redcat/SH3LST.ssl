@@ -1,0 +1,215 @@
+[group]SH3_SSG
+[note]wordwrap
+SchwarzschildⅢ＋Ⅳ収録のⅢ用です。
+
+改造弊害遮断：
+１戦隊に501隻以上の戦艦を配置・不正な戦艦データ設定時のエラー回避効果。
+
+※戦艦の巡航速度が大き過ぎると不具合が発生する可能性があります。「きっとバグバグ」メッセージ付で。
+[/note]
+
+[subject]パラメータ関連:dir
+ [subject]改造弊害遮断/実行/_:b_toggle,0x00,SH3LST->SH3_a,offset
+ [subject]国家データ:dir
+  [repeat]SH3LST->SH3REP1,0,12,1
+ [back]
+ [subject]司令官データ:dir
+  [repeat]SH3LST->SH3REP2,0,16,1
+ [back]
+ [subject]艦隊データ:dir
+  [repeat]SH3LST->SH3REP3,0,6,1
+ [back]
+ [subject]戦艦データ:dir
+  [repeat]SH3LST->SH3REP4,0,48,1
+ [back]
+[back]
+
+[/group]
+
+
+[group]SH3_a
+0x417F1B,EB,74
+0x41B313,EB,7D
+0x42B921,EB,74
+[/group]
+
+
+[group]SH3REP1
+[subject][! @SH3LST->LST_a,$Val !]:dir
+ [replace]_0x52D850+0x[! 0x20*$Val !],SH3LST->SH3_PR1
+[back]
+[/group]
+
+
+[group]SH3REP2
+[subject][! @SH3LST->LST_b,$Val !]:dir
+ [replace]_0x530BE8+0x[! 0x08*$Val !],SH3LST->SH3_PR2
+[back]
+[/group]
+
+
+[group]SH3REP3
+[subject][! @SH3LST->LST_c,$Val !]:dir
+ [replace]_0x52D9E8+0x[! 0x18*$Val !],SH3LST->SH3_PR3
+[back]
+[/group]
+
+
+[group]SH3REP4
+[subject][! @SH3LST->LST_d,$Val !]:dir
+ [replace]_0x52A2C0+0x[! 0x10*$Val !],SH3LST->SH3_PR4
+[back]
+[/group]
+
+
+[group]SH3_PR1
+[subject]資金/現在値/固定:calc,0x00,0x000000,0x01869F,unsigned
+[subject]資源/現在値/固定:calc,0x08,0x000000,0x01869F,unsigned
+[subject]対パーシオン印象値/現在値/_:calc,0x0C,0x00,0xC8,unsigned
+[/group]
+
+
+[group]SH3_PR2
+[subject]未存在であれば出現/実行/_:toggle,0x00,*{0B::07*}
+[subject]階級/_:list,0x04,SH3LST->LST_2b,0x00,0x01
+[subject]経験値/現在値/_:calc,0x06,0x0000,0x2710,unsigned
+[/group]
+
+
+[group]SH3_PR3
+[subject]第１戦隊戦艦種類/_:list,0x02,SH3LST->LST_d,0x00,0x01
+[subject]第１戦隊戦艦数/現在値/固定:calc,0x04,0x0000,0x4E1F,unsigned
+[subject]第２戦隊戦艦種類/_:list,0x08,SH3LST->LST_d,0x00,0x01
+[subject]第２戦隊戦艦数/現在値/固定:calc,0x0A,0x0000,0x4E1F,unsigned
+[subject]第３戦隊戦艦種類/_:list,0x0E,SH3LST->LST_d,0x00,0x01
+[subject]第３戦隊戦艦数/現在値/固定:calc,0x10,0x0000,0x4E1F,unsigned
+[subject]第４戦隊戦艦種類/_:list,0x14,SH3LST->LST_d,0x00,0x01
+[subject]第４戦隊戦艦数/現在値/固定:calc,0x16,0x0000,0x4E1F,unsigned
+[/group]
+
+
+[group]SH3_PR4
+[subject]一括強化/実行/_:toggle,0x02,0F270F270F270F00630A
+[e_with],0x0000,0x270F,unsigned
+ [subject]対艦攻撃力/現在値/_:calc,0x02
+ [subject]惑星攻撃力/現在値/_:calc,0x04
+ [subject]耐久力/現在値/_:calc,0x06
+[/e_with]
+[subject]巡航速度/現在値/_:calc,0x08,0x01,0x0F,unsigned
+[subject]戦時速度/現在値/_:calc,0x09,0x00,0x0F,unsigned
+[subject]戦術射程/現在値/_:calc,0x0A,0x00,0x63,unsigned
+[subject]充填速度/現在値/_:calc,0x0B,0x00,0x0A,unisgned
+[e_with],0x00,0xFF,unsigned
+ [subject]建造単価/現在値/_:calc,0x0C
+ [subject]資源/現在値/_:calc,0x0D
+ [subject]売却単価/現在値/_:calc,0x0E
+[/e_with]
+[/group]
+
+
+[group]LST_a
+パーシオン
+アプリオン
+イノン
+ニーダバウ
+クロスバル
+イェルプ
+ミクトネス
+エルバイブ
+クヌーダ
+ルシーデ
+ヴァルダム
+ＩＬＯ
+[/group]
+
+
+[group]LST_b
+ハミルトン
+ワレンコフ
+クレホ
+ワイズマン
+パシャ
+シュアレス
+ノーベル
+ミュンスター
+ウィドマーク
+ゴヴォン
+ハヤマ
+ロンブローゾ
+エッジクリフ
+ワン
+アムリード
+イークリバ
+[/group]
+
+
+[group]LST_2b
+大佐
+准将
+宙将
+中級宙将
+上級宙将
+提督
+[/group]
+
+
+[group]LST_c
+第１艦隊
+第２艦隊
+第３艦隊
+第４艦隊
+第５艦隊
+第６艦隊
+[/group]
+
+
+[group]LST_d
+ハーキュリー級迎撃戦闘艦
+オライオン級迎撃戦闘艦
+ユリシーズ級巡航駆逐艦
+パーシアス級巡航駆逐艦
+アキリーズ級強襲戦闘艦
+ギャラクシー級巡航戦艦
+ウィザード級対地攻撃艦
+シラ級対地攻撃艦
+タイフーン級対地強襲艦
+ハイドラ級対地強襲艦
+サイクロプス級強襲母艦
+ポラリス級強襲母艦
+デロモラ級巡航駆逐艦
+ゼドレム級巡航駆逐艦
+ディルロー級強襲戦闘艦
+ザルカイド級巡航戦艦
+バムローダ級巡航戦艦
+ヴァトール級巡航強襲艦
+タクラ級対地攻撃艦
+ガース級対地強襲艦
+ガズール級強襲母艦
+グノス級強襲戦闘艦
+ディーム級巡航戦艦
+ジェナス級巡航戦艦
+ウェルファ級巡航強襲艦
+ルフィター級強襲母艦
+ラディア級強襲母艦
+ズィスター級迎撃戦闘艦
+ロデュム級巡航駆逐艦
+ルヴァーデ級巡航駆逐艦
+モーディ級強襲戦闘艦
+ミーシア級巡航戦艦
+ボルコス級巡航戦艦
+パサヴァリ級対地強襲艦
+アンガー級強襲母艦
+イギューネ級強襲母艦
+キナリス級迎撃戦闘艦
+ティレット級迎撃戦闘艦
+イストック級巡航駆逐艦
+オルゼット級巡航駆逐艦
+ソントレス級強襲戦闘艦
+アトネット級巡航戦艦
+アヴェット級巡航戦艦
+マフリート級対地攻撃艦
+ハイバル級対地強襲艦
+ハンプレー級対地強襲艦
+レクテア級強襲母艦
+ソル級ＵＬＥＣ
+[/group]
