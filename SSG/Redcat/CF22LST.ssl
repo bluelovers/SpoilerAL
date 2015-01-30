@@ -1,0 +1,135 @@
+[group]CF22_SSG
+
+[subject]ver2.10:dir
+
+[subject]ＲＰＧパート関連:dir
+ [subject]無限行動可能化/実行/_:toggle,0x4781C4,83610EF0EB029090,8B510E83E2107444
+ [subject]自軍ユニット移動力極大化/実行/_:toggle,0x47EAFE,F6410FFF75086633C0B0638841588BE55DC3,8BE55DC3CCCCCCCCCCCCCCCCCCCCCCCCCCCC
+ [subject]自軍ユニット常にLPMAX/実行/_:toggle,0x47E92E,F6410FFF75086633C0B0648841508BE55DC3,8BE55DC3CCCCCCCCCCCCCCCCCCCCCCCCCCCC
+ [subject]攻撃１回でLVMAX/実行/_:toggle,0x476689,8B0424,034144
+ [subject]強化型天地咆哮龍鳴斬/実行/_:b_toggle,0x00,CF22LST->CF22_a,offset
+[back]
+
+[subject]パラメータ関連:dir
+ [repeat]CF22LST->CF22REP2,0,9,1
+[back]
+
+[subject]フラグ関連:dir
+ [repeat]CF22LST->CF22REP1,0,3,1
+ [subject]分岐フラグ/現在値/_:calc,0x5019A8,0x00,0x04,unsigned
+[back]
+
+[subject]ＣＧモード関連:dir
+ [subject]GALLERY ALL/実行/_:toggle,0x506350,0x506517-01000000,00
+ [subject]MEMORY ALL/実行/_:toggle,0x506550,0x506577-01000000,00
+[back]
+
+[back]
+
+[subject]ver2.11a:dir
+
+[subject]ＲＰＧパート関連:dir
+ [subject]無限行動可能化/実行/_:b_toggle,0x00,CF22LST->CF23_b,offset
+ [subject]自軍ユニット移動力極大化/実行/_:toggle,0x47EB3E,F6410FFF75086633C0B0638841588BE55DC3,8BE55DC3CCCCCCCCCCCCCCCCCCCCCCCCCCCC
+ [subject]自軍ユニット常にLPMAX/実行/_:toggle,0x47E96E,F6410FFF75086633C0B0648841508BE55DC3,8BE55DC3CCCCCCCCCCCCCCCCCCCCCCCCCCCC
+ [subject]攻撃１回でLVMAX/実行/_:toggle,0x4766B9,8B0424,034144
+ [subject]強化型天地咆哮龍鳴斬/実行/_:b_toggle,0x00,CF22LST->CF23_a,offset
+[back]
+
+[subject]パラメータ関連:dir
+ [repeat]CF22LST->CF22REP2,0,9,1
+[back]
+
+[subject]フラグ関連:dir
+ [repeat]CF22LST->CF22REP1,0,3,1
+ [subject]分岐フラグ/現在値/_:calc,0x5019A8,0x00,0x04,unsigned
+[back]
+
+[subject]ＣＧモード関連:dir
+ [subject]GALLERY ALL/実行/_:toggle,0x506350,0x506517-01000000,00
+ [subject]MEMORY ALL/実行/_:toggle,0x506550,0x506577-01000000,00
+[back]
+
+[back]
+
+[/group]
+
+
+[group]CF22REP1
+[subject][! @CF22LST->LST_a,$Val !]好感度/現在値/_:calc,_0x501990+0x[! 0x04*$Val !],0x0000,0x3E7,unsigned
+[/group]
+
+
+[group]CF22REP2
+[subject][! @CF22LST->LST_b,$Val !]:dir
+ [replace]_0x50B380+0x[! 0x24*$Val !],CF22LST->CF22_PR
+[back]
+[/group]
+
+
+[group]CF22_PR
+[subject]LV/現在値/_:calc,0x02,0x01,0x63,unsigned
+[subject]EXP/現在値/_:calc,0x04,0x0000,0x26AB,unsigned
+[e_with],0x0000,0x270F,unsigned
+ [subject]MAXHP/現在値/_:calc,0x0C
+ [subject]攻撃力/現在値/_:calc,0x0E
+ [subject]防御力/現在値/_:calc,0x10
+[/e_with]
+[/group]
+
+
+[group]LST_a
+アリア
+ハンナ
+ティア
+[/group]
+
+
+[group]LST_b
+ヒューイ
+アリア
+ハンナ
+ティア
+ルナール
+セシル
+ジュディ
+シルエラ
+ソミア
+[/group]
+
+
+[group]CF22_a
+0x46B345,E986AD050090,898554FFFFFF
+0x4C60D0,81781097B496C2,00000000000000
+0x4C60D7,751A,0000
+0x4C60D9,C74040E7030000,00000000000000
+0x4C60E0,66C74054C2F7,000000000000
+0x4C60E6,66C7405CC2F7,000000000000
+0x4C60EC,C74016814589FC,00000000000000
+0x4C60F3,898554FFFFFF,0000000000
+0x4C60F9,E94D52FAFF,0000000000
+[/group]
+
+
+[group]CF23_a
+0x46B375,E986AD050090,898554FFFFFF
+0x4C6100,81781097B496C2,00000000000000
+0x4C6107,751A,0000
+0x4C6109,C74040E7030000,00000000000000
+0x4C6110,66C74054C2F7,000000000000
+0x4C6116,66C7405CC2F7,000000000000
+0x4C611C,C74016814589FC,00000000000000
+0x4C6123,898554FFFFFF,0000000000
+0x4C6129,E94D52FAFF,0000000000 
+[/group]
+
+
+[group]CF23_b
+0x4781F7,E934DF0400,83E2107444
+0x4C6130,66F7410E0001,000000000000
+0x4C6136,7506,0000
+0x4C6138,6681610EF0FF,000000000000
+0x4C613E,83E210,000000
+0x4C6141,0F84F920FBFF,000000000000
+0x4C6147,E9B020FBFF,0000000000
+[/group]
