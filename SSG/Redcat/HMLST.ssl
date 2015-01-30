@@ -1,0 +1,108 @@
+[group]HM_MA
+[note]wordwrap
+以下、少々補足です
+
+■育成パート
+チェック時のみ有効
+
+能力＋９９９：
+消耗度も上昇するので、消耗度増えないと併用必須
+
+■パラメータ関連
+任意に下げたい場合に利用価値あり
+
+■おまけ
+ＡＤＶパートの発生
+イベントの任意操作「モードＯＮ」後、イベント番号を入力。解除時は「モードＯ
+Ｎ」チェックを外す。
+
+00h（00）:リセット→ＯＰ
+
+01_29h(1_41):キャロル関連
+
+2A_4Dh(42_77):メルクリウス関連
+
+4E_6Ch(78_108):シャルル関連
+
+6D_91h(109_145):ヴァルキリー関連
+
+92_A1h(146_161):フレイ関連
+
+A2_B3h(162_179):グレン関連
+
+B4_E6h(180_230):エンディング他汎用イベント
+[/note]
+
+[subject]育成パート関連:dir
+	[subject]ドール作り後、所持金ＭＡＸ/実行/_:toggle,0x42A51F,B93F420F00A3108B7B00EB0190,8B0D44A14A00A3108B7D0003C8
+	[subject]ドール作り後、技術ＬＶＭＡＸ/実行/_:toggle,0x42A4DD,A10C00400090,8B0D4CA14A00
+	[subject]キャラクターカード１００％発動/実行/_:toggle,0x41BE7B,7C024000,A4B04A00
+	[subject]各能力値１日でＭＡＸ/実行/_:toggle,0x411264,BBE7030000EB00,8B1CBD94A14A00
+	[subject]消耗度増えない/実行/_:toggle,0x4112A9,07,08
+[/group]
+
+
+[group]HM_PR
+[subject]所持金/現在値/_:calc,0x4AA144,0x00000000,0x000F423F,unsigned
+[subject]技術ＬＶ/現在値/_:calc,0x4AA148,0x01,0x32,unsigned
+[subject]経験値/現在値/_:calc,0x4AA14C,0x00000000,0x00FFFFFF,unsigned
+	[repeat]HMLST->HMREP1,0,8,1
+[subject]評価/現在値/_:calc,0x4AA1B4,0x00,0x64,unsigned
+[/group]
+
+
+[group]HM_F1
+[subject]カード全種所持/実行/_:toggle,0x4AA5A8,0x4AA753-01000000
+[subject]絆値確認調整:dir
+	[repeat]HMLST->HMREP2,0,6,1
+[/group]
+
+
+[group]HM_CG
+[subject]ＣＧ鑑賞:dir
+	[subject]ＡＬＬＯＮ/実行/_:toggle,0x7DB538,0x7DB6B4-01000000
+	[subject]ＡＬＬＯＦＦ/実行/_:toggle,0x7DB538,0x7DB6B4-00000000
+[back]
+[subject]イベント鑑賞:dir
+	[subject]ＡＬＬＯＮ/実行/_:toggle,0x7DB908,0x7DBC9C-01000000
+	[subject]ＡＬＬＯＦＦ/実行/_:toggle,0x7DB908,0x7DBC9C-00000000
+[/group]
+
+
+[group]HM_EX
+[subject]発生イベント任意変更:dir
+	[subject]モードＯＮ/実行/_:toggle,0x4153E7,B8??000000,A194BA4A00
+	[subject]イベント番号入力/現在値/_:calc,0x4153E8,0x00,0xE6,unsigned
+[/group]
+
+
+[group]HMREP1
+[subject][! @HMLST->LST_a,$Val !]/現在値/_:calc,0x[! 0x4AA194+$Val*4 !],0x0000,0x03E7,unsigned
+[/group]
+
+
+[group]HMREP2
+[subject][! @HMLST->LST_b,$Val !]/現在値/_:calc,0x[! 0x4AA150+$Val*4 !],0x00,0x64,unsigned
+[/group]
+
+
+[group]LST_a
+知力
+魅力
+戦闘力
+器用さ
+敏捷度
+耐久度
+人間性
+消耗度
+[/group]
+
+
+[group]LST_b
+キャロル
+メルクリウス
+シャルル
+ヴァルキリー
+フレイ
+グレン
+[/group]
