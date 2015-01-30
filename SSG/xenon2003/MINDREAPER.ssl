@@ -1,0 +1,14 @@
+[group]ステータス1
+	[subject]_mem,0x[! 0x55043C+ $Val *112 !], 12, 00, $Val:dir
+		[replace]0x[! 0x55043C+ $Val *112 !], MindReaper->ステータス
+    	[back]
+[/group]
+[group]ステータス
+	[subject]Lv: calc,0x3C,0,99
+	[subject]HP(現在値): calc,0x40,0,99
+	[subject]HP(最高値): calc,0x44,0,99
+	[subject]MP(現在値): calc,0x48,0,99
+	[subject]MP(最高値): calc,0x4C,0,99
+	[subject]AP(現在値): calc,0x50,0,99
+	[subject]AP(最高値): calc,0x54,0,99
+[/group]
