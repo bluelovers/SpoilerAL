@@ -1,0 +1,96 @@
+[group]CON_MA
+[note]wordwrap
+以下、少々補足です。
+
+■環境関連
+テキスト表示：
+音声に拘らなければ、別のゲームのように快適になるかと(^^;　課題曲発表時にだけ元に戻るので、固定しても良いかも。
+
+エフェクトスキップ:
+ＢＧ処理部分のみ、及びキャラの処理全般とそれに関するウエイトをスキップできます。
+■フラグ関連
+おまけ出現はクリアカウントフラグと同様なので、最低限の条件だけ満たすようにしています。またクリアフラグＡＬＬは、メッセージＡＬＬも兼ねています。
+
+■ＣＧモード関連
+１枚ＣＧ出現時、及び任意のシナリオクリア時等に更新処理されます。
+[/note]
+
+[subject]環境関連:dir
+[subject]テキスト表示:dir
+	[subject]高速化/ＯＮ/固定:toggle,_[:0x440048:]+0x18,0A,4B
+	[subject]ノーウエイト化/ＯＮ/固定:toggle,_[:0x440048:]+0x18,00,4B
+[back]
+[subject]エフェクトスキップ/ＯＮ/_:b_toggle,_[:0x43FF30:]+0xE8C+0x34,CONLST->CON_a,offset
+[/group]
+
+
+[group]CON_a
+0x00,01,00
+0x04,00,01
+0x18,01,08
+0x68,01,08
+[/group]
+
+
+[group]CON_PR
+[subject]三石ミント:dir
+	[replace]0x4E9DD8,CONLST->CON_b
+[subject]大泉いちご:dir
+	[replace]0x4E9DEC,CONLST->CON_b
+[/group]
+
+
+[group]CON_b
+[e_with],0x00,0x1E,signed
+[subject]ＬＯＶＥ/現在値/_:calc,0x00
+[subject]ＴＥＣＨＮＩＱＵＥ/現在値/_:calc,0x02
+[/e_with]
+[subject]レッスン回数/現在値/_:calc,0x0E,0x00,0x0F,unsigned
+[back]
+[/group]
+
+
+[group]CON_F2
+[subject]歌詞全所持/実行/_:toggle,0x4E9B80,0x4E9C3B-0100
+[subject]おまけ出現/実行/_:toggle,0x4E9A04,*{00::01*}
+[subject]クリアフラグＡＬＬ/実行/_:toggle,0x4E9A06,0x4E9A19-0100
+[/group]
+
+
+[group]CON_CG
+[subject]ＣＧ鑑賞:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:b_toggle,0x4E9A50,CONLST->CON_c,real
+	[subject]ＡＬＬ ＯＦＦ/実行/_:b_toggle,0x4E9A50,CONLST->CON_d,real
+[back]
+[subject]唄鑑賞:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:b_toggle,0x4E9A1A,CONLST->CON_e,real
+	[subject]ＡＬＬ ＯＦＦ/実行/_:b_toggle,0x4E9A1A,CONLST->CON_f,real
+[back]
+[subject]Ｈシーン鑑賞:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x4E9B1C,0x4E9B27-0100
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x4E9B1C,0x4E9B27-0000
+[/group]
+
+
+[group]CON_c
+0x4E9A50,0x4E9AF7-0100
+0x4E9B1A,0100
+[/group]
+
+
+[group]CON_d
+0x4E9A50,0x4E9AF7-0000
+0x4E9B1A,0000
+[/group]
+
+
+[group]CON_e
+0x4E9A1A,0100
+0x4E9B30,0x4E9B7F-0100
+[/group]
+
+
+[group]CON_f
+0x4E9A1A,0000
+0x4E9B30,0x4E9B7F-0000
+[/group]
