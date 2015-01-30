@@ -1,0 +1,62 @@
+[group]SLK_SSG
+[note]wordwrap
+また、あっというまに終わった…
+
+各章の一番上がヒロイン。高いとBADEND選択肢自動回避等。他陵辱イベント関係等。
+各モードはクリアフラグ実行後、タイトル画面に戻ると反映。LOAD画面では無理。
+
+デバッグモードは機能固定後、更新周期を短くして起動。タイミングはかなりシビア。
+[/note]
+
+[subject]環境関連:dir
+	[subject]デバッグモード/実行/固定:toggle,0x457E38,C70530FC4E0001000000,A130FC4E0083F801750E
+[root]
+
+[subject]パラメータ関連:dir
+[subject]一章:dir
+[size]4
+ [e_with],0xFFFFFFF7,0x00000009,signed
+  [subject]森崎七央好感度/現在値/_:calc,0x4FE0FC
+  [subject]セラリア＝マーカライト好感度/現在値/_:calc,0x4FE100
+ [/e_with]
+[/size]
+[subject]シェラタン探索回数/現在値/_:calc,0x4FE034,0x00,0x14,unsigned
+[back]
+[subject]二章:dir
+[size]4
+ [e_with],0xFFFFFFF7,0x00000009,signed
+  [subject]永瀬沙佳好感度/現在値/_:calc,0x4FE28C
+  [subject]新田亜希好感度/現在値/_:calc,0x4FE290
+  [subject]ユウ＝ヤマナミ好感度/現在値/_:calc,0x4FE294
+ [/e_with]
+ [/size]
+[root]
+
+[subject]ＣＧモード関連:dir
+ [subject]クリアフラグALL/ＯＮ／ＯＦＦ/_:b_toggle,0x00,SLKLST->SLK_a,real
+ [subject]CG GALLERY ALL/ＯＮ／ＯＦＦ/_:b_toggle,0x00,SLKLST->SLK_b,real
+// [subject]CG GALLERY ALL/ＯＮ／ＯＦＦ/_:toggle,0x514464,0x5144DC-FF,00
+ [subject]SCENE REPLAY ALL/ＯＮ／ＯＦＦ/_:toggle,0x51445E,FFFF,0000
+ [subject]ENDING REPLAY ALL/ＯＮ／ＯＦＦ/_:toggle,0x514458,0x51445B-FF,00
+ [subject]MUSIC PLAYER ALL/ＯＮ／ＯＦＦ/_:toggle,0x5166D8,0x51673F-01000000,00
+[root]
+
+[/group]
+
+
+[group]SLK_a
+0x51245C,01000000,00000000
+0x512470,0x512483-01000000,00
+[/group]
+
+
+[group]SLK_b
+0x514460,0000000010C000013430400001047040,00000000000000000000000000000000
+0x514470,003104F040000F0CF05F000304104000,00000000000000000000000000000000
+0x514480,010C104000030C10C0000704F0C30003,00000000000000000000000000000000
+0x514490,0C10C001010C104000010C1040003104,00000000000000000000000000000000
+0x5144A0,10C000311C10C000031C70C001030430,00000000000000000000000000000000
+0x5144B0,C000010C30C003030C104000010C10C0,00000000000000000000000000000000
+0x5144C0,00030410C000030C10C000031C30C000,00000000000000000000000000000000
+0x5144D0,310410C0000F04304000010470003300,00000000000000000000000000000000
+[/group]
