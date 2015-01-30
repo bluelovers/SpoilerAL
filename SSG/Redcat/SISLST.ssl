@@ -1,0 +1,41 @@
+[group]SIS_SSG
+[note]wordwrap
+正直な話し、タイトル見ただけで中身も知らずに購入。…あぁ、ここだったのかと不安にｗ　相変わらず使い回し多いのはなんですが、目的ｗは果たせたんでないかと。つか、主人公たる兄が変態野郎かと予想していたのに、蓋を空けたら妹達の方が余程狂ってたという罠。
+
+フラグ類は更新反映の必要があります。最初から初めて、最初のＣＧを見た時点でセーブデータにも反映されます。
+[/note]
+
+[subject]パラメータ関連:dir
+	[replace]_[:[:[:[:0x473E28:]+0x830:]+0x504:]:],SISLST->SIS_a
+[root]
+
+[subject]ＣＧモード関連:dir
+	[replace]_[:[:[:[:0x473E28:]+0x830:]+0x508:]:],SISLST->SIS_b
+[root]
+[/group]
+
+
+[group]SIS_a
+[subject]みゆき:dir
+[e_with],0x00,0x63,unsigned
+	[subject]好感度/現在値/_:calc,0x28
+	[subject]経験値/現在値/_:calc,0x3C
+[/e_with]
+[back]
+[subject]あゆみ:dir
+[e_with],0x00,0x63,unsigned
+	[subject]好感度/現在値/_:calc,0x2C
+	[subject]経験値/現在値/_:calc,0x40
+[/e_with]
+[/group]
+
+
+[group]SIS_b
+[subject]グラフィックモード:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x0C,0x2B-FF
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x0C,0x2B-00
+[back]
+[subject]回想＆おまけモード:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x32,0x36-FF
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x32,0x36-00
+[/group]
