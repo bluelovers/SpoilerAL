@@ -1,0 +1,136 @@
+[group]PCG_SSG
+[note]wordwrap
+全員と知り合う：
+シナリオ内で機能実行後、そのままタイトル画面に戻れば完了。うまくいかない場合は、任意のスロットに
+データセーブ。ただし、このデータでは以降プレイしないでください。他のプレイデータで上書きすると良いです。
+
+[/note]
+
+[subject]ver1.00:dir
+
+[subject]パラメータ関連:dir
+ [replace]_[:[:[:(MName::smartadv.dll)+0x0226E8:]+0x44:]+0x024268:],PCGLST->PCG_PR
+[back]
+
+[subject]ＣＧモード関連:dir
+ [replace]_[:[:[:(MName::smartadv.dll)+0x0226E8:]+0x44:]+0x02426C:],PCGLST->PCG_CG
+[back]
+
+[back]
+
+[subject]ver1.01/1.02:dir
+
+[subject]AVGパート関連:dir
+// [subject]半無限行動可能化/実行/_:b_toggle,_(MName::piago.dll),PCGLST->PCG_c
+ [subject]編成時配置制限解除/実行/_:b_toggle,_(MName::piago.dll),PCGLST->PCG_e
+ [subject]ＣＰ減らない/実行/_:toggle,_(MName::piago.dll)+0x0512D3,EB00,7609
+[back]
+
+[subject]パラメータ関連:dir
+ [replace]_[:[:[:(MName::smartadv.dll)+0x015DAC:]:]+0x024268:],PCGLST->PCG_PR
+[back]
+
+[subject]ＣＧモード関連:dir
+ [replace]_[:[:[:(MName::smartadv.dll)+0x015DAC:]:]+0x02426C:],PCGLST->PCG_CG
+[back]
+
+[back]
+
+[/group]
+
+
+[group]PCG_c
+0x01BC81,00,06
+0x01BC95,5390,6A01
+0x01BCC3,90,40
+0x01BCDE,00,02
+[/group]
+
+
+[group]PCG_e
+0x010255,90,47
+0x0102C6,90,47
+0x010393,EB,74
+[/group]
+
+
+[group]PCG_PR
+[subject]主人公体力［'+'_mem,0x0284,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x0284,0x00,0x64,unsigned
+[subject]主人公所持金［'+'_mem,0x0288,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x0288,0x000000,0x0F423F,unsigned
+[subject]ヒロインステータス:dir
+ [repeat]PCGLST->PCGREP1,0,15,1
+[back]
+[/group]
+
+
+[group]PCGREP1
+[subject][! @PCGLST->LST_a,$Val !]:dir
+ [replace]0x[! 0x04*$Val !],PCGLST->PCG_2PR
+[back]
+[/group]
+
+
+[group]PCG_2PR
+[subject]好感度［'+'_mem,0x0194,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0194,0x0000,0x03E7,unsigned
+[subject]一括最大化/実行/_:b_toggle,0x00,PCGLST->PCG_d
+[subject]ウエイトレス能力［'+'_mem,0x01D0,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x01D0,0x00,0x64,unsigned
+[subject]キャッシャー能力［'+'_mem,0x020C,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x020C,0x00,0x64,unsigned
+[subject]厨房能力［'+'_mem,0x0248,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0248,0x00,0x64,unsigned
+[/group]
+
+
+[group]PCG_d
+0x01D0,64000000
+0x020C,64000000
+0x0248,64000000
+[/group]
+
+
+[group]PCG_CG
+[subject]全員と知り合う※/実行/_:toggle,0x89,0x0138-FF,00
+[subject]CG mode ALL/実行/_:b_toggle,0x00,PCGLST->PCG_a,offset
+[subject]Hシーン回想 ALL/実行/_:b_toggle,0x00,PCGLST->PCG_b,offset
+[subject]EXTRA ALL/実行/_:toggle,0x12,3FFF80,000000
+[/group]
+
+
+[group]PCG_a
+0x01B0,00000000000421084210842108421084,00000000000000000000000000000000
+0x01C0,21084210842108421084210842108421,00000000000000000000000000000000
+0x01D0,08421084210842108421084210842108,00000000000000000000000000000000
+0x01E0,42108421084210842108421084210842,00000000000000000000000000000000
+0x01F0,10842108421084210842108421084210,00000000000000000000000000000000
+0x0200,84210842108421084210842108421084,00000000000000000000000000000000
+0x0210,21084210842108421084210842108421,00000000000000000000000000000000
+0x0220,08421084210842108421084210842108,00000000000000000000000000000000
+0x0230,42108421084210842108421084210842,00000000000000000000000000000000
+0x0240,10042108421084210842108421084210,00000000000000000000000000000000
+0x0250,84210842108421084210842108421084,00000000000000000000000000000000
+0x0260,21084210842108421084210842000000,00000000000000000000000000000000
+[/group]
+
+
+[group]PCG_b
+0x0170,0000000000000070000780007FF807E0,00000000000000000000000000000000
+0x0180,0070000400007C000600006000060000,00000000000000000000000000000000
+0x0190,7000060000700007F000600000000000,00000000000000000000000000000000
+[/group]
+
+
+[group]LST_a
+木ノ下留美
+椚あやの
+御堂千尋
+八重樫香苗
+久我原美森
+楢原燕
+堀内さな
+常葉みさき
+西園寺美湖
+衣坂小春
+高屋敷瑞希
+陸文華
+白鍬澄光
+姫川かずみ
+山名トキ子
+[/group]
