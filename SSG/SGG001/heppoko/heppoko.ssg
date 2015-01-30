@@ -1,0 +1,825 @@
+SSG for SpoilerAL ver 3.4
+[script]
+[title]ウイニングポスト4
+[process]WP4.EXE
+[maker]KOEI
+[creator]へっぽこ
+[note]wordwrap
+今更ですがWP4のSSGをば作ってみました。
+ただし、
+これは私の練習用に作ったものなので、
+資金しか改造できません。
+まあ金さえあれば最初はOKだと思います。
+ロックしておけば金減らないし･･･。
+つえーお馬さん作りは自分で挑戦して見てください。
+(9月19日追加)
+名声値も上げられるようにしました。
+でもあんまりメリット無し
+普通にやってても上がってくし・・・
+[/note]
+[subject]資金:calc,0x70DFD8,0x0,0x3B9AC9FF,signed,little_e
+[subject]名声値:calc,0x125CA44,0x0,0x2710,signed,little_e
+[/script]
+
+[script]
+[title]ウイニングポスト4PK版
+[process]WP4PK.EXE
+[maker]KOEI
+[creator]へっぽこ
+[note]wordwrap
+たいしてパワーアップされないキットです。
+正直言って損こいた気分･･･
+KOEIはなんでこんなにボッタくるんでしょうか？
+パソコン業界でガイナックスと双璧をなすボッタくりメーカーだとオラは思ってます。
+最近は内容もヘチョイし･･･
+[/note]
+[subject]資金:calc,0x62EC1B,0x0,0xffffffff,unsigned,little_e
+[subject]名声値:calc,0x12A3702,0x0,0x2710,signed,little_e
+[/script]
+
+[script]
+[title]HiすくーるJam
+[process]SP.EXE
+[maker]Jam
+[creator]へっぽこ
+[note]
+主人公の能力をマックスに出来ます。
+でも支持率だけは見つかりませんでした。
+まあ適当にやってもガンガン上がってくでしょう。
+
+[/note]
+
+[subject]主人公:dir
+  [subject]体力（最大）:calc,0x8D0FBA,0x0,0x63,unsigned,little_e
+  [subject]体力（現在）:calc,0x8D0FC7,0x0,0x63,unsigned,little_e
+  [subject]実行力:calc,0x8D0FBC,0x0,0x63,unsigned,little_e
+  [subject]根性:calc,0x8D0FBE,0x0,0x63,unsigned,little_e
+  [subject]知識:calc,0x8D0FC0,0x0,0x63,unsigned,little_e
+  [subject]クラブ:calc,0x8D0FC2,0x0,0x63,unsigned,little_e
+  [subject]学力:calc,0x8D0FBB,0x0,0x63,unsigned,little_e
+  [subject]弁論:calc,0x8D0FBF,0x0,0x63,unsigned,little_e
+  [subject]魅力:calc,0x8D0FBD,0x0,0x63,unsigned,little_e
+  [subject]運:calc,0x8D0FC1,0x0,0x63,unsigned,little_e
+
+[root]
+
+[/script]
+
+[script]
+[title]シ－クエンスパラディウム
+[process]SSP.EXE
+[maker]KOGADO
+[creator]へっぽこ
+[note]
+Ver.1.301でのみ動作確認
+どうもこのゲームVerによって多少アドレスの
+位置が変化する見たいッス
+みそさんがもうすでに作ってらっしゃるんですが
+上記のような理由により（たぶんですけどね）
+私のバージョンだと改造できなかったので
+Ver1.301版を作りました
+ちなみにじじい共（せんせぇ達）は
+めんどくさかったんで無改造ッス
+っていうかMAXにした時点でもう
+じじい共は用済みです。
+あと、FEELの上限を255にしてます
+が、もしかしたらバグるかもしれま
+せん。
+その場合は100程度に押えてください。
+[/note]
+
+[subject]全機体:toggle,0x4B26C9,0x4B26E0-FF,00
+[subject]全武器:toggle,0x4CDED9,0x4CDF05-FF,00
+[subject]全呪文:toggle,0x4CE039,0x4CE06D-FF,00
+[subject]全聖句:toggle,0x4CE06E,0x4CE09A-FF,00
+[subject]全技能:toggle,0x4CE019,0x4CE030-FF,00
+[subject]全拡張:toggle,0x4CDFD9,0x4CE016-FF,00
+[subject]全アイテム:toggle,0x4B2829,0x4B2867-FF,00
+
+[subject]パラスィート:dir
+   [subject]ジルMAX:toggle,0x4AEBC0,0x4AEBC5-14,00
+   [subject]ラシュペルMAX:toggle,0x4AEBFB,0x4AEC00-14,00
+   [subject]ドナMAX:toggle,0x4AEC36,0x4AEC3B-14,00
+   [subject]シャノンMAX:toggle,0x4AECE7,0x4AECEC-14,00
+   [subject]エレミーMAX:toggle,0x4AED22,0x4AED27-14,00
+   [subject]クリスティンMAX:toggle,0x4AED98,0x4AED9D-14,00
+   [subject]ティファMAX:toggle,0x4AED5D,0x4AED62-14,00
+   [subject]レイハMAX:toggle,0x4AEDD3,0x4AEDD8-14,00
+   [subject]キッスMAX:toggle,0x4AEE49,0x4AEE4E-14,00
+   [subject]チェルニーMAX:toggle,0x4AEEFA,0x4AEEFF-14,00
+   [subject]ケストMAX:toggle,0x4AECAC,0x4AECB1-14,00
+   [subject]メルMAX:toggle,0x4AEEBF,0x4AEEC4-14,00
+   [subject]ラミMAX:toggle,0x4AEF35,0x4AEF3A-14,00
+   [subject]アトワイスMAX:toggle,0x4AEE0E,0x4AEE13-14,00
+   [subject]リナリーMAX:toggle,0x4AEE84,0x4AEE89-14,00
+   [subject]ユリエルMAX:toggle,0x4AEC71,0x4AEC76-14,00
+   [back] 
+   
+  [subject]騎士:dir
+   [subject]レヴィンMAX:toggle,0x4AEF70,0x4AEF75-14,00
+   [subject]オルフェMAX:toggle,0x4AEFE6,0x4AEFEB-14,00
+   [subject]ルカMAX:toggle,0x4AF234,0x4AF239-14,00
+   [subject]セレートMAX:toggle,0x4AEFAB,0x4AEFB0-14,00
+   [subject]フェンネルMAX:toggle,0x4AF2AA,0x4AF2AF-14,00   
+   [subject]ファルシスMAX:toggle,0x4AF10D,0x4AF122-14,00  
+   [subject]ナハトMAX:toggle,0x4AF05C,0x4AF061-14,00
+   [subject]フィッテMAX:toggle,0x4AF097,0x4AF09C-14,00
+   [subject]ケリーMAX :toggle,0x4AF183,0x4AF188-14,00
+   [subject]ディアランMAX:toggle,0x4AF1BE,0x4AF1C3-14,00
+   [subject]カインMAX:toggle,0x4AF4BD,0x4AF4C2-14,00
+   [subject]アレスMAX:toggle,0x4AF4F8,0x4AF4FD-14,00
+   [subject]モルガンMAX:toggle,0x4AF0D2,0x4AF0D7-14,00
+   [subject]アスプリージャMAX:toggle,0x4AF26F,0x4AF274-14,00
+   [subject]リップMAX:toggle,0x4AF1F9,0x4AF1FE-14,00
+   [subject]バドMAX:toggle,0x4AF482,0x4AF487-14,00
+   [subject]イェルファンMAX:toggle,0x4AF021,0x4AF026-14,00
+   [subject]バウニーMAX:toggle,0x4AF148,0x4AF14D-14,00
+   [subject]ティアスMAX:toggle,0x4AF320,0x4AF325-14,00
+   [subject]ジェスターMAX:toggle,0x4AF40C,0x4AF411-14,00
+   [subject]セラジンMAX:toggle,0x4AF447,0x4AF44C-14,00
+   [subject]ザインMAX:toggle,0x4AF533,0x4AF538-14,00
+   [subject]スーMAX:toggle,0x4AF38C,0x4AF391-14,00
+   [subject]マイスMAX:toggle,0x4AF3D1,0x4AF3D6-14,00
+   [subject]ガラリアMAX:toggle,0x4AF35B,0x4AF360-14,00
+   [subject]クレッセンMAX:toggle,0x4AF2E5,0x4AF2EA-14,00
+   [back]
+ 
+
+
+
+[subject]FEEL:dir
+  [subject]パラスィート:dir
+   [subject]ジル:calc,0x4AEBDF,0x0,0xFF,signed,little_e
+   [subject]ラシュペル:calc,0x4AEC1A,0x0,0xFF,signed,little_e
+   [subject]ドナ:calc,0x4AEC55,0x0,0xFF,signed,little_e
+   [subject]シャノン:calc,0x4AED06,0x0,0xFF,signed,little_e
+   [subject]エレミー:calc,0x4AED41,0x0,0xFF,signed,little_e
+   [subject]クリスティン:calc,0x4AEDB7,0x0,0xFF,signed,little_e
+   [subject]ティファ:calc,0x4AED7C,0x0,0xFF,signed,little_e
+   [subject]レイハ:calc,0x4AEDF2,0x0,0xFF,signed,little_e
+   [subject]キッス:calc,0x4AEE68,0x0,0xFF,signed,little_e
+   [subject]チェルニー:calc,0x4AEF19,0x0,0xFF,signed,little_e
+   [subject]ケスト:calc,0x4AECCB,0x0,0xFF,signed,little_e
+   [subject]メル:calc,0x4AEEDE,0x0,0xFF,signed,little_e
+   [subject]ラミ:calc,0x4AEF54,0x0,0xFF,signed,little_e
+   [subject]アトワイス:calc,0x4AEE2D,0x0,0xFF,signed,little_e
+   [subject]リナリー:calc,0x4AEEA3,0x0,0xFF,signed,little_e
+   [subject]ユリエル:calc,0x4AEC90,0x0,0xFF,signed,little_e
+   [back]
+  
+  [subject]騎士:dir
+   [subject]レヴィン:calc,0x4AEF8F,0x0,0xFF,signed,little_e
+   [subject]オルフェ:calc,0x4AF005,0x0,0xFF,signed,little_e
+   [subject]ルカ:calc,0x4AF253,0x0,0xFF,signed,little_e
+   [subject]セレート:calc,0x4AEFCA,0x0,0xFF,signed,little_e
+   [subject]フェンネル:calc,0x4AF2C9,0x0,0xFF,signed,little_e
+   [subject]ファルシス:calc,0x4AF12C,0x0,0xFF,signed,little_e
+   [subject]ナハト:calc,0x4AF07B,0x0,0xFF,signed,little_e
+   [subject]フィッテ:calc,0x4AF0B6,0x0,0xFF,signed,little_e
+   [subject]ケリー:calc,0x4AF1A2,0x0,0xFF,signed,little_e
+   [subject]ディアラン:calc,0x4AF1DD,0x0,0xFF,signed,little_e
+   [subject]カイン:calc,0x4AF4DC,0x0,0xFF,signed,little_e
+   [subject]アレス:calc,0x4AF517,0x0,0xFF,signed,little_e
+   [subject]モルガン:calc,0x4AF01F,0x0,0xFF,signed,little_e
+   [subject]アスプリージャ:calc,0x4AF28E,0x0,0xFF,signed,little_e
+   [subject]リップ:calc,0x4AF218,0x0,0xFF,signed,little_e
+   [subject]バド:calc,0x4AF4A1,0x0,0xFF,signed,little_e
+   [subject]イェルファン:calc,0x4AF040,0x0,0xFF,signed,little_e
+   [subject]バウニー:calc,0x4AF167,0x0,0xFF,signed,little_e
+   [subject]ティアス:calc,0x4AF33F,0x0,0xFF,signed,little_e
+   [subject]ジェスター:calc,0x4AF42B,0x0,0xFF,signed,little_e
+   [subject]セラジン:calc,0x4AF466,0x0,0xFF,signed,little_e
+   [subject]ザイン:calc,0x4AF552,0x0,0xFF,signed,little_e
+   [subject]スー:calc,0x4AF3AB,0x0,0xFF,signed,little_e
+   [subject]マイス:calc,0x4AF3F0,0x0,0xFF,signed,little_e
+   [subject]ガラリア:calc,0x4AF37A,0x0,0xFF,signed,little_e
+   [subject]クレッセン:calc,0x4AF304,0x0,0xFF,signed,little_e
+   [back]
+
+[/script]
+
+[script]
+[title]きわめて！スキャンダル！？
+[process]MAIN.EXE
+[maker]iMAGE CLUB
+[creator]へっぽこ
+[note]
+バブルってもうけっこう昔なんですよねぇ・・・
+時が経つのって、早いなぁ・・・
+オラが就職するまでに景気良くならないかなぁ・・・
+[/note]
+
+[subject]鯱男:dir
+   [subject]体力:calc,0x4630B0,0x0,0x64,signed,little_e
+   [subject]知識:calc,0x4630B8,0x0,0x64,signed,little_e
+   [subject]ストレス:calc,0x4630B4,0x0,0x64,signed,little_e
+[back]
+
+[subject]清原澄香:dir
+   [subject]体力:calc,0x4631C8,0x0,0x64,signed,little_e
+   [subject]愛情:calc,0x4631CC,0x0,0x64,signed,little_e
+   [subject]快楽:calc,0x4631D0,0x0,0x64,signed,little_e
+   [subject]服従:calc,0x4631D4,0x0,0x64,signed,little_e
+[back]
+
+[subject]新堂水穂:dir
+   [subject]体力:calc,0x4631F0,0x0,0x64,signed,little_e
+   [subject]愛情:calc,0x4631F4,0x0,0x64,signed,little_e
+   [subject]快楽:calc,0x4631F8,0x0,0x64,signed,little_e
+   [subject]服従:calc,0x4631FC,0x0,0x64,signed,little_e
+[back]
+
+[subject]枝科ルイ:dir
+   [subject]体力:calc,0x463240,0x0,0x64,signed,little_e
+   [subject]愛情:calc,0x463244,0x0,0x64,signed,little_e
+   [subject]快楽:calc,0x463248,0x0,0x64,signed,little_e
+   [subject]服従:calc,0x46324C,0x0,0x64,signed,little_e
+[back]
+
+[subject]レナ・クライトン:dir
+   [subject]体力:calc,0x463218,0x0,0x64,signed,little_e
+   [subject]愛情:calc,0x46321C,0x0,0x64,signed,little_e
+   [subject]快楽:calc,0x463220,0x0,0x64,signed,little_e
+   [subject]服従:calc,0x463224,0x0,0x64,signed,little_e
+[back]
+
+[subject]安達多美恵:dir
+   [subject]体力:calc,0x463268,0x0,0x64,signed,little_e
+   [subject]愛情:calc,0x46326C,0x0,0x64,signed,little_e
+   [subject]快楽:calc,0x463270,0x0,0x64,signed,little_e
+   [subject]服従:calc,0x463274,0x0,0x64,signed,little_e
+[back]
+
+[subject]福富紀子:dir
+   [subject]体力:calc,0x4632B8,0x0,0x64,signed,little_e
+   [subject]愛情:calc,0x4632BC,0x0,0x64,signed,little_e
+   [subject]快楽:calc,0x4632C0,0x0,0x64,signed,little_e
+   [subject]服従:calc,0x4632C4,0x0,0x64,signed,little_e
+[back]
+
+[subject]片桐つばさ:dir
+   [subject]体力:calc,0x463308,0x0,0x64,signed,little_e
+   [subject]愛情:calc,0x46330C,0x0,0x64,signed,little_e
+   [subject]快楽:calc,0x463310,0x0,0x64,signed,little_e
+   [subject]服従:calc,0x463314,0x0,0x64,signed,little_e
+[back]
+
+[subject]坂井美樹:dir
+   [subject]体力:calc,0x463290,0x0,0x64,signed,little_e
+   [subject]愛情:calc,0x463294,0x0,0x64,signed,little_e
+   [subject]快楽:calc,0x463298,0x0,0x64,signed,little_e
+   [subject]服従:calc,0x46329C,0x0,0x64,signed,little_e
+[back]
+
+[subject]椎名美久:dir
+   [subject]体力:calc,0x463330,0x0,0x64,signed,little_e
+   [subject]愛情:calc,0x463334,0x0,0x64,signed,little_e
+   [subject]快楽:calc,0x463338,0x0,0x64,signed,little_e
+   [subject]服従:calc,0x46333C,0x0,0x64,signed,little_e
+[back]
+
+[subject]藤村裕乃:dir
+   [subject]体力:calc,0x4632E0,0x0,0x64,signed,little_e
+   [subject]愛情:calc,0x4632E4,0x0,0x64,signed,little_e
+   [subject]快楽:calc,0x4632E8,0x0,0x64,signed,little_e
+   [subject]服従:calc,0x4632EC,0x0,0x64,signed,little_e
+[back]
+
+[/script]
+
+[script]
+[title]虜
+[process]TORIKO.EXE
+[maker]D.O
+[creator]へっぽこ
+[note]
+またまた今更なもののSSGを
+作ってしまいました。
+このゲームパラメーターを
+MAXにするとやること無いです。
+あと、値の数値を固定しておくと
+特別調教は発生しません。
+またオシリの方についても麻美で
+発生させてから数値の増減を
+してください。
+値を固定しておけばずーっと
+調教してられます。
+食事はちゃんとあげましょう。
+～余談～
+先生を精力絶倫男にしてあげようと
+思ったんですが失敗しました。
+違反が出てしまっちゃうんです。
+という事で先生は無改造です。
+[/note]
+
+[subject]佐伯 由美子:dir
+     [subject]意識:calc,0x850B3C,0x0,0x0064,unsigned,little_e
+     [subject]体力:calc,0x850B3E,0x0,0x012C,unsigned,little_e
+     [subject]精神:calc,0x850B40,0x0,0x012C,unsigned,little_e
+     [subject]忠誠度:calc,0x850B42,0x0,0x03E7,unsigned,little_e
+     [subject]快楽:calc,0x850B44,0x0,0x03E7,unsigned,little_e
+     [subject]羞恥:calc,0x850B46,0x0,0x03E7,unsigned,little_e
+     [subject]被虐:calc,0x850B48,0x0,0x03E7,unsigned,little_e
+     [subject]経験:calc,0x850B4A,0x0,0x03E7,unsigned,little_e
+     [subject]アナル:calc,0x850B4C,0x0,0x03E7,unsigned,little_e
+[back]  
+
+[subject]田村 麻美:dir
+     [subject]意識:calc,0x850B80,0x0,0x0064,unsigned,little_e
+     [subject]体力:calc,0x850B82,0x0,0x012C,unsigned,little_e
+     [subject]精神:calc,0x850B84,0x0,0x012C,unsigned,little_e
+     [subject]忠誠度:calc,0x850B86,0x0,0x03E7,unsigned,little_e
+     [subject]快楽:calc,0x850B88,0x0,0x03E7,unsigned,little_e
+     [subject]羞恥:calc,0x850B8A,0x0,0x03E7,unsigned,little_e
+     [subject]被虐:calc,0x850B8C,0x0,0x03E7,unsigned,little_e
+     [subject]経験:calc,0x850B8E,0x0,0x03E7,unsigned,little_e
+     [subject]アナル:calc,0x850B90,0x0,0x03E7,unsigned,little_e
+[back] 
+
+[subject]平井 美恵子:dir
+     [subject]意識:calc,0x850BC4,0x0,0x0064,unsigned,little_e
+     [subject]体力:calc,0x850BC6,0x0,0x012C,unsigned,little_e
+     [subject]精神:calc,0x850BC8,0x0,0x012C,unsigned,little_e
+     [subject]忠誠度:calc,0x850BCA,0x0,0x03E7,unsigned,little_e
+     [subject]快楽:calc,0x850BCC,0x0,0x03E7,unsigned,little_e
+     [subject]羞恥:calc,0x850BCE,0x0,0x03E7,unsigned,little_e
+     [subject]被虐:calc,0x850BD0,0x0,0x03E7,unsigned,little_e
+     [subject]経験:calc,0x850BD2,0x0,0x03E7,unsigned,little_e
+     [subject]アナル:calc,0x850BD4,0x0,0x03E7,unsigned,little_e
+[back]
+
+[/script]
+
+[script]
+[title]しゃぶり姫 ～陰の章～
+[process]AVS.EXE
+[maker]Mink
+[creator]へっぽこ
+[note]
+しゃぶり姫です。
+暇だったので作りました。
+完成度はいじるとバグるみたいなので
+やめときました。
+やった回数もいじってません。
+意味無いと思いますしねぇ・・・
+[/note]
+
+[subject]従順度:calc,0x45A2EE,0x0,0x64,signed,little_e
+[subject]奉仕テクニック:calc,0x45A2F2,0x0,0x64,signed,little_e
+[subject]性感度:calc,0x45A2F6,0x0,0x64,signed,little_e
+[subject]色気:calc,0x45A2FA,0x0,0x64,signed,little_e
+
+[/script]
+
+[script]
+[title]GUNDAM TACTICS
+[process]GUNDAM.EXE
+[maker]BandaiDigitalEntertainment
+[creator]へっぽこ
+[note]
+ガンダムのＳＬＧです。
+攻略本にはﾞ連邦の方が簡単ﾞとか書いて
+ありますがあれは嘘じゃないでしょうか？
+ジオンの方が簡単です。
+ビグロマイヤー二機手に入るし・・・
+戦艦をバグにすると、メチャ強いです。
+戦艦だけで全クリで来ます（＾o＾）
+でも、バグだけにバグる可能性あります。
+その場合は、普通の船に変更してください。
+パイロットを全員同じ人物に
+する事も出来ます。
+ＭＳについても同じです。
+日本人だけのチームとか作ってヤンキー
+やロ助共を撃墜しましょう！（＾o＾）
+あと、裏は取れてないんですが
+どうも、普通にやったら出てこないキャラ
+（ジョニーやらアイナやら）は滅茶苦茶
+成長が遅い気がします。
+ジョニーの場合は良いんですが、
+アイナは・・・（Ｔ-Ｔ）
+[/note]
+
+[subject]戦艦:list,0x44a0e4,戦艦,0x0,0x1
+[subject]モビルスーツ:dir
+         [subject]一機目:list,0x44a0e5,MS,0x0,0x1
+         [subject]二機目:list,0x44a0e6,MS,0x0,0x1
+         [subject]三機目:list,0x44a0e7,MS,0x0,0x1
+         [subject]四機目:list,0x44a0e8,MS,0x0,0x1
+         [subject]五機目:list,0x44a0e9,MS,0x0,0x1
+         [subject]六機目:list,0x44a0ea,MS,0x0,0x1
+         [subject]七機目:list,0x44a0eb,MS,0x0,0x1
+         [subject]八機目:list,0x44a0ec,MS,0x0,0x1
+[back]         
+[subject]パイロット:dir
+         [subject]一人目:list,0x44a0ed,パイロット,0x0,0x1
+         [subject]二人目:list,0x44a0ee,パイロット,0x0,0x1
+         [subject]三人目:list,0x44a0ef,パイロット,0x0,0x1
+         [subject]四人目:list,0x44a0f0,パイロット,0x0,0x1
+         [subject]五人目:list,0x44a0f1,パイロット,0x0,0x1
+         [subject]六人目:list,0x44a0f2,パイロット,0x0,0x1
+         [subject]七人目:list,0x44a0f3,パイロット,0x0,0x1
+         [subject]八人目:list,0x44a0f4,パイロット,0x0,0x1
+         [subject]九人目:list,0x44a0f5,パイロット,0x0,0x1
+         [subject]十人目:list,0x44a0f6,パイロット,0x0,0x1
+         [subject]十一人目:list,0x44a0f7,パイロット,0x0,0x1
+         [subject]十二人目:list,0x44a0f8,パイロット,0x0,0x1
+         [subject]十三人目:list,0x44a0f9,パイロット,0x0,0x1
+         [subject]十四人目:list,0x44a0fa,パイロット,0x0,0x1
+         [subject]十五人目:list,0x44a0fb,パイロット,0x0,0x1
+         [subject]十六人目:list,0x44a0fc,パイロット,0x0,0x1
+[back]
+
+[/script]
+
+[script]
+[title]DAWN*SLAVE
+       ～期せず檎とされた姫の處と心と拠～
+[process]DAWNSLAVE.EXE
+[maker]U-MeSOFT
+[creator]へっぽこ
+[note]
+今までやったゲームの中で一番サブタイトルが
+長かったゲームです。
+それ以外は特に言うべき事はありません。
+以上
+[/note]
+
+[subject]姫:dir
+         [subject]体力:calc,0xc620ed,0x0,0x64,unsigned
+         [subject]自尊心:calc,0xc620ec,0x0,0x64,unsigned
+         [subject]精神力:calc,0xc620ee,0x0,0x64,unsigned
+         [subject]好意:calc,0xc620f1,0x0,0x64,unsigned
+         [subject]好色度:calc,0xc620ef,0x0,0x64,unsigned
+         [subject]性欲:calc,0xc620f0,0x0,0x64,unsigned
+         [subject]変態度:calc,0xc620f2,0x0,0x64,unsigned
+         [subject]性技:calc,0xc620f3,0x0,0x64,unsigned
+         [subject]膣:calc,0xc620f5,0x0,0x64,unsigned
+         [subject]肛門:calc,0xc620f4,0x0,0x64,unsigned
+[back]
+[subject]感情:list,0xc620e4,感情,0x0,0x1
+[subject]薬:dir
+         [subject]鎮静剤:calc,0xc62146,0x0,0x3,unsigned
+         [subject]興奮剤:calc,0xc62148,0x0,0x3,unsigned
+         [subject]強壮薬:calc,0xc6214a,0x0,0x3,unsigned
+         [subject]治癒薬:calc,0xc6214c,0x0,0x3,unsigned
+[back]
+[/script]
+
+[script]
+[title]提督の決断3withパワーアップキット
+[process]TK3PKW95.EXE
+[maker]KOEI
+[creator]へっぽこ
+[note]
+光栄の海戦SLG第三段です。
+個人的には2の方が面白かったような気が･･･
+まぁ、それは良いとして日本軍ONLYです。
+米国、大嫌いなんで･･･
+日本の企業はダンピングなんか
+してないっつーの！
+お前らのとこの企業がもっと努力しろっつーの！
+日本にアメ公の基地はいらんっつーの！
+犯罪者、母国に逃がすのはやめろっつーの！
+ちなみに＊＊＊っつーの！の所は、
+ジャイアンの気持ちになって読んでください。
+例）俺はカァちゃんの奴隷じゃないっつーの！
+･･･やっぱ気にしないでください。
+注）
+別にアメリカ人は嫌いじゃありません。
+ただ、国単位になるとウザいです。
+他国のことガタガタ言う暇があったら、
+テメェんとこの山積みになってる問題
+どうにかしろって感じです。
+
+[/note]
+
+[subject]大日本帝国:dir
+         [subject]国民生産力:calc,0x5fd3d9,0x0,0x3e7,signed,little_e
+         [subject]国民士気:calc,0x5fd3db,0x0,0x63,signed,little_e
+         [subject]国家予算:calc,0x5e64c0,0x0,0xea60,signed,little_e
+         [subject]石油備蓄量:calc,0x5e64c2,0x0,0x186a0,signed,little_e
+         [subject]物質備蓄量:calc,0x5e64c6,0x0,0x186a0,signed,little_e
+         [subject]鉄鋼備蓄量:calc,0x5e64ca,0x0,0xea60,signed,little_e
+         [subject]アルミ備蓄量:calc,0x5e64cc,0x0,0xea60,signed,little_e
+         [subject]輸送船:calc,0x5e64e3,0x0,0x3e7,signed,little_e
+         [subject]海防艦:calc,0x5e64e5,0x0,0x3e7,signed,little_e
+         [subject]予備部隊数:calc,0x5e64ce,0x0,0x3e7,signed,little_e
+         [subject]技術力:dir
+                  [subject]工業:calc,0x5e64d0,0x0,0x3e7,signed,little_e
+                  [subject]兵器:calc,0x5e64d2,0x0,0x3e7,signed,little_e
+                  [subject]航空:calc,0x5e64d4,0x0,0x3e7,signed,little_e                  
+                  [subject]艦船:calc,0x5e64d6,0x0,0x3e7,signed,little_e
+                  [subject]情報:calc,0x5e64d8,0x0,0x3e7,signed,little_e
+         [back]
+         [subject]航空機:dir
+                  [subject]九六式艦戦:calc,0x607a18,0x0,0x3e7,signed,little_e
+                  [subject]零戦二一型:calc,0x607a27,0x0,0x3e7,signed,little_e
+                  [subject]零戦三二型:calc,0x607a36,0x0,0x3e7,signed,little_e
+                  [subject]零戦五二型:calc,0x607a45,0x0,0x3e7,signed,little_e
+                  [subject]零戦六三型:calc,0x607a54,0x0,0x3e7,signed,little_e
+                  [subject]烈風:calc,0x607a63,0x0,0x3e7,signed,little_e
+                  [subject]二式水戦:calc,0x607a72,0x0,0x3e7,signed,little_e
+                  [subject]強風:calc,0x607a81,0x0,0x3e7,signed,little_e
+                  [subject]雷電:calc,0x607a90,0x0,0x3e7,signed,little_e
+                  [subject]紫電:calc,0x607a9f,0x0,0x3e7,signed,little_e
+                  [subject]紫電改:calc,0x607aae,0x0,0x3e7,signed,little_e
+                  [subject]天雷:calc,0x607abd,0x0,0x3e7,signed,little_e
+                  [subject]震電:calc,0x607acc,0x0,0x3e7,signed,little_e
+                  [subject]月光:calc,0x607adb,0x0,0x3e7,signed,little_e
+                  [subject]秋水:calc,0x607aea,0x0,0x3e7,signed,little_e
+                  [subject]橘花:calc,0x607af9,0x0,0x3e7,signed,little_e
+                  [subject]九九式艦爆:calc,0x607b08,0x0,0x3e7,signed,little_e
+                  [subject]彗星:calc,0x607b17,0x0,0x3e7,signed,little_e
+                  [subject]銀河:calc,0x607b26,0x0,0x3e7,signed,little_e
+                  [subject]富嶽:calc,0x607b35,0x0,0x3e7,signed,little_e
+                  [subject]九七式艦攻:calc,0x607b44,0x0,0x3e7,signed,little_e
+                  [subject]天山:calc,0x607b53,0x0,0x3e7,signed,little_e
+                  [subject]流星:calc,0x607b62,0x0,0x3e7,signed,little_e
+                  [subject]九六式陸攻:calc,0x607b71,0x0,0x3e7,signed,little_e
+                  [subject]一式陸攻:calc,0x607b80,0x0,0x3e7,signed,little_e
+                  [subject]深山:calc,0x607b8f,0x0,0x3e7,signed,little_e
+                  [subject]連山:calc,0x607b9e,0x0,0x3e7,signed,little_e
+                  [subject]零式水偵:calc,0x607bad,0x0,0x3e7,signed,little_e
+                  [subject]瑞雲:calc,0x607bbc,0x0,0x3e7,signed,little_e
+                  [subject]零式観測機:calc,0x607bcb,0x0,0x3e7,signed,little_e
+                  [subject]彩曇:calc,0x607bda,0x0,0x3e7,signed,little_e
+                  [subject]東海:calc,0x607be9,0x0,0x3e7,signed,little_e
+                  [subject]零式水上機:calc,0x607bf8,0x0,0x3e7,signed,little_e
+                  [subject]晴嵐:calc,0x607c07,0x0,0x3e7,signed,little_e
+                  [subject]九七式飛行艇:calc,0x607c16,0x0,0x3e7,signed,little_e
+                  [subject]二式飛行艇:calc,0x607c25,0x0,0x3e7,signed,little_e
+                  [subject]隼:calc,0x607c34,0x0,0x3e7,signed,little_e
+                  [subject]鍾馗:calc,0x607c43,0x0,0x3e7,signed,little_e
+                  [subject]屠龍:calc,0x607c52,0x0,0x3e7,signed,little_e
+                  [subject]飛燕:calc,0x607c61,0x0,0x3e7,signed,little_e
+                  [subject]疾風:calc,0x607c70,0x0,0x3e7,signed,little_e
+                  [subject]五式戦:calc,0x607c7f,0x0,0x3e7,signed,little_e
+                  [subject]キ１０２:calc,0x607c8e,0x0,0x3e7,signed,little_e
+                  [subject]九九式襲撃機:calc,0x607c9d,0x0,0x3e7,signed,little_e
+                  [subject]九九式双軽爆:calc,0x607cac,0x0,0x3e7,signed,little_e
+                  [subject]九七式重爆:calc,0x607cbb,0x0,0x3e7,signed,little_e
+                  [subject]呑龍:calc,0x607cca,0x0,0x3e7,signed,little_e
+                  [subject]飛龍:calc,0x607cd9,0x0,0x3e7,signed,little_e
+                  [subject]九七式司偵:calc,0x607ce8,0x0,0x3e7,signed,little_e
+                  [subject]百式司偵:calc,0x607cf7,0x0,0x3e7,signed,little_e
+        [back]  
+[back]
+[/script]
+
+[script]
+[title]コートの中の天使達
+[process]DSON.EXE
+[maker]Pinpai
+[creator]へっぽこ
+[note]
+バレーボール部の軌道がウンタラカンタラ･･･
+顧問が前に問題起こしてウンタラカンタラ･･･
+それぞれ部員に裏が有りウンタラカンタラ･･･
+ちなみに最初？？？には入れませんが、
+これは各自でどうにかしてください。
+[/note]
+[subject]CG ALL ON:toggle,0x4950a2,00000100020003000400050006000700080009000a000b000c000d000e000f0010001100120013001400150016001700180019001a001b001c001d001e001f0020002100220023002400250026002700280029002a002b002c002d002e002f0030003100320033003400350036003700380039003a003b003c003d003e003f0040004100420043004400450046004700480049004a004b004c004d004e004f0050005100520053005400550056005700580059005a005b005c005d005e005f0060006100620063006400650066006700680069006a006b006c006d006e006f00700071007200,0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+                                   
+[/script]
+
+[script]
+[title]魁！メモリアル～hold me or die～
+[process]SAKINEW.EXE
+[maker]???
+[creator]へっぽこ
+[note]
+ノーコメント（笑）
+ときメモや男塾好きな人は
+やらない方が･･･
+記念SSGです。
+以上･･･
+他に何かいて良いのか
+分からん（笑）
+[/note]
+
+[subject]主人公:dir
+         [subject]体調:calc,0x422588,0x00,0x03E7,signed,little_e
+         [subject]民明:calc,0x42258c,0x00,0x03E7,signed,little_e
+         [subject]九九:calc,0x422590,0x00,0x03E7,signed,little_e
+         [subject]体術:calc,0x422594,0x00,0x03E7,signed,little_e
+         [subject]運動:calc,0x422598,0x00,0x03E7,signed,little_e
+         [subject]雑学:calc,0x42259c,0x00,0x03E7,signed,little_e
+         [subject]肉体:calc,0x4225a0,0x00,0x03E7,signed,little_e
+         [subject]根性:calc,0x4225a4,0x00,0x03E7,signed,little_e
+         [subject]疲労:calc,0x4225a8,0x00,0x03E7,signed,little_e
+[back]
+[/script]
+
+[script]
+[title]西風の狂詩曲
+[process]ZEPHYR.EXE
+[maker]Falcom
+[creator]へっぽこ
+[note]wordwrap
+しょっぱなから話が重過ぎ･･･
+まだ全然やり込んでないんでこんな事しかいえないっす。
+[10月9日更新]
+経験値をMAXにすれば能力もMAXになるようです。
+ただキャラごとに能力の上限が決まってるみたいでそれ以上の値は受け付けないようです。
+ちなみにLV99にするには一回戦闘をして経験値を加えてください。
+また現在HP、MP双方とも戦闘中に数値は反映されないです。
+ちなみにこれはFULLインストール用だと考えてください。
+標準については試してないので何とも言えません。
+[9月10日更新]
+シルバーナ、カーナ、エスメラルダ
+を追加。
+[9月11日]
+クリスを追加
+[9月12日]
+宮三さんの要望によりXPを追加。キャラが透明人間になるという不具合がありそうな予感・・・
+他にも幾つか報告があったが、環境によって多少違うようである。
+これから使用する人はそれを踏まえたうえで使用してください。
+ついでにリデルも追加
+[9月13日]
+アイテムをちょこっといじれるようにしました。
+エクスカリバーは、装備できるアイテムの一番上のものを書き換えます。
+ジグプリードは二番目のものを書き換えます。
+どんな大切な物であろうが関係ありません。
+問答無用で書き換えます。注意してください。
+これから少しずつ増やしていこうと思ってます。
+[9月17日]
+メディチとイザベルを追加。
+カーナにもXPを付ける。
+[9月18日]
+アイテムにそれなりのものを追加。
+[/note]
+[subject]このSSGを使用して何が起こっても作者は一切責任を負いません:dir
+[subject]上記の文を了承します:dir
+[subject]シラノ:dir
+         [subject]経験値:calc,0x564b28,0x0,0xf42400,signed,little_e
+         [subject]現在HP:calc,0x564bb0,0x0,0x270f,signed,little_e
+         [subject]現在MP:calc,0x564bb4,0x0,0x0b7c,signed,little_e
+         [subject]XP:calc,0x564b38,0x0,0x64,signed,little_e
+[back]
+[subject]シルバーナ:dir
+         [subject]経験値:calc,0x565368,0x0,0xf42400,signed,little_e
+         [subject]現在HP:calc,0x5653f0,0x0,0x270f,signed,little_e
+         [subject]XP:calc,0x565378,0x0,0x64,signed,little_e
+[back]
+[subject]カーナ:dir
+         [subject]経験値:calc,0x564f48,0x0,0xf42400,signed,little_e
+         [subject]現在HP:calc,0x564fd0,0x0,0x25a8,signed,little_e
+         [subject]現在MP:calc,0x564fd4,0x0,0x15d6,signed,little_e
+         [subject]XP:calc,0x564f58,0x0,0x64,signed,little_e
+[back]
+[subject]エスメラルダ:dir
+         [subject]経験値:calc,0x565788,0x0,0xf42400,signed,little_e
+         [subject]現在HP:calc,0x565810,0x0,0x01f6a,signed,little_e
+         [subject]現在MP:calc,0x565814,0x0,0x0194c,signed,little_e
+         [subject]XP:calc,0x565798,0x0,0x64,signed,little_e
+[back]
+[subject]クリス:dir
+         [subject]経験値:calc,0x565fc8,0x0,0xf42400,signed,little_e
+         [subject]現在HP:calc,0x566050,0x0,0x266c,signed,little_e
+         [subject]現在MP:calc,0x566054,0x0,0x1450,signed,little_e
+         [subject]XP:calc,0x565fd8,0x0,0x64,signed,little_e
+[back]
+[subject]リデル:dir
+         [subject]経験値:calc,0x566808,0x0,0xf42400,signed,little_e
+         [subject]現在HP:calc,0x566890,0x0,0x270f,signed,little_e
+         [subject]XP:calc,0x566818,0x0,0x64,signed,little_e
+[back]
+[subject]メディチ:dir
+         [subject]経験値:calc,0x565ba8,0x0,0xf42400,signed,little_e
+         [subject]現在HP:calc,0x565c30,0x0,0x270f,signed,little_e
+         [subject]現在MP:calc,0x565c34,0x0,0x0ad6,signed,little_e
+         [subject]XP:calc,0x565bb8,0x0,0x64,signed,little_e
+[back]
+[subject]イザベル:dir
+         [subject]経験値:calc,0x5663e8,0x0,0xf42400,signed,little_e
+         [subject]現在HP:calc,0x566470,0x0,0x270f,signed,little_e
+         [subject]XP:calc,0x5663f8,0x0,0x64,signed,little_e
+[back]
+[subject]アイテム:dir
+         [subject]エクスカリバー（修理後）:toggle,0x567c10,30455843410000000000000007,0000000000000000000000000000
+         [subject]ジグプリード:toggle,0x567c20,31534945470052000000000004,0000000000000000000000000000
+         [subject]ロンギヌスの槍:toggle,0x567c30,314c4f4e474900000000000008,0000000000000000000000000000
+         [subject]不死鳥の卵:toggle,0x567c40,4145474700,0000000000
+         [subject]竜の鱗:toggle,0x567c50,41445243524500,0000000000000
+         [subject]一角獣の角:toggle,0x567c60,41554e49004552000000000001,00000000000000000000000000
+         [subject]蛮族の彫像:toggle,0x567c70,41424142410052,00000000000000
+[root]
+[subject]ELD:calc,0x569410,0x00,0x5f5e0ff,signed,little_e
+[/script]
+
+[script]
+[title]淫内感染２～鳴り止まないナースコール～
+[process]NCALL2.EXE
+[maker]ＺＸＹ
+[creator]へっぽこ
+[note]wordwrap
+犯る！犯る！犯る！以上！（爆）
+それ以上何を書いても虚しいだけで…
+まぁ、本編のオマケみたいなもんでしょう。
+1の人達も出てきますので一本で二本分美味しい！？
+陣取りゲームなんでストーリー性なんかは皆無ですねぇ。
+看護婦さん好きだからいいけどね（^^
+[/note]
+[subject]残機:calc,0x4348B0,0x0,0x63,signed,little_e
+[/script]
+
+[script]
+[title]GTA2
+[process]GTA2.EXE
+[maker]ズー
+[creator]へっぽこ
+[note]wordwrap
+犯罪者体験シュミレーション
+カージャックがお気に入り。
+金を改造すると即刻クリア可能
+でもツマラナイ･･･
+MAXで数値を固定してクリアするとバグるかも･･･
+要注意です。
+3月14日更新分
+防弾チョッキを装備してても火炎放射器を浴びると即死亡です。
+また警察にボコられてもパクられます。
+透明人間、無敵なんかも見つけてはいるんですが、何か上手くいきません。
+次回までには･･･
+[/note]
+[subject]残機:calc,0x038DF690,0x0,0x63,signed,little_e
+[subject]金:calc,0x038DF2E0,0x0,0x3B9AC9FF,signed,little_e
+[subject]防弾チョッキ:calc,0x38DF706,0x0,0x63,signed,little_e
+[subject]スーパー連射:toggle,0x38DF710,64,00
+[subject]ブタ箱免除:toggle,0x38DF708,64,00
+[/script]
+
+[script]
+[title]グランプリワールド　完全日本語版
+[process]GPW.EXE
+[maker]メディアクエスト
+[creator]へっぽこ
+[note]wordwrap
+F1チーム経営シュミレーション
+かなり気合入っったゲームです。
+とりあえず、ミカ様に「フェラーリのテストドライバーしてみない？」
+と誘ったところキッパリシッカリ断られました。
+う～んミカ様のイケズ～♪
+フルインストールのみ対応（してるといいなぁと思ってます。）
+環境によってはアドレスの位置が変わることも考えられます。
+[/note]
+[subject]ウィリアムズ:dir
+ [subject]資金:calc,0x1209B00,0x0,0x3b9ac9ff,unsigned,little_e
+[root]
+[subject]フェラーリ:dir
+ [subject]資金:calc,0x120b990,0x0,0x3b9ac9ff,unsigned,little_e
+[root]
+[subject]ベネトン:dir
+ [subject]資金:calc,0x120D820,0x0,0x3b9ac9ff,unsigned,little_e
+[root]
+[subject]マクラーレン:dir
+ [subject]資金:calc,0x120F6B0,0x0,0x3b9ac9ff,unsigned,little_e
+[root]
+[subject]ジョーダン:dir
+ [subject]資金:calc,0x1211540,0x0,0x3b9ac9ff,unsigned,little_e
+[root]
+[subject]プロスト:dir
+ [subject]資金:calc,0x12133D0,0x0,0x3b9ac9ff,unsigned,little_e
+[root]
+[subject]ザウバー:dir
+ [subject]資金:calc,0x1215260,0x0,0x3b9ac9ff,unsigned,little_e
+[root]
+[subject]アローズ:dir
+ [subject]資金:calc,0x12170F0,0x0,0x3b9ac9ff,unsigned,little_e
+[root]
+[subject]スチュワート:dir
+ [subject]資金:calc,0x1218F80,0x0,0x3b9ac9ff,unsigned,little_e
+[root]
+[subject]ティレル:dir
+ [subject]資金:calc,0x121AE10,0x0,0x3b9ac9ff,unsigned,little_e
+[root]
+[subject]ミナルディ:dir
+ [subject]資金:calc,0x121CCA0,0x0,0x3b9ac9ff,unsigned,little_e
+[root]
+[/script]
+
+[script]
+[title]探検道～THE NEW FRONTIER～
+[process]TANKENDO.EXE
+[maker]日本クリエイト
+[creator]へっぽこ
+[note]wordwrap
+資金が尽きてしまう某お方へ愛を込めて（笑
+[/note]
+[subject]
+[subject]主人公:dir
+ [subject]体力:toggle,0x51DA50,00004843,00000000
+ [subject]統率力:calc,0x51DA88,0x0,0x3e7,unsigned,little_e
+ [subject]戦闘力:calc,0x51DA90,0x0,0x3e7,unsigned,little_e
+ [subject]交渉能力:calc,0x51DA98,0x0,0x3e7,unsigned,little_e
+ [subject]博学:calc,0x51DA9C,0x0,0x3e7,unsigned,little_e
+ [subject]危機管理:calc,0x51DA94,0x0,0x3e7,unsigned,little_e
+ [subject]探索力:calc,0x51DA8C,0x0,0x3e7,unsigned,little_e
+ [subject]カリスマ:calc,0x51DAA0,0x0,0x3e7,unsigned,little_e
+[root]
+[subject]資金:calc,0x51DB5C,0x0,0x1869f,unsigned,little_e
+[subject]食料:calc,0x51DB90,0x0,0x270f,unsigned,little_e
+[subject]ナイフ:calc,0x51DB80,0x0,0x3e7,unsigned,little_e
+[subject]ライフル:calc,0x51DB88,0x0,0x3e7,unsigned,little_e
+[subject]医薬品:calc,0x51DB8C,0x0,0x3e7,unsigned,little_e
+[/script]
+
