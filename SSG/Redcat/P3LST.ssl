@@ -1,0 +1,191 @@
+[group]P3_MA
+[note]wordwrap
+…メインヒロインの立場が前作にも増して憐れな感じですね(^^;　このポジショ	ンはシナリオライターに嫌われてる？つか、出番的に古柴瞳子化byBesideしてる	のが可哀想すぎ（笑）
+
+以下、少々補足です。
+■ＡＤＶパート関連
+初期ＭＡＸ化：
+機能実行時に、最初から始めると対象ステータスＭＡＸ状態で始められます。
+
+常時ＭＡＸ化：
+シナリオ内でパラメータが変動した際、同様の効果がでます。
+
+■フラグ関連
+制服変更：
+シナリオ内で即座に影響が出るので、結構使えたり。
+
+スケジュール変更：
+前日あたりまでには変えておかないと効果がでません。
+
+■パラメータ関連
+好感度：
+ヒロイン毎に上昇幅が異なるので注意。
+
+■ＣＧモード関連
+モード利用可能：
+シナリオ中に機能実行し、タイトルに戻ります。
+[/note]
+
+
+[subject]ＡＤＶパート関連:dir
+	[subject]初期体調・所持金ＭＡＸ化/実行/_:b_toggle,0x00,P3LST->P3_p1,offset
+	[subject]パラメータ常時ＭＡＸ化/実行/_:b_toggle,0x00,P3LST->P3_p2,offset
+	[subject]体調常時自動回復/実行/_:toggle,0x026A25,EB00,7E16
+	[subject]所持金常時自動回復/実行/_:toggle,0x026390,EB00,7E0D
+	[subjext]不評増えない/実行/_:toggle,0x026930,33C0,03C3
+[/group]
+
+
+[group]P3_p1
+0x026300,EB00,7E11
+0x0269BC,EB00,7E15
+[/group]
+
+
+[group]P3_p2
+0x026485,EB00,7E16
+0x026575,EB00,7E16
+0x026665,EB00,7E16
+0x026755,EB00,7E16
+0x026845,EB00,7E16
+[/group]
+
+
+[group]P3_F1
+[subject]制服任意変更/_:list,0xB4,P3LST->LST_a,0x01,0x01
+[subject]スケジュール中途変更:dir
+	[replace]0x00,P3LST->P3_RP
+[/group]
+
+
+[group]P3_f2
+[subject]時間帯/_:list,0x00,P3LST->LST_b,0x00,0x01
+[subject]業種/_:list,0x04,P3LST->LST_c,0x00,0x01
+[back]
+[/group]
+
+
+[group]P3_RP
+[subject]１日:dir
+	[replace]0x360,P3LST->P3_f2
+[subject]２日:dir
+	[replace]0x36C,P3LST->P3_f2
+[subject]３日:dir
+	[replace]0x378,P3LST->P3_f2
+[subject]５日:dir
+	[replace]0x390,P3LST->P3_f2
+[subject]６日:dir
+	[replace]0x39C,P3LST->P3_f2
+[subject]７日:dir
+	[replace]0x3A8,P3LST->P3_f2
+[subject]８日:dir
+	[replace]0x3B4,P3LST->P3_f2
+[subject]９日:dir
+	[replace]0x3C0,P3LST->P3_f2
+[subject]１０日:dir
+	[replace]0x3CC,P3LST->P3_f2
+[subject]１２日:dir
+	[replace]0x3E4,P3LST->P3_f2
+[subject]１５日:dir
+	[replace]0x408,P3LST->P3_f2
+[subject]１６日:dir
+	[replace]0x414,P3LST->P3_f2
+[subject]１７日:dir
+	[replace]0x420,P3LST->P3_f2
+[subject]１９日:dir
+	[replace]0x438,P3LST->P3_f2
+[subject]２０日:dir
+	[replace]0x444,P3LST->P3_f2
+[subject]２１日:dir
+	[replace]0x450,P3LST->P3_f2
+[subject]２２日:dir
+	[replace]0x45C,P3LST->P3_f2
+[subject]２３日:dir
+	[replace]0x468,P3LST->P3_f2
+[subject]２７日:dir
+	[replace]0x498,P3LST->P3_f2
+[subject]２８日:dir
+	[replace]0x4A4,P3LST->P3_f2
+[back]
+[/group]
+
+
+[group]P3_PR
+[subject]主人公ステータス:dir
+	[repeat]P3LST->P3REP1,0,7,1
+[back]
+[subject]好感度確認編集:dir
+	[repeat]P3LST->P3REP2,0,8,1
+[/group]
+
+
+[group]P3REP1
+[subject][! @P3LST->LST_d,$Val !]/現在値/_:calc,_[:[:(MName::RESIDENT.DLL)+0x16A400:]+0x1C:]+0x[! 0xC8+$Val*4 !],0x00,0x78,unsigned
+[/group]
+
+
+[group]P3REP2
+[subject][! @P3LST->LST_e,$Val !]/現在値/_:calc,_[:[:(MName::RESIDENT.DLL)+0x16A400:]+0x1C:]+0x11C+0x[! $Val*4 !],0x00,0x12C,unsigned
+[/group]
+
+
+[group]P3_CG
+	[subject]モード利用可能/実行/_:toggle,0x0CD0,01000000
+	[subject]織江開封/実行/_:toggle,0x48,01000000
+	[subject]ビデオＡＬＬ/実行/_:toggle,0x02AC,0x02BF-01000000
+[subject]ＣＧモード:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x04B4,0x0A7F-01000000
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x4B4,0x0A7F-00
+[back]
+[subject]シーン回想:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x0C84,0x0CCF-01000000
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x0C84,0x0CCF-00
+[/group]
+
+
+[group]LST_a
+フローラルミント
+トロピカル
+パロパロ
+[/group]
+
+
+[group]LST_b
+未定
+午前
+午後
+[/group]
+
+
+[group]LST_c
+未定
+ウエイター
+キャッシャー
+調理
+皿洗い
+掃除
+倉庫整理
+[/group]
+
+
+[group]LST_d
+容姿
+優しさ
+根性
+学力
+体力
+不評
+体調
+[/group]
+
+
+[group]LST_e
+高井さやか
+愛沢ともみ
+岩倉夏姫
+木ノ下貴子
+冬木美春
+君島ナナ
+羽瀬川朱美
+天野織江
+[/group]
