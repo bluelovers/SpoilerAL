@@ -1,0 +1,242 @@
+SSG for SpoilerAL ver 5.2
+
+[script]
+[title]シャイニングフォース
+[creator]ニコ
+[maker]セガ　b-club
+[process]TKMD.EXE
+[note]wordwrap
+＜サーチ環境＞
+OS:WinXP
+  アイテム・魔法は１から順番にいれてください
+  装備品のところを書き換える場合は装備しなおしてください
+  装備品変更しても呪いは解けないので教会で解いてもらってください
+  パラメータは装備してないときの値です
+  経験値以外のパラメータは猶予をいれておいてください
+  レベルアップすると戻るパラメータ［騎士にMPなど］は値固定を使ってください
+  戦闘後レベルアップをつける場合はキャラ別の経験値を入力しないでください
+  戦闘後レベルアップをつける場合は値固定をしておくと便利
+[/note]
+[subject]戦闘後レベルアップ:b_toggle,0x10,s_force exp_toggle,offset
+ [subject]主人公:dir
+  [replace]0x00c29e22,s_force sub
+ [subject]メイ:dir
+  [replace]0x00c29e4a,s_force sub
+ [subject]ペイル:dir
+  [replace]0x00c29e72,s_force sub
+ [subject]ケン:dir
+  [replace]0x00c29e9a,s_force sub
+ [subject]バンガード:dir
+  [replace]0x00c29ec2,s_force sub
+ [subject]アーネスト:dir
+  [replace]0x00c29eeb,s_force sub
+ [subject]アーサー:dir
+  [replace]0x00c29f12,s_force sub
+ [subject]ゴート:dir
+  [replace]0x00c29f3a,s_force sub
+ [subject]ラグ:dir
+  [replace]0x00c29f62,s_force sub
+ [subject]ガンツ:dir
+  [replace]0x00c29f8a,s_force sub
+ [subject]アンリ:dir
+  [replace]0x00c29fb2,s_force sub
+ [subject]アレフ:dir
+  [replace]0x00c29fda,s_force sub
+ [subject]タオ:dir
+  [replace]0x00c2a002,s_force sub
+ [subject]ドミンゴ:dir
+  [replace]0x00c2a02a,s_force sub
+ [subject]ロウ:dir
+  [replace]0x00c2a052,s_force sub
+ [subject]チップ:dir
+  [replace]0x00c2a07a,s_force sub
+ [subject]トーラス:dir
+  [replace]0x00c2a0a2,s_force sub
+ [subject]ゴング:dir
+  [replace]0x00c2a0ca,s_force sub
+ [subject]ディアーネ:dir
+  [replace]0x00c2a0f2,s_force sub
+ [subject]ハンス:dir
+  [replace]0x00c2a11a,s_force sub
+ [subject]ライル:dir
+  [replace]0x00c2a142,s_force sub
+ [subject]アモン:dir
+  [replace]0x00c2a16a,s_force sub
+ [subject]バルバロイ:dir
+  [replace]0x00c2a192,s_force sub
+ [subject]コーキチ:dir
+  [replace]0x00c2a1ba,s_force sub
+ [subject]バリュウ:dir
+  [replace]0x00c3a1e2,s_force sub
+ [subject]アダム:dir
+  [replace]0x00c2a20a,s_force sub
+ [subject]ザッパ:dir
+  [replace]0x00c2a232,s_force sub
+ [subject]ムサシ:dir
+  [replace]0x00c2a25a,s_force sub
+ [subject]ハンゾウ:dir
+  [replace]0x00c2a282,s_force sub
+ [subject]ヨーグルト:dir
+  [replace]0x00c2a2aa,s_force sub
+[/script]  
+
+[script]
+[title]シャイニング・フォースⅡ ～古えの封印～[CYBER DISK]
+[creator]ニコ
+[maker]セガ　b-club
+[process]gens.exe
+[note]wordwrap
+＜サーチ環境＞
+OS:WinXP
+パラメータは装備していないときの値です
+アイテム・まほうは１から順にいれてください
+make date 12/21/2002
+
+[/note]
+[subject]戦闘後レベルアップ:b_toggle,0x31,s_force2 exp_toggle,offset
+ [subject]ボウイ:dir
+  [replace]0x00680500,s_force2 sub
+ [subject]サラ:dir
+  [replace]0x00680538,s_force2 sub
+ [subject]ヒューイ:dir
+  [replace]0x00680570,s_force2 sub
+ [subject]ジャジャ:dir
+  [replace]0x006805a8,s_force2 sub
+ [subject]カズン:dir
+  [replace]0x006805e0,s_force2 sub
+ [subject]ジッポ:dir
+  [replace]0x00680618,s_force2 sub
+ [subject]キウイ:dir
+  [replace]0x00680650,s_force2 sub
+ [subject]ピーター:dir
+  [replace]0x00680688,s_force2 sub
+ [subject]マチルダ:dir
+  [replace]0x006806c0,s_force2 sub
+ [subject]ゲルハルト:dir
+  [replace]0x006806f8,s_force2 sub
+ [subject]ルド:dir
+  [replace]0x00680730,s_force2 sub
+ [subject]ロイド:dir
+  [replace]0x00680768,s_force2 sub
+ [subject]ミック:dir
+  [replace]0x006807a0,s_force2 sub
+ [subject]ポルナレフ:dir
+  [replace]0x006807d8,s_force2 sub
+ [subject]エルリック:dir
+  [replace]0x00680810,s_force2 sub
+ [subject]ツィッギー:dir
+  [replace]0x00680848,s_force2 sub
+ [subject]ドンゴ:dir
+  [replace]0x00680880,s_force2 sub
+ [subject]バイパー:dir
+  [replace]0x006808b8,s_force2 sub
+ [subject]ジャネット:dir
+  [replace]0x006808f0,s_force2 sub
+ [subject]ヒギンズ:dir
+  [replace]0x00680928,s_force2 sub
+ [subject]フィルダー:dir
+  [replace]0x00680960,s_force2 sub
+ [subject]リンダ:dir
+  [replace]0x00680998,s_force2 sub
+ [subject]シャロル:dir
+  [replace]0x006809d0,s_force2 sub
+ [subject]ファルコン:dir
+  [replace]0x00680a08,s_force2 sub
+ [subject]ガイアン:dir
+  [replace]0x00680a40,s_force2 sub
+ [subject]シーラ:dir
+  [replace]0x00680a78,s_force2 sub
+ [subject]バッカス:dir
+  [replace]0x00680ab0,s_force2 sub
+ [subject]オネイア:dir
+  [replace]0x00680ae8,s_force2 sub
+ [subject]レモン:dir
+  [replace]0x00680b20,s_force2 sub
+ [subject]マード:dir
+  [replace]0x00680b58,s_force2 sub
+[/script]  
+
+[script]
+[title]シャイニング＆ザ・ダクネス[CYBER DISK]
+[creator]ニコ
+[maker]セガ　b-club
+[process]tkmd.exe
+[note]wordwrap
+＜サーチ環境＞
+OS:WinXP
+パラメータ[ちえ・すばやさ・うん・ちから]を変更した場合は、装備をしなおしてください。
+
+[/note]
+ [size]4
+  [io_fep]$Val*65536+$Val/65536,$Val*65536+$Val/65536
+   [subject]お金:calc,0x00c21834,0,9999999
+  [/io_fep]
+[/size]
+ [subject]主人公:dir
+  [subject]HP          :calc,0x00c21844, 1, 999
+  [subject]MP          :calc,0x00c2184a, 1, 999
+   [size]4
+    [io_fep]$Val*65536+$Val/65536,$Val*65536+$Val/65536
+     [subject]EXP:calc,0x00c2186e,0,9999999
+    [/io_fep]
+   [/size]
+  [subject]ちえ:calc,0x00c21862, 1, 999
+  [subject]すばやさ:calc,0x00c21856, 1, 999
+  [subject]うん:calc,0x00c2185c, 1, 999
+  [subject]ちから:calc,0x00c21850, 1, 999
+  [subject]アイテム:dir
+   [subject]1つ目:list,0x00c2187a,s_and_d item,0,1
+   [subject]2つ目:list,0x00c2187c,s_and_d item,0,1
+   [subject]3つ目:list,0x00c2187e,s_and_d item,0,1
+   [subject]4つ目:list,0x00c21880,s_and_d item,0,1
+   [subject]5つ目:list,0x00c21882,s_and_d item,0,1
+   [subject]6つ目:list,0x00c21884,s_and_d item,0,1
+   [subject]7つ目:list,0x00c21886,s_and_d item,0,1
+   [subject]8つ目:list,0x00c21888,s_and_d item,0,1
+ [root]
+ [subject]ビルボ:dir
+  [subject]HP      :calc,0x00c21846,1,999
+  [subject]MP      :calc,0x00c2184c,1,999
+   [size]4
+    [io_fep]$Val*65536+$Val/65536,$Val*65536+$Val/65536
+     [subject]EXP     :calc,0x00c21873,0,9999999
+    [/io_fep]
+   [/size]
+  [subject]ちえ    :calc,0x00c21864,1,999
+  [subject]すばやさ:calc,0x00c21858,1,999
+  [subject]うん    :calc,0x00c2185e,1,999
+  [subject]ちから  :calc,0x00c21852,1,999
+  [subject]アイテム:dir
+   [subject]1つ目:list,0x00c2188a,s_and_d item,0,1
+   [subject]2つ目:list,0x00c2188c,s_and_d item,0,1
+   [subject]3つ目:list,0x00c2188e,s_and_d item,0,1
+   [subject]4つ目:list,0x00c21890,s_and_d item,0,1
+   [subject]5つ目:list,0x00c21892,s_and_d item,0,1
+   [subject]6つ目:list,0x00c21894,s_and_d item,0,1
+   [subject]7つ目:list,0x00c21896,s_and_d item,0,1
+   [subject]8つ目:list,0x00c21898,s_and_d item,0,1
+ [root]
+ [subject]マーリン:dir
+  [subject]HP      :calc,0x00c21848,1,999
+  [subject]MP      :calc,0x00c2184e,1,999
+   [size]4
+    [io_fep]$Val*65536+$Val/65536,$Val*65536+$Val/65536
+     [subject]EXP     :calc,0x00c21876,0,9999999
+    [/io_fep]
+   [/size]
+  [subject]ちえ    :calc,0x00c21866,1,999
+  [subject]すばやさ:calc,0x00c2185a,1,999
+  [subject]うん    :calc,0x00c21860,1,999
+  [subject]ちから  :calc,0x00c21854,1,999
+  [subject]アイテム:dir
+   [subject]1つ目:list,0x00c2189a,s_and_d item,0,1
+   [subject]2つ目:list,0x00c2189c,s_and_d item,0,1
+   [subject]3つ目:list,0x00c2189e,s_and_d item,0,1
+   [subject]4つ目:list,0x00c218a0,s_and_d item,0,1
+   [subject]5つ目:list,0x00c218a2,s_and_d item,0,1
+   [subject]6つ目:list,0x00c218a4,s_and_d item,0,1
+   [subject]7つ目:list,0x00c218a6,s_and_d item,0,1
+   [subject]8つ目:list,0x00c218a8,s_and_d item,0,1
+ [root]
+[/size]
+[/script]  
