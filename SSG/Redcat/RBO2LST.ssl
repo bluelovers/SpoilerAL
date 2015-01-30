@@ -1,0 +1,91 @@
+[group]RBO2_SSG
+[note]wordwrap
+「君は、まず空気を読むところから始めるんだ！」
+…茶拭いたｗ
+
+そのうちRBOも宇宙とかシュメールとかが舞台になるんだろうか？
+それ以前にRBOでギルバレスの迷宮っぽいのとか無理だろ。製作者連中死んでしまうｗ
+[/note]
+
+[subject]ver1.000:dir
+ [subject]操作キャラクタ無敵化/実行/_:toggle,0x44A308,EB03??????8B46F083F80EEB000F8C,7511??????8B867407000085C00F85
+ [subject]敵一撃死化/実行/_:toggle,0x449969,837EF00D7F1E8BC890,8B86040800008B4818
+ [subject]ＨＰ回復高速化/実行/_:b_toggle,0x00,RBO2LST->RBO2_c,offset
+ [subject]HP･SP一時極大化/実行/_:b_toggle,0x00,RBO2LST->RBO2_b,offset
+ [subject]タイムカウント停止/実行/_:toggle,0x435B17,EB,74
+ [subject]無限多段ジャンプ化/実行/_:toggle,0x44354A,B10190,0F9EC1
+ [subject]無条件で隠し職選択可能/実行/_:toggle,0x4093B9,EB,75
+ [subject]振り分けポイント減らない+上限制限解除/実行/_:b_toggle,0x00,RBO2LST->RBO2_a,offset
+ [subject]矢の数常にMAX/実行/_:toggle,0x435390,B863000000A31CB1AD00C3,A11CB1AD00C39090909090
+ [subject]コインの数常にMAX/実行/_:toggle,0x435500,B863000000A36484AE00C3,A16484AE00C39090909090
+ [subject]イグ葉の数常にMAX/実行/_:toggle,0x436130,B809000000A30085AE00C3,A10085AE00C39090909090
+[back]
+
+[subject]0818修正版:dir
+ [subject]操作キャラクタ無敵化/実行/_:toggle,0x44A3B8,EB03??????8B46F083F80EEB000F8C,7511??????8B867407000085C00F85
+ [subject]敵一撃死化/実行/_:toggle,0x449A19,837EF00D7F1E8BC890,8B86040800008B4818
+ [subject]ＨＰ回復高速化/実行/_:b_toggle,0xB0,RBO2LST->RBO2_c,offset
+ [subject]HP･SP一時極大化/実行/_:b_toggle,0xB0,RBO2LST->RBO2_b,offset
+ [subject]タイムカウント停止/実行/_:toggle,0x435BA7,EB,74
+ [subject]無限多段ジャンプ化/実行/_:toggle,0x4435FA,B10190,0F9EC1
+ [subject]無条件で隠し職選択可能/実行/_:toggle,0x409449,EB,75
+ [subject]振り分けポイント減らない+上限制限解除/実行/_:b_toggle,0x90,RBO2LST->RBO2_a,offset
+ [subject]矢の数常にMAX/実行/_:toggle,0x435420,B863000000A33CB1AD00C3,A13CB1AD00C39090909090
+ [subject]コインの数常にMAX/実行/_:toggle,0x435590,B863000000A38484AE00C3,A18484AE00C39090909090
+ [subject]イグ葉の数常にMAX/実行/_:toggle,0x4361C0,B809000000A32085AE00C3,A12085AE00C39090909090
+[back]
+
+[subject]0822修正版:dir
+ [subject]操作キャラクタ無敵化/実行/_:b_toggle,0x00,RBO2LST->RBO2_d,offset
+ [subject]敵一撃死化/実行/_:toggle,0x449C49,837EF00D7F1E8BC890,8B86040800008B4818
+ [subject]ＨＰ回復高速化/実行/_:b_toggle,0x02C0,RBO2LST->RBO2_c,offset
+ [subject]HP･SP一時極大化/実行/_:b_toggle,0x0290,RBO2LST->RBO2_b,offset
+ [subject]タイムカウント停止/実行/_:toggle,0x435DA7,EB,74
+ [subject]無限多段ジャンプ化/実行/_:toggle,0x44382A,B10190,0F9EC1
+ [subject]無条件で隠し職選択可能/実行/_:toggle,0x409409,EB,75
+ [subject]振り分けポイント減らない+上限制限解除/実行/_:b_toggle,0x00,RBO2LST->RBO2_2a,offset
+ [subject]矢の数常にMAX/実行/_:toggle,0x435620,B863000000A39CB1AD00C3,A19CB1AD00C39090909090
+ [subject]コインの数常にMAX/実行/_:toggle,0x435790,B863000000A3D48FAE00C3,A1D48FAE00C39090909090
+ [subject]イグ葉の数常にMAX/実行/_:toggle,0x4363C0,B809000000A37090AE00C3,A17090AE00C39090909090
+[back]
+
+[/group]
+
+
+[group]RBO2_a
+0x4094B6,EB,75
+0x4094CF,EB00,2BC8
+0x4097E0,90,49
+[/group]
+
+
+[group]RBO2_2a
+0x409506,EB,75
+0x40951F,EB00,2BC8
+0x409840,90,49
+[/group]
+
+
+[group]RBO2_b
+0x453C99,B89F8601005EC3,03C65EC3909090
+0x453D49,B89F8601005EC3,03C65EC3909090
+[/group]
+
+
+[group]RBO2_c
+0x45077A,EB00,7E6C
+0x45078B,EB00,7F5B
+0x45079B,EB00,754B
+0x4507C2,EB00,7E03
+[/group]
+
+
+[group]RBO2_d
+0x44A5FB,E9C086030090,8D9F40070000
+0x482CC0,8B5C2404,00000000
+0x482CC4,8B5BF0,000000
+0x482CC7,83FB0E,000000
+0x482CCA,0F8CCB7BFCFF,000000000000
+0x482CD0,8D9F40070000,000000000000
+0x482CD6,E92679FCFF,0000000000
+[/group]
