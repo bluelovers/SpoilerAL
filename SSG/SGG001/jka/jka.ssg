@@ -1,0 +1,558 @@
+SSG for SpoilerAL ver 4.0
+
+
+[script]
+[title]行殺　新撰組
+[process]GYOSATSU.EXE
+[maker]Liar soft
+[creator]JKA-db
+[note]
+カモちゃん
+[/note]
+[subject]財政	:calc,0x43c26c,0x0,999,signed
+[subject]治安	:calc,0x43c270,0x0,100,signed
+[subject]知名度	:calc,0x43c274,0x0,100,signed
+[subject]発言力	:calc,0x43c278,0x0,100,signed
+[subject]評判	:calc,0x43c27c,0x0,100,signed
+[subject]不条理	:calc,0x43c280,0x0,100,signed
+[subject]隊務金	:calc,0x43c284,0x0,100,signed
+
+[/script]
+
+
+[script]
+[title]Rebirth
+[process]REBIRTH.EXE
+[maker]ぴんぱい
+[creator]JKA-db
+[note]
+[/note]
+[subject]絵が全部見られます。猫は可愛いから。:toggle,0x665290,0x665305-01,00
+[/script]
+
+
+[script]
+[title]MOON LIGHT2
+[process]3VS3.EXE
+[maker]もりもとうちゅういち
+[creator]JKA-db
+[note]
+なんかやられ声がやられ声って感じでアレです。
+[/note]
+[subject]１Ｐ体力:calc,0x6B19DA,0x0,0x60,signed
+[subject]１ＰSPゲージ:calc,0x6B19CC,0x0,0x20,signed
+[subject]２Ｐ体力:calc,0x6B1AF6,0x0,0x60,signed
+[subject]２ＰSPゲージ:calc,0x6B1AE8,0x0,0x20,signed
+[/script]
+
+[script]
+[title]MAID IN HEAVEN
+[process]NEKOW95.EXE
+[maker]PIL
+[creator]JKA-db＆あつ
+[note]
+淫乱度は、変更してすぐには
+画面に反映されません。
+が、内部的には書き変わっています。
+スティーブは、アイテムの使用回数を見て
+レベルを判断しています。ですので、
+レベルそのものを書き換えても
+あまり意味がありません。
+「愛称」は、アイテムレベル（使用回数）が
+一定以上になったときに、
+スティーブに鑑定してもらうと
+反映されるようになります。
+[/note]
+[subject]お金:calc,0x693DD4,0x0000,0xFFFF,signed
+[subject]月:calc,0x693902,0x01,0x0C,signed
+[subject]日:calc,0x693904,0x01,0x1F,signed
+[subject]俺様 体力:calc,0x693560,0x00,0x63,signed
+[subject]俺様 体力最大:calc,0x693914,0x00,0x63,signed
+[subject]なぎさ体力:calc,0x693562,0x00,0x63,signed
+[subject]なぎさ体力最大:calc,0x693918,0x00,0x63,signed
+[subject]淫乱度:calc,0x69356C,0x00,0xC7,signed
+[subject]快楽:calc,0x69391C,0x00,0x63,signed
+[subject]奉仕:calc,0x69391E,0x00,0x63,signed
+[subject]被虐:calc,0x693920,0x00,0x63,signed
+[subject]アイテム:dir
+	[subject]使用回数:dir
+		[subject]普通のバイブ:calc,0x693A3A,0,0xFFFF,signed
+		[subject]卵バイブ:calc,0x693A3C,0,0xFFFF,signed
+		[subject]荒縄:calc,0x693A3E,0,0xFFFF,signed
+		[subject]ムチ:calc,0x693A40,0,0xFFFF,signed
+		[subject]カンチョー器:calc,0x693A42,0,0xFFFF,signed
+		[subject]アナルバイブ:calc,0x693A44,0,0xFFFF,signed
+		[subject]クスコ:calc,0x693A46,0,0xFFFF,signed
+		[subject]アナルビーズ:calc,0x693A48,0,0xFFFF,signed
+	[back]
+	[subject]レベル:dir
+		[subject]普通のバイブ:calc,0x693A4E,0,6,signed
+		[subject]卵バイブ:calc,0x693A4C,0,6,signed
+		[subject]荒縄:calc,0x693A4E,0,6,signed
+		[subject]ムチ:calc,0x693A50,0,6,signed
+		[subject]カンチョー器:calc,0x693A52,0,6,signed
+		[subject]アナルバイブ:calc,0x693A54,0,6,signed
+		[subject]クスコ:calc,0x693A56,0,6,signed
+		[subject]アナルビーズ:calc,0x693A58,0,6,signed
+	[back]
+	[subject]愛称:dir
+		[subject]卵バイブ名:string,0x7A722C, 0xF, null
+		[subject]普通のバイブ名:string,0x7A724C, 0xF, null
+		[subject]ムチ名:string,0x7A726C, 0xF, null
+		[subject]カンチョー器名:string,0x7A728C, 0xF, null
+		[subject]アナルバイブ名:string,0x7A72AC, 0xF, null
+		[subject]クスコ名:string,0x7A72CC, 0xF, null
+		[subject]アナルビーズ名:string,0x7A72EC, 0xF, null
+[root]
+[subject]主人公名字:string,0x7A71EC, 0xF, null
+[subject]主人公名前:string,0x7A720C, 0xF, null
+[/script]
+
+[script]
+[title]THE QUEEN OF HEART'98
+[process]QOH98.EXE
+[maker]渡辺製作所
+[creator]JKA-db＆あゆきよ
+[note]
+このスクリプトは私ＪＫＡがあゆきよさんのＳＴＡＮＤ用コードを基に作りました。
+つーか、ほとんどあゆきよさんのおかげ？
+あゆきよさんありがとです。
+[/note]
+[subject]１Ｐ体力:calc,0x4B7B20,0x0001,0x23F0,signed
+[subject]１Ｐパワー:calc,0x4B7B14,0x0,0x9,signed
+[subject]２Ｐ体力:calc,0x4B8820,0x0001,0x23F0,signed
+[subject]２Ｐパワー:calc,0x4B8814,0x0,0x9,signed
+[subject]１Ｐ無限ジャンプ:toggle,0x4B7DD8,0,?
+[subject]１Ｐ超必無限ヒット:toggle,0x4B87D8,0,?
+[subject]１Ｐ無限にチェーン:toggle,0x4DE878,0,?
+[subject]２Ｐやられ判定つねにある:toggle,0x4B8AD4,0,?
+[/script]
+
+[script]
+[title]バーチャコップ２(IF-SEGA2付属)
+[process]PPJ2DD.EXE
+[maker]セガ
+[creator]JKA-db
+[note]
+このバーチャコップのＳＳＧはIF-SEGA2に付属のもので作りました。
+ちなみに数字が大きすぎると止まったり表示がおかしくなったりするようです。
+（弾数、ライフともに）
+[/note]
+[subject]１Ｐ弾数:calc,0x52CA68,0,255,signed
+[subject]１Ｐライフ:calc,0x4D02F2,0,255,signed
+[/script]
+
+[script]
+[title]THE QUEEN OF HEART'99 体験版
+[process]QOH_SAM.EXE
+[maker]渡辺製作所
+[creator]JKA-db
+[note]
+[/note]
+[subject]１Ｐ無限ジャンプ:toggle,0x792624,0,?
+[subject]１Ｐ無限チェーン:toggle,0x7EDD38,0,?
+[subject]１Ｐ無限超必ヒット:toggle,0x793438,0,?
+[/script]
+
+[script]
+[title]夢天使
+[process]MJ.EXX
+[maker]TRIANGLE
+[creator]JKA-db
+[note]
+麻雀しか改造してないっす。
+よって、これは全部麻雀モード用だよ。
+[/note]
+[subject]イカサマポイント数:calc,0x44F3C8,0,99,signed
+[subject]点数（自分）:calc,0x44EA98,-999999,999999,signed
+[subject]点数（相手）:calc,0x44F6B4,-999999,999999,signed
+[/script]
+
+[script]
+[title]拡張子自動判別変換猫
+[process]EXTCHG2.EXE
+[maker]SNCA
+[creator]JKA-db
+[note]
+起動回数を３２２以上にしてください。
+すると「情報」の所にぬくぬくが出現します。
+ちなみに起動回数は「情報」の所のキャラの左目クリックで表示されます。
+
+つーか、あほなＳＳＧで済みません。
+[/note]
+[subject]起動回数:calc,0xC5DC48,0x0,0xFFFF,signed
+[/script]
+
+[script]
+[title]THE QUEEN OF HEART'99
+[process]QOH99.EXE
+[maker]渡辺製作所
+[creator]JKA-db
+
+[subject]ノーマル:dir
+	[subject]1P:dir
+		[subject]体力:calc,0x8862F0,0x0000,0x23F0,signed
+		[subject]ゲージ:calc,0x8875E4,0x00,0x09,signed
+		[subject]ガードゲージ:calc,0x8872F4,0x00,0x64,signed
+		[subject]無限ジャンプ:toggle,0x885684,0,?
+		[subject]キャラ変更:list,0x8851BD,QOH99,00,01
+	[back]
+	[subject]2P:dir
+		[subject]体力:calc,0x886300,0x0000,0x23F0,signed
+		[subject]ゲージ:calc,0x8875F8,0x00,0x09,signed
+		[subject]ガードゲージ:calc,0x8872C8,0x00,0x64,signed
+		[subject]無限ジャンプ:toggle,0x887BB4,0,?
+		[subject]キャラ変更:list,0x8876ED,QOH99,00,01
+	[back]
+	[subject]3P:dir
+		[subject]体力:calc,0x886310,0x0000,0x23F0,signed
+		[subject]ガードゲージ:calc,0x887320,0x00,0x64,signed
+		[subject]無限ジャンプ:toggle,0x7656A4,0,?
+		[subject]キャラ変更:list,0x7651DD,QOH99,00,01
+	[back]
+	[subject]4P:dir
+		[subject]体力:calc,0x886320,0x0000,0x23F0,signed
+		[subject]ガードゲージ:calc,0x88734C,0x00,0x64,signed
+		[subject]無限ジャンプ:toggle,0x879664,0,?
+		[subject]キャラ変更:list,0x87919D,QOH99,00,01
+	[back]
+[back]
+
+[subject]アルバム:dir
+	[subject]新城　沙織:dir
+		[replace]0x878D0C,QOH99,offset
+	[subject]藍原　瑞穂:dir
+		[replace]0x878D24,QOH99,offset
+	[subject]月島　瑠璃子:dir
+		[replace]0x878D3C,QOH99,offset
+	[subject]柏木　初音:dir
+		[replace]0x878D54,QOH99,offset
+	[subject]柏木　楓:dir
+		[replace]0x878D6C,QOH99,offset
+	[subject]柏木　梓:dir
+		[replace]0x878D84,QOH99,offset
+	[subject]柏木　千鶴:dir
+		[replace]0x878D9C,QOH99,offset
+	[subject]高瀬　瑞希:dir
+		[replace]0x878DB4,QOH99,offset
+	[subject]神岸　あかり:dir
+		[replace]0x878DCC,QOH99,offset
+	[subject]来栖川　芹香:dir
+		[replace]0x878DE4,QOH99,offset
+	[subject]保科　智子:dir
+		[replace]0x878DFC,QOH99,offset
+	[subject]長岡　志保:dir
+		[replace]0x878E14,QOH99,offset
+	[subject]松原　葵:dir
+		[replace]0x878E2C,QOH99,offset
+	[subject]森川　由綺:dir
+		[replace]0x878E44,QOH99,offset
+	[subject]セリオ:dir
+		[replace]0x878E5C,QOH99,offset
+	[subject]マルチ:dir
+		[replace]0x878E74,QOH99,offset
+	[subject]姫川　琴音:dir
+		[replace]0x878E8C,QOH99,offset
+	[subject]宮内　レミィ:dir
+		[replace]0x878EA4,QOH99,offset
+	[subject]雛山　理緒:dir
+		[replace]0x878EBC,QOH99,offset
+	[subject]来栖川　綾香:dir
+		[replace]0x878ED4,QOH99,offset
+	[subject]緒方　理奈:dir
+		[replace]0x878EEC,QOH99,offset
+	[subject]お下げのあかり:dir
+		[replace]0x878F04,QOH99,offset
+	[subject]ＨＭ－１２:dir
+		[replace]0x878F1C,QOH99,offset
+	[subject]鬼千鶴:dir
+		[replace]0x878F34,QOH99,offset
+	[subject]太田　香奈子:dir
+		[replace]0x878F4C,QOH99,offset
+	[subject]コモード芹香:dir
+		[replace]0x878F64,QOH99,offset
+	[subject]殺意の波動に目覚めた　志保:dir
+		[replace]0x878F7C,QOH99,offset
+	[subject]真のヒロイン　琴音:dir
+		[replace]0x878F94,QOH99,offset
+	[subject]ＬＦ９７葵:dir
+		[replace]0x878FAC,QOH99,offset
+[back]
+
+[subject]隠しキャラ:dir
+		[subject]高瀬　瑞希:toggle,0x878184,1,0
+		[subject]森川　由綺:toggle,0x878188,1,0
+		[subject]コモード芹香:toggle,0x87818C,1,0
+		[subject]セリオ:toggle,0x87818C,1,0
+		[subject]緒方　理奈:toggle,0x878190,1,0
+		[subject]お下げのあかり:toggle,0x878194,1,0
+		[subject]ＨＭ－１２:toggle,0x878198,1,0
+		[subject]鬼千鶴:toggle,0x87819C,1,0
+		[subject]太田　香奈子:toggle,0x8781A0,1,0
+		[subject]殺意の波動に目覚めた　志保:toggle,0x8781A8,1,0
+		[subject]真のヒロイン　琴音:toggle,0x8781AC,1,0
+		[subject]ＬＦ９７葵:toggle,0x8781B0,1,0
+[back]
+
+[subject]ポーズ不可:toggle,0x8874D0,0,1
+[subject]現在の試合（何試合目？）:calc,0x887D58,0x0000,0x23F0,signed
+
+[note]wordwrap
+1P、2P等の表記については４人対戦（CPU無し）での表記に準じています。
+よって、上の名前の順で言うと、
+1P 3P FPS 2P 4P
+と、なります。
+たとえば、
+「1P&2P VS CPU&CPU」
+でプレイヤー側を無敵にしたい時は１Ｐと３Ｐのコードを使います。
+
+無限ジャンプは値を固定するだけでなぜかＯＫです。
+
+キャラ変更は固定にしないで戦闘中に変えて下さい。
+
+２人対戦と４人対戦のコードは同じに使わないようにしてください。
+ポーズ不可を解除するときは値の固定をはずした後にいったん「ポーズ不可」をＯＦＦにしてください。
+
+おまけ：
+＊現在の試合を7にするとその試合終了後にエンディング
+＊キャラが現れない隠しは「左Shift」キーを押しながら元キャラで決定
+[/note]
+[/script]
+
+
+[script]
+[title]THE QUEEN OF HEART'99  （12/28VerUp版）
+[process]QOH99.EXE
+[maker]渡辺製作所
+[creator]JKA-db
+
+[subject]ノーマル:dir
+	[subject]1P:dir 
+		[subject]体力:calc,0x5FF6C0,0x0000,0x23F0,signed
+		[subject]ゲージ:calc,0x6009C4,0x00,0x09,signed
+		[subject]ガードゲージ:calc,0x6006A8,0x00,0x64,signed
+		[subject]無限ジャンプ:toggle,0x5FEA34,0,?
+		[subject]やられ判定状態:toggle,0x5FEA30,0,1
+		[subject]キャラ変更:list,0x5FE56D,QOH99,00,01
+		[subject]シャドー:toggle,0x84A200,4,4
+	[back]
+	[subject]2P:dir
+		[subject]体力:calc,0x5FF6D0,0x0000,0x23F0,signed
+		[subject]ゲージ:calc,0x6009D8,0x00,0x09,signed
+		[subject]ガードゲージ:calc,0x6006D4,0x00,0x64,signed
+		[subject]無限ジャンプ:toggle,0x600F94,0,?
+		[subject]やられ判定状態:toggle,0x600F90,0,1
+		[subject]キャラ変更:list,0x600ACD,QOH99,00,01
+		[subject]シャドー:toggle,0x84A644,4,4
+	[back]
+	[subject]3P:dir
+		[subject]体力:calc,0x5FF6E0,0x0000,0x23F0,signed
+		[subject]ガードゲージ:calc,0x600700,0x00,0x64,signed
+		[subject]無限ジャンプ:toggle,0x4DE774,0,?
+		[subject]やられ判定状態:toggle,0x4DE770,0,1
+		[subject]キャラ変更:list,0x4DE2AD,QOH99,00,01
+		[subject]シャドー:toggle,0x84AA88,4,4
+	[back]
+	[subject]4P:dir
+		[subject]体力:calc,0x5FF6F0,0x0000,0x23F0,signed
+		[subject]ガードゲージ:calc,0x60072C,0x00,0x64,signed
+		[subject]無限ジャンプ:toggle,0x5F2A14,0,?
+		[subject]やられ判定状態:toggle,0x5F2A10,0,1
+		[subject]キャラ変更:list,0x5F254D,QOH99,00,01
+		[subject]シャドー:toggle,0x84AECC,4,4
+	[back]
+[back]
+
+[subject]アルバム:dir
+	[subject]新城　沙織:dir
+		[replace]0x5F209C,QOH99,offset
+	[subject]藍原　瑞穂:dir
+		[replace]0x5F20B4,QOH99,offset
+	[subject]月島　瑠璃子:dir
+		[replace]0x5F20CC,QOH99,offset
+	[subject]柏木　初音:dir
+		[replace]0x5F20E4,QOH99,offset
+	[subject]柏木　楓:dir
+		[replace]0x5F20FC,QOH99,offset
+	[subject]柏木　梓:dir
+		[replace]0x5F2114,QOH99,offset
+	[subject]柏木　千鶴:dir
+		[replace]0x5F212C,QOH99,offset
+	[subject]高瀬　瑞希:dir
+		[replace]0x5F2144,QOH99,offset
+	[subject]神岸　あかり:dir
+		[replace]0x5F215C,QOH99,offset
+	[subject]来栖川　芹香:dir
+		[replace]0x5F2174,QOH99,offset
+	[subject]保科　智子:dir
+		[replace]0x5F218C,QOH99,offset
+	[subject]長岡　志保:dir
+		[replace]0x5F21A4,QOH99,offset
+	[subject]松原　葵:dir
+		[replace]0x5F21BC,QOH99,offset
+	[subject]森川　由綺:dir
+		[replace]0x5F21D4,QOH99,offset
+	[subject]セリオ:dir
+		[replace]0x5F21EC,QOH99,offset
+	[subject]マルチ:dir
+		[replace]0x5F2204,QOH99,offset
+	[subject]姫川　琴音:dir
+		[replace]0x5F221C,QOH99,offset
+	[subject]宮内　レミィ:dir
+		[replace]0x5F2234,QOH99,offset
+	[subject]雛山　理緒:dir
+		[replace]0x5F224C,QOH99,offset
+	[subject]来栖川　綾香:dir
+		[replace]0x5F2264,QOH99,offset
+	[subject]緒方　理奈:dir
+		[replace]0x5F227C,QOH99,offset
+	[subject]お下げのあかり:dir
+		[replace]0x5F2294,QOH99,offset
+	[subject]ＨＭ－１２:dir
+		[replace]0x5F22AC,QOH99,offset
+	[subject]鬼千鶴:dir
+		[replace]0x5F22C4,QOH99,offset
+	[subject]太田　香奈子:dir
+		[replace]0x5F22DC,QOH99,offset
+	[subject]コモード芹香:dir
+		[replace]0x5F22F4,QOH99,offset
+	[subject]殺意の波動に目覚めた　志保:dir
+		[replace]0x5F230C,QOH99,offset
+	[subject]真のヒロイン　琴音:dir
+		[replace]0x5F2324,QOH99,offset
+	[subject]ＬＦ９７葵:dir
+		[replace]0x5F233C,QOH99,offset
+
+[back]
+
+[subject]隠しキャラ:dir
+		[subject]高瀬　瑞希:toggle,0x5F1514,1,0
+		[subject]森川　由綺:toggle,0x5F1518,1,0
+		[subject]セリオ:toggle,0x5F151C,1,0
+		[subject]緒方　理奈:toggle,0x5F1520,1,0
+		[subject]お下げのあかり:toggle,0x5F1524,1,0
+		[subject]ＨＭ－１２:toggle,0x5F1528,1,0
+		[subject]鬼千鶴:toggle,0x5F152C,1,0
+		[subject]太田　香奈子:toggle,0x5F1530,1,0
+		[subject]コモード芹香:toggle,0x5F1534,1,0
+		[subject]殺意の波動に目覚めた　志保:toggle,0x5F1538,1,0
+		[subject]真のヒロイン　琴音:toggle,0x5F153C,1,0
+		[subject]ＬＦ９７葵:toggle,0x5F1540,1,0
+[back]
+
+[subject]現在の試合（何試合目？）:calc,0x601148,0x0000,0xFFFF,signed
+[subject]モザイク消し:b_toggle,0,QOH99_0,real
+[subject]タイム:calc,0x52EC80,0x000000,0xFFFFFF,signed
+[subject]キャラを操作（１Ｐのみ）:calc,0x5FE508,0x00,0xFF,signed
+
+[note]wordwrap
+1P、2P等の表記については４人対戦（CPU無し）での表記に準じています。
+よって、上の名前の順で言うと、
+1P 3P FPS 2P 4P
+と、なります。
+たとえば、
+「1P&2P VS CPU&CPU」
+でプレイヤー側を無敵にしたい時は１Ｐと３Ｐのコードを使います。
+
+＜無限ジャンプ＞
+値を固定するだけでなぜかＯＫです。
+
+＜やられ判定状態＞
+固定にして使ってください。
+ＯＮ　…やられ判定が常にある。（コンボ入れ放題）
+ＯＦＦ…やられ判定が常にない。（無敵）
+
+＜キャラ変更＞
+固定にしないで戦闘中に変えて下さい。
+
+＜シャドー＞
+固定にして使ってください。
+キャラが真っ黒になります。
+
+＜現在の試合＞
+７にするとその試合終了後にエンディング
+
+＜モザイク消し＞
+固定にして使ってください。
+太田さんのアノ技のモザイクが消えます。
+
+
+＊キャラが現れない隠しは「左Shift」キーもしくは４ボタンを押しながら元キャラで決定
+[/note]
+[/script]
+
+[script]
+[title]THE QUEEN OF HEART'99  （02/11VerUp版）
+[process]QOH99.EXE
+[maker]渡辺製作所
+[creator]JKA-db
+[subject]デバッグモード:toggle,0x607D34,1,1
+
+[note]wordwrap
+F?キー（関数キー）で色々できます。
+あと、他にも効果あり。
+[/note]
+[/script]
+
+[script]
+[title]THE QUEEN OF HEART'99 SE（04/28VerUp版）
+[process]QOH99.EXE
+[maker]渡辺製作所
+[creator]JKA-db
+[subject]デバッグモード:toggle,0x610274,1,1
+
+[note]wordwrap
+デバッグモード詳細（試合中にF2-F10を押すと効果）
+F2 : 1PをMAN/CPU切り替え
+F3 : 2PをMAN/CPU切り替え
+F5 : キャラセレクトに
+F6 : 試合リセット
+F7 : 判定表示
+F8 : コマ送り（F9時）
+F9 : ポーズ
+F10 : ポーズ
+[/note]
+[/script]
+
+[script]
+[title]PARTY'S BREAKER(ver 1.000)
+[process]PB2K1.EXE
+[maker]渡辺製作所
+[creator]JKA-db
+
+[subject]ウェイトとか:dir
+[subject]ウェイト外し:toggle,0x40B110,90E9,0F85
+[subject]ゲームスピード:calc,0x6C2190,0x0000,0xFFFF
+[subject]ゲーム停止:toggle,0x6C84A4,0x01,0x00
+[back]
+[fuck]
+
+[note]wordwrap
+ツール公開までの補助用(爆
+やはり、こういうのだと楽なり・・・
+
+ゲームスピードは大きいほど遅くなる模様
+[/note]
+[/script]
+
+[script]
+[title]PARTY'S BREAKER(ver 1.001)
+[process]PB2K1.EXE
+[maker]渡辺製作所
+[creator]JKA-db
+
+[subject]ウェイトとか:dir
+[subject]ウェイト外し:toggle,0x40B190,90E9,0F85
+[subject]ゲームスピード:calc,0x6C32F0,0x0000,0xFFFF
+[subject]ゲーム停止:toggle,0x6C9604,0x01,0x00
+[back]
+[fuck]
+
+[note]wordwrap
+ツール公開までの補助用(爆
+やはり、こういうのだと楽なり・・・
+
+ゲームスピードは大きいほど遅くなる模様
+[/note]
+[/script]
+
