@@ -1,0 +1,11 @@
+[note]
+はじめに登場する4人のTrustで補正してます
+現在のTrustを入力してください。
+これで、とりあえずの所補正できると思います(^^;
+[/note]
+
+[val]*.000000*.000000*.000000*.
+[calc]千紗都,no,0,0x64,signed,little_e
+[calc]空,no,0,0x64,signed,little_e
+[calc]日奈美,no,0,0x64,signed,little_e
+[calc]久美子,no,0,0x64,signed,little_e
