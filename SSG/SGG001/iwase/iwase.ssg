@@ -1,0 +1,176 @@
+SSG for SpoilerAL ver 3.4
+
+// SpoilerAL ver3.4用 SSGデータ by 岩瀬晶
+//
+[script]
+[title]Princess Knight
+[process]pRIkNI.Exe
+[maker]MINK
+[creator]岩瀬晶
+[note]
+[/note]
+[subject]資金calc,0x4AF3B4,0x00,0x0FFFFFF,signed,little_e
+[subject]キャラクター:dir
+	[subject]主人公:dir
+		[replace]0x4AEB90,pk1,offset
+	[subject]一人目:dir
+		[replace]0x4AEC30,pk1,offset
+	[subject]二人目:dir
+		[replace]0x4AECD0,pk1,offset
+	[subject]三人目:dir
+		[replace]0x4AED70,pk1,offset
+	[subject]四人目:dir
+		[replace]0x4AEE10,pk1,offset
+	[subject]五人目:dir
+		[replace]0x4AEEB0,pk1,offset
+	[subject]六人目:dir
+		[replace]0x4AEF50,pk1,offset
+	[subject]七人目:dir
+		[replace]0x4AEFF0,pk1,offset
+	[subject]八人目:dir
+		[replace]0x4AF090,pk1,offset
+[back]
+[subject]鑑賞ＡＬＬＯＮ:toggle,0x04AF4A0,0x04AF888-01000000,00000000
+[/script]
+
+[script]
+[title]Wizardry Chronicle
+[process]Wiz.Exe
+[maker]K.S.S.
+[creator]岩瀬晶
+[note]
+これで全ての種族で全ての職業が作れると思います
+[/note]
+[subject]ボーナス:calc,0x49B998,0x00,0x020,signed,little_e
+[back]
+[/script]
+
+[script]
+[title]大航海時代ⅣPK
+[process]DK4PK.icd
+[maker]光栄
+[creator]岩瀬晶
+[note]
+現在は資金のみ
+[/note]
+[subject]資金:dir
+	[subject]ラファエル:calc,0x59D890,0x00,0x05F5E0FF,signed,little_e
+	[subject]リル:calc,0x59D8E0,0x00,0x05F5E0FF,signed,little_e
+	[subject]ホラドム:calc,0x59D930,0x00,0x05F5E0FF,signed,little_e
+	[subject]マリア:calc,0x59D980,0x00,0x05F5E0FF,signed,little_e
+	[subject]ウッディーン:calc,0x59DCA0,0x00,0x05F5E0FF,signed,little_e
+	[subject]キョータロー:calc,0x59DED0,0x00,0x05F5E0FF,signed,little_e
+	[subject]ティエル:calc,0x59DF20,0x00,0x05F5E0FF,signed,little_e
+[back]
+[/script]
+
+[script]
+[title]戦略娘Ⅱ
+[process]SENRYAK2.EXE
+[maker]ぴよぴよ組
+[creator]岩瀬晶
+[note]
+部隊は開発順です
+[/note]
+[subject]資金:calc,0x44E886,0x00,0x05F5E0FF,signed,little_e
+	[subject]第1部隊:dir
+		[replace]0x472d8e,SENRYAK2B,offset
+	[subject]第2部隊:dir
+		[replace]0x472ddc,SENRYAK2B,offset
+	[subject]第3部隊:dir
+		[replace]0x472e2a,SENRYAK2B,offset
+	[subject]第4部隊:dir
+		[replace]0x472e78,SENRYAK2B,offset
+	[subject]第5部隊:dir
+		[replace]0x472ec6,SENRYAK2B,offset
+	[subject]第6部隊:dir
+		[replace]0x472f14,SENRYAK2B,offset
+	[subject]第7部隊:dir
+		[replace]0x472f62,SENRYAK2B,offset
+	[subject]第8部隊:dir
+		[replace]0x472fb0,SENRYAK2B,offset
+	[subject]第9部隊:dir
+		[replace]0x472ffe,SENRYAK2B,offset
+	[subject]第10部隊:dir
+		[replace]0x47304c,SENRYAK2B,offset
+	[subject]第11部隊:dir
+		[replace]0x47309a,SENRYAK2B,offset
+	[subject]第12部隊:dir
+		[replace]0x4730e8,SENRYAK2B,offset
+	[subject]第13部隊:dir
+		[replace]0x473136,SENRYAK2B,offset
+	[subject]第14部隊:dir
+		[replace]0x473184,SENRYAK2B,offset
+	[subject]第15部隊:dir
+		[replace]0x4731d2,SENRYAK2B,offset
+	[subject]第16部隊:dir
+		[replace]0x473220,SENRYAK2B,offset
+	[subject]第17部隊:dir
+		[replace]0x47326e,SENRYAK2B,offset
+	[subject]第18部隊:dir
+		[replace]0x4732bc,SENRYAK2B,offset
+	[subject]第19部隊:dir
+		[replace]0x47330a,SENRYAK2B,offset
+	[subject]第20部隊:dir
+		[replace]0x473358,SENRYAK2B,offset
+	[subject]第21部隊:dir
+		[replace]0x4733a6,SENRYAK2B,offset
+	[subject]第22部隊:dir
+		[replace]0x4733f4,SENRYAK2B,offset
+	[subject]第23部隊:dir
+		[replace]0x473442,SENRYAK2B,offset
+	[subject]第24部隊:dir
+		[replace]0x473490,SENRYAK2B,offset
+	[subject]第25部隊:dir
+		[replace]0x4734de,SENRYAK2B,offset
+	[subject]第26部隊:dir
+		[replace]0x47352c,SENRYAK2B,offset
+	[subject]第27部隊:dir
+		[replace]0x47357a,SENRYAK2B,offset
+	[subject]第28部隊:dir
+		[replace]0x4735c8,SENRYAK2B,offset
+	[subject]第29部隊:dir
+		[replace]0x473616,SENRYAK2B,offset
+	[subject]第30部隊:dir
+		[replace]0x473664,SENRYAK2B,offset
+	[subject]第31部隊:dir
+		[replace]0x4736b2,SENRYAK2B,offset
+	[subject]第32部隊:dir
+		[replace]0x473700,SENRYAK2B,offset
+	[subject]第33部隊:dir
+		[replace]0x47374e,SENRYAK2B,offset
+	[subject]第34部隊:dir
+		[replace]0x47379c,SENRYAK2B,offset
+	[subject]第35部隊:dir
+		[replace]0x4737ea,SENRYAK2B,offset
+	[subject]第36部隊:dir
+		[replace]0x473838,SENRYAK2B,offset
+	[subject]第37部隊:dir
+		[replace]0x473886,SENRYAK2B,offset
+	[subject]第38部隊:dir
+		[replace]0x4738d4,SENRYAK2B,offset
+	[subject]第39部隊:dir
+		[replace]0x473922,SENRYAK2B,offset
+	[subject]第40部隊:dir
+		[replace]0x473970,SENRYAK2B,offset
+	[subject]第41部隊:dir
+		[replace]0x4739be,SENRYAK2B,offset
+	[subject]第42部隊:dir
+		[replace]0x473a0c,SENRYAK2B,offset
+	[subject]第43部隊:dir
+		[replace]0x473a5a,SENRYAK2B,offset
+	[subject]第44部隊:dir
+		[replace]0x473aa8,SENRYAK2B,offset
+	[subject]第45部隊:dir
+		[replace]0x473af6,SENRYAK2B,offset
+	[subject]第46部隊:dir
+		[replace]0x473b44,SENRYAK2B,offset
+	[subject]第47部隊:dir
+		[replace]0x473b92,SENRYAK2B,offset
+	[subject]第48部隊:dir
+		[replace]0x473be0,SENRYAK2B,offset
+	[subject]第49部隊:dir
+		[replace]0x473c2e,SENRYAK2B,offset
+	[subject]第50部隊:dir
+		[replace]0x473c7c,SENRYAK2B,offset
+[/script]
