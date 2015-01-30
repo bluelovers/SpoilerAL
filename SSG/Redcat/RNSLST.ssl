@@ -1,0 +1,204 @@
+[group]RNS_SSG
+[note]wordwrap
+短編ものは以外に性にあってるなと。なんか主人公より強い格闘ヒロインの存在がデフォになりつつあるw
+
+操作キャラ無敵化：
+現在、クーノ・マクリウム・マクーノ・エーベル・アネキング・アネクイーン・アネゴッデスのみ対応しています。他にも操作可能キャラがいれば対応させます。
+
+パラメータ関連：
+アクションパートそのもののパラメータデータを調整できますが、アクションパート内でしか使えないし、MAPが切り替わると戻ってしまいます。それでもジャンプ力や移動スピードの変更、鉄壁状態にもできるので登録しました。使うのであれば緩やかな周期での固定推奨。
+
+所持金：
+道具屋画面内では効果がでませんので、使用はアクションパート或いは移動MAP上で。
+[/note]
+
+[subject]ver1.00:dir
+
+[subject]アクションパート関連:dir
+	[subject]操作キャラ無敵化/実行/_:b_toggle,0x46AC1C,RNSLST->RNS_f,real
+	[subject]溜め魔法即効発動/実行/_:b_toggle,0x45BAE9,RNSLST->RNS_e,real
+	[subject]無限多段ジャンプ化/実行/_:toggle,0x46FE70,C6815401000001909090,83B954010000020F9DC2
+[back]
+
+[subject]環境関連:dir
+	[subject]AVGパート高速化/実行/_:b_toggle,0x4C95E7,RNSLST->RNS_g,real
+[back]
+
+[subject]パラメータ関連:dir
+[subject]所持金/現在値/_:calc,_[:0x61BCB0:]+0x70,0x00000000,0x0001869F,unsigned
+ [enabled] [:0x613F3C:] != 0x00000000
+	[replace]_[:[:[:0x613F3C:]+0x34:]+0x0B80:]+0xE4,RNSLST->RNS_PR
+ [/enabled]
+[back]
+
+[subject]フラグ関連:dir
+	[replace]_[:0x614598:],RNSLST->RNS_1FL
+	[replace]_[:0x6145C0:],RNSLST->RNS_2FL
+[back]
+
+[subject]ＣＧモード関連:dir
+	[replace]_[:0x61BE50:],RNSLST->RNS_CG
+[back]
+
+[back]
+
+[subject]ver1.01:dir
+
+[subject]アクションパート関連:dir
+	[subject]操作キャラ無敵化/実行/_:b_toggle,0x46AF2C,RNSLST->RNS_2f,real
+	[subject]溜め魔法即効発動/実行/_:b_toggle,0x45BDD9,RNSLST->RNS_2e,real
+	[subject]無限多段ジャンプ化/実行/_:toggle,0x4701A0,C6815C01000001909090,83B95C010000020F9DC2
+[back]
+
+[subject]環境関連:dir
+	[subject]AVGパート高速化/実行/_:b_toggle,0x4C99D7,RNSLST->RNS_2g,real
+[back]
+
+[subject]パラメータ関連:dir
+[subject]所持金/現在値/_:calc,_[:0x61CCB0:]+0x70,0x00000000,0x0001869F,unsigned
+ [enabled] [:0x614F3C:] != 0x00000000
+	[replace]_[:[:[:0x614F3C:]+0x34:]+0x0B80:]+0xE8,RNSLST->RNS_PR
+ [/enabled]
+[back]
+
+[subject]フラグ関連:dir
+	[replace]_[:0x615598:],RNSLST->RNS_1FL
+	[replace]_[:0x6155C0:],RNSLST->RNS_2FL
+[back]
+
+[subject]ＣＧモード関連:dir
+	[replace]_[:0x61CE50:],RNSLST->RNS_CG
+[back]
+
+[back]
+
+[/group]
+
+
+[group]RNS_PR
+[subject]現在ライフ/現在値/固定:f_calc,0x00,0,200,float
+ [e_with],RNSLST->RNS_c,offset,0,100,float
+  [subject]攻撃力/現在値/固定:bf_calc,0x04
+  [subject]防御力/現在値/固定:bf_calc,0x08
+ [/e_with]
+ [e_with],RNSLST->RNS_c,offset,0,100,float
+  [subject]ジャンプ力/現在値/固定:bf_calc,0x0C
+  [subject]移動速度/現在値/固定:bf_calc,0x14
+ [/e_with]
+[subject]一括強化/実行/固定:b_toggle,0x00,RNSLST->RNS_d,offfset
+[/group]
+
+
+[group]RNS_1FL
+[subject]Maxライフ増加量/現在値/_:calc,0x24,0x00,0x0F,unsigned
+[subject]武器最強化/実行/_:toggle,0x0190,0x01AF-01000000
+[subject]防具最強化/実行/_:toggle,0x01E0,0x01F7-01000000
+[subject]奥義書全種所持/実行/_:toggle,0x0230,0x0247-01000000
+[subject]紋章全種所持/実行/_:b_toggle,0x00,RNSLST->RNS_b,offset
+[/group]
+
+
+[group]RNS_CG
+[subject]CGMode ALL/ＯＮ／ＯＦＦ/_:toggle,0x00,0x71-02,01
+[subject]MemorialMode ALL/ＯＮ／ＯＦＦ/_:toggle,0xA0,0xB5-02,01
+[/group]
+
+
+[group]RNS_2FL
+[subject]モンスター図鑑ALL/実行/_:b_toggle,0x00,RNSLST->RNS_a,offset
+[/group]
+
+
+[group]RNS_a
+0x0190,0x0237-01000000
+0x0320,0x061B-01000000
+[/group]
+
+
+[group]RNS_b
+0xF0,0xFF-01000000
+0x02A8,0100000001000000
+0x02D4,0100000001000000
+[/group]
+
+
+[group]RNS_c
+0x00
+0x24
+[/group]
+
+
+[group]RNS_d
+0x04,00004843
+0x08,00004843
+0x0C,00004842
+0x14,00007042
+0x28,00004843
+0x2C,00004843
+0x30,00004842
+0x38,00007042
+[/group]
+
+
+[group]RNS_e
+0x45BAE9,0000C842,00000000
+0x45BB10,EB,7A
+[/group]
+
+
+[group]RNS_2e
+0x45BDD9,0000C842,00000000
+0x45BE00,EB,7A
+[/group]
+
+
+[group]RNS_f
+0x46AC1C,E97FD214009090909090,837D08000F84000D0000
+0x5B7EA0,8B494C,000000
+0x5B7EA3,8B09,0000
+0x5B7EA5,B8D07E5B00,0000000000
+0x5B7EAA,813800000000,000000000000
+0x5B7EB0,740B,0000
+0x5B7EB2,3B08,0000
+0x5B7EB4,7411,0000
+0x5B7EB6,0504000000,0000000000
+0x5B7EBB,EBED,0000
+0x5B7EBD,837D0800,00000000
+0x5B7EC1,0F855F2DEBFF,000000000000
+0x5B7EC7,E95A3AEBFF90,000000000000
+0x5B7ED0,01000000020000000700000008000000100000001100000012000000,00000000000000000000000000000000000000000000000000000000
+[/group]
+
+
+[group]RNS_2f
+0x46AF2C,E9EFD314009090909090,837D08000F840C0D0000
+0x5B8320,8B4950,000000
+0x5B8323,8B09,0000
+0x5B8325,B850835B00,0000000000
+0x5B832A,813800000000,000000000000
+0x5B8330,740B,0000
+0x5B8332,3B08,0000
+0x5B8334,7411,0000
+0x5B8336,0504000000,0000000000
+0x5B833B,EBED,0000
+0x5B833D,837D0800,00000000
+0x5B8341,0F85EF2BEBFF,000000000000
+0x5B8347,E9F638EBFF90,000000000000
+0x5B8350,01000000020000000700000008000000100000001100000012000000,00000000000000000000000000000000000000000000000000000000
+[/group]
+
+
+[group]RNS_g
+0x4C95E7,EB,75
+0x4CF648,E92513000090,0F8524130000
+0x4D1377,EB00,740E
+0x4D14BB,EB00,7406
+[/group]
+
+
+[group]RNS_2g
+0x4C99D7,EB,75
+0x4CF938,E92513000090,0F8524130000
+0x4D1667,EB00,740E
+0x4D17AB,EB00,7406
+[/group]
