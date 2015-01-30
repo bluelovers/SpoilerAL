@@ -1,0 +1,429 @@
+[group]GRM_SSG
+[note]wordwrap
+ver1.2と1.2aでは各機能の互換性は全くありません。またDirect3D設定は8.1/9によってロードされるライブラリ自体が変わるため、対応したSSGをご利用ください。
+
+ver1.2aではこれまでの改造トラップ（無論内容も少々異なる）に加え、殊にＨＰ等いくつかのパラメータの改造等による矛盾関係が監視されています。ＨＰ数値拡張機能を実行しておけば、当面は回避できますが、先に触れたように全編に渡っての確認はしていませんので、過信はしないでください。
+
+衣装の強制変更機能は、機能実行後セーブ＆ロードすることで効果が出ます。
+[/note]
+
+[subject]ver1.0:dir
+
+[subject]アクションパート関連:dir
+	[subject]パリンノーダメージ化/実行/_:b_toggle,0x00,GRMLST->GRM_a,offset
+	[subject]クリティカル１回でドリルLVUP/実行/_:toggle,_(MName::app8.dll)+0x03AC97,EB00,7E3C
+[back]
+
+[subject]パラメータ関連:dir
+[funnel]GRMLST->GF_c
+ [subject]最大ＨＰ/現在値/_:calc,_[:(MName::app8.dll)+0xE86F:],0x0000,0x03E7,unsigned
+[/funnel]
+[funnel]GRMLST->GF_d
+ [subject]現在ＨＰ/現在値/固定:calc,_[:(MName::app8.dll)+0xE83D:],0x0000,0x03E7,unsigned
+[/funnel]
+[funnel]GRMLST->GF_a
+ [subject]持っているお金/現在値/_:calc,_[:(MName::app8.dll)+0xE8A3:],0x000000,0x01869F,unsigned
+[/funnel]
+[funnel]GRMLST->GF_b
+ [subject]ガラクタポイント/現在値/_:calc,_[:(MName::app8.dll)+0xE8D6:],0x0000,0x03E7,unsigned
+[/funnel]
+[funnel]GRMLST->GF_e
+ [subject]クリティカル回数/現在値/_:calc,_[:(MName::app8.dll)+0xE7DB:],0x00,0x63,unsigned
+[/funnel]
+[back]
+
+[subject]アイテム関連:dir
+	[subject]変更アイテム選択/_:list,0x461BB0,GRMLST->LST_a,0x00,0x01
+	 [funnel]GRMLST->GF_I
+	  [size]1
+	   [subject]_mem,_([\:0x461BB0\:]-0x01)=>temp;$temp*0xC0=>temp;[\:(MName\:\:app8.dll)+0x03D7D6\:]+$temp,20,00,＜アイテム未選択＞'+'の個数変更/現在値/_:calc,_[:(MName::app8.dll)+0xE9F3:]+[:0x461BB0:],0x00,0x63,unsigned
+	  [/size]
+	 [/funnel]
+[back]
+
+[back]
+
+[subject]ver1.2aD81:dir
+
+[subject]アクションパート関連:dir
+	[subject]当たり判定解除/実行/_:toggle,_(MName::app8.dll)+0x09B2B0,E94D04000090,0F854C040000
+	[subject]ノーダメージ化/実行/_:b_toggle,_(MName::app8.dll),GRMLST->GRM_2a,offset
+	[subject]敵一撃死化/実行/_:toggle,_(MName::app8.dll)+0x099395,33C0,2BC3
+	[subject]クリティカルでドリルLVMAX化/実行/_:b_toggle,_(MName::app8.dll),GRMLST->GRM_c,offset
+	[subject]チャージゲージ即MAX化/実行/_:toggle,_(MName::app8.dll)+0x12C0BC,EB00,7C0C
+	[subject]ロングジャンプ化/実行/_:toggle,_(MName::app8.dll)+0x167A37,99,91
+[back]
+
+[subject]パラメータ関連:dir
+[subject]数値拡張機能/実行/_:b_toggle,_(MName::app8.dll),GRMLST->GRM_b,offset
+[funnel]GRMLST->GF_2c
+ [subject]現在ＨＰ/現在値/固定:calc,_[:(MName::app8.dll)+0xE907:],0x0000,0x03E7,unsigned
+[/funnel]
+[funnel]GRMLST->GF_2d
+ [subject]最大ＨＰ/現在値/_:calc,_[:(MName::app8.dll)+0xE942:],0x0000,0x03E7,unsigned
+[/funnel]
+[funnel]GRMLST->GF_2a
+ [subject]持っているお金/現在値/_:calc,_[:(MName::app8.dll)+0xE97E:],0x000000,0x01869F,unsigned
+[/funnel]
+[funnel]GRMLST->GF_2b
+ [subject]ガラクタポイント/現在値/_:calc,_[:(MName::app8.dll)+0xE9B4:],0x0000,0x03E7,unsigned
+[/funnel]
+[funnel]GRMLST->GF_2e
+ [subject]クリティカル回数/現在値/_:calc,_[:(MName::app8.dll)+0xE8A3:],0x00,0x63,unsigned
+[/funnel]
+[back]
+
+[subject]アイテム関連:dir
+	[subject]変更アイテム選択/_:list,0x461EC0,GRMLST->LST_a,0x00,0x01
+	 [funnel]GRMLST->GF_2I
+	  [size]1
+	   [subject]_mem,_([\:0x461EC0\:]-0x01)=>temp;$temp*0xC0=>temp;[\:(MName\:\:app8.dll)+0x0402FF\:]+$temp,20,00,＜アイテム未選択＞'+'の個数変更/現在値/_:calc,_[:(MName::app8.dll)+0xEAE3:]+[:0x461EC0:],0x00,0x63,unsigned
+	  [/size]
+	 [/funnel]
+[back]
+
+[subject]衣装関連:dir
+	[subject]クローゼットALL化/実行/_:b_toggle,0x00,GRMLST->GRM_d,offset
+	[subject]ポポン強制変更/実行/_:b_toggle,0x00,GRMLST->GRM_e1,offfset
+	[subject]着物（パリン）強制変更/実行/_:b_toggle,0x00,GRMLST->GRM_e2,offfset
+[back]
+
+[back]
+
+[subject]ver1.2aD9:dir
+
+[subject]アクションパート関連:dir
+	[subject]当たり判定解除/実行/_:toggle,_(MName::app.dll)+0x09B210,E94D04000090,0F854C040000
+	[subject]ノーダメージ化/実行/_:b_toggle,_(MName::app.dll),GRMLST->GRM_29a,offset
+	[subject]敵一撃死化/実行/_:toggle,_(MName::app.dll)+0x0992F5,33C0,2BC3
+	[subject]クリティカルでドリルLVMAX化/実行/_:b_toggle,_(MName::app.dll),GRMLST->GRM_29c,offset
+	[subject]チャージゲージ即MAX化/実行/_:toggle,_(MName::app.dll)+0x12C01C,EB00,7C0C
+	[subject]ロングジャンプ化/実行/_:toggle,_(MName::app.dll)+0x166F77,99,91
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]数値拡張機能/実行/_:b_toggle,_(MName::app.dll),GRMLST->GRM_29b,offset
+[funnel]GRMLST->GF_29c
+ [subject]現在ＨＰ/現在値/固定:calc,_[:(MName::app.dll)+0xE907:],0x0000,0x03E7,unsigned
+[/funnel]
+[funnel]GRMLST->GF_29d
+ [subject]最大ＨＰ/現在値/_:calc,_[:(MName::app.dll)+0xE942:],0x0000,0x03E7,unsigned
+[/funnel]
+[funnel]GRMLST->GF_29a
+ [subject]持っているお金/現在値/_:calc,_[:(MName::app.dll)+0xE97E:],0x000000,0x01869F,unsigned
+[/funnel]
+[funnel]GRMLST->GF_29b
+ [subject]ガラクタポイント/現在値/_:calc,_[:(MName::app.dll)+0xE9B4:],0x0000,0x03E7,unsigned
+[/funnel]
+[funnel]GRMLST->GF_29e
+ [subject]クリティカル回数/現在値/_:calc,_[:(MName::app.dll)+0xE8A3:],0x00,0x63,unsigned
+[/funnel]
+[back]
+
+[subject]アイテム関連:dir
+	 [subject]変更アイテム選択/_:list,0x461EC0,GRMLST->LST_a,0x00,0x01
+	 [funnel]GRMLST->GF_29I
+	  [size]1
+	   [subject]_mem,_([\:0x461EC0\:]-0x01)=>temp;$temp*0xC0=>temp;[\:(MName\:\:app.dll)+0x04026F\:]+$temp,20,00,＜アイテム未選択＞'+'の個数変更/現在値/_:calc,_[:(MName::app.dll)+0xEAE3:]+[:0x461EC0:],0x00,0x63,unsigned
+	  [/size]
+	 [/funnel]
+[back]
+
+[subject]衣装関連:dir
+	[subject]クローゼットALL化/実行/_:b_toggle,0x00,GRMLST->GRM_29d,offset
+	[subject]ポポン強制変更/実行/_:b_toggle,0x00,GRMLST->GRM_29e1,offfset
+	[subject]着物（パリン）強制変更/実行/_:b_toggle,0x00,GRMLST->GRM_29e2,offfset
+[back]
+
+[back]
+
+[/group]
+
+
+[group]GRM_a
+_(MName::app8.dll)+0x05DE48,$4 [:(MName::app8.dll)+0x05DE6C:] $$,$4 ([:(MName::app8.dll)+0x05DE6C:])-0x04 $$
+_(MName::app8.dll)+0x05DE5D,33F6,2BFE
+[/group]
+
+
+[group]GRM_2a
+0x0608BA,$4 [:(MName::app8.dll)+0x0608DE:] $$,$4 ([:(MName::app8.dll)+0x0608DE:])-0x04 $$
+0x0608CF,33F6,2BFE
+[/group]
+
+
+[group]GRM_29a
+0x06082A,$4 [:(MName::app.dll)+0x06084E:] $$,$4 ([:(MName::app.dll)+0x06084E:])-0x04 $$
+0x06083F,33F6,2BFE
+[/group]
+
+
+[group]GRM_b
+0x13AE76,EB,7D
+0x13AFA2,EB,7E
+0x13AFEF,EB,7E
+0x13B030,EB,7E
+0x13B07E,EB,7E
+0x13B1CE,EB,7E
+0x13B228,EB,7E
+[/group]
+
+
+[group]GRM_29b
+0x13ADD6,EB,7D
+0x13AF02,EB,7E
+0x13AF4F,EB,7E
+0x13AF90,EB,7E
+0x13AFDE,EB,7E
+0x13B12E,EB,7E
+0x13B188,EB,7E
+[/group]
+
+
+[group]GRM_c
+0x03CC32,EB0033C0B002B92C0100009090,7E3CA1$4 (MName::app8.dll)+0x03CC6A-0x08 $$8B0D$4 (MName::app8.dll)+0x03CC6A $$
+0x0608FD,EB07,7F05
+[/group]
+
+
+[group]GRM_29c
+0x03CBA2,EB0033C0B002B92C0100009090,7E3CA1$4 (MName::app.dll)+0x03CBDA-0x08 $$8B0D$4 (MName::app.dll)+0x03CBDA $$
+0x06086D,EB07,7F05
+[/group]
+
+
+[group]GRM_d
+_[:(MName::app8.dll)+0xEA8A:]+0x08,FF03
+_[:(MName::app8.dll)+0x03E2FC:],FF03
+[/group]
+
+
+[group]GRM_29d
+_[:(MName::app.dll)+0xEA8A:]+0x08,FF03
+_[:(MName::app.dll)+0x03E26C:],FF03
+[/group]
+
+
+[group]GRM_e1
+_[:(MName::app8.dll)+0xEA8A:],06000000
+_[:(MName::app8.dll)+0xEA90:],42020000
+_(MName::app8.dll)+0x03E379,89F7,7416
+[/group]
+
+
+[group]GRM_e2
+_[:(MName::app8.dll)+0xEA8A:],07000000
+_[:(MName::app8.dll)+0xEA90:],41020000
+_(MName::app8.dll)+0x03E3A6,EB00,33F6
+[/group]
+
+
+[group]GRM_29e1
+_[:(MName::app.dll)+0xEA8A:],06000000
+_[:(MName::app.dll)+0xEA90:],42020000
+_(MName::app.dll)+0x03E2E9,89F7,7416
+[/group]
+
+
+[group]GRM_29e2
+_[:(MName::app.dll)+0xEA8A:],07000000
+_[:(MName::app.dll)+0xEA90:],41020000
+_(MName::app.dll)+0x03E316,EB00,33F6
+[/group]
+
+
+[group]GF_a
+use,_[:(MName::app8.dll)+0xE8A8:],$4 (([:[:(MName::app8.dll)+0xE8A3:]:])~0xFFFFFFFF)+0x04 $$
+[/group]
+
+
+[group]GF_2a
+use,_[:(MName::app8.dll)+0xE983:],$4 (([:[:(MName::app8.dll)+0xE97E:]:])~0xFFFFFFFF)+0x0104 $$
+[/group]
+
+
+[group]GF_29a
+use,_[:(MName::app.dll)+0xE983:],$4 (([:[:(MName::app.dll)+0xE97E:]:])~0xFFFFFFFF)+0x0104 $$
+[/group]
+
+
+[group]GF_b
+use,_[:(MName::app8.dll)+0xE8DB:],$4 (([:[:(MName::app8.dll)+0xE8D6:]:])~0xFFFFFFFF)+0x05 $$
+[/group]
+
+
+[group]GF_2b
+use,_[:(MName::app8.dll)+0xE9B9:],$4 (([:[:(MName::app8.dll)+0xE9B4:]:])~0xFFFFFFFF)+0x0145 $$
+[/group]
+
+
+[group]GF_29b
+use,_[:(MName::app.dll)+0xE9B9:],$4 (([:[:(MName::app.dll)+0xE9B4:]:])~0xFFFFFFFF)+0x0145 $$
+[/group]
+
+
+[group]GF_c
+use,_[:(MName::app8.dll)+0xE875:],$4 (([:[:(MName::app8.dll)+0xE86F:]:])~0xFFFFFFFF)+0x03 $$
+[/group]
+
+
+[group]GF_2c
+use,_[:(MName::app8.dll)+0xE90C:],$4 (([:[:(MName::app8.dll)+0xE907:]:])~0xFFFFFFFF)+0x82 $$
+[/group]
+
+
+[group]GF_29c
+use,_[:(MName::app.dll)+0xE90C:],$4 (([:[:(MName::app.dll)+0xE907:]:])~0xFFFFFFFF)+0x82 $$
+[/group]
+
+
+[group]GF_d
+use,_[:(MName::app8.dll)+0xE842:],$4 (([:[:(MName::app8.dll)+0xE83D:]:])~0xFFFFFFFF)+0x02 $$
+[/group]
+
+
+[group]GF_2d
+use,_[:(MName::app8.dll)+0xE948:],$4 (([:[:(MName::app8.dll)+0xE942:]:])~0xFFFFFFFF)+0xC3 $$
+[/group]
+
+
+[group]GF_29d
+use,_[:(MName::app.dll)+0xE948:],$4 (([:[:(MName::app.dll)+0xE942:]:])~0xFFFFFFFF)+0xC3 $$
+[/group]
+
+
+[group]GF_e
+use,_[:(MName::app8.dll)+0xE7E1:],$4 (([:[:(MName::app8.dll)+0xE7DB:]:])~0xFFFFFFFF) $$
+[/group]
+
+
+[group]GF_2e
+use,_[:(MName::app8.dll)+0xE8A9:],$4 (([:[:(MName::app8.dll)+0xE8A3:]:])~0xFFFFFFFF) $$
+[/group]
+
+
+[group]GF_29e
+use,_[:(MName::app.dll)+0xE8A9:],$4 (([:[:(MName::app.dll)+0xE8A3:]:])~0xFFFFFFFF) $$
+[/group]
+
+
+[group]GF_I
+use,_[:(MName::app8.dll)+0xE9FA:]+([:0x461BB0:]*0x04),$4 [:(MName::app8.dll)+0xE9F3:]=>temp;([:[:0x461BB0:]+$temp:1])=>temp;($temp)~0xFF=>temp;$temp+[:0x461BB0:]+0x0A $$
+use,_[:(MName::app8.dll)+0xE9FA:]+([:0x461BB0:]*0x04)+0x01,*{00????::FFFFFF::000000*}
+[/group]
+
+
+[group]GF_2I
+use,_[:(MName::app8.dll)+0xEAEA:]+([:0x461EC0:]*0x04),$4 [:(MName::app8.dll)+0xEAE3:]=>temp;([:[:0x461EC0:]+$temp:1])=>temp;($temp)~0xFFFF=>temp;$temp+([:0x461EC0:])*0x41+0x14 $$
+use,_[:(MName::app8.dll)+0xEAEA:]+([:0x461EC0:]*0x04)+0x01,??0000
+use,_[:(MName::app8.dll)+0xEAEA:]+([:0x461EC0:]*0x04)+0x01,*{FF????::FFFFFF*}
+[/group]
+
+
+[group]GF_29I
+use,_[:(MName::app.dll)+0xEAEA:]+([:0x461EC0:]*0x04),$4 [:(MName::app.dll)+0xEAE3:]=>temp;([:[:0x461EC0:]+$temp:1])=>temp;($temp)~0xFFFF=>temp;$temp+([:0x461EC0:])*0x41+0x14 $$
+use,_[:(MName::app.dll)+0xEAEA:]+([:0x461EC0:]*0x04)+0x01,??0000
+use,_[:(MName::app.dll)+0xEAEA:]+([:0x461EC0:]*0x04)+0x01,*{FF????::FFFFFF*}
+[/group]
+
+
+[group]LST_a
+未選択
+アルファパーツ
+壁紙
+火のパーツ
+クッキー
+チョコレート
+ベータパーツ
+マスターパーツ
+ビラ
+ハリケンパーツ
+トルネドパーツ
+サイクロパーツ
+男物の帽子
+限界パーツ
+雷のパーツ
+氷のパーツ
+命の珠
+ダイヤモンド
+ドラスレ
+強化オイル
+イチゴケーキ
+吸血キット
+耐久オイル
+青色のツボ
+黄色のツボ
+錬金術の書
+緑色のツボ
+少女マンガ
+紫色のツボ
+汗臭いパーツ
+ガトーショコラ
+ランプステーキ
+金貨
+フランソワ
+魔法のツボ
+謎の袋
+メイド服
+ヘッドドレス
+アフロ
+ソンブレロ
+ネコミミ
+ゴーグル
+ガスマスク
+ヘルメット
+ハチマキ
+リボン
+平家の兜
+魔法の頭巾
+覇者の面
+鉢植え
+石像
+秘伝の書
+ファラオ
+鼻眼鏡
+白金のメダル
+黒色のツボ
+おさるの帽子
+ナイトキャップ
+ちゃぶ台
+本棚
+テーブル
+おだんご
+王冠
+ソファー
+桐の箪笥
+洋服箪笥
+高級本棚
+傘たて
+下駄箱
+帽子掛け
+あひる
+車の模型
+ぬいぐるみ
+蓄音機
+ラジカセ
+コンポ
+銀のメダル
+銅のメダル
+金魚鉢
+金のメダル
+ハッスル
+[/group]
+
+
+[group]LST_b
+普段着
+お猿服
+パジャマ
+チャイナドレス
+ゴスロリ
+制服
+ポポン化
+着物
+ナース
+作業着
+体操着
+ひょう
+スク水
+[/group]
