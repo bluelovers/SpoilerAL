@@ -1,0 +1,43 @@
+[group]touyou_ssg
+[note]wordwrap
+Player減らないを使うとミス回数も増えません。
+Bomb減らないを使うとBomb使用回数も増えません。
+敵弾全て吸収はオマケです。
+[/note]
+
+[subject]VER1.00b:dir
+[subject]Player減らない/ON/_:b_toggle,0,touyou->touyou4,real
+[subject]Bomb減らない/ON/_:b_toggle,0,touyou->touyou2,real
+[subject]POWER MAX/ON/_:b_toggle,0,touyou->touyou1,real
+[subject]無敵/ON/_:b_toggle,0,touyou->touyou3,real
+[subject]アイテム引き寄せ/ON/_:toggle,0x432C8E,*{ 757A :: 7500 *},*{ 7500 :: 757A *}
+[subject]敵弾全て吸収/ON/_:toggle,0x43E288,*{ 740A :: 7400 *},*{ 7400 :: 740A *}
+[back]
+[/group]
+
+
+[group]touyou1
+0x432615,*{ D9587C :: 909090 *},*{ 909090 :: D9587C *}
+0x432FD8,*{ 7C49 :: 7C00 *},*{ 7C00 :: 7C49 *}
+0x433485,*{ 7C48 :: 7C00 *},*{ 7C00 :: 7C48 *}
+[/group]
+
+
+[group]touyou2
+0x433485,*{ 7C48 :: 7C00 *},*{ 7C00 :: 7C48 *}
+0x42D647,*{ D95868 :: 909090 *},*{ 909090 :: D95868 *}
+0x43B7D5,*{ D9586C :: 909090 *},*{ 909090 :: D9586C *}
+[/group]
+
+
+[group]touyou3
+0x43E32E,*{ 7A04 :: 7A00 *},*{ 7A00 :: 7A04 *}
+0x43EA50,*{ 7B05 :: EB05 *},*{ EB05 :: 7B05 *}
+0x43EAC6,*{ 7A07 :: 7A00 *},*{ 7A00 :: 7A07 *}
+[/group]
+
+[group]touyou4
+0x42D602,*{ D9585C :: 909090 *},*{ 909090 :: D9585C *}
+0x43B785,*{ D95850 :: 909090 *},*{ 909090 :: D95850 *}
+[/group]
+
