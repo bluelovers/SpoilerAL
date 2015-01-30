@@ -330,414 +330,6 @@ MAXEPとRNGを除く現在LV相当の基本設定値の操作が可能。本来ステータスの任意書き換え
 
 [root]
 
-[subject]ver1.034:dir
-
-[subject]ＲＰＧパート関連:dir
-	[subject]クォーツ装備属性及び重複制限解除/実行/_:b_toggle,0x46B2EF,ED6LST->ED6_5c,real
-	[subject]全オーバルアーツ無条件使用可能/実行/_:b_toggle,0x4AD4A5,ED6LST->ED6_5d,real
-	[subject]戦闘中敵攻撃完全無効化/実行/_:toggle,0x41D42D,90803F067C,F646040274
-	[subject]味方攻撃時CRITICAL+SEPITHUP+STRUP1&2+HPHEAL2効果自動発動/実行/_:b_toggle,0x402D6A,ED6LST->ED6_4j,real
-	[subject]オーバルアーツ使用時EP減らない/実行/_:b_toggle,0x4349EC,ED6LST->ED6_5h,real
-	[subject]雑魚敵戦闘発生しない/実行/_:toggle,0x4AC38D,E96401000090,0F8463010000
-	[subject]全戦闘経験値システム上の最大化/実行/_:toggle,0x408404,EB,7C
-	[subject]戦闘中CP即最大化/実行/_:toggle,0x434A65,EB,7D
-	[subject]キャンプ画面に入ると現在HP&EP無条件回復/実行/_:toggle,0x4A7DF0,EB00,7410
-	[subject]キャンプ画面に入るとCP無条件最大化/実行/_:toggle,0x4A7E02,66C7460AC8005E5BC3,5E5BC3909090909090
-	[subject]入手・購入アイテム最大個数化/実行/_:b_toggle,0x48D7B9,ED6LST->ED6_5f,real
-[back]
-
-[subject]パラメータ関連:dir
- [subject]パラメータ極大化系:dir
-	[subject]全パラメータ無条件極大化/実行/_:b_toggle,0x4A7D46,ED6LST->ED6_5e,real
-	[subject]無条件でMAXLV時のパラメータ/実行/_:toggle,0x4A7CE2,33C9B13B,8B4C240C
-	[subject]EP最大値無条件極大化/実行/_:toggle,0x4A7DB5,401F,3200
-	[subject]RNG無条件極大化/実行/_:toggle,0x4A7DAC,08,00
- [back]
- [subject]通貨・ポイント類:dir
-  [e_with],0x00000000,0x05F5E0FF,unsigned
-	[subject]ミラ貨/現在値/_:calc,0x016FB630
-	[subject]ブレイサーポイント/現在値/_:calc,0x016FB634
-  [/e_with]
-	[repeat]ED6LST->ED6REP41,0,7,1
- [back]
- [subject]LV・経験値:dir
-	[repeat]ED6LST->ED6REP42,0,8,1
- [back]
- [subject]現在LVのステータス設定変更:dir
-	[repeat]ED6LST->ED6REP43,0,8,1
- [back]
- [subject]アイテムエディタ:dir
-	[subject]一括所持数の指定/現在値/_:calc,0x50A73C,0x00,0x63,unsigned
-	[subject]所持アイテム一括数量変更/実行/_:toggle,0x016FA630,0x016FAC7B-*{0000????::00000000::????$2[:0x50A73C:2]$$*}
-  [subject]個別所持指定:dir
-   [io_fep]$Val-1, $Val+1
-	[subject]アイテム格納スロット選択/現在値/_:calc,0x50A738,0x0000,0x018F,unsigned
-   [/io_fep]
-   [size]2
-	[subject]_mem,_([\:0x50A738\:]*0x04)=>temp;[\:0x016FA630+$temp\:2]=>temp;[\:[\:0x019409A0\:]+$temp*2\:2]=>temp;[\:[\:0x019409A0\:]+$temp\:2]=>temp;[\:0x019409A0\:]+$temp,20,00,アイテム'+'の種類変更/_:d_list,_([:0x50A738:]*0x04)=>temp;0x016FA630+$temp,ED6LST->LST_e,0x0000,0xFFFF,ED6LST->LST_c,offset
-	[subject]_mem,_([\:0x50A738\:]*0x04)=>temp;[\:0x016FA630+$temp\:2]=>temp;[\:[\:0x019409A0\:]+$temp*2\:2]=>temp;[\:[\:0x019409A0\:]+$temp\:2]=>temp;[\:0x019409A0\:]+$temp,20,00,アイテム'+'の個数変更/現在値/_:calc,_([:0x50A738:]*0x04)=>temp;0x016FA632+$temp,0x0000,0x0063,unsigned
-   [/size]
-  [back]
- [back]
-[back]
-
-[subject]フラグ関連:dir
-	[subject]依頼の期限切れ状態解除/実行/_:toggle,0x016FB660,0x016FBAD8-*{????42??????????????????::????02??????????????????*}
-	[subject]逃走・戦闘不能戦績リセット/実行/_:b_toggle,0x016FC05C,ED6LST->ED6_4i,real
-	[subject]レシピ手帳ＡＬＬ化/実行/_:toggle,0x016FBE68,FFFFFFFFFFFFFFFF07,000000000000000000
-[back]
-
-[subject]環境関連:dir
-	[subject]移動速度設定変更/_:d_list,0x4976EC,ED6LST->LST_f,0x00000000,0xFFFFFFFF,ED6LST->LST_5g,real
-	 [e_with],-255,255,float
-	  [subject]緊急脱出用Ｘ座標変更/現在値/_:f_calc,0x016D5C24
-	  [subject]緊急脱出用Ｙ座標変更/現在値/_:f_calc,0x016D5C2C
-	 [/e_with]
-	[subject]Playtimeリセット/実行/_:b_toggle,0x019B2390,ED6LST->ED6_4a,offset
- [io_fep]$Val*0x03E8, $Val/0x03E8
-	[subject]Playtime変更/現在値/_:b_calc,0x019B2390,ED6LST->ED6_4b,offset,0x00000000,0x00418937,unsigned
- [/io_fep]
-[back]
-
-[back]
-
-[subject]ＦＣ（完全版）:dir
-
-[subject]ＲＰＧパート関連:dir
-	[subject]クォーツ装備属性及び重複制限解除/実行/_:b_toggle,0x46B2EF,ED6LST->ED6_6c,real
-	[subject]全オーバルアーツ無条件使用可能/実行/_:b_toggle,0x4AD425,ED6LST->ED6_6d,real
-	[subject]戦闘中敵攻撃完全無効化/実行/_:toggle,0x41D41D,90803F067C,F646040274
-	[subject]味方攻撃時CRITICAL+SEPITHUP+STRUP1&2+HPHEAL2効果自動発動/実行/_:b_toggle,0x402D7A,ED6LST->ED6_5j,real
-	[subject]オーバルアーツ使用時EP減らない/実行/_:b_toggle,0x434A4C,ED6LST->ED6_6h,real
-	[subject]雑魚敵戦闘発生しない/実行/_:toggle,0x4AC30D,E96401000090,0F8463010000
-	[subject]全戦闘経験値システム上の最大化/実行/_:toggle,0x4083F4,EB,7C
-	[subject]戦闘中CP即最大化/実行/_:toggle,0x434AC5,EB,7D
-	[subject]キャンプ画面に入ると現在HP&EP無条件回復/実行/_:toggle,0x4A7D00,EB00,7410
-	[subject]キャンプ画面に入るとCP無条件最大化/実行/_:toggle,0x4A7D12,66C7460AC8005E5BC3,5E5BC3909090909090
-	[subject]入手・購入アイテム最大個数化/実行/_:b_toggle,0x48DF0C,ED6LST->ED6_6f,real
-[back]
-
-[subject]パラメータ関連:dir
- [subject]パラメータ極大化系:dir
-	[subject]全パラメータ無条件極大化/実行/_:b_toggle,0x4A7C56,ED6LST->ED6_6e,real
-	[subject]無条件でMAXLV時のパラメータ/実行/_:toggle,0x4A7BF2,33C9B13B,8B4C240C
-	[subject]EP最大値無条件極大化/実行/_:toggle,0x4A7CC5,401F,3200
-	[subject]RNG無条件極大化/実行/_:toggle,0x4A7CBC,08,00
- [back]
- [subject]通貨・ポイント類:dir
-  [e_with],0x00000000,0x05F5E0FF,unsigned
-	[subject]ミラ貨/現在値/_:calc,0x016FB630
-	[subject]ブレイサーポイント/現在値/_:calc,0x016FB634
-  [/e_with]
-	[repeat]ED6LST->ED6REP41,0,7,1
- [back]
- [subject]LV・経験値:dir
-	[repeat]ED6LST->ED6REP42,0,8,1
- [back]
- [subject]現在LVのステータス設定変更:dir
-	[repeat]ED6LST->ED6REP43,0,8,1
- [back]
- [subject]アイテムエディタ:dir
-	[subject]一括所持数の指定/現在値/_:calc,0x50A77C,0x00,0x63,unsigned
-	[subject]所持アイテム一括数量変更/実行/_:toggle,0x016FA630,0x016FAC7B-*{0000????::00000000::????$2[:0x50A77C:2]$$*}
-  [subject]個別所持指定:dir
-	[subject]始点スロット選択/現在値/_:calc,0x50A778,0x0000,0x017C,unsigned
-	[repeat]ED6LST->ED6REP83,0,20,1
-  [back]
- [back]
-[back]
-
-[subject]フラグ関連:dir
-	[subject]依頼の期限切れ状態解除/実行/_:toggle,0x016FB660,0x016FBAD8-*{????42??????????????????::????02??????????????????*}
-	[subject]逃走・戦闘不能戦績リセット/実行/_:b_toggle,0x016FC05C,ED6LST->ED6_4i,real
-	[subject]レシピ手帳ＡＬＬ化/実行/_:toggle,0x016FBE68,FFFFFFFFFFFFFFFF07,000000000000000000
-[back]
-
-[subject]環境関連:dir
-	[subject]移動速度設定変更/_:d_list,0x4975FC,ED6LST->LST_f,0x00000000,0xFFFFFFFF,ED6LST->LST_6g,real
-	 [e_with],-255,255,float
-	  [subject]緊急脱出用Ｘ座標変更/現在値/_:f_calc,0x016D5C24
-	  [subject]緊急脱出用Ｙ座標変更/現在値/_:f_calc,0x016D5C2C
-	 [/e_with]
-	[subject]Playtimeリセット/実行/_:b_toggle,0x019B2390,ED6LST->ED6_4a,offset
- [io_fep]$Val*0x03E8, $Val/0x03E8
-	[subject]Playtime変更/現在値/_:b_calc,0x019B2390,ED6LST->ED6_4b,offset,0x00000000,0x00418937,unsigned
- [/io_fep]
-[back]
-
-[back]
-
-[subject]ver1.046:dir
-
-[subject]ＲＰＧパート関連:dir
-	[subject]クォーツ装備属性及び重複制限解除/実行/_:b_toggle,0x46B3EF,ED6LST->ED6_7c,real
-	[subject]全オーバルアーツ無条件使用可能/実行/_:b_toggle,0x4AD6B5,ED6LST->ED6_7d,real
-	[subject]戦闘中敵攻撃完全無効化/実行/_:toggle,0x41D46D,90803F067C,F646040274
-	[subject]味方攻撃時CRITICAL+SEPITHUP+STRUP1&2+HPHEAL2効果自動発動/実行/_:b_toggle,0x402D7A,ED6LST->ED6_6j,real
-	[subject]オーバルアーツ使用時EP減らない/実行/_:b_toggle,0x434B2C,ED6LST->ED6_7h,real
-	[subject]雑魚敵戦闘発生しない/実行/_:toggle,0x4AC59D,E96401000090,0F8463010000
-	[subject]全戦闘経験値システム上の最大化/実行/_:toggle,0x4083F9,EB,7C
-	[subject]戦闘中CP即最大化/実行/_:toggle,0x434BA5,EB,7D
-	[subject]キャンプ画面に入ると現在HP&EP無条件回復/実行/_:toggle,0x4A7EE0,EB00,7410
-	[subject]キャンプ画面に入るとCP無条件最大化/実行/_:toggle,0x4A7EF2,66C7460AC8005E5BC3,5E5BC3909090909090
-	[subject]入手・購入アイテム最大個数化/実行/_:b_toggle,0x48DF0C,ED6LST->ED6_7f,real
-[back]
-
-[subject]パラメータ関連:dir
- [subject]パラメータ極大化系:dir
-	[subject]全パラメータ無条件極大化/実行/_:b_toggle,0x4A7E36,ED6LST->ED6_7e,real
-	[subject]無条件でMAXLV時のパラメータ/実行/_:toggle,0x4A7DD2,33C9B13B,8B4C240C
-	[subject]EP最大値無条件極大化/実行/_:toggle,0x4A7EA5,401F,3200
-	[subject]RNG無条件極大化/実行/_:toggle,0x4A7E9C,08,00
- [back]
- [subject]通貨・ポイント類:dir
-  [e_with],0x00000000,0x05F5E0FF,unsigned
-	[subject]ミラ貨/現在値/_:calc,0x016FB640
-	[subject]ブレイサーポイント/現在値/_:calc,0x016FB644
-  [/e_with]
-	[repeat]ED6LST->ED6REP51,0,7,1
- [back]
- [subject]LV・経験値:dir
-	[repeat]ED6LST->ED6REP52,0,8,1
- [back]
- [subject]現在LVのステータス設定変更:dir
-	[repeat]ED6LST->ED6REP53,0,8,1
- [back]
- [subject]アイテムエディタ:dir
-	[subject]一括所持数の指定/現在値/_:calc,0x50A93C,0x00,0x63,unsigned
-	[subject]所持アイテム一括数量変更/実行/_:toggle,0x016FA640,0x016FAC8B-*{0000????::00000000::????$2[:0x50A93C:2]$$*}
-  [subject]個別所持指定:dir
-	[subject]始点スロット選択/現在値/_:calc,0x50A938,0x0000,0x017C,unsigned
-	[repeat]ED6LST->ED6REP93,0,20,1
-  [back]
- [back]
-[back]
-
-[subject]フラグ関連:dir
-	[subject]依頼の期限切れ状態解除/実行/_:toggle,0x016FB670,0x016FBAE8-*{????42??????????????????::????02??????????????????*}
-	[subject]逃走・戦闘不能戦績リセット/実行/_:b_toggle,0x10,ED6LST->ED6_4i,offset
-	[subject]レシピ手帳ＡＬＬ化/実行/_:toggle,0x016FBE78,FFFFFFFFFFFFFFFF07,000000000000000000
-[back]
-
-[subject]環境関連:dir
-	[subject]移動速度設定変更/_:d_list,0x4975FC,ED6LST->LST_f,0x00000000,0xFFFFFFFF,ED6LST->LST_7g,real
-	 [e_with],-255,255,float
-	  [subject]緊急脱出用Ｘ座標変更/現在値/_:f_calc,0x016D5C34
-	  [subject]緊急脱出用Ｙ座標変更/現在値/_:f_calc,0x016D5C3C
-	 [/e_with]
-	[subject]Playtimeリセット/実行/_:b_toggle,0x019B23A0,ED6LST->ED6_4a,offset
- [io_fep]$Val*0x03E8, $Val/0x03E8
-	[subject]Playtime変更/現在値/_:b_calc,0x019B23A0,ED6LST->ED6_4b,offset,0x00000000,0x00418937,unsigned
- [/io_fep]
-[back]
-
-[back]
-
-[subject]ver1.046(the3rdコンプリート):dir
-
-[subject]ＲＰＧパート関連:dir
- [subject]クォーツ装備属性及び重複制限解除/実行/_:b_toggle,0xC0,ED6LST->ED6_7c,offset
- [subject]全オーバルアーツ無条件使用可能/実行/_:b_toggle,0xC0,ED6LST->ED6_7d,offset
- [subject]戦闘中敵攻撃完全無効化/実行/_:toggle,0x41D46D,90803F067C,F646040274
- [subject]味方攻撃時CRITICAL+SEPITHUP+STRUP1&2+HPHEAL2効果自動発動/実行/_:b_toggle,0x402D7A,ED6LST->ED6_7j,real
- [subject]オーバルアーツ使用時EP減らない/実行/_:b_toggle,0x434B2C,ED6LST->ED6_8h,real
- [subject]雑魚敵戦闘発生しない/実行/_:toggle,0x4AC65D,E96401000090,0F8463010000
- [subject]全戦闘経験値システム上の最大化/実行/_:toggle,0x408409,EB,7C
- [subject]戦闘中CP即最大化/実行/_:toggle,0x434B85,EB,7D
- [subject]キャンプ画面に入ると現在HP&EP無条件回復/実行/_:toggle,0x4A7FA0,EB00,7410
- [subject]キャンプ画面に入るとCP無条件最大化/実行/_:toggle,0x4A7FB2,66C7460AC8005E5BC3,5E5BC3909090909090
- [subject]入手・購入アイテム最大個数化/実行/_:b_toggle,0x48DF0C,ED6LST->ED6_8f,real
-[back]
-
-[subject]パラメータ関連:dir
- [subject]パラメータ極大化系:dir
- [subject]全パラメータ無条件極大化/実行/_:b_toggle,0x4A7E36,ED6LST->ED6_8e,real
- [subject]無条件でMAXLV時のパラメータ/実行/_:toggle,0x4A7E92,33C9B13B,8B4C240C
- [subject]EP最大値無条件極大化/実行/_:toggle,0x4A7F65,401F,3200
- [subject]RNG無条件極大化/実行/_:toggle,0x4A7F5C,08,00
- [back]
- [subject]通貨・ポイント類:dir
-  [e_with],0x00000000,0x05F5E0FF,unsigned
-   [subject]ミラ貨/現在値/_:calc,0x016FB640
-   [subject]ブレイサーポイント/現在値/_:calc,0x016FB644
-  [/e_with]
-  [repeat]ED6LST->ED6REP51,0,7,1
- [back]
- [subject]LV・経験値:dir
-  [repeat]ED6LST->ED6REP52,0,8,1
- [back]
- [subject]現在LVのステータス設定変更:dir
-  [repeat]ED6LST->ED6REP53,0,8,1
- [back]
- [subject]アイテムエディタ:dir
- [subject]一括所持数の指定/現在値/_:calc,0x50A9FC,0x00,0x63,unsigned
- [subject]所持アイテム一括数量変更/実行/_:toggle,0x016FA640,0x016FAC8B-*{0000????::00000000::????$2[:0x50A9FC:2]$$*}
-  [subject]個別所持指定:dir
-  [subject]始点スロット選択/現在値/_:calc,0x50A9F8,0x0000,0x017C,unsigned
-  [repeat]ED6LST->ED6REPA3,0,20,1
-  [back]
- [back]
-[back]
-
-[subject]フラグ関連:dir
- [subject]依頼の期限切れ状態解除/実行/_:toggle,0x016FB670,0x016FBAE8-*{????42??????????????????::????02??????????????????*}
- [subject]逃走・戦闘不能戦績リセット/実行/_:b_toggle,0x10,ED6LST->ED6_4i,offset
- [subject]レシピ手帳ＡＬＬ化/実行/_:toggle,0x016FBE78,FFFFFFFFFFFFFFFF07,000000000000000000
-[back]
-
-[subject]環境関連:dir
- [subject]移動速度設定変更/_:d_list,0x400000,ED6LST->LST_2f,0x00000000,0xFFFFFFFF,ED6LST->LST_8g,offset
- [e_with],-255,255,float
-  [subject]緊急脱出用Ｘ座標変更/現在値/_:f_calc,0x016D5C34
-  [subject]緊急脱出用Ｙ座標変更/現在値/_:f_calc,0x016D5C3C
- [/e_with]
- [subject]Playtimeリセット/実行/_:b_toggle,0x019B23A0,ED6LST->ED6_4a,offset
- [io_fep]$Val*0x03E8, $Val/0x03E8
- [subject]Playtime変更/現在値/_:b_calc,0x019B23A0,ED6LST->ED6_4b,offset,0x00000000,0x00418937,unsigned
- [/io_fep]
-[back]
-
-[back]
-
-
-[subject]ver1.047:dir
-
-[subject]ＲＰＧパート関連:dir
- [subject]クォーツ装備属性及び重複制限解除/実行/_:b_toggle,0x00,ED6LST->ED6_8c,offset
- [subject]全オーバルアーツ無条件使用可能/実行/_:b_toggle,0x0440,ED6LST->ED6_7d,offset
- [subject]戦闘中敵攻撃完全無効化/実行/_:toggle,0x41D45D,90803F067C,F646040274
- [subject]味方攻撃時CRITICAL+SEPITHUP+STRUP1&2+HPHEAL2効果自動発動/実行/_:b_toggle,0x00,ED6LST->ED6_8j,offset
- [subject]オーバルアーツ使用時EP減らない/実行/_:b_toggle,0x00,ED6LST->ED6_9h,offset
- [subject]雑魚敵戦闘発生しない/実行/_:toggle,0x4AC9DD,E96401000090,0F8463010000
- [subject]全戦闘経験値システム上の最大化/実行/_:toggle,0x4083E9,EB,7C
- [subject]戦闘中CP即最大化/実行/_:toggle,0x434B15,EB,7D
- [subject]キャンプ画面に入ると現在HP&EP無条件回復/実行/_:toggle,0x4A8310,EB00,7410
- [subject]キャンプ画面に入るとCP無条件最大化/実行/_:toggle,0x4A8322,66C7460AC8005E5BC3,5E5BC3909090909090
- [subject]入手・購入アイテム最大個数化/実行/_:b_toggle,0x00,ED6LST->ED6_9f,offset
-[back]
-
-[subject]パラメータ関連:dir
- [subject]パラメータ極大化系:dir
- [subject]全パラメータ無条件極大化/実行/_:b_toggle,0x4A8266,ED6LST->ED6_9e,real
- [subject]無条件でMAXLV時のパラメータ/実行/_:toggle,0x4A8202,33C9B13B,8B4C240C
- [subject]EP最大値無条件極大化/実行/_:toggle,0x4A82D5,401F,3200
- [subject]RNG無条件極大化/実行/_:toggle,0x4A82CC,08,00
- [back]
- [subject]通貨・ポイント類:dir
-  [e_with],0x00000000,0x05F5E0FF,unsigned
-   [subject]ミラ貨/現在値/_:calc,0x016FB748
-   [subject]ブレイサーポイント/現在値/_:calc,0x016FB74C
-  [/e_with]
-  [repeat]ED6LST->ED6REP61,0,7,1
- [back]
- [subject]LV・経験値:dir
-  [repeat]ED6LST->ED6REP62,0,8,1
- [back]
- [subject]現在LVのステータス設定変更:dir
-  [repeat]ED6LST->ED6REP63,0,8,1
- [back]
- [subject]アイテムエディタ:dir
- [subject]一括所持数の指定/現在値/_:calc,0x50AD78,0x00,0x63,unsigned
- [subject]所持アイテム一括数量変更/実行/_:toggle,0x016FA748,0x016FAD93-*{0000????::00000000::????$2[:0x50AD78:2]$$*}
-  [subject]個別所持指定:dir
-  [subject]始点スロット選択/現在値/_:calc,0x50AD7C,0x0000,0x017C,unsigned
-  [repeat]ED6LST->ED6REPB3,0,20,1
-  [back]
- [back]
-[back]
-
-[subject]フラグ関連:dir
- [subject]依頼の期限切れ状態解除/実行/_:toggle,0x016FB778,0x016FBBF0-*{????42??????????????????::????02??????????????????*}
- [subject]逃走・戦闘不能戦績リセット/実行/_:b_toggle,0x00,ED6LST->ED6_5i,offset
- [subject]レシピ手帳ＡＬＬ化/実行/_:toggle,0x016FBF80,FFFFFFFFFFFFFFFF07,000000000000000000
-[back]
-
-[subject]環境関連:dir
- [subject]移動速度設定変更/_:d_list,0x400000,ED6LST->LST_2f,0x00000000,0xFFFFFFFF,ED6LST->LST_9g,offset
- [e_with],-255,255,float
-  [subject]緊急脱出用Ｘ座標変更/現在値/_:f_calc,0x016D5D3C
-  [subject]緊急脱出用Ｙ座標変更/現在値/_:f_calc,0x016D5D44
- [/e_with]
- [subject]Playtimeリセット/実行/_:b_toggle,0x019B25A8,ED6LST->ED6_4a,offset
- [io_fep]$Val*0x03E8, $Val/0x03E8
- [subject]Playtime変更/現在値/_:b_calc,0x019B25A8,ED6LST->ED6_4b,offset,0x00000000,0x00418937,unsigned
- [/io_fep]
-[back]
-
-[back]
-
-[/group]
-
-
-[group]LST_f
-デフォルト
-移動高速固定
-移動２倍速固定
-移動４倍速固定
-自動移動低速固定
-自動移動高速固定
-自動移動２倍速固定
-自動移動４倍速固定
-[/group]
-
-
-[group]LST_2f
-デフォルト
-等速固定
-２倍速固定
-４倍速固定
-[/group]
-
-
-[group]LST_5g
-,0x4976EC=EB00,0x4976F1=CDCCCC3D,0x497746=00000000
-,0x4976EC=EB00,0x4976F1=CDCCCC3D,0x497746=00000000
-,0x4976EC=EB00,0x4976F1=CDCC4C3E,0x497746=00000000
-,0x4976EC=EB00,0x4976F1=CDCCCC3E,0x497746=00000000
-,0x4976EC=EB00,0x4976F1=CDCC4C3D,0x497746=CDCC4C3D
-,0x4976EC=EB00,0x4976F1=CDCCCC3D,0x497746=CDCCCC3D
-,0x4976EC=EB00,0x4976F1=CDCC4C3E,0x497746=CDCC4C3E
-,0x4976EC=EB00,0x4976F1=CDCCCC3E,0x497746=CDCCCC3E
-[/group]
-
-
-[group]LST_6g
-,0x4975FC=7507,0x497601=CDCCCC3D,0x497656=00000000
-,0x4975FC=EB00,0x497601=CDCCCC3D,0x497656=00000000
-,0x4975FC=EB00,0x497601=CDCC4C3E,0x497656=00000000
-,0x4975FC=EB00,0x497601=CDCCCC3E,0x497656=00000000
-,0x4975FC=EB00,0x497601=CDCC4C3D,0x497656=CDCC4C3D
-,0x4975FC=EB00,0x497601=CDCCCC3D,0x497656=CDCCCC3D
-,0x4975FC=EB00,0x497601=CDCC4C3E,0x497656=CDCC4C3E
-,0x4975FC=EB00,0x497601=CDCCCC3E,0x497656=CDCCCC3E
-[/group]
-
-
-[group]LST_7g
-,0x4977DC=7507,0x4977E1=CDCCCC3D,0x497836=00000000
-,0x4977DC=EB00,0x4977E1=CDCCCC3D,0x497836=00000000
-,0x4977DC=EB00,0x4977E1=CDCC4C3E,0x497836=00000000
-,0x4977DC=EB00,0x4977E1=CDCCCC3E,0x497836=00000000
-,0x4977DC=EB00,0x4977E1=CDCC4C3D,0x497836=CDCC4C3D
-,0x4977DC=EB00,0x4977E1=CDCCCC3D,0x497836=CDCCCC3D
-,0x4977DC=EB00,0x4977E1=CDCC4C3E,0x497836=CDCC4C3E
-,0x4977DC=EB00,0x4977E1=CDCCCC3E,0x497836=CDCCCC3E
-[/group]
-
-
-[group]LST_8g
-,0x09789C=7507??????CDCCCC3D,0x0977B6=741B,0x0977E1=CDCCCC3D,0x0975E2=740D,0x0975EB=CDCCCC3D
-,0x09789C=EB00??????CDCCCC3D,0x0977B6=EB22,0x0977E1=CDCCCC3D,0x0975E2=EB04,0x0975EB=CDCCCC3D
-,0x09789C=EB00??????CDCC4C3E,0x0977B6=EB22,0x0977E1=CDCC4C3E,0x0975E2=EB04,0x0975EB=CDCC4C3E
-,0x09789C=EB00??????CDCCCC3E,0x0977B6=EB22,0x0977E1=CDCCCC3E,0x0975E2=EB04,0x0975EB=CDCCCC3E
-[/group]
-
-
-[group]LST_9g
-,0x097B6C=7507??????CDCCCC3D,0x097A86=741B,0x097AB1=CDCCCC3D,0x0978B2=740D,0x0978BB=CDCCCC3D
-,0x097B6C=EB00??????CDCCCC3D,0x097A86=EB22,0x097AB1=CDCCCC3D,0x0978B2=EB04,0x0978BB=CDCCCC3D
-,0x097B6C=EB00??????CDCC4C3E,0x097A86=EB22,0x097AB1=CDCC4C3E,0x0978B2=EB04,0x0978BB=CDCC4C3E
-,0x097B6C=EB00??????CDCCCC3E,0x097A86=EB22,0x097AB1=CDCCCC3E,0x0978B2=EB04,0x0978BB=CDCCCC3E
 [/group]
 
 
@@ -759,12 +351,6 @@ MAXEPとRNGを除く現在LV相当の基本設定値の操作が可能。本来ステータスの任意書き換え
 [/group]
 
 
-[group]ED6_4a
-0x00,00000000
-0x0C,00000000
-[/group]
-
-
 [group]ED6_b
 0x19B2158
 0x19B2164
@@ -780,12 +366,6 @@ MAXEPとRNGを除く現在LV相当の基本設定値の操作が可能。本来ステータスの任意書き換え
 [group]ED6_3b
 0x019B3310
 0x019B331C
-[/group]
-
-
-[group]ED6_4b
-0x00
-0x0C
 [/group]
 
 
@@ -814,34 +394,6 @@ MAXEPとRNGを除く現在LV相当の基本設定値の操作が可能。本来ステータスの任意書き換え
 0x46B43F,EB00,740F
 0x4AAD96,EB0490909090,0F8593000000
 0x4AADCE,E9A200000090,0F84A1000000
-[/group]
-
-
-[group]ED6_5c
-0x46B2EF,EB00,740F
-0x4AA9F6,EB0490909090,0F8593000000
-0x4AAA2E,E9A200000090,0F84A1000000
-[/group]
-
-
-[group]ED6_6c
-0x46B2EF,EB00,740F
-0x4AA976,EB0490909090,0F8593000000
-0x4AA9AE,E9A200000090,0F84A1000000
-[/group]
-
-
-[group]ED6_7c
-0x46B3EF,EB00,740F
-0x4AAC06,EB0490909090,0F8593000000
-0x4AAC3E,E9A200000090,0F84A1000000
-[/group]
-
-
-[group]ED6_8c
-0x46B53F,EB00,740F
-0x4AB036,EB0490909090,0F8593000000
-0x4AB06E,E9A200000090,0F84A1000000
 [/group]
 
 
@@ -889,39 +441,6 @@ MAXEPとRNGを除く現在LV相当の基本設定値の操作が可能。本来ステータスの任意書き換え
 [/group]
 
 
-[group]ED6_5d
-0x4AD4A5,668178020800,668B50023BD5
-0x4AD4B2,668178040800,668B50043BD5
-0x4AD4BF,668178060800,668B50063BD5
-0x4AD4CC,668178080800,668B50083BD5
-0x4AD4D9,6681780A0B00,668B500A3BD5
-0x4AD4E6,6681780C0800,668B500C3BD5
-0x4AD4F4,6681FA0800,8B46183BD0
-[/group]
-
-
-[group]ED6_6d
-0x4AD425,668178020800,668B50023BD5
-0x4AD432,668178040800,668B50043BD5
-0x4AD43F,668178060800,668B50063BD5
-0x4AD44C,668178080800,668B50083BD5
-0x4AD459,6681780A0B00,668B500A3BD5
-0x4AD466,6681780C0800,668B500C3BD5
-0x4AD474,6681FA0800,8B46183BD0
-[/group]
-
-
-[group]ED6_7d
-0x4AD6B5,668178020800,668B50023BD5
-0x4AD6C2,668178040800,668B50043BD5
-0x4AD6CF,668178060800,668B50063BD5
-0x4AD6DC,668178080800,668B50083BD5
-0x4AD6E9,6681780A0B00,668B500A3BD5
-0x4AD6F6,6681780C0800,668B500C3BD5
-0x4AD704,6681FA0800,8B46183BD0
-[/group]
-
-
 [group]ED6_e
 0x4A7536,E9E52E0600,33C0668B06
 0x50A400,3B000F2700000F270F270F270F270F270F2714006400,00000000000000000000000000000000000000000000
@@ -962,56 +481,6 @@ MAXEPとRNGを除く現在LV相当の基本設定値の操作が可能。本来ステータスの任意書き換え
 [/group]
 
 
-[group]ED6_5e
-0x4A7D46,E9152B0600,33C0668B06
-0x50A840,3B00401F0000401F401F401F401F401F401F14006400,00000000000000000000000000000000000000000000
-0x50A860,33C0,0000
-0x50A862,668B06,000000
-0x50A865,BF40A85000,0000000000
-0x50A86A,E9DCD4F9FF90,000000000000
-[/group]
-
-
-[group]ED6_6e
-0x4A7C56,E9452B0600,33C0668B06
-0x50A780,3B00401F0000401F401F401F401F401F401F14006400,00000000000000000000000000000000000000000000
-0x50A7A0,33C0,0000
-0x50A7A2,668B06,000000
-0x50A7A5,BF80A75000,0000000000
-0x50A7AA,E9ACD4F9FF90,000000000000
-[/group]
-
-
-[group]ED6_7e
-0x4A7E36,E9252B0600,33C0668B06
-0x50A940,3B00401F0000401F401F401F401F401F401F14006400,00000000000000000000000000000000000000000000
-0x50A960,33C0,0000
-0x50A962,668B06,000000
-0x50A965,BF40A95000,0000000000
-0x50A96A,E9CCD4F9FF90,000000000000
-[/group]
-
-
-[group]ED6_8e
-0x4A7EF6,E9252B0600,33C0668B06
-0x50AA00,3B00401F0000401F401F401F401F401F401F14006400,00000000000000000000000000000000000000000000
-0x50AA20,33C0,0000
-0x50AA22,668B06,000000
-0x50AA25,BF00AA5000,0000000000
-0x50AA2A,E9CCD4F9FF90,000000000000
-[/group]
-
-
-[group]ED6_9e
-0x4A8266,E9352B0600,33C0668B06
-0x50AD80,3B00401F0000401F401F401F401F401F401F14006400,00000000000000000000000000000000000000000000
-0x50ADA0,33C0,0000
-0x50ADA2,668B06,000000
-0x50ADA5,BF80AD5000,0000000000
-0x50ADAA,E9BCD4F9FF90,000000000000
-[/group]
-
-
 [group]ED6_f
 0x4A97E9,EB00,7D5A
 0x4A97EF,EB00,7C0C
@@ -1041,46 +510,6 @@ MAXEPとRNGを除く現在LV相当の基本設定値の操作が可能。本来ステータスの任意書き換え
 0x4AA399,EB00,7D5A
 0x4AA39F,EB00,7C0C
 0x4AA3D9,EB00,7C0C
-[/group]
-
-
-[group]ED6_5f
-0x48D7B9,EB,7F
-0x4A9FF9,EB00,7D5A
-0x4A9FFF,EB00,7C0C
-0x4AA039,EB00,7C0C
-[/group]
-
-
-[group]ED6_6f
-0x48D2C9,EB,7F
-0x4A9F79,EB00,7D5A
-0x4A9F7F,EB00,7C0C
-0x4A9FB9,EB00,7C0C
-[/group]
-
-
-[group]ED6_7f
-0x48D859,EB,7F
-0x4AA209,EB00,7D5A
-0x4AA20F,EB00,7C0C
-0x4AA249,EB00,7C0C
-[/group]
-
-
-[group]ED6_8f
-0x48D939,EB,7F
-0x4AA2C9,EB00,7D5A
-0x4AA2CF,EB00,7C0C
-0x4AA309,EB00,7C0C
-[/group]
-
-
-[group]ED6_9f
-0x48D559,EB,7F
-0x4AA639,EB00,7D5A
-0x4AA63F,EB00,7C0C
-0x4AA679,EB00,7C0C
 [/group]
 
 
@@ -1130,36 +559,6 @@ MAXEPとRNGを除く現在LV相当の基本設定値の操作が可能。本来ステータスの任意書き換え
 [/group]
 
 
-[group]ED6_5h
-0x4349EC,06,08
-0x4349F8,EB0D,7D07
-[/group]
-
-
-[group]ED6_6h
-0x434A4C,06,08
-0x434A58,EB0D,7D07
-[/group]
-
-
-[group]ED6_7h
-0x434B2C,06,08
-0x434B38,EB0D,7D07
-[/group]
-
-
-[group]ED6_8h
-0x434B0C,06,08
-0x434B18,EB0D,7D07
-[/group]
-
-
-[group]ED6_9h
-0x434A9C,06,08
-0x434AA8,EB0D,7D07
-[/group]
-
-
 [group]ED6_2i
 0x016FBE88,$2[:0x016FBE84:2]$$
 0x016FBE86,0000
@@ -1171,20 +570,6 @@ MAXEPとRNGを除く現在LV相当の基本設定値の操作が可能。本来ステータスの任意書き換え
 0x016FCFA8,$2[:0x016FCFA4:2]$$
 0x016FCFA6,0000
 0x016FCFAC,0000
-[/group]
-
-
-[group]ED6_4i
-0x016FC060,$2[:0x016FC06C:2]$$
-0x016FC05E,0000
-0x016FC064,0000
-[/group]
-
-
-[group]ED6_5i
-0x016FC178,$2[:0x016FC174:2]$$
-0x016FC176,0000
-0x016FC17C,0000
 [/group]
 
 
@@ -1200,66 +585,6 @@ MAXEPとRNGを除く現在LV相当の基本設定値の操作が可能。本来ステータスの任意書き換え
 [/group]
 
 
-[group]ED6_4j
-0x402D6A,B00C803F04900F8F,84C08844240C0F84
-0x402D76,EB029090,8B44240C
-0x402E28,EB00,7567
-0x402F2C,EB00,7516
-0x404E0C,803B047F25EB029090,E88F4202003C077521
-0x404E3B,803B047F2BEB029090,E8604202003C087527
-0x4052D1,803B047F0CEB029090,E8CA3D02003C0C7508
-0x407E38,803E067F0CEB029090,E8631202003C0B7408
-[/group]
-
-
-[group]ED6_5j
-0x402D7A,B00C803F04900F8F,84C08844240C0F84
-0x402D86,EB029090,8B44240C
-0x402E38,EB00,7567
-0x402F3C,EB00,7516
-0x404E1C,803B047F25EB029090,E87F4202003C077521
-0x404E4B,803B047F2BEB029090,E8504202003C087527
-0x4052E1,803B047F0CEB029090,E8BA3D02003C0C7508
-0x407E28,803E067F0CEB029090,E8731202003C0B7408
-[/group]
-
-
-[group]ED6_6j
-0x402D7A,B00C803F04900F8F,84C08844240C0F84
-0x402D86,EB029090,8B44240C
-0x402E38,EB00,7567
-0x402F3C,EB00,7516
-0x404E1C,803B047F25EB029090,E8BF4202003C077521
-0x404E4B,803B047F2BEB029090,E8904202003C087527
-0x4052E1,803B047F0CEB029090,E8FA3D02003C0C7508
-0x407E18,803E067F0CEB029090,E8C31202003C0B7408
-[/group]
-
-
-[group]ED6_7j
-0x402D7A,B00C803F05900F8F,84C08844240C0F84
-0x402D86,EB029090,8B44240C
-0x402E38,EB00,7567
-0x402F3C,EB00,7516
-0x404E1C,803B057F25EB029090,E8BF4202003C077521
-0x404E4B,803B057F2BEB029090,E8904202003C087527
-0x4052E1,803B057F0CEB029090,E8FA3D02003C0C7508
-0x407E28,803E057F0CEB029090,E8B31202003C0B7408
-[/group]
-
-
-[group]ED6_8j
-0x402D6A,B00C803F05900F8F,84C08844240C0F84
-0x402D76,EB029090,8B44240C
-0x402E28,EB00,7567
-0x402F2C,EB00,7516
-0x404E0C,803B057F25EB029090,E8DF4202003C077521
-0x404E3B,803B057F2BEB029090,E8B04202003C087527
-0x4052D1,803B057F0CEB029090,E81A3E02003C0C7508
-0x407E08,803E057F0CEB029090,E8E31202003C0B7408
-[/group]
-
-
 [group]ED6REP1
 [subject][! @ED6LST->LST_a,$Val !]/現在値/_:calc,_0x016FB3D0+0x[! 0x04*$Val !],0x0000,0x270F,unsigned
 [/group]
@@ -1272,21 +597,6 @@ MAXEPとRNGを除く現在LV相当の基本設定値の操作が可能。本来ステータスの任意書き換え
 
 [group]ED6REP31
 [subject][! @ED6LST->LST_a,$Val !]/現在値/_:calc,_0x016FC580+0x[! 0x04*$Val !],0x0000,0x270F,unsigned
-[/group]
-
-
-[group]ED6REP41
-[subject][! @ED6LST->LST_a,$Val !]/現在値/_:calc,_0x016FB638+0x[! 0x04*$Val !],0x0000,0x270F,unsigned
-[/group]
-
-
-[group]ED6REP51
-[subject][! @ED6LST->LST_a,$Val !]/現在値/_:calc,_0x016FB648+0x[! 0x04*$Val !],0x0000,0x270F,unsigned
-[/group]
-
-
-[group]ED6REP61
-[subject][! @ED6LST->LST_a,$Val !]/現在値/_:calc,_0x016FB750+0x[! 0x04*$Val !],0x0000,0x270F,unsigned
 [/group]
 
 
@@ -1311,91 +621,9 @@ MAXEPとRNGを除く現在LV相当の基本設定値の操作が可能。本来ステータスの任意書き換え
 [/group]
 
 
-[group]ED6REP42
-[subject][! @ED6LST->LST_d,$Val !]:dir
-	[replace]_0x016F9800+0x[! 0x34*$Val !],ED6LST->ED6_g
-[back]
-[/group]
-
-
-[group]ED6REP52
-[subject][! @ED6LST->LST_d,$Val !]:dir
-	[replace]_0x016F9810+0x[! 0x34*$Val !],ED6LST->ED6_g
-[back]
-[/group]
-
-
-[group]ED6REP62
-[subject][! @ED6LST->LST_d,$Val !]:dir
-	[replace]_0x016F9918+0x[! 0x34*$Val !],ED6LST->ED6_g
-[back]
-[/group]
-
-
 [group]ED6REP33
 [subject][! @ED6LST->LST_d,$Val !]:dir
 	[replace]_0x[! $Val*0x34 !]=>temp;[:0x16FA748+$temp:1]=>temp;[:0x01941780:]+$temp*0x16+0x[! $Val*0x0528 !]+0x10,ED6LST->ED6_2g
-[back]
-[/group]
-
-
-[group]ED6REP43
-[subject][! @ED6LST->LST_d,$Val !]:dir
-	[replace]_0x[! $Val*0x34 !]=>temp;[:0x16F9800+$temp:1]=>temp;[:0x01940800:]+$temp*0x16+0x[! $Val*0x0528 !]+0x10,ED6LST->ED6_2g
-[back]
-[/group]
-
-
-[group]ED6REP53
-[subject][! @ED6LST->LST_d,$Val !]:dir
-	[replace]_0x[! $Val*0x34 !]=>temp;[:0x16F9810+$temp:1]=>temp;[:0x01940810:]+$temp*0x16+0x[! $Val*0x0528 !]+0x10,ED6LST->ED6_2g
-[back]
-[/group]
-
-
-[group]ED6REP63
-[subject][! @ED6LST->LST_d,$Val !]:dir
-	[replace]_0x[! $Val*0x34 !]=>temp;[:0x16F9918+$temp:1]=>temp;[:0x01940A18:]+$temp*0x16+0x[! $Val*0x0528 !]+0x10,ED6LST->ED6_2g
-[back]
-[/group]
-
-
-[group]ED6REP83
-[subject]_mem,_([\:0x50A778\:]+0x[! $Val !])*0x04=>temp;[\:0x016FA630+$temp\:2]=>temp;[\:[\:0x019409A0\:]+$temp*2\:2]=>temp;[\:[\:0x019409A0\:]+$temp\:2]=>temp;[\:0x019409A0\:]+$temp,20,00,<NoData>/_:dir
-[size]2
- [subject]種類変更/_:d_list,_([:0x50A778:]+0x[! $Val !])*0x04=>temp;0x016FA630+$temp,ED6LST->LST_e,0x0000,0xFFFF,ED6LST->LST_c,offset
- [subject]個数変更/現在値/_:calc,_([:0x50A778:]+0x[! $Val !])*0x04=>temp;0x016FA632+$temp,0x0000,0x0063,unsigned
-[/size]
-[back]
-[/group]
-
-
-[group]ED6REP93
-[subject]_mem,_([\:0x50A938\:]+0x[! $Val !])*0x04=>temp;[\:0x016FA640+$temp\:2]=>temp;[\:[\:0x019409B0\:]+$temp*2\:2]=>temp;[\:[\:0x019409B0\:]+$temp\:2]=>temp;[\:0x019409B0\:]+$temp,20,00,<NoData>/_:dir
-[size]2
- [subject]種類変更/_:d_list,_([:0x50A938:]+0x[! $Val !])*0x04=>temp;0x016FA640+$temp,ED6LST->LST_e,0x0000,0xFFFF,ED6LST->LST_c,offset
- [subject]個数変更/現在値/_:calc,_([:0x50A938:]+0x[! $Val !])*0x04=>temp;0x016FA642+$temp,0x0000,0x0063,unsigned
-[/size]
-[back]
-[/group]
-
-
-[group]ED6REPA3
-[subject]_mem,_([\:0x50A9F8\:]+0x[! $Val !])*0x04=>temp;[\:0x016FA640+$temp\:2]=>temp;[\:[\:0x019409B0\:]+$temp*2\:2]=>temp;[\:[\:0x019409B0\:]+$temp\:2]=>temp;[\:0x019409B0\:]+$temp,20,00,<NoData>/_:dir
-[size]2
- [subject]種類変更/_:d_list,_([:0x50A9F8:]+0x[! $Val !])*0x04=>temp;0x016FA640+$temp,ED6LST->LST_e,0x0000,0xFFFF,ED6LST->LST_c,offset
- [subject]個数変更/現在値/_:calc,_([:0x50A9F8:]+0x[! $Val !])*0x04=>temp;0x016FA642+$temp,0x0000,0x0063,unsigned
-[/size]
-[back]
-[/group]
-
-
-[group]ED6REPB3
-[subject]_mem,_([\:0x50AD7C\:]+0x[! $Val !])*0x04=>temp;[\:0x016FA748+$temp\:2]=>temp;[\:[\:0x01940BB8\:]+$temp*2\:2]=>temp;[\:[\:0x01940BB8\:]+$temp\:2]=>temp;[\:0x01940BB8\:]+$temp,20,00,<NoData>/_:dir
-[size]2
- [subject]種類変更/_:d_list,_([:0x50AD7C:]+0x[! $Val !])*0x04=>temp;0x016FA748+$temp,ED6LST->LST_e,0x0000,0xFFFF,ED6LST->LST_c,offset
- [subject]個数変更/現在値/_:calc,_([:0x50AD7C:]+0x[! $Val !])*0x04=>temp;0x016FA74A+$temp,0x0000,0x0063,unsigned
-[/size]
 [back]
 [/group]
 
@@ -1420,6 +648,18 @@ MAXEPとRNGを除く現在LV相当の基本設定値の操作が可能。本来ステータスの任意書き換え
 アガット
 ティータ
 ジン
+[/group]
+
+
+[group]LST_f
+デフォルト
+移動高速固定
+移動２倍速固定
+移動４倍速固定
+自動移動低速固定
+自動移動高速固定
+自動移動２倍速固定
+自動移動４倍速固定
 [/group]
 
 
