@@ -1,0 +1,71 @@
+SSG for SpoilerAL ver 6.1
+
+// CG ALL-ONは他の人に任せます。
+
+[script]
+[title]家庭内調教
+[process]KATEI.EXE
+[maker]Guilty
+[creator]xenon
+[note]wordwrap
+　発売日　　2004/01/23
+　ジャンル  調教SLG＋ADV
+　原画　　　綾風　柳晶
+　シナリオ　卑影 ムラサキ
+
+　http://www.guilty-soft.com/
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2004/01/23
+[size]4
+[e_with],unsigned,little_e
+[subject]月: calc,0x590AE0,5,7
+[subject]日: calc,0x590AE4,1,31
+[subject]知美:dir
+	[replace] 0x590A40,家庭内調教->STATUS
+[back]
+[subject]智里:dir
+	[replace] 0x590A70,家庭内調教->STATUS
+[back]
+[subject]華憐:dir
+	[replace] 0x590AA0,家庭内調教->STATUS
+[back]
+[/e_with]
+[/size]
+[/script]
+
+[script]
+[title]カード・オブ・デスティニー　オルタナティブ 
+[process]CARD OF DESTINY ALTERNATIVE.EXE
+[maker]アーベルソフトウェア
+[creator]xenon
+[note]wordwrap
+　発売日　　2004/01/23
+　ジャンル  カードバトル型ダンジョンRPG
+
+  DVD-ROM版
+　http://www.abelsoftware-jp.com/
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2004/01/23
+[size]4
+[e_with],unsigned,little_e
+[subject]GOLD:calc,0x5E0934,0,0xFFFF
+[subject]ステータス:dir
+	[replace]0x5E0914,COD_ALTERNATIVE->STATUS
+[back]
+[subject]ガーディア:dir
+/	[subject]CARD: toggle,0x5DEFED,0x5DF028-01
+	[subject]使用回数(99): toggle,0x5E0C34,0x5E0D23-63000000
+[back]
+[subject]ダンジョン:dir
+	[subject]敵HP1: toggle,0x5E09B8,0100
+	[subject]敵遭遇回避:toggle,0x48C8F8,6300
+	[replace]0x00,COD_ALTERNATIVE->POSITION
+[back]
+[subject]　:dir
+	[subject]シーン回想: toggle,0x5E18D0,0x5E192C-01
+[back]
+[/e_with]
+[/size]
+[/script]
