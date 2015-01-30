@@ -1,0 +1,32 @@
+[group]Angerize
+[subject]ver1.00:dir
+[subject]残機数			:calc,0x637CE0,00,13
+[subject]近接攻撃ゲージ消費なし	:toggle,0x4028DA,909090909090,66A3EE8F6200
+[subject]ボム使用時ゲージ消費なし	:toggle,0x402353,90909090909090,66891DEE8F6200
+[subject]コンボ途切れず		:toggle,0x404861,909090909090909090,66C705889162000000
+[back]
+
+[subject]ver1.03:dir
+[subject]残機数			:calc,0x637D70,00,13
+[subject]近接攻撃ゲージ消費なし	:toggle,0x4028DA,909090909090,66A37E906200
+[subject]ボム使用時ゲージ消費なし	:toggle,0x402353,90909090909090,66891D7E906200
+[subject]コンボ途切れず		:toggle,0x404861,909090909090909090,66C705189262000000
+/[subject]無敵化			:toggle,0x,,
+[back]
+[/group]
+
+
+[group]theta
+[subject]ver1.00:dir
+[subject]共通 残機数			:calc,0x686BA8,00,13
+[subject]共通 コンボ途切れない	:toggle,0x405621,909090909090909090,66C705107B67000000
+	[subject]ティルカ＆レイファ＆フィリア:dir
+	[subject]近接攻撃ゲージ消費なし	:toggle,0x402F75,90909090909090,66892D6E796700
+	[subject]ボム使用時ゲージ消費なし	:toggle,0x4026B0,90909090909090,66891D6E796700
+	[back]
+	[subject]シータ:dir
+	[subject]近接攻撃ゲージ消費なし	:toggle,0x403031,90909090909090,66892D6E796700
+	[subject]ボム使用時ゲージ消費なし	:toggle,0x4026B0,90909090909090,66891D6E796700
+	[back]
+[back]
+[/group]
