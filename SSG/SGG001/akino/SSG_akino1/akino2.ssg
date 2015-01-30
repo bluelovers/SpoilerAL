@@ -1,0 +1,1237 @@
+SSG for SpoilerAL ver 5.3
+
+[script]
+[title]てりるのクリスマスＢＯＸ
+[distinction]発売日=2/12/27
+[process]魔女打ッ！！.exe
+[process]魔女のお仕事.exe
+[maker]Witch
+[creator]秋野日和
+[note] 
+
+[/note]	
+[subject]魔女打ッ！！:dir
+[subject]自キャラライフ:calc,0x4FF260,0,9999,unsigned
+[subject]敵ライフ/１発ＫＯ/_:toggle,0x4FF2C0,01000000,01000000
+[subject]メダル:calc,0x5051E4,0,4,unsigned
+[subject]クリアフラグ/礼・奈緒美 選択可能/_:toggle,0x5078EC,02,00
+[back]
+[subject]魔女のお仕事:dir
+[subject]ＭＯＮＥＹ\/Ｃｒｅｄｉｔ:calc,0x475D28,0,99999,unsigned
+[replace]0x00,RIRI->teriru_majyo1
+[subject]ぎゃらりー/ぎゃらりーフル化/_:toggle,0x476180,0x4761A3-01000000,00000000
+[back]
+[/script]
+
+
+
+[script]
+[title]ｒ．ｐ．ｍ．　～瞳の中の想い出～
+[distinction]発売日=2/10/11
+[process]rpm.exe
+[maker]ｅ・エレキテル
+[creator]秋野日和
+[note] 
+
+[/note]	
+[subject]Ａｐｐｅｎｄｉｘ/ＶＯＩＤ→Ａｐｐｅｎｄｉｘ/_:toggle,0x6798E0,01,00
+[subject]ＣＧ＋回想/フル化/_:toggle,0x6798E8,6F7FF7EFFBFFF779FCEFFE000101640C,00000000000000000000000000000000
+[/script]
+
+
+
+[script]
+[title]なりきりプリンセス　
+[distinction]発売日=2/12/13
+[process]REALLIVE.EXE
+[maker]ZERO
+[creator]秋野日和
+[note] 
+
+[/note]	
+[subject]ＣＧ/ＣＧフル化/_:b_toggle,0,RIRI->naripuri_CG,offset
+[subject]シーン回想/シーン回想フル化/_:toggle,0x560FF8,0x561023-01000000,00000000
+[/script]
+
+
+
+/[script]
+/[title]ぽぽたん
+[distinction]発売日=2/12/13
+[process]popotan.exe
+[maker]Petitferret
+[creator]秋野日和
+[note] 
+
+[/note]	
+[adjustment]search, 0x3017010,6D6169303261,0x2A00000, 0x3100000, 4
+[subject]ＣＧフル化//_:b_toggle,0,POPO->POPO,offset
+[/adjustment]
+/[/script]
+
+
+
+[script]
+[title]いもうと観察日記
+[distinction]発売日=2/12/13
+[process]IMOUTO.EXE
+[maker]TRIANGLE
+[creator]秋野日和
+[note] 
+
+[/note]	
+[subject]ＣＧ/ＣＧフル化/_:toggle,0x69FB3A,0x69FB83-010204,000000
+[subject]シーン/シーン＋エンディング回想フル化/_:toggle,0x69FB8C,0x69FD20-02040801,00000000
+[/script]
+
+
+
+[script]
+[title]だぶるまいんど
+[distinction]発売日=2/12/20
+[process]advwin32.exe
+[maker]Ｆ＆Ｃ
+[creator]秋野日和
+[note] 
+
+[/note]	
+[adjustment]search, 0x4EBBE0,736F6674776172 ,0x460000, 0x560000, 4
+[subject]ＣＧ鑑賞/ＣＧフル化/_:toggle,0x4EC774,0x4EC7CD-01,00
+[subject]シーン鑑賞/シーンフル化/_:toggle,0x4ECA94,0x4ECAB5-01,00
+[subject]音楽鑑賞/ＯＮ/_:toggle,0x4EC83C,01,00
+[/adjustment] 
+[/script]
+
+
+
+[script]
+[title]まじかるＬＯＶＥレッスン
+[distinction]発売日=2/12/06
+[process]REALLIVE.EXE
+[maker]大熊猫
+[creator]秋野日和
+[note] 
+
+[/note]	
+[subject]主人公:dir
+	[replace]0xA2BF5C,RIRI->MAZIパラメータ
+[subject]穂純:dir
+	[replace]0xA2C0EC,RIRI->MAZIパラメータ
+[subject]ＣＧ鑑賞/ＣＧフル化/_:toggle,0x560058,0x560270-01000000,00000000
+[subject]シーン鑑賞/シーンフル化/_:toggle,0x55E2AC,0x55E38F-01000000,00000000
+[/script]
+
+
+
+[script]
+[title]妹汁
+[distinction]発売日=2/12/13
+[process]Start.exe
+[maker]アトリエかぐや
+[creator]秋野日和
+[note] 
+
+[/note]	
+[adjustment]search, 0xD41234, 5CD446005C62C3,0xD00000, 0xD80000, 4
+[subject]ＣＧモード/ＣＧフル化/_:toggle,0xD41330,0xD41429-01,00
+[subject]シーン再生/シーンフル化/_:toggle,0xD412D0,0xD412FA-01,00
+[/adjustment]
+[/script]
+
+
+
+[script]
+[title]家族計画 ～絆箱～
+[distinction]発売日=2/12/27
+[process]KAZOKUK.EXE
+[maker]DO
+[creator]秋野日和
+[note] 
+ＤＶＤ版用です。
+
+まず最初に好感度以外を選択。
+自動サーチで１件該当するはずですので
+それを選択してから使用してください。
+
+◆ＣＧ＋シーンフル化
+使用の際は「KAZOKUK.SAV」のバックアップを。
+
+[/note]	
+[adjustment]search, 0x49E270,5449544C452E49,0x470000, 0x4C0000, 4
+[subject]物置ＯＮ//_:toggle,0x49E2AA,FC01,EC01
+[subject]ＣＧ鑑賞/ＣＧフル化/:toggle,0x49E2BD,FEFFFFFF7FC2F8C7FB1EFEDDF8FFFF7FC11FF07F9EFFFF74FEBFAEBFFFEDFEEC7F,000000000000000000000000000000000000000000000000000000000000000000
+[subject]シーン鑑賞/シーンフル化/:toggle,0x49E2B0,F0C7FF01,00000000
+        [replace]0x00,RIRI->kizuna_1
+[back]
+[/adjustment] 
+[/script]
+
+
+
+[script]
+[title]さよらなエトランジュ
+[distinction]発売日=2/12/20
+[process]BGI.exe
+[maker]ORBIT
+[creator]秋野日和
+[note] 
+
+[/note]
+[subject]ＣＧフル化//_:b_toggle,0,RIRI->sayorana,offset
+[/script]
+
+
+
+[script]
+[title]モルダヴァイト
+[distinction]発売日=2/12/20
+[process]ScrPlayer.exe
+[maker]CLOVER
+[creator]秋野日和
+[note] 
+以下補足説明
+
+◆再行動
+攻撃・移動後に使用すると
+再び各種行動が出来るようになります。
+値の固定を併用すれば何度でも攻撃できます。
+
+ＨＰ０になったキャラはＯＮにしないで下さい。
+不具合の原因になります。
+
+◆Ｈフラグ
+それぞれ決められた章の戦闘後に
+ＯＮになってると、Ｈシーンが発生します。
+
+◆おまけフル化２
+「おまけフル化」でうまく書き換えできない方用です。
+チュートリアルのＨシーンが
+ＣＧモードに登録されてる状態で選択すると
+自動サーチで１件該当するはずですので
+それを選択して使用してください。
+
+[/note]
+[subject]ヴァイン:dir
+	[replace]0x5E4C54,RIRI->MOLDAパラメータ
+[subject]ステラ:dir
+	[replace]0x5E4FD8,RIRI->MOLDAパラメータ
+[subject]アネット:dir
+	[replace]0x5E535C,RIRI->MOLDAパラメータ
+[subject]コンラッド:dir
+	[replace]0x5E56E0,RIRI->MOLDAパラメータ
+[subject]ユン:dir
+	[replace]0x5E5A64,RIRI->MOLDAパラメータ
+[subject]シンシア:dir
+	[replace]0x5E5DE8,RIRI->MOLDAパラメータ
+[subject]イブリン:dir
+	[replace]0x5E616C,RIRI->MOLDAパラメータ
+[subject]カレン:dir
+	[replace]0x5E64F0,RIRI->MOLDAパラメータ
+[subject]ドロテア:dir
+	[replace]0x5E6874,RIRI->MOLDAパラメータ
+[subject]ニナ:dir
+	[replace]0x5E6BF8,RIRI->MOLDAパラメータ
+[replace]0x00,RIRI->MOLDA_一括
+[replace]0x00,RIRI->MOLDA_敵ＨＰ一括
+[replace]0x5E4190,RIRI->MOLDA_LOVE
+/        [replace]0x00,RIRI->MOLDA_H1
+/[back]
+[replace]0x00,RIRI->MOLDA_H4
+[subject]おまけフル化:dir
+        [replace]0x00,RIRI->MOLDA_CG
+        /[subject]ＣＧ//_:toggle,0x847A00,0x847BB8-3F,00
+        [subject]シーン回想//_:toggle,0x847C00,FFFF0F00,00000000
+        [replace]0x00,RIRI->MOLDA_CARD
+[back]
+[subject]おまけフル化２:dir
+[adjustment]search, 0x847BAC,0100000003000000010000000300000000000000,0x750000, 0x950000, 4
+        [replace]0x00,RIRI->MOLDA_CG
+        [subject]シーン回想//_:toggle,0x847C00,FFFF0F00,00000000
+        [replace]0x00,RIRI->MOLDA_CARD
+[back]
+[/adjustment] 
+[/script]
+
+
+
+[script]
+[title]らいむいろ戦奇譚
+[distinction]発売日=2/12/13
+[process]Ai5win.exe
+[maker]elf
+[creator]秋野日和 
+[note] 
+ＣＤ版用です。
+ＤＶＤ版では使用出来ないようです。
+
+◆おまけフル化
+　以下の項目が全てＯＮになります。
+　・ＣＧ鑑賞フル化
+　・シーン鑑賞フル化
+　・音楽鑑賞フル化
+　・フリー戦闘モ－ド ＡＬＬ「甲」
+　・おまけシナリオ１,２ ＯＮ
+
+[/note]
+[replace]0x00,RIRI->lime_ALL
+[adjustment]search, 0x4684400,A8A9AAABACADAEAFB0B1B2B3B4B5B6B7,0x4000000, 0x4A00000, 4
+/[adjustment]search, 0x47553C0,E2002301E3002401FFFF000000000000,0x4000000, 0x4A00000, 4
+/[adjustment]search, 0x47553C0,3E01F4004001F5000B003F01F5004001,0x4000000, 0x4A00000, 4
+[subject]防衛レベル:calc,0x4686980,0,1100,unsigned
+[/adjustment] 
+[subject]教務成績:calc,0x1E4542E,0,99,unsigned
+[subject]好意度:dir
+[subject]木綿:calc,0x1E45424,0,300,unsigned
+[subject]麻:calc,0x1E45426,0,300,unsigned
+[subject]絹:calc,0x1E45428,0,300,unsigned
+[subject]綸子:calc,0x1E4542A,0,300,unsigned
+[subject]更紗:calc,0x1E4542C,0,300,unsigned
+[back]
+[/script]
+
+
+
+[script]
+[title]傷モノの学園　～case of saint spica～
+[distinction]発売日=2/11/29
+[process]KZSP.exe
+[maker]RaSeN
+[creator]秋野日和
+[note] 
+
+[/note]
+[subject]おまけモ－ドＯＮ:toggle,0x1182AA4,F0,00
+[subject]ＣＧフル化:toggle,0x1182AE6,0x1182AFC-FF,00
+[subject]回想フル化:toggle,0x1182BE6,0x1182BEE-FF,00
+[/script]
+
+
+
+[script]
+[title]さよらなエトランジュ体験版
+[distinction]発売日=2/00/00
+[process]BGI.exe
+[maker]ORBIT
+[creator]秋野日和
+[note] 
+
+[/note]
+[replace]0x00,RIRI->sayora_CG
+[/script]
+
+
+
+[script]
+[title]尽くしてあげちゃう４ ～私たちの蜜月～
+[distinction]発売日=2/12/06
+[process]TUKU4.EXE
+[maker]TRABULANCE
+[creator]秋野日和
+[note] 
+選択回数は一人選ぶ時のルート継続。
+好感度はエンディング分岐に関系します。
+
+[/note]
+[replace]0x00,RIRI->tuku4_CG
+[replace]0x00,RIRI->tuku4_ME 
+[adjustment]search, 0x4FD984,53544152542E495346,0x400000, 0x500000, 4
+	[replace]0x00,RIRI->尽く４好感度
+[root]
+	[replace]0x00,RIRI->尽く４選択回数
+[root]
+[/adjustment] 
+[/script]
+
+
+
+[script]
+[title]Ｄ．Ｃ． Ｗｈｉｔｅ Ｓｅａｓｏｎ 
+[distinction]発売日=2/12/13
+[process]DC_WS.exe
+[process]dcshoot.exe
+[maker]circus
+[creator]秋野日和
+[note] 
+ＤＶＤ版Version 1.00用です。
+
+[/note]
+[subject]ＣＧフル化:toggle,0x44D520,0x44D55B-01,00
+[subject]シーン回想フル化:toggle,0x44D5E8,0x44D625-01,00
+[subject]名前変更:string,0x44D4A8,8,null
+[subject]ＡＦＴＥＲ ＢＡＮＡＮＡ:dir
+[replace]0x00,RIRI->banana
+[subject]残機:calc,0x13B69C8,0,3,unsigned
+[subject]ゲージ ＭＡＸ:toggle,0xB6F254,64,00
+[subject]ショットＬＶ:calc,0xB6F250,0,2,unsigned
+[back]
+[/script]
+
+
+
+[script]
+[title]あいかぎ　～ひだまりと彼女の部屋着～
+[distinction]発売日=2/08/30
+[process]advwin32.exe
+[maker]Ｆ＆Ｃ
+[creator]秋野日和 
+[adjustment]search, 0x1BB97A0, 00000001010101010100000000010101,0x1B00000, 0x1CFFFFF, 4
+[note] 
+
+葉月姉妹とサブキャラのＣＧ。
+ずいぶん差があるような･･･。（^^;
+
+[/note]
+[subject]スペシャルＯＮ//_:toggle,0x1BB97D4,01,00
+[replace]0x00,RIRI->aikey_CG
+[/adjustment] 
+[/script]
+
+
+
+[script]
+[title]Ｂｌｕｅ－Ｓｋｙ－Ｂｌｕｅ【ｓ】空を舞う翼 
+[distinction]発売日=2/10/18
+[process]sora.exe
+[maker]EMU
+[creator]秋野日和 
+[note] 
+Version 1.10用です。
+ふーかさんは最後にクリアしましょう。(^^
+
+使用の際は必ず
+「SoraSave.dat」のバックアップを！
+（データ壊れる可能性大）
+
+なお、全員のクリアフラグもＯＮになります。
+[/note]
+[replace]0x00,RIRI->sora_CGMEED
+[/script]
+
+
+
+[script]
+[title]性裁～白濁の禊～
+[distinction]発売日=2/03/22
+[process]seisai.exe
+[maker]BLUEGALE
+[creator]秋野日和
+[note] 
+
+[/note]
+[subject]ＣＧ鑑賞フル化:toggle,0x5466A5,0x54671C-01,00
+[replace]0x00,RIRI->sei_ME
+[replace]0x00,RIRI->sei_ED
+[/script]
+
+
+
+[script]
+[title]密
+[distinction]発売日=2/11/22
+[process]Mitsu.exe
+[maker]Will
+[creator]秋野日和
+[note] 
+
+[/note]
+[replace]0x00,RIRI->mitu_CG
+[subject]回想フル化:toggle,0x529C32,0x529CA8-0100,0000
+[/script]
+
+
+
+[script]
+[title]人形の館～淫夢に抱かれたメイドたち～
+[distinction]発売日=2/10/25
+[process]ADV08.EXE
+[maker]アトリエかぐや
+[creator]秋野日和
+[note] 
+[/note]
+[subject]ＣＧフル化:toggle,0x8E576C,0x8E6154-01000000,00000000
+[subject]回想フル化:toggle,0x8E616C,0x8E628C-01000000,00000000
+[/script]
+
+
+
+[script]
+[title]めいでん☆ブリーダー 
+[distinction]発売日=2/03/21
+[process]Maiden.exe
+[maker]TEATIME
+[creator]秋野日和
+[note] 
+
+[/note]
+[replace]0x00,RIRI->maiden_CG
+[subject]回想フル化:toggle,0x47C349,0x47C354-01,00
+[/script]
+
+
+
+[script]
+[title]股人タクシー３
+[distinction]発売日=2/07/26
+[process]Taxi3.exe
+[maker]ザウス【吟醸】
+[creator]秋野日和
+[note] 
+
+[/note]
+[replace]0x00,RIRI->Taxi3_CG
+[subject]回想フル化:toggle,0x449830,FFFFFFFF,00000000
+[/script]
+
+
+
+[script]
+[title]Ｃａｌｉｚ
+[distinction]発売日=2/11/29
+[process]RAGE_R1.exe
+[maker]cronus 
+[creator]秋野日和
+[note] 
+Ver1.00用です。
+
+ＣＧフルですが確認作業が困難なため
+やや適当な作りになってます。(^^；
+
+[/note]
+[subject]愛情:calc,0x453454,0,200,unsigned
+[subject]開発:calc,0x453458,0,200,unsigned
+[subject]おまけＯＮ:toggle,0x4528A0,01,00
+[subject]ＣＧフル化:toggle,0x452968,0x452F60-01000000,00000000
+[replace]0x00,RIRI->Caliz_ME
+[root]
+[/script]
+
+
+
+[script]
+[title]誕生日～通い妻（自称）日記～
+[distinction]発売日=2/11/29
+[process]TBD.EXE
+[maker]ｊＡＮＩＳ
+[creator]秋野日和
+[note] 
+赤丸×が埋まらないのは仕様です。
+あんなの表示しなきゃいいのにね。（^_^；
+
+[/note]
+[subject]おまけＯＮ:toggle,0x12A2D18,63,03
+[subject]ザ・へタレ丸出しＯＮ:toggle,0x12A2D2D,FF,00
+[subject]ＣＧフル化:toggle,0x12A2D66,0x12A2D7F-FF,00
+[subject]回想フル化:toggle,0x12A2D19,0x12A2D2C-FF,00
+[subject]回想へタレフル化:toggle,0x12A2D19,0x12A2D2C-55,00
+[root]
+[/script]
+
+♭　:12A3568-9CFFFFFF00000000
+♪♯:12A3568-9CFFFFFF9CFFFFFF
+♪　:12A3568-0000000042FFFFFF
+♯　:12A3568-92FFFFFFF6FFFFFF
+
+兄♪　:12A3570-0000000024FFFFFF
+兄♪♯:12A3570-24FFFFFF24FFFFFF
+兄♪♭:12A3570-DC00000024FFFFFF
+兄♭  :12A3570-DC00000000000000
+兄∬  :12A3570-00000000DC000000
+兄♭∬:12A3570-DC000000DC000000
+兄♯  :12A3570-24FFFFFF00000000
+兄♯∬:12A3570-24FFFFFFDC000000
+
+
+
+[script]
+[title]魔法少女アイ２
+[distinction]発売日=2/09/27
+[process]ai2.exe
+[maker]Colors
+[creator]秋野日和
+[note] 
+
+[/note]
+[subject]おまけＯＮ:toggle,0xCFC708,01,00
+[subject]ＣＧ＆回想フル化:toggle,0xCFC2E8,0xCFC578-01000000,00000000
+[/script]
+
+
+
+[script]
+[title]いもうとブルマ
+[distinction]発売日=2/08/02
+[process]REALLIVE.EXE
+[maker]萌。
+[creator]秋野日和
+[note] 
+以下補足説明
+
+◆日付
+電卓の値に＋２した数値が
+ゲーム上の日付になります。
+
+◆彩/千夏/ななる
+隠しパラメータです。
+ゲーム画面には表示されません。
+変更するとイベントが発生したり
+ＥＤを変更出来たりします。
+
+[/note]
+[subject]日付:calc,0xA2ECA0,0,43,unsigned
+[subject]彩:dir
+	[replace]0xA2C268,RIRI->いもブルパラメータ
+[back]
+[subject]千夏:dir
+	[replace]0xA300E8,RIRI->いもブルパラメータ
+[back]
+[subject]ななる:dir
+	[replace]0xA32028,RIRI->いもブルパラメータ
+[back]
+[subject]おまけＯＮ:toggle,0x5491A4,01,00
+	[replace]0x00,RIRI->いもブル_CGME
+[root]
+[/script]
+
+
+
+[script]
+[title]モルダヴァイト体験版
+[distinction]発売日=2/00/00
+[process]ScrPlayer.exe
+[maker]CLOVER
+[creator]秋野日和
+[note] 
+以下補足説明
+
+◆再行動
+攻撃・移動後に使用すると
+再び各種行動が出来るようになります。
+値の固定を併用すれば何度でも攻撃できます。
+
+[/note]
+[subject]ヴァイン:dir
+	[replace]0x5753DC,RIRI->MOLパラメータ
+[back]
+[subject]ステラ:dir
+	[replace]0x5755C0,RIRI->MOLパラメータ
+[back]
+[subject]女の子:dir
+	[replace]0x5757A4,RIRI->MOLパラメータ
+[back]
+[subject]先生（敵）:dir
+	[replace]0x57721C,RIRI->MOLパラメータ
+[back]
+[subject]幹部（敵）:dir
+	[replace]0x577400,RIRI->MOLパラメータ
+[back]
+[subject]ＣＧフル:toggle,0x77FF84,01000000030000000100000003000000,0000000000000000000000000000000
+[/script]
+
+
+
+[script]
+[title]クイズ ダ・カーポ うたまるでポン
+[distinction]発売日=2/00/00
+[process]QDC.exe
+[maker]
+[creator]秋野日和
+[note] 
+
+[/note]
+[subject]ライフ減らない:toggle,0x4198ED,90909090,662D0100
+[/script]
+
+
+
+[script]
+[title]戦女神Ⅱ～失われし記憶への鎮魂歌～
+[distinction]発売日=2/11/25
+[process]AGE.EXE
+[maker]エウシュリー
+[creator]秋野日和
+[note] 
+Ver.1・Ver.1.01用です。
+Ver.1.02以降の対応は技術的に不可能です。
+ご了承下さい。
+
+なお、アドレス移動型のためこのままでは使えません。
+「アドレス補正の試作」を使用してください。
+戦闘中にセリカの最大ＨＰを「1000000～10F0000」
+ぐらいの範囲でサーチすれば当たるかと。
+ダメならHEAP3全部を設定してみて下さい。(^^;
+
+以下補足説明
+
+◆一人～五人目・敵パラメータ
+戦闘のパラメータ変更です。
+戦闘中のみ書き換え可能です。
+味方キャラは戦闘後も引き継がれます。
+
+◆敵ＨＰ一括”１”
+そのまんまです。
+敵キャラのＨＰが全員、"１"になります。
+
+◆愛情値
+ゲーム起動するたび、ゲーム内の表示が
+「+200」やら「+300」とか変わります。(^^；
+
+◆倉庫アイテム一括８０
+チェック後オフにすると
+アイテム全部無くなります。注意を。
+
+◆忍び歩き
+スキル「忍び歩き」の残り歩数です。
+スキル使わなくても数値増やせば
+エンカウントはありません。
+
+◆パーティー変更
+戦闘に出るキャラのみ
+任意のキャラに変更できます。
+変更してもキャラクターメニューには追加されません。
+
+[/note]
+[subject]所持金:calc,0xF7121C,0,999999,unsigned
+[subject]一人目:dir
+	[replace]0x10C05EC,RIRI->戦女神Ⅱパラメータ
+[back]
+[subject]二人目:dir
+	[replace]0x10C05F0,RIRI->戦女神Ⅱパラメータ
+[back]
+[subject]三人目:dir
+	[replace]0x10C05F4,RIRI->戦女神Ⅱパラメータ
+[back]
+[subject]四人目:dir
+	[replace]0x10C05F8,RIRI->戦女神Ⅱパラメータ
+[back]
+[subject]五人目:dir
+	[replace]0x10C05FC,RIRI->戦女神Ⅱパラメータ
+[back]
+	[replace]0x00,RIRI->戦女神Ⅱ_敵パラメータ
+[back]
+	[replace]0x00,RIRI->戦女神Ⅱ_敵ＨＰ一括
+[back]
+	[replace]0x00,RIRI->戦女神Ⅱ_熟練度ランク
+[root]
+[subject]経験値:dir
+	[replace]0x00,RIRI->戦女神Ⅱ_経験値ＭＡＸ
+        [subject]セリカ:calc,0xF71AE0,0,999999,unsigned
+        [subject]エクリア:calc,0xF71AE4,0,999999,unsigned
+        [subject]マリーニャ:calc,0xF71AE8,0,999999,unsigned
+        [subject]シュリ:calc,0xF71AEC,0,999999,unsigned
+        [subject]サリア:calc,0xF71AF0,0,999999,unsigned
+        [subject]レヴィア:calc,0xF71AF4,0,999999,unsigned
+        [subject]ロカ:calc,0xF71AF8,0,999999,unsigned
+        [subject]マウア:calc,0xF71AFC,0,999999,unsigned
+        [subject]カウラ:calc,0xF71B00,0,999999,unsigned
+        [subject]ウェンディス:calc,0xF71B04,0,999999,unsigned
+        [subject]シェンナ:calc,0xF71B08,0,999999,unsigned
+        [subject]シェスタ:calc,0xF71B0C,0,999999,unsigned
+        [subject]レシェンテ:calc,0xF71B10,0,999999,unsigned
+        [subject]イーリッシュ:calc,0xF71B14,0,999999,unsigned
+        [subject]エウシュリーちゃん:calc,0xF71B18,0,999999,unsigned
+        [subject]Ｂエウシュリーちゃん:calc,0xF71B1C,0,999999,unsigned
+[back]
+/	[replace]0x00,RIRI->戦女神Ⅱ_熟練度
+/[back]
+[subject]愛情値:dir
+        [subject]エクリア:calc,0xF8A724,0,999,unsigned
+        [subject]マリーニャ:calc,0xF8A728,0,999,unsigned
+        [subject]シュリ:calc,0xF8A72C,0,999,unsigned
+        [subject]サリア:calc,0xF8A730,0,999,unsigned
+        [subject]レヴィア:calc,0xF8A734,0,999,unsigned
+        [subject]ロカ:calc,0xF8A738,0,999,unsigned
+        [subject]マウア:calc,0xF8A73C,0,999,unsigned
+        [subject]カウラ:calc,0xF8A740,0,999,unsigned
+        [subject]ウェンディス:calc,0xF8A744,0,999,unsigned
+        [subject]シェンナ:calc,0xF8A748,0,999,unsigned
+        [subject]シェスタ:calc,0xF8A74C,0,999,unsigned
+        [subject]レシェンテ:calc,0xF8A750,0,999999,unsigned
+        [subject]イーリッシュ:calc,0xF8A754,0,999999,unsigned
+        [subject]エウシュリーちゃん:calc,0xF8A758,0,999999,unsigned
+        [subject]Ｂエウシュリーちゃん:calc,0xF8A75C,0,999999,unsigned
+[back]
+[subject]倉庫アイテム一括８０:dir
+        [subject]回復系アイテム:toggle,0xF8AB1C,0xF8AB83-50000000,FFFFFFFF
+        [subject]戦闘時アイテム:toggle,0xF8AB84,0xF8AC5F-50000000,FFFFFFFF
+        [subject]合成アイテム:toggle,0xF8AC60,0xF8AD4B-50000000,FFFFFFFF
+        [subject]売却用アイテム:toggle,0xF8AD4C,0xF8AD6B-50000000,FFFFFFFF
+        [subject]武器:toggle,0xF8B92C,0xF8BFDB-50000000,FFFFFFFF
+        [subject]防具:toggle,0xF8C8CC,0xF8CDAB-50000000,FFFFFFFF
+        [subject]盾:toggle,0xF8CF0C,0xF8D0BB-50000000,FFFFFFFF
+        [subject]装飾品:toggle,0xF8D22C,0xF8D33B-50000000,FFFFFFFF
+[back]
+/	[replace]0x00,RIRI->戦女神Ⅱ_重要アイテム
+/[root]
+[subject]セリカ忍び歩き:calc,0xF8EE10,0,999,unsigned
+[subject]マウア忍び歩き:calc,0xF8F270,0,999,unsigned
+[subject]セバスの門 到達階数:calc,0xF8DE80,0,99,unsigned
+	[replace]0x00,RIRI->戦女神Ⅱパーティー
+[root]
+[/script]
+[back]
+
+
+[script]
+[title]なないろ　～恋の天気予報
+[distinction]発売日=2/10/25
+[process]nanairo.exe
+[maker]FILM-SOFTWARE
+[creator]秋野日和
+/[adjustment]search, 0x7D5AE0,0C000000D40D690011000000,0x700000, 0x7FFFFF, 4
+[note] 
+
+[/note]
+[subject]メッセージ高速化:toggle,0x44D3B4,E703,FF00
+/[subject]晴れ:calc,0x7D4750,0,12,unsigned
+/[subject]曇り:calc,0x7D74C0,0,12,unsigned
+/[subject]雨:calc,0x7D5AE0,0,12,unsigned
+[/adjustment]
+[/script]
+
+
+
+[script]
+[title]てんあく
+[distinction]発売日=2/11/25
+[process]tenaku.exe
+[maker]Studio e.go!
+[creator]秋野日和
+[note] 
+ＯＮにしたら本編で適当なＣＧを見て下さい。
+その後タイトルに戻ればフル化になってます。
+
+[/note]
+[subject]善行ポイント:calc,0x4B0E22,0,20,unsigned
+	[replace]0x00,RIRI->TENAKU_CG
+[root]
+	[replace]0x00,RIRI->TENAKU_ME
+[root]
+[/script]
+
+
+
+[script]
+[title]特別授業２
+[distinction]発売日=2/09/20
+[process]tj2.exe
+[maker]BISHOP
+[creator]秋野日和
+[note] 
+
+[/note]
+[subject]快楽:dir
+        [subject]明日香:calc,0x570EE3,0,150,unsigned
+        [subject]優未:calc,0x570EE7,0,150,unsigned
+        [subject]聖来:calc,0x570EEB,0,150,unsigned
+[back]
+[subject]破壊:dir
+        [subject]明日香:calc,0x570EE4,0,150,unsigned
+        [subject]優未:calc,0x570EE8,0,150,unsigned
+        [subject]聖来:calc,0x570EEC,0,150,unsigned
+[back]
+	[replace]0x00,RIRI->TOKUBETU2_CG
+[root]
+	[replace]0x00,RIRI->TOKUBETU2_ME
+[root]
+[/script]
+
+
+
+[script]
+[title]リリカル・ミント
+[distinction]発売日=2/09/20
+[process]mint.exe
+[maker]あんたっちゃぶる
+[creator]秋野日和
+
+	[replace]0x00,RIRI->RIRI_MA
+[root]
+	[replace]0x00,RIRI->RIRI_PR
+[root]
+	[replace]0x00,RIRI->RIRI_DAY
+[root]
+[/script]
+
+
+
+[script]
+[title]ＤＡＬＫ外伝
+[distinction]発売日=2/09/27
+[process]System40.exe
+[maker]AliceSoft
+[creator]秋野日和
+[note] 
+ステータスの最大値は程々に。(^^；
+以下補足説明
+
+◆現在階数
+グナガン迷宮は「+20」の値になります。
+
+◆再度行動可能
+攻撃後に使用すると
+再び各種行動が出来るようになります。
+（残り移動は１０になります。）
+値の固定を併用すれば何度でも攻撃できます。
+
+◆必殺技使用回数
+「必殺ドリンク」の
+装備の有無は関係ありません。
+
+◆Ｈ回数
+Ｈするたび上がってくので
+何らかの意味はあるんだろうけど
+意味不明。(^^；
+
+[/note]
+[subject]マーティス:dir
+        [subject]ＬＶ:calc,0x76CC9F4,0,99999,unsigned
+        [subject]現在ＥＸＰ:calc,0x76CC9F8,0,99999,unsigned
+        [subject]最大ＥＸＰ:calc,0x76CC9FC,0,99999,unsigned
+        [subject]現在ＨＰ:calc,0x76CCA00,0,99999,unsigned
+        [subject]最大ＨＰ:calc,0x76CCA04,0,99999,unsigned
+        [subject]攻撃:calc,0x76CCA08,0,99999,unsigned
+        [subject]防御:calc,0x76CCA0C,0,99999,unsigned
+        [subject]魔法:calc,0x76CCA10,0,99999,unsigned
+        [subject]魔抵:calc,0x76CCA14,0,99999,unsigned
+        [subject]命中:calc,0x76CCA18,0,99999,unsigned
+        [subject]回避:calc,0x76CCA1C,0,99999,unsigned
+        [subject]残り移動:calc,0x76CCA20,0,99,unsigned
+        [subject]移動:calc,0x76CCA24,0,99,unsigned
+        [subject]射程:calc,0x76CCA28,0,10,unsigned
+        [subject]成長値:calc,0x76CCA3C,0,99,unsigned
+        [subject]クリティカル:calc,0x76CCA48,0,99,unsigned
+        [subject]反撃:calc,0x76CCA4C,0,99,unsigned
+        [subject]再行動:calc,0x76CCA50,0,99,unsigned
+        [subject]アイテム発見:calc,0x76CCA54,0,99,unsigned
+[subject]ボーナス値:dir
+        [subject]体力:calc,0x,0,99,unsigned
+        [subject]攻撃:calc,0x,0,99,unsigned
+        [subject]防御:calc,0x,0,99,unsigned
+        [subject]魔法:calc,0x,0,99,unsigned
+        [subject]魔抵:calc,0x,0,99,unsigned
+[back]
+[back]
+
+[subject]エレシア:dir
+        [subject]ＬＶ:calc,0x76CC524,0,99999,unsigned
+        [subject]現在ＥＸＰ:calc,0x76CC528,0,99999,unsigned
+        [subject]最大ＥＸＰ:calc,0x76CC52C,0,99999,unsigned
+        [subject]現在ＨＰ:calc,0x76CC530,0,99999,unsigned
+        [subject]最大ＨＰ:calc,0x76CC534,0,99999,unsigned
+        [subject]攻撃:calc,0x76CC538,0,99999,unsigned
+        [subject]防御:calc,0x76CC53C,0,99999,unsigned
+        [subject]魔法:calc,0x76CC540,0,99999,unsigned
+        [subject]魔抵:calc,0x76CC544,0,99999,unsigned
+        [subject]命中:calc,0x76CC548,0,99999,unsigned
+        [subject]回避:calc,0x76CC54C,0,99999,unsigned
+        [subject]残り移動:calc,0x76CC550,0,99,unsigned
+        [subject]移動:calc,0x76CC554,0,99,unsigned
+        [subject]射程:calc,0x76CC558,0,10,unsigned
+        [subject]成長値:calc,0x76CC56C,0,99,unsigned
+        [subject]クリティカル:calc,0x76CC578,0,99,unsigned
+        [subject]反撃:calc,0x76CC57C,0,99,unsigned
+        [subject]再行動:calc,0x76CC580,0,99,unsigned
+        [subject]アイテム発見:calc,0x76CC584,0,99,unsigned
+[subject]ボーナス値:dir
+        [subject]体力:calc,0x76CC590,0,99,unsigned
+        [subject]攻撃:calc,0x76CC594,0,99,unsigned
+        [subject]防御:calc,0x76CC598,0,99,unsigned
+        [subject]魔法:calc,0x76CC59C,0,99,unsigned
+        [subject]魔抵:calc,0x76CC5A0,0,99,unsigned
+[back]
+[subject]Ｈ回数:dir
+        [subject]LV1H:calc,0x76CC5C4,0,99,unsigned
+        [subject]LV2H:calc,0x76CC5C8,0,99,unsigned
+        [subject]LV3H:calc,0x76CC5CC,0,99,unsigned
+[back]
+[back]
+
+[subject]レジィナ:dir
+        [subject]ＬＶ:calc,0x76CC274,0,999999,unsigned
+        [subject]現在ＥＸＰ:calc,0x76CC278,0,99999,unsigned
+        [subject]最大ＥＸＰ:calc,0x76CC27C,0,99999,unsigned
+        [subject]現在ＨＰ:calc,0x76CC280,0,99999,unsigned
+        [subject]最大ＨＰ:calc,0x76CC284,0,99999,unsigned
+        [subject]攻撃:calc,0x76CC288,0,99999,unsigned
+        [subject]防御:calc,0x76CC28C,0,99999,unsigned
+        [subject]魔法:calc,0x76CC290,0,99999,unsigned
+        [subject]魔抵:calc,0x76CC294,0,99999,unsigned
+        [subject]命中:calc,0x76CC298,0,99999,unsigned
+        [subject]回避:calc,0x76CC29C,0,99999,unsigned
+        [subject]残り移動:calc,0x76CC2A0,0,99,unsigned
+        [subject]移動:calc,0x76CC2A4,0,99,unsigned
+        [subject]射程:calc,0x76CC2A8,0,10,unsigned
+        [subject]成長値:calc,0x76CC2BC,0,99,unsigned
+        [subject]クリティカル:calc,0x76CC2C8,0,99,unsigned
+        [subject]反撃:calc,0x76CC2CC,0,99,unsigned
+        [subject]再行動:calc,0x76CC2D0,0,99,unsigned
+        [subject]アイテム発見:calc,0x76CC2D4,0,99,unsigned
+[subject]ボーナス値:dir
+        [subject]体力:calc,0x76CC2E0,0,99,unsigned
+        [subject]攻撃:calc,0x76CC2E4,0,99,unsigned
+        [subject]防御:calc,0x76CC2E8,0,99,unsigned
+        [subject]魔法:calc,0x76CC2EC,0,99,unsigned
+        [subject]魔抵:calc,0x76CC2F0,0,99,unsigned
+[back]
+[subject]Ｈ回数:dir
+        [subject]LV1H:calc,0x76CC314,0,99,unsigned
+        [subject]LV2H:calc,0x76CC318,0,99,unsigned
+        [subject]LV3H:calc,0x76CC31C,0,99,unsigned
+[back]
+[back]
+
+[subject]ヴェルナ:dir
+        [subject]ＬＶ:calc,0x76CDF24,0,99999,unsigned
+        [subject]現在ＥＸＰ:calc,0x76CDF28,0,99999,unsigned
+        [subject]最大ＥＸＰ:calc,0x76CDF2C,0,99999,unsigned
+        [subject]現在ＨＰ:calc,0x76CDF30,0,99999,unsigned
+        [subject]最大ＨＰ:calc,0x76CDF34,0,99999,unsigned
+        [subject]攻撃:calc,0x76CDF38,0,99999,unsigned
+        [subject]防御:calc,0x76CDF3C,0,99999,unsigned
+        [subject]魔法:calc,0x76CDF40,0,99999,unsigned
+        [subject]魔抵:calc,0x76CDF44,0,99999,unsigned
+        [subject]命中:calc,0x76CDF48,0,99999,unsigned
+        [subject]回避:calc,0x76CDF4C,0,99999,unsigned
+        [subject]残り移動:calc,0x76CDF50,0,99,unsigned
+        [subject]移動:calc,0x76CDF54,0,99,unsigned
+        [subject]射程:calc,0x76CDF58,0,10,unsigned
+        [subject]成長値:calc,0x76CDF6C,0,99,unsigned
+        [subject]クリティカル:calc,0x76CDF78,0,99,unsigned
+        [subject]反撃:calc,0x76CDF7C,0,99,unsigned
+        [subject]再行動:calc,0x76CDF80,0,99,unsigned
+        [subject]アイテム発見:calc,0x76CDF84,0,99,unsigned
+[subject]ボーナス値:dir
+        [subject]体力:calc,0x76CDF90,0,99,unsigned
+        [subject]攻撃:calc,0x76CDF94,0,99,unsigned
+        [subject]防御:calc,0x76CDF98,0,99,unsigned
+        [subject]魔法:calc,0x76CDF9C,0,99,unsigned
+        [subject]魔抵:calc,0x76CDFA0,0,99,unsigned
+[back]
+[subject]Ｈ回数:dir
+        [subject]LV1H:calc,0x76CDFC4,0,99,unsigned
+        [subject]LV2H:calc,0x76CDFC8,0,99,unsigned
+        [subject]LV3H:calc,0x76CDFC8C,0,99,unsigned
+[back]
+[back]
+
+[subject]時子:dir
+        [subject]ＬＶ:calc,0x76C9E34,0,99999,unsigned
+        [subject]現在ＥＸＰ:calc,0x76C9E38,0,99999,unsigned
+        [subject]最大ＥＸＰ:calc,0x76C9E3C,0,99999,unsigned
+        [subject]現在ＨＰ:calc,0x76C9E40,0,99999,unsigned
+        [subject]最大ＨＰ:calc,0x76C9E44,0,99999,unsigned
+        [subject]攻撃:calc,0x76C9E48,0,99999,unsigned
+        [subject]防御:calc,0x76C9E4C,0,99999,unsigned
+        [subject]魔法:calc,0x76C9E50,0,99999,unsigned
+        [subject]魔抵:calc,0x76C9E54,0,99999,unsigned
+        [subject]命中:calc,0x76C9E58,0,99999,unsigned
+        [subject]回避:calc,0x76C9E5C,0,99999,unsigned
+        [subject]残り移動:calc,0x76C9E60,0,99,unsigned
+        [subject]移動:calc,0x76C9E64,0,99,unsigned
+        [subject]射程:calc,0x76C9E68,0,10,unsigned
+        [subject]成長値:calc,0x76C9E7C,0,99,unsigned
+        [subject]クリティカル:calc,0x76C9E88,0,99,unsigned
+        [subject]反撃:calc,0x76C9E8C,0,99,unsigned
+        [subject]再行動:calc,0x76C9E90,0,99,unsigned
+        [subject]アイテム発見:calc,0x76C9E94,0,99,unsigned
+[subject]ボーナス値:dir
+        [subject]体力:calc,0x76C9EA0,0,99,unsigned
+        [subject]攻撃:calc,0x76C9EA4,0,99,unsigned
+        [subject]防御:calc,0x76C9EA8,0,99,unsigned
+        [subject]魔法:calc,0x76C9EAC,0,99,unsigned
+        [subject]魔抵:calc,0x76C9EB0,0,99,unsigned
+[back]
+[subject]Ｈ回数:dir
+        [subject]LV1H:calc,0x76C9ED4,0,99,unsigned
+        [subject]LV2H:calc,0x76C9ED8,0,99,unsigned
+        [subject]LV3H:calc,0x76C9EDC,0,99,unsigned
+[back]
+[back]
+
+[subject]リーシャ:dir
+        [subject]ＬＶ:calc,0x76CDC84,0,99999,unsigned
+        [subject]現在ＥＸＰ:calc,0x76CDC88,0,99999,unsigned
+        [subject]最大ＥＸＰ:calc,0x76CDC8C,0,99999,unsigned
+        [subject]現在ＨＰ:calc,0x76CDC90,0,99999,unsigned
+        [subject]最大ＨＰ:calc,0x76CDC94,0,99999,unsigned
+        [subject]攻撃:calc,0x76CDC98,0,99999,unsigned
+        [subject]防御:calc,0x76CDC9C,0,99999,unsigned
+        [subject]魔法:calc,0x76CDCA0,0,99999,unsigned
+        [subject]魔抵:calc,0x76CDCA4,0,99999,unsigned
+        [subject]命中:calc,0x76CDCA8,0,99999,unsigned
+        [subject]回避:calc,0x76CDCAC,0,99999,unsigned
+        [subject]残り移動:calc,0x76CDCB0,0,99,unsigned
+        [subject]移動:calc,0x76CDCB4,0,99,unsigned
+        [subject]射程:calc,0x76CDCB8,0,10,unsigned
+        [subject]成長値:calc,0x76CDCCC,0,99,unsigned
+        [subject]クリティカル:calc,0x76CDCD8,0,99,unsigned
+        [subject]反撃:calc,0x76CDCDC,0,99,unsigned
+        [subject]再行動:calc,0x76CDCE0,0,99,unsigned
+        [subject]アイテム発見:calc,0x76CDCE4,0,99,unsigned
+[subject]ボーナス値:dir
+        [subject]体力:calc,0x76CDCF0,0,99,unsigned
+        [subject]攻撃:calc,0x76CDCF4,0,99,unsigned
+        [subject]防御:calc,0x76CDCF8,0,99,unsigned
+        [subject]魔法:calc,0x76CDCFC,0,99,unsigned
+        [subject]魔抵:calc,0x76CDD00,0,99,unsigned
+[back]
+[subject]Ｈ回数:dir
+        [subject]LV1H:calc,0x76CDD24,0,99,unsigned
+        [subject]LV2H:calc,0x76CDD28,0,99,unsigned
+        [subject]LV3H:calc,0x76CDD2C,0,99,unsigned
+[back]
+[back]
+
+[subject]ファーファ:dir
+        [subject]ＬＶ:calc,0x76CD9D4,0,99999,unsigned
+        [subject]現在ＥＸＰ:calc,0x76CD9D8,0,99999,unsigned
+        [subject]最大ＥＸＰ:calc,0x76CD9DC,0,99999,unsigned
+        [subject]現在ＨＰ:calc,0x76CD9E0,0,99999,unsigned
+        [subject]最大ＨＰ:calc,0x76CD9E4,0,99999,unsigned
+        [subject]攻撃:calc,0x76CD9E8,0,99999,unsigned
+        [subject]防御:calc,0x76CD9EC,0,99999,unsigned
+        [subject]魔法:calc,0x76CD9F0,0,99999,unsigned
+        [subject]魔抵:calc,0x76CD9F4,0,99999,unsigned
+        [subject]命中:calc,0x76CD9F8,0,99999,unsigned
+        [subject]回避:calc,0x76CD9FC,0,99999,unsigned
+        [subject]残り移動:calc,0x76CDA00,0,99,unsigned
+        [subject]移動:calc,0x76CDA04,0,99,unsigned
+        [subject]射程:calc,0x76CDA08,0,10,unsigned
+        [subject]成長値:calc,0x76CDA1C,0,99,unsigned
+        [subject]クリティカル:calc,0x76CDA28,0,99,unsigned
+        [subject]反撃:calc,0x76CDA2C,0,99,unsigned
+        [subject]再行動:calc,0x76CDA30,0,99,unsigned
+        [subject]アイテム発見:calc,0x76CDA00,0,99,unsigned
+[subject]ボーナス値:dir
+        [subject]体力:calc,0x76CDA40,0,99,unsigned
+        [subject]攻撃:calc,0x76CDA44,0,99,unsigned
+        [subject]防御:calc,0x76CDA48,0,99,unsigned
+        [subject]魔法:calc,0x76CDA4C,0,99,unsigned
+        [subject]魔抵:calc,0x76CDA50,0,99,unsigned
+[back]
+[subject]Ｈ回数:dir
+        [subject]LV1H:calc,0x76CDA74,0,99,unsigned
+        [subject]LV2H:calc,0x76CDA78,0,99,unsigned
+        [subject]LV3H:calc,0x76CDA7C,0,99,unsigned
+[back]
+[back]
+
+[subject]フィーメ:dir
+        [subject]ＬＶ:calc,0x76CD7A4,0,99999,unsigned
+        [subject]現在ＥＸＰ:calc,0x76CD7A8,0,99999,unsigned
+        [subject]最大ＥＸＰ:calc,0x76CD7AC,0,99999,unsigned
+        [subject]現在ＨＰ:calc,0x76CD7B0,0,99999,unsigned
+        [subject]最大ＨＰ:calc,0x76CD7B4,0,99999,unsigned
+        [subject]攻撃:calc,0x76CD7B8,0,99999,unsigned
+        [subject]防御:calc,0x76CD7BC,0,99999,unsigned
+        [subject]魔法:calc,0x76CD7C0,0,99999,unsigned
+        [subject]魔抵:calc,0x76CD7C4,0,99999,unsigned
+        [subject]命中:calc,0x76CD7C8,0,99999,unsigned
+        [subject]回避:calc,0x76CD7CC,0,99999,unsigned
+        [subject]残り移動:calc,0x76CD7D0,0,99,unsigned
+        [subject]移動:calc,0x76CD7D4,0,99,unsigned
+        [subject]射程:calc,0x76CD7D8,0,10,unsigned
+        [subject]成長値:calc,0x76CD7EC,0,99,unsigned
+        [subject]クリティカル:calc,0x76CD7F8,0,99,unsigned
+        [subject]反撃:calc,0x76CD7FC,0,99,unsigned
+        [subject]再行動:calc,0x76CD800,0,99,unsigned
+        [subject]アイテム発見:calc,0x76CD804,0,99,unsigned
+[subject]ボーナス値:dir
+        [subject]体力:calc,0x76CD810,0,99,unsigned
+        [subject]攻撃:calc,0x76CD814,0,99,unsigned
+        [subject]防御:calc,0x76CD818,0,99,unsigned
+        [subject]魔法:calc,0x76CD81C,0,99,unsigned
+        [subject]魔抵:calc,0x76CD820,0,99,unsigned
+[back]
+[subject]Ｈ回数:dir
+        [subject]LV1H:calc,0x76CD844,0,99,unsigned
+        [subject]LV2H:calc,0x76CD848,0,99,unsigned
+        [subject]LV3H:calc,0x76CD84C,0,99,unsigned
+[back]
+[back]
+	[replace]0x00,RIRI->DALK_SAI
+[root]
+	[replace]0x00,RIRI->DALK_SB
+[root]
+	[replace]0x00,RIRI->DALK_HW
+[root]
+[subject]現在階数:calc,0x76CCA74,0,10019,unsigned
+[/script]
+
+
+
+[script]
+[title]最終痴漢電車
+[process]ADV04.EXE
+[maker]アトリエかぐや
+[creator]秋野日和
+[note] 
+
+[/note]	
+[subject]ＣＧ/ＣＧフル化/_:toggle,0x67D04C,0x67D64C-01000000,00000000
+[subject]シーン回想/シーン回想フル化/_:toggle,0x67D6C0,0x67D733-01000000,00000000
+[/script]
+
+
+
+[script]
+[title]狂淫学園
+[process]ADV05.EXE
+[maker]アトリエかぐや
+[creator]秋野日和
+[note] 
+
+[/note]	
+[subject]ＣＧ/ＣＧフル化/_:toggle,0xAD0A80,0xAD0B35-01,00
+[subject]シーン回想/シーン回想フル化/_:toggle,0xAD0EB0,0xAD0EBF-01,00
+[/script]
+
+
+
+
+[script]
+[title]初夜献上
+[distinction]発売日=
+[process]REALLIVE.EXE
+[maker]大熊猫
+[creator]秋野日和
+[note] 
+
+[/note]	
+[subject]ＣＧ/ＣＧフル化/_:b_toggle,0,RIRI->syoya_CG,offset
+[subject]シーン回想/シーン回想フル化/_:b_toggle,0,RIRI->syoya_ME,offset
+[/script]
+
+
+
+[script]
+[title]はじめてのおるすばん
+/[distinction]発売日
+[process]REALLIVE.EXE
+[maker]ZERO
+[creator]秋野日和
+[note] 
+
+[/note]	
+[subject]ＣＧぎゃらり/ＣＧフル化/_:toggle,0x5EF7B4,E0FFFFFFFFFF3F,00000000000000
+[subject]おもいでのへや/おもいでのへやフル化/_:toggle,0x5EF7A8,FEFFFFFF3F,0000000000
+[/script]
+
+
+
+[script]
+[title]新体操（仮）
+/[distinction]発売日
+[process]ScrPlayer.exe
+[maker]PANDA HOUSE
+[creator]秋野日和
+[note] 
+
+[/note]	
+[subject]プレゼント/プレゼントＯＮ/_:toggle,0x6A1D04,01,00
+[subject]グラフィック鑑賞/グラフィック鑑賞フル化/_:b_toggle,0,RIRI->sintai_CG,offset
+[subject]イベント鑑賞/イベント鑑賞フル化/_:toggle,0x6A418C,FFFFFFFFFFFF01,00000000000000
+[/script]
+
+
+
