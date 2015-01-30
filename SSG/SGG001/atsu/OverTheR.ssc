@@ -1,0 +1,10 @@
+	[subject]名前:string,0x0, 16, null
+	[subject]レベル:calc,0x101,0,0xFFFF
+	[subject]現在体力:calc,0x206,0,0xFFFF
+	[subject]現在精神:calc,0x30B,0,0xFFFF
+	[subject]最大体力:calc,0x410,0,0xFFFF
+	[subject]最大精神:calc,0x515,0,0xFFFF
+	[subject]知力:calc,0x61A,0,0xFFFF
+	[subject]礼法:calc,0x71F,0,0xFFFF
+	[subject]モラル:calc,0x824,0,0xFFFF
+[back]
