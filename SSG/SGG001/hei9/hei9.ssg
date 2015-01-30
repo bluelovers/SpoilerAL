@@ -1,0 +1,246 @@
+SSG for SpoilerAL ver 3.2
+
+[script]
+[title]ＷｉｎｎｉｎｇＰｏｓｔ５
+[process]WP5.ICD
+[maker]コーエー
+[creator]平九郎
+[note]
+取り敢えず
+簡単なところを
+
+Me未対応
+98でしか動作確認してません
+[/note]
+[subject]所持金:calc,0x00656318,0,9999999,signed,little_e
+[subject]獲得賞金:calc,0x0185DD24,0,9999999,signed,little_e
+[subject]名声:calc,0x0185DD34,0,0xC350,signed,little_e
+[subject]通算勝利:calc,0x0185DD2C,0,0x2710,signed,little_e
+[subject]ＧⅠ通算勝利:calc,0x0185DD1C,0,0x2710,signed,little_e
+[subject]秘書:dir
+	[subject]西村里咲:toggle,0x0065632E,C0,C0
+	[subject]萱野晶子:toggle,0x0065632E,D0,D0
+	[subject]麻川貢:toggle,0x0065632E,E0,E0
+[back]
+[subject]牧場長:dir
+	[subject]宝塚菊夫:toggle,0x185FB94,00,00
+	[subject]緒川源:toggle,0x185FB94,01,01
+	[subject]篠原宏美:toggle,0x185FB94,02,02
+	[subject]牧野若菜:toggle,0x185FB94,03,03
+	[subject]ロドリコテシオ:toggle,0x185FB94,04,04
+[root]
+[/script]
+
+[script]
+[title]ＨｏｒｓｅＢｒｅａｋｅｒ
+[process]HB.ICD
+[maker]コーエー
+[creator]平九郎
+[note]
+年度勝利数などの変化は
+タイトル集め程度に考えて下さい
+
+自身の能力ＭＡＸは所属によって
+チョット違うので、注意
+[/note]
+[subject]年度勝利数:calc,0x1806A10,0,0xFFFF,signed,little_e
+[subject]年度２着数:calc,0x1806A12,0,0xFFFF,signed,little_e
+[subject]年度３着数:calc,0x1806A14,0,0xFFFF,signed,little_e
+[subject]年度着外数:calc,0x1806A16,0,0xFFFF,signed,little_e
+[subject]年度賞金額:calc,0x1806A18,0,0xFFFFFFFF,signed,little_e
+[subject]調教能力ＭＡＸ:dir
+	[subject]栗東（男）:toggle,0x1806A26,FBFF,FBFF
+	[subject]栗東（女）:toggle,0x1806A26,FFFF,FFFF
+	[subject]美浦（男）:toggle,0x1806A26,FF3F,FF3F
+	[subject]美浦（女）:toggle,0x1806A26,FF7F,FF7F
+[root]
+[/script]
+
+[script]
+[title]ＷｉｎｎｉｎｇＰｏｓｔ４ＰＫ
+[process]WP4PK.EXE
+[maker]コーエー
+[creator]平九郎
+[note]
+所有金額
+獲得賞金
+名声
+騎手育成モードでの
+騎手の能力をＭＡＸに
+変更出来ます
+
+所有金額は１６進で入れて＾＾；；
+獲得賞金はあまり無茶な
+数字入れないように＾＾；；
+
+騎手育成の１～８人目の
+順番は製作順です
+値を固定しない場合
+育成モードでの結果次第で
+能力が上下します
+・・・って言っても下がるだけ＾＾；；
+【パッチ当てないと動かないです】
+[/note]
+[subject]所有金額:calc,0x62EC20,0,0xFFFFFFFF,unsigned,little_e
+[subject]馬主獲得賞金:calc,0x12A36F6,0,0xFFFFFF,unsigned,little_e
+[subject]牧場獲得賞金:calc,0x12A308C,0,0xFFFFFF,unsigned,little_e
+[subject]名声:calc,0x12A3700,0,10000,unsigned,little_e
+[subject]育成騎手能力ＭＡＸ:dir
+	[subject]１人目:toggle,0x12A38FC,FFFFFFFFFFFFFFFFFFFFFFFFFFFF,FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+	[subject]２人目:toggle,0x12A394C,FFFFFFFFFFFFFFFFFFFFFFFFFFFF,FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+	[subject]３人目:toggle,0x12A399C,FFFFFFFFFFFFFFFFFFFFFFFFFFFF,FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+	[subject]４人目:toggle,0x12A39EC,FFFFFFFFFFFFFFFFFFFFFFFFFFFF,FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+	[subject]５人目:toggle,0x12A3A3C,FFFFFFFFFFFFFFFFFFFFFFFFFFFF,FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+	[subject]６人目:toggle,0x12A3A8C,FFFFFFFFFFFFFFFFFFFFFFFFFFFF,FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+	[subject]７人目:toggle,0x12A3ADC,FFFFFFFFFFFFFFFFFFFFFFFFFFFF,FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+	[subject]８人目:toggle,0x12A3B2C,FFFFFFFFFFFFFFFFFFFFFFFFFFFF,FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+[/script]
+
+[script]
+[title]ＬｕｎａｔｉｃＤａｗｎⅣ
+[process]LD4.EXE
+[maker]アートディンク
+[creator]平九郎
+[note]
+ver:1.2.1.5
+
+Win98でしか使えないようです、ご注意を
+後、常駐アプリなどで正常に動作しない場合があります
+
+ＬＧＤ祭壇前直通などはＯＮにするとゲームを
+１度終了するまで祭壇前直通のままです
+
+＊＊＊＊＊注意＊＊＊＊＊
+機械,魔法の属性
+(合計10000になるように)
+秩序,混沌,光,闇の属性
+(合計20000になるように)
+火,風,土,水の属性
+(合計20000になるように)
+発展度
+(最大10000)
+＊＊＊＊＊＊＊＊＊＊＊＊
+
+これ使って問題起きても知りません（爆）
+これで属性変えても１度平行世界かネットで
+世界移動しないと実際には変化しませんのでご注意を
+後、プレー中に属性変化、発展などに関わるプレーを
+してた場合その数値も加算され数値が上下します
+[/note]
+[subject]ＬＧＤ祭壇前直通:dir
+	[subject]ＯＮ:toggle,0x013711B0,038051003F00,038051003F00
+[back]
+[subject]ＬＧＤを爺の祭壇へ:dir
+	[subject]ＯＮ:toggle,0x013711B0,03F054003800,03F054003800
+[back]
+[subject]ＬＧ出口を爺の祭壇へ:dir
+	[subject]ＯＮ:toggle,0x01371188,03F054003800,03F054003800
+[back]
+[subject]ＬＧ出口をＬＧＤ祭壇前へ:dir
+	[subject]ＯＮ:toggle,0x01371188,038051003F00,038051003F00
+[back]
+[subject]世界属性:dir
+	[subject]魔法:calc,0x133E700,0,10000,signed,little_e
+	[subject]機械:calc,0x133E702,0,10000,signed,little_e
+[back]
+[subject]神聖属性:dir
+	[subject]秩序:calc,0x133E704,0,20000,signed,little_e
+	[subject]混沌:calc,0x133E706,0,20000,signed,little_e
+	[subject]光:calc,0x133E708,0,20000,signed,little_e
+	[subject]闇:calc,0x133E70A,0,20000,signed,little_e
+[back]
+[subject]精霊属性:dir
+	[subject]火:calc,0x133E70C,0,20000,signed,little_e
+	[subject]風:calc,0x133E70E,0,20000,signed,little_e
+	[subject]土:calc,0x133E710,0,20000,signed,little_e
+	[subject]水:calc,0x133E712,0,20000,signed,little_e
+[back]
+[subject]街の発展度:dir
+	[subject]発展度:calc,0x133E714,0,10000,signed,little_e
+[back]
+[subject]ＬＧＤ敵レベル:dir
+	[subject]ＬＧＤ敵レベル:calc,0x133E72E,0,112,signed,little_e
+[/script]
+
+[script]
+[title]ＬｕｎａｔｉｃＤａｗｎⅢ
+[process]LD3.EXE
+[maker]アートディンク
+[creator]平九郎
+[note]
+vre,1.1.0.8
+
+＊＊＊＊注意＊＊＊＊
+機械,魔法の属性
+(合計10000になるように)
+秩序,混沌,光,闇の属性
+(合計20000になるように)
+火,風,土,水の属性
+(合計20000になるように)
+発展度
+(最大10000)
+＊＊＊＊＊＊＊＊＊＊
+
+これ使って問題起きても知りません（爆）
+これで属性変えても１度平行世界かネットで
+世界移動、セーブして終了後ロードして
+起動しないと実際には変化しませんのでご注意を
+[/note]
+[subject]世界属性:dir
+	[subject]魔法:calc,0x1239D48,0,10000,signed,little_e
+	[subject]機械:calc,0x1239D4A,0,10000,signed,little_e
+[back]
+[subject]神聖属性:dir
+	[subject]秩序:calc,0x1239D4C,0,20000,signed,little_e
+	[subject]混沌:calc,0x1239D4E,0,20000,signed,little_e
+	[subject]光:calc,0x1239D50,0,20000,signed,little_e
+	[subject]闇:calc,0x1239D52,0,20000,signed,little_e
+[back]
+[subject]精霊属性:dir
+	[subject]火:calc,0x1239D58,0,20000,signed,little_e
+	[subject]風:calc,0x1239D5A,0,20000,signed,little_e
+	[subject]土:calc,0x1239D54,0,20000,signed,little_e
+	[subject]水:calc,0x1239D56,0,20000,signed,little_e
+[back]
+[subject]街の発展度:dir
+	[subject]発展度:calc,0x1239D5C,0,10000,signed,little_e
+[/script]
+
+[script]
+[title]ザ・ファミレス　ＰＵＫ
+[process]FAMIRES.EXE
+[maker]マスターピース
+[creator]平九郎
+[note]
+すいません、各キャラの能力までは
+面倒なので調べませんでした（笑）
+だからお金だけ（汗）
+古いゲームだし需要もないでしょう（爆）
+[/note]
+[subject]所持金:calc,0x4E3238,0,0xFFFFFFFF,unsigned,little_e
+[/script]
+
+[script]
+[title]Ａ列車で行こうⅢ
+[process]A3WIN.EXE
+[maker]アートディンク
+[creator]平九郎
+[note]
+ＡＲＴＤＩＮＫ　ＢＥＳＴ　ＣＨＯＩＣＥ版の
+Ａ列車で行こうⅢのです
+他の（あるんか？）ＡⅢでは知りません
+[/note]
+[subject]所持金:calc,0x43D19C,0,0xFFFFFFFF,unsigned,little_e
+[/script]
+
+[script]
+[title]Ｎｅｏ．ＡＴＬＡＳ
+[process]NAWIN.EXE
+[maker]アートディンク
+[creator]平九郎
+[note]
+所持金増やすと提督にかかる給料も
+めちゃくちゃ増えていきます
+[/note]
+[subject]所持金:calc,0x1B4B900,0,0xFFFFFFFF,unsigned,little_e
+[/script]
