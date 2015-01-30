@@ -1,0 +1,38 @@
+[group]K2_PR
+[note]wordwrap
+末莉…って名前からしてヤバげ（笑）
+
+注意：
+ＣＧＡＬＬは、元のセーブデータをバックアップし、新たに初期化したセーブデータを利用して行って下さい。対象ファイルは、[Kazoku.sav]。ファイルのない状態で起動すれば、新しく同名の初期化されたファイルが作成されます。
+
+[/note]
+
+[subject]パラメータ関連:dir
+[subject]好感度確認・調整:dir
+	[repeat]K2LST->K2REP1,0,5,1
+[/group]
+
+
+[group]K2REP1
+[subject][! @K2LST->LST_a,$Val !]/実行/_:calc,0x[! 0x494A14+$Val*4 !],0x00,0x19,unsigned
+[/group]
+
+
+[group]LST_a
+高屋敷春花
+高屋敷末莉
+高屋敷準
+高屋敷青葉
+高屋敷真純
+[/group]
+
+[group]K2_CG
+[subject]"物置"使用可能/実行/_:toggle,0x4D3C92,FC01
+[subject]シーン回想＋クリアフラグ:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x4D3C98,F0DFFF0F
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x4D3C98,00000000
+[back]
+[subject]ＣＧ鑑賞:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x4D3CA5,FEFFFFFFFFFFFBDFFBFFFEFFFBFF	FFFFDFFFF7FFF7FDFFF7FEFFEFFFFFFD7EFF7F
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x4D3CA5,0x4D3CC5-00
+[/group]
