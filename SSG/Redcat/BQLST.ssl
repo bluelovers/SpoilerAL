@@ -1,0 +1,175 @@
+[group]BQ_SSG
+[note]wordwrap
+声付きなのは大いに結構ｗなんですが、その分中文版から（特にストーリー関係等を）いろいろ削ってるのがなんですな。移植版は単純にギャルゲ色がますます濃くなってるみたいで(^^;
+
+以下、少々補足です。
+
+■■経営パート関連
+増えない系：
+詳細は省きますが、パラメータ関係は複数の配列を利用してます。これらは最後に実データ→画面表示上に戻すうえで反映させる部分への作用ですので、関係するフェイズ開始前に利用してください。
+
+■■パラメータ関係
+基本能力値はほとんどカンストしますが、ＬＶや経験値にはそれがありません。またＬＶが高過ぎると、メモリ上で行われている暗号復号チェック（内部で若干の改造対策がしてありますが、ＳＳＧ上でこれを外しています）に異常が生じフリーズする可能性があります。ＬＶは９９まで、経験値は９９９９９程度までに抑えておくのをおすすめします。
+
+■■フラグ関連
+イベント発生進行にはかなりの汎用フラグが干与するため単純にシナリオを巻き戻すことは難しいと思います。基本的に現時点より１週間程遡って取りこぼしたイベントを回収したり、創造パート用に余裕を割いたりするためのものと考えてください。なお各ヒロイン発生方法が異なる共有イベント等にこの機能を利用することにより、本来オンリープレイしかできないこのソフトでも複数人同時攻略が可能になります。なお、日数変更の際は「年次」数に注意してください。９月～１２月が１、１月～８月には２になります。
+
+■■おまけ
+デバッグモードの残骸らしき好感度モニタ等を出現させますが、実際は利用できません。ソフトの仕様からして改造対策用のダミーの可能性もありますが、移植につき仕様変更されたにもかかわらず、キャラクタ名が中文版のままなことから原版の名残をそのまま放置したものと判断されます。
+[/note]
+
+[subject]経営パート関連:dir
+	[subject]ラトーの疲労度溜まらない/実行/_:toggle,0x416DC8,EB00,7D0A
+	[subject]無条件で店舗火力・格式最大化/実行/_:b_toggle,0x414DA6,BQLST->BQ_b,real
+	[subject]経営時不潔ポイント増えない/実行/_:toggle,0x41504F,33C090,034170
+	[subject]創造１回で必ず完成/実行/_:b_toggle,0x415EC9,BQLST->BQ_2b,real
+
+[subject]ここまで:split,line,-1,100,5
+[root]
+
+[subject]パラメータ関連:dir
+[size]4
+ [io_fep] $Val^(0xD2A4CD3A), $Val^(0xD2A4CD3A)
+	[subject]所持金/現在値/_:calc,0x4E82E8,0x00000000,0x05F5E0FF,unsigned
+	[subject]好感度確認調整:dir
+		[repeat]BQLST->BQREP1,0,12,1
+ [subject]ここまで:split,roll,-2,-,100
+	[back]
+	[subject]基本ステータス編集:dir
+		[repeat]BQLST->BQREP2,0,13,1
+ [subject]ここまで:split,line,-1,100,5
+	[back]
+ [/io_fep]
+	[subject]経験値編集:dir
+		[repeat]BQLST->BQREP3,0,13,1
+	[back]
+[/size]
+[subject]ここまで:split,line,-1,100,5
+[root]
+
+[subject]フラグ関連:dir
+[size]4
+ [io_fep] $Val^(0xD2A4CD3A), $Val^(0xD2A4CD3A)
+	[subject]年次/現在値/_:calc,0x4E82F8,0x01,0x02,unsigned
+	[subject]月/現在値/_:calc,0x4E82F4,0x01,0x0C,unsigned
+	[subject]日/現在値/_:calc,0x4E82F0,0x01,0x1F,unsigned
+ [/io_fep]
+[/size]
+	[subject]曜日/現在値/_:d_list,0x4E82FC,BQLST->LST_b,0x00000000,0xFFFFFFFF,BQLST->LST_c,real
+	[subject]狩場全開/実行/_:toggle,0x4E8308,0x4E833F-01000000
+	[subject]全料理習得済/実行/_:b_toggle,0x4E89E8,BQLST->BQ_c,real
+[subject]ここまで:split,line,-1,100,5
+[root]
+
+[subject]ＣＧモード関連:dir
+ [subject]おまけ項目:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x50F190,0x50F3C3-01000000
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x50F190,0x50F3C3-00
+ [back]
+[subject]ここまで:split,line,-1,100,5
+[root]
+
+[subject]おまけ:dir
+	[subject]中文版デバッグモードの残骸？/実行/_:toggle,0x4CAF84,01000000,00000000
+[subject]ここまで:split,line,-1,100,5
+[root]
+
+[/group]
+
+
+[group]BQREP1
+[subject][! @BQLST->LST_a,$Val !]/現在値/_:calc,_0x4E89D0+0x[! $Val*0x468 !],0x0000,0x03E7,unsigned
+[/group]
+
+
+[group]BQREP2
+[subject][! @BQLST->LST_a,$Val !]:dir
+	[replace]_0x4E89B8+0x[! $Val*0x468 !],BQLST->BQ_a
+[/group]
+
+
+[group]BQREP3
+[subject][! @BQLST->LST_a,$Val !]/現在値/_:calc,_0x4E89D4+0x[! $Val*0x468 !],0x00000000,0x000F423F,unsigned
+[/group]
+
+
+[group]BQ_a
+[subject]ＬＶ/現在値/_:calc,0x00,0x01,0x63,unsigned
+[subject]体力/現在値/_:calc,0x04,0x0000,0x07CF,unsigned
+ [e_with],0x0000,0x03E7,unsigned
+  [subject]料理能力/現在値/_:calc,0x08
+  [subject]攻撃/現在値/_:calc,0x0C
+  [subject]防御/現在値/_:calc,0x10
+  [subject]速度/現在値/_:calc,0x14
+ [/e_with]
+ [subject]ここまで:split,roll,-2,-,100
+[back]
+[/group]
+
+
+[group]BQ_b
+0x414DA6,EB00,7E0A
+0x414DBC,EB00,7E0A
+[/group]
+
+
+[group]BQ_2b
+0x415EC9,EB00,750E
+0x415F14,EB00,750E
+[/group]
+
+
+[group]BQ_c
+0x4E89E8,0x4E8A37-0000803F
+0x4E8E50,0x4E8E77-0000803F
+0x4E92B8,0x4E92EF-0000803F
+0x4E9720,0x4E976B-0000803F
+0x4E9B88,0x4E9BBF-0000803F
+0x4E9FF0,0x4EA017-0000803F
+0x4EA458,0x4EA493-0000803F
+0x4EA8C0,0x4EA91B-0000803F
+0x4EAD28,0x4EAD53-0000803F
+0x4EB190,0x4EB1D7-0000803F
+0x4EB5F8,0x4EB633-0000803F
+0x4EBA60,0x4EBBBB-0000803F
+0x4EBEC8,0x4EC027-0000803F
+[/group]
+
+
+[group]LST_a
+ラベンダ・スウィート
+セージィ・パイナップル
+サン・フラワー
+ラム・テイル
+クレス・ウォーター
+ローズ・シナモン
+サフラン・ターメリック
+ミント・ハイビスカス
+アップル・ベリー
+メロウ・ブルーフラワー
+スノー・ブルーフラワー
+メリッサ・レモンバルム
+ラトー・コリアンダー
+[/group]
+
+
+[group]LST_b
+月曜日
+火曜日
+水曜日
+木曜日
+金曜日
+土曜日
+日曜日
+[/group]
+
+
+[group]LST_c
+0xD2A4CD3A
+0xD2A4CD3B
+0xD2A4CD38
+0xD2A4CD39
+0xD2A4CD3E
+0xD2A4CD3F
+0xD2A4CD3C
+[/group]
