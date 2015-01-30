@@ -1,0 +1,625 @@
+SSG for SpoilerAL ver 5.3
+
+
+■■■■■■■■■■■■■■
+
+
+[script]
+[title]パティシエなにゃんこ
+[distinction]発売日=3/02/28
+[process]pnyan.exe
+[maker]ぱじゃまソフト
+[creator]秋野日和
+[note]wordwrap
+◆アルバムＯＮ
+最初から始めるかロードした後に使用して下さい。
+その後にタイトルに戻ればＯＫです。
+
+[/note]	
+/[adjustment]search, 0x49EA98,3023433E,0x400000, 0x4FFFFF, 4
+[subject]ＣＧ/ＣＧフル化/_:toggle,0x49EC20,0x49ED8F-01,00
+[subject]アルバム＋回想/アルバムＯＮ＋回想フル化/_:toggle,0x49DAF8,0x49DB13-01000000,00000000
+/[/adjustment]
+[/script]
+
+■■■■■■■■■■■■■■
+
+[script]
+[title]あいあん☆めいど　～恋のご奉仕大作戦～
+[distinction]発売日=3/02/14
+[process]IRONMAID.EXE
+[maker]TOUCHABLE
+[creator]秋野日和
+[note]wordwrap
+
+[/note]	
+[subject]絵梨奈 不機嫌度:calc,0x59982C,0,4
+[subject]日付:calc,0x599828,0,29
+[replace]0x00,AKINO->aianme
+[/script]
+
+■■■■■■■■■■■■■■
+
+[script]
+[title]ふくらみかけりた～んず
+[distinction]発売日=3/01/24
+[process]FUKUD.EXE
+[process]FUKUR.EXE
+[maker]TRABULANCE
+[creator]秋野日和
+[note]wordwrap
+
+[/note]	
+[adjustment]search, 0x24DFDFC,5449544C452E4249,0x2450000, 0x24FFFFF, 4
+[subject]ふくらみかけＣＧ/ＣＧフル化/_:toggle,0x24DFE3A,0x24DFE4A-FF,00
+[subject]ふくらみかけ回想/回想フル化/_:toggle,0x24DFE2F,0x24DFE34-FF,00
+[/adjustment]
+[subject]りた～んずＣＧ/ＣＧフル化/_:toggle,0x4ACB7E,0x4ACB84-FF,00
+[subject]りた～んず回想/回想フル化/_:toggle,0x4ACB63,0x4ACB67-FF,00
+[/script]
+
+
+■■■■■■■■■■■■■■
+
+[script]
+[title]ぎりギリＬＯＶＥ
+[distinction]発売日=2/12/27
+[process]sviu.exe
+[maker]林組
+[creator]秋野日和
+[note]wordwrap
+ＯＮにすると「内部スクリプト異常」
+となりますが再起動すると
+フル化になってます。
+
+[/note]	
+[subject]ＣＧ/ＣＧフル化/_:toggle,0x48D451,0x48D454-C0ff07,000000
+[subject]ＥＶＥＮＴ/ＥＶＥＮＴフル化/_:toggle,0x48D458,0x48D46F-FEFFFFFFFFFFFFBFFFFFFFFF7FC0FFF7FFFE9FFF7FEF31,00
+[/script]
+
+
+■■■■■■■■■■■■■■
+
+[script]
+[title]てのひらを、たいように
+[distinction]発売日=3/01/24
+[process]c4.exe
+[maker]Clear
+[creator]秋野日和
+[note]wordwrap
+VER.101b用です。
+
+SPECIALは同名項目の出現の他、
+全キャラ攻略可能にもなります。
+
+[/note]	
+[subject]ＳＰＥＣＩＡＬ/ＳＰＥＣＩＡＬ ＯＮ/_:b_toggle,0,AKINO->tenohra101b
+[subject]ＣＧ/ＣＧフル化/_:b_toggle,0,AKINO->tenohra101b_CG
+[subject]ＭＥＭＥＮＴＯ/ＭＥＭＥＮＴＯ フル化/_:b_toggle,0,AKINO->tenohra101b_ME
+[subject]VER.1.00:dir
+[subject]ＳＰＥＣＩＡＬ/ＳＰＥＣＩＡＬ ＯＮ/_:b_toggle,0,AKINO->tenohra100
+[back]
+[/script]
+
+■■■■■■■■■■■■■■
+
+[script]
+[title]ＤＡパンツ！！
+[distinction]発売日=3/01/31
+[process]dapants.exe
+[maker]Cadath
+[creator]秋野日和
+[note]wordwrap
+version1.01用です。
+
+[/note]	
+/[adjustment]search, 0x484F74,50FBFFFF50FBFFFF,0x400000, 0x4FFFFF, 4
+[subject]おまけ関連/おまけ関連ＯＮ/_:toggle,0x484354,FE3F,0000
+[subject]ＣＧモード/ＣＧモードフル化/_:b_toggle,0,AKINO->dapanntu_cg,offset
+[subject]回想モード/回想モードフル化/_:b_toggle,0,AKINO->dapanntu_me,offset
+[/adjustment]
+[/script]
+
+■■■■■■■■■■■■■■
+
+[script]
+[title]ときどきシュガー
+[distinction]発売日=3/01/31
+[process]Sugar.exe
+[maker]ザウス【純米】
+[creator]秋野日和
+[note]wordwrap
+
+[/note]	
+/[adjustment]search, 0x484F74,50FBFFFF50FBFFFF,0x400000, 0x4FFFFF, 4
+[replace]0x00,AKINO->tokidoki
+[subject]Ｐｈｏｔｏ/Ｐｈｏｔｏフル化/_:toggle,0x484F24,0x484F43-FF,00
+[subject]Ｍｅｍｏｒｙ/Ｍｅｍｏｒｙフル化/_:toggle,0x484F44,0x484F49-FF,00
+[subject]Ｗ．Ｗ．Ｓ/Ｗ．Ｗ．Ｓフル化/_:toggle,0x484F1D,FF,00
+[/adjustment]
+[/script]
+
+■■■■■■■■■■■■■■
+
+[script]
+[title]ももいろパラダイス～住み込みバイト恋愛付～
+[distinction]発売日=3/01/24
+[process]ags.exe
+[maker]AINOS
+[creator]秋野日和
+[note]wordwrap
+◆好感度・イベントポイント
+上昇させると各種イベント、
+エンディングが発生します。
+（日付は関係なし）
+
+しかし規定の値を越えると
+ゲームが強制終了するので
+確認用とでもしてください。
+
+
+[/note]	
+[replace]0x00,AKINO->momopara
+[replace]0x00,AKINO->momopara3
+[subject]回想/回想フル化/_:toggle,0x42C730,0x42C755-01,00
+[/script]
+
+■■■■■■■■■■■■■■
+
+[script]
+[title]妖月綺譚
+[distinction]発売日=0/00/00
+[process]yogetsu.exe
+[maker]
+[creator]秋野日和
+[note]wordwrap
+
+[/note]	
+[adjustment]search, 0x299422D,636F6E66696700,0x2900000, 0x2B00000, 4
+[subject]残機９:toggle,0x2994878,09,00
+[subject]無敵:toggle,0x2993ED0,FF,00
+[/adjustment]
+[/script]
+
+■■■■■■■■■■■■■■
+
+[script]
+[title]モエかん
+[distinction]発売日=3/01/31
+[process]Moekan.exe
+[maker]ケロＱ
+[creator]秋野日和
+[note]wordwrap
+
+[/note]	
+[replace]0x00,AKINO->moekan
+[replace]0x00,AKINO->moekan3
+[subject]ＯＭＡＫＥ/ＯＮ/_:toggle,0x43D738,01,00
+[subject]ＣＧ/ＣＧフル化/_:toggle,0x43D761,0x43D95D-01,00
+[subject]Ｍｅｍｏｒlｅｓ/Ｍｅｍｏｒlｅｓフル化/_:toggle,0x43D74C,0x43D761-01,00
+[/script]
+
+■■■■■■■■■■■■■■
+
+[script]
+[title]ＳＮＯＷ
+[distinction]発売日=3/01/31
+[process]MEBIUS33.EXE
+[maker]Studio Mebius
+[creator]秋野日和
+[note]wordwrap
+ＤＶＤ版で製作。
+
+◆クリアフラグ
+------------
+澄乃
+↓
+Legend
+↓
+旭 or しぐれ 
+↓
+桜花
+------------
+正規のルートでは
+上記の順にしか攻略出来ないので
+これを無視したい時お使い下さい。
+
+でも未プレイなら正規のルート通り
+にプレイした方がいいですよ。（^^；
+
+なお、澄乃は
+エキストラモード出現も兼ねてます。
+
+[/note]	
+/[adjustment]search, 0x4FE82C,E8030000E8030000E80300000000,0x410000, 0x510000, 
+[replace]0x00,AKINO->snow1
+[subject]ＣＧモード/ＣＧモードフル化/_:toggle,0x4D2810,0x4D3BED-01,00
+[subject]ＳＯＵＮＤ ＭＯＤＥ/ＳＯＵＮＤ ＭＯＤＥフル化/_:toggle,0x4D2158,0x4D21B4-01000000,00000000
+[/adjustment]
+[/script]
+
+
+■■■■■■■■■■■■■■
+
+[script]
+[title]月姫　
+[distinction]発売日=0/00/00
+[process]月姫.exe
+[maker]ＴＹＰＥ－ＭＯＯＮ
+[creator]秋野日和
+[note]wordwrap
+ver.2.0用
+[/note]	
+[repeat]AKINO->tukihime1,0,5,1
+[/script]
+
+■■■■■■■■■■■■■■
+
+[script]
+[title]木漏れ日の並木道 
+[distinction]発売日=3/01/24
+[process]advwin32.exe
+[maker]Ｆ＆Ｃ
+[creator]秋野日和
+[note]wordwrap
+システムの性質上、
+SSGで鑑賞モード出現は出来ません。
+一度クリアしてからご使用下さい。
+
+[/note]	
+[adjustment]search, 0x4FE82C,E8030000E8030000E80300000000,0x410000, 0x510000, 4
+/[subject]鑑賞/鑑賞ＯＮ/_:toggle,0xB2207C,01,00
+[subject]ＣＧモード/ＣＧモードフル化/_:toggle,0x4FE074,0x4FE118-01,00
+[subject]シーンモード/シーンモードフル化/:toggle,0x4FE218,0x4FE22E-01,00
+[replace]0x00,AKINO->komorebi1
+[/adjustment]
+[/script]
+
+■■■■■■■■■■■■■■
+
+[script]
+[title]結い橋
+[distinction]発売日=2/06/26
+[process]cs.exe
+[maker]ういんどみる
+[creator]秋野日和
+[note]wordwrap
+
+[/note]	
+/[adjustment]search, 0xB1F837,0054455354,0xA80000, 0xC8FFFF, 4
+[subject]お祭りの思い出/ＯＮ/_:toggle,0x6586BC,01000000,00000000
+/[/adjustment]
+[/script]
+■■■■■■■■■■■■■■
+
+[script]
+[title]プラチナウィンド
+[distinction]発売日=2/12/20
+[process]BGI.exe
+[maker]ROOT
+[creator]秋野日和
+[note]wordwrap
+「Bgi.gdb」を退避してから
+使用してください。
+[/note]	
+[subject]ＥＸＴＲＡ/ＥＸＴＲＡ ＯＮ/_:toggle,0x8AC2E3,80,00
+[subject]ＣＧモード/ＣＧモードフル化/_:b_toggle,0,AKINO->puratina
+[subject]ＳＣＥＮＥモード/ＳＣＥＮＥモードフル化/_:toggle,0x8AC2DC,FF3F,0000
+[/script]
+/[adjustment]search, 0xB1F837,0054455354,0xA80000, 0xC8FFFF, 4
+/[/adjustment]
+
+■■■■■■■■■■■■■■
+
+[script]
+[title]ヤミと帽子と本の旅人
+[distinction]発売日=2/12/20
+[process]YAMI.EXE
+[maker]ROOT
+[creator]秋野日和
+[note]wordwrap
+
+[/note]	
+/[adjustment]search, 0xB1F837,0054455354,0xA80000, 0xC8FFFF, 4
+[subject]鑑賞/鑑賞ＯＮ/_:toggle,0xB2207C,01,00
+[subject]ＣＧモード/ＣＧモードフル化/_:b_toggle,0,AKINO->yamito_CG,offset
+[subject]シーンモード/シーンモードフル化/_:toggle,0xB22744,0xB22770-01000000,00000000
+/[/adjustment]
+[/script]
+
+■■■■■■■■■■■■■■
+
+/[script]
+[title]ＭＥＬＴＹ ＢＬＯＯＤ
+[distinction]発売日=2/12/28
+[process]mb.exe
+[maker]渡辺製作所・TYPE-MOON
+[creator]秋野日和
+[note]wordwrap
+2BCE7=74-EB
+[/note]	
+[subject]MAGIC CIRCUIT常にＭＡＸ:toggle,0xA47EE0,01,00
+[subject]MAGIC CIRCUIT常にＭＡＸ:toggle,0x443365,7407,9090
+[e_with],0,10000,unsigned
+[subject]１Ｐライフ:calc,0x884010
+[subject]２Ｐライフ:calc,0x885844
+[/e_with] 
+[e_with],0,30000,unsigned
+[subject]１ＰMAGIC CIRCUIT:calc,0x883FFC
+[subject]２ＰMAGIC CIRCUIT:calc,0x885830
+[subject]Ver1.0:dir
+[e_with],0,10000,unsigned
+[subject]１Ｐライフ:calc,0x16D1B48
+[subject]２Ｐライフ:calc,0x16D337C
+[/e_with] 
+[e_with],0,30000,unsigned
+[subject]１ＰMAGIC CIRCUIT:calc,0x16D1B34
+[subject]２ＰMAGIC CIRCUIT:calc,0x16D3368
+[back]
+/[/script]
+
+■■■■■■■■■■■■■■
+
+[script]
+[title]VIPER-M3 3.2
+[distinction]発売日=2/12/20
+[process]ags.exe
+[maker]sogna
+[creator]秋野日和
+[note]wordwrap
+
+[/note]	
+[subject]回想/回想フル化/_:toggle,0x42343A,0x423444-01,00
+[/script]
+
+■■■■■■■■■■■■■■
+
+[script]
+[title]黒炎闘鬼ダーク・シャドー
+[distinction]発売日=2/12/27
+[process]Splayer.exe
+[process]SplayerB.exe
+[maker]創美研究所
+[creator]秋野日和
+[note]wordwrap
+
+[/note]	
+/[subject]敵 ライフ:calc,0x125A754,0,3,unsigned
+[subject]敵 ライフ:toggle,0x125A754,00000000,00000000
+[subject]敵 ライフ/DirectX無し用/:toggle,0x124AFA8,00000000,00000000
+/[subject]クリア回数//:calc,0x124AE04,0,30,unsigned
+[/script]
+
+
+■■■■■■■■■■■■■■
+
+[script]
+[title]夏色の砂時計
+[distinction]発売日=3/01/24
+[process]natsuiro.exe
+[maker]Berries
+[creator]秋野日和
+[note]wordwrap
+
+[/note]
+/[adjustment]search, 0x1BE0920,C03FD23F,0x18C0000, 0x2000000, 4
+[subject]ＳＰＥＣＩＡＬ/ＳＰＥＣＩＡＬ ＯＮ＋フル化/_:b_toggle,0,AKINO->natuiro_CG,offset
+[/adjustment]
+[/script]
+
+■■■■■■■■■■■■■■
+
+[script]
+[title]Ｓｈｉ/Ｋｏ/Ｍｉ
+[distinction]発売日=2/12/27
+[process]SHIKOMI.EXE
+[maker]zxy
+[creator]秋野日和
+[note]wordwrap
+◆パラメータ
+調教画面にしてから使用して下さい。
+
+◆ＥＸＴＲＡ
+ＥＸＴＲＡモードに入ってから使用して下さい。
+
+[/note]
+[adjustment]search, 0x4C6230,700800006801,0x490000, 0x4F0000, 4
+[subject]vitality:calc,0x4C5E48,0,05,unsigned
+[repeat]AKINO->sikomi1,0,5,1
+[/adjustment]
+[subject]ＥＸＴＲＡ/ＥＸＴＲＡフル化/_:toggle,0x4EC6C2,0x4EC6EB-FF,00
+[/script]
+
+■■■■■■■■■■■■■■
+
+[script]
+[title]紅蓮天衝 羅刹
+[distinction]発売日=2/12/27
+[process]羅刹.exe
+[maker]ZONE
+[creator]秋野日和
+[note]wordwrap
+VER1.0.0.4用です。
+
+以下補足説明
+
+◆移動数
+進んだ値を書き換えます。
+※現在サイの目より大きな数にしないで下さい。
+[使用例]
+６が出て２マス先で移動を終了したい時は
+６－２の値「４」を入力。
+
+◆現在サイの目
+現在サイの目の確認用項目です。
+書き換えないで下さい。
+
+[/note]	
+[adjustment]search, 0x47EE78,F4FFFFFF05,0x401000, 0x510000, 4
+[subject]敵１撃死/敵１撃死/:toggle,0x47EE70,00000000,00000000
+[subject]敵 士気/敵 士気０/:toggle,0x47EE7C,00000000,00000000
+[subject]自 戦力:calc,0x47CC84,0,99999,unsigned
+[subject]自 士気/ＭＡＸ/:toggle,0x47CC90,64000000,00000000
+[subject]移動数//:calc,0x4D8A68,0,30,unsigned
+[subject]現在サイの目/確認用です/:calc,0x4D8A6C,0,0,unsigned
+[replace]0x4D965C,AKINO->羅刹_アイテム
+[replace]0x00,AKINO->rasetu1
+[subject]おまけ:dir
+[subject]おまけＯＮ:toggle,0x4D67A4,01,00
+[subject]ＣＧ/ＣＧフル化/_:toggle,0x4D5EA4,0x4D61C0-01000000,00000000
+[subject]回想/回想フル化/_:toggle,0x4D6694,0x4D66CC-01000000,00000000
+[back]
+[/adjustment]
+[/script]
+
+■■■■■■■■■■■■■■
+
+[script]
+[title]Stitch 掛け違えたボタン
+[distinction]発売日=2/12/20
+[process]Stitch.exe
+[maker]aias
+[creator]秋野日和
+[note]wordwrap
+
+[/note]	
+/[adjustment]search, 0x43B2EC,826C8272,0x401000, 0x4A0000, 4
+[replace]0x00,AKINO->Stitch
+[subject]ＣＧ/ＣＧフル化/_:toggle,0x43B36C,0x43B451-01,00
+[subject]ＲＥＰＬＡＹ/ＲＥＰＬＡＹフル化/_:toggle,0x43B56C,0x43B5D6-01,00
+[/adjustment]
+[/script]
+
+■■■■■■■■■■■■■■
+
+[script]
+[title]ケーキ！ ～苺いちえ～
+[distinction]発売日=2/12/27
+[process]K0WIN.EXE
+[maker]フラウ
+[creator]秋野日和
+[note]wordwrap
+
+[/note]	
+/[adjustment]search, 0xAAD8F4,FFFFFFFF02,0xA90000, 0xC9FFFF, 4
+[subject]ＣＧ/フル化/_:toggle,0xAAD880,0xAAD898-FFFFFFFF,00000000
+[/adjustment]
+[/script]
+
+■■■■■■■■■■■■■■
+
+[script]
+[title]メンアットワーク！３ ～ハンター達の青春～
+[distinction]発売日=2/12/27
+[process]maw3.exe
+[maker]Studio e.go!
+[creator]秋野日和
+[note]wordwrap
+ＣＤ版用です。
+ロードすると使用出来なくなりますが
+ゲームを起動し直せば使用出来ます。
+
+
+◆ＣＧ／回想
+ＯＮにしたら本編で適当なＣＧを見て下さい。
+その後タイトルに戻ればフル化になってます。
+
+[/note]
+/[adjustment]search, 0x102838C,20020000,0x102838C, 0x1A2838C, 4
+/[adjustment]dialog,0x102838C,AKINO->maw3サーチ,0x1020000,0x122FFFF,4
+/[subject]移動数//:calc,0x102838C,0,990,unsigned
+[subject]ライル:dir
+        [replace]0x102838C,AKINO->maw3_パラメータ
+        [replace]0x1028452,AKINO->skil1
+        [replace]0x10283DC,AKINO->maw3_LV1
+[back]
+[subject]モニカ:dir
+        [replace]0x1028FB0,AKINO->maw3_パラメータ
+        [replace]0x1029076,AKINO->skil1
+        [replace]0x1029000,AKINO->maw3_LV1
+[back]
+[subject]リサ:dir
+        [replace]0x1029BD4,AKINO->maw3_パラメータ
+        [replace]0x1029C9A,AKINO->skil1
+        [replace]0x1029C24,AKINO->maw3_LV1
+[back]
+[subject]ジャスティン:dir
+        [replace]0x102A7F8,AKINO->maw3_パラメータ
+        [replace]0x102A8BE,AKINO->skil1
+        [replace]0x102A848,AKINO->maw3_LV1
+[back]
+[subject]瑞穂:dir
+        [replace]0x102C040,AKINO->maw3_パラメータ
+        [replace]0x102C106,AKINO->skil1
+        [replace]0x102C090,AKINO->maw3_LV1
+[back]
+[subject]フィリス:dir
+        [replace]0x102B41C,AKINO->maw3_パラメータ
+        [replace]0x102B4E2,AKINO->skil1
+        [replace]0x102B46C,AKINO->maw3_LV1
+[back]
+[replace]0x00,AKINO->maw3_EXP_3
+[replace]0x00,AKINO->maw3_EXP_1
+[subject]アイテム:dir
+[replace]0x00,AKINO->maw3_risa1
+[replace]0x00,AKINO->maw3_mizuho1
+[replace]0x00,AKINO->maw3_rairu1
+[replace]0x00,AKINO->maw3_monika1
+[replace]0x00,AKINO->maw3_firi1
+[replace]0x00,AKINO->maw3_jyasu1
+[replace]0x00,AKINO->maw3_bougu1
+[replace]0x00,AKINO->maw3_asi1
+[replace]0x00,AKINO->maw3_asi2
+[replace]0x00,AKINO->maw3_kaifuku1
+[replace]0x00,AKINO->maw3_sou1
+[replace]0x00,AKINO->maw3_hou1
+[back]
+[/adjustment] 
+[replace]0x00,AKINO->maw3_kadai
+[replace]0x59A690,AKINO->maw3_LOVE_1
+[replace]0x00,AKINO->maw3_CGME
+[/script]
+
+[script]
+[title]簡易README（サポートについて等）
+[distinction]発売日=4/00/00
+[process]
+[creator]秋野日和
+[note] wordwrap
+当SSGを作成しました秋野日和といいます。
+初めての方は、以後宜しく。
+
+ダウンロード(使用)したら
+DL報告等、一言お願いします。
+その際「あなたの使用OS」
+「どのゲーム目的でDLしたか」
+など書いてくれると嬉しいです。
+
+***********************************
+SSGの動作に関する質問をなさる場合、
+『質問した時点で、御自身の環境が
+理解できているのは御自身だけ』
+ということに留意して下さい。
+
+SSGで使用される項目の示すアドレス群は、
+使用者のOSや物理メモリ量等の環境、
+及び使用されるソフトのバージョンによって
+左右される可能性があります。
+
+これらの要件を備えたうえで、
+どのタイトルでどの項目を使用した際、
+どのような状況に陥ったのか。
+そして、希望としてはどうありたいか。
+これらを詳細に記述して下さい。
+***********************************
+
+最後に、当SSGは
+WinME／Pentium4 2GHz／511MB
+の環境下で作成・確認したものであり、
+それ以外では完全動作は保障できません。
+
+御了承下さい。
+
+[/note]	
+[/script]
+
