@@ -1,0 +1,26 @@
+[group]CV2_SSG
+[note]wordwrap
+
+[/note]
+
+[subject]パラメータ関連:dir
+ [subject]好感度確認調整:dir
+	[repeat]CV2LST->CV2REP1,0,6,1
+[root]
+
+[/group]
+
+
+[group]CV2REP1
+[subject][! @CV2LST->LST_a,$Val !]/現在値/_:calc,_[:(MName::SYSTEM.UNT)+0x34574:]+0x[! 0x04*$Val !]+0x1180,0x0000,0x012C,unsigned
+[/group]
+
+
+[group]LST_a
+鳳仙エリス
+桔梗霧
+萩野可奈
+美咲菫
+鷺ノ宮紗綾
+杉原紫衣
+[/group]
