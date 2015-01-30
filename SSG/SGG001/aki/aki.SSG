@@ -1,0 +1,105 @@
+SSG for SpoilerAL ver 4.3
+
+[script]
+[title]ぱらパラ２
+[process]PARA2.EXE
+[maker]Studio B-ROOM
+[creator]aki
+[note]
+動作環境
+Win98(Not SE)+SpoilerAL(Ver4.3)+ぱらパラ２（Ver1.1/1.2)
+
+[Alt]+[Tab]で、ウィンドウの切り替えができるはず、
+当方の環境では、切り替えに時間が掛かったり、
+画面が崩れたりしますが（^^；
+
+※仮にアドレス移動する際は同梱の「更新履歴他.txt」をお読みください。
+[/note]
+[subject]Ver1.1:dir
+[subject]所持金:calc,0x00442f98,0,500000
+[subject]パラメーター:dir
+	[subject]深月:dir
+		[replace]0x004430c8,PA2,offset
+[back]
+	[subject]葵:dir
+		[replace]0x004430f0,PA2,offset
+[back]
+	[subject]林檎:dir
+		[replace]0x00443118,PA2,offset
+[back]
+	[subject]苺:dir
+		[replace]0x00443140,PA2,offset
+[back]
+	[subject]桃子:dir
+		[replace]0x00443168,PA2,offset
+[root]
+[subject]Ver1.2:dir
+[subject]所持金:calc,0x00442fd8,0,500000
+[subject]パラメーター:dir
+	[subject]深月:dir
+		[replace]0x00443108,PA2,offset
+[back]
+	[subject]葵:dir
+		[replace]0x00443130,PA2,offset
+[back]
+	[subject]林檎:dir
+		[replace]0x00443158,PA2,offset
+[back]
+	[subject]苺:dir
+		[replace]0x00443180,PA2,offset
+[back]
+	[subject]桃子:dir
+		[replace]0x004431a8,PA2,offset
+[back]	
+[/script] 
+
+[script]
+[title]よくできました。
+[process]YOKU.EXE
+[maker]Triangle
+[creator]aki
+[note]
+動作環境
+Win98(Not SE)+SpoilerAL(Ver4.3)+よくできました。（アップデート済み)
+とりあえず、作ってみました。
+
+書き換える値は、「学力表示」で見える値ではなく、
+「学力表示」で見えない翌日の値です。
+
+日曜日終了時点で、学力が１０以下、または、８０以上だと、
+エンディング判定に入ります。
+
+ＣＧフル化は、誰か、お願いします（^^；＜他力本願な奴。
+
+※仮にアドレス移動する際は同梱の「更新履歴他.txt」をお読みください。
+[/note]
+[subject]文系学力:calc,0x007bf348,0,100
+[subject]理系学力:calc,0x007bf34e,0,100
+[/script]
+
+[script]
+[title]コスって！ My Honey
+[process]MYHONEY.EXE
+[maker]BLUE GALE
+[creator]aki
+[note]
+動作環境
+Win98(Not SE)+SpoilerAL(Ver4.3)+コスって！ My Honey
+
+各キャラの好感度を編集します。
+好感度の最大値は上限がわからないので適当です（^^；
+
+ＣＧフル化は、誰か、お願いします（^^；＜他力本願な奴。
+
+※仮にアドレス移動する際は同梱の「更新履歴他.txt」をお読みください。
+[/note]
+[subject]好感度:dir
+	[subject]紅音:calc,0x013078f4,0,200
+	[subject]伊織:calc,0x013078f8,0,200
+	[subject]有梨:calc,0x013078fc,0,200
+	[subject]万里亜:calc,0x01307900,0,200
+	[subject]知子:calc,0x01307904,0,200
+	[subject]綾子:calc,0x01307908,0,200
+
+[back]
+[/script]
