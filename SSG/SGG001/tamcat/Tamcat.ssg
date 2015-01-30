@@ -1,0 +1,271 @@
+SSG for SpoilerAL ver 3.4
+
+/*SpoilerALの作成者"あつ"さんとそれに携わってくださった   */
+/*皆さんにこの場を借りて"ありがとうと"と言わせてください。*/
+/*                                               by Tamcat*/
+/*追伸                                                    */
+/*大したことやっていないのにすぺしゃるさんくすに          */
+/*名前を入れて貰って、なんだか申し訳ないです              */
+
+[script]
+[title]RUNNERS
+[process]RUNNERS.EXE
+[maker]STUDiO B-ROOM
+[creator]Tamcat
+[note]
+STUDiO B-ROOMのRUNNERSです。
+Win95専用&Ver2.1では正常動作しないこと
+が確認されています。
+(真相はウィンドウがアクティブに出来ないだけ。
+ 暗号化といい排他的処理といい
+ 改造対策にまめな会社ですね)
+[/note]
+[subject]相馬　歩:dir
+  [subject]ＬＶ:calc,0x436424,0x1,0x63,signed,little_e
+  [subject]ＥＸＰ:calc,0x436428,0x0,0x270F,signed,little_e
+  [subject]信頼:calc,0x43642C,0x0,0x3E7,signed,little_e
+  [subject]愛情:calc,0x436430,0x0,0x3E7,signed,little_e
+  [subject]ＨＰ:calc,0x436434,0x1,0x41,signed,little_e
+  [subject]パラメーター:dir
+    [subject]100M:calc,0x43643C,0x0,0x3E7,signed,little_e
+    [subject]800M:calc,0x436440,0x0,0x3E7,signed,little_e
+    [subject]幅跳び/LongJump:calc,0x436444,0x0,0x3E7,signed,little_e
+    [subject]高飛び/HighJump:calc,0x436448,0x0,0x3E7,signed,little_e
+    [subject]槍投げ/Javelin:calc,0x43644c,0x0,0x3E7,signed,little_e
+    [subject]砲丸投げ/ShotPut:calc,0x436450,0x0,0x3E7,signed,little_e
+  [back]
+  [subject]チップ:dir
+以下次コメントまでBasicType
+    [subject]瞬発:calc,0x43645C,0x0,0x96,signed,little_e
+    [subject]持久:calc,0x43645E,0x0,0x96,signed,little_e
+    [subject]回復:calc,0x436460,0x0,0x96,signed,little_e
+    [subject]筋力:calc,0x436462,0x0,0x96,signed,little_e
+    [subject]腕力:calc,0x436464,0x0,0x96,signed,little_e
+    [subject]脚力:calc,0x436466,0x0,0x96,signed,little_e
+以下次コメントまでApplicationType
+    [subject]DASH:calc,0x436468,0x0,0x96,signed,little_e
+    [subject]STG:calc,0x43646A,0x0,0x96,signed,little_e
+    [subject]TAKE:calc,0x43646C,0x0,0x96,signed,little_e
+    [subject]JUMP:calc,0x43646E,0x0,0x96,signed,little_e
+    [subject]SWING:calc,0x436470,0x0,0x96,signed,little_e
+    [subject]STYLE:calc,0x436472,0x0,0x96,signed,little_e
+次["root"]までSportType
+    [subject]100M:calc,0x436474,0x0,0x96,signed,little_e
+    [subject]800M:calc,0x436476,0x0,0x96,signed,little_e
+    [subject]幅跳び/LongJump/:calc,0x436478,0x0,0x96,signed,little_e
+    [subject]高飛び/HightJump/:calc,0x43647A,0x0,0x96,signed,little_e
+    [subject]槍投げ/Javelin/:calc,0x43647C,0x0,0x96,signed,little_e
+    [subject]砲丸投げ/ShotPut/:calc,0x43647E,0x0,0x96,signed,little_e
+[root]
+[subject]二人目:dir
+  [subject]ＬＶ:calc,0x436874,0x1,0x63,signed,little_e
+  [subject]ＥＸＰ:calc,0x436878,0x0,0x270F,signed,little_e
+  [subject]信頼:calc,0x43687C,0x0,0x3E7,signed,little_e
+  [subject]愛情:calc,0x436880,0x0,0x3E7,signed,little_e
+  [subject]ＨＰ:calc,0x436884,0x0,0x41,signed,little_e
+  [subject]パラメーター:dir
+    [subject]100M:calc,0x43688C,0x0,0x3E7,signed,little_e
+    [subject]800M:calc,0x436890,0x0,0x3E7,signed,little_e
+    [subject]幅跳び/LongJump:calc,0x436894,0x0,0x3E7,signed,little_e
+    [subject]高跳び/HightJump:calc,0x436898,0x0,0x3E7,signed,little_e
+    [subject]槍投げ/Javelin:calc,0x43689C,0x0,0x3E7,signed,little_e
+    [subject]砲丸投げ/ShotPut:calc,0x4368A0,0x0,0x3E7,signed,little_e
+  [back]
+  [subject]チップ:dir
+以下次コメントまでBasicType
+    [subject]瞬発:calc,0x4368AC,0x0,0x96,signed,little_e
+    [subject]持久:calc,0x4368AE,0x0,0x96,signed,little_e
+    [subject]回復:calc,0x4368B0,0x0,0x96,signed,little_e
+    [subject]筋力:calc,0x4368B2,0x0,0x96,signed,little_e
+    [subject]腕力:calc,0x4368B4,0x0,0x96,signed,little_e
+    [subject]脚力:calc,0x4368B6,0x0,0x96,signed,little_e
+以下次コメントまでApplicationType
+    [subject]DASH:calc,0x4368B8,0x0,0x96,signed,little_e
+    [subject]STG:calc,0x4368BA,0x0,0x96,signed,little_e
+    [subject]TAKE:calc,0x4368BC,0x0,0x96,signed,little_e
+    [subject]JUMP:calc,0x4368BE,0x0,0x96,signed,little_e
+    [subject]SWING:calc,0x4368C0,0x0,0x96,signed,little_e
+    [subject]STYLE:calc,0x4368C2,0x0,0x96,signed,little_e
+次["root"]までSportType
+    [subject]100M:calc,0x4368C4,0x0,0x96,signed,little_e
+    [subject]800M:calc,0x4368C6,0x0,0x96,signed,little_e
+    [subject]幅跳び/LongJump:calc,0x4368C8,0x0,0x96,signed,little_e
+    [subject]高飛び/HightJump:calc,0x4368CA,0x0,0x96,signed,little_e
+    [subject]槍投げ/Javelin:calc,0x4368CC,0x0,0x96,signed,little_e
+    [subject]砲丸投げ/ShotPut:calc,0x4368CE,0x0,0x96,signed,little_e
+[root]
+[subject]三人目:dir
+  [subject]ＬＶ:calc,0x436CC4,0x1,0x63,signed,little_e
+  [subject]ＥＸＰ:calc,0x436CC8,0x0,0x270F,signed,little_e
+  [subject]信頼:calc,0x436CCC,0x0,0x3E7,signed,little_e
+  [subject]愛情:calc,0x436CD0,0x0,0x3E7,signed,little_e
+  [subject]ＨＰ:calc,0x436CD4,0x0,0x41,signed,little_e
+  [subject]パラメーター:dir
+    [subject]100M:calc,0x436CDC,0x0,0x3E7,signed,little_e
+    [subject]800M:calc,0x436CE0,0x0,0x3E7,signed,little_e
+    [subject]幅跳び/LongJump:calc,0x436CE4,0x0,0x3E7,signed,little_e
+    [subject]高跳び/HightJump:calc,0x436CE8,0x0,0x3E7,signed,little_e
+    [subject]槍投げ/Javerin:calc,0x436CEC,0x0,0x3E7,signed,little_e
+    [sunject]砲丸投げ/ShotPut:calc,0x436CF0,0x0,0x3E7,signed,little_e
+  [back]
+  [subject]チップ:dir
+以下次コメントまでBasicType
+    [subject]瞬発:calc,0x436CFC,0x0,0x96,signed,little_e
+    [subject]持久:calc,0x436CFE,0x0,0x96,signed,little_e
+    [subject]回復:calc,0x436D00,0x0,0x96,signed,little_e
+    [subject]筋力:calc,0x436D02,0x0,0x96,signed,little_e
+    [subject]腕力:calc,0x436D04,0x0,0x96,signed,little_e
+    [subject]脚力:calc,0x436D06,0x0,0x96,signed,little_e
+以下次コメントまでApplicationType
+    [subject]DASH:calc,0x436D08,0x0,0x96,signed,little_e
+    [subject]STG:calc,0x436D0A,0x0,0x96,signed,little_e
+    [subject]TAKE:calc,0x436D0C,0x0,0x96,signed,little_e
+    [subject]JUMP:calc,0x436D0E,0x0,0x96,signed,little_e
+    [subject]SWING:calc,0x436D10,0x0,0x96,signed,little_e
+    [subject]STYLE:calc,0x436D12,0x0,0x96,signed,little_e
+次["root"]までSportType
+    [subject]100M:calc,0x436D14,0x0,0x96,signed,little_e
+    [subject]800M:calc,0x436D16,0x0,0x96,signed,little_e
+    [subject]幅跳び/LongJump:calc,0x436D18,0x0,0x96,signed,little_e
+    [subject]高跳び/HightJump:calc,0x436D1A,0x0,0x96,signed,little_e
+    [subject]槍投げ/Javerin:calc,0x436D1C,0x0,0x96,signed,little_e
+    [subject]砲丸投げ/ShotPut:calc,0x436D1E,0x0,0x96,signed,little_e
+[root]
+[subject]四人目:dir
+  [subject]ＬＶ:calc,0x437114,0x1,0x63,signed,little_e
+  [subject]ＥＸＰ:calc,0x437118,0x0,0x270F,signed,little_e
+  [subject]信頼:calc,0x43711C,0x0,0x3E7,signed,little_e
+  [subject]愛情:calc,0x437120,0x0,0x3E7,signed,little_e
+  [subject]ＨＰ:calc,0x437124,0x0,0x41,signed,little_e
+  [subject]パラメーター:dir
+    [subject]100M:calc,0x43712C,0x0,0x3E7,signed,little_e
+    [subject]800M:calc,0x437130,0x0,0x3E7,signed,little_e
+    [subject]幅跳び/LongJump:calc,0x437134,0x0,0x3E7,signed,little_e
+    [subject]高跳び/HightJump:calc,0x437138,0x0,0x3E7,sigend,little_e
+    [subject]槍投げ/Javelin:calc,0x43713C,0x0,0x3E7,signed,little_e
+    [subject]砲丸投げ/ShotPut:calc,0x437140,0x0,0x3E7,signed,little_e
+  [back]
+  [subject]チップ:dir
+以下次コメントまでBasicType
+    [subject]瞬発:calc,0x43714C,0x0,0x96,signed,little_e
+    [subject]持久:calc,0x43714E,0x0,0x96,signed,little_e
+    [subject]回復:calc,0x437150,0x0,0x96,signed,little_e
+    [subject]筋力:calc,0x437152,0x0,0x96,signed,little_e
+    [subject]腕力:calc,0x437154,0x0,0x96,signed,little_e
+    [subject]脚力:calc,0x437156,0x0,0x96,signed,little_e
+以下次コメントまでApplicationType
+    [subject]DASH:calc,0x437158,0x0,0x96,signed,little_e
+    [subject]STG:calc,0x43715A,0x0,0x96,signed,little_e
+    [subject]TAKE:calc,0x43715C,0x0,0x96,signed,little_e
+    [subject]JUMP:calc,0x43715E,0x0,0x96,signed,little_e
+    [subject]SWING:calc,0x437160,0x0,0x96,signed,little_e
+    [subject]STYLE:calc,0x437162,0x0,0x96,signed,little_e
+次["root"]までSportType
+    [subject]100M:calc,0x437164,0x0,0x96,signed,little_e
+    [subject]800M:calc,0x437166,0x0,0x96,signed,little_e
+    [subject]幅跳び/LongJump:calc,0x437168,0x0,0x96,signed,little_e
+    [subject]高跳び/HightJump:calc,0x43716A,0x0,0x96,signed,little_e
+    [subject]槍投げ/Javelin:calc,0x43716C,0x0,0x96,signed,little_e
+    [subject]砲丸投げ/ShotPut:calc,0x43716E,0x0,0x96,signed,little_e
+[root]
+[subject]五人目:dir
+  [subject]LV:calc,0x437564,0x1,0x63,signed,little_e
+  [subject]EXP:calc,0x437568,0x0,0x270F,signed,little_e
+  [subject]Sinrai:calc,0x43756C,0x0,0x3E7,signed,little_e
+  [subject]Koukisin:calc,0x437570,0x0,0x3E7,signed,little_e
+  [subject]HP:calc,0x437574,0x0,0x41,signed,little_e
+  [subject]Paramerte:dir
+    [subject]100M:calc,0x43757C,0x0,0x3E7,signed,little_e
+    [subject]800M:calc,0x437580,0x0,0x3E7,signed,little_e
+    [subject]LongJump:calc,0x437584,0x0,0x3E7,signed,little_e
+    [subject]HightJump:calc,0x437588,0x0,0x3E7,sigend,little_e
+    [subject]Javerin:calc,0x43758C,0x0,0x3E7,signed,little_e
+    [subject]ShotPut:calc,0x437590,0x0,0x3E7,signed,little_e
+  [back]
+  [subject]Tips:dir
+以下次コメントまでBasicType
+    [subject]Syunn:calc,0x43759C,0x0,0x96,signed,little_e
+    [subject]Jikyuu:calc,0x43759E,0x0,0x96,signed,little_e
+    [subject]kyaku:calc,0x4375A0,0x0,0x96,signed,little_e
+    [subject]Wann:calc,0x4375A2,0x0,0x96,signed,little_e
+    [subject]kai:calc,0x4375A4,0x0,0x96,signed,little_e
+    [subject]Power:calc,0x4375A6,0x0,0x96,signed,little_e
+以下次コメントまでApplicationType
+    [subject]Dash:calc,0x4375A8,0x0,0x96,signed,little_e
+    [subject]Jump:calc,0x4375AA,0x0,0x96,signed,little_e
+    [subject]Runn:calc,0x4375AC,0x0,0x96,signed,little_e
+    [subject]Stand:calc,0x4375AE,0x0,0x96,signed,little_e
+    [subject]Toru:calc,0x4375B0,0x0,0x96,signed,little_e
+    [subject]Style:calc,0x4375B2,0x0,0x96,signed,little_e
+次["root"]までSportType
+    [subject]100M:calc,0x4375B4,0x0,0x96,signed,little_e
+    [subject]800M:calc,0x4375B6,0x0,0x96,signed,little_e
+    [subject]LongJump:calc,0x4375B8,0x0,0x96,signed,little_e
+    [subject]HightJump:calc,0x4375BA,0x0,0x96,signed,little_e
+    [subject]Javerin:calc,0x4375BC,0x0,0x96,signed,little_e
+    [subject]ShotPut:calc,0x4375BE,0x0,0x96,signed,little_e
+[root]
+[subject]主人公:dir
+LVとEXPは設定値を超えられることが確認。
+引っ張れるようであればLVは0x63はまで引っ張ってみる
+EXPはOverが発生する可能性があるので現状維持。
+  [subject]LV:calc,0x4600DC,0x1,0x1E,signed,little_e
+  [subject]EXP:calc,0x4600E4,0x1,0xEA60,signed,little_e
+  [subject]ダイス最大:toggle,0x4600F0,0x460168-09000000,01000000
+/*　　　　　　↑何故かうまくいかなかったので、すいませんm(__)m*/
+[/script]
+
+[script]
+[title]寿
+[process]寿.EXE
+[maker]C'sWare
+[creator]Tamcat
+[note]
+C'sWareの寿で機数と無敵の設定をします。
+更新周期を小さくしないと無敵は効果無し(^^;
+とは言うもののかなりでかくしない限りは
+大丈夫なんですけどね(^^;;;
+[/note]
+
+/*み、見てはならぬ物を見てしまったようで(--;           */
+/*アドレスを見たのなら既にお気づきですね               */
+/*そう！実は"ぴの"と"ぱお"に分ける必要は全くないのだ！ */
+
+[subject]ぴの:dir
+  [subject]無敵:toggle,0x454C07,FFFF,0000
+  [subject]残機:calc,0x45A084,0x00,0x06,signed,little_e
+[root]
+[subject]ぱお:dir
+  [subject]無敵:toggle,0x454C07,FFFF,0000
+  [subject]残機:calc,0x45A084,0x00,0x06,signed,little_e
+[root]
+[/script]
+
+//約1年のブランクがあるので何か問題があったら
+//Tamcatまでご報告ください。
+//せっかくの機会なのでoffset機能を使ってみようと思います。
+//あと、時間を見つけてRUNNERSもoffset化してみようと思います。
+//え？今更2.1未対応版は要らないですか？(^^;
+
+//見ての通りネットワーク上でのテスト及び解析は行っていません。
+//これは時期を見ながら協力者を募って解析を行いたいと思います。
+//LAN環境が無い僕としてはこれしか確認手段がありませんので…
+//逆アセして解析するほどの実力はありませんし(;_;
+[script]
+[title]Maykick Online
+[process]NETGAME.EXE
+[maker]ZENOS
+[creator]Tamcat
+[note]wordwarp
+ZENOSのMaykick Online用のデータです。
+例によって未だWin95を使い続けているので、
+Win95のみで確認しています。
+なお、このデータは全キャラ共通して使えます。
+発売2日目にしてアップデートが行われているので詳しくは
+http://www.zenos.co.jp/
+を見てください。
+なお、当データも00/06/16時点の修正版を基準に作成してあります。
+[/note]
+[subject]キャラステータス:dir
+  [replace]0x8AEF00,maykick,offset
+[/script]
