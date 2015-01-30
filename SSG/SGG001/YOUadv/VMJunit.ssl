@@ -1,0 +1,36 @@
+[group]UnitParameter
+	[subject]–¡•û-“G	:list,0x0004,VMJ_divid,0,1
+	[subject]í—Ş		:list,0x0008,VMJ_unit,0,1
+	[subject]UŒ‚—Í	:calc,0x0050,0,30
+	[subject]–hŒä—Í	:calc,0x0054,0,30
+	[subject]p—Í		:calc,0x0058,0,30
+	[subject]p–hŒä	:calc,0x005C,0,30
+	[subject]‘f‘‚³	:calc,0x0060,0,30
+	[subject]ˆÚ“®—Í	:calc,0x0064,0,30
+	[subject]ŒoŒ±’l	:calc,0x006C,0,100
+	[subject]HP		:calc,0x0070,0,10
+	[subject]Œ„		:calc,0x0078,0,999
+	[subject]Œ„+		:calc,0x007C,0,999
+	[subject]˜TŠÔ	:calc,0x0080,0,999
+	[subject]•n–RŠÔ	:calc,0x0088,0,999
+	[subject]–£—¹ŠÔ	:calc,0x008C,0,999
+[back]
+[/group]
+[group]PKUnitParameter
+	[subject]–¡•û-“G	:list,0x0004,VMJ_divid,0,1
+	[subject]í—Ş		:list,0x0008,VMJPK_unit,0,1
+	[subject]UŒ‚—Í	:calc,0x0054,0,30
+	[subject]–hŒä—Í	:calc,0x0058,0,30
+	[subject]p—Í		:calc,0x005C,0,30
+	[subject]p–hŒä	:calc,0x0060,0,30
+	[subject]‘f‘‚³	:calc,0x0064,0,30
+	[subject]ˆÚ“®—Í	:calc,0x0068,0,30
+	[subject]ŒoŒ±’l	:calc,0x0070,0,100
+	[subject]HP		:calc,0x0074,0,10
+	[subject]Œ„		:calc,0x007C,0,999
+	[subject]Œ„+		:calc,0x0080,0,999
+	[subject]˜TŠÔ	:calc,0x0084,0,999
+	[subject]•n–RŠÔ	:calc,0x008C,0,999
+	[subject]–£—¹ŠÔ	:calc,0x0090,0,999
+[back]
+[/group]
