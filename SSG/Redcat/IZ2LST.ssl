@@ -141,74 +141,6 @@ AVGパート時立ちキャラの表示や背景処理他それらのウエイトを外します。
 
 [root]
 
-[subject]学園狂想曲同梱版(ver1.03):dir
-
-[subject]ＲＰＧパート関連:dir
-	[subject]無条件戦闘勝利スキップ/実行/_:b_toggle,0x41D2CC,IZ2LST->IZ2_4c,real
-	[subject]戦闘入手経験値Ｘ倍化/_:d_list,0x42B3FF,IZ2LST->LST_e,0x00,0xFFFFFFFF,IZ2LST->LST_f,offset
-	[subject]エンカウンター操作/_:d_list,0x40A0C5,IZ2LST->LST_c,0x00,0xFFFFFFFF,IZ2LST->LST_2d,offset
-	[subject]無条件で勾玉スロット全開/実行/_:b_toggle,0x402BB6,IZ2LST->IZ2_4a,real
-	[subject]エンディングセレクト/_:d_list,_[:0x6E5B3C:]+0xA4,IZ2LST->LST_g,0x0000,0x0006,IZ2LST->LST_h,offset
-[back]
-
-[subject]環境関連:dir
-	[subject]AVGパート高速化/実行/_:b_toggle,0x0500,IZ2LST->IZ2_3b,offset
-[back]
-
-[subject]パラメータ関連:dir
-	[subject]勾玉全種類最大数所持/所持／抹消/_:b_toggle,0x00,IZ2LST->PR_2e,offset
-	 [subject]アイテムエディタ:dir
-		[subject]変更アイテム指定/_:list,0x6685A4,IZ2LST->LST_b,0x00,0x01
-		[subject]_mem,_([\:0x6685A4\:])*0x150=>temp;[\:0x6D2A10\:]+$temp+0x10,32,00,<ReadError>'+'の数量変更/現在値/_:f_calc,_([:0x6685A4:])*0x150=>temp;[:[:0x6D2A10:]+$temp:]=>temp;[:0x6D27FE:]+$temp*0x04,0,99,float
-	 [back]
- [subject]ステータス上限値変更:dir
-	[replace]0x6D2B20,IZ2LST->PR_3b
- [back]
- [subject]仲間のステータス:dir
-	[repeat]IZ2LST->IZ2REP21,0,6,1
- [back]
-[back]
-
-[subject]ＣＧモード関連:dir
-	[replace]_[:0x6E5BB0:],IZ2LST->IZ2_CG
-[back]
-
-[root]
-
-[subject]IZUMO3同梱版(ver1.05):dir
-
-[subject]ＲＰＧパート関連:dir
- [subject]無条件戦闘勝利スキップ/実行/_:b_toggle,0x41D2CC,IZ2LST->IZ2_4c,real
- [subject]戦闘入手経験値Ｘ倍化/_:d_list,0x42B3FF,IZ2LST->LST_e,0x00,0xFFFFFFFF,IZ2LST->LST_f,offset
- [subject]エンカウンター操作/_:d_list,0x40A0C5,IZ2LST->LST_c,0x00,0xFFFFFFFF,IZ2LST->LST_2d,offset
- [subject]無条件で勾玉スロット全開/実行/_:b_toggle,0x402BB6,IZ2LST->IZ2_4a,real
- [subject]エンディングセレクト/_:d_list,_[:0x6E5B3C:]+0xA4,IZ2LST->LST_g,0x0000,0x0006,IZ2LST->LST_h,offset
-[back]
-
-[subject]環境関連:dir
- [subject]AVGパート高速化/実行/_:b_toggle,0x0510,IZ2LST->IZ2_3b,offset
-[back]
-
-[subject]パラメータ関連:dir
- [subject]勾玉全種類最大数所持/所持／抹消/_:b_toggle,0x00,IZ2LST->PR_2e,offset
- [subject]アイテムエディタ:dir
-  [subject]変更アイテム指定/_:list,0x668CF4,IZ2LST->LST_b,0x00,0x01
-  [subject]_mem,_([\:0x668CF4\:])*0x150=>temp;[\:0x6D2A10\:]+$temp+0x10,32,00,<ReadError>'+'の数量変更/現在値/_:f_calc,_([:0x668CF4:])*0x150=>temp;[:[:0x6D2A10:]+$temp:]=>temp;[:0x6D27FE:]+$temp*0x04,0,99,float
- [back]
- [subject]ステータス上限値変更:dir
-  [replace]0x6D2B20,IZ2LST->PR_3b
- [back]
- [subject]仲間のステータス:dir
-  [repeat]IZ2LST->IZ2REP21,0,6,1
- [back]
-[back]
-
-[subject]ＣＧモード関連:dir
- [replace]_[:0x6E5BB0:],IZ2LST->IZ2_2CG
-[back]
-
-[root]
-
 [/group]
 
 
@@ -395,29 +327,8 @@ _[:0x6D282E:]+0x04,_[:0x6D282E:]+0x5F-00C07944
 
 [group]IZ2_CG
 [subject]ＣＧ１枚目ＯＦＦ/実行/_:toggle,0x00,01
-[subject]ＣＧＡＬＬ/ＯＮ／ＯＦＦ/_:b_toggle,0x00,IZ2LST->IZ2_zc,offset
+[subject]ＣＧＡＬＬ/ＯＮ／ＯＦＦ/_:toggle,0x00,0x82-*{00::00::02*},*{00::00::01*}
 [subject]回想ＡＬＬ/ＯＮ／ＯＦＦ/_:toggle,0xB0,0xC6-02,01
-[/group]
-
-
-[group]IZ2_2CG
-[subject]ＣＧ１枚目ＯＦＦ/実行/_:toggle,0x00,01
-[subject]ＣＧＡＬＬ/ＯＮ／ＯＦＦ/_:b_toggle,0x00,IZ2LST->IZ2_2zc,offset
-[subject]回想ＡＬＬ/ＯＮ／ＯＦＦ/_:toggle,0xB0,0xC6-02,01
-[/group]
-
-
-[group]IZ2_zc
-0x00,0x4B-02,01
-0x50,0x81-02,01
-0x82,02,05
-[/group]
-
-
-[group]IZ2_2zc
-0x00,0x4B-02,01
-0x50,0x82-02,01
-0x83,02,05
 [/group]
 
 
@@ -471,13 +382,6 @@ _[:0x6D282E:]+0x04,_[:0x6D282E:]+0x5F-00C07944
 [/group]
 
 
-[group]IZ2_4a
-0x402BB6,B90500000090,038AF4000000
-0x402BFA,81F905000000,3B88F0000000
-0x493458,B8050000009033C9EB029090,8B82F00000008B8AF4000000
-[/group]
-
-
 [group]IZ2_3b
 0x5696E3,EB00,7410
 0x56EFC0,EB,75
@@ -490,13 +394,6 @@ _[:0x6D282E:]+0x04,_[:0x6D282E:]+0x5F-00C07944
 0x41D3BC,EB00,7531
 0x41D3C1,33C98948584190,837858000F94C1
 0x41D7C1,EB00,7413
-[/group]
-
-
-[group]IZ2_4c
-0x41D2CC,EB00,7531
-0x41D2D1,33C98948584190,837858000F94C1
-0x41D6D1,EB00,7413
 [/group]
 
 
