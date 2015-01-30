@@ -1,0 +1,80 @@
+SSG for SpoilerAL ver 4.3
+[script]
+[title]よくできました。
+[process]YOKU.EXE
+[maker]Triangle
+[creator]aki
+[adjustment]search, 0x007bf348,14 00 14 00 14 00 14 00 14 00 14,0x400000,0xffffff,1
+[note]
+動作環境
+Win98(Not SE)+SpoilerAL(Ver4.3)+よくできました。（アップデート済み)
+
+※アドレス補正について
+ゲーム開始直後の文系・理系学力を固定値として、
+サーチしていますので、必ず「最初から/本編から」
+ゲームを初めて、アドレス補正を行ってください。
+アドレス補正後、セーブデータをロードしてください。
+
+書き換える値は、「学力表示」で見える値ではなく、
+「学力表示」で見えない翌日の値です。
+[/note]
+[subject]文系学力:calc,0x007bf348,0,100
+[subject]理系学力:calc,0x007bf34e,0,100
+[/script]
+
+[script]
+[title]ぱらパラ２
+[process]PARA2.EXE
+[maker]Studio B-ROOM
+[creator]aki
+[adjustment]dialog,0x00442f98,pa2,0x0040000,0xffffff,4
+[note]
+動作環境
+Win98(Not SE)+SpoilerAL(Ver4.3)+ぱらパラ２（Ver1.1/1.2)
+
+Ver1.1/1.2どちらでもアドレス補正できるはずです。
+[/note]
+[subject]所持金:calc,0x00442f98,0,500000
+[subject]パラメーター:dir
+	[subject]深月:dir
+		[replace]0x004430c8,PA2,offset
+[back]
+	[subject]葵:dir
+		[replace]0x004430f0,PA2,offset
+[back]
+	[subject]林檎:dir
+		[replace]0x00443118,PA2,offset
+[back]
+	[subject]苺:dir
+		[replace]0x00443140,PA2,offset
+[back]
+	[subject]桃子:dir
+		[replace]0x00443168,PA2,offset
+[back]	
+[/script]
+
+[script]
+[title]コスって！ My Honey
+[process]MYHONEY.EXE
+[maker]BLUE GALE
+[creator]aki
+[adjustment]search, 0x01307640,81 40 83 52 83 58 82 c1 82 c4,0x400000,0xfffffff,4
+[note]
+動作環境
+Win98(Not SE)+SpoilerAL(Ver4.3)+コスって！ My Honey
+
+各キャラの好感度を編集します。
+好感度の最大値は上限がわからないので適当です（^^；
+
+ＣＧフル化は、誰か、お願いします（^^；＜他力本願な奴。
+[/note]
+[subject]好感度:dir
+	[subject]紅音:calc,0x013078f4,0,200
+	[subject]伊織:calc,0x013078f8,0,200
+	[subject]有梨:calc,0x013078fc,0,200
+	[subject]万里亜:calc,0x01307900,0,200
+	[subject]知子:calc,0x01307904,0,200
+	[subject]綾子:calc,0x01307908,0,200
+
+[back]
+[/script] 
