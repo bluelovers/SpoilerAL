@@ -1,0 +1,423 @@
+[group]MWc4_SSG
+[note]wordwrap
+MAW4特典版収録のver1.11(公式パッチ充て済み)に対応しています。
+
+いくつか細かく改変してますが、基本的に、ver1.02bの注意事項通りです。
+
+※即効性の確認はしてますが、通しプレイでは未確認です。念のためにデータのバックアップをお忘れなく。
+[/note]
+
+[subject]ＲＰＧパート関連:dir
+ [subject]戦闘時ノーダメージ＋リジェネ化/実行/_:b_toggle,0x00,MWc4LST->MWc4_c,offset
+ [subject]精神力無限利用可能/実行/_:b_toggle,0x42A5F6,MWc4LST->MWc4_e,real
+ [subject]戦闘毎に基本ＬＶ１ＵＰ/実行/_:toggle,0x4260F3,33C0B06490,8B020345B8
+ [subject]エネミーエンカウント操作/_:d_list,0x400000,MWc4LST->LST_f,0x00,0xFF,MWc4LST->LST_g,offset
+ [subject]授業後技術経験値極大化/実行/_:toggle,0x41D090,BBE7030000EB00,0F9EC34B235D10
+ [subject]課題入手時即条件達成/実行/_:b_toggle,0x5365B5,MWc4LST->MWc4_d,real
+ [subject]主人公の移動先に全員集合/実行/_:toggle,0x4F40D2,A1B00A5900894270EB059090909090,8B42703B05B00A59000F85A5000000
+[back]
+
+[subject]パラメータ関連:dir
+ [replace]0x00,MWc4LST->MWc4_PR
+[root]
+
+[subject]フラグ関連:dir
+ [replace]0x00,MWc4LST->MWc4_F1
+[back]
+
+[subject]ＣＧモード関連:dir
+ [replace]_[:0x598854:],MWc4LST->MWc4_CG
+[back]
+
+[/group]
+
+
+[group]MWc4_PR
+[subject]アイテムALLMAX化/実行/_:toggle,_[:0x5842EC:]+0xD6,_[:0x5842EC:]+0x065D-E703
+[repeat]MWc4LST->MWc4REP4,0,6,1
+[/group]
+
+
+[group]MWc4REP3
+[subject][! @MWc4LST->LST_2a,$Val !]:dir
+ [replace]_0x5898F8+0x[! 0xE2*$Val !],MWc4LST->MWc4_b
+[back]
+[/group]
+
+
+[group]MWc4REP4
+[subject][! @MWc4LST->LST_2a,$Val !]:dir
+ [replace]_(0x[! 0x04*$Val !])=>temp;[:[:[:0x5842EC:]+0xC0:]+$temp:],MWc4LST->MWc4_a
+[back]
+[/group]
+
+
+[group]MWc4_a
+[size]4
+[subject]基本ステータス:dir
+[e_with],0x0000,0x270F,unsigned
+ [subject]生命力/現在値/固定:calc,0x14
+ [subject]精神力/現在値/固定:calc,0x18
+ [subject]最大生命力/現在値/_:calc,0x1C
+ [subject]最大精神力/現在値/_:calc,0x20
+[/e_with]
+[e_with],0x0000,0x03E7,unsigned
+ [subject]耐久力/現在値/_:calc,0x24
+ [subject]意志力/現在値/_:calc,0x28
+ [subject]腕力/現在値/_:calc,0x2C
+ [subject]俊敏さ/現在値/_:calc,0x30
+ [subject]器用さ/現在値/_:calc,0x34
+[/e_with]
+[back]
+[subject]技術ＬＶ:dir
+[e_with],0x00,0x63,unsigned
+ [subject]基本ＬＶ/現在値/_:calc,0x64
+ [subject]黒魔法ＬＶ/現在値/_:calc,0x68
+ [subject]白魔法ＬＶ/現在値/_:calc,0x6C
+ [subject]自然魔法ＬＶ/現在値/_:calc,0x70
+ [subject]錬金術ＬＶ/現在値/_:calc,0x74
+ [subject]戦闘術ＬＶ/現在値/_:calc,0x78
+[/e_with]
+[back]
+[subject]技術経験値:dir
+[e_with],0x0000,0x270F,unsigned
+ [subject]一括9999化/実行/_:toggle,0x80,0x97-0F270000
+ [subject]基本経験値/現在値/_:calc,0x80
+ [subject]黒魔法/現在値/_:calc,0x84
+ [subject]白魔法/現在値/_:calc,0x88
+ [subject]自然魔法/現在値/_:calc,0x8C
+ [subject]錬金術/現在値/_:calc,0x90
+ [subject]戦闘術/現在値/_:calc,0x94
+[/e_with]
+[/size]
+[back]
+[subject]魔法ＬＶ:dir
+[size]2
+[e_with],0x00,0x63,unsigned
+ [subject]一括LV9化/実行/_:toggle,0xDA,0x011D-0900
+ [subject]ファイア/現在値/_:calc,0xDA
+ [subject]フリーズ/現在値/_:calc,0xDC
+ [subject]サンダー/現在値/_:calc,0xDE
+ [subject]アシッドガス/現在値/_:calc,0xE0
+ [subject]パニッシュ/現在値/_:calc,0xE2
+ [subject]スリープ/現在値/_:calc,0xE4
+ [subject]サック/現在値/_:calc,0xE6
+ [subject]ドレイン/現在値/_:calc,0xE8
+ [subject]チャーム/現在値/_:calc,0xEA
+ [subject]ヒール/現在値/_:calc,0xEC
+ [subject]トランス/現在値/_:calc,0xEE
+ [subject]フォース/現在値/_:calc,0xF0
+ [subject]リフレッシュ/現在値/_:calc,0xF2
+ [subject]リザレクト/現在値/_:calc,0xF4
+ [subject]サイコキネシス/現在値/_:calc,0xF6
+ [subject]ブレイク/現在値/_:calc,0xF8
+ [subject]リフレクト/現在値/_:calc,0xFA
+ [subject]ライト/現在値/_:calc,0xFC
+ [subject]スロウ/現在値/_:calc,0xFE
+ [subject]ヘイスト/現在値/_:calc,0x100
+ [subject]ヒート/現在値/_:calc,0x102
+ [subject]ウィーク/現在値/_:calc,0x104
+ [subject]エイド/現在値/_:calc,0x106
+ [subject]ペトロガス/現在値/_:calc,0x108
+ [subject]メテオ/現在値/_:calc,0x10A
+ [subject]全体化/現在値/_:calc,0x10C
+ [subject]合成/現在値/_:calc,0x10E
+ [subject]開錠/現在値/_:calc,0x110
+ [subject]窃盗/現在値/_:calc,0x112
+ [subject]武器鍛錬/現在値/_:calc,0x114
+ [subject]集中力鍛錬/現在値/_:calc,0x116
+ [subject]回避訓練/現在値/_:calc,0x118
+ [subject]持久力訓練/現在値/_:calc,0x11A
+ [subject]精神鍛錬/現在値/_:calc,0x11C
+[/e_with]
+[/size]
+[back]
+[/group]
+
+
+[group]MWc4_b
+[size]4
+[subject]基本ステータス:dir
+[e_with],0x0000,0x270F,unsigned
+ [subject]生命力/現在値/_:calc,0x04
+ [subject]精神力/現在値/_:calc,0x08
+ [subject]最大生命力/現在値/_:calc,0x0C
+ [subject]最大精神力/現在値/_:calc,0x10
+[/e_with]
+[e_with],0x0000,0x03E7,unsigned
+ [subject]耐久力/現在値/_:calc,0x14
+ [subject]意志力/現在値/_:calc,0x18
+ [subject]腕力/現在値/_:calc,0x1C
+ [subject]俊敏さ/現在値/_:calc,0x20
+ [subject]器用さ/現在値/_:calc,0x24
+[/e_with]
+[back]
+[subject]技術ＬＶ:dir
+[e_with],0x00,0x63,unsigned
+ [subject]基本ＬＶ/現在値/_:calc,0x28
+ [subject]黒魔法ＬＶ/現在値/_:calc,0x2C
+ [subject]白魔法ＬＶ/現在値/_:calc,0x30
+ [subject]自然魔法ＬＶ/現在値/_:calc,0x34
+ [subject]錬金術ＬＶ/現在値/_:calc,0x38
+ [subject]戦闘術ＬＶ/現在値/_:calc,0x3C
+[/e_with]
+[back]
+[subject]技術経験値:dir
+[e_with],0x0000,0x270F,unsigned
+ [subject]一括9999化/実行/固定:toggle,0x40,0x57-0F270000
+ [subject]基本経験値/現在値/_:calc,0x40
+ [subject]黒魔法/現在値/_:calc,0x44
+ [subject]白魔法/現在値/_:calc,0x48
+ [subject]自然魔法/現在値/_:calc,0x4C
+ [subject]錬金術/現在値/_:calc,0x50
+ [subject]戦闘術/現在値/_:calc,0x54
+[/e_with]
+[/size]
+[back]
+[subject]魔法ＬＶ:dir
+[size]2
+[e_with],0x00,0x63,unsigned
+ [subject]一括LV99化/実行/_:toggle,0x8E,0xD1-6300
+ [subject]ファイア/現在値/_:calc,0x8E
+ [subject]フリーズ/現在値/_:calc,0x90
+ [subject]サンダー/現在値/_:calc,0x92
+ [subject]アシッドガス/現在値/_:calc,0x94
+ [subject]パニッシュ/現在値/_:calc,0x96
+ [subject]スリープ/現在値/_:calc,0x98
+ [subject]サック/現在値/_:calc,0x9A
+ [subject]ドレイン/現在値/_:calc,0x9C
+ [subject]チャーム/現在値/_:calc,0x9E
+ [subject]ヒール/現在値/_:calc,0xA0
+ [subject]トランス/現在値/_:calc,0xA2
+ [subject]フォース/現在値/_:calc,0xA4
+ [subject]リフレッシュ/現在値/_:calc,0xA6
+ [subject]リザレクト/現在値/_:calc,0xA8
+ [subject]サイコキネシス/現在値/_:calc,0xAA
+ [subject]ブレイク/現在値/_:calc,0xAC
+ [subject]リフレクト/現在値/_:calc,0xAE
+ [subject]ライト/現在値/_:calc,0xB0
+ [subject]スロウ/現在値/_:calc,0xB2
+ [subject]ヘイスト/現在値/_:calc,0xB4
+ [subject]ヒート/現在値/_:calc,0xB6
+ [subject]ウィーク/現在値/_:calc,0xB8
+ [subject]エイド/現在値/_:calc,0xBA
+ [subject]ペトロガス/現在値/_:calc,0xBC
+ [subject]メテオ/現在値/_:calc,0xBE
+ [subject]全体化/現在値/_:calc,0xC0
+ [subject]合成/現在値/_:calc,0xC2
+ [subject]開錠/現在値/_:calc,0xC4
+ [subject]窃盗/現在値/_:calc,0xC6
+ [subject]武器鍛錬/現在値/_:calc,0xC8
+ [subject]集中力鍛錬/現在値/_:calc,0xCA
+ [subject]回避訓練/現在値/_:calc,0xCC
+ [subject]持久力訓練/現在値/_:calc,0xCE
+ [subject]精神鍛錬/現在値/_:calc,0xD0
+[/e_with]
+[back]
+[/size]
+[/group]
+
+
+[group]MWc4_c
+0x42AC04,E9ADF91100EB0190,034A048B45F08908
+0x54A5B6,8B45F0,000000
+0x54A5B9,53,00
+0x54A5BA,89C3,0000
+0x54A5BC,8B40FC,000000
+0x54A5BF,833807,000000
+0x54A5C2,7C05,0000
+0x54A5C4,034A04,000000
+0x54A5C7,EB08,0000
+0x54A5C9,33C9,0000
+0x54A5CB,894A04,000000
+0x54A5CE,8B4B08,000000
+0x54A5D1,89D8,0000
+0x54A5D3,8908,0000
+0x54A5D5,5B,00
+0x54A5D6,E93106EEFF90,000000000000
+[/group]
+
+
+[group]MWc4_d
+0x5365B5,E926400100EB00,FF2495C8665300
+0x54A5E0,50,00
+0x54A5E1,53,00
+0x54A5E2,51,00
+0x54A5E3,B8E46B5900,0000000000
+0x54A5E8,B306,0000
+0x54A5EA,8B08,0000
+0x54A5EC,894804,000000
+0x54A5EF,4B,00
+0x54A5F0,84DB,0000
+0x54A5F2,7407,0000
+0x54A5F4,058C000000,0000000000
+0x54A5F9,EBEF,0000
+0x54A5FB,59,00
+0x54A5FC,5B,00
+0x54A5FD,58,00
+0x54A5FE,FF2495C866530090,0000000000000000
+[/group]
+
+
+[group]MWc4_e
+0x42A5F6,4208EB00,022B45F0
+0x487E95,4808EB00,082B4DFC
+[/group]
+
+
+[group]MWc4_CG
+[subject]CG GALLERY ALL/ＯＮ／ＯＦＦ/_:b_toggle,0x00,MWc4LST->MWc4_1cg,offset
+[subject]MEMORIAL ALL/ＯＮ／ＯＦＦ/_:b_toggle,0x00,MWc4LST->MWc4_2cg,offset
+[/group]
+
+
+[group]MWc4_1cg
+0x04,0x6F-20,10
+0x70,0x72-20,90
+0x74,0x8C-20,10
+[/group]
+
+
+[group]MWc4_2cg
+0xA4,0xBC-2F,10
+0xBD,2F,90
+[/group]
+
+
+[group]MWc4_F1
+[subject]時間関係:dir
+ [io_fep] $Val-1, $Val+1
+  [subject]日付/現在値/_:calc,0x5909A4,0x00,0x62,unsigned
+ [/io_fep]
+ [subject]時間/現在値/固定:calc,0x590AAC,0x0000,0x059F,unsigned
+[back]
+[subject]好感度関係:dir
+ [subject]ヒロイン:dir
+  [repeat]MWc4LST->MWc4REP1,0,5,1
+ [back]
+ [subject]教師とサブキャラ:dir
+ [subject]サブキャラ好感度ALLMAX化/実行/_:toggle,0x596F14,0x59823B-64000000*+0188
+  [repeat]MWc4LST->MWc4REP2,0,36,1
+ [back]
+ [subject]エンディング確定フラグ/_:d_list,0x590AF8,MWc4LST->LST_c,0x00,0xFF,MWc4LST->LST_d,offset
+[back]
+[/group]
+
+
+[group]MWc4REP1
+[subject][! @MWc4LST->LST_a,$Val !]'+'［'+'_mem,_0x596BEC+0x[! 0x8C*$Val !]+0x6C,4,num,<Nodata>,%d'+'］'+'［'+'_mem,_0x596BEC+0x[! 0x8C*$Val !]+0x70,4,free_list,<NoData or その他>,MWc4LST->LST_e'+'］/現在値/_:calc,_0x596BEC+0x[! 0x8C*$Val !]+0x6C,0x0000,0x03E7,unsigned
+[/group]
+
+
+[group]MWc4REP2
+[subject][! @MWc4LST->LST_b,$Val !]'+'［'+'_mem,_0x596EA8+0x[! 0x8C*$Val !]+0x6C,4,num,<Nodata>,%d'+'］'+'［'+'_mem,_0x596EA8+0x[! 0x8C*$Val !]+0x70,4,free_list,<NoData or その他>,MWc4LST->LST_e'+'］/現在値/_:calc,_0x596EA8+0x[! 0x8C*$Val !]+0x6C,0x00,0x64,unsigned
+[/group]
+
+
+[group]LST_a
+モニカ・オルブライト
+リサ・エアハート
+ジャスティン・クライトン
+フィリス・サイフォン
+綾小路瑞穂
+[/group]
+
+
+[group]LST_2a
+ライル・エインズワース
+モニカ・オルブライト
+リサ・エアハート
+ジャスティン・クライトン
+フィリス・サイフォン
+綾小路瑞穂
+[/group]
+
+
+[group]LST_b
+ミリアム
+ギルバート
+龍道
+マリオン
+ロレッタ
+アーウィン
+イレーネ
+エステル
+クララ
+セシリー
+ドリス
+ルイーズ
+アイリス
+ウェンディ
+オリビア
+シモーヌ
+ナディア
+ヘイゼル
+メリッサ
+レイチェル
+エイミー
+エリカ
+キャロル
+ティーナ
+マチルダ
+ラヴィニア
+アルシア
+エフィ
+ケイト
+ソフィア
+ブリジット
+リリアナ
+アイナ
+ジゼル
+ニーナ
+パッツィー
+[/group]
+
+
+[group]LST_c
+関係破棄
+モニカ・オルブライト
+リサ・エアハート
+ジャスティン・クライトン
+フィリス・サイフォン
+綾小路瑞穂
+[/group]
+
+
+[group]LST_d
+,0x00=00/??
+,0x00=02/??
+,0x00=03/??
+,0x00=04/??
+,0x00=05/??
+,0x00=06/??
+[/group]
+
+
+[group]LST_e
+1=黒魔法の講義室
+2=白魔法の講義室
+3=自然魔法の講義室
+4=錬金術の講義室
+5=中庭
+6=図書室
+7=食堂
+8=ロビー
+9=テラス
+10=ラウンジ
+16=バルコニー
+17=保健室
+[/group]
+
+
+[group]LST_f
+デフォルト
+完全回避
+強制化
+[/group]
+
+
+[group]LST_g
+,0x073BB9=0F8453010000,0x073C0A=7D3B,0x073C41=0F8DC9000000
+,0x073BB9=0F8453010000,0x073C0A=EB00,0x073C41=E9CA00000090
+,0x073BB9=EB0490909090,0x073C0A=EB3B,0x073C41=0F8DC9000000
+[/group]
