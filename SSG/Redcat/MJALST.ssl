@@ -1,0 +1,43 @@
+[group]MJA_SSG
+[note]wordwrap
+前評判上々で蓋を開けたら毎度F&Cな内容でした。相変わらず萌要素は凄いけど(^^;
+
+＊SSGの基本仕様は「木漏れ日～」と同様。デバッガチェッカが発動する以前にウチは青画面なので、少々凹んでます(^^;　そのうち対策する予定ではいましたけど…ってことで、リプレイの方は一時的効果しか出ません。更新周期絞って固定しといてください。
+[/note]
+
+[subject]パラメータ関連:dir
+ [subject]好感度確認調整:dir
+  [size]4
+	[repeat]MJALST->MJAREP1,0,5,1
+  [/size]
+[root]
+
+[subject]ＣＧモード関連:dir
+	[replace]_[:(MName::SYSTEM.UNT)+0x33574:],MJALST->MJA_a
+[root]
+
+[/group]
+
+
+[group]MJAREP1
+[subject][! @MJALST->LST_a,$Val !]/現在値/_:calc,_[:(MName::SYSTEM.UNT)+0x33574:]+0x1180+0x[! 0x04*$Val !],0x00,0xC8,unsigned
+[/group]
+
+
+[group]LST_a
+シルビア・アイゼット
+エレーネ・シルバーナ
+ナナ
+リディア・アーセナル
+ミルキー・ミルコック
+[/group]
+
+
+[group]MJA_a
+[subject]CGモード:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x05DC,0x063D-01
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x05DC,0x063D-00
+[back]
+[subject]Hリプレイ:dir
+	[subject]ＡＬＬ ＯＮ/実行/固定:toggle,0x0780,0x788-01
+[/group]
