@@ -1,0 +1,230 @@
+[group]SW3_SSG
+[note]wordwrap
+シリーズで、特に人気のある理由が少しわかりました。これでベイグランツ同様VGAの敷居が高くなければなぁ…。４が発売されることを期待してます。
+
+
+パートによって手法が異なるものを共通機能で解決するため、「※」のついたディレクトリ内及び・対象項目には必須コードの反映が必要になります。
+
+必須コード反映方法
+１）タイトル画面、或いはシステムメニュー画面でパラメータ関連内必須コードを実行。
+２）最初から始めるか、任意のデータをロードする。
+
+以上で、自動反映されます。以後、起動中は効果が永続しますので、「※」の機能も普通に利用できます。
+
+以下、少々補足です。
+
+■■SLGパート関連
+光武ノーダメージ化：
+味方の無敵化と同意。
+
+光武通常攻撃無限化：
+攻撃するとARMSゲージが最大回復するので殴り放題です。
+
+■■パラメータ関連
+ADVパート時間帯：
+イベントテーブルの作成は時間帯更新時に行われますので、変更しても即座に効果は出ず、特定の行動で時間を潰し、テーブルデータを再セットさせる必要があります。目的の時間の５分前を目安に設定すると良いです。なお、時間帯は２４時間基準で設定します。
+
+キャラ別信頼値他：
+クリアフラグが起っているのと、大神の累積信頼値100以上が黒髪の貴公子の条件。SLGパートの調子は隊員の信頼値によって変動。
+
+SLGパート部隊能力他：
+素早さによって配列が変動します。本来は41人分ありますが、処理の負担軽減のため12人分に抑えてあります。パラメータは合計値が128以上になると表示がおかしくなりますが、反映はされてるらしいです。
+
+■■パラメータ関連
+副隊長中途変更：
+自分でやっといてなんですが鬼畜な所業(^^;
+
+サクラ大戦２フルコンプデータ連結：
+実行状態で、アイキャッチ画面か、巴里の優雅な一日で日記をつけると反映されます。ＣＧモード関連も同様。
+[/note]
+
+[subject]SLGパート関連:dir
+	[subject]光武ノーダメージ化/実行/_:b_toggle,0x621451,SW3LST->SW3_c,real
+	[subject]光武通常攻撃無限化/実行/_:b_toggle,0x658E9E,SW3LST->SW3_d,real
+	[subject]ため１回で光武耐久・気合全快/実行/_:b_toggle,0x62285C,SW3LST->SW3_e,real
+[root]
+
+[subject]パラメータ関連:dir
+	[subject]※必須コード/実行/_:b_toggle,0x497DC7,SW3LST->SW3_b,real
+	 [enabled] [:0x497DC8:] == 0x00230CB4
+		[subject]※ADVパート時間帯:dir
+			[subject]時/現在値/固定:calc,_[:[:0x1F8F800:]+0x1C:]+0x01EA,0x00,0x17,unsigned
+		 	[subject]分/現在値/固定:calc,_[:[:0x1F8F800:]+0x1C:]+0x01EC,0x00,0x3B,unsigned
+	[back]
+	[subject]※キャラ別信頼値他:dir
+		[repeat]SW3LST->SW3REP2,0,13,1
+		[subject]レノ神父:dir
+			[replace]_[:[:0x1F8F800:]+0x18:]+0x01E0,SW3LST->SW3_PR2
+		[back]
+	 [/enabled]
+	[back]
+	[subject]SLGパート部隊能力他:dir
+		[repeat]SW3LST->SW3REP1,0,12,1
+[root]
+
+[subject]フラグ関連:dir
+ [size]1
+  [enabled] [:0x497DC8:] == 0x00230CB4
+	[subject]※副隊長任意変更/_:list,_[:[:0x1F8F800:]+0x18:]+0x26,SW3LST->LST_e,0x00,0x01
+  [/enabled]
+ [/size]
+	[subject]サクラ大戦２フルコンプデータ連結/実行/_:toggle,_[:0x1F2E74C:]+0x3C,0100FF
+[root]
+
+
+[subject]ＣＧモード関連:dir
+	[replace]_[:0x1F2E74C:],SW3LST->SW3_CG
+[root]
+
+
+[/group]
+
+
+[group]SW3REP1
+[subject]_mem,_[\:0x203C374+0x[! 0x08*$Val !]\:]+0x04,0x01,free_list,<敵ユニットor空白>,SW3LST->LST_a:dir
+	[replace]_[:0x203C374+0x[! 0x08*$Val !]:],SW3LST->SW3_PR1
+[back]
+[/group]
+
+
+[group]SW3REP2
+[subject][! @SW3LST->LST_b,$Val !]:dir
+	[replace]_[:[:0x1F8F800:]+0x18:]+0x[! 0x20*$Val !]+0x20,SW3LST->SW3_PR2
+[back]
+[/group]
+
+
+[group]SW3_a
+0x2C,E703E703
+0x34,64006400
+0x70,3A3A3A3A3A3A
+[/group]
+
+
+[group]SW3_b
+0x497DC7,E9B40C230090,C706534B5343
+0x6C8A80,C706534B5343,000000000000
+0x6C8A86,893500F8F801,000000000000
+0x6C8A8C,E93CF3DCFF90,000000000000
+[/group]
+
+
+[group]SW3_c
+0x621451,E982760A,668B4632
+0x621455,00909090,6601462E
+0x6C8AD8,807E0200
+0x6C8ADC,7511,0000
+0x6C8ADE,50,00
+0x6C8ADF,6633C0,000000
+0x6C8AE2,66894632,00000000
+0x6C8AE6,668B462C,00000000
+0x6C8AEA,6689462E,00000000
+0x6C8AEE,58,00
+0x6C8AEF,668B4632,0000000
+0x6C8AF3,6601462E,00000000
+0x6C8AF7,E95D89F5FF90,000000000000
+[/group]
+
+
+[group]SW3_d
+0x658E9E,E9F1FB06,662B4646
+0x658EA2,00909090,66894640
+0x6C8A94,807E0200,00000000
+0x6C8A98,750A,0000
+0x6C8A9A,668B4650,00000000
+0x6C8A9E,66894644,00000000
+0x6C8AA2,EB04,0000
+0x6C8AA4,662B4646,00000000
+0x6C8AA8,66894640,00000000
+0x6C8AAC,E9F503F9FF90,000000000000
+[/group]
+
+
+[group]SW3_e
+0x62285C,E953620A,668B4634
+0x622860,00909090,66894E40
+0x6C8AB4,66894E40,00000000
+0x6C8AB8,807E0200,00000000
+0x6C8ABC,7510,0000
+0x6C8ABE,668B462C,00000000
+0x6C8AC2,6689462E,00000000
+0x6C8AC6,668B4634,00000000
+0x6C8ACA,66894636,00000000
+0x6C8ACE,668B4634,00000000
+0x6C8AD2,E98D9DF5FF90,000000000000
+[/group]
+
+
+[group]SW3_f
+0x03A4,0x03AA-FF
+0x3BD,FFFF
+[/group]
+
+
+[group]SW3_PR1
+[subject]全能力一括極大化/実行/_:b_toggle,0x00,SW3LST->SW3_a,offset
+[subject]かばう回数（大神機専用）/現在値/_:calc,0x06,0x00,0x63,unsigned
+[subject]最大耐久/現在値/_:calc,0x2C,0x0000,0x03E7,unsigned
+[subject]現在耐久/現在値/_:calc,0x2E,0x0000,0x03E7,unsigned
+[subject]最大気合/現在値/_:calc,0x34,0x00,0x64,unsigned
+[subject]現在気合/現在値/_:calc,0x36,0x00,0x64,unsigned
+[e_with],0x00,0x63,unsigned
+ [subject]操者攻撃/現在値/_:calc,0x70
+ [subject]操者防御/現在値/_:calc,0x71
+ [subject]操者移動/現在値/_:calc,0x72
+ [subject]甲冑攻撃/現在値/_:calc,0x73
+ [subject]甲冑防御/現在値/_:calc,0x74
+ [subject]甲冑移動/現在値/_:calc,0x75
+[/e_with]
+[/group]
+
+
+[group]SW3_PR2
+[e_with],0xFFFFFC19,0x000003E7,signed
+ [subject]累積信頼度/現在値/_:calc,0x00
+ [subject]信頼度/現在値/_:calc,0x02
+[/e_with]
+[/group]
+
+
+[group]SW3_CG
+[subject]巴里の優雅な一日・ムービーALL ON/実行/_:b_toggle,0x00,SW3LST->SW3_f,offfset
+[subject]巴里の優雅な一日・アルバムALL ON/実行/_:toggle,0x02DB,0x031E-FF
+[/group]
+
+
+[group]LST_a
+0x01=光武F大神機
+0x02=光武Fエリカ機
+0x03=光武Fグリシーヌ機
+0x04=光武Fコクリコ機
+0x05=光武Fロベリア機
+0x06=光武F花火機
+[/group]
+
+
+[group]LST_b
+大神一郎
+エリカ・フォンティーヌ
+グリシーヌ・ブル－メール
+コクリコ
+ロベリア・カルリーニ
+北大路花火
+グラン・マ
+メル・レゾン
+シー・カプリス
+迫水典通
+ジャン
+エビヤン警部
+タレブー
+[/group]
+
+
+[group]LST_e
+未決定
+エリカ・フォンティーヌ
+グリシーヌ・ブル－メール
+コクリコ
+ロベリア・カルリーニ
+北大路花火
+[/group]
