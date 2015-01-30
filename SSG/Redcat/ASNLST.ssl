@@ -12,7 +12,7 @@ SLGƒp[ƒgŠÖ˜A‚Ì‹@”\‚ÍŠeX‚Ìƒpƒ‰ƒ[ƒ^•Ï“®‚É•t‚µ‚Ä”­¶BƒQ[ƒ€ŠJŽnŽž‚É‚ÍŠO‚µ‚Ä‚
 
 [/note]
 
-[subject]ver1.0:dir
+[subject]ver1.00:dir
 
 [subject]SLGƒp[ƒgŠÖ˜A:dir
  [subject]ƒAƒCƒeƒ€•Ï“®ŽžŒÂ”Å‘å‰»/ŽÀs/_:toggle,0x40DD1B,89D6????????????????????4E90,8BF0????????????????????85F6
@@ -58,7 +58,7 @@ SLGƒp[ƒgŠÖ˜A‚Ì‹@”\‚ÍŠeX‚Ìƒpƒ‰ƒ[ƒ^•Ï“®‚É•t‚µ‚Ä”­¶BƒQ[ƒ€ŠJŽnŽž‚É‚ÍŠO‚µ‚Ä‚
 
 [back]
 
-[subject]ver1.2:dir
+[subject]ver1.02:dir
 
 [subject]SLGƒp[ƒgŠÖ˜A:dir
  [subject]ƒAƒCƒeƒ€•Ï“®ŽžŒÂ”Å‘å‰»/ŽÀs/_:toggle,0x40DE67,89D6????????????????????4E90,8BF0????????????????????85F6
@@ -104,52 +104,6 @@ SLGƒp[ƒgŠÖ˜A‚Ì‹@”\‚ÍŠeX‚Ìƒpƒ‰ƒ[ƒ^•Ï“®‚É•t‚µ‚Ä”­¶BƒQ[ƒ€ŠJŽnŽž‚É‚ÍŠO‚µ‚Ä‚
 
 [back]
 
-[subject]ver1.3:dir
-
-[subject]SLGƒp[ƒgŠÖ˜A:dir
- [subject]ƒAƒCƒeƒ€•Ï“®ŽžŒÂ”Å‘å‰»/ŽÀs/_:toggle,0x40E02B,89D6????????????????????4E90,8BF0????????????????????85F6
- [subject]Œ¤‹†•K‚¸‚P‰ñ‚ÅI—¹/ŽÀs/_:toggle,0x40E0F2,BA0B0000008BF28BD8,8BF28BD8BA0B000000
- [subject]‘M‚«Å‘åˆÛŽ/ŽÀs/_:toggle,0x40D7B8,89D0,8BC3
- [subject]‘Ì—ÍÅ‘åˆÛŽ/ŽÀs/_:toggle,0x40D7FC,89D0,8BC3
- [subject]•œ‹»Ž‘‹àÅ‘åˆÛŽ/ŽÀs/_:toggle,0x40DACF,89D0,8BC6
- [subject]ŠX“X•ÜŒšÝ‘¦I—¹/ŽÀs/_:toggle,0x40E668,33C0,8BC7
- [subject]ŠX“X•Ü‚Ìl‹Cˆê—¥‘€ì/_:d_list,0x40E728,ASNLST->LST_c,0x00,0xFF,ASNLST->LST_d,offset
-[back]
-
-[subject]ƒpƒ‰ƒ[ƒ^ŠÖ˜A:dir
- [subject]Œo‰ßƒ^[ƒ“”/Œ»Ý’l/_:calc,0x54D988,0x0000,0x044A,unsigned
- [subject]‘M‚«/Œ»Ý’l/ŒÅ’è:calc,0x54D994,0x00,0x13,unsigned
- [subject]‘Ì—Í/Œ»Ý’l/ŒÅ’è:calc,0x54D998,0x00,0x13,unsigned
- [subject]ŠŽ‹à/Œ»Ý’l/_:calc,0x54D99C,0x000000,0x98967F,unsigned
-  [subject]ƒAƒCƒeƒ€ƒGƒfƒBƒ^:dir
-   [subject]ŠŽ”Žw’è/Œ»Ý’l/_:calc,0x520F1C,0x00,0x63,unsigned
-   [subject]H•¨‘SŽíŽw’è”ŠŽ/ŽÀs/_:toggle,0x54D9DC,0x54DD9B-01??0000$4[:0x520F1C:]$$640000000A000000
-   [subject]H•¨‘SŽí–•Á/ŽÀs/_:toggle,0x54D9DC,0x54DD9B-00??0000000000006400000000000000
-   [subject]‰»Šw‘SŽíŽw’è”ŠŽ/ŽÀs/_:toggle,0x54DD9C,0x54E11B-01??0000$4[:0x520F1C:]$$640000000A000000
-   [subject]‰»Šw‘SŽí–•Á/ŽÀs/_:toggle,0x54DD9C,0x54E11B-00??0000000000006400000000000000
-   [subject]ŽG‰Ý‘SŽíŽw’è”ŠŽ/ŽÀs/_:toggle,0x54E11C,0x54E4BB-01??0000$4[:0x520F1C:]$$640000000A000000
-   [subject]ŽG‰Ý‘SŽí–•Á/ŽÀs/_:toggle,0x54E11C,0x54E4BB-00??0000000000006400000000000000
-   [subject]‹@ŠB‘SŽíŽw’è”ŠŽ/ŽÀs/_:toggle,0x54E4BC,0x54E86B-01??0000$4[:0x520F1C:]$$640000000A000000
-   [subject]‹@ŠB‘SŽí–•Á/ŽÀs/_:toggle,0x54E4BC,0x54E86B-00??0000000000006400000000000000
-   [subject]‘•¨‘SŽíŽw’è”ŠŽ/ŽÀs/_:toggle,0x54E86C,0x54EC6B-01??0000$4[:0x520F1C:]$$640000000A000000
-   [subject]‘•¨‘SŽí–•Á/ŽÀs/_:toggle,0x54E86C,0x54EC6B-00??0000000000006400000000000000
-    [subject]ŒÂ•ÊŽw’è:dir
-	[repeat]ASNLST->ASNREP13,0,297,1
-    [back]
-  [back]
-  [subject]’n‹æƒpƒ‰ƒ[ƒ^:dir
-   [subject]Œö‹¤Ž{ÝŒšÝŽ‘‹à/Œ»Ý’l/_:calc,0x54D9A8,0x000000,0x98967F,unsigned
-	[repeat]ASNLST->ASNREP23,0,9,1
-  [back]
-[back]
-
-[subject]‚b‚fƒ‚[ƒhŠÖ˜A:dir
- [subject]}ŠÓ‚`‚k‚k/‚n‚m^‚n‚e‚e/_:toggle,0x55B624,0x55B649-FF,00
- [subject]ƒAƒ‹ƒoƒ€‚`‚k‚k/‚n‚m^‚n‚e‚e/_:toggle,0x55B614,0x55B61D-FF,00
-[back]
-
-[back]
-
 [/group]
 
 
@@ -167,13 +121,6 @@ SLGƒp[ƒgŠÖ˜A‚Ì‹@”\‚ÍŠeX‚Ìƒpƒ‰ƒ[ƒ^•Ï“®‚É•t‚µ‚Ä”­¶BƒQ[ƒ€ŠJŽnŽž‚É‚ÍŠO‚µ‚Ä‚
 [/group]
 
 
-[group]ASNREP13
-[subject][! @ASNLST->LST_a,$Val !]:dir
-	[replace]_0x54D9DC+0x[! 0x10*$Val !],ASNLST->ASN_1PR
-[back]
-[/group]
-
-
 [group]ASNREP2
 [subject][! @ASNLST->LST_b,$Val !]:dir
 	[replace]_0x55A814+0x[! 0x0144*$Val !],ASNLST->ASN_2PR
@@ -184,13 +131,6 @@ SLGƒp[ƒgŠÖ˜A‚Ì‹@”\‚ÍŠeX‚Ìƒpƒ‰ƒ[ƒ^•Ï“®‚É•t‚µ‚Ä”­¶BƒQ[ƒ€ŠJŽnŽž‚É‚ÍŠO‚µ‚Ä‚
 [group]ASNREP22
 [subject][! @ASNLST->LST_b,$Val !]:dir
 	[replace]_0x55AA48+0x[! 0x0144*$Val !],ASNLST->ASN_2PR
-[back]
-[/group]
-
-
-[group]ASNREP23
-[subject][! @ASNLST->LST_b,$Val !]:dir
-	[replace]_0x55AAA0+0x[! 0x0144*$Val !],ASNLST->ASN_2PR
 [back]
 [/group]
 
