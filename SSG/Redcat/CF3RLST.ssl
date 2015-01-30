@@ -1,0 +1,215 @@
+[group]CF3R_SSG
+[note]wordwrap
+数倍の敵に真正面から白兵戦し掛けて大勝してしまうファイゼル。いや、ギャグでしょこれはｗ
+
+■■育成パート関連
+ステータス無条件極大維持：
+行動結果に関係なく、仲間全員の体力全快・他全能力を999に維持
+
+■■パラメータ関連
+フラグ関連も含め、実際にプレイ上に効果を出すための実データの書き換えになります。セーブデータ書き換え用の配列データへの反映は１週分の行動を実行した後で行われます。
+
+■■フラグ関連
+経過週に関しては、現在存在する仲間の数が減ってしまう週への巻き戻しはできません。
+
+ルート確定は５６～６５週目のローゼンベルク内で行われますが、その際分岐を自由に変更できる機能になります。
+
+様々な要因がありますが、基本的に
+テルル
+ラピス
+レヴィアン
+ミンファ
+チャイカ
+クリームヒルトとセリカ
+ナガレ
+の順くらいでルート確定には優先順位がありますので、攻略サイト等での条件を満たしたのに攻略できない等の場合、優先順位の高いヒロインのイベント条件とルート確定フラグを解除することでルートに入れるようになります。
+
+■■ＣＧモード関連
+更新反映させるには、NEWGAMEで始めて、最初のミンのイベントＣＧを見ればＯＫです。
+[/note]
+
+[subject]ver2.00:dir
+
+[subject]育成パート関連:dir
+	[subject]ステータス無条件極大維持/実行/_:b_toggle,0x454C30,CF3RLST->CF3R_a,real
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]一般ステータス確認調整:dir
+  [size]4
+	[repeat]CF3RLST->CF3REP1,0,9,1
+  [/size]
+ [back]
+ [subject]好感度確認調整:dir
+  [size]4
+	[repeat]CF3RLST->CF3REP2,0,8,1
+  [/size]
+ [back]
+[back]
+
+[subject]フラグ関連:dir
+	[subject]経過週/現在値/_:calc,0x50D008,0x00,0x4D,unsigned
+	[subject]ルート確定フラグ/_:list,0x50D184,CF3RLST->LST_b,0x00,0x01
+	[subject]確定イベント条件操作/_:d_toggle,0x50D188,CF3RLST->LST_a,CF3RLST->LST_c,real
+	[subject]ラピス嫉妬ポイント/現在値/_:calc,0x50D1AC,0x00,0x09,unsigned
+[back]
+
+[subject]ＣＧモード関連:dir
+	[replace]_[:0x5140D8:],CF3RLST->CF3R_c
+[back]
+
+[back]
+
+[subject]ver2.01:dir
+
+[subject]育成パート関連:dir
+	[subject]ステータス無条件極大維持/実行/_:b_toggle,0x48BCBF,CF3RLST->CF3R_a2,real
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]一般ステータス確認調整:dir
+  [size]4
+	[repeat]CF3RLST->CF3REP4,0,9,1
+  [/size]
+ [back]
+ [subject]好感度確認調整:dir
+  [size]4
+	[repeat]CF3RLST->CF3REP3,0,8,1
+  [/size]
+ [back]
+[back]
+
+[subject]フラグ関連:dir
+	[subject]経過週/現在値/_:calc,0x512E50,0x00,0x4D,unsigned
+	[subject]ルート確定フラグ/_:list,0x512FCC,CF3RLST->LST_b,0x00,0x01
+	[subject]確定イベント条件操作/_:d_toggle,0x512FD0,CF3RLST->LST_a,CF3RLST->LST_c2,real
+	[subject]ラピス嫉妬ポイント/現在値/_:calc,0x512FF4,0x00,0x09,unsigned
+[back]
+
+[subject]ＣＧモード関連:dir
+	[replace]_[:0x518378:],CF3RLST->CF3R_c
+[back]
+
+[back]
+
+[/group]
+
+
+[group]CF3R_a
+0x454C30,33D2EB029090,8B9544FFFFFF
+0x454C3F,B96400000090,8B4838034D94
+0x454CE4,33C0EB029090,8B8538FFFFFF
+0x454CF3,BAE703000090,8B513C035584
+0x454D98,33C9EB029090,8B8D2CFFFFFF
+0x454DA7,B8E703000090,8B4240034588
+0x454E58,33D2EB029090,8B9520FFFFFF
+0x454E6D,B9E703000090,038D74FFFFFF
+[/group]
+
+
+[group]CF3R_a2
+0x48BCBF,33C0EB029090,8B8544FFFFFF
+0x48BCD1,BA6400000090,03957CFFFFFF
+0x48BD61,33C9EB029090,8B8D38FFFFFF
+0x48BD6D,B8E703000090,8B423C03458C
+0x48BE09,33D2EB029090,8B952CFFFFFF
+0x48BE1B,B9E703000090,038D74FFFFFF
+0x48BEB7,33C0EB029090,8B8520FFFFFF
+0x48BEC9,BAE703000090,039578FFFFFF
+[/group]
+
+
+[group]CF3REP1
+[subject]_mem,_0x502A04+0x[! 0x4C*$Val !],0x10,00,<NoCharacter>:dir
+	[replace]_0x5029F8+0x[! 0x4C*$Val !],CF3RLST->CF3R_b
+[back]
+[/group]
+
+
+[group]CF3REP4
+[subject]_mem,_0x51CC14+0x[! 0x4C*$Val !],0x10,00,<NoCharacter>:dir
+	[replace]_0x51CC08+0x[! 0x4C*$Val !],CF3RLST->CF3R_b
+[back]
+[/group]
+
+
+[group]CF3R_b
+[subject]兵士数/現在数/_:calc,0x34,0x00,0x05,unsigned
+[e_with],0x00,0x64,unsigned
+ [subject]体力/現在数/_:calc,0x38
+ [subject]能力/現在数/_:calc,0x3C
+ [subject]行動力/現在数/_:calc,0x40
+ [subject]統率力/現在数/_:calc,0x44
+[/e_with]
+[/group]
+
+
+[group]CF3REP2
+[subject][! @CF3RLST->LST_a,$Val !]/現在値/_:calc,_0x50D084+0x[! 0x04*$Val !],0x00,0xFF,unsigned
+[/group]
+
+
+[group]CF3REP3
+[subject][! @CF3RLST->LST_a,$Val !]/現在値/_:calc,_0x512ECC+0x[! 0x04*$Val !],0x00,0xFF,unsigned
+[/group]
+
+
+[group]LST_a
+ミンファ
+ラピス
+テルル
+チャイカ
+ナガレ
+クリームヒルト
+セリカ
+レヴィアン
+[/group]
+
+
+[group]LST_b
+ミーティア（初期化）
+ミンファ
+ラピス
+テルル
+チャイカ
+ナガレ
+クリームヒルト
+セリカ
+レヴィアン
+[/group]
+
+
+[group]LST_c
+0x50D188=0100000001000000/0000000000000000
+0x50D1A8=01000000/00000000
+0x50D1D0=01000000/00000000
+0x50D1E0=04000000/00000000
+0x50D1F8=01000000/00000000
+0x50D204=0x50D20C-01000000/00000000
+0x50D204=0x50D20C-01000000/00000000
+0x50D230=01000000
+[/group]
+
+
+[group]LST_c2
+0x512FD0=0100000001000000/0000000000000000
+0x512FF0=01000000/00000000
+0x513018=01000000/00000000
+0x513028=04000000/00000000
+0x513040=01000000/00000000
+0x51304C=0x513054-01000000/00000000
+0x51304C=0x513054-01000000/00000000
+0x513074=01000000
+[/group]
+
+
+[group]CF3R_c
+[subject]ARTGALLERY:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x04,0xA5-20,10
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x04,0xA5-20,00
+[back]
+[subject]MEMORIAL:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0xB4,0xC3-2F,10
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0xB4,0xC3-2F,00
+[back]
+[/group]
