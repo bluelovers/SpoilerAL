@@ -1,0 +1,388 @@
+SSG for SpoilerAL ver 3.5
+
+[script]
+[title]イースⅡ ETERNAL Orginal
+[process]YS2_WIN.EXE
+[maker]日本Falcom
+[creator]たーちゃん
+[note]wordwrap
+＜使用上の注意＞
+OrginalのCD版のみ確認済み。
+
+ゲームスタートから、最初のウィンドウ切り替えの時は、なにも改造しないで下さい。予期せぬ結果となります。必ず一旦ゲームに復帰してからもう一度切り替えて、その後改造して下さい。
+ゲーム進行に反する改造を行ったときは、強制終了する事があります。
+[/note]
+[subject]アドル所持品:dir
+	[subject]武器防具:dir
+		[subject]SWORD :d_toggle,0x605400,TATYAN->YS2E-刀Viw,TATYAN->YS2E-刀Adr,offset
+		[subject]SHIELD:d_toggle,0x605400,TATYAN->YS2E-盾Viw,TATYAN->YS2E-盾Adr,offset
+		[subject]ARMOR :d_toggle,0x605400,TATYAN->YS2E-鎧Viw,TATYAN->YS2E-鎧Adr,offset
+	[back]
+	[subject]魔法装備:dir
+		[subject]トバの魔法    :toggle,0x605434,0101,0000
+		[subject]ダビーの魔法  :toggle,0x605436,0101,0000
+		[subject]ハダルの魔法  :toggle,0x605438,0101,0000
+		[subject]ジェンマの魔法:toggle,0x60543C,0101,0000
+		[subject]メサの魔法    :toggle,0x60543A,0101,0000
+		[subject]ファクトの魔法:toggle,0x60543E,0101,0000
+	[back]
+	[subject]彫像、指輪など:dir
+		[subject]精霊の衣      :toggle,0x605440,0101,0000
+		[subject]鷹の彫像      :toggle,0x605442,0101,0000
+		[subject]隼の彫像      :toggle,0x605444,0101,0000
+		[subject]クレリアの指輪:toggle,0x605446,0101,0000
+		[subject]やすらぎの指輪:toggle,0x605448,0101,0000
+		[subject]女神の指輪    :toggle,0x60544A,0101,0000
+	[back]
+	[subject]消費アイテム:dir
+		[subject]鉄鉱石(最初)      :toggle,0x60545C,0101,0000
+		[subject]生命の薬(最初)    :toggle,0x605486,0101,0000
+		[subject]ウイング(最初)    :toggle,0x605488,0101,0000
+		[subject]薬草(最初)        :toggle,0x60548A,0301,0000
+		[subject]リンゴ(最初)      :toggle,0x60548C,0301,0000
+		[subject]ロダの実(最初)    :toggle,0x60548E,0101,0000
+		[subject]マールの花(最初)  :toggle,0x605490,0301,0000
+		[subject]セルセタの花(最初):toggle,0x605492,0101,0000
+		[subject]クルの実(最初)    :toggle,0x605494,0301,0000
+		[subject]燻製肉(極上)(最初):toggle,0x605496,0101,0000
+		[subject]生肉(極上)(最初)  :toggle,0x605498,0101,0000
+		[subject]ミートローフ(最初):toggle,0x60549A,0101,0000
+		[subject]クルの実パイ(最初):toggle,0x60549C,0101,0000
+		[?ubject]鉄鉱石      :calc,0x60545C,0x00,0xFF,unsigned
+		[subject]生命の薬    :calc,0x605486,0x00,0xFF,unsigned
+		[subject]ウイング    :calc,0x605488,0x00,0xFF,unsigned
+		[subject]薬草        :calc,0x60548A,0x00,0xFF,unsigned
+		[subject]リンゴ      :calc,0x60548C,0x00,0xFF,unsigned
+		[subject]ロダの実    :calc,0x60548E,0x00,0xFF,unsigned
+		[subject]マールの花  :calc,0x605490,0x00,0xFF,unsigned
+		[subject]セルセタの花:calc,0x605492,0x00,0xFF,unsigned
+		[subject]クルの実    :calc,0x605494,0x00,0xFF,unsigned
+		[subject]燻製肉(極上):calc,0x605496,0x00,0xFF,unsigned
+		[subject]生肉(極上)  :calc,0x605498,0x00,0xFF,unsigned
+		[subject]ミートローフ:calc,0x60549A,0x00,0xFF,unsigned
+		[subject]クルの実パイ:calc,0x60549C,0x00,0xFF,unsigned
+	[back]
+	[subject]その他アイテム:dir
+		[subject]いにしえの石版  :toggle,0x605458,0101,0000
+		[subject]神界の杖        :toggle,0x60545A,0101,0000
+		[subject]氷霧の玉        :toggle,0x60545E,0101,0000
+		[subject]神殿の鍵        :toggle,0x605460,0101,0000
+		[subject]水路室の鍵      :toggle,0x605462,0101,0000
+		[subject]ささやきの耳飾り:toggle,0x605464,0101,0000
+		[subject]リラの貝殻      :toggle,0x605466,0101,0000
+		[subject]通行証          :toggle,0x605468,0101,0000
+		[subject]銀のペンダント  :toggle,0x60546A,0101,0000
+		[subject]金のペンダント  :toggle,0x60546C,0101,0000
+		[subject]銀のハーモニカ  :toggle,0x60546E,0101,0000
+		[subject]邪悪な鈴        :toggle,0x605470,0101,0000
+		[subject]導きの巻物      :toggle,0x605472,0101,0000
+		[subject]幻影の鏡        :toggle,0x605474,0101,0000
+		[subject]黒い真珠        :toggle,0x605476,0101,0000
+		[subject]聖なる杯        :toggle,0x605478,0101,0000
+		[subject]夢見の石像      :toggle,0x60547A,0101,0000
+		[subject]マトック        :toggle,0x60547C,0101,0000
+		[subject]バノアの手紙    :toggle,0x60547E,0101,0000
+		[subject]リリアの薬      :toggle,0x605480,0101,0000
+		[subject]石の靴          :toggle,0x605482,0101,0000
+		[subject]ロダの葉        :toggle,0x605484,0101,0000
+		[subject]ﾍﾞｽﾃｨｱﾘｰﾎﾟｰｼｮﾝ  :toggle,0x60549E,0101,0000
+	[back]
+[back]
+[subject]アドル能力:dir
+	[io_fep]$Val-1, $Val+1
+		[subject]レベル:calc,0x605F44,0x01,0x37,unsigned,little_e
+	[/io_fep]
+	[subject]経験値:calc,0x605F4C,0x000000,0xFFFFFF,unsigned,little_e
+	[subject]HP    :calc,0x605F2C,0x0000,0x0100,unsigned,little_e
+	[?ubject]MP    :calc,0x605F30,0x0000,0x0100,unsigned,little_e
+	[subject]所持金:calc,0x605F48,0x000000,0xFFFFFF,unsigned,little_e
+[back]
+[subject]マスコット:dir
+	[subject]主要人物:dir
+		[subject]女神:dir
+			[subject]フィーナ      :toggle,0x604A8B,01,00
+			[subject]村娘のフィーナ:toggle,0x604AE4,01,00
+			[subject]レア          :toggle,0x604A8C,01,00
+			[subject]詩人のレア    :toggle,0x604AE3,01,00
+		[back]
+		[subject]リリア:dir
+			[subject]リリア        :toggle,0x604A83,01,00
+			[subject]ピースリリア  :toggle,0x604AE8,01,00
+			[subject]よそいきリリア:toggle,0x604AE9,01,00
+			[subject]メイドリリア  :toggle,0x604AEA,01,00
+			[subject]巫女リリア    :toggle,0x604AEB,01,00
+			[subject]ヤマンバリリア:toggle,0x604AEC,01,00
+		[back]
+		[subject]神官:dir
+			[subject]交通安全:toggle,0x604ADB,01,00
+			[subject]勝運祈願:toggle,0x604ADC,01,00
+			[subject]商売繁盛:toggle,0x604ADD,01,00
+			[subject]健康長寿:toggle,0x604ADE,01,00
+			[subject]学業成就:toggle,0x604ADF,01,00
+			[subject]家内安全:toggle,0x604AE0,01,00
+		[back]
+		[subject]その他:dir
+			[subject]しっぽタルフ:toggle,0x604AED,01,00
+			[subject]黒真珠?     :toggle,0x604AD2,01,00
+			[subject]囚われマリア:toggle,0x604AE7,01,00
+			[subject]ザレムＡ    :toggle,0x604AEE,01,00
+			[subject]子ガモ      :toggle,0x604AEF,01,00
+			[subject]爆裂カボチャ:toggle,0x604AF0,01,00
+			[subject]齧歯類(食用):toggle,0x604AF1,01,00
+		[back]
+	[back]
+	[subject]村人たち:dir
+		[subject]エステリア:dir
+			[subject]フィーナ        :toggle,0x604A8B,01,00
+			[subject]レア            :toggle,0x604A8C,01,00
+			[subject]ゴーバン        :toggle,0x604A89,01,00
+			[subject]ルタ＝ジェンマ  :toggle,0x604A88,01,00
+			[subject]占い師サラ      :toggle,0x604AE1,01,00
+			[subject]ドギ            :toggle,0x604AE5,01,00
+			[subject]ミネアの看護婦  :toggle,0x604AE2,01,00
+			[subject]ダルク＝ファクト:toggle,0x604AE6,01,00
+		[back]
+		[subject]ランスの村:dir
+			[subject]リリア        :toggle,0x604A83,01,00
+			[subject]バノア        :toggle,0x604A71,01,00
+			[subject]アスタル      :toggle,0x604A73,01,00
+			[subject]レノア＝ラル  :toggle,0x604A68,01,00
+			[subject]フレア＝ラル  :toggle,0x604A69,01,00
+			[subject]看護婦        :toggle,0x604A70,01,00
+			[subject]カーネル長老  :toggle,0x604A67,01,00
+			[subject]ナターシャ    :toggle,0x604A72,01,00
+			[subject]ギド          :toggle,0x604A6C,01,00
+			[subject]ジェイド      :toggle,0x604A6B,01,00
+			[subject]ジラ          :toggle,0x604A6D,01,00
+			[subject]レグス        :toggle,0x604A74,01,00
+			[subject]ルードル      :toggle,0x604A6A,01,00
+			[subject]テス          :toggle,0x604A9E,01,00
+			[subject]トラン        :toggle,0x604A9F,01,00
+			[subject]ラーゼン      :toggle,0x604A60,01,00
+			[subject]ボーツ        :toggle,0x604A66,01,00
+			[subject]シーラ        :toggle,0x604A93,01,00
+			[subject]クリス        :toggle,0x604A75,01,00
+			[subject]セラス        :toggle,0x604A76,01,00
+			[subject]ブロディ      :toggle,0x604A5E,01,00
+			[subject]マリーナ      :toggle,0x604A61,01,00
+			[subject]ベス          :toggle,0x604A64,01,00
+			[subject]シザリア      :toggle,0x604A94,01,00
+			[subject]アンディ      :toggle,0x604A5D,01,00
+			[subject]オーザム      :toggle,0x604A63,01,00
+			[subject]ケイト        :toggle,0x604A95,01,00
+			[subject]ルシール      :toggle,0x604A65,01,00
+			[subject]メーセントルチ:toggle,0x604A5F,01,00
+			[subject]コルト        :toggle,0x604A5B,01,00
+			[subject]ティータ      :toggle,0x604A5C,01,00
+			[subject]エスカ        :toggle,0x604AA2,01,00
+			[subject]ルーシー      :toggle,0x604AA0,01,00
+			[subject]テオ          :toggle,0x604AA1,01,00
+			[subject]ポロ          :toggle,0x604AA3,01,00
+			[subject]サフラン      :toggle,0x604A62,01,00
+		[back]
+		[subject]溶岩の村:dir
+			[subject]ルバ      :toggle,0x604A78,01,00
+			[subject]タルフ    :toggle,0x604A84,01,00
+			[subject]フレッド  :toggle,0x604A8D,01,00
+			[subject]ナタリー  :toggle,0x604A8F,01,00
+			[subject]ノイト    :toggle,0x604A6E,01,00
+			[subject]ラファ    :toggle,0x604A90,01,00
+			[subject]レックス  :toggle,0x604A91,01,00
+			[subject]チェルニー:toggle,0x604A92,01,00
+			[subject]ファーブル:toggle,0x604A82,01,00
+			[subject]エル      :toggle,0x604A77,01,00
+			[subject]メリル    :toggle,0x604A8A,01,00
+			[subject]カーソン  :toggle,0x604A8E,01,00
+			[subject]イシュト  :toggle,0x604AA4,01,00
+			[subject]カシム    :toggle,0x604AA5,01,00
+			[subject]フローネ  :toggle,0x604AA6,01,00
+			[subject]ダリエ    :toggle,0x604AA7,01,00
+			[subject]ナッシュ  :toggle,0x604AA8,01,00
+			[subject]ルー      :toggle,0x604A7E,01,00
+		[back]
+		[subject]ラミアの村:dir
+			[subject]キース  :toggle,0x604A86,01,00
+			[subject]ゴート  :toggle,0x604A85,01,00
+			[subject]ロイド  :toggle,0x604A9A,01,00
+			[subject]ハダト  :toggle,0x604A7A,01,00
+			[subject]サダ    :toggle,0x604A7D,01,00
+			[subject]マリア  :toggle,0x604A87,01,00
+			[subject]カレン  :toggle,0x604A79,01,00
+			[subject]レグ    :toggle,0x604A7B,01,00
+			[subject]ザレム  :toggle,0x604A7C,01,00
+			[subject]フラウ  :toggle,0x604A99,01,00
+			[subject]フリス  :toggle,0x604A96,01,00
+			[subject]ブリッツ:toggle,0x604A9B,01,00
+			[subject]ポーリー:toggle,0x604A9C,01,00
+			[subject]ターニャ:toggle,0x604A9D,01,00
+			[subject]ニール  :toggle,0x604A6F,01,00
+			[subject]フェイ  :toggle,0x604AAA,01,00
+			[subject]ムート  :toggle,0x604AA9,01,00
+			[subject]ジル    :toggle,0x604A97,01,00
+			[subject]レーゼ  :toggle,0x604A98,01,00
+			[subject]リムル  :toggle,0x604AAB,01,00
+			[subject]カイル  :toggle,0x604A7F,01,00
+			[subject]ボリス  :toggle,0x604A80,01,00
+			[subject]エド    :toggle,0x604A81,01,00
+		[back]
+	[back]
+	[subject]モンスター:dir
+		[subject]ムーンドリアの廃墟:dir
+			[subject]クレイス    :toggle,0x604AAC,01,00
+			[subject]カークシャン:toggle,0x604AAD,01,00
+			[subject]ゴドアーゴ  :toggle,0x604AAE,01,00
+		[back]
+		[subject]聖域トール:dir
+			[subject]ウォリゾール:toggle,0x604AAF,01,00
+			[subject]ノメス      :toggle,0x604AB0,01,00
+			[subject]ゾルゲル    :toggle,0x604AB1,01,00
+		[back]
+		[subject]ラスティーニの廃坑:dir
+			[subject]リプレート:toggle,0x604AB2,01,00
+			[subject]トルピ    :toggle,0x604AB3,01,00
+			[subject]ピュロイド:toggle,0x604AB4,01,00
+			[subject]クノックス:toggle,0x604AB5,01,00
+			[subject]カルリィ  :toggle,0x604AB6,01,00
+			[subject]オルハロス:toggle,0x604AB7,01,00
+		[back]
+		[subject]ノルティア氷壁:dir
+			[subject]ニーリ    :toggle,0x604AB8,01,00
+			[subject]ゲルガルド:toggle,0x604AB9,01,00
+			[subject]エグニド  :toggle,0x604ABA,01,00
+			[subject]ガルガタ  :toggle,0x604ABB,01,00
+			[subject]グォーダー:toggle,0x604ABC,01,00
+			[subject]スヴォフ  :toggle,0x604ABD,01,00
+		[back]
+		[subject]バーンドブレス:dir
+			[subject]プレリガード:toggle,0x604ABE,01,00
+			[subject]オヌマン    :toggle,0x604ABF,01,00
+			[subject]スコールン  :toggle,0x604AC0,01,00
+			[subject]ディルガ    :toggle,0x604AC4,01,00
+			[subject]トプス      :toggle,0x604AC3,01,00
+			[subject]マグニュート:toggle,0x604AC5,01,00
+			[subject]ゼルベノース:toggle,0x604AC1,01,00
+			[subject]ジーン      :toggle,0x604AC2,01,00
+		[back]
+		[subject]サルモンの神殿:dir
+			[subject]アシュヴェル:toggle,0x604AC6,01,00
+			[subject]バオカー    :toggle,0x604AC7,01,00
+			[subject]ナシュザル  :toggle,0x604AC8,01,00
+			[subject]エルエンデス:toggle,0x604AC9,01,00
+			[subject]ナスタール  :toggle,0x604ACA,01,00
+			[subject]ベアロット  :toggle,0x604ACB,01,00
+			[subject]マロキオス  :toggle,0x604ACC,01,00
+			[subject]アロモッド  :toggle,0x604ACD,01,00
+			[subject]トロバー    :toggle,0x604ACE,01,00
+			[subject]ゴドルブ    :toggle,0x604ACF,01,00
+			[subject]ザバ側近    :toggle,0x604ADA,01,00
+			[subject]ゼアーロット:toggle,0x604AD9,01,00
+		[back]
+		[subject]地下水路:dir
+			[subject]デルパス    :toggle,0x604AD0,01,00
+			[subject]ジフテロイド:toggle,0x604AD1,01,00
+			[subject]ケアビス    :toggle,0x604AD6,01,00
+		[back]
+		[subject]神殿・本館:dir
+			[subject]フォルクレス  :toggle,0x604AD3,01,00
+			[subject]レヴィルヴァン:toggle,0x604AD4,01,00
+			[subject]ゲアロット    :toggle,0x604AD5,01,00
+		[back]
+		[subject]女神の王宮:dir
+			[subject]シャーロント:toggle,0x604AD7,01,00
+			[subject]バルキリア  :toggle,0x604AD8,01,00
+		[back]
+	[back]
+[back]
+[subject]マスコット・その他:dir
+	[subject]全て所持:toggle,0x6049F3,0x604AFD-01,00
+	[subject]0x605F2A:calc,0x605F2A,0x00,0xFF,unsigned
+	[subject]0x605F2B:calc,0x605F2B,0x00,0xFF,unsigned
+	[subject]0x605F2C(HP):calc,0x605F2C,0x00,0xFF,unsigned
+	[subject]0x605F2D:calc,0x605F2D,0x00,0xFF,unsigned
+	[subject]0x605F2E:calc,0x605F2E,0x00,0xFF,unsigned
+	[subject]0x605F2F:calc,0x605F2F,0x00,0xFF,unsigned
+[back]
+[/script]
+
+[script]
+[title]イース・エターナル ＶＥ
+[process]YS1_WIN.EXE
+[maker]日本Falcom
+[creator]たーちゃん
+[note]wordwrap
+＜使用上の注意＞
+ゲーム進行に反する改造を行ったときは、強制終了する事があります。
+[/note]
+[subject]アドル所持品:dir
+	[subject]武器防具:dir
+		[subject]SWORD :d_toggle,0x574500,TATYAN->YSVE-刀Viw,TATYAN->YSVE-刀Adr,offset
+		[subject]SHIELD:d_toggle,0x574500,TATYAN->YSVE-盾Viw,TATYAN->YSVE-盾Adr,offset
+		[subject]ARMOR :d_toggle,0x574500,TATYAN->YSVE-鎧Viw,TATYAN->YSVE-鎧Adr,offset
+	[back]
+	[subject]指輪:dir
+		[subject]POWER RING:toggle,0x5745D0,01,00
+		[subject]RING MAIL :toggle,0x5745D4,01,00
+		[subject]TIMER RING:toggle,0x5745D8,01,00
+		[subject]HEAL RING :toggle,0x5745DC,01,00
+		[subject]EVIL RING :toggle,0x5745E0,01,00
+	[back]
+	[subject]換金・購入アイテム:dir
+		[subject]ルビー     :toggle,0x574600,01,00
+		[subject]ネックレス :toggle,0x574634,01,00
+		[subject]金の台座   :toggle,0x574638,01,00
+		[subject]ｻﾌｧｲｱの指輪:toggle,0x574630,01,00
+		[subject]ウイング   :toggle,0x574640,01,00
+		[subject]ミラー     :toggle,0x574644,01,00
+		[subject]ミラー残量 :calc,  0x574334,0x00,0xFF,unsigned,little_e
+		[subject]ﾋｰﾙ ﾎﾟｰｼｮﾝ :toggle,0x57463C,01,00
+	[back]
+	[subject]鍵アイテム:dir
+		[subject]宝箱の鍵  :toggle,0x574604,01,00
+		[subject]牢屋の鍵  :toggle,0x574608,01,00
+		[subject]神殿の鍵  :toggle,0x57460C,01,00
+		[subject]象牙の鍵  :toggle,0x574610,01,00
+		[subject]大理石の鍵:toggle,0x574614,01,00
+		[subject]ダームの鍵:toggle,0x574618,01,00
+	[back]
+	[subject]イースの本:dir
+		[subject]ハダルの章  :toggle,0x5745E4,01,00
+		[subject]トバの章    :toggle,0x5745E8,01,00
+		[subject]ダビーの章  :toggle,0x5745EC,01,00
+		[subject]メサの章    :toggle,0x5745F0,01,00
+		[subject]ジェンマの章:toggle,0x5745F4,01,00
+		[subject]ファクトの章:toggle,0x5745F8,01,00
+	[back]
+	[subject]その他アイテム:dir
+		[subject]クリスタル    :toggle,0x5745FC,01,00
+		[subject]偶像          :toggle,0x57461C,01,00
+		[subject]ロッド        :toggle,0x574620,01,00
+		[subject]銀のﾊｰﾓﾆｶ     :toggle,0x574624,01,00
+		[subject]銀の鈴        :toggle,0x574628,01,00
+		[subject]ロダの種      :toggle,0x57462C,01,00
+		[subject]ハンマー      :toggle,0x574648,01,00
+		[subject]ﾏｽｸ ｵﾌﾞ ｱｲｽﾞ  :toggle,0x57464C,01,00
+		[subject]ﾌﾞﾙｰ ﾈｯｸﾚｽ    :toggle,0x574650,01,00
+		[subject]メガネ        :toggle,0x574654,01,00
+		[subject]ﾌﾞﾙｰ ｱﾐｭﾚｯﾄ   :toggle,0x574658,01,00
+		[subject]ﾍﾞｽﾃｨｱﾘｰﾎﾟｰｼｮﾝ:toggle,0x57465C,01,00
+		[subject]紙切れ        :toggle,0x574660,01,00
+	[back]
+[back]
+[subject]アドル能力:dir
+	[subject]レベル:calc,0x57442C,    0x01,    0x0A,unsigned,little_e
+	[subject]経験値:calc,0x574428,0x000000,0x01869F,unsigned,little_e
+	[subject]HP    :calc,0x574414,    0x00,    0xFF,unsigned,little_e
+	[subject]Max.HP:calc,0x574418,    0x00,    0xFF,unsigned,little_e
+	[subject]攻撃力:calc,0x57441C,  0x0000,  0xFFFF,unsigned,little_e
+	[subject]防御力:calc,0x574420,  0x0000,  0xFFFF,unsigned,little_e
+	[subject]所持金:calc,0x574424,0x000000,0x01000E,unsigned,little_e
+[back]
+[subject]フィーナ能力:dir
+	[subject]経験値:calc,0x57435C,0x00,0xFF,unsigned,little_e
+	[subject]HP    :calc,0x574434,    0x00,    0xFF,unsigned,little_e
+	[subject]Max.HP:calc,0x574438,    0x00,    0xFF,unsigned,little_e
+	[subject]攻撃力:calc,0x57443C,  0x0000,  0xFFFF,unsigned,little_e
+	[subject]防御力:calc,0x574440,  0x0000,  0xFFFF,unsigned,little_e
+[back]
+[/script]
+
