@@ -1,0 +1,7 @@
+[group]ステータス
+	[subject] 懲  罰 : calc,0x00,0,100
+	[subject]性 感 度: calc,0x08,0,100
+	[subject]苦痛感度: calc,0x10,0,100
+	[subject]羞恥感度: calc,0x18,0,100
+	[subject]恋 愛 度: calc,0x20,0,100
+[/group]
