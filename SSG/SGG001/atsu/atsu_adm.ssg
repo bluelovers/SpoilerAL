@@ -1,0 +1,1245 @@
+SSG for SpoilerAL ver 5.2
+
+[script]
+[title]ぱすてるチャイム
+[process]SYSTEM36.EXE
+[maker]アリスソフト
+[creator]あつ
+[adjustment]heap,heap2=0x6A0000>0xBAFFFF,heap3=0xBB0000>0x14BFFFF
+[note]wordwrap
+キャラの正体を変えると、グラフィック等もすり替わります。
+ただし、その場合の能力値もそれぞれのキャラのものに切り替わりますので、注意すること。
+単位は入力値÷10が、画面上に表示されています。
+[/note]
+[subject]ザッカ:calc,0xBB23B0,0x0,0xFFFF,signed,little_e
+[subject]単位  :calc,0xBB23B2,0x0,999,signed,little_e
+[subject]薬:dir
+	[subject]エイドバンド:calc,0xCDAB62,0x0,0x63,signed,little_e
+	[subject]毎日一本    :calc,0xCDAB64,0x0,0x63,signed,little_e
+	[subject]元気のコナ  :calc,0xCDAB66,0x0,0x63,signed,little_e
+	[subject]ヒヨコＭＡＸ:calc,0xCDAB68,0x0,0x63,signed,little_e
+	[subject]毒消しネギ  :calc,0xCDAB6A,0x0,0x63,signed,little_e
+	[subject]浄化丸      :calc,0xCDAB6C,0x0,0x63,signed,little_e
+	[subject]イシャイラズ:calc,0xCDAB6E,0x0,0x63,signed,little_e
+[back]
+[subject]キャラデータ:dir
+	[subject]カイト:dir
+		[replace]0x121CB70,ぱすチャ->パラメータ,offset
+	[subject]ミューゼル:dir
+		[replace]0x121CB72,ぱすチャ->パラメータ,offset
+	[subject]コレット:dir
+		[replace]0x121CB74,ぱすチャ->パラメータ,offset
+	[subject]沙耶:dir
+		[replace]0x121CB76,ぱすチャ->パラメータ,offset
+	[subject]セレス:dir
+		[replace]0x121CB78,ぱすチャ->パラメータ,offset
+	[subject]フォーディン:dir
+		[replace]0x121CB7A,ぱすチャ->パラメータ,offset
+	[subject]ギャロック:dir
+		[replace]0x121CB7C,ぱすチャ->パラメータ,offset
+	[subject]グリード:dir
+		[replace]0x121CB7E,ぱすチャ->パラメータ,offset
+	[subject]トリ・アトリ:dir
+		[replace]0x121CB80,ぱすチャ->パラメータ,offset
+	[subject]クサナギ:dir
+		[replace]0x121CB82,ぱすチャ->パラメータ,offset
+	[subject]ボルフェス:dir
+		[replace]0x121CB84,ぱすチャ->パラメータ,offset
+	[subject]ロイド:dir
+		[replace]0x121CB86,ぱすチャ->パラメータ,offset
+	[subject]コレット（成長後）:dir
+		[replace]0x121CB88,ぱすチャ->パラメータ,offset
+[back]
+[subject]日時:dir
+	[subject]日時（月）:calc,0xBB22D2,0x1,0xc,signed,little_e
+	[subject]日時（日）:calc,0xBB22D4,0x1,0x1f,signed,little_e
+	[subject]日時（曜日）:list,0xBB22D6,ぱすチャ->曜日,0x1,0x1
+	[subject]日時（時）:calc,0xBB22DA,0x1,0xc,signed,little_e
+	[subject]日時（分）:calc,0xBB22DC,0x0,0x3b,signed,little_e
+[back]
+[subject]おまけ:dir
+	[subject]ぷれいやーの名前:string,0xCECE60,16,null
+	[subject]仲間の名前:string,0xCECE80,16,null
+	[subject]ランサーの名前:string,0xCECEA0,16,null
+	[subject]ぷれいやーの正体:list,0xBB2564,ぱすチャ->人物,0x0,0x1
+	[subject]仲間の正体:list,0xBB2572,ぱすチャ->人物,0x0,0x1
+	[subject]ランサーの正体:list,0xBB2580,ぱすチャ->人物,0x0,0x1
+	[subject]日曜日の約束:	list,0xBB21C0,ぱすチャ->人物,0x0,0x1
+/	[subject]階層:calc,0x6a2234,0x1,0x29,signed,little_e
+[back]
+/	[subject]道具:dir
+/		[subject]バッグ１つめ:list,0x7c93a2,ぱすチャ->道具,0x0,0x1
+/		[subject]バッグ２つめ:list,0x7c93a4,ぱすチャ->道具,0x0,0x1
+/		[subject]バッグ３つめ:list,0x7c93a6,ぱすチャ->道具,0x0,0x1
+/		[subject]バッグ４つめ:list,0x7c93a8,ぱすチャ->道具,0x0,0x1
+/		[subject]バッグ５つめ:list,0x7c93aa,ぱすチャ->道具,0x0,0x1
+/		[subject]バッグ６つめ:list,0x7c93ac,ぱすチャ->道具,0x0,0x1
+/		[subject]バッグ７つめ:list,0x7c93ae,ぱすチャ->道具,0x0,0x1
+/		[subject]バッグ８つめ:list,0x7c93b0,ぱすチャ->道具,0x0,0x1
+/		[subject]バッグ９つめ:list,0x7c93b2,ぱすチャ->道具,0x0,0x1
+/		[subject]バッグ１０つめ:list,0x7c93b4,ぱすチャ->道具,0x0,0x1
+/		[subject]バッグ１１つめ:list,0x7c93b6,ぱすチャ->道具,0x0,0x1
+/		[subject]バッグ１２つめ:list,0x7c93b8,ぱすチャ->道具,0x0,0x1
+/		[subject]バッグ１３つめ:list,0x7c93ba,ぱすチャ->道具,0x0,0x1
+/		[subject]バッグ１４つめ:list,0x7c93bc,ぱすチャ->道具,0x0,0x1
+/		[subject]バッグ１５つめ:list,0x7c93be,ぱすチャ->道具,0x0,0x1
+/		[subject]バッグ１６つめ:list,0x7c93c0,ぱすチャ->道具,0x0,0x1
+/		[subject]バッグ１７つめ:list,0x7c93c2,ぱすチャ->道具,0x0,0x1
+/		[subject]バッグ１８つめ:list,0x7c93c4,ぱすチャ->道具,0x0,0x1
+/		[subject]バッグ１９つめ:list,0x7c93c6,ぱすチャ->道具,0x0,0x1
+/		[subject]バッグ２０つめ:list,0x7c93c8,ぱすチャ->道具,0x0,0x1
+/		[subject]バッグ２１つめ:list,0x7c93ca,ぱすチャ->道具,0x0,0x1
+/		[subject]バッグ２２つめ:list,0x7c93cc,ぱすチャ->道具,0x0,0x1
+/		[subject]バッグ２３つめ:list,0x7c93ce,ぱすチャ->道具,0x0,0x1
+/		[subject]バッグ２４つめ:list,0x7c93d0,ぱすチャ->道具,0x0,0x1
+/		[subject]バッグ２５つめ:list,0x7c93d2,ぱすチャ->道具,0x0,0x1
+/		[subject]バッグ２６つめ:list,0x7c93d4,ぱすチャ->道具,0x0,0x1
+/		[subject]バッグ２７つめ:list,0x7c93d6,ぱすチャ->道具,0x0,0x1
+/		[subject]バッグ２８つめ:list,0x7c93d8,ぱすチャ->道具,0x0,0x1
+/		[subject]バッグ２９つめ:list,0x7c93da,ぱすチャ->道具,0x0,0x1
+/		[subject]バッグ３０つめ:list,0x7c93dc,ぱすチャ->道具,0x0,0x1
+/		[subject]鑑定済みにする:toggle,0x7c9406,0x7c9440-0000,ffff
+/	[back]
+[/adjustment]
+[/script]
+
+[script]
+[title]略奪
+[process]RYAKU.EXE
+[maker]ZYX
+[creator]あつ
+[adjustment]dialog,0x530EC9,略奪,0x530000,0xD8FFFF,4
+[note]wordwrap
+アドレス移動系って嫌ですねぇ(^^;)
+特に略奪は、クセのあるアドレス移動でして…(TAT)
+
+結局数値入力…(;_;)
+[/note]
+[subject]調教日数:calc,0x530EC7,0,0xFF,signed,little_e
+[subject]YOU:dir
+	[subject]体力:calc,0x530EC9,0,0xFF,signed,little_e
+	[subject]ストレス:calc,0x530ECA,0,0xFF,signed,little_e
+	[subject]SEX経験値:calc,0x530ECB,0,0xFF,signed,little_e
+	[subject]SM経験値:calc,0x530ECC,0,0xFF,signed,little_e
+	[subject]鞭技能:calc,0x530ECD,0,0xFF,signed,little_e
+	[subject]緊縛技能:calc,0x530ECE,0,0xFF,signed,little_e
+	[subject]良心度:calc,0x530ECF,0,0xFF,signed,little_e
+	[subject]残虐度:calc,0x530ED0,0,0xFF,signed,little_e
+	[subject]愛情度:calc,0x530ED1,0,0xFF,signed,little_e
+[back]
+[subject]COM:dir
+	[subject]体力:calc,0x530ED2,0,0xFF,signed,little_e
+	[subject]ストレス:calc,0x530ED3,0,0xFF,signed,little_e
+	[subject]SEX経験値:calc,0x530ED4,0,0xFF,signed,little_e
+	[subject]SM経験値:calc,0x530ED5,0,0xFF,signed,little_e
+	[subject]鞭技能:calc,0x530ED6,0,0xFF,signed,little_e
+	[subject]緊縛技能:calc,0x530ED7,0,0xFF,signed,little_e
+	[subject]良心度:calc,0x530ED8,0,0xFF,signed,little_e
+	[subject]残虐度:calc,0x530ED9,0,0xFF,signed,little_e
+	[subject]愛情度:calc,0x530EDA,0,0xFF,signed,little_e
+[back]
+[subject]SLAVE:dir
+	[subject]体力:calc,0x530EDB,0,0xFF,signed,little_e
+	[subject]ストレス:calc,0x530EDC,0,0xFF,signed,little_e
+	[subject]SEX性感度:calc,0x530EDD,0,0xFF,signed,little_e
+	[subject]SM性感度:calc,0x530EDE,0,0xFF,signed,little_e
+	[subject]ヴァギナ性感度:calc,0x530EDF,0,0xFF,signed,little_e
+	[subject]アナル性感度:calc,0x530EE0,0,0xFF,signed,little_e
+	[subject]羞恥心:calc,0x530EE1,0,0xFF,signed,little_e
+	[subject]従属度:calc,0x530EE2,0,0xFF,signed,little_e
+[back]
+[/adjustment]
+[/script]
+
+
+[script]
+[title]ママトト(アドレス補正)
+[process]SYSTEM36.EXE
+[maker]アリスソフト
+[creator]あつ
+[adjustment]heap,heap2=0x6A0000>0x8AFFFF,heap3=0x8B0000>0xEBFFFF
+[note]wordwrap
+レベルは、『並び替えた順番』で「何番目のキャラか」で考えて下さい。
+なお、各キャラのステータスは、レベルに応じて上下します。
+ナナスポイントは、すべて使い切らないと次の画面へ行けません。
+アイテムの個数を255にすると、リスト内に表示されなくなります（所持していないと見なされる）
+[/note]
+カード数を増やしすぎると、キッズ生産画面がなかなか終わりません。程々にしましょう(^^;)
+[subject]GOLD:calc,0x8B6C6A,0x0,0xFFFF,signed,little_e
+[subject]心臓HP（現在）:calc,0x8B6CAA,0,999,signed,little_e
+[subject]心臓HP（最大）:calc,0x8B6CAC,0,999,signed,little_e
+[subject]ナナスポイント:calc,0x8B6B7C,0,80,signed,little_e
+[subject]残り編成可能数:calc,0x8B6B78,0,22,signed,little_e
+[subject]ナナス・カカロモード行動回数制限なし:toggle,0x8B6E30,FF,00
+//[subject]武器生成用カード5100枚／0枚:toggle,0x9D5538,0x9D556E-FF00,0000
+[subject]キッズのストック:dir
+	[subject]ファイタン:calc,0x9D7B72,0,0xFFFF,signed,little_e
+	[subject]ウィズ:calc,0x9D4042,0,0xFFFF,signed,little_e
+	[subject]ブロッケン:calc,0x9D4032,0,0xFFFF,signed,little_e
+	[subject]一直:calc,0x9D4022,0,0xFFFF,signed,little_e
+	[subject]チアー:calc,0x9D4012,0,0xFFFF,signed,little_e
+	[subject]ワプワプ:calc,0x9D7602,0,0xFFFF,signed,little_e
+	[subject]みゅうたん:calc,0x9D75F2,0,0xFFFF,signed,little_e
+[back]
+[subject]レベル:dir
+	[subject]１番目:calc,0x9D52BA,0,0xFFFF,signed,little_e
+	[subject]２番目:calc,0x9D52BC,0,0xFFFF,signed,little_e
+	[subject]３番目:calc,0x9D52BE,0,0xFFFF,signed,little_e
+	[subject]４番目:calc,0x9D52C0,0,0xFFFF,signed,little_e
+	[subject]５番目:calc,0x9D52C2,0,0xFFFF,signed,little_e
+	[subject]６番目:calc,0x9D52C4,0,0xFFFF,signed,little_e
+	[subject]７番目:calc,0x9D52C6,0,0xFFFF,signed,little_e
+	[subject]８番目:calc,0x9D52C8,0,0xFFFF,signed,little_e
+	[subject]９番目:calc,0x9D52CA,0,0xFFFF,signed,little_e
+	[subject]10番目:calc,0x9D52CC,0,0xFFFF,signed,little_e
+	[subject]11番目:calc,0x9D52CE,0,0xFFFF,signed,little_e
+	[subject]12番目:calc,0x9D52D0,0,0xFFFF,signed,little_e
+	[subject]13番目:calc,0x9D52D2,0,0xFFFF,signed,little_e
+	[subject]14番目:calc,0x9D52D4,0,0xFFFF,signed,little_e
+	[subject]15番目:calc,0x9D52D6,0,0xFFFF,signed,little_e
+	[subject]16番目:calc,0x9D52D8,0,0xFFFF,signed,little_e
+	[subject]17番目:calc,0x9D52DA,0,0xFFFF,signed,little_e
+	[subject]18番目:calc,0x9D52DC,0,0xFFFF,signed,little_e
+	[subject]19番目:calc,0x9D52DE,0,0xFFFF,signed,little_e
+	[subject]20番目:calc,0x9D52E0,0,0xFFFF,signed,little_e
+[back]
+[subject]アイテム:dir
+	[subject]全て/一度は取ったことがある:toggle,0x9D4140,0x9D418E-??00,??FF
+	[subject]レッドストーン:calc,0x9D4140,0x0,0x63,signed,little_e
+	[subject]グリーンストーン:calc,0x9D4142,0x0,0x63,signed,little_e
+	[subject]純金亀:calc,0x9D4144,0x0,0x63,signed,little_e
+	[subject]素質のオカリナ:calc,0x9D4146,0x0,0x63,signed,little_e
+	[subject]携帯連絡魔機:calc,0x9D4148,0x0,0x63,signed,little_e
+	[subject]心を開くカギ:calc,0x9D414A,0x0,0x63,signed,little_e
+	[subject]攻撃の為の爪切り:calc,0x9D414C,0x0,0x63,signed,little_e
+	[subject]耳カキ:calc,0x9D414E,0x0,0x63,signed,little_e
+	[subject]万歳ネズミ:calc,0x9D4150,0x0,0x63,signed,little_e
+	[subject]必殺の印籠:calc,0x9D4152,0x0,0x63,signed,little_e
+	[subject]神懸りの十字架:calc,0x9D4154,0x0,0x63,signed,little_e
+	[subject]ドッペル人形:calc,0x9D4156,0x0,0x63,signed,little_e
+	[subject]根性入り巾着袋:calc,0x9D4158,0x0,0x63,signed,little_e
+	[subject]守護の数珠:calc,0x9D415A,0x0,0x63,signed,little_e
+	[subject]もじゃ人形:calc,0x9D415C,0x0,0x63,signed,little_e
+	[subject]ダイヤチェーン:calc,0x9D415E,0x0,0x63,signed,little_e
+	[subject]ドラ猫の鈴:calc,0x9D4160,0x0,0x63,signed,little_e
+	[subject]雷入りボール:calc,0x9D4162,0x0,0x63,signed,little_e
+	[subject]身軽の羽:calc,0x9D4164,0x0,0x63,signed,little_e
+	[subject]攻撃一手のかんざし:calc,0x9D4166,0x0,0x63,signed,little_e
+	[subject]八得の玉:calc,0x9D4168,0x0,0x63,signed,little_e
+	[subject]素早い変な虫:calc,0x9D416A,0x0,0x63,signed,little_e
+	[subject]ハニージッポー:calc,0x9D416C,0x0,0x63,signed,little_e
+	[subject]堪忍袋割り:calc,0x9D416E,0x0,0x63,signed,little_e
+	[subject]粘りのロウソク:calc,0x9D4170,0x0,0x63,signed,little_e
+	[subject]金板の首飾り:calc,0x9D4172,0x0,0x63,signed,little_e
+	[subject]古い壷:calc,0x9D4174,0x0,0x63,signed,little_e
+	[subject]大声イヤリング:calc,0x9D4176,0x0,0x63,signed,little_e
+	[subject]不屈ストーン:calc,0x9D4178,0x0,0x63,signed,little_e
+	[subject]ガラスの芸術:calc,0x9D417A,0x0,0x63,signed,little_e
+	[subject]黄金の腕輪:calc,0x9D417C,0x0,0x63,signed,little_e
+	[subject]チェーンリング:calc,0x9D417E,0x0,0x63,signed,little_e
+	[subject]シルバーリング:calc,0x9D4180,0x0,0x63,signed,little_e
+	[subject]ハートリング:calc,0x9D4182,0x0,0x63,signed,little_e
+	[subject]エメラルドリング:calc,0x9D4184,0x0,0x63,signed,little_e
+	[subject]ブルーリング:calc,0x9D4186,0x0,0x63,signed,little_e
+	[subject]瑪瑙リング:calc,0x9D4188,0x0,0x63,signed,little_e
+	[subject]ブラックリング:calc,0x9D418A,0x0,0x63,signed,little_e
+	[subject]金の指輪:calc,0x9D418C,0x0,0x63,signed,little_e
+	[subject]ピンクパール:calc,0x9D418E,0x0,0x63,signed,little_e
+[root]
+[subject]カード:dir
+	[subject]細かいの(笑):dir
+		[subject]ファイタン全て/一度は取ったことがある:toggle,0x9D5D20,0x9D5D46-??00,FFFF
+		[subject]ウィズ全て/一度は取ったことがある:toggle,0x9D5D48,0x9D5D6E-??00,FFFF
+		[subject]ブロッケン全て/一度は取ったことがある:toggle,0x9D5D70,0x9D5D96-??00,FFFF
+		[subject]一直全て/一度は取ったことがある:toggle,0x9D5D98,0x9D5DBE-??00,FFFF
+		[subject]チアー全て/一度は取ったことがある:toggle,0x9D5DC0,0x9D5DE6-??00,FFFF
+		[subject]ワプワプ全て/一度は取ったことがある:toggle,0x9D5DE8,0x9D5E0E-??00,FFFF
+		[subject]みゅうたん全て/一度は取ったことがある:toggle,0x9D5E10,0x9D5E36-??00,FFFF
+		[subject]アイテム全て/一度は取ったことがある:toggle,0x9D5E38,0x9D5E5E-??00,FFFF
+		[subject]スカ１全て/一度は取ったことがある:toggle,0x9D5E60,0x9D5E88-??00,FFFF
+		[subject]スカ２全て/一度は取ったことがある:toggle,0x9D5FC8,0x9D5FEE-??00,FFFF
+	[back]
+	[subject]光:dir
+		[subject]全て/一度は取ったことがある:toggle,0x9D5E88,0x9D5E92-??00,FFFF
+		[subject]伽瑠羅・明星:calc,0x9D5E88,0,0xFF,signed,little_e
+		[subject]ユニコーン・ナイト:calc,0x9D5E8A,0,0xFF,signed,little_e
+		[subject]レディ・モノセロン:calc,0x9D5E8C,0,0xFF,signed,little_e
+		[subject]ティファレス:calc,0x9D5E8E,0,0xFF,signed,little_e
+		[subject]ミノン・ミール:calc,0x9D5E90,0,0xFF,signed,little_e
+		[subject]グランディーエ・エイフェ:calc,0x9D5E92,0,0xFF,signed,little_e
+	[back]
+	[subject]闇:dir
+		[subject]全て/一度は取ったことがある:toggle,0x9D5EB0,0x9D5EBA-??00,FFFF
+		[subject]アルカード・バンパイア:calc,0x9D5EB0,0,0xFF,signed,little_e
+		[subject]ラグナロク:calc,0x9D5EB2,0,0xFF,signed,little_e
+		[subject]ヴァイス:calc,0x9D5EB4,0,0xFF,signed,little_e
+		[subject]ザ・ラック:calc,0x9D5EB6,0,0xFF,signed,little_e
+		[subject]リッチ・オブ・ザ・ストーム:calc,0x9D5EB8,0,0xFF,signed,little_e
+		[subject]シュナウクァー:calc,0x9D5EBA,0,0xFF,signed,little_e
+	[back]
+	[subject]炎:dir
+		[subject]全て/一度は取ったことがある:toggle,0x9D5EEB,0x9D5EF2-??00,FFFF
+		[subject]テゥーム・ガレオ:calc,0x9D5EE8,0,0xFF,signed,little_e
+		[subject]フレア:calc,0x9D5EEA,0,0xFF,signed,little_e
+		[subject]ファイアーブースター:calc,0x9D5EEC,0,0xFF,signed,little_e
+		[subject]マグナスティラン:calc,0x9D5EEE,0,0xFF,signed,little_e
+		[subject]ゾット・ザ・グレート:calc,0x9D5EF0,0,0xFF,signed,little_e
+		[subject]ドラゴン・オブ・レジェンド:calc,0x9D5EF2,0,0xFF,signed,little_e
+	[back]
+	[subject]水:dir
+		[subject]全て/一度は取ったことがある:toggle,0x9D5F00,0x9D5F0A-??00,FFFF
+		[subject]ガイ・キノーチ:calc,0x9D5F00,0,0xFF,signed,little_e
+		[subject]リムル:calc,0x9D5F02,0,0xFF,signed,little_e
+		[subject]リザード・キャプテン:calc,0x9D5F04,0,0xFF,signed,little_e
+		[subject]エルフォートリア:calc,0x9D5F06,0,0xFF,signed,little_e
+		[subject]メガトンブラザーズ:calc,0x9D5F08,0,0xFF,signed,little_e
+		[subject]ポセイドンホエール:calc,0x9D5F0A,0,0xFF,signed,little_e
+	[back]
+	[subject]風:dir
+		[subject]全て/一度は取ったことがある:toggle,0x9D5F28,0x9D5F32-??00,FFFF
+		[subject]リア・エルトロ:calc,0x9D5F28,0,0xFF,signed,little_e
+		[subject]フィーント:calc,0x9D5F2A,0,0xFF,signed,little_e
+		[subject]リディア＆リディア:calc,0x9D5F2C,0,0xFF,signed,little_e
+		[subject]ウィンドウルフ:calc,0x9D5F2E,0,0xFF,signed,little_e
+		[subject]ユーリィ・キノーチ:calc,0x9D5F30,0,0xFF,signed,little_e
+		[subject]刃（ヤイバ）:calc,0x9D5F32,0,0xFF,signed,little_e
+	[back]
+	[subject]地:dir
+		[subject]全て/一度は取ったことがある:toggle,0x9D5F50,0x9D5F5A-??00,FFFF
+		[subject]レディ・ロック:calc,0x9D5F50,0,0xFF,signed,little_e
+		[subject]ジャバラクイーン:calc,0x9D5F52,0,0xFF,signed,little_e
+		[subject]ロッジ・オン・ザ・ヘッド:calc,0x9D5F54,0,0xFF,signed,little_e
+		[subject]レティオウス:calc,0x9D5F56,0,0xFF,signed,little_e
+		[subject]ダイアモンド・ティア:calc,0x9D5F58,0,0xFF,signed,little_e
+		[subject]スフィンクス:calc,0x9D5F5A,0,0xFF,signed,little_e
+	[back]
+	[subject]雷:dir
+		[subject]全て/一度は取ったことがある:toggle,0x9D5F78,0x9D5F82-??00,FFFF
+		[subject]ワング・シャザイン:calc,0x9D5F78,0,0xFF,signed,little_e
+		[subject]闘姫（とき）:calc,0x9D5F7A,0,0xFF,signed,little_e
+		[subject]ライトニング・アロー:calc,0x9D5F7C,0,0xFF,signed,little_e
+		[subject]轟震王:calc,0x9D5F7E,0xFF,signed,little_e
+		[subject]ヨハン＆キャノン:calc,0x9D5F80,0,0xFF,signed,little_e
+		[subject]フォートラン:calc,0x9D5F82,0,0xFF,signed,little_e
+	[back]
+	[subject]無:dir
+		[subject]全て/一度は取ったことがある:toggle,0x9D5FA0,0x9D5FAA-??00,FFFF
+		[subject]キサドナ:calc,0x9D5FA0,0,0xFF,signed,little_e
+		[subject]獅子王:calc,0x9D5FA2,0,0xFF,signed,little_e
+		[subject]ロイヤル・ガーズ:calc,0x9D5FA4,0,0xFF,signed,little_e
+		[subject]ゴルキウス:calc,0x9D5FA6,0,0xFF,signed,little_e
+		[subject]ラ・ガレオ:calc,0x9D5FA8,0,0xFF,signed,little_e
+		[subject]ノア・ジージス:calc,0x9D5FAA,0,0xFF,signed,little_e
+[root]
+[/adjustment]
+[/script]
+
+[script]
+[title]夜勤病棟
+[process]夜勤病棟.EXE
+[maker]Mink
+[creator]あつ
+[note]wordwrap
+白衣の天使っつーか制服はピンクですね。あ、前掛け（エプロン？）は白ですが。
+しかし声優さんの演技力は見事の一言です。
+私はあんまり女性が叫ぶとことか好きな方じゃないんですが、魂こもっててちょっとビビりました(^^;)
+
+☆実験可能条件
+20<好漢度：第一実験
+40<好漢度：第二実験
+80<好漢度：第三実験
+なお、好漢度が上記の状態で、
+●恋
+１．２Ｆ
+２．屋上
+３．２Ｆ（後半）
+●亜子
+１．３Ｆ
+２．３Ｆ（後半）
+３．３Ｆ（後半）
+●ひかる
+１．２Ｆ
+２．２Ｆ（後半）
+３．３Ｆ
+●礼美
+１．２Ｆ（前半）
+２．３Ｆ（前半）
+３．３Ｆ（前半）
+にて接触すること。
+※当たり前ですが、準備（脅し）がすんでないうちは無理ですよ(^^;)
+
+
+好漢度と経過日数はそれぞれ違ったアドレス移動量を持っていますので、補正は個々に行われます。
+
+まともにプレイする場合、日曜日のイベントを全制覇するのは至難の業です(^^;)
+なんせ好漢度が少ないと発生しない、ある程度攻略していないと発生しない、日曜日は４回しかない（しかも第２週までにイベント発生条件を達成できたら神業。第５週はエンディングなので絶対無理）
+
+ま、うまく使えば
+茜イベント【2週目(火)以降、通算6回目の誰もいないエリアで遭遇】
+緑イベント【茜イベントを3週目までに済ませ、通算50回目の誰もいないエリアで遭遇】
+もやりやすいでしょう(^^;)
+※ともにメインキャラ（成美含む）に、平日の移動で遭遇しないこと
+[/note]
+[adjustment]dialog,0x6B5228,夜勤病棟->好漢度補正,0x500000,0x7FFFFF,8
+	[subject]恋/好漢度/値の固定/％:calc,0x6B522C,0,100
+	[subject]亜子/好漢度/値の固定/％:calc,0x6B51D4,0,100
+	[subject]ひかる/好漢度/値の固定/％:calc,0x6B517C,0,100
+	[subject]礼美/好漢度/値の固定/％:calc,0x6B5124,0,100
+[/adjustment]
+[adjustment]dialog,0x6B5788,夜勤病棟->日にち補正,0x6B0000,0x6BFFFF,8
+	[subject]経過日数:list,0x6B578C,夜勤病棟->経過日数,2,1
+[/adjustment]
+[/script]
+
+[script]
+[title]幻獣蒐集団
+[process]GSH_ST.EXE
+[maker]PinkySoft
+[creator]あつ
+[note]wordwrap
+「各フィールドごと」に、書き換えるべきアドレスが移動するようです。
+幾つか該当アドレスを用意しましたので、適宜選び変えてください。
+
+※変更後すぐには画面に反映されませんが、内部的には書き変わっています。
+[/note]
+[adjustment]dialog,0xD590000,幻獣蒐集,0xD590000,0xE59FFFF,8
+[subject]自分現在:calc,0xD590000,0,999
+[subject]自分最大:calc,0xD590020,0,999
+[subject]幻獣現在:calc,0xD590040,0,999
+[subject]幻獣最大:calc,0xD590060,0,999
+[subject]自分休み回数:calc,0xD590080,0,999
+[subject]幻獣休み回数:calc,0xD5900A0,0,999
+[/adjustment]
+[/script]
+
+[script]
+[title]育乳種
+[process]IKU_ST.EXE
+[maker]PinkySoft
+[creator]あつ
+[note]wordwrap
+ゲーム中では、シーンによってパラメータ等のアドレス管理が大きく変動します。値の変更・確認は、出来る限りステータス表示可能な状態（幻獣の部屋）で行ってください。
+
+　ピンキィソフトさんとこのゲームは、機能面に割合を割いたレイアウトのせいか、ちょっと文字が読みづらい感があります…。画面解像度の変更が欲しくなりますな…
+　あと、部分アニメーションのカットか高速化が欲しい。
+[/note]
+[adjustment]dialog,0x5BFC548,育乳種,0x5000000,0x5BFFFFF,8
+[subject]所持幻獣ステータス:dir
+	[subject]名称:string,0x5BFC4CE, 0xF, null
+	[size]4
+	[subject]体力:calc,0x5BFC548,0,999999
+	[subject]体力最大:calc,0x5BFC568,0,999999
+	[subject]精気:calc,0x5BFC508,0,999999
+	[subject]愛:calc,0x5BFC408,0,999999
+	[subject]憎悪:calc,0x5BFC5A8,0,999999
+	[subject]技:calc,0x5BFC588,0,999999
+	[subject]感度:calc,0x5BFC468,0,999999
+	[subject]美:calc,0x5BFC428,0,999999
+	[subject]胸:calc,0x5BFC488,0,999999
+	[subject]胸最大:calc,0x5BFC4A8,0,999999
+	[subject]自我:calc,0x5BFC448,0,999999
+	[subject]SM:calc,0x5BFC528,0,999999
+	[/size]
+[back]
+[subject]MM:calc,0x5BFD348,0,999999
+[subject]所持金:calc,0x5BFD368,0,999999
+[/adjustment]
+[/script]
+
+[script]
+[title]VIPER GT1
+[process]GT1.EXE
+[maker]ソニア
+[creator]あつ
+[note]wordwrap
+◆注意！！必読◆
+ゲーム中にアドレスが移動しますので、一回補正したら大丈夫って言うわけではありません！(^^;)
+項目をクリックしてみて画面に表示される値と違う場合は、「その都度」アドレス補正を行ってください。
+（初回はただクリックするだけで補正ウィンドウが開きますが、二回目以降はメニューの「メモリ・プロセス(M)->選択項目のアドレス補正を解除(A)」で一旦補正を解除して、再度補正ウィンドウを呼び出して下さい。）
+◆－－－－－－◆
+
+ん～、相変わらずソニアさんはシステムに難あり、かな(^^;)「終了」は、一応確認を入れて欲しいってばよぅ。
+あ、シナリオライターさんの気骨っつーか性癖が「そっち方面」に傾いている気もする(^^;)
+私は「そーいうつもり」の回復力を指したワケじゃあないんだよぉっ(笑)
+[/note]
+[adjustment]dialog,0x1823B88,VIP_GT1,heap3,heap4,4
+///[subject]日にち:calc,0x1823B7E,0,31,unsigned
+[subject]所持金:calc,0x1823B88,0,0xFFFFFFFF,unsigned
+[subject]体力:calc,0x1823B90,0,0xFFFF,unsigned
+[subject]知力:calc,0x1823B98,0,0xFFFF,unsigned
+[subject]容姿:calc,0x1823BA0,0,0xFFFF,unsigned
+[subject]ストレス:calc,0x1823BA8,0,0xFFFF,unsigned
+[/adjustment]
+[/script]
+
+[script]
+[title]吸血殲鬼ヴェドゴニア
+[process]VJED.EXE
+[maker]Nitro+
+[creator]あつ
+[note]wordwrap
+※　注意　※
+　アドレスの関係上、戦闘時の選択が4つある場合でも、3つのみ追尾します。赤ゲージになった選択は、ONにしても回復しません。赤ゲージになるまえに、ONにするなり値を固定するなどしてください。
+　なお、戦闘毎にアドレス補正をかける必要があります。LOADを行って別の戦闘に入った場合も同様です。
+※※※※※※
+
+書きたいことを書こうと思うと、どーしてもネタバレになるのですが、リァノーンENDとモーラENDは是非通してほしーです(^^;。
+//－－－－－－－－－－－
+//以下、ネタバレのため
+//未プレイの方は思慮の上
+//－－－－－－－－－－－
+ リァノーンENDの場合、主人公はリァノーンと共に生きる道、端的に言えば「知人の死を見続ける」悠久の時を生きることになります。当たり前ですが、不老とはつまりそういうこと。死に行く者と残された者…哀しむことが出来る分、想うことが出来る分、千切れるほどにつらい。そしてそのつらさを薄れさせるのは、その人を「忘れること」。…だからこそ、よけいにつらい。自分を知る最後の人、白柳弥沙子の死を見届けたとき、ぎこちなく笑って見せて…堪えきれず涙をこぼした主人公に、リァノーンがかけた言葉…「最初の100年が、一番つらい。わたしも…そうだったから」。生きるということは、夢や目的を成すための時間があるということ…それと同時に、哀しいことや苦しいことを抱えていく時間もあるということ。どちらか片方なんかじゃない。つらいことを受け止める覚悟を持って生きるんだ。生きている限り、目指すことができるんだ。
+ モーラENDの場合、彼女は老い、死ぬことはなく、吸血鬼を追っていつ終わるとも知れぬ戦いを続ける。その傍らで、同じように戦いあぐねる「人間の」主人公。日々の凄惨さのためか、（かつてのフリッツのように）穏やかな笑みを殆ど無くした主人公に、そうさせたのは自分ではないのかと一抹の罪悪感を感じるモーラ。人は…変わる。時間を含む環境の変遷で、肉体が変化を遂げていくのと同じように、人の心…性格もまた移り変わる。…誰かがやらなくてはならないことなのかもしれない。でも、「彼らがやらねばならない」のか？幾度となく寝物語に語ったという「小さな幸せ」、いつかそこへと落ち着こうと…また武器を取る。たった二人で…いつ何処で増え続けているかも分からぬ吸血鬼を滅ぼす……。モーラは耐え続けるだろう、でも、惣太(主人公)は人間…いつか、老い、逝くのだ。遺されるモーラ…いや、そこに至る前に、惣太が動けなくなったとき、モーラは、一人でも吸血鬼との戦いに行くのか。己の身の不自由が故に、ただ待つというのは堪らなく歯がゆい。今、自分が動けぬこの瞬間、モーラは無事でいるのか…「ただいま。」と、いつもの声で戻ってきてくれることは二度と無いかも知れない…そう考え出すと、待つことだけで気が狂いそうになる。…卑怯でもいい、彼らには、やっと見つけた「小さな幸せ」に生きて欲しい。
+//－－－－－－－－－－－
+以上(笑)
+ちなみに戦闘は、リァノーン編のギーラッハは念動剣を使うので結構手強いですが、それ以外なら敵の間合いを避けてちまちまいぢめれば比較的楽にクリアできまふ。まぁ、値の固定すればギーちゃんでも楽勝ですが(^^;
+[/note]
+//**** 埋め込みファイル ****
+[involve]ファイル
+[group]行動値
+0,78
+0x100,78
+0x200,78
+[/group]
+[/involve]
+//**** **************** ****
+[adjustment]search,0x1000000,04000000BE000000BE00000000000000 *+01 F0 04000000BE000000BE00000000000000,0x01000000,0x1FFFFFF,4
+[subject]主要行動/可能にする:b_toggle,0x1000018,ファイル->行動値,offset
+[/adjustment]
+//0x107F858,FF
+[/script]
+
+[script]
+[title]コズミックマン
+[process]SPLAYER.EXE
+[process]SPLAYERB.EXE
+[process]~SPLAYER.EXE
+[process]~SPLAYERB.EXE
+[maker]創美研究所
+[creator]あつ
+[note]wordwrap
+取りあえず行動力さえ溜まっていれば、バリア張りーの回復しーので、まず勝てます(^^;
+起動毎にアドレス移動を起こすので、入力値に応じて補正をかけるようにしています。
+[/note]
+[adjustment]dialog,0x28BDBAC,コズミックマン,0x1DA0000,0x32FFFFF,4
+[subject]行動力:calc,0x28BDBAC,0,9999
+[/script]
+
+[script]
+[title]Pretty Crisis 2nd
+[process]PR2.EXE
+[maker]inspire
+[creator]あつ
+[note]wordwrap
+所持金は、1の位が銀貨、10の位以降が金貨の枚数になります。
+
+なんつーか、目立つキャラを使っていても、必ずinspireのそれと分かる「透明な雰囲気」がいいですね。ところどころに見える、理不尽さからくる笑いも個人的に好きです。
+[/note]
+[adjustment]dialog,0xDF22F1,PC2,heap3,heap4,16
+[subject]所持金:calc,0xDF22F1,0,9999
+//[subject]日付:dir
+//	[subject]週//第/週:calc,0xDF22F0,0,10
+[/script]
+
+[script]
+[title]てんてこ温泉時代劇・亀屋
+[process]KAMEYA.EXE
+[maker]SOLEIL
+[creator]あつ
+[note]wordwrap
+値入力によるアドレス補正が必要です。
+また、発見箇所が複数になるかと思いますが、実際に書き換え可能なのはそのうち一つだけです。他の発見アドレスは、書き換え後にまた戻されてしまいます。
+なお、10日ごとに訪れる、予定決定のときにサーチしてください。それ以外のときにサーチした場合の結果は、保証できません。
+[/note]
+[adjustment]dialog,0x5D5860,亀屋,0x4F0000,0x10F0000,4
+[subject]状況:dir
+	[subject]残金:calc,0x5D5860,0,9999999
+	[subject]経費:calc,0x5D5864,0,9999999
+	[subject]評判:calc,0x5D5888,0,9999999
+	[subject]清潔:calc,0x5D588C,0,9999999
+	[subject]接客:calc,0x5D5890,0,9999999
+	[subject]状態:calc,0x5D5894,0,9999999
+	[subject]調理:calc,0x5D5898,0,9999999
+[back]
+[subject]日時:dir
+	[subject]月:calc,0x5D57F8,1,12
+	[subject]日:calc,0x5D57FC,1,30
+[back]
+[/script]
+
+[script]
+[title]Xanadu
+[process]XANADU.EXE
+[maker]Falcom
+[creator]あつ
+[note]wordwrap
+※所持金等は、100以上の桁と、それ未満の桁とで分けて入力します。
+（所持金が12345なら、123と5）
+[/note]
+//**** 埋め込みファイル ****
+[involve]ファイル
+[group]ダイアログ
+[note]
+※現在の所持金を、100以上の桁と、それ未満の桁とで分けて入力して下さい。
+（所持金が12345なら、123と5）
+数値入力の際は、16進/10進に注意して下さいね(^^)
+[/note]
+[val]*. *.
+[calc]所持金(100単位),no,0,99999
+[calc]所持金(  1単位),no,0,99
+[back]
+[/group]
+[/involve]
+//**** **************** ****
+[adjustment]dialog,0x7B31FC,ファイル->ダイアログ,0x00400000,0x0AFFFFFF,4
+[subject]基本:dir
+	[subject]所持金(100単位):calc,0x7B31FC,0,99999
+	[subject]所持金(  1単位):calc,0x7B31FE,0,99
+	[subject]HTP(100単位):calc,0x7B31EB,0,99999
+	[subject]HTP(  1単位):calc,0x7B31ED,0,99
+	[subject]MHP(100単位):calc,0x7B31EE,0,99999
+	[subject]MHP(  1単位):calc,0x7B31F0,0,99
+	[subject]FOD(100単位):calc,0x7B31F9,0,99999
+	[subject]FOD(  1単位):calc,0x7B31FB,0,99
+	[subject]名前:string,0x7B31D4,13,FF
+[back]
+[subject]能力:dir
+	[subject]STR:calc,0x7B31F1,0,0xFF
+	[subject]INT:calc,0x7B31F2,0,0xFF
+	[subject]WIS:calc,0x7B31F3,0,0xFF
+	[subject]CHR:calc,0x7B31F6,0,0xFF
+	[subject]DEX:calc,0x7B31F4,0,0xFF
+	[subject]AGL:calc,0x7B31F5,0,0xFF
+	[subject]MGR:calc,0x7B31F8,0,0xFF
+	[subject]KRM:calc,0x7B31F7,0,0xFF
+[back]
+[subject]物品:dir
+	[subject]KEY:calc,0x7B3205,0,0xFF
+	[subject]CRN:calc,0x7B3204,0,0xFF
+	[subject]ELX:calc,0x7B3206,0,0xFF
+[back]
+[/script]
+
+
+[script]
+[title]紺碧の艦隊2 ADVANCE
+[process]DB2WINSP.EXE
+[maker]株式会社マイクロキャビン
+[creator]あつ
+[note]wordwrap
+
+[/note]
+//**** 埋め込みファイル ****
+[involve]ファイル
+[group]ダイアログ
+[note]
+※現在の日本の国力Pと技術力Pを入力して下さい。
+数値入力の際は、16進/10進に注意して下さいね(^^)
+[/note]
+[val]*. *.
+[calc]日本国力P,no,0,99999999
+[calc]日本技術力P,no,0,9999
+[back]
+[/group]
+[group]ダイアログ2
+[note]
+※現在のアメリカの国力Pと技術力Pを入力して下さい。
+数値入力の際は、16進/10進に注意して下さいね(^^)
+[/note]
+[val]*. *.
+[calc]アメリカ国力P,no,0,99999999
+[calc]アメリカ技術力P,no,0,9999
+[back]
+[/group]
+[group]国情報
+	[subject]国力P:calc,0x0,0,9999999
+	[subject]技術力P:calc,0x4,0,9999
+	[subject]国民意識:calc,0x6,0,100
+	[subject]予備兵員:calc,0xC,0,9999999
+[back]
+[/group]
+[group]基地情報
+	[subject]正式名称:string,0x00,13,00
+	[subject]基地司令部:calc,0x2B,0,9999
+	[subject]飛行場:calc,0x39,0,9999
+	[subject]電探施設:calc,0x47,0,9999
+	[subject]港湾施設:calc,0x55,0,9999
+	[subject]工場:calc,0x63,0,9999
+	[subject]燃料タンク:calc,0x71,0,9999
+	[subject]基地砲台1:calc,0x7F,0,9999
+	[subject]基地砲台2:calc,0x8D,0,9999
+[back]
+[/group]
+[group]基地名
+アバディーン
+アバカン
+アクラ
+アデレード
+アデン
+アンヘル
+アフマダーバード
+アルマテゥイ
+アムステルダム
+アンカレジ
+アンカラ
+アスマラ
+アスワン
+アッツ
+ボンベイ
+ボリソグレプスク
+バグダード
+ベンガジ
+バンゼルマシン
+武漢
+ブルネイ
+バンコク
+バルナウル
+ブリスベーン
+ベルリン
+ブラーツク
+ボイシシティ
+ブリストル
+ブレスト
+シカゴ
+コーチン
+カルカッタ
+コロンボ
+クリスマス
+コンスタンティーヌ
+ケープタウン
+カイロ
+チタ
+青島
+ダブリン
+デリー
+ダッチハーバー
+インパール
+ダマスクス
+ダバオ
+ダーウィン
+エカテリンブルグ
+ファラファンガナ
+フィジー
+フォークランド
+フリータウン
+ガダルカナル
+ジブラルタル
+グアム
+ハルビン
+ハイダラーバード
+香港
+ハノイ
+ヒューストン
+ハワイ
+アイスランド
+インディアナポリス
+イルクーツク
+硫黄島
+イスファハーン
+ヤルート
+ジャカルタ
+ケーニヒスベルク
+キエフ
+ハバロフスク
+キール
+京城
+ケルン
+ケルマーン
+昆民
+紺碧島
+カラチ
+呉
+広州
+クウェート
+クラスノヤルスク
+ロスアラモス
+リスボン
+ロンドン
+レニングラード
+ラゴス
+リマ
+蘭州
+ロサンゼルス
+ルアンダ
+メルボルン
+メッカ
+マガダン
+マドラス
+ミッドウェイ
+マシュハド
+ミンスク
+マジュンガ
+マカッサル
+モンバサ
+メンフィス
+メナド
+マニラ
+ミネアポリス
+モスクワ
+マルセイユ
+モントリオール
+モンテレイ
+南鳥島
+ニュルンベルク
+那覇
+南京
+ノヴォクズネツク
+ニューオーリンズ
+ノヴォシビルスク
+ニューヨーク
+オデッサ
+オリョル
+オラン
+オムスク
+オスロ
+オタワ
+パレンバン
+北京
+パラオ
+ポートモレスビー
+パルミラ
+パナマ
+第踏パナマ
+パリ
+パース
+ポートランド
+ラバウル
+リオデジャネイロ
+ローマ
+リヤード
+西安
+サンクリストバル
+サンディエゴ
+シドニー
+スェズ
+サンフランシスコ
+シェフィールド
+サイゴン
+シンガポール
+上海
+成都
+ソルトレイクシティ
+サルバドル
+サモア
+スモレンスク
+サマラ
+ソスノビエツ
+ソロン
+サイパン
+サンパウロ
+スラバヤ
+サントドミンゴ
+シアトル
+セヴァストポリ
+トリスタンダクーナ
+トリエステ
+豊原
+テヘラン
+東京
+台北
+トリポリ
+トラック
+ターラント
+トロイツク
+ウランバートル
+バンクーバー
+ヴァレンシア
+ボルゴグラード
+ウラジオストク
+ヴェネチア
+ウェリントン
+ウィルヘルムスハーフェン
+ウェーキ
+ウィニペグ
+ワルシャワ
+ワシントン
+ヤクーツク
+ラングーン
+アキダウアナ
+アトランタ
+バム
+ブカレスト
+コルドバ
+カルガリー
+ダルハン
+デンバー
+エルパソ
+エルズルム
+グアテマラ
+ガンジ
+イジェフェスク
+ケーズ
+カルクラント
+カミナ
+クルムカン
+キーロフ
+カラスク
+ルイアナ
+リール
+マドリード
+マナグア
+盛岡
+名古屋
+オクラホマシティ
+フェニックス
+ペルミ
+レジャイナ
+サマルカンド
+札幌
+スチュアート
+ウファ
+アピントン
+ウラジーミル
+ホワイトリバー
+ヤムスクロ
+ザクーラ
+ズエラテ
+[/group]
+[group]基地情報反復
+	[subject][! @ファイル->基地名,$Val !]:dir
+		[replace]0x[! 0x7C848E+$Val*0x99 !],ファイル->基地情報
+[/group]
+[group]艦隊情報
+	[subject]部隊名:string,0x00,8,00
+	[subject]右舷:calc,0x16,0,9999
+	[subject]左舷:calc,0x18,0,9999
+	[subject]艦首:calc,0x1A,0,9999
+	[subject]艦尾:calc,0x1C,0,9999
+	[subject]甲板:calc,0x1E,0,9999
+	[subject]士気:calc,0x34,0,100
+	[subject]燃料:calc,0x35,0,9999
+	[subject]搭載兵器1残射数:calc,0x4D,0,99
+	[subject]搭載兵器2残射数:calc,0x4E,0,99
+	[subject]搭載兵器3残射数:calc,0x4F,0,99
+[back]
+[/group]
+[group]艦隊名
+金剛
+榛名
+長門
+陸奥
+伊勢
+踏硯
+妙高
+那智
+足柄
+羽黒
+祥鳳
+瑞鳳
+五十鈴
+天津風
+時津風
+初風
+雪風
+<未定>
+<未定>
+<未定>
+<未定>
+<未定>
+<未定>
+比叡
+霧島
+赤城
+加賀
+蒼龍
+飛龍
+翔鶴
+瑞鶴
+利根
+筑摩
+阿武隈
+谷風
+浦風
+濱風
+磯風
+輸送船
+輸送船
+輸送船
+輸送船
+輸送船
+輸送船
+扶桑
+山城
+龍鳳
+最上
+三隈
+鈴谷
+熊野
+天龍
+睦月
+如月
+弥生
+卯月
+輸送船
+輸送船
+輸送船
+輸送船
+高雄
+愛宕
+鳥海
+摩耶
+鳳翔
+龍驤
+龍田
+海風
+山風
+江風
+涼風
+輸送船
+輸送船
+輸送船
+輸送船
+伊１６８
+伊１６９
+伊１７０
+伊１７１
+伊６０１
+伊５０１
+伊５０２
+伊５０３
+伊７０１
+青葉
+衣笠
+古鷹
+加古
+北上
+大井
+秋雲
+陽炎
+不知火
+黒潮
+川内
+神通
+那珂
+親潮
+早潮
+夏潮
+夕張
+吹雪
+白雪
+初雪
+深雪
+長良
+叢雲
+東雲
+薄哩
+白雲
+木曽
+初春
+子踏
+若葉
+初霜
+伊１７２
+伊１７３
+伊１５
+伊１７
+伊１９
+伊１６
+伊１８
+伊２０
+輸送船
+輸送船
+輸送船
+輸送船
+輸送船
+輸送船
+輸送船
+輸送船
+輸送船
+輸送船
+輸送船
+輸送船
+千歳
+千代田
+踏進
+球磨
+多摩
+名取
+由良
+鬼怒
+皐月
+水無月
+文月
+長月
+菊月
+三日月
+望月
+夕月
+磯波
+浦波
+綾波
+敷波
+朝霧
+夕霧
+天霧
+狭霧
+白露
+時雨
+村雨
+夕立
+春雨
+五月雨
+朝潮
+大潮
+満潮
+荒潮
+朝雲
+山雲
+夏雲
+峯雲
+霞
+霰
+野分
+嵐
+萩
+舞風
+伊２１
+伊２３
+伊２５
+伊２２
+伊２４
+夕雲
+[/group]
+[group]艦隊情報反復
+	[subject][! @ファイル->艦隊名,$Val !]:dir
+		[replace]0x[! 0x7F6C57+$Val*0x76 !],ファイル->艦隊情報
+[/group]
+[/involve]
+//**** **************** ****
+[adjustment]dialog,0x7C6680,ファイル->ダイアログ,0x00400000,0x0AFFFFFF,4
+[subject]基本国情報:dir
+	[subject]日本:dir
+		[subject]国力P:calc,0x7C6680,0,9999999
+		[subject]技術力P:calc,0x7C6684,0,9999
+		[subject]国民意識:calc,0x7C6686,0,9999
+		[subject]兵員:calc,0x7C668C,0,9999999
+	[back]
+	[subject]ドイツ:dir
+		[replace]0x7C672B,ファイル->国情報
+	[subject]オランダ:dir
+		[replace]0x7C679D,ファイル->国情報
+	[subject]オーストラリア:dir
+		[replace]0x7C67D6,ファイル->国情報
+	[subject]タイ:dir
+		[replace]0x7C680F,ファイル->国情報
+	[subject]インド:dir
+		[replace]0x7C6848,ファイル->国情報
+	[subject]中国:dir
+		[replace]0x7C6881,ファイル->国情報
+[back]
+[subject]基地情報:dir
+	[repeat]ファイル->基地情報反復,0,223,1
+[back]
+[subject]艦隊情報:dir
+	[repeat]ファイル->艦隊情報反復,0,185,1
+[back]
+[/adjustment]
+[adjustment]dialog,0x8D0B39,ファイル->ダイアログ2,0x00400000,0x0AFFFFFF,4
+[subject]特別国情報:dir
+	[subject]アメリカ:dir
+		[replace]0x8D0B39,ファイル->国情報
+	[subject]イギリス:dir
+		[replace]0x8D0B5C,ファイル->国情報
+	[subject]ソ連:dir
+		[replace]0x8D0BA2,ファイル->国情報
+[back]
+[/adjustment]
+[/script]
+
+
+[script]
+[title]H ～いつかたどりつけた場所～
+[process]ADVWIN32.EXE
+[maker]F&C
+[creator]あつ
+[note]wordwrap
+各キャラクタのSTATUS表示は、LVが0以外の時に可能となります。
+[/note]
+//**** 埋め込みファイル ****
+[involve]ファイル
+[group]ダイアログ
+[note]
+※梓の現在HPと最大HPを入力して下さい。
+数値入力の際は、16進/10進に注意して下さいね(^^)
+[/note]
+[val]*.0000 *.0000
+[calc]梓現在HP,no,0,999
+[calc]梓最大HP,no,0,999
+[back]
+[/group]
+[group]STATUS
+	[subject]LV:calc,0x0,0,9
+	[subject]LOVE:calc,0x04,0,450
+	[subject]MENTAL:calc,0x10,0,999
+	[subject]現在HP:calc,0x1C,0,999
+	[subject]最大HP:calc,0x20,0,999
+	[subject]愛撫回数:calc,0x78,0,999
+	[subject]前挿入回数:calc,0x7C,0,999
+	[subject]後ろ挿入回数:calc,0x80,0,999
+	[subject]フェラチオ回数:calc,0x84,0,999
+	[subject]素股回数:calc,0x88,0,999
+	[subject]ロウソク回数:calc,0x8C,0,999
+	[subject]クリーム回数:calc,0x90,0,999
+	[subject]オナニー回数:calc,0x94,0,999
+	[subject]放尿回数:calc,0x98,0,999
+	[subject]局部検査回数:calc,0x9C,0,999
+	[subject]排卵回数:calc,0xA0,0,999
+	[subject]ローター回数:calc,0xA4,0,999
+	[subject]バイブ回数:calc,0xA8,0,999
+	[subject]アナルビーズ回数:calc,0xAC,0,999
+[back]
+[/group]
+[group]COSTUME
+			[subject]ブルマー:toggle,0x00,01,00
+			[subject]スクール水着:toggle,0x01,01,00
+			[subject]メイド服:toggle,0x02,01,00
+			[subject]バニースーツ:toggle,0x03,01,00
+			[subject]ボンデージ:toggle,0x04,01,00
+			[subject]エプロン:toggle,0x05,01,00
+			[subject]私服:toggle,0x06,01,00
+			[subject]制服:toggle,0x07,01,00
+[/group]
+[/involve]
+//**** **************** ****
+[adjustment]dialog,0x4F20C8,ファイル->ダイアログ,0x00400000,0x0AFFFFFF,4
+[subject]STATUS:dir
+	[subject]塚本 梓:dir
+		[replace]0x4F20AC,ファイル->STATUS
+	[subject]真田 冬月:dir
+		[replace]0x4F23CC,ファイル->STATUS
+	[subject]福原 みく:dir
+		[replace]0x4F26EC,ファイル->STATUS
+[back]
+[subject]所持品:dir
+	[subject]ITEM:dir
+		[subject]ローター:toggle,0x4F090C,01,00
+		[subject]バイブ:toggle,0x4F090D,01,00
+		[subject]ロウソク:toggle,0x4F090E,01,00
+		[subject]クリーム:toggle,0x4F090F,01,00
+		[subject]スペキュラム:toggle,0x4F0910,01,00
+		[subject]アナルビーズ:toggle,0x4F0911,01,00
+		[subject]ピンポン玉:toggle,0x4F0912,01,00
+		[subject]ゴルフボール:toggle,0x4F0913,01,00
+		[subject]ビー玉:toggle,0x4F0914,01,00
+		[subject]バイブL:toggle,0x4F0915,01,00
+		[subject]リモコンローター:toggle,0x4F0916,01,00
+		[subject]利尿剤:toggle,0x4F0917,01,00
+		[subject]バイブ極太:toggle,0x4F0918,01,00
+		[subject]巨大懐中時計:toggle,0x4F0919,01,00
+		[subject]スタンガン:toggle,0x4F091A,01,00
+	[back]
+	[subject]COSTUME:dir
+		[subject]梓用:dir
+			[replace]0x4F0920,ファイル->COSTUME
+		[back]
+		[subject]冬月用:dir
+			[replace]0x4F092A,ファイル->COSTUME
+		[back]
+		[subject]みく用:dir
+			[replace]0x4F0934,ファイル->COSTUME
+			[subject]巫女服:toggle,0x4F093C,01,00
+		[back]
+	[back]
+[back]
+[/script]
+
