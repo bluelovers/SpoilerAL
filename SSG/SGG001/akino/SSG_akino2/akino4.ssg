@@ -1,0 +1,347 @@
+SSG for SpoilerAL ver 5.3
+
+40D9DF>40D9E2-90
+■■■■■■■■■■■■■■
+
+[script]
+[title]テネレッツア
+[distinction]発売日=3/03/28
+[process]Tenerezza.exe
+[maker]アクアプラス
+[creator]秋野日和
+[note]wordwrap
+ＸＰ環境でサーチ。
+
+◆所持アイテム・鞄の中身
+「無し」から別のアイテムにした場合
+所持アイテム数と鞄の中身の数値が
+イコールになるようにしてください。
+（当然「無し」は含まず）
+
+◆貴重品
+所持アイテムと同じ。
+貴重品数とイコールになるように。
+変更するのはあまりお勧めしません。
+
+◆ロロ攻撃
+使用不可状態の解除です。（赤→青）
+固定すれば連続使用出来ます。
+
+◆魔法ゲージ減らない
+チャージした魔法ＬＶが下がらなくなります。
+ＯＮにした後ＬＶ３を使うと
+以降の魔法は溜め無しＬＶ３となります。
+
+[/note]	
+[subject]所持金:calc,0x4916C0,0,999999
+[subject]現在ＨＰ:calc,0x4914C8,0,999
+[subject]最大ＨＰ:calc,0x4914CA,0,999
+[subject]経験値:calc,0x4916C4,0,9999999
+[subject]敵倒した数:calc,0x4914E6,0,999
+[subject]罪人の剣倒した数:calc,0x4914E4,0,999
+/[subject]ロロ攻撃//_:toggle,0x40ECA3,0x40ECA8-90,66C746088403
+[subject]ロロ攻撃:toggle,0x483BB8,0000,0300
+[subject]ＨＰ減らない//_:toggle,0x41C9CD,0x41C9D3-90,662905C8144900
+[subject]魔法ゲージ減らない//_: b_toggle,0x,AKINO2->tenere_mahou
+[replace]0x,AKINO2->tenere_point
+[replace]0x,AKINO2->tenere_iteme1
+[replace]0x,AKINO2->tenere_kityo1
+[subject]禁呪/禁呪全て習得/_:toggle,0x48FE6B,0x48FE6E-01,00
+[subject]剣技・魔道の書/全て習得/_:toggle,0x48FE24,0x48FE28-01,00
+[subject]通り名/通り名フル化/_:toggle,0x48FFC0,0x48FFCD-01,00
+[subject]レシピ/レシピフル化/_:toggle,0x48FEA6,??0101??0101010101010101010001,??0000??0000000000000000000000
+[subject]キャラ図鑑/キャラ図鑑フル化/_:toggle,0x490468,0x490472-FEFFFFFFFFFFFFFFFFFF03,00
+/[subject]魔法ゲージ:calc,0x505C70
+/[subject]魔法ＬＶ:calc,0x505C72
+[/script]
+◆ロロ攻撃
+ロロ使用可の状態でＯＮにして下さい。
+「赤→青」の瞬間復帰です。
+連続でロロ攻撃が出来ます。
+
+■■■■■■■■■■■■■■
+
+[script]
+[title]ブラウン通り３番目
+[distinction]発売日=3/03/28
+[process]brown.exe
+[maker]ソフトハウスキャラ
+[creator]秋野日和
+[note]wordwrap
+ＸＰ環境でサーチ。
+他のＯＳでは動かない可能性あり。
+
+[/note]	
+[adjustment]search,0x1B2210,70726F2E626F78,0x140000,0x5FFFFF, 4,
+[replace]0x1B1D24,AKINO2->buraun
+[replace]0x00,AKINO2->buraun_love
+[replace]0x00,AKINO2->buraun_hyou
+/[subject]冒険者:dir
+/        [replace]0x1BBEE8,AKINO2->buraun3
+/[back]
+[replace]0x,AKINO2->buraun一括_1
+[subject]おまけＯＮ:toggle,0x1B1725,FF,00
+[subject]ＣＧ＋回想フル化:toggle,0x1B1726,0x1B1CC0-01000100,00000000
+[/adjustment]
+[/script]
+
+■■■■■■■■■■■■■■
+[script]
+[title]結い橋つめちゃいました！Ｐ・Ｒ・Ｏ
+[distinction]発売日=3/03/28
+[process]cs.exe
+[maker]ういんどみる
+[creator]秋野日和
+[note]wordwrap
+「ver 1.00」「ver 1.10」
+どちらでも動作確認してます。
+以下補足説明
+
+◆現在体力
+セ－ブ＆ロードの必要あり。
+主人公の体力は
+マインスイーパーでも使えます。
+
+◆カードバトル手札最強
+ＯＮにしたら１~３枚目を
+選択して決定して下さい。
+１枚目が「Ｄｏｕｂｌｅ」
+その他のカードが全て「１０」になります。
+（決定するまでカードの見た目は変化しません）
+
+◆ブラックジャック
+相手の手札がバーストします。
+
+◆装備カード
+改造で出現させたカードは
+バインダーに戻さないで下さい。
+ゲームがおかしくなるかもしれません。
+
+◆キャラ消去（配置場所）
+「みい」をイベントで出現させてないのに
+配置場所を変更するとその後
+出現したままになってしまいますので
+その時はこれを使用して下さい。
+なお、他のキャラで使った時も消えるので注意。
+
+◆お祭りの思い出ＯＮ
+結い橋オリジナル・リニューアル、
+どちらでも使えます
+
+
+[/note]	
+/[adjustment]dialog,0x659BD2,AKINO2->yui,0x140000,0x7FFFFF, 4
+[adjustment]search,0x659BD2,B80F,0x140000,0x7FFFFF, 4
+/[adjustment]search,0x65394C,6D706F72744B65794167,0x600000,0x7FFFFF, 4
+[subject]日付:calc,0x658BC1,1,30
+[replace]0x,AKINO2->yui_time1
+[subject]所持金:calc,0x659BD2,0,0xFFFF
+[subject]主人公:dir
+        [replace]0x658D10,AKINO2->yuipati0
+[back]
+[subject]みい:dir
+        [replace]0x658D00,AKINO2->yuipati1
+        [replace]0x658D0C,AKINO2->yui_sou1
+[back]
+[subject]末依:dir
+        [replace]0x658CC0,AKINO2->yuipati1
+        [replace]0x658CCC,AKINO2->yui_sou1
+[back]
+[subject]知絵:dir
+        [replace]0x658CD0,AKINO2->yuipati1
+        [replace]0x658CDC,AKINO2->yui_sou1
+[back]
+[subject]まつり:dir
+        [replace]0x658CE0,AKINO2->yuipati1
+        [replace]0x658CEC,AKINO2->yui_sou1
+[back]
+[subject]詩奈:dir
+        [replace]0x658CF0,AKINO2->yuipati1
+        [replace]0x658CFC,AKINO2->yui_sou1
+[back]
+[replace]0x,AKINO2->yui_haichi1
+[replace]0x658C78,AKINO2->yui_iteme1
+/[subject]ＡまんじゅうＨＰ:calc,0x3348504,1,30
+[subject]ミニゲーム:dir
+        [replace]0x,AKINO2->yui_narabe
+        [replace]0x,AKINO2->yui_card
+        [subject]カードバトル手札最強:toggle,0x656C60,0B0A0A0A0A0A0A0A
+        /[subject]ブラックジャック最強カード:toggle,0x656DC4,160DFFFF
+        [subject]ブラックジャック:toggle,0x656EC4,222C13FF
+        [subject]結いぷるＳＰゲージ/ＯＮ→ＭＡＸ　ＯＦＦ→"０"/:toggle,0x65AEDC,803801,00
+[back]
+[subject]ＣＧ＋回想モード出現:dir
+        [subject]お祭りの思い出ＯＮ:toggle,0x6587CC,01,00
+        [subject]結いぱち:toggle,0x6587CC,01,00
+[back]
+[/adjustment]
+[/script]
+■■■■■■■■■■■■■■
+
+[script]
+[title]妻みぐい２
+[distinction]発売日=3/03/28
+[process]System39.exe
+[maker]AliceSoft
+[creator]秋野日和
+[note]wordwrap
+各種パラメータのサーチは
+起動した最初のタイトル画面で行ってください。
+
+◆日付
+使い所によっては
+ゲームが進まなくなります。
+その時は元の数値に戻して下さい。
+
+◆夏の記憶フル化
+夏の記憶に入ったら
+回想リストが表示される前に
+「ヘルプ＞ゲームバージョン」
+を選択してゲームを止めます。
+その後「夏の記憶フル化」を選択。
+サーチが終わったら該当したのを選択。
+そしてチェックをＯＮに。
+その後ゲームに戻ればフル化されます。
+
+[/note]	
+[adjustment]search,0x91B7DC,2C01000000,0x910000,0xAFFFFF, 4
+[subject]日付:calc,0x91B7CA,2,29
+[subject]所持金:calc,0x91B7DC,0,0xFFFF
+[replace]0x91B7D6,AKINO2->tumami1
+[/adjustment]
+[subject]好感度:dir
+        [subject]遥:calc,0x16DA204,0,100
+        [subject]香苗:calc,0x16DA218,0,100
+[back]
+[subject]生中回数:dir
+        [subject]遥:calc,0x16DA214,0,20
+        [subject]香苗:calc,0x16DA228,0,20
+[back]
+[subject]バイト中遥機嫌:calc,0x16DA20C,0,100
+[subject]ＸＰ:dir
+[subject]好感度:dir
+        [subject]遥:calc,0xEAF794,0,100
+        [subject]香苗:calc,0xEAF7A8,0,100
+[back]
+[subject]生中回数:dir
+        [subject]遥:calc,0xEAF7A4,0,20
+        [subject]香苗:calc,0xEAF7B8,0,20
+[back]
+[subject]バイト中遥機嫌:calc,0xEAF79C,0,100
+[back]
+[adjustment]search,0x13C897E,6576656E745F6C6973742E616476,0x1300000,0x16CFFFF, 4
+[subject]夏の記憶フル化:toggle,0x13C8158,0x13C894F-01000100,00000000
+[/adjustment]
+[/script]
+■■■■■■■■■■■■■■
+
+[script]
+[title]ＡＮＧＥＬＩＵＭ ～ときめき ＬＯＶＥ ＧＯＤ～
+[distinction]発売日=3/03/14
+[process]ANGELIUM.EXE
+[maker]Terios
+[creator]秋野日和
+[note]wordwrap
+◆アルバイト1～5
+現在選択可能なアルバイトを変更出来ます。
+
+◆アルバイト火曜～金曜
+スケジュールで決めてしまった
+翌日以降のアルバイトを直前に変更出来ます。
+
+[/note]	
+/[adjustment]search,0xA180C0,441B00A001,0xA00000, 0xAF0000, 4
+[subject]ヘラセンサー/ＯＮ→"０"　ＯＦＦ→ＭＡＸ/:toggle,0xA187E4,00000000,64000000
+[subject]お店レベル:calc,0xA187E0,3,9,unsigned
+[subject]資金:calc,0xA187F0,0,9000000,unsigned
+[subject]ユウ:dir
+        [replace]0xA18758,AKINO2->ANGELIUM_パラメータ
+        [replace]0x,AKINO2->an_yuu1
+        [replace]0x,AKINO2->an_suke_yuu1
+[back]
+[subject]美喜:dir
+        [replace]0xA18784,AKINO2->ANGELIUM_パラメータ
+        [replace]0x,AKINO2->an_miki1
+        [replace]0x,AKINO2->an_suke_miki1
+[back]
+[subject]チャド子:dir
+        [replace]0xA187B0,AKINO2->ANGELIUM_パラメータ
+        [replace]0x,AKINO2->an_tyad1
+        [replace]0x,AKINO2->an_suke_tyad1
+[back]
+[replace]0x00,AKINO2->an_para1
+/[replace]0x00,AKINO2->an_yuu1
+/[subject]項目名:d_list,0xA18A2C,AKINO2->an_miki4,0x01,0x18,AKINO2->an_miki5,offset
+[replace]0x,AKINO2->ANGELIUM_ギャラリー
+[/adjustment]
+[/script]
+
+■■■■■■■■■■■■■■
+
+[script]
+[title]Ｒｏｕｔｅｓ
+[distinction]発売日=3/02/28
+[process]Routes.exe
+[maker]Ｌｅａｆ
+[creator]秋野日和
+[note]wordwrap
+◆おまけモードＯＮ
+適当に最初ｏｒ続きから始めてＯＮにした後
+タイトル画面に戻ってください。
+なお、「はじめから」に
+”Roots”も追加されます。
+
+[/note]	
+[adjustment]search, 0xDC201C,B80B5A04,0xC00000, 0xDFFFFF, 4
+[subject]おまけモードＯＮ//_:toggle,0xCBAF90,0xCBB04F-01000000,00000000
+[subject]ＣＧ/ＣＧモードフル化/_:b_toggle,0,AKINO2->Routes_CG
+[subject]回想モード/回想モードフル化/_:toggle,0xD5F299,0xD5F29F-01,00
+[/adjustment]
+[/script]
+
+■■■■■■■■■■■■■■
+
+[script]
+[title]カラフルキッス　～１２コの胸キュン！～
+[distinction]発売日=3/03/14
+[process]ColorfulKiss.exe
+[maker]戯画
+[creator]秋野日和
+[note]wordwrap
+◆ＣＧモードフル化
+「アクセサリ」の
+・システムボイス
+・マスコット
+・アイキャッチ
+もフル化されます。
+
+[/note]	
+/[adjustment]search, 0x52D213,4F322E77,0x400000, 0x5FFFFF, 4
+[subject]ＣＧモード/ＣＧモードフル化/_:b_toggle,0,AKINO2->kyun_CG
+[subject]回想モード/回想モードフル化/_:toggle,0x52DBC0,0x52DC1F-01000000,00000000
+/[/adjustment]
+[/script]
+
+■■■■■■■■■■■■■■
+
+[script]
+[title]マージ～ＭＡＲＧＩＮＡＬ～
+[distinction]発売日=3/01/31
+[process]Megu.exe
+[maker]ACTRESS
+[creator]秋野日和
+[note]wordwrap\
+◆どこでもセーブ
+ＯＮにした時のみセーブが可能に。
+その時のセーブデータをロードすると
+前の選択肢を選んだ直後から始まります。
+
+・・・ってあんま意味ないですね。（^^;
+[/note]	
+/[adjustment]search, 0x52D213,4F322E77,0x400000, 0x5FFFFF, 4
+[replace]0x00,AKINO2->margi1
+[subject]どこでもセーブ:toggle,0x453EC0,01000000,00000000
+/[/adjustment]
+[/script]
+
+■■■■■■■■■■■■■■
