@@ -1,0 +1,4 @@
+[subject]攻撃係数（％）/現在値/_:calc,0x38,0x0001,0x03E7,unsigned
+[subject]射程変更/_:d_list,0x4C,CF2RLST->LST_d,0x00000011,0x0009000D,CF2RLST->LST_e,offset
+[subject]範囲変更/_:d_list,0x54,CF2RLST->LST_d,0x00000011,0x0001F81C,CF2RLST->LST_e,offset
+[back]
