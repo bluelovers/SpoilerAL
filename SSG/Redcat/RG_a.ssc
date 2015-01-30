@@ -1,0 +1,11 @@
+[subject]現在体力/現在値/固定:calc,0x74,0x0000,0x3E7,unsigned
+[subject]現在魔力/現在値/固定:calc,0x78,0x0000,0x3E7,unsigned
+[subject]全パラメータＭＡＸ/実行/固定:b_toggle,0x00,RG_b,offset
+[subject]攻撃内容変更:dir
+[e_with],RGLST->LST_d,0x00,0x01
+[subject]通常攻撃変更/固定:list,0xD0
+[subject]必殺技１変更/固定:list,0xD4
+[subject]必殺技２変更/固定:list,0xD8
+[/e_with]
+[back]
+[back]
