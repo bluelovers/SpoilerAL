@@ -1,0 +1,129 @@
+[group]NC2_SSG
+[note]wordwrap
+2006年5月発売の廉価版対応
+
+LimitTimeカウント停止：
+時間進行形のトラップにかかったら一端外せば、普通に進めます。
+
+霊力自動回復：
+戦闘突入時他一定状況で霊力を全快させます。
+
+武器攻撃範囲全体化：
+ステータス画面で武器データ表示時に当該武器に関して有効になります。効果は起動中永続化。
+[/note]
+
+[subject]RPGパート関連:dir
+ [subject]LimitTimeカウント停止/実行/_:toggle,_(MName::NIGHTDLL.dll)+0x058158,EB00,7503
+ [subject]戦闘中硬直時間キャンセル/実行/_:toggle,_(MName::NIGHTDLL.dll)+0x0551FF,C3,C1
+ [subject]霊力自動回復/実行/_:b_toggle,_(MName::NIGHTDLL.dll),NC2LST->NC2_b,offset
+ [subject]戦闘勝利時即LVMAX化/実行/_:b_toggle,_(MName::NIGHTDLL.dll),NC2LST->NC2_a,offset
+ [subject]戦果最大化/実行/_:b_toggle,_(MName::NIGHTDLL.dll),NC2LST->NC2_c,offset
+ [subject]武器攻撃範囲全体化/実行/_:toggle,_(MName::NIGHTDLL.dll)+0x03F70F,33C0B00489455083C4084890,8B455083C4084883F8037738
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]LimitTime/現在値/固定:calc,_[:[:(MName::NIGHTDLL.dll)+0xE6B2:]:]+0xDC,0x0000,0x03E8,unsigned
+ [subject]要素石全種所持/実行/_:b_toggle,_[:(MName::NIGHTDLL.dll)+0x05C653:],NC2LST->NC2_d,offset
+ [subject]パーティパラメータ:dir
+  [repeat]NC2LST->NC2REP1,0,8,1
+ [back]
+[back]
+
+[/group]
+
+
+[group]NC2REP1
+[subject][! @NC2LST->LST_a,$Val !]:dir
+ [replace]_[:(MName::NIGHTDLL.dll)+0x0480D3:]+0x[! 0x04*$Val !]=>temp;[:$temp:],NC2LST->NC2_2PR
+[back]
+[/group]
+
+
+[group]NC2_a
+0x12AC,83F963900F8F,D1E33BFB0F8C
+0x12E9,33FF,2BFB
+[/group]
+
+
+[group]NC2_b
+0x00218D,368B4108,2B442404
+0x01AA92,0890,0C49
+0x050CDB,08EB00,0C2BD0
+0x054A82,EB,74
+[/group]
+
+
+[group]NC2_c
+0x001288,6E,46
+0x056CA4,6E,4E
+0x056CB8,6E,4E
+[/group]
+
+
+[group]NC2_d
+0x0000,0x013F-0100000063000000
+[/group]
+
+
+[group]NC2_e
+0x08,9F860100
+0x0C,9F860100
+0x34,E7030000
+0x38,E7030000
+0x3C,E7030000
+0x40,E7030000
+[/group]
+
+
+[group]LST_a
+羽村亮
+新開健人
+星川翼
+百瀬壮一
+火倉いずみ
+七荻鏡花
+三輪坂真言美
+祁答院マコト
+[/group]
+
+
+[group]LST_b
+　なし
+『重ね』
+『金剛力』
+『目貫』
+『繕い』
+『覚り』
+『言霊』
+『体術』
+[/group]
+
+
+[group]NC2_2PR
+[subject]一括強化/実行/_:b_toggle,0x00,NC2LST->NC2_e,offset
+[subject]レベル:calc,0x04,0x01,0x63,unsigned
+ [e_with],0x000000,0x01869F,unsigned
+  [subject]最大霊力/現在値/_:calc,0x08
+  [subject]現在霊力/現在値/_:calc,0x0C
+  [subject]経験値/現在値/_:calc,0x10
+  [subject]訓練値/現在値/_:calc,0x14
+  [subject]月片/現在値/_:calc,0x18
+ [/e_with]
+[subject]基本ステータス:dir
+ [e_with],0x0000,0x03E7,unsigned
+  [subject]体力/現在値/_:calc,0x34
+  [subject]素早さ/現在値/_:calc,0x38
+  [subject]器用さ/現在値/_:calc,0x3C
+  [subject]精神/現在値/_:calc,0x40
+ [/e_with]
+[back]
+[subject]装備不可特殊能力付与:dir
+ [e_with],NC2LST->LST_b,0x00,0x01
+  [subject]A欄/_:list,0xA8
+  [subject]B欄/_:list,0xAC
+  [subject]C欄/_:list,0xB0
+  [subject]D欄/_:list,0xB4
+ [/e_with]
+[back]
+[subject]好感度/現在値/_:calc,0xBC,-99999,99999,signed
+[group]
