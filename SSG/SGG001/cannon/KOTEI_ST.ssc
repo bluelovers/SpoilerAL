@@ -1,0 +1,7 @@
+[subject]経験値		:calc,0x26,0,9999
+[subject]移動力		:calc,0x2A,0,999
+[subject]将軍勝率	:calc,0x38,0,999
+[subject]隊長勝率	:calc,0x3A,0,999
+[subject]兵士勝率	:calc,0x36,0,999
+[subject]戦闘可能/ゾンビ:toggle,0x2C,00,??
+[back]
