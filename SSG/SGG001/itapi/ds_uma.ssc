@@ -1,0 +1,9 @@
+        [subject]馬齢:calc,0x02,4,20,signed,little_e
+        [subject]価格:calc,0x04,0x0000,0xFF7F,signed,little_e
+        [subject]保険付き:toggle,0x1A,1,0
+        [subject]受胎(暫定):dir
+                [subject]受胎情報クリア:b_toggle,0x00,ds_clear,offset
+                [subject]強制受胎:b_toggle,0x00,ds_jutai,offset
+                [subject]種牡馬選択:list,0x22,ds_shuboba,0x00,0x01
+        [back]
+[back]
