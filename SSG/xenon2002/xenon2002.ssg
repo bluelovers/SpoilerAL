@@ -1,0 +1,2665 @@
+SSG for SpoilerAL ver 6.1
+
+// CG ALL-ONは他の人に任せます。
+
+[script]
+[title]Caliz
+[process]RAGE_R1.EXE
+[maker]Cronus
+[creator]xenon
+[note]
+　発 売 日   2002/11/29
+  ジャンル   SLG
+  原画       葵 羽鳥
+  シナリオ   富樫 つか沙
+
+　http://www.cronus.tk/
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/11/29
+[subject]日付: calc,0x453468,1,15
+[subject]時間(1朝 2昼 3夜): calc,0x453464,1,3
+[subject]愛情: calc,0x453454,0,255
+[subject]開発: calc,0x453458,0,255
+[/script]
+
+[script]
+[title]流聖天使プリマヴェールＶ
+[process]PURIVE_V.EXE
+[maker]エスクード
+[creator]xenon
+[note]
+　発 売 日   2002/12/13
+  ジャンル   調教シュミレーション
+
+　http://www.escude.co.jp/
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/12/13
+[subject]ステータス:dir
+	[subject]服従心: calc,0x48201C,0,250
+	[subject]愛情: calc,0x482020,0,250
+	[subject]？ : calc,0x482024,0,250
+[back]
+[subject]調教ＬＶ:dir
+	[subject]感度:calc,0x482028,0,150
+	[subject]感度(MAX):calc,0x48202C,0,150
+	[subject]感度ＬＶ:calc,0x482030,0,150
+	[subject]被虐性:calc,0x482034,0,150
+	[subject]被虐性(MAX):calc,0x482038,0,150
+	[subject]被虐性ＬＶ:calc,0x48203C,0,4
+	[subject]アナル:calc,0x482040,0,150
+	[subject]アナル(MAX):calc,0x482044,0,150
+	[subject]アナルＬＶ:	calc,0x482048,0,4
+[back]
+[subject]体力:dir
+	[subject]あなたの体力:calc,0x48204C,0,250
+	[subject]あなたの体力(MAX):calc,0x482050,0,250
+	[subject]純菜の体力:calc,0x482054,0,250
+	[subject]純菜の体力(MAX):calc,0x482058,0,250
+[back]
+[subject]状態:dir
+	[subject]ＴＩＭＥ:calc,0x48205C,0,100
+	[subject]濡れ具合:calc,0x482064,0,140
+[back]
+[subject]その他:dir
+	[subject]設備投資:calc,0x482498,0,100
+	[subject]スーパー洗脳ZKC:calc,0x4821A0,0,250
+	[subject]残り予算:calc,0x48219C,0,60000
+	[subject]作戦ポイント:calc,0x482518,0,999
+[back]
+[subject]コロナ:dir
+	[subject]ＨＰ:calc,0x482A90,0,10000
+	[subject]服従心:calc,0x48254C,0,100
+	[subject]愛情:calc,0x482550,0,100
+[back]
+[subject]戦闘員:dir
+	[subject]Ａ:dir
+		[replace]0x4821A8,プリマヴェールＶ->ステータス
+	[back]
+	[subject]Ｂ子:dir
+		[replace]0x4821C8,プリマヴェールＶ->ステータス
+	[back]
+	[subject]Ｃ:dir
+		[replace]0x4821E8,プリマヴェールＶ->ステータス
+	[back]
+	[subject]Ｄ:dir
+		[replace]0x482208,プリマヴェールＶ->ステータス
+	[back]
+	[subject]Ｅ:dir
+		[replace]0x482228,プリマヴェールＶ->ステータス
+	[back]
+[back]
+[subject]調教回数:dir
+	[subject]胸を愛撫:calc,0x482070,0,250
+	[subject]　:calc,0x482074,0,250
+	[subject]　:calc,0x482078,0,250
+	[subject]　:calc,0x48207C,0,250
+	[subject]　:calc,0x482080,0,250
+	[subject]　:calc,0x482084,0,250
+	[subject]　:calc,0x482088,0,250
+	[subject]　:calc,0x48208C,0,250
+	[subject]　:calc,0x482090,0,250
+	[subject]　:calc,0x482094,0,250
+	[subject]　:calc,0x482098,0,250
+	[subject]　:calc,0x48209C,0,250
+	[subject]　:calc,0x4820A0,0,250
+	[subject]　:calc,0x4820A4,0,250
+	[subject]　:calc,0x4820A8,0,250
+	[subject]　:calc,0x4820AC,0,250
+	[subject]普通にに挿入:calc,0x4820B0,0,250
+	[subject]乱暴に挿入:calc,0x4820B4,0,250
+	[subject]優しく挿入:calc,0x4820B8,0,250
+	[subject]アナルに挿入:calc,0x4820BC,0,250
+[back]
+[/script]
+
+[script]
+[title]らいむいろ戦奇譚（CD-ROM版）
+[process]AI5WIN.EXE
+[maker]エルフ
+[creator]xenon
+[note]
+　発 売 日   2002/12/13
+  ジャンル   美少女　純愛戦記浪漫アドベンチャー
+  原画       本田直樹
+  シナリオ   あかほりさとる
+
+　http://www.elf-game.co.jp/
+  
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/12/13
+[subject]マップ移動回数: calc,0x1F3D394,0,3
+[subject]おまけ: toggle,0x1F3DF00,0x1F3E2FF-01,00
+[/script]
+
+[script]
+[title]性裁恥療 ～恥辱に濡れる白衣～
+[process]SYSTEM.EXE
+[maker]TRYSET
+[creator]xenon
+[note]
+　発 売 日   2002/12/13
+  ジャンル   制裁陵辱アドベンチャー
+  原画       天乃　御剣
+
+　http://
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/12/13
+[subject]日付: b_calc,0x14DFF14,性裁恥療->基準,offset,1,7
+[subject]時間: b_calc,0x14DFF15,性裁恥療->基準,offset,1,6
+[/script]
+
+[script]
+[title]いもうと観察日記
+[process]IMOUTO.EXE
+[maker]Triangle
+[creator]xenon
+[note]
+　発 売 日   2002/12/13
+  ジャンル   いもうとドキドキアドベンチャー
+  原画       斎藤なつき
+  シナリオ   島村ひろし
+
+　http://www.h-gate.co.jp/
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/12/13
+[subject]兄への想い:calc,0x69F340,0,255
+[subject]成長:calc,0x69F342,0,255
+[subject]欲求不満度:calc,0x69F344,0,255
+[subject]訪問回数:dir
+	[subject]屋上:calc,0x69F5FC,0,255
+	[subject]保健室:calc,0x69F5FE,0,255
+[back]
+[subject]パラメータ（属性）:dir
+	[subject]挿入:calc,0x69F346,0,255
+	[subject]フェラ:calc,0x69F348,0,255
+	[subject]ノーマル:calc,0x69F34A,0,255
+[back]
+[subject]アイテム（成功回数）:dir
+	[subject]ALL99/ON=99 OFF=0: toggle,0x6A32B0,0x6A3338-63000000,00000000
+	[subject]首輪付きメイド服:calc,0x6A32B0,0,255
+	[subject]？:calc,0x6A32B4,0,255
+	[subject]ＳＭ女王様スーツ:calc,0x6A32B8,0,255
+	[subject]ローション:calc,0x6A32BC,0,255
+	[subject]バナナ:calc,0x6A32C0,0,255
+	[subject]マッサージ器:calc,0x6A32C4,0,255
+	[subject]精液入りコンドーム:calc,0x6A32C8,0,255
+	[subject]ローター:calc,0x6A32CC,0,255
+	[subject]バイブレータ:calc,0x6A32D0,0,255
+	[subject]アナル用バイブ:calc,0x6A32D4,0,255
+	[subject]おまる:calc,0x6A32D8,0,255
+	[subject]体操の教材「新体操のすべて」:calc,0x6A32DC,0,255
+	[subject]保健体育の教科書「身体の神秘：誕生編」:calc,0x6A32E0,0,255
+	[subject]ジュウシーゲイン:calc,0x6A32E4,0,255
+	[subject]ラブポイズン:calc,0x6A32E8,0,255
+	[subject]投稿写真雑誌「まるごとルミちゃん」:calc,0x6A32EC,0,255
+	[subject]投稿写真雑誌「激写歓楽学園：美樹」:calc,0x6A32F0,0,255
+	[subject]投稿写真雑誌「口内射精特集：範子」:calc,0x6A32F4,0,255
+	[subject]エロ本「虐めてっ！御主人様！」:calc,0x6A32F8,0,255
+	[subject]エロ本「サディスティックミサ」:calc,0x6A32FC,0,255
+	[subject]エロ本「堕天使スイートナイツ」:calc,0x6A3300,0,255
+	[subject]Ｈマンガ「フェラアンソロジー」:calc,0x6A3304,0,255
+	[subject]Ｈマンガ「コードＢの微少女」:calc,0x6A3308,0,255
+	[subject]Ｈマンガ「ルミちゃんは快楽主義」:calc,0x6A330C,0,255
+	[subject]アイドルビデオ「美樹：天使のはじらい」:calc,0x6A3310,0,255
+	[subject]ＡＶビデオ「ルミちゃん大ピンチ！」:calc,0x6A3314,0,255
+	[subject]ＡＶビデオ「身体中弄られて：美樹」:calc,0x6A3318,0,255
+	[subject]ＡＶビデオ「性涼飲料：範子」:calc,0x6A331C,0,255
+	[subject]深夜番組の録画ビデオ「スイートナイツＴ」:calc,0x6A3320,0,255
+	[subject]深夜番組の録画ビデオ「特集！女王様の本」:calc,0x6A3324,0,255
+	[subject]深夜番組の録画ビデオ「メイドのセイカツ」:calc,0x6A3328,0,255
+	[subject]特殊ビデオ「下のお口に入れてね」:calc,0x6A332C,0,255
+	[subject]特殊ビデオ「オモチャで遊ぼっ」:calc,0x6A3330,0,255
+	[subject]特殊ビデオ「後の方が感じるのっ！」:calc,0x6A3334,0,255
+	[subject]特殊ビデオ「ＣＣ：檸檬色」:	calc,0x6A3338,0,255
+[back]
+[/script]
+
+[script]
+[title]PeepingWeb
+[process]PEEPING WEB.EXE
+[maker]Sweetpain TEAM M/K
+[creator]xenon
+[note]
+　発 売 日   2002/11/22
+  ジャンル   私生活盗撮アドベンチャー
+  原画       百済内創 
+  シナリオ   町田都民 
+
+　http://www.peepingweb.net/
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/11/22
+[subject]日付(6月20日=0): b_calc,0xB43108,PEEPING->基準,offset,0,99
+[subject]時間: b_calc,0xB430F8,PEEPING->基準,offset,0,3
+[subject]所持金: b_calc,0xB43128,PEEPING->基準,offset,0,9999000
+[subject]アイテム:dir
+	[subject]ALL-ON: b_toggle,0xB43158,PEEPING->アイテム,offset
+	[subject]コンサートチケット : b_toggle,0xB43158,PEEPING->個別アイテム,offset
+	[subject]ＳＭ大全 : b_toggle,0xB43168,PEEPING->個別アイテム,offset
+	[subject]ゲーム機 : b_toggle,0xB43178,PEEPING->個別アイテム,offset
+	[subject]ザ・レイプ : b_toggle,0xB43188,PEEPING->個別アイテム,offset
+	[subject]アンティーク時計 : b_toggle,0xB43198,PEEPING->個別アイテム,offset
+	[subject]ぬいぐるみ : b_toggle,0xB431A8,PEEPING->個別アイテム,offset
+	[subject]ノートパソコン : b_toggle,0xB431B8,PEEPING->個別アイテム,offset
+	[subject]バイブ : b_toggle,0xB431C8,PEEPING->個別アイテム,offset
+	[subject]媚薬 : b_toggle,0xB431D8,PEEPING->個別アイテム,offset
+	[subject]リトグラフ : b_toggle,0xB431E8,PEEPING->個別アイテム,offset
+	[subject]利尿剤 : b_toggle,0xB431F8,PEEPING->個別アイテム,offset
+	[subject]ロマンス文庫 : b_toggle,0xB43208,PEEPING->個別アイテム,offset
+[back]
+[/script]
+
+[script]
+[title]お姫様は特訓中！～性なる魔法修行～
+[process]HIMETOKU.EXE
+[maker]Lusterise
+[creator]xenon
+[adjustment]dialog, 0x11833D0,お姫様は特訓中->サーチ,0x00520000,0x015B0FFF,4
+[note]
+　発 売 日   2002/11/08
+  ジャンル   魔法王女調教育成SLG
+
+  アドレス移動型
+　http://www.lusterise.com/
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/11/08
+[subject]日付:calc,0x1183240,1,30
+[subject]魔力:calc,0x11833D0,0,99999
+[subject]属性:dir
+	[subject]火:calc,0x11833E4,0,999
+	[subject]水:calc,0x11833E8,0,999
+	[subject]地:calc,0x11833EC,0,999
+	[subject]風:calc,0x11833F0,0,999
+[back]
+[subject]調教育成:dir
+	[subject]セレスティナ体力(現在値):calc,0x11833D8,0,999
+	[subject]セレスティナ体力(最高値):calc,0x11833DC,0,999
+	[subject]ユアン体力:calc,0x1183248,0,999
+	[subject]エクスタシー:calc,0x11833FC,0,100
+	[subject]愛情:calc,0x1183400,0,1000
+	[subject]性感:calc,0x1183404,0,1000
+	[subject]従順:calc,0x1183408,0,1000
+	[subject]被虐:calc,0x118340C,0,1000
+	[subject]気品:calc,0x1183410,0,1000
+	[subject]アナル:calc,0x1183420,0,1000
+[root]
+[/script]
+
+[script]
+[title]戦女神II～失われし記憶への鎮魂歌～
+[process]AGE.EXE
+[maker]エウシュリー
+[creator]xenon
+/[adjustment]dialog, 0xFA212C,戦女神II->サーチ,0x00F00000,0x00FFFFFF,4
+[adjustment]search, 0xFA1F18,2C0100002D010000,0x00E00000,0x00FFFFFF,4
+[note]
+　発 売 日   2002/10/25
+  ジャンル   ファンタジーＲＰＧ    
+  原画       鳩月つみき
+  シナリオ   秋谷里夫、天崎カケル
+
+  ★個別のアイテム数変更は、倉庫にアイテム名が表示されている物のみ変更できます。
+  ★敵遭遇の回避(忍び歩き)は、パーティ内にスキルを使えるキャラが必要。
+  ★重要アイテムをONにしたら、OFFにはしない事。（初期化されます）
+
+  アドレス移動型
+  Ver 1.00.0007 Ver 1.01.0008
+　http://www.phoenix-c.or.jp/~eushully/
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/10/25
+[subject]所持金: calc,0xF8882C,0,999999
+[subject]忍び歩き: b_calc,0xFA6420,戦女神II->敵遭遇回避,offset,0,999
+[subject]セバスの門階数?:calc,0xFA5490,0,99
+[subject]ステータス:dir
+	[subject]セリカ:dir
+		[subject]能力値:dir
+			[replace]0xF88920,戦女神II->ステータス
+		[back]
+		[subject]HP/MP/TP:dir
+			[replace]0xF88B50,戦女神II->パラメータ
+		[back]
+		[subject]技能経験値:dir
+			[subject]片手小型武器: calc,0xF95A80,0,999999
+			[subject]中型片手武器: calc,0xF95AA8,0,999999
+			[subject]両手武器: calc,0xF95AD0,0,999999
+			[subject]秘印術・電撃: calc,0xF95DAC,0,999999
+			[subject]秘印術・体鍛: calc,0xF95DC4,0,999999
+			[subject]性魔術・魅了: calc,0xF95DC8,0,999999
+			[subject]召還魔術: calc,0xF95DF0,0,999999
+			[subject]飛燕剣・妖: calc,0xF95F30,0,999999
+			[subject]飛燕剣・斬: calc,0xF95F34,0,999999
+			[subject]飛燕剣・円燐: calc,0xF95F38,0,999999
+			[subject]支配力操作: calc,0xF95F54,0,999999
+		[back]
+	[back]
+	[subject]エクリア:dir
+		[subject]能力値:dir
+			[replace]0xF88924,戦女神II->ステータス
+		[back]
+		[subject]HP/MP/TP:dir
+			[replace]0xF88B54,戦女神II->パラメータ
+		[back]
+		[subject]技能経験値:dir
+			[subject]片手射出武器: calc,0xF96458,0,999999
+			[subject]秘印術・冷却: calc,0xF96704,0,999999
+			[subject]秘印術・水流: calc,0xF96708,0,999999
+			[subject]秘印術・純粋: calc,0xF96714,0,999999
+			[subject]秘印術・念動: calc,0xF96718,0,999999
+			[subject]秘印術・攻鍛: calc,0xF9671C,0,999999
+			[subject]秘印術・防鍛: calc,0xF96720,0,999999
+			[subject]性魔術・魅了: calc,0xF96728,0,999999
+			[subject]性魔術・束縛: calc,0xF9672C,0,999999
+		[back]
+	[back]
+	[subject]マリーニャ:dir
+		[subject]能力値:dir
+			[replace]0xF88928,戦女神II->ステータス
+		[back]
+		[subject]HP/MP/TP:dir
+			[replace]0xF88B58,戦女神II->パラメータ
+		[back]
+		[subject]技能経験値:dir
+			[subject]小型片手武器: calc,0xF96D40,0,999999
+			[subject]中型片手武器: calc,0xF96D68,0,999999
+			[subject]片手射出武器: calc,0xF96DB8,0,999999
+			[subject]財宝探索: calc,0xF9720C,0,999999
+		[back]
+	[back]
+	[subject]シュリ:dir
+		[subject]能力値:dir
+			[replace]0xF8892C,戦女神II->ステータス
+		[back]
+		[subject]HP/MP/TP:dir
+			[replace]0xF88B5C,戦女神II->パラメータ
+		[back]
+		[subject]技能経験値:dir
+			[subject]小型片手武器: calc,0xF976A0,0,999999
+			[subject]片手射出武器: calc,0xF97718,0,999999
+			[subject]両手射出武器: calc,0xF97740,0,999999
+			[subject]神聖魔法治癒: calc,0xF97A38,0,999999
+			[subject]神聖魔法再生: calc,0xF97A3C,0,999999
+			[subject]神聖魔法浄化: calc,0xF97A40,0,999999
+			[subject]神聖魔法古神: calc,0xF97A4C,0,999999
+			[subject]祝福: calc,0xF97B70,0,999999
+			[subject]魔力授与技能: calc,0xF97B78,0,999999
+		[back]
+	[back]
+	[subject]サリア:dir
+		[subject]能力値:dir
+			[replace]0xF88930,戦女神II->ステータス
+		[back]
+		[subject]HP/MP/TP:dir
+			[replace]0xF88B60,戦女神II->パラメータ
+		[back]
+		[subject]技能経験値:dir
+			[subject]片手射出武器: calc,0xF98078,0,999999
+			[subject]召喚魔術: calc,0xF98374,0,999999
+			[subject]魔力授与技能: calc,0xF984D8,0,999999
+		[back]
+	[back]
+	[subject]レヴィア:dir
+		[subject]能力値:dir
+			[replace]0xF88934,戦女神II->ステータス
+		[back]
+		[subject]HP/MP/TP:dir
+			[replace]0xF88B64,戦女神II->パラメータ
+		[back]
+		[subject]技能経験値:dir
+			[subject]片手小型武器: calc,0xF98960,0,999999
+			[subject]中型片手武器: calc,0xF98988,0,999999
+			[subject]神聖魔術治療: calc,0xF98CF8,0,999999
+			[subject]神聖魔術再生: calc,0xF98CFC,0,999999
+			[subject]神聖魔術一般: calc,0xF98D04,0,999999
+			[subject]祝福技能: calc,0xF98E30,0,999999
+		[back]
+	[back]
+	[subject]ロカ:dir
+		[subject]能力値:dir
+			[replace]0xF88938,戦女神II->ステータス
+		[back]
+		[subject]HP/MP/TP:dir
+			[replace]0xF88B68,戦女神II->パラメータ
+		[back]
+		[subject]技能経験値:dir
+			[subject]両手武器: calc,0xF99310,0,999999
+			[subject]片手射出武器: calc,0xFF99338,0,999999
+			[subject]神聖魔術治療: calc,0xF99658,0,999999
+			[subject]神聖魔術再生: calc,0xF9965C,0,999999
+			[subject]神聖魔術一般: calc,0xF99664,0,999999
+			[subject]神聖魔術現神: calc,0xF99668,0,999999
+			[subject]魔道鎧砲撃: calc,0xF99788,0,999999
+		[back]
+	[back]
+	[subject]マウア・フィズ:dir
+		[subject]能力値:dir
+			[replace]0xF8893C,戦女神II->ステータス
+		[back]
+		[subject]HP/MP/TP:dir
+			[replace]0xF88B6C,戦女神II->パラメータ
+		[back]
+		[subject]技能経験値:dir
+			[subject]中型片手武器: calc,0xF99C48,0,999999
+			[subject]片手射出武器: calc,0xF99C98,0,999999
+			[subject]両手射出武器: calc,0xF99CC0,0,999999
+			[subject]秘印術・火炎: calc,0xF99F40,0,999999
+			[subject]秘印術・念動: calc,0xF99F58,0,999999
+			[subject]秘印術・攻鍛: calc,0xF99F5C,0,999999
+			[subject]秘印術・防鍛: calc,0xF99F60,0,999999
+			[subject]魔道鎧砲撃: calc,0xF9A0E8,0,999999
+			[subject]支配力操作: calc,0xF9A0F4,0,999999
+		[back]
+	[back]
+	[subject]カウラ:dir
+		[subject]能力値:dir
+			[replace]0xF88940,戦女神II->ステータス
+		[back]
+		[subject]HP/MP/TP:dir
+			[replace]0xF88B70,戦女神II->パラメータ
+		[back]
+		[subject]技能経験値:dir
+			[subject]両手武器: calc,0xF9A5D0,0,999999
+			[subject]神極剣: calc,0xF9AA3C,0,999999
+		[back]
+	[back]
+	[subject]ウェンディズ:dir
+		[subject]能力値:dir
+			[replace]0xF88944,戦女神II->ステータス
+		[back]
+		[subject]HP/MP/TP:dir
+			[replace]0xF88B74,戦女神II->パラメータ
+		[back]
+		[subject]技能経験値:dir
+			[subject]片手射出武器: calc,0xF9AF58,0,999999
+			[subject]秘印術・火炎: calc,0xF9B200,0,999999
+			[subject]秘印術・冷却: calc,0xF9B204,0,999999
+			[subject]秘印術・水流: calc,0xF9B208,0,999999
+			[subject]秘印術・電撃: calc,0xF9B20C,0,999999
+			[subject]秘印術・大気: calc,0xF9B210,0,999999
+			[subject]秘印術・純粋: calc,0xF9B214,0,999999
+			[subject]秘印術・念動: calc,0xF9B218,0,999999
+			[subject]暗黒魔術: calc,0xF9B290,0,999999
+		[back]
+	[back]
+	[subject]シェンナ:dir
+		[subject]能力値:dir
+			[replace]0xF88948,戦女神II->ステータス
+		[back]
+		[subject]HP/MP/TP:dir
+			[replace]0xF88B78,戦女神II->パラメータ
+		[back]
+		[subject]技能経験値:dir
+			[subject]片手射出武器: calc,0xF887F0,0,999999
+			[subject]秘印術・大気: calc,0xF9BB70,0,999999
+			[subject]精霊招聘術: calc,0xF9BB90,0,999999
+			[subject]祝福技能: calc,0xF9BD10,0,999999
+		[back]
+	[back]
+	[subject]シェスタ:dir
+		[subject]能力値:dir
+			[replace]0xF8894C,戦女神II->ステータス
+		[back]
+		[subject]HP/MP/TP:dir
+			[replace]0xF88B7C,戦女神II->パラメータ
+		[back]
+		[subject]技能経験値:dir
+			[subject]両手射出武器: calc,0xF9C240,0,999999
+			[subject]エルフ弓術: calc,0xF9C664,0,999999
+		[back]
+	[back]
+	[subject]レシェンテ:dir
+		[subject]能力値:dir
+			[replace]0xF88950,戦女神II->ステータス
+		[back]
+		[subject]HP/MP/TP:dir
+			[replace]0xF88B80,戦女神II->パラメータ
+		[back]
+		[subject]技能経験値:dir
+			[subject]小型片手武器: calc,0xF9CB00,0,999999
+			[subject]片手射出武器: calc,0xF9CB78,0,999999
+			[subject]秘印術・火炎: calc,0xF9CE20,0,999999
+			[subject]秘印術・冷却: calc,0xF9CE24,0,999999
+			[subject]秘印術・電撃: calc,0xF9CE2C,0,999999
+			[subject]秘印術・純粋: calc,0xF9CE34,0,999999
+			[subject]支配力操作: calc,0xF9CFD4,0,999999
+		[back]
+	[back]
+	[subject]イーリッシュ:dir
+		[subject]能力値:dir
+			[replace]0xF88954,戦女神II->ステータス
+		[back]
+		[subject]HP/MP/TP:dir
+			[replace]0xF88B84,戦女神II->パラメータ
+		[back]
+		[subject]技能経験値:dir
+			[subject]両手武器: calc,0xF9D4B0,0,999999
+			[subject]風鎌剣: calc,0xF9D920,0,999999
+		[back]
+	[back]
+	[subject]エウシュリーちゃん:dir
+		[subject]能力値:dir
+			[replace]0xF88958,戦女神II->ステータス
+		[back]
+		[subject]HP/MP/TP:dir
+			[replace]0xF88B88,戦女神II->パラメータ
+		[back]
+		[subject]技能経験値:dir
+			[subject]両手武器: calc,0xF9DE10,0,999999
+			[subject]掃除魔法: calc,0xF9E174,0,999999
+		[back]
+	[back]
+	[subject]ブラックエウシュリーちゃん:dir
+		[subject]能力値:dir
+			[replace]0xF8895C,戦女神II->ステータス
+		[back]
+		[subject]HP/MP/TP:dir
+			[replace]0xF88B8C,戦女神II->パラメータ
+		[back]
+		[subject]技能経験値:dir
+			[subject]両手武器: calc,0xF9E770,0,999999
+			[subject]掃除魔法: calc,0xF9EAD4,0,999999
+		[back]
+	[back]
+[root]
+[subject]アイテム:dir
+	[subject]重要アイテム/ALL-ON ALL-OFF: b_toggle,0xFA1F18,戦女神II->重要アイテム,offset
+	[subject]地下室ALL99-50/ON=99 OFF=50: toggle,0xFA212C,0xFA494C-63000000,32000000
+	[subject]地下室ALL01-00/ON=01 OFF=00: toggle,0xFA212C,0xFA494C-01000000,00000000
+	[subject]体力系アイテム:dir
+		[subject]体力回復:dir
+		[replace]0xFA212C,戦女神II->青瓶
+		[back]
+		[subject]瀕死回復:dir
+			[replace]0xFA212C,戦女神II->赤瓶
+		[back]
+		[subject]魔力回復:dir
+			[replace]0xFA212C,戦女神II->黄瓶
+		[back]
+		[subject]技力回復:dir
+			[replace]0xFA212C,戦女神II->白瓶
+		[back]
+		[subject]状態回復:dir
+			[replace]0xFA212C,戦女神II->葉
+		[back]
+	[back]
+	[subject]戦闘補助アイテム:dir
+		[subject]戦闘薬:dir
+			[replace]0xFA212C,戦女神II->緑薬
+		[back]
+		[subject]燐粉:dir
+			[replace]0xFA212C,戦女神II->橙薬
+		[back]
+		[subject]秘文:dir
+			[replace]0xFA212C,戦女神II->水薬
+		[back]
+		[subject]アクセサリー:dir
+			[replace]0xFA212C,戦女神II->赤薬
+		[back]
+		[subject]小枝:dir
+			[replace]0xFA212C,戦女神II->白薬
+		[back]
+		[subject]妙薬:dir
+			[replace]0xFA212C,戦女神II->桃薬
+		[back]
+		[subject]軍配:dir
+			[replace]0xFA212C,戦女神II->紫薬
+		[back]
+		[subject]笛:dir
+			[replace]0xFA212C,戦女神II->青薬
+		[back]
+		[subject]絵札:dir
+			[replace]0xFA212C,戦女神II->絵札
+		[back]
+	[back]
+	[subject]星石:dir
+		[replace]0xFA212C,戦女神II->星石
+	[back]
+	[subject]補助アイテム:dir
+		[subject]杖:dir
+			[replace]0xFA212C,戦女神II->杖
+		[back]
+		[subject]地下水路の鍵:calc,0xFA22C4,0,99
+	[back]
+	[subject]呪鍛液:dir
+		[replace]0xFA212C,戦女神II->呪鍛
+	[back]
+	[subject]売却専用:dir
+		[replace]0xFA212C,戦女神II->金袋
+	[back]
+	[subject]鍵:dir
+		[subject]転移・アイテム転送:dir
+			[replace]0xFA212C,戦女神II->転送
+		[back]
+		[subject]転移鍵:dir
+			[replace]0xFA212C,戦女神II->鍵
+		[back]	
+		[subject]喚石:dir
+			[replace]0xFA212C,戦女神II->喚石
+		[back]
+	[back]
+	[subject]武器:dir
+		[subject]鉤爪:dir
+			[replace]0xFA212C,戦女神II->鉤爪
+		[back]
+		[subject]小剣:dir
+			[replace]0xFA212C,戦女神II->小剣
+		[back]
+		[subject]忍刀:dir
+			[replace]0xFA212C,戦女神II->忍刀
+		[back]
+		[subject]長剣:dir
+			[replace]0xFA212C,戦女神II->長剣
+		[back]
+		[subject]メイス:dir
+			[replace]0xFA212C,戦女神II->鉾
+		[back]
+		[subject]両手剣:dir
+			[replace]0xFA212C,戦女神II->両手剣
+		[back]
+		[subject]槍:dir
+			[replace]0xFA212C,戦女神II->槍
+		[back]
+		[subject]箒:dir
+			[replace]0xFA212C,戦女神II->箒
+		[back]
+		[subject]魔導銃:dir
+			[replace]0xFA212C,戦女神II->銃
+		[back]
+		[subject]ブーメラン:dir
+			[replace]0xFA212C,戦女神II->ブーメラン
+		[back]
+		[subject]鞭:dir
+			[replace]0xFA212C,戦女神II->鞭
+		[back]
+		[subject]魔導銃(砲):dir
+			[replace]0xFA212C,戦女神II->両手銃
+		[back]
+		[subject]弓:dir
+			[replace]0xFA212C,戦女神II->弓
+		[back]
+	[back]
+	[subject]防具:dir
+		[subject]服:dir
+			[replace]0xFA212C,戦女神II->服
+		[back]
+		[subject]鎧:dir
+			[replace]0xFA212C,戦女神II->鎧
+		[back]
+		[subject]全身鎧:dir
+			[replace]0xFA212C,戦女神II->全身鎧
+		[back]
+		[subject]魔導鎧:dir
+			[replace]0xFA212C,戦女神II->魔導鎧
+		[back]
+		[subject]小盾:dir
+			[replace]0xFA212C,戦女神II->小盾
+		[back]
+		[subject]大盾:dir
+			[replace]0xFA212C,戦女神II->大盾
+		[back]
+		[subject]装飾:dir
+			[replace]0xFA212C,戦女神II->指輪
+		[back]
+	[back]
+[root]
+[/adjustment]
+[/script]
+愛情度FA1D34
+
+[script]
+[title]高級娼婦 ～コルティジャーナ～
+[process]CORTIGIAN.EXE
+[maker]maple
+[creator]xenon
+[note]
+　発 売 日　　2002/10/18
+  ジャンル    娼婦育成ＳＬＧ
+  原画        灰村キヨタカ 
+  シナリオ    穂高　望
+
+  Ver 1.00
+　http://www.maple-hp.com/
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/10/18
+[subject]日付: calc,0xAD4A12,1,99
+[subject]所持金: calc,0xAD4A14,1,9999
+[subject]エルザ:dir
+	[replace]0xAD4A22,高級娼婦->ステータス
+[back]
+[subject]エミリア:dir
+	[replace]0xAD4A16,高級娼婦->ステータス
+[back]
+[/script]
+
+[script]
+[title]Empire Earth - The Art of Conquest
+[process]EE-AOC.EXE
+[maker]Sierra
+[creator]xenon
+[adjustment]dialog,0x07ACBD44,EMPIREEARTH->サーチ,0x01690000,0x0BEFFFFF,1
+[note] 
+
+  マルチプレイ時には使用しない様に
+
+[/note]
+[subject] Food : calc,0x07ACBD44,00,999999
+[subject] Wood : calc,0x07ACBD48,00,999999
+[subject] Stone: calc,0x07ACBD4C,00,999999
+[subject] Gold : calc,0x07ACBD50,00,999999
+[subject] Iron : calc,0x07ACBD54,00,999999
+[/adjustment]
+[/script]
+
+[script]
+[title]EMPIRE EARTH (英語版)
+[process]EMPIRE EARTH.EXE
+[maker]Sierra
+[creator]xenon
+[adjustment]dialog,0x07ACBD44,EMPIREEARTH->サーチ,0x01690000,0x0BEFFFFF,1
+[note] 
+  Ver1.0.4.0 (UPDATE)
+  NoCD Pacth
+  日本語化DLL(むつ氏 2001/12/31版)
+
+  http://empireearth.sierra.com/ (英語公式HP)
+  http://www.capcom.co.jp/empireearth/ (日本公式HP)
+
+  マルチプレイ時には使用しない様に
+
+[/note]
+[subject] Food : calc,0x07ACBD44,00,999999
+[subject] Wood : calc,0x07ACBD48,00,999999
+[subject] Stone: calc,0x07ACBD4C,00,999999
+[subject] Gold : calc,0x07ACBD50,00,999999
+[subject] Iron : calc,0x07ACBD54,00,999999
+[/adjustment]
+[/script]
+
+[script]
+[title]ギャラクシーエンジェル
+[process]GA.EXE
+[maker]ブロッコリー
+[creator]xenon
+[note]
+　発 売 日　　2002/08/23
+
+  日付は参考程度に留めておく方が良いと思います。
+  時間の変更は、ADVパート時のみです。
+  各機のステータス検索＆変更は戦闘時のみです。
+
+　http://www.broccoli.co.jp/ga/game/index.html
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/08/23
+[subject]日付: calc,0x34904C8,1,31
+[subject]時: calc,0x34904C9,0,24
+[subject]分: calc,0x34904CA,0,60
+[adjustment]search, 0x066C22CE,8347838B83568349815B838B,0x052C0000,0x07EBFFFF,4
+[subject]エルシオール:dir
+	[replace]0x066C2330,ギャラクシーエンジェル->ステータス
+[back]
+[subject]ラッキースター:dir
+	[replace]0x066C8330,ギャラクシーエンジェル->ステータス
+[back]
+[subject]カンフーファイター:dir
+	[replace]0x066CE330,ギャラクシーエンジェル->ステータス
+[back]
+[subject]ラトリックマスター:dir
+	[replace]0x066D4330,ギャラクシーエンジェル->ステータス
+[back]
+[subject]ハッピートリガー:dir
+	[replace]0x066DA330,ギャラクシーエンジェル->ステータス
+[back]
+[subject]ハーベスター:dir
+	[replace]0x066E0330,ギャラクシーエンジェル->ステータス
+[back]
+[/adjustment]
+[/script]
+
+[script]
+[title]はちみつ荘deほっぺにチュウ
+[process]HATIMITU.EXE
+[maker]ぱれっと
+[creator]xenon
+[note]
+　発 売 日　　2002/09/27
+  ジャンル    恋愛シミュレーション
+  原画        たまひよ
+  シナリオ    米村純一
+
+　http://www.clearrave.co.jp/
+  ゲーム内期間 7月8日～8月31日
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/09/27
+[adjustment]search, 0xE90CB0,6D6F6E7900FFFFFF,0x00CE0000,0x0280FFFF,4
+#HEAP3= 00CE0000>0280FFFF
+	[subject]所 持 金: calc,0xE90CC0,0,999999
+	[subject]疲 労 度: calc,0xE90BE0,0,100
+	[subject]月: calc,0xE8F140,7,8
+	[subject]日: calc,0xE8F060,1,31
+	[subject]月間給与: calc,0xE8E0A0,0,999999
+	[subject]週間給与: calc,0xE8E180,0,999999
+
+[/script]
+
+[script]
+[title]従姫-ともひめ-
+[process]TMHM.EXE
+[maker]X[iks](イクス)
+[creator]xenon
+[note]
+　発 売 日　　2002/09/27
+  ジャンル    学園物陵辱シミュレーションアドベンチャー
+  原画        ぺたんこさいど
+  シナリオ    白鷺あん
+
+　http://www.x-iks.jp/
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/09/27
+[subject]黒田理緒:dir
+	[replace]0x4B1B6C,従姫->ステータス
+[back]
+[subject]黒田知佳:dir
+	[replace]0x4B1BB0,従姫->ステータス
+[back]
+[subject]桜井歩:dir
+	[replace]0x4B1BF4,従姫->ステータス
+[back]
+[subject]細川央佳:dir
+	[replace]0x4B1C38,従姫->ステータス
+[back]
+[subject]堀尾静:dir
+	[replace]0x4B1C7C,従姫->ステータス
+[back]
+[subject]片桐舞:dir
+	[replace]0x4B1CC0,従姫->ステータス
+[back]
+[subject]福島有里:dir
+	[replace]0x4B1D04,従姫->ステータス
+[back]
+[subject]糟屋めぐみ:dir
+	[replace]0x4B1D48,従姫->ステータス
+[back]
+[subject]ｱｸﾞﾈｽｳｨﾝｽﾃｯﾄ:dir
+	[replace]0x4B1D8C,従姫->ステータス
+[back]
+[subject]浅野みゆき:dir
+	[replace]0x4B1DD0,従姫->ステータス
+[back]
+[subject]長束杏子:dir
+	[replace]0x4B1E14,従姫->ステータス
+[back]
+[subject]増田若菜:dir
+	[replace]0x4B1E58,従姫->ステータス
+[back]
+[subject]石田志穂:dir
+	[replace]0x4B1E9C,従姫->ステータス
+[back]
+野球部4B1EE0
+[/script]
+
+[script]
+[title]ミスティック・リポート～恋の部活はチコクしない～
+[process]REALLIVE.EXE
+[maker]裸足少女
+[creator]xenon
+[note]wordwrap
+　発 売 日　　2002/09/06
+  ジャンル    ラブコメアドベンチャー
+  原画        止田卓史
+
+　http://hadashi.product.co.jp/
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/09/06
+[subject]仲間?:dir
+	[replace]0xA37E9C,ミスティック->ステータス
+[back]
+[subject]仲間1(主人公):dir
+	[replace]0xA37F6C,ミスティック->ステータス
+[back]
+[subject]仲間2:dir
+	[replace]0xA38034,ミスティック->ステータス
+[back]
+[subject]敵:dir
+	[replace]0xA380FC,ミスティック->ステータス
+[back]
+[/script]
+
+[script]
+[title]PIGEON BLOOD -ピジョンブラッド-
+[process]SYSTEM.EXE
+[maker]アボガドパワーズ
+[creator]xenon
+[note]wordwrap
+　発 売 日　　2002/08/30
+  ジャンル    調教シミュレーション
+  原画        吉澤友章
+  シナリオ    猫柳まんぼ
+
+　http://www.abopa.net/
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/08/30
+/[adjustment]heap,heap3=0x00D00000>0x0130FFFF
+[adjustment]search, 0x130F9B4,534D533031,0x00D00000,0x0130FFFF,4
+[subject]ステータス:dir
+	[subject]体力: calc,0x130FA28,0,999,unsigned,big_e
+	[subject]精神: calc,0x130FA2A,0,999,unsigned,big_e
+	[subject]従順: calc,0x130FA2E,0,999,unsigned,big_e
+	[subject]変態: calc,0x130FA30,0,999,unsigned,big_e
+	[subject]淫乱: calc,0x130FA2C,0,999,unsigned,big_e
+	[subject]技術: calc,0x130FA32,0,999,unsigned,big_e
+	[subject]忍耐: calc,0x130FA34,0,999,unsigned,big_e
+[back]
+[subject]奉仕:dir
+	[subject]体舐め: calc,0x130FA36,0,3000,unsigned,big_e
+	[subject]足舐め: calc,0x130FA38,0,3000,unsigned,big_e
+	[subject]フェラチオ: calc,0x130FA3A,0,3000,unsigned,big_e
+	[subject]アナル舐め: calc,0x130FA3C,0,3000,unsigned,big_e
+	[subject]人犬: calc,0x130FA3E,0,3000,unsigned,big_e
+	[subject]唾液: calc,0x130FA40,0,3000,unsigned,big_e
+	[subject]飲尿: calc,0x130FA42,1,4000,unsigned,big_e
+	[subject]ホワイトジャム: calc,0x130FA44,1,3000,unsigned,big_e
+	[subject]食糞: calc,0x130FA46,1,3000,unsigned,big_e
+	[subject]便器女: calc,0x130FA48,1,3000,unsigned,big_e
+	[subject]胸押し付け: calc,0x130FA4A,1,3000,unsigned,big_e
+	[subject]尻押し付け: calc,0x130FA4C,1,3000,unsigned,big_e
+	[subject]マットプレイ: calc,0x130FA4E,1,3000,unsigned,big_e
+	[subject]人間机: calc,0x130FA50,1,3000,unsigned,big_e
+	[subject]人間椅子: calc,0x130FA52,1,3000,unsigned,big_e
+[back]
+[subject]恥辱:dir
+	[subject]言葉責め: calc,0x130FA54,1,3000,unsigned,big_e
+	[subject]オナニー強制: calc,0x130FA56,1,3000,unsigned,big_e
+	[subject]野外オナニー: calc,0x130FA58,1,3000,unsigned,big_e
+	[subject]野外オナニーⅡ: calc,0x130FA5A,1,3000,unsigned,big_e
+	[subject]放尿: calc,0x130FA5C,1,3000,unsigned,big_e
+	[subject]浣腸: calc,0x130FA5E,1,3000,unsigned,big_e
+	[subject]野外失禁: calc,0x130FA60,1,3000,unsigned,big_e
+	[subject]野外放尿: calc,0x130FA62,1,3000,unsigned,big_e
+	[subject]野外放置: calc,0x130FA64,1,3000,unsigned,big_e
+	[subject]野外露出: calc,0x130FA66,1,3000,unsigned,big_e
+	[subject]野外人犬: calc,0x130FA68,1,3000,unsigned,big_e
+	[subject]野外ファック: calc,0x130FA6A,1,3000,unsigned,big_e
+	[subject]媚薬: calc,0x130FA6C,1,3000,unsigned,big_e
+	[subject]ドラッグⅠ: calc,0x130FA6E,1,3000,unsigned,big_e
+	[subject]ドラッグⅡ: calc,0x130FA70,1,3000,unsigned,big_e
+	[subject]トロロ芋: calc,0x130FA72,1,3000,unsigned,big_e
+[back]
+[subject]責苦:dir
+	[subject]平手打ち: calc,0x130FA74,1,4000,unsigned,big_e
+	[subject]九条鞭: calc,0x130FA76,1,3000,unsigned,big_e
+	[subject]一本鞭: calc,0x130FA78,1,3000,unsigned,big_e
+	[subject]騎乗鞭: calc,0x130FA7A,1,3000,unsigned,big_e
+	[subject]スパイクボール: calc,0x130FA7A,1,3000,unsigned,big_e
+	[subject]ラバーテープ: calc,0x130FA7E,1,3000,unsigned,big_e
+	[subject]洗濯バサミ: calc,0x130FA80,1,3000,unsigned,big_e
+	[subject]ニードル: calc,0x130FA82,1,4000,unsigned,big_e
+	[subject]三角木馬: calc,0x130FA84,1,3000,unsigned,big_e
+	[subject]電極責め: calc,0x130FA86,1,3000,unsigned,big_e
+	[subject]尿道責め: calc,0x130FA88,1,3000,unsigned,big_e
+	[subject]鼻枷: calc,0x130FA8A,1,3000,unsigned,big_e
+	[subject]緊縛Ⅰ: calc,0x130FA8C,1,3000,unsigned,big_e
+	[subject]緊縛Ⅱ: calc,0x130FA8E,1,3000,unsigned,big_e
+	[subject]有刺鉄線: calc,0x130FA92,1,3000,unsigned,big_e
+	[subject]熱蝋責め: calc,0x130FA92,1,4000,unsigned,big_e
+	[subject]熱苦責め: calc,0x130FA94,1,4000,unsigned,big_e
+[back]
+[subject]秘所:dir
+	[subject]秘所視犯: calc,0x130FA96,1,4000,unsigned,big_e
+	[subject]指弄: calc,0x130FA98,1,4000,unsigned,big_e
+	[subject]レズファックⅠ: calc,0x130FA9A,1,4000,unsigned,big_e
+	[subject]レズファックⅡ: calc,0x130FA9C,1,4000,unsigned,big_e
+	[subject]フィストファック: calc,0x130FA9E,1,4000,unsigned,big_e
+	[subject]　: calc,0x130FAA0,1,4000,unsigned,big_e
+	[subject]ピンクローターⅠ: calc,0x130FAA2,1,3000,unsigned,big_e
+	[subject]ピンクローターⅡ: calc,0x130FAA4,1,3000,unsigned,big_e
+	[subject]バイブ: calc,0x130FAA6,1,3000,unsigned,big_e
+	[subject]イタリアンスティック: calc,0x130FAA8,1,3000,unsigned,big_e
+	[subject]極太バイブ: calc,0x130FAAA,1,3000,unsigned,big_e
+	[subject]バイブ付き木馬: calc,0x130FAAC,1,3000,unsigned,big_e
+	[subject]異物挿入: calc,0x130FAAE,1,3000,unsigned,big_e
+	[subject]アナルセックス: calc,0x130FAB0,1,3000,unsigned,big_e
+	[subject]アナル調教: calc,0x130FAB2,1,3000,unsigned,big_e
+	[subject]秘所拡張: calc,0x130FAB4,1,3000,unsigned,big_e
+[back]
+[/adjustment]
+[/script]
+
+[script]
+[title]SinsAbell～緋昏し空の遠く～
+[process]SINSABELL.EXE
+[maker]すたじおみりす
+[creator]xenon
+[note]wordwrap
+　発 売 日　　2002/08/09
+  ジャンル    3Dアクション
+  原画        NAPA 
+  シナリオ    TANA、紅涙妖魔 
+
+　http://www.studio-miris.com/
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/08/09
+[adjustment]heap,heap3=0x00BB0000>0x019DFFFF,heap5=0x00FD0000>0x01C1FFFF
+[adjustment]search, 0x1613BFA,803F3333333F3333,0x00FD0000,0x01C1FFFF,4
+/ [adjustment]dialog,0x1616B64,SINSABELL->サーチ,0x00FD0000,0x01C1FFFF,4
+	[subject]HP(最大値): calc,0x1613C50,1,0xFFFF
+	[subject]HP(現在値): calc,0x1613C54,1,0xFFFF
+ [/adjustment]
+[/adjustment]
+[/script]
+
+[script]
+[title]ラブリーラブドール
+[process]LOVELY.EXE
+[maker]エスクード
+[creator]xenon
+[note]wordwrap
+　発 売 日　　2002/08/02
+  ジャンル    着せ替え人形調教ゲーム
+  原画        はなたか・れとも 
+  シナリオ    籐太 
+
+
+　http://www.escude.co.jp/
+　Windows98SEで動作を確認
+[/note]
+
+[subject]調教中STATUS:dir
+[note]
+[distinction]発売日=2002/08/02
+BATTERYは、基本値４＋追加バッテリー数を超えるとゲームが止まります。
+[/note]
+	[subject]Orgasm: calc,0x56CB42,0,100
+	[subject]+Emotion: calc,0x56CB43,0,0xFFFF
+	[subject]BATTERY: calc,0x56CB3E,0,7
+	[subject]絶頂回数: calc,0x56CB45,0,7
+[back]
+[subject]STATUS:dir
+	[subject]月: calc,0x56CB38,5,6
+	[subject]日: calc,0x56CB39,1,31
+	[subject]Emotion(換金): calc,0x56CB31,0,0xFFFF
+	[subject]TOTAL E.C.: calc,0x56CB2D,0,0xFFFF
+	[subject]LOVE: calc,0x56CB3F,0,100
+	[subject]FEEL: calc,0x56CB40,0,100
+	[subject]OBED: calc,0x56CB41,0,100
+	[subject]MONEY: calc,0x56CB33,0,900000
+	[subject]ItemGetterPoint calc,0x56CB3A,0,900000
+[back]
+[subject]Joke-Item:dir
+	[subject]Joke-Item(ALL-ON) : toggle,0x56CB60,0x56CB65-01,00
+	[subject]聴診器: toggle,0x56CB60,1,0
+	[subject]包帯: toggle,0x56CB5F,1,0
+	[subject]アナルビーズ: toggle,0x56CB5E,1,0
+	[subject]ローター: toggle,0x56CB5D,1,0
+	[subject]バイブ: toggle,0x56CB5C,1,0
+	[subject]紐: toggle,0x56CB61,1,0
+	[subject]SMセット: toggle,0x56CB62,1,0
+	[subject]拘束具: toggle,0x56CB63,1,0
+	[subject]ディルド: toggle,0x56CB64,1,0
+[back]
+[subject]Machine-Item:dir
+	[subject]HiSpecメモリ: toggle,0x56CB65,1,0
+	[subject]追加バッテリー: calc,0x56CB66,0,3
+	[subject]擬似媚薬: toggle,0x56CB67,1,0
+[back]
+[subject]CLOSET:dir
+	[subject]コスプレ衣装 (ALL-ON) : toggle,0x56CB68,0x56CB7D-01,00
+	[subject]ドールドレス: toggle,0x56CB68,1,0
+	[subject]セーラー服: toggle,0x56CB69,1,0
+	[subject]ブレザー: toggle,0x56CB6A,1,0
+	[subject]浴衣: toggle,0x56CB6B,1,0
+	[subject]ナース: toggle,0x56CB6C,1,0
+	[subject]メイド(黒): toggle,0x56CB6D,1,0
+	[subject]メイド(赤): toggle,0x56CB6E,1,0
+	[subject]ブルマ: toggle,0x56CB6F,1,0
+	[subject]女王様:toggle,0x56CB70,1,0
+	[subject]スクール水着:toggle,0x56CB71,1,0
+	[subject]チャイナドレス:toggle,0x56CB72,1,0
+	[subject]巫女:toggle,0x56CB73,1,0
+	[subject]ネコミミ:toggle,0x56CB74,1,0
+	[subject]バニーガール:toggle,0x56CB75,1,0
+	[subject]美少女戦士:toggle,0x56CB76,1,0
+	[subject]Ｙシャツ:toggle,0x56CB77,1,0
+	[subject]外出着Ａ:toggle,0x56CB78,1,0
+	[subject]外出着Ｂ:toggle,0x56CB79,1,0
+	[subject]外出着Ｃ:toggle,0x56CB7A,1,0
+	[subject]ビキニ水着:toggle,0x56CB7B,1,0
+	[subject]ウエディング:toggle,0x56CB7C,1,0
+[back]
+[subject]DUM-system:dir
+	[subject]DUM-system(ALL-ON) : toggle,0x56CB7D,0x56CB90-01,00
+	[subject]☆マーク(ALL-ON) : toggle,0x56CB92,0x56CBA5-01,00
+	[subject]ドールドレス:toggle,0x56CB7D,1,0
+	[subject]セーラー服:toggle,0x56CB7E,1,0
+	[subject]ブレザー:toggle,0x56CB7F,1,0
+	[subject]浴衣:toggle,0x56CB80,1,0
+	[subject]ナース:toggle,0x56CB81,1,0
+	[subject]メイド(黒):toggle,0x56CB82,1,0
+	[subject]メイド(赤):toggle,0x56CB83,1,0
+	[subject]ブルマ:toggle,0x56CB84,1,0
+	[subject]女王様:toggle,0x56CB85,1,0
+	[subject]スクール水着:toggle,0x56CB86,1,0
+	[subject]チャイナドレス:toggle,0x56CB87,1,0
+	[subject]巫女:toggle,0x56CB88,1,0
+	[subject]ネコミミ:toggle,0x56CB89,1,0
+	[subject]バニーガール:toggle,0x56CB8A,1,0
+	[subject]美少女戦士:toggle,0x56CB8B,1,0
+	[subject]Ｙシャツ:toggle,0x56CB8C,1,0
+	[subject]外出着Ａ:toggle,0x56CB8D,1,0
+	[subject]外出着Ｂ:toggle,0x56CB8E,1,0
+	[subject]外出着Ｃ:toggle,0x56CB8F,1,0
+[back]
+
+[/script]
+
+[script]
+[title]いもうとブルマ～放課後のくいこみレッスン～
+[process]REALLIVE.EXE
+[maker]萌。
+[creator]xenon
+[note]wordwrap
+　発 売 日　　2002/08/02
+  ジャンル    Hな秘密のレッスンを教えちゃうADV
+
+　http://moe.product.co.jp/
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/08/02
+[subject]９月２日が0です。:dir
+[back]
+[subject]経過日付:b_calc,0,いもうとブルマ->経過日付,real,0,99
+[subject]ﾚｯｽﾝ回数: calc,0xA321B4,0,2
+[/script]
+
+[script]
+[title]コートの中の天使達2～ソフトボール編～
+[process]COURT2.EXE
+[maker]ピンパイ
+[creator]xenon
+[adjustment]heap,heap3=0x008D0000>0x010EFFFF
+[note]wordwrap
+　発 売 日　　2002/07/26
+  ジャンル    
+  キャラデザ  アオキヨシト
+  シナリオ    むとうやすゆき
+
+　http://www.pinkpineapple.co.jp/
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/07/26
+[subject]円井　晶:dir
+	[replace]0x99F990,コト天2->ステータス
+[back]
+[subject]円井 玖美:dir
+	[replace]0x99F9F0,コト天2->ステータス
+[back]
+[subject]伊那部 尚:dir
+	[replace]0x99FA50,コト天2->ステータス
+[back]
+[subject]森村 奈々瀬:dir
+	[replace]0x99FAB0,コト天2->ステータス
+[back]
+[subject]松田 未依:dir
+	[replace]0x99FB10,コト天2->ステータス
+[back]
+[subject]喜多嶋 麻由美:dir
+	[replace]0x99FB70,コト天2->ステータス
+[back]
+[subject]潮乃木 葛葉:dir
+	[replace]0x99FBD0,コト天2->ステータス
+[back]
+[subject]音胡田 こずえ:dir
+	[replace]0x99FC30,コト天2->ステータス
+[back]
+[/script]
+
+[script]
+[title]VAMPIRE HURTS
+[process]VH.EXE
+[maker]エグゼクリエイト
+[creator]xenon
+/[adjustment]search, 0x463678,540E7600A40F7600E4DC7B,0x00401000,0x00839D7E,4
+
+[note]wordwrap
+　発 売 日　　2002/07/25
+  ジャンル    アクション・RPG
+  原　　画 　 夢野キリコ
+
+　http://www.exe-create.co.jp/
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/07/25
+/[subject]HP(最高値): calc,0x721FF8,1,999
+[subject]HP(現在値): calc,0x72200C,1,999
+/[subject]VP(最高値): calc,0x721FFA,1,999
+[subject]VP(現在値): calc,0x72200E,1,999
+/[subject]STR(最高値): calc,0x721FFC,1,999
+[subject]STR(現在値): calc,0x722010,1,999
+/[subject]DEF(最高値): calc,0x721FFE,1,999
+[subject]DEF(現在値): calc,0x722012,1,999
+[/script]
+
+
+[script]
+[title]股人タクシー３
+[process]TAXI3.EXE
+[maker]ザウス【吟醸】
+[creator]xenon
+[note]wordwrap
+　発 売 日　　2002/07/26
+  ジャンル    凌辱ＳＬＧ
+  原    画    あらきまき 
+  シナリオ    五十鈴
+
+　Windows98SEで動作を確認
+  http://www.xuse.co.jp/
+[/note]
+[distinction]発売日=2002/07/26
+	[subject]お金: calc,0x441C9C,00,9999999
+	[subject]経過日数: calc,0x441BB8,00,9
+	[subject]時間: calc,0x441BBA,00,48
+	[subject](PM3時を0 以後15分毎+1): calc,0x441BBA,00,48
+[subject] アイテム:dir
+	[subject]アイテム (ALL-ON) : toggle,0x441CA0,0x441CC6-01,00
+	[subject]ホテル601号室の鍵: toggle,0x441CA0,01,00
+	[subject]外付けＨＤＤ: toggle,0x441CA1,01,00
+	[subject]極秘情報入りＨＤＤ: toggle,0x441CA2,01,00
+	[subject]盗聴器: toggle,0x441CA3,01,00
+	[subject]嘔吐剤入りのお菓子: toggle,0x441CA4,01,00
+	[subject]おもちゃ３点セット: toggle,0x441CA5,01,00
+	[subject]スタンガン: toggle,0x441CA6,01,00
+	[subject]火炎瓶: toggle,0x441CA7,01,00
+	[subject]ホテルのマスターキー: toggle,0x441CA8,01,00
+	[subject]男性用生活用品セット: toggle,0x441CA9,01,00
+	[subject]レイプ写真: toggle,0x441CAA,01,00
+	[subject]ピッキングツール: toggle,0x441CAB,01,00
+	[subject]契約書とチケット: toggle,0x441CAC,01,00
+	[subject]体操着: toggle,0x441CAD,01,00
+	[subject]アイマスク: toggle,0x441CAE,01,00
+	[subject]使い捨て携帯: toggle,0x441CAF,01,00
+	[subject]催淫剤: toggle,0x441CB0,01,00
+	[subject]首輪: toggle,0x441CB1,01,00
+	[subject]特大の鏡: toggle,0x441CB2,01,00
+	[subject]プロレスのユニフォーム: toggle,0x441CB3,01,00
+	[subject]コート: toggle,0x441CB4,01,00
+	[subject]特大バイブ: toggle,0x441CB5,01,00
+	[subject]ローション: toggle,0x441CB6,01,00
+	[subject]ウエディングドレス: toggle,0x441CB7,01,00
+	[subject]拘束具: toggle,0x441CB8,01,00
+	[subject]アナル用バイブ: toggle,0x441CB9,01,00
+	[subject]スクール水着: toggle,0x441CBA,01,00
+	[subject]小さい絵画: toggle,0x441CBB,01,00
+	[subject]描け軸: toggle,0x441CBC,01,00
+	[subject]試合のチケット: toggle,0x441CBD,01,00
+	[subject]旅行チケット: toggle,0x441CBE,01,00
+	[subject]腕時計: toggle,0x441CBF,01,00
+	[subject]健康保険証: toggle,0x441CC0,01,00
+	[subject]クレジットカード: toggle,0x441CC1,01,00
+	[subject]免許証: toggle,0x441CC2,01,00
+	[subject]パスポート: toggle,0x441CC3,01,00
+	[subject]履歴書: toggle,0x441CC4,01,00
+	[subject]学生証: toggle,0x441CC5,01,00
+[back]
+[/script]
+
+[script]
+[title]うにっち！ ～ Weenie Witches ～
+[process]UNICCHI.EXE
+[maker]タクティクス
+[creator]xenon
+/[adjustment]search, 0x463690,5453445F554E4943434849,0x00401000,0x004AFBBA,4
+/[adjustment]search, 0x463678,719313578803,0x00401000,0x004AFBBA,4
+/[adjustment]dialog,0x4FDEF0,うにっち->サーチ,0x00401000,0x004AFBBA,4
+
+[note]wordwrap
+　発 売 日　　2002/07/26
+  ジャンル    エロエロエロコメディ育成AVG
+  原　　画 　 かんたか
+  シナリオ    三波雄
+
+  ステータスと改造数値が一致しません。
+  イリナ：ゲーム表示数値より大きい
+  ヴェル：ゲーム表示数値から-100程度の値
+  サティ：ほぼ同じ
+
+  http://www.tactics.co.jp/
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/07/26
+*	[subject]月: calc,0x4636FC,1,12
+*	[subject]週: list,0x4636FE,うにっち->週,0,1
+[subject]月: calc,0x15B41B4,1,12
+[subject]週: list,0x15B41B6,うにっち->週,0,1
+[subject] イリナ:dir
+/	[replace]0x463718,うにっち->ステータス
+	[replace]0x15B41D0,うにっち->ステータス
+/	[subject]ストレス: calc,0x463774,00,0xFFFF
+	[subject]ストレス: calc,0x15B422C,00,0xFFFF
+[back]
+[subject] ヴェル:dir
+/	[replace]0x463730,うにっち->ステータス
+	[replace]0x15B41E8,うにっち->ステータス
+/	[subject]ストレス: calc,0x463776,00,0xFFFF
+	[subject]ストレス: calc,0x15B422E,00,0xFFFF
+449846
+463736
+15B41EE
+[back]
+[subject] サティ:dir
+/	[replace]0x463748,うにっち->ステータス
+	[replace]0x15B4200,うにっち->ステータス
+/	[subject]ストレス: calc,0x463778,00,0xFFFF
+	[subject]ストレス: calc,0x15B4230,00,0xFFFF
+[back]
+[/script]
+
+[script]
+[title]紅蓮天衝-修羅-
+[process]紅蓮天衝.exe
+[maker]ZONE
+[creator]xenon
+[note]wordwrap
+　発 売 日　　2002/07/19
+  ジャンル    ADV
+  原　　画 　 AM-DVL
+
+  メーカHPにトラブルシューティングあり
+  http://www.zone-pg.co.jp/
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/07/19
+[subject]敵ＨＰ: calc,0x45B80C,1,9999
+[subject]烈火HP(現在値): calc,0x45A184,1,9999
+[subject]烈火HP(最大値): calc,0x45A188,1,9999
+[/script]
+
+[script]
+[title]機甲銃勇士サキガケ
+[process]SAKIGAKE.EXE
+[maker]電脳猿(デジタルモンキー)
+[creator]xenon
+/[adjustment]dialog,0x9C0BA4,サキガケ->サーチ,0x00460000,0x025AFFFF,1
+[adjustment]search, 0x9C07D0,10FFFF59FF595259,0x0046000011010000,0x025AFFFF,4
+[note] 
+　発 売 日　　2002/07/19
+  ジャンル    AVG+戦略シミュレーションRPG
+  原　　画 　 秋山康一
+  シナリオ    東雅ナゴム
+
+  http://www.digital-monkey.com/
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/07/19
+[subject] アルファ:dir
+	[replace]0x9C0BA4,サキガケ->ステータス
+[back]
+[subject] オメガ:dir
+	[replace]0x9C0E84,サキガケ->ステータス
+[back]
+[subject] イプシロン:dir
+	[replace]0x9C0994,サキガケ->ステータス
+[back]
+[/adjustment]
+210
+[/script]
+
+[script]
+[title]蒼い海のトリスティア～発明工房奮闘記～
+[process]AUT.EXE
+[maker]工画堂スタジオ
+[creator]xenon
+[note]wordwrap 
+  発売日 2002/07/20
+  ジャンル 街発展アドベンチャー(一般ゲーム)
+  キャラクターデザイン 駒都え～じ
+  シナリオ 竹内なおゆき
+
+  http://www.kogado.com/
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/07/20
+[subject] 所持金 : calc,0x561C74,00,9999999
+[/script]
+
+[script]
+[title]崖っプチ家計簿
+[process]GAKEPPUCHI.EXE
+[maker]ワッフル
+[creator]xenon
+[note]wordwrap 
+　発売日　　2002/07/12
+　ジャンル  麻雀
+　原画　　　さくやついたち、神代ゆうき
+　シナリオ　ウシ子
+
+  http://www.wattle.co.jp/
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/07/12
+[subject] SAVE 西暦: calc,0x129DEDC,00,0xFFFF
+[subject] SAVE 月: calc,0x129DEE0,00,12
+[subject] SAVE 日: calc,0x129DEE4,00,31
+[subject] SAVE 回数: calc,0x129DF04,00,0xFF
+[subject] LOAD 回数: calc,0x129DF00,00,0xFF
+[subject]残金合計:dir
+	[subject] １話目: calc,0x129DF44,00,0xFFFFFFFF,unsigned
+	[subject] ２話目: calc,0x129DF48,00,0xFFFFFFFF,unsigned
+	[subject] ３話目: calc,0x129DF4C,00,0xFFFFFFFF,unsigned
+	[subject] ４話目: calc,0x129DF50,00,0xFFFFFFFF,unsigned
+	[subject] ５話目: calc,0x129DF54,00,0xFFFFFFFF,unsigned
+	[subject] ６話目: calc,0x129DF58,00,0xFFFFFFFF,unsigned
+	[subject] ７話目: calc,0x129DF5C,00,0xFFFFFFFF,unsigned
+[back]
+[/script]
+
+[script]
+[title]アルフレッド学園魔物大隊
+[process]ALFRED.EXE
+[maker]ソフトハウスキャラ
+[creator]xenon
+[adjustment]
+[adjustment]dialog,0x4FDEF0,魔物大隊->サーチ,0x4C0000,0x6FFFFF,1
+[note]wordwrap 
+　発売日   2002/07/12
+　ジャンル 魔物教師シミュレーション
+　原画     佐々木珠流 / ちんじゃおろぉす
+
+　http://www.shchara.com/
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/07/12
+ [subject]雪継魔力: calc,0x4FDEDC,00,9999
+ [subject]AP(現在値): calc,0x4FDEF0,00,9
+ [subject]AP(最大値): calc,0x4FDEF4,00,9
+ [subject]結晶化魔力(最大): calc,0x4FDEF8,00,9
+ [subject]悪魔称号: list,0x4FDEFC,魔物大隊->悪魔称号,1,1
+ [subject]教師称号: list,0x4FDF00,魔物大隊->教師称号,1,1
+ [subject]ターン: calc,0x4FDFF4,01,07
+[/adjustment]
+[subject]仲魔:dir
+[subject]シルビア:dir
+	[replace]0x50552C,魔物大隊->ステータス
+[back]
+[subject]ステック:dir
+	[replace]0x505554,魔物大隊->ステータス
+[back]
+[subject]セイ:dir
+	[replace]0x50557C,魔物大隊->ステータス
+[back]
+[subject]リリカ:dir
+	[replace]0x5055A4,魔物大隊->ステータス
+[back]
+[subject]ルミーゼ:dir
+	[replace]0x5055CC,魔物大隊->ステータス
+[back]
+[back]
+[subject]アイテム:dir
+	[subject]アイテム(99)	: toggle,0x505464,0x0x5054BF-63,00
+	[subject]大召還:calc,0x505464,00,99
+	[subject]退避の霧:calc,0x505466,00,99
+	[subject]悪夢の笛:calc,0x505468,00,99
+	[subject]学者の瞳:calc,0x50546A,00,99
+	[subject]賢者の瞳:calc,0x50546C,00,99
+	[subject]追跡の目:calc,0x50546E,00,99
+	[subject]暗黒雲:calc,0x505470,00,99
+	[subject]忘却の手:calc,0x505472,00,99
+	[subject]忘却の腕:calc,0x505474,00,99
+	[subject]誘導の光:calc,0x505476,00,99
+	[subject]昇格:calc,0x505478,00,99
+	[subject]捕縛の糸:calc,0x50547A,00,99
+	[subject]捕獲の紐:calc,0x50547C,00,99
+	[subject]捕獲の縄:calc,0x50547E,00,99
+	[subject]捕獲の鎖:calc,0x505480,00,99
+	[subject]魔力の粉:calc,0x505482,00,99
+	[subject]時の剣:calc,0x505484,00,99
+	[subject]吸血鬼の血:calc,0x505486,00,99
+	[subject]狼女の牙:calc,0x505488,00,99
+	[subject]人魚の鱗:calc,0x50548A,00,99
+	[subject]堕天使の翼:calc,0x50548C,00,99
+	[subject]死神の鎌:calc,0x50548E,00,99
+	[subject]溢れる壷:calc,0x505490,00,99
+	[subject]魔力発生器:calc,0x505492,00,99
+	[subject]耳栓:calc,0x505494,00,99
+	[subject]開封の鍵:calc,0x505496,00,99
+	[subject]神々の鍵:calc,0x505498,00,99
+	[subject]先見のレンズ:calc,0x50549A,00,99
+	[subject]先見の魔水晶:calc,0x50549C,00,99
+	[subject]賢者の水晶球:calc,0x50549E,00,99
+	[subject]生徒の下着:calc,0x5054A0,00,99
+	[subject]時計のパーツ:calc,0x5054A2,00,99
+	[subject]金貨:calc,0x5054A4,00,99
+	[subject]純魔力10:calc,0x5054A6,00,99
+	[subject]純魔力100:calc,0x5054A8,00,99
+	[subject]純魔力500:calc,0x5054AA,00,99
+	[subject]純魔力1000:calc,0x5054AC,00,99
+	[subject]純魔力5000:calc,0x5054AE,00,99
+	[subject]純魔力 赤:calc,0x5054B0,00,99
+	[subject]純魔力 青:calc,0x5054B2,00,99
+	[subject]純魔力 黄:calc,0x5054B4,00,99
+	[subject]純魔力 緑:calc,0x5054B6,00,99
+	[subject]純魔力 白:calc,0x5054B8,00,99
+	[subject]純魔力 黒:calc,0x5054BA,00,99
+	[subject]警護の瞳:calc,0x5054BC,00,99
+	[subject]悪魔の息吹:calc,0x5054BE,00,99
+[back]
+[/script]
+
+[script]
+[title]Brave Hearts～勇者の卵たち～
+[process]YUTAMA.EXE
+[maker]ASOBELL
+[creator]xenon
+
+[note]
+　発 売 日　　2002/06/28
+  ジャンル    勇者育成RPG
+
+  http://www.asobell.jp/
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/06/28
+[subject] 月 : calc,0x1506CC0,00,12
+[subject] 日 : calc,0x1506CC2,00,31
+[subject]ルシーダ:dir
+	[replace]0x1506244,勇者の卵たち->ステータス
+[back]
+[subject]チェン:dir
+	[replace]0x1506304,勇者の卵たち->ステータス
+[back]
+[subject]ミズキ:dir
+	[replace]0x15063C4,勇者の卵たち->ステータス
+[back]
+[subject]レイチェル:dir
+	[replace]0x1506484,勇者の卵たち->ステータス
+[back]
+[subject]ハル:dir
+	[replace]0x1506544,勇者の卵たち->ステータス
+[back]
+
+[subject]アイテム:dir
+	[subject]アイテム(99)	: toggle,0x150670C,0x1506760-63,00
+	[subject] ビート版	:calc,0x150670C,0,0xFF
+	[subject] 木の盾	:calc,0x150670D,0,0xFF
+	[subject] カイトシールド:calc,0x150670E,0,0xFF
+	[subject] 鉄の鍬	:calc,0x150670F,0,0xFF
+	[subject] 銀の鍬	:calc,0x1506710,0,0xFF
+	[subject] 金の鍬	:calc,0x1506711,0,0xFF
+	[subject] 砂袋		:calc,0x1506712,0,0xFF
+	[subject] 砂鉄袋	:calc,0x1506713,0,0xFF
+	[subject] 砂金袋	:calc,0x1506714,0,0xFF
+	[subject] 鉄アレイ	:calc,0x1506715,0,0xFF
+	[subject] 重い鉄アレイ	:calc,0x1506716,0,0xFF
+	[subject] 純金製鉄アレイ:calc,0x1506717,0,0xFF
+	[subject] 鉄下駄	:calc,0x1506718,0,0xFF
+	[subject] 熱血鉄下駄	:calc,0x1506719,0,0xFF
+	[subject] アマンダイト下駄	:calc,0x150671A,0,0xFF
+	[subject] 養成ギブス	:calc,0x150671B,0,0xFF
+	[subject] 大リーガー	:calc,0x150671C,0,0xFF
+	[subject] ひゅうま	:calc,0x150671D,0,0xFF
+	[subject] はちまき	:calc,0x150671E,0,0xFF
+	[subject] 必勝はちまき	:calc,0x150671F,0,0xFF
+	[subject] 長尺はちまき	:calc,0x1506720,0,0xFF
+	[subject] 木刀		:calc,0x1506721,0,0xFF
+	[subject] 不知火	:calc,0x1506722,0,0xFF
+	[subject] 風林火山	:calc,0x1506723,0,0xFF
+	[subject] なわとび	:calc,0x1506724,0,0xFF
+	[subject] 皮の鞭	:calc,0x1506725,0,0xFF
+	[subject] 鎖鎌		:calc,0x1506726,0,0xFF
+	[subject] 竹刀		:calc,0x1506727,0,0xFF
+	[subject] 高級竹刀	:calc,0x1506728,0,0xFF
+	[subject] 鋼鉄の竹刀	:calc,0x1506729,0,0xFF
+	[subject] 果物ナイフ	:calc,0x150672A,0,0xFF
+	[subject] ペーパーナイフ:calc,0x150672B,0,0xFF
+	[subject] オリハルコンの短剣	:calc,0x150672C,0,0xFF
+	[subject] 包丁		:calc,0x150672D,0,0xFF
+	[subject] 菊一文字	:calc,0x150672E,0,0xFF
+	[subject] 妖刀村雨	:calc,0x150672F,0,0xFF
+	[subject] やさしい本	:calc,0x1506730,0,0xFF
+	[subject] 難しい本	:calc,0x1506731,0,0xFF
+	[subject] 分厚い本	:calc,0x1506732,0,0xFF
+	[subject] 初級知恵の輪	:calc,0x1506733,0,0xFF
+	[subject] 上級知恵の輪	:calc,0x1506734,0,0xFF
+	[subject] 手錠		:calc,0x1506735,0,0xFF
+	[subject] バナナ	:calc,0x1506736,0,0xFF
+	[subject] 野生のバナナ	:calc,0x1506737,0,0xFF
+	[subject] 魔法のバナナ	:calc,0x1506738,0,0xFF
+	[subject] ほうき	:calc,0x1506739,0,0xFF
+	[subject] 通販のほうき	:calc,0x150673A,0,0xFF
+	[subject] 魔女のほうき	:calc,0x150673B,0,0xFF
+	[subject] 雑巾		:calc,0x150673C,0,0xFF
+	[subject] 素敵な雑巾	:calc,0x150673D,0,0xFF
+	[subject] -黄色い雑巾	:calc,0x150673E,0,0xFF
+	[subject] モップ	:calc,0x150673F,0,0xFF
+	[subject] 通販のモップ	:calc,0x1506740,0,0xFF
+	[subject] ハイテクモップ:calc,0x1506741,0,0xFF
+	[subject] 紙製トランプ	:calc,0x1506742,0,0xFF
+	[subject] 高級トランプ	:calc,0x1506743,0,0xFF
+	[subject] スチール製トランプ	:calc,0x1506744,0,0xFF
+	[subject] 瓦		:calc,0x1506745,0,0xFF
+	[subject] セラミックの瓦:calc,0x1506746,0,0xFF
+	[subject] 鉄板		:calc,0x1506747,0,0xFF
+	[subject] ドミノ	:calc,0x1506748,0,0xFF
+	[subject] 薄型ドミノ	:calc,0x1506749,0,0xFF
+	[subject] 極薄ドミノ	:calc,0x150674A,0,0xFF
+	[subject] スプーン	:calc,0x150674B,0,0xFF
+	[subject] 銀のスプーン	:calc,0x150674C,0,0xFF
+	[subject] 金のスプーン	:calc,0x150674D,0,0xFF
+	[subject] シルクハット	:calc,0x150674E,0,0xFF
+	[subject] マジックハット:calc,0x150674F,0,0xFF
+	[subject] シャンプーハット	:calc,0x1506750,0,0xFF
+	[subject] つけもの石	:calc,0x1506751,0,0xFF
+	[subject] 月の石	:calc,0x1506752,0,0xFF
+	[subject] ミスリル銀	:calc,0x1506753,0,0xFF
+	[subject] スポーツ飲料	:calc,0x1506754,0,0xFF
+	[subject] 栄養ドリンク	:calc,0x1506755,0,0xFF
+	[subject] 滋養強壮剤	:calc,0x1506756,0,0xFF
+	[subject] 入浴剤	:calc,0x1506757,0,0xFF
+	[subject] 温泉の元	:calc,0x1506758,0,0xFF
+	[subject] 温泉チケット	:calc,0x1506759,0,0xFF
+	[subject] 安眠マスク	:calc,0x150675A,0,0xFF
+	[subject] ガスマスク	:calc,0x150675B,0,0xFF
+	[subject] 石仮面	:calc,0x150675C,0,0xFF
+[back]
+[/script]
+
+[script]
+[title]信長の野望 蒼天録
+[process]NOBU10.EXE
+[maker]コーエー
+[creator]xenon
+[adjustment]dialog,0x00982CE0,蒼天録->サーチ,0x00401000,0x00A5EB0C,1
+[note]
+　発 売 日　　2002/06/28
+  ジャンル    戦国SLG
+
+  アドレス移動型
+  http://www.gamecity.ne.jp/products/products/ee/new/souten/
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/06/28
+[subject] 金銭 : calc,0x00982CE0,00,0xFFFF
+[subject] 兵糧 : calc,0x00982CE4,00,0xFFFF
+[subject] 軍馬 : calc,0x00982CE8,00,0xFFFF
+[subject] 鉄砲 : calc,0x00982CEC,00,0xFFFF
+
+/[subject] 忍の里友好度 :dir
+/	[subject]甲賀衆 : calc,0x99C92D,00,100
+/	[subject]伊賀衆 : calc,0x99CAB1,00,100
+/	[subject]窃忍衆 : calc,0x99CDB9,00,100
+/[back]
+
+[/adjustment]
+/[adjustment]dialog,0x99C9D4,蒼天録->サーチ2,0x00401000,0x00A5EB0C,1
+/[subject] 勢力友好度 :dir
+/	[subject]友好度 : calc,0x99C92D,00,100
+/[back]
+/[/adjustment]
+[/script]
+
+[script]
+[title]とらかぷっ！
+[process]TORA.EXE
+[maker]PULLTOP
+[creator]xenon
+[adjustment]dialog,0x00D70BBC,とらかぷっ！->サーチ,0x00D40000,0x01460FFF,2
+[note]
+　発 売 日　　2002/06/28
+  ジャンル    コメディタッチAVG＋お手軽SLG
+  原　　画 　 たけやまさみ
+  シナリオ    椎原 旬、下原 正
+
+  Ver 1.00/1.11対応
+  ★こちらの環境での補正値
+  Ver1.00 00D70BBC=補正値(16進:0) (10進:0)
+  Ver1.11 01280F48=補正値(16進:51038C) (10進:5309324)
+
+  http://www.pulltop.com/
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/06/28
+[subject] 体力 : calc,0xD70BBC,01,100
+[subject] 気力 : calc,0xD70BC0,01,100
+[subject] 友好度(御翼) : calc,0xD70BC6,00,9999
+[subject] 友好度(静波) : calc,0xD70BC8,00,9999
+[subject] 所持獣玉 : calc,0xD70BCA,00,9999
+[subject] 所持鳥玉 : calc,0xD70BCC,00,9999
+[subject] 所持竜玉 : calc,0xD70BCE,00,9999
+[subject] マップステータス :dir
+ [subject]  虎耳神社 : calc,0xD70C86,00,9999
+ [subject]  虎 耳 山 : calc,0xD70CAE,00,9999
+ [subject]  繁 華 街 : calc,0xD70CD6,00,9999
+ [subject] 四方山温泉: calc,0xD70CFE,00,9999
+ [subject] 高級住宅街: calc,0xD70D26,00,9999
+ [subject]  龍野神社 : calc,0xD70D4E,00,9999
+ [subject]  旧 市 街 : calc,0xD70D76,00,9999
+ [subject]  鳳 神 社 : calc,0xD70D9E,00,9999
+[back]
+[subject] アイテム :dir
+ [subject]アイテム(99): toggle,0xD70E16,0xD70E51-6300,0000
+ [subject]  ほうき : calc,0xD70E16,00,99
+ [subject]  はたき : calc,0xD70E18,00,99
+ [subject]  くまで : calc,0xD70E1A,00,99
+ [subject]  物干し竿 : calc,0xD70E1C,00,99
+ [subject]  掃除機 : calc,0xD70E1E,00,99
+ [subject]  三角巾 : calc,0xD70E20,00,99
+ [subject]  浴衣 : calc,0xD70E22,00,99
+ [subject]  はっぴ : calc,0xD70E24,00,99
+ [subject]  たすき : calc,0xD70E26,00,99
+ [subject]  高下駄 : calc,0xD70E28,00,99
+ [subject]  ６オンスグローブ : calc,0xD70E2A,00,99
+ [subject]  ねこグローブ : calc,0xD70E2C,00,99
+ [subject]  タイガーグローブ : calc,0xD70E2E,00,99
+ [subject]  山猫の牙 : calc,0xD70E30,00,99
+ [subject]  白虎皇牙 : calc,0xD70E32,00,99
+ [subject]  護符 : calc,0xD70E34,00,99
+ [subject]  牙のペンダント : calc,0xD70E36,00,99
+ [subject]  白虎の腕輪 : calc,0xD70E38,00,99
+ [subject]  神速のわらじ : calc,0xD70E3A,00,99
+ [subject]  白虎のわらじ : calc,0xD70E3C,00,99
+ [subject]  虫取り網 : calc,0xD70E3E,00,99
+ [subject]  投網 : calc,0xD70E40,00,99
+ [subject]  赤の喜び : calc,0xD70E42,00,99
+ [subject]  黄の笑顔 : calc,0xD70E44,00,99
+ [subject]  青の幸せ : calc,0xD70E46,00,99
+ [subject]  獣符 : calc,0xD70E48,00,99
+ [subject]  鳥符・逆 : calc,0xD70E4A,00,99
+ [subject]  竜符・逆 : calc,0xD70E4C,00,99
+ [subject]  丸薬 : calc,0xD70E4E,00,99
+ [subject]  散薬 : calc,0xD70E50,00,99
+[back]
+EHP:		DC33F8-M1
+EHP2:		DC3414-M1
+[/adjustment]
+[/script]
+
+[script]
+[title]メイクLove！～SLAVE LOVE～
+[process]MAKELOVE.EXE
+[maker]Kiss next
+[creator]xenon
+[adjustment]dialog,0x01998154,メイクLove！->サーチ,0x00CA0000,0x0223FFFF,1
+  ヒロインの豊富な外見エディットパーツの種類
+  ・髪型（前髪、後髪パーツあり
+    １２パターン、瞳３タイプ、眉２タイプ、メガネの有無、胸サイズ３タイプ
+  ・髪の毛の色＆目の色＆アクセサリーの色
+    彩度３６６段階　輝度２５６段階　明度２５６段階、肌の色2タイプ
+[note]wordwrap
+　発 売 日　　2002/04/26
+  ジャンル    愛欲＋ON-LINE＆配信型・調教育成シミュレーション
+  原　　画 　 弥舞秀人
+  シナリオ    米倉俵
+   
+  育成中のキャラに対して改造できます。
+  アドレス移動型
+　メーカーのHPに修正・プラグインファイルがでています。
+  1.12aで作成
+  http://www.kiss-next.com/
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/04/26
+/ [subject] TIME_BLOCK : calc,0x1994458,00,6
+/[subject] GRADE :dir
+/ [subject] 淫乱Lv     : calc,0x1998180,00,99
+/ [subject] 変態Lv     : calc,0x1998184,00,99
+/ [subject] ＭっけLv   : calc,0x1998188,00,99
+/ [subject] 淫乱EXP    : calc,0x1998178,00,99
+/ [subject] 変態EXP    : calc,0x199817C,00,99
+/ [subject] ＭっけEXP  : calc,0x1998180,00,99
+/[back]
+
+[subject] PROFILE :dir
+ [subject] 好感度     : list,0x1998174,メイクLove！->好感度,0,1
+ [subject] バスト     : calc,0x1998154,01,255
+ [subject] ウエスト   : calc,0x1998158,01,255
+ [subject] ヒップ     : calc,0x199815C,01,255
+[back]
+[/adjustment]
+
+[/script]
+
+[script]
+[title]マシンメイデン・ネクスト
+[process]ETERNITY.EXE
+[maker]エヴォリューション
+[creator]xenon
+[note]wordwrap
+　発 売 日　　2002/06/21
+  ジャンル    アドベンチャー
+  原　　画 　 ナカジマコンタ
+  シナリオ    鬼生天結
+
+  http://www.dice-soft.co.jp/evolution/
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/06/21
+[subject] 日付 : calc,0x426A3C,01,14
+CG-FULL:4276BC>427990-M1
+[/script]
+
+[script]
+[title]背徳
+[process]HAITOKU.EXE
+[maker]ruf
+[creator]xenon
+[note]wordwrap
+　発 売 日　　2002/06/07
+  ジャンル    ADV+SLG
+  原　　画 　 相川 亜利砂
+  シナリオ    卑影ムラサキ
+
+  http://www.will-japan.co.jp/
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/06/07
+[subject] 日付 : calc,0x5473CA,01,31
+[subject] 美沙樹 :dir
+	[replace]0x5473DA,背徳
+[back]
+[subject]   遥   :dir
+	[replace]0x5473E0,背徳
+[back]
+[subject] 綾  乃 :dir
+	[replace]0x5473E6,背徳
+[back]
+[/script]
+
+[script]
+[title]PINK PANZER ～ピンクの象～
+[process]PINK.EXE
+[maker]ライアーソフト
+[creator]xenon
+[note]wordwrap
+　発 売 日　　2002/06/07
+  ジャンル    おんなのこ教育SLG
+  原　　画 　 せんばた楼
+  シナリオ    高尾登山・天野佑一
+
+  http://www.liar.co.jp/
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/06/07
+[subject]部隊状況:dir
+	[replace]0x7B430A,ピンクパンツァー->部隊能力
+[back]
+[subject]鰐辺ジン:dir
+	[replace]0x7B43D2,ピンクパンツァー->個人ステータス
+[back]
+[subject]砂海沙希:dir
+	[replace]0x7B43E6,ピンクパンツァー->個人ステータス
+[back]
+[subject]神凪瑠美子:dir
+	[replace]0x7B43FA,ピンクパンツァー->個人ステータス
+[back]
+[subject]百武比奈:dir
+	[replace]0x7B440E,ピンクパンツァー->個人ステータス
+[back]
+[subject]大停蘭子:dir
+	[replace]0x7B4422,ピンクパンツァー->個人ステータス
+[back]
+[subject]MC050N3:dir
+	[replace]0x7B4436,ピンクパンツァー->個人ステータス
+[back]
+[/script]
+
+[script]
+[title]Nursery Song
+[process]NSONG.EXE
+[maker]Cronus
+[creator]xenon
+[note]wordwrap
+　発 売 日　　2002/05/24
+  ジャンル    看護婦恋愛イマジネーションSLG
+  原　　画 　 葵羽鳥
+  シナリオ    富樫つか沙
+
+  http://www.agree.co.jp/cherrysoft/cronus/
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/05/24
+[subject] 日付 : calc,0x86CB5C,00,31
+[subject] 曜日 : calc,0x86CB60,00,7
+[subject] 妄想値 : calc,0x86CB64,00,4
+[subject] 行動残 : calc,0x86CB68,00,3
+[/script]
+
+[script]
+[title]旅館白鷺
+[process]RYOKAN.EXE
+[maker]SPEED
+[creator]xenon
+[note]wordwrap
+　発 売 日　　2002/05/24
+  ジャンル    対決型旅館経営SLG 
+  原　　画 　 どどいつ 
+
+  http://www.sp-janis.com/pro/pro_speed.html
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/05/24
+[subject] 資金 : calc,0x4BB664,00,0xFFFF
+[subject] 接客 : calc,0x4BB668,00,999
+[subject] 環境 : calc,0x4BB66A,00,999
+[subject] 経理 : calc,0x4BB66C,00,999
+[subject]行動力: calc,0x4BB6FB,00,99
+[subject]優梨子:dir
+	[replace]0x4BB680,旅館白鷺
+[back]
+[subject]冬香:dir
+	[replace]0x4BB69C,旅館白鷺
+[back]
+[subject]要:dir
+	[replace]0x4BB6B8,旅館白鷺
+[back]
+[subject]ひばり:dir
+	[replace]0x4BB6D4,旅館白鷺
+[back]
+[/script]
+
+[script]
+[title]必殺！さとみアタック！
+[process]SATOMI.EXE
+[maker]TinkerBell（チーム・ザット）
+[creator]xenon
+/[adjustment]heap,heap2=0x007F0000>0x009FFFFF
+[adjustment]dialog,0x00931150,さとみアタック->サーチ,0x007F0000,0x009FFFFF,1
+[note]wordwrap
+　発 売 日　　2002/05/24
+  ジャンル    シュミレーションＲＰＧ 
+  原　　画 　 名波 春平 
+  シナリオ    坂田 徹也 
+
+  2番目以降キャラの相対位置が変化する様なので1キャラ分しかありません。
+  変更したいキャラをサーチしてください。
+
+  アドレス移動型(戦闘毎)
+  http://www.cyberworks.co.jp/tink/tink.html
+　Windows98SEで制作
+[/note]
+[distinction]発売日=2002/05/24
+/ショウ931150/美亜9324D0/さとみ936B90
+[subject]ステータス(戦闘時):dir
+	[replace]0x00931150,さとみアタック->ステータス
+[back]
+[/adjustment]
+[subject]ステータス:dir
+	[subject]ショウ:dir
+		[replace]0x8033B4,さとみアタック->平時
+	[back]
+	[subject]さとみ:dir
+		[replace]0x8033B8,さとみアタック->平時
+	[back]
+	[subject]美亜:dir
+		[replace]0x8033BC,さとみアタック->平時
+	[back]
+	[subject]鏡:dir
+		[replace]0x8033C8,さとみアタック->平時
+	[back]
+	[subject]夏樹:dir
+		[replace]0x8033C4,さとみアタック->平時
+	[back]
+	[subject]リコ:dir
+		[replace]0x8033C8,さとみアタック->平時
+	[back]
+[back]
+[/adjustment]
+[/script]
+
+
+[script]
+[title]魔法戦士スイートナイツ～ヒロイン凌辱指令～
+[process]SK.EXE
+[maker]Triangle (bitter)
+[creator]xenon
+[note]wordwrap
+　発 売 日  2002/05/17
+  ジャンル  アドベンチャー
+  原    画  斎藤なつき
+
+　メーカーのHPに修正ファイルがでています。
+  http://www.h-gate.co.jp/
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/05/17
+[subject]残マナ数: calc,0x42EED4,00,999
+[repeat]魔法戦士スイートナイツ->魔UNIT,0,12,1
+[back]
+
+[/script]
+
+
+[script]
+[title]金の瞳＊銀の瞳
+[process]GSP.EXE
+[maker]UNCANNY!
+[creator]xenon
+[adjustment]heap,heap2=0x006C0000>0x008CFFFF
+[note]wordwrap
+　発売日　　2002/04/26
+　原画　　　あおいゆーじ、高野皇子
+　シナリオ　海野安和、羽合"A"唯孝
+
+  http://www.vanira.com/
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/04/26
+[subject]  ＨＰ : calc,0x7D17A4,00,999
+[subject]  ＳＰ : calc,0x7D1784,00,999
+[subject] 攻撃力: calc,0x7D1764,00,999
+[subject] 防御力: calc,0x7D1744,00,999
+[subject] 敏捷力: calc,0x7D1724,00,999
+[subject]  日付 : calc,0x7D18C4,1,7
+[subject]   週  : calc,0x7D18E4,1,8
+[/adjustment]
+/1蕾2花3実4樹5凪6風7嵐8雷
+[/script]
+
+[script]
+[title]エルフィーナ～淫夜へと売られた王国で・・・～
+[process]ELLFIENA.EXE
+[maker]アイル【チーム・Riva】
+[creator]xenon
+[note]wordwrap
+　発売日　　2002/05/03
+　ジャンル  調教シミュレーション風アドベンチャー
+　原画　　　リバ原あき
+　シナリオ　リバ原あき / 樋口和真
+  ボイス    女性のみフルボイス
+
+  http://www.ail-soft.com/
+  LV1が調教度0～14、LV2が調教度15～29、LV3が調教度30
+
+　Windows98SEで制作
+[/note]
+[distinction]発売日=2002/05/03
+[subject]  日  付  : calc,0x469796,00,44
+[subject]Lv1_0-14/Lv2_15-29/Lv3_30:dir
+[back]
+[subject] 姫 調教度: calc,0x46979C,00,30
+[subject]アン調教度: calc,0x46979D,00,30
+/[subject]姫0：正　１：処　2：正騎　6：正騎後 : calc,0x46979E,0,6
+/[subject]姫 拡張(挿入回数): calc,0x4697A9,0,4
+/[subject]姫 パイズリ(フェラチオ回数): calc,0x4697A1,0,1
+/[subject]姫 正(処女喪失?): calc,0x4697AE,0,1
+
+[/script]
+
+[script]
+[title]うたわれるもの
+[process]UTAWARE.EXE
+[maker]Leaf
+[creator]xenon
+[note]wordwrap
+　発売日　　2002/04/26
+　ジャンル  AVG＋シミュレーションRPG
+　原画　　　甘露樹
+　シナリオ　菅宗光
+  音源      CD-DA
+
+  http://leaf.aquaplus.co.jp/
+　 
+  改造は戦闘パート時に行ってください。
+  ADVパート時には変更されません。
+　Windows98SEで制作
+
+[/note]
+[distinction]発売日=2002/04/26
+[repeat]うたわれるもの->UNIT番号,0,12,1
+[/script]
+
+[script]
+[title]探検道 ～THE NEW FRONTIER～
+[process]TANKENDO.EXE
+[maker]日本クリエイト
+[creator]xenon
+[note]wordwrap
+　発売日　　2001/07/--
+
+  http://www.nihon-create.co.jp/
+
+　Windows98SEで動作を確認
+　探検道CVでの動作は不明
+[/note]
+[distinction]発売日=2001/07/00
+[subject]発行部数: calc,0x51D69C,00,999999
+[subject]所 持 金: calc,0x51DB5C,00,999999
+[subject]探索力？: calc,0x51DB60,00,255
+[subject]攻撃力？: calc,0x51DB64,00,255
+[subject]捕獲力？: calc,0x51DB68,00,255
+[subject] 食  料 : calc,0x51DB90,00,255
+[subject]医 薬 品: calc,0x51DB8C,00,255
+[subject]ナ イ フ: calc,0x51DB80,00,255
+[subject]   弓   : calc,0x51DB84,00,255
+[subject]ライフル: calc,0x51DB88,00,255
+
+[subject]ラリー(主人公):dir
+ [subject]統 率 力: calc,0x51DA88,00,255
+ [subject]戦 闘 力: calc,0x51DA90,00,255
+ [subject]交渉能力: calc,0x51DA98,00,255
+ [subject] 博  学 : calc,0x51DA9C,00,255
+ [subject]危機管理: calc,0x51DA94,00,255
+ [subject]探 索 力: calc,0x51DA8C,00,255
+ [subject]カリスマ: calc,0x51DAA0,00,255
+[back]
+
+[/script]
+[script]
+[title]コミックカフェ
+[process]CCAFE.EXE
+[maker]GIRL'S_SOFTWARE
+[creator]xenon
+[note]wordwrap
+　発売日　　2002/03/29
+　原画　　　Niki　 
+　音声    　あり
+
+　http://www.girls-software.ne.jp/
+
+　Windows98SEで制作（不完全かも）
+　変更は固定しておいた方が良いかも
+　アドレス移動型
+[/note]
+[distinction]発売日=2002/03/29
+[adjustment]search, 0x4EB388,080200A0, 0x490000, 0x500000,2
+ [subject]所持金: calc,0x4EB390,00,9990
+/ 水咲あゆみ0x4EB3A8
+/ 逢坂千絵0x4EB3BC
+[/script]
+
+[script]
+[title]催淫術2
+[process]SAIIN2.EXE
+[maker]び～にゃん
+[creator]xenon
+[note]wordwrap
+　発売日　　2002/03/22
+　原画　　　明雄 
+　シナリオ　萌木一路 
+　音声    　女性キャラフルボイス
+
+　http://www.r18game.com/beenyan
+
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/03/22
+[adjustment]search, 0x477B20,54656B694850,0x450000,0x500000,4
+[subject]相手精神力: calc,0x477B40,00,99
+[adjustment]search, 0x477B48,4D794850,0x450000,0x500000,4
+[subject]自分精神力: calc,0x477B68,00,99
+
+[/script]
+
+[script]
+[title]戦略娘
+[process]SENRYAKU.EXE
+[maker]r.
+[creator]xenon
+[note]wordwrap
+　発売日　　2002/03/22
+　ジャンル　ＳＬＧ
+　音声    　女性キャラフルボイス
+
+　http://www.aaru.co.jp/
+
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/03/22
+[subject]資金: calc,0x44EB56,00,9999999
+[subject]機数:b_calc,_ 0x4727E2 + 0x1C,戦略娘->全体設定,offset,0,10 
+[subject]開発:b_calc,_ 0x4727E2 + 0x24,戦略娘->全体設定,offset,0,999 
+[subject]経験:b_calc,_ 0x4727E2 + 0x28,戦略娘->全体設定,offset,0,999
+[repeat]戦略娘->兵器番号,0,50,1
+
+[/script]
+
+[script]
+[title]Doki！Doki！お医者さんごっこ 
+[process]B2.EXE
+[maker]CANDY SOFT
+[creator]xenon
+[note]wordwrap
+　発売日　　2002/02/15
+　原画　　　詩夜月笹
+
+　http://www.interheart.co.jp/
+
+　Windows98SEで制作（不完全かも）
+[/note]
+[distinction]発売日=2002/02/15
+[subject]治療進行度: calc,0x507BFC,0,999
+[subject] 不 信 度 : calc,0x507BF0,0,999
+[subject] ストレス : calc,0x507C0C,0,999
+[subject] 興 奮 度 : calc,0x507BF8,0,300
+[subject] 精 神 力 : calc,0x507C10,0,100
+[subject]  時　間  : calc,0x507C0C,0,999
+[/script]
+
+[script]
+[title]ReNN
+[process]RENN.EXE
+[maker]TOPCAT
+[creator]xenon
+[note]wordwrap
+　発売日　　2001/11/22
+　ジャンル　半リアルタイム育成AVG
+　原画　　　ぼうのうと
+　シナリオ　鷹取　兵馬
+
+　メーカーのHPに修正ファイルがでています。
+　http://www.topcat.tc/
+
+　Windows98SEで制作（不完全かも）
+[/note]
+[distinction]発売日=2001/11/22
+[subject]所持金(苑): calc,0x4B8B04,0,9999900
+[subject]ジャンク ALL-9000: toggle,0x4B60F4,0x4B64ED-2823,0000
+[subject]INGOT ALL-900: toggle,0x4B8AC2,0x4B8AD0-8403,0000
+[subject]アイテム ALL-99: toggle,0x4B60F4,0x4B64ED-63,00
+[/script]
+
+[script]
+[title]幻燐の姫将軍
+[process]SHAFT.EXE
+[maker]エウシュリー
+[creator]xenon
+[adjustment]heap,heap3=0x00890000>0x00A9FFFF
+[note]wordwrap
+　発売日　　2001/04/27
+　ジャンル　ＳＬＧ＋ＲＰＧ
+　原画　　　鳩月つみき
+　シナリオ　小泉裕・鶴来カスミ
+　ボイス　　あり
+　アニメ　　なし
+
+　メーカーのHPに修正ファイルがでています。
+　http://www.phoenix-c.or.jp/~eushully/
+
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2001/04/27
+[subject]所持金: calc,0x9A0B60,0,9999999
+[subject]アイテム ALL-99: toggle,0x9A1704,0x9A1844-63000000,00000000
+
+[subject]リウイ:dir
+	[replace]0x9A0000,幻燐の姫将軍
+[back]
+[subject]ジール:dir
+	[replace]0x9A0004,幻燐の姫将軍
+[back]
+[subject]マーリオン:dir
+	[replace]0x9A000C,幻燐の姫将軍
+[back]
+[subject]リスティ:dir
+	[replace]0x9A0014,幻燐の姫将軍
+[back]
+[subject]ファラシス:dir
+	[replace]0x9A0020,幻燐の姫将軍
+[back]
+[subject]ラージャ:dir
+	[replace]0x9A0024,幻燐の姫将軍
+[back]
+[subject]ペテレーネ:dir
+	[replace]0x9A0028,幻燐の姫将軍
+[back]
+[subject]カーリアン:dir
+	[replace]0x9A002C,幻燐の姫将軍
+[back]
+[subject]リネア:dir
+	[replace]0x9A0030,幻燐の姫将軍
+[back]
+[subject]エスカーナ:dir
+	[replace]0x9A0034,幻燐の姫将軍
+[back]
+[subject]シーマ:dir
+	[replace]0x9A0038,幻燐の姫将軍
+[back]
+[subject]ファーミシルス:dir
+	[replace]0x9A003C,幻燐の姫将軍
+[back]
+[subject]エウシュリーchan:dir
+	[replace]0x9A005C,幻燐の姫将軍
+[back]
+[/script]
+
+[script]
+[title]アルティメットハンター
+[process]UHUNTER.EXE
+[maker]ザウス【本醸造】
+[creator]xenon
+[note]wordwrap
+　発売日　　2002/02/01 
+　原画　　　まさはる 
+　シナリオ　BAKU 
+　ボイス　　フルボイス（女性のみ） 
+　アニメ　　あり 
+
+　メーカーのHPに修正ファイルがでています。
+　http://www.xuse.co.jp/
+
+　Windows98SEで制作（不完全かも）
+[/note]
+[distinction]発売日=2002/02/01
+[subject]所持金: calc,0x4A3304,00,9999999
+[subject]アイテム ALL-99: toggle,0x4A2108,0x4A2150-99,00
+
+[subject]パーティー１人目:dir
+	[replace]0x4A43B4,アルティメットハンター
+[back]
+[subject]パーティー２人目:dir
+	[replace]0x4A4544,アルティメットハンター
+[back]
+[subject]パーティー３人目:dir
+	[replace]0x4A46D4,アルティメットハンター
+[back]
+[subject]パーティー４人目:dir
+	[replace]0x4A4864,アルティメットハンター
+[back]
+[subject]パーティー５人目:dir
+	[replace]0x4A49F4,アルティメットハンター
+[back]
+
+[/script]
+
+[script]
+[title]パールな気分で～明日に向かって歩こう～
+[process]SCRIPTEXE.EXE
+[maker]ジュエリー
+[creator]xenon
+[note]wordwrap
+　発売日   2002/02/28
+　原画     TKS 
+　シナリオ ハッピー清原 
+　音声     女性キャラフルボイス 
+
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2002/02/28
+[subject]日付: calc,0x1159AB0,00,30
+[subject]時間: calc,0x1159AC0,00,08
+[subject]根性: calc,0x115A500,000,999
+[subject]話術: calc,0x115A508,000,999
+[subject]身だしなみ: calc,0x115A510,000,999
+[subject]知識: calc,0x115A518,000,999
+[subject]営業成績: calc,0x115A520,000,999
+[subject]話題 ALL-ON: toggle,0x115A470,115A500-01000000,00000000
+
+[/script]
+
+[script]
+[title]海賊王冠
+[process]KAIZOKU.EXE
+[maker]ソフトハウスキャラ
+[creator]xenon
+[note]wordwrap
+　発売日 2001/04/20 
+　原画 　SHIGATAKE、人丸、佐々木　珠流
+
+　メーカーのHPに修正ファイルがでています。
+　改造コードは、Ver1.01のものです。
+　http://www.shchara.com/
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2001/04/20
+[subject]船舶ステータス:dir
+	[subject]戦闘力: calc,0x56E4A8,000,999
+	[subject]交渉力: calc,0x56E4AC,000,999
+	[subject]探索力: calc,0x56E4B0,000,999
+	[subject]積載量: calc,0x56E4C0,00,99
+	[subject]所持金: calc,0x56E4C4,0000000,9999999
+	[subject]最大 船舶耐久力: calc,0x56E4C8,000,999
+	[subject]現在 船舶耐久力: calc,0x56E4CC,000,999
+	[subject]現在 経験値: calc,0x56E4D0,000,9999
+	[subject]必要 経験値: calc,0x56E4D4,000,9999
+	[subject]LV: calc,0x56E4D8,00,99
+	[subject]悪名値: calc,0x56E4DC,000000,999999
+	[subject]善行値: calc,0x56E4E0,000000,999999
+[back]
+
+[subject]戦闘カード:dir
+	[subject]ALL-80: toggle,0x99961D,0x999623-50,00
+	[subject]交渉: calc,0x99961D,00,99
+	[subject]探索: calc,0x99961E,00,99
+	[subject]戦闘: calc,0x99961F,00,99
+	[subject]突撃: calc,0x999620,00,99
+	[subject]銃撃: calc,0x999621,00,99
+	[subject]砲撃: calc,0x999622,00,99
+[back]
+
+[subject]通常財宝:dir
+	[subject]ALL-99: toggle,0x999623,0x99966F-63,00
+	[subject]黄金珠: calc,0x999623,00,99
+	[subject]燃ゆる剣: calc,0x999624,00,99
+	[subject]輝く盾: calc,0x999625,00,99
+	[subject]震える鎧: calc,0x999626,00,99
+	[subject]銀の天使像: calc,0x999627,00,99
+	[subject]虹孔雀: calc,0x999628,00,99
+	[subject]金: calc,0x999629,00,99
+	[subject]銀: calc,0x99962A,00,99
+	[subject]ダイヤモンド: calc,0x99962B,00,99
+	[subject]ルビー: calc,0x99962C,00,99
+	[subject]サファイア: calc,0x99962D,00,99
+	[subject]エメラルド: calc,0x99962E,00,99
+	[subject]パール: calc,0x99962F,00,99
+	[subject]古いコイン: calc,0x999630,00,99
+	[subject]書物: calc,0x999631,00,99
+	[subject]医薬品: calc,0x999632,00,99
+	[subject]米酒: calc,0x999633,00,99
+	[subject]ワイン: calc,0x999634,00,99
+	[subject]滋養酒: calc,0x999635,00,99
+	[subject]ガラス細工: calc,0x999636,00,99
+	[subject]彫刻: calc,0x999637,00,99
+	[subject]骨董品・壷: calc,0x999638,00,99
+	[subject]骨董品・皿: calc,0x999639,00,99
+	[subject]骨董品・茶器: calc,0x99963A,00,99
+	[subject]絵画: calc,0x99963B,00,99
+	[subject]庭石: calc,0x99963C,00,99
+	[subject]招き猫: calc,0x99963D,00,99
+	[subject]武具: calc,0x99963E,00,99
+	[subject]トリ: calc,0x99963F,00,99
+	[subject]マツタケ: calc,0x999640,00,99
+	[subject]キャビア: calc,0x999641,00,99
+	[subject]香辛料: calc,0x999642,00,99
+	[subject]ドレス: calc,0x999643,00,99
+	[subject]肉: calc,0x999644,00,99
+	[subject]砂糖: calc,0x999645,00,99
+	[subject]木材: calc,0x999646,00,99
+	[subject]衣服: calc,0x999647,00,99
+	[subject]油: calc,0x999648,00,99
+	[subject]石材: calc,0x999649,00,99
+	[subject]土材: calc,0x99964A,00,99
+	[subject]石炭: calc,0x99964B,00,99
+	[subject]木炭: calc,0x99964C,00,99
+	[subject]鉄鉱石: calc,0x99964D,00,99
+	[subject]紙: calc,0x99964E,00,99
+	[subject]酒: calc,0x99964F,00,99
+	[subject]タバコ: calc,0x999650,00,99
+	[subject]茶葉: calc,0x999651,00,99
+	[subject]大豆: calc,0x999652,00,99
+	[subject]麻: calc,0x999653,00,99
+	[subject]米: calc,0x999654,00,99
+	[subject]小麦: calc,0x999655,00,99
+	[subject]大麦: calc,0x999656,00,99
+	[subject]トウモロコシ: calc,0x999657,00,99
+	[subject]トマト: calc,0x999658,00,99
+	[subject]リンゴ: calc,0x999659,00,99
+	[subject]冷たくない氷: calc,0x99965A,00,99
+	[subject]謎のカツラ: calc,0x99965B,00,99
+	[subject]愛のフォーク: calc,0x99965C,00,99
+	[subject]土鍋: calc,0x99965D,00,99
+	[subject]女の子の下着: calc,0x99965E,00,99
+	[subject]王様魚: calc,0x99965F,00,99
+	[subject]巨大魚: calc,0x999660,00,99
+	[subject]金魚: calc,0x999661,00,99
+	[subject]カメ: calc,0x999662,00,99
+	[subject]海老: calc,0x999663,00,99
+	[subject]大型魚: calc,0x999664,00,99
+	[subject]カニ: calc,0x999665,00,99
+	[subject]イカ: calc,0x999666,00,99
+	[subject]中型魚: calc,0x999667,00,99
+	[subject]タコ: calc,0x999668,00,99
+	[subject]ヒトデ: calc,0x999669,00,99
+	[subject]クラゲ: calc,0x99966A,00,99
+	[subject]小型魚: calc,0x99966B,00,99
+	[subject]錆びた錨: calc,0x99966C,00,99
+	[subject]ボロ靴: calc,0x99966D,00,99
+	[subject]メダカ: calc,0x99966E,00,99
+[back]
+
+[subject]特殊財宝:dir
+	[subject]ALL 1: toggle,0x99966F,0x999689-01,00
+	[subject]偵察レンズ: calc,0x99966F,00,99
+	[subject]黄金の盾: calc,0x999670,00,99
+	[subject]鬼の盾: calc,0x999671,00,99
+	[subject]鉄の盾: calc,0x999672,00,99
+	[subject]伝説の旗: calc,0x999673,00,99
+	[subject]呪われた旗: calc,0x999674,00,99
+	[subject]快速艇: calc,0x999675,00,99
+	[subject]釣具: calc,0x999676,00,99
+	[subject]古い地図: calc,0x999677,00,99
+	[subject]伝説の地図: calc,0x999678,00,99
+	[subject]海域の海図Ａ: calc,0x999679,00,99
+	[subject]海域の海図Ｂ: calc,0x99967A,00,99
+	[subject]海域の海図Ｃ: calc,0x99967B,00,99
+	[subject]葵屋パスポート: calc,0x99967C,00,99
+	[subject]ルシアンパス: calc,0x99967D,00,99
+	[subject]ダルモアパス: calc,0x99967E,00,99
+	[subject]宝箱: calc,0x99967F,00,99
+	[subject]謎の宝箱: calc,0x999680,00,99
+	[subject]黄金の宝箱: calc,0x999681,00,99
+	[subject]呪われた宝箱: calc,0x999682,00,99
+	[subject]青い石: calc,0x999683,00,99
+	[subject]ダルモア情報: calc,0x999684,00,99
+	[subject]ルシアン情報: calc,0x999685,00,99
+	[subject]ラスキーノ情報: calc,0x999686,00,99
+	[subject]レース参加証: calc,0x999687,00,99
+	[subject]天界の金貨: calc,0x999688,00,99
+[back]
+
+[subject]女の子:dir
+	[subject]女の子ALL-ON: toggle,0x999689,0x999695-01,00
+	[subject]メアリー: calc,0x999689,00,01
+	[subject]シリア: calc,0x99968A,00,01
+	[subject]ネルル: calc,0x99968B,00,01
+	[subject]コトリ: calc,0x99968C,00,01
+	[subject]桔梗: calc,0x99968D,00,01
+	[subject]リズ: calc,0x99968E,00,01
+	[subject]チヒロ: calc,0x99968F,00,01
+	[subject]エレナ: calc,0x999690,00,01
+	[subject]シルフィ: calc,0x999691,00,01
+	[subject]リン: calc,0x999692,00,01
+	[subject]マリカ: calc,0x999693,00,01
+	[subject]彩: calc,0x999694,00,01
+[back]
+
+[subject]記録回数: calc,0x56E488,0000,9999
+
+[/script]
+
+[script]
+[title]真昼に踊る犯罪者
+[process]MAHIRU.EXE
+[maker]ソフトハウスキャラ
+[creator]xenon
+[adjustment]search, 0xD3FADC,240300A0,0x500000,0xFFFFFF,4
+[note]wordwrap
+　発売日   2001/10/26
+　ジャンル 大都会犯罪シミュレーション
+　原画     佐々木珠流、ちんじゃおろぉす、
+           蜂矢、人丸、シガタケ、赤木義尚
+　音声     女性パートはフルボイス
+
+　メーカーのHPに修正ファイルがでています。
+　改造コードは、Ver1.11のものです。
+　http://www.shchara.com/
+
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2001/10/26
+[subject]日付: calc,0xD3FBA8,00,99
+[subject]所持金: calc,0xD3FBAC,000000,999990
+
+[subject]山県一義:dir
+	[subject]LEVEL: calc,0xD3FBD0,00,99
+	[subject]体力: calc,0xD3FBD4,00,999
+	[subject]戦闘力: calc,0xD3FBD8,00,99
+	[subject]行動力: calc,0xD3FBDC,00,99
+	[subject]思考力: calc,0xD3FBE0,00,99
+	[subject]応用力: calc,0xD3FBE4,00,99
+	[subject]経験値: calc,0xD3FBE8,000000,999999
+[back]
+
+[subject]奥平鈴:dir
+	[subject]LEVEL: calc,0xD3FBF8,00,99
+	[subject]体力: calc,0xD3FBFC,00,99
+	[subject]戦闘力: calc,0xD3FC00,00,99
+	[subject]行動力: calc,0xD3FC04,00,99
+	[subject]思考力: calc,0xD3FC08,00,99
+	[subject]応用力: calc,0xD3FC0C,00,99
+	[subject]経験値: calc,0xD3FC10,000000,999999
+[back]
+
+[subject]葵宮子:dir
+	[subject]LEVEL: calc,0xD3FC20,00,99
+	[subject]体力: calc,0xD3FC24,00,99
+	[subject]戦闘力: calc,0xD3FC28,00,99
+	[subject]行動力: calc,0xD3FC2C,00,99
+	[subject]思考力: calc,0xD3FC30,00,99
+	[subject]応用力: calc,0xD3FC34,00,99
+	[subject]経験値: calc,0xD3FC38,000000,999999
+[back]
+
+[subject]アーティ:dir
+	[subject]LEVEL: calc,0xD3FC48,00,99
+	[subject]体力: calc,0xD3FC4C,00,99
+	[subject]戦闘力: calc,0xD3FC50,00,99
+	[subject]行動力: calc,0xD3FC54,00,99
+	[subject]思考力: calc,0xD3FC58,00,99
+	[subject]応用力: calc,0xD3FC5C,00,99
+	[subject]経験値: calc,0xD3FC60,000000,999999
+[back]
+
+[subject]設備:dir
+	[subject]テレビ: calc,0xD3FCE8,00,08
+	[subject]椅子: calc,0xD3FCEC,00,10
+	[subject]絵画: calc,0xD3FCF0,00,12
+	[subject]冷蔵庫: calc,0xD3FCF4,00,08
+[back]
+
+[/adjustment]
+[/script]
+
+[script]
+[title]Restrain-レストレイン-
+[process]RESTRAIN.EXE
+[maker]spiel
+[creator]xenon
+[note]wordwrap
+　発売日　　2001/09/28 
+　ジャンル　執事陵辱型ＡＶＧ
+　原画　　　藤ノ宮　由美 
+　シナリオ　前山　信頼 
+　音声　　　女の子のみフルボイス 
+
+　メーカーのHPに修正ファイルがでています。
+　http://www.spielsoft.co.jp/
+
+　Windows98SEで動作を確認
+[/note]
+[distinction]発売日=2001/09/28
+[subject]日付: b_calc,0x6A4D38,レストレイン,offset,0,30
+[subject]曜日(月～日): b_calc,0x6A4D3C,レストレイン,offset,0,6
+[subject]時間(朝～夜): b_calc,0x6A4D40,レストレイン,offset,0,2
+[subject]仕事: b_calc,0x6A4CA8,レストレイン,offset,0,100
+
+[/script]
