@@ -1,0 +1,214 @@
+[group]RCR_MA
+[note]wordwrap
+以下、少々補足です。
+
+■環境関連
+基本的には固定して使用して下さい。
+
+全シャッター使用可能：
+戦闘時の必殺技や、移動場所に関してシャッターの使用可能制限がなくなります。後者はほとんど役にたたないと思いますが…。「総本山」とかあるので、お遊びまでに(^^;
+
+「貴様の全て」閲覧可能：
+ラスボス等、見切れない筈の敵の能力も見れるということで。
+
+■パラメータ関連
+大王カウンター：
+任意のデータ更新処理で反映されます。最終イベントは600前後で発生。
+
+時間帯：
+任意の画面更新処理で反映されます。
+
+■フラグ関連
+一般設定：
+エンディング判定、分岐に使用します。値によってノーマル・グッド・パーフェクト・バッドエンド等が発生。
+
+個別設定：
+イベント進展度…
+所謂好感度のようなもの。任意の必須イベント、正答選択肢により＋５～＋１０になり、個別差はあるものの＋１８０～＋２８０程度で終了します。
+
+待機カウント…
+任意の必須イベント直後から、次の必須イベント発生のタイミングを統制するフラグになります。基本的に１日につき＋１。よって、増加させることにより連続でイベントを発生させたり、固定することにより、イベントの期間引き伸ばしが可能。必須イベント発生後初期化されます。
+
+■ＣＧモード関連
+それぞれの最低条件を満たす機能です。よってＡＬＬ状態でもチェックが入らない場合もあります。
+[/note]
+
+[subject]環境関連:dir
+[/group]
+
+
+[group]RCR_a
+[subject]全シャッター無条件使用可能/ＯＮ/固定推奨:toggle,0x22A,0x23E-0100
+[subject]戦闘時「貴様の全て」閲覧可/ＯＮ/固定推奨:toggle,0x444,0100
+[/group]
+
+
+[group]RCR_b
+[subject]大王カウンター/現在値/固定:calc,0x1D2,0x0000,0x270F,unsigned
+[subject]時間帯任意指定/固定:d_list,0x1C8,RCRLST->LST_c,0x00000000,0x1B001B00,RCRLST->LST_d,offset
+[subject]漢ポイントＭＡＸ/実行/固定:toggle,0x3F2,1400
+[back]
+[/group]
+
+
+[group]RCR_c
+[subject]ＬＶ:calc,0x7D2,0x05,0x63,unsigned
+[e_with],0x0000,0x270F,unsigned
+[subject]最大ＨＰ/現在値/_:calc,0xCA
+[subject]現在ＨＰ/現在値/固定:calc,0x89A
+[subject]攻撃力/現在値/_:calc,0x962
+[subject]防御力/現在値/_:calc,0xA2A
+[subject]素早さ/現在値/_:calc,0xAF2
+[/e_with]
+[e_with],0x0000,0x3E7,unsigned
+[subject]ＥＸＰ/現在値/固定:calc,0xBBA
+[subject]ＣＮＴ/現在値/_:calc,0xC82
+[/e_with]
+[/group]
+
+
+[group]RCR_d
+[subject]愛を誓ったヒロイン/_:list,0x600,RCRLST->LST_e,0x00,0x01
+[e_with],0x00,0x07,unsigned
+[subject]幸福にしたヒロイン数/現在値/_:calc,0x60A
+[subject]不幸にしたヒロイン数/現在値/_:calc,0x608
+[/e_with]
+[subject]虎頭に殴られた回数/現在値/_:calc,0x60E,0x00,0x63,unsigned
+[back]
+[/group]
+
+
+[group]RCR_e
+[subject]秋月まゆ:dir
+	[subject]イベント進展度/現在値/_:calc,0x5CE,0x0000,0xFFFF,unsigned
+	[subject]シナリオ状態/_:list,0x5EA,RCRLST->LST_f,0x00,0x01
+	[subject]待機カウント/現在値/固定:calc,0x86E,0x0000,0x0063,unsigned
+[back]
+[subject]仁藤美咲:dir
+	[subject]イベント進展度/現在値/_:calc,0x5D0,0x0000,0xFFFF,unsigned
+	[subject]シナリオ状態/_:list,0x5EC,RCRLST->LST_f,0x00,0x01
+	[subject]待機カウント/現在値/固定:calc,0x870,0x0000,0x0063,unsigned
+[back]
+[subject]天童来夢:dir
+	[subject]イベント進展度/現在値/_:calc,0x5D2,0x0000,0xFFFF,unsigned
+	[subject]シナリオ状態/_:list,0x5EE,RCRLST->LST_f,0x00,0x01
+	[subject]待機カウント/現在値/固定:calc,0x874,0x0000,0x0063,unsigned
+[back]
+[subject]杜若あやめ:dir
+	[subject]イベント進展度/現在値/_:calc,0x5D4,0x0000,0xFFFF,unsigned
+	[subject]シナリオ状態/_:list,0x5F0,RCRLST->LST_f,0x00,0x01
+	[subject]待機カウント/現在値/固定:calc,0x876,0x0000,0x0063,unsigned
+[back]
+[subject]鏡守萌木:dir
+	[subject]イベント進展度/現在値/_:calc,0x5D6,0x0000,0xFFFF,unsigned
+	[subject]シナリオ状態/_:list,0x5F2,RCRLST->LST_f,0x00,0x01
+	[subject]待機カウント/現在値/固定:calc,0x87E,0x0000,0x0063,unsigned
+[back]
+[subject]ミュシャ・カレニーナ:dir
+	[subject]イベント進展度/現在値/_:calc,0x5D8,0x0000,0xFFFF,unsigned
+	[subject]シナリオ状態/_:list,0x5F4,RCRLST->LST_f,0x00,0x01
+	[subject]待機カウント/現在値/固定:calc,0x878,0x0000,0x0063,unsigned
+[back]
+[subject]鈴麗蘭:dir
+	[subject]イベント進展度/現在値/_:calc,0x5DA,0x0000,0xFFFF,unsigned
+	[subject]シナリオ状態/_:list,0x5F6,RCRLST->LST_f,0x00,0x01
+	[subject]待機カウント/現在値/固定:calc,0x87A,0x0000,0x0063,unsigned
+[back]
+[subject]軽井沢成美:dir
+	[subject]待機カウント/現在値/固定:calc,0x872,0x0000,0x0063,unsigned
+[/group]
+
+
+[group]RCR_f
+[subject]シナリオＣＧ・回想:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x02,0x1D9-0100
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x02,0x1D9-0000
+[back]
+[subject]おまけイベントＣＧ・回想:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x76C,0x7B0-0100
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x76C,0x7B0-0000
+[/group]
+
+
+[group]LST_c
+午前１
+午前２
+午前３
+午前４
+午前５
+午前６
+午前７
+午前８
+午後１
+午後２
+午後３
+午後４
+午後５
+午後６
+午後７
+午後８
+夜１
+夜２
+夜３
+夜４
+夜５
+夜６
+夜７
+夜８
+深夜１
+深夜２
+深夜３
+深夜４
+[/group]
+
+
+[group]LST_d
+,0x00=00000000,0x20C=00000000
+,0x00=01000100,0x20C=01000100
+,0x00=02000200,0x20C=02000200
+,0x00=03000300,0x20C=03000300
+,0x00=04000400,0x20C=04000400
+,0x00=05000500,0x20C=05000500
+,0x00=06000600,0x20C=06000600
+,0x00=07000700,0x20C=07000700
+,0x00=08000800,0x20C=08000800
+,0x00=09000900,0x20C=09000900
+,0x00=0A000A00,0x20C=0A000A00
+,0x00=0B000B00,0x20C=0B000B00
+,0x00=0C000C00,0x20C=0C000C00
+,0x00=0D000D00,0x20C=0D000D00
+,0x00=0E000E00,0x20C=0E000E00
+,0x00=0F000F00,0x20C=0F000F00
+,0x00=10001000,0x20C=10001000
+,0x00=11001100,0x20C=11001100
+,0x00=12001200,0x20C=12001200
+,0x00=13001300,0x20C=13001300
+,0x00=14001400,0x20C=14001400
+,0x00=15001500,0x20C=15001500
+,0x00=16001600,0x20C=16001600
+,0x00=17001700,0x20C=17001700
+,0x00=18001800,0x20C=18001800
+,0x00=19001900,0x20C=19001900
+,0x00=1A001A00,0x20C=1A001A00
+,0x00=1B001B00,0x20C=1B001B00
+[/group]
+
+
+[group]LST_e
+なし
+秋月まゆ
+仁藤美咲
+天童来夢
+杜若あやめ
+鏡守萌木
+ミュシャ・カレニーナ
+鈴麗蘭
+軽井沢成美
+[/group]
+
+
+[group]LST_f
+通常
+幸福
+不幸
+[/group]
