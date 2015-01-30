@@ -1,0 +1,219 @@
+[group]BRW_SSG
+[note]wordwrap
+…ラネットの専用エンディングなかったよ(つД｀;　と、それはともかくメインヒロインのリズィがキャラ、シナリオ共にインパクト弱過ぎるんじゃないかなと。正直、マーチェリッカに流れるEND2あたりが一番まともな気がするし、リズィエンドどれも大した展開にならないし。つーか世界観では当たり前でも、プレイヤーとしてはかなり萎えるんですが＜親から強制された許婚(^^;
+
+以下、少々補足です。
+
+■■経営パート関連
+一度実行すれば、起動中は効果が持続するプログラムコード。ただし、疲労度～の方は、頻繁にアクセスされるルーチンへの干渉なので、タイミング次第で強制終了等が出る可能性が無いわけでもありません（SpoilerALが当該書き換え中の部分にアクセスされてしまう場合等。非常に希なケース）。システム画面呼び出し時等、アクセスされないタイミングでの実行をお勧めします。
+
+■■パラメータ関連
+日付：
+現在の日時から変更したい日時への週数差×７を増減して下さい
+
+冒険者エディタ：
+書き換え対象となる冒険者グループを選択してから、書き換え項目を変化させます。存在やランク変動等の効果は、当該データが読まれる週更新時に行われます（書き換えの次週）。
+[/note]
+
+[subject]経営パート関連:dir
+	[subject]疲労度自動完全回復/実行/_:b_toggle,0x406FA8,BRWLST->BRW_d,real
+	[subject]冒険者無条件で次週に帰還/実行/_:b_toggle,0x411067,BRWLST->BRW_e,real
+ [subject]ここまで:split,line,-1,100,5
+[root]
+
+[subject]パラメータ関連:dir
+ [subject]店舗関係全般:dir
+	[replace]_[:[:0x4683B8:]+0x99C:]+0x7C4,BRWLST->BRW_a
+ [subject]ここまで:split,roll,-2,-,100
+[back]
+ [subject]評価全般:dir
+	[repeat]BRWLST->BRWREP2,0,6,1
+ [subject]ここまで:split,roll,-2,-,100
+[back]
+ [subject]ヒロイン恋愛値:dir
+  [size]4
+	[repeat]BRWLST->BRWREP1,0,4,1
+  [/size]
+ [subject]ここまで:split,roll,-2,-,100
+[back]
+ [subject]冒険者エディタ:dir
+	[subject]書き換えグループ選択/_:list,0x44A284,BRWLST->LST_c,0x00,0x01
+	 [subject]書き換え項目:dir
+		[replace]_[:[:0x4683B8:]+0x99C:]+[:0x44A284:1]*0x50+0xA99C,BRWLST->BRW_b
+	[back]
+ [back]
+[subject]ここまで:split,line,-1,100,5
+[root]
+
+[subject]ＣＧモード関連:dir
+	[replace]_[:[:0x4683B8:]+0x99C:],BRWLST->BRW_c
+ [subject]ここまで:split,line,-1,100,5
+[root]
+
+[/group]
+
+
+[group]BRWREP1
+[subject][! @BRWLST->LST_a,$Val !]/現在値/_:calc,_[:[:0x4683B8:]+0x99C:]+0x9A4+0x[! 0x04*$Val !],0x00,0xFF,unsigned
+[/group]
+
+
+[group]BRWREP2
+[subject][! @BRWLST->LST_b,$Val !]/現在値/_:calc,_[:[:0x4683B8:]+0x99C:]+0x814+0x[! 0x04*$Val !],0x00,0x1E,unsigned
+[/group]
+
+
+[group]LST_a
+リズィ
+マーチェリッカ
+ラネット
+セラ
+[/group]
+
+
+[group]LST_b
+王室評価補正値
+街人評価補正値
+商人評価補正値
+悪人評価補正値
+冒険者評価補正値
+お店の人気補正値
+[/group]
+
+
+[group]BRW_a
+[subject]所持金/現在値/_:calc,0x38,0x00000000,0x77359400,unsigned
+[e_with],0x0000,0x270F,unsigned
+[subject]雰囲気ポイント/現在値/_:calc,0x28
+[subject]開発ポイント/現在値/_:calc,0x2C
+[subject]材料ポイント/現在値/_:calc,0x30
+[/e_with]
+[size]4
+[subject]HOLD基本数/現在値/_:calc,0x40,0x0000,0x03E7,unsigned
+[/size]
+[subject]現在日時/現在値/_:calc,0x34,0x0054,0x0459,unsigned
+[/group]
+
+
+[group]BRW_b
+[subject]存在フラグ/実行/_:toggle,0x00,FFFFFFFF,00000000,unsigned
+[subject]店友好度/現在値/_:calc,0x18,0x00,0x64,unsigned
+[subject]冒険者経験/現在値/_:calc,0x14,0x0000,0x0258,unsigned
+[/group]
+
+
+[group]LST_c
+グランディソード
+ラネットとその仲間達
+戦士団
+魔法使い団
+盗賊団
+僧侶団
+商人団
+狩人団
+騎士団
+魔法戦士団
+神官戦士団
+ガレとその仲間達
+アレンとその仲間達
+レベッカとその仲間達
+ルフィーロとその仲間達
+財宝を狩る者
+洞窟屋
+森の守護者
+金色傭兵団
+絶対完璧究極探検隊
+ハゲワシのフーガ
+ドラゴンハンター
+ボムアックス
+ジャッジマン
+チャンピオンズ
+ロッソネロ
+ビアンコロネ
+デッドライナーズ
+ブラウラー
+エルフベル
+長帽子
+二又帽子
+アーリーアイアン
+リフリーズ
+ラッキーファイターズ
+ヘルコンドルズ
+リリンナイト
+ワンダーナイト
+バッドムーン
+タムタムタム
+コンスタンティ
+ベウォルグファング
+星屑ウォーカー
+ティエンロン
+竜双騎兵団
+鬼骨
+アカネ隊
+オオカミの牙
+ライオンヘッド
+ボーンデッドクィーン
+キングスアーム
+緑のテンガロン
+黒のテンガロン
+白のテンガロン
+ビッグピーカー
+赤の魔道士隊
+明星の黒
+スワンウィング
+スコーピオンズ
+ダイヤモンドヘッド
+サファイア
+刃
+ウィンディル
+ヘルウィングズ
+ドラゴン救助隊
+ガデロニ
+ガロング
+ガーバング
+ガンデーロ
+アルフレッド
+クレイジーズ
+海賊団
+アヤカシ
+[/group]
+
+
+[group]BRW_c
+[subject]モード出現/実行/_:toggle,0x1ED,FF,00
+[subject]ＣＧギャラリー:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x6FC,0x788-FF
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x6FC,0x788-00
+ [subject]ここまで:split,roll,-2,-,100
+[back]
+[subject]シーン回想:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x1EE,0x288-FF
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x1EE,0x288-00
+ [subject]ここまで:split,roll,-2,-,100
+[back]
+[subject]アイテム一覧:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x2AF,0x597-FF
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x2AF,0x597-00
+ [subject]ここまで:split,roll,-2,-,100
+[back]
+[subject]冒険者一覧:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x698,0x6E0-FF
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x698,0x6E0-00
+[back]
+[/group]
+
+
+[group]BRW_d
+0x406FA8,E9E332,8B55D8
+0x406FAB,040090,89423C
+0x44A290,8B55D8,000000
+0x44A293,33C0,0000
+0x44A295,89423C,000000
+0x44A298,E911CDFBFF90,000000000000
+[/group]
+
+
+[group]BRW_e
+0x411067,7F,02
+0x411076,7F,01
+[/group]
