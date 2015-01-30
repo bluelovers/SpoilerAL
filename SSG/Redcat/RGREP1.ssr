@@ -1,0 +1,2 @@
+[subject][! @RGLST->LST_a,$Val !]:dir
+[replace]0x[! 0x4B4384+$Val*0x214 !],RG_a
