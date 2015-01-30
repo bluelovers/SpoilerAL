@@ -1,0 +1,92 @@
+[group]KAK2_SSG
+[note]wordwrap
+＊値の固定は本体メニューから「ガイド無し」モードにしてから行うこと。編集機能は反映行動による時間の経過を計算に入れること。
+
+
+＊日付の内訳＝月*100+日 ex.１０月２１日なら10*100+21=1021
+
+
+＊時間帯の内訳＝時間*100+分 ex.午後４時３０分なら16*100+30=1630
+
+
+＊好感度の最大値指定は未定。90あたりで赤面するようになる。
+
+
+＊汎用好感度に関して…イベント開始とともに現在発生しているイベントの対象となるヒロインの好感度がコピーされ、イベント終了後に対象ヒロインの好感度にここの値が書き戻されます。つまり、イベント中の好感度の増減はここで扱われるということです。ここで言うイベントとは広義のそれであり、強制・汎用を問はず、日常会話等もこのカテゴリに属します。
+
+
+＊ＣＧモード関連の使い方：ゲームプレイ中に機能実行し、タイトル画面に戻ると反映。ＣＧモード内で使用しても一時的効果がある。
+[/note]
+
+[subject]パラメータ関連:dir
+	[replace]_[:[:0x83C4C0:]+0xE8:]=>temp;[:[:[:$temp+0x14:]+0x04:]+$temp+0x04B58C:],KAK2LST->KAK2_2PR
+	[replace]_[:[:0x83C4C0:]+0xE8:]=>temp;[:[:[:$temp+0x14:]+0x04:]+$temp+0x04B58C:]+0x6084,KAK2LST->KAK2_PR
+[root]
+
+[subject]ＣＧモード関連:dir
+	[replace]_[:[:0x83C4C0:]+0xE8:]=>temp;[:[:[:$temp+0x14:]+0x04:]+$temp+0x04B58C:]+0x3F00,KAK2LST->KAK2_CG
+[root]
+
+[/group]
+
+
+[group]KAK2_2PR
+[subject]一括所持数指定/現在値/_:calc,_0x0184ED80-[_0_],0x00,0x09,unsigned
+[subject]全アイテム一括所持/実行/_:toggle,0x07EC,0x0817-$1[:0x0184ED80:]$$
+[/group]
+
+
+[group]KAK2_PR
+[size]2
+ [io_fep] $Val/0x64, $Val*0x64
+  [subject]所持金/現在値/_:calc,0x18,0x0000,0x0F41DC,unsigned
+ [/io_fep]
+ [subject]年月日編集/現在値/_:calc,0x0E,0x0199,0x05E3,unsigned
+ [subject]時間帯編集/現在値/固定:calc,0x26,0x0000,0x0937,unsigned
+ [subject]好感度確認調整:dir
+  [e_with],0x0000,0x03E8,unsigned
+   [subject]汎用好感度/現在値/固定:calc,0x0236
+   [subject]柴門たまき/現在値/_:calc,0xFC
+   [subject]若井みさき/現在値/_:calc,0x0124
+   [subject]高遠七瀬/現在値/_:calc,0x0138
+   [subject]沢村香月/現在値/_:calc,0x014C
+   [subject]白井夕璃/現在値/_:calc,0x0160
+   [subject]横溝ふみ/現在値/_:calc,0x019C
+   [subject]掘出実果/現在値/_:calc,0x01B0
+   [subject]井伏オキエ/現在値/_:calc,0x01C4
+   [subject]平沢博子/現在値/_:calc,0x01D8
+  [/e_with]
+ [back]
+[/size]
+[/group]
+
+
+[group]KAK2_CG
+[subject]ＣＧモードＡＬＬ/ＯＮ／ＯＦＦ/_:b_toggle,0x00,KAK2LST->KAK2_b,offset
+[subject]シーンモードＡＬＬ/ＯＮ／ＯＦＦ/_:b_toggle,0x00,KAK2LST->KAK2_c,offset
+[subject]音楽モードＡＬＬ/ＯＮ／ＯＦＦ/_:toggle,0x0BB8,0x0BFA-01,00
+[/group]
+
+
+[group]KAK2_b
+0x0000,0x0385-FF,00
+0x03E7,01,00
+[/group]
+
+
+[group]KAK2_c
+0x03E8,0x0441-FF,00
+0x044C,01,00
+0x07D0,0x089C-01,00
+[/group]
+
+
+[group]LST_a
+日曜日
+月曜日
+火曜日
+水曜日
+木曜日
+金曜日
+土曜日
+[/group]
