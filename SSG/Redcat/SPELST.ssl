@@ -1,0 +1,853 @@
+[group]SPE_SSG
+[note]wordwrap
+ver1.01：06/03/02の修正版です。発売と修正同時でいきなりミュラー先生ですかorz
+[/note]
+
+[subject]ver1.00:dir
+
+[subject]ＲＰＧパート関連:dir
+ [subject]ダメージ受けない＋敵一撃死化/実行/_:b_toggle,0x00,SPELST->SPE_k,offset
+ [subject]スキルポイント減らない/実行/_:toggle,0x455FDA,32C990,8A4E2E
+ [subject]ダメージ床でＨＰ減らない/実行/_:toggle,0x496E77,57E9A1000000,33F633C03BCE
+ [subject]シンボルエンカウンター回避/実行/_:b_toggle,0x00,SPELST->SPE_m,offset
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]お金/現在値/_:calc,0x4FD51C,0x00000000,0x05F5E0FF,unsigned
+ [subject]マナ/現在値/_:calc,0x4FD520,0x00000000,0x05F5E0FF,unsigned
+ [subject]仲間のステータス:dir
+  [repeat]SPELST->SPEREP1,0,13,1
+ [back]
+ [subject]スキルエディタ:dir
+  [repeat]SPELST->SPEREP2,0,13,1
+ [back]
+ [subject]アイテムエディタ:dir
+  [subject]全種99個所持/実行/_:toggle,0x4FD440,0x4FD51B-63
+  [subject]個別指定所持:dir
+   [subject]アイテム指定/_:list,0x4CF52C,SPELST->LST_d,0x00,0x01
+   [subject]_mem,0x4CF52C,4,list,<Nodata>,SPELST->LST_d,0x00,0x01'+'の個数/現在値/_:calc,_0x4FD440+([:0x4CF52C:]),0x00,0x63,unsigned
+  [back]
+ [back]
+[back]
+
+[subject]ＣＧモード関連:dir
+ [subject]他おまけ要素出現/実行/_:toggle,0x4E9829,01,00
+ [subject]ＣＧ閲覧ALL/実行/_:toggle,0x4E97F4,0x4E981D-FF,00
+ [subject]シーン回想ALL/実行/_:toggle,0x4E9820,FFFF,0000
+[back]
+
+[back]
+
+
+[subject]ver1.01／ver1.02:dir
+
+[subject]ＲＰＧパート関連:dir
+ [subject]ダメージ受けない＋敵一撃死化/実行/_:b_toggle,0x00,SPELST->SPE_p,offset
+ [subject]スキルポイント減らない/実行/_:toggle,0x462C45,32C990,8A4D2E
+ [subject]ダメージ床無効化/実行/_:toggle,0x49C0F2,EB,74
+ [subject]シンボルエンカウンター回避/実行/_:b_toggle,0x00,SPELST->SPE_r,offset
+ [subject]移動速度３倍化/実行/_:b_toggle,0x00,SPELST->SPE_s,offset
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]お金/現在値/_:calc,0x4FF62C,0x00000000,0x05F5E0FF,unsigned
+ [subject]マナ/現在値/_:calc,0x4FF630,0x00000000,0x05F5E0FF,unsigned
+ [subject]仲間のステータス:dir
+  [repeat]SPELST->SPEREP1b,0,13,1
+ [back]
+ [subject]スキルエディタ:dir
+  [repeat]SPELST->SPEREP2b,0,13,1
+ [back]
+ [subject]アイテムエディタ:dir
+  [subject]全種99個所持/実行/_:toggle,0x4FF550,0x4FF62B-63
+  [subject]個別指定所持:dir
+   [subject]アイテム指定/_:list,0x4D1C7C,SPELST->LST_d,0x00,0x01
+   [subject]_mem,0x4D1C7C,4,list,<Nodata>,SPELST->LST_d,0x00,0x01'+'の個数/現在値/_:calc,_0x4FF550+([:0x4D1C7C:]),0x00,0x63,unsigned
+  [back]
+ [back]
+[back]
+
+[subject]ＣＧモード関連:dir
+ [subject]他おまけ要素出現/実行/_:toggle,0x4EB8A9,01,00
+ [subject]ＣＧ閲覧ALL/実行/_:toggle,0x4EB874,0x4EB89D-FF,00
+ [subject]シーン回想ALL/実行/_:toggle,0x4EB8A0,FFFF,0000
+[back]
+
+[back]
+
+
+[subject]ver1.03:dir
+
+[subject]ＲＰＧパート関連:dir
+ [subject]ダメージ受けない＋敵一撃死化/実行/_:b_toggle,0x30,SPELST->SPE_p,offset
+ [subject]スキルポイント減らない/実行/_:b_toggle,0x00,SPELST->SPE_v,offset
+ [subject]ダメージ床無効化/実行/_:toggle,0x49C122,EB,74
+ [subject]シンボルエンカウンター回避/実行/_:b_toggle,0x30,SPELST->SPE_r,offset
+ [subject]移動速度３倍化/実行/_:b_toggle,0x30,SPELST->SPE_s,offset
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]お金/現在値/_:calc,0x4FF62C,0x00000000,0x05F5E0FF,unsigned
+ [subject]マナ/現在値/_:calc,0x4FF630,0x00000000,0x05F5E0FF,unsigned
+ [subject]仲間のステータス:dir
+  [repeat]SPELST->SPEREP1b,0,13,1
+ [back]
+ [subject]スキルエディタ:dir
+  [repeat]SPELST->SPEREP2b,0,13,1
+ [back]
+ [subject]アイテムエディタ:dir
+  [subject]全種99個所持/実行/_:toggle,0x4FF550,0x4FF62B-63
+  [subject]個別指定所持:dir
+   [subject]アイテム指定/_:list,0x4D1CAC,SPELST->LST_d,0x00,0x01
+   [subject]_mem,0x4D1CAC,4,list,<Nodata>,SPELST->LST_d,0x00,0x01'+'の個数/現在値/_:calc,_0x4FF550+([:0x4D1CAC:]),0x00,0x63,unsigned
+  [back]
+ [back]
+[back]
+
+[subject]ＣＧモード関連:dir
+ [subject]他おまけ要素出現/実行/_:toggle,0x4EB8A9,01,00
+ [subject]ＣＧ閲覧ALL/実行/_:toggle,0x4EB874,0x4EB89D-FF,00
+ [subject]シーン回想ALL/実行/_:toggle,0x4EB8A0,FFFF,0000
+[back]
+
+[back]
+
+[subject]ver1.05:dir
+
+[subject]ＲＰＧパート関連:dir
+ [subject]ダメージ受けない＋敵一撃死化/実行/_:b_toggle,0x00,SPELST->SPE_2p,offset
+ [subject]スキルポイント減らない/実行/_:b_toggle,0x00,SPELST->SPE_2v,offset
+ [subject]ダメージ床無効化/実行/_:toggle,0x49C082,EB,74
+ [subject]シンボルエンカウンター回避/実行/_:b_toggle,0x00,SPELST->SPE_2r,offset
+ [subject]移動速度３倍化/実行/_:b_toggle,0x00,SPELST->SPE_2s,offset
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]お金/現在値/_:calc,0x4FF62C,0x00000000,0x05F5E0FF,unsigned
+ [subject]マナ/現在値/_:calc,0x4FF630,0x00000000,0x05F5E0FF,unsigned
+ [subject]仲間のステータス:dir
+  [repeat]SPELST->SPEREP1b,0,13,1
+ [back]
+ [subject]スキルエディタ:dir
+  [repeat]SPELST->SPEREP2b,0,13,1
+ [back]
+ [subject]アイテムエディタ:dir
+  [subject]全種99個所持/実行/_:toggle,0x4FF550,0x4FF62B-63
+  [subject]個別指定所持:dir
+   [subject]アイテム指定/_:list,0x4D1BAC,SPELST->LST_d,0x00,0x01
+   [subject]_mem,0x4D1BAC,4,list,<Nodata>,SPELST->LST_d,0x00,0x01'+'の個数/現在値/_:calc,_0x4FF550+([:0x4D1BAC:]),0x00,0x63,unsigned
+  [back]
+ [back]
+[back]
+
+[subject]ＣＧモード関連:dir
+ [subject]他おまけ要素出現/実行/_:toggle,0x4EB8A9,01,00
+ [subject]ＣＧ閲覧ALL/実行/_:toggle,0x4EB874,0x4EB89D-FF,00
+ [subject]シーン回想ALL/実行/_:toggle,0x4EB8A0,FFFF,0000
+[back]
+
+[back]
+
+[subject]ver1.06～1.08:dir
+
+[subject]ＲＰＧパート関連:dir
+ [subject]ダメージ受けない＋敵一撃死化/実行/_:b_toggle,0x0140,SPELST->SPE_2p,offset
+ [subject]スキルポイント減らない/実行/_:b_toggle,0x00,SPELST->SPE_3v,offset
+ [subject]ダメージ床無効化/実行/_:toggle,0x49C1F2,EB,74
+ [subject]シンボルエンカウンター回避/実行/_:b_toggle,0x00,SPELST->SPE_3r,offset
+ [subject]移動速度３倍化/実行/_:b_toggle,0x0190,SPELST->SPE_2s,offset
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]お金/現在値/_:calc,0x4FF62C,0x00000000,0x05F5E0FF,unsigned
+ [subject]マナ/現在値/_:calc,0x4FF630,0x00000000,0x05F5E0FF,unsigned
+ [subject]仲間のステータス:dir
+  [repeat]SPELST->SPEREP1b,0,13,1
+ [back]
+ [subject]スキルエディタ:dir
+  [repeat]SPELST->SPEREP2b,0,13,1
+ [back]
+ [subject]アイテムエディタ:dir
+  [subject]全種99個所持/実行/_:toggle,0x4FF550,0x4FF62B-63
+  [subject]個別指定所持:dir
+   [subject]アイテム指定/_:list,0x4D1D1C,SPELST->LST_d,0x00,0x01
+   [subject]_mem,0x4D1D1C,4,list,<Nodata>,SPELST->LST_d,0x00,0x01'+'の個数/現在値/_:calc,_0x4FF550+([:0x4D1D1C:]),0x00,0x63,unsigned
+  [back]
+ [back]
+[back]
+
+[subject]ＣＧモード関連:dir
+ [subject]他おまけ要素出現/実行/_:toggle,0x4EB8A9,01,00
+ [subject]ＣＧ閲覧ALL/実行/_:toggle,0x4EB874,0x4EB89D-FF,00
+ [subject]シーン回想ALL/実行/_:toggle,0x4EB8A0,FFFF,0000
+[back]
+
+[back]
+
+[subject]ver1.10:dir
+
+[subject]ＲＰＧパート関連:dir
+ [subject]ダメージ受けない＋敵一撃死化/実行/_:b_toggle,0x00,SPELST->SPE_3p,offset
+ [subject]スキルポイント減らない/実行/_:b_toggle,0x00,SPELST->SPE_4v,offset
+ [subject]ダメージ床無効化/実行/_:toggle,0x49C212,EB,74
+ [subject]シンボルエンカウンター回避/実行/_:b_toggle,0x00,SPELST->SPE_4r,offset
+ [subject]移動速度３倍化/実行/_:b_toggle,0x00,SPELST->SPE_3s,offset
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]お金/現在値/_:calc,0x4FF5EC,0x00000000,0x05F5E0FF,unsigned
+ [subject]マナ/現在値/_:calc,0x4FF5F0,0x00000000,0x05F5E0FF,unsigned
+ [subject]仲間のステータス:dir
+  [repeat]SPELST->SPEREP1c,0,13,1
+ [back]
+ [subject]スキルエディタ:dir
+  [repeat]SPELST->SPEREP2c,0,13,1
+ [back]
+ [subject]アイテムエディタ:dir
+  [subject]全種99個所持/実行/_:toggle,0x4FF510,0x4FF5EB-63
+  [subject]個別指定所持:dir
+   [subject]アイテム指定/_:list,0x4D1E4C,SPELST->LST_d,0x00,0x01
+   [subject]_mem,0x4D1E4C,4,list,<Nodata>,SPELST->LST_d,0x00,0x01'+'の個数/現在値/_:calc,_0x4FF510+([:0x4D1E4C:]),0x00,0x63,unsigned
+  [back]
+ [back]
+[back]
+
+[subject]ＣＧモード関連:dir
+ [subject]他おまけ要素出現/実行/_:toggle,0x4EB8A9,01,00
+ [subject]ＣＧ閲覧ALL/実行/_:toggle,0x4EB874,0x4EB89D-FF,00
+ [subject]シーン回想ALL/実行/_:toggle,0x4EB8A0,FFFF,0000
+[back]
+
+[back]
+
+[/group]
+
+
+[group]SPE_k
+0x45E0DD,0890????0D7E,4838????017D
+0x45E0F2,EB00,7E03
+[/group]
+
+
+[group]SPE_p
+0x461AF4,C20FB74804EB0190????0D7E,809C0000008B4838????017D
+0x461B0B,EB00,7E03
+[/group]
+
+
+[group]SPE_2p
+0x4618C4,C20FB74804EB0190????0D7E,809C0000008B4838????017D
+0x4618DB,EB00,7E03
+[/group]
+
+
+[group]SPE_3p
+0x461944,C20FB74804EB0190????0D7E,809C0000008B4838????017D
+0x46195B,EB00,7E03
+[/group]
+
+
+[group]SPE_m
+0x4791AB,EB,74
+0x498F99,EB0490909090,0F844C010000
+0x498FAE,EB0490909090,0F8437010000
+0x498FD1,E95A65030090,8BD885DB7518
+0x4CF530,8BD8,0000
+0x4CF532,833D40C54F0007,00000000000000
+0x4CF539,7502,0000
+0x4CF53B,33DB,0000
+0x4CF53D,85DB,0000
+0x4CF53F,0F85AA9AFCFF,000000000000
+0x4CF545,E98D9AFCFF,0000000000
+[/group]
+
+
+[group]SPE_r
+0x47B3DB,EB,74
+0x49B6C9,EB0490909090,0F844C010000
+0x49B6DE,EB0490909090,0F8437010000
+0x49B72A,E951650300,83F80B753C
+0x4D1C80,83F80B,000000
+0x4D1C83,0F85E29AFCFF,000000000000
+0x4D1C89,E9799AFCFF90,0000000000
+[/group]
+
+
+[group]SPE_2r
+0x47B24B,EB,74
+0x49B659,EB0490909090,0F844C010000
+0x49B66E,EB0490909090,0F8437010000
+0x49B6BA,E901650300,83F80B753C
+0x4D1BC0,83F80B,000000
+0x4D1BC3,0F85329BFCFF,000000000000
+0x4D1BC9,E9C99AFCFF90,0000000000 
+[/group]
+
+
+[group]SPE_3r
+0x47B3DB,EB,74
+0x49B7C9,EB0490909090,0F844C010000
+0x49B7DE,EB0490909090,0F8437010000
+0x49B82A,E9F1640300,83F80B753C
+0x4D1D20,83F80B,000000
+0x4D1D23,0F85429BFCFF,000000000000
+0x4D1D29,E9D99AFCFF90,0000000000 
+[/group]
+
+
+[group]SPE_4r
+0x47B33B,EB,74
+0x49B7E9,EB0490909090,0F844C010000
+0x49B7FE,EB0490909090,0F8437010000
+0x49B84A,E911660300,83F80B753C
+0x4D1E60,83F80B,000000
+0x4D1E63,0F85229AFCFF,000000000000 49b827
+0x4D1E69,E9B999FCFF90,0000000000
+[/group]
+
+
+[group]SPE_s
+0x4800D2,EB,74
+0x4800E6,02,06
+[/group]
+
+
+[group]SPE_2s
+0x47FF42,EB,74
+0x47FF56,02,06
+[/group]
+
+
+[group]SPE_3s
+0x480032,EB,74
+0x480046,02,06
+[/group]
+
+
+[group]SPE_v
+0x41FE4C,32C090,8A402E
+0x45692A,32C990,8A4E2E
+0x45C9A3,32C990,8A4D2E
+0x462C75,32C990,8A4D2E
+0x462D30,EB00,0001
+0x4737E0,32C990,8A4B2E
+[/group]
+
+
+[group]SPE_2v
+0x41FCAC,32C090,8A402E
+0x4569EA,32C990,8A4E2E
+0x45C733,32C990,8A4D2E
+0x462A15,32C990,8A4D2E
+0x462AD0,EB00,0001
+0x473610,32C990,8A4B2E
+[/group]
+
+
+[group]SPE_3v
+0x41FDEC,32C090,8A402E
+0x456B1A,32C990,8A4E2E
+0x45C893,32C990,8A4D2E
+0x462B55,32C990,8A4D2E
+0x462C10,EB00,0001
+0x4737D0,32C990,8A4B2E
+[/group]
+
+
+[group]SPE_4v
+0x41FCCC,32C090,8A402E
+0x456A6A,32C990,8A4F2E
+0x45C7C3,32C990,8A4D2E
+0x462A95,32C990,8A4D2E
+0x462B50,EB00,0001
+0x473710,32C990,8A4B2E
+[/group]
+
+
+[group]SPE_PR
+[subject]_mem,0x07,20,00,<Nodata>:dir
+ [subject]一括強化/実行/_:b_toggle,0x00,SPELST->SPE_a,offset
+ [subject]属性/_:list,0x27,SPELST->LST_c,0x01,0x01
+ [subject]ＬＶ/現在値/_:calc,0x28,0x01,0x63,unsigned
+ [subject]必要マナ/現在値/_:calc,0x2C,0x000000,0x01869F,unsigned
+ [subject]レベルボーナス/現在値/_:calc,0x30,0x000000,0x98967F,unsigned
+ [subject]実戦値/現在値/_:calc,0x34,0x000000,0x98967F,unsigned
+ [subject]基礎パラメータ:dir
+  [subject]現在ＨＰ/現在値/固定:calc,0x38,0x000000,0x01869F,unsigned
+  [subject]最大ＨＰ/現在値/_:calc,0x3C,0x000000,0x01869F,unsigned
+  [subject]移動力/現在値/_:calc,0x40,0x01,0x19,unsigned
+  [repeat]SPELST->SPEREP11,0,4,1
+ [back]
+ [subject]属性パラメータ:dir
+  [repeat]SPELST->SPEREP12,0,5,1
+ [back]
+ [subject]スキルポイント:dir
+  [repeat]SPELST->SPEREP13,0,12,1
+ [back]
+[back]
+[/group]
+
+
+[group]SPEREP1
+[replace]_0x4FC544+0x[! 0x011C*$Val !],SPELST->SPE_PR
+[/group]
+
+
+[group]SPEREP1b
+[replace]_0x4FE654+0x[! 0x011C*$Val !],SPELST->SPE_PR
+[/group]
+
+
+[group]SPEREP1c
+[replace]_0x4FE614+0x[! 0x011C*$Val !],SPELST->SPE_PR
+[/group]
+
+
+[group]SPEREP2
+[subject]_mem,_0x4FC54B+0x[! 0x011C*$Val !],20,00,<Nodata>:dir
+[replace]_0x4FC5D4+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_2PR
+[replace]_0x4FC5D8+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_2PR
+[replace]_0x4FC5DC+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_2PR
+[replace]_0x4FC5E0+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_2PR
+[replace]_0x4FC5E4+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_2PR
+[replace]_0x4FC5E8+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_2PR
+[replace]_0x4FC5EC+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_2PR
+[replace]_0x4FC5F0+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_2PR
+[replace]_0x4FC5F4+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_2PR
+[replace]_0x4FC5F8+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_2PR
+[replace]_0x4FC5FC+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_2PR
+[replace]_0x4FC600+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_2PR
+[replace]_0x4FC604+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_2PR
+[replace]_0x4FC608+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_2PR
+[replace]_0x4FC60C+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_2PR
+[replace]_0x4FC610+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_2PR
+[back]
+[/group]
+
+
+[group]SPEREP2b
+[subject]_mem,_0x4FE65B+0x[! 0x011C*$Val !],20,00,<Nodata>:dir
+[replace]_0x4FE6E4+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE6E8+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE6EC+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE6F0+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE6F4+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE6F8+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE6FC+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE700+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE704+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE708+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE70C+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE710+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE714+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE718+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE71C+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE720+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE724+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE728+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE72C+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE730+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[back]
+[/group]
+
+
+[group]SPEREP2c
+[subject]_mem,_0x4FE61B+0x[! 0x011C*$Val !],20,00,<Nodata>:dir
+[replace]_0x4FE6A4+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE6A8+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE6AC+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE6B0+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE6B4+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE6B8+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE6BC+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE6C0+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE6C4+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE6C8+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE6CC+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE6D0+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE6D4+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE6D8+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE6DC+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE6E0+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE6E4+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE6E8+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE6EC+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[replace]_0x4FE6F0+0x[! 0x011C*$Val !]=>temp;[:$temp:],SPELST->SPE_3PR
+[back]
+[/group]
+
+
+[group]SPEREP11
+[subject][! @SPELST->LST_1b,$Val !]/現在値/_:calc,0x[! 0x44+0x04*$Val !],0x0000,0x0200,unsigned
+[/group]
+
+
+[group]SPEREP12
+[subject][! @SPELST->LST_2b,$Val !]/現在値/_:calc,0x[! 0x54+0x04*$Val !],0x00,0x64,unsigned
+[/group]
+
+
+[group]SPEREP13
+[subject][! @SPELST->LST_3b,$Val !]/現在値/_:calc,0x[! 0x68+0x01*$Val !],0x00,0x63,unsigned
+[/group]
+
+
+[group]SPEREP14
+[replace]0x[! 0x90+0x04*$Val !],SPELST->SPE_2PR
+[/group]
+
+
+[group]SPE_2PR
+[subject]_mem,0x00,20,00,<Nodata>:dir
+ [subject]一括強化/実行/_:b_toggle,0x00,SPELST->SPE_b,offset
+ [subject]LV/現在値/_:calc,0x2D,0x01,0x06,unsigned
+ [subject]消費SP/現在値/_:calc,0x2E,0x00,0x63,unsigned
+ [e_with],0x01,0x63,unsigned
+  [subject]熟練度/現在値/_:calc,0x21
+  [subject]射程/現在値/_:calc,0x26
+  [subject]範囲/現在値/_:calc,0x28
+  [subject]段数/現在値/_:calc,0x29
+ [/e_with]
+ [subject]反撃/現在値/_:calc,0x2B,0x00,0x64,unsigned
+ [subject]時間/現在値/_:calc,0x2C,0x01,0x09,unsigned
+ [subject]対ＨＰ効果/現在値/_:calc,0x58,0x000000,0x01869F,unsigned
+ [subject]スキルボーナス/現在値/_:calc,0x60,0x000000,0x0F423F,unsigned
+ [subject]全対能力効果MAX/実行/_:toggle,0x35,64006400640064006400
+ [subject]全対属性効果MAX/実行/_:toggle,0x41,9C9C9C9C9C
+ [subject]全攻撃耐性MAX/実行/_:toggle,0x48,646464646464
+ [subject]全魔法耐性MAX/実行/_:toggle,0x4F,646464646464
+[back]
+[/group]
+
+
+[group]SPE_3PR
+[subject]_mem,0x00,20,00,<Nodata>:dir
+ [subject]一括強化/実行/_:b_toggle,0x00,SPELST->SPE_2b,offset
+ [subject]LV/現在値/_:calc,0x2D,0x01,0x06,unsigned
+ [subject]消費SP/現在値/_:calc,0x2E,0x00,0x63,unsigned
+ [e_with],0x01,0x63,unsigned
+  [subject]熟練度/現在値/_:calc,0x21
+  [subject]射程/現在値/_:calc,0x26
+  [subject]範囲/現在値/_:calc,0x28
+  [subject]段数/現在値/_:calc,0x29
+ [/e_with]
+ [subject]反撃/現在値/_:calc,0x2B,0x00,0x64,unsigned
+ [subject]時間/現在値/_:calc,0x2C,0x01,0x09,unsigned
+ [subject]対ＨＰ効果/現在値/_:calc,0x58,-99999,99999,unsigned
+ [subject]スキルボーナス/現在値/_:calc,0x60,0x000000,0x0F423F,unsigned
+ [subject]全対能力効果MAX/実行/_:toggle,0x36,64006400640064006400
+ [subject]全対属性効果MAX/実行/_:toggle,0x41,9C9C9C9C9C
+ [subject]全攻撃耐性MAX/実行/_:toggle,0x48,646464646464
+ [subject]全魔法耐性MAX/実行/_:toggle,0x4F,646464646464
+[back]
+[/group]
+
+
+[group]SPE_a
+0x30,7F969800
+0x34,3F420F00
+0x38,9F8601009F860100
+0x40,19000000
+0x44,0x53-00020000
+0x54,0x67-64000000
+0x68,0x73-63
+[/group]
+
+
+[group]SPE_b
+0x21,63
+0x2E,00
+0x26,14
+0x28,08
+0x29,0A
+0x2C,01
+0x58,0F27
+0x60,3F420F
+0x36,64006400640064006400
+0x41,9C9C9C9C9C
+0x48,646464646464
+0x4F,646464646464
+[/group]
+
+
+[group]SPE_2b
+0x21,63
+0x2E,00
+0x26,63
+0x28,63
+0x29,0A
+0x2C,01
+0x58,0F27
+0x60,3F420F
+0x36,64006400640064006400
+0x41,9C9C9C9C9C
+0x48,646464646464
+0x4F,646464646464
+[/group]
+
+
+[group]LST_1b
+攻撃力
+防御力
+魔法力
+抵抗力
+[/group]
+
+
+[group]LST_2b
+青属性
+赤属性
+緑属性
+黒属性
+白属性
+[/group]
+
+
+[group]LST_3b
+LV1
+LV2
+LV3
+LV4
+LV5
+LV6
+LV1MAX
+LV2MAX
+LV3MAX
+LV4MAX
+LV5MAX
+LV6MAX
+[/group]
+
+
+[group]LST_c
+青
+赤
+緑
+黒
+白
+金
+[/group]
+
+
+[group]LST_d
+携帯Ｅジャンプ
+乾燥ネネの実
+ネネの実
+ノナミーの実
+ギニニの実
+フラルセの実
+ケネクの実
+ヨフアル
+ヨーティアの秘薬
+イオの薬
+リクェム
+生命石のかけら
+生命石
+霊水(小)
+霊水(大)
+マナ結晶のかけら
+マナ結晶
+妖精の粉
+お守り
+身代わりの護符
+攻め手の教書
+防ぎ手の教書
+操魔の教書
+助勢の教書
+運足の教書
+満力の教書
+不動の教書
+空間の教書
+光線石(小)
+爆発石(小)
+光線石(大)
+爆発石(大)
+青粉(小袋)
+赤粉(小袋)
+緑粉(小袋)
+黒粉(小袋)
+白粉(小袋)
+青粉(大袋)
+赤粉(大袋)
+緑粉(大袋)
+黒粉(大袋)
+白粉(大袋)
+縞虎の牙
+縞虎の毛皮
+縞虎の瞳
+縞虎の爪
+蒼玉
+紅玉
+碧玉
+月玉
+輝玉
+青トュミ
+赤トュミ
+緑トュミ
+黒トュミ
+白トュミ
+包丁魚の鱗
+鉈トカゲの皮
+槍猿の毛皮
+黄金虫の甲殻
+シトラのかけら
+丘くじらの苔
+火ねずみの尻尾
+スライムの体液
+竜の鱗
+ネンチャク糸
+水晶のかけら
+天使の羽根
+黒い翼
+呪いのシャレコウベ
+樹皮の髪飾り
+樹皮の篭手
+樹皮の帷子
+霊樹の玉
+霊樹の護符
+獣牙の髪飾り
+獣皮の篭手
+獣皮の帷子
+神獣の玉
+神獣の護符
+竜骨の髪飾り
+竜骨の篭手
+竜皮の帷子
+竜玉
+竜の護符
+水化粧
+火化粧
+葉化粧
+影化粧
+雪化粧
+氷雪紋
+火炎紋
+新緑紋
+月影紋
+白光紋
+蒼玉の指輪
+紅玉の指輪
+緑柱石の指輪
+黒真珠の指輪
+水晶の指輪
+蒼玉の腕輪
+紅玉の腕輪
+緑柱石の腕輪
+黒真珠の腕輪
+水晶の腕輪
+蒼玉の首輪
+紅玉の首輪
+緑柱石の首輪
+黒真珠の首輪
+水晶の首輪
+蒼玉の耳飾り
+紅玉の耳飾り
+緑柱石の耳飾り
+黒真珠の耳飾り
+水晶の耳飾り
+蒼玉の髪飾り
+紅玉の髪飾り
+緑柱石の髪飾り
+黒真珠の髪飾り
+水晶の髪飾り
+蒼玉の首飾り
+紅玉の首飾り
+緑柱石の首飾り
+黒真珠の首飾り
+水晶の首飾り
+金剛石の髪飾り
+金剛石の指輪
+金剛石の腕輪
+金剛石の首輪
+金剛石の帷子
+瑠璃の髪飾り
+瑠璃の耳飾り
+瑠璃の首飾り
+白金の鏡
+星の欠片
+ハチマキ
+兎の角
+ラキオス細工
+愛の前掛け
+魔除けの石
+渋い湯呑み
+ハリセン
+ジュズ
+ハイ・ペリア眼鏡
+小振りの神剣
+細身の神剣
+長大な神剣
+双身の神剣
+長柄の神剣
+戦士の証
+騎士の証
+魔人の証
+鉄人の証
+蒼天の宝珠
+狂炎の宝珠
+深縁の宝珠
+奈落の宝珠
+裁きの宝珠
+天使の羽根飾り
+妖精の羽衣
+呪符
+呪印
+巨人の腕輪
+霊銀の篭手
+孔雀石の腕輪
+亡者の髪飾り
+破壊の耳飾り
+創生の髪飾り
+部族の髪飾り
+部族の篭手
+部族の帷子
+部族の玉
+部族の護符
+汗臭い帯
+石の靴
+ナホリたん
+ナポリたん
+マナ結晶の髪飾り
+マナ結晶の耳飾り
+マナ結晶の首飾り
+マナ結晶の指輪
+古びた篭手
+古びた帷子
+古びた首飾り
+謎の首飾り
+火龍の篭手
+火龍の帷子
+土龍の篭手
+土龍の帷子
+獅子龍の篭手
+獅子龍の帷子
+雷獣の護符
+風獣の護符
+嵐獣の護符
+神獣の免罪符
+狂想の耳飾り
+妖艶の髪飾り
+相克の篭手
+インフィニティコア
+アルティメットコア
+虹色の髪飾り
+氷輪の帯
+炎輪の帯
+緑輪の帯
+影輪の帯
+光輪の帯
+神速の帯
+霊妙の護符
+霊妙の宝玉
+知恵の髪飾り
+騎士の首飾り
+混沌の耳飾り
+烙印の護符
+封魔紋
+世界のかけら
+防毒面
+封炎の護符
+封炎紋
+封水の護符
+封水紋
+[/group]
