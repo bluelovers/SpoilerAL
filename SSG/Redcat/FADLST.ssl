@@ -1,0 +1,134 @@
+[group]FAD_SSG
+[note]wordwrap
+
+地図見ると目標先に移動：
+任務決定後、地図画面を表示すると瞬間移動
+[/note]
+
+[subject]ＡＰ常時最大化/実効/_:b_toggle,0x00,FADLST->FAD_etap,offset
+[subject]地図見ると目標先に移動/実効/_:b_toggle,0x00,FADLST->FAD_a,offset
+[subject]戦闘中必殺技ゲージ最大維持/実効/_:b_toggle,0x00,FADLST->FAD_spet,offset
+[subject]妖精→勇者相性最大化/実効/_:toggle,0x556E7D,0x556EB3-05
+[subject]ストレス全解消/実行/固定:b_toggle,0x00,FADLST->FAD_st,offset
+[subject]ターン数/現在値/_:calc,0x607BB4,0x01,0xFF,unsigned
+
+[subject]主人公ステータス:dir
+ [subject]ＬＶ/現在値/_:calc,0x602ED1,0x01,0x63,unsigned
+ [subject]信仰心/現在値/_:calc,0x602ED2,0x01,0xFF,unsigned
+ [subject]知力/現在値/_:calc,0x602ED3,0x01,0xFF,unsigned
+ [subject]素早さ/現在値/_:calc,0x602ED4,0x01,0xFF,unsigned
+[size]2
+ [subject]ＡＰ/現在値/固定:calc,0x602EC8,0x0000,0x03E7,unsigned
+[/size]
+[back]
+[subject]妖精ステータス:dir
+ [repeat]FADLST->FADREP1,0,2,1
+[back]
+[subject]勇者ステータス:dir
+ [repeat]FADLST->FADREP2,0,6,1
+[back]
+
+[/group]
+
+
+[group]FADREP1
+[subject]_mem,_0x[! 0x608369+$Val !]=>temp;([\:$temp\:1]*0x10+0x53E7A0)*([\:0x608368\:1]>=0x[! $Val+0x01 !]),20,00,<NoData>:dir
+ [replace]_0x[! 0x608369+$Val !]=>temp;(([:$temp:1]-0x0D)*0x2C+0x6006F0)*([:0x608368:1]>=0x[! $Val+0x01 !]),FADLST->FAD_01PR
+[back]
+[/group]
+
+
+[group]FADREP2
+[subject]_mem,_0x[! 0x60836D+$Val !]=>temp;([\:$temp\:1]*0x10+0x53E7A0)*([\:0x60836C\:1]>=0x[! $Val+0x01 !]),20,00,<NoData>:dir
+ [replace]_0x[! 0x60836D+$Val !]=>temp;([:$temp:1]*0x0164+0x6007D8)*([:0x60836C:1]>=0x[! $Val+0x01 !]),FADLST->FAD_02PR
+[back]
+[/group]
+
+
+[group]FAD_01PR
+[subject]ＬＶ/現在値/_:calc,0x10,0x01,0x63,unsigned
+[size]4
+ [subject]Ｅｘｐ/現在値/_:calc,0x04,0x000000,0x01D9C7,unsigned
+[/size]
+[size]2
+ [subject]体力/現在値/固定:calc,0x00,0x0000,0x03E7,unsigned
+ [subject]最大体力/現在値/_:calc,0x02,0x0000,0x03E7,unsigned
+[/size]
+[subject]攻撃力/現在値/_:calc,0x12,0x00,0xFF,unsigned
+[subject]防御力/現在値/_:calc,0x11,0x00,0xFF,unsigned
+[subject]素早さ/現在値/_:calc,0x13,0x00,0xFF,unsigned
+[subject]勇者発見/現在値/_:calc,0x16,0x00,0xFF,unsigned
+[subject]敵の探索/現在値/_:calc,0x15,0x00,0xFF,unsigned
+[subject]ストレス/現在値/_:calc,0x17,0x00,0xFF,unsigned
+[subject]ALLMAX/実行/_:b_toggle,0x00,FADLST->FAD_PR01
+[/group]
+
+
+[group]FAD_PR01
+0x00,E703E703C7D90100
+0x10,63FFFFFF??636300
+[/group]
+
+
+[group]FAD_02PR
+[subject]ＬＶ/現在値/_:calc,0x0B,0x01,0x63,unsigned
+[size]4
+ [subject]Ｅｘｐ/現在値/_:calc,0x14,0x000000,0x01D9C7,unsigned
+[/size]
+[size]2
+ [subject]体力/現在値/固定:calc,0x00,0x0000,0x03E7,unsigned
+ [subject]最大体力/現在値/_:calc,0x02,0x0000,0x03E7,unsigned
+[/size]
+[subject]正義感/現在値/_:calc,0x04,0x00,0xFF,unsigned
+[subject]信頼度/現在値/_:calc,0x013C,0x00,0xFF,unsigned
+[subject]ストレス/現在値/_:calc,0x06,0x00,0xFF,unsigned
+[subject]攻撃力/現在値/_:calc,0x0D,0x00,0xFF,unsigned
+[subject]防御力/現在値/_:calc,0x0C,0x00,0xFF,unsigned
+[subject]素早さ/現在値/_:calc,0x0E,0x00,0xFF,unsigned
+[subject]ALLMAX/実行/_:b_toggle,0x00,FADLST->FAD_PR02
+[subject]Ｘ座標/現在値/_:calc,0x0152,0x05,0x4A,unsigned
+[subject]Ｙ座標/現在値/_:calc,0x0154,0x04,0x37,unsigned
+[/group]
+
+
+[group]FAD_st
+0x600707,0x60078C-00*+012B
+0x6007DE,0x60188F-00*+020163
+[/group]
+
+
+[group]FAD_PR02
+0x00,E703E703FF000000
+0x0B,63FFFFFF
+0x14,C7D90100
+0x013C,FF00
+[/group]
+
+
+[group]FAD_a
+0x443308,E98B8E0A009090,668B8A2A096000
+0x4EC198,8B8832096000,000000000000
+0x4EC19E,89882A096000,000000000000
+0x4EC1A4,898836096000,000000000000
+0x4EC1AA,8B8A32096000,000000000000
+0x4EC1B0,898A2A096000,000000000000
+0x4EC1B6,898A36096000,000000000000
+0x4EC1BC,E94E71F5FF,0000000000
+[/group]
+
+
+[group]FAD_etap
+0x4332F1,B8E703000066A3C82E6000C3,C39090909090909090909090
+0x41828D,BAE703909090,8B151C274F00
+0x41829D,89151C,3B9730
+0x4182AF,EB,7D
+0x40580E,E8DEDA02009090,0FBF05C82E6000
+[/group]
+
+
+[group]FAD_spet
+0x4EC1C8,C74622FF00FF00,00000000000000
+0x4EC1CF,66C74626FF00,000000000000
+0x4EC1D5,668B4628668B4E22C3,0000000000000000
+0x41AADA,E8E9160D00909090,668B4628668B4E22
+[/group]
