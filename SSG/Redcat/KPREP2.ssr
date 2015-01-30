@@ -1,0 +1,1 @@
+[subject][! @KPLST->LST_b,$Val !]/ŒÅ’è:d_list,0x[! 0x14+$Val*4 !],KPLST->LST_c,0x00,0x3C,KPLST->LST_d,offset
