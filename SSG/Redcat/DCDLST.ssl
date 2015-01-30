@@ -1,0 +1,44 @@
+[group]DCD_SSG
+[note]wordwrap
+コンシューマ版を超える移植作ってのは久しぶりに見た気がする。もっとも、ＰＳ版のユーザーはほとんど購入してるだろうけどw
+[/note]
+
+[subject]パラメータ関連:dir
+ [subject]好感度確認調整:dir
+	[repeat]DCDLST->DCDREP1,0,13,1
+[root]
+
+[subject]ＣＧモード関連:dir
+[subject]全項目出現/実行/_:toggle,0x454D48,0x454D82-01,00
+[subject]ＣＧ鑑賞:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x454DAC,0x454F5D-01
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x454DAC,0x454F5D-00
+[back]
+[subject]シナリオ回想:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x454FAC,0x455320-01
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x454FAC,0x455320-00
+[root]
+
+[/group]
+
+
+[group]DCDREP1
+[subject][! @DCDLST->LST_a,$Val !]/現在値/_:calc,_0x9D91F4+0x[! $Val !],0x00,0x63,unsigned
+[/group]
+
+
+[group]LST_a
+朝倉音夢
+芳野さくら
+白河ことり
+天枷美春
+水越萌
+水越眞子
+鷺澤頼子
+月城アリス
+彩珠ななこ
+胡ノ宮環
+紫和泉子
+工藤叶
+霧羽香澄
+[/group]
