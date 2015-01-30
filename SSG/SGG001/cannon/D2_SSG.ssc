@@ -1,0 +1,18 @@
+[subject]現在Life	:calc,0x31,0,999
+[subject]現在Mana	:calc,0x41,0,999
+[subject]現在Stamina	:calc,0x51,0,999
+[subject]GOLD		:calc,0x70,0,9999999
+[subject]EXP.		:calc,0x68,0,999999999
+[subject]SkillPolnt	:calc,0x28,0,99
+[subject]StatusPoint	:calc,0x20,0,99
+
+[subject]基本ステータス	:dir
+	[subject]最大Life	:calc,0x39,0,999
+	[subject]最大Mana	:calc,0x49,0,999
+	[subject]最大Stamina	:calc,0x59,0,999
+	[subject]Strength	:calc,0x00,0,999
+	[subject]Dexterity	:calc,0x10,0,999
+	[subject]Vitality	:calc,0x18,0,999
+	[subject]Energy		:calc,0x08,0,999
+	[back]
+[back]
