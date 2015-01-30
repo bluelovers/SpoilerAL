@@ -1,0 +1,42 @@
+[group]WD_MA
+[note]wordwrap
+…色々と薄っぺらい(^^;
+
+以下、少々補足です。
+
+スキップカスタム化：
+選択肢表示時に発生する文章スキップ解除処理をキャンセル。お好みで。
+
+全シナリオ出現：
+タイトル画面で機能を実行した後、最初からはじめるとわかりやすいかも。
+[/note]
+
+[subject]環境関連:dir
+	[subject]文章スキップカスタム化/実行	/_:toggle,0x41F978,EB089090909090909090,C7056835460000000000
+	[subject]おまけ的クリックＳＥ変更/実行/_:toggle,0x454F64,36,31
+[/group]
+
+
+[group]WD_PR
+[e_with],0x00,0x09,unsigned
+[subject]千彰好感度/現在値/_:calc,0x461CBC
+[subject]恵好感度/現在値/_:calc,0x461CBC
+[subject]詩織信頼度/現在値/_:calc,0x461CBE
+[/e_with]
+[/group]
+
+
+[group]WD_F2
+[subject]全シナリオ出現/実行/_:toggle,0x461C72,0x461C89-0000
+[/group]
+
+
+[group]WD_CG
+[subject]ＣＧ ＧＡＬＬＥＲＹ:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x487060,0x48729F-01000000
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x487060,0x48729F-00
+[back]
+[subject]ＲＥＣＯＬＬＥＣＴＩＯＮ:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x4872A0,0x4872DF-01000000
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x4872A0,0x4872DF-00
+[/group]
