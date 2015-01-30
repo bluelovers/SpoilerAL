@@ -1,0 +1,175 @@
+[group]OGG_SSG
+[note]wordwrap
+無条件で特殊効果付与＋α：
+敵に全ステータス異常、味方に攻撃・防御補正を行う機能。
+
+エフェクトカットカスタム版：
+かったるいウエイト部分も切ったエフェクト省略機能。
+[/note]
+
+[subject]ver1.00:dir
+
+[subject]SRPGパート関連:dir
+ [subject]攻撃毎にLVUP/実行/_:toggle,0x43940E,EB00,7E09
+ [subject]無条件で特殊効果付与＋α/実行/_:b_toggle,0x4360D7,OGGLST->OGG_d,real
+ [subject]無限行動可能化/実行/_:toggle,0x43A51A,B8FFFFFF00214218EB00,8B42182500000080752F
+ [subject]戦闘パート無条件スキップ/実行/_:b_toggle,0x434B89,OGGLST->OGG_c,real
+ [subject]エフェクトカットカスタム版/実行/_:b_toggle,0x42177B,OGGLST->OGG_e,real
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]親密度確認調整:dir
+  [e_with],0x00,0x63,unsigned
+  [subject]天神かんな/現在値/_:calc,0x4F241C
+  [subject]天神うづき/現在値/_:calc,0x4F245C
+  [subject]イチ様/現在値/_:calc,0x4F249C
+  [/e_with]
+ [back]
+	[repeat]OGGLST->OGGREP1,0,16,1
+[back]
+
+[subject]ＣＧモード関連:dir
+	[replace]_[:0x4F6BB4:],OGGLST->OGG_CG
+[back]
+
+[back]
+
+[subject]ver1.01/1.01a:dir
+
+[subject]SRPGパート関連:dir
+ [subject]攻撃毎にLVUP/実行/_:toggle,0x4393FE,EB00,7E09
+ [subject]無条件で特殊効果付与＋α/実行/_:b_toggle,0x4360C7,OGGLST->OGG_2d,real
+ [subject]無限行動可能化/実行/_:toggle,0x43A50A,B8FFFFFF00214218EB00,8B42182500000080752F
+ [subject]戦闘パート無条件スキップ/実行/_:b_toggle,0x434B79,OGGLST->OGG_2c,real
+ [subject]呪符・アイテム関係/_:d_toggle,0x43C80A,OGGLST->OGG_f,OGGLST->OGG_g,real
+ [subject]エフェクトカットカスタム版/実行/_:b_toggle,0x42177B,OGGLST->OGG_e,real
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]親密度確認調整:dir
+  [e_with],0x00,0x63,unsigned
+  [subject]天神かんな/現在値/_:calc,0x4F241C
+  [subject]天神うづき/現在値/_:calc,0x4F245C
+  [subject]イチ様/現在値/_:calc,0x4F249C
+  [/e_with]
+ [back]
+	[repeat]OGGLST->OGGREP1,0,16,1
+[back]
+
+[subject]ＣＧモード関連:dir
+	[replace]_[:0x4F6BB4:],OGGLST->OGG_CG
+[back]
+
+[back]
+
+[/group]
+
+
+[group]OGG_CG
+[subject]絵巻鑑賞ALL/ＯＮ／ＯＦＦ/_:toggle,0x08,0x017F-02000000,01000000
+[subject]物語回想ALL/ＯＮ／ＯＦＦ/_:b_toggle,0x00,OGGLST->OGG_a,offset
+[/group]
+
+
+[group]OGG_a
+0x0208,0x0237-0D000000,01000000
+0x0238,1F00000002000000,0100000001000000
+0x0248,0x0277-0D000000,01000000
+0x0278,1F00000002000000,0100000001000000
+0x0288,0x0293-0D000000,01000000
+0x0294,0x02A7-02000000,01000000
+0x02A8,0x02B3-0D000000,01000000
+0x02B4,0x02F3-02000000,01000000
+[/group]
+
+
+[group]OGGREP1
+[replace]_[!R(1),[:!][:[:0x4F6B34:]:][!R(1),:]!],OGGLST->OGG_PR
+[/group]
+
+
+[group]OGG_PR
+[subject]_mem,0x08,16,00,<NoData>:dir
+ [subject]一括最大化/実行/_:b_toggle,0x00,OGGLST->OGG_b,offset
+ [subject]LV/現在値/_:calc,0x24,0x00,0x63,unsigned
+ [subject]現在体力/現在値/_:calc,0x3C,0x0000,0x03E7,unsigned
+ [e_with],0,999,float
+  [subject]最大体力/現在値/_:f_calc,0x48
+  [subject]現在霊力/現在値/_:f_calc,0x40
+  [subject]最大霊力/現在値/_:f_calc,0x4C
+  [subject]攻撃力/現在値/_:f_calc,0x50
+  [subject]防御力/現在値/_:f_calc,0x54
+  [subject]精神/現在値/_:f_calc,0x58
+ [/e_with]
+ [subject]移動力/現在値/_:calc,0x38,0x00,0x14,unsigned
+[back]
+[/group]
+
+
+[group]OGG_b
+0x24,63000000
+0x3C,E7030000
+0x48,00C07944
+0x40,00C07944
+0x4C,00C07944
+0x50,00C07944
+0x54,00C07944
+0x58,00C07944
+0x38,14000000
+[/group]
+
+
+[group]OGG_c
+0x434B89,EB,74
+0x436A5C,02,01
+[/group]
+
+
+[group]OGG_2c
+0x434B79,EB,74
+0x436A4C,02,01
+[/group]
+
+
+[group]OGG_d
+0x4360D7,E93826080090,8B8D1CFFFFFF
+0x4B8714,B900002800,0000000000
+0x4B8719,80781804,00000000
+0x4B871D,7C05,0000
+0x4B871F,B900005700,0000000000
+0x4B8724,094818,000000
+0x4B8727,8B8D1CFFFFFF,000000000000
+0x4B872D,E9ABD9F7FF90,000000000000
+[/group]
+
+
+[group]OGG_2d
+0x4360C7,E93826080090,8B8D1CFFFFFF
+0x4B8704,B900002800,0000000000
+0x4B8709,80781804,00000000
+0x4B870D,7C05,0000
+0x4B870F,B900005700,0000000000
+0x4B8714,094818,000000
+0x4B8717,8B8D1CFFFFFF,000000000000
+0x4B871D,E9ABD9F7FF90,000000000000
+[/group]
+
+
+[group]OGG_e
+0x42177B,EB,75
+0x422CD9,EB00,740A
+0x423152,EB00,740C
+0x42697D,EB00,740A
+[/group]
+
+
+[group]OGG_f
+無条件で呪符製作可能
+入手した呪符・アイテム無限化
+[/group]
+
+
+[group]OGG_g
+0x43C80A=EB/74
+0x462072=C7400463000000C3/C3CCCCCCCCCCCCCC
+[/group]
