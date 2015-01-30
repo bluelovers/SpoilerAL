@@ -1,0 +1,410 @@
+SSG for SpoilerAL ver 5.6
+
+[script]
+	[title]POWER DoLLS 5
+	[process]PD5.EXE
+	[maker]工画堂 うさぎさんチーム
+	[creator]風月
+[note]
+久々にターン制に戻ったPOWER DoLLS 5。
+5Xと違い、丁寧にやれば、無改造でほぼ確実にクリアできます。
+コツはグレネードと煙幕。肩兵装のR2タイプのグレネードは
+出来るだけ装備していくのが吉。
+あと、105mmCAN が地味に強かったり……
+
+改変時の注意点（Power DoLLS 5Xと共通）
+-AP-
+APの正規の上限は“40”です。それ以上に増やした場合でも、
+戦闘中に８以下まで使ってしまうと、内部のレベルアップ判定に引っかかり、
+40に戻されてしまいます。（固定はフリーズの危険があるため奨めません）
+
+-弾倉-
+また、マシンガン等の兵器以外、ミサイルや投下爆弾にも弾倉が設定されています。
+戦闘中に弾倉交換の出来ない兵器も、装備時点で必要となるので、
+元の兵器を増やした場合、該当する弾薬も同様に増やしてください。
+※センサーのみ弾倉の追加は不要。
+[/note]
+	[subject]隊員能力:dir
+		[subject]陸戦人員:split,roll,0,－・,40
+		[subject]177STB DoLLS:dir
+			[subject]フェイエン ノール:dir
+				[replace]0x8F97AC,fugetsu-XP->PD5-skill,offset
+
+			[subject]ロザリア チャペック:dir
+				[replace]0x8F97CC,fugetsu-XP->PD5-skill,offset
+
+			[subject]イネス フェイロン:dir
+				[replace]0x8F97EC,fugetsu-XP->PD5-skill,offset
+
+			[subject]ニナ ラーマン:dir
+				[replace]0x8F980C,fugetsu-XP->PD5-skill,offset
+
+			[subject]アニー ウィルキンズ:dir
+				[replace]0x8F982C,fugetsu-XP->PD5-skill,offset
+
+			[subject]メアリー アプルトン:dir
+				[replace]0x8F984C,fugetsu-XP->PD5-skill,offset
+
+			[subject]レンレン ミャオ:dir
+				[replace]0x8F986C,fugetsu-XP->PD5-skill,offset
+
+			[subject]ナリス エリクソン:dir
+				[replace]0x8F988C,fugetsu-XP->PD5-skill,offset
+
+			[subject]エディタ ヴェルネル:dir
+				[replace]0x8F98AC,fugetsu-XP->PD5-skill,offset
+
+			[subject]キャロル マクガイア:dir
+				[replace]0x8F98CC,fugetsu-XP->PD5-skill,offset
+
+			[subject]アイザワ モモ:dir
+				[replace]0x8F98EC,fugetsu-XP->PD5-skill,offset
+
+			[subject]トリッシュ ラティーニ:dir
+				[replace]0x8F990C,fugetsu-XP->PD5-skill,offset
+
+			[subject]リー メイファ:dir
+				[replace]0x8F992C,fugetsu-XP->PD5-skill,offset
+
+			[subject]マハティ ラーケーシュ:dir
+				[replace]0x8F994C,fugetsu-XP->PD5-skill,offset
+
+			[subject]マチルダ メッテルニヒ:dir
+				[replace]0x8F996C,fugetsu-XP->PD5-skill,offset
+
+			[subject]メラニー ブレア:dir
+				[replace]0x8F998C,fugetsu-XP->PD5-skill,offset
+
+			[subject]ジェニファー メルビル:dir
+				[replace]0x8F99AC,fugetsu-XP->PD5-skill,offset
+
+			[subject]アデーレ ヴィルツ:dir
+				[replace]0x8F99CC,fugetsu-XP->PD5-skill,offset
+
+			[subject]エルヴィラ モス:dir
+				[replace]0x8F99EC,fugetsu-XP->PD5-skill,offset
+
+			[subject]ナガセ マリ:dir
+				[replace]0x8F9A0C,fugetsu-XP->PD5-skill,offset
+		[back]
+
+		[subject]航空人員:split,roll,0,－・,40
+		[subject]DoLLS Wing:dir
+			[subject]サンディ クーリッジ:dir
+				[replace]0x8F9A2C,fugetsu-XP->PD5-skill,offset
+
+			[subject]ナム ヨンジュ:dir
+				[replace]0x8F9A4C,fugetsu-XP->PD5-skill,offset
+
+			[subject]ソニア カミンスキー:dir
+				[replace]0x8F9A6C,fugetsu-XP->PD5-skill,offset
+
+			[subject]ホリィ タカス:dir
+				[replace]0x8F9A8C,fugetsu-XP->PD5-skill,offset
+
+			[subject]セルシュ ルジチカ:dir
+				[replace]0x8F9AAC,fugetsu-XP->PD5-skill,offset
+
+			[subject]クレール ヴァランタン:dir
+				[replace]0x8F9ACC,fugetsu-XP->PD5-skill,offset
+
+			[subject]フー ルォシャン:dir
+				[replace]0x8F9AEC,fugetsu-XP->PD5-skill,offset
+		[back]
+		[subject]ステータス末尾:split,roll,0,－・,40
+	[root]
+
+	[subject]陸戦兵器:split,label,root,
+	[subject]177STB DoLLS:dir
+		[subject]パワーローダー:dir
+			[replace]0x7FE8F8,fugetsu-XP->PD5-PLD,offset
+		[back]
+
+		[subject]肩兵装:dir
+			[replace]0x7FE929,fugetsu-XP->PD5-S_WPN,offset
+		[back]
+
+		[subject]腕兵装:dir
+			[replace]0x7FE929,fugetsu-XP->PD5-H_WPN,offset
+		[back]
+
+		[subject]支援砲撃ロケット:dir
+			[replace]0x7FE929,fugetsu-XP->PD5-RCT,offset
+		[back]
+
+		[subject]弾薬:dir
+			[replace]0x7FE9A0,fugetsu-XP->PD5-BLT,offset
+		[back]
+
+		[subject]補助兵装:dir
+			[replace]0x7FE9DD,fugetsu-XP->PD5-item,offset
+	[root]
+
+	[subject]空戦兵器:split,label,root,
+	[subject]DoLLS Wing:dir
+		[subject]航空機:dir
+			[replace]0x7FE907,fugetsu-XP->PD5-AIR,offset
+		[back]
+
+		[subject]兵装:dir
+			[replace]0x7FE94E,fugetsu-XP->PD5-AirWPN,offset
+		[back]
+
+		[subject]弾薬:dir
+			[replace]0x7FE9C9,fugetsu-XP->PD5-AirBLT,offset
+	[root]
+[/script]
+
+
+
+[script]
+	[title]POWER DoLLS 5X
+	[process]PD5X.EXE
+	[maker]工画堂 うさぎさんチーム
+	[creator]風月
+[note]
+戦術級SLGの名作、Power DoLLSシリーズより「Power DoLLS 5X」のSSGです。
+え～………えげつなく難しい作品です。軽くいじっただけでは簡単になってくれません。
+敵単体は大したこと無いんですが…時間制限がきつかったり。
+
+あまりバラすのもなんなので、改変時の注意を。（AP・弾倉はPower DoLLS 5と共通）
+-AP-
+APの正規の上限は“40”です。それ以上に増やした場合でも、
+戦闘中に８以下まで使ってしまうと、内部のレベルアップ判定に引っかかり、
+40に戻されてしまいます。（固定はフリーズの危険があるため奨めません）
+
+-弾倉-
+また、マシンガン等の兵器以外、ミサイルや投下爆弾にも弾倉が設定されています。
+戦闘中に弾倉交換の出来ない兵器も、装備時点で必要となるので、
+元の兵器を増やした場合、該当する弾薬も同様に増やしてください。
+※センサーのみ弾倉の追加は不要。
+
+-兵員ステータス-
+メインキャンペーン・シングルミッション「ブラスト」を除く
+サブキャンペーン・シングルミッションについては、
+専用のディレクトリを作っていますので、そちらをお使い下さい。
+（同キャラでもアドレスが変わっています）
+[/note]
+	[subject]隊員能力:dir
+		[subject]陸戦人員:split,roll,0,－・,40
+		[subject]177STB DoLLS:dir
+			[subject]フェイエン ノール:dir
+				[replace]0x563634,fugetsu-XP->PD5-skill,offset
+
+			[subject]ロザリア チャペック:dir
+				[replace]0x563654,fugetsu-XP->PD5-skill,offset
+
+			[subject]イネス フェイロン:dir
+				[replace]0x563674,fugetsu-XP->PD5-skill,offset
+
+			[subject]ニナ ラーマン(Single Mission):dir
+				[replace]0x563694,fugetsu-XP->PD5-skill,offset
+
+			[subject]アニー ウィルキンズ(Single Mission):dir
+				[replace]0x5636B4,fugetsu-XP->PD5-skill,offset
+
+			[subject]メアリー アプルトン:dir
+				[replace]0x5636D4,fugetsu-XP->PD5-skill,offset
+
+			[subject]レンレン ミャオ(Single Mission):dir
+				[replace]0x5636F4,fugetsu-XP->PD5-skill,offset
+
+			[subject]ナリス エリクソン:dir
+				[replace]0x563714,fugetsu-XP->PD5-skill,offset
+
+			[subject]エディタ ヴェルネル(Single Mission):dir
+				[replace]0x563734,fugetsu-XP->PD5-skill,offset
+
+			[subject]キャロル マクガイア(Single Mission):dir
+				[replace]0x563754,fugetsu-XP->PD5-skill,offset
+
+			[subject]アイザワ モモ:dir
+				[replace]0x563774,fugetsu-XP->PD5-skill,offset
+
+			[subject]トリッシュ ラティーニ:dir
+				[replace]0x563794,fugetsu-XP->PD5-skill,offset
+
+			[subject]リー メイファ:dir
+				[replace]0x5637B4,fugetsu-XP->PD5-skill,offset
+
+			[subject]マハティ ラーケーシュ(Single Mission):dir
+				[replace]0x5637D4,fugetsu-XP->PD5-skill,offset
+
+			[subject]マチルダ メッテルニヒ:dir
+				[replace]0x5637F4,fugetsu-XP->PD5-skill,offset
+
+			[subject]メラニー ブレア(Single Mission):dir
+				[replace]0x563814,fugetsu-XP->PD5-skill,offset
+
+			[subject]ジェニファー メルビル(Single Mission):dir
+				[replace]0x563834,fugetsu-XP->PD5-skill,offset
+
+			[subject]アデーレ ヴィルツ:dir
+				[replace]0x563854,fugetsu-XP->PD5-skill,offset
+
+			[subject]エルヴィラ モス:dir
+				[replace]0x563874,fugetsu-XP->PD5-skill,offset
+
+			[subject]ナガセ マリ:dir
+				[replace]0x563894,fugetsu-XP->PD5-skill,offset
+
+			[subject]ソイニ イェルム(Single Mission):dir
+				[replace]0x5639B4,fugetsu-XP->PD5-skill,offset
+
+			[subject]エレン シュターミツ(Single Mission):dir
+				[replace]0x5639D4,fugetsu-XP->PD5-skill,offset
+
+			[subject]リーユン ウェルゲラン(Single Mission):dir
+		        	[replace]0x5639F4,fugetsu-XP->PD5-skill,offset
+		[back]
+
+		[subject]航空人員:split,roll,0,－・,40
+		[subject]DoLLS Wing:dir
+			[subject]サンディ クーリッジ:dir
+				[replace]0x5638B4,fugetsu-XP->PD5-skill,offset
+
+			[subject]ナム ヨンジュ:dir
+				[replace]0x5638D4,fugetsu-XP->PD5-skill,offset
+
+			[subject]ソニア カミンスキー:dir
+				[replace]0x5638F4,fugetsu-XP->PD5-skill,offset
+
+			[subject]ホリィ タカス:dir
+				[replace]0x563914,fugetsu-XP->PD5-skill,offset
+
+			[subject]セルシュ ルジチカ(Single Mission):dir
+				[replace]0x563934,fugetsu-XP->PD5-skill,offset
+
+			[subject]クレール ヴァランタン:dir
+				[replace]0x563954,fugetsu-XP->PD5-skill,offset
+
+			[subject]フー ルォシャン:dir
+				[replace]0x563974,fugetsu-XP->PD5-skill,offset
+
+			[subject]フランシス ル ベリエ(Single Mission):dir
+				[replace]0x563A14,fugetsu-XP->PD5-skill,offset
+
+			[subject]ナンシー ウォルコット(Single Mission):dir
+				[replace]0x563A34,fugetsu-XP->PD5-skill,offset
+		[back]
+
+		[subject]38号特別演習:split,roll,0,－・,40
+		[subject]SP-MNV #38:dir
+			[subject]ソイニ イェルム:dir
+				[replace]0x563634,fugetsu-XP->PD5-skill,offset
+
+			[subject]エレン シュターミツ:dir
+				[replace]0x563654,fugetsu-XP->PD5-skill,offset
+
+			[subject]リーユン ウェルゲラン:dir
+		        	[replace]0x563674,fugetsu-XP->PD5-skill,offset
+
+			[subject]フランシス ル ベリエ:dir
+				[replace]0x563694,fugetsu-XP->PD5-skill,offset
+
+			[subject]ナンシー ウォルコット:dir
+				[replace]0x5636B4,fugetsu-XP->PD5-skill,offset
+		[back]
+
+		[subject]個別ミッション:split,roll,0,－・,40
+		[subject]Single Mission:dir
+			[subject]オフタックル:dir
+				[subject]ナガセ マリ:dir
+					[replace]0x563634,fugetsu-XP->PD5-skill,offset
+
+				[subject]O.U.A. C-1:dir
+					[replace]0x563654,fugetsu-XP->PD5-skill,offset
+
+				[subject]O.U.A. C-2:dir
+					[replace]0x563674,fugetsu-XP->PD5-skill,offset
+
+				[subject]O.U.A. C-3:dir
+					[replace]0x563694,fugetsu-XP->PD5-skill,offset
+
+				[subject]O.U.A. C-4:dir
+					[replace]0x5636B4,fugetsu-XP->PD5-skill,offset
+
+				[subject]O.U.A. C-5:dir
+					[replace]0x5636D4,fugetsu-XP->PD5-skill,offset
+			[back]
+
+			[subject]エフラックス:dir
+				[subject]アデーレ ヴィルツ:dir
+					[replace]0x563634,fugetsu-XP->PD5-skill,offset
+
+				[subject]O.U.Marine 海兵隊中尉:dir
+					[replace]0x563674,fugetsu-XP->PD5-skill,offset
+
+				[subject]O.U.Marine 海兵隊准尉:dir
+					[replace]0x563694,fugetsu-XP->PD5-skill,offset
+			[back]
+
+			[subject]バトルプラクティス:dir
+				[subject]エルヴィラ モス:dir
+					[replace]0x563634,fugetsu-XP->PD5-skill,offset
+
+				[subject]O.U.JSC (XB-10):dir
+					[replace]0x563654,fugetsu-XP->PD5-skill,offset
+
+				[subject]O.U.A.JSC (XF-10):dir
+					[replace]0x563674,fugetsu-XP->PD5-skill,offset
+
+				[subject]O.U.A. C-3 (XD-10):dir
+					[replace]0x563694,fugetsu-XP->PD5-skill,offset
+
+				[subject]O.U.A. C-4 (XE-10):dir
+					[replace]0x5636B4,fugetsu-XP->PD5-skill,offset
+
+				[subject]O.U.Army (X5-R):dir
+					[replace]0x5636D4,fugetsu-XP->PD5-skill,offset
+
+				[subject]O.U.Army (X5 with 105mm):dir
+					[replace]0x5636F4,fugetsu-XP->PD5-skill,offset
+
+				[subject]O.U.Army (X5 with TMS16):dir
+					[replace]0x563A34,fugetsu-XP->PD5-skill,offset
+			[back]
+		[back]
+		[subject]ステータス末尾:split,roll,0,－・,40
+	[root]
+
+	[subject]陸戦兵器:split,label,root,
+	[subject]177STB DoLLS:dir
+		[subject]パワーローダー:dir
+			[replace]0x54F870,fugetsu-XP->PD5-PLD,offset
+		[back]
+
+		[subject]肩兵装:dir
+			[replace]0x54F8A1,fugetsu-XP->PD5-S_WPN,offset
+		[back]
+
+		[subject]腕兵装:dir
+			[replace]0x54F8A1,fugetsu-XP->PD5-H_WPN,offset
+		[back]
+
+		[subject]支援砲撃ロケット:dir
+			[replace]0x54F8A1,fugetsu-XP->PD5-RCT,offset
+		[back]
+
+		[subject]弾薬:dir
+			[replace]0x54F918,fugetsu-XP->PD5-BLT,offset
+		[back]
+
+		[subject]補助兵装:dir
+			[replace]0x54F955,fugetsu-XP->PD5-item,offset
+	[root]
+
+	[subject]空戦兵器:split,label,root,
+	[subject]DoLLS Wing:dir
+		[subject]航空機:dir
+			[replace]0x54F87F,fugetsu-XP->PD5-AIR,offset
+		[back]
+
+		[subject]兵装:dir
+			[replace]0x54F8C6,fugetsu-XP->PD5-AirWPN,offset
+		[back]
+
+		[subject]弾薬:dir
+			[replace]0x54F941,fugetsu-XP->PD5-AirBLT,offset
+	[root]
+[/script]
