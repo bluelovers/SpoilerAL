@@ -1,0 +1,168 @@
+[group]PRE_SSG
+[note]wordwrap
+敵側行動封印化：
+敵側のカード配置直前に実行してあると効果有。「何もしない」を選択し続けます。現状敵のカード枚数がおかしくなることがありますが、使用されるのはプレイヤーと同じ数だけなので、プレイに問題はありません。
+
+EX攻撃100%発動：
+1%でも確率があれば必ず発動します。
+
+委員長ナターニア化：
+戦闘に入る前に実行していないと意味無し。全登場バトルで、あの「彼女」になります。攻撃性能も鬼化。
+
+戦闘難度ナイトメア化：
+自家製サバイバルモード。３１ターン目まで生き残れれば楽勝。。
+
+[/note]
+
+[subject]戦闘関連:dir
+ [subject]ターン中攻撃キャラ無限選択可能/実行/_:toggle,0x41EFE6,33C033F6EB0190??????????EB00,4081FE00000080??????????7406
+ [subject]敵側行動封印化/実行/_:toggle,0x41D1AD,E9120100009090,FF249510D34100
+ [subject]EX攻撃100%発動/実行/_:toggle,0x41DCDA,01,64
+ [subject]EX攻撃効果量倍増/実行/_:b_toggle,0x0E30,PRELST->PRE_e,offset
+ [subject]ノーダメージ化/実行/_:b_toggle,0x0E30,PRELST->PRE_2f,offset
+ [subject]ノーマル委員長全属性選択可能/実行/_:toggle,0x432177,E9AC000000,E844460000
+ [subject]委員長ナターニア化/実行/_:b_toggle,0x47D52C,PRELST->PRE_a,real
+ [subject]戦闘難度ナイトメア化/実行/_:b_toggle,0x42A607,PRELST->PRE_g,real
+[back]
+
+[subject]パラメータ関連:dir
+ [e_with],0x00000000,0x0098967F,unsigned
+  [subject]敵のMAXHP/現在値/_:calc,0x4A528C
+  [subject]味方のMAXHP/現在値/_:calc,0x4A5290
+  [subject]敵の現在HP/現在値/_:calc,0x4A52E8
+  [subject]味方の現在HP/現在値/_:calc,0x4A52EC
+ [/e_with]
+ [subject]ごきげん度調整確認:dir
+  [subject]正義・真実編:dir
+	[repeat]PRELST->PREREP1,0,4,1
+  [back]
+  [subject]英雄編:dir
+	[repeat]PRELST->PREREP2,0,2,1
+  [back]
+ [back]
+[back]
+
+[subject]ＣＧモード関連:dir
+	[replace]0x51C1E8,PRELST->PRE_CG
+	[subject]ＣＧ鑑賞ALL/ＯＮ／ＯＦＦ/_:toggle,_[:0x51DAD8:]+0x08,_[:0x51DAD8:]+0x09B0-FF,00
+[back]
+
+[/group]
+
+
+[group]PREREP1
+[subject][! @PRELST->LST_a,$Val !]/現在値/_:calc,_0x51B164+0x[! 0x04*$Val !],0x0000,0x03E7,unsigned
+[/group]
+
+
+[group]PREREP2
+[subject][! @PRELST->LST_b,$Val !]/現在値/_:calc,_0x51B1A0+0x[! 0x04*$Val !],0x0000,0x03E7,unsigned
+[/group]
+
+
+[group]PRE_CG
+[subject]おまけメニュー全出現/ＯＮ／ＯＦＦ/_:b_toggle,0x00,PRELST->PRE_c,offset
+[subject]シーン鑑賞ALL/ＯＮ／ＯＦＦ/_:b_toggle,0x00,PRELST->PRE_d,offset
+[subject]フリーバトルALL/ＯＮ／ＯＦＦ/_:toggle,0x084C,0x08A7-01000000,00
+[subject]アバンタイトル鑑賞ALL/ＯＮ／ＯＦＦ/_:toggle,0x0550,0x0577-01000000,00
+[/group]
+
+
+[group]LST_a
+クルル
+委員長
+林檎
+かれん
+[/group]
+
+
+[group]LST_b
+クルル
+委員長
+[/group]
+
+
+[group]PRE_a
+0x47D52C,20,10
+0x47D564,2000,0010
+0x47D56C,2000,0020
+0x434B47,E9B42C0300,8B43208901
+0x467800,C70164000000,000000000000
+0x467806,C741F4EC040000,00000000000000
+0x46780D,C741F068010000,00000000000000
+0x467814,C741E820000000,00000000000000
+0x46781B,E961D3FCFF90,000000000000
+[/group]
+
+
+[group]PRE_c
+0x0E10,01000000,00000000
+0x0E38,0x0E57-01000000,00
+[/group]
+
+
+[group]PRE_d
+0x04B0,0x04C7-01000000,00
+0x04D8,0x04EB-01000000,00
+0x0500,0x050F-01000000,00
+0x0528,0x053B-01000000,00
+0x0540,01000000,00
+[/group]
+
+
+[group]PRE_e
+0x431EF0,EB05,7616
+0x431F2F,D1E090EB0190,EB048B442418
+0x431F65,EB05,7632
+0x431F98,28,2E
+0x431FC1,D1E090EB0190,EB048B442418
+0x431FEE,EB05,7619
+0x432008,0F,15
+0x432018,D1E790EB0190,EB048B7C2418
+0x43208B,EB05,7616
+0x4320A2,0D,13
+0x4320B0,D1E390EB0190,EB048B5C2418
+[/group]
+
+
+[group]PRE_2f
+0x41D2CF,33C0EB029090,8B8218040000
+0x41D351,33C0EB029090,8B8218040000
+0x41D3D3,33C0EB029090,8B8218040000
+0x41D433,33C0EB029090,8B8218040000
+0x41D4AF,33C0EB029090,8B821C040000
+0x41D4FD,33C0EB029090,8B821C040000
+0x41D58F,33C0EB029090,8B821C040000
+0x41D60D,33C0EB029090,8B821C040000
+[/group]
+
+
+[group]PRE_g
+0x42A607,E925D2030090,8B7C240C8B07
+0x467831,F7055C534A0001000000,00000000000000000000
+0x46783B,7508,0000
+0x46783D,8B7C240C,00000000
+0x467841,8B07,0000
+0x467843,EB0B,0000
+0x467845,33C0,0000
+0x467847,833D5C534A001E,00000000000000
+0x46784E,7FED,0000
+0x467850,E9B82DFCFF,0000000000
+0x43668B,E9D0110300EBF99090,CCCCCCCCCC8B442404
+0x467860,C164240403,0000000000
+0x467865,8B442408,00000000
+0x467869,03C0,0000
+0x46786B,8D0480,000000
+0x46786E,89442408,00000000
+0x467872,8B442404,00000000
+0x467876,E919EEFCFF,0000000000
+0x4366E0,E99B110300909090,8B4C24048B442408
+0x467880,8B4C2404,00000000
+0x467884,8B442408,00000000
+0x467888,85C9,0000
+0x46788A,750C,0000
+0x46788C,D1E8,0000
+0x46788E,0105E8524A00,000000000000
+0x467894,8B442408,00000000
+0x467898,E94BEEFCFF,0000000000
+[/group]
