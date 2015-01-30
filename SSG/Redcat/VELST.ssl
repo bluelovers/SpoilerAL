@@ -1,0 +1,19 @@
+[group]VE_CG
+[note]
+‚È‚ñ‚¾‚©‚È[(^^;
+[/note]
+
+[subject]‚b‚fƒ‚[ƒhŠÖ˜A:dir
+	[replace]_[:[:[:[:0x460134:]+0x820:]+0x1A0:]:],VELST->VE_a
+[/group]
+
+
+[group]VE_a
+[subject]‚b‚fE‚`‚k‚a‚t‚l:dir
+	[subject]‚`‚k‚k ‚n‚m/Às/_:toggle,0x0C,0x24-FF
+	[subject]‚`‚k‚k ‚n‚e‚e/Às/_:toggle,0x0C,0x24-00
+[back]
+[subject]‚r-‚‚Œ‚‚™‚‰‚‚‡:dir
+	[subject]‚`‚k‚k ‚n‚m/Às/_:toggle,0x25,0F
+	[subject]‚`‚k‚k ‚n‚e‚e/Às/_:toggle,0x25,00
+[/group]
