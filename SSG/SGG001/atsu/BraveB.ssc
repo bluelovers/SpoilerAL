@@ -1,0 +1,7 @@
+	[subject]戦闘力:calc,0,0,99
+	[subject]移動力:calc,4,0,99
+	[subject]X座標:calc,0x20,0,50
+	[subject]Y座標:calc,0x24,0,50
+	[subject]向き:list,0x30,ファイル->向き,0,1
+	[subject]行動済み:toggle,0x34,01,00
+[back]
