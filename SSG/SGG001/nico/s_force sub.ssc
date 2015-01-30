@@ -1,0 +1,20 @@
+ [subject]HP[MAX]:    calc,0x12,01,255
+  [subject]MP[MAX]:   calc,0x17,01,127
+  [subject]‚±‚¤‚°‚«—Í:calc,0x0d,01, 99
+  [subject]‚Ú‚¤‚¬‚å—Í:calc,0x0c,01, 99
+  [subject]ˆÚ“®‹——£:  calc,0x0e,01, 99
+  [subject]•q·‚³:    calc,0x0f,01, 99
+  [subject]ŒoŒ±’l:    calc,0x10,00,100
+  [subject]ƒAƒCƒeƒ€:dir
+   [subject]‚P‚Â–Ú:list,0x1b,s_force item,00,01
+   [subject]‚Q‚Â–Ú:list,0x1a,s_force item,00,01
+   [subject]‚R‚Â–Ú:list,0x1d,s_force item,00,01
+   [subject]‚S‚Â–Ú:list,0x1c,s_force item,00,01
+  [back]
+  [subject]–‚–@:dir
+   [subject]‚P‚Â–Ú:d_list,0x1f,s_force magic,00,01,s_force magic_sub
+   [subject]‚Q‚Â–Ú:d_list,0x1e,s_force magic,00,01,s_force magic_sub
+   [subject]‚R‚Â–Ú:d_list,0x21,s_force magic,00,01,s_force magic_sub
+   [subject]‚S‚Â–Ú:d_list,0x20,s_force magic,00,01,s_force magic_sub
+  [back]
+ [back]
