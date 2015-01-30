@@ -1,0 +1,1108 @@
+SSG for SpoilerAL ver 5.6
+
+
+
+
+[script]
+[title]DALK外伝
+[process]SYSTEM40.EXE
+[maker]AliceSoft
+[creator]KEI
+[note]
+System 4.0 Version1.00専用です。
+System 4.0のバージョンが違うと使用できません。
+Windows 98SEとWindows Meで動作を確認しています。
+●ボーナスポイントについて
+最大999ですが、全て999にしてしまうと増やせなくなり
+ゲームが止まってしまうので気をつけて下さい。
+●装備スペースについて
+全開にチェックした後、何かアイテムをドロップして外せば全開になります。
+●アイテムについて
+既存のアイテムを変更する場合はアイテム名を変更すれば良いです。
+無いところに作る場合は、アイテム情報1に数値（詳しくは不明）を入れて
+アイテム情報2に他のアイテムと違う1000以上の数値を入れて下さい。
+●マーティスの「クラス？」について
+初期値は3ですが、例えば5に固定すると攻撃ができるようになります。
+●到達階について
+最初から数えていますので、グナガン迷宮でゲーム中に
+表示される階数は20引いた数値が表示されます。
+●アイテム廃棄数について
+アイテムを100個捨てると、街に戻った時にTJOEメダルが貰えます。
+●グナガン迷宮ターン数について
+グナガン迷宮で200ターンを経過すると、街に戻った時にALETメダルが貰えます。
+[/note]
+[subject]到達階:calc,_[:[:[:(MName::SYS40VM.DLL) + 0x28B28:]+0x1C4:]+0x08:]+0x94,0,1019
+[subject]アイテム廃棄数:calc,_[:[:[:(MName::SYS40VM.DLL) + 0x28B28:]+0x1B4:]+0x08:]+0x38,0,100
+[subject]グナガン迷宮ターン数:calc,_[:[:[:(MName::SYS40VM.DLL) + 0x28B28:]+0x1B4:]+0x08:]+0x3C,0,200
+[subject]マーティス:dir
+  [replace]_[:[:[:(MName::SYS40VM.DLL) + 0x28B28:]+0x1C4:]+0x08:]-0x10, lib2x->dalk
+[subject]エレシア:dir
+  [replace]_[:[:[:(MName::SYS40VM.DLL) + 0x28B28:]+0x1E0:]+0x08:]-0x10, lib2x->dalk
+[subject]レジィナ:dir
+  [replace]_[:[:[:(MName::SYS40VM.DLL) + 0x28B28:]+0x1EC:]+0x08:]-0x10, lib2x->dalk
+[subject]ヴェルナ:dir
+  [replace]_[:[:[:(MName::SYS40VM.DLL) + 0x28B28:]+0x1F8:]+0x08:]-0x10, lib2x->dalk
+[subject]時子:dir
+  [replace]_[:[:[:(MName::SYS40VM.DLL) + 0x28B28:]+0x204:]+0x08:]-0x10, lib2x->dalk
+[subject]リーシャ:dir
+  [replace]_[:[:[:(MName::SYS40VM.DLL) + 0x28B28:]+0x210:]+0x08:]-0x10, lib2x->dalk
+[subject]ファーファ:dir
+  [replace]_[:[:[:(MName::SYS40VM.DLL) + 0x28B28:]+0x21C:]+0x08:]-0x10, lib2x->dalk
+[subject]ファーメ:dir
+  [replace]_[:[:[:(MName::SYS40VM.DLL) + 0x28B28:]+0x228:]+0x08:]-0x10, lib2x->dalk
+[subject]一括変換:dir
+	[subject]LV:b_calc,0x24,lib2x->dalk_ad1,offset,0,99999
+	[subject]EXP:b_calc,0x28,lib2x->dalk_ad1,offset,0,99999
+	[subject]次EXP:b_calc,0x2C,lib2x->dalk_ad1,offset,0,99999
+	[subject]現在HP:b_calc,0x30,lib2x->dalk_ad1,offset,0,99999
+	[subject]最大HP:b_calc,0x34,lib2x->dalk_ad1,offset,0,99999
+	[subject]攻撃:b_calc,0x38,lib2x->dalk_ad1,offset,0,99999
+	[subject]防御:b_calc,0x3C,lib2x->dalk_ad1,offset,0,99999
+	[subject]魔法:b_calc,0x40,lib2x->dalk_ad1,offset,0,99999
+	[subject]魔抵:b_calc,0x44,lib2x->dalk_ad1,offset,0,99999
+	[subject]命中:b_calc,0x48,lib2x->dalk_ad1,offset,0,999
+	[subject]回避:b_calc,0x4C,lib2x->dalk_ad1,offset,0,999
+	//[subject]移動残:b_calc,0x50,lib2x->dalk_ad1,offset,0,99
+	[subject]行動終了しない:b_toggle,0x50,lib2x->dalk_ad3,offset
+	[subject]移動:b_calc,0x54,lib2x->dalk_ad1,offset,0,999
+	[subject]射程:b_calc,0x58,lib2x->dalk_ad1,offset,0,999
+	[subject]？:b_calc,0x5C,lib2x->dalk_ad1,offset,0,99999
+	[subject]？:b_calc,0x60,lib2x->dalk_ad1,offset,0,99999
+	[subject]クラス？:b_calc,0x64,lib2x->dalk_ad1,offset,0,99999
+	[subject]？:b_calc,0x68,lib2x->dalk_ad1,offset,0,99999
+	[subject]成長値:b_calc,0x6C,lib2x->dalk_ad1,offset,0,99
+	[subject]？:b_calc,0x70,lib2x->dalk_ad1,offset,0,99999
+	[subject]？:b_calc,0x74,lib2x->dalk_ad1,offset,0,99999
+	[subject]クリティカル:b_calc,0x78,lib2x->dalk_ad1,offset,0,100
+	[subject]反撃:b_calc,0x7C,lib2x->dalk_ad1,offset,0,100
+	[subject]再行動:b_calc,0x80,lib2x->dalk_ad1,offset,0,100
+	[subject]アイテム発見:b_calc,0x84,lib2x->dalk_ad1,offset,0,100
+	[subject]装備スペース全開:b_toggle,0x88,lib2x->dalk_ad2,offset
+	[subject]ボーナス値:dir
+	[subject]体力:b_calc,0x90,lib2x->dalk_ad1,offset,0,999
+	[subject]攻撃:b_calc,0x94,lib2x->dalk_ad1,offset,0,999
+	[subject]防御:b_calc,0x98,lib2x->dalk_ad1,offset,0,999
+	[subject]魔法:b_calc,0x9C,lib2x->dalk_ad1,offset,0,999
+	[subject]魔抵:b_calc,0xA0,lib2x->dalk_ad1,offset,0,999
+	[back]
+[back]
+[subject]アイテム:dir
+[repeat]lib2x->dalk_it,0,200,1
+
+[back]
+[/script]
+
+[script]
+[title]炎多留Ⅱ魂
+[process]HOTARU2S.EXE
+[maker]T&M
+[creator]KEI
+[note]
+Windows Me(256MB)で動作を確認しています。
+[/note]
+[subject]日付:calc,_ [_ [: 0x54F218 :] +0x25C0  _],0,11
+[subject]時間:calc,_ [_ [: 0x54F218 :] +0x25E0  _],0,15
+[subject]CG全開:b_toggle,_ [_ [: 0x54F218 :] +0x5810  _],lib2x->hotaru2,offset
+[/script]
+
+[script]
+[title]ランス５Ｄ
+[process]SYSTEM39.EXE
+[maker]AliceSoft
+[creator]KEI
+[note]
+Windows Me(256MB)で動作を確認しています。
+各キャラのパラメータですが、レベルで管理しているようですので
+変更することはできません。
+レベルの表示は最大99ですが、実際はそれ以上のレベルも可能です。
+各キャラのパラメータ表示も999以上の場合は
+下三桁しか表示されませんので
+パラメーターの数値の確認用に使用して下さい。
+経験値とレベルは変更可能です。
+パラメータを増やしたい場合は補正値で加算してください。
+女の子モンスターは体力だけ変更可能です。
+他のパラメータは反映されません。
+増やしたい場合は補正値で加算してください。
+●アイテムについて
+武器や防具を追加した場合は、補正値を調節してください。
+そのままだと加算値が0です。
+●行動難易度易化について
+調べる、宝箱開け、トラップ解除などの行動の難易度を易しくします。
+●アイテムの種類について
+キーアイテム：放火セット、通行手形、防空頭巾など無いとゲーム進行にかかわるアイテム
+消費アイテム：世色癌、ジュース類、経験玉、宝箱の鍵など消費するアイテム
+イベントアイテム：ガラクタ、金塊、うちわ、ひよまん、砂時計、レンズ、
+妖怪玉串、捕獲ロープなど無くてもゲームは進むがイベントが起こるアイテム
+[/note]
+[subject]TIME:calc,_ [_ [:[:[: 0x494058 :] +0x4 :]+0x4:] +0xFC_],0,0xFF
+[subject]小タイマー:calc,_ [_ [:[:[: 0x494058 :] +0x4 :]+0x4:] +0xE8_],0,0x4
+[subject]CGモード・ハードモード出現:toggle,_ [_ [:[:[: 0x494058 :] +0x4 :]+0x454:] +0x16_],630063006300,??
+//[subject]行動難易度易化:toggle,_ [_ [:[:[: 0x494058 :] +0x4 :]+0x4:] +0x1A8_],64,??
+//[subject]行動難易度易化:toggle,_ [_ [:[:[: 0x494058 :] +0x4 :]+0x4:] +0x160_],0A,??
+[subject]行動難易度易化:b_toggle,_ [_ [:[:[: 0x494058 :] +0x4 :]+0x4:] +0x160_],lib2x->r5d_p,offset
+[subject]ギャルズタワー到達階:calc,_ [_ [:[:[: 0x494058 :] +0x4 :]+0x10:] +0x6_],0,20
+[subject]ランスの特殊能力:dir
+[subject]宝箱開け:calc,_ [_ [:[:[: 0x494058 :] +0x4 :]+0x4:] +0x106_],0,0xFF
+[subject]トラップ解除:calc,_ [_ [:[:[: 0x494058 :] +0x4 :]+0x4:] +0x108_],0,0xFF
+[back]
+[subject]行動回数:dir
+[subject]全員０:toggle,_ [_ [:[:[: 0x494058 :] +0x4 :]+0x4:] +0xC6_],_ [_ [:[:[: 0x494058 :] +0x4 :]+0x4:] +0xD7_]-0,00,??
+[subject]ランス調べる:calc,_ [_ [:[:[: 0x494058 :] +0x4 :]+0x4:] +0xC6_],0,0xFF
+[subject]ランスなぐる:calc,_ [_ [:[:[: 0x494058 :] +0x4 :]+0x4:] +0xC8_],0,0xFF
+[subject]シィル調べる:calc,_ [_ [:[:[: 0x494058 :] +0x4 :]+0x4:] +0xCA_],0,0xFF
+[subject]シィルリーダー:calc,_ [_ [:[:[: 0x494058 :] +0x4 :]+0x4:] +0xCC_],0,0xFF
+[subject]あてな調べる:calc,_ [_ [:[:[: 0x494058 :] +0x4 :]+0x4:] +0xCE_],0,0xFF
+[subject]あてなくんくん:calc,_ [_ [:[:[: 0x494058 :] +0x4 :]+0x4:] +0xD0_],0,0xFF
+[subject]フェリス調べる:calc,_ [_ [:[:[: 0x494058 :] +0x4 :]+0x4:] +0xD2_],0,0xFF
+[subject]リズナ調べる:calc,_ [_ [:[:[: 0x494058 :] +0x4 :]+0x4:] +0xD4_],0,0xFF
+[subject]コパンドン調べる:calc,_ [_ [:[:[: 0x494058 :] +0x4 :]+0x4:] +0xD6_],0,0xFF
+[back]
+[subject]パーティー:dir
+[subject]1人目:list,_[_ [:[:[: 0x494058 :] +0x4 :]+0x1C:]_]+0x189E,lib2x->r5d_p,0,1
+[subject]2人目:list,_[_ [:[:[: 0x494058 :] +0x4 :]+0x1C:]_]+0x18A0,lib2x->r5d_p,0,1
+[subject]3人目:list,_[_ [:[:[: 0x494058 :] +0x4 :]+0x1C:]_]+0x18A2,lib2x->r5d_p,0,1
+[back]
+[subject]キャラ別パラメータ:dir
+[repeat]lib2x->r5d,0,6,1
+[back]
+[subject]キャラ別パラメータ補正値:dir
+[repeat]lib2x->r5d3,0,6,1
+[back]
+[subject]耐久度:dir
+[subject]全員分MAX:b_toggle,_ [_ [:[:[: 0x494058 :] +0x4 :]+0x1C:] +0xDAE_],lib2x->r5d_t,offset
+[repeat]lib2x->r5d4,0,6,1
+[back]
+[subject]装備:dir
+[repeat]lib2x->r5d_装備,0,6,1
+[back]
+[subject]女の子モンスター別パラメータ:dir
+[repeat]lib2x->r5d2,0,18,1
+[back]
+[subject]女の子モンスター別パラメータ補正値:dir
+[repeat]lib2x->r5d3m,0,18,1
+[back]
+[subject]アイテム:dir
+[repeat]lib2x->r5d_i,0,23,1
+[back]
+[back]
+[/script]
+
+[script]
+[title]ままにょにょ
+[process]SYSTEM40.EXE
+[maker]AliceSoft
+[creator]KEI
+[note]
+System 4.0 Version1.03専用です。
+System 4.0のバージョンが違うと使用できません。
+Windows 98SEとWindows Meで動作を確認しています。
+●カカロの遊びについて
+イベントが起きた時点でセーブされますので、全開にしてもセーブされません。
+33に設定して最後の絵を見るか、異空間の絵を持っている某ボスを倒せばセーブされます。
+●アイテムについて
+アイテムの獲得順は、獲得した順番に番号が振られます。
+新たにアイテムを捏造する場合は、アイテムの獲得番号に王の間で「獲得アイテムの総数」に1加算した数値を入れてください。
+また、同じ数字を獲得アイテム総数１，２にも入れてください。
+同じ数値が無いようにしてください。
+また、装備キャラは変更しないで下さい。エラーになります。
+装備中のアイテムは変更しないで下さい。
+[/note]
+[io_fep]$Val-1, $Val+1
+[subject]現時点の異空窟LV:calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0x1F8:]+0x08:]+0x04,0,0xFFFFFFFF,unsigned
+[/io_fep]
+[io_fep]$Val-1, $Val+1
+[subject]最深の異空窟LV:calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0x1F8:]+0x08:]+0x08,0,0xFFFFFFFF,unsigned
+[/io_fep]
+[subject]召還鉱石//_:calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0xB4:]+0x08:]+0x0C,0,65535
+[subject]国家予算:calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0xB4:]+0x08:]+0x10,0,0x7FFFFFFF
+[subject]心臓耐久値:calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0xB4:]+0x08:]+0x14,0,5
+[subject]貯蔵EXP:calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0xB4:]+0x08:]+0x18,0,0xFFFFFFFF,unsigned
+[subject]現在コスト:calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0xB4:]+0x08:]+0x1C,0,0xFFFFFFFF,unsigned
+[subject]許容コスト:calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0xB4:]+0x08:]+0x20,0,0xFFFFFFFF,unsigned
+[subject]装備スペース全開:dir
+[subject]装備スペース全開(拡張プログラム適用前):b_toggle,0x400000,lib2->nyo_soubi2,real
+[subject]装備スペース全開(拡張プログラム適用後):b_toggle,0x400000,lib2->nyo_soubi4,real
+[back]
+[subject]ゲーム情報:dir
+[subject]獲得GOLD合計:calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0xB4:]+0x08:]+0x38,0,0xFFFFFFFF,unsigned
+[subject]倒したモンスター総数:calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0xB4:]+0x08:]+0x3C,0,0xFFFFFFFF,unsigned
+[subject]獲得EXP合計:calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0xB4:]+0x08:]+0x40,0,0xFFFFFFFF,unsigned
+[subject]獲得アイテム総数1:calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0xB4:]+0x08:]+0x44,0,0xFFFFFFFF,unsigned
+[io_fep]$Val+1000, $Val-1000
+[subject]獲得アイテム総数2:calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0xB4:]+0x08:]+0x28,0,0xFFFFFFFF,unsigned
+[/io_fep]
+[subject]総ターン数:calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0xB4:]+0x08:]+0x48,0,0xFFFFFFFF,unsigned
+[subject]GAMEOVER回数:calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0xB4:]+0x08:]+0x4C,0,0xFFFFFFFF,unsigned
+[subject]キッズやられた回数:calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0xB4:]+0x08:]+0x50,0,0xFFFFFFFF,unsigned
+[back]
+[subject]キャラ別パラメータ:dir
+[repeat]lib2->nyo,0,92,1
+[back]
+[subject]キャラ別パラメータ（名前表示あり）:dir
+[repeat]lib2->nyo_n,0,92,1
+[back]
+[subject]パラメータ一括変換:dir
+[subject]LV:b_calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0xC0:]+0x08:],lib2->nyo_ad,offset,0,0xFFFFFFFF,unsigned
+[subject]現在体力:b_calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0xC4:]+0x08:],lib2->nyo_ad,offset,0,0xFFFFFFFF,unsigned
+[subject]最大体力:b_calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0xC8:]+0x08:],lib2->nyo_ad,offset,0,0xFFFFFFFF,unsigned
+[subject]攻撃:b_calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0xCC:]+0x08:],lib2->nyo_ad,offset,0,0xFFFFFFFF,unsigned
+[subject]防御:b_calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0xD0:]+0x08:],lib2->nyo_ad,offset,0,0xFFFFFFFF,unsigned
+[subject]魔法:b_calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0xD4:]+0x08:],lib2->nyo_ad,offset,0,0xFFFFFFFF,unsigned
+[subject]魔抵:b_calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0xD8:]+0x08:],lib2->nyo_ad,offset,0,0xFFFFFFFF,unsigned
+[subject]命中:b_calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0xDC:]+0x08:],lib2->nyo_ad,offset,0,999
+[subject]回避:b_calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0xE0:]+0x08:],lib2->nyo_ad,offset,0,999
+[subject]移動:b_calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0xE4:]+0x08:],lib2->nyo_ad,offset,0,99
+[subject]射程:b_calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0xE8:]+0x08:],lib2->nyo_ad,offset,0,99
+[subject]クリティカル:b_calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0xEC:]+0x08:],lib2->nyo_ad,offset,0,100
+[subject]ふっとばし:b_calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0xF0:]+0x08:],lib2->nyo_ad,offset,0,100
+[subject]反撃:b_calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0xF4:]+0x08:],lib2->nyo_ad,offset,0,100
+[subject]回復:b_calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0xF8:]+0x08:],lib2->nyo_ad,offset,0,100
+[subject]効果拡大:b_calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0xFC:]+0x08:],lib2->nyo_ad,offset,0,100
+[subject]再行動:b_calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0x100:]+0x08:],lib2->nyo_ad,offset,0,100
+[subject]素質:b_calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0x104:]+0x08:],lib2->nyo_ad,offset,0,100
+[subject]コスト:b_calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0x108:]+0x08:],lib2->nyo_ad,offset,0,9999
+//[subject]療養中:b_calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0x10C:]+0x08:],lib2->nyo_ad,offset,0,999
+[subject]療養解除:toggle,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0x10C:]+0x08:],_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0x10C:]+0x08:]+0x320-0000,??
+[subject]ＬＵＰ:b_calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0x110:]+0x08:],lib2->nyo_ad,offset,0,999999
+[subject]与えたダメージ総数:b_calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0x114:]+0x08:],lib2->nyo_ad,offset,0,0xFFFFFFFF,unsigned
+[subject]？:b_calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0x118:]+0x08:],lib2->nyo_ad,offset,0,0xFFFFFFFF,unsigned
+[subject]連続再行動記録:b_calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0x11C:]+0x08:],lib2->nyo_ad,offset,0,999999
+[subject]？:b_calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0x120:]+0x08:],lib2->nyo_ad,offset,0,0xFFFFFFFF,unsigned
+[back]
+[subject]敵キャラ別パラメータ:dir
+[repeat]lib2->nyo_e,0,20,1
+[back]
+[subject]敵パラメータ一括変換:dir
+[subject]現在体力:b_calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0x15C:]+0x08:],lib2->nyo_ad2,offset,0,0xFFFFFFFF,unsigned
+[subject]最大体力:b_calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0x160:]+0x08:],lib2->nyo_ad2,offset,0,0xFFFFFFFF,unsigned
+[subject]攻撃:b_calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0x164:]+0x08:],lib2->nyo_ad2,offset,0,0xFFFFFFFF,unsigned
+[subject]防御:b_calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0x168:]+0x08:],lib2->nyo_ad2,offset,0,0xFFFFFFFF,unsigned
+[subject]魔法:b_calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0x16C:]+0x08:],lib2->nyo_ad2,offset,0,0xFFFFFFFF,unsigned
+[subject]魔抵:b_calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0x170:]+0x08:],lib2->nyo_ad2,offset,0,0xFFFFFFFF,unsigned
+[subject]命中:b_calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0x174:]+0x08:],lib2->nyo_ad2,offset,0,0xFFFFFFFF,unsigned
+[subject]回避:b_calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0x178:]+0x08:],lib2->nyo_ad2,offset,0,0xFFFFFFFF,unsigned
+[subject]移動:b_calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0x17C:]+0x08:],lib2->nyo_ad2,offset,0,0xFFFFFFFF,unsigned
+[subject]射程:b_calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0x180:]+0x08:],lib2->nyo_ad2,offset,0,0xFFFFFFFF,unsigned
+[back]
+[subject]キッズの移動力:dir
+[subject]パクポン:calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0x1D0:]+0x08:]+0x00,0,99
+[subject]みゅうたん:calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0x1D0:]+0x08:]+0x04,0,99
+[subject]埋め丸:calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0x1D0:]+0x08:]+0x08,0,99
+[back]
+[subject]アイテム:dir
+[repeat]lib2->nyo_item,0,500,1
+[back]
+[subject]アイテム（名前表示あり）:dir
+[repeat]lib2->nyo_item_n,0,500,1
+[back]
+[subject]カカロの遊び:dir
+[subject]カカロの遊び全開:toggle,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0x234:]+0x08:],22,??
+[subject]カカロの遊び:calc,_[:[:[:(MName::SYS41VM.DLL) + 0x3FCE0:]+0x234:]+0x08:],0,34
+[back]
+[/script]
+
+[script]
+[title]星の王女
+[process]星の王女.EXE
+[maker]美蕾
+[creator]KEI
+[note]
+Windows Me(512MB)とXP(512MB)で動作を確認しています。
+CG鑑賞はCGのサムネイルが表示されている画面で有効になります。
+また、（クリアフラグ）音楽鑑賞はトップメニューで有効になります。
+クリアフラグを全開にすると、兄ルートに行けるようになります。
+セーブデータに反映させるには、ゲームを開始してから
+ゲーム中にチェックした後、1つ以上のCGが表示されるまでゲームを進めてください。
+CGが表示されるとセーブされます。
+[/note]
+[subject]初期バージョン用:dir
+//[subject]CG鑑賞全開:b_toggle,_[_[: 0x55F534 :] +0x1D62C_],lib2x->王女,offset
+//[subject]クリアフラグ全開:b_toggle,_[_[: 0x55F534 :] +0x1D2E4_],lib2x->王女2,offset
+[subject]CG鑑賞全開:b_toggle,_[_[: 0x55E524 :] +0x1D62C_],lib2x->王女,offset
+[subject]クリアフラグ全開:b_toggle,_[_[: 0x55E524 :] +0x1D2E4_],lib2x->王女2,offset
+[back]
+[subject]1.04用:dir
+[subject]CG鑑賞全開:b_toggle,_[_[:[:0x41CAD5:]:] +0x1D62C_],lib2x->王女,offset
+[subject]クリアフラグ全開:b_toggle,_[_[:[:0x41CAD5:]:] +0x1D2E4_],lib2x->王女2,offset
+[back]
+[subject]1.05用:dir
+[subject]CG鑑賞全開:b_toggle,_[_[:[:0x41CCCB:]:] +0x1D62C_],lib2x->王女,offset
+[subject]クリアフラグ全開:b_toggle,_[_[:[:0x41CCCB:]:] +0x1D2E4_],lib2x->王女2,offset
+[back]
+[/script]
+
+[script]
+[title]金色のコルダ
+[process]Corda.EXE
+[maker]コーエー
+[creator]KEI
+[note]
+Windows Me(512MB)とXP(512MB)で動作を確認しています。
+●解釈MAXについて
+解釈のベルを鳴らしたものだけMAXになります。
+●経過時間について
+12時から経過した分数です。
+移動画面で変更ができます。
+●情報既読初期化について
+1日1つの情報しか聞けないようですが、初期化すれば
+1日に何度でも情報が聞けます。
+●恋愛進行度について
+最大8で、失敗すると9になります。
+9になると顔写真が消えます。
+[/note]
+[subject]Ver1.00用:dir
+[subject]主人公情報:dir
+	[subject]Lv:dir
+	[subject]技術:calc,0x5C9FDE,0,99
+	[subject]清麗:calc,0x5C9FE2,0,99
+	[subject]彩華:calc,0x5C9FE6,0,99
+	[subject]悠情:calc,0x5C9FEA,0,99
+	[back]
+	[subject]ex:dir
+	[subject]技術:calc,0x5C9FE0,0,100
+	[subject]清麗:calc,0x5C9FE4,0,100
+	[subject]彩華:calc,0x5C9FE8,0,100
+	[subject]悠情:calc,0x5C9FEC,0,100
+	[back]
+[subject]BP:calc,0x5C9FF0,0,65535
+[subject]スキル全取得:toggle,0x5CB828,0x5CB837-01,??
+[subject]楽譜全取得:b_toggle,0x5CB000,lib2x->コルダ楽譜a,offset
+//[subject]楽譜全部:b_toggle,0x5CB950,lib2x->コルダ楽譜,offset
+[subject]上達度MAX:b_toggle,0x5CB951,lib2x->コルダ楽譜2,offset
+[subject]解釈のベル全取得:b_toggle,0x5CB000,lib2x->コルダ楽譜3a,offset
+[subject]解釈MAX:b_toggle,0x5CBA10,lib2x->コルダ楽譜3,offset
+[back]
+[subject]アイテム:dir
+[subject]練習道具99個:b_toggle,0x5CB838,lib2x->コルダアイテム1,offset
+[subject]その他アイテム全取得:b_toggle,0x5CB838,lib2x->コルダアイテム2,offset
+[back]
+[io_fep]$Val*60, $Val/60
+[subject]12時以降の経過時間(分):calc,0x5CCA02,0,21600
+[/io_fep]
+[subject]次セレクション:calc,0x5CCA00,0,4
+[subject]経過日数:calc,0x5CCA01,0,11
+[subject]親密度:dir
+	[subject]月森蓮:calc,0x5C9FF8,0,1000
+	[subject]土浦梁太郎:calc,0x5CA01C,0,1000
+	[subject]志水桂一:calc,0x5CA040,0,1000
+	[subject]火原和樹:calc,0x5CA064,0,1000
+	[subject]柚木梓馬:calc,0x5CA088,0,1000
+	[subject]冬海笙子:calc,0x5CA0AC,0,1000
+	[subject]天羽菜美:calc,0x5CA0D0,0,1000
+	[subject]金澤紘人:calc,0x5CA0F4,0,1000
+	[subject]王崎信武:calc,0x5CA118,0,1000
+[back]
+[subject]ライバル度:dir
+	[subject]月森蓮:calc,0x5CA13C,0,1000
+	[subject]土浦梁太郎:calc,0x5CA146,0,1000
+	[subject]志水桂一:calc,0x5CA150,0,1000
+	[subject]火原和樹:calc,0x5CA15A,0,1000
+	[subject]柚木梓馬:calc,0x5CA164,0,1000
+	[subject]冬海笙子:calc,0x5CA16E,0,1000
+[back]
+[subject]恋愛進行度:dir
+	[subject]月森蓮:calc,0x5C9FFA,0,9
+	[subject]土浦梁太郎:calc,0x5CA01E,0,9
+	[subject]志水桂一:calc,0x5CA042,0,9
+	[subject]火原和樹:calc,0x5CA066,0,9
+	[subject]柚木梓馬:calc,0x5CA08A,0,9
+	[subject]冬海笙子:calc,0x5CA0AE,0,9
+	[subject]天羽菜美:calc,0x5CA0D2,0,9
+	[subject]金澤紘人:calc,0x5CA0F6,0,9
+	[subject]王崎信武:calc,0x5CA11A,0,9
+[back]
+[subject]好きな衣装・解釈全開:dir
+	[subject]月森蓮:toggle,0x5CA005,FF,??
+	[subject]土浦梁太郎:toggle,0x5CA029,FF,??
+	[subject]志水桂一:toggle,0x5CA04D,FF,??
+	[subject]火原和樹:toggle,0x5CA071,FF,??
+	[subject]柚木梓馬:toggle,0x5CA095,FF,??
+	[subject]冬海笙子:toggle,0x5CA0B9,FF,??
+	[subject]天羽菜美:toggle,0x5CA0DD,FF,??
+	[subject]金澤紘人:toggle,0x5CA101,FF,??
+	[subject]王崎信武:toggle,0x5CA125,FF,??
+[back]
+[subject]情報ポイント:dir
+	[subject]情報既読初期化:b_toggle,0x5CC9ED,lib2x->コルダ情報,offset
+	[subject]練習室:calc,0x5CC9EC,0,10
+	[subject]正門前:calc,0x5CC9EE,0,10
+	[subject]音楽室:calc,0x5CC9F0,0,10
+	[subject]エントランス:calc,0x5CC9F2,0,10
+	[subject]屋上:calc,0x5CC9F4,0,10
+	[subject]森の広場:calc,0x5CC9F6,0,10
+	[subject]講堂:calc,0x5CC9F8,0,10
+	[subject]観戦スペース:calc,0x5CC9FA,0,10
+	[subject]公園:calc,0x5CC9FC,0,10
+	[subject]駅前通り:calc,0x5CC9FE,0,10
+[back]
+[subject]My Memory全開:b_toggle,0x5C9D00,lib2x->コルダCG,offset
+[back]
+[subject]Ver1.01用:dir
+  [replace]0x2000, lib2x->コルダ100
+[back]
+[/script]
+
+[script]
+[title]大番長
+[process]SYSTEM40.EXE
+[maker]AliceSoft
+[creator]KEI
+[note]
+System 4.0 Version1.15専用です。
+System 4.0のバージョンが違うと使用できません。
+Windows XPWindows Meで動作を確認しています。
+●ターン数について
+経過ターン数は総ターン数よりも1少ないので
+書き換える場合は注意してください。
+両方とも変更する必要があります。
+県内編、全国編に入ったらリセットされます。
+また、月齢はターン数に依存します。
+●キャラのステイタスについて
+キャラステイタスは、戦闘中には変更できません。
+11人目以降のキャラが表示されなくなってしまったら、SpoilerALを再起動して下さい。
+それでも表示されない場合は、ゲームを再起動してロードし直して下さい。
+●キャラ名書換えについて
+名前変更でキャラ名を変更することができます。
+汎用キャラのキャラ番号、CG番号を書き換えれば他のキャラにすることができます。
+（能力値はそのままです。適宜変更して下さい。）
+●BPについて
+BPの変更は収支フェイズの決算画面の出る直前に変更してください。
+4の倍数のターンが始まったら、タイトル画面の続行ボタンを押した後
+自軍イベントフェイズ中に変更すれば変更できます。
+イベントフェイズが無い場合は、続行ボタンを押した直後にゲームを最小化して
+その間に変更してください。
+BPMAXは9999999に変更します。（タイミング不問）
+●アイテムについて
+個別アイテムはチェックを外すことで消すことが出来ますが
+装備中のアイテムは消さないようにして下さい。
+●クリア情報について
+ノーマルモードをクリアすると、ハードモードが選択できるようになります。
+ハードモードをクリアすると、無茶苦茶モードが選択できるようになります。
+屋上でモード選択ができます。
+最終BP、最終レベルアップ回数は、無茶苦茶モードで引き継がれます。
+●パラメータ一括変換について
+敵のパラメーターまで変更しないように
+人数を確認してから変更して下さい。
+●ハードモードONについて
+途中でもモードの変更が出来ます。
+ターンの始めのスタート画面で変更すると、そのターンからのモードが変わります。
+●キャラCG変更について
+キャラのCGのみ変更します。スキルや能力値や名前は変わりませんので適宜変更して下さい。
+キャラ番号と一緒に変更すれば、そのキャラがいることになり、そのキャラ関連のイベントも
+起きるようになります。
+ハーレムにも登場します。
+●キャラクター変更について
+キャラの追加改造をする場合、一度System4.0を再起動した上で、
+１キャラ改造する毎にセーブして、再起動からやり始めなおすと、
+綺麗にソートされます。
+●関数名？について
+軽量化のためにコメントアウトしました。
+復活させるにはKEI7x.SSGの「大番長」のところの//を削除してください。
+//が行頭についていると、コメントアウトされています。
+閲覧専用です。表示されるだけで変更できません。
+ゲームに使用されている関数？などを知る参考にして下さい。
+●ルートについて
+途中で変更可能です。
+ナイトメアを久那妓で、護国院を扇奈で進めれば、カミラ・ねこ番長／半蔵・伊織の
+排他キャラのイベントを全て起こして仲間にしたり、
+九州勢力の支配を自由に選択できる。
+●限界ターンについて
+0にするとターン制限なしになります。
+●フラグ関連について
+▲緋皇宮神耶／４０仲間：1にすると大悟を見捨てなくても会話でキャラクリ2,3がつきます。
+[/note]
+[subject]CG回想全開:toggle,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]+0x140:]+0x08:]+0x4,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]+0x140:]+0x08:]+0x2EB-01000000,??
+[subject]キャラクリ全開:toggle,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]+0x13C:]+0x08:],_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]+0x13C:]+0x08:]+0x217-02000000,??
+[subject]総ターン数:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]+0x58:]+0x08:]+0x8,0,999
+[subject]経過ターン数:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]+0x58:]+0x08:]+0x24,0,999
+[subject]BP//_:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]+0x58:]+0x08:]+0x20,0,999999
+[subject]BPMAX:b_toggle,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]+0x58:]+0x08:],lib2x->番長BPMAX,offset
+//[subject]チェック用BP//_:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]+0x58:]+0x08:]+0x10,0,999999
+[subject]借金:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]:]+0x08:]+0x27AC,0,999999
+[subject]学連負担金:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]:]+0x08:]+0x279C,0,999999
+[subject]戦歴:dir
+[subject]戦闘で死んだ仲間の数:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]+0x58:]+0x08:]+0x84,0,9999
+[subject]戦闘で死んだ敵の数:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]+0x58:]+0x08:]+0x88,0,9999
+[subject]戦闘総回数:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]+0x58:]+0x08:]+0x8C,0,9999
+[subject]動物殺戮数:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]+0x58:]+0x08:]+0x90,0,9999
+[subject]内ハニー殺戮数:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]+0x58:]+0x08:]+0xA4,0,9999
+[subject]内ムー殺戮数:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]+0x58:]+0x08:]+0xA8,0,9999
+[subject]捕獲した敵の数:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]+0x58:]+0x08:]+0x94,0,9999
+[subject]説得した部下の数:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]+0x58:]+0x08:]+0x98,0,9999
+[subject]尋問した敵の数:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]+0x58:]+0x08:]+0x9C,0,999
+[subject]総ターン数:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]+0x58:]+0x08:]+0xAC,0,9999
+[subject]総獲得BP:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]+0x58:]+0x08:]+0xB0,0,0xFFFFFFFF,unsigned,little_e
+[back]
+[subject]限界ターン数:dir
+[subject]九州制限:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]:]+0x08:]+0x2724,0,999
+[subject]魔界制限:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]:]+0x08:]+0x2728,0,999
+[subject]全国限界ターン:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]:]+0x08:]+0x272C,0,999
+[back]
+//[subject]キャラ別パラメータ（～10人目）:dir
+//[repeat]lib2x->番長キャラ,0,10,1
+//[back]
+//[subject]キャラ別パラメータ（11人目～）:dir
+//[repeat]lib2x->番長キャラ2,0,100,1
+//[back]
+[subject]キャラ別パラメータ:dir
+[repeat]lib2x->番長キャラ,0,10,1
+[repeat]lib2x->番長キャラ2,0,120,1
+[back]
+[subject]パラメータ一括変換:dir
+	[subject]～10人目:dir
+	[subject]信頼タイプ:b_list,0x10,lib2x->番長絆,0,1,lib2x->番長ad10,offset
+	[subject]信頼度:b_calc,0x14,lib2x->番長ad10,offset,0,99
+	[subject]給料:b_calc,0x18,lib2x->番長ad10,offset,0,99
+	[subject]治安:b_calc,0x1C,lib2x->番長ad10,offset,0,99
+	[subject]収益:b_calc,0x20,lib2x->番長ad10,offset,0,99
+	[subject]LV:b_calc,0x24,lib2x->番長ad10,offset,0,999
+	[subject]現在経験値:b_calc,0x28,lib2x->番長ad10,offset,0,9999
+	[subject]必要経験値:b_calc,0x2C,lib2x->番長ad10,offset,0,9999
+	[subject]最大体力:b_calc,0x30,lib2x->番長ad10,offset,0,999
+	[subject]最大気力:b_calc,0x34,lib2x->番長ad10,offset,0,10
+	[subject]現在体力:b_calc,0x38,lib2x->番長ad10,offset,0,999
+	[subject]現在気力:b_calc,0x3C,lib2x->番長ad10,offset,0,10
+	[subject]攻撃:b_calc,0x40,lib2x->番長ad10,offset,0,999
+	[subject]命中:b_calc,0x44,lib2x->番長ad10,offset,0,999
+	[subject]回避:b_calc,0x48,lib2x->番長ad10,offset,0,999
+	[subject]反撃率:b_calc,0x4C,lib2x->番長ad10,offset,0,100
+	[subject]攻撃距離:b_list,0x50,lib2x->番長距離,0,1,lib2x->番長ad10,offset
+	[subject]属性:b_list,0x54,lib2x->番長属性,0,1,lib2x->番長ad10,offset
+	[subject]対属性全部:b_toggle,0x58,lib2x->番長ad10z,offset
+	[subject]スキル:b_list,0x5C,lib2x->番長スキル,0,1,lib2x->番長ad10,offset
+	[subject]体力UP:b_calc,0xA8,lib2x->番長ad10,offset,0,999
+	[subject]気力UP:b_calc,0xAC,lib2x->番長ad10,offset,0,999
+	[subject]攻撃UP:b_calc,0xB0,lib2x->番長ad10,offset,0,999
+	[subject]命中UP:b_calc,0xB4,lib2x->番長ad10,offset,0,999
+	[subject]回避UP:b_calc,0xB8,lib2x->番長ad10,offset,0,999
+	[subject]反撃UP:b_calc,0xBC,lib2x->番長ad10,offset,0,999
+	[subject]治安UP:b_calc,0xC0,lib2x->番長ad10,offset,0,999
+	[subject]収益UP:b_calc,0xC4,lib2x->番長ad10,offset,0,999
+	[subject]素質:b_calc,0xC8,lib2x->番長ad10,offset,0,999
+	[back]
+	[subject]11～20人目:dir
+	[subject]信頼タイプ:b_list,0x10,lib2x->番長絆,0,1,lib2x->番長ad20,offset
+	[subject]信頼度:b_calc,0x14,lib2x->番長ad20,offset,0,99
+	[subject]給料:b_calc,0x18,lib2x->番長ad20,offset,0,99
+	[subject]治安:b_calc,0x1C,lib2x->番長ad20,offset,0,99
+	[subject]収益:b_calc,0x20,lib2x->番長ad20,offset,0,99
+	[subject]LV:b_calc,0x24,lib2x->番長ad20,offset,0,999
+	[subject]現在経験値:b_calc,0x28,lib2x->番長ad20,offset,0,9999
+	[subject]必要経験値:b_calc,0x2C,lib2x->番長ad20,offset,0,9999
+	[subject]最大体力:b_calc,0x30,lib2x->番長ad20,offset,0,999
+	[subject]最大気力:b_calc,0x34,lib2x->番長ad20,offset,0,10
+	[subject]現在体力:b_calc,0x38,lib2x->番長ad20,offset,0,999
+	[subject]現在気力:b_calc,0x3C,lib2x->番長ad20,offset,0,10
+	[subject]攻撃:b_calc,0x40,lib2x->番長ad20,offset,0,999
+	[subject]命中:b_calc,0x44,lib2x->番長ad20,offset,0,999
+	[subject]回避:b_calc,0x48,lib2x->番長ad20,offset,0,999
+	[subject]反撃率:b_calc,0x4C,lib2x->番長ad20,offset,0,100
+	[subject]攻撃距離:b_list,0x50,lib2x->番長距離,0,1,lib2x->番長ad20,offset
+	[subject]属性:b_list,0x54,lib2x->番長属性,0,1,lib2x->番長ad20,offset
+	[subject]対属性全部:b_toggle,0x58,lib2x->番長ad20z,offset
+	[subject]スキル:b_list,0x5C,lib2x->番長スキル,0,1,lib2x->番長ad20,offset
+	[subject]体力UP:b_calc,0xA8,lib2x->番長ad20,offset,0,999
+	[subject]気力UP:b_calc,0xAC,lib2x->番長ad20,offset,0,999
+	[subject]攻撃UP:b_calc,0xB0,lib2x->番長ad20,offset,0,999
+	[subject]命中UP:b_calc,0xB4,lib2x->番長ad20,offset,0,999
+	[subject]回避UP:b_calc,0xB8,lib2x->番長ad20,offset,0,999
+	[subject]反撃UP:b_calc,0xBC,lib2x->番長ad20,offset,0,999
+	[subject]治安UP:b_calc,0xC0,lib2x->番長ad20,offset,0,999
+	[subject]収益UP:b_calc,0xC4,lib2x->番長ad20,offset,0,999
+	[subject]素質:b_calc,0xC8,lib2x->番長ad20,offset,0,999
+	[back]
+	[subject]11～30人目:dir
+	[subject]信頼タイプ:b_list,0x10,lib2x->番長絆,0,1,lib2x->番長ad30,offset
+	[subject]信頼度:b_calc,0x14,lib2x->番長ad30,offset,0,99
+	[subject]給料:b_calc,0x18,lib2x->番長ad30,offset,0,99
+	[subject]治安:b_calc,0x1C,lib2x->番長ad30,offset,0,99
+	[subject]収益:b_calc,0x20,lib2x->番長ad30,offset,0,99
+	[subject]LV:b_calc,0x24,lib2x->番長ad30,offset,0,999
+	[subject]現在経験値:b_calc,0x28,lib2x->番長ad30,offset,0,9999
+	[subject]必要経験値:b_calc,0x2C,lib2x->番長ad30,offset,0,9999
+	[subject]最大体力:b_calc,0x30,lib2x->番長ad30,offset,0,999
+	[subject]最大気力:b_calc,0x34,lib2x->番長ad30,offset,0,10
+	[subject]現在体力:b_calc,0x38,lib2x->番長ad30,offset,0,999
+	[subject]現在気力:b_calc,0x3C,lib2x->番長ad30,offset,0,10
+	[subject]攻撃:b_calc,0x40,lib2x->番長ad30,offset,0,999
+	[subject]命中:b_calc,0x44,lib2x->番長ad30,offset,0,999
+	[subject]回避:b_calc,0x48,lib2x->番長ad30,offset,0,999
+	[subject]反撃率:b_calc,0x4C,lib2x->番長ad30,offset,0,100
+	[subject]攻撃距離:b_list,0x50,lib2x->番長距離,0,1,lib2x->番長ad30,offset
+	[subject]属性:b_list,0x54,lib2x->番長属性,0,1,lib2x->番長ad30,offset
+	[subject]対属性全部:b_toggle,0x58,lib2x->番長ad30z,offset
+	[subject]スキル:b_list,0x5C,lib2x->番長スキル,0,1,lib2x->番長ad30,offset
+	[subject]体力UP:b_calc,0xA8,lib2x->番長ad30,offset,0,999
+	[subject]気力UP:b_calc,0xAC,lib2x->番長ad30,offset,0,999
+	[subject]攻撃UP:b_calc,0xB0,lib2x->番長ad30,offset,0,999
+	[subject]命中UP:b_calc,0xB4,lib2x->番長ad30,offset,0,999
+	[subject]回避UP:b_calc,0xB8,lib2x->番長ad30,offset,0,999
+	[subject]反撃UP:b_calc,0xBC,lib2x->番長ad30,offset,0,999
+	[subject]治安UP:b_calc,0xC0,lib2x->番長ad30,offset,0,999
+	[subject]収益UP:b_calc,0xC4,lib2x->番長ad30,offset,0,999
+	[subject]素質:b_calc,0xC8,lib2x->番長ad30,offset,0,999
+	[back]
+	[subject]11～40人目:dir
+	[subject]信頼タイプ:b_list,0x10,lib2x->番長絆,0,1,lib2x->番長ad40,offset
+	[subject]信頼度:b_calc,0x14,lib2x->番長ad40,offset,0,99
+	[subject]給料:b_calc,0x18,lib2x->番長ad40,offset,0,99
+	[subject]治安:b_calc,0x1C,lib2x->番長ad40,offset,0,99
+	[subject]収益:b_calc,0x20,lib2x->番長ad40,offset,0,99
+	[subject]LV:b_calc,0x24,lib2x->番長ad40,offset,0,999
+	[subject]現在経験値:b_calc,0x28,lib2x->番長ad40,offset,0,9999
+	[subject]必要経験値:b_calc,0x2C,lib2x->番長ad40,offset,0,9999
+	[subject]最大体力:b_calc,0x30,lib2x->番長ad40,offset,0,999
+	[subject]最大気力:b_calc,0x34,lib2x->番長ad40,offset,0,10
+	[subject]現在体力:b_calc,0x38,lib2x->番長ad40,offset,0,999
+	[subject]現在気力:b_calc,0x3C,lib2x->番長ad40,offset,0,10
+	[subject]攻撃:b_calc,0x40,lib2x->番長ad40,offset,0,999
+	[subject]命中:b_calc,0x44,lib2x->番長ad40,offset,0,999
+	[subject]回避:b_calc,0x48,lib2x->番長ad40,offset,0,999
+	[subject]反撃率:b_calc,0x4C,lib2x->番長ad40,offset,0,100
+	[subject]攻撃距離:b_list,0x50,lib2x->番長距離,0,1,lib2x->番長ad40,offset
+	[subject]属性:b_list,0x54,lib2x->番長属性,0,1,lib2x->番長ad40,offset
+	[subject]対属性全部:b_toggle,0x58,lib2x->番長ad40z,offset
+	[subject]スキル:b_list,0x5C,lib2x->番長スキル,0,1,lib2x->番長ad40,offset
+	[subject]体力UP:b_calc,0xA8,lib2x->番長ad40,offset,0,999
+	[subject]気力UP:b_calc,0xAC,lib2x->番長ad40,offset,0,999
+	[subject]攻撃UP:b_calc,0xB0,lib2x->番長ad40,offset,0,999
+	[subject]命中UP:b_calc,0xB4,lib2x->番長ad40,offset,0,999
+	[subject]回避UP:b_calc,0xB8,lib2x->番長ad40,offset,0,999
+	[subject]反撃UP:b_calc,0xBC,lib2x->番長ad40,offset,0,999
+	[subject]治安UP:b_calc,0xC0,lib2x->番長ad40,offset,0,999
+	[subject]収益UP:b_calc,0xC4,lib2x->番長ad40,offset,0,999
+	[subject]素質:b_calc,0xC8,lib2x->番長ad40,offset,0,999
+	[back]
+	[subject]11～50人目:dir
+	[subject]信頼タイプ:b_list,0x10,lib2x->番長絆,0,1,lib2x->番長ad50,offset
+	[subject]信頼度:b_calc,0x14,lib2x->番長ad50,offset,0,99
+	[subject]給料:b_calc,0x18,lib2x->番長ad50,offset,0,99
+	[subject]治安:b_calc,0x1C,lib2x->番長ad50,offset,0,99
+	[subject]収益:b_calc,0x20,lib2x->番長ad50,offset,0,99
+	[subject]LV:b_calc,0x24,lib2x->番長ad50,offset,0,999
+	[subject]現在経験値:b_calc,0x28,lib2x->番長ad50,offset,0,9999
+	[subject]必要経験値:b_calc,0x2C,lib2x->番長ad50,offset,0,9999
+	[subject]最大体力:b_calc,0x30,lib2x->番長ad50,offset,0,999
+	[subject]最大気力:b_calc,0x34,lib2x->番長ad50,offset,0,10
+	[subject]現在体力:b_calc,0x38,lib2x->番長ad50,offset,0,999
+	[subject]現在気力:b_calc,0x3C,lib2x->番長ad50,offset,0,10
+	[subject]攻撃:b_calc,0x40,lib2x->番長ad50,offset,0,999
+	[subject]命中:b_calc,0x44,lib2x->番長ad50,offset,0,999
+	[subject]回避:b_calc,0x48,lib2x->番長ad50,offset,0,999
+	[subject]反撃率:b_calc,0x4C,lib2x->番長ad50,offset,0,100
+	[subject]攻撃距離:b_list,0x50,lib2x->番長距離,0,1,lib2x->番長ad50,offset
+	[subject]属性:b_list,0x54,lib2x->番長属性,0,1,lib2x->番長ad50,offset
+	[subject]対属性全部:b_toggle,0x58,lib2x->番長ad50z,offset
+	[subject]スキル:b_list,0x5C,lib2x->番長スキル,0,1,lib2x->番長ad50,offset
+	[subject]体力UP:b_calc,0xA8,lib2x->番長ad50,offset,0,999
+	[subject]気力UP:b_calc,0xAC,lib2x->番長ad50,offset,0,999
+	[subject]攻撃UP:b_calc,0xB0,lib2x->番長ad50,offset,0,999
+	[subject]命中UP:b_calc,0xB4,lib2x->番長ad50,offset,0,999
+	[subject]回避UP:b_calc,0xB8,lib2x->番長ad50,offset,0,999
+	[subject]反撃UP:b_calc,0xBC,lib2x->番長ad50,offset,0,999
+	[subject]治安UP:b_calc,0xC0,lib2x->番長ad50,offset,0,999
+	[subject]収益UP:b_calc,0xC4,lib2x->番長ad50,offset,0,999
+	[subject]素質:b_calc,0xC8,lib2x->番長ad50,offset,0,999
+	[back]
+	[subject]11～60人目:dir
+	[subject]信頼タイプ:b_list,0x10,lib2x->番長絆,0,1,lib2x->番長ad60,offset
+	[subject]信頼度:b_calc,0x14,lib2x->番長ad60,offset,0,99
+	[subject]給料:b_calc,0x18,lib2x->番長ad60,offset,0,99
+	[subject]治安:b_calc,0x1C,lib2x->番長ad60,offset,0,99
+	[subject]収益:b_calc,0x20,lib2x->番長ad60,offset,0,99
+	[subject]LV:b_calc,0x24,lib2x->番長ad60,offset,0,999
+	[subject]現在経験値:b_calc,0x28,lib2x->番長ad60,offset,0,9999
+	[subject]必要経験値:b_calc,0x2C,lib2x->番長ad60,offset,0,9999
+	[subject]最大体力:b_calc,0x30,lib2x->番長ad60,offset,0,999
+	[subject]最大気力:b_calc,0x34,lib2x->番長ad60,offset,0,10
+	[subject]現在体力:b_calc,0x38,lib2x->番長ad60,offset,0,999
+	[subject]現在気力:b_calc,0x3C,lib2x->番長ad60,offset,0,10
+	[subject]攻撃:b_calc,0x40,lib2x->番長ad60,offset,0,999
+	[subject]命中:b_calc,0x44,lib2x->番長ad60,offset,0,999
+	[subject]回避:b_calc,0x48,lib2x->番長ad60,offset,0,999
+	[subject]反撃率:b_calc,0x4C,lib2x->番長ad60,offset,0,100
+	[subject]攻撃距離:b_list,0x50,lib2x->番長距離,0,1,lib2x->番長ad60,offset
+	[subject]属性:b_list,0x54,lib2x->番長属性,0,1,lib2x->番長ad60,offset
+	[subject]対属性全部:b_toggle,0x58,lib2x->番長ad60z,offset
+	[subject]スキル:b_list,0x5C,lib2x->番長スキル,0,1,lib2x->番長ad60,offset
+	[subject]体力UP:b_calc,0xA8,lib2x->番長ad60,offset,0,999
+	[subject]気力UP:b_calc,0xAC,lib2x->番長ad60,offset,0,999
+	[subject]攻撃UP:b_calc,0xB0,lib2x->番長ad60,offset,0,999
+	[subject]命中UP:b_calc,0xB4,lib2x->番長ad60,offset,0,999
+	[subject]回避UP:b_calc,0xB8,lib2x->番長ad60,offset,0,999
+	[subject]反撃UP:b_calc,0xBC,lib2x->番長ad60,offset,0,999
+	[subject]治安UP:b_calc,0xC0,lib2x->番長ad60,offset,0,999
+	[subject]収益UP:b_calc,0xC4,lib2x->番長ad60,offset,0,999
+	[subject]素質:b_calc,0xC8,lib2x->番長ad60,offset,0,999
+	[back]
+	[subject]11～70人目:dir
+	[subject]信頼タイプ:b_list,0x10,lib2x->番長絆,0,1,lib2x->番長ad70,offset
+	[subject]信頼度:b_calc,0x14,lib2x->番長ad70,offset,0,99
+	[subject]給料:b_calc,0x18,lib2x->番長ad70,offset,0,99
+	[subject]治安:b_calc,0x1C,lib2x->番長ad70,offset,0,99
+	[subject]収益:b_calc,0x20,lib2x->番長ad70,offset,0,99
+	[subject]LV:b_calc,0x24,lib2x->番長ad70,offset,0,999
+	[subject]現在経験値:b_calc,0x28,lib2x->番長ad70,offset,0,9999
+	[subject]必要経験値:b_calc,0x2C,lib2x->番長ad70,offset,0,9999
+	[subject]最大体力:b_calc,0x30,lib2x->番長ad70,offset,0,999
+	[subject]最大気力:b_calc,0x34,lib2x->番長ad70,offset,0,10
+	[subject]現在体力:b_calc,0x38,lib2x->番長ad70,offset,0,999
+	[subject]現在気力:b_calc,0x3C,lib2x->番長ad70,offset,0,10
+	[subject]攻撃:b_calc,0x40,lib2x->番長ad70,offset,0,999
+	[subject]命中:b_calc,0x44,lib2x->番長ad70,offset,0,999
+	[subject]回避:b_calc,0x48,lib2x->番長ad70,offset,0,999
+	[subject]反撃率:b_calc,0x4C,lib2x->番長ad70,offset,0,100
+	[subject]攻撃距離:b_list,0x50,lib2x->番長距離,0,1,lib2x->番長ad70,offset
+	[subject]属性:b_list,0x54,lib2x->番長属性,0,1,lib2x->番長ad70,offset
+	[subject]対属性全部:b_toggle,0x58,lib2x->番長ad70z,offset
+	[subject]スキル:b_list,0x5C,lib2x->番長スキル,0,1,lib2x->番長ad70,offset
+	[subject]体力UP:b_calc,0xA8,lib2x->番長ad70,offset,0,999
+	[subject]気力UP:b_calc,0xAC,lib2x->番長ad70,offset,0,999
+	[subject]攻撃UP:b_calc,0xB0,lib2x->番長ad70,offset,0,999
+	[subject]命中UP:b_calc,0xB4,lib2x->番長ad70,offset,0,999
+	[subject]回避UP:b_calc,0xB8,lib2x->番長ad70,offset,0,999
+	[subject]反撃UP:b_calc,0xBC,lib2x->番長ad70,offset,0,999
+	[subject]治安UP:b_calc,0xC0,lib2x->番長ad70,offset,0,999
+	[subject]収益UP:b_calc,0xC4,lib2x->番長ad70,offset,0,999
+	[subject]素質:b_calc,0xC8,lib2x->番長ad70,offset,0,999
+	[back]
+	[subject]11～80人目:dir
+	[subject]信頼タイプ:b_list,0x10,lib2x->番長絆,0,1,lib2x->番長ad80,offset
+	[subject]信頼度:b_calc,0x14,lib2x->番長ad80,offset,0,99
+	[subject]給料:b_calc,0x18,lib2x->番長ad80,offset,0,99
+	[subject]治安:b_calc,0x1C,lib2x->番長ad80,offset,0,99
+	[subject]収益:b_calc,0x20,lib2x->番長ad80,offset,0,99
+	[subject]LV:b_calc,0x24,lib2x->番長ad80,offset,0,999
+	[subject]現在経験値:b_calc,0x28,lib2x->番長ad80,offset,0,9999
+	[subject]必要経験値:b_calc,0x2C,lib2x->番長ad80,offset,0,9999
+	[subject]最大体力:b_calc,0x30,lib2x->番長ad80,offset,0,999
+	[subject]最大気力:b_calc,0x34,lib2x->番長ad80,offset,0,10
+	[subject]現在体力:b_calc,0x38,lib2x->番長ad80,offset,0,999
+	[subject]現在気力:b_calc,0x3C,lib2x->番長ad80,offset,0,10
+	[subject]攻撃:b_calc,0x40,lib2x->番長ad80,offset,0,999
+	[subject]命中:b_calc,0x44,lib2x->番長ad80,offset,0,999
+	[subject]回避:b_calc,0x48,lib2x->番長ad80,offset,0,999
+	[subject]反撃率:b_calc,0x4C,lib2x->番長ad80,offset,0,100
+	[subject]攻撃距離:b_list,0x50,lib2x->番長距離,0,1,lib2x->番長ad80,offset
+	[subject]属性:b_list,0x54,lib2x->番長属性,0,1,lib2x->番長ad80,offset
+	[subject]対属性全部:b_toggle,0x58,lib2x->番長ad80z,offset
+	[subject]スキル:b_list,0x5C,lib2x->番長スキル,0,1,lib2x->番長ad80,offset
+	[subject]体力UP:b_calc,0xA8,lib2x->番長ad80,offset,0,999
+	[subject]気力UP:b_calc,0xAC,lib2x->番長ad80,offset,0,999
+	[subject]攻撃UP:b_calc,0xB0,lib2x->番長ad80,offset,0,999
+	[subject]命中UP:b_calc,0xB4,lib2x->番長ad80,offset,0,999
+	[subject]回避UP:b_calc,0xB8,lib2x->番長ad80,offset,0,999
+	[subject]反撃UP:b_calc,0xBC,lib2x->番長ad80,offset,0,999
+	[subject]治安UP:b_calc,0xC0,lib2x->番長ad80,offset,0,999
+	[subject]収益UP:b_calc,0xC4,lib2x->番長ad80,offset,0,999
+	[subject]素質:b_calc,0xC8,lib2x->番長ad80,offset,0,999
+	[back]
+[back]
+[subject]アイテム:dir
+[subject]アイテム全取得:b_toggle,0x400000,lib2x->番長アイテム,real
+[subject]アイテム個別:dir
+[repeat]lib2x->番長アイテム個別,0,48,1
+[back]
+[back]
+[subject]キャラ変更:dir
+[subject]名前変更:dir
+[repeat]lib2x->番長キャラ名,0,10,1
+[repeat]lib2x->番長キャラ名2,0,100,1
+[back]
+[subject]キャラ番号CG変更:dir
+[repeat]lib2x->番長キャラCG,0,10,1
+[repeat]lib2x->番長キャラCG2,0,100,1
+[back]
+[back]
+[subject]捕虜:dir
+[subject]全国編:dir
+[subject]キャラ別パラメータ:dir
+[repeat]lib2x->番長捕虜,0,100,1
+[back]
+[subject]名前変更:dir
+[repeat]lib2x->番長捕虜名,0,100,1
+[back]
+[subject]CG変更:dir
+[repeat]lib2x->番長捕虜CG,0,100,1
+[back]
+[back]
+
+[subject]県内編:dir
+[subject]キャラ別パラメータ:dir
+[repeat]lib2x->番長捕虜2,0,50,1
+[back]
+[subject]名前変更:dir
+[repeat]lib2x->番長捕虜名2,0,50,1
+[back]
+[subject]CG変更:dir
+[repeat]lib2x->番長捕虜CG2,0,50,1
+[back]
+[back]
+[back]
+[subject]地域:dir
+[subject]地域一括変換:dir
+	[subject]所属:b_list,0x14,lib2x->番長所属,0,1,lib2x->番長地域ad30,offset
+	[subject]治安状態:b_list,0x40,lib2x->番長地域状態,0,1,lib2x->番長地域ad30,offset
+	[subject]治安:b_calc,0x44,lib2x->番長地域ad30,offset,0,99
+	[subject]総支配力:b_calc,0x4C,lib2x->番長地域ad30,offset,0,15
+	[subject]自軍支配力:b_calc,0x50,lib2x->番長地域ad30,offset,0,15
+	[subject]収益:b_calc,0x54,lib2x->番長地域ad30,offset,0,999
+[back]
+[repeat]lib2x->番長地域,0,32,1
+[back]
+[subject]クリア情報:dir
+//[subject]?:toggle,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]+0x144:]+0x08:]+0x0,01,00
+[subject]ノーマルクリア:toggle,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]+0x144:]+0x08:]+0x4,01,00
+[subject]ハードクリア:toggle,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]+0x144:]+0x08:]+0x8,01,00
+[subject]無茶苦茶クリア:toggle,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]+0x144:]+0x08:]+0xC,01,00
+[subject]真エンディングクリア:toggle,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]+0x144:]+0x08:]+0x10,01,00
+[subject]最終BP:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]+0x144:]+0x08:]+0x14,00,9999999
+[subject]最終レベルアップ回数:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]+0x144:]+0x08:]+0x18,00,999
+[back]
+[subject]フラグ関連（抜粋）:dir
+[subject]ルート:list,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]:]+0x08:]+0x2714,lib2x->番長ルート,1,1
+[subject]ハードモードON:toggle,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]:]+0x08:]+0x2718,01,00
+[subject]建設ON:toggle,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]:]+0x08:]+0x30,01,00
+[subject]本を借りるON:toggle,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]:]+0x08:]+0x27C8,01,00
+[subject]ネコ缶ON:toggle,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]:]+0x08:]+0x1180,01,00
+[subject]同人誌ON:toggle,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]:]+0x08:]+0x2860,01,00
+[subject]強化２ON:toggle,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]:]+0x08:]+0x2A8C,0100000001000000,0000000000000000
+[subject]秘密日記番号:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]:]+0x08:]+0x2914,0,99
+[subject]▲緋皇宮神耶／４０仲間:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]:]+0x08:]+0x2314,0,99
+[subject]火星侵攻隊との戦いの記録:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]:]+0x08:]+0x2734,0,5
+[subject]ヴァンダイン関連:d_toggle,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]:]+0x08:]+0x2CC8,lib2x->番長ヴァンダイン,lib2x->番長ヴァンダインad,offset
+[subject]冬摩彼方関連:d_toggle,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]:]+0x08:]+0x2040,lib2x->番長冬摩彼方,lib2x->番長冬摩彼方ad,offset
+[subject]▲ざくろ／コレクション:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]:]+0x08:]+0x2864,0,999
+[subject]ハニワ教:dir
+[subject]▲ハニワ教:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]:]+0x08:]+0x2880,0,99
+[subject]▲ハニワ教／時間:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]:]+0x08:]+0x2884,0,999
+[subject]▲ハニワ教／宴回数:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]:]+0x08:]+0x2888,0,999
+[back]
+[back]
+//[subject]キャラステイタス戦闘中:dir
+//[replace]_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]+0x6318:]+0x08:], lib2x->番長para
+//  [replace]_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]+0x63C4:]+0x08:], lib2x->番長para
+//[repeat]lib2x->番長戦闘,0,150,1
+//[back]
+[subject]ハーレム:dir
+[subject]天楼 久那妓:dir
+  [replace]_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]:]+0x08:]+0x1298+0x44, lib2x->番長ハーレム
+[subject]京堂 扇奈:dir
+  [replace]_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]:]+0x08:]+0x1298+0x84, lib2x->番長ハーレム
+[subject]日比生 咲苗:dir
+  [replace]_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]:]+0x08:]+0x1298, lib2x->番長ハーレム
+[subject]シオン:dir
+  [replace]_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]:]+0x08:]+0x1298+0xFC, lib2x->番長ハーレム
+[subject]高羽 沙枝:dir
+  [replace]_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]:]+0x08:]+0x1298+0xC0, lib2x->番長ハーレム
+[subject]姫乃宮 華苑:dir
+  [replace]_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]:]+0x08:]+0x1298+0x138, lib2x->番長ハーレム
+[back]
+[subject]部下人数:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x49AC8:]+0x4430:]+0x08:]+0x4,0,80
+[subject]フラグ関連:dir
+[subject]フラグ関連１:dir
+[repeat]lib2x->番長フラグ,0,499,1
+[back]
+[subject]フラグ関連２:dir
+[repeat]lib2x->番長フラグ,500,999,1
+[back]
+[subject]フラグ関連３:dir
+[repeat]lib2x->番長フラグ,1000,1499,1
+[back]
+[subject]フラグ関連４:dir
+[repeat]lib2x->番長フラグ,1500,1999,1
+[back]
+[subject]フラグ関連５:dir
+[repeat]lib2x->番長フラグ,2000,2499,1
+[back]
+[subject]フラグ関連６:dir
+[repeat]lib2x->番長フラグ,2500,2999,1
+[back]
+[subject]フラグ関連７:dir
+[repeat]lib2x->番長フラグ,3000,3462,1
+[back]
+[back]
+//[subject]フラグ関連調査用:dir
+//[repeat]lib2x->番長フラグ1,0,3463,1
+//[back]
+//[subject]関数名？（閲覧のみ）:dir
+//[repeat]lib2x->番長フラグ2,0,5375,1
+//[back]
+//[subject]DATA名？（閲覧のみ）:dir
+//[repeat]lib2x->番長DATA,0,8000,1
+//[back]
+[/script]
+
+[script]
+[title]星の王女2
+[process]星の王女2.EXE
+[maker]美蕾
+[creator]KEI
+[note]
+Windows Me(512MB)とXP(512MB)で動作を確認しています。
+CG鑑賞はCGのサムネイルが表示されている画面で有効になります。
+また、音楽鑑賞はトップメニューで有効になります。
+セーブデータに反映させるには、ゲームを開始してから
+ゲーム中にチェックした後、1つ以上のCGが表示されるまでゲームを進めてください。
+CGが表示されるとセーブされます。
+Ver1.00（初期バージョン）はゲームのバグで回想の秀春が表示されませんので
+アップデートしてください。
+クリアフラグ関連はFoolさんに協力していただきました。どうもありがとうございます。
+[/note]
+[subject]Ver1.00用:dir
+[subject]CG鑑賞全開:b_toggle,_[_[:[:0x41D948:]:] +0x23794_],lib2x->王女２,offset
+[subject]回想全開:b_toggle,_[_[:[:0x41D948:]:] +0x28294_],lib2x->王女２a,offset
+[subject]クリアフラグ全開:b_toggle,_[_[:[:0x41D948:]:] +0x2344C_],lib2x->王女２b,offset
+[subject]音楽鑑賞ON:toggle,_[_[:[:0x41D948:]:] +0x23434_],*{ 00 :: 01 *},??
+[subject]クリアフラグ関連:d_toggle,_[_[:[:0x41D948:]:] +0x2344C_],lib2x->王女２c,lib2x->王女２_ad,offset
+[back]
+[subject]Ver1.01、1.02用:dir
+[subject]CG鑑賞全開:b_toggle,_[_[:[:0x41D940:]:] +0x23794_],lib2x->王女２,offset
+[subject]回想全開:b_toggle,_[_[:[:0x41D940:]:] +0x28294_],lib2x->王女２a,offset
+[subject]クリアフラグ全開:b_toggle,_[_[:[:0x41D940:]:] +0x2344C_],lib2x->王女２b,offset
+[subject]音楽鑑賞ON:toggle,_[_[:[:0x41D940:]:] +0x23434_],*{ 00 :: 01 *},??
+[subject]クリアフラグ関連:d_toggle,_[_[:[:0x41D940:]:] +0x2344C_],lib2x->王女２c,lib2x->王女２_ad,offset
+[back]
+[/script]
+
+[script]
+[title]王子さまLV2
+[process]SYSTEM40.EXE
+[maker]AliceBlue
+[creator]KEI
+[note]
+System 4.0 Version1.17専用です。
+System 4.0のバージョンが違うと使用できません。
+Windows XPWindows Meで動作を確認しています。
+[/note]
+//[subject]メモリ更新OFF:toggle,_(MName::SYS42VM.DLL)+0x26CCC,9090,7517
+[subject]CGモード全開:b_toggle,0x40000,lib2x->王子２CG,real
+[subject]回想モード全開:toggle,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x98:]+0x08:]+0x190,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x98:]+0x08:]+0xB43-01000000,??
+[subject]音楽モード全開:toggle,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x9C:]+0x08:],_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x9C:]+0x08:]+0x47-01000000,??
+[subject]所持金:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x110:]+0x08:],00,99999
+[subject]はらぺこ:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x288:]+0x08:],00,999
+[subject]セレスト:dir
+[subject]現在体力:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x8B4:]+0x08:]+0x4,00,99999
+[subject]最大体力:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x8B4:]+0x08:]+0x8,00,99999
+[subject]現在気力:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x8B4:]+0x08:]+0xC,00,99999
+[subject]最大気力:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x8B4:]+0x08:]+0x10,00,99999
+[subject]攻撃:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x8B8:]+0x08:],00,999
+[subject]防御:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x8B8:]+0x08:]+0x4,00,999
+[subject]魔法:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x8B8:]+0x08:]+0x8,00,999
+[subject]魔抵:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x8B8:]+0x08:]+0xC,00,999
+[subject]回避:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x8B8:]+0x08:]+0x10,00,999
+[subject]行動:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x8B8:]+0x08:]+0x14,00,999
+[back]
+[subject]戦闘中:dir
+[subject]カナン:dir
+[subject]現在体力:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1130:]+0x08:]+0x4,00,99999
+[subject]最大体力:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1130:]+0x08:]+0x8,00,99999
+[subject]現在気力:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1130:]+0x08:]+0xC,00,99999
+[subject]最大気力:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1130:]+0x08:]+0x10,00,99999
+[subject]攻撃:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1134:]+0x08:],00,999
+[subject]防御:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1134:]+0x08:]+0x4,00,999
+[subject]魔法:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1134:]+0x08:]+0x8,00,999
+[subject]魔抵:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1134:]+0x08:]+0xC,00,999
+[subject]回避:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1134:]+0x08:]+0x10,00,999
+[subject]行動:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1134:]+0x08:]+0x14,00,999
+[back]
+[back]
+[size]4
+[subject]アイテム:dir
+[subject]消費アイテム99個:b_toggle,0x40000,lib2x->王子消費アイテム,real
+	[subject]アイテム個別:dir
+	[subject]世色癌:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x14B8:]+0x08:]+0xC,00,99
+	[subject]世色癌２:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x14C8:]+0x08:]+0xC,00,99
+	[subject]世色癌３:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x14D8:]+0x08:]+0xC,00,99
+	[subject]竜角惨:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x14E8:]+0x08:]+0xC,00,99
+	[subject]愚論酸:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x14F8:]+0x08:]+0xC,00,99
+	[subject]離解印:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1508:]+0x08:]+0xC,00,99
+	[subject]まんが肉:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1518:]+0x08:]+0xC,00,99
+	[subject]爆発茸:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1528:]+0x08:]+0xC,00,99
+	[subject]復活の小判:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1538:]+0x08:]+0xC,00,99
+	[subject]帰り木:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1548:]+0x08:]+0xC,00,99
+	[subject]捕獲ロープ:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1558:]+0x08:]+0xC,00,99
+[subject]バケツ:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1568:]+0x08:]+0xC,0,99,unsigned
+[subject]さがりなしの実:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1578:]+0x08:]+0xC,0,99,unsigned
+[subject]ベストグリーン:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1588:]+0x08:]+0xC,0,99,unsigned
+[subject]えんじぼうず:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1598:]+0x08:]+0xC,0,99,unsigned
+[subject]ベージュきのこ:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x15A8:]+0x08:]+0xC,0,99,unsigned
+[subject]黒陸ワカメ:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x15B8:]+0x08:]+0xC,0,99,unsigned
+[subject]鍋:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x15C8:]+0x08:]+0xC,0,99,unsigned
+[subject]きゃんきゃん党の鍵:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x15D8:]+0x08:]+0xC,0,99,unsigned
+[subject]機械の破片:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x15E8:]+0x08:]+0xC,0,99,unsigned
+[subject]イの木の花:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x15F8:]+0x08:]+0xC,0,99,unsigned
+[subject]タの木の花:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1608:]+0x08:]+0xC,0,99,unsigned
+[subject]コの木の花:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1618:]+0x08:]+0xC,0,99,unsigned
+[subject]イタコの実:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1628:]+0x08:]+0xC,0,99,unsigned
+[subject]ママタビの実:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1638:]+0x08:]+0xC,0,99,unsigned
+[subject]マタドールの衣裳:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1648:]+0x08:]+0xC,0,99,unsigned
+[subject]無敵カウベル:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1658:]+0x08:]+0xC,0,99,unsigned
+[subject]すいかの種:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1668:]+0x08:]+0xC,0,99,unsigned
+[subject]注射器:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1678:]+0x08:]+0xC,0,99,unsigned
+[subject]硫酸:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1688:]+0x08:]+0xC,0,99,unsigned
+[subject]くじら:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1698:]+0x08:]+0xC,0,99,unsigned
+[subject]開花したカブトトリ:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x16A8:]+0x08:]+0xC,0,99,unsigned
+[subject]赤いダンジョン茸:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x16B8:]+0x08:]+0xC,0,99,unsigned
+[subject]赤っぽいダンジョン茸:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x16C8:]+0x08:]+0xC,0,99,unsigned
+[subject]にゃんじゃらし:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x16D8:]+0x08:]+0xC,0,99,unsigned
+[subject]子分:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x16E8:]+0x08:]+0xC,0,99,unsigned
+[subject]遺跡３の鍵:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x16F8:]+0x08:]+0xC,0,99,unsigned
+[subject]遺跡４の鍵:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1708:]+0x08:]+0xC,0,99,unsigned
+[subject]扉に捧げる花:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1718:]+0x08:]+0xC,0,99,unsigned
+[subject]扉に捧げる花:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1728:]+0x08:]+0xC,0,99,unsigned
+[subject]扉に捧げる花:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1738:]+0x08:]+0xC,0,99,unsigned
+[subject]立派なうし肉:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1748:]+0x08:]+0xC,0,99,unsigned
+[subject]おかゆ壱番しぼり:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1758:]+0x08:]+0xC,0,99,unsigned
+[subject]アイテムちゃつみ:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1768:]+0x08:]+0xC,0,99,unsigned
+[subject]よーでるタマネギ:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1778:]+0x08:]+0xC,0,99,unsigned
+[subject]業雷にんじん:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1788:]+0x08:]+0xC,0,99,unsigned
+[subject]男色イモ:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1798:]+0x08:]+0xC,0,99,unsigned
+[subject]プリン:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x17A8:]+0x08:]+0xC,0,99,unsigned
+[subject]にゃんにゃん:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x17B8:]+0x08:]+0xC,0,99,unsigned
+[subject]金魚:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x17C8:]+0x08:]+0xC,0,99,unsigned
+[subject]にぎり飯:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x17D8:]+0x08:]+0xC,0,99,unsigned
+[subject]ほかほかごはん:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x17E8:]+0x08:]+0xC,0,99,unsigned
+[subject]あんぱん:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x17F8:]+0x08:]+0xC,0,99,unsigned
+[subject]あやしい薬:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1808:]+0x08:]+0xC,0,99,unsigned
+[subject]ハニーカレー:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1818:]+0x08:]+0xC,0,99,unsigned
+[subject]一日寝かせたカレー:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1828:]+0x08:]+0xC,0,99,unsigned
+[subject]サハラマサラ:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1838:]+0x08:]+0xC,0,99,unsigned
+[subject]哭きのルー:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1848:]+0x08:]+0xC,0,99,unsigned
+[subject]こんにちわの塩辛:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1858:]+0x08:]+0xC,0,99,unsigned
+[subject]ヒラミレモン:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1868:]+0x08:]+0xC,0,99,unsigned
+[subject]ももの実:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1878:]+0x08:]+0xC,0,99,unsigned
+[subject]だんごパウダー:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1888:]+0x08:]+0xC,0,99,unsigned
+[subject]ゴールデン捕獲ロープ:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1898:]+0x08:]+0xC,0,99,unsigned
+[subject]認証カード:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x18A8:]+0x08:]+0xC,0,99,unsigned
+[subject]カードキー:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x18B8:]+0x08:]+0xC,0,99,unsigned
+[subject]除草剤２:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x18C8:]+0x08:]+0xC,0,99,unsigned
+[subject]写真Ａ:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x18D8:]+0x08:]+0xC,0,99,unsigned
+[subject]写真Ｂ:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x18E8:]+0x08:]+0xC,0,99,unsigned
+[subject]写真１:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x18F8:]+0x08:]+0xC,0,99,unsigned
+[subject]写真２:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1908:]+0x08:]+0xC,0,99,unsigned
+[subject]写真３:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1918:]+0x08:]+0xC,0,99,unsigned
+[subject]写真４:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1928:]+0x08:]+0xC,0,99,unsigned
+[subject]写真５:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1938:]+0x08:]+0xC,0,99,unsigned
+[subject]写真６:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x1948:]+0x08:]+0xC,0,99,unsigned
+[back]
+[back]
+[/size]
+//[subject]フラグ関連調査用:dir
+//[repeat]lib2x->王子２フラグ1,0,270,1
+//[back]
+//[subject]関数名？（閲覧のみ）:dir
+//[repeat]lib2x->王子２フラグ2,0,210,1
+//[back]
+//[subject]変数名？（閲覧のみ）:dir
+//[repeat]lib2x->王子２フラグ3,0,4500,1
+//[back]
+//[subject]変数名２？（閲覧のみ）:dir
+//[repeat]lib2x->王子２フラグ4,0,500,1
+//[back]
+//[subject]DATA名？（閲覧のみ）:dir
+//[repeat]lib2x->王子２DATA,0,8000,1
+[subject]アダルト？:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x53F80:]+0x151C:]+0x08:],0,99,unsigned
+[back]
+[/script]
+
