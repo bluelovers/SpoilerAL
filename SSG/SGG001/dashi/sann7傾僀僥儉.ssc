@@ -1,0 +1,6 @@
+[subject]持ち主:list,0x2c,sunn7武将,0x1fe2a24,0x110,
+[subject]次のアイテム:list,0x30,sunn7アイテム,0x200ce08,0x3c,
+[subject]次のアイテムなし:toggle,0x30,689CB800,689CD800,
+[subject]画像:list,0x20,sunn7アイテム,0x00,0x01,
+[subject]アイテム名:string,0x0c,10,2,
+[back]

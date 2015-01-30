@@ -1,0 +1,10 @@
+[group]サーチ
+ [val]*.????????????*.
+ [calc] NHP,no,00,9999
+ [calc] MHP,no,00,9999
+[/group]
+
+[group]ステータス
+        [subject] NHP : calc,0x0,00,9999
+        [subject] MHP : calc,0x8,00,9999
+[/group]

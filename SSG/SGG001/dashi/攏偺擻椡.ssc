@@ -1,0 +1,9 @@
+[subject]素質:calc,0x00,0,255,
+[subject]スピード:calc,0x01,0,255,
+[subject]スタミナ:calc,0x02,0,255,
+[subject]馬齢+賢さ:bitlist,0x03,馬3,1,
+[subject]血統毛色:list,0x04,馬1,0,1,
+[subject]根性成長毛色:list,0x05,馬2,0,1,
+[subject]強化:bitlist,0x06,馬4,1
+[subject]性格:bitlist,0x07,馬5,1
+[back]

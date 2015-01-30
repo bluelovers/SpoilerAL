@@ -1,0 +1,17 @@
+[group]STATUS
+	[subject]ALL: b_calc,0x00,‰Æ’ë“à’²‹³->STATUS_ALL,offset,0,999,
+	[subject]«Œğ: calc,0x04,0,999
+	[subject]«Š´: calc,0x0C,0,999
+	[subject]ãè–å: calc,0x14,0,999
+	[subject]ãµ’p: calc,0x1C,0,999
+	[subject]]‡: calc,0x24,0,999
+	[subject]•òd: calc,0x2C,0,999
+[/group]
+[group]STATUS_ALL
+0x04
+0x0C
+0x14
+0x1C
+0x24
+0x2C
+[/group]

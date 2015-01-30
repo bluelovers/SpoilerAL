@@ -1,0 +1,55 @@
+[group]ステータス1
+    [subject]_mem,0x[! 0x458A7C+ $Val *348 !], 12, 00, $Val:dir
+        [replace]0x[! 0x458A6C+ $Val *348 !], プリンセスティア->ステータス
+        [back]
+[/group]
+[group]ステータス
+	[subject]HP(最大値): calc,0x30,0,999
+	[subject]HP(現在値): calc,0x34,0,999
+	[subject]MP(最大値): calc,0x38,0,999
+	[subject]MP(現在値): calc,0x3C,0,999
+	[subject]攻撃: calc,0x40,0,999
+	[subject]魔法: calc,0x44,0,999
+	[subject]敏捷(最大値): calc,0x48,0,999
+	[subject]敏捷(現在値): calc,0x4C,0,999
+	[subject]防御(最大値): calc,0x50,0,999
+	[subject]防御(現在値): calc,0x54,0,999
+/	[subject] : calc,0x58,0,999
+/	[subject] : calc,0x5C,0,999
+/	[subject] : calc,0x60,0,999
+	[subject]装備呪文: list,0x64,プリンセスティア->装備呪文,0,1
+	[subject]装備呪文: list,0x68,プリンセスティア->装備呪文,0,1
+	[subject]装備呪文: list,0x6C,プリンセスティア->装備呪文,0,1
+[/group]
+[group]装備呪文
+なし
+ファイアⅠ
+ファイアⅡ
+ファイアⅢ
+アイスⅠ
+アイスⅡ
+アイスⅢ
+サンダーⅠ
+サンダーⅡ
+サンダーⅢ
+エクスタシー
+パラライズ
+シールド
+[/group]
+
+[group]恥辱1
+    [subject]_mem,0x[! 0x458A7C+ $Val *348 !], 12, 00, $Val:dir
+        [replace]0x[! 0x458A6C+ $Val *348 !], プリンセスティア->恥辱
+        [back]
+[/group]
+[group]恥辱
+	[subject]恥辱度: calc,0xFC,0,200
+	[subject]乳首感度: calc,0x104,0,999
+	[subject]性器感度: calc,0x10C,0,999
+	[subject]肛門感度: calc,0x114,0,999
+[/group]
+
+恥辱度458B68
+乳首感度458B70
+性器感度458B78
+肛門感度458B80

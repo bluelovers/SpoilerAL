@@ -1,0 +1,154 @@
+[subject]航空部隊:dir
+[subject]F-14トムキャット:dir
+	[replace]0x0,兵器性能,offset
+[subject]F-15イーグル:dir
+	[replace]0x58,兵器性能,offset
+[subject]F-22ラプター:dir
+	[replace]0xB0,兵器性能,offset
+[subject]MiG-29ファルクラム:dir
+	[replace]0x108,兵器性能,offset
+[subject]Su-27フランカー:dir
+	[replace]0x160,兵器性能,offset
+[subject]ミラージュF1:dir
+	[replace]0x1B8,兵器性能,offset
+[subject]ミラージュ2000:dir
+	[replace]0x210,兵器性能,offset
+[subject]ラファール:dir
+	[replace]0x268,兵器性能,offset
+[subject]ユーロファイター2000:dir
+	[replace]0x2C0,兵器性能,offset
+[subject]オーディーン:dir
+	[replace]0x318,兵器性能,offset
+[subject]F-16ファルコン:dir
+	[replace]0x370,兵器性能,offset
+[subject]FA-18ホーネット:dir
+	[replace]0x3C8,兵器性能,offset
+[subject]A-10サンダーボルト:dir
+	[replace]0x420,兵器性能,offset
+[subject]F-111アードバーグ:dir
+	[replace]0x478,兵器性能,offset
+[subject]Su-25フロッグフット:dir
+	[replace]0x4D0,兵器性能,offset
+[subject]Su-24フェンサー:dir
+	[replace]0x528,兵器性能,offset
+[subject]ジャギュア:dir
+	[replace]0x580,兵器性能,offset
+[subject]トーネードIDS:dir
+	[replace]0x5D8,兵器性能,offset
+[subject]AV8ハリアー:dir
+	[replace]0x630,兵器性能,offset
+[subject]F-2B:dir
+	[replace]0x688,兵器性能,offset
+[subject]B-52Sフォートレス:dir
+	[replace]0x6E0,兵器性能,offset
+[subject]B-1Bランサー:dir
+	[replace]0x738,兵器性能,offset
+[subject]Tu-16バジャー:dir
+	[replace]0x790,兵器性能,offset
+[subject]F-117ナイトホーク:dir
+	[replace]0x7E8,兵器性能,offset
+[subject]B-2Aスピリッツ:dir
+	[replace]0x840,兵器性能,offset
+[subject]RA-01ワルキューレ:dir
+	[replace]0x898,兵器性能,offset
+[subject]AH-64アパッチ:dir
+	[replace]0x8F0,兵器性能,offset
+[subject]Ka-50ホーカム:dir
+	[replace]0x948,兵器性能,offset
+[subject]タイガー:dir
+	[replace]0x9A0,兵器性能,offset
+[subject]ヒューイコブラ:dir
+	[replace]0x9F8,兵器性能,offset
+[subject]AHXツインスネーク:dir
+	[replace]0xA50,兵器性能,offset
+[subject]UH-60ブラックホーク:dir
+	[replace]0xAA8,兵器性能,offset
+[subject]Mi-8ヒップ:dir
+	[replace]0xB00,兵器性能,offset
+[subject]UH-1イロコイ:dir
+	[replace]0xB58,兵器性能,offset
+[subject]輸送機:dir
+	[replace]0xBB0,兵器性能,offset
+[back]
+[subject]陸上部隊:dir
+[subject]M1A2エイブラムズ:dir
+	[replace]0xC08,兵器性能,offset
+[subject]M60:dir
+	[replace]0xC60,兵器性能,offset
+[subject]T-72:dir
+	[replace]0xCB8,兵器性能,offset
+[subject]T-80:dir
+	[replace]0xD10,兵器性能,offset
+[subject]レオポルド2:dir
+	[replace]0xD68,兵器性能,offset
+[subject]ルクレール:dir
+	[replace]0xDC0,兵器性能,offset
+[subject]チャレンジャー2:dir
+	[replace]0xE18,兵器性能,offset
+[subject]メルカバMk3:dir
+	[replace]0xE70,兵器性能,offset
+[subject]90式戦車:dir
+	[replace]0xEC8,兵器性能,offset
+[subject]RG-Tプロメテウス:dir
+	[replace]0xF20,兵器性能,offset
+[subject]M109A6パラディン:dir
+	[replace]0xF78,兵器性能,offset
+[subject]2S3アカツィヤ:dir
+	[replace]0xFD0,兵器性能,offset
+[subject]75式自走榴弾砲:dir
+	[replace]0x1028,兵器性能,offset
+[subject]MLRS:dir
+	[replace]0x1080,兵器性能,offset
+[subject]MLRSⅡスカラベ:dir
+	[replace]0x10D8,兵器性能,offset
+[subject]M113:dir
+	[replace]0x1130,兵器性能,offset
+[subject]兵員輸送車:dir
+	[replace]0x1188,兵器性能,offset
+[subject]M2ブラッドリー:dir
+	[replace]0x11E0,兵器性能,offset
+[subject]BMP-2:dir
+	[replace]0x1238,兵器性能,offset
+[subject]ウォリアー:dir
+	[replace]0x1290,兵器性能,offset
+[subject]マルダー:dir
+	[replace]0x12E8,兵器性能,offset
+[subject]89式装甲戦闘車:dir
+	[replace]0x1340,兵器性能,offset
+[subject]MIM104パトリオット:dir
+	[replace]0x1398,兵器性能,offset
+[subject]SA-9ガスキン:dir
+	[replace]0x13F0,兵器性能,offset
+[subject]IMSキュクロプス:dir
+	[replace]0x1448,兵器性能,offset
+[subject]ゲパルト:dir
+	[replace]0x14A0,兵器性能,offset
+[subject]ZSU-23-4:dir
+	[replace]0x14F8,兵器性能,offset
+[subject]ATジャベリン:dir
+	[replace]0x1550,兵器性能,offset
+[subject]Lスカッド:dir
+	[replace]0x15A8,兵器性能,offset
+[subject]歩兵:dir
+	[replace]0x1600,兵器性能,offset
+[subject]海兵隊:dir
+	[replace]0x1658,兵器性能,offset
+[subject]空挺隊:dir
+	[replace]0x16B0,兵器性能,offset
+[back]
+[subject]海上部隊:dir
+[subject]ニミッツ:dir
+	[replace]0x1708,兵器性能,offset
+[subject]アドミラルクズネツォフ:dir
+	[replace]0x1760,兵器性能,offset
+[subject]タイコンデロガ:dir
+	[replace]0x17B8,兵器性能,offset
+[subject]キローフ:dir
+	[replace]0x1810,兵器性能,offset
+[subject]アーレイバーク:dir
+	[replace]0x1868,兵器性能,offset
+[subject]ソブレメンヌイ:dir
+	[replace]0x18C0,兵器性能,offset
+[subject]揚陸艦:dir
+	[replace]0x1918,兵器性能,offset
+[back]

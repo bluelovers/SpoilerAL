@@ -1,0 +1,37 @@
+[group]UNIT番号
+	[subject]UNIT番号[! L$Val+1 !]:dir
+/平時
+		[replace]0x[! 0x4E72F8-$Val*0x7A8 !],うたわれるものDVD->ステータス
+/戦闘時
+/		[replace]0x[! 0x4E47C2+$Val*0x8C !],うたわれるものDVD->ステータス
+	[back]
+[/group]
+
+[group]ステータス
+	[subject]ALL:  b_toggle,0x00,うたわれるものDVD->ステータスSET,offset
+	[subject] レ ベ ル : calc,0x00,0,99
+	[subject] 経 験 値 : calc,0x02,0,0xFFFF
+	[subject] 現在体力 : calc,0x06,0,999
+	[subject] 最大体力 : calc,0x1E,0,999
+	[subject]   気 力  : calc,0x01,0,100
+	[subject]    技    : calc,0x14,0,999
+	[subject] 攻 撃 力 : calc,0x12,0,999
+	[subject] 防 御 力  : calc,0x16,0,999
+	[subject] 術防御力 : calc,0x18,0,999
+[/group]
+[group]ステータスSET
+0x06,8403
+0x1E,8403
+0x01,6400
+0x14,8403
+0x12,8403
+0x16,8403
+0x18,8403
+[/group]
+
+hakuoro LV 4E72F8/4E8478 1
+eruru   LV 4E6B50/4E7CD0 2 -118
+4E63A8
+4E5C00
+4E5458
+teoro   LV 4E6C68/4E7DE8 

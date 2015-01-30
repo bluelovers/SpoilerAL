@@ -1,0 +1,673 @@
+SSG for SpoilerAL ver 5.3
+===============================================================================
+//しろの作った試作品。
+//上手くいかなくても怒らないでね (^_^;ゞ
+===============================================================================
+[script]
+[title]リトルＭｙメイド
+[process]MyMaid.exe
+[maker]Sweet Basil
+[creator]しろ
+[note]wordwrap
+[/note]
+
+[subject]P-S POINT  :calc,0x6b0314,0x0,0x64,signed,little_e
+
+[subject]鞠:dir
+[subject]愛情       :calc,0x6b0318,0x0,0x64,signed,little_e
+[subject]信頼       :calc,0x6b031c,0x0,0x64,signed,little_e
+[subject]体力       :calc,0x6b0320,0x0,0x64,signed,little_e
+[back]
+
+[subject]雛:dir
+[subject]愛情       :calc,0x6b0324,0x0,0x64,signed,little_e
+[subject]信頼       :calc,0x6b0328,0x0,0x64,signed,little_e
+[subject]体力       :calc,0x6b032c,0x0,0x64,signed,little_e
+[back]
+
+[subject]繭:dir
+[subject]愛情       :calc,0x6b0330,0x0,0x64,signed,little_e
+[subject]信頼       :calc,0x6b0334,0x0,0x64,signed,little_e
+[subject]体力       :calc,0x6b0338,0x0,0x64,signed,little_e
+[back]
+
+[/script]
+===============================================================================
+ 
+[script]
+[title]闘神都市
+[process]SYSTEM35.EXE
+[maker]アリスソフト
+[creator]しろ
+[note]wordwrap
+[/note]
+[subject]GOLD             :calc,0x693b44,0x0,0xFFFF,signed,little_e
+[subject]世色癌           :calc,0x693bc0,0x0,0xFfFF
+[subject]竜角惨           :calc,0x693bc2,0x0,0xFFFF
+[subject]帰り木           :calc,0x693bc4,0x0,0xFFFF
+[subject]世色癌２         :calc,0x693bc6,0x0,0xFFFF
+[subject]勇者の紋章/所持:toggle,0x693bca,01,00
+
+[/script]
+=============================================================================== 
+[script]
+[title]ランス ３
+[process]SYSTEM35.EXE
+[maker]アリスソフト
+[creator]しろ
+[note]wordwrap
+GOLDの書き換えができない・・・
+[/note]   
+
+[subject]ランス:dir
+ [subject]体力                :calc,0x693bc6,0x0,0x3e7
+ [subject]気力                :calc,0x693bca,0x0,0x3e7
+ [subject]体力MAX             :calc,0x693bc8,0x0,0x3e7
+ [subject]気力MAX             :calc,0x693bcc,0x0,0x3e7
+ [subject]EXP                 :calc,0x693bce,0x0,0xffff
+ [subject]LV                  :calc,0x693bd0,0x0,0x3e7
+ [subject]攻撃力              :calc,0x693bd4,0x0,0xffff
+ [subject]防御力              :calc,0x693bda,0x0,0xffff
+ [subject]必要気力            :calc,0x693bd6,0x0,0xffff
+ [subject]武器                :list,0x693bd2,ランス3ランス武器,0x01,0x01
+ [subject]防具                :list,0x693bd8,ランス3ランス防具,0x01,0x01
+ [subject]盾                  :list,0x693bdc,ランス3ランス盾,0x01,0x01
+[back]
+
+[subject]シィル:dir
+ [subject]体力                :calc,0x693bde,0x0,0x3e7
+ [subject]気力                :calc,0x693be2,0x0,0x3e7
+ [subject]体力MAX             :calc,0x693be0,0x0,0x3e7
+ [subject]気力MAX             :calc,0x693be4,0x0,0x3e7
+ [subject]EXP                 :calc,0x693be6,0x0,0xffff
+ [subject]LV                  :calc,0x693be8,0x0,0x3e7
+ [subject]魔法パワー          :calc,0x693bec,0x0,0xffff
+ [subject]防御力              :calc,0x693bf0,0x0,0xffff
+ [subject]武器                :list,0x693bea,ランス3シィル武器,0x01,0x01
+ [subject]防具                :list,0x693bee,ランス3シィル防具,0x01,0x01
+[back]
+ 
+[subject]かなみ:dir
+ [subject]体力                :calc,0x693bf6,0x0,0x3e7
+ [subject]気力                :calc,0x693bf8,0x0,0x3e7
+ [subject]EXP                 :calc,0x693bfa,0x0,0xffff
+ [subject]LV                  :calc,0x693bfc,0x0,0x2a
+ [subject]攻撃力              :calc,0x693c00,0x0,0xffff
+ [subject]必要気力            :calc,0x693c02,0x0,0xffff
+ [subject]防御力              :calc,0x693c06,0x0,0xffff
+ [subject]仲間になる        :toggle,0x693bf2,01,00
+ [subject]武器                :list,0x693bfe,ランス3かなみ武器,0x01,0x01
+ [subject]防具                :list,0x693c04,ランス3かなみ防具,0x01,0x01
+[back]
+
+[subject]フェリス:dir
+ [subject]体力                :calc,0x693c0c,0x0,0x3e7
+ [subject]気力                :calc,0x693c0e,0x0,0x3e7
+[back]
+
+[subject]志津香:dir
+ [subject]体力                :calc,0x693c14,0x0,0x3e7
+ [subject]気力                :calc,0x693c16,0x0,0x3e7
+ [subject]EXP                 :calc,0x693c18,0x0,0xffff
+ [subject]LV                  :calc,0x693c1a,0x0,0x3c
+ [subject]魔法パワー          :calc,0x693c1e,0x0,0xffff
+ [subject]防御力              :calc,0x693c22,0x0,0xffff
+ [subject]仲間になる        :toggle,0x693c10,01,00
+ [subject]武器                :list,0x693c1c,ランス3志津香武器,0x01,0x01
+ [subject]防具                :list,0x693c20,ランス3志津香防具,0x01,0x01
+[back]
+
+[subject]ミリ:dir
+ [subject]体力                :calc,0x693c68,0x0,0x3e7
+ [subject]気力                :calc,0x693c6a,0x0,0x3e7
+ [subject]EXP                 :calc,0x693c6c,0x0,0xffff
+ [subject]LV                  :calc,0x693c6e,0x0,0x30
+ [subject]攻撃力              :calc,0x693c72,0x0,0xffff
+ [subject]必要気力            :calc,0x693c74,0x0,0xffff
+ [subject]防御力              :calc,0x693c78,0x0,0xffff
+ [subject]仲間になる        :toggle,0x693c64,01,00
+ [subject]武器                :list,0x693c70,ランス3ミリ武器,0x04,0x01
+ [subject]防具                :list,0x693c76,ランス3ミリ防具,0x04,0x01
+[back]
+
+[subject]セル:dir
+ [subject]体力                :calc,0x693c28,0x0,0x3e7
+ [subject]気力                :calc,0x693c2a,0x0,0x3e7
+ [subject]EXP                 :calc,0x693c2c,0x0,0xffff
+ [subject]LV                  :calc,0x693c2e,0x0,0x2d
+ [subject]魔法パワー          :calc,0x693c32,0x0,0xffff
+ [subject]防御力              :calc,0x693c36,0x0,0xffff
+ [subject]仲間になる        :toggle,0x693c24,01,00
+ [subject]武器                :list,0x693c30,ランス3セル武器,0x01,0x01
+ [subject]防具                :list,0x693c34,ランス3セル防具,0x01,0x01
+[back]
+
+ [subject]リア:dir
+ [subject]体力                :calc,0x693c3c,0x0,0x3e7
+ [subject]気力                :calc,0x693c3e,0x0,0x3e7
+ [subject]EXP                 :calc,0x693c40,0x0,0xffff
+ [subject]LV                  :calc,0x693c42,0x0,0x24
+ [subject]攻撃力              :calc,0x693c46,0x0,0xffff
+ [subject]必要気力            :calc,0x693c48,0x0,0xffff
+ [subject]防御力              :calc,0x693c4c,0x0,0xffff
+ [subject]仲間になる        :toggle,0x693c38,01,00
+ [subject]武器                :list,0x693c44,ランス3リア武器,0x01,0x01
+ [subject]防具                :list,0x693c4a,ランス3リア防具,0x01,0x01
+[back]
+
+[subject]マリス:dir
+ [subject]体力                :calc,0x693c52,0x0,0x3e7
+ [subject]気力                :calc,0x693c54,0x0,0x3e7
+ [subject]EXP                 :calc,0x693c56,0x0,0xffff
+ [subject]LV                  :calc,0x693c58,0x0,0x32
+ [subject]攻撃力              :calc,0x693c5c,0x0,0xffff
+ [subject]必要気力            :calc,0x693c5e,0x0,0xffff
+ [subject]防御力              :calc,0x693c62,0x0,0xffff
+ [subject]仲間になる        :toggle,0x693c4e,01,00
+ [subject]武器                :list,0x693c5a,ランス3マリス武器,0x01,0x01
+ [subject]防具                :list,0x693c60,ランス3マリス防具,0x01,0x01
+[back]
+
+[subject]アイテム:dir
+ [subject]世色癌              :calc,0x693c84,0x0,0x63
+ [subject]世色癌２            :calc,0x693d12,0x0,0x63
+ [subject]世色癌３            :calc,0x693d14,0x0,0x63
+ [subject]元気の薬            :calc,0x693c86,0x0,0x63
+ [subject]竜角惨              :calc,0x693c88,0x0,0x63
+ [subject]Ｖ３爆弾            :calc,0x693e04,0x0,0x63
+ [subject]Ｖ５爆弾            :calc,0x693e06,0x0,0x63
+ [subject]破裂玉            :toggle,0x693e08,01,00
+ [subject]帰り木              :calc,0x693cba,0x0,0x63
+ [subject]女の子呪縛          :calc,0x693e0a,0x0,0x63
+ [subject]超鋼鉄飲料        :toggle,0x693d16,01,00
+ [subject]泉の女神の素      :toggle,0x693cb8,01,00
+ [subject]悪魔のパスポート  :toggle,0x693ca0,01,00
+ [subject]卵                :toggle,0x693e80,01,00
+ [subject]ポータブルＭＶＲ  :toggle,0x693d0e,01,00
+[back]
+
+[subject]鍵:dir
+ [subject]鍾乳洞の鍵        :toggle,0x693e8a,01,00
+ [subject]地下牢の鍵        :toggle,0x693ec4,01,00
+ [subject]ピンクの鍵        :toggle,0x693e84,01,00
+ [subject]リアの宝の鍵      :toggle,0x693d1a,01,00
+[back]
+
+[subject]鏡の破片:dir
+ [subject]鏡の破片 その１     :list,0x693d1c,ランス3鏡の破片,0x00,0x01
+ [subject]鏡の破片 その２     :list,0x693d1e,ランス3鏡の破片,0x00,0x01
+[back]
+
+[subject]女の子モンスター:dir
+ [subject]きゃんきゃん      :toggle,0x693dde,01,00
+ [subject]パステル          :toggle,0x693de0,01,00
+ [subject]金魚使い          :toggle,0x693de2,01,00
+ [subject]まじしゃん        :toggle,0x693de4,01,00
+ [subject]フローズン        :toggle,0x693de6,01,00
+ [subject]ラーメン          :toggle,0x693de8,01,00
+ [subject]ちょーちん        :toggle,0x693dea,01,00
+ [subject]ライカンスロープ  :toggle,0x693dec,01,00
+ [subject]ワー村娘          :toggle,0x693dee,01,00
+ [subject]ワープリンセス    :toggle,0x693df0,01,00
+ [subject]ワー看護婦さん    :toggle,0x693df2,01,00
+ [subject]ワー婦警さん      :toggle,0x693df4,01,00
+ [subject]コンテ            :toggle,0x693df6,01,00
+ [subject]デュラピー        :toggle,0x693df8,01,00
+ [subject]神風              :toggle,0x693dfa,01,00
+ [subject]ハチ女            :toggle,0x693dfc,01,00
+ [subject]３姉妹            :toggle,0x693dfe,01,00
+[back]
+
+[subject]ラレラレ石:dir
+ [subject]ウハウハ女子高生  :toggle,0x693d5c,01,00 
+ [subject]好奇心ギャル      :toggle,0x693cc4,01,00
+ [subject]肉欲の診察室      :toggle,0x693cc6,01,00
+ [subject]ラ○ジュース      :toggle,0x693cc8,01,00
+ [subject]いじめられっ娘    :toggle,0x693cca,01,00
+ [subject]危険な追跡        :toggle,0x693ccc,01,00
+ [subject]お姉様それは××  :toggle,0x693cce,01,00
+ [subject]ある日・・・      :toggle,0x693cd0,01,00
+ [subject]風紀委員を倒せ    :toggle,0x693cd2,01,00
+ [subject]ＰＳ・エンジェル  :toggle,0x693cd4,01,00
+ [subject]おしりならいいの  :toggle,0x693cd6,01,00
+[back]
+
+[/script]
+===============================================================================
+[script]
+[title]ランス ２
+[process]System35.EXE
+[maker]アリスソフト 
+[creator]しろ
+[note]wordwrap
+[/note]
+
+[subject]ランス:dir
+ [subject]体力          :calc,0x693bca,0x0,0xffff
+ [subject]体力MAX       :calc,0x693bcc,0x0,0xffff
+ [subject]気力          :calc,0x693bce,0x0,0xffff
+ [subject]気力MAX       :calc,0x693bd0,0x0,0xffff
+ [subject]経験値        :calc,0x693bde,0x0,0xffff
+ [subject]攻撃命中能力  :calc,0x693bd2,0x0,0xffff
+ [subject]攻撃回避能力  :calc,0x693bd4,0x0,0xffff
+ [subject]攻撃破壊力    :calc,0x693bd6,0x0,0xffff
+ [subject]耐久力        :calc,0x693bd8,0x0,0xffff
+ [subject]知識          :calc,0x693bda,0x0,0xffff
+ [subject]好運          :calc,0x693bdc,0x0,0xffff
+ [subject]良心          :calc,0x693bc2,0x0,0xffff
+ [subject]レベル        :calc,0x693be0,0x0,0xffff
+ [subject]破壊力        :calc,0x693be4,0x0,0xffff
+ [subject]防御力        :calc,0x693bea,0x0,0xffff
+ [subject]必要スタミナ  :calc,0x693be6,0x0,0xffff
+[back]
+        
+[subject]シィル:dir
+ [replace]0x693bee,ランス２ キャラ状態    
+[root] 
+
+[subject]マリア:dir
+ [replace]0x693c12,ランス２ キャラ状態    
+[root] 
+
+[subject]ミル:dir
+ [replace]0x693c12,ランス２ キャラ状態    
+[root] 
+
+[subject]志津香:dir
+ [replace]0x693c5a,ランス２ キャラ状態
+[root] 
+
+[subject]バード:dir
+ [replace]0x693c5a,ランス２ キャラ状態    
+[root] 
+
+[subject]GOLD(シィルがいる)   :calc,0x693bc4,0x0,0xffff,signed,little_e
+[subject]GOLD(シィルがいない) :calc,0x693c94,0x0,0xffff,signed,little_e
+
+[subject]アイテム:dir
+ [subject]世色癌         :calc,0x693bc6,0x0,0xffff
+ [subject]帰り木         :calc,0x693bc8,0x0,0xffff
+ [subject]おかし         :calc,0x693cea,0x0,0xffff
+ [subject]元気の薬       :calc,0x693cee,0x0,0xffff
+[back]
+
+[subject]ランス装備:dir
+ [subject]武器           :list,0x693be2,ランス２ランス武器,0x00,0x01
+ [subject]鎧             :list,0x693be8,ランス２ランス鎧,0x00,0x01
+ [subject]アイテム       :list,0x693bec,ランス２アイテム,0x00,0x01
+[back]
+
+[subject]シィル装備:dir
+ [subject]武器           :list,0x693c06,ランス２シィル武器,0x00,0x01
+ [subject]鎧             :list,0x693c0c,ランス２シィル鎧,0x00,0x01
+ [subject]アイテム       :list,0x693c10,ランス２アイテム,0x00,0x01
+[back]
+
+[subject]マリア装備:dir
+ [subject]武器           :list,0x693c2a,ランス２マリア武器,0x00,0x01
+ [subject]鎧             :list,0x693c30,ランス２マリア鎧,0x00,0x01
+ [subject]アイテム       :list,0x693c34,ランス２アイテム,0x00,0x01
+[back]
+
+[subject]ミリ装備:dir
+ [subject]武器           :list,0x693c4e,ランス２ミリ武器,0x00,0x01
+ [subject]鎧             :list,0x693c54,ランス２ミリ鎧,0x00,0x01
+ [subject]アイテム       :list,0x693c58,ランス２アイテム,0x00,0x01
+[back]
+
+[subject]バード装備:dir
+ [subject]武器           :list,0x693c72,ランス２バード武器,0x00,0x01
+ [subject]鎧             :list,0x693c78,ランス２バード鎧,0x00,0x01
+ [subject]アイテム       :list,0x693c7c,ランス２アイテム,0x00,0x01
+[back]
+
+[/script]
+===============================================================================
+[script]
+[title]ランス １
+[process]System35.EXE
+[maker]アリスソフト 
+[creator]しろ
+[note]wordwrap
+[/note]
+
+[subject]ランスの状態:dir
+        [subject]体力MAX      :calc,0x693b34,0,9999
+        [subject]体力         :calc,0x693b32,0,9999
+        [subject]魔力MAX      :calc,0x693b38,0,9999
+        [subject]魔力         :calc,0x693b36,0,9999
+        [subject]経験値       :calc,0x693b40,0x0,0xffff
+        [subject]攻撃成功能力 :calc,0x693b3a,0,9999
+        [subject]回避成功能力 :calc,0x693b3c,0,9999
+        [subject]武器の攻撃力 :calc,0x693b46,0,9999
+[back] 
+
+[subject]GOLD       :calc,0x693b42,0x0,0xffff,signed,little_e
+[subject]世色癌     :calc,0x693ba8,0x0,0xffff
+[subject]薬         :calc,0x693bac,0x0,0xffff
+
+[subject]武器、防具:dir
+        [subject]武器  :list,0x693c10,ランス１武器,0x00,0x01
+        [subject]鎧    :list,0x693c12,ランス１鎧,0x00,0x01
+        [subject]盾    :list,0x693c14,ランス１盾,0x00,0x01
+[back]
+
+[subject]鍵:dir
+        [subject]城の鍵        :toggle,0x693bb4,01,00
+        [subject]牢屋の鍵      :toggle,0x693bb6,01,00
+        [subject]盗賊の鍵      :toggle,0x693bb8,01,00
+        [subject]屋敷の鍵      :toggle,0x693bae,01,00
+[back]
+
+[subject]その他:dir
+        [subject]盗賊のくつ    :toggle,0x693bba,01,00
+        [subject]ひやかし      :toggle,0x693bbe,01,00
+        [subject]MXDOS         :toggle,0x693bc0,01,00
+        [subject]はにわ銅像    :toggle,0x693c1c,01,00
+        [subject]ビン          :toggle,0x693c20,01,00
+        [subject]パンティー    :toggle,0x693c26,01,00
+        [subject]火炎木の葉    :toggle,0x693c28,01,00
+        [subject]わら          :toggle,0x693c2c,01,00
+        [subject]通行手形      :toggle,0x693ba4,01,00
+        [subject]安らぎの石    :toggle,0x693ba6,01,00
+        [subject]参加券        :toggle,0x693baa,01,00
+        [subject]ハンマー      :toggle,0x693bb2,01,00
+[back]
+[/script]
+===============================================================================
+[script]
+[title]ランス ４(Ⅳ)
+[process]System35.exe
+[maker]アリスソフト
+[creator]しろ
+[note]wordwrap
+[/note]
+[subject]お金          :calc,0x431c54,0x0,0xffff,signed,little_e
+
+[subject]キャラの状態:dir
+        [subject]ランス:dir
+                [replace]0x60848a,ランス４ 盾あり
+        [subject]シィル:dir
+                [replace]0x60848c,ランス４ 盾なし
+        [subject]リック:dir
+                [replace]0x608492,ランス４ 盾なし
+        [subject]レイラ:dir
+                [replace]0x608494,ランス４ 盾あり
+        [subject]かなみ:dir
+                [replace]0x608498,ランス４ 盾なし
+        [subject]ジュリア:dir
+                [replace]0x608496,ランス４ 盾あり
+        [subject]メリム:dir
+                [replace]0x608490,ランス４ 盾なし
+        [subject]マリア:dir
+                [replace]0x60849a,ランス４ 盾なし
+        [subject]あてな２号:dir
+                [replace]0x60849e,ランス４ 盾なし
+        [subject]志津香:dir
+                [replace]0x60849c,ランス４ 盾なし
+        [subject]イオ:dir
+                [replace]0x60848e,ランス４ 盾なし
+        [subject]ヒューバート:dir
+                [replace]0x6084a0,ランス４ 盾なし
+        [subject]フリーク:dir
+                [replace]0x6084a2,ランス４ 盾なし
+[root] 
+
+[subject]武器:dir
+        [subject]木の棒             :calc,0x607202,0,99
+        [subject]氷の杖             :calc,0x60720e,0,99
+        [subject]光の杖             :calc,0x607210,0,99
+        [subject]炎の杖             :calc,0x607208,0,99
+        [subject]魔法使いの杖       :calc,0x607204,0,99
+        [subject]ミニハンマー       :calc,0x607268,0,99
+        [subject]びっくりハンマー   :calc,0x60720a,0,99
+        [subject]魔法使いのムチ     :calc,0x60720c,0,99
+        [subject]カパーラの短剣     :calc,0x607206,0,99
+        [subject]暗黒の棒きれ       :calc,0x607212,0,99
+        [subject]ロケットパンチ     :calc,0x607214,0,99
+        [subject]バイロード         :calc,0x607238,0,99
+        [subject]中古ソード         :calc,0x60722a,0,99
+        [subject]アリスソード       :calc,0x607216,0,99
+        [subject]ロングソード       :calc,0x60722c,0,99
+        [subject]ロングソード２     :calc,0x60722e,0,99
+        [subject]スーパーソード     :calc,0x607242,0,99
+        [subject]リーザスソード     :calc,0x60723a,0,99
+        [subject]バスターソード     :calc,0x607236,0,99
+        [subject]ブラックソード     :calc,0x607246,0,99
+        [subject]黄金の剣           :calc,0x607244,0,99
+        [subject]氷山の剣           :calc,0x607248,0,99
+        [subject]さびた剣           :calc,0x60724c,0,99
+        [subject]無敵鉄人の剣       :calc,0x607240,0,99
+        [subject]イナズマの剣       :calc,0x607230,0,99
+        [subject]パワーアップ剣     :calc,0x60723c,0,99
+        [subject]村正               :calc,0x607234,0,99
+        [subject]日本刀             :calc,0x607232,0,99
+        [subject]不知火             :calc,0x607250,0,99
+        [subject]ぷりょスレイヤー   :calc,0x60723e,0,99
+        [subject]忍者ブレード       :calc,0x60726c,0,99
+        [subject]火炎ブレード       :calc,0x60724a,0,99
+        [subject]冷たい長槍         :calc,0x60724e,0,99
+        [subject]ナギナタ           :calc,0x607252,0,99
+        [subject]風の忍刀           :calc,0x607266,0,99
+        [subject]軽量の弓           :calc,0x607218,0,99
+        [subject]藤吉郎の弓         :calc,0x60726a,0,99
+        [subject]氷のレイピア       :calc,0x60726e,0,99
+        [subject]太陽の剣           :calc,0x607270,0,99
+        [subject]ハニーナイフ       :calc,0x607272,0,99
+[back]
+
+[subject]鎧系:dir
+        [subject]炎のローブ         :calc,0x60728c,0,99
+        [subject]氷のローブ         :calc,0x60728e,0,99
+        [subject]雷のローブ         :calc,0x607290,0,99
+        [subject]プラレンローブ     :calc,0x60727a,0,99
+        [subject]マジックローブ     :calc,0x60727e,0,99
+        [subject]風の忍服           :calc,0x60729c,0,99
+        [subject]戦闘工作服         :calc,0x607280,0,99
+        [subject]カチカチ洋服       :calc,0x60729a,0,99
+        [subject]魔法使いの服       :calc,0x607282,0,99
+        [subject]セフランの服       :calc,0x60728a,0,99
+        [subject]ヘルマン魔法服     :calc,0x60727c,0,99
+        [subject]クラマセン洋服     :calc,0x607286,0,99
+        [subject]ニセ魔法使いの服   :calc,0x607284,0,99
+        [subject]ベベター着ぐるみ   :calc,0x607288,0,99
+        [subject]天使の羽衣         :calc,0x607292,0,99
+        [subject]死神の陣羽織       :calc,0x607294,0,99
+        [subject]神官着             :calc,0x607296,0,99
+        [subject]アルメの寝間着     :calc,0x607298,0,99
+        [subject]スプリガンＶ       :calc,0x6072aa,0,99
+        [subject]ダンディーコート   :calc,0x60729e,0,99
+        [subject]アーマー           :calc,0x6072a6,0,99
+        [subject]中古アーマー       :calc,0x6072a2,0,99
+        [subject]親衛隊アーマー     :calc,0x6072a4,0,99
+        [subject]絶縁体アーマー     :calc,0x6072ac,0,99
+        [subject]コースアーマー     :calc,0x6072ae,0,99
+        [subject]コースアーマー２   :calc,0x6072b0,0,99
+        [subject]コースアーマー３   :calc,0x6072b8,0,99
+        [subject]ライオネット       :calc,0x6072b4,0,99
+        [subject]ライオネットＲ     :calc,0x6072b6,0,99
+        [subject]神の鎧（丙）       :calc,0x6072cc,0,99
+        [subject]鋼鉄の鎧           :calc,0x6072b2,0,99
+        [subject]真紅の鎧           :calc,0x6072a8,0,99
+        [subject]呪われた鎧         :calc,0x6072ba,0,99
+        [subject]リーザス正規鎧     :calc,0x6072ca,0,99
+        [subject]ヘルマン正規鎧     :calc,0x6072ce,0,99
+[back]
+
+[subject]盾系:dir
+        [subject]中古シールド       :calc,0x6072de,0,99
+        [subject]ミニシールド       :calc,0x6072e0,0,99
+        [subject]ネイシールド       :calc,0x6072e8,0,99
+        [subject]フルシールド       :calc,0x6072ee,0,99
+        [subject]炎の盾             :calc,0x6072e2,0,99
+        [subject]氷の盾             :calc,0x6072e4,0,99
+        [subject]雷の盾             :calc,0x6072e6,0,99
+        [subject]Ｔ33型丸盾         :calc,0x6072ea,0,99
+        [subject]Ｔ34Ｄ試作盾       :calc,0x6072ec,0,99
+[back]
+
+[subject]銃系:dir
+        [subject]チューリップ１号   :calc,0x6072f2,0,99
+[back]
+
+[subject]アイテム:dir
+        [subject]食、薬、回復系:dir
+                [subject]世色癌             :calc,0x607162,0,99
+                [subject]世色癌２           :calc,0x60717c,0,99
+                [subject]竜角惨             :calc,0x607164,0,99
+                [subject]石焼きイモ         :calc,0x607166,0,99
+                [subject]おにぎり           :calc,0x607168,0,99
+                [subject]マンドラコ         :calc,0x60716a,0,99
+                [subject]ギルタンＶ         :calc,0x60716c,0,99
+                [subject]力のポテチ         :calc,0x60717e,0,99
+                [subject]魔法のパセリ       :calc,0x607180,0,99
+                [subject]イモ               :calc,0x607182,0,99
+                [subject]高級まったけ       :calc,0x607184,0,99
+                [subject]ヒララレモン       :calc,0x607186,0,99
+                [subject]おかし             :calc,0x607188,0,99
+                [subject]媚薬               :calc,0x60714a,0,99
+                [subject]眠り薬             :calc,0x6071ca,0,99
+                [subject]PTTP薬             :calc,0x60714c,0,99
+                [subject]龍の風邪薬         :calc,0x607120,0,99
+           [back]
+        [subject]その他:dir
+                [subject]不思議な紙         :calc,0x6071b2,0,99
+                [subject]ゴム手袋           :calc,0x6071b4,0,99
+                [subject]ネコタマのお守り   :calc,0x6071b6,0,99
+                [subject]カチカチのうんこ   :calc,0x6071bc,0,99
+                [subject]ヨウナシ人形       :calc,0x6071c2,0,99
+                [subject]免罪符             :calc,0x6071c4,0,99
+                [subject]ヨウナシの実       :calc,0x6071c6,0,99
+                [subject]桜の壺             :calc,0x6071c8,0,99
+                [subject]チェルネン粉       :calc,0x6071cc,0,99
+                [subject]フィーバー下し     :calc,0x6071ce,0,99
+                [subject]熱ガラス           :calc,0x6071d2,0,99
+                [subject]ヒララ合金         :calc,0x6071d4,0,99
+                [subject]ルビー             :calc,0x6071d6,0,99
+                [subject]ダイヤモンド       :calc,0x6071d0,0,99
+                [subject]エメラルド         :calc,0x6071be,0,99
+                [subject]お帰り盆栽         :calc,0x6070fe,0,99
+                [subject]フロンの紹介状     :calc,0x607100,0,99
+                [subject]青銅の鈴           :calc,0x607102,0,99
+                [subject]アキカン           :calc,0x607104,0,99
+                [subject]耐寒カイロ         :calc,0x607106,0,99
+                [subject]ぴんてる486        :calc,0x607108,0,99
+                [subject]百式指令偵察機     :calc,0x60710a,0,99
+                [subject]毒消しの玉         :calc,0x60710c,0,99
+                [subject]聖水               :calc,0x60710e,0,99
+                [subject]天使の蜜           :calc,0x607122,0,99
+                [subject]悪魔の蜜           :calc,0x607124,0,99
+                [subject]堅いスプレー       :calc,0x60712e,0,99
+                [subject]強いスプレー       :calc,0x607130,0,99
+                [subject]天使の鏡           :calc,0x60714e,0,99
+[root] 
+
+[subject]鍵関係:dir
+        [subject]おかゆのキー       :toggle,0x60718a,01,00
+        [subject]西の塔の鍵         :toggle,0x60718c,01,00
+        [subject]研究室の鍵         :toggle,0x60718e,01,00
+        [subject]Ｎキー             :toggle,0x607190,01,00
+        [subject]Ｓキー             :toggle,0x607192,01,00
+        [subject]Ｗキー             :toggle,0x607194,01,00
+        [subject]Ｅキー             :toggle,0x607196,01,00
+        [subject]貯蔵庫の鍵         :toggle,0x607198,01,00
+        [subject]愛の鍵             :toggle,0x60719a,01,00
+        [subject]信じる鍵           :toggle,0x60719c,01,00
+        [subject]裏切りの鍵         :toggle,0x60719e,01,00
+        [subject]幻想の鍵           :toggle,0x6071a0,01,00
+        [subject]NECの鍵            :toggle,0x6071a2,01,00
+        [subject]エプソンの鍵       :toggle,0x6071a4,01,00
+        [subject]シャープの鍵       :toggle,0x6071a6,01,00
+        [subject]富士通の鍵         :toggle,0x6071a8,01,00
+        [subject]鉄ハニーの鍵       :toggle,0x6071aa,01,00
+[back]
+
+[subject]Ｈな写真:dir
+        [subject]１           :toggle,0x6071b8,01,00
+        [subject]２           :toggle,0x6071c0,01,00
+[back]
+
+[subject]有名な絵画:dir
+        [subject]１     :toggle,0x6071ba,01,00
+        [subject]２     :toggle,0x6071d8,01,00
+        [subject]３     :toggle,0x6071da,01,00
+        [subject]４     :toggle,0x6071dc,01,00
+        [subject]５     :toggle,0x6071de,01,00
+        [subject]６     :toggle,0x6071e0,01,00
+        [subject]７     :toggle,0x6071e2,01,00
+        [subject]８     :toggle,0x6071e4,01,00
+        [subject]９     :toggle,0x6071e6,01,00
+        [subject]10     :toggle,0x6071e8,01,00
+        [subject]11     :toggle,0x6071ea,01,00
+        [subject]12     :toggle,0x6071ec,01,00
+[back]  
+ 
+[subject]鏡関係:dir
+        [subject]かなみの鏡１       :toggle,0x607110,01,00
+        [subject]かなみの鏡２       :toggle,0x607112,01,00
+        [subject]かなみの鏡３       :toggle,0x607114,01,00
+        [subject]かなみの鏡４       :toggle,0x607116,01,00
+        [subject]レイラの鏡１       :toggle,0x607118,01,00
+        [subject]レイラの鏡２       :toggle,0x60711a,01,00
+        [subject]レイラの鏡３       :toggle,0x60711c,01,00
+        [subject]レイラの鏡４       :toggle,0x60711e,01,00
+        [subject]鏡の破片Ａ１       :toggle,0x607126,01,00
+        [subject]鏡の破片Ａ２       :toggle,0x607128,01,00
+        [subject]鏡の破片Ａ３       :toggle,0x60712a,01,00
+        [subject]鏡の破片Ａ４       :toggle,0x60712c,01,00
+        [subject]鏡の破片Ｂ１       :toggle,0x607132,01,00
+        [subject]鏡の破片Ｂ２       :toggle,0x607134,01,00
+        [subject]鏡の破片Ｂ３       :toggle,0x607136,01,00
+        [subject]鏡の破片Ｂ４       :toggle,0x607138,01,00
+        [subject]鏡の破片Ｃ１       :toggle,0x60713a,01,00
+        [subject]鏡の破片Ｃ２       :toggle,0x60713c,01,00
+        [subject]鏡の破片Ｃ３       :toggle,0x60713e,01,00
+        [subject]鏡の破片Ｃ４       :toggle,0x607140,01,00
+        [subject]鏡の破片Ｄ１       :toggle,0x607142,01,00
+        [subject]鏡の破片Ｄ２       :toggle,0x607144,01,00
+        [subject]鏡の破片Ｄ３       :toggle,0x607146,01,00
+        [subject]鏡の破片Ｄ４       :toggle,0x607148,01,00
+[back]
+[subject]女の子モンスター:dir
+        [subject]キャンソン       :calc,0x431c18,0x0,0x1,signed,little_e
+        [subject]ハチ女           :calc,0x431c1a,0x0,0x1,signed,little_e
+        [subject]海のサチ         :calc,0x431c1c,0x0,0x1,signed,little_e
+        [subject]山のサチ         :calc,0x431c1e,0x0,0x1,signed,little_e
+        [subject]ハミング         :calc,0x431c20,0x0,0x1,signed,little_e
+        [subject]きゃんきゃん     :calc,0x431c22,0x0,0x1,signed,little_e
+        [subject]ラルガ           :calc,0x431c24,0x0,0x1,signed,little_e
+        [subject]サイエンス       :calc,0x431c26,0x0,0x1,signed,little_e
+        [subject]やもりん         :calc,0x431c28,0x0,0x1,signed,little_e
+        [subject]ジャンスカ       :calc,0x431c2a,0x0,0x1,signed,little_e
+        [subject]ブレザァ         :calc,0x431c2c,0x0,0x1,signed,little_e
+        [subject]セェラァ         :calc,0x431c2e,0x0,0x1,signed,little_e
+        [subject]黒衣の天使       :calc,0x431c30,0x0,0x1,signed,little_e
+        [subject]サワー           :calc,0x431c32,0x0,0x1,signed,little_e
+        [subject]メカきゃんきゃん :calc,0x431c34,0x0,0x1,signed,little_e
+        [subject]ドラゴン女       :calc,0x431c36,0x0,0x1,signed,little_e
+        [subject]金魚使い         :calc,0x431c38,0x0,0x1,signed,little_e
+        [subject]ちょーちん       :calc,0x431c3a,0x0,0x1,signed,little_e
+        [subject]おかし女         :calc,0x431c3c,0x0,0x1,signed,little_e
+        [subject]神風             :calc,0x431c3e,0x0,0x1,signed,little_e
+        [subject]ラーメン         :calc,0x431c40,0x0,0x1,signed,little_e
+        [subject]フローズン       :calc,0x431c42,0x0,0x1,signed,little_e
+        [subject]サルファ         :calc,0x431c44,0x0,0x1,signed,little_e
+        [subject]まじしゃん       :calc,0x431c46,0x0,0x1,signed,little_e
+        [subject]マジ・スコ       :calc,0x431c48,0x0,0x1,signed,little_e
+        [subject]ミグ             :calc,0x431c4a,0x0,0x1,signed,little_e
+        [subject]座敷わらし       :calc,0x431c4c,0x0,0x1,signed,little_e
+[back]
+[/script]
+===============================================================================
+[script]
+[title]ぺろぺろCandy ～陽の章～
+[process]PCAN.EXE
+[maker]MINK
+[creator]しろ
+[note]wordwrap
+上手くいくかな？
+[/note]
+[subject]好感度            :calc,0x44ED28,0,100
+[subject]来店回数          :calc,0x44ED14,0,200
+[/script]
+===============================================================================

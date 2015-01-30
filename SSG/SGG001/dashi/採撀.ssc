@@ -1,0 +1,7 @@
+[subject]ŠK‹‰:list,0x00,ŠK‹‰,0,1,
+[subject]”\—Í1:bitlist,0x01,”\—Í‚P,1,
+[subject]”\—Í2:bitlist,0x02,”\—Í‚Q,1,
+[subject]”\—Í3:bitlist,0x03,”\—Í‚R,1,
+[subject]Œ÷Ñ:calc,4,0,1000,signed,little_e
+[subject]¡Œ‚ÌŒ÷Ñ:calc,6,0,1000,signed,little_e
+[back]

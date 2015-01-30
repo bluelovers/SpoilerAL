@@ -1,0 +1,13 @@
+[group]ステータス
+	[subject]体力 魔力  : calc,0x00,00,999
+	[subject]     耐久力: calc,0x02,00,999
+	[subject]     愛情  : calc,0x04,00,999
+	[subject]     隷属  : calc,0x06,00,999
+	[subject]愛撫 5     : calc,0x08,00,999
+	[subject]自慰 6     : calc,0x0A,00,999
+	[subject]奉仕 7     : calc,0x0C,00,999
+	[subject]本番 8     : calc,0x0E,00,999
+	[subject]     9     : calc,0x10,00,999
+	[subject]     A     : calc,0x12,00,999
+[/group]
+

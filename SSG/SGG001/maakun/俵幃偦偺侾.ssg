@@ -1,0 +1,25 @@
+SSG for SpoilerAL ver 3.4
+[script]
+[title]ダウンタウン熱血物語
+[process]NESTERJ.EXE
+[maker]テクモ
+[creator]まぁくん
+[note]wordwrap
+WinMe使用、emu本体:NESTERJ,
+使用すると敵も強くなります＋お金の表示がバグりますがしっかり買い物はできます（笑）
+[/note]
+[subject]くにお:dir
+      [subject]パンチ     :calc,0x00ad4f4b,1,255
+      [subject]キック     :calc,0x00ad4f4f,1,255
+      [subject]武器       :calc,0x00ad4f53,1,255
+      [subject]ちから     :calc,0x00ad4f57,1,255
+      [subject]すばやさ   :calc,0x00ad4f5b,1,255
+      [subject]防御       :calc,0x00ad4f5f,1,255
+      [subject]打たれ強さ :calc,0x00ad4f63,1,255
+      [subject]気力       :calc,0x00ad4f67,1,255
+      [subject]現体力     :calc,0x00ad4f6b,1,255
+      [subject]最大ＨＰ   :calc,0x00ad4f6f,1,255
+      [subject]お金       :calc,0x00ad4f73,0,9999
+[back]
+[/script]
+

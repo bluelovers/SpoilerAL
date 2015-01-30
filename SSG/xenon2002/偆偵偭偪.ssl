@@ -1,0 +1,19 @@
+[group]サーチ
+ [val]*.00*.00*.
+ [calc] 理性(0～255),no,0,255
+ [calc] 知性(0～255),no,0,255
+ [calc] 悟性(0～255),no,0,255
+[/group]
+
+[group]ステータス
+ [subject]理性: calc,0x00,00,0xFFFF
+ [subject]知性: calc,0x02,00,0xFFFF
+ [subject]悟性: calc,0x04,00,0xFFFF
+[/group]
+
+[group]週
+第１週
+第２週
+第３週
+第４週
+[/group]

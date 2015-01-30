@@ -1,0 +1,12 @@
+[group]ステータス
+	[subject]Level: calc,0x00,1,31
+	[subject]HP: calc,0x04,0,999
+	[subject]ALL: toggle,0x00,0x1B-63000000,00000000
+	[subject]AP: calc,0x08,0,99
+	[subject]LAP: calc,0x0C,0,99
+	[subject]DP: calc,0x10,0,99
+	[subject]MP: calc,0x14,0,99
+	[subject]QP: calc,0x18,0,99
+	[subject]Exp: calc,0x1C,0,99
+[/group]
+

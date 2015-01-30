@@ -1,0 +1,49 @@
+[subject]M92Fピストル:dir
+	[replace]0x0,銃器性能,offset
+[subject]マグナムリボルバー:dir
+	[replace]0x28,銃器性能,offset
+[subject]M870Pショットガン:dir
+	[replace]0x50,銃器性能,offset
+[subject]SPAS12ショットガン:dir
+	[replace]0x78,銃器性能,offset
+[subject]M16アサルトライフル:dir
+	[replace]0xA0,銃器性能,offset
+[subject]AK74アサルトライフル:dir
+	[replace]0xC8,銃器性能,offset
+[subject]FALアサルトライフル:dir
+	[replace]0xF0,銃器性能,offset
+[subject]89式アサルトライフル:dir
+	[replace]0x118,銃器性能,offset
+[subject]MP5サブマシンガン:dir
+	[replace]0x140,銃器性能,offset
+[subject]UZIサブマシンガン:dir
+	[replace]0x168,銃器性能,offset
+[subject]M12サブマシンガン:dir
+	[replace]0x190,銃器性能,offset
+[subject]M60マシンガン:dir
+	[replace]0x1B8,銃器性能,offset
+[subject]M249マシンガン:dir
+	[replace]0x1E0,銃器性能,offset
+[subject]レーザーライフル:dir
+	[replace]0x208,銃器性能,offset
+[subject]M21スナイパーライフル:dir
+	[replace]0x230,銃器性能,offset
+[subject]M24スナイパーライフル:dir
+	[replace]0x258,銃器性能,offset
+[subject]SVDスナイパーライフル:dir
+	[replace]0x280,銃器性能,offset
+[subject]M82A1対装甲ライフル:dir
+	[replace]0x2A8,銃器性能,offset
+[subject]M79グレネード:dir
+	[replace]0x2D0,銃器性能,offset
+[subject]M203グレネード:dir
+	[replace]0x2F8,銃器性能,offset
+[subject]M20A1バズーカ:dir
+	[replace]0x320,銃器性能,offset
+[subject]M72LAWバズーカ:dir
+	[replace]0x348,銃器性能,offset
+[subject]M67無反動砲:dir
+	[replace]0x370,銃器性能,offset
+[subject]M2無反動砲:dir
+	[replace]0x398,銃器性能,offset
+[back]

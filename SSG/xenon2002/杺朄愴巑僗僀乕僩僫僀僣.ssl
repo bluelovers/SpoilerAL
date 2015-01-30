@@ -1,0 +1,47 @@
+[group]UNIT名
+下魔01
+下魔02
+下魔03
+下魔04
+下魔05
+下魔06
+下魔07
+下魔08
+下魔09
+上魔01
+上魔02
+上魔03
+[/group]
+
+[group]魔UNIT
+ [subject][! @魔法戦士スイートナイツ->UNIT名, $Val !]:dir
+/  [replace] 0x[! 0x42F820+ $Val*9C !],魔法戦士スイートナイツ->ステータス
+  [replace] 0x[! 0x42F820+ $Val*156 !],魔法戦士スイートナイツ->ステータス
+ [back]
+[/group]
+
+[group]ステータス
+	[subject] 名前 : string,0x00,7,null
+	[subject]MAX HP: calc,0x20,0,999
+	[subject]NOW HP: calc,0x24,0,999
+	[subject]素早さ: calc,0x28,0,999
+/	[subject]04: calc,0x2C,0,999
+	[subject]攻撃力: calc,0x30,0,999
+	[subject]防御力: calc,0x34,0,999
+/	[subject]07: calc,0x38,0,999
+/	[subject]08: calc,0x3C,0,999
+/	[subject]09: calc,0x40,0,999
+/	[subject]10: calc,0x44,0,999
+/	[subject]11: calc,0x48,0,999
+/	[subject]12: calc,0x4C,0,999
+/	[subject]13: calc,0x50,0,999
+/	[subject]14: calc,0x54,0,999
+/	[subject]15: calc,0x58,0,999
+/	[subject]16: calc,0x5C,0,999
+/	[subject]17: calc,0x60,0,999
+/	[subject]18: calc,0x64,0,999
+	[subject] 触手 : calc,0x68,0,999
+/	[subject]20: calc,0x6C,0,999
+
+ [back]
+[/group]

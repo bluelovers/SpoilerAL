@@ -1,0 +1,18 @@
+矢澤　瑞恵
+白石　文香
+
+[group]ステータス
+	[subject]ALL(500): toggle,0x00,0x27-F4010000,
+	[subject]意識 体力 理性(200): toggle,0x00,0x0B-C8000000,
+	[subject]意識: calc,0x00,00,999
+	[subject]体力: calc,0x04,00,999
+	[subject]理性: calc,0x08,00,999
+	[subject]従順～アナル(200): toggle,0x0C,0x27-C8000000,
+	[subject]従順: calc,0x0C,00,999
+	[subject]精神: calc,0x10,00,999
+	[subject]快楽: calc,0x14,00,999
+	[subject]恥虐: calc,0x18,00,999
+	[subject]恥虐: calc,0x1C,00,999
+	[subject]経験: calc,0x20,00,999
+	[subject]アナル: calc,0x24,00,999
+[/group]

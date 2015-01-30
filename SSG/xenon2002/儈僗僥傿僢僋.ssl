@@ -1,0 +1,8 @@
+[group]ステータス
+ [subject]LV: calc,0x00,00,255
+ [subject]HP(最大値): calc,0x04,00,255
+ [subject]HP(現在値): calc,0x08,00,255
+ [subject]POW: calc,0x0C,00,255
+ [subject]DEF: calc,0x10,00,255
+ [subject]EXP: calc,0x20,00,100
+[/group]

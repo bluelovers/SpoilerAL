@@ -1,0 +1,84 @@
+SSG for SpoilerAL ver4.0
+[script]
+[title]ＯＮＬＹ　ＹＯＵ　－リ・クルス－
+[creator]アイゼナッハ
+[maker]アリスソフト
+[process]System39.EXE
+[note]
+ゲームver.3.9.5.16
+まだ初心者なので、上手く動かなくても
+ご容赦ください・・・
+[/note]
+
+[subject]現在ＬＶ:calc,0x00AA4A42,0,0x63,unsigned
+[subject]最大ＨＰ:calc,0x00AA433A,0,0x3E7,unsigned
+[subject]現在ＨＰ:calc,0x00AA4B0A,0,0x3E7,unsigned
+[subject]攻撃力:calc,0x00AA4BD2,0,0x3E7,unsigned
+[subject]防御力:calc,0x00AA4C9A,0,0x3E7,unsigned
+[subject]素早さ:calc,0x00AA4D62,0,0x3E7,unsigned
+[subject]現在経験値:calc,0x00AA4E2A,0,0x3CA,unsigned
+[subject]トータル戦闘回数:calc,0x00AA4EF2,0,0x3E7,unsigned
+[subject]漢ポイント:calc,0xAEC29E,0,0x14,unsigned
+[/script]
+
+SSG for SpoilerAL ver4.0
+[script]
+[title]コス☆パラ
+[creator]アイゼナッハ
+[maker]ＢＬＡＣＫ　ＰＡＣＫＡＧＥ
+[process]OTWIN.EXE
+[note]
+　数値を変更する時は値を
+変更して固定して何か教育
+しないと反映されないようです
+　ちなみにこのゲームは改造すると
+最後に怒られます（エンディングが
+見えません）
+
+OS:Win me/CPU PentiumⅢ 1GHz/
+Memory 256MHz
+ゲームver.1, 0, 0, 1
+[/note]
+
+[subject]パラメーター:dir 
+[subject]体力:calc,0xA87130,0,999
+[subject]服飾:calc,0xA8712C,0,999
+[subject]事務:calc,0xA87128,0,999
+[subject]容姿:calc,0xA87120,0,999
+[subject]接客:calc,0xA87124,0,999
+[root] 
+[subject]成功率:dir
+[subject]体力:calc,0xA87144,0,999
+[subject]服飾:calc,0xA87140,0,999
+[subject]事務:calc,0xA8713C,0,999
+[subject]容姿:calc,0xA87134,0,999
+[subject]接客:calc,0xA87138,0,999
+[root] 
+[subject]チップ数一括変更:b_calc,0,チップ,real,0,0x63,unsigned
+[/script] 
+
+SSG for SpoilerAL ver4.6
+[script]
+[title]フォルトゥーナ
+[creator]アイゼナッハ
+[maker]Ｚｘｙ
+[process]FORTUNA.EXE
+[note] 
+Ｗｉｎ　ｍｅ用です。たぶん・・・
+他のＯＳでも使えたら使って
+やってください・・・ｍ（＿ ＿）ｍ
+他のキャラは主人公のレベルと同じレベルになるので
+能力MAXにはなりませんが十分強いです
+[/note]
+[subject]お金:calc,0x49B908,0,9999999
+[subject]主人公パラメーター:dir
+[subject]レベル:calc,0x49B754,0,99
+[subject]現在ＬＰ:calc,0x49B758,0,999999
+[subject]最大ＬＰ:calc,0x49B75C,0,999999
+[subject]ＡＴＣ.:calc,0x49B76C,0,9999
+[subject]ＤＥＦ.:calc,0x49B76E,0,9999
+[subject]ＭＡＧ.:calc,0x49B770,0,9999
+[subject]ＲＥＳ.:calc,0x49B772,0,9999
+[subject]経験値:calc,0x49B764,0,9999999
+[back]
+[/script]

@@ -1,0 +1,9 @@
+[note]
+自分及び幻獣の体力値を入力してください。
+16進/10進に注意して下さいね(^^)
+[/note]
+[val]*. *+0120 *. *+0120 *. *+0120 *.
+[calc]自分現在,no,0,0xFFFFFFFF,unsigned
+[calc]自分最大,no,0,0xFFFFFFFF,unsigned
+[calc]幻獣現在,no,0,0xFFFFFFFF,unsigned
+[calc]幻獣最大,no,0,0xFFFFFFFF,unsigned

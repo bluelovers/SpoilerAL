@@ -1,0 +1,651 @@
+SSG for SpoilerAL ver 3.4
+
+[script]
+[title]エレメンタルアーツVer1.02
+[process]FT.EXE
+[maker]Baroque
+[creator]TH
+[note]
+ステータスなどを書き換える。
+無いから作ってみました。
+ちなみに初めて作ったので自信ありません。
+一応自分のところと他の人のところで
+動作確認しました。
+[/note]
+[subject]お金:calc,0x5DD164,0x00,0x98967F,signed,little_e
+[subject]キャラステータス:dir
+         [subject]レン:dir
+         [subject]レベル:calc,0x7A116A,0,0x1E,signed,little_e
+         [subject]最大HP:calc,0x7A11B2,0,0x270F,signed,little_e
+         [subject]現在HP:calc,0x7A11B4,0,0x270F,signed,little_e
+         [subject]最大AP:calc,0x7A11B6,0,0x270F,signed,little_e
+         [subject]現在AP:calc,0x7A11B8,0,0x270F,signed,little_e
+         [subject]腕力:calc,0x7A11BA,0,0x3E7,signed,little_e
+         [subject]魔力:calc,0x7A11BC,0,0x3E7,signed,little_e
+         [subject]敏捷さ:calc,0x7A11BE,0,0x3E7,signed,little_e
+         [subject]抵抗力:calc,0x7A11C0,0,0x3E7,signed,little_e
+         [subject]防御力:calc,0x7A11C2,0,0x3E7,signed,little_e
+         [subject]移動力:calc,0x7A11C4,0,0x63,signed,little_e
+         [subject]経験値:calc,0x7A116C,0,0xBB7,signed,little_e
+         [subject]装備品1:list,0x7A1180,装備リスト,0x0,0x1
+         [subject]装備品2:list,0x7A1182,装備リスト,0x0,0x1
+         [subject]装備品3:list,0x7A1184,装備リスト,0x0,0x1
+         [subject]装備品4:list,0x7A1186,装備リスト,0x0,0x1
+         [subject]装備品5:list,0x7A1188,装備リスト,0x0,0x1
+         [subject]装備品6:list,0x7A118A,装備リスト,0x0,0x1
+[back]
+[subject]リア:dir
+         [subject]レベル:calc,0x7A136A,0,0x1E,signed,little_e
+         [subject]最大HP:calc,0x7A13B2,0,0x270F,signed,little_e
+         [subject]現在HP:calc,0x7A13B4,0,0x270F,signed,little_e
+         [subject]最大AP:calc,0x7A13B6,0,0x270F,signed,little_e
+         [subject]現在AP:calc,0x7A13B8,0,0x270F,signed,little_e
+         [subject]腕力:calc,0x7A13BA,0,0x3E7,signed,little_e
+         [subject]魔力:calc,0x7A13BC,0,0x3E7,signed,little_e
+         [subject]敏捷さ:calc,0x7A13BE,0,0x3E7,signed,little_e
+         [subject]抵抗力:calc,0x7A13C0,0,0x3E7,signed,little_e
+         [subject]防御力:calc,0x7A13C2,0,0x3E7,signed,little_e
+         [subject]移動力:calc,0x7A13C4,0,0x63,signed,little_e
+         [subject]経験値:calc,0x7A136C,0,0xBB7,signed,little_e
+         [subject]装備品1:list,0x7A1380,装備リスト,0x0,0x1
+         [subject]装備品2:list,0x7A1382,装備リスト,0x0,0x1
+         [subject]装備品3:list,0x7A1384,装備リスト,0x0,0x1
+         [subject]装備品4:list,0x7A1386,装備リスト,0x0,0x1
+         [subject]装備品5:list,0x7A1388,装備リスト,0x0,0x1
+         [subject]装備品6:list,0x7A138A,装備リスト,0x0,0x1
+[back]
+[subject]ヨナ:dir
+         [subject]レベル:calc,0x7A156A,0,0x1E,signed,little_e
+         [subject]最大HP:calc,0x7A15B2,0,0x270F,signed,little_e
+         [subject]現在HP:calc,0x7A15B4,0,0x270F,signed,little_e
+         [subject]最大AP:calc,0x7A15B6,0,0x270F,signed,little_e
+         [subject]現在AP:calc,0x7A15B8,0,0x270F,signed,little_e
+         [subject]腕力:calc,0x7A15BA,0,0x3E7,signed,little_e
+         [subject]魔力:calc,0x7A15BC,0,0x3E7,signed,little_e
+         [subject]敏捷さ:calc,0x7A15BE,0,0x3E7,signed,little_e
+         [subject]抵抗力:calc,0x7A15C0,0,0x3E7,signed,little_e
+         [subject]防御力:calc,0x7A15C2,0,0x3E7,signed,little_e
+         [subject]移動力:calc,0x7A15C4,0,0x63,signed,little_e
+         [subject]経験値:calc,0x7A156C,0,0xBB7,signed,little_e
+         [subject]装備品1:list,0x7A1580,装備リスト,0x0,0x1
+         [subject]装備品2:list,0x7A1582,装備リスト,0x0,0x1
+         [subject]装備品3:list,0x7A1584,装備リスト,0x0,0x1
+         [subject]装備品4:list,0x7A1586,装備リスト,0x0,0x1
+         [subject]装備品5:list,0x7A1588,装備リスト,0x0,0x1
+         [subject]装備品6:list,0x7A158A,装備リスト,0x0,0x1
+[back]
+[subject]ボルガ:dir
+         [subject]レベル:calc,0x7A176A,0,0x1E,signed,little_e
+         [subject]最大HP:calc,0x7A17B2,0,0x270F,signed,little_e
+         [subject]現在HP:calc,0x7A17B4,0,0x270F,signed,little_e
+         [subject]最大AP:calc,0x7A17B6,0,0x270F,signed,little_e
+         [subject]現在AP:calc,0x7A17B8,0,0x270F,signed,little_e
+         [subject]腕力:calc,0x7A17BA,0,0x3E7,signed,little_e
+         [subject]魔力:calc,0x7A17BC,0,0x3E7,signed,little_e
+         [subject]敏捷さ:calc,0x7A17BE,0,0x3E7,signed,little_e
+         [subject]抵抗力:calc,0x7A17C0,0,0x3E7,signed,little_e
+         [subject]防御力:calc,0x7A17C2,0,0x3E7,signed,little_e
+         [subject]移動力:calc,0x7A17C4,0,0x63,signed,little_e
+         [subject]経験値:calc,0x7A176C,0,0xBB7,signed,little_e
+         [subject]装備品1:list,0x7A1780,装備リスト,0x0,0x1
+         [subject]装備品2:list,0x7A1782,装備リスト,0x0,0x1
+         [subject]装備品3:list,0x7A1784,装備リスト,0x0,0x1
+         [subject]装備品4:list,0x7A1786,装備リスト,0x0,0x1
+         [subject]装備品5:list,0x7A1788,装備リスト,0x0,0x1
+         [subject]装備品6:list,0x7A178A,装備リスト,0x0,0x1
+[back]
+[subject]ムジカ:dir
+         [subject]レベル:calc,0x7A196A,0,0x1E,signed,little_e
+         [subject]最大HP:calc,0x7A19B2,0,0x270F,signed,little_e
+         [subject]現在HP:calc,0x7A19B4,0,0x270F,signed,little_e
+         [subject]最大AP:calc,0x7A19B6,0,0x270F,signed,little_e
+         [subject]現在AP:calc,0x7A19B8,0,0x270F,signed,little_e
+         [subject]腕力:calc,0x7A19BA,0,0x3E7,signed,little_e
+         [subject]魔力:calc,0x7A19BC,0,0x3E7,signed,little_e
+         [subject]敏捷さ:calc,0x7A19BE,0,0x3E7,signed,little_e
+         [subject]抵抗力:calc,0x7A19C0,0,0x3E7,signed,little_e
+         [subject]防御力:calc,0x7A19C2,0,0x3E7,signed,little_e
+         [subject]移動力:calc,0x7A19C4,0,0x63,signed,little_e
+         [subject]経験値:calc,0x7A196C,0,0xBB7,signed,little_e
+         [subject]装備品1:list,0x7A1980,装備リスト,0x0,0x1
+         [subject]装備品2:list,0x7A1982,装備リスト,0x0,0x1
+         [subject]装備品3:list,0x7A1984,装備リスト,0x0,0x1
+         [subject]装備品4:list,0x7A1986,装備リスト,0x0,0x1
+         [subject]装備品5:list,0x7A1988,装備リスト,0x0,0x1
+         [subject]装備品6:list,0x7A198A,装備リスト,0x0,0x1
+[back]
+[subject]デクロック:dir
+         [subject]レベル:calc,0x7A1B6A,0,0x1E,signed,little_e
+         [subject]最大HP:calc,0x7A1BB2,0,0x270F,signed,little_e
+         [subject]現在HP:calc,0x7A1BB4,0,0x270F,signed,little_e
+         [subject]最大AP:calc,0x7A1BB6,0,0x270F,signed,little_e
+         [subject]現在AP:calc,0x7A1BB8,0,0x270F,signed,little_e
+         [subject]腕力:calc,0x7A1BBA,0,0x3E7,signed,little_e
+         [subject]魔力:calc,0x7A1BBC,0,0x3E7,signed,little_e
+         [subject]敏捷さ:calc,0x7A1BBE,0,0x3E7,signed,little_e
+         [subject]抵抗力:calc,0x7A1BC0,0,0x3E7,signed,little_e
+         [subject]防御力:calc,0x7A1BC2,0,0x3E7,signed,little_e
+         [subject]移動力:calc,0x7A1BC4,0,0x63,signed,little_e
+         [subject]経験値:calc,0x7A1B6C,0,0xBB7,signed,little_e
+         [subject]装備品1:list,0x7A1B80,装備リスト,0x0,0x1
+         [subject]装備品2:list,0x7A1B82,装備リスト,0x0,0x1
+         [subject]装備品3:list,0x7A1B84,装備リスト,0x0,0x1
+         [subject]装備品4:list,0x7A1B86,装備リスト,0x0,0x1
+         [subject]装備品5:list,0x7A1B88,装備リスト,0x0,0x1
+         [subject]装備品6:list,0x7A1B8A,装備リスト,0x0,0x1
+[back]
+[subject]レイビック:dir
+         [subject]レベル:calc,0x7A1D6A,0,0x1E,signed,little_e
+         [subject]最大HP:calc,0x7A1DB2,0,0x270F,signed,little_e
+         [subject]現在HP:calc,0x7A1DB4,0,0x270F,signed,little_e
+         [subject]最大AP:calc,0x7A1DB6,0,0x270F,signed,little_e
+         [subject]現在AP:calc,0x7A1DB8,0,0x270F,signed,little_e
+         [subject]腕力:calc,0x7A1DBA,0,0x3E7,signed,little_e
+         [subject]魔力:calc,0x7A1DBC,0,0x3E7,signed,little_e
+         [subject]敏捷さ:calc,0x7A1DBE,0,0x3E7,signed,little_e
+         [subject]抵抗力:calc,0x7A1DC0,0,0x3E7,signed,little_e
+         [subject]防御力:calc,0x7A1DC2,0,0x3E7,signed,little_e
+         [subject]移動力:calc,0x7A1DC4,0,0x63,signed,little_e
+         [subject]経験値:calc,0x7A1D6C,0,0xBB7,signed,little_e
+         [subject]装備品1:list,0x7A1D80,装備リスト,0x0,0x1
+         [subject]装備品2:list,0x7A1D82,装備リスト,0x0,0x1
+         [subject]装備品3:list,0x7A1D84,装備リスト,0x0,0x1
+         [subject]装備品4:list,0x7A1D86,装備リスト,0x0,0x1
+         [subject]装備品5:list,0x7A1D88,装備リスト,0x0,0x1
+         [subject]装備品6:list,0x7A1D8A,装備リスト,0x0,0x1
+[back]
+[subject]シルフィ:dir
+         [subject]レベル:calc,0x7A1F6A,0,0x1E,signed,little_e
+         [subject]最大HP:calc,0x7A1FB2,0,0x270F,signed,little_e
+         [subject]現在HP:calc,0x7A1FB4,0,0x270F,signed,little_e
+         [subject]最大AP:calc,0x7A1FB6,0,0x270F,signed,little_e
+         [subject]現在AP:calc,0x7A1FB8,0,0x270F,signed,little_e
+         [subject]腕力:calc,0x7A1FBA,0,0x3E7,signed,little_e
+         [subject]魔力:calc,0x7A1FBC,0,0x3E7,signed,little_e
+         [subject]敏捷さ:calc,0x7A1FBE,0,0x3E7,signed,little_e
+         [subject]抵抗力:calc,0x7A1FC0,0,0x3E7,signed,little_e
+         [subject]防御力:calc,0x7A1FC2,0,0x3E7,signed,little_e
+         [subject]移動力:calc,0x7A1FC4,0,0x63,signed,little_e
+         [subject]経験値:calc,0x7A1F6C,0,0xBB7,signed,little_e
+         [subject]装備品1:list,0x7A1F80,装備リスト,0x0,0x1
+         [subject]装備品2:list,0x7A1F82,装備リスト,0x0,0x1
+         [subject]装備品3:list,0x7A1F84,装備リスト,0x0,0x1
+         [subject]装備品4:list,0x7A1F86,装備リスト,0x0,0x1
+         [subject]装備品5:list,0x7A1F88,装備リスト,0x0,0x1
+         [subject]装備品6:list,0x7A1F8A,装備リスト,0x0,0x1                                                   
+[back]
+[subject]グランプラ:dir
+         [subject]レベル:calc,0x7A216A,0,0x1E,signed,little_e
+         [subject]最大HP:calc,0x7A21B2,0,0x270F,signed,little_e
+         [subject]現在HP:calc,0x7A21B4,0,0x270F,signed,little_e
+         [subject]最大AP:calc,0x7A21B6,0,0x270F,signed,little_e
+         [subject]現在AP:calc,0x7A21B8,0,0x270F,signed,little_e
+         [subject]腕力:calc,0x7A21BA,0,0x3E7,signed,little_e
+         [subject]魔力:calc,0x7A21BC,0,0x3E7,signed,little_e
+         [subject]敏捷さ:calc,0x7A21BE,0,0x3E7,signed,little_e
+         [subject]抵抗力:calc,0x7A21C0,0,0x3E7,signed,little_e
+         [subject]防御力:calc,0x7A21C2,0,0x3E7,signed,little_e
+         [subject]移動力:calc,0x7A21C4,0,0x63,signed,little_e
+         [subject]経験値:calc,0x7A216C,0,0xBB7,signed,little_e
+         [subject]装備品1:list,0x7A2180,装備リスト,0x0,0x1
+         [subject]装備品2:list,0x7A2182,装備リスト,0x0,0x1
+         [subject]装備品3:list,0x7A2184,装備リスト,0x0,0x1
+         [subject]装備品4:list,0x7A2186,装備リスト,0x0,0x1
+         [subject]装備品5:list,0x7A2188,装備リスト,0x0,0x1
+         [subject]装備品6:list,0x7A218A,装備リスト,0x0,0x1
+[/script]
+
+[script]
+[title]キャッスルファンタジアVer1.02
+[process]CASTLE.EXE
+[maker]Studio e.go!
+[creator]TH
+[note]
+値を固定すると敵の値も変わるので
+気をつけること
+[/note]
+[subject]一人目MAX:b_toggle,0x434420,MAX,offset
+[subject]二人目MAX:b_toggle,0x4344C4,MAX,offset
+[subject]三人目MAX:b_toggle,0x434568,MAX,offset
+[subject]四人目MAX:b_toggle,0x43460C,MAX,offset
+[subject]五人目MAX:b_toggle,0x4346B0,MAX,offset
+[subject]一人目:dir
+[replace]0x434420,ステータス,offset
+[subject]二人目:dir
+[replace]0x4344C4,ステータス,offset
+[subject]三人目:dir
+[replace]0x434568,ステータス,offset
+[subject]四人目:dir
+[replace]0x43460C,ステータス,offset
+[subject]五人目:dir
+[replace]0x4346B0,ステータス,offset
+[subject]戦闘後のハートの数:dir
+[subject]ヴァル:calc,0x4342EC,0x0,0xFF,signet,little_e
+[subject]ナッシュ:calc,0x4342F0,0x0,0xFF,signet,little_e
+[subject]ファナ:calc,0x4342F4,0x0,0xFF,signet,little_e
+[subject]メル:calc,0x4342F8,0x0,0xFF,signet,little_e
+[subject]マリー:calc,0x4342FC,0x0,0xFF,signet,little_e
+[subject]ルー:calc,0x434300,0x0,0xFF,signet,little_e
+[subject]ラーラ:calc,0x434304,0x0,0xFF,signet,little_e
+[subject]キララ:calc,0x434308,0x0,0xFF,signet,little_e
+[subject]ステラ:calc,0x43430C,0x0,0xFF,signet,little_e
+[/script]
+
+[script]
+[title]ファントムナイト 夢幻の迷宮2
+[process]PKNIGHT.EXE
+[maker]SoftwareHouse Palsrey
+[creator]TH
+[note]
+このゲームは環境によって
+アドレスが変わるみたいです
+使えなかったらアドレスを
+補正しましょう
+補正するときの注意！！
+主人公のステータスを1度町に戻って
+最初のステータスにすることです
+それで補正したらゲームを中断して途中からはじめてステータスを変えましょう
+
+あと、仲間キャラはどうも不安定なので
+使えないことが多いと思います
+[/note]
+[adjustment]dialog,0x2DDCA08,ファントムナイト,0x200CA08,0x2FFCA08,0x4
+[subject]所持金:calc,0x2DDCA44,0,999999,signed,little_e
+[subject]自分MAX:b_toggle,0x2DDCA04,自分MAX,offset
+[subject]仲間MAX:b_toggle,0x2DD7DD4,仲間MAX,offset
+[subject]自分ステータス:dir
+[subject]経験値:calc,0x2DDCA04,0,8000000,signed,little_e
+[subject]現在体力:calc,0x2DDCA08,0,999,signed,little_e
+[subject]最大体力:calc,0x2DDCA10,0,999,signed,little_e
+[subject]技ゲージ:toggle,0x2DDCA14,2C0100002C01,????????????
+[subject]現在ちから:calc,0x2DDCA20,0,99999,signed,little_e
+[subject]最大ちから:calc,0x2DDCA24,0,99999,signed,little_e
+[subject]現在満腹度:calc,0x2DDCA30,0,99999,signed,little_e
+[subject]最大満腹度:calc,0x2DDCA34,0,99999,signed,little_e
+[back]
+[subject]仲間キャラ:dir
+	[subject]現在体力:calc,0x2DD7DD4,0,999,signed,little_e
+	[subject]最大体力:calc,0x2DD7DDC,0,999,signed,little_e
+	[subject]現在ちから:calc,0x2DD7DEC,0,99999,signed,little_e
+	[subject]最大ちから:calc,0x2DD7DF0,0,99999,signed,little_e
+[back]
+[/script]
+
+[script]
+[title]ぷろすちゅーでんとGood
+[process]SYSTEM36.EXE
+[maker]アリスソフト
+[creator]TH
+[note]
+環境によってはアドレスが違います
+[/note]
+[subject]話数:calc,0xBB23AE,1,20,signed,little_e
+[subject]LV:dir
+	[subject]猿藤悟郎:calc,0x1194EC2,0,98,signed,little_e
+	[subject]阿寒湖まりも:calc,0x1194EC4,0,98,signed,little_e
+	[subject]魔窟堂野武彦:calc,0x1194EC6,0,98,signed,little_e
+	[subject]姫夜木紫音:calc,0x1194EC8,0,98,signed,little_e
+	[subject]桜小路牡丹:calc,0x1194ECA,0,98,signed,little_e
+	[subject]四条沙羅沙:calc,0x1194ECC,0,98,signed,little_e
+	[subject]高見柚子:calc,0x1194ECE,0,98,signed,little_e
+	[subject]ミーア:calc,0x1194ED0,0,98,signed,little_e
+	[subject]アンドロイド赤:calc,0x1194ED2,0,98,signed,little_e
+	[subject]アンドロイド青:calc,0x1194ED4,0,98,signed,little_e
+	[subject]アンドロイド黄:calc,0x1194ED6,0,98,signed,little_e
+	[subject]アンドロイド緑:calc,0x1194ED8,0,98,signed,little_e
+	[subject]霧島影美:calc,0x1194EDA,0,98,signed,little_e
+	[subject]野沢口咲:calc,0x1194EDC,0,98,signed,little_e
+	[subject]阿寒湖まりも+:calc,0x1194EE6,0,98,signed,little_e
+[back]
+[subject]HP:dir
+	[subject]全員65535(ファラビット･闇楓は除く):toggle,0x1191D6A,0x1191D80-FFFF,??
+	[subject]爆猿皇:calc,0x1191D6A,0,0xFFFF,signed,little_e
+	[subject]猿皇:calc,0x1191D6C,0,0xFFFF,signed,little_e
+	[subject]猿皇(飛翔型):calc,0x1191D6E,0,0xFFFF,signed,little_e
+	[subject]爆砕姫:calc,0x1191D70,0,0xFFFF,signed,little_e
+	[subject]爆撃姫:calc,0x1191D72,0,0xFFFF,signed,little_e
+	[subject]ラージオン:calc,0x1191D74,0,0xFFFF,signed,little_e
+	[subject]ビストーム:calc,0x1191D76,0,0xFFFF,signed,little_e
+	[subject]レスキュート:calc,0x1191D78,0,0xFFFF,signed,little_e
+	[subject]プレイメイα:calc,0x1191D7A,0,0xFFFF,signed,little_e
+	[subject]プレイメイβ:calc,0x1191D7C,0,0xFFFF,signed,little_e
+	[subject]プレイメイγ:calc,0x1191D7E,0,0xFFFF,signed,little_e
+	[subject]プレイメイΔ:calc,0x1191D80,0,0xFFFF,signed,little_e
+	[subject]ファラビット:calc,0x1191D8C,0,0xFFFF,signed,little_e
+	[subject]闇楓:calc,0x1191D8E,0,0xFFFF,signed,little_e
+	[subject]敵全員HP0:toggle,0x1191DCE,0x1191E89-0,0xFFFF
+[back]
+[subject]対地 ABILITY:dir
+	[subject]猿藤悟郎:calc,0x1194F3A,0,0xFFFF,signed,little_e
+	[subject]阿寒湖まりも:calc,0x1194F3C,0,0xFFFF,signed,little_e
+	[subject]魔窟堂野武彦:calc,0x1194F3E,0,0xFFFF,signed,little_e
+	[subject]姫夜木紫音:calc,0x1194F40,0,0xFFFF,signed,little_e
+	[subject]桜小路牡丹:calc,0x1194F42,0,0xFFFF,signed,little_e
+	[subject]四条沙羅沙:calc,0x1194F44,0,0xFFFF,signed,little_e
+	[subject]高見柚子:calc,0x1194F46,0,0xFFFF,signed,little_e
+	[subject]ミーア:calc,0x1194F48,0,0xFFFF,signed,little_e
+	[subject]アンドロイド赤:calc,0x1194F4A,0,0xFFFF,signed,little_e
+	[subject]アンドロイド青:calc,0x1194F4C,0,0xFFFF,signed,little_e
+	[subject]アンドロイド黄:calc,0x1194F4E,0,0xFFFF,signed,little_e
+	[subject]アンドロイド緑:calc,0x1194F50,0,0xFFFF,signed,little_e
+	[subject]霧島影美:calc,0x1194F52,0,0xFFFF,signed,little_e
+	[subject]野沢口咲:calc,0x1194F54,0,0xFFFF,signed,little_e
+	[subject]阿寒湖まりも+:calc,0x1194F5E,0,0xFFFF,signed,little_e
+[back]
+[subject]対空 ABILITY:dir
+	[subject]猿藤悟郎:calc,0x1194FB2,0,0xFFFF,signed,little_e
+	[subject]阿寒湖まりも:calc,0x1194FB4,0,0xFFFF,signed,little_e
+	[subject]魔窟堂野武彦:calc,0x1194FB6,0,0xFFFF,signed,little_e
+	[subject]姫夜木紫音:calc,0x1194FB8,0,0xFFFF,signed,little_e
+	[subject]桜小路牡丹:calc,0x1194FBA,0,0xFFFF,signed,little_e
+	[subject]四条沙羅沙:calc,0x1194FBC,0,0xFFFF,signed,little_e
+	[subject]高見柚子:calc,0x1194FBE,0,0xFFFF,signed,little_e
+	[subject]ミーア:calc,0x1194FC0,0,0xFFFF,signed,little_e
+	[subject]アンドロイド赤:calc,0x1194FC2,0,0xFFFF,signed,little_e
+	[subject]アンドロイド青:calc,0x1194FC4,0,0xFFFF,signed,little_e
+	[subject]アンドロイド黄:calc,0x1194FC6,0,0xFFFF,signed,little_e
+	[subject]アンドロイド緑:calc,0x1194FC8,0,0xFFFF,signed,little_e
+	[subject]霧島影美:calc,0x1194FCA,0,0xFFFF,signed,little_e
+	[subject]野沢口咲:calc,0x1194FCC,0,0xFFFF,signed,little_e
+	[subject]阿寒湖まりも+:calc,0x1194FD6,0,0xFFFF,signed,little_e
+[back]
+[subject]移動POWER:dir
+	[subject]全員9(ファラビット･闇楓は除く):toggle,0x1191982,0x1191998-09??,??
+	[subject]爆猿皇:calc,0x1191982,0,9,signed,little_e
+	[subject]猿皇:calc,0x1191984,0,9,signed,little_e
+	[subject]猿皇(飛翔型):calc,0x1191986,0,9,signed,little_e
+	[subject]爆砕姫:calc,0x1191988,0,9,signed,little_e
+	[subject]爆撃姫:calc,0x119198A,0,9,signed,little_e
+	[subject]ラージオン:calc,0x119198C,0,9,signed,little_e
+	[subject]ビストーム:calc,0x119198E,0,9,signed,little_e
+	[subject]レスキュート:calc,0x1191990,0,9,signed,little_e
+	[subject]プレイメイα:calc,0x1191992,0,9,signed,little_e
+	[subject]プレイメイβ:calc,0x1191994,0,9,signed,little_e
+	[subject]プレイメイγ:calc,0x1191996,0,9,signed,little_e
+	[subject]プレイメイΔ:calc,0x1191998,0,9,signed,little_e
+	[subject]ファラビット:calc,0x11919A4,0,9,signed,little_e
+	[subject]闇楓:calc,0x11919A6,0,9,signed,little_e
+[back]
+[subject]反応:dir
+	[subject]全員999:toggle,0x1192922,0x119293C-E703,??
+	[subject]爆猿皇:calc,0x1192922,0,0x3E7,signed,little_e
+	[subject]猿皇:calc,0x1192924,0,0x3E7,signed,little_e
+	[subject]猿皇(飛翔型):calc,0x1192926,0,0x3E7,signed,little_e
+	[subject]爆砕姫:calc,0x1192928,0,0x3E7,signed,little_e
+	[subject]爆撃姫:calc,0x119292A,0,0x3E7,signed,little_e
+	[subject]ラージオン:calc,0x119292C,0,0x3E7,signed,little_e
+	[subject]ビストーム:calc,0x119292E,0,0x3E7,signed,little_e
+	[subject]レスキュート:calc,0x1192930,0,0x3E7,signed,little_e
+	[subject]プレイメイα:calc,0x1192932,0,0x3E7,signed,little_e
+	[subject]プレイメイβ:calc,0x1192934,0,0x3E7,signed,little_e
+	[subject]プレイメイγ:calc,0x1192936,0,0x3E7,signed,little_e
+	[subject]プレイメイΔ:calc,0x1192938,0,0x3E7,signed,little_e
+	[subject]ファラビット:calc,0x119293A,0,0x3E7,signed,little_e
+	[subject]闇楓:calc,0x119293C,0,0x3E7,signed,little_e
+[back]
+[subject]OVER HEAT:dir
+	[subject]全員0(ファラビット･闇楓は除く):toggle,0x1191F5E,0x1191F74-00,??
+	[subject]爆猿皇:calc,0x1191F5E,0,0xFFFF,signed,little_e
+	[subject]猿皇:calc,0x1191F60,0,0xFFFF,signed,little_e
+	[subject]猿皇(飛翔型):calc,0x1191F62,0,0xFFFF,signed,little_e
+	[subject]爆砕姫:calc,0x1191F64,0,0xFFFF,signed,little_e
+	[subject]爆撃姫:calc,0x1191F66,0,0xFFFF,signed,little_e
+	[subject]ラージオン:calc,0x1191F68,0,0xFFFF,signed,little_e
+	[subject]ビストーム:calc,0x1191F6A,0,0xFFFF,signed,little_e
+	[subject]レスキュート:calc,0x1191F6C,0,0xFFFF,signed,little_e
+	[subject]プレイメイα:calc,0x1191F6E,0,0xFFFF,signed,little_e
+	[subject]プレイメイβ:calc,0x1191F70,0,0xFFFF,signed,little_e
+	[subject]プレイメイγ:calc,0x1191F72,0,0xFFFF,signed,little_e
+	[subject]プレイメイΔ:calc,0x1191F74,0,0xFFFF,signed,little_e
+	[subject]ファラビット:calc,0x1191F80,0,0xFFFF,signed,little_e
+	[subject]闇楓:calc,0x1191F82,0,0xFFFF,signed,little_e
+[back]
+[subject]移動可否:dir
+	[subject]爆猿皇/移動可能:toggle,0x1192152,00,??
+	[subject]猿皇/移動可能:toggle,0x1192154,00,??
+	[subject]猿皇(飛翔型)/移動可能:toggle,0x1192156,00,??
+	[subject]爆砕姫/移動可能:toggle,0x1192158,00,??
+	[subject]爆撃姫/移動可能:toggle,0x119215A,00,??
+	[subject]ラージオン/移動可能:toggle,0x119215C,00,??
+	[subject]ビストーム/移動可能:toggle,0x119215E,00,??
+	[subject]レスキュート/移動可能:toggle,0x1192160,00,??
+	[subject]プレイメイα/移動可能:toggle,0x1192162,00,??
+	[subject]プレイメイβ/移動可能:toggle,0x1192164,00,??
+	[subject]プレイメイγ/移動可能:toggle,0x1192166,00,??
+	[subject]プレイメイΔ/移動可能:toggle,0x1192168,00,??
+	[subject]ファラビット/移動可能:toggle,0x1192174,00,??
+	[subject]闇楓/移動可能:toggle,0x1192176,00,??
+[back]
+[subject]攻撃可否:dir
+	[subject]爆猿皇/攻撃可能:toggle,0x1192346,00,??
+	[subject]猿皇/攻撃可能:toggle,0x1192348,00,??
+	[subject]猿皇(飛翔型)/攻撃可能:toggle,0x119234A,00,??
+	[subject]爆砕姫/攻撃可能:toggle,0x119234C,00,??
+	[subject]爆撃姫/攻撃可能:toggle,0x119234E,00,??
+	[subject]ラージオン/攻撃可能:toggle,0x1192350,00,??
+	[subject]ビストーム/攻撃可能:toggle,0x1192352,00,??
+	[subject]レスキュート/攻撃可能:toggle,0x1192354,00,??
+	[subject]プレイメイα/攻撃可能:toggle,0x1192356,00,??
+	[subject]プレイメイβ/攻撃可能:toggle,0x1192358,00,??
+	[subject]プレイメイγ/攻撃可能:toggle,0x119235A,00,??
+	[subject]プレイメイΔ/攻撃可能:toggle,0x119235C,00,??
+	[subject]ファラビット/攻撃可能:toggle,0x1192368,00,??
+	[subject]闇楓/攻撃可能:toggle,0x119236A,00,??
+[back]
+[subject]サポート用の機体/追加可能:toggle,0xBB22BC,00,01
+[/script]
+
+[script]
+[title]キャッスルファンタジア　聖魔大戦 Ver1.05
+[process]CASTLE2.EXE
+[maker]Studio e・go!
+[creator]TH
+[note]wordwrap
+キャラクターリストの一番上にいるキャラクターのステータスを書き換えます。
+敵も変わるので注意
+[/note]
+	[subject]一人目MAX:b_toggle,0x470738,MAX2,offset
+	[subject]二人目MAX:b_toggle,0x470968,MAX2,offset
+	[subject]三人目MAX:b_toggle,0x470B98,MAX2,offset
+	[subject]四人目MAX:b_toggle,0x470DC8,MAX2,offset
+	[subject]一人目データ:dir
+		[subject]現在耐久力:calc,0x470738,0,999,signed,little_e
+		[subject]最大耐久力:calc,0x47073C,0,999,signed,little_e
+		[subject]素早さ:calc,0x470740,1,999,signed,little_e
+		[subject]移動範囲:calc,0x470744,0,999,signed,little_e
+		[subject]攻撃力:calc,0x470750,0,999,signed,little_e
+		[subject]守備力:calc,0x47074C,0,999,signed,little_e
+		[subject]攻撃射程:calc,0x470754,0,999,signed,little_e
+	[back]
+	[subject]愛情値:dir
+		[subject]アリア:calc,0x48F784,0,300,signed,little_e
+		[subject]ハンナ:calc,0x48F788,0,300,signed,little_e
+		[subject]ティア:calc,0x48F78C,0,300,signed,little_e
+		[subject]ルナール:calc,0x48F790,0,300,signed,little_e
+		[subject]セシル:calc,0x48F794,0,300,signed,little_e
+		[subject]ジュディ:calc,0x48F798,0,300,signed,little_e
+		[subject]シルエラ:calc,0x48F79C,0,300,signed,little_e
+[/script]
+
+[script]
+[title]Snes9X ドラゴンクエストⅤ
+[process]SNES9XW.EXE
+[maker]エニックス
+[creator]TH
+[note]
+環境により
+アドレスが違います
+
+注意！！
+
+・主人公を他のキャラにすると
+ゲームが止まる可能性がある
+・人間キャラは1匹目にしておく
+・GOLD、コインの表示が変なときは
+GOLDMAX、コインMAXを使う
+・EXPを書き換えると最大HPが変わることがあるので
+変わったら書き換え直すこと
+・モンスターを変えた場合、
+職業も変えたモンスターにしないとそのモンスターの特性にならない
+身近な例だとはぐれメタルが魔法でダメージをふつうに受けます
+[/note]
+[adjustment]dialog,0x10A30BC,ドラクエ,0x1090000,0x27CFFFF,0x4
+[subject]GOLD:calc,0x10A3095,0,99999,signed,little_e
+[subject]GOLDMAX:toggle,0x10A3095,9F8601,??????
+[subject]コイン:calc,0x10A30B8,0,9999999,signed,little_e
+[subject]コインMAX:toggle,0x10A30B8,7F9698,??????
+[subject]主人公ステータス:dir
+[replace]0x10A30BE,ドラクエ5,offset
+[subject]2人目ステータス:dir
+[replace]0x10A30E8,ドラクエ5,offset
+[subject]3人目ステータス:dir
+[replace]0x10A3112,ドラクエ5,offset
+[subject]4人目ステータス:dir
+[replace]0x10A313C,ドラクエ5,offset
+[subject]5人目ステータス:dir
+[replace]0x10A3166,ドラクエ5,offset
+[subject]6人目ステータス:dir
+[replace]0x10A3190,ドラクエ5,offset
+[subject]7人目ステータス:dir
+[replace]0x10A31BA,ドラクエ5,offset
+[subject]8人目ステータス:dir
+[replace]0x10A31E4,ドラクエ5,offset
+[/script]
+
+[script]
+[title]Snes9X ロマサガ3
+[process]SNES9XW.EXE
+[maker]スクウェア
+[creator]TH
+[note]
+環境により
+アドレスが違います
+モンスターレベルは大きくしすぎないでください
+
+[/note]
+[adjustment]dialog,0x1493258,ロマサガ3,0x1090000,0x27CFFFF,0x4
+[subject]時間:dir
+[subject]時:calc,0x149354A,0x0,0x63,signet,little_e
+[subject]分:calc,0x149354B,0x0,0x3B,signet,little_e
+[subject]秒:calc,0x149354C,0x0,0x3B,signet,little_e
+[back]
+[subject]お金関係:dir
+[subject]お金MAX:toggle,0x149355A,1027,????
+[subject]国資金(オーラム銀行)MAX:toggle,0x149355C,FFFFFFFE,????????
+[subject]買収劇資金MAX:toggle,0x1493CCB,FFFFFFFF,????????
+[back]
+[subject]技、陣形関係:dir
+[subject]技の極意全部:toggle,0x149374B,0x1493769-FF,??
+[subject]見切りの極意全部(通常のだけ):toggle,0x1493765,0FFFFFFF80
+[subject]陣形全部覚える:toggle,0x1493560,FFF0,????
+[subject]陣形技合成術全部覚える:toggle,0x149376A,FFFFFFFFFFFF,????????????
+[back]
+[subject]マスコンバット関係:dir
+[subject]マスコンバット技全部覚える:toggle,0x1493D1E,7FFFFFFFFFF8,??????
+[subject]マスコンバット陣形全部覚える:toggle,0x1493D2A,FFF0,????
+[subject]マスコンバット使用回数MAX:toggle,0x149B15F,FFFFFFFFFFFFFF,??????????????
+[back]
+[subject]トレード関係:dir
+[subject]かけひき技全部覚える:toggle,0x1493CDD,FFFFFF,??????
+[subject]グループ技全部覚える:toggle,0x1493CD8,FFFFFFFFFF,??????????
+[back]
+[subject]モンスターレベル:dir
+	[subject]骸骨系:calc,0x1493773,0x0,0xFF,signet,little_e
+	[subject]悪魔系:calc,0x1493774,0x0,0xFF,signet,little_e
+	[subject]獣系:calc,0x1493775,0x0,0xFF,signet,little_e
+	[subject]魚系:calc,0x1493776,0x0,0xFF,signet,little_e
+	[subject]獣人系:calc,0x1493777,0x0,0xFF,signet,little_e
+	[subject]植物系:calc,0x1493778,0x0,0xFF,signet,little_e
+	[subject]水棲系:calc,0x1493779,0x0,0xFF,signet,little_e
+	[subject]精霊系:calc,0x149377A,0x0,0xFF,signet,little_e
+	[subject]ゾンビ系:calc,0x149377B,0x0,0xFF,signet,little_e
+	[subject]蛇系:calc,0x149377C,0x0,0xFF,signet,little_e
+	[subject]両棲系:calc,0x149377D,0x0,0xFF,signet,little_e
+	[subject]昆虫系:calc,0x149377E,0x0,0xFF,signet,little_e
+	[subject]無機系:calc,0x149377F,0x0,0xFF,signet,little_e
+	[subject]鳥系:calc,0x1493780,0x0,0xFF,signet,little_e
+	[subject]亡霊系:calc,0x1493781,0x0,0xFF,signet,little_e
+	[subject]妖精系:calc,0x1493782,0x0,0xFF,signet,little_e
+[back]
+[subject]武具すぐ開発:toggle,0x149370E,00,??
+[subject]主人公ステータス:dir
+[replace]0x1493242,ロマサガ3,offset
+[subject]2人目ステータス:dir
+[replace]0x14932C2,ロマサガ3,offset
+[subject]3人目ステータス:dir
+[replace]0x1493342,ロマサガ3,offset
+[subject]4人目ステータス:dir
+[replace]0x14933C2,ロマサガ3,offset
+[subject]5人目ステータス:dir
+[replace]0x1493442,ロマサガ3,offset
+[subject]6人目ステータス:dir
+[replace]0x14934C2,ロマサガ3,offset
+[subject]アイテム:dir
+	[subject]アイテム32個目まで99個:toggle,0x149356A,0x14935A9-??63,????
+	[subject]倉庫満タン:toggle,0x14935AA,0x14936A9-63,??
+	[subject]1個目:list,0x149356A,ロマサガ3アイテム,0x0,0x1
+	[subject]1個目数:calc,0x149356B,0x0,99,signet,little_e
+	[subject]2個目:list,0x149356C,ロマサガ3アイテム,0x0,0x1
+	[subject]2個目数:calc,0x149356D,0x0,99,signet,little_e
+	[subject]3個目:list,0x149356E,ロマサガ3アイテム,0x0,0x1
+	[subject]3個目数:calc,0x149356F,0x0,99,signet,little_e
+	[subject]4個目:list,0x1493570,ロマサガ3アイテム,0x0,0x1
+	[subject]4個目数:calc,0x1493571,0x0,99,signet,little_e
+	[subject]5個目:list,0x1493572,ロマサガ3アイテム,0x0,0x1
+	[subject]5個目数:calc,0x1493573,0x0,99,signet,little_e
+	[subject]6個目:list,0x1493574,ロマサガ3アイテム,0x0,0x1
+	[subject]6個目数:calc,0x1493575,0x0,99,signet,little_e
+	[subject]7個目:list,0x1493576,ロマサガ3アイテム,0x0,0x1
+	[subject]7個目数:calc,0x1493577,0x0,99,signet,little_e
+	[subject]8個目:list,0x1493578,ロマサガ3アイテム,0x0,0x1
+	[subject]8個目数:calc,0x1493579,0x0,99,signet,little_e
+	[subject]9個目:list,0x149357A,ロマサガ3アイテム,0x0,0x1
+	[subject]9個目数:calc,0x149357B,0x0,99,signet,little_e
+	[subject]10個目:list,0x149357C,ロマサガ3アイテム,0x0,0x1
+	[subject]10個目数:calc,0x149357D,0x0,99,signet,little_e
+	[subject]11個目:list,0x149357E,ロマサガ3アイテム,0x0,0x1
+	[subject]11個目数:calc,0x149357F,0x0,99,signet,little_e
+	[subject]12個目:list,0x1493580,ロマサガ3アイテム,0x0,0x1
+	[subject]12個目数:calc,0x1493581,0x0,99,signet,little_e
+	[subject]13個目:list,0x1493582,ロマサガ3アイテム,0x0,0x1
+	[subject]13個目数:calc,0x1493583,0x0,99,signet,little_e
+	[subject]14個目:list,0x1493584,ロマサガ3アイテム,0x0,0x1
+	[subject]14個目数:calc,0x1493585,0x0,99,signet,little_e
+	[subject]15個目:list,0x1493586,ロマサガ3アイテム,0x0,0x1
+	[subject]15個目数:calc,0x1493587,0x0,99,signet,little_e
+	[subject]16個目:list,0x1493588,ロマサガ3アイテム,0x0,0x1
+	[subject]16個目数:calc,0x1493589,0x0,99,signet,little_e
+	[subject]17個目:list,0x149358A,ロマサガ3アイテム,0x0,0x1
+	[subject]17個目数:calc,0x149358B,0x0,99,signet,little_e
+	[subject]18個目:list,0x149358C,ロマサガ3アイテム,0x0,0x1
+	[subject]18個目数:calc,0x149358D,0x0,99,signet,little_e
+	[subject]19個目:list,0x149358E,ロマサガ3アイテム,0x0,0x1
+	[subject]19個目数:calc,0x149358F,0x0,99,signet,little_e
+	[subject]20個目:list,0x1493590,ロマサガ3アイテム,0x0,0x1
+	[subject]20個目数:calc,0x1493591,0x0,99,signet,little_e
+	[subject]21個目:list,0x1493592,ロマサガ3アイテム,0x0,0x1
+	[subject]21個目数:calc,0x1493593,0x0,99,signet,little_e
+	[subject]22個目:list,0x1493594,ロマサガ3アイテム,0x0,0x1
+	[subject]22個目数:calc,0x1493595,0x0,99,signet,little_e
+	[subject]23個目:list,0x1493596,ロマサガ3アイテム,0x0,0x1
+	[subject]23個目数:calc,0x1493597,0x0,99,signet,little_e
+	[subject]24個目:list,0x1493598,ロマサガ3アイテム,0x0,0x1
+	[subject]24個目数:calc,0x1493599,0x0,99,signet,little_e
+	[subject]25個目:list,0x149359A,ロマサガ3アイテム,0x0,0x1
+	[subject]25個目数:calc,0x149359B,0x0,99,signet,little_e
+	[subject]26個目:list,0x149359C,ロマサガ3アイテム,0x0,0x1
+	[subject]26個目数:calc,0x149359D,0x0,99,signet,little_e
+	[subject]27個目:list,0x149359E,ロマサガ3アイテム,0x0,0x1
+	[subject]27個目数:calc,0x149359F,0x0,99,signet,little_e
+	[subject]28個目:list,0x14935A0,ロマサガ3アイテム,0x0,0x1
+	[subject]28個目数:calc,0x14935A1,0x0,99,signet,little_e
+	[subject]29個目:list,0x14935A2,ロマサガ3アイテム,0x0,0x1
+	[subject]29個目数:calc,0x14935A3,0x0,99,signet,little_e
+	[subject]30個目:list,0x14935A4,ロマサガ3アイテム,0x0,0x1
+	[subject]30個目数:calc,0x14935A5,0x0,99,signet,little_e
+	[subject]31個目:list,0x14935A6,ロマサガ3アイテム,0x0,0x1
+	[subject]31個目数:calc,0x14935A7,0x0,99,signet,little_e
+	[subject]32個目:list,0x14935A8,ロマサガ3アイテム,0x0,0x1
+	[subject]32個目数:calc,0x14935A9,0x0,99,signet,little_e
+
+[/script]

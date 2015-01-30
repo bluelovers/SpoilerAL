@@ -1,0 +1,1184 @@
+[group]部下
+[subject][! L$Val+1 !]人目:dir
+[subject]キャラ名:d_list,_ [_ [: 0x91AC78 :] _]+0x[! $Val*0x02 !]+0x02,大悪司->キャラ名,0,999,大悪司->キャラ番号,offset
+[subject]名前:calc,_ [_ [: 0x91AC60 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]カナ:calc,_ [_ [: 0x91AC6C :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]キャラ番号:calc,_ [_ [: 0x91AC78 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]制御:calc,_ [_ [: 0x91AC84 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+//[subject]性別:calc,_ [_ [: 0x91AC90 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]性別:list,_ [_ [: 0x91AC90 :] _]+0x[! $Val*0x02 !]+0x02,大悪司->性別,0,1
+//[subject]地域:calc,_ [_ [: 0x91AC9C :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]地域:list,_ [_ [: 0x91AC9C :] _]+0x[! $Val*0x02 !]+0x02,大悪司->地域,0,1
+//[subject]タイプ:calc,_ [_ [: 0x91ACA8 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]忠誠タイプ:list,_ [_ [: 0x91ACA8 :] _]+0x[! $Val*0x02 !]+0x02,大悪司->忠誠,0,1
+[subject]忠誠度:calc,_ [_ [: 0x91ACB4 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]給与:calc,_ [_ [: 0x91ACC0 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]収益:calc,_ [_ [: 0x91ACCC :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+//[subject]治安:calc,_ [_ [: 0x91ACD8 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]治安力:list,_ [_ [: 0x91ACD8 :] _]+0x[! $Val*0x02 !]+0x02,大悪司->治安,0,1
+[subject]SP番号:calc,_ [_ [: 0x91ACE4 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]ユニットNO:calc,_ [_ [: 0x91ACF0 :] _]+0x[! $Val*0x02 !]+0x02,0,9999,signed,little_e
+[subject]現在体力:calc,_ [_ [: 0x91ACFC :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]最大体力:calc,_ [_ [: 0x91AD08 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]現在気力:calc,_ [_ [: 0x91AD14 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]最大気力:calc,_ [_ [: 0x91AD20 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]攻撃力:calc,_ [_ [: 0x91AD2C :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]命中:calc,_ [_ [: 0x91AD38 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]回避:calc,_ [_ [: 0x91AD44 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]運:calc,_ [_ [: 0x91AD50 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]最大運:calc,_ [_ [: 0x91AD5C :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]所属:calc,_ [_ [: 0x91AD68 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]対属性:calc,_ [_ [: 0x91AD74 :] _]+0x[! $Val*0x02 !]+0x02,0x0,0xFFF,signed,little_e
+[subject]対属性全部:toggle,_ [_ [: 0x91AD74 :] _]+0x[! $Val*0x02 !]+0x02,FF0F,??
+//[subject]スキル:calc,_ [_ [: 0x91AD80 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]スキル:list,_ [_ [: 0x91AD80 :] _]+0x[! $Val*0x02 !]+0x02,大悪司->スキル,0,1
+[subject]EXP:calc,_ [_ [: 0x91AD8C :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]次EXP:calc,_ [_ [: 0x91AD98 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[back]
+[/group]
+
+[group]部下X
+[subject][! L$Val+1 !]人目:dir
+[subject]キャラ名:d_list,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x2F8 :] _]+0x[! $Val*0x02 !]+0x02,大悪司->キャラ名,0,999,大悪司->キャラ番号,offset
+[subject]名前:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x2E0 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]カナ:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x2EC :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]キャラ番号:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x2F8 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]制御:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x304 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]性別:list,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x310 :] _]+0x[! $Val*0x02 !]+0x02,大悪司->性別,0,1
+[subject]地域:list,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x31C :] _]+0x[! $Val*0x02 !]+0x02,大悪司->地域,0,1
+[subject]忠誠タイプ:list,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x328 :] _]+0x[! $Val*0x02 !]+0x02,大悪司->忠誠,0,1
+[subject]忠誠:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x334 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]給与:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x340 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]収益:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x34C :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]治安力:list,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x358 :] _]+0x[! $Val*0x02 !]+0x02,大悪司->治安,0,1
+[subject]SP番号:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x364 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]ユニットNO:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x370 :] _]+0x[! $Val*0x02 !]+0x02,0,9999,signed,little_e
+[subject]現在体力:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x37C :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]最大体力:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x388 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]現在気力:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x394 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]最大気力:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x3A0 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]攻撃力:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x3AC :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]命中:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x3B8 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]回避:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x3C4 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]運:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x3D0 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]最大運:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x3DC :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]所属:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x3E8 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]対属性:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x3F4 :] _]+0x[! $Val*0x02 !]+0x02,0x0,0xFFF,signed,little_e
+[subject]対属性全部:toggle,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x3F4 :] _]+0x[! $Val*0x02 !]+0x02,FF01,??
+[subject]スキル:list,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x400 :] _]+0x[! $Val*0x02 !]+0x02,大悪司->スキル,0,1
+[subject]EXP:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x40C :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]次EXP:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x418 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[back]
+[/group]
+
+[group]捕虜
+[subject][! L$Val+1 !]人目:dir
+[subject]キャラ名:d_list,_ [_ [: 0x91ADE0 :] _]+0x[! $Val*0x02 !]+0x02,大悪司->キャラ名,0,999,大悪司->キャラ番号,offset
+[subject]名前:calc,_ [_ [: 0x91ADC8 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]カナ:calc,_ [_ [: 0x91ADD4 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]キャラ:calc,_ [_ [: 0x91ADE0 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]制御:calc,_ [_ [: 0x91ADEC :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+//[subject]性別:calc,_ [_ [: 0x91ADF8 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]性別:list,_ [_ [: 0x91ADF8 :] _]+0x[! $Val*0x02 !]+0x02,大悪司->性別,0,1
+[subject]捕虜期間:calc,_ [_ [: 0x91AE04 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]愛欲抵抗:calc,_ [_ [: 0x91AE10 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]愛欲:calc,_ [_ [: 0x91AE1C :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]拷問抵抗:calc,_ [_ [: 0x91AE28 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]拷問:calc,_ [_ [: 0x91AE34 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]物欲抵抗:calc,_ [_ [: 0x91AE40 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]物欲:calc,_ [_ [: 0x91AE4C :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]SP番号:calc,_ [_ [: 0x91AE58 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[back]
+[/group]
+
+[group]捕虜X
+[subject][! L$Val+1 !]人目:dir
+[subject]キャラ名:d_list,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x460 :] _]+0x[! $Val*0x02 !]+0x02,大悪司->キャラ名,0,999,大悪司->キャラ番号,offset
+[subject]名前:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x448 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]カナ:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x454 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]キャラ:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x460 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]制御:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x46C :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+//[subject]性別:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x478 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]性別:list,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x478 :] _]+0x[! $Val*0x02 !]+0x02,大悪司->性別,0,1
+[subject]捕虜期間:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x484 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]愛欲抵抗:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x490 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]愛欲:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x49C :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]拷問抵抗:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x4A8 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]拷問:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x4B4 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]物欲抵抗:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x4C0 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]物欲:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x4CC :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]SP番号:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x4D8 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[back]
+[/group]
+
+[group]娼婦
+[subject][! L$Val+1 !]人目:dir
+[subject]キャラ名:d_list,_ [_ [: 0x91AED0 :] _]+0x[! $Val*0x02 !]+0x02,大悪司->キャラ名,0,999,大悪司->キャラ番号,offset
+[subject]名前:calc,_ [_ [: 0x91AEB8 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]カナ:calc,_ [_ [: 0x91AEC4 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]キャラ:calc,_ [_ [: 0x91AED0 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]制御:calc,_ [_ [: 0x91AEDC :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+//[subject]性別:calc,_ [_ [: 0x91AEE8 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]性別:list,_ [_ [: 0x91AEE8 :] _]+0x[! $Val*0x02 !]+0x02,大悪司->性別,0,1
+//[subject]調教レベル:calc,_ [_ [: 0x91AEF4 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]調教レベル:list,_ [_ [: 0x91AEF4 :] _]+0x[! $Val*0x02 !]+0x02,大悪司->調教,0,1
+[subject]基本価格:calc,_ [_ [: 0x91AF00 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]売り回数:calc,_ [_ [: 0x91AF0C :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]人気:calc,_ [_ [: 0x91AF18 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]調教難易度:calc,_ [_ [: 0x91AF24 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]調教補正値:calc,_ [_ [: 0x91AF30 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]娼婦状態:calc,_ [_ [: 0x91AF3C :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]タマネギ相性:calc,_ [_ [: 0x91AF48 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]石原相性:calc,_ [_ [: 0x91AF54 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]小原相性:calc,_ [_ [: 0x91AF60 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]SP番号:calc,_ [_ [: 0x91AF6C :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[back]
+[/group]
+
+[group]娼婦X
+[subject][! L$Val+1 !]人目:dir
+[subject]キャラ名:d_list,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x550 :] _]+0x[! $Val*0x02 !]+0x02,大悪司->キャラ名,0,999,大悪司->キャラ番号,offset
+[subject]名前:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x538 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]カナ:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x544 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]キャラ:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x550 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]制御:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x55C :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+//[subject]性別:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x568 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]性別:list,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x568 :] _]+0x[! $Val*0x02 !]+0x02,大悪司->性別,0,1
+//[subject]調教レベル:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x574 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]調教レベル:list,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x574 :] _]+0x[! $Val*0x02 !]+0x02,大悪司->調教,0,1
+[subject]基本価格:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x580 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]売り回数:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x58C :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]人気:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x598 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]調教難易度:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x5A4 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]調教補正値:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x5B0 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]娼婦状態:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x5BC :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]タマネギ相性:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x5C8 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]石原相性:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x5D4 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]小原相性:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x5E0 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]SP番号:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x5EC :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[back]
+[/group]
+
+[group]組織
+[subject][! @大悪司->組織名, $Val !]:dir
+[subject]名前:calc,_ [_ [: 0x91ABE8 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]制御:calc,_ [_ [: 0x91ABF4 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]戦略:calc,_ [_ [: 0x91AC00 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]部下数:calc,_ [_ [: 0x91AC0C :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]部下最大数:calc,_ [_ [: 0x91AC18 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[back]
+[/group]
+
+[group]組織X
+[subject][! @大悪司->組織名, $Val !]:dir
+[subject]名前:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x268 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]制御:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x274 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]戦略:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x280 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]部下数:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x28C :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]部下最大数:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x298 :] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[back]
+[/group]
+
+[group]地域X
+[subject][! @大悪司->地域名, $Val !]:dir
+[subject]名前:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x100:] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]制御:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x10C:] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]隣接1:list,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x118:] _]+0x[! $Val*0x02 !]+0x02,大悪司->地域名2,0,1
+[subject]隣接2:list,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x124:] _]+0x[! $Val*0x02 !]+0x02,大悪司->地域名2,0,1
+[subject]隣接3:list,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x130:] _]+0x[! $Val*0x02 !]+0x02,大悪司->地域名2,0,1
+[subject]隣接4:list,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x13C:] _]+0x[! $Val*0x02 !]+0x02,大悪司->地域名2,0,1
+[subject]隣接5:list,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x148:] _]+0x[! $Val*0x02 !]+0x02,大悪司->地域名2,0,1
+[subject]隣接6:list,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x154:] _]+0x[! $Val*0x02 !]+0x02,大悪司->地域名2,0,1
+[subject]規模:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x160:] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]青規模:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x16C:] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]支配:list,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x178:] _]+0x[! $Val*0x02 !]+0x02,大悪司->組織名,1,1
+[subject]予支配:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x184:] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]収益:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x190:] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]治安レベル:list,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x19C:] _]+0x[! $Val*0x02 !]+0x02,大悪司->治安レベル,0,1
+[subject]1名前:list,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x1A8:] _]+0x[! $Val*0x02 !]+0x02,大悪司->建物,201,1
+[subject]1収益:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x1B4:] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]1フラグ:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x1C0:] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]2名前:list,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x1CC:] _]+0x[! $Val*0x02 !]+0x02,大悪司->建物,201,1
+[subject]2収益:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x1D8:] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]2フラグ:calc,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x1E4:] _]+0x[! $Val*0x02 !]+0x02,0,999,signed,little_e
+[subject]建設物:list,_ [_ [: [:[: 0x48DDB0 :] +0x04:] +0x1F0:] _]+0x[! $Val*0x02 !]+0x02,大悪司->建設物,0,1
+[back]
+[/group]
+
+[group]性別
+男
+女
+？
+[/group]
+
+[group]治安
+無能
+普通
+優秀
+完璧
+[/group]
+
+[group]忠誠
+？
+仁義
+脅迫
+愛欲
+物欲
+[/group]
+
+[group]調教
+素人
+娼婦
+上級娼婦
+穴奴隷
+[/group]
+
+[group]ターン数
+0x00
+0x52
+[/group]
+
+[group]ずるっこ1
+ずるっこOFF 早解きOFF
+ずるっこON  早解きOFF
+ずるっこON  早解きON
+ずるっこOFF 早解きON
+[/group]
+
+[group]ずるっこ2
+0xF7
+0xFF
+0x4C
+0x44
+[/group]
+
+[group]キャラ名
+山本　悪司
+青葉　曜子
+加古　未来
+衣笠　智子
+辻家　晴子
+佐藤　たね
+白　民華
+加賀　元子
+市橋　蘭
+加賀　太郎
+森田　愛
+ビノノン王
+乃木　喜久子
+高山　はみ
+高山　リクペチ
+羽黒
+由女
+古宮　陽子
+月瀬　寧々
+土岐　遙
+ＷＷ弾
+サンディ
+鴉丸　羅喉
+星川　翼
+高山　黒子
+高山　ゴルゴ
+宇宙の帝王
+島本　純
+大杉　剛
+長崎　旗男
+小松　舞
+裕木　野枝実
+真田　電波
+素敵医師
+デカオ
+神原　夕子
+岳画　殺
+竹井　つかさ
+河原　伊織
+丹沢　志津
+キャット
+多田山　一途
+支倉　ハイネ
+支倉　アエン
+支倉　キリカ
+盾
+春風
+今川　クルス
+佐々木　鹿の子
+森　薫
+山沢　麻美
+月江　るうな
+大槻　姫子
+山林　吹雪
+柳　秋光
+郷田　真
+天戸　香太郎
+イルラカムイ
+中山　明里
+中山　多恵子
+五十鈴　伊万里
+天界　海音
+松本　了
+金田　酒太郎
+鬼門　始
+木村　弾白
+野比　ひかり
+大谷　善継
+九条　宗麟
+ウパス
+星屑　夜空
+池田　加奈
+池田　苺
+友引　操
+見当　かなみ
+狼　梅清
+筒井　朝顔
+炎　どん子
+不動　明
+野山　めぐる
+ビッグアーサ
+カリコリルリ
+ジョンソン
+山本　一発
+シャロン
+バーバラ
+プリシラ
+青姫
+コンディ
+パンイチ
+青葉　一郎
+セヤダタラ
+相馬　鱗
+陸奥
+ベラドンナ
+アンリ
+ユルペノ
+大まおー
+ランス
+青年団女子
+ちんぴら
+エリートヤクザ
+ドスヤクザ
+高山ヤクザ
+情婦
+入れ墨ヤクザ
+警備員
+野良コーギー
+治安課職員
+ハニー
+那古教　男
+那古教　女
+パンダ
+ジャンキー
+少女
+女子学生
+若い主婦
+店員
+モモメイド
+ピーチボーイ
+女性士官
+まんぼう
+青年
+女の子海賊
+酔っぱらい
+ネズミ
+猿
+ダチョウ
+ウィミィ兵士
+火星ロボ
+プルトむぅ
+塩ぶくろ
+看護婦
+うみねこ
+デカきのこ
+シャア
+ダブルハニー
+スリーハニー
+遅刻ペンギン
+ねこぐるみ
+はなーん
+ドーベルマン
+ハニーホース
+なめくじ
+ベベター
+ブルータイプ
+ウィミィ女兵士
+地底人
+眼鏡っ娘
+猫
+魔法少女
+老人
+火炎放射兵
+機関銃兵
+小型戦車
+装甲兵士
+アメリカン
+戦鬼
+由女の僕
+Ｂ３号
+Ｂ４号
+Ｂ５号
+グナガン
+黄色いトリ
+バグ
+由女の僕ＳＦ
+トン☆ヌラ
+ブリキの兵隊
+味方ハニー
+[/group]
+
+[group]キャラ番号
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+[/group]
+
+[group]組織名
+奉仕青年団
+わかめ組
+桃山組
+那古教
+市議会
+ウィミィ
+？
+？
+独立組織
+[/group]
+
+[group]組織名2
+151
+152
+153
+154
+155
+156
+157
+158
+159
+[/group]
+
+[group]建設物
+無し
+売春宿
+たこ焼き屋
+無人金貸し機
+怪しい電波塔
+
+選挙ポスター
+防犯かかし
+調教の館
+ＧＡＬバーガー
+原子炉
+保養所
+[/group]
+
+[group]地域
+倉庫
+ミドリガオカ
+サカイ
+センリ
+イコマ
+ヘグリ
+ハクア
+ヒノデ
+ハルセ
+クロモン
+ナンコウ
+ナンバ
+テンマ
+シキナ
+キタハマ
+ウメダ
+フナイ
+カネシタ
+ダンジリ
+コフン
+イタミ
+アシヤ
+ロッコウ
+コウベ
+コウシエン
+ヒラカタ
+シンコウベ
+プノンペン
+クサカタ
+オオアナ
+アマノサト
+シラハマ
+パナジ
+スズカ
+エデン
+ギガフロート
+決戦場
+[/group]
+
+[group]地域名
+ミドリガオカ
+サカイ
+センリ
+イコマ
+ヘグリ
+ハクア
+ヒノデ
+ハルセ
+クロモン
+ナンコウ
+ナンバ
+テンマ
+シキナ
+キタハマ
+ウメダ
+フナイ
+カネシタ
+ダンジリ
+コフン
+イタミ
+アシヤ
+ロッコウ
+コウベ
+コウシエン
+ヒラカタ
+シンコウベ
+プノンペン
+クサカタ
+オオアナ
+アマノサト
+シラハマ
+パナジ
+スズカ
+エデン
+ギガフロート
+[/group]
+
+[group]地域名2
+無し
+ミドリガオカ
+サカイ
+センリ
+イコマ
+ヘグリ
+ハクア
+ヒノデ
+ハルセ
+クロモン
+ナンコウ
+ナンバ
+テンマ
+シキナ
+キタハマ
+ウメダ
+フナイ
+カネシタ
+ダンジリ
+コフン
+イタミ
+アシヤ
+ロッコウ
+コウベ
+コウシエン
+ヒラカタ
+シンコウベ
+プノンペン
+クサカタ
+オオアナ
+アマノサト
+シラハマ
+パナジ
+スズカ
+エデン
+ギガフロート
+[/group]
+
+[group]ad60
+0x00
+0x02
+0x04
+0x06
+0x08
+0x0A
+0x0C
+0x0E
+0x10
+0x12
+0x14
+0x16
+0x18
+0x1A
+0x1C
+0x1E
+0x20
+0x22
+0x24
+0x26
+0x28
+0x2A
+0x2C
+0x2E
+0x30
+0x32
+0x34
+0x36
+0x38
+0x3A
+0x3C
+0x3E
+0x40
+0x42
+0x44
+0x46
+0x48
+0x4A
+0x4C
+0x4E
+0x50
+0x52
+0x54
+0x56
+0x58
+0x5A
+0x5C
+0x5E
+0x60
+0x62
+0x64
+0x66
+0x68
+0x6A
+0x6C
+0x6E
+0x70
+0x72
+0x74
+0x76
+[/group]
+
+[group]ad20
+0x00
+0x02
+0x04
+0x06
+0x08
+0x0A
+0x0C
+0x0E
+0x10
+0x12
+0x14
+0x16
+0x18
+0x1A
+0x1C
+0x1E
+0x20
+0x22
+0x24
+0x26
+[/group]
+
+[group]ad48
+0x00,*{ 63 :: 00 *},??
+0x02,*{ 63 :: 00 *},??
+0x04,*{ 63 :: 00 *},??
+0x06,*{ 63 :: 00 *},??
+0x08,*{ 63 :: 00 *},??
+0x0A,*{ 63 :: 00 *},??
+0x0C,*{ 63 :: 00 *},??
+0x0E,*{ 63 :: 00 *},??
+0x10,*{ 63 :: 00 *},??
+0x12,*{ 63 :: 00 *},??
+0x14,*{ 63 :: 00 *},??
+0x16,*{ 63 :: 00 *},??
+0x18,*{ 63 :: 00 *},??
+0x1A,*{ 63 :: 00 *},??
+0x1C,*{ 63 :: 00 *},??
+0x1E,*{ 63 :: 00 *},??
+0x20,*{ 63 :: 00 *},??
+0x22,*{ 63 :: 00 *},??
+0x24,*{ 63 :: 00 *},??
+0x26,*{ 63 :: 00 *},??
+0x28,*{ 63 :: 00 *},??
+0x2A,*{ 63 :: 00 *},??
+0x2C,*{ 63 :: 00 *},??
+0x2E,*{ 63 :: 00 *},??
+0x30,*{ 63 :: 00 *},??
+0x32,*{ 63 :: 00 *},??
+0x34,*{ 63 :: 00 *},??
+0x36,*{ 63 :: 00 *},??
+0x38,*{ 63 :: 00 *},??
+0x3A,*{ 63 :: 00 *},??
+0x3C,*{ 63 :: 00 *},??
+0x3E,*{ 63 :: 00 *},??
+0x40,*{ 63 :: 00 *},??
+0x42,*{ 63 :: 00 *},??
+0x44,*{ 63 :: 00 *},??
+0x46,*{ 63 :: 00 *},??
+0x48,*{ 63 :: 00 *},??
+0x4A,*{ 63 :: 00 *},??
+0x4C,*{ 63 :: 00 *},??
+0x4E,*{ 63 :: 00 *},??
+0x50,*{ 63 :: 00 *},??
+0x52,*{ 63 :: 00 *},??
+0x54,*{ 63 :: 00 *},??
+0x56,*{ 63 :: 00 *},??
+0x58,*{ 63 :: 00 *},??
+0x5A,*{ 63 :: 00 *},??
+0x5C,*{ 63 :: 00 *},??
+0x5E,*{ 63 :: 00 *},??
+[/group]
+
+[group]スキル
+無し
+命中ＵＰ
+★命中ＵＰ
+回避ＵＰ
+★回避ＵＰ
+中打撃
+★大打撃
+手加減
+？？？
+白き煙幕
+？？？
+男殺し
+★男殺し
+女殺し
+★女殺し
+動物殺し
+★動物殺し
+外人殺し
+★外人殺し
+組員殺し
+★組員殺し
+支援回復
+★支援回復
+支援命中
+★支援命中
+支援回避
+★支援回避
+
+
+
+
+大悪司
+？？？
+気力奪い
+★気力破壊
+命中７０
+★命中９０
+回避７０
+★回避９０
+上級攻撃
+★上級攻撃
+特上攻撃
+★特上攻撃
+半減攻撃
+？？？
+先制攻撃
+？？？
+博打
+★大博打
+
+
+精神集中
+？？？
+ボーナス
+★ボーナス
+幸福の雨
+★幸福の雨
+
+
+
+
+土竜
+
+一発
+
+死ぬがよい
+
+不器用ですから
+
+天神祭
+
+癒しの願い
+
+疾風の剣
+
+ハイクラッシュ
+
+ハンティング
+
+死樹氷
+
+業炎火
+
+スケカク
+
+ピンクレディ
+
+桜花
+[/group]
+
+[group]民華チェック
+_ [_ [: _ [: 0xA0AD80 :]+0x08 _ :] _]+0x776,55,41
+[/group]
+
+_ [_ [: 0x8F4280 :] _]+0x63E,55,41
+
+[group]恋人
+無し
+白民華
+加賀元子
+乃木喜久子
+プリシラ・ヴァドル
+山本殺
+アンリ・ペロリ
+[/group]
+
+[group]ヒロイン
+山本殺
+白民華
+アンリ・ペロリ
+[/group]
+
+[group]ad50
+0x00,01,??
+0x02,FFFF,??
+0x04,01,??
+0x06,FFFF,??
+0x08,01,??
+0x0A,01,??
+0x0C,01,??
+0x0E,01,??
+0x10,01,??
+0x12,01,??
+0x14,01,??
+0x16,01,??
+0x18,01,??
+0x1A,01,??
+0x1C,01,??
+0x1E,01,??
+0x20,01,??
+0x22,01,??
+0x24,01,??
+0x26,08,??
+0x28,01,??
+0x2A,01,??
+0x2C,01,??
+0x2E,01,??
+0x30,01,??
+0x32,01,??
+0x34,01,??
+0x36,01,??
+0x38,01,??
+0x3A,01,??
+0x3C,01,??
+0x3E,01,??
+0x40,01,??
+0x42,01,??
+0x44,01,??
+0x46,01,??
+0x48,01,??
+0x4A,01,??
+0x4C,01,??
+0x4E,01,??
+0x50,01,??
+0x52,01,??
+0x54,01,??
+0x56,01,??
+0x58,01,??
+0x5A,01,??
+0x5C,01,??
+0x5E,01,??
+0x60,01,??
+0x62,01,??
+[/group]
+
+[group]建物
+青年団事務所
+ばばあ長屋　
+天才病院　　
+ＳＳＳ学園　
+わかめ組本部
+サンタワー　
+ローカルＴＶ
+たんたん　　
+貴神邸　　　
+竹井邸　　　
+寂れた小屋　
+枯れた井戸　
+キャンプ場　
+イヌ洞窟　　
+市議会本部　
+毛ガニ劇場　
+クロモン市場
+盗品屋　　　
+第６倉庫　　
+外国語塾　　
+南馬券売り場
+ヤクザ塾　　
+第６中学　　
+１６色画廊　
+那古教神殿　
+高山支部　　
+メッコーラボ
+熱拳道場　　
+ハニービル　
+ウメダ地下街
+オルターエロ
+ホストクラブ
+温泉宿　　　
+金下鍾乳洞　
+オオサカ神社
+神々の祠　　
+オオサカ古墳
+農協　　　　
+山頂　　　　
+イタコ屋敷　
+中山邸　　　
+乃木邸　　　
+コンタ眼Ｑ　
+つちのこの祠
+水陸両用　　
+ムッソリーニ
+コロシアム　
+ゴミ焼却場　
+ＰＭ本部　　
+ひらぴー　　
+男パンチ　　
+メイド墓地　
+一攫千金　　
+タコ井戸　　
+ハニー土木　
+いちご農園　
+爆心地　　　
+青の洞窟　　
+光天文台　　
+猿田研究所　
+ビーチ　　　
+高級ホテル　
+灯台　　　　
+海賊本部　　
+国道６号線　
+ラブホテル　
+エデン　　　
+？？？？？？
+？？？？？？
+？？？？？？
+[/group]
+
+[group]治安レベル
+良好
+普通
+悪化
+無法
+[/group]
+
+[group]立候補
+無し
+夕子
+殺
+[/group]
+
+[group]神社
+羽黒
+宗麟
+[/group]
+
+[group]高山
+那古教と戦う
+高山組と戦う
+[/group]
+
+[group]ウィミィ
+イハビーラと戦わない
+イハビーラと戦う
+[/group]
+
+[group]海賊
+女の子海賊隊と対決しない
+女の子海賊隊と対決する
+[/group]
+
+[group]EX
+通常モード
+無茶苦茶モード
+山本一家
+高山わかめ
+桃山組
+那古教
+火星侵攻隊
+[/group]
+
+[group]2部
+ファーストプレイ
+セカンドプレイ以降
+[/group]
+
+[group]助っ人
+追加キャラ無し
+相馬鱗登場
+相馬鱗、星川翼登場
+相馬鱗、星川翼、鴉丸羅喉登場
+[/group]

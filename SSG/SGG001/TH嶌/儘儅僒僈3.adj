@@ -1,0 +1,12 @@
+[note]
+主人公のステータスを
+全部入力してください
+[/note]
+[val]????????????*.*.*.*.*.*.*.
+[calc]腕力,no,0,0x63,signed,little_e
+[calc]器用さ,no,0,0x63,signed,little_e
+[calc]素早さ,no,0,0x63,signed,little_e
+[calc]体力,no,0,0x63,signed,little_e
+[calc]魔力,no,0,0x63,signed,little_e
+[calc]意志力,no,0,0x63,signed,little_e
+[calc]魅力,no,0,0x63,signed,little_e

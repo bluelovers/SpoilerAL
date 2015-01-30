@@ -1,0 +1,147 @@
+SSG for SpoilerAL ver 6.1
+[script]
+[title]ファンタシースター～千年紀の終りに～
+[process]PS4.exe
+[maker]MediaKite/Sega
+[creator]madoka
+[Refix date]2004/12/21
+[note]
+■セガゲーム本舗■
+■ファンタシースター ～千年紀の終りに～■
+漸く出ました。懐かしのMDのPS4 PC版
+と言ってもMDのエミュですが…
+曲が好きなんです。
+出来れば、プレステ版のPSシリーズのエミュも
+出して欲しい(^^ゞ
+
+本題ですが、改造内容は
+所持金，現在HP/MP，経験値，ステータスです。
+所持金は、65535を超えると正常な数値になりませんので
+ご勘弁を。
+注）STは、装備した数値が255を下回る様に設定して下さい。
+2バイト以上になると数値がバグります。
+
+
+■2004/12/24更新
+特技回数設定可能。
+
+所持金，経験値Max化も設定可能。
+XP環境でのみ確認済み。
+
+
+
+[/note]
+[subject]所持金: calc,0xcad83a,0,999999
+[subject]所持金Max/実行/_: toggle,0xcad838,98007F96
+[back]
+[subject]ルディ:dir
+[replace]0xcad90c,Ps4->ルディ
+[subject]経験値Max/実行/_: toggle,0xcad90a,98007F96
+[replace]0xcad96b,Ps4->ルディ2
+[subject]ST:dir
+[subject]ST全て99/実行: toggle,0xcad919,0xcad922-63,00
+[subject]ST全て150/実行: toggle,0xcad919,0xcad922-96,00
+[subject]ST全て200/実行: toggle,0xcad919,0xcad922-c8,00
+[back]
+[back]
+[subject]ライラ:dir
+[replace]0xcad98c,Ps4->ライラ
+[subject]経験値Max/実行/_: toggle,0xcad98a,98007F96
+[replace]0xcad9eb,Ps4->ライラ2
+[subject]ST:dir
+[subject]ST全て99/実行: toggle,0xcad999,0xcad9a2-63,00
+[subject]ST全て150/実行: toggle,0xcad999,0xcad9a2-96,00
+[subject]ST全て200/実行: toggle,0xcad999,0xcad9a2-c8,00
+[back]
+[back]
+[subject]ハーン:dir
+[replace]0xcada0c,Ps4->ハーン
+[subject]経験値Max/実行/_: toggle,0xcada0a,98007F96
+[replace]0xcada6b,Ps4->ハーン2
+[subject]ST:dir
+[subject]ST全て99/実行: toggle,0xcada19,0xcada22-63,00
+[subject]ST全て150/実行: toggle,0xcada19,0xcada22-96,00
+[subject]ST全て200/実行: toggle,0xcada19,0xcada22-c8,00
+[back]
+[back]
+[subject]スレイ:dir
+[replace]0xcada8c,Ps4->スレイ
+[subject]経験値Max/実行/_: toggle,0xcada8a,98007F96
+[replace]0xcadaeb,Ps4->スレイ2
+[subject]ST:dir
+[subject]ST全て99/実行: toggle,0xcada99,0xcadaa2-63,00
+[subject]ST全て150/実行: toggle,0xcada99,0xcadaa2-96,00
+[subject]ST全て200/実行: toggle,0xcada99,0xcadaa2-c8,00
+[back]
+[back]
+[subject]パイク:dir
+[replace]0xcadb0c,Ps4->パイク
+[subject]経験値Max/実行/_: toggle,0xcadb0a,98007F96
+[replace]0xcadb6b,Ps4->パイク2
+[subject]ST:dir
+[subject]ST全て99/実行: toggle,0xcadb19,0xcadb22-63,00
+[subject]ST全て150/実行: toggle,0xcadb19,0xcadb22-96,00
+[subject]ST全て200/実行: toggle,0xcadb19,0xcadb22-c8,00
+[back]
+[back]
+[subject]ファル:dir
+[replace]0xcadb8c,Ps4->ファル
+[subject]経験値Max/実行/_: toggle,0xcadb8a,98007F96
+[replace]0xcadbeb,Ps4->ファル2
+[subject]ST:dir
+[subject]ST全て99/実行: toggle,0xcadb99,0xcadba2-63,00
+[subject]ST全て150/実行: toggle,0xcadb99,0xcadba2-96,00
+[subject]ST全て200/実行: toggle,0xcadb99,0xcadba2-c8,00
+[back]
+[back]
+[subject]フレナ:dir
+[replace]0xcadc0c,Ps4->フレナ
+[subject]経験値Max/実行/_: toggle,0xcadc0a,98007F96
+[replace]0xcadc6b,Ps4->フレナ2
+[subject]ST:dir
+[subject]ST全て99/実行: toggle,0xcadc19,0xcadc22-63,00
+[subject]ST全て150/実行: toggle,0xcadc19,0xcadc22-96,00
+[subject]ST全て200/実行: toggle,0xcadc19,0xcadc22-c8,00
+[back]
+[back]
+[subject]フォーレン:dir
+[replace]0xcadc8c,Ps4->フォーレン
+[subject]経験値Max/実行/_: toggle,0xcadc8a,98007F96
+[replace]0xcadceb,Ps4->フォーレン2
+[subject]ST:dir
+[subject]ST全て99/実行: toggle,0xcadc99,0xcadca2-63,00
+[subject]ST全て150/実行: toggle,0xcadc99,0xcadca2-96,00
+[subject]ST全て200/実行: toggle,0xcadc99,0xcadca2-c8,00
+[back]
+[back]
+[subject]ラジャ:dir
+[replace]0xcadd0c,Ps4->ラジャ
+[subject]経験値Max/実行/_: toggle,0xcadd0a,98007F96
+[replace]0xcadd6b,Ps4->ラジャ2
+[subject]ST:dir
+[subject]ST全て99/実行: toggle,0xcadd19,0xcadd22-63,00
+[subject]ST全て150/実行: toggle,0xcadd19,0xcadd22-96,00
+[subject]ST全て200/実行: toggle,0xcadd19,0xcadd22-c8,00
+[back]
+[back]
+[subject]シェス:dir
+[replace]0xcadd8c,Ps4->シェス
+[subject]経験値Max/実行/_: toggle,0xcadd8a,98007F96
+[replace]0xcaddeb,Ps4->シェス2
+[subject]ST:dir
+[subject]ST全て99/実行: toggle,0xcadd99,0xcadda2-63,00
+[subject]ST全て150/実行: toggle,0xcadd99,0xcadda2-96,00
+[subject]ST全て200/実行: toggle,0xcadd99,0xcadda2-c8,00
+[back]
+[back]
+[subject]シアム:dir
+[replace]0xcade0c,Ps4->シアム
+[subject]経験値Max/実行/_: toggle,0xcade0a,98007F96
+[subject]ST:dir
+[subject]ST全て99/実行: toggle,0xcade19,0xcade22-63,00
+[subject]ST全て150/実行: toggle,0xcade19,0xcade22-96,00
+[subject]ST全て200/実行: toggle,0xcade19,0xcade22-c8,00
+[back]
+[back]
+[root]
+[/script]

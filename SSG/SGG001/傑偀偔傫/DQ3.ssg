@@ -1,0 +1,23 @@
+SSG for SpoilerAL ver 3.4
+[script]
+[title]ドラゴンクエストⅢ
+[process]SNESHOUT.EXE
+[maker]ENIX
+[creator]まぁくん
+[note]wordwrap
+Win Me使用,SNESHOUT v3.1
+[/note]
+[subject]主人公
+[subject]Gold     　:calc,0x004C8E22,0,999999
+[subject]ちから   　:calc,0x004c90bd,0,255
+[subject]すばやさ 　:calc,0x004c90be,0,255
+[subject]たいりょく :calc,0x004c90bf,0,255
+[subject]かしこさ　 :calc,0x004c90c0,0,255
+[subject]運の良さ   :calc,0x004c90c1,0,255
+[subject]最大ｈｐ   :calc,0x004c90b5,0,999
+[subject]hp         :calc,0x004c90b7,0,999
+[subject]最大ｍｐ   :calc,0x004c90b9,0,999
+[subject]mp         :calc,0x004c90bb,0,999
+[subject]経験値     :calc,0x004c90b2,0,9999999
+[subject]Lv         :calc,0x004c74dd,1,99
+[/script]

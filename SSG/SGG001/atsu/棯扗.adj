@@ -1,0 +1,17 @@
+[note]
+略奪はアドレス移動系のゲームです。
+環境によってずれた分のアドレスを、
+補正しようと試みます。
+各パラメータを全て入力して下さいな。
+
+16進/10進に注意して下さいね(^^)
+[/note]
+[val]*.*.*.*.*.*.*.*.
+[calc]体力,no,0,0xFF,signed,little_e
+[calc]ストレス,no,0,0xFF,signed,little_e
+[calc]SEX経験値,no,0,0xFF,signed,little_e
+[calc]SM経験値,no,0,0xFF,signed,little_e
+[calc]鞭技能,no,0,0xFF,signed,little_e
+[calc]緊縛技能,no,0,0xFF,signed,little_e
+[calc]良心度,no,0,0xFF,signed,little_e
+[calc]残虐度,no,0,0xFF,signed,little_e

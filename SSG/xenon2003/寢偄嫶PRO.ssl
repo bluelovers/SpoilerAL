@@ -1,0 +1,4 @@
+[group]ステータス
+	[subject]HP(現在値): calc,0x00,0,200
+	[subject]HP(最高値): calc,0x04,0,200
+[/group]

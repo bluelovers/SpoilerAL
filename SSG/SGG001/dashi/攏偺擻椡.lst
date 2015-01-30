@@ -1,0 +1,7 @@
+[subject]素質:calc,0x00,0,255,
+[subject]スピード:calc,0x01,0,255,
+[subject]スタミナ:calc,0x02,0,255,
+[subject]血統毛色:list,0x04,馬1,0x00,1,
+[subject]根性タイプ毛色:list,0x05,馬1,0x00,1,
+[subject]:calc,0x0,0,255,
+[subject]:calc,0x0,0,255,

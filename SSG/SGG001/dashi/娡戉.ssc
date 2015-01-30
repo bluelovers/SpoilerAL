@@ -1,0 +1,19 @@
+	[subject]m‹C:calc,0x00,0x00,0xff,
+	[subject]m‹CÅ‘å:calc,0x01,0x00,0xff,
+	[subject]ŠøŠÍ:dir
+[replace]0x14,ŠÍ‘à•”‘à,offset
+	[subject]‘æ1•”‘à:dir
+[replace]0x32,ŠÍ‘à•”‘à,offset
+	[subject]‘æ2•”‘à:dir
+[replace]0x50,ŠÍ‘à•”‘à,offset
+	[subject]‘æ3•”‘à:dir
+[replace]0x6e,ŠÍ‘à•”‘à,offset
+	[subject]‘æ4•”‘à:dir
+[replace]0x8c,ŠÍ‘à•”‘à,offset
+	[subject]‘æ5•”‘à:dir
+[replace]0xaa,ŠÍ‘à•”‘à,offset
+	[subject]‘æ6•”‘à:dir
+[replace]0xc8,ŠÍ‘à•”‘à,offset
+	[subject]‘æ7•”‘à:dir
+[replace]0xe6,ŠÍ‘à•”‘à,offset
+	[back]

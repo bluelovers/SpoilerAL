@@ -1,0 +1,655 @@
+[group]サーチ
+ [val]*.000000*.000000*.
+ [calc] 治癒の水・小,no,00,99
+ [calc] 治癒の水・中,no,00,99
+ [calc] 治癒の水・大,ok,00,99
+[/group]
+
+[group]ステータス
+	[subject] 筋力 :calc,0x000,0,999
+	[subject] 体力 :calc,0x050,0,999
+	[subject]敏捷性:calc,0x0A0,0,999
+	[subject]器用度:calc,0x0F0,0,999
+	[subject] 知性 :calc,0x140,0,999
+	[subject]精神力:calc,0x190,0,999
+	[subject] 魅力 :calc,0x1E0,0,999
+	[subject]経験値:calc,0x7D0,0,999999
+[/group]
+
+[group]パラメータ
+	[subject]レベル:calc,0x000,0,999
+	[subject]生命力(現在値):calc,0x050,0,9999
+	[subject]生命力(最大値):calc,0x0A0,0,9999
+	[subject]魔力(現在値):calc,0x0F0,0,999
+	[subject]魔力(最大値):calc,0x140,0,999
+	[subject]技力(現在値):calc,0x190,0,999
+	[subject]技力(最大値):calc,0x1E0,0,999
+[/group]
+
+[group]敵遭遇回避
+0x0000
+0x0460
+0x0780
+[/group]
+
+[group]重要アイテム
+0x00,2C0100002D0100002E0100002F010000,2C0100002D0100004101000042010000
+0x10,30010000310100003201000033010000,00000000000000000000000000000000
+0x20,34010000350100003601000037010000,00000000000000000000000000000000
+0x30,38010000390100003A0100003B010000,00000000000000000000000000000000
+0x40,3C0100003D0100003E0100003F010000,00000000000000000000000000000000
+0x50,40010000410100004201000043010000,00000000000000000000000000000000
+0x60,44010000450100004601000047010000,00000000000000000000000000000000
+0x70,48010000490100004A0100004B010000,00000000000000000000000000000000
+0x80,20000000,04000000
+[/group]
+
+[group]青瓶
+	[subject]治癒の水・小:calc,0x0000,0,99
+	[subject]治癒の水・中:calc,0x0004,0,99
+	[subject]治癒の水・大:calc,0x0008,0,99
+	[subject]治癒の水・特大:calc,0x000C,0,99
+	[subject]イリューンの癒手:calc,0x0010,0,99
+	[subject]治癒の羽・小:calc,0x0014,0,99
+	[subject]治癒の羽・中:calc,0x0018,0,99
+	[subject]治癒の羽・大:calc,0x001C,0,99
+	[subject]治癒の羽・特大:calc,0x0020,0,99
+	[subject]イリューンの息吹:calc,0x0024,0,99
+[/group]
+
+[group]赤瓶
+	[subject]血廉の滴:calc,0x0028,0,99
+	[subject]血廉の癒手:calc,0x002C,0,99
+	[subject]血廉の息吹:calc,0x0030,0,99
+[/group]
+
+[group]黄瓶
+	[subject]魔力石・小:calc,0x0034,0,99
+	[subject]魔力石・中:calc,0x0038,0,99
+	[subject]魔力石・大:calc,0x003C,0,99
+[/group]
+[group]白瓶
+	[subject]魔技石・小:calc,0x0040,0,99
+	[subject]魔技石・中:calc,0x0044,0,99
+	[subject]魔技石・大:calc,0x0048,0,99
+[/group]
+[group]葉
+	[subject]イルビンの香:calc,0x004C,0,99
+	[subject]リエラの葉:calc,0x0050,0,99
+	[subject]レンデーヌ草:calc,0x0054,0,99
+	[subject]パティアの喉薬:calc,0x0058,0,99
+	[subject]破呪の呪札:calc,0x005C,0,99
+	[subject]ルイカ草の樹液:calc,0x0060,0,99
+	[subject]女神の滴:calc,0x0064,0,99
+[/group]
+
+[group]緑薬
+	[subject]戦闘薬:calc,0x0068,0,99
+	[subject]断裂の軟膏:calc,0x006C,0,99
+	[subject]錬焔の軟膏:calc,0x0070,0,99
+	[subject]神剣の軟膏:calc,0x0074,0,99
+[/group]
+
+[group]橙薬
+	[subject]念気の燐分:calc,0x0078,0,99
+	[subject]魔道の燐分:calc,0x007C,0,99
+	[subject]錬心の燐分:calc,0x0080,0,99
+	[subject]神魔の燐分:calc,0x0084,0,99
+[/group]
+
+[group]水薬
+	[subject]鎧の秘文:calc,0x0088,0,99
+	[subject]防護の秘文:calc,0x008C,0,99
+	[subject]魔力拡散の秘文:calc,0x0090,0,99
+	[subject]破術の秘文:calc,0x0094,0,99
+	[subject]守護の秘文:calc,0x0098,0,99
+	[subject]砦の秘文:calc,0x009C,0,99
+	[subject]塔の秘文:calc,0x00A0,0,99
+[/group]
+[group]赤薬
+	[subject]剣のアクセサリー:calc,0x00A4,0,99
+	[subject]槍のアクセサリー:calc,0x00A8,0,99
+	[subject]槌のアクセサリー:calc,0x00AC,0,99
+	[subject]弓のアクセサリー:calc,0x00B0,0,99
+[/group]
+[group]白薬
+	[subject]霧隠れの小枝:calc,0x00B4,0,99
+	[subject]月食の小枝:calc,0x00B8,0,99
+	[subject]日食の小枝:calc,0x00BC,0,99
+	[subject]神隠しの小枝:calc,0x00C0,0,99
+[/group]
+[group]桃薬
+	[subject]蠍の妙薬:calc,0x00C4,0,99
+	[subject]双頭蛇の妙薬:calc,0x00C8,0,99
+	[subject]硝子の妙薬:calc,0x00CC,0,99
+	[subject]鏡の妙薬:calc,0x00D0,0,99
+[/group]
+[group]紫薬
+	[subject]番えの軍配:calc,0x00D4,0,99
+	[subject]騎馬の軍配:calc,0x00D8,0,99
+	[subject]狼煙の軍配:calc,0x00DC,0,99
+	[subject]帆柱の軍配:calc,0x00E0,0,99
+[/group]
+[group]青薬
+	[subject]祝福の笛:calc,0x00E4,0,99
+	[subject]突撃の笛:calc,0x00E8,0,99
+	[subject]聖戦の笛:calc,0x00EC,0,99
+[/group]
+[group]絵札
+	[subject]炎の絵札:calc,0x00F0,0,99
+	[subject]轟火の絵札:calc,0x00F4,0,99
+	[subject]火竜の絵札:calc,0x00F8,0,99
+	[subject]水の絵札:calc,0x00FC,0,99
+	[subject]湖の絵札:calc,0x0100,0,99
+	[subject]海の絵札:calc,0x0104,0,99
+	[subject]冷気の絵札:calc,0x0108,0,99
+	[subject]氷塊の絵札:calc,0x010C,0,99
+	[subject]氷乙女の絵札:calc,0x0110,0,99
+	[subject]風の絵札:calc,0x0114,0,99
+	[subject]雷の絵札:calc,0x0118,0,99
+	[subject]勇者の絵札:calc,0x011C,0,99
+	[subject]光の絵札:calc,0x0120,0,99
+	[subject]大天使の絵札:calc,0x0127,0,99
+	[subject]聖霊の絵札:calc,0x0128,0,99
+	[subject]闇の絵札:calc,0x012C,0,99
+	[subject]堕天子の絵札:calc,0x0130,0,99
+	[subject]魔神の絵札:calc,0x0134,0,99
+	[subject]大地の絵札:calc,0x0138,0,99
+	[subject]淫魔の絵札:calc,0x013C,0,99
+	[subject]死神の絵札:calc,0x0140,0,99
+[/group]
+[group]星石
+	[subject]火星石:calc,0x0144,0,99
+	[subject]木星石:calc,0x0148,0,99
+	[subject]天王石:calc,0x014C,0,99
+	[subject]海王石:calc,0x0150,0,99
+	[subject]水星石:calc,0x0154,0,99
+	[subject]土星石:calc,0x0158,0,99
+	[subject]金星石:calc,0x015C,0,99
+[/group]
+[group]杖
+	[subject]支配の杖:calc,0x0190,0,99
+	[subject]魔除けの杖:calc,0x0194,0,99
+[/group]
+	[subject]地下水路の鍵:calc,0x0198,0,99
+[group]呪鍛
+	[subject]ルバリカの樹液:calc,0x01B8,0,99
+	[subject]合成の錬液:calc,0x01BC,0,99
+	[subject]聖なる錬液:calc,0x01C0,0,99
+	[subject]魔術師の錬液:calc,0x01C4,0,99
+	[subject]虹色の星石:calc,0x01C8,0,99
+	[subject]魔力の羊皮紙:calc,0x01CC,0,99
+	[subject]儀式の剣:calc,0x01D0,0,99
+	[subject]破滅の心臓:calc,0x01D4,0,99
+	[subject]哭璃の目玉:calc,0x01D8,0,99
+	[subject]炎の鱗石:calc,0x01DC,0,99
+	[subject]氷の鱗石:calc,0x01E0,0,99
+	[subject]雷の鱗石:calc,0x01E4,0,99
+	[subject]光の鱗石:calc,0x01E8,0,99
+	[subject]闇の鱗石:calc,0x01EC,0,99
+	[subject]火炎総統の神珠:calc,0x01F0,0,99
+	[subject]氷結女王の神珠:calc,0x01F4,0,99
+	[subject]古神勇者の神珠:calc,0x01F8,0,99
+	[subject]現神勇者の神珠:calc,0x01FC,0,99
+	[subject]魔神の神珠:calc,0x0200,0,99
+	[subject]魔界子爵の神珠:calc,0x0204,0,99
+	[subject]力天使の神珠:calc,0x0208,0,99
+	[subject]神殺しの神珠:calc,0x020C,0,99
+	[subject]竜の鱗:calc,0x0210,0,99
+	[subject]カチャニールの皮:calc,0x0214,0,99
+	[subject]アムドシアスの角:calc,0x0218,0,99
+	[subject]メイド天使の羽:calc,0x021C,0,99
+	[subject]コルシノ鋼:calc,0x0220,0,99
+	[subject]ミスリル鋼:calc,0x0224,0,99
+	[subject]パール鋼:calc,0x0228,0,99
+	[subject]リエン石:calc,0x022C,0,99
+[/group]
+[group]金袋
+	[subject]銀の錘:calc,0x0230,0,99
+	[subject]メダル:calc,0x0234,0,99
+	[subject]金の錘:calc,0x0238,0,99
+	[subject]琥珀の宝石:calc,0x023C,0,99
+	[subject]ミスリルの指輪:calc,0x0240,0,99
+	[subject]金塊:calc,0x0244,0,99
+	[subject]宝石箱:calc,0x0248,0,99
+	[subject]金剛石:calc,0x024C,0,99
+[/group]
+[group]転送
+	[subject]飛翔の耳飾り:calc,0x0320,0,99
+	[subject]メファシエルの瞳:calc,0x0324,0,99
+	[subject]メファシエルの涙:calc,0x0328,0,99
+[/group]
+[group]鍵
+	[subject]ザファンの鍵:calc,0x032C,0,99
+	[subject]ヨベルの鍵:calc,0x0330,0,99
+	[subject]ヴォフ・マナの鍵:calc,0x0334,0,99
+	[subject]青の転移鍵:calc,0x0338,0,99
+	[subject]赤の転移鍵:calc,0x033C,0,99
+	[subject]緑の転移鍵:calc,0x0340,0,99
+	[subject]黒の転移鍵:calc,0x0344,0,99
+	[subject]メルキア将兵の鍵:calc,0x0348,0,99
+	[subject]マーズテリアの鍵:calc,0x034C,0,99
+	[subject]イオ神核:calc,0x0350,0,99
+	[subject]エンプレス神核:calc,0x0354,0,99
+	[subject]ラヴィーヌ神核:calc,0x0358,0,99
+	[subject]丘陵の宝珠:calc,0x035C,0,99
+	[subject]祝杯の宝珠:calc,0x0360,0,99
+[/group]
+[group]喚石
+	[subject]ラウケリュノ喚石:calc,0x0364,0,99
+	[subject]パルディエル喚石:calc,0x0368,0,99
+	[subject]ムールムール喚石:calc,0x036C,0,99
+	[subject]リリエム喚石:calc,0x0370,0,99
+	[subject]リ・クアルー喚石:calc,0x0374,0,99
+	[subject]イルザーブ喚石:calc,0x0378,0,99
+	[subject]ケルナシルス喚石:calc,0x037C,0,99
+	[subject]アムドシアス喚石:calc,0x0380,0,99
+	[subject]ハイシェラ喚石:calc,0x0384,0,99
+	[subject]水精喚石:calc,0x0388,0,99
+	[subject]石像兵喚石:calc,0x038C,0,99
+	[subject]火獣喚石:calc,0x0390,0,99
+	[subject]御雪さん喚石:calc,0x0394,0,99
+	[subject]精霊女王喚石:calc,0x0398,0,99
+	[subject]戦乙女喚石:calc,0x039C,0,99
+[/group]
+[group]鉤爪
+	[subject]鉄の鉤爪:calc,0x0E10,0,99
+	[subject]戦闘篭手:calc,0x0E14,0,99
+	[subject]鉄甲鉤:calc,0x0E18,0,99
+	[subject]バルク・サイティ:calc,0x0E1C,0,99
+	[subject]チャスト:calc,0x0E20,0,99
+	[subject]カナトチャスト:calc,0x0E24,0,99
+	[subject]ファルチャスト:calc,0x0E28,0,99
+	[subject]クァルチャスト:calc,0x0E2C,0,99
+[/group]
+[group]小剣
+	[subject]ショートソード:calc,0x0E30,0,99
+	[subject]パルパー:calc,0x0E34,0,99
+	[subject]レイピア:calc,0x0E38,0,99
+	[subject]スピアー・ソード:calc,0x0E3C,0,99
+	[subject]イルウーン:calc,0x0E40,0,99
+	[subject]狂信者の小剣:calc,0x0E44,0,99
+[/group]
+[group]忍刀
+	[subject]忍刀キウラ:calc,0x0E48,0,99
+	[subject]スキナヴォーナ:calc,0x0E4C,0,99
+	[subject]クリス:calc,0x0E50,0,99
+	[subject]コールマリシュ:calc,0x0E54,0,99
+	[subject]貪りの鎌:calc,0x0E58,0,99
+	[subject]舞の小刀:calc,0x0E5C,0,99
+	[subject]忍刀ナクア:calc,0x0E60,0,99
+	[subject]パーミランナイフ:calc,0x0E64,0,99
+	[subject]忍刀レクナラ:calc,0x0E68,0,99
+	[subject]聖皇女の護り手:calc,0x0E6C,0,99
+	[subject]リンス・アイ:calc,0x0E70,0,99
+	[subject]始祖の短刀:calc,0x0E74,0,99
+[/group]
+[group]長剣
+	[subject]ロングソード:calc,0x0FA0,0,99
+	[subject]呪鍛ロングソード:calc,0x0FA4,0,99
+	[subject]バデール:calc,0x0FA8,0,99
+	[subject]闇隷属の剣:calc,0x0FAC,0,99
+	[subject]光隷属の剣:calc,0x0FB0,0,99
+	[subject]炎虐の微笑:calc,0x0FB4,0,99
+	[subject]イウリスソード:calc,0x0FB8,0,99
+	[subject]炎の鍛剣:calc,0x0FBC,0,99
+	[subject]冷気の鍛剣:calc,0x0FC0,0,99
+	[subject]雷光の鍛剣:calc,0x0FC4,0,99
+	[subject]バイラルソード:calc,0x0FC8,0,99
+	[subject]キュリピナ:calc,0x0FCC,0,99
+	[subject]エクリプス:calc,0x0FD0,0,99
+	[subject]リーンフェルス:calc,0x0FD4,0,99
+	[subject]アーナトス:calc,0x0FD8,0,99
+	[subject]プレニシアソード:calc,0x0FDC,0,99
+	[subject]パールミル:calc,0x0FE0,0,99
+	[subject]パールクァル:calc,0x0FE4,0,99
+	[subject]パールフィスカ:calc,0x0FE8,0,99
+	[subject]プラチナソード:calc,0x0FEC,0,99
+	[subject]マーティルミルバ:calc,0x0FF0,0,99
+	[subject]パラディウム:calc,0x0FF4,0,99
+	[subject]暗黒剣グレニア:calc,0x0FF8,0,99
+	[subject]クァルヴァルス:calc,0x0FFC,0,99
+	[subject]哭璃剣レクリラ:calc,0x1000,0,0,99
+	[subject]暗黒剣テゼラマル:calc,0x1004,0,99
+	[subject]ディフリアル:calc,0x1008,0,99
+	[subject]ヴァーチャーズ:calc,0x100C,0,99
+	[subject]ベルクディウム:calc,0x1010,0,99
+	[subject]ライチェルミルバ:calc,0x1014,0,99
+	[subject]ハイシェラソード:calc,0x1018,0,99
+	[subject]リジェラ:calc,0x101C,0,99
+	[subject]バァルソード:calc,0x1020,0,99
+	[subject]フェリエルンデ:calc,0x1024,0,99
+	[subject]ヌ・メルディウム:calc,0x1028,0,99
+	[subject]ルン・ハイシェラ:calc,0x102C,0,99
+[/group]
+[group]鉾
+	[subject]ホーリースタッフ:calc,0x1030,0,99
+	[subject]リップテール:calc,0x1034,0,99
+	[subject]光の杖:calc,0x1038,0,99
+	[subject]ディニア:calc,0x103C,0,99
+	[subject]ブランスディニア:calc,0x1040,0,99
+	[subject]レヌディニア:calc,0x1044,0,99
+	[subject]ゴールデンハンマ:calc,0x1048,0,99
+	[subject]グレイネテール:calc,0x104C,0,99
+	[subject]クァルディニア:calc,0x1050,0,99
+	[subject]裁きの神槌:calc,0x1054,0,99
+	[subject]バーステア:calc,0x1058,0,99
+	[subject]ティルフィテール:calc,0x105C,0,99
+[/group]
+[group]両手剣
+	[subject]ツヴァイハンダー:calc,0x1130,0,99
+	[subject]フランベルジェ:calc,0x1134,0,99
+	[subject]エグゼキュシナズ:calc,0x1138,0,99
+	[subject]刀:calc,0x113C,0,99
+	[subject]スペイリオン:calc,0x1140,0,99
+	[subject]ブラウザガ:calc,0x1144,0,99
+	[subject]名刀御紅:calc,0x1148,0,99
+	[subject]ペルクスティンド:calc,0x114C,0,99
+	[subject]ゴーファリス:calc,0x1150,0,99
+	[subject]呪刀武鬼羅:calc,0x1154,0,99
+	[subject]断裂の熱剣:calc,0x1158,0,99
+	[subject]暗黒剣ラライズ:calc,0x115C,0,99
+	[subject]氷剣リーニ:calc,0x1160,0,99
+	[subject]ウィンバース:calc,0x1164,0,99
+	[subject]グランファリス:calc,0x1168,0,99
+	[subject]聖霊の涕泣:calc,0x116C,0,99
+	[subject]暗黒剣レイレラ:calc,0x1170,0,99
+	[subject]宝剣リヴェライン:calc,0x1174,0,99
+	[subject]雷剣ヴァステド:calc,0x1178,0,99
+	[subject]火剣ベレメイウス:calc,0x117C,0,99
+	[subject]氷剣セシュレイン:calc,0x1180,0,99
+	[subject]聖剣セレンティア:calc,0x1184,0,99
+	[subject]ファスティバルス:calc,0x1188,0,99
+	[subject]神剣リグライア:calc,0x118C,0,99
+[/group]
+[group]槍
+	[subject]長巻:calc,0x1190,0,99
+	[subject]ハルバート:calc,0x1194,0,99
+	[subject]哭璃の魔槍:calc,0x1198,0,99
+	[subject]シーズランサー:calc,0x119C,0,99
+	[subject]メテル・ズパイン:calc,0x11A0,0,99
+	[subject]火槍ルナグレイプ:calc,0x11A4,0,99
+	[subject]魔導槍ミルリーフ:calc,0x11A8,0,99
+	[subject]氷槍フェナクア:calc,0x11AC,0,99
+	[subject]魔導槍バズ:calc,0x11B0,0,99
+	[subject]闇鎧ルナグレイプ:calc,0x11B4,0,99
+	[subject]雷槍テリーフ:calc,0x11B8,0,99
+	[subject]妖精の宿る長枝:calc,0x11BC,0,99
+	[subject]魔槍ハーミス:calc,0x11C0,0,99
+	[subject]光槍ルナグレイプ:calc,0x11C4,0,99
+	[subject]クァルフェイル:calc,0x11C8,0,99
+	[subject]シーズレイ:calc,0x11CC,0,99
+	[subject]神槍プレシャス:calc,0x11D0,0,99
+	[subject]エーテルブレア:calc,0x11D4,0,99
+[/group]
+[group]箒
+	[subject]バレ:calc,0x11D8,0,99
+	[subject]ルージュバレ:calc,0x11DC,0,99
+	[subject]ヴェールバレ:calc,0x11E0,0,99
+	[subject]ローズバレ:calc,0x11E4,0,99
+	[subject]ヴィオーレバレ:calc,0x11E8,0,99
+	[subject]リュミエールバレ:calc,0x11EC,0,99
+[/group]
+[group]銃
+	[subject]魔導銃ウロベス:calc,0x12C0,0,99
+	[subject]魔導銃エケトロス:calc,0x12C4,0,99
+	[subject]魔導銃ウロベール:calc,0x12C8,0,99
+	[subject]魔導銃エリーフ:calc,0x12CC,0,99
+	[subject]魔導銃エケホース:calc,0x12D0,0,99
+	[subject]魔導銃ウログレス:calc,0x12D4,0,99
+	[subject]魔導銃フレカ:calc,0x12D8,0,99
+	[subject]魔導銃エミオール:calc,0x12DC,0,99
+	[subject]魔導銃カーフ:calc,0x12E0,0,99
+	[subject]皆殺しの魔導銃:calc,0x12E4,0,99
+	[subject]魔導銃ウロザード:calc,0x12E8,0,99
+	[subject]魔導銃ベルフォ:calc,0x12EC,0,99
+	[subject]魔導銃ブレシア:calc,0x12F0,0,99
+	[subject]魔導銃グラーマ:calc,0x12F4,0,99
+	[subject]魔導銃ラミシュ:calc,0x12F8,0,99
+	[subject]魔導銃ペレストグ:calc,0x12FC,0,99
+	[subject]魔導銃ルシール:calc,0x1300,0,99
+	[subject]魔導銃リリエール:calc,0x1304,0,99
+[/group]
+
+[group]ブーメラン
+	[subject]ガーヴス:calc,0x1308,0,99
+	[subject]魔力のダート:calc,0x130C,0,99
+	[subject]リャナック:calc,0x1310,0,99
+	[subject]ケルティヴァ:calc,0x1314,0,99
+	[subject]ユメノパチンコ:calc,0x1318,0,99
+	[subject]ガーヴシルネキア:calc,0x131C,0,99
+	[subject]エノ:calc,0x1320,0,99
+	[subject]ジュラーヴソグ:calc,0x1324,0,99
+	[subject]哭璃の円盤:calc,0x1328,0,99
+	[subject]グロフスの円盤:calc,0x132C,0,99
+	[subject]破術のダート:calc,0x1330,0,99
+	[subject]ケルン・チャクラ:calc,0x1334,0,99
+	[subject]恋妖精の円盤:calc,0x1338,0,99
+	[subject]月食の鎌:calc,0x133C,0,99
+	[subject]マーズレティーニ:calc,0x1340,0,99
+	[subject]エウリーチャクラ:calc,0x1348,0,99
+	[subject]玲瓏たる宝輪:calc,0x134C,0,99
+	[subject]璃舞羅:calc,0x1350,0,99
+[/group]
+[group]鞭
+	[subject]皮の鞭:calc,0x1354,0,99
+	[subject]ネインテイルズ:calc,0x1358,0,99
+	[subject]ティービア:calc,0x135C,0,99
+	[subject]洗礼の鞭:calc,0x1360,0,99
+	[subject]ティルサーヴィス:calc,0x1364,0,99
+	[subject]女豹の雷鞭:calc,0x1368,0,99
+	[subject]ディムニステール:calc,0x136C,0,99
+	[subject]王女様の鞭:calc,0x1370,0,99
+	[subject]女王様の鞭:calc,0x1374,0,99
+	[subject]エフィディーヴァ:calc,0x1378,0,99
+	[subject]ラプソローズ:calc,0x137C,0,99
+	[subject]原罪の鞭:calc,0x1380,0,99
+[/group]
+[group]両手銃
+	[subject]魔導銃エイブレス:calc,0x1450,0,99
+	[subject]魔導銃エリオース:calc,0x1454,0,99
+	[subject]魔導銃エイス:calc,0x1458,0,99
+	[subject]魔導砲ファライオ:calc,0x145C,0,99
+	[subject]魔導銃グラーミル:calc,0x1460,0,99
+	[subject]魔導銃アーダム:calc,0x1464,0,99
+	[subject]魔導砲エリル:calc,0x1468,0,99
+	[subject]魔導銃ブレストラ:calc,0x146C,0,99
+	[subject]魔導砲ブラーダム:calc,0x1470,0,99
+	[subject]魔導砲ラ・カール:calc,0x1474,0,99
+[/group]
+[group]弓
+	[subject]長弓:calc,0x1478,0,99
+	[subject]火の弓:calc,0x147C,0,99
+	[subject]強化弓:calc,0x1480,0,99
+	[subject]闇の魔弓:calc,0x1484,0,99
+	[subject]秘印のクロスボウ:calc,0x1488,0,99
+	[subject]エルフィンボウ:calc,0x148C,0,99
+	[subject]ドゥ・セリエ:calc,0x1490,0,99
+	[subject]ウィリヘルボウ:calc,0x1494,0,99
+	[subject]連射弓:calc,0x1498,0,99
+	[subject]魔弓ゼオ:calc,0x149C,0,99
+	[subject]深紅の合成弓:calc,0x14A0,0,99
+	[subject]グラニティス:calc,0x14A4,0,99
+	[subject]シルフィパルフェ:calc,0x14A8,0,99
+	[subject]哭璃弓ルノークス:calc,0x14AC,0,99
+	[subject]スリスティーネ:calc,0x14B0,0,99
+	[subject]神弓ラテーマ:calc,0x14B4,0,99
+	[subject]レライエ・フィズ:calc,0x14B8,0,99
+	[subject]レライスキューリール:calc,0x14BC,0,99
+[/group]
+[group]服
+	[subject]野外用メイド服:calc,0x1DB0,0,99
+	[subject]クイラス:calc,0x1DB4,0,99
+	[subject]魔術師のローブ:calc,0x1DB8,0,99
+	[subject]氷獣の防寒具:calc,0x1DBC,0,99
+	[subject]ルーンテルパ:calc,0x1DC0,0,99
+	[subject]神聖な法衣:calc,0x1DC4,0,99
+	[subject]闇の衣:calc,0x1DC8,0,99
+	[subject]竜皮のベスト:calc,0x1DCC,0,99
+	[subject]女剣士の肌着:calc,0x1DD0,0,99
+	[subject]シルフィテルパ:calc,0x1DD4,0,99
+	[subject]月鱗の皮鎧:calc,0x1DD8,0,99
+	[subject]睡魔の鎧:calc,0x1DDC,0,99
+	[subject]吹雪のローブ:calc,0x1DE0,0,99
+	[subject]薄地のメイド服:calc,0x1DE4,0,99
+	[subject]踊り子の服:calc,0x1DE8,0,99
+	[subject]妖精王の衣:calc,0x1DEC,0,99
+	[subject]月のメイド服:calc,0x1DF0,0,99
+	[subject]ラプリー:calc,0x1DF4,0,99
+	[subject]イブ・アーライナ:calc,0x1DF8,0,99
+	[subject]氷乙女のメイド服:calc,0x1DFC,0,99
+	[subject]職天使の衣:calc,0x1E00,0,99
+	[subject]エウシュリテルパ:calc,0x1E04,0,99
+	[subject]ルン・ラヴェル:calc,0x1E08,0,99
+	[subject]聖王女の衣:calc,0x1E0C,0,99
+[/group]
+[group]鎧
+	[subject]ラメラーアーマー:calc,0x1F40,0,99
+	[subject]ブレストアーマー:calc,0x1F44,0,99
+	[subject]ルーンアーマー:calc,0x1F48,0,99
+	[subject]吸血の鎧:calc,0x1F50,0,99
+	[subject]ズサーアーマー:calc,0x1F54,0,99
+	[subject]コルシノ・イルテ:calc,0x1F58,0,99
+	[subject]竜皮の胸鎧:calc,0x1F5C,0,99
+	[subject]ラズンアーマー:calc,0x1F60,0,99
+	[subject]鱗片の鎧:calc,0x1F64,0,99
+	[subject]ハイネージュ:calc,0x1F68,0,99
+	[subject]朱雀の鎧:calc,0x1F6C,0,99
+	[subject]パールリザ:calc,0x1F70,0,99
+	[subject]暴虐の鎧:calc,0x1F74,0,99
+	[subject]SG-8R:calc,0x1F78,0,99
+	[subject]深紅の胸鎧:calc,0x1F7C,0,99
+	[subject]プルーレ:calc,0x1F80,0,99
+	[subject]守護天使の鎧:calc,0x1F84,0,99
+	[subject]哭璃の鎧:calc,0x1F88,0,99
+	[subject]ハイシェラブロー:calc,0x1F8C,0,99
+	[subject]プリンシティーズ:calc,0x1F90,0,99
+	[subject]鬼神の鎧:calc,0x1F94,0,99
+	[subject]ラヴァール:calc,0x1F98,0,99
+	[subject]ルン・ハイシェラ:calc,0x1F9C,0,99
+	[subject]ルーシール:calc,0x1FA0,0,99
+[/group]
+[group]全身鎧
+	[subject]プレートメイル:calc,0x20D0,0,99
+	[subject]ルーンメイル:calc,0x20D4,0,99
+	[subject]ズサーメイル:calc,0x20D8,0,99
+	[subject]ガルミース:calc,0x20DC,0,99
+	[subject]コルシノ・レイゾ:calc,0x20E0,0,99
+	[subject]竜皮の全身鎧:calc,0x20E4,0,99
+	[subject]竜亀の鎧:calc,0x20E8,0,99
+	[subject]ラズンメイル:calc,0x20EC,0,99
+	[subject]隔離の全身鎧:calc,0x20F0,0,99
+	[subject]豪華な全身鎧:calc,0x20F4,0,99
+	[subject]プレニシアメイル:calc,0x20F8,0,99
+	[subject]ヴァルザート:calc,0x20FC,0,99
+	[subject]セクシール:calc,0x2100,0,99
+	[subject]ロンクレプス:calc,0x2104,0,99
+	[subject]ネークリス:calc,0x2108,0,99
+	[subject]ストラミール:calc,0x210C,0,99
+	[subject]レーエル:calc,0x2110,0,99
+	[subject]サファイレ:calc,0x2114,0,99
+[/group]
+[group]魔導鎧
+	[subject]魔導鎧フェリオス:calc,0x2260,0,99
+	[subject]魔導鎧フェリムス:calc,0x2264,0,99
+	[subject]魔導鎧フェリクト:calc,0x2265,0,99
+	[subject]魔導鎧ピフティー:calc,0x226C,0,99
+	[subject]魔導鎧クリフ:calc,0x2270,0,99
+	[subject]魔導鎧シール:calc,0x2274,0,99
+	[subject]魔導鎧シールミル:calc,0x2278,0,99
+	[subject]魔導鎧シールエル:calc,0x227C,0,99
+	[subject]魔導鎧トリフィス:calc,0x2280,0,99
+	[subject]魔導鎧スティア:calc,0x2284,0,99
+	[subject]魔導鎧マーリア:calc,0x2288,0,99
+	[subject]魔導鎧ラヴィーヌ:calc,0x228C,0,99
+[/group]
+[group]小盾
+	[subject]バックラー:calc,0x23F0,0,99
+	[subject]祝福の小盾:calc,0x23F4,0,99
+	[subject]ヒーターシールド:calc,0x23F8,0,99
+	[subject]強化盾:calc,0x23FC,0,99
+	[subject]虚無の盾:calc,0x2400,0,99
+	[subject]勇気の盾:calc,0x2404,0,99
+	[subject]ディルファリアス:calc,0x2408,0,99
+	[subject]クーリアス:calc,0x240C,0,99
+[/group]
+[group]大盾
+	[subject]ラージシールド:calc,0x2580,0,99
+	[subject]祝福の大盾:calc,0x2584,0,99
+	[subject]ウォーシールド:calc,0x2588,0,99
+	[subject]湖の盾:calc,0x258C,0,99
+	[subject]暴虐の盾:calc,0x2590,0,99
+	[subject]ルクレアール:calc,0x2594,0,99
+	[subject]エクスプローネ:calc,0x2598,0,99
+	[subject]エリティアの盾:calc,0x259C,0,99
+[/group]
+[group]指輪
+	[subject]トロールリング:calc,0x2710,0,99
+	[subject]歴戦の指輪:calc,0x2714,0,99
+	[subject]軍神の指輪:calc,0x2718,0,99
+	[subject]ガーストリング:calc,0x271C,0,99
+	[subject]砦の指輪:calc,0x2720,0,99
+	[subject]城壁の指輪:calc,0x2724,0,99
+	[subject]コールラン:calc,0x2728,0,99
+	[subject]塔の首輪:calc,0x272C,0,99
+	[subject]天の首輪:calc,0x2730,0,99
+	[subject]エディゴル:calc,0x2734,0,99
+	[subject]姫神の腕輪・右:calc,0x2738,0,99
+	[subject]姫神の腕輪・左:calc,0x273C,0,99
+	[subject]巨紳の手:calc,0x2740,0,99
+	[subject]杖の耳飾り:calc,0x2744,0,99
+	[subject]剣の耳飾り:calc,0x2748,0,99
+	[subject]メルティナ:calc,0x274C,0,99
+	[subject]グロティナ:calc,0x2750,0,99
+	[subject]フールマールズ:calc,0x2754,0,99
+	[subject]メチュカの微笑み:calc,0x2758,0,99
+	[subject]将軍の首輪:calc,0x275C,0,99
+	[subject]英雄の首輪:calc,0x2760,0,99
+	[subject]マースティア:calc,0x2764,0,99
+	[subject]マリアハート:calc,0x2768,0,99
+	[subject]スノラ:calc,0x276C,0,99
+	[subject]毒の指輪:calc,0x2770,0,99
+	[subject]商神の指輪:calc,0x2774,0,99
+	[subject]マルウェンの足輪:calc,0x2778,0,99
+	[subject]マルウェンの指輪:calc,0x277C,0,99
+	[subject]マルウェンの腕輪:calc,0x2780,0,99
+	[subject]マルウェンの首輪:calc,0x2784,0,99
+	[subject]成長の石:calc,0x2788,0,99
+	[subject]成長の足輪:calc,0x278C,0,99
+	[subject]成長の指輪:calc,0x2790,0,99
+	[subject]成長の腕輪:calc,0x2794,0,99
+	[subject]成長の首輪:calc,0x2798,0,99
+	[subject]ヒールリング:calc,0x279C,0,99
+	[subject]ヒールリフィ:calc,0x27A0,0,99
+	[subject]ルーヒール:calc,0x27A4,0,99
+	[subject]シュリのお守り:calc,0x27A8,0,99
+	[subject]第三使徒の護輪:calc,0x27AC,0,99
+	[subject]怒りの仮面:calc,0x27B0,0,99
+	[subject]姫神の仮面:calc,0x27B4,0,99
+	[subject]賭博の仮面:calc,0x27B8,0,99
+	[subject]盗賊王女:calc,0x27BC,0,99
+	[subject]祝福の首飾り:calc,0x27C0,0,99
+	[subject]癒音の首飾り:calc,0x27C4,0,99
+	[subject]ご主人様の人形:calc,0x27C8,0,99
+	[subject]妖精の人形:calc,0x27CC,0,99
+	[subject]ナイトブローチ:calc,0x27D0,0,99
+	[subject]ユーロレウィニア:calc,0x27D4,0,99
+	[subject]破邪の耳飾り:calc,0x27D8,0,99
+	[subject]真実の耳飾り:calc,0x27DC,0,99
+	[subject]ユーロメルキア:calc,0x27E0,0,99
+	[subject]テリアリンス:calc,0x27E4,0,99
+	[subject]エクスプロード:calc,0x27E8,0,99
+	[subject]エクスリオーナ:calc,0x27EC,0,99
+	[subject]魔術師の指輪:calc,0x27F0,0,99
+	[subject]聖賢者の指輪:calc,0x27F4,0,99
+	[subject]フェイ・ハート:calc,0x27F8,0,99
+	[subject]フェイ・ルーン:calc,0x27FC,0,99
+	[subject]ルリエン・ハート:calc,0x2800,0,99
+	[subject]ルリエン・ルーン:calc,0x2804,0,99
+	[subject]ライザット:calc,0x2808,0,99
+	[subject]シュペルデオーネ:calc,0x280C,0,99
+	[subject]ブルームリス:calc,0x2810,0,99
+	[subject]ブルームリアット:calc,0x2814,0,99
+	[subject]エウシュリティア:calc,0x2818,0,99
+	[subject]使徒の絆:calc,0x281C,0,99
+[/group]

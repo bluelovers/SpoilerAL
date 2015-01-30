@@ -1,0 +1,10 @@
+[note]
+‘S•”“ü—Í‚µ‚Ä‚­‚¾‚³‚¢
+‚Å‚È‚¢‚ÆŒ©‚Â‚©‚ç‚È‚¢‚©‚à‚µ‚ê‚Ü‚¹‚ñ
+[/note]
+[val]0080????????*.*.*.*.*.
+[calc]‚·‚Î‚â‚³,no,0,0xFF,signed,little_e
+[calc]‚¿‚©‚ç,no,0,0xFF,signed,little_e
+[calc]‚Ý‚Ì‚Ü‚à‚è,no,0,0xFF,signed,little_e
+[calc]‚©‚µ‚±‚³,no,0,0xFF,signed,little_e
+[calc]‚¤‚ñ‚Ì‚æ‚³,no,0,0xFF,signed,little_e

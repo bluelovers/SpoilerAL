@@ -1,0 +1,73 @@
+SSG for SpoilerAL ver 6.1
+[script]
+[title]エターナルオデッセイ奇幻水晶縁(日本語版)
+[process]ES.exe
+[maker]サンソフト/GameOne
+[Release date
+[creator]madoka
+[Refix date]2005/01/20
+[note]
+■サンソフト■
+■エターナルオデッセイ奇幻水晶縁(日本語版)■
+■発売日：2001/12/21■
+懐かしいGameを解析しました。
+今から3年も前のGameです。
+
+Win98SEのみ動作確認済
+■動作確認環境■
+CPU：Pentium4 3.4(水冷)
+OS：win98Se
+VGA：GeforceFX5700Ultra(DDRⅢ)
+Sound：Envy24HT-S
+■動作結果■
+XP環境では、動作しませんでした。(Game本体)
+2000エミュでしたら動作しますが、不安定です。
+何故かwin9x/Meエミュ動作では、XPでは動作しません。
+■2005/01/22更新■
+■改造内容■
+ステータス変更
+所持金変更
+アイテムAll( イベントアイテムを除く)
+■注■
+改造時は、戦闘時，ステータス画面以外のフィールドの画面にて
+変更願います。
+数字が表示されている時は、変更出来ません。
+経験値は、残り1以下程度の変更に留めて下さい。
+次Lv以上に変更しますとフリーズします
+■お奨め■
+TDは、50以上にしますと戦闘時楽です。
+LvUpしても、この数値は前後するだけで殆ど上昇しません。
+バグと思うのですが…パッチは無い様です。
+■余談■(オィ)
+しかし、魔法のアドレスの手前がGameのシステムがプロテクトされている
+アドレスですので弄った途端にエラー後フリーズしファイルの一部が壊れました。
+皆様も解析の際は、気をつけましょうね。汗
+
+[/note]
+
+[subject]所持金: calc,0x02a4d150,0,999999
+[subject]アイテム:dir
+[subject]魔法All/所持/_: toggle,0x02a4cd51,0x02a4cd74-63,00
+[subject]回復All/所持/_: toggle,0x02a4ce51,0x02a4ce78-63,00
+[subject]武器All/所持/_: toggle,0x02a4cf51,0x02a4cfd6-63,00
+[subject]装飾All/所持/_: toggle,0x02a4d051,0x02a4d06a-63,00
+[back]
+[subject]ステータス:dir
+[subject]カール:dir
+[replace]0x02a4d1c8,eos->カール
+[back]
+[subject]ネリー:dir
+[replace]0x02a4ddb8,eos->ネリー
+[back]
+[subject]リンロン:dir
+[replace]0x02a4e6ac,eos->リンロン
+[back]
+[subject]リディア:dir
+[replace]0x02a4eca4,eos->リディア
+[back]
+[subject]イーロイ:dir
+[replace]0x02a4f598,eos->イーロイ
+[back]
+[back]
+[root]
+[/script]

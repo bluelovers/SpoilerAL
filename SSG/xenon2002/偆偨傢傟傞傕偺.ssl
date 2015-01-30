@@ -1,0 +1,15 @@
+[group]UNIT番号
+ [subject]UNIT番号[! L$Val+1 !]:dir
+  [replace] 0x[! 0x4F0FCE+ $Val*124 !],うたわれるもの->ステータス
+/  [replace] 0x[! 0x4F0FCE+ $Val*7C !],うたわれるもの->ステータス
+ [back]
+[/group]
+
+[group]ステータス
+ [subject] 現在体力 : calc,0x0,0,999
+ [subject] 最大体力 : calc,0x18,0,999
+ [subject]    技    : calc,0x0E,0,999
+ [subject] 攻 撃 力 : calc,0x0C,0,999
+ [subject]  防  御  : calc,0x10,0,999
+ [subject] 技 防 御 : calc,0x12,0,999
+[/group]

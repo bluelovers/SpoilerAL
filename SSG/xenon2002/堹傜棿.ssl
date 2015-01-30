@@ -1,0 +1,34 @@
+[group]サーチ
+ [val]000001*.000000
+ [calc] 現在HP,no,0,0xFFFF
+[/group]
+
+[group]ステータス
+/ [subject]LV			: calc,0x-10,00,0xFFFF
+ [subject]現在HP		: calc,0x00,00,0xFFFF
+ [subject]最大HP		: calc,0x10,00,0xFFFF
+ [subject]現在MP		: calc,0x20,00,0xFFFF
+ [subject]最大MP		: calc,0x30,00,0xFFFF
+ [subject]攻撃			: calc,0x40,00,0xFFFF
+ [subject]防御力		: calc,0x50,00,0xFFFF
+ [subject]素早さ		: calc,0x60,00,0xFFFF
+ [subject]運			: calc,0x70,00,0xFFFF
+ [subject]物理攻撃のミス率	: calc,0x80,00,0xFFFF
+[/group]
+
+[group]アイテム
+ [subject]岩スライムの雫札	: calc,0x00,00,0xFFFF
+ [subject]ランタンの雫札	: calc,0x10,00,0xFFFF
+ [subject]コボルドの雫札	: calc,0x20,00,0xFFFF
+ [subject]ミノタウロスの雫札	: calc,0x30,00,0xFFFF
+ [subject]ハーピーの雫札	: calc,0x40,00,0xFFFF
+ [subject]ゴーストの雫札	: calc,0x50,00,0xFFFF
+ [subject]マンティコアの雫札	: calc,0x60,00,0xFFFF
+ [subject]マンドラゴラの雫札	: calc,0x70,00,0xFFFF
+ [subject]グリフォンの雫札	: calc,0x80,00,0xFFFF
+ [subject]ワームの雫札		: calc,0x90,00,0xFFFF
+ [subject]ナイトメアの雫札	: calc,0xA0,00,0xFFFF
+ [subject]レアの雫札		: calc,0xC0,00,0xFFFF
+ [subject]お金			: calc,0xD0,00,0xFFFF
+ [subject]ＭＭ			: calc,0xE0,00,0xFFFF
+[/group]

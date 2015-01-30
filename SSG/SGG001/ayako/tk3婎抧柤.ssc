@@ -1,0 +1,161 @@
+[subject]アッツ島:dir
+	[replace]0x0,tk3基地,offset
+[subject]ダッチハーバー:dir
+	[replace]0x63,tk3基地,offset
+[subject]イルクーツク:dir
+	[replace]0xC6,tk3基地,offset
+[subject]ハバロフスク:dir
+	[replace]0x129,tk3基地,offset
+[subject]シアトル:dir
+	[replace]0x18C,tk3基地,offset
+[subject]ノモンハン:dir
+	[replace]0x1EF,tk3基地,offset
+[subject]豊原:dir
+	[replace]0x252,tk3基地,offset
+[subject]新京:dir
+	[replace]0x2B5,tk3基地,offset
+[subject]ウラジヲストク:dir
+	[replace]0x318,tk3基地,offset
+[subject]北京:dir
+	[replace]0x37B,tk3基地,offset
+[subject]大湊:dir
+	[replace]0x3DE,tk3基地,offset
+[subject]京城:dir
+	[replace]0x441,tk3基地,offset
+[subject]サンフランシスコ:dir
+	[replace]0x4A4,tk3基地,offset
+[subject]東京:dir
+	[replace]0x507,tk3基地,offset
+[subject]呉:dir
+	[replace]0x56A,tk3基地,offset
+[subject]西安:dir
+	[replace]0x5CD,tk3基地,offset
+[subject]ロサンゼルス:dir
+	[replace]0x630,tk3基地,offset
+[subject]南京:dir
+	[replace]0x693,tk3基地,offset
+[subject]サンジエゴ:dir
+	[replace]0x6F6,tk3基地,offset
+[subject]佐世保:dir
+	[replace]0x759,tk3基地,offset
+[subject]成都:dir
+	[replace]0x7BC,tk3基地,offset
+[subject]武漢:dir
+	[replace]0x81F,tk3基地,offset
+[subject]上海:dir
+	[replace]0x882,tk3基地,offset
+[subject]重慶:dir
+	[replace]0x8E5,tk3基地,offset
+[subject]デリー:dir
+	[replace]0x948,tk3基地,offset
+[subject]硫黄島:dir
+	[replace]0x9AB,tk3基地,offset
+[subject]昆明:dir
+	[replace]0xA0E,tk3基地,offset
+[subject]那覇:dir
+	[replace]0xA71,tk3基地,offset
+[subject]ミッドウェイ:dir
+	[replace]0xAD4,tk3基地,offset
+[subject]インパール:dir
+	[replace]0xB37,tk3基地,offset
+[subject]マーカス島:dir
+	[replace]0xB9A,tk3基地,offset
+[subject]カルカッタ:dir
+	[replace]0xBFD,tk3基地,offset
+[subject]香港:dir
+	[replace]0xC60,tk3基地,offset
+[subject]高雄:dir
+	[replace]0xCC3,tk3基地,offset
+[subject]マンダレー:dir
+	[replace]0xD26,tk3基地,offset
+[subject]ハワイ:dir
+	[replace]0xD89,tk3基地,offset
+[subject]ハノイ:dir
+	[replace]0xDEC,tk3基地,offset
+[subject]ラングーン:dir
+	[replace]0xE4F,tk3基地,offset
+[subject]ウェーク島:dir
+	[replace]0xEB2,tk3基地,offset
+[subject]ジョンストン:dir
+	[replace]0xF15,tk3基地,offset
+[subject]マニラ:dir
+	[replace]0xF78,tk3基地,offset
+[subject]サイパン:dir
+	[replace]0xFDB,tk3基地,offset
+[subject]バンコク:dir
+	[replace]0x103E,tk3基地,offset
+[subject]グァム:dir
+	[replace]0x10A1,tk3基地,offset
+[subject]マドラス:dir
+	[replace]0x1104,tk3基地,offset
+[subject]サイゴン:dir
+	[replace]0x1167,tk3基地,offset
+[subject]レイテ:dir
+	[replace]0x11CA,tk3基地,offset
+[subject]ペリリュー:dir
+	[replace]0x122D,tk3基地,offset
+[subject]トラック:dir
+	[replace]0x1290,tk3基地,offset
+[subject]クェゼリン:dir
+	[replace]0x12F3,tk3基地,offset
+[subject]コロンボ:dir
+	[replace]0x1356,tk3基地,offset
+[subject]ダバオ:dir
+	[replace]0x13B9,tk3基地,offset
+[subject]パルミラ:dir
+	[replace]0x141C,tk3基地,offset
+[subject]コタバル:dir
+	[replace]0x147F,tk3基地,offset
+[subject]タウイタウイ:dir
+	[replace]0x14E2,tk3基地,offset
+[subject]ペナン:dir
+	[replace]0x1545,tk3基地,offset
+[subject]ブルネイ:dir
+	[replace]0x15A8,tk3基地,offset
+[subject]シンガポール:dir
+	[replace]0x160B,tk3基地,offset
+[subject]タワラ:dir
+	[replace]0x166E,tk3基地,offset
+[subject]ビアク:dir
+	[replace]0x16D1,tk3基地,offset
+[subject]メナド:dir
+	[replace]0x1734,tk3基地,offset
+[subject]バリックパパン:dir
+	[replace]0x1797,tk3基地,offset
+[subject]パレンバン:dir
+	[replace]0x17FA,tk3基地,offset
+[subject]バイゼルマシン:dir
+	[replace]0x185D,tk3基地,offset
+[subject]ウェワク:dir
+	[replace]0x18C0,tk3基地,offset
+[subject]マカッサル:dir
+	[replace]0x1923,tk3基地,offset
+[subject]ラバウル:dir
+	[replace]0x1986,tk3基地,offset
+[subject]ブーゲンビル:dir
+	[replace]0x19E9,tk3基地,offset
+[subject]バタビア:dir
+	[replace]0x1A4C,tk3基地,offset
+[subject]ラエ:dir
+	[replace]0x1AAF,tk3基地,offset
+[subject]スラバヤ:dir
+	[replace]0x1B12,tk3基地,offset
+[subject]ガダルカナル:dir
+	[replace]0x1B75,tk3基地,offset
+[subject]ポートモレスビー:dir
+	[replace]0x1BD8,tk3基地,offset
+[subject]サンタクルーズ:dir
+	[replace]0x1C3B,tk3基地,offset
+[subject]ポートダーウィン:dir
+	[replace]0x1C9E,tk3基地,offset
+[subject]エスピリツサント:dir
+	[replace]0x1D01,tk3基地,offset
+[subject]サモア:dir
+	[replace]0x1D64,tk3基地,offset
+[subject]タウンスビル:dir
+	[replace]0x1DC7,tk3基地,offset
+[subject]フィジー:dir
+	[replace]0x1E2A,tk3基地,offset
+[subject]ブリスベン:dir
+	[replace]0x1E8D,tk3基地,offset
+[back]

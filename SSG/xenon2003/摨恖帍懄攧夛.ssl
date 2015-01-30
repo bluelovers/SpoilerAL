@@ -1,0 +1,24 @@
+[group]EVENT_ST
+	[repeat]同人誌即売会->EVENT_ST2,0,99,1
+[/group]
+[group]EVENT_ST2
+	[subject]_mem,0x[! 0x00+$Val*0x30 !],30,00,イベント:dir
+		[subject]事務: calc,0x88,00,100
+		[subject]広報: calc,0x8A,00,100
+	[back]
+[/group]
+[group]STAFF_ST
+	[subject]人数: calc,0x08,00,200
+	[subject]訓練度: calc,0x0C,00,100
+	[subject]士気: calc,0x10,00,200
+/	[subject]年: calc,0x7C,2003,2006
+/	[subject]月日: calc,0x80,0101,1231
+[/group]
+[group]所持金
+	[subject]万円: calc,0x00,00,999999
+	[subject]円: calc,0x04,00,9000
+[/group]
+[group]サークル
+	[subject]参加サークル数: calc,0x24,00,1000
+	[subject]サークル数(MAX): calc,0x28,00,1000
+[/group]

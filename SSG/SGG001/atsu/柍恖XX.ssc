@@ -1,0 +1,5 @@
+		[subject]HP:calc,0x0,0,0x28,signed,little_e
+		[subject]SURVIVAL:calc,0x4,0,0x28,signed,little_e
+		[subject]TRUST:calc,0x8,0,0x28,signed,little_e
+		[subject]STRESS:calc,0x10,0,0x28,signed,little_e
+	[back]

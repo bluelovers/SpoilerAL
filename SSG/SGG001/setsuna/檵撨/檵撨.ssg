@@ -1,0 +1,660 @@
+SSG for SpoilerAL ver 3.8
+
+//////////////////////////////////////////////////////////////////////
+//                 　　　　　☆メイド狩り☆                         //
+//          メイド調教モノはあれど メイドを狩るのとは･･･。          //
+//       さすがエヴォリューションですね～、ってとこですか？（^^;）  //
+//                                                                  //
+//////////////////////////////////////////////////////////////////////
+
+[script]
+[title]メイド狩り
+[process]MEGU.EXE
+[maker]エヴォリューション
+[creator]刹那
+[note]
+メイドを狩れ！！犯れ！！
+なる～に犯られろ！！（爆）
+[/note]
+[subject]時間:calc,0x004BAE30,0x0,0x1770,signed,little_e
+[subject]体力:calc,0x004BAE34,0x0,0x64,signed,little_e
+[subject]食料:calc,0x004BAE38,0x0,0x63,signed,little_e
+[/script]
+
+//////////////////////////////////////////////////////////////////////
+//                        ☆リーフファイト９７☆                    //
+//              　　カード版リーフファイトの原型ですね。            //
+//              この他にネット版リーフファイトもありますよ。　　　　//
+//                                                                  //
+//////////////////////////////////////////////////////////////////////
+
+[script]
+[title]リーフファイト９７
+[process]LFIGHT97.EXE
+[maker]Leaf　～はっぱ～
+[creator]刹那
+[note]
+スピ～ドＵＰ!!
+[/note]
+[subject]スピ～ドＵＰ:toggle,0x0040b394,9090,7304
+[back]
+[/script]
+
+//////////////////////////////////////////////////////////////////////
+//                      ☆絶望～青い果実の散花～☆                  //
+//              　　    スタジオメビウスの鬼畜ゲー                  //
+//                  ～青い果実の散花～シリーズですね。     　　   　//
+//                                                                  //
+//////////////////////////////////////////////////////////////////////
+
+[script]
+[title]絶望　～青い果実の散花～
+[process]AVG3217D.EXE
+[maker]スタジオ　メビウス
+[creator]刹那
+[note]
+回想モード１００％にしま～す。(^^;
+[/note]
+[subject]音楽＆回想オン！！:toggle,0x47E859,03,00
+[subject]回想モード:dir
+        [subject]キャラ１００パ～:toggle,0x47E7DE,0x47E801-FF,00
+        [subject]ビデオ１００パ～:toggle,0x47E802,0x47E805-FF,00
+        [subject]その他１００パ～:toggle,0x47E806,0x47E80B-FF,00
+[back]
+[/script]
+
+//////////////////////////////////////////////////////////////////////
+//                     ☆Touch Me～恋のおくすり☆                   //
+//              　　MinkさんらしいカワイイCGですね。 　             //
+//          明るい色使いでとての良いです、あたしゃすきですよ。　　　//
+//                                                                  //
+//////////////////////////////////////////////////////////////////////
+
+[script]
+[title]Touch Me～恋のおくすり～
+[process]TOUCHME.EXE
+[maker]Mink
+[creator]刹那
+[note]
+Ｔｏｕｃｈ　Ｍｅ起動後、
+［ＡＬＴ］＋［ＴＡＢ］キーを
+押して最小化にから使って下さい。
+又は『固定』して下さい。
+
+[/note]
+[subject]残り時間:calc,0x4542E8,0,0x3C,signed,little_e
+[subject]キャラ好感度:dir
+	[subject]ほのか　好感度:calc,0x4524F4,0,0x64,signed,little_e
+	[subject]典子　好感度:calc,0x4524F8,0,0x64,signed,little_e
+	[subject]雅美　好感度:calc,0x4524FC,0,0x64,signed,little_e
+	[subject]多恵　好感度:calc,0x452500,0,0x64,signed,little_e
+	[subject]志穂　好感度:calc,0x452504,0,0x64,signed,little_e
+	[subject]真里　好感度:calc,0x452508,0,0x64,signed,little_e
+[back]
+[/script]
+
+//////////////////////////////////////////////////////////////////////
+//                         ☆マシンメイデン☆                       //
+//              　  　またまたエヴォリューションです。              //
+//                         　　CG集めるのに苦労します。         　　//
+//                                                                  //
+//////////////////////////////////////////////////////////////////////
+
+[script]
+[title]MACHINE MEIDEN
+[process]MEGU.EXE
+[maker]エヴォリューション
+[creator]刹那
+[note]
+はっきり言ってCG集めるの苦労しました。
+
+[/note]
+[subject]日付:calc,0x48B824,0,0x1E,signed,little_e
+[subject]疑似人格:calc,0x48B510,0,0x64,signed,little_e
+[subject]機体性能:calc,0x48B508,0,0x64,signed,little_e
+[subject]データ量:calc,0x48B50C,0,0x64,signed,little_e
+[subject]従順度:calc,0x48B514,0,0x64,signed,little_e
+[subject]愛情度:calc,0x48B518,0,0x64,signed,little_e
+[/script]
+
+//////////////////////////////////////////////////////////////////////
+//                      ☆ロマンスは剣の輝きⅡ☆                    //
+//              　はっきりいって『おもしろい！！』です。            //
+//              　でもながい、はっきりいって疲れますぅ。　　　　　　//
+//                                                                  //
+//////////////////////////////////////////////////////////////////////
+
+[script]
+[title]ロマンスは剣の輝きⅡ
+[process]ROMANCE2.EXE
+[maker]F&C
+[creator]刹那
+[note]
+シャロン萌え～！！
+[/note]
+[subject]ＥＸＰ:calc,0x6A925C,0,0xFFFF,signed,little_e
+[subject]お金（ＧＰ）:calc,0x6A9258,0,0xFFFF,signed,little_e
+[subject]キース:dir
+       [subject]ＨＰ:calc,0x6A70B0,0,0x3E7,signed,little_e
+       [subject]気合:calc,0x702A28,0,0xFFFF,signed,little_e
+[back]
+[subject]アルビオン:dir
+       [subject]ＨＰ:calc,0x4524F4,0,0x3E7,signed,little_e
+       [subject]気合:calc,0x4524F8,0,0x64,signed,little_e
+[back]
+[subject]エリス:dir
+       [subject]ＨＰ:calc,0x6A7A18,0,0x3E7,signed,little_e
+       [subject]気合:calc,0x70715C,0,0x3E7,signed,little_e
+[back]
+[subject]キュリア:dir
+       [subject]ＨＰ:calc,0x6A74B8,0,0x3E7,signed,little_e
+       [subject]ＭＰ:calc,0x6A74C4,0,0x3E7,signed,little_e
+       [subject]気合:calc,0x7041E4,0,0x64,signed,little_e
+[back]
+[subject]ジャネット:dir
+       [subject]ＨＰ:calc,0x6A7CC8,0,0x3E7,signed,little_e
+       [subject]気合:calc,0x1A264DC,0,0x64,signed,little_e
+[back]
+[subject]シャロン:dir
+       [subject]ＨＰ:calc,0x6A7610,0,0x3E7,signed,little_e
+       [subject]ＭＰ:calc,0x6A761C,0,0x3E7,signed,little_e
+       [subject]気合:calc,0x7059A0,0,0x64,signed,little_e
+[back]
+[subject]スピカ:dir
+       [subject]ＨＰ:calc,0x6A7768,0,0x3E7,signed,little_e
+       [subject]気合:calc,0x1A28DA4,0,0x64,signed,little_e
+[back]
+[subject]スラ造:dir
+       [subject]ＨＰ:calc,0x6A7F78,0,0x3E7,signed,little_e
+       [subject]ＭＰ:calc,0x6A7F84,0,0x3E7,signed,little_e
+       [subject]気合:calc,0x7701FC,0,0x64,signed,little_e
+[back]
+[subject]チム:dir
+       [subject]ＨＰ:calc,0x6A7E20,0,0x3E7,signed,little_e
+       [subject]気合:calc,0x7267A4,0,0x64,signed,little_e
+[back]
+[subject]リーナ:dir
+       [subject]ＨＰ:calc,0x6A7208,0,0x3E7,signed,little_e
+       [subject]ＭＰ:calc,0x6A7214,0,0x3E7,signed,little_e
+       [subject]気合:calc,0x6F2BF0,0,0x64,signed,little_e
+[back]
+[subject]リオン:dir
+       [subject]ＨＰ:calc,0x6A7B70,0,0x3E7,signed,little_e
+       [subject]ＭＰ:calc,0x6A7B7C,0,0x3E7,signed,little_e
+       [subject]気合:calc,0x1AB73B0,0,0x64,signed,little_e
+[back]
+[subject]おまけ:dir
+       [subject]ファランクス:dir
+              [subject]ＨＰ:calc,0x6A7B70,0,0x3E7,signed,little_e
+              [subject]気合:calc,0x1A72480,0,0x64,signed,little_e
+       [back]
+       [subject]エルファーシア:dir
+              [subject]ＨＰ:calc,0x6A8788,0,0x3E7,signed,little_e
+              [subject]ＭＰ:calc,0x6A8794,0,0x3E7,signed,little_e
+              [subject]気合:calc,0x768190,0,0x64,signed,little_e
+       [back]
+[back]
+//[subject]アイテム:dir
+//       [subject]１段目左:dir
+//		[replace]0x6A9260,ロマンス,offset
+//[root]
+[/script]
+
+//////////////////////////////////////////////////////////////////////
+//                   ☆Castle Fantasia～聖魔大戦～☆                //
+//              　　　　　↑とちがって短いです。　　　　            //
+//              　　主人公がやる気なさけでいいですね。　　　　　　　//
+//               　アリアが切れるとこなんかよすぎです。             //
+//////////////////////////////////////////////////////////////////////
+
+[script]
+[title]Castle Fantasia～聖魔大戦～
+[process]CASTLE2.EXE
+[maker]Studio e・go!
+[creator]刹那
+[note]
+ほへぇ～？ver1.05だけだじょ☆（イタ！）
+あつさんの形式ぱくったじょ☆
+[/note]
+[subject]ver1.05:dir
+	[subject]データ:dir
+		[subject]現在耐久力:calc,0x470738,0,999,signed,little_e
+		[subject]最大耐久力:calc,0x47073C,0,999,signed,little_e
+		[subject]素早さ:calc,0x470740,1,999,signed,little_e
+		[subject]移動範囲:calc,0x470744,0,999,signed,little_e
+		[subject]攻撃力:calc,0x47074c,0,999,signed,little_e
+		[subject]守備力:calc,0x470750,0,999,signed,little_e
+		[subject]攻撃射程:calc,0x470754,0,999,signed,little_e
+	[back]
+ 	[subject]愛情値:dir
+		[subject]アリア:calc,0x48F784,0,300,signed,little_e
+		[subject]ハンナ:calc,0x48F788,0,300,signed,little_e
+		[subject]ティア:calc,0x48F78c,0,300,signed,little_e
+		[subject]ルナール:calc,0x48F790,0,300,signed,little_e
+		[subject]セシル:calc,0x48F794,0,300,signed,little_e
+		[subject]ジュディ:calc,0x48F798,0,300,signed,little_e
+		[subject]シルエラ:calc,0x48F79c,0,300,signed,little_e
+       [back]
+[/script]
+
+//////////////////////////////////////////////////////////////////////
+//                    ☆とらいあんぐるハート２☆                    //
+//              　　ほのぼのしてますね～好きですね～。              //
+//                  全１２人はつらいんで９人ですハイ。　     　 　　//
+//                                                                  //
+//////////////////////////////////////////////////////////////////////
+
+[script]
+[title]とらいあんぐるハート２
+[maker]jANIS
+[process]TRI2.EXE
+[creator]刹那
+[note]
+リスティー好感度が有ると思うんですが
+ひっかからなひぃ～。
+[/note]
+[subject]時間:calc,0x41A9D4,0,100,signed
+[subject]パラメータ:dir
+	[subject]料理:calc,0x41A9D6,0,255,signed
+	[subject]掃除:calc,0x41A9D8,0,255,signed
+	[subject]雑用:calc,0x41A9DA,0,255,signed
+[back]
+[subject]好感度:dir
+	[subject]愛:calc,0x41A9EA,0,500,signed
+	[subject]十六夜:calc,0x41A9F8,0,500,signed
+	[subject]薫:calc,0x41A9F6,0,500,signed
+	[subject]知佳:calc,0x41A9F0,0,500,signed
+	[subject]みなみ:calc,0x41A9EE,0,500,signed
+	[subject]真雪:calc,0x41A9F2,0,500,signed
+	[subject]美緒:calc,0x41A9F4,0,500,signed
+	[subject]みなみ:calc,0x41A9EE,0,500,signed
+	[subject]ゆうひ:calc,0x41A9EC,0,500,signed
+[back]
+[/script]
+
+//////////////////////////////////////////////////////////////////////
+//              　 ☆KANON☆＆☆KANON全年齢対象版☆                 //
+//              　　これはずっと前につくってたんですが、            //
+//              皆さんが早かったからね～。やめてたんですぅ。　　　　//
+//                                                                  //
+//////////////////////////////////////////////////////////////////////
+
+[script]
+[title]KANON
+[process]AVG3216M.EXE
+[maker]Key
+[creator]刹那
+[note]
+初回版が中古であるとは･･･
+しかも２５８０円で。
+[/note]
+[subject]全CG ON:toggle,0x478654,0x478664-FF,00
+[subject]おまけ ＯＮ:toggle,0x478679,FF,00
+[/script]
+
+[script]
+[title]Ｋａｎｏｎ全年齢対象版
+[process]AVG3217M.EXE
+[maker]Key
+[creator]刹那
+[note]
+これは９８０円で購入！！
+傷が有ったからね～。
+[/note]
+[subject]全CG ON:toggle,0x47E294,0x47E2A6-FF,00
+[subject]おまけ ＯＮ:toggle,0x47E2B9,1F,00
+[/script]
+
+//////////////////////////////////////////////////////////////////////
+//             ☆Castle Fantasia～エレンシア戦記～☆                //
+//              　　ヴォイス対応ですね～、感度悪いけど。            //
+//              前作と違ってかなり凝ってます。ハイ・・・　　　　　　//
+//                                                                  //
+//////////////////////////////////////////////////////////////////////
+
+[script]
+[title]Castle Fantasia～エレンシア戦記～            
+[process]CF3.EXE
+[maker]Studio e・go!
+[creator]刹那
+[note]
+戦闘中、ヴォイスを使用して
+スペッサルトは馬鹿殿に
+ベンジャミンはヒゲ親父、
+中盤からはただの親父に変えて
+ボコボコにしてお楽しみください。
+[/note]
+[subject]ver1.00:dir
+	[subject]ファイゼル:dir
+		[subject]体力:calc,0x48E050,0,100,signed,little_e
+		[subject]能力:calc,0x48E054,0,100,signed,little_e
+		[subject]機動力:calc,0x48E058,0,100,signed,little_e
+		[subject]総率力:calc,0x48E05C,0,100,signed,little_e
+		[subject]兵数:calc,0x48E04C,0,05,signed,little_e
+	[back]
+	[subject]ラピス:dir
+		[subject]体力:calc,0x48E0E8,0,100,signed,little_e
+		[subject]能力:calc,0x48E0EC,0,100,signed,little_e
+		[subject]機動力:calc,0x48E0F0,0,100,signed,little_e
+		[subject]総率力:calc,0x48E0F4,0,100,signed,little_e
+		[subject]兵数:calc,0x48E0E4,0,05,signed,little_e
+	[back]
+	[subject]ミンファ:dir
+		[subject]体力:calc,0x48E09C,0,100,signed,little_e
+		[subject]能力:calc,0x48E0A0,0,100,signed,little_e
+		[subject]機動力:calc,0x48E0A4,0,100,signed,little_e
+		[subject]総率力:calc,0x48E0A8,0,100,signed,little_e
+		[subject]兵数:calc,0x48E098,0,05,signed,little_e
+	[back]
+	[subject]テルル:dir
+		[subject]体力:calc,0x48E134,0,100,signed,little_e
+		[subject]能力:calc,0x48E138,0,100,signed,little_e
+		[subject]機動力:calc,0x48E13C,0,100,signed,little_e
+		[subject]総率力:calc,0x48E140,0,100,signed,little_e
+		[subject]兵数:calc,0x48E130,0,05,signed,little_e
+	[back]
+	[subject]チャイカ:dir
+		[subject]体力:calc,0x48E180,0,100,signed,little_e
+		[subject]能力:calc,0x48E184,0,100,signed,little_e
+		[subject]機動力:calc,0x48E188,0,100,signed,little_e
+		[subject]総率力:calc,0x48E18C,0,100,signed,little_e
+		[subject]兵数:calc,0x48E17C,0,05,signed,little_e
+	[back]
+	[subject]ナガレ:dir
+		[subject]体力:calc,0x48E1CC,0,100,signed,little_e
+		[subject]能力:calc,0x48E1D0,0,100,signed,little_e
+		[subject]機動力:calc,0x48E1D4,0,100,signed,little_e
+		[subject]総率力:calc,0x48E1D8,0,100,signed,little_e
+		[subject]兵数:calc,0x48E1C8,0,05,signed,little_e
+	[back]
+	[subject]クリームヒルト:dir
+		[subject]体力:calc,0x48E218,0,100,signed,little_e
+		[subject]能力:calc,0x48E21C,0,100,signed,little_e
+		[subject]機動力:calc,0x48E220,0,100,signed,little_e
+		[subject]総率力:calc,0x48E224,0,100,signed,little_e
+		[subject]兵数:calc,0x48E214,0,03,signed,little_e
+	[back]
+	[subject]セリカ:dir
+		[subject]体力:calc,0x48E264,0,100,signed,little_e
+		[subject]能力:calc,0x48E268,0,100,signed,little_e
+		[subject]機動力:calc,0x48E26C,0,100,signed,little_e
+		[subject]総率力:calc,0x48E270,0,100,signed,little_e
+		[subject]兵数:calc,0x48E260,0,05,signed,little_e
+	[back]
+[back]
+[subject]ver1.02:dir
+	[subject]ファイゼル:dir
+		[subject]体力:calc,0x498048,0,100,signed,little_e
+		[subject]能力:calc,0x49804C,0,100,signed,little_e
+		[subject]機動力:calc,0x498050,0,100,signed,little_e
+		[subject]総率力:calc,0x498054,0,100,signed,little_e
+		[subject]兵数:calc,0x498044,0,05,signed,little_e
+	[back]
+	[subject]ラピス:dir
+		[subject]体力:calc,0x4980E0,0,100,signed,little_e
+		[subject]能力:calc,0x4980E4,0,100,signed,little_e
+		[subject]機動力:calc,0x4980E8,0,100,signed,little_e
+		[subject]総率力:calc,0x4980EC,0,100,signed,little_e
+		[subject]兵数:calc,0x4980DC,0,05,signed,little_e
+	[back]
+	[subject]ミンファ:dir
+		[subject]体力:calc,0x498094,0,100,signed,little_e
+		[subject]能力:calc,0x498098,0,100,signed,little_e
+		[subject]機動力:calc,0x49809C,0,100,signed,little_e
+		[subject]総率力:calc,0x4980A0,0,100,signed,little_e
+		[subject]兵数:calc,0x498090,0,05,signed,little_e
+	[back]
+	[subject]テルル:dir
+		[subject]体力:calc,0x49812C,0,100,signed,little_e
+		[subject]能力:calc,0x498130,0,100,signed,little_e
+		[subject]機動力:calc,0x498134,0,100,signed,little_e
+		[subject]総率力:calc,0x498138,0,100,signed,little_e
+		[subject]兵数:calc,0x498128,0,05,signed,little_e
+	[back]
+	[subject]チャイカ:dir
+		[subject]体力:calc,0x498178,0,100,signed,little_e
+		[subject]能力:calc,0x49817C,0,100,signed,little_e
+		[subject]機動力:calc,0x498180,0,100,signed,little_e
+		[subject]総率力:calc,0x498184,0,100,signed,little_e
+		[subject]兵数:calc,0x498174,0,05,signed,little_e
+	[back]
+	[subject]ナガレ:dir
+		[subject]体力:calc,0x4981C4,0,100,signed,little_e
+		[subject]能力:calc,0x4981C8,0,100,signed,little_e
+		[subject]機動力:calc,0x4981CC,0,100,signed,little_e
+		[subject]総率力:calc,0x4981D0,0,100,signed,little_e
+		[subject]兵数:calc,0x4981C0,0,05,signed,little_e
+	[back]
+	[subject]クリームヒルト:dir
+		[subject]体力:calc,0x498210,0,100,signed,little_e
+		[subject]能力:calc,0x498214,0,100,signed,little_e
+		[subject]機動力:calc,0x498218,0,100,signed,little_e
+		[subject]総率力:calc,0x49821C,0,100,signed,little_e
+		[subject]兵数:calc,0x49820C,0,03,signed,little_e
+	[back]
+	[subject]セリカ:dir
+		[subject]体力:calc,0x49825C,0,100,signed,little_e
+		[subject]能力:calc,0x498260,0,100,signed,little_e
+		[subject]機動力:calc,0x498264,0,100,signed,little_e
+		[subject]総率力:calc,0x498268,0,100,signed,little_e
+		[subject]兵数:calc,0x498258,0,05,signed,little_e
+	[back]
+[back]
+[/script]
+
+///////////////////////////////////////////////////////////////////
+//                      　　　☆AIR☆　　　　　　　　　　　　　　//
+//             久々に泣けましたな～流石はKEYさんです。       　　//
+//       　　 向こうの方は売り切れてたみたいですけど、　　　　　 //
+//    　　　 神戸じゃ今でも初回が腐ってますからね～。　　　　　　//
+///////////////////////////////////////////////////////////////////
+[script]
+[title]AIR            
+[process]AVG3217M.EXE
+[maker]KEY
+[creator]刹那＆ジャン太郎
+[note]
+とてつもなく切ない。KANON 同様、
+感情移入激しい人はハンカチ４０枚ぐらい
+用意が必要？
+
+☆注意☆
+タイトル画面変更で [朝]にしてからでないと
+CGは１００％になりません。
+[/note]
+[adjustment]heap,heap2=0x720000>0x92FFFF,heap3=0x930000>0xA30FFF
+[subject]APPENDIX選択可能:toggle,0x4C9BB7,01,00
+[subject]タイトル画面変更:dir
+        [subject]夕焼け:toggle,0x4A9FB4,01,00
+        [subject]夜:toggle,0x4A9FB4,02,00
+        [subject]朝:toggle,0x4A9FB4,03,00
+[back]
+[subject]タイトル画面『朝』に変更後:dir
+        [subject]ＣＧ鑑賞モード１００％:toggle,0x4C9B56,0x4C9B66-FF,00
+[back]
+[/script]
+
+///////////////////////////////////////////////////////////////////
+//           　　☆ドリル少女スパイラル・なみ☆　   　　　　　   //
+//            汁！汁！！汁！！！しる～～！！！！の               //
+//         エヴォリューションです。相も変わらず変なの　　　　　　//
+//        出しますね☆でも、内容も歌も好きですよホント☆         //
+//                                                               //
+///////////////////////////////////////////////////////////////////
+
+[script]
+[title]ドリル少女スパイラル・なみ
+[process]MEGU.EXE
+[maker]エヴォリューション
+[creator]刹那＆ジャン太郎
+[note]
+ドリル？なぜドリル？？っていうか
+なる～はどした～～～！！（故障）
+[/note]
+[adjustment]heap,heap2=0x770000>0xD8FFFF,heap3=0xD90000>0xF9FFFF,heap4=0xFA0000>0x10AFFFF
+[subject]所持金:calc,0x4D8D9C,0x0,9999999,unsigned,little_e
+[subject]ステータス:dir
+	[subject]最大ＨＰ:calc,0x4D8DA0,0,999,unsigned,little_e
+	[subject]最大ＥＮ:calc,0x4D8DA4,0,999,unsigned,little_e
+	[subject]現在ＨＰ:calc,0x4D8DF8,0,999,unsigned,little_e
+	[subject]現在ＥＮ:calc,0x4D8DFC,0,999,unsigned,little_e
+	[subject]パワー:calc,0x4D8DA8,0,999,unsigned,little_e
+	[subject]スピード:calc,0x4D8DAC,0,999,unsigned,little_e
+	[subject]アーマー:calc,0x4D8DB0,0,999,unsigned,little_e
+[back]
+[/script]
+
+///////////////////////////////////////////////////////////////////
+//           　　　　　☆こみっくクイズ☆　　　　   　　　　　   //
+//       　　　　　　ぐはっ、消えてた（汗）　　　　　　          //
+//       　　　　　　　　　　　　　　　　　　　　　　　　　　　　//
+//       　　　　　　　　　　　　　　　　　　　　　　　　　　　  //
+//                                                               //
+///////////////////////////////////////////////////////////////////
+
+[script]
+[title]こみっくクイズ
+[process]COMICQZ.EXE
+[maker]はっぱ
+[creator]刹那
+[note]
+うっうにゅ～
+[/note]
+[subject]ライフ:calc,0x454748,0,0x05,signed,little_e
+[subject]キャラフラグ:dir
+       [subject]瑞希フラグ:calc,0x46B9CB,0,0x28,signed,little_e
+       [subject]南フラグ:calc,0x46B9CC,0,0x28,signed,little_e
+       [subject]千紗フラグ:calc,0x46B9D2,0,0x28,signed,little_e
+       [subject]彩フラグ:calc,0x46B9CF,0,0x28,signed,little_e
+       [subject]玲子フラグ:calc,0x46B9D1,0,0x28,signed,little_e
+       [subject]詠美フラグ:calc,0x46B9CE,0,0x28,signed,little_e
+[back]
+[/script]
+
+///////////////////////////////////////////////////////////////////
+//           　　　　☆プリズム｜ハート☆　   　　　　　 　　　  //
+//           　　　　　　綺麗なCGですね～。        　　　　      //
+//         　　　　　クリアー完了～。　　　　　　　　　　　　　　//
+//        　　　　　　　　　　　　　　　　　　　　　　　         //
+//                                                               //
+///////////////////////////////////////////////////////////////////
+
+[script]
+[title]プリズム ハート
+[process]PRISM.EXE
+[maker]PAJAMAS
+[creator]刹那＆ジャン太郎
+[note]
+前略
+中略
+敬具
+[/note]
+[adjustment]heap,heap2=0x770000>0xD8FFFF,heap3=0xD90000>0xF9FFFF,heap4=0xFA0000>0x10AFFFF
+[subject]1.0:dir
+	[subject]タフ～:calc,0x423104,0,0xFFFF,unsigned,little_e
+	[subject]つよ～い:calc,0x42310C,0,0xFFFF,unsigned,little_e
+	[subject]はや～い:calc,0x423108,0,0xFFFF,unsigned,little_e
+	[subject]かしこ～い:calc,0x423110,0,0xFFFF,unsigned,little_e
+	[subject]ステキ～:calc,0x423114,0,0xFFFF,unsigned,little_e
+[back]
+[subject]1.2:dir
+	[subject]タフ～:calc,0x4230F4,0,0xFFFF,unsigned,little_e
+	[subject]つよ～い:calc,0x4230FC,0,0xFFFF,unsigned,little_e
+	[subject]はや～い:calc,0x4230F8,0,0xFFFF,unsigned,little_e
+	[subject]かしこ～い:calc,0x423100,0,0xFFFF,unsigned,little_e
+	[subject]ステキ～:calc,0x423104,0,0xFFFF,unsigned,little_e
+[back]
+[/script]
+
+///////////////////////////////////////////////////////////////////
+//        　　　　　☆ほえほえ　はにゃ～ん☆　 　   　　　　 　  //
+//         　　　　　　　萌え萌えなCGです　　　　　　　 　       //
+//         　　　　　　　エロエロです(笑)　　　　　　　　　　　　//
+//        　　　　　　　　　　　　　　　　　　　　　　　　　     //
+//                                                               //
+///////////////////////////////////////////////////////////////////
+
+
+[script]（同人）ほえほえ はにゃーん
+[title]
+[process]CCH3.EXE
+[maker]Dew
+[creator]刹那＆ジャン太郎
+[note]
+萌え系の同人です。結構来てます(笑)
+[/note]
+[subject]CG ALL ON:toggle,0x464BE0,0x464BFF-FF,00
+[/script]
+
+
+
+
+///////////////////////////////////////////////////////////////////
+//        　　　☆Piaキャロットへようこそ！!3☆　   　　　　 　  //
+//         うにゅ～、私的には３号店にして欲しかったかな 　       //
+//         　　　しかしイベントは楽しめましたね　　　　　　　　　//
+//        　　　特に”あの”二人のイベントが(笑)　　　　　　     //
+//                                                               //
+///////////////////////////////////////////////////////////////////
+
+[script]
+[title]Piaキャロットへようこそ!!3
+[maker]F&C
+[process]PIA3.EXE
+[creator]刹那＆ジャン太郎
+[note]　piaキャロ　待望の新作ですね
+私的に順番で３号店を舞台にやって欲しかったんですがね(笑)
+女性キャラも良い感じなので文句は言えませんがね(爆)
+ただ一つ言うなればキャラの声の音質が悪かったことでしょうかね
+CGは綺麗なんだからこう言うところにも気を配って欲しかったですね。
+[/note]
+[subject]お金:calc,0x6C83E4,0x00,0x1869F,unsigned,little_e
+[subject]主人公パラメータ:dir
+	[subject]容姿:calc,0x6C840C,0x00,0x78,unsigned,little_e
+	[subject]優しさ:calc,0x6C8410,0x00,0x78,unsigned,little_e
+	[subject]根性:calc,0x6C8414,0x00,0x78,unsigned,little_e
+	[subject]学力:calc,0x6C8418,0x00,0x78,unsigned,little_e
+	[subject]体力:calc,0x6C841C,0x00,0x78,unsigned,little_e
+	[subject]不評:calc,0x6C8420,0x00,0x78,unsigned,little_e
+	[subject]体調:calc,0x6C8424,0x00,0x78,unsigned,little_e
+[root]
+[back]
+[subject]キャラ好感度:dir
+	[subject]高井さやか好感度:calc,0x6C8460,0x00,0xFFFF,unsigned,little_e
+	[subject]愛沢ともみ好感度:calc,0x6C8464,0x00,0xFFFF,unsigned,little_e
+	[subject]羽瀬川朱美好感度:calc,0x6C8478,0x00,0xFFFF,unsigned,little_e
+	[subject]岩倉夏姫好感度:calc,0x6C8468,0x00,0xFFFF,unsigned,little_e
+	[subject]冬木美春好感度:calc,0x6C8470,0x00,0xFFFF,unsigned,little_e
+	[subject]木ノ下貴子好感度:calc,0x6C846C,0x00,0xFFFF,unsigned,little_e
+	[subject]君島ナナ好感度:calc,0x6C8474,0x00,0xFFFF,unsigned,little_e
+[root]
+[back]
+[subject]CG＆おまけ:dir
+	[subject]CG ALL ON:toggle,0x6CA410,0x6CAA0C-01,00
+	[subject]HシーンリプレイALL ON:toggle,0x6CABE0,0x6CAC3C-01,00
+	[subject]声優からの一言ALL ON:toggle,0x6CA078,0x6A090-01,00
+[root]
+[back]
+[/script]
+///////////////////////////////////////////////////////////////////
+//        　　　　　☆いきなり　はっぴぃベル☆　    　　　　 　  //
+//        　　 面白い、横田守氏 だいすきっ子の私ですが　　       //
+//         　　　それを差し引いても面白いです　　　　　　　　　　//
+//　　　　　　　パステーテのイベントが特にね(笑)　　　　 　　　　//
+//        　　　　ゾルベット将軍最高です(笑)　　　　　　　　     //
+//                                                               //
+///////////////////////////////////////////////////////////////////
+
+[script]
+[title]いきなり はっぴぃベル　ver.1.01
+[process]FIANCEE.EXE
+[maker]Terios
+[creator]刹那＆ジャン太郎
+[note]
+面白いね～、コレを使用するに当っては
+下のURL（Terios HP）からver.101をいれてください。
+http://www.terios.net/
+[/note]
+[subject]ギャラリーALL ON:toggle,0x55DB1D,0x55DC61-01,00
+[back]
+[/script]

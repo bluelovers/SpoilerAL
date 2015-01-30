@@ -1,0 +1,79 @@
+[subject]F2Aバッファロー:dir
+			[replace]0x0,tk3航空機性能,offset
+[subject]F4Fワイルドキャット:dir
+			[replace]0xF,tk3航空機性能,offset
+[subject]F4Uコルセア:dir
+			[replace]0x1E,tk3航空機性能,offset
+[subject]F6Fヘルキャット:dir
+			[replace]0x2D,tk3航空機性能,offset
+[subject]F8Fベアキャット:dir
+			[replace]0x3C,tk3航空機性能,offset
+[subject]F7Fタイガーキャット:dir
+			[replace]0x4B,tk3航空機性能,offset
+[subject]FHファントム:dir
+			[replace]0x5A,tk3航空機性能,offset
+[subject]SBDドーントレス:dir
+			[replace]0x69,tk3航空機性能,offset
+[subject]SB2Cヘルダイバー:dir
+			[replace]0x78,tk3航空機性能,offset
+[subject]TBDデバステイター:dir
+			[replace]0x87,tk3航空機性能,offset
+[subject]TBFアベンジャー:dir
+			[replace]0x96,tk3航空機性能,offset
+[subject]BTDデストロイヤー:dir
+			[replace]0xA5,tk3航空機性能,offset
+[subject]BT2Dスカイレイダー:dir
+			[replace]0xB4,tk3航空機性能,offset
+[subject]PVベンチュラ:dir
+			[replace]0xC3,tk3航空機性能,offset
+[subject]PB4Y Pバティア:dir
+			[replace]0xD2,tk3航空機性能,offset
+[subject]OS2U Kフィッシャー:dir
+			[replace]0xE1,tk3航空機性能,offset
+[subject]SCシーホーク:dir
+			[replace]0xF0,tk3航空機性能,offset
+[subject]PBMマリナー:dir
+			[replace]0xFF,tk3航空機性能,offset
+[subject]PBYカタリナ:dir
+			[replace]0x10E,tk3航空機性能,offset
+[subject]PB2Yコロネド:dir
+			[replace]0x11D,tk3航空機性能,offset
+[subject]P-36ホーク:dir
+			[replace]0x12C,tk3航空機性能,offset
+[subject]P-38ライトニング:dir
+			[replace]0x13B,tk3航空機性能,offset
+[subject]P-39エアコブラ:dir
+			[replace]0x14A,tk3航空機性能,offset
+[subject]P-40ウォーホーク:dir
+			[replace]0x159,tk3航空機性能,offset
+[subject]P-47サンダーボルト:dir
+			[replace]0x168,tk3航空機性能,offset
+[subject]P-51ムスタング:dir
+			[replace]0x177,tk3航空機性能,offset
+[subject]P-63キングコブラ:dir
+			[replace]0x186,tk3航空機性能,offset
+[subject]P-61 Bウィドウ:dir
+			[replace]0x195,tk3航空機性能,offset
+[subject]P-59エアラコメット:dir
+			[replace]0x1A4,tk3航空機性能,offset
+[subject]P-80 Sスター:dir
+			[replace]0x1B3,tk3航空機性能,offset
+[subject]A-20ハボック:dir
+			[replace]0x1C2,tk3航空機性能,offset
+[subject]A-26インベーダー:dir
+			[replace]0x1D1,tk3航空機性能,offset
+[subject]A-28ハドソン:dir
+			[replace]0x1E0,tk3航空機性能,offset
+[subject]B-25ミッチェル:dir
+			[replace]0x1EF,tk3航空機性能,offset
+[subject]B-26マローダー:dir
+			[replace]0x1FE,tk3航空機性能,offset
+[subject]B-17フライングフォートレス:dir
+			[replace]0x20D,tk3航空機性能,offset
+[subject]B-24リベレーター:dir
+			[replace]0x21C,tk3航空機性能,offset
+[subject]B-29スーパーフォートレス:dir
+			[replace]0x22B,tk3航空機性能,offset
+[subject]B-36ピースメーカー:dir
+			[replace]0x23A,tk3航空機性能,offset
+[back]

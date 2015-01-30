@@ -1,0 +1,15 @@
+[group]ステータス1
+	[subject]体力(%)  : calc,0x00,0,100
+	[subject]体力  : calc,0x04,0,100
+	[subject]知力  : calc,0x08,0,100
+	[subject]魅力  : calc,0x0C,0,100
+	[subject]接客  : calc,0x10,0,100
+	[subject]料理  : calc,0x14,0,100
+[/group]
+[group]ステータス2
+	[subject]フロア  : calc,0x1C,0,99900
+	[subject]カウンター: calc,0x20,0,99900
+	[subject]厨房  : calc,0x24,0,99900
+	[subject]経理  : calc,0x28,0,99900
+	[subject]清掃  : calc,0x2C,0,99900
+[/group]

@@ -1,0 +1,6 @@
+[subject]名前前:list,0x0,馬名,0x0000,1,
+[subject]名前後:list,0x2,馬名,0x0000,1,
+[subject]父親血統:calc,0x04,0x0000,8000,
+[subject]母親血統:calc,0x06,0x0000,8000,
+[subject]系統:list,0x8,系列,0x00,1,
+[back]

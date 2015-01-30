@@ -1,0 +1,7 @@
+[group]サーチ
+[size]4
+ [val]*.*.
+ [input]体力(現在値): calc,no,0,250
+ [input]体力(最高値): calc,no,0,250
+[size]4
+[/group]

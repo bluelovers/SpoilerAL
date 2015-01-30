@@ -1,0 +1,4 @@
+[group]サーチ
+ [val]FFFFFFFF*.00000000
+ [input]精力値(最高値): calc,no,0,99
+[/group]

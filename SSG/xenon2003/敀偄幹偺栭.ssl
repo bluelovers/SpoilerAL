@@ -1,0 +1,73 @@
+[group]_‘ã—ö
+		[subject]SEX‰ñ”: calc,0x00,0,99
+		[subject]ç[—Í: calc,0x04,0,5
+	[subject]æÃ‚é:dir
+		[subject]³íˆÊ: calc,0x0C,0,4
+		[subject]Œã”wˆÊ: calc,0x10,0,4
+		[subject]‹RæˆÊ: calc,0x14,0,4
+		[subject]ÀˆÊ: calc,0x18,0,4
+	[back]
+	[subject]d‚Ş:dir
+		[subject]Œûˆú: calc,0x1C,0,4
+		[subject]K:  calc,0x20,0,4
+		[subject]“¹‹ï: calc,0x24,0,4
+	[back]
+	[subject]˜M‚Ô:dir
+		[subject]•ú’u: calc,0x08,0,99
+		[subject]‘½ˆú: calc,0x30,0,4
+
+	[back]
+	[subject]‹»‚¶‚é:dir
+		[subject]©ˆÔ: calc,0x34,0,4
+		[subject]–Ø‹ôlŒ`: calc,0x3C,0,4
+	[back]
+[/group]
+
+[group]–¶•¿
+		[subject]SEX‰ñ”: calc,0x00,0,99
+		[subject]ç[—Í: calc,0x04,0,5
+	[subject]æÃ‚é:dir
+		[subject]³íˆÊ: calc,0x0C,0,4
+		[subject]Œã”wˆÊ: calc,0x10,0,4
+		[subject]‹RæˆÊ: calc,0x14,0,4
+		[subject]ÀˆÊ: calc,0x18,0,4
+	[back]
+	[subject]d‚Ş:dir
+		[subject]Œûˆú: calc,0x1C,0,4
+		[subject]K:  calc,0x20,0,4
+		[subject]“¹‹ï: calc,0x24,0,4
+		[subject]–ìŠO: calc,0x28,0,4
+	[back]
+	[subject]˜M‚Ô:dir
+		[subject]˜ZE‹ã: calc,0x2C,0,4
+		[subject]˜Io: calc,0x30,0,4
+	[back]
+	[subject]‹»‚¶‚é:dir
+		[subject]©ˆÔ: calc,0x3C,0,4
+	[back]
+[/group]
+[group]ˆÉ–œ—¢
+		[subject]SEX‰ñ”: calc,0x00,0,99
+		[subject]ç[—Í: calc,0x04,0,5
+	[subject]æÃ‚é:dir
+		[subject]³íˆÊ: calc,0x0C,0,4
+		[subject]Œã”wˆÊ: calc,0x10,0,4
+		[subject]‹RæˆÊ: calc,0x14,0,4
+		[subject]ÀˆÊ: calc,0x18,0,4
+	[back]
+	[subject]d‚Ş:dir
+		[subject]Œûˆú: calc,0x1C,0,4
+		[subject]K:  calc,0x20,0,4
+		[subject]“¹‹ï: calc,0x24,0,4
+		[subject]@: calc,0x28,0,4
+	[back]
+	[subject]˜M‚Ô:dir
+		[subject]Šß‹ï: calc,0x28,0,4
+		[subject]‘½ˆú: calc,0x30,0,4
+		[subject]–Ú‰B‚µ: calc,0x34,0,4
+		[subject]@: calc,0x38,0,4
+	[back]
+	[subject]‹»‚¶‚é:dir
+		[subject]©ˆÔ: calc,0x34,0,4
+	[back]
+[/group]

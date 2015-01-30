@@ -1,0 +1,25 @@
+[group]ステータス
+	[subject]ALL-99: toggle,0x00,0x15-6300000063630000,0000000000000000
+	[subject]愛情A: calc,0x00,0,99
+	[subject]愛情B: calc,0x04,0,99
+	[subject]愛情C: calc,0x05,0,99
+	[subject]忠誠A: calc,0x08,0,99
+	[subject]忠誠B: calc,0x0C,0,99
+	[subject]忠誠C: calc,0x0D,0,99
+	[subject]体力A: calc,0x10,0,99
+	[subject]体力B: calc,0x14,0,99
+	[subject]体力C: calc,0x15,0,99
+[/group]
+[group]技能
+	[subject]ALL-99: toggle,0x00,0x03-63000000,00000000
+	[subject]家事LV: calc,0x00,0,99
+	[subject]   EXP: calc,0x04,0,99
+	[subject]教養LV: calc,0x08,0,99
+	[subject]   EXP: calc,0x0C,0,99
+	[subject]性交LV: calc,0x10,0,99
+	[subject]   EXP: calc,0x14,0,99
+[/group]
+[group]CGFULL
+0x4417E4,01,00
+0x44189A,0x441BAB-0100,0000
+[/group]

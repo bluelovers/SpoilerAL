@@ -1,0 +1,8 @@
+[group]ステータス
+	[subject]迅速さ: calc,0x00,00,100
+	[subject]堅実さ: calc,0x04,00,100
+	[subject]運: calc,0x08,00,100
+	[subject]戦闘力: calc,0x0C,00,100
+	[subject]忠誠心: calc,0x10,00,100
+	[subject]日当: calc,0x14,00,255
+[/group]

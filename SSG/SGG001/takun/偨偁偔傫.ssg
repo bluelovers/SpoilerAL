@@ -1,0 +1,71 @@
+SSG for SpoilerAL ver 3.2
+[script]
+[title]英雄伝説Ⅴ「海の檻歌」
+[process]ED5_WIN.EXE
+[maker]Falcom
+[creator]たあくん
+[note]wordwrap
+注意
+レベルが上がる毎に経験値、ＨＰ、ＭＰが変更します。
+値を固定しておけば戦闘になると変更値に戻ります。たぶん(^^;)
+あと最大までＬＶ．が上がってもパーティから抜けて戻ってきたときＬＶ．が下がっているときがあります。(;_;)
+[/note]
+[subject]このSSGを使用して何が起こっても作者は一切責任を負いません:dir
+[subject]上記の文を了承します:dir
+[subject]フォルト:dir
+	[replace]0x6A65B8,ED5,offset
+[back]
+[subject]ジャン:dir
+	[replace]0x6A6C10,ED5,offset
+[back]
+[subject]マクベイ:dir
+	[replace]0x6A662C,ED5,offset
+[back]
+[subject]ウーナ:dir
+	[replace]0x6A66A0,ED5,offset
+[back]
+[subject]ジャン＆リック:dir
+	[replace]0x6A6714,ED5,offset
+[back]
+[subject]シャオ:dir
+	[replace]0x6A6A40,ED5,offset
+[back]
+[subject]レイチェル:dir
+	[replace]0x6A69CC,ED5,offset
+[back]
+[subject]アルトス:dir
+	[replace]0x6A67FC,ED5,offset
+[back]
+[subject]スレイド:dir
+	[replace]0x6A6870,ED5,offset
+[back]
+[subject]アリア:dir
+	[replace]0x6A68E4,ED5,offset
+[back]
+[subject]パルマン:dir
+	[replace]0x6A6AB4,ED5,offset
+[back]
+[subject]アイーダ:dir
+	[replace]0x6A6CF8,ED5,offset
+[back]
+[subject]フロード:dir
+	[replace]0x6A6EC8,ED5,offset
+[back]
+[subject]マイル:dir
+	[replace]0x6A6B9C,ED5,offset
+[back]
+[subject]アヴィン:dir
+	[replace]0x6A6B28,ED5,offset
+[back]
+[subject]デュオール:dir
+	[replace]0x6A6D6C,ED5,offset
+[back]
+[subject]ミッシェル:dir
+	[replace]0x6A6958,ED5,offset
+[back]
+[subject]トーマス:dir
+	[replace]0x6A6C84,ED5,offset
+[root]
+[subject]所持金(G):calc,0x6A2B1C,0x0,0xF423F,signed,little_e
+[subject]換金物(R):calc,0x6A2B20,0x0,0x270F,signed,little_e
+[/script]

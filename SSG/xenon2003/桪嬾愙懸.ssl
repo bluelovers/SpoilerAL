@@ -1,0 +1,6 @@
+[group]ステータス
+	[subject]末利  : calc,0x00,00,10
+	[subject]汐里  : calc,0x04,00,10
+	[subject]美乃  : calc,0x08,00,10
+	[subject]渚  : calc,0x0C,00,10
+[/group]

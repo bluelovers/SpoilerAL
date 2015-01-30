@@ -1,0 +1,108 @@
+[group]クラウド
+[subject]Lv:calc,0x00,0,99,
+[subject]現在HP:calc,0x2b,0,9999,
+[subject]現在MP:calc,0x2f,0,999,
+[subject]最大HP:calc,0x2d,0,9999,
+[subject]最大MP:calc,0x31,0,999,
+[subject]STMax化/実行/_: toggle,0x01,ffffffffffff
+[subject]リミット技取得Lv4/取得 /_: toggle,0x21,db02
+[subject]リミット技取得Lv3/取得 /_: toggle,0x21,db00
+[subject]リミットMax/実行/: toggle,0x0e,ff,00
+[subject]武器マテリア1個目Max/実行/: toggle,0x40,ffffff
+[/group]
+[group]バレット
+[subject]Lv:calc,0x00,0,99,
+[subject]現在HP:calc,0x2b,0,9999,
+[subject]現在MP:calc,0x2f,0,999,
+[subject]最大HP:calc,0x2d,0,9999,
+[subject]最大MP:calc,0x31,0,999,
+[subject]STMax化/実行/_: toggle,0x01,ffffffffffff
+[subject]リミット技取得Lv4/取得 /_: toggle,0x21,db02
+[subject]リミット技取得Lv3/取得 /_: toggle,0x21,db00
+[subject]リミットMax/実行/: toggle,0x0e,ff,00
+[subject]武器マテリア1個目Max/実行/: toggle,0x40,ffffff
+[/group]
+[group]ティファ
+[subject]Lv:calc,0x00,0,99,
+[subject]現在HP:calc,0x2b,0,9999,
+[subject]現在MP:calc,0x2f,0,999,
+[subject]最大HP:calc,0x2d,0,9999,
+[subject]最大MP:calc,0x31,0,999,
+[subject]STMax化/実行/_: toggle,0x01,ffffffffffff
+[subject]リミット技取得Lv4/取得 /_: toggle,0x21,db02
+[subject]リミット技取得Lv3/取得 /_: toggle,0x21,db00
+[subject]リミットMax/実行/: toggle,0x0e,ff,00
+[subject]武器マテリア1個目Max/実行/: toggle,0x40,ffffff
+[/group]
+[group]エアリス
+[subject]Lv:calc,0x00,0,99,
+[subject]現在HP:calc,0x2b,0,9999,
+[subject]現在MP:calc,0x2f,0,999,
+[subject]最大HP:calc,0x2d,0,9999,
+[subject]最大MP:calc,0x31,0,999,
+[subject]STMax化/実行/_: toggle,0x01,ffffffffffff
+[subject]リミット技取得Lv4/取得 /_: toggle,0x21,db02
+[subject]リミット技取得Lv3/取得 /_: toggle,0x21,db00
+[subject]リミットMax/実行/: toggle,0x0e,ff,00
+[subject]武器マテリア1個目Max/実行/: toggle,0x40,ffffff
+[/group]
+[group]レッドXIII
+[subject]Lv:calc,0x00,0,99,
+[subject]現在HP:calc,0x2b,0,9999,
+[subject]現在MP:calc,0x2f,0,999,
+[subject]最大HP:calc,0x2d,0,9999,
+[subject]最大MP:calc,0x31,0,999,
+[subject]STMax化/実行/_: toggle,0x01,ffffffffffff
+[subject]リミット技取得Lv4/取得 /_: toggle,0x21,db02
+[subject]リミット技取得Lv3/取得 /_: toggle,0x21,db00
+[subject]リミットMax/実行/: toggle,0x0e,ff,00
+[subject]武器マテリア1個目Max/実行/: toggle,0x40,ffffff
+[/group]
+[group]ユフィー
+[subject]Lv:calc,0x00,0,99,
+[subject]現在HP:calc,0x2b,0,9999,
+[subject]現在MP:calc,0x2f,0,999,
+[subject]最大HP:calc,0x2d,0,9999,
+[subject]最大MP:calc,0x31,0,999,
+[subject]STMax化/実行/_: toggle,0x01,ffffffffffff
+[subject]リミット技取得Lv4/取得 /_: toggle,0x21,db02
+[subject]リミット技取得Lv3/取得 /_: toggle,0x21,db00
+[subject]リミットMax/実行/: toggle,0x0e,ff,00
+[subject]武器マテリア1個目Max/実行/: toggle,0x40,ffffff
+[/group]
+[group]ケットーシー
+[subject]Lv:calc,0x00,0,99,
+[subject]現在HP:calc,0x2b,0,9999,
+[subject]現在MP:calc,0x2f,0,999,
+[subject]最大HP:calc,0x2d,0,9999,
+[subject]最大MP:calc,0x31,0,999,
+[subject]STMax化/実行/_: toggle,0x01,ffffffffffff
+[subject]リミット技取得Lv4/取得 /_: toggle,0x21,db02
+[subject]リミット技取得Lv3/取得 /_: toggle,0x21,db00
+[subject]リミットMax/実行/: toggle,0x0e,ff,00
+[subject]武器マテリア1個目Max/実行/: toggle,0x40,ffffff
+[/group]
+[group]ヴィセント
+[subject]Lv:calc,0x00,0,99,
+[subject]現在HP:calc,0x2b,0,9999,
+[subject]現在MP:calc,0x2f,0,999,
+[subject]最大HP:calc,0x2d,0,9999,
+[subject]最大MP:calc,0x31,0,999,
+[subject]STMax化/実行/_: toggle,0x01,ffffffffffff
+[subject]リミット技取得Lv4/取得 /_: toggle,0x21,db02
+[subject]リミット技取得Lv3/取得 /_: toggle,0x21,db00
+[subject]リミットMax/実行/: toggle,0x0e,ff,00
+[subject]武器マテリア1個目Max/実行/: toggle,0x40,ffffff
+[/group]
+[group]シド
+[subject]Lv:calc,0x00,0,99,
+[subject]現在HP:calc,0x2b,0,9999,
+[subject]現在MP:calc,0x2f,0,999,
+[subject]最大HP:calc,0x2d,0,9999,
+[subject]最大MP:calc,0x31,0,999,
+[subject]STMax化/実行/_: toggle,0x01,ffffffffffff
+[subject]リミット技取得Lv4/取得 /_: toggle,0x21,db02
+[subject]リミット技取得Lv3/取得 /_: toggle,0x21,db00
+[subject]リミットMax/実行/: toggle,0x0e,ff,00
+[subject]武器マテリア1個目Max/実行/: toggle,0x40,ffffff
+[/group]

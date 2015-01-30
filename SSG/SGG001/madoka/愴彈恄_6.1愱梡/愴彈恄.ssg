@@ -1,0 +1,50 @@
+SSG for SpoilerAL ver 6.1
+[script]
+[title]戦女神(Vr6.1)
+[process]main.exe
+[maker]eushully
+[creator]madoka
+[Refix date]2004/12/12
+[note]
+発 売 日   1999/01/29
+ジャンル   RPG
+原画       麒麟麦酒/ぱぴよん
+シナリオ 　KAI 
+
+http://www.phoenix-c.or.jp/~eushully/
+WindowsXPで動作を確認
+GameVr_6.1
+古いGameですし、XP環境は本来動作保障されて
+いませんがⅡをPlayしてみてXP環境で
+IをPlay，解析をしてみようかなと思いました。
+尚、初期Vrはアドレスが違いますので改造できません。
+1000～1030ずれています。
+
+[/note]
+[subject]所持金: calc,0x498ef0,0,65535
+[subject]経験値: calc,0x498eec,0,65535
+[subject]現在HP:calc,0x4a2b1c,0,999,
+[subject]剣技/魔術回数:dir
+[subject]剣技All/On=09 Off=00: toggle,0x516faf,0x516fb5-09,00
+[subject]魔術All/On=09 Off=00: toggle,0x516fa8,0x516fae-09,00
+[back]
+[subject]アイテムAll:dir
+[subject]アイテムAll/On=99 Off=00: toggle,0x49fc02,0x49fc46-6300,0000
+[subject]アイテムAll/On=50 Off=00: toggle,0x49fc02,0x49fc46-3200,0000
+[back]
+[subject]武器All:dir
+[subject]武器All/On=01 Off=00: toggle,0x49fa72,0x49fab0-0100,0000
+[back]
+[subject]防具All:dir
+[subject]防具All/On=01 Off=00: toggle,0x49fc42,0x49fc60-0100,0000
+[back]
+[subject]装飾品All:dir
+[subject]装飾品All/On=01 Off=00: toggle,0x49fc62,0x49fc80-0100,0000
+[back]
+[subject]ステータス:dir
+[subject]セリカ:dir
+[replace]0x49a384,戦女神->ステータス
+[back]
+[back]
+[root]
+[/script]

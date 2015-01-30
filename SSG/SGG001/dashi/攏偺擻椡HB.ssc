@@ -1,0 +1,10 @@
+[subject]素質:calc,0x00,0,255,
+[subject]スピード:calc,0x01,0,255,
+[subject]スタミナ:calc,0x02,0,255,
+[subject]毛色:bitlist,0x03,馬HB33,1,
+[subject]毛色勝負魂他:bitlist,0x04,馬HB44,1,
+[subject]成長:bitlist,0x05,馬HB5,1,
+[subject]性格他:bitlist,0x06,馬HB6,1,
+[subject]適正:bitlist,0x07,馬HB8,1,
+[subject]特徴:bitlist,0x08,馬HB9,1,
+[back]

@@ -1,0 +1,86 @@
+[subject]主人公:dir
+	[replace]0x0,戦士能力,offset
+[subject]ウィンストン＝フレッド:dir
+	[replace]0x4C,戦士能力,offset
+[subject]ニールセン＝テルマ:dir
+	[replace]0x98,戦士能力,offset
+[subject]フリード＝リッキー:dir
+	[replace]0xE4,戦士能力,offset
+[subject]ブラウン＝ヘンリー:dir
+	[replace]0x130,戦士能力,offset
+[subject]ヒコックス＝キャサリン:dir
+	[replace]0x17C,戦士能力,offset
+[subject]メイヤー＝サミュエル:dir
+	[replace]0x1C8,戦士能力,offset
+[subject]ハイマンズ＝サマンサ:dir
+	[replace]0x214,戦士能力,offset
+[subject]デファルマ＝リカルト:dir
+	[replace]0x260,戦士能力,offset
+[subject]ミナトス＝ホセ:dir
+	[replace]0x2AC,戦士能力,offset
+[subject]ノルテナ＝アン:dir
+	[replace]0x2F8,戦士能力,offset
+[subject]エド＝グリモス:dir
+	[replace]0x344,戦士能力,offset
+[subject]テーラー＝ヴィンセント:dir
+	[replace]0x390,戦士能力,offset
+[subject]シュルツマン＝ハンス:dir
+	[replace]0x3DC,戦士能力,offset
+[subject]ヘルムート＝リタ:dir
+	[replace]0x428,戦士能力,offset
+[subject]ドヴァリエ＝ジャン:dir
+	[replace]0x474,戦士能力,offset
+[subject]マッケンジー＝リンダ:dir
+	[replace]0x4C0,戦士能力,offset
+[subject]キローフ＝ヘルガ:dir
+	[replace]0x50C,戦士能力,offset
+[subject]トルベツコイ＝イワノフ:dir
+	[replace]0x558,戦士能力,offset
+[subject]リャザノフ＝ニコライ:dir
+	[replace]0x5A4,戦士能力,offset
+[subject]スレイマン＝イザム:dir
+	[replace]0x5F0,戦士能力,offset
+[subject]シュレーヌ＝エレノア:dir
+	[replace]0x63C,戦士能力,offset
+[subject]ムハマンド＝シャヘ:dir
+	[replace]0x688,戦士能力,offset
+[subject]ディナワリ＝アルバグト:dir
+	[replace]0x6D4,戦士能力,offset
+[subject]コンコーネ＝ロベルト:dir
+	[replace]0x720,戦士能力,offset
+[subject]マクユニ＝ギブ:dir
+	[replace]0x76C,戦士能力,offset
+[subject]バルドー＝ディエゴ:dir
+	[replace]0x7B8,戦士能力,offset
+[subject]アンベート＝ダーナン:dir
+	[replace]0x804,戦士能力,offset
+[subject]チャイナム＝ミン:dir
+	[replace]0x850,戦士能力,offset
+[subject]ザンボイ＝エンリコ:dir
+	[replace]0x89C,戦士能力,offset
+[subject]ルビス＝バンタン:dir
+	[replace]0x8E8,戦士能力,offset
+[subject]李＝殿俊:dir
+	[replace]0x934,戦士能力,offset
+[subject]周＝京華:dir
+	[replace]0x980,戦士能力,offset
+[subject]趙＝覇先:dir
+	[replace]0x9CC,戦士能力,offset
+[subject]呉＝永淑:dir
+	[replace]0xA18,戦士能力,offset
+[subject]本田＝泉:dir
+	[replace]0xA64,戦士能力,offset
+[subject]長崎＝陽子:dir
+	[replace]0xAB0,戦士能力,offset
+[subject]戸田＝雄平:dir
+	[replace]0xAFC,戦士能力,offset
+[subject]キャラハン＝フィリップ:dir
+	[replace]0xB48,戦士能力,offset
+[subject]ムーア＝ケイト:dir
+	[replace]0xB94,戦士能力,offset
+[subject]ウィンストン＝ジェームス:dir
+	[replace]0xBE0,戦士能力,offset
+[subject]景山＝耕平:dir
+	[replace]0x134C,戦士能力,offset
+[subject]高崎＝静:dir
+	[replace]0x1398,戦士能力,offset

@@ -1,0 +1,170 @@
+[subject]全艦鉄鋼資金0（敵陣営には使用厳禁）:toggle,0x0,0xC52-??????????????????????????????????????????????????????00000000??????????????,??????????????????????????????????????????????????????00000000??????????????
+[subject]1番艦:dir
+	[replace]0x0,tk3艦船性能,offset
+[subject]2番艦:dir
+	[replace]0x26,tk3艦船性能,offset
+[subject]3番艦:dir
+	[replace]0x4C,tk3艦船性能,offset
+[subject]4番艦:dir
+	[replace]0x72,tk3艦船性能,offset
+[subject]5番艦:dir
+	[replace]0x98,tk3艦船性能,offset
+[subject]6番艦:dir
+	[replace]0xBE,tk3艦船性能,offset
+[subject]7番艦:dir
+	[replace]0xE4,tk3艦船性能,offset
+[subject]8番艦:dir
+	[replace]0x10A,tk3艦船性能,offset
+[subject]9番艦:dir
+	[replace]0x130,tk3艦船性能,offset
+[subject]10番艦:dir
+	[replace]0x156,tk3艦船性能,offset
+[subject]11番艦:dir
+	[replace]0x17C,tk3艦船性能,offset
+[subject]12番艦:dir
+	[replace]0x1A2,tk3艦船性能,offset
+[subject]13番艦:dir
+	[replace]0x1C8,tk3艦船性能,offset
+[subject]14番艦:dir
+	[replace]0x1EE,tk3艦船性能,offset
+[subject]15番艦:dir
+	[replace]0x214,tk3艦船性能,offset
+[subject]16番艦:dir
+	[replace]0x23A,tk3艦船性能,offset
+[subject]17番艦:dir
+	[replace]0x260,tk3艦船性能,offset
+[subject]18番艦:dir
+	[replace]0x286,tk3艦船性能,offset
+[subject]19番艦:dir
+	[replace]0x2AC,tk3艦船性能,offset
+[subject]20番艦:dir
+	[replace]0x2D2,tk3艦船性能,offset
+[subject]21番艦:dir
+	[replace]0x2F8,tk3艦船性能,offset
+[subject]22番艦:dir
+	[replace]0x31E,tk3艦船性能,offset
+[subject]23番艦:dir
+	[replace]0x344,tk3艦船性能,offset
+[subject]24番艦:dir
+	[replace]0x36A,tk3艦船性能,offset
+[subject]25番艦:dir
+	[replace]0x390,tk3艦船性能,offset
+[subject]26番艦:dir
+	[replace]0x3B6,tk3艦船性能,offset
+[subject]27番艦:dir
+	[replace]0x3DC,tk3艦船性能,offset
+[subject]28番艦:dir
+	[replace]0x402,tk3艦船性能,offset
+[subject]29番艦:dir
+	[replace]0x428,tk3艦船性能,offset
+[subject]30番艦:dir
+	[replace]0x44E,tk3艦船性能,offset
+[subject]31番艦:dir
+	[replace]0x474,tk3艦船性能,offset
+[subject]32番艦:dir
+	[replace]0x49A,tk3艦船性能,offset
+[subject]33番艦:dir
+	[replace]0x4C0,tk3艦船性能,offset
+[subject]34番艦:dir
+	[replace]0x4E6,tk3艦船性能,offset
+[subject]35番艦:dir
+	[replace]0x50C,tk3艦船性能,offset
+[subject]36番艦:dir
+	[replace]0x532,tk3艦船性能,offset
+[subject]37番艦:dir
+	[replace]0x558,tk3艦船性能,offset
+[subject]38番艦:dir
+	[replace]0x57E,tk3艦船性能,offset
+[subject]39番艦:dir
+	[replace]0x5A4,tk3艦船性能,offset
+[subject]40番艦:dir
+	[replace]0x5CA,tk3艦船性能,offset
+[subject]41番艦:dir
+	[replace]0x5F0,tk3艦船性能,offset
+[subject]42番艦:dir
+	[replace]0x616,tk3艦船性能,offset
+[subject]43番艦:dir
+	[replace]0x63C,tk3艦船性能,offset
+[subject]44番艦:dir
+	[replace]0x662,tk3艦船性能,offset
+[subject]45番艦:dir
+	[replace]0x688,tk3艦船性能,offset
+[subject]46番艦:dir
+	[replace]0x6AE,tk3艦船性能,offset
+[subject]47番艦:dir
+	[replace]0x6D4,tk3艦船性能,offset
+[subject]48番艦:dir
+	[replace]0x6FA,tk3艦船性能,offset
+[subject]49番艦:dir
+	[replace]0x720,tk3艦船性能,offset
+[subject]50番艦:dir
+	[replace]0x746,tk3艦船性能,offset
+[subject]51番艦:dir
+	[replace]0x76C,tk3艦船性能,offset
+[subject]52番艦:dir
+	[replace]0x792,tk3艦船性能,offset
+[subject]53番艦:dir
+	[replace]0x7B8,tk3艦船性能,offset
+[subject]54番艦:dir
+	[replace]0x7DE,tk3艦船性能,offset
+[subject]55番艦:dir
+	[replace]0x804,tk3艦船性能,offset
+[subject]56番艦:dir
+	[replace]0x82A,tk3艦船性能,offset
+[subject]57番艦:dir
+	[replace]0x850,tk3艦船性能,offset
+[subject]58番艦:dir
+	[replace]0x876,tk3艦船性能,offset
+[subject]59番艦:dir
+	[replace]0x89C,tk3艦船性能,offset
+[subject]60番艦:dir
+	[replace]0x8C2,tk3艦船性能,offset
+[subject]61番艦:dir
+	[replace]0x8E8,tk3艦船性能,offset
+[subject]62番艦:dir
+	[replace]0x90E,tk3艦船性能,offset
+[subject]63番艦:dir
+	[replace]0x934,tk3艦船性能,offset
+[subject]64番艦:dir
+	[replace]0x95A,tk3艦船性能,offset
+[subject]65番艦:dir
+	[replace]0x980,tk3艦船性能,offset
+[subject]66番艦:dir
+	[replace]0x9A6,tk3艦船性能,offset
+[subject]67番艦:dir
+	[replace]0x9CC,tk3艦船性能,offset
+[subject]68番艦:dir
+	[replace]0x9F2,tk3艦船性能,offset
+[subject]69番艦:dir
+	[replace]0xA18,tk3艦船性能,offset
+[subject]70番艦:dir
+	[replace]0xA3E,tk3艦船性能,offset
+[subject]71番艦:dir
+	[replace]0xA64,tk3艦船性能,offset
+[subject]72番艦:dir
+	[replace]0xA8A,tk3艦船性能,offset
+[subject]73番艦:dir
+	[replace]0xAB0,tk3艦船性能,offset
+[subject]74番艦:dir
+	[replace]0xAD6,tk3艦船性能,offset
+[subject]75番艦:dir
+	[replace]0xAFC,tk3艦船性能,offset
+[subject]76番艦:dir
+	[replace]0xB22,tk3艦船性能,offset
+[subject]77番艦:dir
+	[replace]0xB48,tk3艦船性能,offset
+[subject]78番艦:dir
+	[replace]0xB6E,tk3艦船性能,offset
+[subject]79番艦:dir
+	[replace]0xB94,tk3艦船性能,offset
+[subject]80番艦:dir
+	[replace]0xBBA,tk3艦船性能,offset
+[subject]81番艦:dir
+	[replace]0xBE0,tk3艦船性能,offset
+[subject]82番艦:dir
+	[replace]0xC06,tk3艦船性能,offset
+[subject]83番艦:dir
+	[replace]0xC2C,tk3艦船性能,offset
+[subject]84番艦:dir
+	[replace]0xC52,tk3艦船性能,offset
+[back]

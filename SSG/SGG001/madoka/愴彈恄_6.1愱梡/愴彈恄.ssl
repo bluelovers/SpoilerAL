@@ -1,0 +1,9 @@
+[group]ステータス
+[subject] 筋力 :calc,0x000,0,255
+[subject] 体力 :calc,0x002,0,255
+[subject]敏捷性:calc,0x004,0,255
+[subject]器用度:calc,0x006,0,255
+[subject] 知性 :calc,0x008,0,255
+[subject]精神力:calc,0x00a,0,255
+[subject] 魅力 :calc,0x00c,0,255
+[/group]

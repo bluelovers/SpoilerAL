@@ -1,0 +1,23 @@
+SSG for SpoilerAL ver 3.4
+[script]
+[title]三国志Ⅷ with パワーアップキット
+[process]SAN8.EXE
+[maker]KOEI
+[creator]まぁくん
+[note]wordrap
+WinMe使用
+[/note]
+[subject]キャラ１:dir
+  [subject]経験値:dir
+    [subject]武力:calc,0xc12cde,1,99
+    [subject]知力:calc,0xc12cdf,1,99
+    [subject]政治:calc,0xc12ce0,1,99
+    [subject]人徳:calc,0xc12ce1,1,99
+[back]
+[subject]行動数  :calc,0xc12ce3,1,190
+[subject]お金:dir
+    [subject]国家予算:calc,0xb7b0c8,1,9999999
+    [subject]所持金　:calc,0xc12d28,1,9999
+[back]
+[back]
+[/script]

@@ -1,0 +1,22 @@
+[group]ステータス
+	[subject]愛情度  : calc,0x00,00,999
+	[subject]服従度  : calc,0x04,00,999
+	[subject]女興奮  : calc,0x08,00,999
+	[subject]女体力  : calc,0x0C,00,999
+	[subject]男興奮  : calc,0x10,00,999
+	[subject]男体力  : calc,0x14,00,999
+	[subject]耐ロウ  : calc,0x1C,00,999
+	[subject]耐 鞭   : calc,0x20,00,999
+	[subject]耐バイブ: calc,0x24,00,999
+[/group]
+[group]ステータス2
+	[subject]愛情度: calc,0x00,00,999
+	[subject]女興奮: calc,0x08,00,999
+	[subject]女体力: calc,0x10,00,999
+	[subject]男興奮: calc,0x18,00,999
+	[subject]男体力: calc,0x20,00,999
+	[subject]服従度: calc,0x28,00,999
+	[subject]耐ロウ: calc,0x30,00,999
+	[subject]耐鞭  : calc,0x38,00,999
+	[subject]耐バイブ: calc,0x40,00,999
+[/group]

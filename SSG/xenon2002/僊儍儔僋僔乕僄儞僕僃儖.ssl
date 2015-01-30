@@ -1,0 +1,6 @@
+[group]ステータス
+	[subject]HP(最大値): calc,0x00,0,999999
+	[subject]HP(現在値): calc,0x04,0,999999
+	[subject]EN(最大値): calc,0x08,0,999999
+	[subject]EN(現在値): calc,0x0C,0,999999
+[/group]

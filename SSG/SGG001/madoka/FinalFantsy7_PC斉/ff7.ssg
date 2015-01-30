@@ -1,0 +1,85 @@
+SSG for SpoilerAL ver 6.1
+[script]
+[title]Final Fantasy7(英語版)
+[process]ff7.exe
+[maker]EIDOS
+[creator]madoka
+[Refix date]2005/01/20
+[note]
+■EIDOS■
+■Final Fantasy7(英語版)■
+懐かしいGameを解析しました。
+今から7年も前のGameです。
+因みにEIDOS版ですので他版のPC版では
+E9E8のずれがあります。
+因みに両方所持しています。
+
+Win98SEのみ動作確認済
+Vr.1.01
+XP環境では、動作しませんでした。(Game本体)
+■2005/01/20更新
+■改造内容■
+ステータス変更
+リミット技全取得
+リミットメーターMax化
+武器マテリア1個目Max化
+アイテム最強のみ取得
+マテリア最強のみ取得
+ギル変更
+Save何時でも可能に改造
+
+実は、これらは一度うっぴー様の所でUPしました。
+ハンドル名は違いますが。
+ただ、記載したノートを無くしてしまったので今回
+最初から解析し直しました。
+
+それにしても戦闘シーンは何時観てもFF7はいいですね。
+尚、マテリア，アイテムの所持化をしますと上書きされます。
+中盤以降では、削除されてしまう物も発生しますので注意願います。
+
+[/note]
+[subject]ギル: calc,0xdc08b4,0,99999999
+[subject]何処でもSave可能/実行/: toggle,0xdc08fa,0000
+[subject]アイテム:dir
+[subject]最強アイテム01/所持/_: toggle,0xdc0238,32c70fc71dc78ec6aec69ec6bcc6c3c6
+[subject]最強アイテム02/所持/_: toggle,0xdc0248,d5c6e4c6ffc6fcc636c737c73ac706c6
+[back]
+[subject]マテリア:dir
+[subject]最強マテリア01/所持/_:toggle,0xdc04c0,07000000070000000a0000000a0000000c0000000c0000000c0000000c000000
+[subject]最強マテリア02/所持/_:toggle,0xdc04e0,1300000013000000130000001300000014000000140000001400000014000000
+[subject]最強マテリア03/所持/_:toggle,0xdc0500,2c0000002c0000002c0000002c00000049000000490000004900000049000000
+[subject]最強マテリア04/所持/_:toggle,0xdc0520,5a0000005a0000005a0000005a0000000b0000000b0000000f0000000f000000
+[subject]最強マテリア05/所持/_:toggle,0xdc0540,2b0000002b0000002b0000002b00000008000000080000002300000023000000
+[subject]最強マテリア06/所持/_:toggle,0xdc0560,230000002300000059000000590000005900000059000000
+[back]
+[subject]ステータス:dir
+[subject]クラウド:dir
+[replace]0xdbfd8d,ff7->クラウド
+[back]
+[subject]バレット:dir
+[replace]0xdbfe11,ff7->バレット
+[back]
+[subject]ティファ:dir
+[replace]0xdbfe95,ff7->ティファ
+[back]
+[subject]エアリス:dir
+[replace]0xdbff19,ff7->エアリス
+[back]
+[subject]レッドXIII:dir
+[replace]0xdbff9d,ff7->レッドXIII
+[back]
+[subject]ユフィー:dir
+[replace]0xdc0021,ff7->ユフィー
+[back]
+[subject]ケットーシー:dir
+[replace]0xdc00a5,ff7->ケットーシー
+[back]
+[subject]ヴィセント:dir
+[replace]0xdc0129,Ps4->ヴィセント
+[back]
+[subject]シド:dir
+[replace]0xdc01ad,Ps4->シド
+[back]
+[back]
+[root]
+[/script]

@@ -1,0 +1,9 @@
+[group]ステータス
+	[subject]愛情  : calc,0x00,00,255
+	[subject]蟲惑  : calc,0x02,00,255
+	[subject]忠従  : calc,0x04,00,255
+	[subject]閨技  : calc,0x06,00,255
+	[subject]体力  : calc,0x08,00,255
+	[subject]評価  : calc,0x0A,00,255
+	[subject]体力(MAX)  : calc,0x0C,00,255
+[/group]

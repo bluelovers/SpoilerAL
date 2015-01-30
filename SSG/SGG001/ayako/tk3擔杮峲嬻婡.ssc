@@ -1,0 +1,101 @@
+[subject]九六式艦上戦闘機:dir
+			[replace]0x0,tk3航空機性能,offset
+[subject]零式艦上戦闘機二一型:dir
+			[replace]0xF,tk3航空機性能,offset
+[subject]零式艦上戦闘機三二型:dir
+			[replace]0x1E,tk3航空機性能,offset
+[subject]零式艦上戦闘機五二型:dir
+			[replace]0x2D,tk3航空機性能,offset
+[subject]零式艦上戦闘機六三型:dir
+			[replace]0x3C,tk3航空機性能,offset
+[subject]艦上戦闘機烈風:dir
+			[replace]0x4B,tk3航空機性能,offset
+[subject]二式水上戦闘機:dir
+			[replace]0x5A,tk3航空機性能,offset
+[subject]水上戦闘機強風:dir
+			[replace]0x69,tk3航空機性能,offset
+[subject]局地戦闘機雷電:dir
+			[replace]0x78,tk3航空機性能,offset
+[subject]局地戦闘機紫電:dir
+			[replace]0x87,tk3航空機性能,offset
+[subject]局地戦闘機紫電改:dir
+			[replace]0x96,tk3航空機性能,offset
+[subject]局地戦闘機天雷:dir
+			[replace]0xA5,tk3航空機性能,offset
+[subject]局地戦闘機震電:dir
+			[replace]0xB4,tk3航空機性能,offset
+[subject]夜間戦闘機月光:dir
+			[replace]0xC3,tk3航空機性能,offset
+[subject]ロケット戦闘機秋水:dir
+			[replace]0xD2,tk3航空機性能,offset
+[subject]ジェット戦闘機橘花:dir
+			[replace]0xE1,tk3航空機性能,offset
+[subject]九九式艦上爆撃機:dir
+			[replace]0xF0,tk3航空機性能,offset
+[subject]艦上爆撃機彗星:dir
+			[replace]0xFF,tk3航空機性能,offset
+[subject]陸上攻撃機銀河:dir
+			[replace]0x10E,tk3航空機性能,offset
+[subject]戦略爆撃機富嶽:dir
+			[replace]0x11D,tk3航空機性能,offset
+[subject]九七式艦上攻撃機:dir
+			[replace]0x12C,tk3航空機性能,offset
+[subject]艦上攻撃機天山:dir
+			[replace]0x13B,tk3航空機性能,offset
+[subject]艦上攻撃機流星:dir
+			[replace]0x14A,tk3航空機性能,offset
+[subject]九六式陸上攻撃機:dir
+			[replace]0x159,tk3航空機性能,offset
+[subject]一式陸上攻撃機:dir
+			[replace]0x168,tk3航空機性能,offset
+[subject]陸上攻撃機深山:dir
+			[replace]0x177,tk3航空機性能,offset
+[subject]陸上攻撃機連山:dir
+			[replace]0x186,tk3航空機性能,offset
+[subject]零式水上偵察機:dir
+			[replace]0x195,tk3航空機性能,offset
+[subject]水上偵察機瑞雲:dir
+			[replace]0x1A4,tk3航空機性能,offset
+[subject]零式水上観測機:dir
+			[replace]0x1B3,tk3航空機性能,offset
+[subject]艦上偵察機彩雲:dir
+			[replace]0x1C2,tk3航空機性能,offset
+[subject]陸上偵察機東海:dir
+			[replace]0x1D1,tk3航空機性能,offset
+[subject]零式水上機:dir
+			[replace]0x1E0,tk3航空機性能,offset
+[subject]水上爆撃機晴嵐:dir
+			[replace]0x1EF,tk3航空機性能,offset
+[subject]九七式飛行艇:dir
+			[replace]0x1FE,tk3航空機性能,offset
+[subject]二式飛行艇:dir
+			[replace]0x20D,tk3航空機性能,offset
+[subject]戦闘機隼:dir
+			[replace]0x21C,tk3航空機性能,offset
+[subject]戦闘機鍾馗:dir
+			[replace]0x22B,tk3航空機性能,offset
+[subject]戦闘機屠龍:dir
+			[replace]0x23A,tk3航空機性能,offset
+[subject]戦闘機飛燕:dir
+			[replace]0x249,tk3航空機性能,offset
+[subject]戦闘機疾風:dir
+			[replace]0x258,tk3航空機性能,offset
+[subject]五式戦闘機:dir
+			[replace]0x267,tk3航空機性能,offset
+[subject]戦闘機キ１０２:dir
+			[replace]0x276,tk3航空機性能,offset
+[subject]九九式襲撃機:dir
+			[replace]0x285,tk3航空機性能,offset
+[subject]九九式双発軽爆撃機:dir
+			[replace]0x294,tk3航空機性能,offset
+[subject]九七式重爆撃機:dir
+			[replace]0x2A3,tk3航空機性能,offset
+[subject]爆撃機呑龍:dir
+			[replace]0x2B2,tk3航空機性能,offset
+[subject]爆撃機飛龍:dir
+			[replace]0x2C1,tk3航空機性能,offset
+[subject]九七式司令部偵察機:dir
+			[replace]0x2D0,tk3航空機性能,offset
+[subject]百式司令部偵察機:dir
+			[replace]0x2DF,tk3航空機性能,offset
+[back]

@@ -1,0 +1,32 @@
+[group]倉庫
+	[subject] 倉庫:dir
+   	     [replace]0x[! 0x63034FC+ $Val *0x1E8 !], ポートロイヤル->在庫SET
+	[back]
+[/group]
+
+[group]在庫SET
+        [subject]　　: toggle,0x00,0x4A-98929800,00000000
+	[size]4
+	[io_fep]$Val*1000,$Val/1000
+	[subject]穀物  : calc,0x00,0,99
+	[subject]魚    : calc,0x04,0,99
+	[subject]肉    : calc,0x08,0,99
+	[subject]芋    : calc,0x0C,0,99
+	[subject]ラム酒: calc,0x10,0,99
+	[subject]織物  : calc,0x14,0,99
+	[subject]塩    : calc,0x18,0,99
+	[subject]レンガ: calc,0x1C,0,99
+	[subject]木材  : calc,0x20,0,99
+	[subject]麻    : calc,0x24,0,99
+	[subject]タバコ: calc,0x28,0,99
+	[subject]染料  : calc,0x2C,0,99
+	[subject]ココア: calc,0x30,0,99
+	[subject]砂糖  : calc,0x34,0,99
+	[subject]綿花  : calc,0x38,0,99
+	[subject]ワイン: calc,0x3C,0,99
+	[subject]鉄製品: calc,0x40,0,99
+	[subject]陶器  : calc,0x44,0,99
+	[subject]衣類  : calc,0x48,0,99
+	[/io_fep]
+	[/size]
+[/group]

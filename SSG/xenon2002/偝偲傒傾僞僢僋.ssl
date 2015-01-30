@@ -1,0 +1,32 @@
+[group]サーチ
+ [val]*.000000*.000000*.0000*.0000
+ [calc]位置 X(左端=0),yes,0,99
+ [calc]位置 Y(上端=0),yes,0,99
+ [calc]NowHP,no,0,9999
+ [calc]MaxHP,no,0,9999
+[/group]
+
+[group]ステータス
+	[subject]位置 X: calc,0x00,0,99
+	[subject]位置 Y: calc,0x04,0,99
+	[subject]Now HP: calc,0x08,0,9999
+	[subject]Max HP: calc,0x0C,0,9999
+	[subject]移動力: calc,0x1C,0,99
+	[subject] 射程 : calc,0x24,0,99
+	[subject]Now EXP: calc,0x28,0,999
+	[subject]  Lv  : calc,0x2C,0,99
+/	[subject]Max EXP: calc,0x38,0,999
+	[subject] 気合 : calc,0x5C,0,100
+[/group]
+[group]平時
+	[subject]HP: calc,0x00,0,0xFFFF
+/	[subject]------: calc,0x28,0,0xFF
+	[subject]移動力: calc,0x50,0,0xFF
+	[subject]攻撃力: calc,0x78,0,0xFF
+/	[subject]------: calc,0x00,0,0xFF
+	[subject] 射程 : calc,0xA0,0,0xFF
+	[subject]経験値: calc,0xC8,0,0xFFFF
+	[subject]  Lv  : calc,0xF0,0,0xFF
+/	[subject]------: calc,0x168,0,999
+
+[/group]

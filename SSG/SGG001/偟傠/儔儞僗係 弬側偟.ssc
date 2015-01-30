@@ -1,0 +1,13 @@
+[subject]体力MAX    :calc,0x5a,0,9999
+[subject]体力       :calc,0x3c,0,9999
+[subject]気力MAX    :calc,0x96,0,9999
+[subject]気力       :calc,0x78,0,9999
+[subject]EXP        :calc,0x00,0,65535 
+[subject]命中値     :calc,0xf0,0,999 
+[subject]回避値     :calc,0x10e,0,999
+[subject]腕力       :calc,0x12c,0,999
+[subject]知力       :calc,0x14a,0,999 
+[subject]攻撃力     :calc,0x294,0,999
+[subject]消費気力   :calc,0x2b2,0,999
+[subject]装甲レベル :calc,0x1c2,0,65535  
+[back]

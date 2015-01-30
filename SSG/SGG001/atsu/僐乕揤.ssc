@@ -1,0 +1,9 @@
+	[subject]愛情度:calc,0,0,5
+	[subject]信頼度:calc,0x4,0,5
+	[subject]基礎体力:calc,0x8,0,20
+	[subject]技術力:calc,0xC,0,20
+	[subject]戦術能力:calc,0x10,0,20
+	[subject]コンビネーション:calc,0x14,0,20
+	[subject]居残り回数:calc,0x1C,0,6
+	[subject]能力ALL_MAX:toggle,0x8,0x14-14000000,00000000
+[back]

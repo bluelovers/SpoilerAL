@@ -1,0 +1,18 @@
+[group]サーチ
+ [val]*.0000*.0000*.
+ [calc] 金銭(256～65535),no,256,0xFFFF
+ [calc] 兵糧(256～65535),no,256,0xFFFF
+ [calc] 軍馬(未入力可能),ok,256,0xFFFF
+[/group]
+
+[group]サーチ2
+ [val]*.
+ [string] ○○衆,no,6
+[/group]
+
+[group]ステータス
+ [subject] 金銭 : calc,0x0098FB00,00,0xFFFF
+ [subject] 兵糧 : calc,0x0098FB04,00,0xFFFF
+ [subject] 軍馬 : calc,0x0098FB08,00,0xFFFF
+ [subject] 鉄砲 : calc,0x0098FB0C,00,0xFFFF
+[/group]

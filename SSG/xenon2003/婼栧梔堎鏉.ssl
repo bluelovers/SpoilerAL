@@ -1,0 +1,88 @@
+[group]キャラ
+	[subject][! @鬼門妖異譚->キャラ名, $Val !]:dir
+		[replace]0x[! 0x495950+$Val* 0x190 !],鬼門妖異譚->ステータス
+	[back]
+[/group]
+[group]ステータス
+	[subject]レベル: calc,0x00,1,99
+	[subject]HP(最大): calc,0x04,1,999
+	[subject]HP(現在): calc,0x08,1,999
+	[subject]精神力: calc,0x0C,1,999
+	[subject]攻撃力: calc,0x10,1,999
+	[subject]防御力: calc,0x14,1,999
+	[subject]移動力: calc,0x18,1,999
+	[subject]素早さ: calc,0x1C,1,999
+	[subject]経験値: calc,0x48,1,999
+	[subject]武器: toggle,0x84,FF,00
+	[subject]防具: toggle,0x88,FF,00
+	[subject]その他: toggle,0x8C,FF,00
+[/group]
+アイテムはbitで所持が決まる。
+[group]キャラ名
+主人公
+皆元 ひかる
+佐方 希実子
+磯井 由里
+渡部 鋼
+ト部 炎
+ジェレミー大崎Ⅲ
+大江山 摩耶
+安達 しのぶ
+伊原木 瞳子
+折口 学
+菅江 真澄
+姫山 辰夫
+[/group]
+[group]雑貨
+	[subject][! @鬼門妖異譚->雑貨名, $Val !]: calc,0x[! 0x4958D4 +$Val* 0x04 !],00,0x99
+[/group]
+[group]雑貨名
+薬草
+甘栗
+ひよこ饅頭
+スルメ
+ちから餅
+お利口パン
+酒まんじゅう
+スコーン
+神便鬼毒酒
+紅茶
+[/group]
+[group]サーチ
+	[size]4
+	[val]*.*.
+	[input]HP(最大): calc,no,0,999
+	[input]HP(現在): calc,no,0,999
+	[/size]
+[/group]
+[group]戦キャラ
+	[subject][! @鬼門妖異譚->戦キャラ名, $Val !]:dir
+		[replace]0x[! 0xBF4330+$Val* 0xC38 !],鬼門妖異譚->戦ステータス
+	[back]
+[/group]
+[group]戦ステータス
+	[subject]レベル: calc,0x04,1,99
+	[subject]HP(最大): calc,0x10,1,999
+	[subject]HP(現在): calc,0x14,1,999
+	[subject]移動力: calc,0x18,1,999
+	[subject]移動力: calc,0x1C,1,999
+	[subject]再行動/ON: toggle,0x1EC,FF,00
+[/group]
+[group]戦キャラ名
+キャラ１
+キャラ２
+キャラ３
+キャラ４
+キャラ５
+キャラ６
+キャラ７
+キャラ８
+[/group]
+[group]敵キャラ
+	[subject] ALL(HP-1): toggle,0x[! 0xBF062C +0x4E8*$Val !],01000000,00000000
+[/group]
+
+[group]注意事項
+キャラの各能力は、レベルで決定されます。
+敵の強さは、主人公側のレベルで決定されます。
+[/group]

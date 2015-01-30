@@ -1,0 +1,8 @@
+[group]ステータス
+	[subject] 歌 : calc,0x00,00,999
+	[subject]舞踏: calc,0x02,00,999
+	[subject]礼儀: calc,0x0A,00,999
+	[subject]教養: calc,0x04,00,999
+	[subject]閨房: calc,0x06,00,999
+	[subject]魅力: calc,0x08,00,999
+[/group]
