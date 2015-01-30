@@ -1,0 +1,470 @@
+[group]IZZ_SSG
+[note]wordwrap
+和人×陽子／宗一郎×萌夕／虎之助×美園　の組み合わせは100％成立しません。
+
+正直最初からＣＧＡＬ化して、これを見極めとかないと結構凹みますorz
+つか、この組み合わせ期待してソフト買った自分って一体…。
+
+パラメータ関係：
+ver1.02用SSGより、必須コード併用型にして強化しました。プログラムの仕様上これまでのデータのゴミなどが残る場合がありますが、"キャラクター名［戦闘中］"と表示されているものが、現在戦闘中のキャラクターデータになります。
+
+ＣＧモード：
+機能実行後、最初から初めて黒船のＣＧを見ればＯＫ。
+[/note]
+
+[subject]ver1.00:dir
+
+[subject]SLGパート関連:dir
+ [subject]敵全滅戦闘スキップ/実行/_:toggle,0x585728,F64608017405EB0B90,D8D9DFE0DDD8F6C441
+ [subject]体力・霊力無限化/実行/_:b_toggle,0x00,IZZLST->IZZ_a,offset
+ [subject]戦闘１回で即LVMAX/実行/_:toggle,0x586F71,EB,7F
+ [subject]敵行動封印化/実行/_:b_toggle,0x00,IZZLST->IZZ_b,offset
+ [subject]保健室・工房関係/_:d_toggle,0x00,IZZLST->LST_c,IZZLST->LST_d,offset
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]通常勾玉MAX化/実行/_:toggle,0x72C5E0,0x72C657-E703000001000000
+ [subject]イベント関係勾玉/_:d_toggle,0x72C658,IZZLST->LST_a,IZZLST->LST_b,offset
+ [subject]戦闘中のパーティパラメータ:dir
+  [replace]_[:[:0x72C978:]:],IZZLST->IZZ_PR
+  [replace]_[:[:[:0x72C978:]:]+0x04:],IZZLST->IZZ_PR
+  [replace]_[:[:[:[:[:0x72C978:]:]+0x04:]+0x08:]:],IZZLST->IZZ_PR
+  [replace]_[:[:[:[:0x72C978:]:]+0x04:]+0x08:],IZZLST->IZZ_PR
+  [replace]_[:[:[:[:0x72C978:]:]+0x04:]+0x04:],IZZLST->IZZ_PR
+  [replace]_[:[:[:[:[:[:0x72C978:]:]+0x04:]+0x04:]+0x08:]:],IZZLST->IZZ_PR
+ [back]
+[back]
+
+[subject]フラグ関連:dir
+ [subject]好感度確認調整:dir
+  [repeat]IZZLST->IZZREP1,0,6,1
+ [back]
+[back]
+
+[subject]ＣＧモード関連:dir
+ [replace]_[:0x734590:],IZZLST->IZZ_CG
+[back]
+
+[back]
+
+[subject]ver1.02:dir
+
+[subject]SLGパート関連:dir
+ [subject]敵全滅戦闘スキップ/実行/_:toggle,0x585778,F64608017405EB0B90,D8D9DFE0DDD8F6C441
+ [subject]体力・霊力無限化/実行/_:b_toggle,0x00,IZZLST->IZZ_2a,offset
+ [subject]戦闘１回で即LVMAX/実行/_:toggle,0x586FC1,EB,7F
+ [subject]敵行動封印化/実行/_:b_toggle,0x00,IZZLST->IZZ_2b,offset
+ [subject]保健室・工房関係/_:d_toggle,0x00,IZZLST->LST_c,IZZLST->LST_2d,offset
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]通常勾玉MAX化/実行/_:toggle,0x72C5E0,0x72C657-E703000001000000
+ [subject]イベント関係勾玉/_:d_toggle,0x72C658,IZZLST->LST_a,IZZLST->LST_b,offset
+ [subject]戦闘中のパーティパラメータ:dir
+ [subject]基本必須コード/実行/_:b_toggle,0x00,IZZLST->IZZ_f,offset
+  [repeat]IZZLST->IZZREP2,0,14,1
+ [back]
+[back]
+
+[subject]フラグ関連:dir
+ [subject]好感度確認調整:dir
+  [repeat]IZZLST->IZZREP1,0,6,1
+ [back]
+[back]
+
+[subject]ＣＧモード関連:dir
+ [replace]_[:0x734590:],IZZLST->IZZ_CG
+[back]
+
+[back]
+
+[subject]IZUMO零＋ver1.10:dir
+
+[subject]SLGパート関連:dir
+ [subject]敵全滅戦闘スキップ/実行/_:toggle,0x585648,F64608017405EB0B90,D8D9DFE0DDD8F6C441
+ [subject]体力・霊力無限化/実行/_:b_toggle,0x00,IZZLST->IZZ_3a,offset
+ [subject]戦闘１回で即LVMAX/実行/_:toggle,0x586F1E,EB,7F
+ [subject]敵行動封印化/実行/_:b_toggle,0x00,IZZLST->IZZ_3b,offset
+ [subject]保健室・工房関係/_:d_toggle,0x00,IZZLST->LST_c,IZZLST->LST_3d,offset
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]通常勾玉MAX化/実行/_:toggle,0x72C5E0,0x72C657-E703000001000000
+ [subject]イベント関係勾玉/_:d_toggle,0x72C658,IZZLST->LST_a,IZZLST->LST_b,offset
+ [subject]戦闘中のパーティパラメータ:dir
+  [subject]基本必須コード/実行/_:b_toggle,0x00,IZZLST->IZZ_2f,offset
+  [repeat]IZZLST->IZZREP2,0,14,1
+ [back]
+[back]
+
+[subject]フラグ関連:dir
+ [subject]好感度確認調整:dir
+  [repeat]IZZLST->IZZREP12,0,9,1
+ [back]
+[back]
+
+[subject]ＣＧモード関連:dir
+ [replace]_[:0x734590:],IZZLST->IZZ_2CG
+[back]
+
+[back]
+
+[/group]
+
+
+[group]IZZREP1
+[subject][! @IZZLST->LST_e,$Val !]/現在値/_:calc,_[:0x733AC0:]+0x74+0x[! 0x04*$Val !],0x000,0x03E7,unsigned
+[/group]
+
+
+[group]IZZREP12
+[subject][! @IZZLST->LST_2e,$Val !]/現在値/_:calc,_[:0x733AC0:]+0x74+0x[! 0x04*$Val !],0x000,0x03E7,unsigned
+[/group]
+
+
+[group]IZZREP2
+[replace]_[:0x72C978:]+0x84+0x[! $Val*0x04 !]=>temp;[:$temp:],IZZLST->IZZ_2PR
+[/group]
+
+
+[group]IZZ_a
+0x5817D7,E94455120090,8D8DB0FEFFFF
+0x6A6D20,F60001,000000
+0x6A6D23,7414,0000
+0x6A6D25,8B5810,000000
+0x6A6D28,899860010000,000000000000
+0x6A6D2E,8B5814,000000
+0x6A6D31,899864010000,000000000000
+0x6A6D37,33DB,0000
+0x6A6D39,8D8DB0FEFFFF,000000000000
+0x6A6D3F,E999AAEDFF,0000000000
+[/group]
+
+
+[group]IZZ_2a
+0x5817E7,E93456120090,8D8DB0FEFFFF
+0x6A6E20,F60001,000000
+0x6A6E23,7414,0000
+0x6A6E25,8B5810,000000
+0x6A6E28,899860010000,000000000000
+0x6A6E2E,8B5814,000000
+0x6A6E31,899864010000,000000000000
+0x6A6E37,33DB,0000
+0x6A6E39,8D8DB0FEFFFF,000000000000
+0x6A6E3F,E9A9A9EDFF,0000000000
+[/group]
+
+
+[group]IZZ_3a
+0x5816B7,E97458120090,8D8DB0FEFFFF
+0x6A6F30,F60001,000000
+0x6A6F33,7414,0000
+0x6A6F35,8B5810,000000
+0x6A6F38,899860010000,000000000000
+0x6A6F3E,8B5814,000000
+0x6A6F41,899864010000,000000000000
+0x6A6F47,33DB,0000
+0x6A6F49,8D8DB0FEFFFF,000000000000
+0x6A6F4F,E969A7EDFF,0000000000
+[/group]
+
+
+[group]IZZ_b
+0x57AD85,EB089090909090909090,C7867801000000000000
+0x5817D0,E97B55120090,8D8D94FEFFFF
+0x6A6D50,F60001,000000
+0x6A6D53,7506,0000
+0x6A6D55,899870010000,000000000000
+0x6A6D5B,8D8D94FEFFFF,000000000000
+0x6A6D61,E970AAEDFF,0000000000
+[/group]
+
+
+[group]IZZ_2b
+0x57AD85,EB089090909090909090,C7867801000000000000
+0x5817E0,E96B56120090,8D8D94FEFFFF
+0x6A6E50,F60001,000000
+0x6A6E53,7506,0000
+0x6A6E55,899870010000,000000000000
+0x6A6E5B,8D8D94FEFFFF,000000000000
+0x6A6E61,E980A9EDFF,0000000000
+[/group]
+
+
+[group]IZZ_3b
+0x57AC55,EB089090909090909090,C7867801000000000000
+0x5816B0,E9AB58120090,8D8D94FEFFFF
+0x6A6F60,F60001,000000
+0x6A6F63,7506,0000
+0x6A6F65,899870010000,000000000000
+0x6A6F6B,8D8D94FEFFFF,000000000000
+0x6A6F71,E940A7EDFF,0000000000
+[/group]
+
+
+[group]IZZ_PR
+[subject]_mem,0x10,1,list,<Nodata or Enemy>,IZZLST->LST_f,0x00,0x01:dir
+[subject]一括極大化/実行/_:b_toggle,0x00,IZZLST->IZZ_e,offset
+[e_with],0,999,float
+ [subject]最大体力/現在値/_:f_calc,0x28
+ [subject]現在体力/現在値/_:f_calc,0x0178
+ [subject]最大霊力/現在値/_:f_calc,0x2C
+ [subject]現在霊力/現在値/_:f_calc,0x017C
+ [subject]腕力/現在値/_:f_calc,0x30
+ [subject]精神力/現在値/_:f_calc,0x34
+ [subject]命中率/現在値/_:f_calc,0x38
+ [subject]回避率/現在値/_:f_calc,0x3C
+ [subject]物理防御/現在値/_:f_calc,0x40
+ [subject]呪法防御/現在値/_:f_calc,0x44
+ [subject]素早さ/現在値/_:f_calc,0x48
+[/e_with]
+[e_with],0,9.9,float
+ [subject]移動力/現在値/_:f_calc,0x4C
+ [subject]跳躍力/現在値/_:f_calc,0x50
+[/e_with]
+[subject]全技レベルMAX化/実行/_:toggle,0x0230,0x0243-83030000,00000000
+[subject]全呪法レベルMAX化/実行/_:toggle,0x0244,0x27F-83030000,00000000
+[subject]全呪法習得/実行/_:toggle,0x0190,FFFFFF3F,00000000
+[subject]奥義習得/実行/_:toggle,0x18,*_???1????,*_???0????
+[back]
+[/group]
+
+
+[group]IZZ_2PR
+[subject]_mem,0x0C,1,free_list,<Enemy>,IZZLST->LST_2f'+'_mem,0x10,1,list,<Nodata>,IZZLST->LST_3f,0x00,0x01:dir
+[subject]一括極大化/実行/_:b_toggle,0x00,IZZLST->IZZ_e,offset
+[e_with],0,999,float
+ [subject]最大体力/現在値/_:f_calc,0x28
+ [subject]現在体力/現在値/_:f_calc,0x0178
+ [subject]最大霊力/現在値/_:f_calc,0x2C
+ [subject]現在霊力/現在値/_:f_calc,0x017C
+ [subject]腕力/現在値/_:f_calc,0x30
+ [subject]精神力/現在値/_:f_calc,0x34
+ [subject]命中率/現在値/_:f_calc,0x38
+ [subject]回避率/現在値/_:f_calc,0x3C
+ [subject]物理防御/現在値/_:f_calc,0x40
+ [subject]呪法防御/現在値/_:f_calc,0x44
+ [subject]素早さ/現在値/_:f_calc,0x48
+[/e_with]
+[e_with],0,9.9,float
+ [subject]移動力/現在値/_:f_calc,0x4C
+ [subject]跳躍力/現在値/_:f_calc,0x50
+[/e_with]
+[subject]全技レベルMAX化/実行/_:toggle,0x0230,0x0243-83030000,00000000
+[subject]全呪法レベルMAX化/実行/_:toggle,0x0244,0x27F-83030000,00000000
+[subject]全呪法習得/実行/_:toggle,0x0190,FFFFFF3F,00000000
+[subject]奥義習得/実行/_:toggle,0x18,*_??1?????,*_??0?????
+[back]
+[/group]
+
+
+[group]IZZ_CG
+[subject]ＣＧモード/実行/_:b_toggle,0x00,IZZLST->IZZ_c,offset
+[subject]回想モード/実行/_:b_toggle,0x00,IZZLST->IZZ_d,offset
+[/group]
+
+
+[group]IZZ_2CG
+[subject]ＣＧモード/実行/_:b_toggle,0x00,IZZLST->IZZ_2c,offset
+[subject]回想モード/実行/_:b_toggle,0x00,IZZLST->IZZ_2d,offset
+[/group]
+
+
+[group]IZZ_c
+0x00,0x37-02,01
+0x40,0x74-02,01
+0x80,020201,010101
+0x83,0xA4-02,01
+[/group]
+
+
+[group]IZZ_2c
+0x00,0x37-02,01
+0x40,0x74-02,01
+0x80,020201,010101
+0x83,0xA4-02,01
+0xB0,0xCF-02,01
+[/group]
+
+
+[group]IZZ_d
+0xD0,0xDC-12,01
+0xE0,0xEB-12,01
+[/group]
+
+
+[group]IZZ_2d
+0xD0,0xDC-12,01
+0xE0,0xEB-12,01
+0xF0,0xF5-12,01
+[/group]
+
+
+[group]IZZ_e
+0x28,0x4B-00C07944
+0x4C,66661E4166661E41
+0x0178,00C0794400C07944
+[/group]
+
+
+[group]LST_a
+タギリ
+タギツ
+サヨリ
+ウズメ
+ミシャグジ様
+キジムナー
+[/group]
+
+
+[group]LST_b
+0x00=0000000001000000/0000000000000000
+0x08=0000000001000000/0000000000000000
+0x10=0000000001000000/0000000000000000
+0x18=0000000001000000/0000000000000000
+0x20=0000000001000000/0000000000000000
+0x28=0000000001000000/0000000000000000
+[/group]
+
+
+[group]LST_c
+道具作成一回で個数最大
+鍛冶一回で能力極大化
+勾玉の穴加工一回で完全化
+[/group]
+
+
+[group]LST_d
+0x57C17A=EB/7D
+0x57FE66=9090D9056C6D6A00/D901D80524936A00,0x6A6D6C=00C07944/00000000
+0x57FE44=05??????????????????????C6410405C6410805EB1690909090/10??????????????????????FF4104EB1B8B0D3CC97200FF4108
+[/group]
+
+
+[group]LST_2d
+0x57C17A=EB/7D
+0x57FE76=9090D9056C6E6A00/D901D80524936A00,0x6A6E6C=00C07944/00000000
+0x57FE54=05??????????????????????C6410405C6410805EB1690909090/10??????????????????????FF4104EB1B8B0D3CC97200FF4108
+[/group]
+
+
+[group]LST_3d
+0x57C04A=EB/7D
+0x57FD46=9090D9051C6F6A00/D901D80524936A00,0x6A6F1C=00C07944/00000000
+0x57FD24=05??????????????????????C6410405C6410805EB1690909090/10??????????????????????FF4104EB1B8B0D3CC97200FF4108
+[/group]
+
+
+[group]LST_e
+上杉美園→永峰和人
+玉城萌夕→永峰和人
+永峰陽子→沢木宗一郎
+上杉美園→沢木宗一郎
+永峰陽子→山田虎之助
+玉城萌夕→山田虎之助
+[/group]
+
+
+[group]LST_2e
+上杉美園→永峰和人
+玉城萌夕→永峰和人
+永峰陽子→沢木宗一郎
+上杉美園→沢木宗一郎
+永峰陽子→山田虎之助
+玉城萌夕→山田虎之助
+永峰陽子→永峰和人
+玉城萌夕→沢木宗一郎
+上杉美園→山田虎之助
+[/group]
+
+
+[group]LST_f
+不在
+永峰和人
+沢木宗一郎
+山田虎之助
+永峰陽子
+上杉美園
+玉城萌夕
+[/group]
+
+
+[group]LST_2f
+0=<NoCharacter>
+1=永峰和人
+2=沢木宗一郎
+3=山田虎之助
+4=永峰陽子
+5=上杉美園
+6=玉城萌夕
+7=タギリ
+8=タギツ
+9=サヨリ
+10=ウズメ
+11=ミシャグジ様
+12=藤田五郎
+13=桐谷五郎
+21=キジムナー
+[/group]
+
+
+[group]LST_3f
+［不在］
+［戦闘中］
+［戦闘中］
+［戦闘中］
+［戦闘中］
+［戦闘中］
+［戦闘中］
+［戦闘中］
+［戦闘中］
+［戦闘中］
+［戦闘中］
+［戦闘中］
+［戦闘中］
+［戦闘中］
+［戦闘中］
+［戦闘中］
+［戦闘中］
+［戦闘中］
+［戦闘中］
+［戦闘中］
+［戦闘中］
+［戦闘中］
+[/group]
+
+
+[group]IZZ_f
+0x5817B0,E9CB56120090,8D8DB0FEFFFF
+0x6A6E80,8B9DB0FEFFFF,000000000000
+0x6A6E86,807B0C15,00000000
+0x6A6E8A,7F1B,0000
+0x6A6E8C,8BB5A4FEFFFF,000000000000
+0x6A6E92,0FB64B0C,00000000
+0x6A6E96,83F915,000000
+0x6A6E99,7505,0000
+0x6A6E9B,B90E000000,0000000000
+0x6A6EA0,899C8E80000000,00000000000000
+0x6A6EA7,33F6,0000I
+0x6A6EA9,8BDE,0000
+0x6A6EAB,8D8DB0FEFFFF,000000000000
+0x6A6EB1,E900A9EDFF,0000000000
+[/group]
+
+
+[group]IZZ_2f
+0x581680,E9FB58120090,8D8DB0FEFFFF
+0x6A6F80,8B9DB0FEFFFF,000000000000
+0x6A6F86,807B0C15,00000000
+0x6A6F8A,7F1B,0000
+0x6A6F8C,8BB5A4FEFFFF,000000000000
+0x6A6F92,0FB64B0C,00000000
+0x6A6F96,83F915,000000
+0x6A6F99,7505,0000
+0x6A6F9B,B90E000000,0000000000
+0x6A6FA0,899C8E80000000,00000000000000
+0x6A6FA7,33F6,0000I
+0x6A6FA9,8BDE,0000
+0x6A6FAB,8D8DB0FEFFFF,000000000000
+0x6A6FB1,E9D0A6EDFF,0000000000
+[/group]
