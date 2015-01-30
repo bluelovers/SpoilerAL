@@ -1,0 +1,183 @@
+SSG for SpoilerAL ver 3.4
+
+
+[script]
+[title]ドラゴンクエストⅤ
+[process]SNESHOUT.EXE
+[maker]エニックス
+[creator]みそ
+/[adjustment]heap=0x4B0000>0x6EFFFF
+[note]wordwrap
+でも、気にしなくていいです。あと、レベルを書き換えても呪文は覚えないので
+あまり役に立たないかも・・・。それと、幼年時代のビアンカはいくらレベルを上げても
+全ての魔法は覚えません。
+
+開発段階
+[/note]
+[subject]主人公:dir
+	[subject]レベル:calc,0x4C7BFA,0x0000,99,signed
+	[subject]ちから:calc,0x4C7BEF,0x0000,255,signed
+	[subject]すばやさ:calc,0x4C7BEE,0x0000,255,signed
+	[subject]みのまもり:calc,0x4C7BF0,0x0000,255,signed
+	[subject]かしこさ:calc,0x4C7BF1,0x0000,255,signed
+	[subject]うんのよさ:calc,0x4C7BF2,0x0000,255,signed
+	[subject]最大ＨＰ:calc,0x4C7BF6,0x0000,999,signed
+	[subject]ＨＰ:calc,0x4C7BEA,0x0000,999,signed
+	[subject]最大ＭＰ:calc,0x4C7BF8,0x0000,999,signed
+	[subject]ＭＰ:calc,0x4C7BEC,0x0000,999,signed
+	[subject]経験値:calc,0x4C7BF3,0x0000,1000000,signed
+[back]
+[subject]ヘンリー:dir
+	[subject]レベル:calc,0x4C7C24,0x0000,99,signed
+	[subject]ちから:calc,0x4C7C19,0x0000,255,signed
+	[subject]すばやさ:calc,0x4C7C18,0x0000,255,signed
+	[subject]みのまもり:calc,0x4C7C1A,0x0000,255,signed
+	[subject]かしこさ:calc,0x4C7C1B,0x0000,255,signed
+	[subject]うんのよさ:calc,0x4C7C1C,0x0000,255,signed
+	[subject]最大ＨＰ:calc,0x4C7C20,0x0000,999,signed
+	[subject]ＨＰ:calc,0x4C7C14,0x0000,999,signed
+	[subject]最大ＭＰ:calc,0x4C7C22,0x0000,999,signed
+	[subject]ＭＰ:calc,0x4C7C16,0x0000,999,signed
+	[subject]経験値:calc,0x4C7C1D,0x0000,10000000,signed
+[back]
+[subject]2人目:dir
+	[subject]レベル:calc,0x4C7C4E,0x0000,99,signed
+	[subject]ちから:calc,0x4C7C43,0x0000,255,signed
+	[subject]すばやさ:calc,0x4C7C42,0x0000,255,signed
+	[subject]みのまもり:calc,0x4C7C44,0x0000,255,signed
+	[subject]かしこさ:calc,0x4C7C45,0x0000,255,signed
+	[subject]うんのよさ:calc,0x4C7C46,0x0000,255,signed
+	[subject]最大ＨＰ:calc,0x4C7C4A,0x0000,999,signed
+	[subject]ＨＰ:calc,0x4C7C3E,0x0000,999,signed
+	[subject]最大ＭＰ:calc,0x4C7C4C,0x0000,999,signed
+	[subject]ＭＰ:calc,0x4C7C40,0x0000,999,signed
+	[subject]経験値:calc,0x4C7C47,0x0000,10000000,signed
+[back]
+[subject]3人目:dir
+	[subject]レベル:calc,0x4C7C78,0x0000,99,signed
+	[subject]ちから:calc,0x4C7C6D,0x0000,255,signed
+	[subject]すばやさ:calc,0x4C7C6C,0x0000,255,signed
+	[subject]みのまもり:calc,0x4C7C6E,0x0000,255,signed
+	[subject]かしこさ:calc,0x4C7C6F,0x0000,255,signed
+	[subject]うんのよさ:calc,0x4C7C70,0x0000,255,signed
+	[subject]最大ＨＰ:calc,0x4C7C74,0x0000,999,signed
+	[subject]ＨＰ:calc,0x4C7C68,0x0000,999,signed
+	[subject]最大ＭＰ:calc,0x4C7C76,0x0000,999,signed
+	[subject]ＭＰ:calc,0x4C7C6A,0x0000,999,signed
+	[subject]経験値:calc,0x4C7C71,0x0000,10000000,signed
+[back]
+[subject]所持金:calc,0x4C7BC1,0x0000,99999,signed
+[subject]コイン数:calc,0x4C7BE4,0x0000,9999999,signed
+[/script]
+
+[script]
+[title]ドラゴンクエストⅠ&Ⅱ
+[process]SNESHOUT.EXE
+[maker]エニックス
+[creator]みそ
+[note]wordwrap
+ステータスを最大にするとSpoilerの方で数値が－1になることがあります。
+でも、気にしなくていいです。あと、レベルを書き換えても呪文は覚えないので
+あまり役に立たないかも・・・。それと、1の勇者と2のローレシアの王子はアド
+レスの場所が一緒です(所持金も)。
+[/note]
+[adjustment]dialog,0x4BE789,ドラクエ1_2,0x4B0000,0x6EFFFF,8
+
+[subject]ドラゴンクエストⅠ:dir
+	[subject]所持金:calc,0x4BE801,0x0000,99999,signed
+	[replace]0x4BE789,ドラクエⅠ&Ⅱ,offset
+[subject]ドラゴンクエストⅡ:dir
+	[subject]所持金:calc,0x4BE801,0x0000,99999,signed
+	[subject]ローレシアの王子:dir
+		[replace]0x4BE789,ドラクエⅠ&Ⅱ,offset
+	[subject]サマルトリアの王子:dir
+		[replace]0x4BE78A,ドラクエⅠ&Ⅱ,offset
+	[subject]ムーンブルクの王女:dir
+		[replace]0x4BE78B,ドラクエⅠ&Ⅱ,offset
+[back]
+[/script]
+
+[script]
+[title]ドラゴンクエストⅢ
+[process]SNESHOUT.EXE
+[maker]エニックス
+[creator]みそ
+[note]wordwrap
+レベルを書き換えても呪文は覚えないのでレベルは消しました。
+この、2人目や3人目などはルイーダの酒場に登録してある順番になるので自分で登録
+したキャラは5人目からとなります。
+開発段階
+[/note]
+[subject]主人公:dir
+	[replace]0x4C93BA,ドラクエⅢ,offset
+[back]
+[subject]2人目:dir
+	[replace]0x4C93F6,ドラクエⅢ,offset
+[back]
+[subject]3人目:dir
+	[replace]0x4C9432,ドラクエⅢ,offset
+[back]
+[subject]4人目:dir
+	[replace]0x4C946E,ドラクエⅢ,offset
+[back]
+[subject]5人目:dir
+	[replace]0x4C94AA,ドラクエⅢ,offset
+[back]
+[subject]6人目:dir
+	[replace]0x4C94E6,ドラクエⅢ,offset
+[back]
+[subject]7人目:dir
+	[replace]0x4C9522,ドラクエⅢ,offset
+[back]
+[subject]8人目:dir
+	[replace]0x4C945E,ドラクエⅢ,offset
+[back]
+[subject]9人目:dir
+	[replace]0x4C949A,ドラクエⅢ,offset
+[back]
+[subject]10人目:dir
+	[replace]0x4C94D6,ドラクエⅢ,offset
+[back]
+[subject]11人目:dir
+	[replace]0x4C9512,ドラクエⅢ,offset
+[back]
+[subject]12人目:dir
+	[replace]0x4C954E,ドラクエⅢ,offset
+[back]
+[subject]13人目:dir
+	[replace]0x4C958A,ドラクエⅢ,offset
+[back]
+[subject]14人目:dir
+	[replace]0x4C95C6,ドラクエⅢ,offset
+[back]
+[subject]15人目:dir
+	[replace]0x4C9602,ドラクエⅢ,offset
+[back]
+[subject]16人目:dir
+	[replace]0x4C963E,ドラクエⅢ,offset
+[back]
+[subject]所持金:calc,0x4C912A,0x0000,999999,signed
+[/script]
+
+[script]
+[title]ときめきメモリアル
+[process]SNESHOUT.EXE
+[maker]コナミ
+[creator]みそ
+[note]wordwrap
+とりあえず、主人公の能力を変えられるようにしときました。
+あとは、皆さん各自狙った娘をゲットだぜ!!
+あと、これはSNESHOUTで改造したのでその他の本体で動くかどうかの保証はしませんのであしからず。
+[/note]
+[subject]主人公:dir
+	[subject]体調:calc,0x4C7D3C,0x0000,100,signed
+	[subject]文系:calc,0x4C7D3E,0x0000,999,signed
+	[subject]理系:calc,0x4C7D40,0x0000,999,signed
+	[subject]芸術:calc,0x4C7D42,0x0000,999,signed
+	[subject]運動:calc,0x4C7D44,0x0000,999,signed
+	[subject]雑学:calc,0x4C7D46,0x0000,999,signed
+	[subject]容姿:calc,0x4C7D48,0x0000,999,signed
+	[subject]根性:calc,0x4C7D4A,0x0000,999,signed
+	[subject]ストレス:calc,0x4C7D4C,0x0000,999,signed
+[back]
+[/script]
