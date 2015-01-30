@@ -1,0 +1,1180 @@
+SSG for SpoilerAL ver 5.3
+(2002上半期以前発売タイトル)
+
+[script]
+[title]パラダイム・シフト ～目醒めの時～
+[distinction]発売日=2/09/06
+[process]PSHIFT.EXE
+[maker]Tail
+[creator]秋野日和
+[note] 
+
+[/note]
+[subject]ＣＧフル化:toggle,0x945777,0x945784-FF,00
+[/script]
+
+
+
+[script]
+[title]Ｎｏｒ
+[distinction]発売日=2/09/27
+[process]System39.exe
+[maker]AliceNoir
+[creator]秋野日和
+[note] 
+侵食率は値の固定をして下さい。
+[/note]
+[subject]侵食率０:toggle,0x2AE62C0,00,00
+[subject]ＰＥＲＩＮ（Ｆ１）:calc,0x29EA334,0,5,unsigned
+[subject]ＧＲＥＥＭ（Ｆ２）:calc,0x29EA338,0,5,unsigned
+[subject]ＣＲＥＥＺ（Ｆ３）:calc,0x29EA33C,0,5,unsigned
+[subject]ＥＲＩＣＫ（Ｆ４）:calc,0x29EA340,0,5,unsigned
+[subject]コンボ数:calc,0x2AE62CC,0,800,unsigned
+[/script]
+
+
+
+[script]
+[title]翡翠の眸（脱衣の館）
+[distinction]発売日=2/09/27
+[process]System39.exe
+[maker]AliceNoir
+[creator]秋野日和
+[note] 
+
+侵食率は値の固定をして下さい。
+
+[/note]
+[subject]侵食率０:toggle,0x1385780,00,00
+[subject]ＰＥＲＩＮ（Ｆ１）:calc,0x12897F4,0,5,unsigned
+[subject]ＧＲＥＥＭ（Ｆ２）:calc,0x12897F8,0,5,unsigned
+[subject]ＣＲＥＥＺ（Ｆ３）:calc,0x12897FC,0,5,unsigned
+[subject]ＥＲＩＣＫ（Ｆ４）:calc,0x1289800,0,5,unsigned
+[/script]
+
+
+
+[script]
+[title]ＤＥＳ　ＢＬＯＯＤ４
+[distinction]発売日=2/09/27
+[process]db4.exe
+[maker]illusion
+[creator]秋野日和
+[note] 
+
+[/note]
+[subject]ＨＰ減らない:toggle,0x5D2E96,909090,2B55FC
+[subject]銃弾減らない:toggle,0x5C20DB,909090,2B55FC
+[subject]最大ＬＩＦＥ:calc,0x783138,0,999,unsigned
+[subject]現在ＬＩＦＥ:calc,0x783134,0,999,unsigned
+[subject]所持金:calc,0x783240,0,9999,unsigned
+[subject]防御力:calc,0x783144,0,800,unsigned
+[subject]ＥＸＴＲＡフル化:toggle,0x7824E2,0x782500-01,00
+[/script]
+
+
+
+[script]
+[title]ＣＲＡＶＥ１０
+[distinction]発売日=2/09/27
+[process]CRAVE10.EXE
+[maker]CherrySoft
+[creator]秋野日和
+[note] 
+「エンディング鑑賞フル化」は
+ヒロインのクリアフラグも兼ねてます。
+（だからＯＮにすると全員監禁になります）
+[/note]
+[replace]0x00,RIRI->CRAVE_CG
+/[subject]ＣＧ＆回想鑑賞フル化:b_toggle,0x00,CRAVE10,offset
+[subject]エンディング鑑賞フル化:toggle,0xACC540,0xACC568-01000000,00000000
+[/script]
+
+
+
+[script]
+[title]はじらひ
+[distinction]発売日=2/09/20
+[process]hajirahi.exe
+[maker]BLUEGALE
+[creator]秋野日和
+[note] 
+
+[/note]
+[subject]穂乃香好感度:calc,0x12E6A54,0,40,unsigned
+[subject]逸美好感度:calc,0x12E6A58,0,40,unsigned
+[subject]琴理好感度:calc,0x12E6A5C,0,40,unsigned
+[subject]ＣＧフル化:toggle,0x71F881,0x71F924-01,00
+[replace]0x00,RIRI->HAZI_ME
+/[subject]回想フル化:b_toggle,0x00,はじらひ,offset
+[subject]クリアフラグ:dir
+        [subject]穂乃香:toggle,0x71F92A,01,00
+        [subject]逸美:toggle,0x71F92B,01,00
+        [subject]琴理:toggle,0x71F92C,01,00
+[back]
+[back]
+[/script]
+
+
+
+[script]
+[title]ミスティック・レポート～恋の部活はチコクしない～
+[distinction]発売日=2/09/06
+[process]REALLIVE.EXE
+[maker]裸足少女
+[creator]秋野日和
+[note] 
+
+[/note]
+
+[subject]主人公ステータス:dir
+        [subject]LV:calc,0xA37F6C,0,999,unsigned
+        [subject]最大ＨＰ:calc,0xA37F70,0,800,unsigned
+        [subject]現在ＨＰ:calc,0xA37F74,0,800,unsigned
+        [subject]POW:calc,0xA37F78,0,800,unsigned
+        [subject]DEF:calc,0xA37F80,0,800,unsigned
+        [subject]EXP:calc,0xA37F90,0,100,unsigned
+[back]
+[subject]仲間ステータス:dir
+        [subject]LV:calc,0xA38034,0,99,unsigned
+        [subject]最大ＨＰ:calc,0xA38038,0,800,unsigned
+        [subject]現在ＨＰ:calc,0xA3803C,0,800,unsigned
+        [subject]POW:calc,0xA38040,0,800,unsigned
+        [subject]DEF:calc,0xA38048,0,800,unsigned
+        [subject]EXP:calc,0xA38058,0,100,unsigned
+[back]
+[subject]敵ステータス:dir
+        [subject]LV:calc,0xA380FC,0,99,unsigned
+        [subject]最大ＨＰ:calc,0xA38100,0,999,unsigned
+        [subject]現在ＨＰ:calc,0xA38104,0,999,unsigned
+        [subject]POW:calc,0xA38108,0,999,unsigned
+        [subject]DEF:calc,0xA38110,0,999,unsigned
+[back]
+[/script]
+
+
+
+[script]
+[title]ギャラクシーエンジェル
+[distinction]発売日=2/08/23
+[process]GA.exe
+[maker]ブロッコリー
+[creator]秋野日和
+[note] 
+エンジェル隊のステータスを
+アドレス補正の試作する時の範囲は
+「6000000～6B00000」で大抵はＯＫだと思います。
+ダメなら「8000000」まで設定してみて下さい。
+多分凄く時間掛かりますケド。(^_^；
+
+ステータス以外の項目は環境不変ですので
+補正しなくてもいつでも使えます。
+
+「敵攻撃受けても～」はあまり何度も
+ＯＮ/ＯＦＦ切り替えをしないで下さい。
+ゲームが落ちる可能性が高いです。
+あと、この項目を使用時は
+「ＳＰ上昇するとＭＡＸに」が使えません。
+[/note]
+[subject]ミルフィーユ:dir
+        [subject]最大ＨＰ:calc,0x6A88330,0,99999,unsigned
+        [subject]現在ＨＰ:calc,0x6A88334,0,99999,unsigned
+        [subject]最大ＥＮ:calc,0x6A88338,0,65535,unsigned
+        [subject]現在ＥＮ:calc,0x6A8833C,0,65535,unsigned
+        [subject]ＳＰ:calc,0x6A88344,0,100,unsigned
+[back]
+[subject]ランファ:dir
+        [subject]最大ＨＰ:calc,0x6A8E330,0,99999,unsigned
+        [subject]現在ＨＰ:calc,0x6A8E334,0,99999,unsigned
+        [subject]最大ＥＮ:calc,0x6A8E338,0,65535,unsigned
+        [subject]現在ＥＮ:calc,0x6A8E33C,0,65535,unsigned
+        [subject]ＳＰ:calc,0x6A8E344,0,100,unsigned
+[back]
+[subject]ミント:dir
+        [subject]最大ＨＰ:calc,0x6A94330,0,99999,unsigned
+        [subject]現在ＨＰ:calc,0x6A94334,0,99999,unsigned
+        [subject]最大ＥＮ:calc,0x6A94338,0,65535,unsigned
+        [subject]現在ＥＮ:calc,0x6A9433C,0,65535,unsigned
+        [subject]ＳＰ:calc,0x6A94344,0,100,unsigned
+[back]
+[subject]フォルテ:dir
+        [subject]最大ＨＰ:calc,0x6A9A330,0,99999,unsigned
+        [subject]現在ＨＰ:calc,0x6A9A334,0,99999,unsigned
+        [subject]最大ＥＮ:calc,0x6A9A3308,0,65535,unsigned
+        [subject]現在ＥＮ:calc,0x6A9A330C,0,65535,unsigned
+        [subject]ＳＰ:calc,0x6A9A344,0,100,unsigned
+[back]
+[subject]ヴァニラ:dir
+        [subject]最大ＨＰ:calc,0x6AA0330,0,99999,unsigned
+        [subject]現在ＨＰ:calc,0x6AA0334,0,99999,unsigned
+        [subject]最大ＥＮ:calc,0x6AA0338,0,65535,unsigned
+        [subject]現在ＥＮ:calc,0x6AA033C,0,65535,unsigned
+        [subject]ＳＰ:calc,0x6AA0344,0,100,unsigned
+[back]
+[subject]ＨＰ減らない:toggle,0x475641,9090,2BC8
+[subject]攻撃時ＥＮ減らない:toggle,0x477FA6,9090,2BC2
+[subject]移動時ＥＮ減らない:toggle,0x47EE48,9090,2BC1
+[subject]敵攻撃受けてもＥＮ減らない:toggle,0x477FAE,9090,EB59
+[subject]ＳＰ上昇するとＭＡＸに:toggle,0x47537B,9090,760A
+[subject]好感度:dir
+        [subject]ミルフィーユ:calc,0x34A8E58,0,100,unsigned
+        [subject]ランファ:calc,0x34A8E88,0,100,unsigned
+        [subject]ミント:calc,0x34A8EB8,0,100,unsigned
+        [subject]フォルテ:calc,0x34A8EE8,0,100,unsigned
+        [subject]ヴァニラ:calc,0x34A8F18,0,100,unsigned
+[back]
+/[subject]機嫌:dir
+/        [subject]ミルフィーユ:list,0x34A8E48,ギャラクシー機嫌, 0, 1
+/        [subject]ランファ:list,0x34A8E78,ギャラクシー機嫌, 0, 1
+/        [subject]ミント:list,0x34A8EA8,ギャラクシー機嫌, 0, 1
+/        [subject]フォルテ:list,0x34A8ED8,ギャラクシー機嫌, 0, 1
+/        [subject]ヴァニラ:list,0x34A8F08,ギャラクシー機嫌, 0, 1
+/[back]
+	[replace]0x00,RIRI->ギャラクシー機嫌
+[root]
+[/script]
+
+
+
+
+[script]
+[title]ＲＥ☆さいくりんぐＤａｙ'ｓ　
+[distinction]発売日=2/08/30
+[process]RCD.exe
+[maker]PAPRIKA
+[creator]秋野日和
+[note] 
+
+[/note]
+[subject]理数:calc,0xA6BB30,10,900,unsigned
+[subject]文系:calc,0xA6BB34,10,900,unsigned
+[subject]経済:calc,0xA6BB38,10,900,unsigned
+[subject]外語:calc,0xA6BB3C,10,900,unsigned
+[subject]体力:calc,0xA6BB40,10,900,unsigned
+[subject]所持金:calc,0xA6BB48,0,9999999,unsigned
+[subject]美香 好感度:calc,0xA6BBA8,0,20,unsigned
+[subject]弥生 好感度:calc,0xA6BBAC,0,20,unsigned
+[subject]綾瀬 好感度:calc,0xA6BBB0,0,20,unsigned
+[subject]メリイ 好感度:calc,0xA6BBB4,0,20,unsigned
+[subject]ＣＧフル化:toggle,0xA6AB8C,0xA6AEA4-01000000,00
+[/script]
+
+
+
+
+[script]
+[title]超昂天使エスカレイヤー
+[distinction]発売日=2/08/30
+[process]System39.exe
+[maker]アリスソフト
+[creator]秋野日和
+[note] 
+
+「System3.9の再起動」をすると使えなくなります。
+使えなくなったら一度ゲームを終了して下さい。
+
+クリア回数は１以上で
+音楽鑑賞とアリスの館にいくつか項目が追加されます。
+その他に３以上でマドカが攻略可能になります。
+
+おまけ項目は使用しても
+セーブしない限り、セーブデータに反映されません。
+
+[/note]
+[subject]ビーナスポイント:calc,0x9D8E82,0,99,unsigned
+[subject]D2エナジー:calc,0x9D8E7C,0,300,unsigned
+[subject]リビドー最大:calc,0x9D8E80,0,99,unsigned
+[subject]リビドー現在:calc,0x9D8E7E,0,99,unsigned
+[subject]純愛度:calc,0x9D8E78,0,50,unsigned
+[subject]鬼畜度:calc,0x9D8E7A,0,50,unsigned
+[subject]シールド最大値:calc,0x9D8E8E,0,300,unsigned
+[subject]シールド現在値:calc,0x9D8E8C,0,300,unsigned
+[subject]攻撃力:calc,0x9D8E92,0,99,unsigned
+[subject]防御力:calc,0x9D8E94,0,99,unsigned
+[subject]反応力:calc,0x9D8E96,0,99,unsigned
+[subject]おまけ:dir
+	[subject]ＣＧフル化:toggle,0x935B30,0x9369BE-0100,00
+	[replace]0x00,RIRI->エスカ_ME
+/[subject]回想フル化:b_toggle,0x00,エスカレイヤー,offset
+	[subject]クリア回数:calc,0x9D9272,01,100
+	[subject]veryeasy・easy・hard　モードＯＮ:toggle,0x9D9275,0x9D9278-01,00
+[back]
+[/script]
+
+
+
+[script]
+[title]娘３動物園
+[distinction]発売日=2/07/26
+[process]ScrPlayer.exe
+[maker]PANDA HOUSE
+[creator]秋野日和
+[note] 
+
+エンディング直前で「0・6・12」に変更するとそれぞれ
+ハッピー直前ならハッピーの。
+バッド直前ならバッドの「ED1・ED2・ED3」が楽に見れます。
+
+[/note]
+[subject]びうら　好感度:calc,0x6DF9F8,0,15,unsigned
+[subject]花梨菜　好感度:calc,0x6DFA00,0,15,unsigned
+[subject]えーた　好感度:calc,0x6DF9FC,0,15,unsigned
+[subject]あるた　好感度:calc,0x6DFA04,0,15,unsigned
+[subject]りら　好感度:calc,0x6DFA08,0,15,unsigned
+[/script]
+
+
+
+[script]
+[title]ラブリーラブドール
+[distinction]発売日=2/08/02
+[process]LOVELY.EXE
+[maker]エスクード
+[creator]秋野日和
+[note] 
+
+更新日に間に合わなかったので
+「DUM-system」は次回更新しておきます。(^^;
+
+[/note]
+[subject]LOVE:calc,0x56BEBB,0,100,unsigned
+[subject]FEEL:calc,0x56BEBC,0,100,unsigned
+[subject]OBED:calc,0x56BEBD,0,100,unsigned
+[subject]TOTAL E.C.:calc,0x56BEA9,0,99999,unsigned
+[subject]EmotionCounter:calc,0x56BEAD,0,999,unsigned
+[subject]MONEY:calc,0x56BEAF,0,999999,unsigned
+[subject]BATTERY:calc,0x56BEBA,0,7,unsigned
+[subject]Orgasm:calc,0x56BEBE,0,99,unsigned
+[subject]月:calc,0x56BEB3,5,6,unsigned
+[subject]日:calc,0x56BEB4,1,31,unsigned
+[subject]CLOSET:dir
+        [subject]全部所持: toggle,0x56BEE4,0x56BEF8-01,00
+	[subject]ドールドレス:toggle,0x56BEE4,01,00
+	[subject]セーラー服:toggle,0x56BEE5,01,00
+	[subject]ブレザー:toggle,0x56BEE6,01,00
+	[subject]浴衣:toggle,0x56BEE7,01,00
+	[subject]ナース:toggle,0x56BEE8,01,00
+	[subject]メイド(黒):toggle,0x56BEE9,01,00
+	[subject]メイド(赤):toggle,0x56BEEA,01,00
+	[subject]ブルマ:toggle,0x56BEEB,01,00
+	[subject]女王様:toggle,0x56BEEC,01,00
+	[subject]スクール水着:toggle,0x56BEED,01,00
+	[subject]チャイナドレス:toggle,0x56BEEE,01,00
+	[subject]巫女:toggle,0x56BEEF,01,00
+	[subject]ネコミミ:toggle,0x56BEF0,01,00
+	[subject]バニーガール:toggle,0x56BEF1,01,00
+	[subject]美少女戦士:toggle,0x56BEF2,01,00
+	[subject]Ｙシャツ:toggle,0x56BEF3,01,00
+	[subject]外出着Ａ:toggle,0x56BEF4,01,00
+	[subject]外出着Ｂ:toggle,0x56BEF5,01,00
+	[subject]外出着Ｃ:toggle,0x56BEF6,01,00
+	[subject]ビキニ水着:toggle,0x56BEF7,01,00
+	[subject]ウエディング:toggle,0x56BEF8,01,00
+[back]
+[subject]Joke-Item:dir
+        [subject]全部所持:toggle,0x56BED8,0x56BEE0-01,00
+	[subject]バイブ:toggle,0x56BED8,01,00
+	[subject]ローター:toggle,0x56BED9,01,00
+	[subject]アナルビーズ:toggle,0x56BEDA,01,00
+	[subject]包帯:toggle,0x56BEDB,01,00
+	[subject]聴診器:toggle,0x56BEDC,01,00
+	[subject]紐:toggle,0x56BEDD,01,00
+	[subject]SMセット:toggle,0x56BEDE,01,00
+	[subject]拘束具:toggle,0x56BEDF,01,00
+	[subject]ディルド:toggle,0x56BEE0,01,00
+[back]
+[subject]Machine-Item:dir
+	[subject]HiSpecメモリ: toggle,0x56BEE1,01,00
+	[subject]追加バッテリー: calc,0x56BEE2,0,3
+	[subject]擬似媚薬: toggle,0x56BEE3,01,00
+[back]
+[subject]おまけ:dir
+	[subject]おまけＯＮ:toggle,0x569853,01,00
+	[subject]ＣＧ鑑賞フル化:toggle,0x56802F,0x5680BA-01,00
+	[subject]完全調教モードＯＮ:toggle,0x569854,409C,0000
+[back]
+[/script]
+
+
+
+[script]
+[title]SinsAbell ～緋昏し空の向こう～ 
+[distinction]発売日=2/08/09
+[process]SinsAbell.exe
+[maker]すたじおみりす
+[creator]秋野日和
+[note]wordwrap
+Ver.1.03用です。
+
+「一撃死」は強くなりすぎた時
+ワザと死ぬのに使えます。(^^
+
+「ＨＰ」はゲーム内の現在値と
+同じ値の物だけお使い下さい。
+こんだけあればどれか当たるでしょう。（笑
+もしなければアドレス補正を使ってください。(^^;
+
+クリア回数は最大にすると
+「世界樹の木刀／天叢雲の剣／天羽々斬剣／布都御魂剣」
+が手に入ります。
+
+
+[/note]
+/[subject]自・敵キャラ、共にＨＰ無視一撃死:toggle,0x405C60,909090909090,0F894A010000
+/[subject]自・敵キャラ、共にＨＰ減らない:toggle,0x405C58,9090,2BD7
+/[subject]さつき好感度:calc,0x627480,0,20,unsigned
+/[subject]美咲好感度:calc,0x627484,0,20,unsigned
+/[subject]ステイト好感度:calc,0x627488,0,20,unsigned
+[subject]SPECIAL(おまけモード):dir15460
+	[subject]SPECIAL ＯＮ／ＯＦＦ:toggle,0x62DF48,FE01,0
+	[subject]ＣＧフル化:toggle,0x62E1A5,0x62E227-01,00
+	[subject]ＭＥＭＥＮＴフル化:toggle,0x62F145,0x62F3BB-01,00
+[back]
+[subject]パラメータ:dir
+[adjustment]search, 0x1FDAE24,0000803F3333333F,0x1F00000,0x1FFFFFF,4
+/[adjustment]dialog,0x1F5D978,AKINO->sinsサーチ,0x1000000,0x1FFFFFF,4
+	[subject]最大ＨＰ:calc,0x1FDAE7C,0,9999,unsigned
+	[subject]現在ＨＰ:calc,0x1FDAE80,0,9999,unsigned
+	[subject]LV:calc,0x1FDB004,1,99,unsigned
+	[subject]EXP:calc,0x1FDB008,0,10000,unsigned
+[/adjustment]
+[back]
+[subject]クリア回数:calc,0x63109C,0,999,unsigned
+[subject]Ver.1.02用:dir
+	[subject]SPECIAL ＯＮ／ＯＦＦ:toggle,0x618AE8,FE01,0
+	[subject]ＣＧフル化:toggle,0x618D45,0x618DC7-01,00
+	[subject]ＭＥＭＥＮＴフル化:toggle,0x619CE5,0x619F5B-01,00
+	[subject]クリア回数:calc,0x61BC3C,0,999,unsigned
+[back]
+[subject]Ver.1.01用:dir
+[subject]自・敵キャラ、共にＨＰ無視一撃死:toggle,0x405C60,909090909090,0F894A010000
+[subject]自・敵キャラ、共にＨＰ減らない:toggle,0x405C58,9090,2BD7
+[subject]さつき好感度:calc,0x627480,0,20,unsigned
+[subject]美咲好感度:calc,0x627484,0,20,unsigned
+[subject]ステイト好感度:calc,0x627488,0,20,unsigned
+[subject]SPECIAL(おまけモード):dir
+	[subject]SPECIAL ＯＮ／ＯＦＦ:toggle,0x6244C8,7,0
+	[subject]ＣＧフル化:toggle,0x624725,0x6247A7-01,00
+	[subject]ＭＥＭＥＮＴフル化:toggle,0x6256E0,0x62592F-01,00
+[back]
+[subject]ＨＰ:dir
+	[subject]最大ＨＰ1:calc,0x226C52C,0,9999,unsigned
+	[subject]現在ＨＰ1:calc,0x226C530,0,9999,unsigned
+	[subject]最大ＨＰ2:calc,0x226C9B0,0,9999,unsigned
+	[subject]現在ＨＰ2:calc,0x226C9B4,0,9999,unsigned
+	[subject]最大ＨＰ3:calc,0x230B7E8,0,9999,unsigned
+	[subject]現在ＨＰ3:calc,0x230B7EC,0,9999,unsigned
+	[subject]最大ＨＰ4:calc,0x230B8E8,0,9999,unsigned
+	[subject]現在ＨＰ4:calc,0x230B8EC,0,9999,unsigned
+	[subject]最大ＨＰ5:calc,0xC9440C,0,9999,unsigned
+	[subject]現在ＨＰ5:calc,0xC94410,0,9999,unsigned
+	[subject]最大ＨＰ6:calc,0x2270D28,0,9999,unsigned
+	[subject]現在ＨＰ6:calc,0x2270D2C,0,9999,unsigned
+	[subject]最大ＨＰ7:calc,0x2263A24,0,9999,unsigned
+	[subject]現在ＨＰ7:calc,0x2263A28,0,9999,unsigned
+	[subject]最大ＨＰ8:calc,0x2262710,0,9999,unsigned
+	[subject]現在ＨＰ8:calc,0x2262714,0,9999,unsigned
+	[subject]最大ＨＰ9:calc,0xC975EC,0,9999,unsigned
+	[subject]現在ＨＰ9:calc,0xC975F0,0,9999,unsigned
+[back]
+[subject]ＬＶ／ＥＸＰ:dir
+	[subject]LV1:calc,0x226C6B4,1,99,unsigned
+	[subject]EXP1:calc,0x226C6B8,0,10000,unsigned
+	[subject]LV2:calc,0x226CB38,1,99,unsigned
+	[subject]EXP2:calc,0x226CB3C,0,10000,unsigned
+	[subject]LV6:calc,0x2270EB0,1,99,unsigned
+	[subject]EXP6:calc,0x2270EB4,0,10000,unsigned
+	[subject]LV7:calc,0x2263BAC,1,99,unsigned
+	[subject]EXP7:calc,0x2263BB0,0,10000,unsigned
+	[subject]LV8:calc,0x2262898,1,99,unsigned
+	[subject]EXP8:calc,0x226289C,0,10000,unsigned
+	[subject]LV9:calc,0xC97774,1,99,unsigned
+	[subject]EXP9:calc,0xC97778,0,10000,unsigned
+[back]
+[subject]クリア回数:calc,0x62761C,0,999,unsigned
+[back]
+
+[/script]
+
+
+
+[script]
+[title]VIPER　RSR
+[distinction]発売日=2/07/30
+[creator]秋野日和
+[maker]Sogna
+[process]SGS.EXE
+[note]wordwrap
+地底人が魔獣になっただけ？
+エンディングも…。(^^；
+シーン回想が無いんもどうかと。
+ゲーム自体はそんな嫌いじゃないですが残念。
+[/note]
+[subject]敵ＨＰ:calc,0x4579C8,0,100,unsigned
+[/script]
+
+
+
+[script]
+[title]エーベンブルグの風
+[distinction]発売日=2/07/26
+[process]maid.exe
+[maker]Studio e.go!
+[creator]秋野日和
+[note]wordwrap
+
+[/note]
+[subject]シャルロット:dir
+	[subject]体力:calc,0xF94420,0,100,unsigned
+	[subject]勤勉さ:calc,0xF94424,0,100,unsigned
+	[subject]料理:calc,0xF94428,0,9,unsigned
+	[subject]掃除:calc,0xF9442C,0,9,unsigned
+[back]
+[subject]ミレーヌ:dir
+	[subject]体力:calc,0xF94458,0,100,unsigned
+	[subject]勤勉さ:calc,0xF9445C,0,100,unsigned
+	[subject]料理:calc,0xF94460,0,9,unsigned
+	[subject]掃除:calc,0xF94464,0,9,unsigned
+[back]
+[subject]所持金:calc,0xF942F0,0,20000,unsigned
+[subject]クロード体力:calc,0xF942F8,0,100,unsigned
+[subject]人口約５０万人:toggle,0xF942EA,0049,8944,unsigned
+[subject]評価100:toggle,0xF942F5,00C842,0020,unsigned
+[replace]0x00,RIRI->エーベン_CG
+/[subject]CGモードフル化:b_toggle,0x00,エーベン,offset
+[subject]Memorialフル化:toggle,0x58CA44,0x58CA69-21,10
+[/script]
+
+
+
+[script]
+[title]夜勤雀棟
+[distinction]発売日=2/07/26
+[creator]秋野日和
+[maker]ｍｉｎｋ
+[process]ym.exe
+[note]wordwrap
+インストールの度にアドレス移動するので
+埋まらない所が出るかも。
+
+移動といっても+1hですので
+その時は自分で何とかして下さい。(^^；
+
+[/note]
+[subject]ムービー鑑賞フル化:toggle,0x46593B,0x46594B-01000000,00000000,unsigned
+[subject]その他フル化:toggle,0x465968,0x465988-00000001,00000000,unsigned
+[/script]
+
+
+
+[script]
+[title]ＢＬＵＥ
+[distinction]発売日=2/07/26
+[process]Blue.exe
+[maker]キャラメルBOX
+[creator]秋野日和
+[note]wordwrap
+
+中々良かったです。（ｗ
+
+[/note]
+[subject]おまけＯＮ:toggle,0x78FBB0,01,00,unsigned
+[/script]
+
+
+
+[script]
+[title]機甲銃勇士サキガケ
+[distinction]発売日=2/07/19
+[process]Sakigake.exe
+[maker]電脳猿
+[creator]秋野日和
+[note]wordwrap
+
+[/note]
+[subject]アルファ:dir
+	[subject]ATTACK:calc,0x434BB8,0,999,unsigned
+	[subject]DEFENCE:calc,0x434BBC,0,999,unsigned
+	[subject]HIT:calc,0x434BC0,0,99,unsigned
+	[subject]EVASION:calc,0x434BC4,0,99,unsigned
+[back]
+[subject]オメガ:dir
+	[subject]ATTACK:calc,0x434BD0,0,999,unsigned
+	[subject]DEFENCE:calc,0x434BD4,0,999,unsigned
+	[subject]HIT:calc,0x434BD8,0,99,unsigned
+	[subject]EVASION:calc,0x434BDC,0,99,unsigned
+[back]
+[subject]イプシロン:dir
+	[subject]ATTACK:calc,0x434BE8,0,999,unsigned
+	[subject]DEFENCE:calc,0x434BEC,0,999,unsigned
+	[subject]HIT:calc,0x434BEC,0,99,unsigned
+	[subject]EVASION:calc,0x434BF0,0,99,unsigned
+[back]
+[subject]ＳＰ減らない:toggle,0x412553,9090,2BD1,unsigned
+[/script]
+
+
+
+[script]
+[title]innocent hearts -ひとつになりたい-　
+[distinction]発売日=2/06/28
+[process]ASD4AVG.exe
+[maker]しーくえんす
+[creator]秋野日和
+[note]wordwrap
+
+[/note]
+[subject]ＣＧフル化:toggle,0x9E68C2,0x9E68D0-FF,00,unsigned
+[replace]0x00,RIRI->innocent_CG
+/[subject]回想フル化:b_toggle,0x00,innocent,offset
+[/script]
+
+
+
+[script]
+[title]とらかぷっ！
+[distinction]発売日=2/06/28
+[creator]秋野日和 
+[maker]PULL TOP
+[process]TORA.EXE
+[note]wordwrap
+[/note]
+全て環境不変です。
+「戦闘で体力減らない」は敵以外全部のキャラに有効です。
+
+[subject]Ver.1.0:dir
+[subject]戦闘で体力減らない:toggle,0x439F1A,9090,2BD7,unsigned
+[subject]「湯玉を放つ」で気力減らない:toggle,0x434EF3,90909090,66294A04,unsigned
+[subject]「湯玉を放つ」で獣玉減らない:toggle,434EE2,90909090,6629410E,unsigned
+[back]
+
+[subject]Ver.1.11:dir
+[subject]戦闘で体力減らない:toggle,0x43AB1E,9090,2BD7,unsigned
+[subject]「湯玉を放つ」で気力減らない:toggle,0x435AF7,90909090,66294A04,unsigned
+[subject]「湯玉を放つ」で獣玉減らない:toggle,0x435AE6,90909090,6629410E,unsigned
+[back]
+[/script]
+
+
+
+[script]
+[title]紅蓮天衝-修羅-
+[distinction]発売日=2/07/19
+[process]紅蓮天衝.exe
+[maker]ZONE
+[creator]秋野日和
+[note]wordwrap
+
+敵ＨＰはたぶん全キャラ共通。
+とりあえず戦闘４回目までは
+ＯＫでした。
+
+[/note]
+[subject]敵ＨＰ:calc,0x45B80C,1,9999,unsigned
+[subject]烈火現在ＨＰ:calc,0x45A184,1,9999,unsigned
+[subject]烈火最大ＨＰ:calc,0x45A188,1,9999,unsigned
+[/script]
+
+
+
+[script]
+[title]アルフレッド学園魔物大隊
+[distinction]発売日=2/07/12
+[process]ALFRED.EXE
+[maker]ソフトハウスキャラ
+[creator]秋野日和
+[note]wordwrap
+私の環境ではパソコンを起動させた
+初回のゲーム起動時のみ有効でした。
+一度ゲームを終了してしまったら
+パソコンを再起動しないと使用出来ません。
+もし初回でも使えなかったら
+「アドレス補正の試作」を使ってください。
+
+「～魔力消費しない」は
+いつでも使用可能です。
+
+ＣＧフル化はできませんでした。
+たぶんシーンを全部見れば
+埋まるでしょう。(^^；
+
+[/note]
+[subject]雪継魔力:calc,0x4F1CA8,0,99999,unsigned
+[subject]AP 現在値:calc,0x4F1CBC,0,9,unsigned
+[subject]魔力 現在値:dir
+	[subject]シルビア:calc,0x518688,0,900,unsigned
+	[subject]ステック:calc,0x5186B0,0,900,unsigned
+	[subject]セイ:calc,0x5186D8,0,900,unsigned
+	[subject]ルミーゼ:calc,0x518728,0,900,unsigned
+	[subject]リリカ:calc,0x518700,0,900,unsigned
+[back]
+[subject]シルビア:dir
+	[subject]魔力 基準値:calc,0x51868C,0,900,unsigned
+	[subject]魔力 最大値:calc,0x518690,0,900,unsigned
+	[subject]ＬＶ:calc,0x518698,1,98,unsigned
+	[subject]EXP:calc,0x518694,0,900,unsigned
+[back]
+[subject]ステック:dir 
+	[subject]魔力 基準値:calc,0x5186B4,0,900,unsigned
+	[subject]魔力 最大値:calc,0x5186B8,0,900,unsigned
+	[subject]ＬＶ:calc,0x5186C0,1,98,unsigned
+	[subject]EXP:calc,0x5186BC,0,900,unsigned
+[back]
+[subject]セイ:dir
+	[subject]魔力 基準値:calc,0x5186DC,0,900,unsigned
+	[subject]魔力 最大値:calc,0x5186E0,0,900,unsigned
+	[subject]ＬＶ:calc,0x5186E8,1,98,unsigned
+	[subject]EXP:calc,0x5186E4,0,900,unsigned
+[back]
+[subject]ルミーゼ:dir
+	[subject]魔力 基準値:calc,0x51872C,0,900,unsigned
+	[subject]魔力 最大値:calc,0x518730,0,900,unsigned
+	[subject]ＬＶ:calc,0x518738,1,98,unsigned
+	[subject]EXP:calc,0x518734,0,900,unsigned
+[back]
+[subject]リリカ:dir
+	[subject]魔力 基準値:calc,0x518704,0,900,unsigned
+	[subject]魔力 最大値:calc,0x518708,0,900,unsigned
+	[subject]ＬＶ:calc,0x518710,1,98,unsigned
+	[subject]EXP:calc,0x51870C,0,900,unsigned
+[back]
+[subject]魔力記憶 回数:dir
+	[subject]シルビア:calc,0x4F1E38,0,50,unsigned
+	[subject]ステック:calc,0x4F1E3C,0,50,unsigned
+	[subject]セイ:calc,0x4F1E40,1,50,unsigned
+	[subject]リリカ:calc,0x4F1E44,0,50,unsigned
+	[subject]ルミーゼ:calc,0x4F1E48,0,50,unsigned
+[back]
+[subject]アイテム:dir
+	[subject]アイテム一括98:toggle,0x5185C0,0x51861A-6200,00
+	[subject]大召還:calc,0x5185C0,0,98,unsigned
+	[subject]退避の霧:calc,0x5185C2,0,98,unsigned
+	[subject]悪夢の笛:calc,0x5185C4,0,98,unsigned
+	[subject]学者の瞳:calc,0x5185C6,0,98,unsigned
+	[subject]賢者の瞳:calc,0x5185C8,0,98,unsigned
+	[subject]追跡の目:calc,0x5185CA,0,98,unsigned
+	[subject]暗黒雲:calc,0x5185CC,0,98,unsigned
+	[subject]忘却の手:calc,0x5185CE,0,98,unsigned
+	[subject]忘却の腕:calc,0x5185D0,0,98,unsigned
+	[subject]誘導の光:calc,0x5185D2,0,98,unsigned
+	[subject]昇格:calc,0x5185D4,0,98,unsigned
+	[subject]捕縛の糸:calc,0x5185D6,0,98,unsigned
+	[subject]捕獲の紐:calc,0x5185D8,0,98,unsigned
+	[subject]捕獲の縄:calc,0x5185DA,0,98,unsigned
+	[subject]捕獲の鎖:calc,0x5185DC,0,98,unsigned
+	[subject]魔力の粉:calc,0x5185DE,0,98,unsigned
+	[subject]時の剣:calc,0x5185E0,0,98,unsigned
+	[subject]吸血鬼の血:calc,0x5185E2,0,98,unsigned
+	[subject]狼女の牙:calc,0x5185E4,0,98,unsigned
+	[subject]人魚の鱗:calc,0x5185E6,0,98,unsigned
+	[subject]堕天使の翼:calc,0x5185E8,0,98,unsigned
+	[subject]死神の鎌:calc,0x5185EA,0,98,unsigned
+	[subject]溢れる壷:calc,0x5185EC,0,98,unsigned
+	[subject]魔力発生器:calc,0x5185EE,0,98,unsigned
+	[subject]耳栓:calc,0x5185F0,0,98,unsigned
+	[subject]開封の鍵:calc,0x5185F2,0,98,unsigned
+	[subject]神々の鍵:calc,0x5185F4,0,98,unsigned
+	[subject]先見のレンズ:calc,0x5185F6,0,98,unsigned
+	[subject]先見の魔水晶:calc,0x5185F8,0,98,unsigned
+	[subject]賢者の水晶球:calc,0x5185FA,0,98,unsigned
+	[subject]生徒の下着:calc,0x5185FC,0,98,unsigned
+	[subject]時計のパーツ:calc,0x5185FE,98,0,unsigned
+	[subject]金貨:calc,0x518600,98,0,unsigned
+	[subject]純魔力10:calc,0x518602,0,98,unsigned
+	[subject]純魔力100:calc,0x518604,0,98,unsigned
+	[subject]純魔力500:calc,0x518606,0,98,unsigned
+	[subject]純魔力1000:calc,0x518608,0,98,unsigned
+	[subject]純魔力5000:calc,0x51860A,0,98,unsigned
+	[subject]純魔力 赤:calc,0x51860C,0,98,unsigned
+	[subject]純魔力 青:calc,0x51860E,0,98,unsigned
+	[subject]純魔力 黄:calc,0x518610,0,98,unsigned
+	[subject]純魔力 緑:calc,0x518612,0,98,unsigned
+	[subject]純魔力 白:calc,0x518614,0,98,unsigned
+	[subject]純魔力 黒:calc,0x518616,0,98,unsigned
+	[subject]警護の瞳:calc,0x518618,0,98,unsigned
+	[subject]悪魔の息吹:calc,0x51861A,0,98,unsigned
+[back]
+/[subject]悪魔称号: list, 0x4F1CC8, 悪魔, 0, 1
+/[subject]教師称号: list, 0x4F1CCC, 教師, 0, 1
+/[subject]ターン数: list, 0x4F1DC0, ターン, 1, 1
+[replace]0x00,RIRI->悪魔称号
+[replace]0x00,RIRI->教師称号
+[replace]0x00,RIRI->ターン数
+[subject]日付:calc,0x4F1C90,1,35,unsigned
+[subject]AP 最大値:calc,0x4F1CC0,0,9,unsigned
+[subject]結晶化魔力最大値:calc,0x4F1CC4,0,9,unsigned
+[subject]威嚇で魔力消費しない:toggle,0x403AA5,909090,2B4820,unsigned
+[subject]移動で魔力消費しない:toggle,0x410F62,9090,2BC2,unsigned
+[subject]調査で魔力消費しない:toggle,0x41273C,9090,2BD1,unsigned
+[subject]クイズ１０問正解:toggle,0x4F1E14,0A,00,unsigned
+[subject]おまけＯＮ:toggle,0x4F183A,FF,00,unsigned
+[subject]名簿フル化:toggle,0x4F1830,01,00,unsigned
+[subject]シーン回想フル化:toggle,0x4F1876,0x4F1955-01,00
+
+[/script]
+
+
+
+[script]
+[title]Ｄ.Ｃ. ～ダ・カーポ～
+[distinction]発売日=2/06/28
+[process]DC.EXE
+[maker]Circus
+[creator]秋野日和 
+[note]wordwrap
+フル化はＯＮにしてからチェックを外すと
+逆フル化になるのでご注意を。
+
+ヒロインのクリアフラグを
+全員ＯＮでタイトルに
+「Ｄ.Ｃ.」出現。
+「天枷 美春」と
+「鷺澤 頼子」が
+攻略可能になります。
+[/note]
+[subject]ＣＧフル化:toggle,0xBAAF5C,0xBAB2E8-01000000,00
+[subject]ヒロインのシナリオフル化:toggle,0xBA9FC0,0xBAA78C-01000000,00
+[subject]etc7～11のシナリオフル化:toggle,0xBAA7AC,0xBAA864-01000000,00
+[subject]Ｄ.Ｃ. ＯＮ:dir
+	[subject]朝倉音夢 クリアフラグ:toggle,0xBAB418,01,FF,unsigned
+	[subject]白河ことり クリアフラグ:toggle,0xBAB419,01,FF,unsigned
+	[subject]水越萌 クリアフラグ:toggle,0xBAB41A,01,FF,unsigned
+	[subject]芳乃さくら クリアフラグ:toggle,0xBAB41B,01,FF,unsigned
+	[subject]４人ともクリア一括:toggle,0xBAB418,01010101,00
+[/script]
+
+
+
+[script]
+[title]淫内感染～深夜に響くポンちんカン～
+[distinction]発売日=2/06/28
+[process]INKNMJ.EXE
+[maker]zyx
+[creator]秋野日和
+[note]wordwrap
+
+[/note]
+[subject]ポイント:toggle,0x4E7E24,3F420F,00
+[subject]アイテム全部９個:toggle,0x4E7E40,0x4E7E88-09000000,00
+[subject]シーンフル化:toggle,0x4EDBE6,FF03,00
+[subject]壁紙フル化:toggle,0x4E7EDC,0A,00
+[subject]４人打ちＯＮ:toggle,0x4EDBE4,40,00
+[subject]リーチ棒:calc,0xA123B4,0,99,unsigned
+[subject]積み棒:calc,0xA12398,0,99,unsigned
+[/script]
+
+
+
+[script]
+[title]Ｍｉｌｋｙｗａｙ２
+[distinction]発売日=2/06/28
+[process]Milkyway2.exe
+[maker]Ｗｉｔｃｈ
+[creator]秋野日和
+[note]wordwrap
+
+ver 1.13a用です。
+好感度は
+使い道ないかも。
+BADの差し替えしか
+出来ませんでした。
+
+[/note]
+[replace]0x00,RIRI->制服変更
+/[subject]制服変更: list, 0x0012AE4D4, 制服, 0, 1 
+[subject]好感度:dir
+	[subject]七瀬晶:calc,0x0012AB560,0,100,unsigned,little_e
+	[subject]沢木祐美:calc,0x0012AB564,0,100,unsigned,little_e
+	[subject]坂本礼:calc,0x0012AB568,0,100,unsigned,little_e
+	[subject]犬塚ありす:calc,0x0012AB56C,0,100,unsigned,little_e
+	[subject]神月沙耶:calc,0x0012AB570,0,100,unsigned,little_e
+	[subject]結城藍:calc,0x0012AB574,0,100,unsigned,little_e
+	[subject]御影咲夜:calc,0x0012AB578,0,100,unsigned,little_e
+	[subject]東条悠:calc,0x0012AB57C,0,100,unsigned,little_e
+
+[/script]
+
+
+
+/[script]
+/[title]SinsAbell ～緋昏し空の向こう～ 体験版
+/[process]SinsAbell_demo.exe
+/[maker]すたじおみりす
+/[creator]秋野日和
+/[note]wordwrap
+
+「共に～」は
+いつでも使えます。
+
+「ＨＰ」は起動、初回の
+プレイのみ有効です。
+続けての使用は出来ません。
+ゲームオーバー等に
+なるたびにゲームを
+起動し直して下さい。
+
+/[/note]
+/[subject]自・敵キャラ、共にＨＰ減らない:toggle,0x00425462,9090,2BD0
+/[subject]自・敵キャラ、共にＨＰ無視一撃死:toggle,0x0042546A,9090,790A
+/[subject]最大ＨＰ:calc,0x00981A4C,0,999,unsigned
+/[subject]現在ＨＰ:calc,0x00981A50,0,999,unsigned
+/[/script]
+
+
+
+[script]
+[title]フローラリア
+[distinction]発売日=2/05/31
+[process]Floralia.exe
+[maker]ザウス【純米】
+[creator]秋野日和
+[note]wordwrap
+Ver.1.01用です。
+
+メインの３人は
+トゥルーエンド直前で
+値を０にすると
+エンディングをハッピーに
+差し替え出来ました。
+サブ(先生)キャラは
+使い道ないかも。(^_^；
+
+[/note]
+[subject]憂 好感度:calc,0x0044315E,0,0F,unsigned
+[subject]由佳里 好感度:calc,0x00443160,0,0F,unsigned
+[subject]御文 好感度:calc,0x00443162,0,0F,unsigned
+[subject]鈴音 好感度:calc,0x00443164,0,0F,unsigned
+[subject]詩乃 好感度:calc,0x00443166,1,0F,unsigned
+[subject]いずみ 好感度:calc,0x00443168,1,0F,unsigned
+[/script]
+
+
+
+
+[script]
+[title]魔法戦士スイートナイツ
+[distinction]発売日=2/05/17
+[process]SK.exe
+[maker]Triangle
+[creator]秋野日和
+[note]wordwrap
+Ver.1.3用です。
+
+戦闘関連は
+恥辱度で十分ですよね。
+
+上魔１体力はキッスの
+上魔回復を見るときや
+ルージュにわざと
+負ける時にでも
+お使いください。
+
+[/note]
+[subject]マナ:calc,0x0042FC45,0,03,unsigned
+[subject]Ｓリップ恥辱度:calc,0x00430410,0,100,unsigned
+[subject]Ｓキッス恥辱度:calc,0x004304AC,0,100,unsigned
+[subject]Ｓルージュ恥辱度:calc,0x00430548,0,100,unsigned
+[subject]上魔１体力:calc,0x00430B30,1,999,unsigned
+[/script]
+
+
+
+[script]
+[title]はぴベルラヴ×２ハネムーン 
+[distinction]発売日=2/05/31
+[process]LOV_HANE.EXE
+[maker]Terios
+[creator]秋野日和 
+[note]wordwrap
+
+ラクにミニゲーム
+出せます。(^_^
+値は固定して下さい。
+
+[/note]
+[subject]クイズのライフ減らない:toggle,0x00AF143C,04,00
+[/script]
+
+
+
+[script]
+[title]DarkAges 朝のない場所　
+[distinction]発売日=2/05/24
+[process]REALLIVE.EXE
+[maker]OPTIM
+[creator]秋野日和 
+[note]wordwrap
+
+ステータス関連は
+ＬＶＵＰすると
+ＬＶに応じた値に
+補正されます。
+調教関連は
+全キャラ共通です。
+
+しかし、数値のＭＡＸ値
+大きすぎだよこのゲーム…。(^^；
+
+[/note]
+[subject]日付　:calc,0x0098CA24,0,30,unsigned
+[subject]所持金:calc,0x0098CA28,0,9999,unsigned
+[subject]調教:dir
+	[subject]ＨＰ:calc,0x00989325,0,2,unsigned,little_e
+	[subject]玉 :calc,0x0098CA2C,0,5,unsigned,little_e
+	[subject]赤ゲージ:calc,0x00989009,0,6,unsigned,little_e
+	[subject]緑ゲージ:calc,0x00989005,0,6,unsigned,little_e
+[back]
+[subject]シャウルス:dir
+	[subject]攻撃力:calc,0x0098CA5C,0,9999,unsigned,little_e
+	[subject]防御力:calc,0x0098CA60,0,9999,unsigned,little_e
+	[subject]俊敏:calc,0x0098CA64,0,9999,unsigned,little_e
+	[subject]経験値:calc,0x0098CA58,0,9999,unsigned,little_e
+	[subject]最大ＨＰ:calc,0x0098CA54,0,99999,unsigned,little_e
+	[subject]現在ＨＰ:calc,0x0098CA50,0,99999,unsigned,little_e
+	[subject]ステータス一括9999:toggle,0x0098CA50,0x0098CA67-0F270000,00
+[back]
+[subject]ミゼル:dir
+	[subject]攻撃力:calc,0x0098CA84,0,9999,unsigned,little_e
+	[subject]防御力:calc,0x0098CA88,0,9999,unsigned,little_e
+	[subject]俊敏:calc,0x0098CA8C,0,9999,unsigned,little_e
+	[subject]魔力:calc,0x0098CA98,0,9999,unsigned,little_e
+	[subject]経験値:calc,0x0098CA80,0,9999,unsigned,little_e
+	[subject]最大ＨＰ:calc,0x0098CA7C,0,99999,unsigned,little_e
+	[subject]現在ＨＰ:calc,0x0098CA78,0,99999,unsigned,little_e
+	[subject]最大ＭＰ:calc,0x0098CA94,0,9999,unsigned,little_e
+	[subject]現在ＭＰ:calc,0x0098CA90,0,9999,unsigned,little_e
+
+	[subject]ステータス一括9999:toggle,0x0098CA78,0x0098CA9B-0F270000,00
+
+[back]
+[subject]アイテム:dir
+	[subject]祝福の水:calc,0x0098D71C,0,98,unsigned,little_e
+	[subject]ヴァイポーション:calc,0x0098D720,0,98,unsigned,little_e
+	[subject]凌龍丸:calc,0x0098D724,0,98,unsigned,little_e
+        [subject]斬の魂:calc,0x0098D744,0,98,unsigned,little_e
+        [subject]青龍の魂:calc,0x0098D748,0,98,unsigned,little_e
+        [subject]デュラクの魂:calc,0x0098D74C,0,98,unsigned,little_e
+        [subject]翔の魂:calc,0x0098D750,0,98,unsigned,little_e
+        [subject]ロックの魂:calc,0x0098D754,0,98,unsigned,little_e
+        [subject]那護の魂:calc,0x0098D758,0,98,unsigned,little_e
+[root]
+[/script]
+
+
+[script]
+[title]重装皇女メタルプリンセス
+[distinction]発売日=2/02/22
+[process]Metal.exe
+[maker]AniSeed
+[creator]秋野日和
+[note]wordwrap
+
+お金をＭＡＸにすると
+残金が表示されなくなります。
+（他に不具合は出ないようですが）
+
+日付は5/8にＭＡＸにすると
+すぐに真ＥＤ(？)になります。
+
+頑張ったけどＣＧフル化は出来ませんでした。(^_^；
+
+[/note]
+[subject]Ver.1.0:dir
+	[subject]日付:calc,0x00F7D0D0,2,81,unsigned,little_e
+	[subject]地球防衛軍所持金:calc,0x00F7D3C8,0,255,unsigned,little_e
+	[subject]メメモー所持金:calc,0x00F7D3CC,0,255,unsigned,little_e
+[back]
+[subject]Ver.1.03:dir
+	[subject]付録ＯＮ:toggle,0x00B0B39C,01,00
+	[subject]動画フル化:toggle,0x00B0B928,0x00B0B9B0-01000000,00
+	[subject]日付:calc,0x00B0C39C,2,81,unsigned,little_e
+	[subject]地球防衛軍所持金:calc,0x00B0C694,0,255,unsigned,little_e
+	[subject]メメモー所持金:calc,0x00B0C698,0,255,unsigned,little_e
+[root]
+[/script]
+
+
+
+[script]
+[title]めい☆ぷる
+[distinction]発売日=2/01/25
+[process]Maple.exe
+[maker]SweetBasil
+[creator]秋野日和
+[note]wordwrap
+
+エンディングにはあまり関係しないみたいですが
+値によって会話が変化するみたいです。
+
+[/note]
+[subject]梨乃愛情:calc,0x00449D9A,0,100,unsigned
+[subject]美桜愛情:calc,0x00449D98,0,100,unsigned
+[subject]柚香愛情:calc,0x00449D9C,0,100,unsigned
+[subject]涼音愛情:calc,0x00449D9E,0,100,unsigned
+[/script]
+
+
+
+[script]
+[title]Ripple　～ブルーシールへようこそっ～
+[distinction]発売日=2/04/05
+[process]ripple.EXE
+[maker]戯画
+[creator]秋野日和
+[note]wordwrap
+
+
+
+[/note]
+[subject]Ver.1.0:dir
+	[subject]体力:calc,0x02C049E2,0,100,unsigned,little_e
+	[subject]知識:calc,0x02C049E6,0,100,unsigned,little_e
+	[subject]信頼:calc,0x02C049EA,0,100,unsigned,little_e
+	[subject]会話:calc,0x0202005A,0,100,unsigned,little_e
+	[subject]人情:calc,0x02C049F2,0,100,unsigned,little_e
+	[replace]0x00,RIRI->ripple_CGME
+[back]
+[subject]Ver.1.02:dir
+	[subject]体力:calc,0x02D149E2,0,100,unsigned,little_e
+	[subject]知識:calc,0x02D149E6,0,100,unsigned,little_e
+	[subject]信頼:calc,0x02D149EA,0,100,unsigned,little_e
+	[subject]会話:calc,0x02D149EE,0,100,unsigned,little_e
+	[subject]人情:calc,0x02D149F2,0,100,unsigned,little_e
+	[replace]0x00,RIRI->ripple2_CGME
+[root]
+[/script]
+
+
+
+[script]
+[title]悪だくみ　ぬぎぬぎ念シューティング
+[distinction]発売日=2/04/19
+[process]main_f.exe
+[maker]アーカムプロダイツ　チーム暗黒媒体
+[creator]秋野日和
+[note]wordwrap
+
+[/note]
+[subject]所持金:calc,0x01143E82,0,255,unsigned
+[subject]銀玉:calc,0x01143FDC,0,255,unsigned
+[subject]画鋲:calc,0x01143FF8,0,255,unsigned
+[/script]
+
+
+
+[script]
+[title]ラズベリー１／３
+[distinction]発売日=2/03/29
+[process]Raspberry.exe
+[maker]ももグミ
+[creator]秋野日和 
+[note]wordwrap
+
+攻略ページ見かけないのでいまいち効果が分かりませんが
+BAD PowをＭＡＸにするとゲームが進まないみたいです。
+
+[/note]
+[subject]HAPPY　Pow:calc,0x004586F8,0,100,unsigned
+[subject]BAD Pow:calc,0x004586FC,0,100,unsigned
+[/script]
+
