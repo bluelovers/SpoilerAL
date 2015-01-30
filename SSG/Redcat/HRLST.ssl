@@ -1,0 +1,107 @@
+[group]HR_SSG
+[note]wordwrap
+２周目序盤まで動作確認済。
+
+>なるなる さん情報提供
+覚えたスキルの数(1～3)を固定すれば(0～2くらい？)必要淫力が999にならないからすべてのスキルを覚えることがてきました。
+
+
+
+情報提供ありがとうございます。
+[/note]
+
+[subject]基本データ:dir
+ [subject]行動力/現在値/固定:b_calc,0x00,HRLST->LST_a,offset,0x00,0x08,unsigned
+ [e_with],HRLST->LST_a,offset,0x00,0x63,unsigned
+  [subject]日数/現在値/固定:b_calc,0x08
+  [subject]PeacePoints/現在値/固定:b_calc,0x0C
+  [subject]鬼畜度/現在値/固定:b_calc,0x10
+  [subject]リビドー/現在値/固定:b_calc,0x14
+ [/e_with]
+[back]
+
+[subject]パラメータ関連:dir
+ [repeat]HRLST->HRREP1,0,3,1
+[back]
+
+[subject]戦闘中データ:dir
+ [replace]_[:[:[:(MName::Sys42VM.dll)+0x62E30:]+0x11BC:]+0x14:],HRLST->HR_BT
+ [replace]_[:[:[:(MName::Sys42VM.dll)+0x62E30:]+0x11C8:]+0x14:],HRLST->HR_2BT
+[back]
+
+[back]
+
+
+[/group]
+
+
+[group]HRREP1
+[subject][! @HRLST->LST_b,$Val !]:dir
+ [replace]0x[! 0x14*$Val !],HRLST->HR_PR
+[back]
+[/group]
+
+
+[group]HRREP2
+[subject][! @HRLST->LST_d,$Val !]/現在値/固定:b_calc,0x[! 0x04*$Val+0x04 !],HRLST->LST_c,offset,0x00,0x63,unsigned
+[/group]
+
+
+[group]HR_PR
+[repeat]HRLST->HRREP2,0,7,1
+[subject]愛情度/現在値/固定:b_calc,0x20,HRLST->LST_c,offset,0x00,0x0A,unsigned
+[subject]スキル取得数/現在値/固定:b_calc,0x48,HRLST->LST_c,offset,0x00,0x03,unsigned
+[e_with],HRLST->LST_c,offset,0x00,0x63,unsigned
+ [subject]エッチ回数/現在値/固定:b_calc,0x24
+ [subject]戦闘回数/現在値/固定:b_calc,0x2C
+ [subject]勝利数/現在値/固定:b_calc,0x30
+ [subject]敗北数/現在値/固定:b_calc,0x34
+[e_with]
+[/group]
+
+
+[group]HR_BT
+[subject]味方障壁/現在値/固定:calc,0x04,0x00,0x63,unsigned
+[subject]味方淫力/現在値/固定:calc,0x0C,0x00,0x63,unsigned
+[/group]
+
+
+[group]HR_2BT
+[subject]敵障壁/現在値/固定:calc,0x0C,0x00,0x63,unsigned
+[/group]
+
+
+[group]LST_a
+_[:[:[:[:(MName::Sys42VM.dll)+0x62E30:]+0x1194:]+0x14:]:]=>temp;$temp*0x04=>temp;[:[:[:(MName::Sys42VM.dll)+0x62E30:]+$temp:]+0x14:]
+_[:[:[:[:(MName::Sys42VM.dll)+0x62E30:]+0x1194:]+0x14:]+0x04:]=>temp;$temp*0x04=>temp;[:[:[:(MName::Sys42VM.dll)+0x62E30:]+$temp:]+0x14:]
+_[:[:[:[:(MName::Sys42VM.dll)+0x62E30:]+0x1194:]+0x14:]+0x08:]=>temp;$temp*0x04=>temp;[:[:[:(MName::Sys42VM.dll)+0x62E30:]+$temp:]+0x14:]
+_[:[:[:[:(MName::Sys42VM.dll)+0x62E30:]+0x1194:]+0x14:]+0x0C:]=>temp;$temp*0x04=>temp;[:[:[:(MName::Sys42VM.dll)+0x62E30:]+$temp:]+0x14:]
+_[:[:[:[:(MName::Sys42VM.dll)+0x62E30:]+0x1194:]+0x14:]+0x10:]=>temp;$temp*0x04=>temp;[:[:[:(MName::Sys42VM.dll)+0x62E30:]+$temp:]+0x14:]
+[/group]
+
+
+[group]LST_b
+鷹守ハルカ
+四方堂ナリカ
+スバル
+[/group]
+
+
+[group]LST_c
+_[.0.]=>temp;[:[:[:[:(MName::Sys42VM.dll)+0x62E30:]+0x118C:]+0x14:]+$temp:]=>temp;$temp*0x04=>temp;[:[:[:(MName::Sys42VM.dll)+0x62E30:]+$temp:]+0x14:]
+_[.0.]=>temp;[:[:[:[:(MName::Sys42VM.dll)+0x62E30:]+0x118C:]+0x14:]+$temp+0x04:]=>temp;$temp*0x04=>temp;[:[:[:(MName::Sys42VM.dll)+0x62E30:]+$temp:]+0x14:]
+_[.0.]=>temp;[:[:[:[:(MName::Sys42VM.dll)+0x62E30:]+0x118C:]+0x14:]+$temp+0x08:]=>temp;$temp*0x04=>temp;[:[:[:(MName::Sys42VM.dll)+0x62E30:]+$temp:]+0x14:]
+_[.0.]=>temp;[:[:[:[:(MName::Sys42VM.dll)+0x62E30:]+0x118C:]+0x14:]+$temp+0x0C:]=>temp;$temp*0x04=>temp;[:[:[:(MName::Sys42VM.dll)+0x62E30:]+$temp:]+0x14:]
+_[.0.]=>temp;[:[:[:[:(MName::Sys42VM.dll)+0x62E30:]+0x118C:]+0x14:]+$temp+0x10:]=>temp;$temp*0x04=>temp;[:[:[:(MName::Sys42VM.dll)+0x62E30:]+$temp:]+0x14:]
+[/group]
+
+
+[group]LST_d
+現在淫力
+最大淫力
+現在障壁
+最大障壁
+攻撃力
+防御力
+反応力
+[/group]
