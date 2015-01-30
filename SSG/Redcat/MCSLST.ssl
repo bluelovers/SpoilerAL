@@ -1,0 +1,103 @@
+[group]MCS_SSG
+[note]wordwrap
+一部ミニゲームの難易度が異常・移動行動がもたつく等快適さという意味では少々難もありますが、内容自体はいたっておもしろかったです。8.8k出してもこれはこれでいいかなと久々に思えた一作でした。林木葉@金田まひるの目が据わってる時の言動とか、新聞部部長阿州樹安登@2cherの一挙一動は必見かとｗ
+
+■■ミニゲーム関連
+漢は黙ってR.S.！：
+タイミングに関係なく小次郎を三振にできます。
+
+明日に向かって打て！：
+ミスを不問にできる他、空振り時にも（内部的に）出塁扱いとし、一打一得点にします。
+
+迷路大戦＆Fly The Fly！：
+制限時間が減りません。＊これに限っては各ミニゲームがスタートしてから（STARTの文字が消えてから）機能を実行し、クリア後は速やかに機能解除してください。
+
+ころゲッチュ！：
+始まった途端成功終了に。
+
+あのウサギを捕まえろ！：
+ミスを不問にする他、正解１回でクリアになります。
+
+ME GOTO STALKING：
+ミス回数をリセットし、何度でも挑戦できるようにします。
+
+■■その他パラメータ等
+時間：
+最大を72000とし、18000毎に１時間経過します。よって30分で9000、10分で3000増減。
+
+日付：
+日曜日はあてない方がいいかと…
+
+アイテムを一度に５個：
+デフォだと３個で、４つ目を取ると１つ目が消えますが、その制限を５個に変えます。
+[/note]
+
+[subject]ミニゲーム関連:dir
+ [subject]漢は黙ってR.S.！:dir
+	[subject]無条件で空振りする/実行/_:toggle,0x4498E9,EB00,7F29
+[back]
+ [subject]明日に向かって打て！:dir
+	[subject]当たると無条件で得点＋残り打席数減らない/実行/_:b_toggle,0x43A599,MCSLST->MCS_a,real
+[back]
+ [subject]迷路大戦＆Fly The Fly！:dir
+	[subject]制限時間停止/実行/_:b_toggle,0x432245,MCSLST->MCS_b,real
+[back]
+ [subject]ころゲッチュ！:dir
+	[subject]開始後即クリア/実行/_:toggle,0x450340,BAE703000090909090,8B4424048B517003D0
+[back]
+ [subject]あのウサギを捕まえろ！:dir
+	[subject]成功１回でクリア＋網の数減らない/実行/_:b_toggle,0x433CB0,MCSLST->MCS_c,real
+[back]
+
+ [subject]ME GOTO STALKING:dir
+	[subject]失敗回数リセット/実行/固定:toggle,_[:0x556198:]+0x1738,00
+[back]
+ [subject]あむルートミニゲーム:dir
+	[subject]失敗回数リセット/実行/固定:toggle,_[:0x556198:]+0x5160,00
+[root]
+
+[subject]その他パラメータ等:dir
+ [size]4
+	[subject]現在時間確認調整/現在値/固定:calc,_[:0x556198:]+0xD948,0x000000,0x011940,unsigned
+  [io_fep]$Val-1,$Val+1
+	[subject]日付確認調整/現在値/_:calc,_[:0x556198:]+0x15B8,0x00,0x1D,unsigned
+  [/io_fep]
+ [/size]
+	[subject]アイテムを一度に５個持てるようになる/実行/_:toggle,0x48FE15,05,03
+[root]
+
+[subject]ＣＧモード関連:dir
+	[replace]_[:0x556198:],MCSLST->MCS_d
+[root]
+
+[/group]
+
+
+[group]MCS_a
+0x43A599,EB0490909090,FF8B98000000
+0x43A6C1,EB00,7506
+[/group]
+
+
+[group]MCS_b
+0x432245,90,40
+0x4328BD,90,40
+[/group]
+
+
+[group]MCS_c
+0x443CB0,EB0490909090,FF89A8000000
+0x443CC0,5033C08981AC00000058C3,FF89AC000000C390909090
+[/group]
+
+
+[group]MCS_d
+[subject]おまけ出現/実行/_:toggle,0x40,01,00
+[subject]あるばむ:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x01CC,0x01F6-FF
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x01CC,0x01F6-00
+[back]
+[subject]かいそう:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x3C0,FFFFFFFF
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x3C0,00000000
+[/group]
