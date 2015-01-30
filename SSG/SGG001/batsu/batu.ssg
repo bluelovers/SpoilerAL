@@ -1,0 +1,96 @@
+SSG for SpoilerAL ver 5.1
+[script]
+[title]羅刹斬～RASETSUXAN～
+[creator]×
+[maker]工画堂
+[process]RasetsuXan.exe
+[note]wordwrap
+＜サーチ環境＞
+OS:Win2000
+*能力をMAXにすると表示は振りきってますが問題ありません。
+各キャラクター（生態装甲？）ごとにパラメータにボーナスがあるみたいで
+9999以上になってしまいます。
+*強制進化は進化のために必要なパラメータに達することなく進化できます。
+値を固定すると最終進化まで行けます。
+*武器、アイテム全所持は一応確認できたやつのみです。
+装備できない武器も含まれています。
+*キルゴアなどの通常使えないキャラはがんばって出してください。
+Mission14[ヴァダー]クリア後に使えるようになります。
+[/note]
+
+[subject]資金:calc,0x009514CC,0,999999,unsigned
+[subject]パラメータ:dir
+	[subject]セラフィーン:dir
+		[replace]0x00952100,羅刹Xanパラメータ
+	[subject]ラティアラ:dir
+		[replace]0x00952228,羅刹Xanパラメータ
+	[subject]レオーネ:dir
+		[replace]0x00952350,羅刹Xanパラメータ
+	[subject]ジョイス:dir
+		[replace]0x00952478,羅刹Xanパラメータ
+	[subject]スタンシア:dir
+		[replace]0x0061B8EC,羅刹Xanパラメータ
+	[subject]メグ:dir
+		[replace]0x009526C8,羅刹Xanパラメータ
+	[subject]ディバロ:dir
+		[replace]0x009527F0,羅刹Xanパラメータ
+	[subject]リリー:dir
+		[replace]0x00952918,羅刹Xanパラメータ
+	[subject]ナリア:dir
+		[replace]0x00952A40,羅刹Xanパラメータ
+	[subject]セフィー:dir
+		[replace]0x00952B68,羅刹Xanパラメータ
+	[subject]マリオン:dir
+		[replace]0x00952C90,羅刹Xanパラメータ
+	[subject]ミルフィーナ:dir
+		[replace]0x00952DB8,羅刹Xanパラメータ
+	[subject]ロンディ:dir
+		[replace]0x00952EE0,羅刹Xanパラメータ
+	[subject]トニー:dir
+		[replace]0x00953008,羅刹Xanパラメータ
+	[subject]書文:dir
+		[replace]0x00953130,羅刹Xanパラメータ
+	[subject]フォルキス:dir
+		[replace]0x00953258,羅刹Xanパラメータ
+	[subject]レン:dir
+		[replace]0x00953380,羅刹Xanパラメータ
+	[subject]あみ:dir
+		[replace]0x00953B98,羅刹Xanパラメータ
+	[subject]ヴィンス:dir
+		[replace]0x00953CC0,羅刹Xanパラメータ
+	[subject]イリア:dir
+		[replace]0x00953DE8,羅刹Xanパラメータ
+	[subject]ネネ:dir
+		[replace]0x00953F10,羅刹Xanパラメータ
+	[subject]ザルゲ:dir
+		[replace]0x00954038,羅刹Xanパラメータ
+	[subject]レオナ:dir
+		[replace]0x00954160,羅刹Xanパラメータ
+	[subject]キルゴア:dir
+		[replace]0x00954288,羅刹Xanパラメータ
+[back]
+
+[subject]強制的に進化:dir
+	[subject]セラ:toggle,0x009521b0,0000,0100
+	[subject]ラティアラ:toggle,0x009522D8,0000,0100
+	[subject]レオーネ:toggle,0x00952400,0000,0100
+	[subject]ジョイス:toggle,0x00952528,0000,0100
+	[subject]メグ:toggle,0x00952778,0000,0100
+	[subject]ディバロ:toggle,0x009528A0,0000,0100
+	[subject]リリー:toggle,0x009529C8,0000,0100
+	[subject]ナリア:toggle,0x00952AF0,0000,0100
+	[subject]セフィ:toggle,0x00952C18,0000,0100
+	[subject]マリオン:toggle,0x00952D40,0000,0100
+	[subject]ミルフィーナ:toggle,0x00952E68,0000,0100
+	[subject]ロンディ:toggle,0x00952F90,0000,0100
+	[subject]トニー:toggle,0x009530B8,0000,0100
+	[subject]書文:toggle,0x009531E0,0000,0100
+	[subject]フォルキス:toggle,0x00953308,0000,0100
+	[subject]ヴィンス:toggle,0x00953D70,0000,0100
+	[subject]イリア:toggle,0x00953E98,0000,0100
+	[subject]ネネ:toggle,0x00953fc0,0000,0100
+[back]
+
+       [subject]武器/全所持:toggle,0x00951020,0x00951198-01
+       [subject]アイテム/全所持:toggle,0x00950BBC,0x00950C30-01
+[/script]
