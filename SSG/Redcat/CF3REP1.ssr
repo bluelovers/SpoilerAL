@@ -1,0 +1,2 @@
+[subject][! @CF3LST->LST_a,$Val !]:dir
+[replace]0x[! 0x498044+$Val*0x4C !],CF3_h
