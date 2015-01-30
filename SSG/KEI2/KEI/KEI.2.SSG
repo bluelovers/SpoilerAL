@@ -1,0 +1,1072 @@
+SSG for SpoilerAL ver 3.4
+
+
+[script]
+[title]フレグランステイル（WindowsMe用）
+[process]FT.EXE
+[maker]TAKUYO
+[creator]KEI
+[adjustment]heap,heap2=0x00690000>0x009AFFFF,heap3=0x009B0000>0x00BBFFFF,heap4=0x00BC0000>0x010CFFFF
+[note]wordwrap
+Ver1.0とVer1.01で確認しています。
+WindowsMeで動作を確認しています。Windows98だと正常に動作しない可能性があります。
+●簡単な使い方
+まず、ゲームのほうを先に起動して（Window表示のほうがやりやすいです。）ゲームを立ち上げたまま、このSpoilerALを起動します。
+水色の項目を選択すると、電卓の画面が出てきます。
+例えば「日数」を選ぶと、電卓の画面に日数[?](Min:0 Max:72) と出てきます。
+[?]の部分は現在値です。?になっていたらゲームが立ち上がっていないか正常に動作していないです。
+(Min:0 Max:72)は最小値と最大値ですので、この範囲外の数字は入力できません。
+10進数と16進数は好みで切り替えてください。（初期設定では16進数で表示されます。）
+マウスで電卓の数字をクリックして好きな値にしてから、「決定」ボタンをクリックするとその値が書き込まれます。
+「値の固定」にチェックが入っていると、ずーっとその値のまま固定されます。（変化しません。）
+赤色の項目を選択すると、同名のチェックボックスが現れます。
+ここにチェックすると、そのとおりに書き換えられ、「値の固定」にもチェックをすると更にその値で固定されます。
+●デバグ用ステイタス画面出現について
+ご使用のバージョンによってアドレスが異なりますので、バージョンにあった方にチェックを入れてください。
+ここにチェックを入れると、ステイタス画面のかわりにデバグ用ステイタス画面になります。
+元に戻すときは、チェックを外してください。
+●セーブデータチェック解除について
+初期バージョン(Ver1.0)は、セーブデータのチェックを行っていないので、セーブデータを改造しても大丈夫でしたが、バージョンをアップデートするとセーブデータのチェックを行っています。
+改造したセーブデータをロードしようとすると、強制終了しますので、ここにチェックを入れるとそれを回避することができます。
+●訪問順について
+数値とキャラの関係は以下になります。
+例えば全て00にすると、一日中アドルばかりが訪問します。
+（同じ値にしても構いません。）
+00:アドル
+01:フィリス
+02:ソリュード
+03:ティム
+04:ナデュー
+05:シトラ
+06:クレイドル
+07:ロキ
+FF:訪問者なし
+夜の訪問者のところに数字を入れると、約束をしていなくても夜イベントが起こります。
+夜の訪問者に対して居留守を使うと、夜の散歩に出かけられます。
+「脇道に入る」を選べば「開発室」に行けます。
+夜イベントが終わったら、訪問待ちをしないで寝てください。
+「特定のキャラばかり訪問」の「値の固定」をチェックしておいて訪問待ちをすると、再度夜イベントが起こりますが、再び夜イベントが起こるとゲームが強制終了します。
+時間を戻せば大丈夫なこともありますが、なるべく夜イベントの後は寝て下さい。
+複数の「特定のキャラばかり訪問」の「値の固定」はチェックしないでください。（1人だけにして下さい。）
+●話題の切り替えについて
+数値との関係は以下のようになります。
+00:リルダーナの話題 or ラブラブな話題
+01:ティルナティリの話題
+02:フラヒスの話題
+03:アンヌンの話題
+04:主人公の話題
+ラブ度が一定以上（キャラが赤面して先方から話をしようと言うようになる。650前後）になると、00の時は、ラブラブな話題になりそれ以外の話をしなくなります。
+例えば、話題の切り替えを02、フラヒスの話題を03にすると、フラヒスの4番目の話題になります。
+[/note]
+[subject]デバグ用ステイタス画面出現(Ver1.01用):toggle, 0x41678F, 75, 74
+[subject]デバグ用ステイタス画面出現(Ver1.0用):toggle, 0x4165CF, 75, 74
+[subject]セーブデータチェック解除(Ver1.01用):toggle, 0x402865, EB, 75
+[subject]CGデータチェック解除(Ver1.01用):toggle, 0x4026AD, EB, 75
+[subject]日記完成＆リプレイ全開(CG100%):toggle, 0x9BA318,0x9BB608-01000000, ??
+[subject]日数:calc,0x9BB618,0,72,unsigned,little_e
+[subject]時間:calc,0x9BB668,0,17,unsigned,little_e
+[subject]フレグランス完成度:calc,0x9BB61A,0,255,unsigned,little_e
+[subject]夜更かしポイント:calc,0x9BB64A,0,3,unsigned,little_e
+[subject]調合済香料:dir
+	[subject]ティンヌの枝:calc,0x9BB64C,0,255,signed,little_e
+	[subject]ウィシュケの花:calc,0x9BB64E,0,255,signed,little_e
+	[subject]ウイルの葉:calc,0x9BB650,0,255,signed,little_e
+	[subject]グィーの実:calc,0x9BB652,0,255,signed,little_e
+	[subject]アンゲールの枝:calc,0x9BB654,0,255,signed,little_e
+	[subject]アンゲールの花:calc,0x9BB656,0,255,signed,little_e
+	[subject]アンゲールの葉:calc,0x9BB658,0,255,signed,little_e
+	[subject]アンゲールの実:calc,0x9BB65A,0,255,signed,little_e
+	[subject]メーラの枝:calc,0x9BB65C,0,255,signed,little_e
+	[subject]メーラの花:calc,0x9BB65E,0,255,signed,little_e
+	[subject]メーラの葉:calc,0x9BB660,0,255,signed,little_e
+	[subject]メーラの実:calc,0x9BB662,0,255,signed,little_e
+[back]
+[subject]訪問順番:dir
+	[subject]1番目の訪問者:calc,0x9BB669,0,7,unsigned,little_e
+	[subject]2番目の訪問者:calc,0x9BB66A,0,7,unsigned,little_e
+	[subject]3番目の訪問者:calc,0x9BB66B,0,7,unsigned,little_e
+	[subject]4番目の訪問者:calc,0x9BB66C,0,7,unsigned,little_e
+	[subject]5番目の訪問者:calc,0x9BB66D,0,7,unsigned,little_e
+	[subject]6番目の訪問者:calc,0x9BB66E,0,7,unsigned,little_e
+	[subject]7番目の訪問者:calc,0x9BB66F,0,7,unsigned,little_e
+	[subject]8番目の訪問者:calc,0x9BB670,0,7,unsigned,little_e
+	[subject]夜の訪問者:calc,0x9BB671,0,7,unsigned,little_e
+	[subject]アドルばかり訪問:toggle,0x9BB669,0x9BB671-00,??
+	[subject]フィリスばかり訪問:toggle,0x9BB669,0x9BB671-01,??
+	[subject]ソリュードばかり訪問:toggle,0x9BB669,0x9BB671-02,??
+	[subject]ティムばかり訪問:toggle,0x9BB669,0x9BB671-03,??
+	[subject]ナデューばかり訪問:toggle,0x9BB669,0x9BB671-04,??
+	[subject]シトラばかり訪問:toggle,0x9BB669,0x9BB671-05,??
+	[subject]クレイドルばかり訪問:toggle,0x9BB669,0x9BB671-06,??
+	[subject]ロキばかり訪問:toggle,0x9BB669,0x9BB671-07,??
+[back]
+[subject]所持香料:dir
+	[subject]ティンヌの枝:calc,0x9BB61C,0,99,unsigned,little_e
+	[subject]ウィシュケの花:calc,0x9BB61D,0,99,unsigned,little_e
+	[subject]ウイルの葉:calc,0x9BB61E,0,99,unsigned,little_e
+	[subject]グィーの実:calc,0x9BB61F,0,99,unsigned,little_e
+	[subject]アンゲールの枝:calc,0x9BB620,0,99,unsigned,little_e
+	[subject]アンゲールの花:calc,0x9BB621,0,99,unsigned,little_e
+	[subject]アンゲールの葉:calc,0x9BB622,0,99,unsigned,little_e
+	[subject]アンゲールの実:calc,0x9BB623,0,99,unsigned,little_e
+	[subject]メーラの枝:calc,0x9BB624,0,99,unsigned,little_e
+	[subject]メーラの花:calc,0x9BB625,0,99,unsigned,little_e
+	[subject]メーラの葉:calc,0x9BB626,0,99,unsigned,little_e
+	[subject]メーラの実:calc,0x9BB627,0,99,unsigned,little_e
+	[subject]天火石:calc,0x9BB628,0,1,unsigned,little_e
+	[subject]天水石:calc,0x9BB62C,0,1,unsigned,little_e
+	[subject]天土石:calc,0x9BB630,0,1,unsigned,little_e
+	[subject]天風石:calc,0x9BB634,0,1,unsigned,little_e
+	[subject]魔炎石:calc,0x9BB638,0,1,unsigned,little_e
+	[subject]魔水石:calc,0x9BB63C,0,1,unsigned,little_e
+	[subject]魔風石:calc,0x9BB640,0,1,unsigned,little_e
+	[subject]魔土石:calc,0x9BB644,0,1,unsigned,little_e
+	[subject]通常香料全部取得:toggle,0x9BB61C,0x9BB627-63,??
+	[subject]特別香料全部取得:toggle,0x9BB628,0x9BB644-01??????,????????
+[back]
+[subject]ラブラブ度:dir
+	[subject]アドル:calc,0x9BB684,0x80000000,0x7FFFFFFF,signed,little_e
+	[subject]フィリス:calc,0x9BB6B0,0x80000000,0x7FFFFFFF,signed,little_e
+	[subject]ソリュード:calc,0x9BB6DC,0x80000000,0x7FFFFFFF,signed,little_e
+	[subject]ティム:calc,0x9BB708,0x80000000,0x7FFFFFFF,signed,little_e
+	[subject]ナデュー:calc,0x9BB734,0x80000000,0x7FFFFFFF,signed,little_e
+	[subject]シトラ:calc,0x9BB760,0x80000000,0x7FFFFFFF,signed,little_e
+	[subject]クレイドル:calc,0x9BB78C,0x80000000,0x7FFFFFFF,signed,little_e
+	[subject]ロキ:calc,0x9BB7B8,0x80000000,0x7FFFFFFF,signed,little_e
+[back]
+[subject]和解度:dir
+	[subject]アドル:dir
+		[replace]0x9BB688,ftwakaia,offset
+	[subject]フィリス:dir
+		[replace]0x9BB6B4,ftwakaia,offset
+	[subject]ソリュード:dir
+		[replace]0x9BB6E0,ftwakaia,offset
+	[subject]ティム:dir
+		[replace]0x9BB70C,ftwakaia,offset
+	[subject]ナデュー:dir
+		[replace]0x9BB738,ftwakait,offset
+	[subject]シトラ:dir
+		[replace]0x9BB764,ftwakait,offset
+	[subject]クレイドル:dir
+		[replace]0x9BB790,ftwakait,offset
+	[subject]ロキ:dir
+		[replace]0x9BB7BC,ftwakait,offset
+[back]
+[subject]会話進行度＆恋愛イベント:dir
+	[subject]アドル:dir
+		[replace]0x9BB698,ftwadai,offset
+	[subject]フィリス:dir
+		[replace]0x9BB6C4,ftwadai,offset
+	[subject]ソリュード:dir
+		[replace]0x9BB6F0,ftwadai,offset
+	[subject]ティム:dir
+		[replace]0x9BB71C,ftwadai,offset
+	[subject]ナデュー:dir
+		[replace]0x9BB748,ftwadai,offset
+	[subject]シトラ:dir
+		[replace]0x9BB774,ftwadai,offset
+	[subject]クレイドル:dir
+		[replace]0x9BB7A0,ftwadai,offset
+	[subject]ロキ:dir
+		[replace]0x9BB7CC,ftwadai,offset
+[back]
+[/script]
+
+
+[script]
+[title]フレグランステイル（Windows98/95用）
+[process]FT.EXE
+[maker]TAKUYO
+[creator]KEI
+[adjustment]heap,heap2=0x007A0000>0x009AFFFF,heap3=0x009B0000>0x00EBFFFF,heap4=0x00EC0000>0x00FCFFFF
+[note]wordwrap
+Ver1.0とVer1.01で確認しています。
+Windows98で動作を確認しています。WindowsMeだと正常に動作しない可能性があります。
+Windows95でも多分大丈夫だと思いますが、動作確認していませんので動かなかったらご一報下さい。
+●簡単な使い方
+まず、ゲームのほうを先に起動して（Window表示のほうがやりやすいです。）ゲームを立ち上げたまま、このSpoilerALを起動します。
+水色の項目を選択すると、電卓の画面が出てきます。
+例えば「日数」を選ぶと、電卓の画面に日数[?](Min:0 Max:72) と出てきます。
+[?]の部分は現在値です。?になっていたらゲームが立ち上がっていないか正常に動作していないです。
+(Min:0 Max:72)は最小値と最大値ですので、この範囲外の数字は入力できません。
+10進数と16進数は好みで切り替えてください。（初期設定では16進数で表示されます。）
+マウスで電卓の数字をクリックして好きな値にしてから、「決定」ボタンをクリックするとその値が書き込まれます。
+「値の固定」にチェックが入っていると、ずーっとその値のまま固定されます。（変化しません。）
+赤色の項目を選択すると、同名のチェックボックスが現れます。
+ここにチェックすると、そのとおりに書き換えられ、「値の固定」にもチェックをすると更にその値で固定されます。
+●デバグ用ステイタス画面出現について
+ご使用のバージョンによってアドレスが異なりますので、バージョンにあった方にチェックを入れてください。
+ここにチェックを入れると、ステイタス画面のかわりにデバグ用ステイタス画面になります。
+元に戻すときは、チェックを外してください。
+●セーブデータチェック解除について
+初期バージョン(Ver1.0)は、セーブデータのチェックを行っていないので、セーブデータを改造しても大丈夫でしたが、バージョンをアップデートするとセーブデータのチェックを行っています。
+改造したセーブデータをロードしようとすると、強制終了しますので、ここにチェックを入れるとそれを回避することができます。
+●訪問順について
+数値とキャラの関係は以下になります。
+例えば全て00にすると、一日中アドルばかりが訪問します。
+（同じ値にしても構いません。）
+00:アドル
+01:フィリス
+02:ソリュード
+03:ティム
+04:ナデュー
+05:シトラ
+06:クレイドル
+07:ロキ
+FF:訪問者なし
+夜の訪問者のところに数字を入れると、約束をしていなくても夜イベントが起こります。
+夜の訪問者に対して居留守を使うと、夜の散歩に出かけられます。
+「脇道に入る」を選べば「開発室」に行けます。
+夜イベントが終わったら、訪問待ちをしないで寝てください。
+「特定のキャラばかり訪問」の「値の固定」をチェックしておいて訪問待ちをすると、再度夜イベントが起こりますが、再び夜イベントが起こるとゲームが強制終了します。
+時間を戻せば大丈夫なこともありますが、なるべく夜イベントの後は寝て下さい。
+複数の「特定のキャラばかり訪問」の「値の固定」はチェックしないでください。（1人だけにして下さい。）
+●話題の切り替えについて
+数値との関係は以下のようになります。
+00:リルダーナの話題 or ラブラブな話題
+01:ティルナティリの話題
+02:フラヒスの話題
+03:アンヌンの話題
+04:主人公の話題
+ラブ度が一定以上（キャラが赤面して先方から話をしようと言うようになる。650前後）になると、00の時は、ラブラブな話題になりそれ以外の話をしなくなります。
+例えば、話題の切り替えを02、フラヒスの話題を03にすると、フラヒスの4番目の話題になります。
+[/note]
+[subject]デバグ用ステイタス画面出現(Ver1.01用):toggle, 0x41678F, 75, 74
+[subject]デバグ用ステイタス画面出現(Ver1.0用):toggle, 0x4165CF, 75, 74
+[subject]セーブデータチェック解除(Ver1.01用):toggle, 0x402865, EB, 75
+[subject]CGデータチェック解除(Ver1.01用):toggle, 0x4026AD, EB, 75
+[subject]日記完成＆リプレイ全開(CG100%):toggle, 0x7AA318,0x7AB608-01000000, ??
+[subject]日数:calc,0x7AB618,0,72,unsigned,little_e
+[subject]時間:calc,0x7AB668,0,17,unsigned,little_e
+[subject]フレグランス完成度:calc,0x7AB61A,0,255,unsigned,little_e
+[subject]夜更かしポイント:calc,0x7AB64A,0,3,unsigned,little_e
+[subject]調合済香料:dir
+	[subject]ティンヌの枝:calc,0x7AB64C,0,255,signed,little_e
+	[subject]ウィシュケの花:calc,0x7AB64E,0,255,signed,little_e
+	[subject]ウイルの葉:calc,0x7AB650,0,255,signed,little_e
+	[subject]グィーの実:calc,0x7AB652,0,255,signed,little_e
+	[subject]アンゲールの枝:calc,0x7AB654,0,255,signed,little_e
+	[subject]アンゲールの花:calc,0x7AB656,0,255,signed,little_e
+	[subject]アンゲールの葉:calc,0x7AB658,0,255,signed,little_e
+	[subject]アンゲールの実:calc,0x7AB65A,0,255,signed,little_e
+	[subject]メーラの枝:calc,0x7AB65C,0,255,signed,little_e
+	[subject]メーラの花:calc,0x7AB65E,0,255,signed,little_e
+	[subject]メーラの葉:calc,0x7AB660,0,255,signed,little_e
+	[subject]メーラの実:calc,0x7AB662,0,255,signed,little_e
+[back]
+[subject]訪問順番:dir
+	[subject]1番目の訪問者:calc,0x7AB669,0,7,unsigned,little_e
+	[subject]2番目の訪問者:calc,0x7AB66A,0,7,unsigned,little_e
+	[subject]3番目の訪問者:calc,0x7AB66B,0,7,unsigned,little_e
+	[subject]4番目の訪問者:calc,0x7AB66C,0,7,unsigned,little_e
+	[subject]5番目の訪問者:calc,0x7AB66D,0,7,unsigned,little_e
+	[subject]6番目の訪問者:calc,0x7AB66E,0,7,unsigned,little_e
+	[subject]7番目の訪問者:calc,0x7AB66F,0,7,unsigned,little_e
+	[subject]8番目の訪問者:calc,0x7AB670,0,7,unsigned,little_e
+	[subject]夜の訪問者:calc,0x7AB671,0,7,unsigned,little_e
+	[subject]アドルばかり訪問:toggle,0x7AB669,0x7AB671-00,??
+	[subject]フィリスばかり訪問:toggle,0x7AB669,0x7AB671-01,??
+	[subject]ソリュードばかり訪問:toggle,0x7AB669,0x7AB671-02,??
+	[subject]ティムばかり訪問:toggle,0x7AB669,0x7AB671-03,??
+	[subject]ナデューばかり訪問:toggle,0x7AB669,0x7AB671-04,??
+	[subject]シトラばかり訪問:toggle,0x7AB669,0x7AB671-05,??
+	[subject]クレイドルばかり訪問:toggle,0x7AB669,0x7AB671-06,??
+	[subject]ロキばかり訪問:toggle,0x7AB669,0x7AB671-07,??
+[back]
+[subject]所持香料:dir
+	[subject]ティンヌの枝:calc,0x7AB61C,0,99,unsigned,little_e
+	[subject]ウィシュケの花:calc,0x7AB61D,0,99,unsigned,little_e
+	[subject]ウイルの葉:calc,0x7AB61E,0,99,unsigned,little_e
+	[subject]グィーの実:calc,0x7AB61F,0,99,unsigned,little_e
+	[subject]アンゲールの枝:calc,0x7AB620,0,99,unsigned,little_e
+	[subject]アンゲールの花:calc,0x7AB621,0,99,unsigned,little_e
+	[subject]アンゲールの葉:calc,0x7AB622,0,99,unsigned,little_e
+	[subject]アンゲールの実:calc,0x7AB623,0,99,unsigned,little_e
+	[subject]メーラの枝:calc,0x7AB624,0,99,unsigned,little_e
+	[subject]メーラの花:calc,0x7AB625,0,99,unsigned,little_e
+	[subject]メーラの葉:calc,0x7AB626,0,99,unsigned,little_e
+	[subject]メーラの実:calc,0x7AB627,0,99,unsigned,little_e
+	[subject]天火石:calc,0x7AB628,0,1,unsigned,little_e
+	[subject]天水石:calc,0x7AB62C,0,1,unsigned,little_e
+	[subject]天土石:calc,0x7AB630,0,1,unsigned,little_e
+	[subject]天風石:calc,0x7AB634,0,1,unsigned,little_e
+	[subject]魔炎石:calc,0x7AB638,0,1,unsigned,little_e
+	[subject]魔水石:calc,0x7AB63C,0,1,unsigned,little_e
+	[subject]魔風石:calc,0x7AB640,0,1,unsigned,little_e
+	[subject]魔土石:calc,0x7AB644,0,1,unsigned,little_e
+	[subject]通常香料全部取得:toggle,0x7AB61C,0x7AB627-63,??
+	[subject]特別香料全部取得:toggle,0x7AB628,0x7AB644-01??????,????????
+[back]
+[subject]ラブラブ度:dir
+	[subject]アドル:calc,0x7AB684,0x80000000,0x7FFFFFFF,signed,little_e
+	[subject]フィリス:calc,0x7AB6B0,0x80000000,0x7FFFFFFF,signed,little_e
+	[subject]ソリュード:calc,0x7AB6DC,0x80000000,0x7FFFFFFF,signed,little_e
+	[subject]ティム:calc,0x7AB708,0x80000000,0x7FFFFFFF,signed,little_e
+	[subject]ナデュー:calc,0x7AB734,0x80000000,0x7FFFFFFF,signed,little_e
+	[subject]シトラ:calc,0x7AB760,0x80000000,0x7FFFFFFF,signed,little_e
+	[subject]クレイドル:calc,0x7AB78C,0x80000000,0x7FFFFFFF,signed,little_e
+	[subject]ロキ:calc,0x7AB7B8,0x80000000,0x7FFFFFFF,signed,little_e
+[back]
+[subject]和解度:dir
+	[subject]アドル:dir
+		[replace]0x7AB688,ftwakaia,offset
+	[subject]フィリス:dir
+		[replace]0x7AB6B4,ftwakaia,offset
+	[subject]ソリュード:dir
+		[replace]0x7AB6E0,ftwakaia,offset
+	[subject]ティム:dir
+		[replace]0x7AB70C,ftwakaia,offset
+	[subject]ナデュー:dir
+		[replace]0x7AB738,ftwakait,offset
+	[subject]シトラ:dir
+		[replace]0x7AB764,ftwakait,offset
+	[subject]クレイドル:dir
+		[replace]0x7AB790,ftwakait,offset
+	[subject]ロキ:dir
+		[replace]0x7AB7BC,ftwakait,offset
+[back]
+[subject]会話進行度＆恋愛イベント:dir
+	[subject]アドル:dir
+		[replace]0x7AB698,ftwadai,offset
+	[subject]フィリス:dir
+		[replace]0x7AB6C4,ftwadai,offset
+	[subject]ソリュード:dir
+		[replace]0x7AB6F0,ftwadai,offset
+	[subject]ティム:dir
+		[replace]0x7AB71C,ftwadai,offset
+	[subject]ナデュー:dir
+		[replace]0x7AB748,ftwadai,offset
+	[subject]シトラ:dir
+		[replace]0x7AB774,ftwadai,offset
+	[subject]クレイドル:dir
+		[replace]0x7AB7A0,ftwadai,offset
+	[subject]ロキ:dir
+		[replace]0x7AB7CC,ftwadai,offset
+[back]
+[/script]
+
+[script]
+[title]フレグランステイル 簡易ローダー（Ver1.0用）
+[process]FT.EXE
+[maker]TAKUYO
+[creator]KEI
+[adjustment]heap,heap2=0x00690000>0x009AFFFF,heap3=0x009B0000>0x00BBFFFF,heap4=0x00BC0000>0x010CFFFF
+[note]wordwrap
+Ver1.0で確認しています。
+アップデートしたバージョンだと正常に動作しない可能性があります。
+WindowsMeとWindows98で動作を確認しています。
+Windows95でも多分大丈夫だと思いますが、動作確認していませんので動かなかったらご一報下さい。
+正常に動作しない場合はご一報下さい。
+●簡単な使い方
+タイトル画面(title2.tpx)のかわりに任意のゲーム中の画像を表示させます。
+始めにゲームを立ち上げ、タイトル画面を出しておいてください。それからSpoilerALを起動させます。
+タイトル画面の「Restart」の位置を覚えておいてください。
+この簡易ローダーを使うときに、この「Restart」ボタンを押してロード画面に入り、「戻る」ボタンでタイトル画面に戻った時に、見たい画像を表示させます。
+（ロード画面からタイトル画面に戻った時に再読み込みされて表示されます。）
+書き込む前に入力画面を確認して下さい。
+liam_00.tpx～liam_42.tpx(max:24)[title2.tpx]のように[]の中が書き込む前にtitle2.tpxになっていれば正常です。
+もし[title2.tpx]となっていない場合は、バージョンが違う可能性があります。
+表示させたい画像のファイル名を書き込んだ後に、「Restart」ボタンを押してください。
+ボタンが表示されていなくても、カーソルを持っていくと大体の位置がわかります。
+ロード画面が出たら「戻る」ボタンでタイトル画面に戻ってください。
+そのとき「file not open! TPXLoad」のようなエラー画面が出ますが、そのまま「OK」ボタンを押してください。
+そうすると、真っ白な画面になりますので、マウスを左クリックすると表示させたい画像が表示されます。
+次の画像を見たいときは、画像ファイル名を書き込んだ後に、その画像の上で「Restart」ボタンのあった所にカーソルを移動させ（上から2番目）ロード画面に移り、同様に「戻る」ボタンでタイトル画面に戻ってください。
+この繰り返しです。
+何も表示されないときは、その番号のファイルが存在しないかファイル名が間違っているので
+ファイル名を確認するか変更してください。
+（例えば、addle_50.tpxは存在しないようです。ところどころ番号が抜けているところがあります。）
+ファイルの種類については、同梱のftgamedata.txtを見て下さい。
+staff.tpxはtitle2.tpxよりも画像のサイズが大きいため正常に表示されませんので注意してください。
+staff.tpx以外の画像は表示されるはずです。
+
+[/note]
+[subject]タイトルに戻る:toggle,0x42C144,7469746C65322E74707800007469746C65312E7470780000, ??
+[subject]リアム画像:dir
+	[subject]liam_00.tpx～liam_42.tpx:string,0x42C144, 24, null
+[back]
+[subject]アドル画像:dir
+	[subject]addle_00.tpx～addle_70.tpx:string,0x42C144, 24, null
+[back]
+[subject]フィリス画像:dir
+	[subject]philyth_00.tpx～philyth_70.tpx:string,0x42C144, 24, null
+[back]
+[subject]ソリュード画像:dir
+	[subject]solude_00.tpx～solude_70.tpx:string,0x42C144, 24, null
+[back]
+[subject]ティム画像:dir
+	[subject]tim_00.tpx～tim_70.tpx:string,0x42C144, 24, null
+[back]
+[subject]ナデュー画像:dir
+	[subject]nadhew_00.tpx～nadhew_69.tpx:string,0x42C144, 24, null
+[back]
+[subject]シトラ画像:dir
+	[subject]sittra_00.tpx～sittra_68.tpx:string,0x42C144, 24, null
+[back]
+[subject]クレイドル画像:dir
+	[subject]claydle_00.tpx～claydle_70.tpx:string,0x42C144, 24, null
+[back]	
+[subject]ロキ画像:dir
+	[subject]roki_00.tpx～roki_70.tpx:string,0x42C144, 24, null
+[back]
+[subject]フィーレ先生画像:dir
+	[subject]sensei_00.tpx～sensei_04.tpx:string,0x42C144, 24, null
+[back]
+[subject]ルー画像:dir
+	[subject]lugh_00.tpx:string,0x42C144, 24, null
+[back]
+[subject]シフィール画像:dir
+	[subject]cifer_00.tpx:string,0x42C144, 24, null
+[back]
+[subject]ルビィ画像:dir
+	[subject]elfa_00.tpx～elfa_03.tpx:string,0x42C144, 24, null
+[back]
+[subject]サフィ画像:dir
+	[subject]elfb_00.tpx～elfb_03.tpx:string,0x42C144, 24, null
+[back]
+[subject]エメル画像:dir
+	[subject]elfc_00.tpx～elfc_03.tpx:string,0x42C144, 24, null
+[back]
+[subject]アンバー画像:dir
+	[subject]elfd_00.tpx～elfd_03.tpx:string,0x42C144, 24, null
+[back]
+[subject]ティーリーフ画像:dir
+	[subject]elfy_00.tpx～elfy_02.tpx:string,0x42C144, 24, null
+[back]
+[subject]ドラゴン画像:dir
+	[subject]dragon_00.tpx～dragon_01.tpx:string,0x42C144, 24, null
+[back]
+[subject]ワーム画像:dir
+	[subject]worm_00.tpx～worm_01.tpx:string,0x42C144, 24, null
+[back]
+[subject]ゴースト画像:dir
+	[subject]ghost_00.tpx:string,0x42C144, 24, null
+[back]
+[subject]イベント＆エンディング画像:dir
+	[subject]ev00.tpx～ev81.tpx:string,0x42C144, 24, null
+[back]
+[subject]背景画像:dir
+	[subject]b00.tpx～b39.tpx:string,0x42C144, 24, null
+[back]
+[subject]開発室画像:dir
+	[subject]b96.tpx～b98.tpx:string,0x42C144, 24, null
+[back]
+[subject]アイテム画像:dir
+	[subject]item00.tpx～item18.tpx:string,0x42C144, 24, null
+[back]
+[subject]香水画像:dir
+	[subject]item31.tpx～item36.tpx:string,0x42C144, 24, null
+[back]
+[subject]その他画像:dir
+	[subject]gawa.tpx:string,0x42C144, 24, null
+	[subject]hwater.tpx:string,0x42C144, 24, null
+	[subject]load.tpx:string,0x42C144, 24, null
+	[subject]name.tpx:string,0x42C144, 24, null
+	[subject]room.tpx:string,0x42C144, 24, null
+	[subject]save.tpx:string,0x42C144, 24, null
+	[subject]settings.tpx:string,0x42C144, 24, null
+	[subject]status.tpx:string,0x42C144, 24, null
+	[subject]statusdb.tpx:string,0x42C144, 24, null
+	[subject]takuyo.tpx:string,0x42C144, 24, null
+	[subject]unicone_00.tpx:string,0x42C144, 24, null
+[back]
+[/script]
+
+
+[script]
+[title]フレグランステイル 簡易ローダー（Ver1.01用）
+[process]FT.EXE
+[maker]TAKUYO
+[creator]KEI
+[adjustment]heap,heap2=0x007A0000>0x009AFFFF,heap3=0x009B0000>0x00EBFFFF,heap4=0x00EC0000>0x00FCFFFF
+[note]wordwrap
+Ver1.01で確認しています。
+アップデートする前のバージョンだと正常に動作しない可能性があります。
+WindowsMeとWindows98で動作を確認しています。
+Windows95でも多分大丈夫だと思いますが、動作確認していませんので動かなかったらご一報下さい。
+正常に動作しない場合はご一報下さい。
+●簡単な使い方
+タイトル画面(title2.tpx)のかわりに任意のゲーム中の画像を表示させます。
+始めにゲームを立ち上げ、タイトル画面を出しておいてください。それからSpoilerALを起動させます。
+タイトル画面の「Restart」の位置を覚えておいてください。
+この簡易ローダーを使うときに、この「Restart」ボタンを押してロード画面に入り、「戻る」ボタンでタイトル画面に戻った時に、見たい画像を表示させます。
+（ロード画面からタイトル画面に戻った時に再読み込みされて表示されます。）
+書き込む前に入力画面を確認して下さい。
+liam_00.tpx～liam_42.tpx(max:24)[title2.tpx]のように[]の中が書き込む前にtitle2.tpxになっていれば正常です。
+もし[title2.tpx]となっていない場合は、バージョンが違う可能性があります。
+表示させたい画像のファイル名を書き込んだ後に、「Restart」ボタンを押してください。
+ボタンが表示されていなくても、カーソルを持っていくと大体の位置がわかります。
+ロード画面が出たら「戻る」ボタンでタイトル画面に戻ってください。
+そのとき「file not open! TPXLoad」のようなエラー画面が出ますが、そのまま「OK」ボタンを押してください。
+そうすると、真っ白な画面になりますので、マウスを左クリックすると表示させたい画像が表示されます。
+次の画像を見たいときは、画像ファイル名を書き込んだ後に、その画像の上で「Restart」ボタンのあった所にカーソルを移動させ（上から2番目）ロード画面に移り、同様に「戻る」ボタンでタイトル画面に戻ってください。
+この繰り返しです。
+何も表示されないときは、その番号のファイルが存在しないかファイル名が間違っているので
+ファイル名を確認するか変更してください。
+（例えば、addle_50.tpxは存在しないようです。ところどころ番号が抜けているところがあります。）
+ファイルの種類については、同梱のftgamedata.txtを見て下さい。
+staff.tpxはtitle2.tpxよりも画像のサイズが大きいため正常に表示されませんので注意してください。
+staff.tpx以外の画像は表示されるはずです。
+
+[/note]
+[subject]タイトルに戻る:toggle,0x42C1BC,7469746C65322E74707800007469746C65312E7470780000, ??
+[subject]リアム画像:dir
+	[subject]liam_00.tpx～liam_42.tpx:string,0x42C1BC, 24, null
+[back]
+[subject]アドル画像:dir
+	[subject]addle_00.tpx～addle_70.tpx:string,0x42C1BC, 24, null
+[back]
+[subject]フィリス画像:dir
+	[subject]philyth_00.tpx～philyth_70.tpx:string,0x42C1BC, 24, null
+[back]
+[subject]ソリュード画像:dir
+	[subject]solude_00.tpx～solude_70.tpx:string,0x42C1BC, 24, null
+[back]
+[subject]ティム画像:dir
+	[subject]tim_00.tpx～tim_70.tpx:string,0x42C1BC, 24, null
+[back]
+[subject]ナデュー画像:dir
+	[subject]nadhew_00.tpx～nadhew_69.tpx:string,0x42C1BC, 24, null
+[back]
+[subject]シトラ画像:dir
+	[subject]sittra_00.tpx～sittra_68.tpx:string,0x42C1BC, 24, null
+[back]
+[subject]クレイドル画像:dir
+	[subject]claydle_00.tpx～claydle_70.tpx:string,0x42C1BC, 24, null
+[back]	
+[subject]ロキ画像:dir
+	[subject]roki_00.tpx～roki_70.tpx:string,0x42C1BC, 24, null
+[back]
+[subject]フィーレ先生画像:dir
+	[subject]sensei_00.tpx～sensei_04.tpx:string,0x42C1BC, 24, null
+[back]
+[subject]ルー画像:dir
+	[subject]lugh_00.tpx:string,0x42C1BC, 24, null
+[back]
+[subject]シフィール画像:dir
+	[subject]cifer_00.tpx:string,0x42C1BC, 24, null
+[back]
+[subject]ルビィ画像:dir
+	[subject]elfa_00.tpx～elfa_03.tpx:string,0x42C1BC, 24, null
+[back]
+[subject]サフィ画像:dir
+	[subject]elfb_00.tpx～elfb_03.tpx:string,0x42C1BC, 24, null
+[back]
+[subject]エメル画像:dir
+	[subject]elfc_00.tpx～elfc_03.tpx:string,0x42C1BC, 24, null
+[back]
+[subject]アンバー画像:dir
+	[subject]elfd_00.tpx～elfd_03.tpx:string,0x42C1BC, 24, null
+[back]
+[subject]ティーリーフ画像:dir
+	[subject]elfy_00.tpx～elfy_02.tpx:string,0x42C1BC, 24, null
+[back]
+[subject]ドラゴン画像:dir
+	[subject]dragon_00.tpx～dragon_01.tpx:string,0x42C1BC, 24, null
+[back]
+[subject]ワーム画像:dir
+	[subject]worm_00.tpx～worm_01.tpx:string,0x42C1BC, 24, null
+[back]
+[subject]ゴースト画像:dir
+	[subject]ghost_00.tpx:string,0x42C1BC, 24, null
+[back]
+[subject]イベント＆エンディング画像:dir
+	[subject]ev00.tpx～ev81.tpx:string,0x42C1BC, 24, null
+[back]
+[subject]背景画像:dir
+	[subject]b00.tpx～b39.tpx:string,0x42C1BC, 24, null
+[back]
+[subject]開発室画像:dir
+	[subject]b96.tpx～b98.tpx:string,0x42C1BC, 24, null
+[back]
+[subject]アイテム画像:dir
+	[subject]item00.tpx～item18.tpx:string,0x42C1BC, 24, null
+[back]
+[subject]香水画像:dir
+	[subject]item31.tpx～item36.tpx:string,0x42C1BC, 24, null
+[back]
+[subject]その他画像:dir
+	[subject]gawa.tpx:string,0x42C1BC, 24, null
+	[subject]hwater.tpx:string,0x42C1BC, 24, null
+	[subject]load.tpx:string,0x42C1BC, 24, null
+	[subject]name.tpx:string,0x42C1BC, 24, null
+	[subject]room.tpx:string,0x42C1BC, 24, null
+	[subject]save.tpx:string,0x42C1BC, 24, null
+	[subject]settings.tpx:string,0x42C1BC, 24, null
+	[subject]status.tpx:string,0x42C1BC, 24, null
+	[subject]statusdb.tpx:string,0x42C1BC, 24, null
+	[subject]takuyo.tpx:string,0x42C1BC, 24, null
+	[subject]unicone_00.tpx:string,0x42C1BC, 24, null
+[back]
+[/script]
+
+[script]
+[title]炎多留
+[process]HOTARU.EXE
+[maker]T&M
+[creator]KEI
+[adjustment]heap,heap2=0x00D40000>0x02C1FFFF,heap3=0x00F50000>0x0145FFFF,heap4=0x01460000>0x0196FFFF
+[note]wordwrap
+アップデート後のバージョンで確認しています。
+アップデートする前のバージョンだと正常に動作しない可能性があります。
+WindowsMeとWindows98で動作を確認しています。
+Windows95でも多分大丈夫だと思いますが、動作確認していませんので動かなかったらご一報下さい。
+正常に動作しない場合はご一報下さい。
+●7ページ目のCGは上3つしか存在しません。
+残りが「？」のままになっていても正常です。
+CGモードに移った時に窓が開いていなくてもページを進めたり戻したりすると全開になります。
+達成率は変化しません。
+達成率を100%にしたい場合は、セーブデータチェック解除をONにして、バイナリエディタで以下のように書き換えて下さい。
+セーブデータチェック解除をONにすると、セーブデータを改造しても初期化されなくなります。
+CGデータはAA4hからBF0hまでを01000000で埋めると100%になります。
+[/note]
+[subject]CG100%:toggle, 0x892690, 0x892B30-010000000000000000000080FFFFFF7F, 000000000000000000000080FFFFFF7F
+[subject]セーブデータチェック解除:b_toggle, 0x400000, hotaru, offset
+[/script]
+
+[script]
+[title]アンジェリークSpecial_
+[process]ANGEW95.EXE
+[maker]コーエー
+[creator]KEI2
+[note]wordwrap
+WindowsMeとWindows98で動作を確認しています。
+Windows95でも多分大丈夫だと思いますが、動作確認していませんので動かなかったらご一報下さい。
+正常に動作しない場合はご一報下さい。
+●現在位置について
+01:ジュリアスの執務室
+02:クラヴィスの執務室
+03:ランディの執務室
+04:リュミエールの執務室
+05:オスカーの執務室
+06:マルセルの執務室
+07:ゼフェルの執務室
+08:オリヴィエの執務室
+09:ルヴァの執務室
+0A:
+0B:王立研究院
+0C:占いの館
+0D:公園
+0E:湖
+0F:
+11:デート終了後で行方不明
+[/note]
+[subject]ハートの数/ハートを8つにする/ハート減らない:toggle, 0x441990, 0800000008, 0800000000
+[subject]日数:calc,0x441978,0,999,signed,little_e
+[subject]サラ湖イベント/サラ湖イベント初期化/サラ湖イベント初回固定:toggle, 0x441D34, 00, 03
+[subject]守護聖を執務室に戻す:b_toggle, 0x441000, ang95b, offset
+[subject]親密度＆相性:dir
+	[subject]主人公と全守護聖との相性・親密度MAX:b_toggle, 0x441000, ang95a, offset
+	[subject]主人公:dir
+		[subject]ロザリアとの相性:calc,0x441C79,0,100,signed,little_e
+		[subject]ジュリアスとの相性:calc,0x441C7A,0,100,signed,little_e
+		[subject]クラヴィスとの相性:calc,0x441C7B,0,100,signed,little_e
+		[subject]ランディとの相性:calc,0x441C7C,0,100,signed,little_e
+		[subject]リュミエールとの相性:calc,0x441C7D,0,100,signed,little_e
+		[subject]オスカーとの相性:calc,0x441C7E,0,100,signed,little_e
+		[subject]マルセルとの相性:calc,0x441C7F,0,100,signed,little_e
+		[subject]ゼフェルとの相性:calc,0x441C80,0,100,signed,little_e
+		[subject]オリヴィエとの相性:calc,0x441C81,0,100,signed,little_e
+		[subject]ルヴァとの相性:calc,0x441C82,0,100,signed,little_e
+		[subject]主人公の大神官との相性:calc,0x441C83,0,100,signed,little_e
+		[subject]ロザリアの大神官との相性:calc,0x441C84,0,100,signed,little_e
+	[back]
+	[subject]ロザリア:dir
+		[subject]主人公との親密度:calc,0x441C85,0,200,signed,little_e
+		[subject]ジュリアスとの相性:calc,0x441C87,0,100,signed,little_e
+		[subject]クラヴィスとの相性:calc,0x441C88,0,100,signed,little_e
+		[subject]ランディとの相性:calc,0x441C89,0,100,signed,little_e
+		[subject]リュミエールとの相性:calc,0x441C8A,0,100,signed,little_e
+		[subject]オスカーとの相性:calc,0x441C8B,0,100,signed,little_e
+		[subject]マルセルとの相性:calc,0x441C8C,0,100,signed,little_e
+		[subject]ゼフェルとの相性:calc,0x441C8D,0,100,signed,little_e
+		[subject]オリヴィエとの相性:calc,0x441C8E,0,100,signed,little_e
+		[subject]ルヴァとの相性:calc,0x441C8F,0,100,signed,little_e
+		[subject]主人公の大神官との相性:calc,0x441C90,0,100,signed,little_e
+		[subject]ロザリアの大神官との相性:calc,0x441C91,0,100,signed,little_e
+	[back]
+	[subject]ジュリアス:dir
+		[subject]主人公との親密度:calc,0x441C92,0,200,signed,little_e
+		[subject]ロザリアとの親密度:calc,0x441C93,0,200,signed,little_e
+		[subject]クラヴィスとの相性:calc,0x441C95,0,100,signed,little_e
+		[subject]ランディとの相性:calc,0x441C96,0,100,signed,little_e
+		[subject]リュミエールとの相性:calc,0x441C97,0,100,signed,little_e
+		[subject]オスカーとの相性:calc,0x441C98,0,100,signed,little_e
+		[subject]マルセルとの相性:calc,0x441C99,0,100,signed,little_e
+		[subject]ゼフェルとの相性:calc,0x441C9A,0,100,signed,little_e
+		[subject]オリヴィエとの相性:calc,0x441C9B,0,100,signed,little_e
+		[subject]ルヴァとの相性:calc,0x441C9C,0,100,signed,little_e
+		[subject]主人公の大神官との相性:calc,0x441C9D,0,100,signed,little_e
+		[subject]ロザリアの大神官との相性:calc,0x441C9E,0,100,signed,little_e
+	[back]
+	[subject]クラヴィス:dir
+		[subject]主人公との親密度:calc,0x441C9F,0,200,signed,little_e
+		[subject]ロザリアとの親密度:calc,0x441CA0,0,200,signed,little_e
+		[subject]ジュリアスとの親密度:calc,0x441CA1,0,200,signed,little_e
+		[subject]ランディとの相性:calc,0x441CA3,0,100,signed,little_e
+		[subject]リュミエールとの相性:calc,0x441CA4,0,100,signed,little_e
+		[subject]オスカーとの相性:calc,0x441CA5,0,100,signed,little_e
+		[subject]マルセルとの相性:calc,0x441CA6,0,100,signed,little_e
+		[subject]ゼフェルとの相性:calc,0x441CA7,0,100,signed,little_e
+		[subject]オリヴィエとの相性:calc,0x441CA8,0,100,signed,little_e
+		[subject]ルヴァとの相性:calc,0x441CA9,0,100,signed,little_e
+		[subject]主人公の大神官との相性:calc,0x441CAA,0,100,signed,little_e
+		[subject]ロザリアの大神官との相性:calc,0x441CAB,0,100,signed,little_e
+	[back]
+	[subject]ランディ:dir
+		[subject]主人公との親密度:calc,0x441CAC,0,200,signed,little_e
+		[subject]ロザリアとの親密度:calc,0x441CAD,0,200,signed,little_e
+		[subject]ジュリアスとの親密度:calc,0x441CAE,0,200,signed,little_e
+		[subject]クラヴィスとの親密度:calc,0x441CAF,0,200,signed,little_e
+		[subject]リュミエールとの相性:calc,0x441CB1,0,100,signed,little_e
+		[subject]オスカーとの相性:calc,0x441CB2,0,100,signed,little_e
+		[subject]マルセルとの相性:calc,0x441CB3,0,100,signed,little_e
+		[subject]ゼフェルとの相性:calc,0x441CB4,0,100,signed,little_e
+		[subject]オリヴィエとの相性:calc,0x441CB5,0,100,signed,little_e
+		[subject]ルヴァとの相性:calc,0x441CB6,0,100,signed,little_e
+		[subject]主人公の大神官との相性:calc,0x441CB7,0,100,signed,little_e
+		[subject]ロザリアの大神官との相性:calc,0x441CB8,0,100,signed,little_e
+	[back]
+	[subject]リュミエール:dir
+		[subject]主人公との親密度:calc,0x441CB9,0,200,signed,little_e
+		[subject]ロザリアとの親密度:calc,0x441CBA,0,200,signed,little_e
+		[subject]ジュリアスとの親密度:calc,0x441CBB,0,200,signed,little_e
+		[subject]クラヴィスとの親密度:calc,0x441CBC,0,200,signed,little_e
+		[subject]ランディとの親密度:calc,0x441CBD,0,200,signed,little_e
+		[subject]オスカーとの相性:calc,0x441CBF,0,100,signed,little_e
+		[subject]マルセルとの相性:calc,0x441CC0,0,100,signed,little_e
+		[subject]ゼフェルとの相性:calc,0x441CC1,0,100,signed,little_e
+		[subject]オリヴィエとの相性:calc,0x441CC2,0,100,signed,little_e
+		[subject]ルヴァとの相性:calc,0x441CC3,0,100,signed,little_e
+		[subject]主人公の大神官との相性:calc,0x441CC4,0,100,signed,little_e
+		[subject]ロザリアの大神官との相性:calc,0x441CC5,0,100,signed,little_e
+	[back]
+	[subject]オスカー:dir
+		[subject]主人公との親密度:calc,0x441CC6,0,200,signed,little_e
+		[subject]ロザリアとの親密度:calc,0x441CC7,0,200,signed,little_e
+		[subject]ジュリアスとの親密度:calc,0x441CC8,0,200,signed,little_e
+		[subject]クラヴィスとの親密度:calc,0x441CC9,0,200,signed,little_e
+		[subject]ランディとの親密度:calc,0x441CCA,0,200,signed,little_e
+		[subject]リュミエールとの親密度:calc,0x441CCB,0,200,signed,little_e
+		[subject]マルセルとの相性:calc,0x441CCD,0,100,signed,little_e
+		[subject]ゼフェルとの相性:calc,0x441CCE,0,100,signed,little_e
+		[subject]オリヴィエとの相性:calc,0x441CCF,0,100,signed,little_e
+		[subject]ルヴァとの相性:calc,0x441CD0,0,100,signed,little_e
+		[subject]主人公の大神官との相性:calc,0x441CD1,0,100,signed,little_e
+		[subject]ロザリアの大神官との相性:calc,0x441CD2,0,100,signed,little_e
+	[back]
+	[subject]マルセル:dir
+		[subject]主人公との親密度:calc,0x441CD3,0,200,signed,little_e
+		[subject]ロザリアとの親密度:calc,0x441CD4,0,200,signed,little_e
+		[subject]ジュリアスとの親密度:calc,0x441CD5,0,200,signed,little_e
+		[subject]クラヴィスとの親密度:calc,0x441CD6,0,200,signed,little_e
+		[subject]ランディとの親密度:calc,0x441CD7,0,200,signed,little_e
+		[subject]リュミエールとの親密度:calc,0x441CD8,0,200,signed,little_e
+		[subject]オスカーとの親密度:calc,0x441CD9,0,200,signed,little_e
+		[subject]ゼフェルとの相性:calc,0x441CDB,0,100,signed,little_e
+		[subject]オリヴィエとの相性:calc,0x441CDC,0,100,signed,little_e
+		[subject]ルヴァとの相性:calc,0x441CDD,0,100,signed,little_e
+		[subject]主人公の大神官との相性:calc,0x441CDE,0,100,signed,little_e
+		[subject]ロザリアの大神官との相性:calc,0x441CDF,0,100,signed,little_e
+	[back]
+	[subject]ゼフェル:dir
+		[subject]主人公との親密度:calc,0x441CE0,0,200,signed,little_e
+		[subject]ロザリアとの親密度:calc,0x441CE1,0,200,signed,little_e
+		[subject]ジュリアスとの親密度:calc,0x441CE2,0,200,signed,little_e
+		[subject]クラヴィスとの親密度:calc,0x441CE3,0,200,signed,little_e
+		[subject]ランディとの親密度:calc,0x441CE4,0,200,signed,little_e
+		[subject]リュミエールとの親密度:calc,0x441CE5,0,200,signed,little_e
+		[subject]オスカーとの親密度:calc,0x441CE6,0,200,signed,little_e
+		[subject]マルセルとの親密度:calc,0x441CE7,0,200,signed,little_e
+		[subject]オリヴィエとの相性:calc,0x441CE9,0,100,signed,little_e
+		[subject]ルヴァとの相性:calc,0x441CEA,0,100,signed,little_e
+		[subject]主人公の大神官との相性:calc,0x441CEB,0,100,signed,little_e
+		[subject]ロザリアの大神官との相性:calc,0x441CEC,0,100,signed,little_e
+	[back]
+	[subject]オリヴィエ:dir
+		[subject]主人公との親密度:calc,0x441CED,0,200,signed,little_e
+		[subject]ロザリアとの親密度:calc,0x441CEE,0,200,signed,little_e
+		[subject]ジュリアスとの親密度:calc,0x441CEF,0,200,signed,little_e
+		[subject]クラヴィスとの親密度:calc,0x441CF0,0,200,signed,little_e
+		[subject]ランディとの親密度:calc,0x441CF1,0,200,signed,little_e
+		[subject]リュミエールとの親密度:calc,0x441CF2,0,200,signed,little_e
+		[subject]オスカーとの親密度:calc,0x441CF3,0,200,signed,little_e
+		[subject]マルセルとの親密度:calc,0x441CF4,0,200,signed,little_e
+		[subject]ゼフェルとの親密度:calc,0x441CF5,0,200,signed,little_e
+		[subject]ルヴァとの相性:calc,0x441CE7,0,100,signed,little_e
+		[subject]主人公の大神官との相性:calc,0x441CE8,0,100,signed,little_e
+		[subject]ロザリアの大神官との相性:calc,0x441CE9,0,100,signed,little_e
+	[back]
+	[subject]ルヴァ:dir
+		[subject]主人公との親密度:calc,0x441CFA,0,200,signed,little_e
+		[subject]ロザリアとの親密度:calc,0x441CFB,0,200,signed,little_e
+		[subject]ジュリアスとの親密度:calc,0x441CFC,0,200,signed,little_e
+		[subject]クラヴィスとの親密度:calc,0x441CFD,0,200,signed,little_e
+		[subject]ランディとの親密度:calc,0x441CFE,0,200,signed,little_e
+		[subject]リュミエールとの親密度:calc,0x441CFF,0,200,signed,little_e
+		[subject]オスカーとの親密度:calc,0x441D00,0,200,signed,little_e
+		[subject]マルセルとの親密度:calc,0x441D01,0,200,signed,little_e
+		[subject]ゼフェルとの親密度:calc,0x441D02,0,200,signed,little_e
+		[subject]オリヴィエとの親密度:calc,0x441D03,0,200,signed,little_e 
+		[subject]主人公の大神官との相性:calc,0x441D05,0,100,signed,little_e 
+		[subject]ロザリアの大神官との相性:calc,0x441D06,0,100,signed,little_e 
+	[back]
+	[subject]主人公の大神官:dir
+		[subject]主人公との親密度:calc,0x441D07,0,200,signed,little_e
+		[subject]ロザリアとの親密度:calc,0x441D08,0,200,signed,little_e
+		[subject]ジュリアスとの親密度:calc,0x441D09,0,200,signed,little_e
+		[subject]クラヴィスとの親密度:calc,0x441D0A,0,200,signed,little_e
+		[subject]ランディとの親密度:calc,0x441D0B,0,200,signed,little_e
+		[subject]リュミエールとの親密度:calc,0x441D0C,0,200,signed,little_e
+		[subject]オスカーとの親密度:calc,0x441D0D,0,200,signed,little_e
+		[subject]マルセルとの親密度:calc,0x441D0E,0,200,signed,little_e
+		[subject]ゼフェルとの親密度:calc,0x441D0F,0,200,signed,little_e
+		[subject]オリヴィエとの親密度:calc,0x441D10,0,200,signed,little_e
+		[subject]ルヴァとの親密度:calc,0x441D11,0,200,signed,little_e
+		[subject]ロザリアの大神官との相性:calc,0x441D13,0,100,signed,little_e
+	[back]
+	[subject]ロザリアの大神官:dir
+		[subject]主人公との親密度:calc,0x441D14,0,200,signed,little_e
+		[subject]ロザリアとの親密度:calc,0x441D15,0,200,signed,little_e
+		[subject]ジュリアスとの親密度:calc,0x441D16,0,200,signed,little_e
+		[subject]クラヴィスとの親密度:calc,0x441D17,0,200,signed,little_e
+		[subject]ランディとの親密度:calc,0x441D18,0,200,signed,little_e
+		[subject]リュミエールとの親密度:calc,0x441D19,0,200,signed,little_e
+		[subject]オスカーとの親密度:calc,0x441D1A,0,200,signed,little_e
+		[subject]マルセルとの親密度:calc,0x441D1B,0,200,signed,little_e
+		[subject]ゼフェルとの親密度:calc,0x441D1C,0,200,signed,little_e
+		[subject]オリヴィエとの親密度:calc,0x441D1D,0,200,signed,little_e
+		[subject]ルヴァとの親密度:calc,0x441D1E,0,200,signed,little_e
+		[subject]主人公の大神官との親密度:calc,0x441D1F,0,200,signed,little_e
+	[back]
+[back]
+[subject]守護聖の性格等:dir
+	[subject]ジュリアス:dir
+		[subject]移動率:calc,0x4419E0,0x00,0x09,unsigned,little_e
+		[subject]行動傾向:calc,0x4419E1,0x00,0x09,unsigned,little_e
+		[subject]社交性:calc,0x4419E2,0x00,0x09,unsigned,little_e
+		[subject]星への関心:calc,0x4419E3,0x00,0x09,unsigned,little_e
+		[subject]仲間への関心:calc,0x4419E4,0x00,0x09,unsigned,little_e
+		[subject]権力志向:calc,0x4419E5,0x00,0x09,unsigned,little_e
+		[subject]主人公からの依頼:calc,0x4419E7,0x00,0x30,unsigned,little_e
+		[subject]ロザリアからの依頼:calc,0x4419E8,0x00,0x30,unsigned,little_e
+		[subject]現在位置:calc,0x4419EC,0x00,0x11,unsigned,little_e
+		[subject]当日会っていないことにする:toggle, 0x4419EF, 00, 01
+		[subject]デートしても時間経たない:t_toggle,0x4419EB,03,off_disregard,00,00,0x4419EB
+	[back]
+	[subject]クラヴィス:dir
+		[subject]移動率:calc,0x4419F0,0x00,0x09,unsigned,little_e
+		[subject]行動傾向:calc,0x4419F1,0x00,0x09,unsigned,little_e
+		[subject]社交性:calc,0x4419F2,0x00,0x09,unsigned,little_e
+		[subject]星への関心:calc,0x4419F3,0x00,0x09,unsigned,little_e
+		[subject]仲間への関心:calc,0x4419F4,0x00,0x09,unsigned,little_e
+		[subject]権力志向:calc,0x4419F5,0x00,0x09,unsigned,little_e
+		[subject]主人公からの依頼:calc,0x4419F7,0x00,0x30,unsigned,little_e
+		[subject]ロザリアからの依頼:calc,0x4419F8,0x00,0x30,unsigned,little_e
+		[subject]現在位置:calc,0x4419FC,0x00,0x11,unsigned,little_e
+		[subject]当日会っていないことにする:toggle, 0x4419FF, 00, 01
+		[subject]デートしても時間経たない:t_toggle,0x4419FB,03,off_disregard,00,00,0x4419FB
+	[back]
+	[subject]ランディ:dir
+		[subject]移動率:calc,0x441A00,0x00,0x09,unsigned,little_e
+		[subject]行動傾向:calc,0x441A01,0x00,0x09,unsigned,little_e
+		[subject]社交性:calc,0x441A02,0x00,0x09,unsigned,little_e
+		[subject]星への関心:calc,0x441A03,0x00,0x09,unsigned,little_e
+		[subject]仲間への関心:calc,0x441A04,0x00,0x09,unsigned,little_e
+		[subject]権力志向:calc,0x441A05,0x00,0x09,unsigned,little_e
+		[subject]主人公からの依頼:calc,0x441A07,0x00,0x30,unsigned,little_e
+		[subject]ロザリアからの依頼:calc,0x441A08,0x00,0x30,unsigned,little_e
+		[subject]現在位置:calc,0x441A0C,0x00,0x11,unsigned,little_e
+		[subject]当日会っていないことにする:toggle, 0x441A0F, 00, 01
+		[subject]デートしても時間経たない:t_toggle,0x441A0B,03,off_disregard,00,00,0x441A0B
+	[back]
+	[subject]リュミエール:dir
+		[subject]移動率:calc,0x441A10,0x00,0x09,unsigned,little_e
+		[subject]行動傾向:calc,0x441A11,0x00,0x09,unsigned,little_e
+		[subject]社交性:calc,0x441A12,0x00,0x09,unsigned,little_e
+		[subject]星への関心:calc,0x441A13,0x00,0x09,unsigned,little_e
+		[subject]仲間への関心:calc,0x441A14,0x00,0x09,unsigned,little_e
+		[subject]権力志向:calc,0x441A15,0x00,0x09,unsigned,little_e
+		[subject]主人公からの依頼:calc,0x441A17,0x00,0x30,unsigned,little_e
+		[subject]ロザリアからの依頼:calc,0x441A18,0x00,0x30,unsigned,little_e
+		[subject]現在位置:calc,0x441A1C,0x00,0x11,unsigned,little_e
+		[subject]当日会っていないことにする:toggle, 0x441A1F, 00, 01
+		[subject]デートしても時間経たない:t_toggle,0x441A1B,03,off_disregard,00,00,0x441A1B
+	[back]
+	[subject]オスカー:dir
+		[subject]移動率:calc,0x441A20,0x00,0x09,unsigned,little_e
+		[subject]行動傾向:calc,0x441A21,0x00,0x09,unsigned,little_e
+		[subject]社交性:calc,0x441A22,0x00,0x09,unsigned,little_e
+		[subject]星への関心:calc,0x441A23,0x00,0x09,unsigned,little_e
+		[subject]仲間への関心:calc,0x441A24,0x00,0x09,unsigned,little_e
+		[subject]権力志向:calc,0x441A25,0x00,0x09,unsigned,little_e
+		[subject]主人公からの依頼:calc,0x441A27,0x00,0x30,unsigned,little_e
+		[subject]ロザリアからの依頼:calc,0x441A28,0x00,0x30,unsigned,little_e
+		[subject]現在位置:calc,0x441A2C,0x00,0x11,unsigned,little_e
+		[subject]当日会っていないことにする:toggle, 0x441A2F, 00, 01
+		[subject]デートしても時間経たない:t_toggle,0x441A2B,03,off_disregard,00,00,0x441A2B
+	[back]
+	[subject]マルセル:dir
+		[subject]移動率:calc,0x441A30,0x00,0x09,unsigned,little_e
+		[subject]行動傾向:calc,0x441A31,0x00,0x09,unsigned,little_e
+		[subject]社交性:calc,0x441A32,0x00,0x09,unsigned,little_e
+		[subject]星への関心:calc,0x441A33,0x00,0x09,unsigned,little_e
+		[subject]仲間への関心:calc,0x441A34,0x00,0x09,unsigned,little_e
+		[subject]権力志向:calc,0x441A35,0x00,0x09,unsigned,little_e
+		[subject]主人公からの依頼:calc,0x441A37,0x00,0x30,unsigned,little_e
+		[subject]ロザリアからの依頼:calc,0x441A38,0x00,0x30,unsigned,little_e
+		[subject]現在位置:calc,0x441A3C,0x00,0x11,unsigned,little_e
+		[subject]当日会っていないことにする:toggle, 0x441A3F, 00, 01
+		[subject]デートしても時間経たない:t_toggle,0x441A3B,03,off_disregard,00,00,0x441A3B
+	[back]
+	[subject]ゼフェル:dir
+		[subject]移動率:calc,0x441A40,0x00,0x09,unsigned,little_e
+		[subject]行動傾向:calc,0x441A41,0x00,0x09,unsigned,little_e
+		[subject]社交性:calc,0x441A42,0x00,0x09,unsigned,little_e
+		[subject]星への関心:calc,0x441A43,0x00,0x09,unsigned,little_e
+		[subject]仲間への関心:calc,0x441A44,0x00,0x09,unsigned,little_e
+		[subject]権力志向:calc,0x441A45,0x00,0x09,unsigned,little_e
+		[subject]主人公からの依頼:calc,0x441A47,0x00,0x30,unsigned,little_e
+		[subject]ロザリアからの依頼:calc,0x441A48,0x00,0x30,unsigned,little_e
+		[subject]現在位置:calc,0x441A4C,0x00,0x11,unsigned,little_e
+		[subject]当日会っていないことにする:toggle, 0x441A4F, 00, 01
+		[subject]デートしても時間経たない:t_toggle,0x441A4B,03,off_disregard,00,00,0x441A4B
+	[back]
+	[subject]オリヴィエ:dir
+		[subject]移動率:calc,0x441A50,0x00,0x09,unsigned,little_e
+		[subject]行動傾向:calc,0x441A51,0x00,0x09,unsigned,little_e
+		[subject]社交性:calc,0x441A52,0x00,0x09,unsigned,little_e
+		[subject]星への関心:calc,0x441A53,0x00,0x09,unsigned,little_e
+		[subject]仲間への関心:calc,0x441A54,0x00,0x09,unsigned,little_e
+		[subject]権力志向:calc,0x441A55,0x00,0x09,unsigned,little_e
+		[subject]主人公からの依頼:calc,0x441A57,0x00,0x30,unsigned,little_e
+		[subject]ロザリアからの依頼:calc,0x441A58,0x00,0x30,unsigned,little_e
+		[subject]現在位置:calc,0x441A5C,0x00,0x11,unsigned,little_e
+		[subject]当日会っていないことにする:toggle, 0x441A5F, 00, 01
+		[subject]デートしても時間経たない:t_toggle,0x441A5B,03,off_disregard,00,00,0x441A5B
+	[back]
+	[subject]ルヴァ:dir
+		[subject]移動率:calc,0x441A60,0x00,0x09,unsigned,little_e
+		[subject]行動傾向:calc,0x441A61,0x00,0x09,unsigned,little_e
+		[subject]社交性:calc,0x441A62,0x00,0x09,unsigned,little_e
+		[subject]星への関心:calc,0x441A63,0x00,0x09,unsigned,little_e
+		[subject]仲間への関心:calc,0x441A64,0x00,0x09,unsigned,little_e
+		[subject]権力志向:calc,0x441A65,0x00,0x09,unsigned,little_e
+		[subject]主人公からの依頼:calc,0x441A67,0x00,0x30,unsigned,little_e
+		[subject]ロザリアからの依頼:calc,0x441A68,0x00,0x30,unsigned,little_e
+		[subject]現在位置:calc,0x441A6C,0x00,0x11,unsigned,little_e
+		[subject]当日会っていないことにする:toggle, 0x441A6F, 00, 01
+		[subject]デートしても時間経たない:t_toggle,0x441A6B,03,off_disregard,00,00,0x441A6B
+	[back]
+[root]
+[/script]
+
+[script]
+[title]ふしぎの国のアンジェリーク
+[process]ANGE_F.EXE
+[maker]コーエー
+[creator]KEI
+[note]wordwrap
+WindowsMeとWindows98で動作を確認しています。
+Windows95でも多分大丈夫だと思いますが、動作確認していませんので動かなかったらご一報下さい。
+正常に動作しない場合はご一報下さい。
+●ロザリアとの勝負について。
+邪魔されないか必ず勝負するか両方選ばないで下さい。（選ぶ場合は片方にして下さい。）
+●時間について。
+経過時間は分で表されます。
+「時間経たない」にチェックを入れると、時間が固定され経過しません。
+●位置について。
+現在いるコマの場所です。スタート地点が00でゴール地点が1Eです。（16進数で）
+向きは原則的に01が順方向で02が逆方向ですが、例外もあるようなので適宜変更して下さい。
+分岐の仕方によって、04や08などもあります。
+●告白モードについて。
+2にしておくと、次に湖で告白したときに恋愛EDに行けます。
+●サイコロについて。
+「必ずプレゼントを貰う」にチェックを入れておくと、数字が出てもプレゼントのコマが出たことになります。
+位置はその場に留まります。希望の位置にしておいてここをチェックしておくと好きな場所に止まったことになります。
+「必ず守護聖に出会う」にチェックを入れておくと、数字が出てもクローバーのコマが出たことになります。
+「必ずプレゼントを貰う」と「必ず守護聖に出会う」のチェックはどちらかにして下さい。
+両方にチェックした場合は「必ず守護聖に出会う」が優先されます。
+●森の散歩道について。
+「カエル踏まない」にチェックを入れておくと、カエルを踏んだ場合ゲームが終了しないで何もおこりません。そのままゲームを続けてください。
+●カルトクイズについて。
+「必ず正解」をチェックするとどの答えを選んでも正解になります。
+●ふしぎミュージアムについて。
+「時間減らない」と「パズル完成」にチェックを入れ、値を固定しておくとゲームが始まってすぐにパズルが完成したことになります。Enterキーを押すと9分残して完成したことになります。
+●守護聖さまCRUSH!について。
+「獲得点数3000点」にチェックするとゲーム開始直後にゲームオーバーになっても高得点でクリアしたことになります。
+●とどけ！マイハートについて。
+アイテム取得状態（ロザリア寝っぱなしなど）に固定しておくと、ずっとアイテム取得状態になりますが、コードを更新する瞬間だけ元に戻ることがあります。
+[/note]
+[subject]最後にロザリアに邪魔されない:toggle, 0x426845, 9090, 7539
+[subject]最後にロザリアと必ず勝負:toggle, 0x426845, EB39, 7539
+[subject]時間:dir
+	[subject]経過時間（分）:calc,0x4429E6,0x00,0xFF,signed,little_e
+	[subject]時間を0に戻す/時間を0に戻す/時間経たない:toggle, 0x4429E6, 00, ??
+[back]
+[subject]位置:dir
+	[subject]現在位置:calc,0x4429E0,0x00,0x1F,signed,little_e
+	[subject]進行方向:calc,0x4429E3,0x00,0x0F,signed,little_e
+	[subject]ゴール地点にワープ:toggle, 0x4429E0, 1E, ??
+	[subject]進行方向/順方向に進む:toggle, 0x4429E3, 01, ??
+	[subject]進行方向/逆方向に進む:toggle, 0x4429E3, 02, ??
+[back]
+[subject]デートポイント:dir
+	[subject]ジュリアス:calc,0x4429EA,0x00,0xFF,signed,little_e
+	[subject]クラヴィス:calc,0x4429EB,0x00,0xFF,signed,little_e
+	[subject]ランディ:calc,0x4429EC,0x00,0xFF,signed,little_e
+	[subject]リュミエール:calc,0x4429ED,0x00,0xFF,signed,little_e
+	[subject]オスカー:calc,0x4429EE,0x00,0xFF,signed,little_e
+	[subject]マルセル:calc,0x4429EF,0x00,0xFF,signed,little_e
+	[subject]ゼフェル:calc,0x4429F0,0x00,0xFF,signed,little_e
+	[subject]オリヴィエ:calc,0x4429F1,0x00,0xFF,signed,little_e
+	[subject]ルヴァ:calc,0x4429F2,0x00,0xFF,signed,little_e
+	[subject]商人（カティス）:calc,0x4429F3,0x00,0xFF,signed,little_e
+	[subject]全員とデートポイント99:toggle, 0x4429EA, 63636363636363636363, ??
+[back]
+[subject]告白モード:dir
+	[subject]ジュリアス:calc,0x4429F4,0x00,0x02,signed,little_e
+	[subject]クラヴィス:calc,0x4429F5,0x00,0x02,signed,little_e
+	[subject]ランディ:calc,0x4429F6,0x00,0x02,signed,little_e
+	[subject]リュミエール:calc,0x4429F7,0x00,0x02,signed,little_e
+	[subject]オスカー:calc,0x4429F8,0x00,0x02,signed,little_e
+	[subject]マルセル:calc,0x4429F9,0x00,0x02,signed,little_e
+	[subject]ゼフェル:calc,0x4429FA,0x00,0x02,signed,little_e
+	[subject]オリヴィエ:calc,0x4429FB,0x00,0x02,signed,little_e
+	[subject]ルヴァ:calc,0x4429FC,0x00,0x02,signed,little_e
+	[subject]商人（カティス）:calc,0x4429FD,0x00,0x02,signed,little_e
+	[subject]全員と告白モード2:toggle, 0x4429F4, 02020202020202020202, ??
+[back]
+[subject]アイテム/アイテム全部100個/アイテム減らない:toggle, 0x4429FE, 0x442A27-64, ??
+[subject]サイコロ:dir
+	[subject]必ずプレゼント貰う:toggle, 0x423FB7, 9090, 750D
+	[subject]必ず守護聖に出会う:toggle, 0x423F9D, 9090, 7512
+[back]
+[subject]森の散歩道:dir
+	[subject]カエル踏まない:toggle, 0x407EE7, 9090, 740B
+[back]
+[subject]アンジェリーク・カルトクイズ:dir
+	[subject]正解数:calc,0x46742C,0,10,unsigned,little_e
+	[subject]不正解数:calc,0x46742E,0,10,unsigned,little_e
+	[subject]出題数:calc,0x467432,0,10,unsigned,little_e
+	[subject]クイズ必ず正解:toggle, 0x40A6C4, EB, 74
+[back]
+[subject]ふしぎミュージアム:dir
+	[subject]時間減らない/残り時間9分/残り時間9分に固定:toggle, 0x46770C, 09, ??
+	[subject]パズル完成:toggle, 0x4676B0, 0105090D02060A0E03070B0F04080C10, ??
+[back]
+[subject]守護聖さまCRUSH!:dir
+	[subject]獲得点数:calc,0x45BDE0,0,9999,unsigned,little_e
+	[subject]クリアー必要点数:calc,0x6AFCF4,0,9999,unsigned,little_e
+	[subject]残り時間（分）:calc,0x6AFCEC,0,10,unsigned,little_e
+	[subject]獲得点数3000点:toggle, 0x45BDE0, B80B, ??
+[back]
+[subject]とどけ！マイハート:dir
+	[subject]時間減らない/残り時間5分/残り時間5分に固定:toggle, 0x466A30, 05, ??
+	[subject]あめゲット/あめゲット/プレート大きいまま:toggle, 0x4667DC, 01, 00
+	[subject]薬ビンゲット/薬ビンゲット/ロザリア寝っぱなし:toggle, 0x4667DE, 01, 00
+	[subject]星ゲット/星ゲット/3連射固定:toggle, 0x4667E0, 01, 00
+	[subject]クリア済守護聖数:calc,0x4667D2,0,9,unsigned,little_e
+	[subject]弾を当てた数:calc,0x4667D6,0,10,unsigned,little_e
+[back]
+[/script]
