@@ -1,0 +1,38 @@
+[group]NTW_F2
+[note]wordwrap
+高嶺の花的存在でありながら、内心では主人公の幼馴染に対する劣等感に苛まれ続けるメインヒロインの二面性がよかったかなと
+
+ポップアップメニュー制限解除：
+主におまけシナリオ用
+[/note]
+
+[subject]環境関連:dir
+	[subject]ポップアップメニュー制限解除/実行/固定:b_toggle,0x00,NTWLST->NTW_a,offset
+ [subject]ここまで:split,line,-1,100,5
+[root]
+
+[/group]
+
+
+[group]NTW_CG
+[subject]ＣＧモード関連:dir
+ [subject]SPECIAL:dir
+ 	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x34,0x44-FF
+ 	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x34,0x44-00
+  [back]
+ [subject]ここまで:split,line,-1,100,5
+[root]
+
+[/group]
+
+
+[group]NTW_a
+_[:0x523B34:]+0x0D,01
+_[:0x523B3C:]+0x28C,00
+_[:0x523B3C:]+0x2BC,00
+_[:0x523B3C:]+0x31C,00
+_[:0x523B3C:]+0x34C,00
+_[:0x523B3C:]+0x58C,00
+_[:0x523B3C:]+0x5BC,00
+_[:0x523B3C:]+0x5EC,00
+[/group]
