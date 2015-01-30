@@ -1,0 +1,2 @@
+[subject][! @FBLST->LST_a,$Val !]:dir
+[replace]0x[! 0x428A28+$Val*0x14 !],FB_c
