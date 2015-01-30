@@ -1,0 +1,58 @@
+[subject]行動前に戻す:list,0x7CDB27,マイネ曜日,0,1
+[subject]爆弾封印/爆弾封印（固定推奨）:b_toggle,0x7CDB00,mine2,offset
+[subject]服装チェック無し/服装チェック無し（固定推奨）:toggle,0x7CDC60,000000000000000000,??
+[subject]当日のデート相手:d_list,0x7CDA55,マイネ相手1,0x00,0xFF,マイネ相手2,offset
+[subject]当日のデート場所:list,0x7CDA54,マイネ場所,0,1
+[subject]所属部活:list,0x7CDC54,マイネ部活,0,1
+[subject]クリスマスエスコート:list,0x7CDC45,マイネ相手1,0,1
+[subject]元旦に外出可:toggle,0x7CDC47,01,00
+[subject]おまじないした人:list,0x7CDC55,マイネ呪1,0,1
+[subject]2年連続おまじないしたことにする:toggle,0x7CDC75,02,??
+[subject]全員登場:toggle,0x7CDC44,3E,??
+[subject]全員の情報聞く:toggle,0x7CDC4D,3E,??
+[subject]全員フィルタ付:copy,0x7CDC55,0x7CDA55,1
+[subject]日付:dir
+	[subject]カレンダー:d_list,0x7CDB24,マイネ日付1,0x00,0xFFFFFFFF,マイネ日付2,offset
+	[subject]年:calc,0x7CDB24,0,2,signed,little_e
+	[subject]月:calc,0x7CDB25,0,12,signed,little_e
+	[subject]日:calc,0x7CDB26,0,31,signed,little_e
+[back]
+[subject]能力値:dir
+	[subject]体調:calc,0x7CDA34,0,255,signed,little_e
+	[subject]容姿:calc,0x7CDA35,0,255,signed,little_e
+	[subject]心労:calc,0x7CDA36,0,255,signed,little_e
+	[subject]学力:calc,0x7CDA37,0,255,signed,little_e
+	[subject]気品:calc,0x7CDA38,0,255,signed,little_e
+	[subject]芸術:calc,0x7CDA39,0,255,signed,little_e
+	[subject]家政:calc,0x7CDA3A,0,255,signed,little_e
+	[subject]運動:calc,0x7CDA3B,0,255,signed,little_e
+	[subject]雑学:calc,0x7CDA3C,0,255,signed,little_e
+[back]
+[subject]各キャラパラメータ:dir
+	[subject]ラブ度:dir
+		[replace]0x7CDB34,mine1
+	[subject]友好度:dir
+		[replace]0x7CDB35,mine1
+	[subject]傷心度:dir
+		[replace]0x7CDB36,mine1
+[back]
+[subject]彼氏とデート:dir
+	[subject]クリア済:dir
+		[subject]オルフェ:toggle,0x7CDC59,80,00
+		[subject]エド:toggle,0x7CDC5A,80,00
+		[subject]カミユ:toggle,0x7CDC5B,80,00
+		[subject]ルーイ:toggle,0x7CDC5C,80,00
+		[subject]ナオジ:toggle,0x7CDC5D,80,00
+		[subject]アイザック:toggle,0x7CDC5E,80,00
+	[back]
+	[subject]彼氏とデート時のラブ度:dir
+		[e_with],0x00,0x7F,unsigned,little_e
+		[subject]オルフェ:calc,0x7CDC69
+		[subject]エド:calc,0x7CDC6A
+		[subject]カミユ:calc,0x7CDC6B
+		[subject]ルーイ:calc,0x7CDC6C
+		[subject]ナオジ:calc,0x7CDC6D
+		[subject]アイザック:calc,0x7CDC6E
+		[/e_with] 
+		[back]
+[back]
