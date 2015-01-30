@@ -1,0 +1,22 @@
+[group]SUKSSG
+[note]wordwrap
+解析訓練の一環として作成したものなので、当サイトにて同時配布しているセーブデータの利用をお勧めします。
+[/note]
+
+[subject]ＣＧモード関連:dir
+[replace]_[:[:[:[:0x49985C:]+0x828:]+0x554:]:],SUKLST->SUK_CG
+[root]
+
+[/group]
+
+
+[group]SUK_CG
+[subject]GRAPHIC ALL（一時的）/実行/_:toggle,0x3E,0x5B-FF
+[subject]SCENE ALL（一時的）/実行/_:b_toggle,0x00,SUKLST->SUK_a,offset
+[/group]
+
+
+[group]SUK_a
+0x24-FFFFFF
+0x37-FF
+[/group]
