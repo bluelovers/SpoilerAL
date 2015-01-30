@@ -1,0 +1,25 @@
+[group]PC_CG
+[note]wordwrap
+絵やタイトルに騙されると、そのジメジメした暗い展開に鬱な気分になることうけあい(^^; コンプ以後、私はメインヒロインの王詩千晶を『ヨヨ王女』と呼び慣わし、私的ムカツクヒロインリスト第２位に位置づけました。…このシナリオライターの作品はもう買いません(´∞｀;
+[/note]
+
+[subject]ＣＧモード関連:dir
+	[subject]おまけ使用可能/実行/_:toggle,0x6EEB2C,01,00
+	[subject]ＣＧ・回想:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:b_toggle,0x6EEB04,PCLST->CHN_a
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x6EEB04,0x6EEB2B-00
+[/group]
+
+
+[group]CHN_a
+0x6EEB04,FFFFFF3F
+0x6EEB0B,40
+0x6EEB0C,FFFFFFFF03
+0x6EEB13,40
+0x6EEB14,FFFFFF03
+0x6EEB1B,40
+0x6EEB1C,FFFFFFFF03
+0x6EEB23,C0
+0x6EEB24,FFFFFFFF1F
+0x6EEB2B,40
+[/group]
