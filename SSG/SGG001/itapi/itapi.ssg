@@ -1,0 +1,386 @@
+SSG for SpoilerAL ver 3.4
+
+//    ふられちゃいました(T-T)/
+//    激しくブルーっす。。。つうかアホみたいにアホ(^^;
+//    ま、くよくよしてられないんで改造してます(笑)
+//    考えれば考えるほど寂しいな(T-T)
+//
+//　　とりあえず不具合等の報告は
+//　　itapi@ma.kcom.ne.jpまでお願いしまぁ～す。
+//                          いたぴ
+
+
+[script]
+[title]Derby Stallion for Win
+[process]DSWIN.EXE
+[maker]ParityBit
+[creator]いたぴ
+[note]
+※注1　受胎について
+変更したい牝馬に1頭でも子馬がいる場合は
+強制受胎をチェックしてから種牡馬を選択してください。
+
+※注2　日付の変更方法について
+月と週をかけた数から1引いてやった数を入力してください。
+(例)5月3週の場合：5×3-1=14
+
+牧場の規模と受胎については暫定版と言う事で(^^;
+
+[/note]
+
+[subject]資金(x100):calc,0x4B75AC,0x0,999999999,unsigned,little_e
+[subject]牧場の規模(暫定):list,0x4B75FE,ds_bokujo,0x00,0x01
+[subject]リース種牡馬:dir
+        [subject]リース種牡馬全部:toggle,0x4B8108,0x4B813E-05,00
+        [subject]エーピーインディ:toggle,0x4B8108,05,00
+        [subject]ベーリング:toggle,0x4B8109,05,00
+        [subject]ブロードブラッシュ:toggle,0x4B810A,05,00
+        [subject]カーリアン:toggle,0x4B810B,05,00
+        [subject]カポーティ:toggle,0x4B810C,05,00
+        [subject]カーソンシティ:toggle,0x4B810D,05,00
+        [subject]コンキスタドールシエロ:toggle,0x4B810E,05,00
+        [subject]コジーン:toggle,0x4B810F,05,00
+        [subject]クリプトクリアランス:toggle,0x4B8110,05,00
+        [subject]ダンチヒ:toggle,0x4B8111,05,00
+        [subject]ダルシャーン:toggle,0x4B8112,05,00
+        [subject]ディジュール:toggle,0x4B8113,05,00
+        [subject]デヒア:toggle,0x4B8114,05,00
+        [subject]デヴィルズバッグ:toggle,0x4B8115,05,00
+        [subject]ダイイシス:toggle,0x4B8116,05,00
+        [subject]ダイナフォーマー:toggle,0x4B8117,05,00
+        [subject]エフィシオ:toggle,0x4B8118,05,00
+        [subject]エルグランセニョール:toggle,0x4B8119,05,00
+        [subject]フェアリーキング:toggle,0x4B811A,05,00
+        [subject]ギルデッドタイム:toggle,0x4B811B,05,00
+        [subject]ゴーンウェスト:toggle,0x4B811C,05,00
+        [subject]グリーンデザート:toggle,0x4B811D,05,00
+        [subject]ガルチ:toggle,0x4B811E,05,00
+        [subject]ハイエストオナー:toggle,0x4B811F,05,00
+        [subject]インディアンリッジ:toggle,0x4B8120,05,00
+        [subject]キングマンボ:toggle,0x4B8121,05,00
+        [subject]リアファン:toggle,0x4B8122,05,00
+        [subject]リナミックス:toggle,0x4B8123,05,00
+        [subject]マキャベリアン:toggle,0x4B8124,05,00
+        [subject]マウントリバーモア:toggle,0x4B8125,05,00
+        [subject]ムトト:toggle,0x4B8126,05,00
+        [subject]ナシュワン:toggle,0x4B8127,05,00
+        [subject]ヌレイエフ:toggle,0x4B8128,05,00
+        [subject]フォーントリック:toggle,0x4B8129,05,00
+        [subject]プレザントコロニー:toggle,0x4B812A,05,00
+        [subject]ラーイ:toggle,0x4B812B,05,00
+        [subject]レインボウクエスト:toggle,0x4B812C,05,00
+        [subject]レッドランサム:toggle,0x4B812D,05,00
+        [subject]リズンスター:toggle,0x4B812E,05,00
+        [subject]サドラーズウェルズ:toggle,0x4B812F,05,00
+        [subject]サルス:toggle,0x4B8130,05,00
+        [subject]ソルトレイク:toggle,0x4B8131,05,00
+        [subject]シーキングザゴールド:toggle,0x4B8132,05,00
+        [subject]セルカーク:toggle,0x4B8133,05,00
+        [subject]シルヴァーデピュティ:toggle,0x4B8134,05,00
+        [subject]シルヴァーホーク:toggle,0x4B8135,05,00
+        [subject]スルーオゴールド:toggle,0x4B8136,05,00
+        [subject]スペンドアバック:toggle,0x4B8137,05,00
+        [subject]ストームキャット:toggle,0x4B8138,05,00
+        [subject]シアトリカル:toggle,0x4B8139,05,00
+        [subject]トロピュラー:toggle,0x4B813A,05,00
+        [subject]アンブライドルド:toggle,0x4B813B,05,00
+        [subject]ワイルドアゲイン:toggle,0x4B813C,05,00
+        [subject]ウッドマン:toggle,0x4B813D,05,00
+        [subject]ジルザル:toggle,0x4B813E,05,00
+[back]
+[root]
+[subject]繁殖牝馬:dir
+        [subject]1頭目:dir
+        [replace]0x4B4080,ds_uma,offset
+        [subject]2頭目:dir
+        [replace]0x4B4118,ds_uma,offset
+        [subject]3頭目:dir
+        [replace]0x4B41B0,ds_uma,offset
+        [subject]4頭目:dir
+        [replace]0x4B4248,ds_uma,offset
+        [subject]5頭目:dir
+        [replace]0x4B42E0,ds_uma,offset
+        [subject]6頭目:dir
+        [replace]0x4B4378,ds_uma,offset
+        [subject]7頭目:dir
+        [replace]0x4B4410,ds_uma,offset
+        [subject]8頭目:dir
+        [replace]0x4B44A8,ds_uma,offset
+[back]
+[root]
+[subject]日付変更:calc,0x4B75B4,0x00,0x2F,signed,little_e
+[/script]
+
+[script]
+[title]POWER DOLLS 4
+[process]PD4.EXE
+[maker]工画堂スタジオ
+[creator]いたぴ
+[note]
+えっと、はっきり言っちゃうと手抜き？です(^^;
+装備や機体を増やしたいときは必ずそれぞれの
+必須をチェックしてください。そうしないと
+存在フラグ立ちません(^^;
+にしても、前回はここに書くの忘れてた(笑)
+
+[/note]
+[subject]能力:dir
+        [subject]フェイエン:dir
+        [replace]0x5061CA,pd4,offset
+        [subject]ロザリア:dir
+        [replace]0x5062DE,pd4,offset
+        [subject]イネス:dir
+        [replace]0x5063F2,pd4,offset
+        [subject]ニナ:dir
+        [replace]0x506506,pd4,offset
+        [subject]アニー:dir
+        [replace]0x50661A,pd4,offset
+        [subject]メアリー:dir
+        [replace]0x50672E,pd4,offset
+        [subject]レンレン:dir
+        [replace]0x506842,pd4,offset
+        [subject]ナリス:dir
+        [replace]0x506956,pd4,offset
+        [subject]ソイニ:dir
+        [replace]0x506A6A,pd4,offset
+        [subject]エディタ:dir
+        [replace]0x506B7E,pd4,offset
+        [subject]キャロル:dir
+        [replace]0x506C92,pd4,offset
+        [subject]エレン:dir
+        [replace]0x506DA6,pd4,offset
+        [subject]アイザワ:dir
+        [replace]0x506EBA,pd4,offset
+        [subject]トリッシュ:dir
+        [replace]0x506FCE,pd4,offset
+        [subject]リーユン:dir
+        [replace]0x5070E2,pd4,offset
+        [subject]リー:dir
+        [replace]0x5071F6,pd4,offset
+        [subject]マハティ:dir
+        [replace]0x50730A,pd4,offset
+        [subject]マチルダ:dir
+        [replace]0x50741E,pd4,offset
+        [subject]メラニー:dir
+        [replace]0x507532,pd4,offset
+        [subject]ジェニファー:dir
+        [replace]0x507646,pd4,offset
+        [subject]ナム:dir
+        [replace]0x50775A,pd4,offset
+        [subject]ソニア:dir
+        [replace]0x50786E,pd4,offset
+        [subject]フランシス:dir
+        [replace]0x507982,pd4,offset
+        [subject]サンディ:dir
+        [replace]0x507A96,pd4,offset
+        [subject]ホリィ:dir
+        [replace]0x507BAA,pd4,offset
+        [subject]ナンシー:dir
+        [replace]0x507CBE,pd4,offset
+        [subject]セルシュ:dir
+        [replace]0x507DD2,pd4,offset
+[back]
+[root]
+[subject]機体:dir
+        [subject]X5:dir
+        [replace]0x5371BC,pd4_kitai,offset
+        [subject]X5C:dir
+        [replace]0x5371C0,pd4_kitai,offset
+        [subject]X5R:dir
+        [replace]0x5371C4,pd4_kitai,offset
+        [subject]X5+:dir
+        [replace]0x5371C8,pd4_kitai,offset
+        [subject]X5+C:dir
+        [replace]0x5371CC,pd4_kitai,offset,
+        [subject]X5RR:dir
+        [replace]0x5371D0,pd4_kitai,offset
+        [subject]X5S:dir
+        [replace]0x5371D4,pd4_kitai,offset
+        [subject]XB10:dir
+        [replace]0x5371D8,pd4_kitai,offset
+        [subject]XD10:dir
+        [replace]0x5371DC,pd4_kitai,offset
+        [subject]XE10:dir
+        [replace]0x5371E0,pd4_kitai,offset
+        [subject]M6RS:dir
+        [replace]0x5371E4,pd4_kitai,offset
+        [subject]F261:dir
+        [replace]0x5371E8,pd4_kitai,offset
+        [subject]AC157:dir
+        [replace]0x5371EC,pd4_kitai,offset
+        [subject]C637:dir
+        [replace]0x5371F0,pd4_kitai,offset
+[back]
+[root]
+[subject]装備:dir
+        [subject]必須1:toggle,0x537394,0x5374A8-01000000,00000000
+        [subject]必須2:toggle,0x53763C,0x5377C8-01000000,00000000
+        [subject]装備1(100個):toggle,0x53727C,0x537390-64000000,00000000
+        [subject]装備2(100個):toggle,0x5374AC,0x537638-64000000,00000000
+        [back]
+[back]
+[root]
+[/script]
+
+[script]
+[title]家族の絆
+[process]BF.EXE
+[maker]BIND
+[creator]いたぴ
+[note]
+このゲーム体力と従順だけいじっとけば
+簡単に攻略できちゃうし(^^;
+ちなみに、日付を一気に最終日にすると
+エンディングに行っちゃうので
+気をつけてくださいね。
+[/note]
+[subject]日付:calc,0x42601C,0x02,0x1F,signed,little_e
+[subject]時間:list,0x42601E,bf_jikan,0x00,0x01
+[subject]体力:calc,0x426046,0x00,0x64,signed,little_e
+[subject]綾子:dir
+        [replace]0x426048,bf,offset
+[subject]琴奈:dir
+        [replace]0x42604A,bf,offset
+[subject]聖奈:dir
+        [replace]0x42604C,bf,offset
+[subject]CG ALL ON:toggle,0x4472CC,0x44745C-01000000,00000000
+[root]
+[/script]
+
+[script]
+[title]さくらんぼ海岸
+[process]ADVWIN32.EXE
+[maker]F&C
+[creator]いたぴ
+[adjustment]dialog,0x48E7EB,sakura,0x400000,0xFFFFFF,0x01
+[note]
+一応、2台のPCで動作確認とってます(^^;
+ただ、きっちり使えるかどうかわからないので
+一応暫定版にしておきます。
+
+動作確認、苦情等はitapi@ma.kcom.ne.jpまで
+お願いいたします(^^;
+[/note]
+[subject]日付:calc,0x48E627,0x04,0x3D,signed,little_e
+[subject]主人公:dir
+        [subject]存在フラグ:toggle,0x48E7EB,1,0
+        [subject]呼び込み:calc,0x48E7FD,0x00,0x64,signed,little_e
+        [subject]厨房:calc,0x48E801,0x00,0x64,signed,little_e
+        [subject]接客:calc,0x48E805,0x00,0x64,signed,little_e
+        [subject]販売:calc,0x48E809,0x00,0x64,signed,little_e
+        [subject]レジ:calc,0x48E80D,0x00,0x64,signed,little_e
+[back]
+[subject]真奈美:dir
+        [replace]0x48E83B,sakuranbo,offset
+[subject]小百合:dir
+        [replace]0x48E88B,sakuranbo,offset
+[subject]由香:dir
+        [replace]0x48E8DB,sakuranbo,offset
+[subject]愛:dir
+        [replace]0x48E92B,sakuranbo,offset
+[subject]知美&奈美:dir
+        [replace]0x48E97B,sakuranbo,offset
+[subject]かすみ:dir
+        [replace]0x48E9CB,sakuranbo,offset
+[subject]雄之助:dir
+        [replace]0x48EA1B,sakuranbo,offset
+[root]
+[/script]
+
+[script]
+[title]Natural2 ～DUO～
+[process]ADVWIN32.EXE
+[maker]F&C
+[creator]いたぴ
+[adjustment]dialog,0x503AEC,natur_hose,0x400000,0xFFFFFF,0x1
+[note]
+自分の環境ではアドレス移動を補正できました(^^;
+ただ、こちらもきっちり動作するか不安なので
+暫定版とさせていただきます。
+
+動作確認、苦情等はitapi@ma.kcom.ne.jpまで
+お願いいたします(^^;
+[/note]
+[subject]おまけ:toggle,0x5032F8,0x5034EB-01,00
+[subject]日付:calc,0x503A9C,0x01,0x22,signed,little_e
+[subject]千紗都:dir
+        [replace]0x503AEC,natural2,offset
+        [subject]Leasson:calc,0x503B94,0x00,0x64,signed,little_e
+        [subject]SOFT:calc,0x503B9C,0x00,0x64,signed,little_e
+        [subject]HARD:calc,0x503BA4,0x00,0x64,signed,little_e
+        [subject]Educate:calc,0x503BAC,0x00,0x64,signed,little_e
+[back]
+[subject]空:dir
+        [replace]0x503AF0,natural2,offset
+        [subject]Leasson:calc,0x503B98,0x00,0x64,signed,little_e
+        [subject]SOFT:calc,0x503BA0,0x00,0x64,signed,little_e
+        [subject]HARD:calc,0x503BA8,0x00,0x64,signed,little_e
+        [subject]Educate:calc,0x503BB0,0x00,0x64,signed,little_e
+[back]
+[subject]日奈美:dir
+        [replace]0x503AF4,natural2,offset
+[back]
+[subject]久美子:dir
+        [replace]0x503AF8,natural2,offset
+[back]
+[subject]かのこ:dir
+        [replace]0x503AFC,natural2,offset
+[back]
+[subject]彩音:dir
+        [replace]0x503AF0,natural2,offset
+[back]
+[/script]
+
+[script]
+[title]チャットしようよ！
+[process]OKWIN.EXE
+[maker]BLACK PACKAGE
+[creator]いたぴ
+[note]
+やばっ。。。。
+書くこと思いつかない(笑)
+[/note]
+[subject]会話チップ:dir
+       [subject]全部100個:toggle,0x856630,0x8566CC-64000000,00000000
+       [subject]誘うタイプA:calc,0x856630,0x00,0x64,signed,little_e
+       [subject]誘うタイプB:calc,0x856634,0x00,0x64,signed,little_e
+       [subject]誘うタイプC:calc,0x856638,0x00,0x64,signed,little_e
+       [subject]リミット:calc,0x85663C,0x00,0x64,signed,little_e
+       [subject]時間延長:calc,0x856640,0x00,0x64,signed,little_e
+       [subject]ドキドキ↓:calc,0x856644,0x00,0x64,signed,little_e
+       [subject]ネット:calc,0x856648,0x00,0x64,signed,little_e
+       [subject]休日:calc,0x85664C,0x00,0x64,signed,little_e
+       [subject]仕事:calc,0x856650,0x00,0x64,signed,little_e
+       [subject]恋愛:calc,0x856654,0x00,0x64,signed,little_e
+       [subject]趣味:calc,0x856658,0x00,0x64,signed,little_e
+       [subject]アダルト:calc,0x85665C,0x00,0x64,signed,little_e
+       [subject]自分の事:calc,0x856660,0x00,0x64,signed,little_e
+       [subject]相手の事:calc,0x856664,0x00,0x64,signed,little_e
+       [subject]学校:calc,0x856668,0x00,0x64,signed,little_e
+       [subject]病院:calc,0x85666C,0x00,0x64,signed,little_e
+       [subject]ナンパ:calc,0x856670,0x00,0x64,signed,little_e
+       [subject]アイドル:calc,0x856674,0x00,0x64,signed,little_e
+       [subject]カラオケ:calc,0x856678,0x00,0x64,signed,little_e
+       [subject]夏:calc,0x85667C,0x00,0x64,signed,little_e
+       [subject]ストーカー:calc,0x856680,0x00,0x64,signed,little_e
+       [subject]海:calc,0x856684,0x00,0x64,signed,little_e
+       [subject]バンジー:calc,0x856688,0x00,0x64,signed,little_e
+       [subject]神社:calc,0x85668C,0x00,0x64,signed,little_e
+       [subject]巫女:calc,0x856690,0x00,0x64,signed,little_e
+       [subject]万華鏡:calc,0x856694,0x00,0x64,signed,little_e
+       [subject]ファミレス:calc,0x856698,0x00,0x64,signed,little_e
+       [subject]上京:calc,0x85669C,0x00,0x64,signed,little_e
+       [subject]勉強:calc,0x8566A0,0x00,0x64,signed,little_e
+       [subject]紅茶:calc,0x8566A4,0x00,0x64,signed,little_e
+       [subject]プレゼント:calc,0x8566A8,0x00,0x64,signed,little_e
+       [subject]旦那:calc,0x8566AC,0x00,0x64,signed,little_e
+       [subject]教会:calc,0x8566B0,0x00,0x64,signed,little_e
+       [subject]痴漢:calc,0x8566B4,0x00,0x64,signed,little_e
+       [subject]オタク:calc,0x8566B8,0x00,0x64,signed,little_e
+       [subject]妹:calc,0x8566BC,0x00,0x64,signed,little_e
+       [subject]部活:calc,0x8566C0,0x00,0x64,signed,little_e
+       [subject]スポーツcalc,0x8566C4,0x00,0x64,signed,little_e
+       [subject]映画:calc,0x8566C8,0x00,0x64,signed,little_e
+       [subject]七夕:calc,0x8566CC,0x00,0x64,signed,little_e
+[back]
+[/script]
