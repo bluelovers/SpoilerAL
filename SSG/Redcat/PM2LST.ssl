@@ -1,0 +1,104 @@
+[group]PM2_SSG
+[note]wordwrap
+タイトルそっちのけで、女王＋父嫁で王国乗っ取りＥＮＤが清々しいですよw
+
+文字列入力制限解除：
+やばそうな文字列もＯＫw
+
+ver1.00 CRC32/
+PRINCESSMAKER2.EXE=2066E1EF
+
+
+
+
+
+
+
+
+
+
+
+
+…余談ですがダミーデータが初期の服のと同じのになってる模様。
+つまり脱ぎ率は低いかと(^^;
+[/note]
+
+[subject]SLGパート関連:dir
+	[subject]武者修業時時間経過停止＋ランダムエンカウント回避/実行/_:b_toggle,0x4916C0,PM2LST->PM2_a,real
+	[subject]文字列入力制限解除/実行/_:toggle,0x467F3B,6633C090,660DFFFF
+[root]
+
+[subject]パラメータ関連:dir
+ [e_with],0x00,0x64,unsigned
+  [subject]母性/現在値/_:calc,0x530F0A
+  [subject]父親との関係/現在値/_:calc,0x530C7E
+  [subject]執事との関係/現在値/_:calc,0x52F740
+  [subject]王子との関係/現在値/_:calc,0x532472
+ [/e_with]
+ [subject]ＧＯＬＤ/現在値/_:calc,0x5306E4,0x000000,0x01869F,unsigned
+ [subject]娘のフィジカルデータ他:dir
+  [subject]名前/_:string,0x52F32C,12,00
+  [subject]名字/_:string,0x531B04,12,00
+   [e_with],0x0000,0x445C,unsigned
+    [subject]身長/現在値/_:calc,0x52FC80
+    [subject]体重/現在値/_:calc,0x531380
+    [subject]バスト/現在値/_:calc,0x531AB4
+    [subject]ウエスト/現在値/_:calc,0x531A8A
+    [subject]ヒップ/現在値/_:calc,0x52EB52
+   [/e_with]
+  [subject]人脈/現在値/_:calc,0x52F208,0x0000,0x03E8,unsigned
+  [subject]病気指数/現在値/_:calc,0x52F1DC,0x00,0x64,unsigned
+  [subject]非行化指数/現在値/_:calc,0x531ACA,0x00,0x64,unsigned
+ [back]
+ [subject]娘のパラメータ:dir
+  [e_with],0x0000,0x03E7,unsigned
+   [subject]体力/現在値/_:calc,0x5319F4
+   [subject]筋力/現在値/_:calc,0x532424
+   [subject]知能/現在値/_:calc,0x53103A
+   [subject]気品/現在値/_:calc,0x52F76E
+   [subject]色気/現在値/_:calc,0x530708
+   [subject]モラル/現在値/_:calc,0x530C88
+   [subject]信仰/現在値/_:calc,0x52FF54
+   [subject]因業/現在値/_:calc,0x52F34C
+   [subject]感受性/現在値/_:calc,0x5322A4
+   [subject]ストレス/現在値/_:calc,0x530FE2
+  [/e_with]
+ [back]
+ [subject]娘の評価:dir
+  [e_with],0x0000,0x03E7,unsigned
+   [subject]戦士評価/現在値/_:calc,0x52FEEA
+   [subject]魔法評価/現在値/_:calc,0x52FE44
+   [subject]社交評価/現在値/_:calc,0x5313B6
+   [subject]家事評価/現在値/_:calc,0x52F748
+  [/e_with]
+ [back]
+ [subject]娘の戦闘スキル:dir
+  [e_with],0x0000,0x03E7,unsigned
+   [subject]戦闘技術/現在値/_:calc,0x53279A
+   [subject]攻撃力/現在値/_:calc,0x532434
+   [subject]防御力/現在値/_:calc,0x530D3C
+   [subject]魔法技術/現在値/_:calc,0x5307D2
+   [subject]魔力/現在値/_:calc,0x531AD6
+   [subject]抗魔力/現在値/_:calc,0x52E284
+  [/e_with]
+ [back]
+ [subject]娘の家庭スキル:dir
+  [e_with],0x0000,0x03E7,unsigned
+   [subject]礼儀作法/現在値/_:calc,0x52FE46
+   [subject]芸術/現在値/_:calc,0x52E258
+   [subject]話術/現在値/_:calc,0x52F74C
+   [subject]料理/現在値/_:calc,0x52FC60
+   [subject]掃除洗濯/現在値/_:calc,0x52E28A
+   [subject]気だて/現在値/_:calc,0x530C92
+  [/e_with]
+[root]
+
+[/group]
+
+
+[group]PM2_a
+0x4916C0,33C0EB03909090,7E05B808000000
+0x491B49,33C0EB03909090,7E05B808000000
+0x491BAE,33C0EB03909090,7E05B808000000
+0x491F5A,33C0EB03909090,7E05B808000000
+[/group]
