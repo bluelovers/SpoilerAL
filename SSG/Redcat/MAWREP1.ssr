@@ -1,0 +1,2 @@
+[subject][! @MAWLST->LST_a,$Val !]:dir
+[replace]0x[! 0x44B520+$Val*2 !],MAW_d
