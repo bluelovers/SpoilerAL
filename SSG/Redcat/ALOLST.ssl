@@ -1,0 +1,774 @@
+[group]ALO_SSG
+[note]wordwrap
+最新対応バージョンはver1.27。過去ver1.13くらいまでは対応可能。
+
+任意の司令官を仲間にする方法
+１.所属を自勢力へ変更
+２.所在地を自国管理下の星に変更
+３.任務コード初期化機能を実行
+
+※メモ
+・元首は常に任務コードとしてビット１を起たせること。
+・行政官コードは元首かそうでないかのみに注目するだけでよい。
+・国家印象値：自国 = 3000(d)
+・未設定データは基本的に-1(0xFFFFFFFFh)で扱う。
+
+[/note]
+
+[subject]汎用パラメータ:dir
+	[replace]_[:[:0x42063C:]+0x05DC:],ALOLST->ALO_4PR
+	[subject]秘書官強制変更/_:b_list,0x00,ALOLST->LST_a,0x00,0x01,ALOLST->LST_1ba,offset
+[root]
+
+[subject]司令官関連:dir
+	[repeat]ALOLST->ALOREP1,0,100,1
+[root]
+
+[subject]勢力データ:dir
+	[repeat]ALOLST->ALOREP2,0,15,1
+[root]
+
+[subject]惑星データ:dir
+	[repeat]ALOLST->ALOREP3,0,40,1
+[root]
+
+[subject]イベントリスト:dir
+	[replace]_[:[:0x42063C:]+0x063C:],ALOLST->ALO_F2
+[root]
+
+[/group]
+
+
+[group]ALOREP1
+[subject]_mem,_[\:[\:0x42063C\:]+0x057C\:]+0x[! 0xC8*$Val !]+0x08,4,list,無,ALOLST->LST_b,0x00,0x01'+'所属[! @ALOLST->LST_a,$Val !]:dir
+	[replace]_[:[:0x42063C:]+0x057C:]+0x[! 0xC8*$Val !]-0x04,ALOLST->ALO_1PR
+[back]
+[/group]
+
+
+[group]ALOREP2
+[subject][! @ALOLST->LST_2b,$Val !]:dir
+	[replace]_[:[:0x42063C:]+0x059C:]+0x[! 0x0190*$Val !],ALOLST->ALO_2PR
+	[replace]_[:[:0x42063C:]+0x05FC:]+0x[! 0x64*$Val !],ALOLST->ALO_51PR
+[back]
+[/group]
+
+
+[group]ALOREP3
+[subject]_mem,_[\:[\:0x42063C\:]+0x055C\:]+0x[! 0x3C*$Val !]+0x04,4,list,無所属,ALOLST->LST_b,0x00,0x01'+'領[! @ALOLST->LST_f,$Val !]:dir
+	[replace]_[:[:0x42063C:]+0x055C:]+0x[! 0x3C*$Val !],ALOLST->ALO_3PR
+[back]
+[/group]
+
+
+[group]ALO_1PR
+[size]4
+[subject]所属/_:list,0x0C,ALOLST->LST_b,0x00,0x01
+[subject]階級/_:list,0x10,ALOLST->LST_c,0x00,0x01
+[subject]所在地/_:list,0xA4,ALOLST->LST_f,0x00,0x01
+[subject]任務コード初期化/実行/_:toggle,0xB4,00000000????????????????????????00000000
+[subject]年齢/現在値/_:calc,0x14,0x01,0x63,unsigned
+[e_with],0x0000,0x03E7,unsigned
+ [subject]艦隊攻撃/現在値/_:calc,0x18
+ [subject]艦隊防御/現在値/_:calc,0x1C
+ [subject]知力/現在値/_:calc,0x20
+ [subject]政治/現在値/_:calc,0x24
+[/e_with]
+[e_with],ALOLST->LST_d,0x00,0xFF,ALOLST->LST_e,offset
+ [subject]遭遇戦/_:d_list,0x28
+ [subject]拠点侵攻/_:d_list,0x2C
+ [subject]拠点防衛/_:d_list,0x30
+[/e_with]
+[subject]特殊能力/_:d_list,0xB0,ALOLST->LST_g,0x00,0xFF,ALOLST->LST_h,offset
+[subject]功績/現在値/_:calc,0x34,0x000000,0x0F423F,unsigned
+[subject]能力一括最大化/実行/_:b_toggle,0x00,ALOLST->ALO_1aPR,offset
+[subject]個別印象値:dir
+[e_with],-1,0x270F,signed
+ [subject]ＵＦＥ個人印象値/現在値/_:calc,0x38
+ [subject]ＣＬＳ個人印象値/現在値/_:calc,0x3C
+ [subject]ＦＤＭ個人印象値/現在値/_:calc,0x40
+ [subject]ＩＺＮ個人印象値/現在値/_:calc,0x44
+ [subject]ＭＳＡ個人印象値/現在値/_:calc,0x48
+ [subject]ＯＲＩ個人印象値/現在値/_:calc,0x4C
+ [subject]ＦＡＮ個人印象値/現在値/_:calc,0x50
+ [subject]ＷＬＴ個人印象値/現在値/_:calc,0x54
+ [subject]ＭＧＬ個人印象値/現在値/_:calc,0x58
+ [subject]ＢＲＲ個人印象値/現在値/_:calc,0x5C
+ [subject]ＡＰＳ個人印象値/現在値/_:calc,0x60
+ [subject]ＡＧＳ個人印象値/現在値/_:calc,0x64
+ [subject]ＣＲＷ個人印象値/現在値/_:calc,0x68
+ [subject]ＦＲＥ個人印象値/現在値/_:calc,0x6C
+ [subject]ＤＥＭ個人印象値/現在値/_:calc,0x70
+[/e_with]
+[back]
+[/size]
+[/group]
+
+
+[group]ALO_1aPR
+0x18,E7030000
+0x1C,E7030000
+0x20,E7030000
+0x24,E7030000
+0x28,82000000
+0x2C,82000000
+0x30,82000000
+[/group]
+
+
+[group]ALO_2PR
+[size]4
+[subject]主星名/_:list,0x08,ALOLST->LST_f,0x00,0x01
+[subject]保有資金/現在値/_:calc,0x10,0x000000,0x0F423F,unsigned
+[subject]主義/_:list,0xC0,ALOLST->LST_j,0x01,0x01
+[subject]全艦種開発完了/実行/_:toggle,0xD0,0x0127-64000000
+[subject]国家印象値:dir
+[e_with],-1,0x270F,signed
+ [subject]ＵＦＥ印象値/現在値/_:calc,0x70
+ [subject]ＣＬＳ印象値/現在値/_:calc,0x74
+ [subject]ＦＤＭ印象値/現在値/_:calc,0x78
+ [subject]ＩＺＮ印象値/現在値/_:calc,0x7C
+ [subject]ＭＳＡ印象値/現在値/_:calc,0x80
+ [subject]ＯＲＩ印象値/現在値/_:calc,0x84
+ [subject]ＦＡＮ印象値/現在値/_:calc,0x88
+ [subject]ＷＬＴ印象値/現在値/_:calc,0x8C
+ [subject]ＭＧＬ印象値/現在値/_:calc,0x90
+ [subject]ＢＲＲ印象値/現在値/_:calc,0x94
+ [subject]ＡＰＳ印象値/現在値/_:calc,0x98
+ [subject]ＡＧＳ印象値/現在値/_:calc,0x9C
+ [subject]ＣＲＷ印象値/現在値/_:calc,0xA0
+ [subject]ＦＲＥ印象値/現在値/_:calc,0xA4
+ [subject]ＤＥＭ印象値/現在値/_:calc,0xA8
+[/e_with]
+[back]
+[subject]外交関係:dir
+[e_with],ALOLST->LST_k,0x00,0x01
+ [subject]UFE 地球統一連邦/_:list,0x20
+ [subject]CLS セレスティア共和国/_:list,0x24
+ [subject]FDM フリーダムトーチ共和国/_:list,0x28
+ [subject]IZN イザナミ皇国/_:list,0x2C
+ [subject]MSA 神聖メシアン教国/_:list,0x30
+ [subject]ORI オリンピア連合/_:list,0x34
+ [subject]FAN ファンロン共和国/_:list,0x38
+ [subject]WLT Ｗ．Ｌ．Ｔ．Ｃ．/_:list,0x3C
+ [subject]MGL メガリス行政区/_:list,0x40
+ [subject]BRR ブラオローゼ公国/_:list,0x44
+ [subject]APS アプサラス特別区/_:list,0x48
+ [subject]AGS アガスティア行政区/_:list,0x4C
+ [subject]CRW クリアウォーター行政区/_:list,0x50
+ [subject]FRE フリーアース/_:list,0x54
+ [subject]DEM デウス・エクス・マキナ/_:list,0x58
+[/e_with]
+[/size]
+[back]
+[/group]
+
+
+[group]ALO_3PR
+[size]4
+[subject]所属/_:list,0x04,ALOLST->LST_b,0x00,0x01
+[subject]経済規模/現在値/_:calc,0x0C,0x0000,0x270F,unsigned
+[subject]最大経済規模/現在値/_:calc,0x10,0x0000,0x270F,unsigned
+[subject]治安/現在値/_:calc,0x14,0x00,0x64,unsigned
+[subject]最大治安/現在値/_:calc,0x18,0x00,0x64,unsigned
+[subject]防衛衛星数/現在値/_:calc,0x24,0x00,0x63,unsigned
+[subject]最大防衛衛星数/現在値/_:calc,0x28,0x00,0x63,unsigned
+[subject]防衛艦隊数/現在値/_:calc,0x38,0x00,0x63,unsigned
+[subject]軌道部隊/_:d_list,0x30,ALOLST->LST_l,0x00,0xFF,ALOLST->LST_m,offset
+[subject]行政官コード/_:d_list,0x34,ALOLST->LST_n,0x00,0xFF,ALOLST->LST_o,offset
+[subject]担当行政官/_:list,0x08,ALOLST->LST_2a,-1,0x01
+[subject]能力一括最大化/実行/_:b_toggle,0x00,ALOLST->ALO_3aPR,offset
+[/size]
+[/group]
+
+
+[group]ALO_4PR
+[size]4
+ [subject]王道値/現在値/_:calc,0x1C,0x00,0x63,unsigned
+ [subject]覇道値/現在値/_:calc,0x20,0x00,0x63,unsigned
+[/size]
+[subject]人材捜索済フラグ初期化/実行/_:toggle,0xF0,00000000
+[/group]
+
+
+[group]ALO_51PR
+[subject]艦隊エディット:dir
+ [subject]第１艦隊:dir
+	[replace]0x00,ALOLST->ALO_52PR
+ [back]
+ [subject]第２艦隊:dir
+	[replace]0x07D0,ALOLST->ALO_52PR
+ [back]
+ [subject]第３艦隊:dir
+	[replace]0x0FA0,ALOLST->ALO_52PR
+ [back]
+ [subject]第４艦隊:dir
+	[replace]0x1770,ALOLST->ALO_52PR
+ [back]
+ [subject]第５艦隊:dir
+	[replace]0x1F40,ALOLST->ALO_52PR
+ [back]
+ [subject]第６艦隊:dir
+	[replace]0x2710,ALOLST->ALO_52PR
+ [back]
+ [subject]第７艦隊:dir
+	[replace]0x2EE0,ALOLST->ALO_52PR
+ [back]
+ [subject]第８艦隊:dir
+	[replace]0x36B0,ALOLST->ALO_52PR
+ [back]
+[back]
+[/group]
+
+
+[group]ALO_52PR
+[size]4
+ [subject]駐留地/_:list,0x48,ALOLST->LST_f,0x00,0x01
+ [subject]艦隊種/_:list,0x34,ALOLST->LST_i,0x00,0x01
+ [subject]配備数/現在値/_:calc,0x38,0x0000,0x03E7,unsigned
+[/size]
+[/group]
+
+
+[group]ALO_3aPR
+0x0C,0F270000
+0x10,0F270000
+0x14,64000000
+0x18,64000000
+0x24,63000000
+0x28,63000000
+0x38,63000000
+[/group]
+
+
+[group]ALO_F2
+[subject]イベントALL/_:d_toggle,0xC8,ALOLST->LST_r,ALOLST->LST_s,offset
+[subject]エンディングALL/_:d_toggle,0x0168,ALOLST->LST_p,ALOLST->LST_q,offset
+[/group]
+
+
+[group]LST_a
+ジャクソン
+ブラディッシュ
+ベレツトスキー
+クリーブランド
+ツァオ
+ハミルトン
+イブラヒム
+ハッタール
+リ
+オーガン
+サトウ
+フーバー
+ガイドゥコフ
+カザロフ
+トリティン
+ベルモンド
+ナーデル
+レオーネ
+ファンファーニ
+オルトワール
+アップルシード
+ダントン
+マクフライ
+フレーバー
+カーネルバーグ
+オールウェイズ
+イクセ
+モリサキ
+イズハラ
+ツキナリ
+ルメルシエ
+ガーディアン
+イスラフィル
+ボード
+ベネディクト
+オズワルド
+アルガラッハ
+アクィナス
+バートン
+ヘクター
+キョ
+サラムーン
+カサンドラ
+プルミーア
+マイヤー
+パク
+ソン
+グレゴリー
+シュウ
+モーガン
+フライヤー
+ボウマン
+プレシアソ
+クレティアヌス
+トゥメンバイヤー
+クルーソー
+マークライト
+サリーナス
+ベギリスタイン
+シザーズ
+ウェストホーム
+ナトワル
+ライプニッツ
+ベッケンバウワー
+シーツリヒター
+ノイビル
+アイゼンブルク
+ツィッファー
+ハルトヴィック
+トラパトーニ
+テッセラ
+コロンボ
+ジャンマルコ
+レン
+ジャナンタ
+マハートマー
+ポー
+ジョヴァンニ
+ムハドハーン
+マクファーソン
+シャーンディ
+シアリー・エルテン
+マレザキ
+天美館メイド隊
+ブライアン
+オールドソン
+トラボルタ
+クレールヒェン
+クロフォード
+ワソハック
+グラハム
+ブロンコ
+ビスカイノ
+バリントン
+ハーモニア
+ムーア
+ルーヴェンス
+オーブリー
+エウシュリー
+ドレイク
+メイリ・アシュレイ
+ナタリヤ・セルゲーエフ
+ジュディス・タリア
+[/group]
+
+
+[group]LST_1ba
+_[:[:0x42063C:]+0x0BFC:]
+_[:[:0x42063C:]+0x0DBC:]
+_[:[:0x42063C:]+0x05DC:]+0x10
+[/group]
+
+
+[group]LST_2a
+未設定
+ジャクソン
+ブラディッシュ
+ベレツトスキー
+クリーブランド
+ツァオ
+ハミルトン
+イブラヒム
+ハッタール
+リ
+オーガン
+サトウ
+フーバー
+ガイドゥコフ
+カザロフ
+トリティン
+ベルモンド
+ナーデル
+レオーネ
+ファンファーニ
+オルトワール
+アップルシード
+ダントン
+マクフライ
+フレーバー
+カーネルバーグ
+オールウェイズ
+イクセ
+モリサキ
+イズハラ
+ツキナリ
+ルメルシエ
+ガーディアン
+イスラフィル
+ボード
+ベネディクト
+オズワルド
+アルガラッハ
+アクィナス
+バートン
+ヘクター
+キョ
+サラムーン
+カサンドラ
+プルミーア
+マイヤー
+パク
+ソン
+グレゴリー
+シュウ
+モーガン
+フライヤー
+ボウマン
+プレシアソ
+クレティアヌス
+トゥメンバイヤー
+クルーソー
+マークライト
+サリーナス
+ベギリスタイン
+シザーズ
+ウェストホーム
+ナトワル
+ライプニッツ
+ベッケンバウワー
+シーツリヒター
+ノイビル
+アイゼンブルク
+ツィッファー
+ハルトヴィック
+トラパトーニ
+テッセラ
+コロンボ
+ジャンマルコ
+レン
+ジャナンタ
+マハートマー
+ポー
+ジョヴァンニ
+ムハドハーン
+マクファーソン
+シャーンディ
+シアリー・エルテン
+マレザキ
+天美館メイド隊
+ブライアン
+オールドソン
+トラボルタ
+クレールヒェン
+クロフォード
+ワソハック
+グラハム
+ブロンコ
+ビスカイノ
+バリントン
+ハーモニア
+ムーア
+ルーヴェンス
+オーブリー
+エウシュリー
+ドレイク
+[/group]
+
+
+[group]LST_b
+UFE
+CLS
+FDM
+IZN
+MSA
+ORI
+FAN
+WLT
+MGL
+BRR
+APS
+AGS
+CRW
+FRE
+DEM
+[/group]
+
+
+[group]LST_2b
+UFE 地球統一連邦
+CLS セレスティア共和国
+FDM フリーダムトーチ共和国
+IZN イザナミ皇国
+MSA 神聖メシアン教国
+ORI オリンピア連合
+FAN ファンロン共和国
+WLT Ｗ．Ｌ．Ｔ．Ｃ．
+MGL メガリス行政区
+BRR ブラオローゼ公国
+APS アプサラス特別区
+AGS アガスティア行政区
+CRW クリアウォーター行政区
+FRE フリーアース
+DEM デウス・エクス・マキナ
+[/group]
+
+
+[group]LST_c
+元首
+少佐
+中佐
+大佐
+准将
+少将
+中将
+大将
+元帥
+[/group]
+
+
+[group]LST_d
+Ｓ
+Ａ
+Ｂ
+Ｃ
+Ｄ
+Ｅ
+[/group]
+
+
+[group]LST_e
+,0x00=82000000
+,0x00=78000000
+,0x00=6E000000
+,0x00=64000000
+,0x00=5A000000
+,0x00=50000000
+[/group]
+
+
+[group]LST_f
+アース
+アガスティア
+アプサラス
+カラル
+アメトリン
+イザナミ
+イリアス
+ヴァイスアードラ
+ヴァリサイト
+エッダ
+オデュッセイア
+カテドラル
+ヴェーダ
+ガンダルヴァ
+クリアウォーター
+グッドホープ
+ジュピター
+ゼピュロス
+ゴスペル
+ユグドラシル
+カリヨン
+ベルガモット
+ペルセフォネ
+ファーランド
+ダンビュライト
+ブラオローゼ
+プロメテウス
+フロンティア
+マーズ
+ミョウジョウ
+メガリス
+ティワナコ
+ロートヴォルケ
+スターゲート
+ストーンヘンジ
+ゲートキーパー
+オブシディアン
+トリフネ
+ニルヴァーナ
+シルクロード
+[/group]
+
+
+[group]LST_g
+－－
+統率
+戦略
+研究
+内政
+参謀
+軍事
+独断
+象徴
+奉仕
+[/group]
+
+
+[group]LST_h
+,0x00=FFFFFFFF
+,0x00=01000000
+,0x00=02000000
+,0x00=03000000
+,0x00=04000000
+,0x00=05000000
+,0x00=06000000
+,0x00=07000000
+,0x00=08000000
+,0x00=09000000
+[/group]
+
+
+[group]LST_i
+ガルム級防衛艦
+レベリギウス級重巡洋艦
+スコル級駆逐艦
+フレスヴェルグ級巡洋艦
+エウクレデス級戦艦
+スレイプニル級強襲艦
+ヴァルハラ級空母
+フェンリル級戦艦
+ヴァルハラⅡ級空母
+ヨルムンガルド級弩級戦艦
+イリアシオン級巡洋艦
+ニーベルンゲン級空母
+機動要塞ミストルテイン
+艦載戦闘機アインヘリアル
+艦載戦闘機ヴァルキューレ
+特殊戦闘機クリエムヒルト
+異生要塞ミストルテイン
+防衛衛星Ⅰ型
+防衛衛星Ⅱ型
+防衛衛星Ⅲ型
+[/group]
+
+
+[group]LST_j
+保守
+改革
+中道
+孤立
+中立
+[/group]
+
+
+[group]LST_k
+自国
+無関係
+安保同盟国
+交戦国
+[/group]
+
+
+[group]LST_l
+未配備
+艦載戦闘機アインヘリアル
+艦載戦闘機ヴァルキューレ
+特殊戦闘機クリエムヒルト
+[/group]
+
+
+[group]LST_m
+,0x00=FFFFFFFF
+,0x00=0D000000
+,0x00=0E000000
+,0x00=0F000000
+[/group]
+
+
+[group]LST_n
+未設定
+主星：元首担当
+従星：行政官担当
+要塞：行政官担当
+[/group]
+
+
+[group]LST_o
+,0x00=FFFFFFFF
+,0x00=01000000
+,0x00=02000000
+,0x00=03000000
+[/group]
+
+
+[group]LST_p
+Ending No.1 「消えない希望」
+Ending No.2 「創世神話」
+Ending No.3 「和の盟主」
+Ending No.4 「恒星帝国」
+Ending No.5 「まどろみの中で」
+Ending No.6 「銀河連盟発足」
+Ending No.7 「銀河連邦設立」
+Ending No.8 「滅亡」
+[/group]
+
+
+[group]LST_q
+0x00=01000000/00000000
+0x04=01000000/00000000
+0x08=01000000/00000000
+0x0C=01000000/00000000
+0x10=01000000/00000000
+0x14=01000000/00000000
+0x18=01000000/00000000
+0x1C=01000000/00000000
+[/group]
+
+
+[group]LST_r
+イベント01 天青の想い１
+イベント02 天青の想い２
+イベント03 イリアスの夜明け１
+イベント04 イリアスの夜明け２
+イベント05 イリアスの夜明け３
+イベント06 イリアスの夜明け４
+イベント07 海賊騎士１
+イベント08 海賊騎士２
+イベント09 海賊騎士３
+イベント10 海賊騎士４
+イベント11 老将の死に場
+イベント12 見えない鎖１
+イベント13 見えない鎖２
+イベント14 星の鳥篭
+イベント15 空を忘れた小鳥
+イベント16 Broken Wings
+イベント17 黄金の手綱
+イベント18 予定調和
+イベント19 孤独な意思
+イベント20 銀盤遊戯
+イベント21 Over the overture
+イベント22 いつも一緒だよ
+イベント23 イリアス平和祈念式典
+イベント24 覇道の宿命
+イベント25 Final code
+イベント26 始まりにして、終わりの場所へ
+イベント27 m/o/t/h/e/r
+イベント28 軍艦供給ルート確立１
+イベント29 軍艦供給ルート確立２
+イベント30 軍艦供給ルート確立３
+[/group]
+
+
+[group]LST_s
+0x00=01000000/00000000
+0x04=01000000/00000000
+0x08=01000000/00000000
+0x0C=01000000/00000000
+0x10=01000000/00000000
+0x14=01000000/00000000
+0x18=01000000/00000000
+0x1C=01000000/00000000
+0x20=01000000/00000000
+0x24=01000000/00000000
+0x28=01000000/00000000
+0x2C=01000000/00000000
+0x30=01000000/00000000
+0x34=01000000/00000000
+0x38=01000000/00000000
+0x3C=01000000/00000000
+0x40=01000000/00000000
+0x44=01000000/00000000
+0x48=01000000/00000000
+0x4C=01000000/00000000
+0x50=01000000/00000000
+0x54=01000000/00000000
+0x58=01000000/00000000
+0x5C=01000000/00000000
+0x60=01000000/00000000
+0x64=01000000/00000000
+0x68=01000000/00000000
+0x6C=01000000/00000000
+0x70=01000000/00000000
+0x74=01000000/00000000
+[/group]
