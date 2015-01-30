@@ -1,0 +1,1272 @@
+[group]BC3_SSG
+[note]wordwrap
+作成協力：
+４１６９さん／koaruさん／もぐさん／でぼさん／どこぞの名無しさん／ガウさん／OLDGAMERさん
+
+解析データ他、助言を参考にさせて頂きました。大感謝。
+
+パラメータ：
+基本的に戻りますが、固定していると戦闘に持ち越せます。
+
+最低保障歩数：
+固定しておけば、ランダムエンカウンターを抑制できます。
+
+初期化※：
+初期化以前の効果も残ります。全く同じ場所に同じマポを付与しなおすと崩壊跡が見えなくなりますが、魔法崩壊スロット修復を実行すれば再度戻ります。
+
+指定敵出現：
+リストで指定すると、予選迷宮１Ｆに指定した敵が高確率で出現します。
+
+[/note]
+
+[subject]ver1.03:dir
+
+[replace]_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x017C8C:]+0x14:],BC3LST->BC3_03Work
+[replace]_[:[:[:(MName::Sys42VM.dll)+0x078960:]:]+0x14:],BC3LST->BC3_00Work
+[subject]ステータス:dir
+ [replace]_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x017E04:]+0x14:],BC3LST->BC3_PR
+[back]
+[replace]_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x017E5C:]+0x14:],BC3LST->BC3_06Work
+[replace]_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x017E54:]+0x14:],BC3LST->BC3_02Work
+[subject]実装中スキル:dir
+ [replace]_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x017E10:]+0x14:],BC3LST->BC3_A9Work
+ [replace]_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x017E14:]+0x14:],BC3LST->BC3_B9Work
+ [replace]_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x017E18:]+0x14:],BC3LST->BC3_C9Work
+[back]
+[replace]_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x017E78:]+0x14:],BC3LST->BC3_04Work
+[replace]_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x017E4C:]+0x14:],BC3LST->BC3_01Work
+[replace]_[:[:(MName::Sys42VM.dll)+0x078960:]+0x017E1C:],BC3LST->BC3_07Work
+[replace]0x00,BC3LST->BC3_25Work
+
+[subject]戦闘中:dir
+ [subject]【斬り】コスト減少/実行/_:toggle,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x04AEE8:]+0x14:],00000000,06000000
+ [subject]【連斬り】コスト減少/実行/_:toggle,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x04AF08:]+0x14:],00000000,06000000
+ [subject]【３連斬り】コスト減少/実行/_:toggle,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x04AF28:]+0x14:],00000000,06000000
+ [subject]バリア効果/実行/固定:toggle,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x019354:]+0x14:]+0x3C,10000000,00000000
+ [subject]迅速術効果量/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x04B368:]+0x14:],0x00,0x14,unsigned
+ [subject]味方ステータス:dir
+  [replace]_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01934C:]+0x14:],BC3LST->BC3_PR
+ [back]
+ [subject]敵ステータス:dir
+  [replace]_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x019374:]+0x14:],BC3LST->BC3_EPR
+ [back]
+[back]
+
+[subject]座標変更:dir
+ [replace]_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x012E9C:]+0x14:],BC3LST->BC3_XWork
+[back]
+
+[subject]指定敵高確率出現/_:d_list,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x04936C:]+0x14:],BC3LST->LST_d,,,BC3LST->LST_e,offset
+[subject]指定敵高確率出現(HARD)/_:d_list,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x04A150:]+0x14:],BC3LST->LST_d,,,BC3LST->LST_2e,offset
+
+[back]
+
+[subject]ver1.00-1.02:dir
+
+[replace]_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x017C7C:]+0x14:],BC3LST->BC3_03Work
+[replace]_[:[:[:(MName::Sys42VM.dll)+0x078960:]:]+0x14:],BC3LST->BC3_00Work
+[subject]ステータス:dir
+ [replace]_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x017DF4:]+0x14:],BC3LST->BC3_PR
+[back]
+[replace]_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x017E4C:]+0x14:],BC3LST->BC3_06Work
+[replace]_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x017E44:]+0x14:],BC3LST->BC3_02Work
+[subject]実装中スキル:dir
+ [replace]_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x017E00:]+0x14:],BC3LST->BC3_A9Work
+ [replace]_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x017E04:]+0x14:],BC3LST->BC3_B9Work
+ [replace]_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x017E08:]+0x14:],BC3LST->BC3_C9Work
+[back]
+[replace]_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x017E68:]+0x14:],BC3LST->BC3_04Work
+[replace]_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x017E3C:]+0x14:],BC3LST->BC3_01Work
+[replace]_[:[:(MName::Sys42VM.dll)+0x078960:]+0x017E0C:],BC3LST->BC3_07Work
+[replace]0x00,BC3LST->BC3_05Work
+
+[subject]戦闘中:dir
+ [subject]【斬り】コスト減少/実行/_:toggle,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x04AE94:]+0x14:],00000000,06000000
+ [subject]【連斬り】コスト減少/実行/_:toggle,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x04AEB4:]+0x14:],00000000,06000000
+ [subject]【３連斬り】コスト減少/実行/_:toggle,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x04AED4:]+0x14:],00000000,06000000
+ [subject]バリア効果/実行/固定:toggle,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x0192FC:]+0x14:]+0x3C,10000000,00000000
+ [subject]迅速術効果量/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x04B314:]+0x14:],0x00,0x14,unsigned
+ [subject]味方ステータス:dir
+  [replace]_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x0192F4:]+0x14:],BC3LST->BC3_PR
+ [back]
+ [subject]敵ステータス:dir
+  [replace]_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01931C:]+0x14:],BC3LST->BC3_EPR
+ [back]
+[back]
+
+[subject]座標変更:dir
+ [replace]_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x012E8C:]+0x14:],BC3LST->BC3_XWork
+[back]
+
+[subject]指定敵高確率出現/_:d_list,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x049318:]+0x14:],BC3LST->LST_d,,,BC3LST->LST_e,offset
+
+[back]
+
+[/group]
+
+
+[group]BC3_00Work
+[subject]GOLD［'+'_mem,0x0264,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x0264,0x000000,0x01869F,unsigned
+[subject]最低保障歩数［'+'_mem,0x0220,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x0220,0x000000,0x01869F,unsigned
+[subject]ランダムエンカウンター回避 /実行/固定:toggle,0x0288,00000000,64000000
+[/group]
+
+
+[group]BC3_03Work
+[subject]EXP［'+'_mem,0x00,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x00,0x000000,0x01869F,unsigned
+[subject]NEXT［'+'_mem,0x04,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x04,0x000000,0x01869F,unsigned
+[/group]
+
+
+[group]BC3_04Work
+[subject]ドロップ枯渇率:dir
+ [subject]一括初期化/実行/固定:toggle,0x00,0xA7-00
+ [repeat]BC3LST->BC3REP1,0,42,1
+[back]
+[/group]
+
+
+[group]BC3_06Work
+[subject]魔法熟練度:dir
+[e_with],0x000000,0x01869F,unsigned
+ [subject]光［'+'_mem,0x28,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x28
+ [subject]炎［'+'_mem,0x2C,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x2C
+ [subject]氷［'+'_mem,0x30,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x30
+ [subject]雷［'+'_mem,0x34,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x34
+ [subject]闇［'+'_mem,0x38,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x38
+[/e_with]
+[back]
+[/group]
+
+
+[group]BC3_07Work
+[subject]付与スロット:dir
+ [subject]欠落スロット修復/実行/_:toggle,_([:[.0x14.]:]),_([:[.0x14.]:])+([:[.0x18.]:])+0xFFFFFFFF-*{FFFFFFFF::00000000*}
+ [subject]魔法崩壊スロット修復/実行/_:b_toggle,0x00,BC3LST->MBK,offset
+ [subject]崩壊スロット復元/実行/_:b_toggle,0x00,BC3LST->2MBK,offset
+ [subject]初期化※/実行/_:toggle,_([:[.0x14.]:]),_([:[.0x14.]:])+([:[.0x18.]:])+0xFFFFFFFF-00
+//※利用は自己責任で。上記と並行して、設置アイテム毎構造体サイズを一律０にすれば完全初期化可能だけど、多分こっちの方が便利。
+[back]
+[/group]
+
+
+[group]BC3_A9Work
+[subject]実装中１:dir
+ [repeat]BC3LST->BC3REP2,0,9,1
+[back]
+[/group]
+
+
+[group]BC3_B9Work
+[subject]実装中２:dir
+ [repeat]BC3LST->BC3REP2,0,9,1
+[back]
+[/group]
+
+
+[group]BC3_C9Work
+[subject]実装中３:dir
+ [repeat]BC3LST->BC3REP2,0,9,1
+[back]
+[/group]
+
+
+[group]BC3REP1
+[subject][! @BC3LST->LST_c,$Val !]［'+'_mem,0x[! 0x04*$Val !],4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x[! 0x04*$Val !],0x00,0x5A,unsigned
+[/group]
+
+
+[group]BC3REP2
+[subject]スロット[! L($Val+0x01) !]/_:list,0x[! 0x04*$Val !],BC3LST->SKL1,0x0194,0x01
+[/group]
+
+
+[group]BC3_PR
+[subject]一括強化/実行/固定:toggle,0x04,9F8601009F8601009F8601009F8601006300000063000000630000006300000063000000
+[subject]ＬＶ［'+'_mem,0x00,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x00,0x0000,0x270F,unsigned
+[e_with],0x000000,0x01869F,unsigned
+ [subject]活力［'+'_mem,0x04,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x04
+ [subject]最大活力［'+'_mem,0x08,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x08
+ [subject]攻撃［'+'_mem,0x0C,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x0C
+ [subject]防御［'+'_mem,0x10,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x10
+[/e_with]
+[e_with],0x00,0x63,unsigned
+ [subject]命中［'+'_mem,0x14,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x14
+ [subject]回避［'+'_mem,0x18,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x18
+ [subject]クリティカル［'+'_mem,0x1C,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x1C
+ [subject]呪い抵抗［'+'_mem,0x20,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x20
+ [subject]貫徹［'+'_mem,0x24,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x24
+[/e_with]
+[/group]
+
+
+[group]BC3_EPR
+[subject]一括弱化/実行/固定:toggle,0x04,010000000100000000000000000000000000000000000000000000000000000000000000
+[e_with],0x000000,0x01869F,unsigned
+ [subject]活力［'+'_mem,0x04,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x04
+ [subject]最大活力［'+'_mem,0x08,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x08
+ [subject]攻撃［'+'_mem,0x0C,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x0C
+ [subject]防御［'+'_mem,0x10,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x10
+[/e_with]
+[e_with],0x00,0x63,unsigned
+ [subject]命中［'+'_mem,0x14,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x14
+ [subject]回避［'+'_mem,0x18,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x18
+ [subject]クリティカル［'+'_mem,0x1C,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x1C
+ [subject]呪い抵抗［'+'_mem,0x20,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x20
+ [subject]貫徹［'+'_mem,0x24,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x24
+[/e_with]
+[/group]
+
+
+[group]BC3_XWork
+[subject]X軸［'+'_mem,0x30,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x30,0x000000,0x01869F,unsigned
+[subject]Y軸［'+'_mem,0x34,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x34,0x000000,0x01869F,unsigned
+[/group]
+
+
+[group]BC3_01Work
+[size]4
+[subject]消費アイテム:dir
+ [subject]世色癌［'+'_mem,0x04,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x04,-1,999999,signed
+ [e_with],-1,99,signed
+  [subject]御祓いきのこ［'+'_mem,0x10,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x10
+  [subject]マッシュ中尉［'+'_mem,0x14,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x14
+  [subject]どけリンゴ［'+'_mem,0x18,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x18
+  [subject]ぽわわ銃［'+'_mem,0x1C,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x1C
+  [subject]ハニージッポー［'+'_mem,0x20,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x20
+  [subject]お帰り盆栽［'+'_mem,0x24,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x24
+ [/e_with]
+[back]
+[subject]付与アイテム:dir
+ [e_with],-1,999,signed
+  [subject]しいたけ［'+'_mem,0x28,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x28
+  [subject]ハニ消し［'+'_mem,0x2C,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x2C
+  [subject]技のペンチ［'+'_mem,0x30,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x30
+  [subject]とり肉［'+'_mem,0x50,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x50
+  [subject]ねこる金貨［'+'_mem,0x54,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x54
+  [subject]白［'+'_mem,0x60,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x60
+  [subject]赤［'+'_mem,0x64,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x64
+  [subject]黄［'+'_mem,0x68,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x68
+  [subject]青［'+'_mem,0x6C,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x6C
+  [subject]黒［'+'_mem,0x70,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x70
+  [subject]まんが肉［'+'_mem,0x78,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x78
+  [subject]ドラ猫の鈴［'+'_mem,0x7C,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x7C
+  [subject]強固の羽［'+'_mem,0x80,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x80
+  [subject]ｖｓフラッシュ蝋燭［'+'_mem,0x84,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x84
+  [subject]ＭＣorもっと頂戴ハンマー［'+'_mem,0x88,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x88
+  [subject]はじめ肉［'+'_mem,0xA0,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0xA0
+  [subject]純金ベアー［'+'_mem,0xA4,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0xA4
+  [subject]タイキュウラケット［'+'_mem,0xA8,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0xA8
+  [subject]長靴に入った猫［'+'_mem,0xAC,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0xAC
+  [subject]眼力メガネ［'+'_mem,0xC8,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0xC8
+  [subject]すばやい変な虫［'+'_mem,0xCC,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0xCC
+  [subject]不思議犬［'+'_mem,0xD0,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0xD0
+  [subject]ぷっつんプリン［'+'_mem,0xD4,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0xD4
+  [subject]ホーチキっす［'+'_mem,0xD8,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0xD8
+  [subject]意地っ張りせん［'+'_mem,0xDC,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0xDC
+  [subject]素質のオカリナ［'+'_mem,0xE0,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0xE0
+  [subject]専属ナース［'+'_mem,0xE4,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0xE4
+  [subject]メトロノーム［'+'_mem,0xF0,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0xF0
+  [subject]ロケットエンジン［'+'_mem,0xF4,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0xF4
+  [subject]秘薬メタルぎゃー！［'+'_mem,0xE8,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0xE8
+  [subject]丹下犬［'+'_mem,0xEC,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0xEC
+  [subject]光マポ［'+'_mem,0x0168,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x0168
+  [subject]炎マポ［'+'_mem,0x016C,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x016C
+  [subject]氷マポ［'+'_mem,0x0170,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x0170
+  [subject]雷マポ［'+'_mem,0x0174,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x0174
+  [subject]闇マポ［'+'_mem,0x0178,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x0178
+  [subject]光マポ［'+'_mem,0x0154,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x0154
+  [subject]炎マポ［'+'_mem,0x0158,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x0158
+  [subject]氷マポ［'+'_mem,0x015C,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x015C
+  [subject]雷マポ［'+'_mem,0x0160,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x0160
+  [subject]闇マポ［'+'_mem,0x0164,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x0164
+  [subject]光マポ［'+'_mem,0x0140,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x0140
+  [subject]炎マポ［'+'_mem,0x0144,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x0144
+  [subject]氷マポ［'+'_mem,0x0148,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x0148
+  [subject]雷マポ［'+'_mem,0x014C,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x014C
+  [subject]闇マポ［'+'_mem,0x0150,4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x0150
+ [/e_with]
+[back]
+[/size]
+[/group]
+
+[/group]
+
+
+[group]BC3_02Work
+[subject]装備品/_:d_toggle,0x00,BC3LST->LST_a,BC3LST->LST_b,offset
+[/group]
+
+
+[group]MBK
+_([:[.0x14.]:]),_([:[.0x14.]:])+([:[.0x18.]:])+0xFFFFFFFF-*{FFE0F505::00000000*}
+_([:[.0x14.]:]),_([:[.0x14.]:])+([:[.0x18.]:])+0xFFFFFFFF-*{3D040000::00000000*}
+_([:[.0x14.]:]),_([:[.0x14.]:])+([:[.0x18.]:])+0xFFFFFFFF-*{3C040000::00000000*}
+_([:[.0x14.]:]),_([:[.0x14.]:])+([:[.0x18.]:])+0xFFFFFFFF-*{3B040000::00000000*}
+_([:[.0x14.]:]),_([:[.0x14.]:])+([:[.0x18.]:])+0xFFFFFFFF-*{3A040000::00000000*}
+_([:[.0x14.]:]),_([:[.0x14.]:])+([:[.0x18.]:])+0xFFFFFFFF-*{39040000::00000000*}
+[/group]
+
+
+[group]2MBK
+_([:[.0x14.]:]),_([:[.0x14.]:])+([:[.0x18.]:])+0xFFFFFFFF-*{3D040000::FFE0F505*}
+_([:[.0x14.]:]),_([:[.0x14.]:])+([:[.0x18.]:])+0xFFFFFFFF-*{3C040000::FFE0F505*}
+_([:[.0x14.]:]),_([:[.0x14.]:])+([:[.0x18.]:])+0xFFFFFFFF-*{3B040000::FFE0F505*}
+_([:[.0x14.]:]),_([:[.0x14.]:])+([:[.0x18.]:])+0xFFFFFFFF-*{3A040000::FFE0F505*}
+_([:[.0x14.]:]),_([:[.0x14.]:])+([:[.0x18.]:])+0xFFFFFFFF-*{39040000::FFE0F505*}
+[/group]
+
+
+[group]LST_a
+レザーアーマー
+アイアンアーマー
+ゴールドアーマー
+プラチナアーマー
+鬼畜戦士の鎧
+重機動戦士の鎧
+ダンボール
+ギャルボディ
+亀アーマー
+クリスタルアーマー
+ＪＡＰＡＮの鎧
+ドラスーツ
+レザーフード
+アイアンヘルム
+ゴールドヘルム
+プラチナヘルム
+死神の兜
+邪偽ヘルム
+鍋
+禿ヅラ
+おかゆヘルム
+クリスタルヘルム
+ＪＡＰＡＮ兜
+戦隊ヘルメット
+彗星キャップ
+頭巾
+ウッドシールド
+アイアンシールド
+ゴールドシールド
+プラチナシールド
+白悪魔の盾
+ツートンシールド
+鍋蓋
+赤竜シールド
+ぷりょシールド
+クリスタルシールド
+スパイクシールド
+ファイヤーシールド
+一角獣の盾
+レザーグローブ
+アイアングローブ
+ゴールドグローブ
+プラチナグローブ
+ジュエルグローブ
+バルタンハンド
+鍋つかみ
+くじらグローブ
+スパイクグローブ
+ハンマーグローブ
+レザーブーツ
+アイアンブーツ
+ゴールドブーツ
+プラチナブーツ
+ジュエルブーツ
+高下駄
+スニーカー
+うっぴーブーツ
+プレートブーツ
+ファイヤーブーツ
+ふさふさブーツ
+プレートカラー
+アイアンネックレス
+ゴールドネックレス
+ジュエルネックレス
+タイマーネックレス
+鎖
+薔薇のネックレス
+ハニーネックレス
+ルビーネックレス
+パールネックレス
+スパイクネックレス
+ダブルネックレス
+羽のネックレス
+[/group]
+
+
+[group]LST_b
+0x00=01000000/FFFFFFFF
+0x04=01000000/FFFFFFFF
+0x08=01000000/FFFFFFFF
+0x0C=01000000/FFFFFFFF
+0x10=01000000/FFFFFFFF
+0x14=01000000/FFFFFFFF
+0x18=01000000/FFFFFFFF
+0x1C=01000000/FFFFFFFF
+0x20=01000000/FFFFFFFF
+0x24=01000000/FFFFFFFF
+0x28=01000000/FFFFFFFF
+0x2C=01000000/FFFFFFFF
+0x50=01000000/FFFFFFFF
+0x54=01000000/FFFFFFFF
+0x58=01000000/FFFFFFFF
+0x5C=01000000/FFFFFFFF
+0x60=01000000/FFFFFFFF
+0x64=01000000/FFFFFFFF
+0x68=01000000/FFFFFFFF
+0x6C=01000000/FFFFFFFF
+0x70=01000000/FFFFFFFF
+0x74=01000000/FFFFFFFF
+0x78=01000000/FFFFFFFF
+0x7C=01000000/FFFFFFFF
+0x80=01000000/FFFFFFFF
+0x84=01000000/FFFFFFFF
+0xA0=01000000/FFFFFFFF
+0xA4=01000000/FFFFFFFF
+0xA8=01000000/FFFFFFFF
+0xAC=01000000/FFFFFFFF
+0xB0=01000000/FFFFFFFF
+0xB4=01000000/FFFFFFFF
+0xB8=01000000/FFFFFFFF
+0xBC=01000000/FFFFFFFF
+0xC0=01000000/FFFFFFFF
+0xC4=01000000/FFFFFFFF
+0xC8=01000000/FFFFFFFF
+0xCC=01000000/FFFFFFFF
+0xD0=01000000/FFFFFFFF
+0xF0=01000000/FFFFFFFF
+0xF4=01000000/FFFFFFFF
+0xF8=01000000/FFFFFFFF
+0xFC=01000000/FFFFFFFF
+0x0100=01000000/FFFFFFFF
+0x0104=01000000/FFFFFFFF
+0x0108=01000000/FFFFFFFF
+0x010C=01000000/FFFFFFFF
+0x0110=01000000/FFFFFFFF
+0x0114=01000000/FFFFFFFF
+0x0140=01000000/FFFFFFFF
+0x0144=01000000/FFFFFFFF
+0x0148=01000000/FFFFFFFF
+0x014C=01000000/FFFFFFFF
+0x0150=01000000/FFFFFFFF
+0x0154=01000000/FFFFFFFF
+0x0158=01000000/FFFFFFFF
+0x015C=01000000/FFFFFFFF
+0x0160=01000000/FFFFFFFF
+0x0164=01000000/FFFFFFFF
+0x0168=01000000/FFFFFFFF
+0x0190=01000000/FFFFFFFF
+0x0194=01000000/FFFFFFFF
+0x0198=01000000/FFFFFFFF
+0x019C=01000000/FFFFFFFF
+0x01A0=01000000/FFFFFFFF
+0x01A4=01000000/FFFFFFFF
+0x01A8=01000000/FFFFFFFF
+0x01AC=01000000/FFFFFFFF
+0x01B0=01000000/FFFFFFFF
+0x01B4=01000000/FFFFFFFF
+0x01B8=01000000/FFFFFFFF
+0x01BC=01000000/FFFFFFFF
+0x01C0=01000000/FFFFFFFF
+[/group]
+
+
+[group]LST_c
+予選迷宮１Ｆ
+予選迷宮２Ｆ
+ファースト
+見せ物横丁
+清掃週間
+教会と貯水池
+パチル
+泥世界
+だんごの里
+結界迷宮
+結界迷宮２
+マポ畑
+迷宮交差点
+すべり丘
+マヨイガ
+ナマニク
+のーてんフラワー
+２５ＬＤＫ
+崩れる岩盤
+マビル宝庫
+マビル神殿
+ハンス＆ハンズ
+強敵に出会う床
+ハニワ村７７
+ハニワ村５１
+鬼の住処
+魔女の住処
+聖地マウサポン
+オヤクソク迷宮
+ワニワニ峡谷
+悪魔の呼べる谷
+闘神迷宮２５Ｆ
+闘神迷宮２６Ｆ
+闘神迷宮２７Ｆ
+闘神迷宮２８Ｆ
+闘神迷宮２９Ｆ
+闘神迷宮３０Ｆ
+鉱石世界Ａ
+鉱石世界Ｂ
+鉱石世界Ｃ
+鉱石世界Ｄ
+最終面
+[/group]
+
+
+[group]BC3_05Work
+[subject]重要アイテム:dir
+ [subject]いかなご/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AB88:]+0x14:],0x00,0x63,unsigned
+ [subject]イルカの鍵/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AB94:]+0x14:],0x00,0x63,unsigned
+ [subject]蒸発の実/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ABA0:]+0x14:],0x00,0x63,unsigned
+ [subject]泥だんご/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ABAC:]+0x14:],0x00,0x63,unsigned
+ [subject]黒いパンティ/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ABB8:]+0x14:],0x00,0x63,unsigned
+ [subject]謎のアホ毛/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ABC4:]+0x14:],0x00,0x63,unsigned
+ [subject]リココのアホ毛/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ABD0:]+0x14:],0x00,0x63,unsigned
+ [subject]メイドさんのアホ毛/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01BADC:]+0x14:],0x00,0x63,unsigned
+ [subject]スーパー成長促進剤/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ABE8:]+0x14:],0x00,0x63,unsigned
+ [subject]安全財布/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ABF4:]+0x14:],0x00,0x63,unsigned
+ [subject]クリちゃん饅頭/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AC00:]+0x14:],0x00,0x63,unsigned
+ [subject]はちみつ/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AC0C:]+0x14:],0x00,0x63,unsigned
+ [subject]にんじん/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AC18:]+0x14:],0x00,0x63,unsigned
+ [subject]はちみつにんじん/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AC24:]+0x14:],0x00,0x63,unsigned
+ [subject]溺死竜/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AC30:]+0x14:],0x00,0x63,unsigned
+ [subject]毒電波アンテナ/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AC3C:]+0x14:],0x00,0x63,unsigned
+ [subject]呪いの拘束具/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AC48:]+0x14:],0x00,0x63,unsigned
+ [subject]やすらぎの石/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AC54:]+0x14:],0x00,0x63,unsigned
+ [subject]イボコロシ/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AC60:]+0x14:],0x00,0x63,unsigned
+ [subject]ロイヤルゼリーＱ１０/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AC6C:]+0x14:],0x00,0x63,unsigned
+ [subject]ロイヤルゼリーＱ９/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AC78:]+0x14:],0x00,0x63,unsigned
+ [subject]Ｑ１０ケーキ/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AC84:]+0x14:],0x00,0x63,unsigned
+ [subject]Ｑ９ケーキ/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AC90:]+0x14:],0x00,0x63,unsigned
+ [subject]ナナの吸水機/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AC9C:]+0x14:],0x00,0x63,unsigned
+ [subject]特殊草履/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ACA8:]+0x14:],0x00,0x63,unsigned
+ [subject]タクラパンコ/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ACB4:]+0x14:],0x00,0x63,unsigned
+ [subject]タラコパンコ/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ACC0:]+0x14:],0x00,0x63,unsigned
+ [subject]タクマパンコ/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ACCC:]+0x14:],0x00,0x63,unsigned
+ [subject]サクラ貝/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ACD8:]+0x14:],0x00,0x63,unsigned
+ [subject]ぷちハニーの手紙/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ACE4:]+0x14:]+0xFC=>temp;[:$temp:]*0x04=>temp;[:[:[:(MName::Sys42VM.dll)+0x078960:]+$temp:]+0x14:],0x00,0x63,unsigned
+ [subject]雷門通過カード３/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ACF0:]+0x14:]+0x0100=>temp;[:$temp:]*0x04=>temp;[:[:[:(MName::Sys42VM.dll)+0x078960:]+$temp:]+0x14:],0x00,0x63,unsigned
+ [subject]ラレラレ石/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ACFC:]+0x14:],0x00,0x63,unsigned
+ [subject]ハニワ教信者カード（偽）/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AD08:]+0x14:],0x00,0x63,unsigned
+ [subject]エリアカード（伊集院用）/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AD14:]+0x14:],0x00,0x63,unsigned
+ [subject]ハニーの着ぐるみセット/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AD20:]+0x14:],0x00,0x63,unsigned
+ [subject]シャリーさんのカメラ/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AD2C:]+0x14:],0x00,0x63,unsigned
+ [subject]報道マンの腕章/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AD38:]+0x14:],0x00,0x63,unsigned
+ [subject]報道マンの腕章/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AD44:]+0x14:],0x00,0x63,unsigned
+ [subject]パンチラ写真/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AD50:]+0x14:],0x00,0x63,unsigned
+ [subject]ドリンクバー/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AD5C:]+0x14:],0x00,0x63,unsigned
+ [subject]謎のカードＢ/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AD68:]+0x14:],0x00,0x63,unsigned
+ [subject]謎のカードＣ/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AD74:]+0x14:],0x00,0x63,unsigned
+ [subject]忍法解除の鍵/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AD80:]+0x14:],0x00,0x63,unsigned
+ [subject]パステルキー/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AD8C:]+0x14:],0x00,0x63,unsigned
+ [subject]カエル（ピチピチです）/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AD98:]+0x14:],0x00,0x63,unsigned
+ [subject]マジックソード？/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ADA4:]+0x14:],0x00,0x63,unsigned
+ [subject]ムシ殺しのお札/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ADB0:]+0x14:],0x00,0x63,unsigned
+ [subject]分裂薬/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ADBC:]+0x14:],0x00,0x63,unsigned
+ [subject]ペンチの鍵/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ADC8:]+0x14:],0x00,0x63,unsigned
+ [subject]鏡の破片（エムサ）/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ADD4:]+0x14:],0x00,0x63,unsigned
+ [subject]クリスタル/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ADE0:]+0x14:],0x00,0x63,unsigned
+ [subject]金の鍵/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ADEC:]+0x14:],0x00,0x63,unsigned
+ [subject]銀の鍵/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ADF8:]+0x14:],0x00,0x63,unsigned
+ [subject]銅の鍵/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AE04:]+0x14:],0x00,0x63,unsigned
+ [subject]破れているお札/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AE10:]+0x14:],0x00,0x63,unsigned
+ [subject]絶対差し押さえの札/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AE1C:]+0x14:],0x00,0x63,unsigned
+ [subject]きゃんきゃんの下着/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AE28:]+0x14:],0x00,0x63,unsigned
+ [subject]ピコハンマー/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AE34:]+0x14:],0x00,0x63,unsigned
+ [subject]迂回路の鍵/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AE40:]+0x14:],0x00,0x63,unsigned
+ [subject]隔離部屋の鍵/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AE4C:]+0x14:],0x00,0x63,unsigned
+ [subject]虹状石/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AE58:]+0x14:],0x00,0x63,unsigned
+ [subject]核虹状石/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AE64:]+0x14:],0x00,0x63,unsigned
+ [subject]重たい破片/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AE70:]+0x14:],0x00,0x63,unsigned
+ [subject]ふっぴー（生もの）/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AE7C:]+0x14:],0x00,0x63,unsigned
+ [subject]抵抗リング/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AE88:]+0x14:],0x00,0x63,unsigned
+ [subject]ぶるま/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AE94:]+0x14:],0x00,0x63,unsigned
+ [subject]スクール水着/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AEA0:]+0x14:],0x00,0x63,unsigned
+ [subject]チャイナ服/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AEAC:]+0x14:],0x00,0x63,unsigned
+ [subject]巫女服/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AEB8:]+0x14:],0x00,0x63,unsigned
+ [subject]ビキニ鎧/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AEC4:]+0x14:],0x00,0x63,unsigned
+ [subject]ＮＯＶＡの株/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AF00:]+0x14:],0x00,0x63,unsigned
+ [subject]白サクラ貝/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AF0C:]+0x14:],0x00,0x63,unsigned
+ [subject]都市長の記憶/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AF18:]+0x14:],0x00,0x63,unsigned
+ [subject]都市長の記憶/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AF24:]+0x14:],0x00,0x63,unsigned
+[back]
+[/group]
+
+
+[group]BC3_25Work
+[subject]重要アイテム:dir
+ [subject]いかなご/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ABDC:]+0x14:],0x00,0x63,unsigned
+ [subject]イルカの鍵/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ABE8:]+0x14:],0x00,0x63,unsigned
+ [subject]蒸発の実/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ABF4:]+0x14:],0x00,0x63,unsigned
+ [subject]泥だんご/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AC00:]+0x14:],0x00,0x63,unsigned
+ [subject]黒いパンティ/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AC0C:]+0x14:],0x00,0x63,unsigned
+ [subject]謎のアホ毛/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AC18:]+0x14:],0x00,0x63,unsigned
+ [subject]リココのアホ毛/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AC24:]+0x14:],0x00,0x63,unsigned
+ [subject]メイドさんのアホ毛/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AC30:]+0x14:],0x00,0x63,unsigned
+ [subject]スーパー成長促進剤/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AC3C:]+0x14:],0x00,0x63,unsigned
+ [subject]安全財布/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AC48:]+0x14:],0x00,0x63,unsigned
+ [subject]クリちゃん饅頭/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AC54:]+0x14:],0x00,0x63,unsigned
+ [subject]はちみつ/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AC60:]+0x14:],0x00,0x63,unsigned
+ [subject]にんじん/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AC6C:]+0x14:],0x00,0x63,unsigned
+ [subject]はちみつにんじん/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AC78:]+0x14:],0x00,0x63,unsigned
+ [subject]溺死竜/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AC84:]+0x14:],0x00,0x63,unsigned
+ [subject]毒電波アンテナ/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AC90:]+0x14:],0x00,0x63,unsigned
+ [subject]呪いの拘束具/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AC9C:]+0x14:],0x00,0x63,unsigned
+ [subject]やすらぎの石/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ACA8:]+0x14:],0x00,0x63,unsigned
+ [subject]イボコロシ/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ACB4:]+0x14:],0x00,0x63,unsigned
+ [subject]ロイヤルゼリーＱ１０/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ACC0:]+0x14:],0x00,0x63,unsigned
+ [subject]ロイヤルゼリーＱ９/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ACCC:]+0x14:],0x00,0x63,unsigned
+ [subject]Ｑ１０ケーキ/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ACD8:]+0x14:],0x00,0x63,unsigned
+ [subject]Ｑ９ケーキ/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ACE4:]+0x14:],0x00,0x63,unsigned
+ [subject]ナナの吸水機/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ACF0:]+0x14:],0x00,0x63,unsigned
+ [subject]特殊草履/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ACFC:]+0x14:],0x00,0x63,unsigned
+ [subject]タクラパンコ/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AD08:]+0x14:],0x00,0x63,unsigned
+ [subject]タラコパンコ/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AD14:]+0x14:],0x00,0x63,unsigned
+ [subject]タクマパンコ/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AD20:]+0x14:],0x00,0x63,unsigned
+ [subject]サクラ貝/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AD2C:]+0x14:],0x00,0x63,unsigned
+ [subject]ぷちハニーの手紙/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AD38:]+0x14:]+0xFC=>temp;[:$temp:]*0x04=>temp;[:[:[:(MName::Sys42VM.dll)+0x078960:]+$temp:]+0x14:],0x00,0x63,unsigned
+ [subject]雷門通過カード３/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AD44:]+0x14:]+0x0100=>temp;[:$temp:]*0x04=>temp;[:[:[:(MName::Sys42VM.dll)+0x078960:]+$temp:]+0x14:],0x00,0x63,unsigned
+ [subject]ラレラレ石/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AD50:]+0x14:],0x00,0x63,unsigned
+ [subject]ハニワ教信者カード（偽）/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AD5C:]+0x14:],0x00,0x63,unsigned
+ [subject]エリアカード（伊集院用）/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AD68:]+0x14:],0x00,0x63,unsigned
+ [subject]ハニーの着ぐるみセット/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AD74:]+0x14:],0x00,0x63,unsigned
+ [subject]シャリーさんのカメラ/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AD80:]+0x14:],0x00,0x63,unsigned
+ [subject]報道マンの腕章/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AD8C:]+0x14:],0x00,0x63,unsigned
+ [subject]報道マンの腕章/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AD98:]+0x14:],0x00,0x63,unsigned
+ [subject]パンチラ写真/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ADA4:]+0x14:],0x00,0x63,unsigned
+ [subject]ドリンクバー/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ADB0:]+0x14:],0x00,0x63,unsigned
+ [subject]謎のカードＢ/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ADBC:]+0x14:],0x00,0x63,unsigned
+ [subject]謎のカードＣ/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ADC8:]+0x14:],0x00,0x63,unsigned
+ [subject]忍法解除の鍵/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ADD4:]+0x14:],0x00,0x63,unsigned
+ [subject]パステルキー/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ADE0:]+0x14:],0x00,0x63,unsigned
+ [subject]カエル（ピチピチです）/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ADEC:]+0x14:],0x00,0x63,unsigned
+ [subject]マジックソード？/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01ADF8:]+0x14:],0x00,0x63,unsigned
+ [subject]ムシ殺しのお札/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AE04:]+0x14:],0x00,0x63,unsigned
+ [subject]分裂薬/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AE10:]+0x14:],0x00,0x63,unsigned
+ [subject]ペンチの鍵/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AE1C:]+0x14:],0x00,0x63,unsigned
+ [subject]鏡の破片（エムサ）/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AE28:]+0x14:],0x00,0x63,unsigned
+ [subject]クリスタル/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AE34:]+0x14:],0x00,0x63,unsigned
+ [subject]金の鍵/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AE40:]+0x14:],0x00,0x63,unsigned
+ [subject]銀の鍵/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AE4C:]+0x14:],0x00,0x63,unsigned
+ [subject]銅の鍵/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AE58:]+0x14:],0x00,0x63,unsigned
+ [subject]破れているお札/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AE64:]+0x14:],0x00,0x63,unsigned
+ [subject]絶対差し押さえの札/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AE70:]+0x14:],0x00,0x63,unsigned
+ [subject]きゃんきゃんの下着/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AE7C:]+0x14:],0x00,0x63,unsigned
+ [subject]ピコハンマー/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AE88:]+0x14:],0x00,0x63,unsigned
+ [subject]迂回路の鍵/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AE94:]+0x14:],0x00,0x63,unsigned
+ [subject]隔離部屋の鍵/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AEA0:]+0x14:],0x00,0x63,unsigned
+ [subject]虹状石/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AEAC:]+0x14:],0x00,0x63,unsigned
+ [subject]核虹状石/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AEB8:]+0x14:],0x00,0x63,unsigned
+ [subject]重たい破片/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AEC4:]+0x14:],0x00,0x63,unsigned
+ [subject]ふっぴー（生もの）/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AED0:]+0x14:],0x00,0x63,unsigned
+ [subject]抵抗リング/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AEDC:]+0x14:],0x00,0x63,unsigned
+ [subject]ぶるま/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AEE8:]+0x14:],0x00,0x63,unsigned
+ [subject]スクール水着/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AEF4:]+0x14:],0x00,0x63,unsigned
+ [subject]チャイナ服/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AF00:]+0x14:],0x00,0x63,unsigned
+ [subject]巫女服/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AF0C:]+0x14:],0x00,0x63,unsigned
+ [subject]ビキニ鎧/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AF18:]+0x14:],0x00,0x63,unsigned
+ [subject]ＮＯＶＡの株/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AF54:]+0x14:],0x00,0x63,unsigned
+ [subject]白サクラ貝/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AF60:]+0x14:],0x00,0x63,unsigned
+ [subject]都市長の記憶/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AF6C:]+0x14:],0x00,0x63,unsigned
+ [subject]都市長の記憶/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x078960:]+0x01AF78:]+0x14:],0x00,0x63,unsigned
+[back]
+[/group]
+
+
+[group]LST_d
+デフォルト
+ドギ・マギ
+ドギ・マギ
+マスター乞食
+泥人形
+十六夜 幻一郎
+十六夜 幻一郎
+くぐつ伯爵
+ナミール・ハムサンド
+ナミール・ハムサンド
+ナミール・ハムサンド
+ナミール・ハムサンド
+マダラガ・クリケット
+なれのはて
+十六夜 幻一郎
+十六夜 幻一郎
+ルミーナ・ハムサンド
+ナミール・ハムサンド
+ドギ・マギ
+レグルス・ラグナード
+レメディア・カラー
+？？？
+？？？
+？？？
+十六夜 幻一郎
+十六夜 幻一郎
+天降鬼
+魔女アトランタ
+鉄 騎臣
+鉄 騎臣
+マダラガ・クリケット
+ボグシャー
+ボーダー・ガロア
+ボルト・アーレン
+レメディア・カラー
+鉱石獣
+鉱石獣
+鉱石獣
+鉱石獣
+レグルス・ラグナード
+首狩りマサオ
+鉱石獣
+レグルス・ラグナード
+ルームガーター
+レメディア・カラー
+鉱石蟲
+鉱石獣
+鉄騎臣
+リム・ザ・ルーラ
+永劫の剣
+永劫の剣
+きゃんきゃん
+マジスコ
+やもりん
+メイドさん
+とっこーちゃん
+ねこまたまた
+バルキリー
+南国きゃんきゃん
+ブルーマジスコ
+マスターやもりん
+上級メイドさん
+なでしこちゃん
+黒ねこまたまた
+Ａ・バルキリー
+宝箱だんご
+豪華宝箱だんご
+イカマン
+ハニー
+るろんた
+ローパー
+ぷりょ
+グリーンハニー
+メイジマン
+ヤンキー
+ルスト
+まる
+ブルーハニー
+金魚
+うっぴー
+ゾンビ
+ロンメル
+ぶたバンバラ
+マグボール
+ボーン
+ボーン
+ボーン
+ボーン
+アカメ
+ゲーリング
+さけび男
+まる改
+刀武者
+槍武者
+レッドハニー
+アントーン
+まだ角くじら
+クレッチマー
+はっぴー
+シロメ
+ガーター大統領
+キャノンボール
+木箱ん
+おかゆフィーバー
+ガーランド
+ブラックハニー
+指圧マスター
+アオメ
+ゴブリン
+ゴキブリ
+ヒムラー
+にょ～
+オッズ
+角くじら
+ナマリダマ
+堅アントーン
+サメラ～イ
+クロメ
+コンタートル
+ガーター元大統領
+くずの悪魔
+ほほえみ男
+ゲッペルス
+オウゴンダマ
+リビングソード
+バージョンＫ
+刀武者赤備え
+槍武者赤備え
+ロック
+氷箱ん
+スーパーハニー
+ジエダ～イ
+魔素漢
+巨鉄ちゃん
+鋼箱ん
+赤すもう
+ヒトラー
+ストーン・Ｇ
+宇宙刑事ユーダイン
+あばれるろんた
+赤靴下ヤンキー
+あぐーバンバラ
+メタルハニー
+腹ぺこハニー
+のーてんフラワー
+アホ毛メイドさん
+大王イカマン
+ローパー・シンディ
+アバター
+シンガン
+拷問戦士
+中華がゆフィーバー
+アントーン猪木
+片牙折れぷりょ
+宇宙刑事マニア
+ぐろあーる男
+ジエダ～イマスタ～
+？？？
+？？？
+？？？
+？？？
+？？？
+？？？
+？？？
+？？？
+？？？
+？？？
+？？？
+ゴールデンハニー
+アンモス
+クマ
+グナガン
+狂王
+？？？
+？？？
+おたま男
+オーシャンズ１１
+[/group]
+
+
+[group]LST_e
+,0x00=25040000E80300001A04000000000000
+,0x00=65000000E80300006500000065000000
+,0x00=66000000E80300006600000066000000
+,0x00=6F000000E80300006F0000006F000000
+,0x00=70000000E80300007000000070000000
+,0x00=72000000E80300007200000072000000
+,0x00=73000000E80300007300000073000000
+,0x00=79000000E80300007900000079000000
+,0x00=7B000000E80300007B0000007B000000
+,0x00=7D000000E80300007D0000007D000000
+,0x00=7C000000E80300007C0000007C000000
+,0x00=7E000000E80300007E0000007E000000
+,0x00=83000000E80300008300000083000000
+,0x00=84000000E80300008400000084000000
+,0x00=8D000000E80300008D0000008D000000
+,0x00=E0000000E8030000E0000000E0000000
+,0x00=8E000000E80300008E0000008E000000
+,0x00=8F000000E80300008F0000008F000000
+,0x00=90000000E80300009000000090000000
+,0x00=91000000E80300009100000091000000
+,0x00=92000000E80300009200000092000000
+,0x00=C9000000E8030000C9000000C9000000
+,0x00=CA000000E8030000CA000000CA000000
+,0x00=CB000000E8030000CB000000CB000000
+,0x00=CD000000E8030000CD000000CD000000
+,0x00=CE000000E8030000CE000000CE000000
+,0x00=D3000000E8030000D3000000D3000000
+,0x00=D5000000E8030000D5000000D5000000
+,0x00=D6000000E8030000D6000000D6000000
+,0x00=D8000000E8030000D8000000D8000000
+,0x00=D7000000E8030000D7000000D7000000
+,0x00=DD000000E8030000DD000000DD000000
+,0x00=DE000000E8030000DE000000DE000000
+,0x00=DF000000E8030000DF000000DF000000
+,0x00=FB000000E8030000FB000000FB000000
+,0x00=FC000000E8030000FC000000FC000000
+,0x00=FD000000E8030000FD000000FD000000
+,0x00=FE000000E8030000FE000000FE000000
+,0x00=FF000000E8030000FF000000FF000000
+,0x00=00010000E80300000001000000010000
+,0x00=01010000E80300000101000001010000
+,0x00=02010000E80300000201000002010000
+,0x00=03010000E80300000301000003010000
+,0x00=04010000E80300000401000004010000
+,0x00=05010000E80300000501000005010000
+,0x00=06010000E80300000601000006010000
+,0x00=07010000E80300000701000007010000
+,0x00=08010000E80300000801000008010000
+,0x00=09010000E80300000901000009010000
+,0x00=0F010000E80300000F0100000F010000
+,0x00=10010000E80300001001000010010000
+,0x00=0C040000E80300000C0400000C040000
+,0x00=0D040000E80300000D0400000D040000
+,0x00=0E040000E80300000E0400000E040000
+,0x00=0F040000E80300000F0400000F040000
+,0x00=10040000E80300001004000010040000
+,0x00=11040000E80300001104000011040000
+,0x00=5F040000E80300005F0400005F040000
+,0x00=62040000E80300006204000062040000
+,0x00=61040000E80300006104000061040000
+,0x00=60040000E80300006004000060040000
+,0x00=65040000E80300006504000065040000
+,0x00=64040000E80300006404000064040000
+,0x00=63040000E80300006304000063040000
+,0x00=66040000E80300006604000066040000
+,0x00=13040000E80300001304000013040000
+,0x00=2E040000E80300002E0400002E040000
+,0x00=25040000E80300002504000025040000
+,0x00=E8030000E8030000E8030000E8030000
+,0x00=1A040000E80300001A0400001A040000
+,0x00=FF030000E8030000FF030000FF030000
+,0x00=00040000E80300000004000000040000
+,0x00=E9030000E8030000E9030000E9030000
+,0x00=01040000E80300000104000001040000
+,0x00=21040000E80300002104000021040000
+,0x00=ED030000E8030000ED030000ED030000
+,0x00=F7030000E8030000F7030000F7030000
+,0x00=EA030000E8030000EA030000EA030000
+,0x00=2D040000E80300002D0400002D040000
+,0x00=F5030000E8030000F5030000F5030000
+,0x00=14040000E80300001404000014040000
+,0x00=EE030000E8030000EE030000EE030000
+,0x00=22040000E80300002204000022040000
+,0x00=02030000E80300000203000002030000
+,0x00=03030000E80300000303000003030000
+,0x00=48040000E80300004804000048040000
+,0x00=49040000E80300004904000049040000
+,0x00=4A040000E80300004A0400004A040000
+,0x00=F9030000E8030000F9030000F9030000
+,0x00=EF030000E8030000EF030000EF030000
+,0x00=27040000E80300002704000027040000
+,0x00=F8030000E8030000F8030000F8030000
+,0x00=FD030000E8030000FD030000FD030000
+,0x00=FE030000E8030000FE030000FE030000
+,0x00=EB030000E8030000EB030000EB030000
+,0x00=2A040000E80300002A0400002A040000
+,0x00=2B040000E80300002B0400002B040000
+,0x00=F0030000E8030000F0030000F0030000
+,0x00=F6030000E8030000F6030000F6030000
+,0x00=FC030000E8030000FC030000FC030000
+,0x00=30040000E80300003004000030040000
+,0x00=38040000E80300003804000038040000
+,0x00=44040000E80300004404000044040000
+,0x00=04040000E80300000404000004040000
+,0x00=F1040000E8030000F1040000F1040000
+,0x00=33040000E80300003304000033040000
+,0x00=32040000E80300003204000032040000
+,0x00=FB040000E8030000FB040000FB040000
+,0x00=19040000E80300001904000019040000
+,0x00=1C040000E80300001C0400001C040000
+,0x00=F2030000E8030000F2030000F2030000
+,0x00=08040000E80300000804000008040000
+,0x00=05040000E80300000504000005040000
+,0x00=09040000E80300000904000009040000
+,0x00=1E040000E80300001E0400001E040000
+,0x00=37040000E80300003704000037040000
+,0x00=0A040000E80300000A0400000A040000
+,0x00=FA040000E8030000FA040000FA040000
+,0x00=07040000E80300000704000007040000
+,0x00=31040000E80300003104000031040000
+,0x00=2F040000E80300002F0400002F040000
+,0x00=28040000E80300002804000028040000
+,0x00=F3030000E8030000F3030000F3030000
+,0x00=1D040000E80300001D0400001D040000
+,0x00=51040000E80300005104000051040000
+,0x00=40040000E80300004004000040040000
+,0x00=3E040000E80300003E0400003E040000
+,0x00=3F040000E80300003F0400003F040000
+,0x00=59040000E80300005904000059040000
+,0x00=45040000E80300004504000045040000
+,0x00=EC040000E8030000EC040000EC040000
+,0x00=3C040000E80300003C0400003C040000
+,0x00=06040000E80300000604000006040000
+,0x00=0B040000E80300000B0400000B040000
+,0x00=46040000E80300004604000046040000
+,0x00=4B040000E80300004B0400004B040000
+,0x00=F4040000E8030000F4040000F4040000
+,0x00=3B040000E80300003B0400003B040000
+,0x00=18040000E80300001804000018040000
+,0x00=1B040000E80300001B0400001B040000
+,0x00=2C040000E80300002C0400002C040000
+,0x00=23040000E80300002304000023040000
+,0x00=1F040000E80300001F0400001F040000
+,0x00=34040000E80300003404000034040000
+,0x00=35040000E80300003504000035040000
+,0x00=36040000E80300003604000036040000
+,0x00=26040000E80300002604000026040000
+,0x00=39040000E80300003904000039040000
+,0x00=3A040000E80300003A0400003A040000
+,0x00=41040000E80300004104000041040000
+,0x00=43040000E80300004304000043040000
+,0x00=4C040000E80300004C0400004C040000
+,0x00=4D040000E80300004D0400004D040000
+,0x00=47040000E80300004704000047040000
+,0x00=24040000E80300002404000024040000
+,0x00=29040000E80300002904000029040000
+,0x00=3D040000E80300003D0400003D040000
+,0x00=56040000E80300005604000056040000
+,0x00=54040000E80300005404000054040000
+,0x00=53040000E80300005304000053040000
+,0x00=50040000E80300005004000050040000
+,0x00=5A040000E80300005A0400005A040000
+,0x00=5B040000E80300005B0400005B040000
+,0x00=55040000E80300005504000055040000
+,0x00=5D040000E80300005D0400005D040000
+,0x00=57040000E80300005704000057040000
+,0x00=58040000E80300005804000058040000
+,0x00=5E040000E80300005E0400005E040000
+,0x00=20040000E80300002004000020040000
+,0x00=52040000E80300005204000052040000
+,0x00=5C040000E80300005C0400005C040000
+,0x00=4E040000E80300004E0400004E040000
+,0x00=12040000E80300001204000012040000
+,0x00=71000000E80300007100000071000000
+,0x00=7A000000E80300007A0000007A000000
+,0x00=CC000000E8030000CC000000CC000000
+,0x00=2C010000E80300002C0100002C010000
+[/group]
+
+
+[group]LST_2e
+,0x00=25040000E80300001A04000013040000CF070000180400005C04000000000000
+,0x00=65000000E8030000650000006500000065000000650000006500000065000000
+,0x00=66000000E8030000660000006600000066000000660000006600000066000000
+,0x00=6F000000E80300006F0000006F0000006F0000006F0000006F0000006F000000
+,0x00=70000000E8030000700000007000000070000000700000007000000070000000
+,0x00=72000000E8030000720000007200000072000000720000007200000072000000
+,0x00=73000000E8030000730000007300000073000000730000007300000073000000
+,0x00=79000000E8030000790000007900000079000000790000007900000079000000
+,0x00=7B000000E80300007B0000007B0000007B0000007B0000007B0000007B000000
+,0x00=7D000000E80300007D0000007D0000007D0000007D0000007D0000007D000000
+,0x00=7C000000E80300007C0000007C0000007C0000007C0000007C0000007C000000
+,0x00=7E000000E80300007E0000007E0000007E0000007E0000007E0000007E000000
+,0x00=83000000E8030000830000008300000083000000830000008300000083000000
+,0x00=84000000E8030000840000008400000084000000840000008400000084000000
+,0x00=8D000000E80300008D0000008D0000008D0000008D0000008D0000008D000000
+,0x00=E0000000E8030000E0000000E0000000E0000000E0000000E0000000E0000000
+,0x00=8E000000E80300008E0000008E0000008E0000008E0000008E0000008E000000
+,0x00=8F000000E80300008F0000008F0000008F0000008F0000008F0000008F000000
+,0x00=90000000E8030000900000009000000090000000900000009000000090000000
+,0x00=91000000E8030000910000009100000091000000910000009100000091000000
+,0x00=92000000E8030000920000009200000092000000920000009200000092000000
+,0x00=C9000000E8030000C9000000C9000000C9000000C9000000C9000000C9000000
+,0x00=CA000000E8030000CA000000CA000000CA000000CA000000CA000000CA000000
+,0x00=CB000000E8030000CB000000CB000000CB000000CB000000CB000000CB000000
+,0x00=CD000000E8030000CD000000CD000000CD000000CD000000CD000000CD000000
+,0x00=CE000000E8030000CE000000CE000000CE000000CE000000CE000000CE000000
+,0x00=D3000000E8030000D3000000D3000000D3000000D3000000D3000000D3000000
+,0x00=D5000000E8030000D5000000D5000000D5000000D5000000D5000000D5000000
+,0x00=D6000000E8030000D6000000D6000000D6000000D6000000D6000000D6000000
+,0x00=D8000000E8030000D8000000D8000000D8000000D8000000D8000000D8000000
+,0x00=D7000000E8030000D7000000D7000000D7000000D7000000D7000000D7000000
+,0x00=DD000000E8030000DD000000DD000000DD000000DD000000DD000000DD000000
+,0x00=DE000000E8030000DE000000DE000000DE000000DE000000DE000000DE000000
+,0x00=DF000000E8030000DF000000DF000000DF000000DF000000DF000000DF000000
+,0x00=FB000000E8030000FB000000FB000000FB000000FB000000FB000000FB000000
+,0x00=FC000000E8030000FC000000FC000000FC000000FC000000FC000000FC000000
+,0x00=FD000000E8030000FD000000FD000000FD000000FD000000FD000000FD000000
+,0x00=FE000000E8030000FE000000FE000000FE000000FE000000FE000000FE000000
+,0x00=FF000000E8030000FF000000FF000000FF000000FF000000FF000000FF000000
+,0x00=00010000E8030000000100000001000000010000000100000001000000010000
+,0x00=01010000E8030000010100000101000001010000010100000101000001010000
+,0x00=02010000E8030000020100000201000002010000020100000201000002010000
+,0x00=03010000E8030000030100000301000003010000030100000301000003010000
+,0x00=04010000E8030000040100000401000004010000040100000401000004010000
+,0x00=05010000E8030000050100000501000005010000050100000501000005010000
+,0x00=06010000E8030000060100000601000006010000060100000601000006010000
+,0x00=07010000E8030000070100000701000007010000070100000701000007010000
+,0x00=08010000E8030000080100000801000008010000080100000801000008010000
+,0x00=09010000E8030000090100000901000009010000090100000901000009010000
+,0x00=0F010000E80300000F0100000F0100000F0100000F0100000F0100000F010000
+,0x00=10010000E8030000100100001001000010010000100100001001000010010000
+,0x00=0C040000E80300000C0400000C0400000C0400000C0400000C0400000C040000
+,0x00=0D040000E80300000D0400000D0400000D0400000D0400000D0400000D040000
+,0x00=0E040000E80300000E0400000E0400000E0400000E0400000E0400000E040000
+,0x00=0F040000E80300000F0400000F0400000F0400000F0400000F0400000F040000
+,0x00=10040000E8030000100400001004000010040000100400001004000010040000
+,0x00=11040000E8030000110400001104000011040000110400001104000011040000
+,0x00=5F040000E80300005F0400005F0400005F0400005F0400005F0400005F040000
+,0x00=62040000E8030000620400006204000062040000620400006204000062040000
+,0x00=61040000E8030000610400006104000061040000610400006104000061040000
+,0x00=60040000E8030000600400006004000060040000600400006004000060040000
+,0x00=65040000E8030000650400006504000065040000650400006504000065040000
+,0x00=64040000E8030000640400006404000064040000640400006404000064040000
+,0x00=63040000E8030000630400006304000063040000630400006304000063040000
+,0x00=66040000E8030000660400006604000066040000660400006604000066040000
+,0x00=13040000E8030000130400001304000013040000130400001304000013040000
+,0x00=2E040000E80300002E0400002E0400002E0400002E0400002E0400002E040000
+,0x00=25040000E8030000250400002504000025040000250400002504000025040000
+,0x00=E8030000E8030000E8030000E8030000E8030000E8030000E8030000E8030000
+,0x00=1A040000E80300001A0400001A0400001A0400001A0400001A0400001A040000
+,0x00=FF030000E8030000FF030000FF030000FF030000FF030000FF030000FF030000
+,0x00=00040000E8030000000400000004000000040000000400000004000000040000
+,0x00=E9030000E8030000E9030000E9030000E9030000E9030000E9030000E9030000
+,0x00=01040000E8030000010400000104000001040000010400000104000001040000
+,0x00=21040000E8030000210400002104000021040000210400002104000021040000
+,0x00=ED030000E8030000ED030000ED030000ED030000ED030000ED030000ED030000
+,0x00=F7030000E8030000F7030000F7030000F7030000F7030000F7030000F7030000
+,0x00=EA030000E8030000EA030000EA030000EA030000EA030000EA030000EA030000
+,0x00=2D040000E80300002D0400002D0400002D0400002D0400002D0400002D040000
+,0x00=F5030000E8030000F5030000F5030000F5030000F5030000F5030000F5030000
+,0x00=14040000E8030000140400001404000014040000140400001404000014040000
+,0x00=EE030000E8030000EE030000EE030000EE030000EE030000EE030000EE030000
+,0x00=22040000E8030000220400002204000022040000220400002204000022040000
+,0x00=02030000E8030000020300000203000002030000020300000203000002030000
+,0x00=03030000E8030000030300000303000003030000030300000303000003030000
+,0x00=48040000E8030000480400004804000048040000480400004804000048040000
+,0x00=49040000E8030000490400004904000049040000490400004904000049040000
+,0x00=4A040000E80300004A0400004A0400004A0400004A0400004A0400004A040000
+,0x00=F9030000E8030000F9030000F9030000F9030000F9030000F9030000F9030000
+,0x00=EF030000E8030000EF030000EF030000EF030000EF030000EF030000EF030000
+,0x00=27040000E8030000270400002704000027040000270400002704000027040000
+,0x00=F8030000E8030000F8030000F8030000F8030000F8030000F8030000F8030000
+,0x00=FD030000E8030000FD030000FD030000FD030000FD030000FD030000FD030000
+,0x00=FE030000E8030000FE030000FE030000FE030000FE030000FE030000FE030000
+,0x00=EB030000E8030000EB030000EB030000EB030000EB030000EB030000EB030000
+,0x00=2A040000E80300002A0400002A0400002A0400002A0400002A0400002A040000
+,0x00=2B040000E80300002B0400002B0400002B0400002B0400002B0400002B040000
+,0x00=F0030000E8030000F0030000F0030000F0030000F0030000F0030000F0030000
+,0x00=F6030000E8030000F6030000F6030000F6030000F6030000F6030000F6030000
+,0x00=FC030000E8030000FC030000FC030000FC030000FC030000FC030000FC030000
+,0x00=30040000E8030000300400003004000030040000300400003004000030040000
+,0x00=38040000E8030000380400003804000038040000380400003804000038040000
+,0x00=44040000E8030000440400004404000044040000440400004404000044040000
+,0x00=04040000E8030000040400000404000004040000040400000404000004040000
+,0x00=F1040000E8030000F1040000F1040000F1040000F1040000F1040000F1040000
+,0x00=33040000E8030000330400003304000033040000330400003304000033040000
+,0x00=32040000E8030000320400003204000032040000320400003204000032040000
+,0x00=FB040000E8030000FB040000FB040000FB040000FB040000FB040000FB040000
+,0x00=19040000E8030000190400001904000019040000190400001904000019040000
+,0x00=1C040000E80300001C0400001C0400001C0400001C0400001C0400001C040000
+,0x00=F2030000E8030000F2030000F2030000F2030000F2030000F2030000F2030000
+,0x00=08040000E8030000080400000804000008040000080400000804000008040000
+,0x00=05040000E8030000050400000504000005040000050400000504000005040000
+,0x00=09040000E8030000090400000904000009040000090400000904000009040000
+,0x00=1E040000E80300001E0400001E0400001E0400001E0400001E0400001E040000
+,0x00=37040000E8030000370400003704000037040000370400003704000037040000
+,0x00=0A040000E80300000A0400000A0400000A0400000A0400000A0400000A040000
+,0x00=FA040000E8030000FA040000FA040000FA040000FA040000FA040000FA040000
+,0x00=07040000E8030000070400000704000007040000070400000704000007040000
+,0x00=31040000E8030000310400003104000031040000310400003104000031040000
+,0x00=2F040000E80300002F0400002F0400002F0400002F0400002F0400002F040000
+,0x00=28040000E8030000280400002804000028040000280400002804000028040000
+,0x00=F3030000E8030000F3030000F3030000F3030000F3030000F3030000F3030000
+,0x00=1D040000E80300001D0400001D0400001D0400001D0400001D0400001D040000
+,0x00=51040000E8030000510400005104000051040000510400005104000051040000
+,0x00=40040000E8030000400400004004000040040000400400004004000040040000
+,0x00=3E040000E80300003E0400003E0400003E0400003E0400003E0400003E040000
+,0x00=3F040000E80300003F0400003F0400003F0400003F0400003F0400003F040000
+,0x00=59040000E8030000590400005904000059040000590400005904000059040000
+,0x00=45040000E8030000450400004504000045040000450400004504000045040000
+,0x00=EC040000E8030000EC040000EC040000EC040000EC040000EC040000EC040000
+,0x00=3C040000E80300003C0400003C0400003C0400003C0400003C0400003C040000
+,0x00=06040000E8030000060400000604000006040000060400000604000006040000
+,0x00=0B040000E80300000B0400000B0400000B0400000B0400000B0400000B040000
+,0x00=46040000E8030000460400004604000046040000460400004604000046040000
+,0x00=4B040000E80300004B0400004B0400004B0400004B0400004B0400004B040000
+,0x00=F4040000E8030000F4040000F4040000F4040000F4040000F4040000F4040000
+,0x00=3B040000E80300003B0400003B0400003B0400003B0400003B0400003B040000
+,0x00=18040000E8030000180400001804000018040000180400001804000018040000
+,0x00=1B040000E80300001B0400001B0400001B0400001B0400001B0400001B040000
+,0x00=2C040000E80300002C0400002C0400002C0400002C0400002C0400002C040000
+,0x00=23040000E8030000230400002304000023040000230400002304000023040000
+,0x00=1F040000E80300001F0400001F0400001F0400001F0400001F0400001F040000
+,0x00=34040000E8030000340400003404000034040000340400003404000034040000
+,0x00=35040000E8030000350400003504000035040000350400003504000035040000
+,0x00=36040000E8030000360400003604000036040000360400003604000036040000
+,0x00=26040000E8030000260400002604000026040000260400002604000026040000
+,0x00=39040000E8030000390400003904000039040000390400003904000039040000
+,0x00=3A040000E80300003A0400003A0400003A0400003A0400003A0400003A040000
+,0x00=41040000E8030000410400004104000041040000410400004104000041040000
+,0x00=43040000E8030000430400004304000043040000430400004304000043040000
+,0x00=4C040000E80300004C0400004C0400004C0400004C0400004C0400004C040000
+,0x00=4D040000E80300004D0400004D0400004D0400004D0400004D0400004D040000
+,0x00=47040000E8030000470400004704000047040000470400004704000047040000
+,0x00=24040000E8030000240400002404000024040000240400002404000024040000
+,0x00=29040000E8030000290400002904000029040000290400002904000029040000
+,0x00=3D040000E80300003D0400003D0400003D0400003D0400003D0400003D040000
+,0x00=56040000E8030000560400005604000056040000560400005604000056040000
+,0x00=54040000E8030000540400005404000054040000540400005404000054040000
+,0x00=53040000E8030000530400005304000053040000530400005304000053040000
+,0x00=50040000E8030000500400005004000050040000500400005004000050040000
+,0x00=5A040000E80300005A0400005A0400005A0400005A0400005A0400005A040000
+,0x00=5B040000E80300005B0400005B0400005B0400005B0400005B0400005B040000
+,0x00=55040000E8030000550400005504000055040000550400005504000055040000
+,0x00=5D040000E80300005D0400005D0400005D0400005D0400005D0400005D040000
+,0x00=57040000E8030000570400005704000057040000570400005704000057040000
+,0x00=58040000E8030000580400005804000058040000580400005804000058040000
+,0x00=5E040000E80300005E0400005E0400005E0400005E0400005E0400005E040000
+,0x00=20040000E8030000200400002004000020040000200400002004000020040000
+,0x00=52040000E8030000520400005204000052040000520400005204000052040000
+,0x00=5C040000E80300005C0400005C0400005C0400005C0400005C0400005C040000
+,0x00=4E040000E80300004E0400004E0400004E0400004E0400004E0400004E040000
+,0x00=12040000E8030000120400001204000012040000120400001204000012040000
+,0x00=71000000E8030000710000007100000071000000710000007100000071000000
+,0x00=7A000000E80300007A0000007A0000007A0000007A0000007A0000007A000000
+,0x00=CC000000E8030000CC000000CC000000CC000000CC000000CC000000CC000000
+,0x00=2C010000E80300002C0100002C0100002C0100002C0100002C0100002C010000
+[/group]
+
+
+[group]SKL1
+必殺斬り
+必殺斬り2
+必殺斬り3
+行動封じ
+必中斬り
+防破斬り
+遅くする
+窃盗術
+逃走術
+逃走術2
+状態異常解除
+状態異常解除2
+1回バリア
+剣術
+剣術2
+剣術3
+魔法知識
+魔法知識2
+防御術
+防御術2
+魔抵術
+魔抵術2
+必中術
+必中術2
+必中術3
+回避術
+回避術2
+回避術3
+急所見極め
+急所見極め2
+対呪術
+対呪術2
+迅速術
+反撃術
+先制術
+貫徹根性
+ダメージ反射
+応急手当
+開運術
+開運術2
+会得術
+ハニーフラッシュ封じ
+沼歩き
+スリ対策
+敵を知る
+敵を知る2
+バリア破り
+心眼
+[/group]
