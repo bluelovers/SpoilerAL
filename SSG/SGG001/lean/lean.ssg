@@ -1,0 +1,88 @@
+SSG for SpoilerAL ver 4.8
+
+[script]
+[title]HAPPY
+[process]HAPPY.EXE
+[maker]フェアリーダスト
+[creator]Ｌｅａｎ
+[note]wordwrap
+攻撃力はあまり上げすぎないほうが良いです。
+相手の体力（現在値）は半分位が良いと思います。
+[/note]
+[subject]所持金:calc,0x433288,0,90000,unsigned
+[subject]自分:dir
+[subject]体力（最大値）:calc,0x433284,0,999,unsigned
+[subject]体力（現在値）:calc,0x43323C,0,999,unsigned
+[subject]攻撃力:calc,0x45C324,0,200,unsigned
+[subject]防御力:calc,0x45C328,0,200,unsigned
+[back]
+[subject]相手:dir
+[subject]体力（最大値）:calc,0x433250,0,999,unsigned
+[subject]体力（現在値）:calc,0x433248,0,999,unsigned
+[/script]
+
+
+[script]
+[title]Piaキャロットへようこそ！！３
+[process]Pia3.exe
+[maker]Ｆ＆Ｃ
+[creator]Ｌｅａｎ
+[note]wordwrap
+ユニフォームセレクトと「織江」を追加しました。
+[/note]
+[subject]ユニフォームセレクト:list,0x6C83F8,uniform,1,1
+[subject]所持金:calc,0x6C83E4,0,99999,unsigned
+[subject]容　姿:calc,0x6C840C,0,120,unsigned
+[subject]優しさ:calc,0x6C8410,0,120,unsigned
+[subject]根　性:calc,0x6C8414,0,120,unsigned
+[subject]学　力:calc,0x6C8418,0,120,unsigned
+[subject]体　力:calc,0x6C841C,0,120,unsigned
+[subject]不　評:calc,0x6C8420,0,120,unsigned
+[subject]体　調:calc,0x6C8424,0,120,unsigned
+[back]
+[subject]好感度:dir
+[subject]さやか:calc,0x6C8460,0,300,unsigned
+[subject]ともみ:calc,0x6C8464,0,300,unsigned
+[subject]夏　姫:calc,0x6C8468,0,300,unsigned
+[subject]貴　子:calc,0x6C846C,0,300,unsigned
+[subject]美　春:calc,0x6C8470,0,300,unsigned
+[subject]ナ　ナ:calc,0x6C8474,0,300,unsigned
+[subject]朱　美:calc,0x6C8478,0,300,unsigned
+[subject]織　江:calc,0x6C847C,0,300,unsigned
+[/script]
+
+
+[script]
+[title]Doki! Doki! お医者さんごっこ
+[process]B2.EXE
+[maker]キャンディソフト
+[creator]Ｌｅａｎ
+[note]wordwrap
+患者の不信度を「０」で固定しておけば、したい放題です。(^^;
+患者の不信度とストレス度は、最大にしない方が良いです。
+[/note]
+[subject]自分の興奮度:calc,0x507BF8,0,300,unsigned
+[subject]自分の精神力:calc,0x507C10,0,100,unsigned
+[subject]治療進行度:calc,0x507BFC,0,1000,unsigned
+[subject]患者の不信度:calc,0x507BF0,0,100,unsigned
+[subject]患者のストレス度:calc,0x507C0C,0,1000,unsigned
+[/script]
+
+
+[script]
+[title]Ripple　～ブルーシールへようこそっ～
+[process]ripple.EXE
+[maker]戯画
+[creator]Ｌｅａｎ
+[note]wordwrap
+Ver1.01用ですので、それ以外では利用出来ません。
+お目当ての娘を追いかけていれば、
+パラーメーターの改造は必要無いかも・・・。(^^;
+さすがに「０」固定じゃクリア出来ないけど。（笑）
+[/note]
+[subject]体力:calc,0x202004E,0,100,unsigned
+[subject]知識:calc,0x2020052,0,100,unsigned
+[subject]信頼:calc,0x2020056,0,100,unsigned
+[subject]会話:calc,0x202005A,0,100,unsigned
+[subject]人情:calc,0x202005E,0,100,unsigned
+[/script]
