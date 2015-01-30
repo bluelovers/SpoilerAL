@@ -1,0 +1,51 @@
+[subject]ステータス		:dir
+	[subject]店		:dir
+		[subject]所持金///円	:calc,0x4A7054,0,999999999
+		[subject]店頭スペース	:calc,0x4A70AC,0,99
+		[subject]整頓度		:calc,0x4A7089,0,299
+		[subject]清掃度		:calc,0x4A7085,0,299
+		[subject]評判		:calc,0x4A708D,0,299
+		[back]
+	[subject]スフィー	:dir
+		[subject]レベル		:calc,0x4A704C,1,4
+		[subject]マナ		:calc,0x4A7079,0,300
+		[subject]体力現在値	:calc,0x4A7044,0,44
+		[subject]体力最大値	:calc,0x4A703C,0,44
+		[subject]魔力現在値	:calc,0x4A7048,0,44
+		[subject]魔力最大値	:calc,0x4A7040,0,44
+		[subject]器用さ		:calc,0x4A7059,0,200,unsigned
+		[subject]目利き		:calc,0x4A705D,0,200,unsigned
+		[subject]魅力		:calc,0x4A7061,0,200,unsigned
+		[subject]機嫌		:calc,0x4A7081,0,3
+		[back]
+	[back]
+
+[subject]商品		:dir
+	[subject]五月雨堂	:dir
+		[subject]商品の状態/Ａ	:b_toggle,0x4A7840,MA_CN,offset
+		[subject]１ページ目	:dir
+			[replace]0x4A7834,MA_IT0,offset
+		[subject]２ページ目		:dir
+			[replace]0x4A78F4,MA_IT0,offset
+		[subject]３ページ目		:dir
+			[replace]0x4A79B4,MA_IT0,offset
+		[subject]４ページ目		:dir
+			[replace]0x4A7A74,MA_IT0,offset
+		[subject]５ページ目		:dir
+			[replace]0x4A7B34,MA_IT0,offset
+		[subject]６ページ目		:dir
+			[replace]0x4A7BF4,MA_IT0,offset
+		[subject]７ページ目		:dir
+			[replace]0x4A7CB4,MA_IT0,offset
+		[subject]８ページ目		:dir
+			[replace]0x4A7D74,MA_IT0,offset
+		[subject]９ページ目		:dir
+			[replace]0x4A7E34,MA_IT0,offset
+		[back]
+	[subject]仕入れ	:dir
+		[subject]１ページ目	:dir
+			[replace]0x4A81E4,MA_IT0,offset
+		[subject]２ページ目	:dir
+			[replace]0x4A82A4,MA_IT0,offset
+	[back]
+[back]
