@@ -1,0 +1,40 @@
+[group]FR_PR
+[note]wordwrap
+まぁ、どこぞの『俺izm』にばっか固執するシナリオライターさんには、こういうウケ狙いだけなシナリオの書き方も見習ってほしいものです。シナリオライター本人はつまらないだろうけど、商品としてはうまくできてると思います。今後はシステム面の向上（エフェクトスキップ等の実装）に期待。…やろうと思えば自分でも高速化できますが、このツール、描画関係一切（エフェクトはおろかメッセージ制御まで）同一の汎用ルーチンで分岐してしまうので、分岐先で必要な部分を１つ１つ潰すしかないのがツラ過ぎ(T-T
+[/note]
+
+[subject]好感度確認調整:dir
+	[repeat]FRLST->FRREP1,0,6,1
+[/group]
+
+[group]FR_CG
+[subject]クリアフラグＡＬＬ/実行/_:toggle,0x4462B0,3F
+[subject]ＣＧ:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:b_toggle,0x446258,FRLST->FR_a,real
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x446258,0x446269-00
+[back]
+[subject]回想:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x44626C,FFFFFF
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x44626C,000000
+[/group]
+
+
+[group]FR_a
+0x446258,0x446268-FF
+0x446269,03
+[/group]
+
+
+[group]FRREP1
+[subject][! @FRLST->LST_a,$Val !]/現在値/_:calc,_0x445666+0x[! 0x02*$Val !],0x00,0x0F,unsigned
+[/group]
+
+
+[group]LST_a
+白瀬憂
+三ノ宮由佳里
+加賀御文
+麻生鈴音
+櫻井詩乃
+槙いずみ
+[/group]
