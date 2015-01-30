@@ -1,0 +1,91 @@
+[group]WM_MA
+[note]wordwrap
+以下、少々補足です。
+
+■環境関連
+デバグ・自動早：
+永続文章スキップ開発側専用モード。設定内の文字速に出現させます。
+
+描画レート最高速：
+画面更新速度「高速」の２倍の効果。また、デフォだとシナリオ外ではエフェクトスキップが働かないことにも対処可能です。
+
+特殊ワイプ：
+設定のエフェクトスキップでは高速化不可な、このメーカー独特のワイプ処理をスキップ。
+
+■パラメータ関連
+４章には２種の結末がありますが、各々が更に分岐。好感度は、この部分の決定因子になります。
+
+■SUPER INVADER
+……(^^;
+[/note]
+
+[subject]環境関連:dir
+	[subject]開発側専用コマンド出現:dir
+		[subject]文字速「デバグ・自動早」使用可能/実行/_:b_toggle,0x41AB29,WMLST->WM_a,real
+		[subject]没？マウスカーソル使用可能/実行/_:toggle,0x41A7CC,09,06
+	[back]
+	[subject]描画更新レート最高速化/実行/_:b_toggle,0x40DD7D,WMLST->WM_c,real
+		[subject]特殊ワイプ処理スキップ化/実行/_:toggle,0x407AD5,EB00,746F
+[/group]
+
+
+[group]WM_PR
+[subject]好感度確認・調整:dir
+	[subject]名無しの少女/現在値/_:calc,0xD17AB4,0x00,0x0A,unsigned
+	[subject]稲葉ちとせ/現在値/_:calc,0xD17AB8,0x00,0x07,unsigned
+[/group]
+
+
+[group]WM_F2
+[e_with],01,00
+	[subject]２章選択可能/ＯＮ/_:toggle,0xD15698
+	[subject]３章選択可能/ＯＮ/_:toggle,0xD15699
+	[subject]４章選択可能/ＯＮ/_:toggle,0xD1569A
+	[subject]間幕選択可能/ＯＮ/_:toggle,0xD1569E
+[/e_with]
+[subject]閉幕選択可能/ＯＮ/_:toggle,0xD1569C,0101,0000
+[/group]
+
+
+[group]WM_CG
+[subject]画像鑑賞:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0xD1536C,0xD155AF-01000000
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0xD1536C,0xD155AF-00000000
+[back]
+[subject]追憶:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0xD143D0,0xD14953-01000000
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0xD143D0,0xD14953-00000000
+[/group]
+
+
+[group]WM_EX
+[subject]各面即スキップ化/実行/_:b_toggle,0x426243,WMLST->WM_b,real
+[subject]一撃で最高得点ＧＥＴ/ＯＮ/_:toggle,0x421E05,EB00B8,720A05
+[subject]残り玉数ＭＡＸリジェネ/ＯＮ/_:toggle,0x420717,BE0500000090,8B35ECA3CA00
+[/group]
+
+
+[group]WM_a
+0x41AB29,04,03
+0x41AB30,17,21
+0x41AB37,04,03
+0x41AB3C,15,3E
+0x41AB47,90,40
+0x41AB4A,03,04
+0x41AB50,7429,7DBA
+[/group]
+
+
+[group]WM_b
+0x426243,EB15,740C
+0xCAA3F0,00
+[/group]
+
+
+[group]WM_c
+0x40DD7D,EB00,7C0A
+0x40CA12,EB00,751E
+0x4194D8,EB0490909090,0F84F6030000
+0x419BFE,B90002000090,8B0DA841D100
+0x41E2AC,BA0002000090,8B15A841D100
+[/group]
