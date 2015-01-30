@@ -1,0 +1,10 @@
+[subject]Trust	:calc,0x00,0,100
+[subject]Level	:calc,0x18,0,100
+[subject]Body	:calc,0x30,0,10
+[subject]Soul	:calc,0x48,0,10
+[subject]Mental	:calc,0x60,0,10
+[subject]Lesson	:calc,0xA8,0,100
+[subject]Soft	:calc,0xB0,0,100
+[subject]Hard	:calc,0xB8,0,100
+[subject]Educate:calc,0xC0,0,100
+[back]
