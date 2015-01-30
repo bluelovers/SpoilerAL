@@ -1,0 +1,174 @@
+[group]NKG_SSG
+[note]wordwrap
+キャラクタ、世界観共に使えるレベルなのに企画的に某３リメイクまでの繋ぎのような一作っぽいのが勿体無い(^^;
+
+■■環境関連
+拡張シナリオ無条件開封：
+イベントＣＧデータそのものは拡張パッチの方にあるらしいので、あくまでイベント再生のみの役割です。ナツＥＮＤにエピソードを追加するものなので、内容見て気に入ったらファンブック買って下さいなｗ
+
+ＡＶＧパート高速化強化版：
+「エフェクトを使用しない」という環境メニューをキャラだけでなく、背景処理にも作用させるようなものです。
+
+■■パラメータ関連
+経験値による成長要素はなく、セーブデータ等にもそんな都合の良いデータは残りませんので、戦闘毎に書き換えて利用することになります。戦闘以外のＡＶＧパートでは利用できません。
+
+■■ＣＧモード関連
+マスクデータに関しては拡張シナリオ無条件開封の項を参照。
+[/note]
+
+[subject]環境関連:dir
+	[subject]拡張シナリオ無条件開封/実行/_:toggle,0x43E686,B00190,0F95C0
+	[subject]ＡＶＧパート高速化強化版/実行/_:b_toggle,0x42AC61,NKGLST->NKG_a,real
+  [subject]ここまで:split,line,-1,100,5
+ [back]
+[root]
+
+[subject]戦闘関連:dir
+	[subject]戦闘中無限行動可能化/実行/_:toggle,0x43DBB4,33C9,23CA
+	[subject]味方ノーダメージ化/実行/_:b_toggle,0x43C7C3,NKGLST->NKG_b,real
+	[subject]味方霊力減らない/実行/_:b_toggle,0x43C0D8,NKGLST->NKG_c,real
+  [subject]ここまで:split,line,-1,100,5
+ [back]
+[root]
+
+[subject]パラメータ関連:dir
+   [enabled][:0x4C0910:] != 0x00000000
+    [enabled][:0x4C0940:] != 0x00000000
+	[repeat]NKGLST->NKGREP1,0,3,1
+    [/enabled]
+   [/enabled]
+  [subject]ここまで:split,line,-1,100,5
+ [back]
+[root]
+
+[subject]ＣＧモード関連:dir
+	[replace]_[:0x4C0BF4:],NKGLST->NKG_d
+  [subject]ここまで:split,line,-1,100,5
+ [back]
+[root]
+
+[/group]
+
+
+[group]NKG_a
+0x42AC61,EB,75
+0x42C66B,EB00,740C
+0x430943,EB00,740A
+[/group]
+
+
+[group]NKG_b
+0x43C7C3,E98C18,8B45F0
+0x43C7C6,050090,8B4814
+0x43C7D9,E95218,8B55F0
+0x43C7DC,050090,8B4214
+0x48E030,8B55F0,000000
+0x48E033,8B45D8,000000
+0x48E036,817810C8000000,00000000000000
+0x48E03D,7D0B,0000
+0x48E03F,8B401C,000000
+0x48E042,894214,000000
+0x48E045,33C0,0000
+0x48E047,8945F8,000000
+0x48E04A,8B4214,000000
+0x48E04D,E98DE7FAFF9090,0000000000009090
+0x48E054,8B45F0,000000
+0x48E057,8B4814,000000
+0x48E05A,8138C7000000,000000000000
+0x48E060,0F8F63E7FAFF,000000000000
+0x48E066,EBC8,0000
+[/group]
+
+
+[group]NKG_c
+0x43C0D8,E9931F,8B4A18
+0x43C0DB,050090,2B4828
+0x48E070,8B4A18,000000
+0x48E073,813D6C904C0000000000,00000000000000000000
+0x48E07D,7403,0000
+0x48E07F,2B4828,000000
+0x48E082,E957E0FAFF90,000000000000
+[/group]
+
+
+[group]NKG_d
+[subject]絵巻鑑賞:dir
+[subject]ＡＬＬ ＯＮ/実行/_:b_toggle,0x00,NKGLST->NKG_e,offset
+[subject]ＡＬＬ ＯＦＦ/実行/_:b_toggle,0x00,NKGLST->NKG_f,offset
+[subject]ここまで:split,roll,-2,-,100
+[back]
+[subject]物語回想:dir
+[subject]ＡＬＬ ＯＮ/実行/_:b_toggle,0x00,NKGLST->NKG_g,offset
+[subject]ＡＬＬ ＯＦＦ/実行/_:b_toggle,0x00,NKGLST->NKG_h,offset
+[back]
+[/group]
+
+
+[group]NKG_e
+0x04,0x1B-20
+0x24,0x5A-20
+0x5B,202020
+[/group]
+
+
+[group]NKG_f
+0x04,0x1B-10
+0x24,0x5A-10
+0x5B,909090
+[/group]
+
+
+[group]NKG_g
+0x74,0x7F-2F
+0x84,0x8F-2F
+0x94,0x9B-2F
+0xA4,0xAB-2F
+0xB4,0xB9-2F
+0xC4,0xCA-2F
+0xCB,2F
+[/group]
+
+
+[group]NKG_h
+0x74,0x7F-10
+0x84,0x8F-10
+0x94,0x9B-10
+0xA4,0xAB-10
+0xB4,0xB9-10
+0xC4,0xCA-10
+0xCB,90
+[/group]
+
+
+[group]NKGREP1
+[subject][! @NKGLST->LST_a,$Val !]:dir
+	[replace]_[:0x4C0910:]+0x[! 0x24*$Val !],NKGLST->NKG_i
+	[replace]_[:0x4C0940:]+([:0x4BA264:]*0xFC)-0xFC+0x[! 0x54*$Val !],NKGLST->NKG_j
+[back]
+[/group]
+
+
+[group]NKG_i
+[e_with],0x0000,0x03E7,unsigned
+ [subject]現在体力/現在値/_:calc,0x14
+ [subject]現在霊力/現在値/_:calc,0x18
+[/e_with]
+[/group]
+
+
+[group]NKG_j
+[e_with],0x0000,0x03E7,unsigned
+ [subject]最大体力/現在値/_:calc,0x1C
+ [subject]最大霊力/現在値/_:calc,0x20
+ [subject]攻撃力/現在値/_:calc,0x24
+ [subject]防御力/現在値/_:calc,0x28
+[/e_with]
+[subject]移動力/現在値/_:calc,0x2C,0x00,0x32,unsigned
+[/group]
+
+
+[group]LST_a
+滝峰幹也
+音羽桂香
+音羽初花
+[/group]
