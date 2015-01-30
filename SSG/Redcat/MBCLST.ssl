@@ -1,0 +1,45 @@
+[group]MBC_SSG
+[note]wordwrap
+逆弾幕（全攻撃オート連射）:
+自分の攻撃によって真正面がほとんど見えなくなる諸刃の剣ｗ　破壊力は凄まじいけどね。
+[/note]
+
+[subject]ver1.00(C68):dir
+ [subject]魔理沙無敵化/実行/_:b_toggle,0x00,MBCLST->MBC_a,offset
+ [subject]逆弾幕（全攻撃オート連射）/実行/_:b_toggle,0x00,MBCLST->MBC_b,offset
+ [subject]ミサイル弾数減らない/実行/_:toggle,0x4763AF,D2,D7
+ [subject]自機数/現在値/_:calc,0x8EE28C,0x00,0x05,unsigned
+[back]
+
+[subject]C68a:dir
+ [subject]魔理沙無敵化/実行/_:b_toggle,0x00,MBCLST->MBC_2a,offset
+ [subject]逆弾幕（全攻撃オート連射）/実行/_:b_toggle,0x00,MBCLST->MBC_2b,offset
+ [subject]ミサイル弾数減らない/実行/_:toggle,0x4766BF,D2,D3
+ [subject]自機数/現在値/_:calc,0x8EE28C,0x00,0x05,unsigned
+[back]
+
+[/group]
+
+
+[group]MBC_a
+0x472655,EB,7F
+0x47298F,EB,7A
+[/group]
+
+
+[group]MBC_2a
+0x4728E5,EB,7F
+0x472C56,EB,7A
+[/group]
+
+
+[group]MBC_b
+0x4761E2,EB0490909090,0F8E64010000
+0x476357,EB0490909090,0F85A4020000
+[/group]
+
+
+[group]MBC_2b
+0x4764F2,EB0490909090,0F8E64010000
+0x476667,EB0490909090,0F85A1020000
+[/group]
