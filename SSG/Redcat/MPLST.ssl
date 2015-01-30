@@ -1,0 +1,51 @@
+[group]MP_PR
+[note]wordwrap
+難しいようで単純なような、不思議な構成でしたね(^^;まゆらや若葉が攻略対象でないのがちと残念。
+
+日数編集：
+ＯＰと各ヒロインシナリオは１つの統合シナリオなので、効果があるのはそれ以外の本編部分（大体３／４～３／３０くらい）になります。
+[/note]
+
+[subject]パラメータ関連:dir
+	[subject]日数編集/現在値/_:calc,0x449D86,0x04,0x1F,unsigned
+	[subject]美桜服装チェンジ/実行/_:toggle,0x449CC0,0100,0000
+	[subject]愛情度確認調整:dir
+	[repeat]MPLST->MPREP1,0,4,1
+[/group]
+
+
+[group]MP_CG
+[subject]おまけ:dir
+	[subject]グラフィック:dir
+		[subject]ＡＬＬ ＯＮ/実行/_:b_toggle,0x44A48C,MPLST->MP_a,real
+		[subject]ＡＬＬ ＯＦＦ/実行/_:b_toggle,0x44A48C,MPLST->MP_b,real
+	[back]
+	[subject]イベント:dir
+		[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x44AC5C,0x44ACAF-0100
+		[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x44AC5C,0x44ACAF-00
+[/group]
+
+
+[group]MP_a
+0x44A48C,0x44A607-0100
+0x44A6E4,0x44A79D-0100
+[/group]
+
+
+[group]MP_b
+0x44A48C,0x44A607-00
+0x44A6E4,0x44A79D-00
+[/group]
+
+
+[group]MPREP1
+[subject][! @MPLST->LST_a,$Val !]/現在値/_:calc,0x[! 0x449D98+$Val*2 !],0x00,0x64,unsigned
+[/group]
+
+
+[group]LST_a
+森咲美桜
+森咲梨乃
+穂々月柚香
+華宮涼音
+[/group]
