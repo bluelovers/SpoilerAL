@@ -1,0 +1,981 @@
+[group]ALT_SSG
+[note]wordwrap
+※ver3.03/3.04にて確認
+※エラー落ちを誘発しやすい箇所は意図的に外しています。
+
+士官データ内所在地変更：
+「待機」中の士官には行わないでください。
+
+Extra全部拡張し過ぎ：
+仕様上、一度チェックを外してから再度入れること。
+[/note]
+
+[size]4
+
+[subject]汎用データ:dir
+ [replace]_[:[:[:0x424170:]+0x2C:]+0x30*80+0x1C:],ALTLST->ALT_1F
+[back]
+
+[subject]士官データ:dir
+ [repeat]ALTLST->ALTREP1,0,110,1
+[back]
+
+[subject]勢力データ:dir
+ [replace]_[:[:[:0x424170:]+0x2C:]+0x30*78+0x1C:],ALTLST->ALT_na
+[back]
+
+[subject]惑星データ:dir
+ [replace]_[:[:[:0x424170:]+0x2C:]+0x30*76+0x1C:],ALTLST->ALT_pl
+[back]
+
+[subject]イベントリスト:dir
+ [replace]_[:[:[:0x424170:]+0x2C:]+0x30*41+0x1C:],ALTLST->ALT_2F
+[back]
+
+[subject]Extra:dir
+ [subject]全部拡張し過ぎ/実行/_:b_toggle,0x00,ALTLST->ALT_h,offset
+ [subject]果てしなく青過ぎ/実行/_:b_toggle,_[:[:[:0x424170:]+0x2C:]+0x30*151+0x1C:],ALTLST->ALT_d,offset
+[back]
+
+[/size]
+
+[/group]
+
+
+[group]ALTREP1
+[subject]_mem,_[\:[\:[\:0x424170\:]+0x2C\:]+0x30*77+0x1C\:]+0x[! 0x0190*$Val+0x08 !],4,free_list,<Nodata>,ALTLST->LST_1a'+'　'+'[! @ALTLST->LST_2a,$Val !]:dir
+ [replace]_[:[:[:0x424170:]+0x2C:]+0x30*77+0x1C:]+0x[! 0x0190*$Val !],ALTLST->ALT_2PR
+ [replace]_[:[:[:0x424170:]+0x2C:]+0x30*176+0x1C:]+0x[! 0x10*$Val !],ALTLST->ALT_3PR
+[back]
+[/group]
+
+
+[group]ALTREP3
+[subject]_mem,0x[! 0x04+0x78*$Val !],4,free_list,<Nodata>,ALTLST->LST_1a'+'_mem,0x[! 0x34+0x78*$Val !],4,list,<Nodata>,ALTLST->LST_8b,1,1'+'　'+'[! @ALTLST->LST_9a,($Val+1) !]:dir
+ [replace]0x[! 0x78*$Val !],ALTLST->ALT_4PR
+[back]
+[/group]
+
+
+[group]ALTREP4
+[subject][! @ALTLST->LST_4c,$Val !]:dir
+ [replace]0x[! 0x0960*$Val !],ALTLST->ALT_5PR
+[back]
+[/group]
+
+
+[group]ALT_pl
+[repeat]ALTLST->ALTREP3,0,40,1
+[/group]
+
+
+[group]ALT_na
+[repeat]ALTLST->ALTREP4,0,14,1
+[subject]アヴィリオン共和国:dir
+ [replace]0x8CA0,ALTLST->ALT_5PR
+[back]
+[/group]
+
+
+[group]ALT_2PR
+ [subject]所属［'+'_mem,0x08,4,free_list,<Nodata>,ALTLST->LST_1a'+'］/_:d_list,0x08,ALTLST->LST_3a,0x00,0xFF,ALTLST->LST_4a,offset
+ [subject]階級［'+'_mem,0x0C,4,free_list,<Nodata>,ALTLST->LST_5a'+'］/_:list,0x0C,ALTLST->LST_6a,-1,1
+ [subject]年齢［'+'_mem,0x10,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x10,0x01,0x96,unsigned
+ [subject]性別［'+'_mem,0xC4,4,free_list,<Nodata>,ALTLST->LST_8a'+'］/_:list,0xC4,ALTLST->LST_7a,0x01,0x01
+ [subject]所在地［'+'_mem,0xA0,4,list,<Nodata>,ALTLST->LST_9a,-1,1'+'］/_:list,0xA0,ALTLST->LST_9a,-1,1
+ [subject]登場年［'+'_mem,0xA8,4,num,<Nodata>,%d'+'］/現在値/_:calc,0xA8,0x0000,0x03E7,unsigned
+ [subject]功績値［'+'_mem,0x30,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x30,0x00000000,0x0098967F,unsigned
+ [subject]個人印象値 →:dir
+ [e_with],-300,3000,signed
+  [subject]地球統一連邦［'+'_mem,0x34,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x34
+  [subject]セレスティア共和国［'+'_mem,0x38,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x38
+  [subject]フリーダムトーチ共和国［'+'_mem,0x3C,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x3C
+  [subject]イザナミ皇国［'+'_mem,0x40,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x40
+  [subject]神聖メシアン教国［'+'_mem,0x44,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x44
+  [subject]オリンピア連合［'+'_mem,0x48,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x48
+  [subject]ファンロン共和国［'+'_mem,0x4C,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x4C
+  [subject]Ｗ．Ｌ．Ｔ．Ｃ．［'+'_mem,0x50,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x50
+  [subject]メガリス行政区［'+'_mem,0x54,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x54
+  [subject]ブラオローゼ公国［'+'_mem,0x58,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x58
+  [subject]アプサラス特別区［'+'_mem,0x5C,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x5C
+  [subject]アガスティア行政区［'+'_mem,0x60,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x60
+  [subject]クリアウォーター行政区［'+'_mem,0x64,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x64
+  [subject]フリーアース［'+'_mem,0x68,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x68
+  [subject]アヴィリオン共和国［'+'_mem,0x70,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x70
+ [/e_with]
+ [back]
+ [subject]一括強化(100)/実行/_:b_toggle,0x00,ALTLST->ALT_a,offset
+ [subject]一括強化(999)/実行/_:b_toggle,0x00,ALTLST->ALT_b,offset
+ [e_with],ALTLST->LST_4b,80,10
+  [subject]遭遇戦適正［'+'_mem,0x24,4,list,<Nodata>,ALTLST->LST_4b,80,10'+'］/_:list,0x24
+  [subject]拠点侵攻適正［'+'_mem,0x28,4,list,<Nodata>,ALTLST->LST_4b,80,10'+'］/_:list,0x28
+  [subject]拠点防衛適正［'+'_mem,0x2C,4,list,<Nodata>,ALTLST->LST_4b,80,10'+'］/_:list,0x2C
+ [/e_with]
+ [subject]特殊能力［'+'_mem,0xAC,4,free_list,<Nodata>,ALTLST->LST_2b'+'］/_:d_list,0xAC,ALTLST->LST_1b,0x00,0xFF,ALTLST->LST_3b,offset
+ [e_with],0x0000,0x03E7,ubsigned
+  [subject]艦攻［'+'_mem,0x14,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x14
+  [subject]艦防［'+'_mem,0x18,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x18
+  [subject]知力［'+'_mem,0x1C,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x1C
+  [subject]政治［'+'_mem,0x20,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x20
+  [subject]艦攻基本値［'+'_mem,0xDC,4,num,<Nodata>,%d'+'］/現在値/_:calc,0xDC
+  [subject]艦防基本値［'+'_mem,0xE0,4,num,<Nodata>,%d'+'］/現在値/_:calc,0xE0
+  [subject]知力基本値［'+'_mem,0xE4,4,num,<Nodata>,%d'+'］/現在値/_:calc,0xE4
+  [subject]政治基本値［'+'_mem,0xE8,4,num,<Nodata>,%d'+'］/現在値/_:calc,0xE8
+ [/e_with]
+[/group]
+
+
+[group]ALT_3PR
+[e_with],0x0000,0x03E7,unsigned
+ [subject]一括999化/実行/_:toggle,0x00,0x0F-E7030000
+ [subject]艦攻限界値［'+'_mem,0x00,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x00
+ [subject]艦防限界値［'+'_mem,0x04,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x04
+ [subject]知力限界値［'+'_mem,0x08,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x08
+ [subject]政治限界値［'+'_mem,0x0C,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0C
+[/e_with]
+[/group]
+
+
+[group]ALT_4PR
+[subject]所属［'+'_mem,0x04,4,free_list,<Nodata>,ALTLST->LST_1a'+'］/_:d_list,0x04,ALTLST->LST_3a,0x00,0xFF,ALTLST->LST_4a,offset
+[subject]経済規模［'+'_mem,0x0C,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0C,0x0000,0x0BB8,unsigned
+[subject]最大経済規模［'+'_mem,0x10,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x10,0x0000,0x0BB8,unsigned
+[subject]治安値［'+'_mem,0x14,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x14,0x00,0x64,unsigned
+[subject]最大治安値［'+'_mem,0x18,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x18,0x00,0x64,unsigned
+[subject]防御衛星種類［'+'_mem,0x1C,4,list,<Nodata>,ALTLST->LST_9b,0x1D,1'+'］/_:list,0x1C,ALTLST->LST_9b,29,1
+[subject]最大防御衛星数［'+'_mem,0x28,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x28,0x00,0x63,unsigned
+[subject]惑星総耐久力［'+'_mem,0x20,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x20,0x000000,0x98967F,unsigned
+[subject]防衛艦隊数［'+'_mem,0x38,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x38,0x00,0x1E,unsigned
+[subject]軌道部隊［'+'_mem,0x30,4,free_list,<Nodata>,ALTLST->LST_1c'+'］/_:d_list,0x30,ALTLST->LST_2c,0x00,0xFF,ALTLST->LST_3c,offset
+[subject]一括強化/実行/_:b_toggle,0x00,ALTLST->ALT_c,offset
+[/group]
+
+
+[group]ALT_5PR
+[subject]保有資金［'+'_mem,0x10,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x10,0x000000,0x0F423F,unsigned
+[subject]国家主義［'+'_mem,0xC0,4,list,<Nodata>,ALTLST->LST_5c,-1,1'+'］/_:list,0xC0,ALTLST->LST_5c,-1,1
+[subject]F.C.S.cap限界値［'+'_mem,0xD0,4,num,<Nodata>,%d'+'］/現在値/_:calc,0xD0,0x0000,0x03E7,unsigned
+[subject]外交状況:dir
+ [e_with],ALTLST->LST_6c,-1,1
+  [subject]地球統一連邦［'+'_mem,0x20,4,list,<Nodata>,ALTLST->LST_6c,-1,1'+'］/_:list,0x20
+  [subject]セレスティア共和国［'+'_mem,0x24,4,list,<Nodata>,ALTLST->LST_6c,-1,1'+'］/_:list,0x24
+  [subject]フリーダムトーチ共和国［'+'_mem,0x28,4,list,<Nodata>,ALTLST->LST_6c,-1,1'+'］/_:list,0x28
+  [subject]イザナミ皇国［'+'_mem,0x2C,4,list,<Nodata>,ALTLST->LST_6c,-1,1'+'］/_:list,0x2C
+  [subject]神聖メシアン教国［'+'_mem,0x30,4,list,<Nodata>,ALTLST->LST_6c,-1,1'+'］/_:list,0x30
+  [subject]オリンピア連合［'+'_mem,0x34,4,list,<Nodata>,ALTLST->LST_6c,-1,1'+'］/_:list,0x34
+  [subject]ファンロン共和国［'+'_mem,0x38,4,list,<Nodata>,ALTLST->LST_6c,-1,1'+'］/_:list,0x38
+  [subject]Ｗ．Ｌ．Ｔ．Ｃ．［'+'_mem,0x3C,4,list,<Nodata>,ALTLST->LST_6c,-1,1'+'］/_:list,0x3C
+  [subject]メガリス行政区［'+'_mem,0x40,4,list,<Nodata>,ALTLST->LST_6c,-1,1'+'］/_:list,0x40
+  [subject]ブラオローゼ公国［'+'_mem,0x44,4,list,<Nodata>,ALTLST->LST_6c,-1,1'+'］/_:list,0x44
+  [subject]アプサラス特別区［'+'_mem,0x48,4,list,<Nodata>,ALTLST->LST_6c,-1,1'+'］/_:list,0x48
+  [subject]アガスティア行政区［'+'_mem,0x4C,4,list,<Nodata>,ALTLST->LST_6c,-1,1'+'］/_:list,0x4C
+  [subject]クリアウォーター行政区［'+'_mem,0x50,4,list,<Nodata>,ALTLST->LST_6c,-1,1'+'］/_:list,0x50
+  [subject]フリーアース［'+'_mem,0x54,4,list,<Nodata>,ALTLST->LST_6c,-1,1'+'］/_:list,0x54
+  [subject]アヴィリオン共和国［'+'_mem,0x5C,4,list,<Nodata>,ALTLST->LST_6c,-1,1'+'］/_:list,0x5C
+ [/e_with]
+[back]
+[subject]国際印象値:dir
+ [e_with],-1,3000,signed
+  [subject]地球統一連邦［'+'_mem,0x70,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x70
+  [subject]セレスティア共和国［'+'_mem,0x74,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x74
+  [subject]フリーダムトーチ共和国［'+'_mem,0x78,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x78
+  [subject]イザナミ皇国［'+'_mem,0x7C,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x7C
+  [subject]神聖メシアン教国［'+'_mem,0x80,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x80
+  [subject]オリンピア連合［'+'_mem,0x84,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x84
+  [subject]ファンロン共和国［'+'_mem,0x88,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x88
+  [subject]Ｗ．Ｌ．Ｔ．Ｃ．［'+'_mem,0x8C,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x8C
+  [subject]メガリス行政区［'+'_mem,0x90,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x90
+  [subject]ブラオローゼ公国［'+'_mem,0x94,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x94
+  [subject]アプサラス特別区［'+'_mem,0x98,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x98
+  [subject]アガスティア行政区［'+'_mem,0x9C,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x9C
+  [subject]クリアウォーター行政区［'+'_mem,0xA0,4,num,<Nodata>,%d'+'］/現在値/_:calc,0xA0
+  [subject]フリーアース［'+'_mem,0xA4,4,num,<Nodata>,%d'+'］/現在値/_:calc,0xA4
+  [subject]アヴィリオン共和国［'+'_mem,0xAC,4,num,<Nodata>,%d'+'］/現在値/_:calc,0xAC
+ [/e_with]
+[back]
+[subject]兵器開発状況:dir
+[e_with],-1,300,signed
+[subject]全兵器完成/実行/_:b_toggle,0x00,ALTLST->ALT_g,offset
+ [subject]セーフリムニル級試験艦［'+'_mem,0x019C,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x019C
+ [subject]ガルム級防衛艦［'+'_mem,0x01A0,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x01A0
+ [subject]イスカリア級駆逐艦［'+'_mem,0x01A4,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x01A4
+ [subject]レベリギウス級重巡洋艦［'+'_mem,0x01A8,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x01A8
+ [subject]エウクレイデス級戦艦［'+'_mem,0x01AC,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x01AC
+ [subject]スコル級駆逐艦［'+'_mem,0x01B0,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x01B0
+ [subject]フレスヴェルグ級巡洋艦［'+'_mem,0x01B4,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x01B4
+ [subject]ハティ級重駆逐艦［'+'_mem,0x01B8,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x01B8
+ [subject]スレイプニル級強襲艦［'+'_mem,0x01BC,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x01BC
+ [subject]ヴァルハラ級空母［'+'_mem,0x01C0,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x01C0
+ [subject]フェンリル級戦艦［'+'_mem,0x01C4,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x01C4
+ [subject]ヴァルハラⅡ級空母［'+'_mem,0x01C8,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x01C8
+ [subject]ヨルムンガルド級弩級戦艦［'+'_mem,0x01CC,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x01CC
+ [subject]ノルニル級護衛艦［'+'_mem,0x01D0,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x01D0
+ [subject]イリアシオン級巡洋艦［'+'_mem,0x01D8,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x01D8
+ [subject]艦載戦闘機アインヘリアル［'+'_mem,0x01F4,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x01F4
+ [subject]艦載戦闘機ヴァルキューレ［'+'_mem,0x01F8,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x01F8
+ [subject]防衛衛星Ⅰ型［'+'_mem,0x0204,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0204
+ [subject]防衛衛星Ⅱ型［'+'_mem,0x0208,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0208
+ [subject]防衛衛星Ⅲ型［'+'_mem,0x020C,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x020C
+[/e_with]
+[back]
+[subject]技術開発状況:dir
+[subject]全技術出現/実行/_:b_toggle,0x00,ALTLST->ALT_e,offset
+[subject]全技術完成/実行/_:b_toggle,0x00,ALTLST->ALT_f,offset
+[e_with],-1,300,signed
+ [subject]艦隊制御システム［'+'_mem,0x0320,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0320
+ [subject]エネルギー技術［'+'_mem,0x0324,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0324
+ [subject]ソフトウェア技術［'+'_mem,0x0328,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0328
+ [subject]ハードウェア技術［'+'_mem,0x032C,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x032C
+ [subject]ビームキャノンⅠ［'+'_mem,0x0330,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0330
+ [subject]ビームキャノンⅡ［'+'_mem,0x0334,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0334
+ [subject]ビームキャノンⅢ［'+'_mem,0x0338,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0338
+ [subject]巡航ミサイルⅠ［'+'_mem,0x033C,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x033C
+ [subject]巡航ミサイルⅡ［'+'_mem,0x0340,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0340
+ [subject]巡航ミサイルⅢ［'+'_mem,0x0344,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0344
+ [subject]レールキャノンⅠ［'+'_mem,0x0348,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0348
+ [subject]レールキャノンⅡ［'+'_mem,0x034C,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x034C
+ [subject]レールキャノンⅢ［'+'_mem,0x0350,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0350
+ [subject]光熱変換素子装甲［'+'_mem,0x0354,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0354
+ [subject]指向性爆発装甲［'+'_mem,0x0358,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0358
+ [subject]流体装甲［'+'_mem,0x035C,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x035C
+ [subject]複合装甲［'+'_mem,0x0360,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0360
+ [subject]ストロングフレーム［'+'_mem,0x0364,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0364
+ [subject]ダメージコントロール［'+'_mem,0x0368,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0368
+ [subject]パラブースター［'+'_mem,0x036C,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x036C
+ [subject]エコノミーフレーム［'+'_mem,0x0370,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0370
+ [subject]エコノミーアーマー［'+'_mem,0x0374,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0374
+ [subject]ＥＵビームキャノン［'+'_mem,0x0378,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0378
+ [subject]ＥＵレールキャノン［'+'_mem,0x037C,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x038C
+ [subject]ケンジット／ＡＢＳ［'+'_mem,0x0398,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0398
+ [subject]ヴィクトール／ＬＲＣ［'+'_mem,0x039C,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0398
+ [subject]パッシヴセーフティ［'+'_mem,0x03A0,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0398
+ [subject]ブライアンドライブ［'+'_mem,0x03A4,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0398
+ [subject]リックマン／ＥＡ［'+'_mem,0x03A8,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0398
+ [subject]ヘッジホッグ［'+'_mem,0x03AC,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0398
+ [subject]ウサミ／ＡＭＭ［'+'_mem,0x03B0,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0398
+ [subject]ハザマカリキュラム［'+'_mem,0x03B4,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0398
+ [subject]ハィロゥ／ＡＦＬ［'+'_mem,0x03B8,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0398
+ [subject]Martyr ver.1.02［'+'_mem,0x03BC,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0398
+ [subject]アルテミス／ＰＢＣ［'+'_mem,0x03C0,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0398
+ [subject]ケイロン／ＤＣＳ［'+'_mem,0x03C4,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0398
+ [subject]ヒートシェル［'+'_mem,0x03C8,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0398
+ [subject]バーストシステム［'+'_mem,0x03CC,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0398
+ [subject]EGG ver.1.27［'+'_mem,0x03D0,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0398
+ [subject]EGG ver.2.00［'+'_mem,0x03D4,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0398
+ [subject]ラングリッジ／エンジン［'+'_mem,0x03D8,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0398
+ [subject]要塞化計画［'+'_mem,0x03DC,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0398
+ [subject]ナハトドンナー／ＳＭ［'+'_mem,0x03E0,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0398
+ [subject]Zweiter Begrenzer［'+'_mem,0x03E4,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0398
+ [subject]ヒューマンセーフティ［'+'_mem,0x03E8,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0398
+ [subject]スペリオーレ／エンジン［'+'_mem,0x03EC,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0398
+ [subject]コストダウン［'+'_mem,0x03F0,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0398
+ [subject]ジョルハト／ＣＡ［'+'_mem,0x03F4,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0398
+ [subject]ローブオブフェザーズ［'+'_mem,0x03F8,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0398
+ [subject]Forecast ver.0.91［'+'_mem,0x03FC,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0398
+ [subject]Element Phase.6.00［'+'_mem,0x0400,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0398
+ [subject]Forecast ver.1.00［'+'_mem,0x0404,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0398
+ [subject]Blue Ghost［'+'_mem,0x0410,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0410
+ [subject]カリオテプラント［'+'_mem,0x0438,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x0438
+ [subject]パッケージライン［'+'_mem,0x043C,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x043C
+[/e_with]
+[back]
+[/group]
+
+
+[group]ALT_1F
+[subject]星刻歴［'+'_mem,0x04,4,num,<Nodata>,%d'+'］年/現在値/_:calc,0x04,0x01F4,0x0258,unsigned
+[subject]ターン［'+'_mem,0x08,4,num,<Nodata>,%d'+'］期/現在値/_:calc,0x08,0x01,0x34,unsigned
+[subject]王道値［'+'_mem,0x1C,3,num,<Nodata>,%d'+'］/現在値/_:calc,0x1C,0x0000,0x03E7,unsigned
+[subject]覇道値［'+'_mem,0x20,3,num,<Nodata>,%d'+'］/現在値/_:calc,0x20,0x0000,0x03E7,unsigned
+[/group]
+
+
+[group]ALT_2F
+[subject]イベントリスト/_:d_toggle,0xC8,ALTLST->LST_8c,ALTLST->LST_9c,offset
+[subject]エンディングリスト/_:d_toggle,0x0190,ALTLST->LST_7c,ALTLST->LST_9c,offset
+[/group]
+
+
+[group]ALT_a
+0x14,0x23-64000000
+0x24,0x2F-82000000
+[/group]
+
+
+[group]ALT_b
+0x14,0x23-E7030000
+0x24,0x2F-82000000
+[/group]
+
+
+[group]ALT_c
+0x0C,B80B0000B80B00006400000064000000
+0x24,6300000063000000
+0x30,1A000000
+0x38,1E000000
+[/group]
+
+
+[group]ALT_d
+0x2EE8,F40100002C010000F40100002C0100002C010000,320000001E000000320000001E0000001E000000
+0x2EFC,F4010000F4010000F4010000F40100002C010000F4010000E8030000,320000003200000032000000320000001E00000000000000
+0x2F34,00000000,02000000
+[/group]
+
+
+[group]ALT_e
+0x0320,0x037F-*{FFFFFFFF::00000000*}
+0x0398,0x0407-*{FFFFFFFF::00000000*}
+0x0410,*{FFFFFFFF::00000000*}
+0x0438,*{FFFFFFFF::00000000*}
+0x043C,*{FFFFFFFF::00000000*}
+[/group]
+
+
+[group]ALT_f
+0x0320,0x037F-64000000
+0x0398,0x0407-64000000
+0x0410,64000000
+0x0438,64000000
+0x043C,64000000
+[/group]
+
+
+[group]ALT_g
+0x019C,0x01D3-64000000
+0x01D8,64000000
+0x01F4,6400000064000000
+0x0204,0x020F-64000000
+[/group]
+
+
+[group]ALT_h
+_[:[:[:0x424170:]+0x2C:]+0x30*134+0x1C:]+0x02B8,_[:[:[:0x424170:]+0x2C:]+0x30*134+0x1C:]+0x1898-*{FFFFFFFF::????????::63000000*}*+01C4,??
+_[:[:[:0x424170:]+0x2C:]+0x30*151+0x1C:]+0x60,_[:[:[:0x424170:]+0x2C:]+0x30*151+0x1C:]+0x37D8-*{FFFFFFFF::????????::00000000*}*+01C4,??
+[/group]
+
+
+[group]LST_1a
+-2=待機
+-1=在野
+0=UFE
+1=CLS
+2=FDM
+3=IZN
+4=MSA
+5=OLY
+6=FAN
+7=WLT
+8=MGL
+9=BRR
+10=APS
+11=AGS
+12=CRW
+13=FRE
+14=---
+15=AVL
+19=無所属
+[/group]
+
+
+[group]LST_2a
+ジェームス・ジャクソン
+ジェイコブ・ブラディッシュ
+イッポリート・ベレツトスキー
+アーノルド・クリーブランド
+トウエイ・ツァオ
+デリク・ハミルトン
+ドミエ・イブラヒム
+オマフーフ・ハッタール
+ジョギ・リ
+バートラム・オーガン
+ホリー・サトウ
+グレーテ・フーバー
+グラーシム・ガイドゥコフ
+ヴィーカ・カザロフ
+ハンス・トリティン
+ランドルフ・ベルモンド
+エルンスト・ナーデル
+パメラ・レオーネ
+ジョゼ・ファンファーニ
+アリス・オルトワール
+ポール・アップルシード
+カーク・ダントン
+アーサー・マクフライ
+マリアン・フレーバー
+モーリー・カーネルバーグ
+ユージン・オールウェイズ
+ナナミ・イクセ
+キョウコ・モリサキ
+ミスズ・イズハラ
+ハルヒ・ツキナリ
+ユイ・ルメルシエ
+マイケル・ガーディアン
+ファリハッド・イスラフィル
+ウォーレス・ボード
+ディオニージ・ベネディクト
+クレメント・オズワルド
+ジャハビーム・アルガラッハ
+クリストフォーロ・アクィナス
+アイザック・バートン
+ジェレミー・ヘクター
+コウブン・キョ
+アブドナッビ・サラムーン
+グリゼルダ・カサンドラ
+ビーチェ・プルミーア
+ブルーノ・マイヤー
+ジョンソン・パク
+タイホウ・ソン
+フィリッポ・グレゴリー
+ショウケン・シュウ
+クラウス・モーガン
+マチス・フライヤー
+オーガスタス・ボウマン
+エレイン・プレシアソ
+アレクサンドロ・クレティアヌス
+アジズハーン・トゥメンバイヤー
+リアラ・クルーソー
+ウェンディ・マークライト
+オーレリア・サリーナス
+ウルリッヒ・ベギリスタイン
+パトリック・シザーズ
+マンフレッド・ウェストホーム
+アミネー・ナトワル
+ルートヴィヒ・ライプニッツ
+ハインリッヒ・ベッケンバウワー
+ベルトルト・シーツリヒター
+ジークヴァルト・ノイビル
+アンスヘルム・アイゼンブルク
+ロザリンデ・ツィッファー
+マルティン・ハルトヴィック
+クローネ・トラパトーニ
+デメトリオ・テッセラ
+ロベルト・コロンボ
+ジュセッペ・ジャンマルコ
+レイメイ・レン
+サティーラナ・ジャナンタ
+アリムンバ・マハートマー
+ジュヌヴィエーヌ・ポー
+オットー・ジョヴァンニ
+タジルハッド・ムハドハーン
+デニス・マクファーソン
+アンリータ・シャーンディ
+シアリー・エルテン
+カズミ・マレザキ
+天美館メイド隊
+スチュアート・ブライアン
+ヘンリー・オールドソン
+バーナード・トラボルタ
+アーデルハイト・クレールヒェン
+ブリジット・クロフォード
+レオン・ワソハック
+サミュエル・グラハム
+ケネス・ブロンコ
+ホセ・ビスカイノ
+バジリオ・バリントン
+アンジェリカ・ハーモニア
+ボリス・ムーア
+クロード・ルーヴェンス
+マイルズ・オーブリー
+ルーシア・エウシュリー
+ドレイク
+ジリアン・クルーソー
+ダラムサーラー・カラカラム
+オギュスタン・プラティニ
+フェリシテ・リヨンヌ
+テオーデリヒ・ライプニッツ
+ヤシオ・イクセ
+ダニエル・ロックスヒル
+マイク・カーランド
+セシル・トリストラム
+ギネヴィア・ハーキュリーズ
+[/group]
+
+
+[group]LST_3a
+UFE 地球統一連邦
+CLS セレスティア共和国
+FDM フリーダムトーチ共和国
+IZN イザナミ皇国
+MSA 神聖メシアン教国
+OLY オリンピア連合
+FAN ファンロン共和国
+WLT Ｗ．Ｌ．Ｔ．Ｃ．
+MGL メガリス行政区
+BRR ブラオローゼ公国
+APS アプサラス特別区
+AGS アガスティア行政区
+CRW クリアウォーター行政区
+FRE フリーアース
+AVL アヴィリオン共和国
+[/group]
+
+
+[group]LST_4a
+,0x00=00000000
+,0x00=01000000
+,0x00=02000000
+,0x00=03000000
+,0x00=04000000
+,0x00=05000000
+,0x00=06000000
+,0x00=07000000
+,0x00=08000000
+,0x00=09000000
+,0x00=0A000000
+,0x00=0B000000
+,0x00=0C000000
+,0x00=0D000000
+,0x00=0F000000
+,0x00=13000000
+[/group]
+
+
+[group]LST_5a
+-1=未設定
+0=元首
+1=少佐
+2=中佐
+3=大佐
+4=准将
+5=少将
+6=中将
+7=大将
+8=元帥
+[/group]
+
+
+[group]LST_6a
+未設定
+元首
+少佐
+中佐
+大佐
+准将
+少将
+中将
+大将
+元帥
+[/group]
+
+
+[group]LST_7a
+男性
+女性
+[/group]
+
+
+[group]LST_8a
+1=男性
+2=女性
+[/group]
+
+
+[group]LST_9a
+未設定
+アース
+アガスティア
+アプサラス
+カラル
+アメトリン
+イザナミ
+イリアス
+ヴァイスアードラ
+ヴァリサイト
+エッダ
+オデュッセイア
+カテドラル
+ヴェーダ
+ガンダルヴァ
+クリアウォーター
+グッドホープ
+ジュピター
+ゼピュロス
+ゴスペル
+ユグドラシル
+カリヨン
+ベルガモット
+ペルセフォネ
+ファーランド
+ダンビュライト
+ブラオローゼ
+プロメテウス
+フロンティア
+マーズ
+ミョウジョウ
+メガリス
+ティワナコ
+ロートヴォルケ
+スターゲート
+ストーンヘンジ
+ゲートキーパー
+オブシディアン
+トリフネ
+ニルヴァーナ
+シルクロード
+[/group]
+
+
+[group]LST_1b
+－－
+統率
+戦略
+研究
+内政
+参謀
+軍事
+独断
+象徴
+救急
+制圧
+奉仕
+[/group]
+
+
+[group]LST_2b
+0=－－
+1=統率
+2=戦略
+3=研究
+4=内政
+5=参謀
+6=軍事
+7=独断
+8=象徴
+9=救急
+10=制圧
+15=奉仕
+[/group]
+
+
+[group]LST_3b
+,0x00=00000000
+,0x00=01000000
+,0x00=02000000
+,0x00=03000000
+,0x00=04000000
+,0x00=05000000
+,0x00=06000000
+,0x00=07000000
+,0x00=08000000
+,0x00=09000000
+,0x00=0A000000
+,0x00=0F000000
+[/group]
+
+
+[group]LST_4b
+Ｅ
+Ｄ
+Ｃ
+Ｂ
+Ａ
+Ｓ
+[/group]
+
+
+[group]LST_5b
+不在
+ジェームス・ジャクソン
+ジェイコブ・ブラディッシュ
+イッポリート・ベレツトスキー
+アーノルド・クリーブランド
+トウエイ・ツァオ
+デリク・ハミルトン
+ドミエ・イブラヒム
+オマフーフ・ハッタール
+ジョギ・リ
+バートラム・オーガン
+ホリー・サトウ
+グレーテ・フーバー
+グラーシム・ガイドゥコフ
+ヴィーカ・カザロフ
+ハンス・トリティン
+ランドルフ・ベルモンド
+エルンスト・ナーデル
+パメラ・レオーネ
+ジョゼ・ファンファーニ
+アリス・オルトワール
+ポール・アップルシード
+カーク・ダントン
+アーサー・マクフライ
+マリアン・フレーバー
+モーリー・カーネルバーグ
+ユージン・オールウェイズ
+ナナミ・イクセ
+キョウコ・モリサキ
+ミスズ・イズハラ
+ハルヒ・ツキナリ
+ユイ・ルメルシエ
+マイケル・ガーディアン
+ファリハッド・イスラフィル
+ウォーレス・ボード
+ディオニージ・ベネディクト
+クレメント・オズワルド
+ジャハビーム・アルガラッハ
+クリストフォーロ・アクィナス
+アイザック・バートン
+ジェレミー・ヘクター
+コウブン・キョ
+アブドナッビ・サラムーン
+グリゼルダ・カサンドラ
+ビーチェ・プルミーア
+ブルーノ・マイヤー
+ジョンソン・パク
+タイホウ・ソン
+フィリッポ・グレゴリー
+ショウケン・シュウ
+クラウス・モーガン
+マチス・フライヤー
+オーガスタス・ボウマン
+エレイン・プレシアソ
+アレクサンドロ・クレティアヌス
+アジズハーン・トゥメンバイヤー
+リアラ・クルーソー
+ウェンディ・マークライト
+オーレリア・サリーナス
+ウルリッヒ・ベギリスタイン
+パトリック・シザーズ
+マンフレッド・ウェストホーム
+アミネー・ナトワル
+ルートヴィヒ・ライプニッツ
+ハインリッヒ・ベッケンバウワー
+ベルトルト・シーツリヒター
+ジークヴァルト・ノイビル
+アンスヘルム・アイゼンブルク
+ロザリンデ・ツィッファー
+マルティン・ハルトヴィック
+クローネ・トラパトーニ
+デメトリオ・テッセラ
+ロベルト・コロンボ
+ジュセッペ・ジャンマルコ
+レイメイ・レン
+サティーラナ・ジャナンタ
+アリムンバ・マハートマー
+ジュヌヴィエーヌ・ポー
+オットー・ジョヴァンニ
+タジルハッド・ムハドハーン
+デニス・マクファーソン
+アンリータ・シャーンディ
+シアリー・エルテン
+カズミ・マレザキ
+天美館メイド隊
+スチュアート・ブライアン
+ヘンリー・オールドソン
+バーナード・トラボルタ
+アーデルハイト・クレールヒェン
+ブリジット・クロフォード
+レオン・ワソハック
+サミュエル・グラハム
+ケネス・ブロンコ
+ホセ・ビスカイノ
+バジリオ・バリントン
+アンジェリカ・ハーモニア
+ボリス・ムーア
+クロード・ルーヴェンス
+マイルズ・オーブリー
+ルーシア・エウシュリー
+ドレイク
+ジリアン・クルーソー
+ダラムサーラー・カラカラム
+オギュスタン・プラティニ
+フェリシテ・リヨンヌ
+テオーデリヒ・ライプニッツ
+ヤシオ・イクセ
+ダニエル・ロックスヒル
+マイク・カーランド
+セシル・トリストラム
+ギネヴィア・ハーキュリーズ
+[/group]
+
+
+[group]LST_6b
+未配備
+アインヘリアル
+ヴァルキューレ
+[/group]
+
+
+[group]LST_7b
+,0x00=FFFFFFFF
+,0x00=19000000
+,0x00=1A000000
+[/group]
+
+
+[group]LST_8b
+主星
+従星
+要塞
+[/group]
+
+
+[group]LST_9b
+防衛衛星Ⅰ型
+防衛衛星Ⅱ型
+防衛衛星Ⅲ型
+[/group]
+
+
+[group]LST_1c
+-1=未配備
+25=アインヘリアル
+26=ヴァルキューレ
+[/group]
+
+
+[group]LST_2c
+未配備
+アインヘリアル
+ヴァルキューレ
+[/group]
+
+
+[group]LST_3c
+,0x00=FFFFFFFF
+,0x00=19000000
+,0x00=1A000000
+[/group]
+
+
+[group]LST_4c
+地球統一連邦
+セレスティア共和国
+フリーダムトーチ共和国
+イザナミ皇国
+神聖メシアン教国
+オリンピア連合
+ファンロン共和国
+Ｗ．Ｌ．Ｔ．Ｃ．
+メガリス行政区
+ブラオローゼ公国
+アプサラス特別区
+アガスティア行政区
+クリアウォーター行政区
+フリーアース
+アヴィリオン共和国
+[/group]
+
+
+[group]LST_5c
+未存在
+未設定
+保守
+革新
+中道
+孤立
+中立
+[/group]
+
+
+[group]LST_6c
+活動停止
+自国
+無関係
+同盟
+交戦中
+[/group]
+
+
+[group]LST_7c
+Ending No.0 「天には光を」
+Ending No.1 「消えない希望」
+Ending No.2 「創世神話」
+Ending No.3 「和の盟主」
+Ending No.4 「恒星帝国」
+Ending No.5 「まどろみの中で」
+Ending No.6 「銀河連盟発足」
+Ending No.7 「銀河連邦設立」
+Ending No.8 「滅亡」
+Ending No.9 「クリーブランド・レポート」
+[/group]
+
+
+[group]LST_8c
+天青の想い１
+天青の想い２
+イリアスの夜明け１
+イリアスの夜明け２
+イリアスの夜明け３
+イリアスの夜明け４
+海賊騎士１
+海賊騎士２
+海賊騎士３
+海賊騎士４
+老将の死に場
+見えない鎖１
+見えない鎖２
+星の鳥篭
+空を忘れた小鳥
+Broken Wings
+黄金の手綱
+予定調和
+孤独な意思
+銀盤遊戯
+Over the overture
+いつも一緒だよ
+イリアス平和祈念式典
+覇道の宿命
+Final code
+始まりにして、終わりの場所へ
+m/o/t/h/e/r
+軍艦供給ルート確立１
+軍艦供給ルート確立２
+軍艦供給ルート確立３
+意気地なしのライオンハート
+本当のライオンハート
+インテリジェンスド
+ネクシャリスト
+ディフェンス・ライン
+聖別の儀
+川底の小石
+伝説の男
+神々の黄昏
+イリアスの悲劇
+Child, wants to live.
+[/group]
+
+
+[group]LST_9c
+0x00=01000000/00000000
+0x04=01000000/00000000
+0x08=01000000/00000000
+0x0C=01000000/00000000
+0x10=01000000/00000000
+0x14=01000000/00000000
+0x18=01000000/00000000
+0x1C=01000000/00000000
+0x20=01000000/00000000
+0x24=01000000/00000000
+0x28=01000000/00000000
+0x2C=01000000/00000000
+0x30=01000000/00000000
+0x34=01000000/00000000
+0x38=01000000/00000000
+0x3C=01000000/00000000
+0x40=01000000/00000000
+0x44=01000000/00000000
+0x48=01000000/00000000
+0x4C=01000000/00000000
+0x50=01000000/00000000
+0x54=01000000/00000000
+0x58=01000000/00000000
+0x5C=01000000/00000000
+0x60=01000000/00000000
+0x64=01000000/00000000
+0x68=01000000/00000000
+0x6C=01000000/00000000
+0x70=01000000/00000000
+0x74=01000000/00000000
+0x78=01000000/00000000
+0x7C=01000000/00000000
+0x80=01000000/00000000
+0x84=01000000/00000000
+0x88=01000000/00000000
+0x8C=01000000/00000000
+0x90=01000000/00000000
+0x94=01000000/00000000
+0x98=01000000/00000000
+0x9C=01000000/00000000
+0xA0=01000000/00000000
+[/group]
