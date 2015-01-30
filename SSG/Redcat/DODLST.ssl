@@ -1,0 +1,143 @@
+[group]DOD_SSG
+[note]wordwrap
+ベイグランツでくたびれ気味かやや勢いが無いなと(^^;　個人的には魔王と女性勇者のカップルネタは好きなんですけどね。セレンの出番が少なくて残念w
+
+以下少々捕捉です。
+
+■■パラメータ関連
+基本的に実データの改造になりますので、そのままセーブしてもセーブデータには反映されませんし、書き換えた直後は見た目が変わるわけではありません。１週行動すれば効果が反映されたうえでの結果が返ってきます。
+
+■■フラグ関連
+拡張封印開封：
+あくまで本体データに現状あるものの再現しかできません。御注意を。
+
+期間季節週数任意変更：
+変更後データをセーブ＆ロードしてください。シナリオフラグはそのままなので、状況次第では、進行に異常が出る可能性があります。第２期夏を境にアルバイトができるようにはしてあります。
+[/note]
+
+[subject]パラメータ関連:dir
+[subject]所持金/実行/_:calc,0x4C75CC,0x000000,0x98967F,unsigned
+[subject]ティナ基本能力:dir
+	[replace]0x4C75A4,DODLST->DOD_a
+[back]
+[subject]ジェム基本能力:dir
+	[replace]0x4C75B8,DODLST->DOD_a
+[back]
+
+[subject]好感度確認調整:dir
+	[repeat]DODLST->DODREP1,0,5,1
+[root]
+
+[subject]フラグ関連:dir
+[subject]拡張封印開封/実行/_:toggle,0x4CC59E,01,00
+[subject]期間季節週数任意変更:dir
+	[subject]期間季節指定/_:d_list,0x00,DODLST->LST_a,0x0000,0xFFFF,DODLST->LST_b,offset
+	[subject]週数指定/_:d_list,0x00,DODLST->LST_c,0x0000,0xFFFF,DODLST->LST_d,offset
+[root]
+
+[subject]ＣＧモード関連:dir
+	[replace]_[:0x4CC588:],DODLST->DOD_b
+[root]
+
+[/group]
+
+
+[group]LST_a
+第１期春
+第１期夏
+第１期秋
+第１期冬
+第２期春
+第２期夏
+第２期秋
+第２期冬
+第３期春
+第３期夏
+第３期秋
+第３期冬
+[/group]
+
+
+[group]LST_b
+,0x4C1302=88EA,0x4C1331=31,0x4C1306=8F74,0x4C1337=31,0x4C15E8=0B,0x4C14E0=00
+,0x4C1302=88EA,0x4C1331=31,0x4C1306=89C4,0x4C1337=32,0x4C15E8=0C,0x4C14E0=00
+,0x4C1302=88EA,0x4C1331=31,0x4C1306=8F48,0x4C1337=33,0x4C15E8=0D,0x4C14E0=00
+,0x4C1302=88EA,0x4C1331=31,0x4C1306=937E,0x4C1337=34,0x4C15E8=0E,0x4C14E0=00
+,0x4C1302=93F1,0x4C1331=32,0x4C1306=8F74,0x4C1337=31,0x4C15E8=15,0x4C14E0=00
+,0x4C1302=93F1,0x4C1331=32,0x4C1306=89C4,0x4C1337=32,0x4C15E8=16,0x4C14E0=01
+,0x4C1302=93F1,0x4C1331=32,0x4C1306=8F48,0x4C1337=33,0x4C15E8=17,0x4C14E0=01
+,0x4C1302=93F1,0x4C1331=32,0x4C1306=937E,0x4C1337=34,0x4C15E8=18,0x4C14E0=01
+,0x4C1302=8E4F,0x4C1331=33,0x4C1306=8F74,0x4C1337=31,0x4C15E8=1F,0x4C14E0=01
+,0x4C1302=8E4F,0x4C1331=33,0x4C1306=89C4,0x4C1337=32,0x4C15E8=20,0x4C14E0=01
+,0x4C1302=8E4F,0x4C1331=33,0x4C1306=8F48,0x4C1337=33,0x4C15E8=21,0x4C14E0=01
+,0x4C1302=8E4F,0x4C1331=33,0x4C1306=937E,0x4C1337=34,0x4C15E8=22,0x4C14E0=01
+[/group]
+
+
+[group]LST_c
+第１週
+第２週
+第３週
+第４週
+第５週
+第６週
+第７週
+第８週
+第９週
+[/group]
+
+
+[group]LST_d
+,0x4C143C=00,0x4C130C=8250
+,0x4C143C=01,0x4C130C=8251
+,0x4C143C=02,0x4C130C=8252
+,0x4C143C=03,0x4C130C=8253
+,0x4C143C=04,0x4C130C=8254
+,0x4C143C=05,0x4C130C=8255
+,0x4C143C=06,0x4C130C=8256
+,0x4C143C=07,0x4C130C=8257
+,0x4C143C=08,0x4C130C=8258
+,0x4C143C=09,0x4C130C=8259
+[/group]
+
+
+[group]DOD_a
+[subject]健康最大値/現在値/_:calc,0x00,0x00,0x63,unsigned
+[subject]健康現在値/現在値/_:calc,0x04,0x00,0x63,unsigned
+[subject]腕力/現在値/_:calc,0x08,0x00,0x63,unsigned
+[subject]知力/現在値/_:calc,0x0C,0x00,0x63,unsigned
+[subject]性知識/現在値/_:calc,0x10,0x00,0x63,unsigned
+[/group]
+
+
+[group]LST_e
+ティナ（→アモン）
+ティナ（→ジギー）
+ジェム
+セレン
+チルル
+[/group]
+
+
+[group]DODREP1
+[subject][! @DODLST->LST_e,$Val !]/現在値/_:calc,_0x4C75D0+0x[! 0x04*$Val !],0x00,0x63,unsigned
+[/group]
+
+
+[group]DOD_b
+[subject]Gallery:dir
+ [subject]ＡＬＬ ＯＮ/実行/_:toggle,0x00,0x5C-20
+ [subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x00,0x5C-10
+ [subject]拡張分ＡＬＬ ＯＮ/実行/_:toggle,0x5D,20202020
+ [subject]拡張分ＡＬＬ ＯＦＦ/実行/_:toggle,0x5D,90909090
+[back]
+[subject]MINI CG Gallery:dir
+ [subject]ＡＬＬ ＯＮ/実行/_:toggle,0xD2,0x102-20
+ [subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0xD2,0x102-10
+[back]
+[subject]Memorial:dir
+ [subject]ＡＬＬ ＯＮ/実行/_:toggle,0x87,0xAD-20
+ [subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x87,0xAD-10
+ [subject]拡張分ＡＬＬ ＯＮ/実行/_:toggle,0xAE,20202020
+ [subject]拡張分ＡＬＬ ＯＦＦ/実行/_:toggle,0xAE,90909090
+[/group]
