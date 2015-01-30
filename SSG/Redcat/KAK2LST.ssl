@@ -41,7 +41,7 @@
  [io_fep] $Val/0x64, $Val*0x64
   [subject]所持金/現在値/_:calc,0x18,0x0000,0x0F41DC,unsigned
  [/io_fep]
- [subject]年月日編集/現在値/_:calc,0x0E,0x0199,0x05E3,unsigned
+ [subject]年月日編集/現在値/_:calc,0x0E,0x019A,0x05E3,unsigned
  [subject]時間帯編集/現在値/固定:calc,0x26,0x0000,0x0937,unsigned
  [subject]好感度確認調整:dir
   [e_with],0x0000,0x03E8,unsigned
