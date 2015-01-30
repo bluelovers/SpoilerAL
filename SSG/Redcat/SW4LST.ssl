@@ -1,0 +1,230 @@
+[group]SW4_SSG
+[note]wordwrap
+＊例によって名称抽出項目の負担が大きいので、必要が無い限りガイドフォームは外すこと。
+
+ＡＶＧパート機能は要必須コード。機能実行後任意のデータをロードすればＯＫ。
+
+時間帯操作はタイムテーブルを考慮して利用すべし。
+
+ヒロインセレクトに関し、双武パートナー＝エンディングヒロインです。
+[/note]
+
+[subject]戦闘パラメータ:dir
+	[repeat]SW4LST->SW4REP1,0,42,1
+[root]
+
+[subject]ＡＶＧパート関連:dir
+	[subject]必須コード/実行/_:b_toggle,0x00,SW4LST->SW4_b,offset
+	[enabled][:0x6493BBC:] != 0x00000000
+	 [subject]AVGパート時間帯（分針）/現在値/_:calc,_[:[:0x06493BBC:]+0x20:]+0xDA,0x00,0x3B,unsigned
+	 [replace]_[:[:0x06493BBC:]+0x1C:],SW4LST->SW4_1F
+	 [subject]好感度確認調整:dir
+		[repeat]SW4LST->SW4REP2,0,13,1
+	[back]
+	[/enabled]
+[root]
+
+[subject]フラグ・ＣＧモード関連:dir
+	[replace]_[:0x6A9580:],SW4LST->SW4_2F
+[root]
+
+
+
+[/group]
+
+
+[group]SW4REP1
+[subject]_mem,_0x[! $Val*0x08 !]=>temp;[\:0x5987864+$temp\:]+0x04,2,list,<Enemy or NoData>,SW4LST->LST_1a,1,1:dir
+	[replace]_0x[! $Val*0x08 !]=>temp;[:0x5987864+$temp:],SW4LST->SW4_1PR
+[back]
+[/group]
+
+
+[group]SW4REP2
+[subject][! @SW4LST->LST_2a,$Val !]:dir
+	[replace]_[:[:0x06493BBC:]+0x1C:]+0x[! 0x20*$Val !]+0x40,SW4LST->SW4_2PR
+[back]
+[/group]
+
+
+[group]LST_1a
+光（双）武大神機
+光武さくら機
+光武すみれ機
+光武マリア機
+光武カンナ機
+光武アイリス機
+光武紅蘭機
+光武織姫機
+光武レニ機
+光武エリカ機
+光武グリシーヌ機
+光武コクリコ機
+光武ロベリア機
+光武花火機
+[/group]
+
+
+[group]LST_2a
+真宮寺さくら
+神崎すみれ
+マリア・タチバナ
+霧島カンナ
+イリス・シャトーブリアン
+李紅蘭
+ソレッタ・織姫
+レニ・ミルヒシュトラーセ
+エリカ・フォンティーヌ
+グリシーヌ・ブルーメール
+コクリコ
+ロベリア・カルリーニ
+北大路花火
+[/group]
+
+
+[group]LST_3a
+真宮寺さくら
+神崎すみれ
+マリア・タチバナ
+霧島カンナ
+イリス・シャトーブリアン
+李紅蘭
+ソレッタ・織姫
+レニ・ミルヒシュトラーセ
+[/group]
+
+
+[group]LST_4a
+エリカ・フォンティーヌ
+グリシーヌ・ブルーメール
+コクリコ
+ロベリア・カルリーニ
+北大路花火
+[/group]
+
+
+[group]LST_5a
+不在
+真宮寺さくら
+神崎すみれ
+マリア・タチバナ
+霧島カンナ
+イリス・シャトーブリアン
+李紅蘭
+ソレッタ・織姫
+レニ・ミルヒシュトラーセ
+エリカ・フォンティーヌ
+グリシーヌ・ブルーメール
+コクリコ
+ロベリア・カルリーニ
+北大路花火
+大神一郎
+[/group]
+
+
+[group]LST_b
+味方
+敵
+[/group]
+
+
+[group]LST_c
+デフォルト
+１／２
+１／３
+１／６
+[/group]
+
+
+[group]LST_d
+,0x00=1E00
+,0x00=0F00
+,0x00=0A00
+,0x00=0500
+[/group]
+
+
+[group]SW4_a
+0x06,63
+0x2C,E703E703
+0x36,64
+0x46,0A
+0x54,0A0000001400000028001E0014003C000A002800000000000A001E00
+0x70,5050????????0A0A??
+[/group]
+
+
+[group]SW4_b
+0x4AEF8B,E9741C1B009090,C74604534B5343
+0x660C04,C74604534B5343,00000000000000
+0x660C0B,8935BC3B4906,000000000000
+0x660C11,E97CE3E4FF90,000000000000
+[/group]
+
+
+[group]SW4_c
+0xD9,0x010E-FF,00
+0x0131,0x0134-FF,00
+[/group]
+
+
+[group]SW4_1PR
+[subject]能力一括極大化/実行/_:b_toggle,0x00,SW4LST->SW4_a,offset
+[size]2
+ [subject]庇う回数/現在値/_:calc,0x06,0x00,0x63,unsigned
+ [subject]最大耐久/現在値/_:calc,0x2C,0x0001,0x03E7,unsigned
+ [subject]現在耐久/現在値/固定:calc,0x2E,0x0001,0x03E7,unsigned
+ [subject]現在気力/現在値/固定:calc,0x36,0x00,0x64,unsigned
+ [subject]ARMSゲージ緑/現在値/固定:calc,0x40,0x0000,0x012C,unsigned
+ [subject]ARMSゲージ赤/現在値/固定:calc,0x44,0x0000,0x012C,unsigned
+ [subject]攻撃でのゲージ消費量設定/_:d_list,0x46,SW4LST->LST_c,0x0000,0xFFFF,SW4LST->LST_d,offset
+ [subject]各行動ゲージ消費量１／３化/実行／戻す:toggle,0x54,0A0000001400000028001E0014003C000A002800000000000A001E00,1E0000003C00000078005A003C00B4001E007800000000001E005A00
+ [/e_with],0x00,0x63,unsigned
+  [subject]基本攻撃能力/現在値/_:calc,0x70
+  [subject]基本防御能力/現在値/_:calc,0x71
+  [subject]機体攻撃補正/現在値/_:calc,0x73
+  [subject]機体防御補正/現在値/_:calc,0x74
+  [subject]攻撃信頼補正/現在値/_:calc,0x76
+  [subject]防御信頼補正/現在値/_:calc,0x77
+ [e_with]
+[/size]
+[/group]
+
+
+[group]SW4_2PR
+[subject]累積好感度/現在値/_:calc,0x00,0x0000,0x03E7,unsigned
+[subject]章別好感度/現在値/_:calc,0x02,0x0000,0x03E7,unsigned
+[/group]
+
+
+[group]SW4_1F
+[subject]大神一郎隊長度/現在値/_:calc,0x2E,0x0000,0x03E7,unsigned
+[subject]ヒロインセレクト:dir
+ [subject]帝都ヒロイン/_:list,0x20,SW4LST->LST_3a,0x01,0x01
+ [subject]巴里ヒロイン/_:list,0x22,SW4LST->LST_4a,0x09,0x01
+ [subject]双武パートナー/_:list,0x26,SW4LST->LST_2a,0x01,0x01
+[back]
+[/group]
+
+
+[group]LST_e
+サクラ大戦ALLコンプリート
+サクラ大戦２ALLコンプリート
+サクラ大戦３ALLコンプリート
+サクラ大戦４ALLコンプリート
+[/group]
+
+
+[group]LST_f
+0x38=01003F00/00000000
+0x3C=0100FF00/00000000
+0x40=01001F00/00000000
+0x1E=0x2B-01/00,0x01BC=0x01CB-FF/00
+[/group]
+
+
+[group]SW4_2F
+[subject]メニュー画面表示人物/_:list,0x15,SW4LST->LST_5a,0x00,0x01
+[subject]歴代サクラ大戦クリアフラグ/_:d_toggle,0x00,SW4LST->LST_e,SW4LST->LST_f,offset
+[subject]アルバムALL/ＯＮ／ＯＦＦ/_:b_toggle,0x00,SW4LST->SW4_c,offset
+[/group]
