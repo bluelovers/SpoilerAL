@@ -1,0 +1,162 @@
+[group]LVJ_SSG
+[note]wordwrap
+設定やシナリオ面では疲れないのに、システム面で疲れた(^^;
+
+日数とADDITION項目出現は即座には効果は出ません。前者は日付更新時に、後者はゲーム中で機能を使用しタイトル画面に戻ると効果が出ます。
+[/note]
+
+[subject]ＳＬＧパート関連:dir
+	[subject]戦闘時味方怪人ノーダメージ化/実行/_:toggle,0x410306,44??????EB00,5C??????2BC8
+	[subject]１占領行動毎に１ＬＶＵＰ/実行/_:b_toggle,0x40E5BB,LVJLST->LVJ_a,real
+[subject]ミニゲーム:dir
+	[subject]神経衰弱残り回数減らない/実行/_:toggle,0x422E9A,90,49
+	[subject]スロット残り回数減らない/実行/_:toggle,0x423609,90,4D
+	[subject]スロット必ず当たる（マス目固定）/_:d_list,0x42388E,LVJLST->LST_a,0x0000,0xFFFF,LVJLST->LST_b,offset
+[root]
+
+[subject]パラメータ関連:dir
+	[replace]_[:[:[:[:(MName::AGS.DLL)+0x01F9EC:]+0x134:]+0x04:]+0x08:]+0x414,LVJLST->LVJ_b
+	[replace]_[:[:[:[:(MName::AGS.DLL)+0x01F9EC:]+0x134:]+0x04:]+0x08:]+0x8208,LVJLST->LVJ_c
+[subject]怪人能力:dir
+	[repeat]LVJLST->LVJREP1,0,30,1
+[root]
+
+[subject]ＣＧモード関連:dir
+	[replace]_[:[:[:[:(MName::AGS.DLL)+0x01F9EC:]+0x134:]+0x04:]+0x08:],LVJLST->LVJ_e
+[root]
+
+[/group]
+
+
+[group]LVJ_a
+0x40E5BB,B96400000090,8B8F3C030000
+0x40E5D3,BA6400000090,8B973C030000
+[/group]
+
+
+[group]LVJ_b
+[size]4
+ [io_fep]$Val-1, $Val+1
+	[subject]経過日数/現在値/_:calc,0x28,0x0000,0x03E7,unsigned
+ [/io_fep]
+[subject]全イプシード最大化/実行/_:toggle,0x17494,0x1753B-09000000FFFFFFFF
+[subject]コイン数:dir
+[e_with],0x0000,0x03E7,unsigned
+	[subject]資金大コイン/現在値/_:calc,0x78
+	[subject]資材大コイン/現在値/_:calc,0x7C
+	[subject]人材大コイン/現在値/_:calc,0x80
+	[subject]技術大コイン/現在値/_:calc,0x84
+[/e_with]
+[e_with],0x0000,0x270f,unsigned
+	[subject]資金小コイン/現在値/_:calc,0x50
+	[subject]資材小コイン/現在値/_:calc,0x54
+	[subject]人材小コイン/現在値/_:calc,0x58
+	[subject]技術小コイン/現在値/_:calc,0x5C
+[/e_with]
+
+[/size]
+[back]
+[/group]
+
+
+[group]LVJ_c
+[subject]全コゾーン数最大化/実行/_:toggle,0x1E00,0x1ED7-FFFFFFFF6300000000000000
+[/group]
+
+
+[group]LVJREP1
+[subject][! L($Val+0x01) !]人目:dir
+	[replace]_[:[:[:[:(MName::AGS.DLL)+0x01F9EC:]+0x134:]+0x04:]+0x08:]+0x[! 0x80*$Val !]+0x8208,LVJLST->LVJ_d
+[back]
+[/group]
+
+
+[group]LST_a
+デフォルト
+１マス目
+２マス目
+３マス目
+４マス目
+５マス目
+６マス目
+７マス目
+８マス目
+９マス目
+１０マス目
+１１マス目
+１２マス目
+１３マス目
+１４マス目
+[/group]
+
+
+[group]LST_b
+,0x00=8BCA
+,0x00=B10A
+,0x00=B114
+,0x00=B11E
+,0x00=B128
+,0x00=B132
+,0x00=B13C
+,0x00=B146
+,0x00=B150
+,0x00=B15A
+,0x00=B164
+,0x00=B16E
+,0x00=B178
+,0x00=B182
+,0x00=B18C
+[/group]
+
+
+[group]LVJ_d
+[subject]名前/_:string,0x00,16,00
+[subject]LV/現在値/_:calc,0x20,0x01,0x63,unsigned
+[subject]コゾーン編成数/現在値/_:calc,0x30,0x00,0x14,unsignd
+[subject]攻撃力/現在値/_:calc,0x34,0x01,0x32,unsigned
+[subject]生命力/現在値/_:calc,0x38,0x01,0x64,unsigned
+[subject]行動力/現在値/_:calc,0x3C,0x01,0x64,unsigned
+[subject]略奪力/現在値/_:calc,0x40,0x01,0x64,unsigned
+[/group]
+
+
+[group]LVJ_e
+[subject]GAME ADDITION・全項目出現/実行/_:toggle,0xDE,FFFF,0000
+[subject]ＣＧ鑑賞:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:b_toggle,0x00,LVJLST->LVJ_f,offset
+[subject]ＡＬＬ ＯＦＦ/実行/_:b_toggle,0x00,LVJLST->LVJ_g,offset
+[back]
+[subject]イベント回想:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:b_toggle,0x00,LVJLST->LVJ_h,offset
+[subject]ＡＬＬ ＯＦＦ/実行/_:b_toggle,0x00,LVJLST->LVJ_i,offset
+[back]
+[subject]作成怪人リスト:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x32C,0x408-FF
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x32C,0x408-00
+[/group]
+
+
+[group]LVJ_f
+0x0107,FFFFFF
+0x01CE,0x2CA-FF
+[/group]
+
+
+[group]LVJ_g
+0x0107,000000
+0x01CE,0x2CA-00
+[/group]
+
+
+[group]LVJ_h
+0x0138,0x0177-FF
+0xDE,FF
+0x019C,FF
+[/group]
+
+
+[group]LVJ_i
+0x0138,0x0177-00
+0xDE,00
+0x019C,00
+[/group]
