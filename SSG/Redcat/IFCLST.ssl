@@ -1,0 +1,84 @@
+[group]IFC_MA
+[note]wordwrap
+『秋〇の〇に』程でも無いけど、テキストが軽快でサクサク読めました。が、バリエーションに乏しいシナリオのせいで伏線らしい伏線もまともにはれず、失敗しているという印象。オマージュ元になった某作を見ればよくわかることかなぁと。
+
+以下、少々補足です。
+
+■■環境関連
+デバッグモード：
+ＡＬ本体の更新周期を10程度にし、値を固定しながら「それ散る」を起動させて下さい。スクリプトセレクトや１つ前の選択肢に戻る機能等が使えます。
+
+■■フラグ関連
+各ヒロインのＴＲＵＥＥＮＤフラグの操作ができます。全員分起てると、任意のヒロインクリア時に桜香イベントが発生します。
+
+オマケ：
+…ＣＧフラグの仕様上、このシステムは１シーンに４枚までしかＣＧ登録できないことになるようです。少なくない？(^^;
+[/note]
+
+[subject]環境関連:dir
+	[subject]デバッグモード/実行/固定:toggle,0x451238,33C040A3C09D4B00EB00,A1C09D4B0083F801750E
+	[subject]ＡＶＧパート高速化/実行/_:b_toggle,0x41D41D,IFCLST->IFC_a,real
+[/group]
+
+
+[group]IFC_PR
+[subject]好感度確認編集:dir
+	[repeat]IFCLST->IFCREP1,0,5,1
+[back]
+[/group]
+
+
+[group]IFC_F2
+[subject]メニュー項目全出現/実行/_:toggle,0x4CECBC,01000000,00000000
+[subject]ＴＲＵＥＥＮＤフラグ/_:d_toggle,0x4CECA8,IFCLST->LST_a,IFCLST->LST_b,offset
+[/group]
+
+
+[group]IFC_CG
+[subject]ＳＰＥＣＩＡＬ:dir
+	[subject]ＧＲＡＰＨＩＣ:dir
+		[subject]ＡＬＬ ＯＮ/実行/_:b_toggle,0x4D04D3,IFCLST->IFC_b,real
+		[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x4D04D3,0x4D03F6-00
+	[back]
+	[subject]ＭＥＭＯＲＹ:dir
+		[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x4D051E,FFFF
+		[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x4D051E,0000
+[/group]
+
+
+[group]IFC_a
+0x41D41D,EB00,7C08
+0x4572F1,B10190,0F94C1
+[/group]
+
+
+[group]IFCREP1
+[subject][! @IFCLST->LST_a,$Val !]/現在値/_:calc,_0x4C4438+0x[! 0x190*$Val !],0x00,0x64,unsigned
+[/group]
+
+
+[group]LST_a
+星崎希望
+雪村小町
+八重樫つばさ
+里見こだま
+森青葉
+[/group]
+
+
+[group]LST_b
+0x00=01/00
+0x04=01/00
+0x08=01/00
+0x0C=01/00
+0x10=01/00
+[/group]
+
+
+[group]IFC_b
+0x4D04D3,11131311113113371373130130
+0x4D04E0,33113111111113131733110033111113
+0x4D04F0,13137373310000003011113113117177
+0x4D0500,33010000001133131177137133170000
+0x4D0510,00101311311103
+[/group]
