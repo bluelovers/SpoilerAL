@@ -1,0 +1,5 @@
+[e_with],0x00,0x64,unsigned
+[subject]演技力/現在値/_:calc,0x00
+[subject]好感度/現在値/_:calc,0x02
+[/e_with]
+[back]
