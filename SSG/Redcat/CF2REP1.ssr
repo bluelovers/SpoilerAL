@@ -1,0 +1,2 @@
+[subject][! @CF2RLST->LST_a,$Val !]:dir
+[replace]0x[! 0x477452+$Val*0x24 !],CF2R_e
