@@ -1,0 +1,495 @@
+[subject]イベリア交易圏:dir
+[subject]リスボン:dir
+ [replace]0x58E250,dk3city,offset
+[subject]オポルト:dir
+ [replace]0x58E2AC,dk3city,offset
+[subject]ラ＝コルニャ:dir
+ [replace]0x58E308,dk3city,offset
+[subject]ビルバオ:dir
+ [replace]0x58E364,dk3city,offset
+[subject]トレド:dir
+ [replace]0x58E3C0,dk3city,offset
+[subject]サラゴサ:dir
+ [replace]0x58E41C,dk3city,offset
+[subject]コルドバ:dir
+ [replace]0x58E478,dk3city,offset
+[subject]セビリャ:dir
+ [replace]0x58E4D4,dk3city,offset
+[subject]カディス:dir
+ [replace]0x58E530,dk3city,offset
+[subject]グラナダ:dir
+ [replace]0x58E58C,dk3city,offset
+[subject]マラガ:dir
+ [replace]0x58E5E8,dk3city,offset
+[subject]バレンシア:dir
+ [replace]0x58E644,dk3city,offset
+[subject]バルセロナ:dir
+ [replace]0x58E6A0,dk3city,offset
+[subject]マホルカ:dir
+ [replace]0x58E6FC,dk3city,offset
+[back]
+[subject]フランスおよびネーデルランド交易圏:dir
+[subject]パリ:dir
+ [replace]0x58E758,dk3city,offset
+[subject]ルーアン:dir
+ [replace]0x58E7B4,dk3city,offset
+[subject]トゥール:dir
+ [replace]0x58E810,dk3city,offset
+[subject]ナント:dir
+ [replace]0x58E86C,dk3city,offset
+[subject]ボルドー:dir
+ [replace]0x58E8C8,dk3city,offset
+[subject]トゥールーズ:dir
+ [replace]0x58E924,dk3city,offset
+[subject]リヨン:dir
+ [replace]0x58E980,dk3city,offset
+[subject]マルセイユ:dir
+ [replace]0x58E9DC,dk3city,offset
+[subject]ブリュージュ:dir
+ [replace]0x58EA38,dk3city,offset
+[subject]アントワープ:dir
+ [replace]0x58EA94,dk3city,offset
+[subject]アムステルダム:dir
+ [replace]0x58EAF0,dk3city,offset
+[subject]ブリュッセル:dir
+ [replace]0x58EB4C,dk3city,offset
+[back]
+[subject]イタリア交易圏:dir
+[subject]ミラノ:dir
+ [replace]0x58EBA8,dk3city,offset
+[subject]トリノ:dir
+ [replace]0x58EC04,dk3city,offset
+[subject]ジェノヴァ:dir
+ [replace]0x58EC60,dk3city,offset
+[subject]ヴェネツィア:dir
+ [replace]0x58ECBC,dk3city,offset
+[subject]フィレンツェ:dir
+ [replace]0x58ED18,dk3city,offset
+[subject]ピサ:dir
+ [replace]0x58ED74,dk3city,offset
+[subject]ローマ:dir
+ [replace]0x58EDD0,dk3city,offset
+[subject]アンコナ:dir
+ [replace]0x58EE2C,dk3city,offset
+[subject]ナポリ:dir
+ [replace]0x58EE88,dk3city,offset
+[subject]カリアリ:dir
+ [replace]0x58EEE4,dk3city,offset
+[subject]パレルモ:dir
+ [replace]0x58EF40,dk3city,offset
+[subject]シラクサ:dir
+ [replace]0x58EF9C,dk3city,offset
+[back]
+[subject]ブリテン交易圏:dir
+[subject]ロンドン:dir
+ [replace]0x58EFF8,dk3city,offset
+[subject]サザンプトン:dir
+ [replace]0x58F054,dk3city,offset
+[subject]ブリストル:dir
+ [replace]0x58F0B0,dk3city,offset
+[subject]ヨーク:dir
+ [replace]0x58F10C,dk3city,offset
+[subject]エディンバラ:dir
+ [replace]0x58F168,dk3city,offset
+[subject]ダブリン:dir
+ [replace]0x58F1C4,dk3city,offset
+[back]
+[subject]ドイツ交易圏:dir
+[subject]ハンブルク:dir
+ [replace]0x58F220,dk3city,offset
+[subject]リューベック:dir
+ [replace]0x58F27C,dk3city,offset
+[subject]ブレーメン:dir
+ [replace]0x58F2D8,dk3city,offset
+[subject]ケルン:dir
+ [replace]0x58F334,dk3city,offset
+[subject]フランクフルト:dir
+ [replace]0x58F390,dk3city,offset
+[subject]ストラスブルク:dir
+ [replace]0x58F3EC,dk3city,offset
+[subject]マグデブルク:dir
+ [replace]0x58F448,dk3city,offset
+[subject]ニュルンベルク:dir
+ [replace]0x58F4A4,dk3city,offset
+[subject]アウグスブルク:dir
+ [replace]0x58F500,dk3city,offset
+[subject]プラハ:dir
+ [replace]0x58F55C,dk3city,offset
+[subject]ウィーン:dir
+ [replace]0x58F5B8,dk3city,offset
+[subject]ベルン:dir
+ [replace]0x58F614,dk3city,offset
+[back]
+[subject]東欧交易圏:dir
+[subject]ダンツィヒ:dir
+ [replace]0x58F670,dk3city,offset
+[subject]ケーニヒスベルク:dir
+ [replace]0x58F6CC,dk3city,offset
+[subject]リガ:dir
+ [replace]0x58F728,dk3city,offset
+[subject]ノブゴロド:dir
+ [replace]0x58F784,dk3city,offset
+[subject]モスクワ:dir
+ [replace]0x58F7E0,dk3city,offset
+[subject]キエフ:dir
+ [replace]0x58F83C,dk3city,offset
+[subject]ワルシャワ:dir
+ [replace]0x58F898,dk3city,offset
+[subject]ブダペスト:dir
+ [replace]0x58F8F4,dk3city,offset
+[back]
+[subject]北欧交易圏:dir
+[subject]ストックホルム:dir
+ [replace]0x58F950,dk3city,offset
+[subject]ウィスビー:dir
+ [replace]0x58F9AC,dk3city,offset
+[subject]コペンハーゲン:dir
+ [replace]0x58FA08,dk3city,offset
+[subject]オスロ:dir
+ [replace]0x58FA64,dk3city,offset
+[subject]ベルゲン:dir
+ [replace]0x58FAC0,dk3city,offset
+[back]
+[subject]バルカン交易圏:dir
+[subject]ベオグラード:dir
+ [replace]0x58FB1C,dk3city,offset
+[subject]ブカレスト:dir
+ [replace]0x58FB78,dk3city,offset
+[subject]アテネ:dir
+ [replace]0x58FBD4,dk3city,offset
+[subject]ラグーザ:dir
+ [replace]0x58FC30,dk3city,offset
+[subject]サロニカ:dir
+ [replace]0x58FC8C,dk3city,offset
+[subject]ガンディア:dir
+ [replace]0x58FCE8,dk3city,offset
+[subject]ファマガスタ:dir
+ [replace]0x58FD44,dk3city,offset
+[subject]ヴァルナ:dir
+ [replace]0x58FDA0,dk3city,offset
+[subject]モンカストロ:dir
+ [replace]0x58FDFC,dk3city,offset
+[back]
+[subject]北アフリカ交易圏:dir
+[subject]アレキサンドリア:dir
+ [replace]0x58FE58,dk3city,offset
+[subject]カイロ:dir
+ [replace]0x58FEB4,dk3city,offset
+[subject]アスワン:dir
+ [replace]0x58FF10,dk3city,offset
+[subject]トリポリ:dir
+ [replace]0x58FF6C,dk3city,offset
+[subject]チュニス:dir
+ [replace]0x58FFC8,dk3city,offset
+[subject]アルジェ:dir
+ [replace]0x590024,dk3city,offset
+[subject]セウタ:dir
+ [replace]0x590080,dk3city,offset
+[subject]カサブランカ:dir
+ [replace]0x5900DC,dk3city,offset
+[back]
+[subject]北西アフリカ交易圏:dir
+[subject]アソーレス:dir
+ [replace]0x590138,dk3city,offset
+[subject]マディラ:dir
+ [replace]0x590194,dk3city,offset
+[subject]ラス＝パルマス:dir
+ [replace]0x5901F0,dk3city,offset
+[subject]アルグィン:dir
+ [replace]0x59024C,dk3city,offset
+[subject]ヴェルデ岬:dir
+ [replace]0x5902A8,dk3city,offset
+[subject]シェラ＝レオネ:dir
+ [replace]0x590304,dk3city,offset
+[subject]タガーザ:dir
+ [replace]0x590360,dk3city,offset
+[subject]トンブクトゥー:dir
+ [replace]0x5903BC,dk3city,offset
+[subject]ガオ:dir
+ [replace]0x590418,dk3city,offset
+[subject]ジェンネ:dir
+ [replace]0x590474,dk3city,offset
+[subject]カノ:dir
+ [replace]0x5904D0,dk3city,offset
+[back]
+[subject]南西アフリカ交易圏:dir
+[subject]サン＝ジョルジェ:dir
+ [replace]0x59052C,dk3city,offset
+[subject]サン＝トメ:dir
+ [replace]0x590588,dk3city,offset
+[subject]イフェ:dir
+ [replace]0x5905E4,dk3city,offset
+[subject]ルアンダ:dir
+ [replace]0x590640,dk3city,offset
+[subject]ケープ:dir
+ [replace]0x59069C,dk3city,offset
+[back]
+[subject]東アフリカ交易圏:dir
+[subject]ソファラ:dir
+ [replace]0x5906F8,dk3city,offset
+[subject]モザンビケ:dir
+ [replace]0x590754,dk3city,offset
+[subject]ジンバブウェ:dir
+ [replace]0x5907B0,dk3city,offset
+[subject]キルワ:dir
+ [replace]0x59080C,dk3city,offset
+[subject]ザンジバル:dir
+ [replace]0x590868,dk3city,offset
+[subject]モンパザ:dir
+ [replace]0x5908C4,dk3city,offset
+[subject]マリンディ:dir
+ [replace]0x590920,dk3city,offset
+[subject]モガディシオ:dir
+ [replace]0x59097C,dk3city,offset
+[subject]アクスム:dir
+ [replace]0x5909D8,dk3city,offset
+[subject]ハルトゥーム:dir
+ [replace]0x590A34,dk3city,offset
+[back]
+[subject]黒海周辺交易圏:dir
+[subject]イスタンブール:dir
+ [replace]0x590A90,dk3city,offset
+[subject]カッファ:dir
+ [replace]0x590AEC,dk3city,offset
+[subject]ターナ:dir
+ [replace]0x590B48,dk3city,offset
+[subject]シノペ:dir
+ [replace]0x590BA4,dk3city,offset
+[subject]トレビゾンド:dir
+ [replace]0x590C00,dk3city,offset
+[back]
+[subject]近東および中東交易圏:dir
+[subject]アンゴラ:dir
+ [replace]0x590C5C,dk3city,offset
+[subject]アンティオキア:dir
+ [replace]0x590CB8,dk3city,offset
+[subject]ダマスクス:dir
+ [replace]0x590D14,dk3city,offset
+[subject]イェルサレム:dir
+ [replace]0x590D70,dk3city,offset
+[subject]ベイルート:dir
+ [replace]0x590DCC,dk3city,offset
+[subject]メディナ:dir
+ [replace]0x590E28,dk3city,offset
+[subject]メッカ:dir
+ [replace]0x590E84,dk3city,offset
+[subject]アデン:dir
+ [replace]0x590EE0,dk3city,offset
+[subject]マスカット:dir
+ [replace]0x590F3C,dk3city,offset
+[subject]バスラ:dir
+ [replace]0x590F98,dk3city,offset
+[subject]バグダッド:dir
+ [replace]0x590FF4,dk3city,offset
+[subject]ホルムズ:dir
+ [replace]0x591050,dk3city,offset
+[subject]シーラーズ:dir
+ [replace]0x5910AC,dk3city,offset
+[subject]イスパハン:dir
+ [replace]0x591108,dk3city,offset
+[subject]タブリーズ:dir
+ [replace]0x591164,dk3city,offset
+[back]
+[subject]中央アジア交易圏:dir
+[subject]サマルカンド:dir
+ [replace]0x5911C0,dk3city,offset
+[subject]タシケント:dir
+ [replace]0x59121C,dk3city,offset
+[subject]ウルゲンジ:dir
+ [replace]0x591278,dk3city,offset
+[subject]ヘラート:dir
+ [replace]0x5912D4,dk3city,offset
+[subject]カーブル:dir
+ [replace]0x591330,dk3city,offset
+[subject]カシュガル:dir
+ [replace]0x59138C,dk3city,offset
+[subject]トルファン:dir
+ [replace]0x5913E8,dk3city,offset
+[subject]ラサ:dir
+ [replace]0x591444,dk3city,offset
+[subject]アストラハン:dir
+ [replace]0x5914A0,dk3city,offset
+[subject]カザン:dir
+ [replace]0x5914FC,dk3city,offset
+[subject]シビル:dir
+ [replace]0x591558,dk3city,offset
+[subject]コブド:dir
+ [replace]0x5915B4,dk3city,offset
+[subject]カラコルム:dir
+ [replace]0x591610,dk3city,offset
+[back]
+[subject]インド交易圏:dir
+[subject]デリー:dir
+ [replace]0x59166C,dk3city,offset
+[subject]ラホール:dir
+ [replace]0x5916C8,dk3city,offset
+[subject]アーメダバード:dir
+ [replace]0x591724,dk3city,offset
+[subject]ディヴ:dir
+ [replace]0x591780,dk3city,offset
+[subject]ビジャプール:dir
+ [replace]0x5917DC,dk3city,offset
+[subject]ゴア:dir
+ [replace]0x591838,dk3city,offset
+[subject]カナノール:dir
+ [replace]0x591894,dk3city,offset
+[subject]カリカット:dir
+ [replace]0x5918F0,dk3city,offset
+[subject]ヴィジャヤナガル:dir
+ [replace]0x59194C,dk3city,offset
+[subject]コチン:dir
+ [replace]0x5919A8,dk3city,offset
+[subject]コロンボ:dir
+ [replace]0x591A04,dk3city,offset
+[subject]ゴルコンダ:dir
+ [replace]0x591A60,dk3city,offset
+[subject]カルカッタ:dir
+ [replace]0x591ABC,dk3city,offset
+[back]
+[subject]インドシナ交易圏:dir
+[subject]アヴァ:dir
+ [replace]0x591B18,dk3city,offset
+[subject]ペグー:dir
+ [replace]0x591B74,dk3city,offset
+[subject]マラッカ:dir
+ [replace]0x591BD0,dk3city,offset
+[subject]リゴル:dir
+ [replace]0x591C2C,dk3city,offset
+[subject]アユタヤ:dir
+ [replace]0x591C88,dk3city,offset
+[subject]プノンペン:dir
+ [replace]0x591CE4,dk3city,offset
+[subject]ユエ:dir
+ [replace]0x591D40,dk3city,offset
+[subject]交都:dir
+ [replace]0x591D9C,dk3city,offset
+[back]
+[subject]オセアニア交易圏:dir
+[subject]アチン:dir
+ [replace]0x591DF8,dk3city,offset
+[subject]パレンバン:dir
+ [replace]0x591E54,dk3city,offset
+[subject]バンタム:dir
+ [replace]0x591EB0,dk3city,offset
+[subject]スラバヤ:dir
+ [replace]0x591F0C,dk3city,offset
+[subject]ブルネイ:dir
+ [replace]0x591F68,dk3city,offset
+[subject]テルナーテ:dir
+ [replace]0x591FC4,dk3city,offset
+[subject]アンボイナ:dir
+ [replace]0x592020,dk3city,offset
+[back]
+[subject]中国南部交易圏:dir
+[subject]澳門:dir
+ [replace]0x59207C,dk3city,offset
+[subject]広州:dir
+ [replace]0x5920D8,dk3city,offset
+[subject]泉州:dir
+ [replace]0x592134,dk3city,offset
+[subject]福州:dir
+ [replace]0x592190,dk3city,offset
+[subject]杭州:dir
+ [replace]0x5921EC,dk3city,offset
+[subject]南京:dir
+ [replace]0x592248,dk3city,offset
+[subject]武昌:dir
+ [replace]0x5922A4,dk3city,offset
+[subject]桂林:dir
+ [replace]0x592300,dk3city,offset
+[subject]雲南:dir
+ [replace]0x59235C,dk3city,offset
+[subject]成都:dir
+ [replace]0x5923B8,dk3city,offset
+[back]
+[subject]中国北部および日本交易圏:dir
+[subject]甘州:dir
+ [replace]0x592414,dk3city,offset
+[subject]西安:dir
+ [replace]0x592470,dk3city,offset
+[subject]開封:dir
+ [replace]0x5924CC,dk3city,offset
+[subject]済南:dir
+ [replace]0x592528,dk3city,offset
+[subject]太原:dir
+ [replace]0x592584,dk3city,offset
+[subject]北京:dir
+ [replace]0x5925E0,dk3city,offset
+[subject]遼東:dir
+ [replace]0x59263C,dk3city,offset
+[subject]漢城:dir
+ [replace]0x592698,dk3city,offset
+[subject]長崎:dir
+ [replace]0x5926F4,dk3city,offset
+[subject]堺:dir
+ [replace]0x592750,dk3city,offset
+[subject]京都:dir
+ [replace]0x5927AC,dk3city,offset
+[back]
+[subject]西インドおよび中米交易圏:dir
+[subject]サント＝ドミンゴ:dir
+ [replace]0x592808,dk3city,offset
+[subject]サンティアゴ:dir
+ [replace]0x592864,dk3city,offset
+[subject]ハバナ:dir
+ [replace]0x5928C0,dk3city,offset
+[subject]ジャマイカ:dir
+ [replace]0x59291C,dk3city,offset
+[subject]サン＝ファン:dir
+ [replace]0x592978,dk3city,offset
+[subject]ヴェラクルス:dir
+ [replace]0x5929D4,dk3city,offset
+[subject]テノチティトラン:dir
+ [replace]0x592A30,dk3city,offset
+[subject]メシコ:dir
+ [replace]0x592A8C,dk3city,offset
+[subject]トゥラスカラ:dir
+ [replace]0x592AE8,dk3city,offset
+[subject]トゥラパ:dir
+ [replace]0x592B44,dk3city,offset
+[subject]ミトゥラ:dir
+ [replace]0x592BA0,dk3city,offset
+[subject]アカプルコ:dir
+ [replace]0x592BFC,dk3city,offset
+[subject]メリダ:dir
+ [replace]0x592C58,dk3city,offset
+[subject]クァウテマラン:dir
+ [replace]0x592CB4,dk3city,offset
+[subject]トルヒヨ:dir
+ [replace]0x592D10,dk3city,offset
+[subject]レオン:dir
+ [replace]0x592D6C,dk3city,offset
+[subject]パナマ:dir
+ [replace]0x592DC8,dk3city,offset
+[back]
+[subject]南米東部および南米西部交易圏:dir
+[subject]サンタマルタ:dir
+ [replace]0x592E24,dk3city,offset
+[subject]コロ:dir
+ [replace]0x592E80,dk3city,offset
+[subject]クマナ:dir
+ [replace]0x592EDC,dk3city,offset
+[subject]ペルナンブーゴ:dir
+ [replace]0x592F38,dk3city,offset
+[subject]バイーア:dir
+ [replace]0x592F94,dk3city,offset
+[subject]リオ＝デ＝ジャネイロ:dir
+ [replace]0x592FF0,dk3city,offset
+[subject]ブエノス＝アイレス:dir
+ [replace]0x59304C,dk3city,offset
+[subject]ボゴタ:dir
+ [replace]0x5930A8,dk3city,offset
+[subject]キト:dir
+ [replace]0x593104,dk3city,offset
+[subject]トゥンベス:dir
+ [replace]0x593160,dk3city,offset
+[subject]チャンチャン:dir
+ [replace]0x5931BC,dk3city,offset
+[subject]リマ:dir
+ [replace]0x593218,dk3city,offset
+[subject]クスコ:dir
+ [replace]0x593274,dk3city,offset
+[subject]ナスカ:dir
+ [replace]0x5932D0,dk3city,offset
+[subject]ポトシ:dir
+ [replace]0x59332C,dk3city,offset
