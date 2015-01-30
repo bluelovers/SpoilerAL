@@ -1,0 +1,4 @@
+[subject]全パラメータＭＡＸ化/実行/固定必須:b_toggle,0x00,GL_b,offset
+[subject]全魔法マスター/実行/固定必須:toggle,0x22,0x43-01
+[subject]全スキルマスター/実行/固定必須:toggle,0x62,0x9F-01
+[back]
