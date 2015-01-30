@@ -1,0 +1,54 @@
+[group]SW_SSG
+[note]wordwrap
+ƒ^ƒCƒgƒ‹‰æ–Ê‚Ì•Ï‰»‚ğŒ©‚Â‚ÂA÷‰ÔƒNƒŠƒA“€‚Á‚Ä‚½‚ª“®‚«o‚·‰èˆßqƒ‹[ƒg‚ÆŠú‘Ò‚µ‚Ä‚½©•ª‚ª‹ó‚µ‚¢(^^;
+[/note]
+
+[subject]ƒtƒ‰ƒOŠÖ˜A:dir
+ [subject]ƒNƒŠƒAƒtƒ‰ƒOŠm”F•ÒW/_:d_toggle,0x4D1FC8,SWLST->LST_a,SWLST->LST_b,offset
+[root]
+
+[subject]‚b‚fƒ‚[ƒhŠÖ˜A:dir
+ [subject]EXTRA MODEi‰æ–Ê•\¦—pj:dir
+  [subject]CG MODE:dir
+	[subject]‚`‚k‚k ‚n‚m/Às/_:toggle,0x4D2928,0x4D3BF0-01000000
+	[subject]‚`‚k‚k ‚n‚e‚e/Às/_:toggle,0x4D2928,0x4D3BF0-00
+  [back]
+  [subject]SOUND MODE:dir
+  	[subject]‚`‚k‚k ‚n‚m/Às/_:toggle,0x4D2158,0x4D21B4-01000000
+	[subject]‚`‚k‚k ‚n‚e‚e/Às/_:toggle,0x4D2158,0x4D21B4-00
+  [back]
+ [back]
+ [subject]EXTRA MODEiƒZ[ƒuƒf[ƒ^”½‰f—pj:dir
+	[replace]_[:0x9EB204:],SWLST->SW_a
+[root]
+
+[/group]
+
+
+[group]LST_a
+áŒŸ”T
+–k—¢‚µ‚®‚ê
+“ú˜aìˆ®
+á¶÷‰Ô
+LEGEND
+[/group]
+
+
+[group]LST_b
+,0x00=01000000
+,0x04=01000000
+,0x08=01000000
+,0x0C=01000000
+,0x14=01000000
+[/group]
+
+
+[group]SW_a
+[subject]CG MODE:dir
+	[subject]‚`‚k‚k ‚n‚m/Às/_:toggle,0x1134,0x23F8-00000001
+	[subject]‚`‚k‚k ‚n‚e‚e/Às/_:toggle,0x1134,0x23F8-00
+[back]
+[subject]SOUND MODE:dir
+	[subject]‚`‚k‚k ‚n‚m/Às/_:toggle,0x964,0x9C0-00000001
+	[subject]‚`‚k‚k ‚n‚e‚e/Às/_:toggle,0x964,0x9C0-00
+[/group]
