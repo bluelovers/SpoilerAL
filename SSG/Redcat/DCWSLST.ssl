@@ -1,0 +1,65 @@
+[group]DCWS_NV
+[note]wordwrap
+ëäïœÇÌÇÁÇ∏çKîñÇ¢î¸ètÇ…çáè∂ÇóÅ@Ç¬Ç©ÉhÉbÉyÉãÉlÉ^ëΩÇ∑Ç¨ÅB
+[/note]
+
+[subject]WhiteSeasonStories:dir
+ [subject]ÇcÇbâÊòL:dir
+	[subject]Ç`ÇkÇk ÇnÇm/é¿çs/_:toggle,0x44D520,0x44D55D-01
+	[subject]Ç`ÇkÇk ÇnÇeÇe/é¿çs/_:toggle,0x44D520,0x44D55D-00
+ [back]
+ [subject]ÉVÅ[ÉìâÒëz:dir
+	[subject]Ç`ÇkÇk ÇnÇm/é¿çs/_:toggle,0x44D5E8,0x44D627-01
+	[subject]Ç`ÇkÇk ÇnÇeÇe/é¿çs/_:toggle,0x44D5E8,0x44D627-00
+[/group]
+
+
+[group]DCWS_ST
+[subject]AfterBANANA:dir
+	[subject]ñ≥ìGâª/é¿çs/_:b_toggle,0x4DAAA1,DCWSLST->DCWS_a,real
+	[subject]à⁄ìÆë¨ÇQî{âª/é¿çs/_:b_toggle,0x4DAC98,DCWSLST->DCWS_b,real
+	[subject]É{ÉÄñ≥èåèégópÅ{òAî≠â¬î\/é¿çs/_:b_toggle,0x4DB0A4,DCWSLST->DCWS_c,real
+	[subject]É^ÉCÉÄÉJÉEÉìÉgí‚é~/é¿çs/_:toggle,0x4C783E,E9AD00000090,0F84AC000000
+	[subject]ÉGÉlÉãÉMÅ[ÉQÅ[ÉWñ≥å¿âª/é¿çs/_:b_toggle,0x4DB24D,DCWSLST->DCWS_d,real
+	[subject]äeñ àÍèuÇ≈ÉNÉäÉA/é¿çs/_:b_toggle,0x4C73DF,DCWSLST->DCWS_e,real
+	[subject]ÉâÉCÉtécó /åªç›íl/_:calc,_[:[:[:0x50527C:]:]+0x0C:]+0x80,0x00,0x09,unsigned
+	[subject]ìæì_/åªç›íl/_:calc,_[:0x92DC3C:]+0x1F1C,0x00000000,0x773593FF,unsigned
+[/group]
+
+
+[group]DCWS_a
+0x4DAAA1,EB00??FF,7D05??80
+0x4DAB95,EB,7E
+[/group]
+
+
+[group]DCWS_b
+0x4DAC98,EB00,7516
+0x4DAC9F,C5,85
+0x4DAD01,EB00,750F
+0x4DAD0F,81,41
+0x4DAD69,EB00,750F
+0x4DAD77,81,41
+0x4DADD5,EB00,7516
+0x4DADDC,C5,85
+[/group]
+
+
+[group]DCWS_c
+0x4DB0A4,EB0490909090,0F8CA7000000
+0x4DB0B2,EB0490909090,0F8599000000
+0x4DB0C5,EB0190,83C7CE
+[/group]
+
+
+[group]DCWS_d
+0x4DB24D,EB00,7E06
+0x4DB0C5,EB0190,83C7CE
+0x4DB71A,90,49
+[/group]
+
+
+[group]DCWS_e
+0x4C73DF,EB0490909090,0F8E39010000
+0x4C73F7,EB00,751C
+[/group]
