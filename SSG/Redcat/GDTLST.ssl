@@ -1,0 +1,243 @@
+[group]GDT_SSG
+[note]wordwrap
+※各機能は、基本的にホワイト陣営に効果が出ることを想定しています。
+※デバッグモード出現時は、戦闘中システムメニューに戦闘スキップが登録されています。
+
+GADGETT.exe
+ver1.00
+CRC32=D87BCF6A
+
+ver1.01
+CRC32=8239BA3D
+
+ver1.02
+CRC32=5A67BFFA
+
+ver情報は適当です。というか、バージョン情報も無いとか同人ソフトみたいなのはやめてくれ(^^;
+[/note]
+
+[subject]ver1.00:dir
+
+[subject]SLGパート関連:dir
+ [subject]敵の行動ターン封印/実行/_:toggle,0x4334A3,30????75,0C????7E
+ [subject]味方ユニット無条件強化/実行/_:b_toggle,0x00,GDTLST->GDT_a,offset
+ [subject]味方占領制限解除＋占領速ＵＰ/実行/_:b_toggle,0x00,GDTLST->GDT_c,offset
+ [subject]ノーダメージ化＋敵一撃死化/実行/_:b_toggle,0x00,GDTLST->GDT_b,offset
+[back]
+
+[size]4
+
+[subject]パラメータ関連:dir
+ [subject]資金/現在値/_:calc,0x58AF80,0x000000,0x01869F,unsigned
+ [subject]戦闘ポイント:dir
+  [repeat]GDTLST->GDTREP1,0,5,1
+ [back]
+[back]
+
+[/size]
+
+[subject]ＣＧモード関連:dir
+ [subject]CHALLENGE ALL/ＯＮ／ＯＦＦ/_:toggle,0x58B058,0x58B0A7-64,00
+ [subject]SUIT GALLERY ALL/ＯＮ／ＯＦＦ/_:toggle,0x58AFE0,0x58B057-07,00
+ [subject]ALBUM ALL/ＯＮ／ＯＦＦ/_:toggle,0x585D5C,0x585D60-FF,00
+[back]
+
+[back]
+
+[subject]ver1.01:dir
+
+[subject]SLGパート関連:dir
+ [subject]敵の行動ターン封印/実行/_:toggle,0x433AFB,30????75,0C????7E
+ [subject]味方ユニット無条件強化/実行/_:b_toggle,0x00,GDTLST->GDT_2a,offset
+ [subject]味方占領制限解除＋占領速ＵＰ/実行/_:b_toggle,0x00,GDTLST->GDT_2c,offset
+ [subject]ノーダメージ化＋敵一撃死化/実行/_:b_toggle,0x00,GDTLST->GDT_2b,offset
+[back]
+
+[size]4
+
+[subject]パラメータ関連:dir
+ [subject]資金/現在値/_:calc,0x5A3ADC,0x000000,0x01869F,unsigned
+ [subject]戦闘ポイント:dir
+  [repeat]GDTLST->GDTREP21,0,5,1
+ [back]
+[back]
+
+[/size]
+
+[subject]ＣＧモード関連:dir
+ [subject]CHALLENGE ALL/ＯＮ／ＯＦＦ/_:toggle,0x5A3BB4,0x5A3C53-01000000,00
+ [subject]SUIT GALLERY ALL/ＯＮ／ＯＦＦ/_:toggle,0x5A3B3C,0x5A3B77-01000000*+013807000000*+04FFFFFFC4,00000000*+013800000000*+04FFFFFFC4
+ [subject]ALBUM ALL/ＯＮ／ＯＦＦ/_:toggle,0x59E8B8,FFFFFFFFFF,0000000000
+[back]
+
+[back]
+
+
+[subject]ver1.02:dir
+
+[subject]SLGパート関連:dir
+ [subject]敵の行動ターン封印/実行/_:toggle,0x433B7F,30????75,0C????7E
+ [subject]味方ユニット無条件強化/実行/_:b_toggle,0x00,GDTLST->GDT_3a,offset
+ [subject]味方占領制限解除＋占領速ＵＰ/実行/_:b_toggle,0x00,GDTLST->GDT_2c,offset
+ [subject]ノーダメージ化＋敵一撃死化/実行/_:b_toggle,0x00,GDTLST->GDT_3b,offset
+[back]
+
+[size]4
+
+[subject]パラメータ関連:dir
+ [subject]資金/現在値/_:calc,0x5A3ADC,0x000000,0x01869F,unsigned
+ [subject]戦闘ポイント:dir
+  [repeat]GDTLST->GDTREP21,0,5,1
+ [back]
+[back]
+
+[/size]
+
+[subject]ＣＧモード関連:dir
+ [subject]CHALLENGE ALL/ＯＮ／ＯＦＦ/_:toggle,0x5A3BB4,0x5A3C53-01000000,00
+ [subject]SUIT GALLERY ALL/ＯＮ／ＯＦＦ/_:toggle,0x5A3B3C,0x5A3B77-01000000*+013807000000*+04FFFFFFC4,00000000*+013800000000*+04FFFFFFC4
+ [subject]ALBUM ALL/ＯＮ／ＯＦＦ/_:toggle,0x59E8B8,FFFFFFFFFF,0000000000
+[back]
+
+[back]
+
+[/group]
+
+
+[group]GDT_a
+0x433753,E92002120090,8B437483C009
+0x553978,837B3000,00000000
+0x55397C,7517,0000
+0x55397E,B8E7030000,0000000000
+0x553983,89435C,000000
+0x553986,894364,000000
+0x553989,894374,000000
+0x55398C,894378,000000
+0x55398F,898380000000,000000000000
+0x553995,8B4374,000000
+0x553998,83C009,000000
+0x55399B,E9B9FDEDFF,0000000000
+[/group]
+
+
+[group]GDT_2a
+0x433DAB,E9687E130090,8B437483C009
+0x56BC18,837B3000,00000000
+0x56BC1C,7517,0000
+0x56BC1E,B8E7030000,0000000000
+0x56BC23,89435C,000000
+0x56BC26,894364,000000
+0x56BC29,894374,000000
+0x56BC2C,894378,000000
+0x56BC2F,898380000000,000000000000
+0x56BC35,8B4374,000000
+0x56BC38,83C009,000000
+0x56BC3B,E97181ECFF,0000000000
+[/group]
+
+
+[group]GDT_3a
+0x433E2F,E9747E130090,8B437483C009
+0x56BCA8,837B3000,00000000
+0x56BCAC,7517,0000
+0x56BCAE,B8E7030000,0000000000
+0x56BCB3,89435C,000000
+0x56BCB6,894364,000000
+0x56BCB9,894374,000000
+0x56BCBC,894378,000000
+0x56BCBF,898380000000,000000000000
+0x56BCC5,8B4374,000000
+0x56BCC8,83C009,000000
+0x56BCCB,E96581ECFF,0000000000
+[/group]
+
+
+[group]GDT_b
+0x4324FF,E93C14120090,8B41748B5340
+0x553940,8B4174,000000
+0x553943,8B5130,000000
+0x553946,85D2,0000
+0x553948,8BD0,0000
+0x55394A,750A,0000
+0x55394C,33D2,0000
+0x55394E,395338,000000
+0x553951,7403,0000
+0x553953,894338,000000
+0x553956,895340,000000
+0x553959,E9A7EBEDFF,0000000000
+[/group]
+
+
+[group]GDT_2b
+0x432AF3,E94891130090,8B41748B5340
+0x56BC40,8B4174,000000
+0x56BC43,8B5130,000000
+0x56BC46,85D2,0000
+0x56BC48,8BD0,0000
+0x56BC4A,750A,0000
+0x56BC4C,33D2,0000
+0x56BC4E,395338,000000
+0x56BC51,7403,0000
+0x56BC53,894338,000000
+0x56BC56,895340,000000
+0x56BC59,E99B6EECFF,0000000000
+[/group]
+
+
+[group]GDT_3b
+0x432B5F,E97C91130090,8B41748B5340
+0x56BCE0,8B4174,000000
+0x56BCE3,8B5130,000000
+0x56BCE6,85D2,0000
+0x56BCE8,8BD0,0000
+0x56BCEA,750A,0000
+0x56BCEC,33D2,0000
+0x56BCEE,395338,000000
+0x56BCF1,7403,0000
+0x56BCF3,894338,000000
+0x56BCF6,895340,000000
+0x56BCF9,E9676EECFF,0000000000
+[/group]
+
+
+[group]GDT_c
+0x41B96A,E93980130090,8B46188B531C
+0x5539A8,8B4618,000000
+0x5539AB,33C0,0000
+0x5539AD,8B531C,000000
+0x5539B0,837B0C00,00000000
+0x5539B4,7505,0000
+0x5539B6,B8E7030000,0000000000
+0x5539BB,E9B27FECFF,0000000000
+[/group]
+
+
+[group]GDT_2c
+0x41BBA6,E9BD00150090,8B46188B531C
+0x56BC68,8B4618,000000
+0x56BC6B,33C0,0000
+0x56BC6D,8B531C,000000
+0x56BC70,837B0C00,00000000
+0x56BC74,7505,0000
+0x56BC76,B8E7030000,0000000000
+0x56BC7B,E92EFFEAFF,0000000000
+[/group]
+
+
+[group]GDTREP1
+[subject][! @GDTLST->LST_a,$Val !]/現在値/_:calc,_0x58B534+0x[! 0x04*$Val !],0x0000,0x03E7,unsigned
+[/group]
+
+
+[group]GDTREP21
+[subject][! @GDTLST->LST_a,$Val !]/現在値/_:calc,_0x5A4090+0x[! 0x04*$Val !],0x0000,0x03E7,unsigned
+[/group]
+
+
+[group]LST_a
+アイゼン
+ネイ
+ユーリ
+ソウカ
+ヒソカ
+[/group]
