@@ -1,0 +1,5 @@
+	[subject]追加応援言葉:dir
+		[subject]2つとも取得:toggle,0x2A,03,??
+		[subject]1つ目の言葉:list,0x28,遙言葉7,0,1
+		[subject]2つ目の言葉:list,0x29,遙言葉7,0,1
+	[back]
