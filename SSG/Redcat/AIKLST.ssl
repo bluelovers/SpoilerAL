@@ -1,0 +1,30 @@
+[group]AIK_PR
+[note]wordwrap
+補足は特にないので、感想を１つ。
+「要は、シナリオ＋総指揮の人が『後から、本人の希望』で追加しただけあって、媚び方１つとっても妙に力の入れ方が違う『千香』がメイン（といってもへーへーぼんぼんだけど）であって、他は単なるおまけ」。というか、彩音の扱いがぞんざい過ぎ。主人公との接点が乏しく、内容もとってつけた感じで、ＦＣ０２は相変わらずメインヒロインの扱いが下手っぽいです(^^;
+[/note]
+
+[subject]パラメータ関連:dir
+	[subject]好感度確認調整:dir
+		[repeat]AIKLST->AIKREP1,0,4,1
+[/group]
+
+
+[group]AIKREP1
+[subject][! @AIKLST->LST_a,$Val !]/現在値/_:calc,_[:(MName::SYSTEM.UNT)+0x334CC:]+0x1328+0x[! 0x04*$Val !],0x0000,0x012C,unsigned
+[/group]
+
+
+[group]AIK_CG
+[subject]スペシャル:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x257,0x2B2-01
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x257,0x2B2-00
+[/group]
+
+
+[group]LST_a
+葉月彩音
+葉月千香
+山岸めぐみ
+室井祐希
+[/group]
