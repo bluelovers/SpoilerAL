@@ -1,0 +1,104 @@
+[group]SHF_SSG
+[note]wordwrap
+幼馴染＋主人公にベタ惚れパターン＋どこかネジ跳んでるっていうのはあの御方の独壇場ですかね(^^;
+
+ver1.00-CRC32/
+SHUFFLE.EXE=A1B15660
+ver1.10-CRC32/
+SHUFFLE.EXE=11052A98
+
+＊デバッグモードは、カスタマイズより固定周期を短くし、機能固定しつつソフトの起動を試みてください。パッチを利用しないSSG側だと、任意の一時利用が可能です。モード起動後は要らぬ負担を減らすため、固定周期を緩め、固定機能は外してください。
+[/note]
+
+[subject]ver1.00:dir
+
+[subject]環境関連:dir
+	[subject]デバッグモード/実行/固定:toggle,0x453148,C70548E84D0001000000,A148E84D0083F801750E
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]好感度確認編集:dir
+	[repeat]SHFLST->SHFREP1,0,5,1
+ [back]
+[back]
+
+[subject]ＣＧモード関連:dir
+ [subject]おまけ・表情鑑賞モード出現/実行/_:toggle,0x4F773B,*_?????11?,*_?????00?
+	[subject]ＣＧ鑑賞:dir
+		[subject]ＡＬＬ ＯＮ/実行/_:b_toggle,0x4F7738,SHFLST->SHF_a,offset
+		[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x4F7751,0x4F7810-00
+	[back]
+	[subject]シーン再生モード:dir
+ 		[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x4F7744,0x4F7749-FF
+		[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x4F7744,0x4F7749-00
+	[back]
+	[subject]サウンドモード:dir
+ 		[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x4F99B8,0x4F9A13-01000000
+		[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x4F99B8,0x4F9A13-00
+	[back]
+ [back]
+[back]
+
+[root]
+
+[subject]ver1.10:dir
+
+[subject]環境関連:dir
+	[subject]デバッグモード/実行/固定:toggle,0x453188,C70558E84D0001000000,A158E84D0083F801750E
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]好感度確認編集:dir
+	[repeat]SHFLST->SHFREP2,0,5,1
+ [back]
+[back]
+
+[subject]ＣＧモード関連:dir
+ [subject]おまけ・表情鑑賞モード出現/実行/_:toggle,0x4F7753,*_?????11?,*_?????00?
+	[subject]ＣＧ鑑賞:dir
+		[subject]ＡＬＬ ＯＮ/実行/_:b_toggle,0x4F7750,SHFLST->SHF_a,offset
+		[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x4F7759,0x4F7828-00
+	[back]
+	[subject]シーン再生モード:dir
+ 		[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x4F775C,0x4F7761-FF
+		[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x4F775C,0x4F7761-00
+	[back]
+	[subject]サウンドモード:dir
+ 		[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x4F99D0,0x4F9A2B-01000000
+		[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x4F99D0,0x4F9A2B-00
+	[back]
+ [back]
+[back]
+
+[root]
+
+[/group]
+
+
+[group]SHFREP1
+[subject][! @SHFLST->LST_a,$Val !]/現在値/_:calc,_0x4ECF70+0x[! 0x190*$Val !],0x00,0x63,unsigned
+[/group]
+
+
+[group]SHFREP2
+[subject][! @SHFLST->LST_a,$Val !]/現在値/_:calc,_0x4ECF80+0x[! 0x190*$Val !],0x00,0x63,unsigned
+[/group]
+
+
+[group]LST_a
+リシアンサス
+ネリネ
+芙蓉楓
+時雨亜沙
+プリムラ
+[/group]
+
+
+[group]SHF_a
+0x19,0x34-FF
+0x3E,0x59-FF
+0x64,0x7B-FF
+0x89,0xA1-FF
+0xAF,0xC7-FF
+0xD4,FFFFFFFFFF01
+[/group]
