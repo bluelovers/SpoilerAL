@@ -1,0 +1,104 @@
+[group]RF_SSG
+[note]wordwrap
+最近のＦ＆Ｃ製ソフトの中では一番頑張ってる印象。このメーカーのソフトでコンプリートしたのって久しぶりかなとｗ
+
+以下、少々補足です。
+
+■■環境関連
+どちらもツール本来の機能でありながら、このソフトでは使用されていない機能を利用できるようにしました。
+
+■■フラグ関連
+無条件全シナリオ選択可能：
+シナリオ選択可能な時に、この機能を固定しながら「最初から始める」を選択乃至ルート分岐画面に入ると、任意の全シナリオを選択できるようになります。いきなりＥＤとかも可能。
+
+■■ＣＧモード関連
+フラグ関連にて「学園祭へＧＯ！」を出現させてから利用してください。
+[/note]
+
+[subject]環境関連:dir
+	[replace]_[:(MName::SYSTEM.UNT)+0x334CC:],RFLST->RF_PR1
+[subject]ここまで:split,line,-1,100,5
+[root]
+
+[subject]パラメータ関連:dir
+[subject]ポイント/現在値/_:calc,_[:(MName::SYSTEM.UNT)+0x334CC:]+0x13E8,0x0000,0x270F,unsigned
+[subject]好感度確認調整:dir
+	[repeat]RFLST->RFREP1,0,10,1
+[back]
+[subject]ここまで:split,line,-1,100,5
+[root]
+
+[subject]フラグ関連:dir
+	[replace]_[:(MName::SYSTEM.UNT)+0x334CC:],RFLST->RF_F12
+[subject]ここまで:split,line,-1,100,5
+[root]
+
+[subject]ＣＧモード関連:dir
+	[replace]_[:(MName::SYSTEM.UNT)+0x334CC:],RFLST->RF_CG
+[subject]ここまで:split,line,-1,100,5
+[root]
+
+[/group]
+
+
+[group]RF_PR1
+[subject]シーン単位スキップ実行/実行/固定:toggle,0xBA,01
+[subject]１つ前の選択肢に戻る/実行/_:toggle,0xC6,01
+[/group]
+
+
+[group]RFREP1
+[subject][! @RFLST->LST_a,$Val !]/現在値/_:calc,_[:(MName::SYSTEM.UNT)+0x334CC:]+0x1C70+0x[! 0x04*$Val !],0x00,0x64,unsigned
+[/group]
+
+
+[group]LST_a
+鞠原千歩
+野々村孝美
+瑞原歌鈴
+いちご
+奥原すもも
+高端そあら
+瑞原鈴子
+鞠原あずみ
+初瀬菜々美
+橘秋華
+[/group]
+
+
+[group]RF_F12
+[subject]「学園祭へＧＯ！」追加/実行/_:toggle,0x54,01
+[subject]シナリオ選択＋主人公タイプＡＬＬ化/実行/_:toggle,0x13AC,07
+[subject]シナリオ全出現/実行/_:b_toggle,0x00,RFLST->RF_a,offset
+[subject]無条件全シナリオ選択可能/実行/固定:toggle,0x2008,0x20B3-13000000
+[subject]クリアフラグＡＬＬ化/実行/_:toggle,0x13D8,FF07
+[/group]
+
+
+[group]RF_a
+0x13E0,FFFFFFFFFF07
+0xFA0,0xFAA-01
+[/group]
+
+
+[group]RF_CG
+[subject]展示室（ＣＧ）:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0xDAC,0xF4B-01
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0xDAC,0xF4B-00
+[subject]ここまで:split,roll,-2,-,100
+[back]
+[subject]保健室（シーン回想）:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x13F8,638CFF06631C
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x13F8,0x13FD-00
+[subject]ここまで:split,roll,-2,-,100
+[back]
+[subject]購買部（カードフォルダ）:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x13EC,FFFFFFFFFFFFFFFF07
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x13EC,0x13F4-00
+[subject]ここまで:split,roll,-2,-,100
+[back]
+[subject]図書館（壁紙）ＡＬＬ:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x13C8,FFFFFF3F
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x13C8,00000000
+[back]
+[/group]
