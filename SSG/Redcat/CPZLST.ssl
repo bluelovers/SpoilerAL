@@ -1,0 +1,68 @@
+[group]CPZ_SSG
+[note]wordwrap
+—\‘z’Ê‚è‚ÌÁ”ïŒ^w
+
+ver1.00-CRC32/
+SYSTEM.UNT=286CD796
+[/note]
+
+[subject]ƒpƒ‰ƒ[ƒ^ŠÖ˜A:dir
+ [subject]DŠ´“xŠm”F’²®:dir
+	[repeat]CPZLST->CPZREP1,0,6,1
+[root]
+
+[subject]ƒtƒ‰ƒOŠÖ˜A:dir
+	[subject]ƒNƒŠƒAƒtƒ‰ƒO/_:d_toggle,_[:(MName::SYSTEM.UNT)+0x34574:],CPZLST->LST_c,CPZLST->LST_b,offset
+[root]
+
+[subject]‚b‚fƒ‚[ƒhŠÖ˜A:dir
+	[replace]_[:(MName::SYSTEM.UNT)+0x34574:],CPZLST->CPZ_CG
+[root]
+
+[/group]
+
+
+[group]CPZREP1
+[subject][! @CPZLST->LST_a,$Val !]/Œ»İ’l/_:calc,_[:(MName::SYSTEM.UNT)+0x34574:]+0x[!0x04*$Val !]+0x1F08,0x0384,0x044C,unsigned
+[/group]
+
+
+[group]LST_a
+Ÿì‚¢‚Â‚İ
+÷ˆä‰Á¢
+—é]‚±‚Ì‚İ
+Ÿì—R
+‘Š—Ç”üŒ
+…“àçŒb
+[/group]
+
+
+[group]LST_b
+0x12B=01/00
+0x18F=01/00
+0x1F3=01/00
+0x257=01/00
+0x2BB=01/00
+0x31F=01/00
+[/group]
+
+
+[group]LST_c
+Ÿì‚¢‚Â‚İ
+Ÿì—R
+÷ˆä‰Á¢
+—é]‚±‚Ì‚İ
+‘Š—Ç”üŒ
+…“àçŒb
+[/group]
+
+
+[group]CPZ_CG
+[subject]‚b‚f:dir
+	[subject]‚`‚k‚k ‚n‚m/Às/_:toggle,0xB7B,0xBD8-01
+	[subject]‚`‚k‚k ‚n‚e‚e/Às/_:toggle,0xB7B,0xBD8-00
+[back]
+[subject]‚gƒV[ƒ“:dir
+	[subject]‚`‚k‚k ‚n‚m/Às/_:toggle,0xCBC,0xCD3-01
+	[subject]‚`‚k‚k ‚n‚e‚e/Às/_:toggle,0xCBC,0xCD3-00
+[/group]
