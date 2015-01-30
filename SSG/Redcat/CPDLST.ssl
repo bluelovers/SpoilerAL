@@ -1,0 +1,257 @@
+[group]CPD_MA
+[note]wordwrap
+いや、普通追加キャラって隠し設定のネタバレとか、全く関係ないサイドストーリーだったりするのが普通なわけで、まさか直球勝負で来るとはなぁ(^^;　瑞希の影がまた一段と薄くなって…ｗ
+
+注：マニュアル通りにポインタ繋ぐと、見苦しいわ安定しないわでロクなことがないので、抽出方法を変えてます。同人誌執筆パート関連・環境関連以外は、必ず基本必須コードを実行してから利用して下さい。また、タイピングはコンフィグでＯＦＦ設定にするのを前提としています。
+
+手順
+１）ゲームを起動し、SpoilerALも起動させてこのSSGを展開する
+
+２）タイトル又はシステム画面で基本必須コードを実行（スケジュール入力・パラメータ参照画面のタイミングで使用するのは厳禁）
+
+３）コードが実行されている状態でスケジュール入力・パラメータ参照画面に入る
+
+＊以上が終了するまでは書き換え禁止警告が発生します。
+
+
+■■同人誌執筆パート関連
+同人誌執筆高速化：
+各執筆段階を１回で終了させます。
+
+最良クオリティ維持：
+執筆と同時にクオリティをＭＡＸ化。大志と編集長の評価はクオリティのパラメータだけが参照されますので、この機能を実行している限りタイピングは全く必要なくなります。
+
+体力自動回復：
+行動メニュー入力画面に入ると同時に、体力が最大値まで自動的に回復します。
+
+イニシャルスタート時全能力最大：
+機能実行時、基本ステータスや所持金等が最大化状態で最初から始めることができます。必須コード使うのがめんどい人はこちらで。
+
+■■パラメータ関連
+実売部数8000以上で「同人の神」ランクに。
+
+■■フラグ関連
+日付調整：
+イベントフラグの巻き戻しはありませんので注意。取りこぼし回収専用っぽい。
+[/note]
+
+[subject]基本必須コード/実行/_:b_toggle,0x428218,CPDLST->CPD_m,real
+
+[subject]同人誌執筆パート関連:dir
+	[subject]同人誌執筆高速化/実行/_:b_toggle,0x45C685,CPDLST->CPD_a,real
+	[subject]最良クオリティ維持/実行/_:b_toggle,0x45D950,CPDLST->CPD_b,real
+	[subject]体力自動回復/実行/_:b_toggle,0x4293F6,CPDLST->CPD_c,real
+	[subject]イニシャルスタート時全能力最大/実行/_:b_toggle,0x486E5A,CPDLST->CPD_d,real
+  [subject]ここまで:split,line,-1,100,5
+ [back]
+[root]
+
+[subject]環境関連:dir
+	[subject]未読制限解除/実行/_:b_toggle,0x44BB20,CPDLST->CPD_e,real
+  [subject]ここまで:split,line,-1,100,5
+ [back]
+[root]
+
+[/group]
+
+
+[group]CPD_EX
+
+ [enabled][:0x4E8788:] != 0x00000000
+
+  [subject]パラメータ関連:dir
+   [subject]主人公ステータス:dir
+	[replace]_[:0x4E8788:],CPDLST->CPD_f
+	[repeat]CPDLST->CPDREP1,0,5,1
+    [subject]ここまで:split,roll,-2,-,100
+   [back]
+   [subject]ジャンルパラメータ:dir
+	[repeat]CPDLST->CPDREP2,0,4,1
+    [subject]ここまで:split,roll,-2,-,100
+   [back]
+   [subject]アイテムエディタ:dir
+	[repeat]CPDLST->CPDREP3,0,10,1
+    [back]
+   [subject]ここまで:split,line,-1,100,5
+  [root]
+
+  [subject]フラグ関連:dir
+   [subject]現在月数/現在値/_:calc,_[:0x4E8788:]+0x18B3C,0x01,0x0C,unsigned
+   [subject]現在日数/現在値/_:calc,_[:0x4E8788:]+0x18B3D,0x01,0x1F,unsigned
+   [subject]ここまで:split,roll,-1,-,100
+   [subject]好感度確認調整:dir
+	[repeat]CPDLST->CPDREP4,0,10,1
+    [back]
+   [subject]ここまで:split,line,-1,100,5
+  [root]
+
+  [subject]ＣＧモード関連:dir
+	[replace]_[:0x4E8788:],CPDLST->CPD_g
+    [back]
+  [root]
+
+ [/enabled]
+
+[/group]
+
+
+[group]CPD_m
+0x428218,E973DF080090,8B87108B0100
+0x4B618D,CCCCCC,000000
+0x4B6190,8B87108B0100,000000000000
+0x4B6196,893D88874E00,000000000000
+0x4B619C,E97D20F7FF90,000000000000
+[/group]
+
+
+[group]CPD_a
+0x45C685,EB00,7E06
+0x45C6E5,D8,EC
+0x45C773,D8,E8
+0x45C7F7,D8,E4
+[/group]
+
+
+[group]CPD_b
+0x45D950,EB00,754C
+0x45D959,EB0490909090,0F8482000000
+0x45F3E7,EB0490909090,0F8437010000
+0x45F503,EB00,7E06
+[/group]
+
+
+[group]CPD_c
+0x4293F6,E9B5CD080090,8B88088B0100
+0x4B61B0,51,00
+0x4B61B1,8B880C8B0100,000000000000
+0x4B61B7,8988088B0100,000000000000
+0x4B61BD,59,00
+0x4B61BE,E93932F7FF90,000000000000
+[/group]
+
+
+[group]CPD_d
+0x486E5A,90,48
+0x486E5F,63,0A
+0x486E70,32,01
+0x486EE6,1C9698,50C300
+[/group]
+
+
+[group]CPD_e
+0x44BB20,EB00,750D
+0x44BB27,EB00,7406
+[/group]
+
+
+[group]CPD_f
+[subject]所持金/現在値/_:calc,0x18B10,0x00000000,0x0098961C,unsigned
+[subject]体力現在値/現在値/_:calc,0x18B08,0x00,0x90,unsigned
+[subject]体力最大値/現在値/_:calc,0x18B0C,0x00,0x90,unsigned
+[size]4
+ [subject]実売部数総計/現在値/_:calc,0x29E44,0x00000000,0x0000FFFF,unsigned
+[/size]
+[/group]
+
+
+[group]CPD_g
+[subject]ＣＧ鑑賞モード:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x2A0DC,0x2A1A6-01
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x2A0DC,0x2A1A6-00
+ [subject]ここまで:split,roll,-2,-,100
+[back]
+[subject]音楽鑑賞モード:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x2A1B8,0x2A1D2-01
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x2A1B8,0x2A1D2-00
+ [subject]ここまで:split,roll,-2,-,100
+[back]
+[subject]発行済み同人誌:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x2A1D6,0x2A296-01
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x2A1D6,0x2A296-00
+ [subject]ここまで:split,roll,-2,-,100
+[back]
+[subject]ゲスト作家:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x2A299,0x2A30B-01
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x2A299,0x2A30B-00
+[back]
+[subject]ここまで:split,line,-1,100,5
+[/group]
+
+
+[group]CPDREP1
+[subject][! @CPDLST->LST_a,$Val !]/現在値/_:calc,_[:0x4E8788:]+0x18B14+0x[! 0x04*$Val !],0x00,0x63,unsigned
+[/group]
+
+
+[group]CPDREP2
+[subject][! @CPDLST->LST_b,$Val !]/現在値/_:calc,_[:0x4E8788:]+0x18B2C+0x[! 0x04*$Val !],0x00,0x32,unsigned
+[/group]
+
+
+[group]CPDREP3
+[subject]スロット番号[! L($Val+0x01) !]/固定:list,_[:0x4E8788:]+0x29EAC+0x[! 0x04*$Val !],CPDLST->LST_c,0x00,0x01
+[/group]
+
+
+[group]CPDREP4
+[subject][! @CPDLST->LST_d,$Val !]/現在値/_:calc,_[:0x4E8788:]+0x28D70+0x[! $Val !],0x00,0x63,unsigned
+[/group]
+
+
+[group]LST_a
+創造力
+画力
+仕上げ技術
+カラー技術
+出店センス
+[/group]
+
+
+[group]LST_b
+ポップ
+シリアス
+ポピュラー
+マニアック
+[/group]
+
+
+[group]LST_c
+なし
+健康鉄アレイ
+健康ブレード
+健康ウォーカー
+伝説のＧペン
+幻の絵筆
+ノリノリＣＤ
+癒し系ＣＤ
+スーパートーン
+神様の帽子
+ドリンク剤
+スーパードリンク剤
+[/group]
+
+[group]LST_d
+高瀬瑞希
+牧村南
+猪名川由宇
+大庭詠美
+長谷部綾
+桜井あさひ
+芳賀玲子
+塚本千紗
+立川郁美
+御影すばる
+[/group]
+
+
+[group]LST_e
+0
+1
+2
+3
+4
+5
+6
+7
+9
+[/group]
