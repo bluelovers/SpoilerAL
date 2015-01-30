@@ -1,0 +1,275 @@
+SSG for SpoilerAL ver 5.3
+
+[script]
+[title]Men at Work!3 ver1.02b
+[creator]konhen
+[maker]Studio e.go!
+[process]maw3.exe
+[note]wordwrap
+Men at Work!3　暫定版です。Win200ProSP3用。
+パラメータと所持アイテムを変更できます。
+注意事項:
+ステータス画面を開いて、そのままでパラメータなどを変更してください。そしてすぐにセーブしてロード。これで適用されます。
+
+
+なかなか楽しいですが、飽きますな…
+とくにSSG作りながらゲーム進めてると、
+強くなりすぎて面白みがなくなっちゃってですねぇ…
+あっという間に冒険部が終わって、シナリオがついていってない部分が…
+[/note]
+[subject]パラメータ:dir
+	[subject]ライル:dir
+		[replace]0x58d234,maw3->plam
+		[back]
+	[subject]モニカ:dir
+		[replace]0x58d316,maw3->plam
+		[back]
+	[subject]リサ:dir
+		[replace]0x58d3f8,maw3->plam
+		[back]
+	[subject]ジャスティン:dir
+		[replace]0x58d4da,maw3->plam
+		[back]
+	[subject]フィリス:dir
+		[replace]0x58D5BC,maw3->plam
+		[back]
+	[subject]瑞穂:dir
+		[replace]0x58D69E,maw3->plam
+		[back]
+	[back]
+[subject]アイテム:dir
+	[subject]武器ライル:dir
+		[repeat]maw3->武器ライルSSR,0,31,1
+		[back]
+	[subject]武器モニカ:dir
+		[repeat]maw3->武器モニカSSR,0,18,1
+		[back]
+	[subject]武器リサ:dir
+		[repeat]maw3->武器リサSSR,0,50,1
+		[back]
+	[subject]武器ジャスティン:dir
+		[repeat]maw3->武器ジャスティンSSR,0,11,1
+		[back]
+	[subject]武器フィリス:dir
+		[repeat]maw3->武器フィリスSSR,0,36,1
+		[back]
+	[subject]武器瑞穂:dir
+		[repeat]maw3->武器瑞穂SSR,0,19,1
+		[back]
+	[subject]鎧:dir
+		[repeat]maw3->鎧SSR,0,10,1
+		[back]
+	[subject]靴:dir
+		[repeat]maw3->靴SSR,0,7,1
+		[back]
+	[subject]アクセサリ:dir
+		[repeat]maw3->アクセサリSSR,0,14,1
+		[back]
+	[subject]アイテム:dir
+		[replace]0x58db66,maw3->アイテム
+		[back]
+		
+[/back]
+[/back]
+[/script]
+
+
+
+
+[script]
+[title]東方紅魔郷 1.02h
+[creator]konhen
+[maker]上海アリス幻楽団
+[process]q1T÷.exe
+[note]wordwrap
+非常に面白い！話題沸騰中の同人ゲーム、東方紅魔郷です。
+
+避けてて楽しい弾幕シューティングは初めてと思います、自分は。
+実はへたれなので、1回しかクリアできませんでした。
+エキストラはクリア出来そうなんですけどねぇ…
+凡ミスばかりで進めません…
+
+実行ファイル名が2バイト文字ですので、取得に失敗するかもしれません。その時は対象プロセスの追加の項目で、東方っぽいプロセスを追加してください。
+
+ステータス変更は1.02fでも動作します。Win2000用ですが。
+
+処理変更は全てのWindowsで動作します(と思います)。
+値の固定は不要です。プログラムを直接書き換えますので。
+当たり判定を消滅させたいときには通常弾とビームの両方にチェックを入れてください。
+いつでもアイテム引き寄せたい場合は、非フルパワーとどこでもの両方にチェックをいれてください。
+
+以下のサイトの解析を参考にさせていただきました。
+ここのは1.02f用のアドレスだったので、1.02h用にしました。
+http://www.geocities.co.jp/Playtown/8052/
+DANAの部屋
+掲載許可はいただきました。ありがとうございます。
+
+[/note]
+
+[subject]ステータス変更:dir
+	[size]1
+	[subject]Player:calc,0x69D4BA,0,9
+	[subject]Bomb:calc,0x69D4BB,0,9
+	[subject]コンティニュー:calc,0x69D4B8,0,3
+	[/size]
+	
+	[size]2
+	[subject]Power:calc,0x69D4B0,0,0x80
+	[subject]Graze:calc,0x69BCB4,0,9999
+	[subject]点:calc,0x69D4B4,0,9999
+	[/size]
+	
+	[size]4
+	[subject]得点:calc,0x69BCA0,0,999999999
+	[/size]
+	[back]
+	
+[subject]処理変更:dir
+	[subject]ボム減らない:toggle,0x4289E1,909090,80EA01
+	[subject]ボム使用回数増えない:toggle,0x4289D2,909090,83C101
+	[subject]残機減らない:toggle,0x428DEB,9090,2C01
+	[subject]ミス回数増えない:toggle,0x4277FF,909090,83C101
+	[subject]コンティニュー回数増えない:toggle,0x402F15,909090,80C101
+	[subject]通常弾当たり判定消滅:toggle,0x426DD4,9090,7407
+	[subject]ビーム当たり判定消滅:toggle,0x427610,9090,7407
+	[subject]1回とればPowerMAX:toggle,0x41FA1C,9090,7C1F
+	[subject]死んでもPower減らない:toggle,0x428B7B,909090,83E910
+	[subject]非フルパワーでも引き寄せ:toggle,0x41F71C,9090,7C6A
+	[subject]どこでも引き寄せ:toggle,0x41F72F,9090,7A57
+	[subject]敵弾即消滅:toggle,0x428E52,909090909090,0F8550010000
+
+	[back]
+
+[/script]
+
+
+
+
+[script]
+[title]とらかぷっ！ 
+[creator]konhen
+[maker]PULL TOP
+[process]TORA.EXE
+[note]wordwrap
+『とらかぷっ！』 Ver1.11です。WinMeで調査。他のOSで動かない方おられましたら報告ください。…報告されても持ってなければ改善できませんけど…
+
+8箇所すべての区画を独占したくて作ってみました。…でもめんどっちいので、所持湯玉のアドレスのみ探し出してきました。これでも十分なんですが、湯玉を放つのに必要な気力が足りなくなることが多いので、気力の変更ができるようにしました。となりのアドレスにあった体力も追加。まだ出していない装備が欲しくなったのでアイテムを999個にするモードも作り…今に至ります。
+
+おすすめの使用法は、桜姫の湯玉をすべてMAX、ライバルの湯玉をMIN、全員の体力気力をMAXで固定するとよいです。体力気力は反映されないこともありますが、いろいろいじってたら自然に反映されます。一桁くらい桁あふれを起こしても表示されないだけできちんと内部処理されるので気にせずゲームを進めてください。2バイトなので32768くらいまでは大丈夫なはずです。
+
+ゲーム自体はそこそこ面白いです。左側5区画を独占するように、ライバル二人を右3区画のみにあらわれるまでリロードするように工夫すれば、楽に毎週1位をとれますし。リロードがめんどくさいのでこいつを作ってみたわけですが。あとの課題はかぷかぷ桜姫ちゃん人形を…
+
+konhen
+konhen@lily.freemail.ne.jp
+(このメールアドレスは予告なく変更されるおそれがあります)
+[/note]
+
+[size]2
+[subject]所持湯玉:dir
+	[subject]桜姫:dir
+		[subject]獣玉:calc,0x1280f56,0,9999 
+		[subject]鳥玉:calc,0x1280f58,0,9999 
+		[subject]竜玉:calc,0x1280f5a,0,9999 
+		[back]
+	[subject]御翼:dir
+		[subject]獣玉:calc,0x1280f7e,0,9999 
+		[subject]鳥玉:calc,0x1280f80,0,9999 
+		[subject]竜玉:calc,0x1280f82,0,9999 
+		[back]
+	[subject]静波:dir
+		[subject]獣玉:calc,0x1280fa6,0,9999 
+		[subject]鳥玉:calc,0x1280fa8,0,9999 
+		[subject]竜玉:calc,0x1280faa,0,9999 
+		[back]
+	[back]
+[subject]捕獲黒玉:dir
+	[subject]黒玉総数:calc,0x1280f60,0,9999 
+	[subject]今週の成果:calc,0x1280f62,0,9999 
+	[back]
+
+[subject]体力・気力:dir
+	[subject]桜姫:dir
+		[subject]体力:calc,0x1280f48,0,100
+		[subject]気力:calc,0x1280f4c,0,100
+		[back]
+	[subject]御翼:dir
+		[subject]体力:calc,0x1280f70,0,100
+		[subject]気力:calc,0x1280f74,0,100
+		[back]
+	[subject]静波:dir
+		[subject]体力:calc,0x1280f98,0,100
+		[subject]気力:calc,0x1280f9c,0,100
+		[back]
+	[back]
+[subject]アイテム:dir
+	[subject]全部999個所持:toggle,0x12811a2,0x12811dd-e703,0000 
+	[subject]ほうき:calc,0x12811a2,0,999
+	[subject]はたき:calc,0x12811a4,0,999
+	[subject]くまで:calc,0x12811a6,0,999
+	[subject]物干し竿:calc,0x12811a8,0,999
+	[subject]掃除機:calc,0x12811aa,0,999
+	[subject]三角巾:calc,0x12811ac,0,999
+	[subject]浴衣:calc,0x12811be,0,999
+	[subject]はっぴ:calc,0x12811b0,0,999
+	[subject]たすき:calc,0x12811b2,0,999
+	[subject]高下駄:calc,0x12811b4,0,999
+	[subject]6オンスグローブ:calc,0x12811b6,0,999
+	[subject]ねこグローブ:calc,0x12811b8,0,999
+	[subject]タイガーグローブ:calc,0x12811ba,0,999
+	[subject]山猫の牙:calc,0x12811bc,0,999
+	[subject]白虎皇牙:calc,0x12811be,0,999
+	[subject]護符:calc,0x12811c0,0,999
+	[subject]牙のペンダント:calc,0x12811c2,0,999
+	[subject]白虎の腕輪:calc,0x12811c4,0,999
+	[subject]神速のわらじ:calc,0x12811c6,0,999
+	[subject]白虎のわらじ:calc,0x12811c8,0,999
+	[subject]虫取り網:calc,0x12811ca,0,999
+	[subject]投網:calc,0x12811ca,0,999
+	[subject]赤の喜び:calc,0x12811ce,0,999
+	[subject]黄の笑顔:calc,0x12811d0,0,999
+	[subject]青の幸せ:calc,0x12811d2,0,999
+	[subject]獣符:calc,0x12811d4,0,999
+	[subject]鳥符・逆:calc,0x12811d6,0,999
+	[subject]竜符・逆:calc,0x12811d8,0,999
+	[subject]丸薬:calc,0x12811da,0,999
+	[subject]散薬:calc,0x12811dc,0,999
+	[back]
+
+
+[/size]
+[/script]
+
+
+
+
+//[script]
+//[title]らじおぞんで　1.24
+//[creator]konhen
+//[maker]いぬどんていこく
+//[process]shoot.exe
+//[note]wordwrap
+//できん…　なんだこのアドレス移動は…
+//[/note]
+//
+//[size]1
+//[subject]Player:calc,0x12eb78,0,9
+//
+//[/script]
+
+//[script]
+//[title]MesserSchmitt
+//[creator]konhen
+//[maker]HirokiAraya(株式会社フィクス)
+//[process]Messer.exe
+//[note]wordwrap
+//100円シューティングです。
+//Windows2000用　　てかうまくいかない場合があるので保留
+//[/note]
+//
+//[subject]残機:calc,0x1c0a70,0,9
+//[subject]ボム:calc,0x1c0b90,0,9
+//
+//[/script]
+
+
+
