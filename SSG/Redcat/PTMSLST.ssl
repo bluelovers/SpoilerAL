@@ -1,0 +1,19 @@
+[group]PTMS_SSG
+[note]wordwrap
+なんつーか前作時の希望通りの展開なのに笑えたｗ
+
+ver1.00-CRC32/
+PLEASE_S.EXE=8A6946C1
+
+アルバム利用可能：
+フラグ項目ですので、機能実行後は一度オプション画面を出入りする等を行い反映させてください。
+[/note]
+
+[subject]ＣＧモード関連:dir
+[subject]アルバム利用可能/実行/_:toggle,0x61A38C,01000000,00000000
+ [subject]ＣＧ鑑賞・シーン回想:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x61A524,0x61A5AF-01000000
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x61A524,0x61A5AF-00
+[root]
+
+[/group]
