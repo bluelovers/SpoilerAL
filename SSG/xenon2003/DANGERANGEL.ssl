@@ -1,0 +1,14 @@
+[group]ステータス
+	[subject]レベル: calc,0x24,00,99
+	[subject]経験値(現在): calc,0x28,00,65000
+	[subject]経験値(NEXT): calc,0x2C,00,65000
+	[subject]HP(最高): calc,0x30,00,9999
+	[subject]HP(現在): calc,0x34,00,9999
+	[subject]MP(最高): calc,0x38,00,9999
+	[subject]MP(現在): calc,0x3C,00,9999
+	[subject]攻撃力: calc,0x44,00,9999
+	[subject]敏捷性: calc,0x48,00,9999
+	[subject]耐久力: calc,0x4C,00,9999
+	[subject]知力: calc,0x50,00,9999
+	[subject]魔法耐久: calc,0x54,00,9999
+[/group]
