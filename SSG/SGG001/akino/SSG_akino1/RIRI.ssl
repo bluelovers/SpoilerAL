@@ -1,0 +1,1550 @@
+
+[group]teriru_CG
+0x509454,0CF00D0234F40D0234F40D02,000000000000000000000000
+0x509474,801AEE00A81DEE00A81DEE00,000000000000000000000000
+[/group]
+_______________________________________________________________________________
+
+[group]teriru_majyo1
+[subject]ƒAƒCƒeƒ€:dir
+	[repeat]RIRI->teriru_majyo2,0,8,1
+[back]
+[/group]
+[group]teriru_majyo2
+[subject][! @RIRI->teriru_majyo3,$Val !]//:calc,0x[! 0x476160+$Val*4 !],00,99,unsigned
+[/group]
+[group]teriru_majyo3
+ƒ{ƒ€
+ƒr[ƒ€
+‚R|‚v‚`‚x
+ƒƒCƒh
+ƒXƒs[ƒhƒAƒbƒv
+ƒXƒs[ƒhƒ_ƒEƒ“
+ƒNƒGƒCƒN
+‚Ç‚è‚é
+[/group]
+
+_______________________________________________________________________________
+
+[group]sintai_CG
+0x6A3F8C,01,00
+0x6A3F90,03000000030000000100000003000000,00000000000000000000000000000000
+0x6A3FA0,0B00000001000000010000000F000000,00000000000000000000000000000000
+0x6A3FB0,03000000010000000300000007000000,00000000000000000000000000000000
+0x6A3FC0,03000000C50000000100000001000000,00000000000000000000000000000000
+0x6A3FD0,0B0000003F000000030000000F000000,00000000000000000000000000000000
+0x6A3FE0,07000000010000000100000003000000,00000000000000000000000000000000
+0x6A3FF0,03000000030000000300000003000000,00000000000000000000000000000000
+0x6A4000,030000000F0000000100000003000000,00000000000000000000000000000000
+0x6A4010,01000000010000000700000007000000,00000000000000000000000000000000
+0x6A4020,070000000F0000000100000001000000,00000000000000000000000000000000
+0x6A4030,01000000010000000300000003000000,00000000000000000000000000000000
+0x6A4040,01000000010000000100000001000000,00000000000000000000000000000000
+0x6A4050,01000000030000000300000007000000,00000000000000000000000000000000
+0x6A4060,07000000030000000100000001000000,00000000000000000000000000000000
+0x6A4070,01000000010000000100000003000000,00000000000000000000000000000000
+0x6A4080,07000000030000000100000003000000,00000000000000000000000000000000
+0x6A4090,010000000F000000070000001F000000,00000000000000000000000000000000
+0x6A40A0,01000000070000000100000000000000,00000000000000000000000000000000
+[/group]
+_______________________________________________________________________________
+
+[group]syoya_CG
+0x5E79A4,0x5E7A27-01000000,00000000
+0x5E7B34,0x5E7BBB-01000000,00000000
+0x5E7CC4,0x5E7D4F-01000000,00000000
+0x5E7E54,0x5E7E73-01000000,00000000
+[/group]
+
+[group]syoya_ME
+0x5E8944,0x5E895B-01000000,00000000
+0x5E8AD4,0x5E8ADF-01000000,00000000
+0x5E8C64,0x5E8C77-01000000,00000000
+0x5E8DF4,01,00
+[/group]
+
+_______________________________________________________________________________
+
+[group]naripuri_CG
+0x5602B0,0x5602E3-01000000,00000000
+0x560260,0x56028F-01000000,00000000
+0x560210,0x560243-01000000,00000000
+0x5601C0,0x5601F3-01000000,00000000
+0x560170,0x5601AF-01000000,00000000
+0x560120,0x560153-01000000,00000000
+0x560058,0x5600F7-01000000,00000000
+[/group]
+_______________________________________________________________________________
+[group]MAZIƒpƒ‰ƒ[ƒ^
+[e_with],0,20
+[subject]‚d‚w‚o:calc,0x000
+[subject]s“®—Í‚m‚n‚v:calc,0x004
+[subject]s“®—Í‚l‚`‚w:calc,0x008
+[subject]Šw—Íi–‚—Íj:calc,0x00C
+[/e_with]
+[back]
+[/group]
+_______________________________________________________________________________
+
+
+[group]kizuna_1
+[subject]DŠ´“x:dir
+	[repeat]RIRI->kizuna_2,0,5,1
+[/group]
+
+[group]kizuna_2
+[subject][! @RIRI->kizuna_3,$Val !]//_:calc,0x[! 0x4A3750+$Val*4 !],0x00,0x19,unsigned
+[/group]
+
+[group]kizuna_3
+t‰Ô
+––ä»
+€
+Â—t
+^ƒ
+[/group]
+_______________________________________________________________________________
+
+
+[group]MOLDA_CARD
+[subject]ƒJ[ƒh/ƒJ[ƒhƒtƒ‹‰»/_:b_toggle,0,RIRI->CARD,offset
+[/group]
+
+[group]CARD
+0x845774,0x845776-FFFFFF,000000
+0x845778,0x84577A-FFFFFF,000000
+0x84577C,0x84577E-FFFFFF,000000
+0x845780,0x845782-FFFFFF,000000
+0x845784,0x845785-FF01,0000
+[/group]
+
+
+[group]MOLDA_H4
+[subject]‚gƒtƒ‰ƒO//_: d_toggle,0,RIRI->MOLDA_H5,RIRI->MOLDA_H6,offset
+[/group]
+[group]MOLDA_H5
+ƒAƒlƒbƒg
+ƒJƒŒƒ“
+ƒVƒ“ƒVƒA
+ƒhƒƒeƒA
+ƒCƒuƒŠƒ“
+ƒjƒi
+ƒ†ƒ“
+ƒXƒeƒ‰
+[/group]
+[group]MOLDA_H6
+0x5E416C=01000000/00000000
+0x5E4170=01000000/00000000
+0x5E4174=01000000/00000000
+0x5E4178=01000000/00000000
+0x5E417C=01000000/00000000
+0x5E4180=01000000/00000000
+0x5E4184=01000000/00000000
+0x5E4188=01000000/00000000
+[/group]
+
+
+[group]MOLDA_H1
+[subject]‚gƒtƒ‰ƒO:dir
+	[repeat]RIRI->MOLDA_H2,0,8,1
+[/group]
+[group]MOLDA_H2
+[subject][! @RIRI->MOLDA_H3,$Val !]//_:toggle,0x[! 0x5E416C+$Val*4 !],01,00
+[/group]
+[group]MOLDA_H3
+ƒAƒlƒbƒg
+ƒJƒŒƒ“
+ƒVƒ“ƒVƒA
+ƒhƒƒeƒA
+ƒCƒuƒŠƒ“
+ƒjƒi
+ƒ†ƒ“
+ƒXƒeƒ‰
+[/group]
+
+
+[group]MOLDAƒpƒ‰ƒ[ƒ^
+[e_with],0,999
+[subject]Œ»Ý@‘Ì—Í:calc,0x004
+[subject]Å‘å@‘Ì—Í:calc,0x020
+[subject]Œ»Ý@¸_:calc,0x008
+[subject]Å‘å@¸_:calc,0x024
+[/e_with] 
+[subject]Œ»Ý@ŒoŒ±’l:calc,0x00C,0,99
+[subject]‘¬“x:        calc,0x000,0,40
+[subject]Äs“®:      toggle,0x0A1,0000,0101
+[e_with],RIRI->MOLDAƒAƒCƒeƒ€1,0x0,0xFFFFFFFFF,RIRI->MOLDAƒAƒCƒeƒ€2,real 
+[subject]ƒAƒCƒeƒ€‚P:d_list,0x0B4
+[subject]ƒAƒCƒeƒ€‚Q:d_list,0x0B8
+[subject]ƒAƒCƒeƒ€‚R:d_list,0x0BC
+[/e_with] 
+[back]
+[/group]
+[group]MOLDAƒAƒCƒeƒ€1
+‚È‚µ
+–ØlŒ`
+–‚–@‚Ì•²
+¢ŠÒŽt‚Ìñ
+–½‚Ì½
+’Á°‚Ìà 
+ƒŠƒWƒFƒNƒgƒŠƒ“ƒO
+Â‚¢‘
+ƒLƒ…ƒA[AiƒG[ƒXj 
+ƒOƒŠ[ƒ“ƒX[ƒv 
+g‚¢Î 
+ƒAƒ“ƒvƒŠƒ“ƒO 
+ƒEƒCƒ“ƒOƒu[ƒc 
+ƒgƒŒƒbƒLƒ“ƒOƒVƒ…[ƒY
+ƒ}ƒOƒŠƒ“ƒO 
+ƒIƒp[ƒ‹‚ÌŽñü‚è 
+”Ø‘°‚Ìí‰»Ï
+pŽÒ‚ÌŽw—Ö 
+ƒƒ“ƒ^ƒ‹ƒpƒqƒ…[ƒ€
+ƒpƒ[ƒlƒCƒ‹
+ƒNƒƒbƒNƒAƒbƒvƒ‹[ƒWƒ…
+ƒtƒH[ƒ`ƒ…ƒ“ƒŠƒ“ƒO 
+ƒ‰ƒCƒgƒjƒ“ƒOƒAƒ[ 
+ƒtƒ@ƒCƒA[ƒ{[ƒ‹
+ƒ}ƒWƒFƒXƒeƒBƒbƒNƒ{ƒCƒX 
+ƒlƒCƒ`ƒƒ[ƒEƒBƒbƒv 
+‘Þ–‚‚Ì™ô™á 
+‹F‚è‚Ì”g“® 
+’¾–Ù‚Ì‹ó‹C 
+Šó–]‚Ìù—¥ 
+Ž€‚Ìé 
+’n–‚Ì‹Æ‰Î 
+ƒzƒƒCƒgƒAƒEƒg 
+[/group]
+[group]MOLDAƒAƒCƒeƒ€2
+0xFFFFFFFF
+0x00
+0x01
+0x02
+0x03
+0x04
+0x05
+0x06
+0x07
+0x08
+0x09
+0x0A
+0x0B
+0x0C
+0x0D
+0x0E
+0x0F
+0x10
+0x11
+0x12
+0x13
+0x14
+0x15
+0x16
+0x17
+0x18
+0x19
+0x1A
+0x1B
+0x1C
+0x1D
+0x1E
+0x1F
+[/group]
+
+
+
+[group]MOLDA_ˆêŠ‡
+[subject]–¡•ûƒ†ƒjƒbƒgˆêŠ‡:dir
+        [subject]Œ»Ý@‘Ì—Í:b_calc,0,RIRI->Œ»Ý@‘Ì—Í,offset,1,999
+        [subject]Œ»Ý@¸_:b_calc,0,RIRI->Œ»Ý@¸_,offset,1,999
+        [subject]ŒoŒ±’l:    b_calc,0,RIRI->ŒoŒ±’l,offset,1,99
+        [subject]‘¬“x:      b_calc,0,RIRI->‘¬“x,offset,1,40
+[back]
+[/group]
+
+[group]Œ»Ý@‘Ì—Í
+0x5E4C58
+0x5E4C68
+0x5E4FDC
+0x5E5360
+0x5E56E4
+0x5E6170
+0x5E5DEC
+0x5E64F4
+0x5E6BFC
+0x5E5A68
+0x5E6878
+[/group]
+[group]Œ»Ý@¸_
+0x5E4C5C
+0x5E4C6C
+0x5E4FE0
+0x5E5364
+0x5E56E8
+0x5E6174
+0x5E5DF0
+0x5E64F8
+0x5E6C00
+0x5E5A6C
+0x5E687C
+[/group]
+[group]ŒoŒ±’l
+0x5E4C60
+0x5E4FE4
+0x5E5368
+0x5E56EC
+0x5E6178
+0x5E5DF4
+0x5E64FC
+0x5E6C04
+0x5E5A70
+0x5E6880
+[/group]
+[group]‘¬“x
+0x5E4C54
+0x5E4C64
+0x5E4FD8
+0x5E535C
+0x5E56E0
+0x5E616C
+0x5E5DE8
+0x5E64F0
+0x5E6BF8
+0x5E5A64
+0x5E6874
+[/group]
+
+[group]MOLDA_“G‚g‚oˆêŠ‡
+[subject]“G‚g‚oˆêŠ‡h‚Ph:b_toggle,0,RIRI->MOLDA“G‚g‚o,offset
+[/group]
+[group]MOLDA“G‚g‚o
+0x5E8498,01000000,64000000
+0x5E881C,01000000,64000000
+0x5E8574,01000000,64000000
+0x5E872C,01000000,64000000
+0x5E8650,01000000,64000000
+0x5E8BA0,01000000,64000000
+0x5E8F24,01000000,64000000
+0x5E92A8,01000000,64000000
+0x5E962C,01000000,64000000
+0x5E99B0,01000000,64000000
+0x5E9D34,01000000,64000000
+0x5EAB44,01000000,64000000
+0x5EA7C0,01000000,64000000
+0x5EAEC8,01000000,64000000
+0x5EA0B8,01000000,64000000
+0x5EA43C,01000000,64000000
+0x5EB5D0,01000000,64000000
+0x5EB954,01000000,64000000
+0x5EB24C,01000000,64000000
+0x5EBCD8,01000000,64000000
+0x5EC3E0,01000000,64000000
+0x5EC05C,01000000,64000000
+0x5EC764,01000000,64000000
+0x5ECAE8,01000000,64000000
+0x5ECE6C,01000000,64000000
+0x5ED8F8,01000000,64000000
+0x5EDC7C,01000000,64000000
+0x5ED574,01000000,64000000
+0x5ED1F0,01000000,64000000
+0x5EE384,01000000,64000000
+0x5EF518,01000000,64000000
+0x5EEE10,01000000,64000000
+0x5EEA8C,01000000,64000000
+0x5EE000,01000000,64000000
+0x5EE708,01000000,64000000
+0x5EF194,01000000,64000000
+[/group]
+
+
+[group]MOLDA_LOVE
+[subject]DŠ´“x:dir
+[e_with],0,20
+[subject]ƒXƒeƒ‰:  calc,0x018
+[subject]ƒAƒlƒbƒg:calc,0x000
+[subject]ƒCƒuƒŠƒ“:calc,0x010
+[subject]ƒVƒ“ƒVƒA:calc,0x008
+[subject]ƒhƒƒeƒA:calc,0x00C
+[subject]ƒjƒi:    calc,0x014
+[subject]ƒ†ƒ“:    calc,0x01C
+[subject]ƒJƒŒƒ“:  calc,0x004
+[/e_with] 
+[back]
+[/group]
+
+
+[group]MOLDA_CG
+[subject]‚b‚f//_:b_toggle,0,RIRI->MOLDACG,offset
+[/group]
+
+
+[group]MOLDACG
+0x847A00,01 00 00 00 3F 10 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 03 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 03 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 0F 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 03 00 00 00 01 00 00 00 03 00 00 00 01 00 00 00 01 00 00 00 03 00 00 00 01 00 00 00 01 00 00 00 03 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 03 00 00 00 01 00 00 00 01 00 00 00 03 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 03 00 00 00 01 00 00 00 03 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 03 00 00 00 01 00 00 00 03 00 00 00 03 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 03 00 00 00 03 00 00 00 01 00 00 00 01 00 00 00 03 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 03 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 03 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 03 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 03 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 03 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 03 00 00 00 01 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00,00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+[/group]
+_______________________________________________________________________________
+
+[group]MOLƒpƒ‰ƒ[ƒ^
+	[subject]Œ»Ý@‘Ì—Í:calc,0x004,0,999
+	[subject]Å‘å@‘Ì—Í:calc,0x020,0,999
+	[subject]Œ»Ý@¸_:calc,0x008,0,999
+	[subject]Å‘å@¸_:calc,0x024,0,999
+	[subject]Œ»Ý@ŒoŒ±’l:calc,0x00C,0,999
+	[subject]‘¬“x:calc,0x000,0,40
+        [subject]Äs“®:toggle,0x054,00000000,00010100
+[/group]
+_______________________________________________________________________________
+
+
+
+[group]lime_ALL
+[subject]‚¨‚Ü‚¯ƒtƒ‹‰»//_:b_toggle,0,RIRI->lime,offset
+[/group]
+
+[group]lime
+0x1E44E78,0x1E44E7D-01,00
+0x1E44E82,0x1E44EB3-01,00
+0x1E44EB4,01,01
+0x1E44EB5,0x1E44EC0-01,00
+0x1E44EC1,0x1E44EC3-01,01
+0x1E44EC4,0x1E44F27-01,00
+
+0x1E44F40,0x1E44FC3-01,00
+0x1E44FC5,01,00
+0x1E44FC7,0x1E44FF6-01,00
+0x1E44FF8,0x1E45028-01,00
+0x1E4502A,0x1E45035-01,00
+0x1E45037,0x1E45049-01,00
+0x1E4504B,0x1E4504D-01,00
+0x1E4504F,0x1E45117-01,00
+0x1E45119,0x1E4511D-01,00
+0x1E45134,01,00
+[/group]
+_______________________________________________________________________________
+
+[group]tuku4_CG
+[subject]‚b‚f‰ñ‘zƒtƒ‹‰»//_:b_toggle,0,RIRI->tuku4_1,offset
+[/group]
+
+[group]tuku4_1
+0x4BD930,00 00 00 00 00 00 F0 E5 FF FF FF B7 FF FF FF FF,00000000000000000000000000000000
+0x4BD940,FF FE FF FF FF FF FF FF FF FF FF F3 7F 00 00 00,00000000000000000000000000000000
+[/group]
+
+[group]tuku4_ME
+[subject]‚gƒV[ƒ“‰ñ‘zƒtƒ‹‰»//_:b_toggle,0,RIRI->tuku4_2,offset
+[/group]
+
+[group]tuku4_2
+0x4BD91C,0C EA FF FF FF,00 00 00 00 00
+[/group]
+
+
+[group]s‚­‚SDŠ´“x
+[subject]DŠ´“x:dir
+        [replace]0x4FDAA0,RIRI->DŠ´“x
+[back]
+[/group]
+
+[group]DŠ´“x
+	[subject]•PŽq:calc,0x000,0,10,unsigned
+	[subject]ç’ß:calc,0x008,0,10,unsigned
+	[subject]‘é”T:calc,0x004,0,10,unsigned
+	[subject]—æ:calc,0x00C,0,10,unsigned
+[back]
+[/group]
+
+[group]s‚­‚S‘I‘ð‰ñ”
+[subject]‘I‘ð‰ñ”:dir
+        [replace]0x4FDAB0,RIRI->‘I‘ð‰ñ”
+[back]
+[/group]
+
+[group]‘I‘ð‰ñ”
+	[subject]•PŽq:calc,0x000,0,10,unsigned
+	[subject]ç’ß:calc,0x008,0,10,unsigned
+	[subject]‘é”T:calc,0x004,0,10,unsigned
+	[subject]—æ:calc,0x00C,0,10,unsigned
+[back]
+[/group]
+_______________________________________________________________________________
+
+
+[group]banana
+[subject]€–Ú–¼: d_toggle,0,RIRI->banana1,RIRI->banana2,offset
+[/group]
+
+[group]banana1
+Žc‹@‚R
+ƒQ[ƒW ‚l‚`‚w
+ƒVƒ‡ƒbƒg‚k‚u ‚l‚`‚w
+[/group]
+
+
+[group]banana2
+0x13B69C8=03000000/00000000
+0xB6F254=64000000/00000000
+0xB6F250=02000000/00000000
+[/group]
+_______________________________________________________________________________
+
+
+[group]aikey_CG
+[subject]‚b‚fE‚gƒV[ƒ“ƒtƒ‹‰»//_:b_toggle,0,RIRI->aikey,offset
+[/group]
+
+[group]aikey
+0x1BB9923,01,00
+0x1BB9925,0x1BB9932-01,00
+0x1BB9938,01,00
+0x1BB993A,0x1BB997E-01,00
+0x1BB9990,01,00
+0x1BB998F,01,00
+0x1BB9995,0x1BB9996-01,00
+[/group]
+_______________________________________________________________________________
+
+[group]sora_CGMEED
+[subject]EXTRA MODEƒtƒ‹‰»//_:b_toggle,0,RIRI->sora,offset
+[/group]
+
+[group]sora
+0xCF2B64,0xCF2C78-01000000,00000000
+0xCF2C80,01000000,00000000
+0xCF2C88,0xCF2CA8-01000000,00000000
+0xCF2D00,01000000,00000000
+0xCF2D20,0xCF2D24-01000000,00000000
+0xCF2D64,0xCF2D68-01000000,00000000
+0xCF2D70,01000000,00000000
+0xCF2D78,01000000,00000000
+0xCF2D8C,01000000,00000000
+0xCF2DA0,0xCF2DA4-01000000,00000000
+0xCF2DAC,01000000,00000000
+0xCF2DB8,01000000,00000000
+0xCF2DC0,0xCF2DC4-01000000,00000000
+0xCF2DD0,01000000,00000000
+0xCF2DE8,01000000,00000000
+0xCF2DF8,01000000,00000000
+0xCF2E04,01000000,00000000
+0xCF2E18,01000000,00000000
+0xCF2F1C,01000000,00000000
+0xCF2F50,01000000,00000000
+0xCF2FA8,01000000,00000000
+0xCF30AC,01000000,00000000
+0xCF30E0,01000000,00000000
+0xCF37E4,0xCF37F0-01000000,00000000
+0xCF3970,02000000,00000000
+0xCF3974,0xCF3994-01000000,00000000
+0xCF3B00,00000000380100000000000000000000,00000000000000003200000000000000
+0xCF3B10,00000000010000000100000001000000,00000000010000000100000001000000
+0xCF3B20,01000000010000000100000001000000,01000000010000000100000001000000
+0xCF3B30,01000000010000000000000000000000,01000000010000000000000000000000
+0xCF3B40,0000000001000000010000004D000000,00000000010000000100000032000000
+0xCF3B50,61000000000000000000000000000000,32000000000000000000000000000000
+0xCF3B60,32000000000000000000000000000000,32000000000000000000000000000000
+[/group]
+
+_______________________________________________________________________________
+
+[group]sei_ME
+[subject]ƒV[ƒ“ŠÓÜƒtƒ‹‰»:b_toggle,0,RIRI->seisaiME,offset
+[/group]
+
+[group]seisaiME
+0x546727,0x546735-01,00
+0x54674A,0x546767-01,00
+[/group]
+
+[group]sei_ED
+[subject]ƒGƒ“ƒfƒBƒ“ƒOŠÓÜƒtƒ‹‰»:b_toggle,0,RIRI->seisaiED,offset
+[/group]
+
+[group]seisaiED
+0x54673F,0x546748-01,00
+0x54673A,0x54673C-01,00
+[/group]
+_______________________________________________________________________________
+
+[group]mitu_CG
+[subject]‚b‚fƒtƒ‹‰»:b_toggle,0,RIRI->mitu,offset
+[/group]
+
+[group]mitu
+0x529CFA,0x529DD6-0100,0000
+0x529E8A,0x52A1F6-0100,0000
+[/group]
+_______________________________________________________________________________
+
+[group]maiden_CG
+[subject]‚b‚fƒtƒ‹‰»:b_toggle,0,RIRI->maiden,offset
+[/group]
+
+[group]maiden
+0x47C2B3,0x47C2CF-01,00
+0x47C2D1,0x47C328-01,00
+0x47C32B,0x47C330-01,00
+[/group]
+_______________________________________________________________________________
+
+[group]ripple_CGME
+[subject]‚b‚f{‰ñ‘zƒtƒ‹‰»:b_toggle,0,RIRI->ripple,offset
+[/group]
+
+[group]ripple
+0x71BE3C,0x71BE3F-FFFF3F00,00000000
+0x71BE40,0x71BE4F-00000040FFFF0700000000C0FFFF0300,00000000000000000000000000000000
+0x71BE50,0x71BE5F-00000040FFFF1F0000000040FFFF0F00,00000000000000000000000000000000
+0x71BE60,0x71BE6F-00000040FF0F000000000040FFFF0000,00000000000000000000000000000000
+0x71BE70,0x71BE7F-000000C0FFFF3F000000004001000000,00000000000000000000000000000000
+[/group]
+
+
+[group]ripple2_CGME
+[subject]‚b‚f{‰ñ‘zƒtƒ‹‰»:b_toggle,0,RIRI->ripple2,offset
+[/group]
+
+[group]ripple2
+0x7201BC,0x7201BF-FFFF3F00,00000000
+0x7201C0,0x7201CF-00000040FFFF0700000000C0FFFF0300,00000000000000000000000000000000
+0x7201D0,0x7201DF-00000040FFFF1F0000000040FFFF0F00,00000000000000000000000000000000
+0x7201E0,0x7201EF-00000040FF0F000000000040FFFF0000,00000000000000000000000000000000
+0x7201F0,0x7201FF-000000C0FFFF3F000000004001000000,00000000000000000000000000000000
+[/group]
+
+_______________________________________________________________________________
+
+[group]Taxi3_CG
+[subject]‚b‚fƒtƒ‹‰»:b_toggle,0,RIRI->ŒÒl‚R,offset
+[/group]
+
+[group]ŒÒl‚R
+0x447F1C,0x447F1F-FFFFFFFF,00000000
+0x447F20,0x447F2F-FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF,00000000000000000000000000000000
+0x447F30,0x447F3F-FFFFFFFFFFFFFFFFFFFFFFFF7FE00700,00000000000000000000000000000000
+0x447F40,0x447F47-FFFFFFFFFFFFFF1F,0000000000000000
+[/group]
+_______________________________________________________________________________
+
+[group]Caliz_ME
+[subject]‰ñ‘zƒtƒ‹‰»:b_toggle,0,RIRI->‚b‚‚Œ‚‰‚š_‰ñ‘z,offset
+[/group]
+
+[group]‚b‚‚Œ‚‰‚š_‰ñ‘z
+0x453020,0x4530FC-01000000,00000000
+0x453108,0x4531CC-01000000,00000000
+[/group]
+_______________________________________________________________________________
+
+[group]‚¢‚àƒuƒ‹ƒpƒ‰ƒ[ƒ^
+	[subject]Š´“x:calc,0x000,0,150   
+	[subject]ƒeƒN:calc,0x004,0,150   
+	[subject]‚r‚d‚w:calc,0x008,0,150 
+	[subject]ãµ’p:calc,0x00C,0,150
+	[subject]—öˆ¤ƒ|ƒCƒ“ƒg:calc,0x010,0,10     
+[/group]
+
+[group]‚¢‚àƒuƒ‹_CGME
+[subject]‚b‚f{‰ñ‘zƒtƒ‹‰»:b_toggle,0,RIRI->‚¢‚àƒuƒ‹_‚b‚f‰ñ‘z,offset
+[/group]
+
+[group]‚¢‚àƒuƒ‹_‚b‚f‰ñ‘z
+0x54726C,0x5472A0-01000000,00000000
+0x5462C8,0x54638F-476D1C21,00000000
+[/group]
+
+_______________________________________________________________________________
+
+[group]í—_‡Uƒpƒ‰ƒ[ƒ^
+	[subject]Œ»Ý@‚g‚o:calc,0x000,1,9999
+	[subject]Å‘å@‚g‚o:calc,0x050,1,9999
+	[subject]Œ»Ý@‚l‚o:calc,0x0A0,0,9999
+	[subject]Å‘å@‚l‚o:calc,0x0F0,0,9999
+	[subject]Œ»Ý@‚s‚o:calc,0x140,0,9999
+	[subject]Å‘å@‚s‚o:calc,0x190,0,9999
+[/group]
+
+[group]í—_‡U“Gƒpƒ‰ƒ[ƒ^
+	[subject]Œ»Ý@‚g‚o:calc,0x000,1,999999
+	[subject]Å‘å@‚g‚o:calc,0x050,1,999999
+	[subject]Œ»Ý@‚l‚o:calc,0x0A0,0,99999
+	[subject]Å‘å@‚l‚o:calc,0x0F0,0,99999
+	[subject]Œ»Ý@‚s‚o:calc,0x140,0,99999
+	[subject]Å‘å@‚s‚o:calc,0x190,0,99999
+[/group]
+
+
+[group]í—_‡U_n—û“x
+[subject]n—û“x:dir
+[subject]ƒZƒŠƒJ:dir
+        [replace]0xF7E470,RIRI->ƒZƒŠƒJ_n—û
+[back]
+[subject]ƒGƒNƒŠƒA:dir
+	[replace]0xF7EE48,RIRI->ƒGƒNƒŠƒA_n—û
+[back]
+[subject]ƒ}ƒŠ[ƒjƒƒ:dir
+	[replace]0xF7F730,RIRI->ƒ}ƒŠ[ƒjƒƒ_n—û
+[back]
+[subject]ƒVƒ…ƒŠ:dir
+	[replace]0xF80090,RIRI->ƒVƒ…ƒŠ_n—û
+[back]
+[subject]ƒTƒŠƒA:dir
+	[replace]0xF80A68,RIRI->ƒTƒŠƒA_n—û
+[back]
+[subject]ƒŒƒ”ƒBƒA:dir
+	[replace]0xF81350,RIRI->ƒŒƒ”ƒBƒA_n—û
+[back]
+[subject]ƒƒJ:dir
+	[replace]0xF81D00,RIRI->ƒƒJ_n—û
+[back]
+[subject]ƒ}ƒEƒA:dir
+	[replace]0xF82638,RIRI->ƒ}ƒEƒA_n—û
+[back]
+[subject]ƒJƒEƒ‰:dir
+	[replace]0xF82FC0,RIRI->ƒJƒEƒ‰_n—û
+[back]
+[subject]ƒEƒFƒ“ƒfƒBƒX:dir
+	[replace]0xF83948,RIRI->ƒEƒFƒ“ƒfƒBƒX_n—û
+[back]
+[subject]ƒVƒFƒ“ƒi:dir
+	[replace]0xF842A8,RIRI->ƒVƒFƒ“ƒi_n—û
+[back]
+[subject]ƒVƒFƒXƒ^:dir
+	[replace]0xF84C30,RIRI->ƒVƒFƒXƒ^_n—û
+[back]
+[subject]ƒŒƒVƒFƒ“ƒe:dir
+	[replace]0xF854F0,RIRI->ƒŒƒVƒFƒ“ƒe_n—û
+[back]
+[subject]ƒC[ƒŠƒbƒVƒ…:dir
+	[replace]0xF85EA0,RIRI->ƒC[ƒŠƒbƒVƒ…_n—û
+[back]
+[back]
+[/group]
+
+
+[group]ƒZƒŠƒJ_n—û
+	[subject]¬Œ^•ÐŽè•Ší: calc,0x000,0,999999
+	[subject]’†Œ^•ÐŽè•Ší: calc,0x28,0,999999
+	[subject]—¼Žè•Ší: calc,0x50,0,999999
+	[subject]”éˆóp“dŒ‚: calc,0x32C,0,999999
+	[subject]”éˆóp‘Ì’b: calc,0x344,0,999999
+	[subject]«–‚p–£—¹: calc,0x348,0,999999
+	[subject]¢ŠÒ–‚p: calc,0x370,0,999999
+	[subject]”ò‰Œ•E—d: calc,0x4B0,0,999999
+	[subject]”ò‰Œ•EŽa: calc,0x4B4,0,999999
+	[subject]”ò‰Œ•E‰~—Ó: calc,0x4B8,0,999999
+	[subject]Žx”z—Í‘€ì: calc,0x4D4,0,999999
+[/group]
+
+[group]ƒGƒNƒŠƒA_n—û
+	[subject]•ÐŽèŽËo•Ší: calc,0x000,0,999999
+	[subject]”éˆópE—â‹p: calc,0x2AC,0,999999
+	[subject]”éˆópE…—¬: calc,0x2B0,0,999999
+	[subject]”éˆópEƒˆ: calc,0x2BC,0,999999
+	[subject]”éˆópE”O“®: calc,0x2C0,0,999999
+	[subject]”éˆópEU’b: calc,0x2C4,0,999999
+	[subject]”éˆópE–h’b: calc,0x2C8,0,999999
+	[subject]«–‚pE–£—¹: calc,0x2D0,0,999999 
+	[subject]«–‚pE‘©”›: calc,0x2D4,0,999999 
+[/group]
+
+[group]ƒ}ƒŠ[ƒjƒƒ_n—û
+	[subject]¬Œ^•ÐŽè•Ší: calc,0x000,0,999999
+	[subject]’†Œ^•ÐŽè•Ší: calc,0x028,0,999999
+	[subject]•ÐŽèŽËo•Ší: calc,0x078,0,999999 
+	[subject]à•ó’Tõ: calc,0x4CC,0,999999 
+[/group]
+
+[group]ƒVƒ…ƒŠ_n—û
+	[subject]¬Œ^•ÐŽè•Ší: calc,0x000,0,999999
+	[subject]•ÐŽèŽËo•Ší: calc,0x078,0,999999 
+	[subject]—¼ŽèŽËo•Ší: calc,0x0A0,0,999999 
+	[subject]_¹–‚–@Ž¡–ü: calc,0x398,0,999999 
+	[subject]_¹–‚–@Ä¶: calc,0x39C,0,999999 
+	[subject]_¹–‚–@ò‰»: calc,0x3A0,0,999999 
+	[subject]_¹–‚–@ŒÃ_: calc,0x3AC,0,999999 
+	[subject]j•Ÿ‹Z”\: calc,0x4D0,0,999999 
+	[subject]–‚—Í•t—^‹Z”\: calc,0x4D8,0,999999
+[/group]
+
+[group]ƒTƒŠƒA_n—û
+	[subject]•ÐŽèŽËo•Ší: calc,0x000,0,999999
+	[subject]¢Š«–‚p: calc,0x2FC,0,999999
+	[subject]–‚—Í•t—^‹Z”\: calc,0x460,0,999999
+[/group]
+
+[group]ƒŒƒ”ƒBƒA_n—û
+	[subject]¬Œ^•ÐŽè•Ší: calc,0x000,0,999999
+	[subject]’†Œ^•ÐŽè•Ší: calc,0x028,0,999999
+	[subject]_¹–‚pŽ¡–ü: calc,0x398,0,999999
+	[subject]_¹–‚pÄ¶: calc,0x39C,0,999999
+	[subject]_¹–‚pˆê”Ê: calc,0x3A4,0,999999
+	[subject]j•Ÿ‹Z”\: calc,0x4D0,0,999999
+[/group]
+
+[group]ƒƒJ_n—û
+	[subject]—¼Žè•Ší: calc,0x000,0,999999
+	[subject]•ÐŽèŽËo•Ší: calc,0x28,0,999999
+	[subject]_¹–‚pŽ¡—Ã: calc,0x348,0,999999
+	[subject]_¹–‚pÄ¶: calc,0x34C,0,999999
+	[subject]_¹–‚pˆê”Ê: calc,0x354,0,999999
+	[subject]_¹–‚pŒ»_: calc,0x358,0,999999
+	[subject]–‚“¹ŠZ–CŒ‚: calc,0x478,0,999999
+[/group]
+
+[group]ƒ}ƒEƒA_n—û
+	[subject]’†Œ^•ÐŽè•Ší: calc,0x000,0,999999
+	[subject]•ÐŽèŽËo•Ší: calc,0x50,0,999999
+	[subject]—¼ŽèŽËo•Ší: calc,0x78,0,999999
+	[subject]”éˆópE‰Î‰Š: calc,0x2F8,0,999999
+	[subject]”éˆópE”O“®: calc,0x310,0,999999
+	[subject]”éˆópEU’b: calc,0x314,0,999999
+	[subject]”éˆópE–h’b: calc,0x318,0,999999
+	[subject]–‚“¹ŠZ–CŒ‚: calc,0x4A0,0,999999
+	[subject]Žx”z—Í‘€ì: calc,0x4AC,0,999999
+[/group]
+
+[group]ƒJƒEƒ‰_n—û
+	[subject]—¼Žè•Ší: calc,0x000,0,999999
+	[subject]_‹ÉŒ•: calc,0x46C,0,999999
+[/group]
+
+[group]ƒEƒFƒ“ƒfƒBƒX_n—û
+	[subject]•ÐŽèŽËo•Ší: calc,0x000,0,999999
+	[subject]”éˆópE‰Î‰Š: calc,0x2A8,0,999999
+        [subject]”éˆópE—â‹p: calc,0x2AC,0,999999
+	[subject]”éˆópE…—¬: calc,0x2B0,0,999999
+	[subject]”éˆópE“dŒ‚: calc,0x2B4,0,999999
+	[subject]”éˆópE‘å‹C: calc,0x2B8,0,999999
+	[subject]”éˆópEƒˆ: calc,0x2BC,0,999999
+	[subject]”éˆópE”O“®: calc,0x2C0,0,999999
+	[subject]ˆÃ•–‚p: calc,0x338,0,999999
+[/group]
+
+[group]ƒVƒFƒ“ƒi_n—û
+	[subject]•ÐŽèŽËo•Ší: calc,0x000,0,999999
+	[subject]”éˆópE‘å‹C: calc,0x2B8,0,999999
+	[subject]¸—ìµãÙp: calc,0x2D8,0,999999
+	[subject]j•Ÿ‹Z”\: calc,0x458,0,999999
+[/group]
+
+[group]ƒVƒFƒXƒ^_n—û
+	[subject]—¼ŽèŽËo•Ší: calc,0x000,0,999999
+	[subject]ƒGƒ‹ƒt‹|p: calc,0x424,0,999999
+[/group]
+
+[group]ƒŒƒVƒFƒ“ƒe_n—û
+	[subject]¬Œ^•ÐŽè•Ší: calc,0x000,0,999999
+	[subject]•ÐŽèŽËo•Ší: calc,0x078,0,999999
+	[subject]”éˆópE‰Î‰Š: calc,0x320,0,999999
+	[subject]”éˆópE—â‹p: calc,0x324,0,999999
+	[subject]”éˆópE“dŒ‚: calc,0x32C,0,999999
+	[subject]”éˆópEƒˆ: calc,0x334,0,999999
+	[subject]Žx”z—Í‘€ì: calc,0x4D4,0,999999
+[/group]
+
+[group]ƒC[ƒŠƒbƒVƒ…_n—û
+	[subject]—¼Žè•Ší: calc,0x000,0,999999
+	[subject]•—Š™Œ•: calc,0x470,0,999999
+[/group]
+
+[group]ƒGƒEƒVƒ…ƒŠ[chan_n—û
+	[subject]—¼Žè•Ší: calc,0x000,0,999999
+	[subject]´‘|–‚–@: calc,0x,0,999999
+[/group]
+
+[group]BƒGƒEƒVƒ…ƒŠ[chan_n—û
+	[subject]—¼Žè•Ší: calc,0x000,0,999999
+	[subject]´‘|–‚–@: calc,0x,0,999999
+[/group]
+
+
+
+[group]í—_‡U_“G‚g‚oˆêŠ‡
+[subject]“G‚g‚oˆêŠ‡h‚Ph:b_toggle,0,RIRI->“G‚g‚o,offset
+[/group]
+
+[group]“G‚g‚o
+0x10C0608,01000000,01000000
+0x10C060C,01000000,01000000
+0x10C0610,01000000,01000000
+0x10C0614,01000000,01000000
+0x10C0618,01000000,01000000
+0x10C061C,01000000,01000000
+[/group]
+
+[group]í—_‡U_“Gƒpƒ‰ƒ[ƒ^
+[subject]“Gƒpƒ‰ƒ[ƒ^:dir
+[subject]“G‚P:dir
+	[replace]0x10C0608,RIRI->í—_‡U“Gƒpƒ‰ƒ[ƒ^
+[back]
+[subject]“G‚Q:dir
+	[replace]0x10C060C,RIRI->í—_‡U“Gƒpƒ‰ƒ[ƒ^
+[back]
+[subject]“G‚R:dir
+	[replace]0x10C0610,RIRI->í—_‡U“Gƒpƒ‰ƒ[ƒ^
+[back]
+[subject]“G‚S:dir
+	[replace]0x10C0614,RIRI->í—_‡U“Gƒpƒ‰ƒ[ƒ^
+[back]
+[subject]“G‚T:dir
+	[replace]0x10C0618,RIRI->í—_‡U“Gƒpƒ‰ƒ[ƒ^
+[back]
+[subject]“G‚U:dir
+	[replace]0x10C061C,RIRI->í—_‡U“Gƒpƒ‰ƒ[ƒ^
+[back]
+[back]
+[/group]
+
+[group]í—_‡UƒT[ƒ`
+ [val]*.
+ [calc]Œ»ÝŠŽ‹à,no,0,999999
+[/group]
+
+
+[group]í—_‡Uƒp[ƒeƒB[
+[subject]ƒp[ƒeƒB[•ÏX:dir
+	[subject]‚Pl–Ú:list, 0xF8D86C,RIRI->í—_‡UƒLƒƒƒ‰–¼,0,1
+	[subject]‚Ql–Ú:list, 0xF8D870,RIRI->í—_‡UƒLƒƒƒ‰–¼,0,1
+	[subject]‚Rl–Ú:list, 0xF8D874,RIRI->í—_‡UƒLƒƒƒ‰–¼,0,1
+	[subject]‚Sl–Ú:list, 0xF8D878,RIRI->í—_‡UƒLƒƒƒ‰–¼,0,1
+	[subject]‚Tl–Ú:list, 0xF8D87C,RIRI->í—_‡UƒLƒƒƒ‰–¼,0,1
+[back]
+[/group]
+
+
+[group]í—_‡UƒLƒƒƒ‰–¼
+ƒZƒŠƒJ
+ƒGƒNƒŠƒA
+ƒ}ƒŠ[ƒjƒƒ
+ƒVƒ…ƒŠ
+ƒTƒŠƒA
+ƒŒƒ”ƒBƒA
+ƒƒJ
+ƒ}ƒEƒA
+ƒJƒEƒ‰
+ƒEƒFƒ“ƒfƒBƒX
+ƒVƒFƒ“ƒi
+ƒVƒFƒXƒ^
+ƒŒƒVƒFƒ“ƒe
+ƒC[ƒŠƒbƒVƒ…
+ƒGƒEƒVƒ…ƒŠ[chan
+BƒGƒEƒVƒ…ƒŠ[chan
+[/group]
+
+
+
+[group]n—û“xƒ‰ƒ“ƒN
+‚d
+‚c
+‚b
+‚a
+‚`
+‚r
+[/group]
+
+[group]í—_‡U_n—û“xƒ‰ƒ“ƒN
+[subject]n—û“xƒ‰ƒ“ƒN:dir
+[subject]ƒZƒŠƒJ:dir
+        [replace]0xF728F0,RIRI->ƒZƒŠƒJ_n—ûƒ‰ƒ“ƒN
+[back]
+[subject]ƒGƒNƒŠƒA:dir
+	[replace]0xF732C8,RIRI->ƒGƒNƒŠƒA_n—ûƒ‰ƒ“ƒN
+[back]
+[subject]ƒ}ƒŠ[ƒjƒƒ:dir
+	[replace]0xF73BB0,RIRI->ƒ}ƒŠ[ƒjƒƒ_n—ûƒ‰ƒ“ƒN
+[back]
+[subject]ƒVƒ…ƒŠ:dir
+	[replace]0xF74510,RIRI->ƒVƒ…ƒŠ_n—ûƒ‰ƒ“ƒN
+[back]
+[subject]ƒTƒŠƒA:dir
+	[replace]0xF74EE8,RIRI->ƒTƒŠƒA_n—ûƒ‰ƒ“ƒN
+[back]
+[subject]ƒŒƒ”ƒBƒA:dir
+	[replace]0xF757D0,RIRI->ƒŒƒ”ƒBƒA_n—ûƒ‰ƒ“ƒN
+[back]
+[subject]ƒƒJ:dir
+	[replace]0xF76180,RIRI->ƒƒJ_n—ûƒ‰ƒ“ƒN
+[back]
+[subject]ƒ}ƒEƒA:dir
+	[replace]0xF76AB8,RIRI->ƒ}ƒEƒA_n—ûƒ‰ƒ“ƒN
+[back]
+[subject]ƒJƒEƒ‰:dir
+	[replace]0xF77440,RIRI->ƒJƒEƒ‰_n—ûƒ‰ƒ“ƒN
+[back]
+[subject]ƒEƒFƒ“ƒfƒBƒX:dir
+	[replace]0xF77DC8,RIRI->ƒEƒFƒ“ƒfƒBƒX_n—ûƒ‰ƒ“ƒN
+[back]
+[subject]ƒVƒFƒ“ƒi:dir
+	[replace]0xF78728,RIRI->ƒVƒFƒ“ƒi_n—ûƒ‰ƒ“ƒN
+[back]
+[subject]ƒVƒFƒXƒ^:dir
+	[replace]0xF790B0,RIRI->ƒVƒFƒXƒ^_n—ûƒ‰ƒ“ƒN
+[back]
+[subject]ƒŒƒVƒFƒ“ƒe:dir
+	[replace]0xF79970,RIRI->ƒŒƒVƒFƒ“ƒe_n—ûƒ‰ƒ“ƒN
+[back]
+[subject]ƒC[ƒŠƒbƒVƒ…:dir
+	[replace]0xF7A320,RIRI->ƒC[ƒŠƒbƒVƒ…_n—ûƒ‰ƒ“ƒN
+[back]
+[subject]ƒGƒEƒVƒ…ƒŠ[‚¿‚á‚ñ:dir
+	[replace]0xF7AC80,RIRI->ƒGƒEƒVƒ…ƒŠ[‚¿‚á‚ñ_n—ûƒ‰ƒ“ƒN
+[back]
+[subject]‚aƒGƒEƒVƒ…ƒŠ[‚¿‚á‚ñ:dir
+	[replace]0xF7B5E0,RIRI->‚aƒGƒEƒVƒ…ƒŠ[‚¿‚á‚ñ_n—ûƒ‰ƒ“ƒN
+[back]
+[back]
+[/group]
+
+
+[group]ƒZƒŠƒJ_n—ûƒ‰ƒ“ƒN
+	[subject]¬Œ^•ÐŽè•Ší:list, 0x000,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]’†Œ^•ÐŽè•Ší:list, 0x28,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]—¼Žè•Ší:list, 0x50,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]”éˆóp“dŒ‚:list, 0x32C,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]”éˆóp‘Ì’b:list, 0x344,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]«–‚p–£—¹:list, 0x348,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]¢ŠÒ–‚p:list, 0x370,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]”ò‰Œ•E—d:list, 0x4B0,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]”ò‰Œ•EŽa:list, 0x4B4,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]”ò‰Œ•E‰~—Ó:list, 0x4B8,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]Žx”z—Í‘€ì:list, 0x4D4,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+[/group]
+
+[group]ƒGƒNƒŠƒA_n—ûƒ‰ƒ“ƒN
+	[subject]•ÐŽèŽËo•Ší:list, 0x000,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]”éˆópE—â‹p:list, 0x2AC,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]”éˆópE…—¬:list, 0x2B0,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]”éˆópEƒˆ:list, 0x2BC,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]”éˆópE”O“®:list, 0x2C0,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]”éˆópEU’b:list, 0x2C4,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]”éˆópE–h’b:list, 0x2C8,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]«–‚pE–£—¹:list, 0x2D0,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]«–‚pE‘©”›:list, 0x2D4,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+[/group]
+
+[group]ƒ}ƒŠ[ƒjƒƒ_n—ûƒ‰ƒ“ƒN
+	[subject]¬Œ^•ÐŽè•Ší:list, 0x000,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]’†Œ^•ÐŽè•Ší:list, 0x28,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]•ÐŽèŽËo•Ší:list, 0x78,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]à•ó’Tõ:list, 0x4CC,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+[/group]
+
+[group]ƒVƒ…ƒŠ_n—ûƒ‰ƒ“ƒN
+	[subject]¬Œ^•ÐŽè•Ší:list, 0x000,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]•ÐŽèŽËo•Ší:list, 0x78,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]—¼ŽèŽËo•Ší:list, 0xA0,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]_¹–‚–@Ž¡–ü:list, 0x398,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]_¹–‚–@Ä¶:list, 0x39C,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]_¹–‚–@ò‰»:list, 0x3A0,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]_¹–‚–@ŒÃ_:list, 0x3AC,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]j•Ÿ‹Z”\:list, 0x4D0,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]–‚—Í•t—^‹Z”\:list, 0x4D8,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+[/group]
+
+[group]ƒTƒŠƒA_n—ûƒ‰ƒ“ƒN
+	[subject]•ÐŽèŽËo•Ší:list, 0x000,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]¢Š«–‚p:list, 0x2FC,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]–‚—Í•t—^‹Z”\:list, 0x460,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+[/group]
+
+[group]ƒŒƒ”ƒBƒA_n—ûƒ‰ƒ“ƒN
+	[subject]¬Œ^•ÐŽè•Ší:list, 0x000,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]’†Œ^•ÐŽè•Ší:list, 0x28,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]_¹–‚pŽ¡–ü:list, 0x398,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]_¹–‚pÄ¶:list, 0x39C,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]_¹–‚pˆê”Ê:list, 0x3A4,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]j•Ÿ‹Z”\:list, 0x4D0,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+[/group]
+
+[group]ƒƒJ_n—ûƒ‰ƒ“ƒN
+	[subject]—¼Žè•Ší:list, 0x000,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]•ÐŽèŽËo•Ší:list, 0x28,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]_¹–‚pŽ¡—Ã:list, 0x348,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]_¹–‚pÄ¶:list, 0x34C,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]_¹–‚pˆê”Ê:list, 0x354,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]_¹–‚pŒ»_:list, 0x358,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]–‚“¹ŠZ–CŒ‚:list, 0x478,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+[/group]
+
+[group]ƒ}ƒEƒA_n—ûƒ‰ƒ“ƒN
+	[subject]’†Œ^•ÐŽè•Ší:list, 0x000,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]•ÐŽèŽËo•Ší:list, 0x50,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]—¼ŽèŽËo•Ší:list, 0x78,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]”éˆópE‰Î‰Š:list, 0x2F8,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]”éˆópE”O“®:list, 0x310,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]”éˆópEU’b:list, 0x314,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]”éˆópE–h’b:list, 0x318,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]–‚“¹ŠZ–CŒ‚:list, 0x4A0,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]Žx”z—Í‘€ì:list, 0x4AC,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+[/group]
+
+[group]ƒJƒEƒ‰_n—ûƒ‰ƒ“ƒN
+	[subject]—¼Žè•Ší:list, 0x000,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]_‹ÉŒ•:list, 0x46C,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+[/group]
+
+[group]ƒEƒFƒ“ƒfƒBƒX_n—ûƒ‰ƒ“ƒN
+	[subject]•ÐŽèŽËo•Ší:list, 0x000,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]”éˆópE‰Î‰Š:list, 0x2A8,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+        [subject]”éˆópE—â‹p:list, 0x2AC,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]”éˆópE…—¬:list, 0x2B0,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]”éˆópE“dŒ‚:list, 0x2B4,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]”éˆópE‘å‹C:list, 0x2B8,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]”éˆópEƒˆ:list, 0x2BC,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]”éˆópE”O“®:list, 0x2C0,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]ˆÃ•–‚p:list, 0x338,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+[/group]
+
+[group]ƒVƒFƒ“ƒi_n—ûƒ‰ƒ“ƒN
+	[subject]•ÐŽèŽËo•Ší:list, 0x000,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]”éˆópE‘å‹C:list, 0x2B8,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]¸—ìµãÙp:list, 0x2D8,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]j•Ÿ‹Z”\:list, 0x458,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+[/group]
+
+[group]ƒVƒFƒXƒ^_n—ûƒ‰ƒ“ƒN
+	[subject]—¼ŽèŽËo•Ší:list, 0x000,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]ƒGƒ‹ƒt‹|p:list, 0x424,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+[/group]
+
+[group]ƒŒƒVƒFƒ“ƒe_n—ûƒ‰ƒ“ƒN
+	[subject]¬Œ^•ÐŽè•Ší:list, 0x000,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]•ÐŽèŽËo•Ší:list, 0x78,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]”éˆópE‰Î‰Š:list, 0x320,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]”éˆópE—â‹p:list, 0x324,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]”éˆópE“dŒ‚:list, 0x32C,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]”éˆópEƒˆ:list, 0x334,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]Žx”z—Í‘€ì:list, 0x4D4,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+[/group]
+
+[group]ƒC[ƒŠƒbƒVƒ…_n—ûƒ‰ƒ“ƒN
+	[subject]—¼Žè•Ší:list, 0x000,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]•—Š™Œ•:list, 0x470,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+[/group]
+
+[group]ƒGƒEƒVƒ…ƒŠ[‚¿‚á‚ñ_n—ûƒ‰ƒ“ƒN
+	[subject]—¼Žè•Ší:list, 0x000,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]´‘|–‚–@:list, 0x364,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+[/group]
+
+[group]‚aƒGƒEƒVƒ…ƒŠ[‚¿‚á‚ñ_n—ûƒ‰ƒ“ƒN
+	[subject]—¼Žè•Ší:list, 0x000,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+	[subject]´‘|–‚–@:list, 0x364,RIRI->n—û“xƒ‰ƒ“ƒN,1,1
+[/group]
+
+[group]í—_‡U_d—vƒAƒCƒeƒ€
+[subject]d—vƒAƒCƒeƒ€ƒtƒ‹‰»:b_toggle,0,RIRI->d—vƒAƒCƒeƒ€,offset
+[/group]
+
+[group]d—vƒAƒCƒeƒ€
+0xF8A900,0xF8A90F-00000000000000002C0100002D010000,00000000000000002C0100002D010000
+0xF8A910,0xF8A91F-2E0100002F0100003001000031010000,00000000000000000000000000000000
+0xF8A920,0xF8A92F-32010000330100003401000035010000,00000000000000000000000000000000
+0xF8A930,0xF8A93F-36010000370100003801000039010000,00000000000000000000000000000000
+0xF8A940,0xF8A94F-3A0100003B0100003C0100003D010000,00000000000000000000000000000000
+0xF8A950,0xF8A95F-3E0100003F0100004001000041010000,00000000000000000000000000000000
+0xF8A960,0xF8A96F-42010000430100004401000045010000,00000000000000000000000000000000
+0xF8A970,0xF8A97F-46010000470100004801000049010000,00000000000000000000000000000000
+0xF8A980,0xF8A98B-4A0100004B01000020000000,000000000000000002000000
+[/group]
+
+[group]í—_‡U_ŒoŒ±’l‚l‚`‚w
+[subject]ŒoŒ±’lˆêŠ‡‚l‚`‚w:b_toggle,0,RIRI->‚l‚`‚w,offset
+[/group]
+
+[group]‚l‚`‚w
+0xF71AE0,3F420F,000000
+0xF71AE4,3F420F,000000
+0xF71AE8,3F420F,000000
+0xF71AEC,3F420F,000000
+0xF71AF0,3F420F,000000
+0xF71AF4,3F420F,000000
+0xF71AF8,3F420F,000000
+0xF71AFC,3F420F,000000
+0xF71B00,3F420F,000000
+0xF71B04,3F420F,000000
+0xF71B08,3F420F,000000
+0xF71B0C,3F420F,000000
+0xF71B10,3F420F,000000
+0xF71B14,3F420F,000000
+0xF71B18,3F420F,000000
+0xF71B1C,3F420F,000000
+[/group]
+
+
+
+_______________________________________________________________________________
+
+[group]TENAKU_CG
+[subject]‚b‚fƒtƒ‹‰»:b_toggle,0,RIRI->‚Ä‚ñ‚ ‚­_CG,offset
+[/group]
+
+[group]TENAKU_ME
+[subject]‰ñ‘zƒtƒ‹‰»:b_toggle,0,RIRI->‚Ä‚ñ‚ ‚­_ME,offset
+[/group]
+
+[group]‚Ä‚ñ‚ ‚­_CG
+0x547FB8,0x547FD6-20,10
+0x547FD8,0x547FF3-20,10
+0x547FF8,0x548000-20,10
+0x548008,0x54800F-20,10
+0x548018,0x548019-20,10
+[/group]
+
+[group]‚Ä‚ñ‚ ‚­_ME
+0x548038,0x54803F-232F2F2F2F2F2F21,1010101010101010
+0x548040,0x548049-23232323212323272727,1010101010101010101010
+0x548058,0x54805F-232F2F2F2F2F2F23,1010101010101010
+0x548060,0x54806A-2323232323232321272727,1010101010101010101010
+0x548078,23,10
+0x548088,0x54808C-2F2F272321,1010101010
+0x548098,0x54809F-2121212121212121,1010101010101010
+0x5480A0,0x5480A6-21212121212121,10101010101010
+0x5480B6,0x5480B8-010001,000000
+[/group]
+_______________________________________________________________________________
+
+[group]RIRI_MA
+[note]wordwrapB
+
+[/note]
+
+
+[group]RIRI_PR
+[subject]‚u«Š´:b_calc,0,RIRI->‚u«Š´,offset,0,100
+[subject]‚`«Š´:b_calc,0,RIRI->‚`«Š´,offset,0,100
+[subject]”í‹s“x:b_calc,0,RIRI->”í‹s“x,offset,0,100
+[subject]ˆú—“x:b_calc,0,RIRI->ˆú—“x,offset,0,100
+[subject]–‚—Í:b_calc,0,RIRI->–‚—Í,offset,0,100
+[/group]
+
+[group]RIRI_DAY
+[subject]“ú•t:list, 0x5A9BAC,RIRI->“ú•t,0,1
+[/group]
+
+[group]‚u«Š´
+0x6AED50
+0x665088
+0x1290660
+[/group]
+
+[group]‚`«Š´
+0x6AED54
+0x66508C
+0x1290664
+[/group]
+
+[group]”í‹s“x
+0x6AED58
+0x665090
+0x1290668
+[/group]
+
+[group]ˆú—“x
+0x6AED5C
+0x665094
+0x129066C
+[/group]
+
+[group]–‚—Í
+0x6AED60
+0x665098
+0x1290670
+[/group]
+
+
+[group]“ú•t
+‚Q“ú
+‚R“ú
+‚S“ú
+‚T“ú
+‚U“ú
+‚V“ú
+‚W“ú
+‚X“ú
+‚P‚O“ú
+‚P‚P“ú
+‚P‚Q“ú
+‚P‚R“ú
+‚P‚S“ú
+‚P‚T“ú
+‚P‚U“ú
+‚P‚V“ú
+‚P‚W“ú
+‚P‚X“ú
+‚Q‚O“ú
+‚Q‚P“ú
+‚Q‚Q“ú
+[/group]
+_______________________________________________________________________________
+
+[group]DALK_SAI
+[subject]Ä“xs“®‰Â”\:dir
+        [subject]‘SƒLƒƒƒ‰ˆêŠ‡:b_toggle,0,RIRI->Äs“®,offset
+        [subject]ƒ}[ƒeƒBƒX:toggle,0x76CCA20,0A000000,FFFFFFFF
+        [subject]ƒGƒŒƒVƒA:toggle,0x76CC550,0A000000,FFFFFFFF
+        [subject]ƒŒƒWƒBƒi:toggle,0x76CC2A0,0A000000,FFFFFFFF
+        [subject]ƒ”ƒFƒ‹ƒi:toggle,0x76CDF50,0A000000,FFFFFFFF
+        [subject]ŽžŽq:toggle,0x76C9E60,0A000000,FFFFFFFF
+        [subject]ƒŠ[ƒVƒƒ:toggle,0x76CDCB0,0A000000,FFFFFFFF
+        [subject]ƒtƒ@[ƒtƒ@:toggle,0x76CDA00,0A000000,FFFFFFFF
+        [subject]ƒtƒB[ƒ:toggle,0x76CD7D0,0A000000,FFFFFFFF
+[back]
+[/group]
+
+[group]DALK_SB
+        [subject]‘•”õBOX:dir
+        [subject]ƒGƒŒƒVƒA:calc,0x76CC588,0,99,unsigned
+        [subject]ƒŒƒWƒBƒi:calc,0x76CC2D8,0,99,unsigned
+        [subject]ƒ”ƒFƒ‹ƒi:calc,0x76CDF88,0,99,unsigned
+        [subject]ŽžŽq:calc,0x76C9E98,0,99,unsigned
+        [subject]ƒŠ[ƒVƒƒ:calc,0x76CDCE8,0,99,unsigned
+        [subject]ƒtƒ@[ƒtƒ@:calc,0x76CDA38,0,99,unsigned
+        [subject]ƒtƒB[ƒ:calc,0x76CD808,0,99,unsigned
+[back]
+[/group]
+
+[group]DALK_HW
+[subject]•KŽE‹ZŽg—p‰ñ”:dir
+        [subject]‘SƒLƒƒƒ‰ˆêŠ‡99:b_toggle,0,RIRI->•KŽE‹Z,offset
+        [subject]ƒGƒŒƒVƒA:calc,0x76CC58C,0,99,unsigned
+        [subject]ƒŒƒWƒBƒi:calc,0x76CC2DC,0,99,unsigned
+        [subject]ƒ”ƒFƒ‹ƒi:calc,0x76CDF8C,99,unsigned
+        [subject]ŽžŽq:calc,0x76C9E9C,0,99,unsigned
+        [subject]ƒŠ[ƒVƒƒ:calc,0x76CDCEC,0,99,unsigned
+        [subject]ƒtƒ@[ƒtƒ@:calc,0x76CDA3C,0,99,unsigned
+        [subject]ƒtƒB[ƒ:calc,0x76CD80C,0,99,unsigned
+[back]
+[/group]
+
+[group]•KŽE‹Z
+0x76CC58C,63,0
+0x76CC2DC,63,0
+0x76CDF8C,63,0
+0x76C9E9C,63,0
+0x76CDCEC,63,0
+0x76CDA3C,63,0
+0x76CD80C,63,0
+[/group]
+
+
+[group]Äs“®
+0x76CCA20,0A000000,FFFFFFFF
+0x76CC550,0A000000,FFFFFFFF
+0x76CC2A0,0A000000,FFFFFFFF
+0x76CDF50,0A000000,FFFFFFFF
+0x76C9E60,0A000000,FFFFFFFF
+0x76CDCB0,0A000000,FFFFFFFF
+0x76CDA00,0A000000,FFFFFFFF
+0x76CD7D0,0A000000,FFFFFFFF
+[/group]
+_______________________________________________________________________________
+
+[group]TOKUBETU2_CG
+[subject]‚b‚fƒtƒ‹‰»:b_toggle,0,RIRI->‚b‚fƒtƒ‹,offset
+[/group]
+
+[group]TOKUBETU2_ME
+[subject]‰ñ‘zƒtƒ‹‰»:toggle,0x447AF0,0x447B24-01,00
+[/group]
+
+[group]‚b‚fƒtƒ‹
+0x447B2D,0x447B79-01,00
+0x447B7D,0x447D5E-01,00
+[/group]
+_______________________________________________________________________________
+
+[group]ƒG[ƒxƒ“_CG
+[subject]CGƒ‚[ƒhƒtƒ‹‰»//_:b_toggle,0,RIRI->ƒG[ƒxƒ“,offset
+[/group]
+
+[group]ƒG[ƒxƒ“
+0x58C984,0x58C99D-20,10
+0x58C9A4,0x58C9BB-20,10
+0x58C9C4,0x58C9CD-20,10
+0x58C9D4,0x58C9DD-20,10
+0x58C9E4,0x58C9ED-20,10
+0x58C9F4,0x58CA00-20,10
+0x58CA04,0x58CA21-20,10
+0x58CA24,0x58CA2A-20,10
+0x58CA2B,0x58CA2C-A0,10
+[/group]
+_______________________________________________________________________________
+
+[group]CRAVE_CG
+[subject]‚b‚f•‰ñ‘zŠÓÜƒtƒ‹‰»//_:b_toggle,0,RIRI->CRAVE,offset
+[/group]
+
+[group]CRAVE
+0xACFB78,0xACFFF8-01000000,00000000
+0xACDF5C,0xACE090-01000000,00000000
+[/group]
+_______________________________________________________________________________
+
+[group]innocent_CG
+[subject]‰ñ‘zƒtƒ‹‰»//_:b_toggle,0,RIRI->innocent,offset
+[/group]
+
+[group]innocent
+0x1A4A09F,01,00
+0x1A4A3C5,01,00
+0x1A4A6EB,01,00
+0x1A4A6EB,01,00
+0x1A4AA11,01,00
+0x1A4AD37,01,00
+0x1A4B05D,01,00
+0x1A4B383,01,00
+0x1A4B6A9,01,00
+0x1A4B9CF,01,00
+0x1A4BCF5,01,00
+0x1A4C01B,01,00
+0x1A4C341,01,00
+0x1A4C667,01,00
+0x1A4C98D,01,00
+0x1A4CCB3,01,00
+0x1A4CFD9,01,00
+[/group]
+_______________________________________________________________________________
+
+[group]HAZI_ME
+[subject]‰ñ‘zƒtƒ‹‰»//_:b_toggle,0,RIRI->HAZI,offset
+[/group]
+
+[group]HAZI
+0x71F934,0x71F954-01,00
+0x71F95C,0x71F95D-01,00
+0x71F961,01,00
+0x71F966,0x71F969-01,00
+0x71F96B,0x71F96C-01,00
+[/group]
+_______________________________________________________________________________
+
+[group]ƒGƒXƒJ_ME
+[subject]‰ñ‘zƒtƒ‹‰»//_:b_toggle,0,RIRI->ƒGƒXƒJ,offset
+[/group]
+
+[group]ƒGƒXƒJ
+0xA00622,0xA00712-0100,00
+0x164F0B2,0x164F176-0100,00
+0x1868EF2,0x1868FB6-0100,00
+0x1868BC0,0x1868DBF-0100,00
+0x1868EF2,0x1868FB6-0100,00
+0x1868DE2,0x1868EA6-0100,00
+[/group]
+_______________________________________________________________________________
+
+[group]ƒMƒƒƒ‰ƒNƒV[‹@Œ™
+[subject]‹@Œ™:dir
+        [subject]ƒ~ƒ‹ƒtƒB[ƒ†:list, 0x34A8E48,RIRI->‹@Œ™,1,1
+        [subject]ƒ‰ƒ“ƒtƒ@:list, 0x34A8E78,RIRI->‹@Œ™,1,1
+        [subject]ƒ~ƒ“ƒg:list, 0x34A8EA8,RIRI->‹@Œ™,1,1
+        [subject]ƒtƒHƒ‹ƒe:list, 0x34A8ED8,RIRI->‹@Œ™,1,1
+        [subject]ƒ”ƒ@ƒjƒ‰:list, 0x34A8F08,RIRI->‹@Œ™,1,1
+[back]
+[/group]
+
+[group]‹@Œ™
+•’Ê
+—Ç‚¢
+ƒjƒRƒjƒR
+[/group]
+_______________________________________________________________________________
+
+[group]ˆ«–‚Ì†
+[subject]ˆ«–‚Ì†:list,0x4F1CC8,RIRI->ˆ«–‚,1,1
+[/group]
+
+[group]‹³ŽtÌ†
+[subject]‹³ŽtÌ†:list,0x4F1CCC,RIRI->‹³Žt,1,1
+[/group]
+
+[group]ƒ^[ƒ“”
+[subject]ƒ^[ƒ“”:list,0x4F1DC0,RIRI->ƒ^[ƒ“,1,1
+[/group]
+
+
+[group]ˆ«–‚
+ƒ_ƒ~[
+—Í–³‚«ˆ«–‚
+í‚¤ˆ«–‚
+ˆ«–‚ŒR‘‚
+•S‚ð]‚¦‚éŽÒ
+ç‚ð]‚¦‚éŽÒ
+–œ‚ð]‚¦‚éŽÒ
+ˆ«–‚­²
+ˆ«–‚’†²
+ˆ«–‚‘å²
+ˆ«–‚«ŒR
+•Ó‹«‚Ì–‚‰¤
+—ÍŽ‚Â–‚‰¤
+Žp–³‚«–‚‰¤
+–¼‚à–³‚«–‚‰¤
+”j‰ó‚ðŽi‚é–‚‰¤
+Ž€‚ð—^‚¦‚é–‚‰¤
+“VŠE‚ð‘_‚¤–‚‰¤
+‹P‚­–‚‰¤
+Ž½•‚Ì–‚‰¤
+Žl“V‰¤
+‘S‚Ä‚ðŽi‚é–‚‰¤
+^‚È‚é–‚‰¤
+[/group]
+
+[group]‹³Žt
+ƒ_ƒ~[
+V•Ä‹³Žt
+‚Ü‚¾‚Ü‚¾‹³Žt
+‚»‚±‚»‚±‹³Žt
+ƒ}ƒCƒi[‹³Žt
+ƒm[ƒ}ƒ‹‹³Žt
+ƒxƒeƒ‰ƒ“‹³Žt
+l‹CŽÒ‹³Žt
+¶“k‚Ì“²‚ê‹³Žt
+—Fî‹³Žt
+ˆ¤î‹³Žt
+”MŒŒ‹³Žt
+’´”MŒŒ‹³Žt
+‹³Žt‚Ì‹¾
+‹³Žt‚ÌŒ©–{
+‹P‚­‹³Žt
+á¿‚µ‚¢‹³Žt
+ƒSƒbƒh‹³Žt
+ƒ}ƒXƒ^[‹³Žt
+‹³ŽtƒIƒu‹³Žt
+“`à‚Ì‹³Žt
+‰hŒõ‚Ì‹³Žt
+‰i‰“‚Ì‹³Žt
+[/group]
+
+[group]ƒ^[ƒ“
+ƒ^[ƒ“‚P
+ƒ^[ƒ“‚Q
+ƒ^[ƒ“‚R
+ƒ^[ƒ“‚S
+ƒ^[ƒ“‚T
+ƒ^[ƒ“‚U
+ƒ^[ƒ“‚V
+[/group]
+_______________________________________________________________________________
+
+[group]§•ž•ÏX
+[subject]§•ž•ÏX:list,0x12AE4D4,RIRI->§•ž,1,1
+[/group]
+
+[group]§•ž
+SWEET PINK
+OCEAN WHITE
+[/group]
+_______________________________________________________________________________
+
+[group]sayora_CG
+[subject]‚b‚f‰ñ‘zƒtƒ‹‰»//_:b_toggle,0,RIRI->sayora,offset
+[/group]
+
+[group]sayora
+0x433F70,69 73 61 30 31 67 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 31 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 31 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 31 63 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 31 64 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 31 65 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 31 66 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 63 61 74 63 68 62 67 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 63 61 74 63 68 6C 67 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 74 6F 6B 6F 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 74 6F 6B 6F 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 74 6F 6B 6F 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 32 74 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 63 6F 6E 30 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 32 63 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 36 64 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 35 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 36 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 72 65 67 69 73 74 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 36 65 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 32 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 31 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 32 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 33 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 34 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 35 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 37 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 72 79 75 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 72 79 75 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 72 79 75 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 36 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 37 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 36 63 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 36 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 31 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 30 33 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 30 33 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 30 33 5F 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 30 33 5F 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 35 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 30 34 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 30 34 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 34 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 34 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 31 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 30 5F 30 35 63 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 30 5F 30 35 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 37 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 31 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 30 5F 30 35 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 30 5F 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 30 5F 30 38 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 30 5F 30 36 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 61 74 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 61 74 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 30 32 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 30 32 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 30 32 5F 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 38 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 30 5F 30 36 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 45 68 6F 6E 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 45 68 6F 6E 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 45 68 6F 6E 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 45 68 6F 6E 30 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 45 68 6F 6E 30 35 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 45 68 6F 6E 30 36 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 45 68 6F 6E 30 37 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 45 68 6F 6E 30 38 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 45 68 6F 6E 30 39 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 45 68 6F 6E 31 30 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 45 68 6F 6E 31 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 68 61 72 75 30 37 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 33 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 33 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 65 69 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 65 69 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 65 69 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 65 69 30 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 65 69 30 35 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 65 69 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 63 68 69 6E 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 63 68 69 6E 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 63 68 69 6E 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 63 68 69 6E 30 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 63 68 69 6E 30 35 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 63 68 69 6E 30 36 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 63 68 69 6E 30 37 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 63 68 69 6E 30 38 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 37 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 35 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 35 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 35 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 30 5F 30 35 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 31 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 6F 70 32 5F 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 6F 70 32 5F 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 6F 70 32 5F 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 6F 70 32 5F 30 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6E 61 6F 30 36 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 6E 64 72 6F 6C 6C 2E 5F 62 67 00 00 00 00 00,00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+[/group]
+
+_______________________________________________________________________________
+
+[group]sayorana
+0x43B080,00 00 00 00 00 00 00 00 70 68 61 72 75 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 35 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 36 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 64 75 6D 6D 79 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 6F 70 31 5F 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 6F 70 31 5F 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 6C 69 67 68 74 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 6C 69 67 68 74 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 6C 69 67 68 74 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 31 67 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 31 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 31 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 31 63 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 31 64 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 31 65 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 31 66 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 63 61 74 63 68 62 67 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 63 61 74 63 68 6C 67 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 74 6F 6B 6F 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 74 6F 6B 6F 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 74 6F 6B 6F 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 32 74 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 63 6F 6E 30 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 32 63 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 36 64 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 63 6F 6E 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 35 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 36 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 72 65 67 69 73 74 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 36 65 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 32 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 31 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 32 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 33 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 34 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 35 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 37 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 72 79 75 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 72 79 75 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 72 79 75 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 30 31 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 30 31 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 30 31 5F 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 30 31 5F 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 36 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 31 6E 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 32 6E 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 33 6E 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 35 6E 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 37 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 36 63 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 6C 65 67 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 6C 65 67 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 6C 65 67 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 6C 65 67 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 6C 65 67 35 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 6C 65 67 36 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 6C 65 67 37 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 6C 65 67 38 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 36 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 31 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 30 33 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 30 33 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 30 33 5F 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 30 33 5F 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 35 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 69 6E 75 30 31 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 69 6E 75 30 31 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 69 6E 75 30 32 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 69 6E 75 30 32 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 30 34 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 30 34 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 34 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 34 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 31 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 30 5F 30 35 63 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 30 5F 30 35 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 37 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 31 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 30 5F 30 35 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 30 5F 30 37 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 30 5F 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 65 69 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 65 69 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 65 69 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 65 69 30 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 65 69 30 35 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 65 69 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 30 5F 30 36 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 30 5F 30 38 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 30 5F 30 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 30 5F 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 61 74 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 61 74 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 30 32 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 30 32 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 30 32 5F 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 38 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 30 5F 30 36 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 45 68 6F 6E 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 45 68 6F 6E 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 45 68 6F 6E 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 45 68 6F 6E 30 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 45 68 6F 6E 30 35 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 45 68 6F 6E 30 36 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 45 68 6F 6E 30 37 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 45 68 6F 6E 30 38 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 45 68 6F 6E 30 39 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 45 68 6F 6E 31 30 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 45 68 6F 6E 31 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 68 61 72 75 30 37 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 33 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 33 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 65 69 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 63 68 69 6E 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 63 68 69 6E 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 63 68 69 6E 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 63 68 69 6E 30 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 63 68 69 6E 30 35 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 63 68 69 6E 30 36 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 63 68 69 6E 30 37 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 63 68 69 6E 30 38 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 37 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 35 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 35 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 35 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 30 5F 30 35 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 31 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 6F 70 32 5F 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 6F 70 32 5F 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 6F 70 32 5F 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 6F 70 32 5F 30 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 30 31 74 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 36 6C 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 61 6F 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 61 6F 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 61 6F 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 30 39 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 30 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 31 35 64 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 31 35 63 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 67 5F 30 38 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 31 35 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 31 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 30 36 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 31 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 79 6F 30 31 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 79 6F 30 32 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 79 6F 30 33 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 79 6F 30 34 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 79 6F 30 35 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 63 68 69 6E 30 39 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 79 6F 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 79 6F 30 36 31 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 79 6F 30 36 32 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 30 39 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 30 33 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 30 35 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 30 32 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 36 6E 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 36 6A 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 33 63 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6E 61 6F 30 31 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6E 61 6F 30 32 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6E 61 6F 30 33 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6E 61 6F 30 34 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6E 61 6F 30 35 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6E 61 6F 30 36 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6E 61 6F 30 37 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6E 61 6F 30 38 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6E 61 6F 30 39 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 30 35 74 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 31 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 32 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 33 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 34 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 35 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 37 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 30 37 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 39 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 31 32 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 69 6E 75 30 31 31 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 69 6E 75 30 31 32 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 36 6B 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 79 6F 30 38 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 63 6F 6E 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 6B 79 6F 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 30 32 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 30 31 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 38 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 30 5F 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 32 36 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 30 35 74 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 30 35 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 30 5F 30 31 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 30 33 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 31 36 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 34 38 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 34 38 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 34 38 5F 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 34 38 5F 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6E 61 6F 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 31 63 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 32 63 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 33 63 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 34 63 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 35 63 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 37 63 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 36 68 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 69 6E 75 30 32 31 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 69 6E 75 30 32 32 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 31 30 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 34 34 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 30 5F 30 31 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 36 6D 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 65 69 33 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6E 61 6F 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6E 61 6F 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6E 61 6F 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6E 61 6F 30 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6E 61 6F 30 35 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6E 61 6F 30 36 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 30 5F 30 32 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 79 6F 30 37 31 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 79 6F 30 37 32 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 30 5F 30 32 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 30 5F 30 36 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 79 6F 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 31 35 65 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 30 35 74 63 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 30 37 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 65 6E 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 65 6E 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 65 6E 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 65 6E 30 31 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 65 6E 30 32 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 65 6E 30 33 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 34 35 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 34 35 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 33 35 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 33 35 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 33 35 5F 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 33 35 5F 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 6E 61 6F 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 34 39 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 34 39 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 34 39 5F 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 34 39 5F 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 79 6F 30 31 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 79 6F 30 32 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 79 6F 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 79 6F 30 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 79 6F 30 35 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 33 32 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 33 32 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 33 32 5F 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 33 32 5F 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 33 32 5F 35 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 35 38 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 35 38 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 65 69 30 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 65 69 30 34 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 65 69 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 31 35 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 63 6F 6E 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6E 61 6F 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 33 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 31 31 63 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 34 36 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 34 36 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 34 36 5F 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 34 36 5F 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 34 36 5F 35 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 32 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 79 6F 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 79 6F 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 79 6F 30 35 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 79 6F 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 67 75 72 64 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 67 75 72 64 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 61 73 6B 61 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 61 73 6B 61 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 61 73 6B 61 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 31 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 34 34 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 31 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 79 6F 30 36 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 79 6F 30 36 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 31 34 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 35 32 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 35 32 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 35 32 5F 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 35 32 5F 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 79 6F 30 34 62 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 79 6F 30 34 62 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 79 6F 30 34 62 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 79 6F 30 34 62 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 79 6F 30 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 79 6F 30 34 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 6B 79 6F 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 6B 79 6F 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 35 31 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 35 31 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 35 31 5F 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 35 31 5F 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 79 6F 30 34 63 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 79 6F 30 34 63 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 79 6F 30 34 63 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 79 6F 30 34 63 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 79 6F 30 34 63 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 31 34 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 33 64 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 31 33 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 33 38 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 33 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 79 6F 33 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 35 36 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 35 36 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 35 36 5F 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 35 36 5F 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 35 33 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 35 33 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 35 33 5F 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 32 65 79 65 71 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 32 33 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 32 33 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 30 5F 30 37 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 34 33 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 34 33 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 34 33 5F 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 30 5F 30 37 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 6B 79 6F 30 35 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 6B 79 6F 30 37 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 6B 79 6F 30 36 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 36 69 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 79 6F 30 37 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 79 6F 30 37 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 79 6F 30 32 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 79 6F 33 34 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 79 6F 33 34 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 79 6F 33 34 63 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 79 6F 33 34 64 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 79 6F 33 34 65 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 79 6F 33 34 66 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 79 6F 33 34 67 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 79 6F 33 34 68 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 31 34 63 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 32 31 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 30 5F 30 38 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 72 65 67 5F 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 79 6F 33 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 79 6F 33 31 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 79 6F 33 31 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 79 6F 33 31 63 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 79 6F 33 31 64 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 79 6F 33 31 65 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 79 6F 33 31 66 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 79 6F 33 31 67 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 79 6F 33 31 68 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 79 6F 33 32 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 31 39 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 32 30 71 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 32 34 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 32 34 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 32 34 5F 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 79 6F 33 33 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 6B 79 6F 65 64 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 36 6F 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 36 66 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 33 67 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 65 69 30 32 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 36 72 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 65 69 30 35 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 65 69 30 35 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 34 31 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 34 31 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 34 31 5F 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 6B 65 69 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 6B 65 69 30 32 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 6B 65 69 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 6B 65 69 30 33 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 65 69 33 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 36 30 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 32 65 79 65 6B 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 6B 65 69 30 31 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 33 5F 30 35 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 33 31 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 33 31 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 33 31 5F 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 33 31 5F 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 33 69 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 34 30 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 34 30 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 34 30 5F 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 34 30 5F 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 33 39 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 33 39 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 33 39 5F 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 6B 65 69 30 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 33 5F 30 36 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 6B 65 69 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 6B 65 69 30 36 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 33 5F 30 35 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 65 69 30 35 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 6B 65 69 30 35 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 6B 65 69 30 37 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 33 5F 30 35 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 36 70 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 65 69 30 31 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 65 69 30 32 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 65 69 30 33 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 65 69 30 34 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 65 69 30 35 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 65 69 30 37 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 65 69 30 36 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 33 63 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6B 31 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6B 31 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6B 31 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6B 31 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6B 31 35 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6B 31 36 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6B 31 37 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6B 31 38 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6B 32 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 30 30 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 32 30 6B 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 33 37 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 33 5F 30 35 63 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 65 69 33 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 65 69 33 33 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 65 69 33 33 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 65 69 33 33 63 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 65 69 33 33 64 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 65 69 33 33 65 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 65 69 33 33 66 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 65 69 33 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 65 69 33 32 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 65 69 33 32 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6B 65 69 33 32 63 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 6B 65 69 65 64 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 73 79 61 69 73 75 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 73 79 61 31 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 73 79 61 31 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 73 79 61 31 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 73 79 61 33 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 73 79 61 33 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 73 79 61 33 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 73 79 61 33 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 73 79 61 32 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 73 79 61 32 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 63 6F 6E 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6E 61 6F 30 32 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 35 30 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 35 30 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 35 30 5F 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 31 36 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6E 61 6F 30 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6E 61 6F 31 31 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6E 61 6F 33 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 33 68 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6E 61 6F 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6E 61 6F 30 33 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 6E 61 6F 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 6E 61 6F 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 35 39 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 35 39 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 35 39 5F 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 32 65 79 65 6E 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 30 31 63 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6E 61 6F 33 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6E 61 6F 33 31 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6E 61 6F 33 31 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 34 37 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 34 37 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 34 37 5F 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6E 61 7A 6F 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6E 61 7A 6F 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 33 30 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 6E 61 6F 30 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 6E 61 6F 30 35 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 72 65 67 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 32 37 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 32 32 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6D 61 6F 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6D 61 6F 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6D 61 6F 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6E 61 6F 33 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 6E 61 6F 30 37 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 6E 61 6F 30 36 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 34 32 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 34 32 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 34 32 5F 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 31 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 31 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 31 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 31 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 31 35 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 31 36 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 31 37 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 31 38 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 32 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 32 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 32 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 32 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 32 35 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 32 36 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 32 37 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 32 38 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 33 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 33 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 33 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 33 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 33 35 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 33 36 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 33 37 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 33 38 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 34 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 30 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 30 35 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 30 36 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 34 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 34 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 34 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 34 35 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 34 36 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 34 37 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 34 38 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 35 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 30 37 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 30 38 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 30 39 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 35 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 35 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 35 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 35 35 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 35 36 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 35 37 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 35 38 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 6E 36 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 31 30 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 31 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 32 30 6E 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6E 61 6F 30 32 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 6E 61 6F 33 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 6E 61 6F 65 64 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 33 36 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 31 37 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 31 30 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 33 34 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 33 34 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 68 61 72 75 30 37 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 68 61 72 75 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 68 61 72 75 30 31 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 68 61 72 75 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 68 61 72 75 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 35 35 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 35 35 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 35 35 5F 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 68 61 72 75 30 39 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 73 79 6F 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 73 79 6F 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 31 38 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 39 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 36 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 67 5F 31 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 36 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 32 5F 31 38 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 35 34 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 35 34 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 32 65 79 65 68 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 69 6E 75 30 33 31 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 69 6E 75 30 33 32 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 69 6E 75 30 33 33 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 69 6E 75 30 33 34 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 69 6E 75 30 33 35 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 69 6E 75 30 33 36 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 68 61 72 75 30 31 63 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 68 61 72 75 30 31 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 68 61 72 75 30 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 68 61 72 75 30 35 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 68 61 72 75 30 37 63 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 68 61 72 75 30 37 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 79 6F 30 31 63 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 79 6F 30 32 63 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6B 79 6F 30 35 63 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 33 33 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 68 61 72 75 30 36 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 68 61 72 75 30 36 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 32 38 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 32 38 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 33 5F 30 36 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 32 30 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 32 30 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 68 61 72 75 30 38 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 30 5F 30 38 64 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 30 5F 30 38 63 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 72 65 67 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 31 5F 30 37 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 33 66 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 33 5F 30 33 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 33 65 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 33 5F 30 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 33 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 33 31 61 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 33 31 62 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 33 31 63 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 32 35 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 32 35 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 33 5F 30 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 33 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 33 5F 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 33 5F 30 34 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 73 61 30 35 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 62 67 30 5F 30 31 63 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 68 61 72 75 30 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 64 32 30 68 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 35 37 5F 31 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 35 37 5F 32 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 65 66 35 37 5F 33 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 61 72 75 65 64 2E 5F 62 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00,00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+[/group]
