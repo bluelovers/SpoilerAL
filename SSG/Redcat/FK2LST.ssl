@@ -1,0 +1,80 @@
+[group]FK2_SSG
+[note]wordwrap
+未クリアにつき、データのバックアップは忘れずに。
+
+ターン数：
+実データにつき、即表示に反映されるわけではありません。
+
+敵も操作可能：
+索敵範囲外に出ると視認不可になるため操作できなくなります。
+[/note]
+
+[subject]SLGパート関連:dir
+ [subject]無限行動可能化/実行/_:toggle,0x429C30,33C0408BD0898168030000EB0A,8B9168030000B8010000003BD0
+ [subject]敵も操作可能/実行/_:toggle,0x41DBB5,EB0490909090,0F85DA000000
+ [subject]自軍ＭＰ減らない/実行/_:b_toggle,0x00,FK2LST->FK2_a,offset
+[back]
+
+[size]4
+
+[subject]パラメータ関連:dir
+ [io_fep]$Val-1,$Val+1
+  [subject]ターン数/現在値/_:calc,_[:[:[:[:0x498E3C:]+0x40:]+0x08:]+0x0C:]+0x0104,0x0000,0x03E6,unsigned
+ [/io_fep]
+ [replace]_[:[:[:[:[:[:0x498E3C:]+0x40:]+0x08:]+0x0C:]+0x013C:]+0xF8:],FK2LST->FK2_PR
+[back]
+
+[/size]
+
+[/group]
+
+
+[group]FK2_PR
+[subject]王女信頼度/現在値/_:calc,0x0C,0x0000,0x0190,unsigned
+[e_with],0x000000,0x0F423F,unsigned
+ [subject]資金/現在値/固定:calc,0x10
+ [subject]資源/現在値/固定:calc,0x1C
+[/e_with]
+[subject]種族別友好度:dir
+[subject]一括最大化/実行/_:toggle,0x2C,0x67-64000000
+[repeat]FK2LST->FK2REP1,0,15,1
+[back]
+[/group]
+
+
+[group]FK2REP1
+[subject][! @FK2LST->LST_a,$Val !]/現在値/_:calc,0x[! 0x2C+0x04*$Val !],-100,100,signed
+[/group]
+
+
+[group]LST_a
+人間
+エルフ
+ドワーフ
+オーク
+ゴブリン
+ドラコーン
+ダークネス
+ダークエルフ
+リザードマン
+ケンタウロス
+トリトーン
+巨人
+ファルコン
+エンジェル
+デーモン
+[/group]
+
+
+[group]FK2_a
+0x42C25B,E9304705009090,8A510B8B442404
+0x480990,8A5109,000000
+0x480993,3A1528EE2201,000000000000
+0x480999,750B,0000
+0x48099B,8A510C,000000
+0x48099E,8364240400,0000000000
+0x4809A3,88510B,000000
+0x4809A6,8A510B,000000
+0x4809A9,8B442404,00000000
+0x4809AD,E9B0B8FAFF,0000000000
+[/group]
