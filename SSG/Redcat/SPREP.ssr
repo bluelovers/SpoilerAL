@@ -1,0 +1,1 @@
+[subject][! @SPLST->LST_c,$Val !]:calc,0x[! 0x4AF998+$Val*4 !],0x00,0x0D,unsigned,little_e
