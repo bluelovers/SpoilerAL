@@ -1,0 +1,731 @@
+SSG for SpoilerAL ver 3.9
+
+[script]
+[title]王子さま Lv1
+[process]SYSTEM39.EXE
+[maker]アリスブルー
+[creator]KEI
+[adjustment]heap,heap2=0x006E0000>0x009FFFFF,heap3=0x00A00000>0x02E0FFFF
+[note]wordwrap
+System 3.9 Version5.16専用です。
+System 3.9のバージョンが違うと使用できません。
+Windows 98SEとWindows Meで動作を確認しています。
+アイテムの個数を変更する場合は、先に取得済みにしてからにして下さい。
+未取得だと個数が反映されません。
+モンスターのHP常に1は固定しておくと、出会ったモンスターのHPが1になっています。
+画面上では変化ないようですが、ちゃんと1になっているので闘わずして捕獲できます。
+闘えば一撃で倒せます。
+スキルはスキル屋に行かなくても変更可能です。
+BL追加ディスクをインストールしていない場合は、アダルトモードONには
+チェックをしないで下さい。アダルトモードへの分岐地点でゲームが止まります。
+[/note]
+[subject]アダルトモードON:toggle,0xAB3204,01,00
+[subject]はらへらずON:toggle,0xAB31F2,01,00
+[subject]戦闘勝利ON:toggle,0xAB31F4,01,00
+[subject]壁通り抜けON:toggle,0xAB31F6,01,00
+[subject]敵出現なしON:toggle,0xAB31F8,01,00
+[subject]敵大量出現ON:toggle,0xAB31FA,01,00
+[subject]Lv20で戦闘有りON:toggle,0xAB3204,01,00
+[subject]お金:calc,0xAB32CC,0x0,0xFFFF,signed,little_e
+[subject]はらぺこ指数 :calc,0xAB32CE,0x0,999,signed,little_e
+[subject]現在EXP:calc,0xAB32D6,0x0,0xFFFF,signed,little_e
+[subject]次レベルまでのEXP:calc,0xAB32D8,0x0,0xFFFF,signed,little_e
+[subject]捕獲しているモンスター:list,0xAB32DA,王子モンスターリスト,0,1
+[subject]同行モンスター:list,_ [_ [: 0xA1DF48 :] _]+0x04,王子モンスターリスト,0,1
+[subject]モンスターの現在HP:calc,0xAB3266,0x0,0xFFFF,signed,little_e
+[subject]モンスターの最大HP:calc,0xAB3268,0x0,0xFFFF,signed,little_e
+[subject]モンスターのHP常に1: toggle, 0xAB3266, *{ 0000 :: 0000 :: 0100 *} , ??
+[subject]全スキル取得:b_toggle,_ [_ [: 0xA1DF6C :] _],王子スキル,offset
+[subject]全武器・防具取得:b_toggle,_ [_ [: 0xA1DF3C :] _],王子装備,offset
+[subject]レンタル可能モンスター:d_list,_ [_ [: 0xA1DF60 :] _],王子モンスターリスト,0,1,王子モンスターリスト2,offset
+[subject]通常アイテム:dir
+	[subject]全通常アイテム取得済: toggle,_ [_ [: 0xA1DF78 :] _]+0x02 , 010001000100010001000100010001000100, ??
+	[subject]全通常アイテム99個: toggle,_ [_ [: 0xA1DF30 :] _]+0x02 , 630063006300630063006300630063006300, ??
+	[subject]世色癌:calc,_ [_ [: 0xA1DF30 :] _]+0x02,0x0,0x63,signed,little_e
+	[subject]世色癌２:calc,_ [_ [: 0xA1DF30 :] _]+0x04,0x0,0x63,signed,little_e
+	[subject]世色癌３:calc,_ [_ [: 0xA1DF30 :] _]+0x06,0x0,0x63,signed,little_e
+	[subject]竜角惨:calc,_ [_ [: 0xA1DF30 :] _]+0x08,0x0,0x63,signed,little_e
+	[subject]まんが肉:calc,_ [_ [: 0xA1DF30 :] _]+0x0A,0x0,0x63,signed,little_e
+	[subject]帰り木:calc,_ [_ [: 0xA1DF30 :] _]+0x0C,0x0,0x63,signed,little_e
+	[subject]爆発茸:calc,_ [_ [: 0xA1DF30 :] _]+0x0E,0x0,0x63,signed,little_e
+	[subject]復活の小判:calc,_ [_ [: 0xA1DF30 :] _]+0x10,0x0,0x63,signed,little_e
+	[subject]捕獲ロープ:calc,_ [_ [: 0xA1DF30 :] _]+0x12,0x0,0x63,signed,little_e
+[back]
+[subject]イベントアイテム:dir
+	[subject]全イベントアイテム取得済: toggle,_ [_ [: 0xA1DF78 :] _]+0x28 ,_ [_ [: 0xA1DF78 :] _]+0x70-0100, ??
+	[subject]全イベントアイテム99個: toggle,_ [_ [: 0xA1DF30 :] _]+0x28 ,_ [_ [: 0xA1DF30 :] _]+0x70-6300, ??
+	[subject]封じの壺:calc,_ [_ [: 0xA1DF30 :] _]+0x28,0x0,0x63,signed,little_e
+	[subject]照魔の香:calc,_ [_ [: 0xA1DF30 :] _]+0x2A,0x0,0x63,signed,little_e
+	[subject]壺:calc,_ [_ [: 0xA1DF30 :] _]+0x2C,0x0,0x63,signed,little_e
+	[subject]チーズケーキ:calc,_ [_ [: 0xA1DF30 :] _]+0x2E,0x0,0x63,signed,little_e
+	[subject]幸福きゃんきゃん:calc,_ [_ [: 0xA1DF30 :] _]+0x30,0x0,0x63,signed,little_e
+	[subject]材木:calc,_ [_ [: 0xA1DF30 :] _]+0x32,0x0,0x63,signed,little_e
+	[subject]よい土:calc,_ [_ [: 0xA1DF30 :] _]+0x34,0x0,0x63,signed,little_e
+	[subject]うっぴー:calc,_ [_ [: 0xA1DF30 :] _]+0x36,0x0,0x63,signed,little_e
+	[subject]赤ぴこハンマー:calc,_ [_ [: 0xA1DF30 :] _]+0x38,0x0,0x63,signed,little_e
+	[subject]青ぴこハンマー:calc,_ [_ [: 0xA1DF30 :] _]+0x3A,0x0,0x63,signed,little_e
+	[subject]緑ぴこハンマー:calc,_ [_ [: 0xA1DF30 :] _]+0x3C,0x0,0x63,signed,little_e
+	[subject]ゴールデン捕獲ロープ:calc,_ [_ [: 0xA1DF30 :] _]+0x3E,0x0,0x63,signed,little_e
+	[subject]じょにー:calc,_ [_ [: 0xA1DF30 :] _]+0x40,0x0,0x63,signed,little_e
+	[subject]盗賊団の鍵:calc,_ [_ [: 0xA1DF30 :] _]+0x42,0x0,0x63,signed,little_e
+	[subject]ぬいぐるみ:calc,_ [_ [: 0xA1DF30 :] _]+0x44,0x0,0x63,signed,little_e
+	[subject]ゴムボート:calc,_ [_ [: 0xA1DF30 :] _]+0x46,0x0,0x63,signed,little_e
+	[subject]木のボート:calc,_ [_ [: 0xA1DF30 :] _]+0x48,0x0,0x63,signed,little_e
+	[subject]父上の肖像画:calc,_ [_ [: 0xA1DF30 :] _]+0x4A,0x0,0x63,signed,little_e
+	[subject]スタンプシート:calc,_ [_ [: 0xA1DF30 :] _]+0x4C,0x0,0x63,signed,little_e
+	[subject]湯浴みのペナント:calc,_ [_ [: 0xA1DF30 :] _]+0x4E,0x0,0x63,signed,little_e
+	[subject]懐ゲーのペナント:calc,_ [_ [: 0xA1DF30 :] _]+0x50,0x0,0x63,signed,little_e
+	[subject]グルメのペナント:calc,_ [_ [: 0xA1DF30 :] _]+0x52,0x0,0x63,signed,little_e
+	[subject]マサジのペナント:calc,_ [_ [: 0xA1DF30 :] _]+0x54,0x0,0x63,signed,little_e
+	[subject]卓球のペナント:calc,_ [_ [: 0xA1DF30 :] _]+0x56,0x0,0x63,signed,little_e
+	[subject]湯かげんの珠:calc,_ [_ [: 0xA1DF30 :] _]+0x58,0x0,0x63,signed,little_e
+	[subject]わくわくの珠:calc,_ [_ [: 0xA1DF30 :] _]+0x5A,0x0,0x63,signed,little_e
+	[subject]封印はがし:calc,_ [_ [: 0xA1DF30 :] _]+0x5C,0x0,0x63,signed,little_e
+	[subject]耐寒コート:calc,_ [_ [: 0xA1DF30 :] _]+0x5E,0x0,0x63,signed,little_e
+	[subject]アンモスの肉:calc,_ [_ [: 0xA1DF30 :] _]+0x60,0x0,0x63,signed,little_e
+	[subject]ナタブームの子分:calc,_ [_ [: 0xA1DF30 :] _]+0x62,0x0,0x63,signed,little_e
+	[subject]バケツ:calc,_ [_ [: 0xA1DF30 :] _]+0x64,0x0,0x63,signed,little_e
+	[subject]青い宝玉:calc,_ [_ [: 0xA1DF30 :] _]+0x66,0x0,0x63,signed,little_e
+	[subject]赤い宝玉:calc,_ [_ [: 0xA1DF30 :] _]+0x68,0x0,0x63,signed,little_e
+	[subject]いかなご:calc,_ [_ [: 0xA1DF30 :] _]+0x6A,0x0,0x63,signed,little_e
+	[subject]温泉たまご:calc,_ [_ [: 0xA1DF30 :] _]+0x6C,0x0,0x63,signed,little_e
+	[subject]よい氷:calc,_ [_ [: 0xA1DF30 :] _]+0x6E,0x0,0x63,signed,little_e
+	[subject]スパイメモ:calc,_ [_ [: 0xA1DF30 :] _]+0x70,0x0,0x63,signed,little_e
+[back]
+[subject]写真:dir
+	[subject]全写真取得済: toggle,_ [_ [: 0xA1DF78 :] _]+0x8C , 010001000100010001000100, ??
+	[subject]全写真99個: toggle,_ [_ [: 0xA1DF30 :] _]+0x8C , 630063006300630063006300, ??
+	[subject]じょにぃの生写真１:calc,_ [_ [: 0xA1DF30 :] _]+0x8C,0x0,0x63,signed,little_e
+	[subject]じょにぃの生写真２:calc,_ [_ [: 0xA1DF30 :] _]+0x8E,0x0,0x63,signed,little_e
+	[subject]写真Ａの断片:calc,_ [_ [: 0xA1DF30 :] _]+0x90,0x0,0x63,signed,little_e
+	[subject]写真Ｂの断片:calc,_ [_ [: 0xA1DF30 :] _]+0x92,0x0,0x63,signed,little_e
+	[subject]写真Ｃの断片:calc,_ [_ [: 0xA1DF30 :] _]+0x94,0x0,0x63,signed,little_e
+	[subject]写真Ｄの断片:calc,_ [_ [: 0xA1DF30 :] _]+0x96,0x0,0x63,signed,little_e
+[back]
+[subject]キャラデータ:dir
+	[subject]カナン:dir
+		[subject]レベル:calc,_ [_ [: 0xA1DE58 :] _],0x0,0xFFFF,signed,little_e
+		[subject]最大体力:calc,_ [_ [: 0xA1DE70 :] _],0x0,0xFFFF,signed,little_e
+		[subject]現在体力:calc,_ [_ [: 0xA1DE64 :] _],0x0,0xFFFF,signed,little_e
+		[subject]最大気力:calc,_ [_ [: 0xA1DE88 :] _],0x0,0xFFFF,signed,little_e
+		[subject]現在気力:calc,_ [_ [: 0xA1DE7C :] _],0x0,0xFFFF,signed,little_e
+		[subject]攻撃力:calc,_ [_ [: 0xA1DE94 :] _],0x0,0xFFFF,signed,little_e
+		[subject]防御力:calc,_ [_ [: 0xA1DEA0 :] _],0x0,0xFFFF,signed,little_e
+		[subject]魔法力:calc,_ [_ [: 0xA1DEAC :] _],0x0,0xFFFF,signed,little_e
+		[subject]魔抵力:calc,_ [_ [: 0xA1DEB8 :] _],0x0,0xFFFF,signed,little_e
+		[subject]回避力:calc,_ [_ [: 0xA1DEC4 :] _],0x0,0xFFFF,signed,little_e
+		[subject]装備武器:d_list,_ [_ [: 0xA1DEDC :] _],王子装備品,0,FF,王子装備品2,offset
+		[subject]装備防具:d_list,_ [_ [: 0xA1DEE8 :] _],王子装備品,0,FF,王子装備品2,offset
+		[subject]1番目のスキル:d_list,_ [_ [: 0xA1DEF4 :] _],王子スキルリスト,0,FF,王子スキルリスト2,offset
+		[subject]2番目のスキル:d_list,_ [_ [: 0xA1DF00 :] _],王子スキルリスト,0,FF,王子スキルリスト2,offset
+		[subject]3番目のスキル:d_list,_ [_ [: 0xA1DF0C :] _],王子スキルリスト,0,FF,王子スキルリスト2,offset
+		[subject]4番目のスキル:d_list,_ [_ [: 0xA1DF18 :] _],王子スキルリスト,0,FF,王子スキルリスト2,offset
+		[subject]5番目のスキル:d_list,_ [_ [: 0xA1DF24 :] _],王子スキルリスト,0,FF,王子スキルリスト2,offset
+		[subject]攻撃力修正:calc,_ [_ [: 0xA1DF84 :] _],0x0,0xFFFF,signed,little_e
+		[subject]防御力修正:calc,_ [_ [: 0xA1DF84 :] _]+0x02,0x0,0xFFFF,signed,little_e
+		[subject]魔法力修正:calc,_ [_ [: 0xA1DF84 :] _]+0x04,0x0,0xFFFF,signed,little_e
+		[subject]魔抵力修正:calc,_ [_ [: 0xA1DF84 :] _]+0x06,0x0,0xFFFF,signed,little_e
+		[subject]回避力修正:calc,_ [_ [: 0xA1DF84 :] _]+0x08,0x0,0xFFFF,signed,little_e
+	[back]
+	[subject]セレスト:dir
+		[subject]レベル:calc,_ [_ [: 0xA1DE58 :] _]+0x02,0x0,0xFFFF,signed,little_e
+		[subject]最大体力:calc,_ [_ [: 0xA1DE70 :] _]+0x02,0x0,0xFFFF,signed,little_e
+		[subject]現在体力:calc,_ [_ [: 0xA1DE64 :] _]+0x02,0x0,0xFFFF,signed,little_e
+		[subject]最大気力:calc,_ [_ [: 0xA1DE88 :] _]+0x02,0x0,0xFFFF,signed,little_e
+		[subject]現在気力:calc,_ [_ [: 0xA1DE7C :] _]+0x02,0x0,0xFFFF,signed,little_e
+		[subject]攻撃力:calc,_ [_ [: 0xA1DE94 :] _]+0x02,0x0,0xFFFF,signed,little_e
+		[subject]防御力:calc,_ [_ [: 0xA1DEA0 :] _]+0x02,0x0,0xFFFF,signed,little_e
+		[subject]魔法力:calc,_ [_ [: 0xA1DEAC :] _]+0x02,0x0,0xFFFF,signed,little_e
+		[subject]魔抵力:calc,_ [_ [: 0xA1DEB8 :] _]+0x02,0x0,0xFFFF,signed,little_e
+		[subject]回避力:calc,_ [_ [: 0xA1DEC4 :] _]+0x02,0x0,0xFFFF,signed,little_e
+		[subject]装備武器:d_list,_ [_ [: 0xA1DEDC :] _]+0x02,王子装備品,0,FF,王子装備品2,offset
+		[subject]装備防具:d_list,_ [_ [: 0xA1DEE8 :] _]+0x02,王子装備品,0,FF,王子装備品2,offset
+		[subject]1番目のスキル:d_list,_ [_ [: 0xA1DEF4 :] _]+0x02,王子スキルリスト,0,FF,王子スキルリスト2,offset
+		[subject]2番目のスキル:d_list,_ [_ [: 0xA1DF00 :] _]+0x02,王子スキルリスト,0,FF,王子スキルリスト2,offset
+		[subject]3番目のスキル:d_list,_ [_ [: 0xA1DF0C :] _]+0x02,王子スキルリスト,0,FF,王子スキルリスト2,offset
+		[subject]4番目のスキル:d_list,_ [_ [: 0xA1DF18 :] _]+0x02,王子スキルリスト,0,FF,王子スキルリスト2,offset
+		[subject]5番目のスキル:d_list,_ [_ [: 0xA1DF24 :] _]+0x02,王子スキルリスト,0,FF,王子スキルリスト2,offset
+		[subject]攻撃力修正:calc,_ [_ [: 0xA1DF84 :] _]+0x0E,0x0,0xFFFF,signed,little_e
+		[subject]防御力修正:calc,_ [_ [: 0xA1DF84 :] _]+0x10,0x0,0xFFFF,signed,little_e
+		[subject]魔法力修正:calc,_ [_ [: 0xA1DF84 :] _]+0x12,0x0,0xFFFF,signed,little_e
+		[subject]魔抵力修正:calc,_ [_ [: 0xA1DF84 :] _]+0x14,0x0,0xFFFF,signed,little_e
+		[subject]回避力修正:calc,_ [_ [: 0xA1DF84 :] _]+0x16,0x0,0xFFFF,signed,little_e
+		[subject]やられ率:calc,_ [_ [: 0xA1DED0 :] _]+0x02,0x0,0x64,signed,little_e
+	[back]
+[back]
+[subject]同行モンスターデータ:dir
+	[subject]きゃんきゃん:dir
+		[subject]最大体力:calc,_ [_ [: 0xA1DE70 :] _]+0x04,0x0,0xFFFF,signed,little_e
+		[subject]現在体力:calc,_ [_ [: 0xA1DE64 :] _]+0x04,0x0,0xFFFF,signed,little_e
+		[subject]攻撃力:calc,_ [_ [: 0xA1DE94 :] _]+0x04,0x0,0xFFFF,signed,little_e
+		[subject]防御力:calc,_ [_ [: 0xA1DEA0 :] _]+0x04,0x0,0xFFFF,signed,little_e
+		[subject]魔法力:calc,_ [_ [: 0xA1DEAC :] _]+0x04,0x0,0xFFFF,signed,little_e
+		[subject]魔抵力:calc,_ [_ [: 0xA1DEB8 :] _]+0x04,0x0,0xFFFF,signed,little_e
+		[subject]回避力:calc,_ [_ [: 0xA1DEC4 :] _]+0x04,0x0,0xFFFF,signed,little_e
+		[subject]やられ率:calc,_ [_ [: 0xA1DED0 :] _]+0x04,0x0,0x64,signed,little_e
+	[back]
+	[subject]シャノアール:dir
+		[subject]最大体力:calc,_ [_ [: 0xA1DE70 :] _]+0x06,0x0,0xFFFF,signed,little_e
+		[subject]現在体力:calc,_ [_ [: 0xA1DE64 :] _]+0x06,0x0,0xFFFF,signed,little_e
+		[subject]攻撃力:calc,_ [_ [: 0xA1DE94 :] _]+0x06,0x0,0xFFFF,signed,little_e
+		[subject]防御力:calc,_ [_ [: 0xA1DEA0 :] _]+0x06,0x0,0xFFFF,signed,little_e
+		[subject]魔法力:calc,_ [_ [: 0xA1DEAC :] _]+0x06,0x0,0xFFFF,signed,little_e
+		[subject]魔抵力:calc,_ [_ [: 0xA1DEB8 :] _]+0x06,0x0,0xFFFF,signed,little_e
+		[subject]回避力:calc,_ [_ [: 0xA1DEC4 :] _]+0x06,0x0,0xFFFF,signed,little_e
+		[subject]やられ率:calc,_ [_ [: 0xA1DED0 :] _]+0x06,0x0,0x64,signed,little_e
+	[back]
+	[subject]うし使い:dir
+		[subject]最大体力:calc,_ [_ [: 0xA1DE70 :] _]+0x08,0x0,0xFFFF,signed,little_e
+		[subject]現在体力:calc,_ [_ [: 0xA1DE64 :] _]+0x08,0x0,0xFFFF,signed,little_e
+		[subject]攻撃力:calc,_ [_ [: 0xA1DE94 :] _]+0x08,0x0,0xFFFF,signed,little_e
+		[subject]防御力:calc,_ [_ [: 0xA1DEA0 :] _]+0x08,0x0,0xFFFF,signed,little_e
+		[subject]魔法力:calc,_ [_ [: 0xA1DEAC :] _]+0x08,0x0,0xFFFF,signed,little_e
+		[subject]魔抵力:calc,_ [_ [: 0xA1DEB8 :] _]+0x08,0x0,0xFFFF,signed,little_e
+		[subject]回避力:calc,_ [_ [: 0xA1DEC4 :] _]+0x08,0x0,0xFFFF,signed,little_e
+		[subject]やられ率:calc,_ [_ [: 0xA1DED0 :] _]+0x08,0x0,0x64,signed,little_e
+	[back]
+	[subject]すいかハンマー:dir
+		[subject]最大体力:calc,_ [_ [: 0xA1DE70 :] _]+0x0A,0x0,0xFFFF,signed,little_e
+		[subject]現在体力:calc,_ [_ [: 0xA1DE64 :] _]+0x0A,0x0,0xFFFF,signed,little_e
+		[subject]攻撃力:calc,_ [_ [: 0xA1DE94 :] _]+0x0A,0x0,0xFFFF,signed,little_e
+		[subject]防御力:calc,_ [_ [: 0xA1DEA0 :] _]+0x0A,0x0,0xFFFF,signed,little_e
+		[subject]魔法力:calc,_ [_ [: 0xA1DEAC :] _]+0x0A,0x0,0xFFFF,signed,little_e
+		[subject]魔抵力:calc,_ [_ [: 0xA1DEB8 :] _]+0x0A,0x0,0xFFFF,signed,little_e
+		[subject]回避力:calc,_ [_ [: 0xA1DEC4 :] _]+0x0A,0x0,0xFFFF,signed,little_e
+		[subject]やられ率:calc,_ [_ [: 0xA1DED0 :] _]+0x0A,0x0,0x64,signed,little_e
+	[back]
+	[subject]ハチ少年:dir
+		[subject]最大体力:calc,_ [_ [: 0xA1DE70 :] _]+0x0C,0x0,0xFFFF,signed,little_e
+		[subject]現在体力:calc,_ [_ [: 0xA1DE64 :] _]+0x0C,0x0,0xFFFF,signed,little_e
+		[subject]攻撃力:calc,_ [_ [: 0xA1DE94 :] _]+0x0C,0x0,0xFFFF,signed,little_e
+		[subject]防御力:calc,_ [_ [: 0xA1DEA0 :] _]+0x0C,0x0,0xFFFF,signed,little_e
+		[subject]魔法力:calc,_ [_ [: 0xA1DEAC :] _]+0x0C,0x0,0xFFFF,signed,little_e
+		[subject]魔抵力:calc,_ [_ [: 0xA1DEB8 :] _]+0x0C,0x0,0xFFFF,signed,little_e
+		[subject]回避力:calc,_ [_ [: 0xA1DEC4 :] _]+0x0C,0x0,0xFFFF,signed,little_e
+		[subject]やられ率:calc,_ [_ [: 0xA1DED0 :] _]+0x0C,0x0,0x64,signed,little_e
+	[back]
+	[subject]やぎさん:dir
+		[subject]最大体力:calc,_ [_ [: 0xA1DE70 :] _]+0x0E,0x0,0xFFFF,signed,little_e
+		[subject]現在体力:calc,_ [_ [: 0xA1DE64 :] _]+0x0E,0x0,0xFFFF,signed,little_e
+		[subject]攻撃力:calc,_ [_ [: 0xA1DE94 :] _]+0x0E,0x0,0xFFFF,signed,little_e
+		[subject]防御力:calc,_ [_ [: 0xA1DEA0 :] _]+0x0E,0x0,0xFFFF,signed,little_e
+		[subject]魔法力:calc,_ [_ [: 0xA1DEAC :] _]+0x0E,0x0,0xFFFF,signed,little_e
+		[subject]魔抵力:calc,_ [_ [: 0xA1DEB8 :] _]+0x0E,0x0,0xFFFF,signed,little_e
+		[subject]回避力:calc,_ [_ [: 0xA1DEC4 :] _]+0x0E,0x0,0xFFFF,signed,little_e
+		[subject]やられ率:calc,_ [_ [: 0xA1DED0 :] _]+0x0E,0x0,0x64,signed,little_e
+	[back]
+	[subject]ちゃぷちゃぷ:dir
+		[subject]最大体力:calc,_ [_ [: 0xA1DE70 :] _]+0x10,0x0,0xFFFF,signed,little_e
+		[subject]現在体力:calc,_ [_ [: 0xA1DE64 :] _]+0x10,0x0,0xFFFF,signed,little_e
+		[subject]攻撃力:calc,_ [_ [: 0xA1DE94 :] _]+0x10,0x0,0xFFFF,signed,little_e
+		[subject]防御力:calc,_ [_ [: 0xA1DEA0 :] _]+0x10,0x0,0xFFFF,signed,little_e
+		[subject]魔法力:calc,_ [_ [: 0xA1DEAC :] _]+0x10,0x0,0xFFFF,signed,little_e
+		[subject]魔抵力:calc,_ [_ [: 0xA1DEB8 :] _]+0x10,0x0,0xFFFF,signed,little_e
+		[subject]回避力:calc,_ [_ [: 0xA1DEC4 :] _]+0x10,0x0,0xFFFF,signed,little_e
+		[subject]やられ率:calc,_ [_ [: 0xA1DED0 :] _]+0x10,0x0,0x64,signed,little_e
+	[back]
+	[subject]金魚使い:dir
+		[subject]最大体力:calc,_ [_ [: 0xA1DE70 :] _]+0x12,0x0,0xFFFF,signed,little_e
+		[subject]現在体力:calc,_ [_ [: 0xA1DE64 :] _]+0x12,0x0,0xFFFF,signed,little_e
+		[subject]攻撃力:calc,_ [_ [: 0xA1DE94 :] _]+0x12,0x0,0xFFFF,signed,little_e
+		[subject]防御力:calc,_ [_ [: 0xA1DEA0 :] _]+0x12,0x0,0xFFFF,signed,little_e
+		[subject]魔法力:calc,_ [_ [: 0xA1DEAC :] _]+0x12,0x0,0xFFFF,signed,little_e
+		[subject]魔抵力:calc,_ [_ [: 0xA1DEB8 :] _]+0x12,0x0,0xFFFF,signed,little_e
+		[subject]回避力:calc,_ [_ [: 0xA1DEC4 :] _]+0x12,0x0,0xFFFF,signed,little_e
+		[subject]やられ率:calc,_ [_ [: 0xA1DED0 :] _]+0x12,0x0,0x64,signed,little_e
+	[back]
+	[subject]まげにゃん:dir
+		[subject]最大体力:calc,_ [_ [: 0xA1DE70 :] _]+0x14,0x0,0xFFFF,signed,little_e
+		[subject]現在体力:calc,_ [_ [: 0xA1DE64 :] _]+0x14,0x0,0xFFFF,signed,little_e
+		[subject]攻撃力:calc,_ [_ [: 0xA1DE94 :] _]+0x14,0x0,0xFFFF,signed,little_e
+		[subject]防御力:calc,_ [_ [: 0xA1DEA0 :] _]+0x14,0x0,0xFFFF,signed,little_e
+		[subject]魔法力:calc,_ [_ [: 0xA1DEAC :] _]+0x14,0x0,0xFFFF,signed,little_e
+		[subject]魔抵力:calc,_ [_ [: 0xA1DEB8 :] _]+0x14,0x0,0xFFFF,signed,little_e
+		[subject]回避力:calc,_ [_ [: 0xA1DEC4 :] _]+0x14,0x0,0xFFFF,signed,little_e
+		[subject]やられ率:calc,_ [_ [: 0xA1DED0 :] _]+0x14,0x0,0x64,signed,little_e
+	[back]
+	[subject]フローズン:dir
+		[subject]最大体力:calc,_ [_ [: 0xA1DE70 :] _]+0x16,0x0,0xFFFF,signed,little_e
+		[subject]現在体力:calc,_ [_ [: 0xA1DE64 :] _]+0x16,0x0,0xFFFF,signed,little_e
+		[subject]攻撃力:calc,_ [_ [: 0xA1DE94 :] _]+0x16,0x0,0xFFFF,signed,little_e
+		[subject]防御力:calc,_ [_ [: 0xA1DEA0 :] _]+0x16,0x0,0xFFFF,signed,little_e
+		[subject]魔法力:calc,_ [_ [: 0xA1DEAC :] _]+0x16,0x0,0xFFFF,signed,little_e
+		[subject]魔抵力:calc,_ [_ [: 0xA1DEB8 :] _]+0x16,0x0,0xFFFF,signed,little_e
+		[subject]回避力:calc,_ [_ [: 0xA1DEC4 :] _]+0x16,0x0,0xFFFF,signed,little_e
+		[subject]やられ率:calc,_ [_ [: 0xA1DED0 :] _]+0x16,0x0,0x64,signed,little_e
+	[back]
+	[subject]DEATH夫:dir
+		[subject]最大体力:calc,_ [_ [: 0xA1DE70 :] _]+0x18,0x0,0xFFFF,signed,little_e
+		[subject]現在体力:calc,_ [_ [: 0xA1DE64 :] _]+0x18,0x0,0xFFFF,signed,little_e
+		[subject]攻撃力:calc,_ [_ [: 0xA1DE94 :] _]+0x18,0x0,0xFFFF,signed,little_e
+		[subject]防御力:calc,_ [_ [: 0xA1DEA0 :] _]+0x18,0x0,0xFFFF,signed,little_e
+		[subject]魔法力:calc,_ [_ [: 0xA1DEAC :] _]+0x18,0x0,0xFFFF,signed,little_e
+		[subject]魔抵力:calc,_ [_ [: 0xA1DEB8 :] _]+0x18,0x0,0xFFFF,signed,little_e
+		[subject]回避力:calc,_ [_ [: 0xA1DEC4 :] _]+0x18,0x0,0xFFFF,signed,little_e
+		[subject]やられ率:calc,_ [_ [: 0xA1DED0 :] _]+0x18,0x0,0x64,signed,little_e
+	[back]
+	[subject]まじしゃん:dir
+		[subject]最大体力:calc,_ [_ [: 0xA1DE70 :] _]+0x1A,0x0,0xFFFF,signed,little_e
+		[subject]現在体力:calc,_ [_ [: 0xA1DE64 :] _]+0x1A,0x0,0xFFFF,signed,little_e
+		[subject]攻撃力:calc,_ [_ [: 0xA1DE94 :] _]+0x1A,0x0,0xFFFF,signed,little_e
+		[subject]防御力:calc,_ [_ [: 0xA1DEA0 :] _]+0x1A,0x0,0xFFFF,signed,little_e
+		[subject]魔法力:calc,_ [_ [: 0xA1DEAC :] _]+0x1A,0x0,0xFFFF,signed,little_e
+		[subject]魔抵力:calc,_ [_ [: 0xA1DEB8 :] _]+0x1A,0x0,0xFFFF,signed,little_e
+		[subject]回避力:calc,_ [_ [: 0xA1DEC4 :] _]+0x1A,0x0,0xFFFF,signed,little_e
+		[subject]やられ率:calc,_ [_ [: 0xA1DED0 :] _]+0x1A,0x0,0x64,signed,little_e
+	[back]
+	[subject]エスパー二世:dir
+		[subject]最大体力:calc,_ [_ [: 0xA1DE70 :] _]+0x1C,0x0,0xFFFF,signed,little_e
+		[subject]現在体力:calc,_ [_ [: 0xA1DE64 :] _]+0x1C,0x0,0xFFFF,signed,little_e
+		[subject]攻撃力:calc,_ [_ [: 0xA1DE94 :] _]+0x1C,0x0,0xFFFF,signed,little_e
+		[subject]防御力:calc,_ [_ [: 0xA1DEA0 :] _]+0x1C,0x0,0xFFFF,signed,little_e
+		[subject]魔法力:calc,_ [_ [: 0xA1DEAC :] _]+0x1C,0x0,0xFFFF,signed,little_e
+		[subject]魔抵力:calc,_ [_ [: 0xA1DEB8 :] _]+0x1C,0x0,0xFFFF,signed,little_e
+		[subject]回避力:calc,_ [_ [: 0xA1DEC4 :] _]+0x1C,0x0,0xFFFF,signed,little_e
+		[subject]やられ率:calc,_ [_ [: 0xA1DED0 :] _]+0x1C,0x0,0x64,signed,little_e
+	[back]
+	[subject]神風:dir
+		[subject]最大体力:calc,_ [_ [: 0xA1DE70 :] _]+0x1E,0x0,0xFFFF,signed,little_e
+		[subject]現在体力:calc,_ [_ [: 0xA1DE64 :] _]+0x1E,0x0,0xFFFF,signed,little_e
+		[subject]攻撃力:calc,_ [_ [: 0xA1DE94 :] _]+0x1E,0x0,0xFFFF,signed,little_e
+		[subject]防御力:calc,_ [_ [: 0xA1DEA0 :] _]+0x1E,0x0,0xFFFF,signed,little_e
+		[subject]魔法力:calc,_ [_ [: 0xA1DEAC :] _]+0x1E,0x0,0xFFFF,signed,little_e
+		[subject]魔抵力:calc,_ [_ [: 0xA1DEB8 :] _]+0x1E,0x0,0xFFFF,signed,little_e
+		[subject]回避力:calc,_ [_ [: 0xA1DEC4 :] _]+0x1E,0x0,0xFFFF,signed,little_e
+		[subject]やられ率:calc,_ [_ [: 0xA1DED0 :] _]+0x1E,0x0,0x64,signed,little_e
+	[back]
+	[subject]オーディン:dir
+		[subject]最大体力:calc,_ [_ [: 0xA1DE70 :] _]+0x20,0x0,0xFFFF,signed,little_e
+		[subject]現在体力:calc,_ [_ [: 0xA1DE64 :] _]+0x20,0x0,0xFFFF,signed,little_e
+		[subject]攻撃力:calc,_ [_ [: 0xA1DE94 :] _]+0x20,0x0,0xFFFF,signed,little_e
+		[subject]防御力:calc,_ [_ [: 0xA1DEA0 :] _]+0x20,0x0,0xFFFF,signed,little_e
+		[subject]魔法力:calc,_ [_ [: 0xA1DEAC :] _]+0x20,0x0,0xFFFF,signed,little_e
+		[subject]魔抵力:calc,_ [_ [: 0xA1DEB8 :] _]+0x20,0x0,0xFFFF,signed,little_e
+		[subject]回避力:calc,_ [_ [: 0xA1DEC4 :] _]+0x20,0x0,0xFFFF,signed,little_e
+		[subject]やられ率:calc,_ [_ [: 0xA1DED0 :] _]+0x20,0x0,0x64,signed,little_e
+	[back]
+	[subject]幸福きゃんきゃん:dir
+		[subject]最大体力:calc,_ [_ [: 0xA1DE70 :] _]+0x22,0x0,0xFFFF,signed,little_e
+		[subject]現在体力:calc,_ [_ [: 0xA1DE64 :] _]+0x22,0x0,0xFFFF,signed,little_e
+		[subject]攻撃力:calc,_ [_ [: 0xA1DE94 :] _]+0x22,0x0,0xFFFF,signed,little_e
+		[subject]防御力:calc,_ [_ [: 0xA1DEA0 :] _]+0x22,0x0,0xFFFF,signed,little_e
+		[subject]魔法力:calc,_ [_ [: 0xA1DEAC :] _]+0x22,0x0,0xFFFF,signed,little_e
+		[subject]魔抵力:calc,_ [_ [: 0xA1DEB8 :] _]+0x22,0x0,0xFFFF,signed,little_e
+		[subject]回避力:calc,_ [_ [: 0xA1DEC4 :] _]+0x22,0x0,0xFFFF,signed,little_e
+		[subject]やられ率:calc,_ [_ [: 0xA1DED0 :] _]+0x22,0x0,0x64,signed,little_e
+	[back]
+	[subject]スパイ伊藤:dir
+		[subject]最大体力:calc,_ [_ [: 0xA1DE70 :] _]+0x24,0x0,0xFFFF,signed,little_e
+		[subject]現在体力:calc,_ [_ [: 0xA1DE64 :] _]+0x24,0x0,0xFFFF,signed,little_e
+		[subject]攻撃力:calc,_ [_ [: 0xA1DE94 :] _]+0x24,0x0,0xFFFF,signed,little_e
+		[subject]防御力:calc,_ [_ [: 0xA1DEA0 :] _]+0x24,0x0,0xFFFF,signed,little_e
+		[subject]魔法力:calc,_ [_ [: 0xA1DEAC :] _]+0x24,0x0,0xFFFF,signed,little_e
+		[subject]魔抵力:calc,_ [_ [: 0xA1DEB8 :] _]+0x24,0x0,0xFFFF,signed,little_e
+		[subject]回避力:calc,_ [_ [: 0xA1DEC4 :] _]+0x24,0x0,0xFFFF,signed,little_e
+		[subject]やられ率:calc,_ [_ [: 0xA1DED0 :] _]+0x24,0x0,0x64,signed,little_e
+	[back]
+	[subject]聖幻獣:dir
+		[subject]最大体力:calc,_ [_ [: 0xA1DE70 :] _]+0x26,0x0,0xFFFF,signed,little_e
+		[subject]現在体力:calc,_ [_ [: 0xA1DE64 :] _]+0x26,0x0,0xFFFF,signed,little_e
+		[subject]攻撃力:calc,_ [_ [: 0xA1DE94 :] _]+0x26,0x0,0xFFFF,signed,little_e
+		[subject]防御力:calc,_ [_ [: 0xA1DEA0 :] _]+0x26,0x0,0xFFFF,signed,little_e
+		[subject]魔法力:calc,_ [_ [: 0xA1DEAC :] _]+0x26,0x0,0xFFFF,signed,little_e
+		[subject]魔抵力:calc,_ [_ [: 0xA1DEB8 :] _]+0x26,0x0,0xFFFF,signed,little_e
+		[subject]回避力:calc,_ [_ [: 0xA1DEC4 :] _]+0x26,0x0,0xFFFF,signed,little_e
+		[subject]やられ率:calc,_ [_ [: 0xA1DED0 :] _]+0x26,0x0,0x64,signed,little_e
+	[back]
+[back]
+[subject]CGモード全開: toggle, _ [_ [: 0xA1DF90 :] _]+0x02, _ [_ [: 0xA1DF90 :] _]+0x161-0100, ?? 
+[subject]回想モード全開: toggle, _ [_ [: 0xA1DF9C :] _], _ [_ [: 0xA1DF9C :] _]+0x1B1-0100, ?? 
+[subject]温泉卵の状態:list,0xAB34D6,王子卵,0,1
+[subject]拾った壷の状態:list,0xAB341C,王子壷,0,1
+[/script]
+
+[script]
+[title]Apocripha/0 アレクディスク
+[process]SS_ADV3.EXE
+[maker]Stacksoftware
+[creator]KEI
+[note]wordwrap
+アレクディスク専用です。
+Windows 98SEとWindows Meで動作を確認しています。
+カードバトルの役は複数選択しないで下さい。
+ロイヤルストレートは最強の共同技ですが、ゲームの進行によって
+単独で戦闘をする場合はダメージを与えられませんので負けます。
+別の技を選ぶか無効にしてください。
+チェック形式とリスト形式がありますので、好みで使ってください。
+どちらも同じ物です。
+●デバッグモードについて。
+環境設定にデバッグタブが出てくるようになります。
+デバッグ機能を有効にしているとタイトルバーに現在の状態が出てきます。
+Alt+DでFlagモニタ、Alt+Fで分岐順路のウィンドウが立ち上がります。
+FlagモニタはEditにチェックを入れると書き換えられるようになります。
+Hexが16進表記、Decが10進表記です。
+●Extraモードについて。
+エンディングを迎えていない場合は、スタートメニューに表示されないので
+有効にしてから、ロードを選び戻ってください。
+●その他裏技
+インストール先のフォルダにあるSS_ADV3.INIというファイルを書き換えることによって
+各種機能が追加されます。
+一番下の行のSystemMenu=0をSystemMenu=1と書き換えると
+タイトルバーの下にシステムメニュー等が出現します。
+下から4行目のPopUpMenu=0をPopUpMenu=1に書き換えると
+右クリックでポップアップメニューが開くようになります。
+下から57行目のMesBackMenu=0をMesBackMenu=1に書き換えると
+メッセージ履歴の画面のポップアップメニューが右クリックで開くようになります。
+●他方もインストールしたことにするについて
+プラチナディスクをインストールしたことになりますので、未インストールでも
+Extraモードが開き、最初から始めるとプラチナディスクをインストールしないと
+見られないイベントなども見られます。
+[/note]
+[subject]デバッグモードON:b_toggle,0x400000,アポクリモニタ,offset
+[subject]Extraモード全開:b_toggle,0x6D0000,アポCG,offset
+[subject]他方もインストールしたことにするON:toggle,0xE72D9E,01,00
+[subject]感情値:dir
+	[subject]アレク:calc,0xEB20D4,0,999,signed,little_e
+	[subject]プラチナ:calc,0xEB20D8,0,999,signed,little_e
+	[subject]サフィルス:calc,0xEB20DC,0,999,signed,little_e
+	[subject]ジェイド:calc,0xEB20E0,0,999,signed,little_e
+	[subject]ベリル:calc,0xEB20E4,0,999,signed,little_e
+	[subject]ジル:calc,0xEB20E8,0,999,signed,little_e
+	[subject]ロード:calc,0xEB20EC,0,999,signed,little_e
+	[subject]プラム:calc,0xEB20F0,0,999,signed,little_e
+	[subject]カロール:calc,0xEB20F4,0,999,signed,little_e
+	[subject]ルビイ:calc,0xEB20F8,0,999,signed,little_e
+[back]
+[subject]仲間フラグ:dir
+	[subject]仲間A群:d_list,0xEA63C0,仲間A1,0,1,仲間A2,offset
+	[subject]仲間B群:d_list,0xEA63C0,仲間B1,0,1,仲間B2,offset
+	[subject]仲間C群:d_list,0xEA63C0,仲間C1,0,1,仲間C2,offset
+[back]
+[subject]カードバトルの役:dir
+	[subject]いつでもロイヤルストレート:b_toggle,0x400000,ロイヤル,offset
+	[subject]いつでも全聖霊召還:b_toggle,0x400000,聖霊,offset
+[back]
+[subject]カードバトルの役:d_list,0x400000,カード1,0,65535,カード2,offset
+[/script]
+
+[script]
+[title]隠れ月
+[process]SYSTEM38.EXE
+[maker]アリスブルー
+[creator]KEI
+[adjustment]heap,heap2=0x006C0000>0x008CFFFF,heap3=0x008D0000>0x01D3FFFF
+[note]wordwrap
+System3.8 Version4.03専用です。
+Windows 98SEとWindows Meで動作を確認しています。
+[/note]
+[subject]デバッグモードON:toggle,0x8D4F1E,01,00
+[subject]模擬＆技ON:toggle,0x8D4F20,0x8D4F34-0100,0000
+[subject]回想モード全開:b_toggle,0x957000,月回想,offset
+[subject]CGモード全開:b_toggle,0x957000,月CG,offset
+[subject]日時:dir
+	[subject]月:calc,0x8D4EE4,0,12,signed,little_e
+	[subject]日:calc,0x8D4EE2,0,31,signed,little_e
+	[subject]曜日:list,0x8D4EE6,月曜日,1,1
+[back]
+[subject]通常パラメーター:dir
+	[subject]最大体力:calc,0x8D4EEA,0,9999,signed,little_e
+	[subject]現在体力:calc,0x8D4EEC,0,9999,signed,little_e
+	[subject]最大HP:calc,0x8D4EF6,0,9999,signed,little_e
+	[subject]現在HP:calc,0x8D4EF8,0,9999,signed,little_e
+	[subject]法:calc,0x8D4EEE,0,999,signed,little_e
+	[subject]武:calc,0x8D4EF0,0,999,signed,little_e
+	[subject]識:calc,0x8D4EF2,0,999,signed,little_e
+	[subject]魔:calc,0x8D4EF4,0,20,signed,little_e
+[back]
+[subject]戦闘時パラメーター:dir
+	[subject]現在合目:calc,0x8D4E56,0,10,signed,little_e
+	[subject]召還モンスター:d_list,0x8D50E6,月モンスター1,0,255,月モンスター2,offset
+	[subject]現在体力:calc,0x8D50EC,0,9999,signed,little_e
+	[subject]攻撃力:calc,0x8D50EE,0,999,signed,little_e
+	[subject]防御力:calc,0x8D50F0,0,999,signed,little_e
+	[subject]魔法力:calc,0x8D50F2,0,999,signed,little_e
+	[subject]魔抵抗:calc,0x8D50F4,0,999,signed,little_e
+[back]
+[subject]戦闘時敵パラメーター:dir
+	[subject]現在体力:calc,0x8D5102,0,9999,signed,little_e
+	[subject]攻撃力:calc,0x8D5104,0,999,signed,little_e
+	[subject]防御力:calc,0x8D5106,0,999,signed,little_e
+	[subject]魔法力:calc,0x8D5108,0,999,signed,little_e
+	[subject]魔抵抗:calc,0x8D510A,0,999,signed,little_e
+[back]
+[/script]
+
+[script]
+[title]Apocripha/0 プラチナディスク
+[process]SS_ADV3.EXE
+[maker]Stacksoftware
+[creator]KEI
+[note]wordwrap
+プラチナディスク専用です。
+Windows 98SEとWindows Meで動作を確認しています。
+カードバトルの役は複数選択しないで下さい。
+ロイヤルストレートは最強の共同技ですが、ゲームの進行によって
+単独で戦闘をする場合はダメージを与えられませんので負けます。
+別の技を選ぶか無効にしてください。
+チェック形式とリスト形式がありますので、好みで使ってください。
+どちらも同じ物です。
+●デバッグモードについて。
+環境設定にデバッグタブが出てくるようになります。
+デバッグ機能を有効にしているとタイトルバーに現在の状態が出てきます。
+また戦闘は勝利したことになってスキップします。
+Alt+DでFlagモニタ、Alt+Fで分岐順路のウィンドウが立ち上がります。
+FlagモニタはEditにチェックを入れると書き換えられるようになります。
+Hexが16進表記、Decが10進表記です。
+●Extraモードについて。
+エンディングを迎えていない場合は、スタートメニューに表示されないので
+有効にしてから、ロードを選び戻ってください。
+●その他裏技
+インストール先のフォルダにあるSS_ADV3.INIというファイルを書き換えることによって
+各種機能が追加されます。
+一番下の行のSystemMenu=0をSystemMenu=1と書き換えると
+タイトルバーの下にシステムメニュー等が出現します。
+下から4行目のPopUpMenu=0をPopUpMenu=1に書き換えると
+右クリックでポップアップメニューが開くようになります。
+下から57行目のMesBackMenu=0をMesBackMenu=1に書き換えると
+メッセージ履歴の画面のポップアップメニューが右クリックで開くようになります。
+●他方もインストールしたことにするについて
+アレクディスクをインストールしたことになりますので、未インストールでも
+Extraモードが開き、最初から始めるとアレクディスクをインストールしないと
+見られないイベントなども見られます。
+[/note]
+[subject]デバッグモードON:b_toggle,0x4003D0,アポクリモニタ,offset
+[subject]Extraモード全開:b_toggle,0x6CFF00,アポCG,offset
+[subject]他方もインストールしたことにするON:toggle,0xE72D1E,01,00
+[subject]感情値:dir
+	[subject]アレク:calc,0xEB1D14,0,999,signed,little_e
+	[subject]プラチナ:calc,0xEB1D18,0,999,signed,little_e
+	[subject]サフィルス:calc,0xEB1D1C,0,999,signed,little_e
+	[subject]ジェイド:calc,0xEB1D20,0,999,signed,little_e
+	[subject]ベリル	:calc,0xEB1D24,0,999,signed,little_e
+	[subject]ジル:calc,0xEB1D28,0,999,signed,little_e
+	[subject]ロード:calc,0xEB1D2C,0,999,signed,little_e
+	[subject]プラム:calc,0xEB1D30,0,999,signed,little_e
+	[subject]カロール:calc,0xEB1D34,0,999,signed,little_e
+	[subject]ルビイ:calc,0xEB1D38,0,999,signed,little_e
+[back]
+[subject]仲間フラグ:dir
+	[subject]仲間A群:d_list,0xEA6000,仲間A1,0,1,仲間A2,offset
+	[subject]仲間B群:d_list,0xEA6000,仲間B1,0,1,仲間B2,offset
+	[subject]仲間C群:d_list,0xEA6000,仲間C1,0,1,仲間C2,offset
+[back]
+[subject]カードバトルの役:dir
+	[subject]いつでもロイヤルストレート:b_toggle,0x400314,ロイヤル,offset
+	[subject]いつでも全聖霊召還:b_toggle,0x400314,聖霊,offset
+[back]
+[subject]カードバトルの役:d_list,0x400314,カード1,0,65535,カード2,offset
+[/script]
+
+[script]
+[title]Only you -リ・クルス-
+[process]SYSTEM39.EXE
+[maker]AliceSoft
+[creator]KEI
+[adjustment]heap,heap2=0x006E0000>0x009FFFFF,heap3=0x00A00000>0x02B9FFFF
+[note]wordwrap
+System 3.9 Version5.16専用です。
+System 3.9のバージョンが違うと使用できません。
+Windows 98SEとWindows Meで動作を確認しています。
+[/note]
+[subject]破滅メーター:calc,0xAEC07E,0,65535,signed,little_e
+[subject]時間:calc,0xAEC074,0,27,signed,little_e
+[subject]CNT:calc,0xAA4EF2,0,65535,signed,little_e
+[subject]敵番号:calc,0xAEC292,0,100,signed,little_e
+[subject]CG・回想全開:b_toggle,0xAA0000,onlycg,offset
+[subject]戦闘中:dir
+	[subject]1ターン目:d_list,0xAEC2AE,only技1,0,999,only技2,offset
+	[subject]2ターン目:d_list,0xAEC2B0,only技1,0,999,only技2,offset
+	[subject]3ターン目:d_list,0xAEC2B2,only技1,0,999,only技2,offset
+	[subject]1ターン目漢ON:toggle,0xAEC2B4,01,00
+	[subject]2ターン目漢ON:toggle,0xAEC2B6,01,00
+	[subject]3ターン目漢ON:toggle,0xAEC2B8,01,00
+[back]
+[subject]僕自身:dir
+	[subject]レベル:calc,0xAA4A42,0,1000,signed,little_e
+	[subject]EXP:calc,0xAA4E2A,0,65535,signed,little_e
+	[subject]最大HP:calc,0xAA433A,0,65535,signed,little_e
+	[subject]現在HP:calc,0xAA4B0A,0,65535,signed,little_e
+	[subject]攻撃力:calc,0xAA4BD2,0,65535,signed,little_e
+	[subject]防御力:calc,0xAA4C9A,0,65535,signed,little_e
+	[subject]素早さ:calc,0xAA4D62,0,65535,signed,little_e
+	[subject]漢:calc,0xAEC29E,0,20,signed,little_e
+	[subject]心:list,0xAEC2AA,only心,0,1
+	[subject]ステータス:dir
+		[subject]正常:toggle,0xAEC0AA,01,00
+		[subject]眠り:toggle,0xAEC2A4,01,00
+		[subject]痺れ:toggle,0xAEC2A6,01,00
+		[subject]毒:toggle,0xAEC2A8,01,00
+	[back]
+[back]
+[subject]キャラ:dir
+	[subject]本命:list,0xAEC4AC,only愛,0,1
+	[subject]幸福Ｋ:calc,0xAEC4B6,0,255,signed,little_e
+	[subject]不幸Ｋ:calc,0xAEC4B4,0,255,signed,little_e
+	[subject]状態:dir
+		[subject]まゆ:list,0xAEC496,only状態,0,1
+		[subject]美咲:list,0xAEC498,only状態,0,1
+		[subject]来夢:list,0xAEC49A,only状態,0,1
+		[subject]あやめ:list,0xAEC49C,only状態,0,1
+		[subject]萌木:list,0xAEC49E,only状態,0,1
+		[subject]ミュシャ:list,0xAEC4A0,only状態,0,1
+		[subject]麗蘭:list,0xAEC4A2,only状態,0,1
+		[subject]軽井沢:list,0xAEC4A4,only状態,0,1
+	[back]
+	[subject]値:dir
+		[subject]まゆ:calc,0xAEC47A,0,65535,signed,little_e
+		[subject]美咲:calc,0xAEC47C,0,65535,signed,little_e
+		[subject]来夢:calc,0xAEC47E,0,65535,signed,little_e
+		[subject]あやめ:calc,0xAEC480,0,65535,signed,little_e
+		[subject]萌木:calc,0xAEC482,0,65535,signed,little_e
+		[subject]ミュシャ:calc,0xAEC484,0,65535,signed,little_e
+		[subject]麗蘭:calc,0xAEC486,0,65535,signed,little_e
+		[subject]軽井沢:calc,0xAEC488,0,65535,signed,little_e
+	[back]
+	[subject]日数:dir
+		[subject]まゆ:calc,0xAEC71A,0,65535,signed,little_e
+		[subject]美咲:calc,0xAEC71C,0,65535,signed,little_e
+		[subject]来夢:calc,0xAEC720,0,65535,signed,little_e
+		[subject]あやめ:calc,0xAEC722,0,65535,signed,little_e
+		[subject]萌木:calc,0xAEC72A,0,65535,signed,little_e
+		[subject]ミュシャ:calc,0xAEC724,0,65535,signed,little_e
+		[subject]麗蘭:calc,0xAEC726,0,65535,signed,little_e
+		[subject]軽井沢:calc,0xAEC71E,0,65535,signed,little_e
+	[back]
+[back]
+[/script]
+
+[script]
+[title]闘神都市Ⅱ
+[process]SYSTEM35.EXE
+[maker]Alice Soft
+[creator]KEI
+[note]wordwrap
+System3.5 Version1.12専用です。
+Windows 98SEとWindows Meで動作を確認しています。
+●インチキモードについて
+・爆弾岩出現とラクガキ1号出現率UP以外は固定推奨です。（チェックが消えなければ固定解消しても良い）
+・デバッグの剣、手加減攻撃３は特殊攻撃の欄に追加されます。
+・手加減攻撃３は、敵のHPを残り５にします。女の子モンスターの捕獲に役立ちます。
+・デバッグモードの入り口は初期メニューの一番下の空欄です。
+・3番目の項目が正解ですが必要なファイルが削除されているため、強制終了します。
+・爆弾岩出現は、戦闘中にチェックをしてサーチすれば現れます。
+・ラム出現率は、EXPやお金を減らす嫌なキャラを全部ラムに変更します。
+・ラム捕獲率ですが、レベル30以上で捕獲ロープを持っていると自動で捕獲します。
+・死んでも生き返るは、ゲームオーバー画面になってから生き返ります。
+・ラクガキ1号出現率UPは、迷宮戦士の替わりに出現します。（捕獲できても逃げます。）
+[/note]
+[subject]インチキモード:dir
+	[subject]デバッグの剣使用可能:toggle,_ [: 0x4BE300 :] +0x10F4,*{ 7D :: 7C *},7D
+	[subject]手加減攻撃３使用可能:b_toggle,_ [: 0x4BE300 :] +0x113B,t2手加減3,offset
+	[subject]スパイ斎藤出現頻度UP:toggle,_ [: 0x4BDDD8 :] +0x120B,*{ 7B :: 7E *},7B
+	[subject]アリスの館出現:toggle,_ [: 0x4BDDD8 :] +0x2E45,*{ 40 :: 45 *},40
+	[subject]ヒント&グラフィック出現:toggle,_ [: 0x4BDDD8 :] +0x2E67,*{ 287B :: 297C *},287B
+	[subject]デバッグモード入り口OPEN:toggle,_ [: 0x4BDDD8 :]+0x125B,*{ 7B :: 7E *},7B
+	[subject]死んでも生き返る:toggle,_ [: 0x4BE3A0 :]+0x347,*{ 7B :: 7E *},7B
+	[subject]爆弾岩出現:toggle,_ [: 0x4BE288 :]+0x6BE,*{ 7B :: 7E *},7B
+	[subject]ラム出現率&捕獲率UP:b_toggle,_ [: 0x4BE350 :] +0x145,t2ラム,offset
+	[subject]ラクガキ1号出現率UP:b_toggle,_ [: 0x4BE288 :] +0x01,t2ラクガキ,offset
+[back]
+[subject]日付:calc,0x43A9E8,0,65535,signed,little_e
+[subject]装備品全部:toggle,0x43A7B6,0x43A846-0100,??
+[subject]技能全部:toggle,0x43A9A4,0x43A9C8-0100,??
+[subject]烈・風・天の剣65535回:toggle,0x43A9AC,FFFFFFFFFFFF,??
+[subject]魔法全部:toggle,0x43A848,FFFF01000100FFFF010001000100FFFFFFFFFFFFFFFFFFFF0100FFFF010001000100,??
+[subject]所有モンスター全部:toggle,0x43A8A4,0x43A910-0300,??
+[subject]消費アイテム99個:b_toggle,0x43A000,t2消費アイテム,offset
+[subject]アイテムFULL:b_toggle,0x43A000,t2アイテム,offset
+[subject]お供モンスター:d_list,0x43AAEE,t2お供1,0,999,t2お供2,offset
+[subject]主人公パラメーター:dir
+	[subject]クラス:list,0x43A718,t2クラス,0,1
+	[subject]LV:calc,0x43A71A,0,65535,signed,little_e
+	[subject]お金:calc,0x43A734,0,65535,signed,little_e
+	[subject]経験値:calc,0x43A71C,0,65535,signed,little_e
+	[subject]最大HP:calc,0x43A720,0,65535,signed,little_e
+	[subject]現在HP:calc,0x43A71E,0,65535,signed,little_e
+	[subject]最大SP:calc,0x43A724,0,65535,signed,little_e
+	[subject]現在SP:calc,0x43A722,0,65535,signed,little_e
+	[subject]攻撃力:calc,0x43A726,0,65535,signed,little_e
+	[subject]防御力:calc,0x43A728,0,65535,signed,little_e
+	[subject]魔力:calc,0x43A72A,0,65535,signed,little_e
+	[subject]抵抗力:calc,0x43A72C,0,65535,signed,little_e
+	[subject]命中:calc,0x43A72E,0,65535,signed,little_e
+	[subject]回避:calc,0x43A730,0,65535,signed,little_e
+	[subject]必殺:calc,0x43A732,0,100,signed,little_e
+	[subject]悪事:calc,0x43A7A8,0,65535,signed,little_e
+[back]
+[subject]戦闘時敵パラメーター:dir
+	[subject]敵最弱:b_toggle,0x43AA18,t2敵,offset
+	[subject]現在体力:calc,0x43AA18,0,65535,signed,little_e
+	[subject]最大体力:calc,0x43AA76,0,65535,signed,little_e
+	[subject]防御力:calc,0x43AA1C,0,65535,signed,little_e
+	[subject]回避力:calc,0x43AA1A,0,65535,signed,little_e
+	[subject]自己回復力:calc,0x43AA22,0,65535,signed,little_e
+	[subject]魔法抵抗:calc,0x43AA28,0,65535,signed,little_e
+	[subject]攻撃回数:calc,0x43AA24,0,65535,signed,little_e
+	[subject]獲得経験値:calc,0x43AA1E,0,65535,signed,little_e
+	[subject]獲得最大GOLD:calc,0x43AA20,0,65535,signed,little_e
+	[subject]防御属性:dir
+		[subject]全属性致命:toggle,0x43AA2A,0x43AA34-0300,??
+		[subject]直:d_list,0x43AA2A,t2防御属性1,0,999,t2防御属性2,offset
+		[subject]炎:d_list,0x43AA2C,t2防御属性1,0,999,t2防御属性2,offset
+		[subject]氷:d_list,0x43AA2E,t2防御属性1,0,999,t2防御属性2,offset
+		[subject]雷:d_list,0x43AA30,t2防御属性1,0,999,t2防御属性2,offset
+		[subject]光:d_list,0x43AA32,t2防御属性1,0,999,t2防御属性2,offset
+		[subject]闇:d_list,0x43AA34,t2防御属性1,0,999,t2防御属性2,offset
+	[back]
+	[subject]攻撃方法:dir
+		[subject]１つめ:dir
+			[subject]攻撃方法:list,0x43AA3A,t2攻撃方法,1,1
+			[subject]攻撃:calc,0x43AA3C,0,65535,signed,little_e
+			[subject]命中:calc,0x43AA3E,0,65535,signed,little_e
+			[subject]必殺:calc,0x43AA40,0,65535,signed,little_e
+			[subject]攻撃属性:d_list,0x43AA42,t2攻撃属性1,0,999,t2攻撃属性2,offset
+		[back]
+		[subject]２つめ:dir
+			[subject]攻撃方法:list,0x43AA4E,t2攻撃方法,1,1
+			[subject]攻撃:calc,0x43AA50,0,65535,signed,little_e
+			[subject]命中:calc,0x43AA52,0,65535,signed,little_e
+			[subject]必殺:calc,0x43AA54,0,65535,signed,little_e
+			[subject]攻撃属性:d_list,0x43AA56,t2攻撃属性1,0,999,t2攻撃属性2,offset
+		[back]
+		[subject]３つめ:dir
+			[subject]攻撃方法:list,0x43AA62,t2攻撃方法,1,1
+			[subject]攻撃:calc,0x43AA64,0,65535,signed,little_e
+			[subject]命中:calc,0x43AA66,0,65535,signed,little_e
+			[subject]必殺:calc,0x43AA68,0,65535,signed,little_e
+			[subject]攻撃属性:d_list,0x43AA6A,t2攻撃属性1,0,999,t2攻撃属性2,offset
+		[back]
+[back]
+[/script]
+
+[script]
+[title]Apocripha/0 FANBOX Happiness Cage
+[process]SS_ADV3.EXE
+[maker]Stacksoftware
+[creator]KEI
+[note]wordwrap
+Windows 98SEとWindows Meで動作を確認しています。
+●デバッグモードについて。
+環境設定にデバッグタブが出てくるようになります。
+デバッグ機能を有効にしているとタイトルバーに現在の状態が出てきます。
+また戦闘は勝利したことになってスキップします。
+Alt+DでFlagモニタ、Alt+Fで分岐順路のウィンドウが立ち上がります。
+FlagモニタはEditにチェックを入れると書き換えられるようになります。
+Hexが16進表記、Decが10進表記です。
+●Extraモードについて。
+エンディングを迎えていない場合は、スタートメニューに表示されないので
+有効にしてから、ロードを選び戻ってください。
+●その他裏技
+インストール先のフォルダにあるSS_ADV3.INIというファイルを書き換えることによって
+各種機能が追加されます。
+下から6行目のSystemMenu=0をSystemMenu=1と書き換えると
+タイトルバーの下にシステムメニュー等が出現します。
+下から9行目のPopUpMenu=0をPopUpMenu=1に書き換えると
+右クリックでポップアップメニューが開くようになります。
+下から62行目のMesBackMenu=0をMesBackMenu=1に書き換えると
+メッセージ履歴の画面のポップアップメニューが右クリックで開くようになります。
+[/note]
+[subject]デバッグモードON:b_toggle,0x443000,apf->デバッグ,offset
+[subject]Extraモード全開:b_toggle,0x6E8830,apf->エクストラ,offset
+[/script]
