@@ -1,0 +1,47 @@
+[subject]守護聖の性格等:dir
+	[subject]ジュリアス:dir
+		[replace]0x4419E0,ang95,offset
+		[subject]当日会っていないことにする:toggle, 0x4419EF, 00, 01
+		[subject]デートしても時間経たない:t_toggle,0x4419EB,03,off_disregard,00,00,0x4419EB
+	[back]
+	[subject]クラヴィス:dir
+		[replace]0x4419F0,ang95,offset
+		[subject]当日会っていないことにする:toggle, 0x4419FF, 00, 01
+		[subject]デートしても時間経たない:t_toggle,0x4419FB,03,off_disregard,00,00,0x4419FB
+	[back]
+	[subject]ランディ:dir
+		[replace]0x441A00,ang95,offset
+		[subject]当日会っていないことにする:toggle, 0x441A0F, 00, 01
+		[subject]デートしても時間経たない:t_toggle,0x441A0B,03,off_disregard,00,00,0x441A0B
+	[back]
+	[subject]リュミエール:dir
+		[replace]0x441A10,ang95,offset
+		[subject]当日会っていないことにする:toggle, 0x441A1F, 00, 01
+		[subject]デートしても時間経たない:t_toggle,0x441A1B,03,off_disregard,00,00,0x441A1B
+	[back]
+	[subject]オスカー:dir
+		[replace]0x441A20,ang95,offset
+		[subject]当日会っていないことにする:toggle, 0x441A2F, 00, 01
+		[subject]デートしても時間経たない:t_toggle,0x441A2B,03,off_disregard,00,00,0x441A2B
+	[back]
+	[subject]マルセル:dir
+		[replace]0x441A30,ang95,offset
+		[subject]当日会っていないことにする:toggle, 0x441A3F, 00, 01
+		[subject]デートしても時間経たない:t_toggle,0x441A3B,03,off_disregard,00,00,0x441A3B
+	[back]
+	[subject]ゼフェル:dir
+		[replace]0x441A40,ang95,offset
+		[subject]当日会っていないことにする:toggle, 0x441A4F, 00, 01
+		[subject]デートしても時間経たない:t_toggle,0x441A4B,03,off_disregard,00,00,0x441A4B
+	[back]
+	[subject]オリヴィエ:dir
+		[replace]0x441A50,ang95,offset
+		[subject]当日会っていないことにする:toggle, 0x441A5F, 00, 01
+		[subject]デートしても時間経たない:t_toggle,0x441A5B,03,off_disregard,00,00,0x441A5B
+	[back]
+	[subject]ルヴァ:dir
+		[replace]0x441A60,ang95,offset
+		[subject]当日会っていないことにする:toggle, 0x441A6F, 00, 01
+		[subject]デートしても時間経たない:t_toggle,0x441A6B,03,off_disregard,00,00,0x441A6B
+	[back]
+[back]
