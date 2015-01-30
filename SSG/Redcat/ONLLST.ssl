@@ -1,0 +1,65 @@
+[group]ONL_SSG
+[note]wordwrap
+霞魅のアホ毛が動けばなおよかったのにｗ
+[/note]
+
+[subject]パラメータ関連:dir
+ [subject]経験値/現在値/_:calc,0x48617C,0x000000,0x01869F,unsigned
+ [subject]累積経験値/現在値/_:calc,0x486180,0x000000,0x01869F,unsigned
+ [size]2
+  [repeat]ONLLST->ONLREP2,0,3,1
+  [repeat]ONLLST->ONLREP1,0,5,1
+ [/size]
+[back]
+
+[subject]ＣＧモード関連:dir
+ [subject]CG MODE ALL/ＯＮ／ＯＦＦ/_:toggle,_[:0x486160:],_[:0x486160:]+0x0179-0000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF,00
+[back]
+
+[/group]
+
+
+[group]ONLREP1
+[subject][! @ONLLST->LST_a,$Val !]:dir
+ [replace]_[:0x48639C:]+0x[! 0x20*$Val !]+0x20,ONLLST->ONL_PR
+[back]
+[/group]
+
+
+[group]ONLREP2
+[subject][! @ONLLST->LST_b,$Val !]/現在値/_:calc,_[:0x4861EC:]+0x[! 0x02*$Val !]+0x02,0x00,0x63,unsigned
+[/group]
+
+
+[group]LST_a
+八神狼
+鬼流御門
+高槻霞魅
+当麻戀
+龍梨花
+[/group]
+
+
+[group]LST_b
+御門好感度
+霞魅好感度
+梨花好感度
+[/group]
+
+
+[group]ONL_PR
+[subject]一括強化/実行/_:toggle,0x00,E703E703E703E7033200E703E703E703????0600
+[subject]LV/現在値/_:calc,0x08,0x01,0x32,unsigned
+[e_with],0x0001,0x03E7,unsigned
+ [subject]現在HP/現在値/_:calc,0x00
+ [subject]現在AP/現在値/_:calc,0x02
+ [subject]最大HP/現在値/_:calc,0x04
+ [subject]最大AP/現在値/_:calc,0x06
+[/e_with]
+[subject]移動力/現在値/_:calc,0x12,0x00,0x06,unsigned
+[e_with],0x0001,0x0064,unsigned
+ [subject]HIT/現在値/_:calc,0x0A
+ [subject]ATK/現在値/_:calc,0x0C
+ [subject]DEF/現在値/_:calc,0x0E
+[/e_with]
+[/group]
