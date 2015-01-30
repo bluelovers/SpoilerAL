@@ -1,0 +1,5996 @@
+SSG for SpoilerAL ver 3.4
+[script]
+
+[title]BIOHAZARD3 LAST ESCAPE
+
+[process]BIO3_PC.EXE
+
+[maker]CAPCOM
+
+[creator]freecss
+
+[note]
+プレーヤーが担当するジル又は
+カルロスの装備を自由に変更できる・・・かも。
+アイテム変更後は装備し直した方がいいかも。
+セーブ回数設定を付け加えましたので、
+アイテムの表示画像が気になる人はセーブして
+終了した後に再ロードしてください。
+
+注意：各個人の責任において使用してください。
+単位は　　表示しない・・・なし
+　　　　　通常・・・・・・個or発
+　　　　　パーセント・・・％
+　　　　　無限弾・・・・・無限
+の中から適当に選んでください。
+括弧内の色の表示は適当に選んで
+構わないと思います。
+
+弾薬調合経験値のMAXは
+勝手に決めてありますので、
+変更しても構いません。
+但し、ゲーム中に0xFFFFを超えると
+初期値（ゼロ）に戻りますので気をつけて。
+
+[/note]
+
+[subject]セーブ回数:calc,0x00A61110,0x00,0x63,signed,little_e
+
+[subject]ジル・バレンタイン:dir
+[subject]弾薬調合経験値:dir
+	[subject]ハンドガンの弾:calc,0x00A61430,0x0000,0x0FFF,unsigned,little_e
+	[subject]ショットガンの弾:calc,0x00A61432,0x0000,0x0FFF,unsigned,little_e
+	[subject]マグナムの弾:calc,0x00A61434,0x0000,0x0FFF,unsigned,little_e
+	[subject]グレネードの弾:calc,0x00A61436,0x0000,0x0FFF,unsigned,little_e
+[back]
+[subject]所持可能アイテム数:calc,0x00A6142E,0x08,0x0A,signed,little_e
+[subject]アイテム１:dir
+	[replace]0x00A61304,Bio3Item,offset
+[subject]アイテム２:dir
+	[replace]0x00A61308,Bio3Item,offset
+[subject]アイテム３:dir
+	[replace]0x00A6130C,Bio3Item,offset
+[subject]アイテム４:dir
+	[replace]0x00A61310,Bio3Item,offset
+[subject]アイテム５:dir
+	[replace]0x00A61314,Bio3Item,offset
+[subject]アイテム６:dir
+	[replace]0x00A61318,Bio3Item,offset
+[subject]アイテム７:dir
+	[replace]0x00A6131C,Bio3Item,offset
+[subject]アイテム８:dir
+	[replace]0x00A61320,Bio3Item,offset
+[subject]アイテム９:dir
+	[replace]0x00A61324,Bio3Item,offset
+[subject]アイテム１０:dir
+	[replace]0x00A61328,Bio3Item,offset
+[root]
+
+[subject]カルロス・オリヴェイラ:dir
+[subject]弾薬調合経験値:dir
+	[subject]ハンドガンの弾:calc,0x00A61570,0x0000,0x0FFF,unsigned,little_e
+	[subject]ショットガンの弾:calc,0x00A61572,0x0000,0x0FFF,unsigned,little_e
+	[subject]マグナムの弾:calc,0x00A61574,0x0000,0x0FFF,unsigned,little_e
+	[subject]グレネードの弾:calc,0x00A61576,0x0000,0x0FFF,unsigned,little_e
+[back]
+[subject]所持可能アイテム数:calc,0x00A6156E,0x08,0x0A,signed,little_e
+[subject]アイテム１:dir
+	[replace]0x00A61444,Bio3Item,offset
+[subject]アイテム２:dir
+	[replace]0x00A61448,Bio3Item,offset
+[subject]アイテム３:dir
+	[replace]0x00A6144C,Bio3Item,offset
+[subject]アイテム４:dir
+	[replace]0x00A61450,Bio3Item,offset
+[subject]アイテム５:dir
+	[replace]0x00A61454,Bio3Item,offset
+[subject]アイテム６:dir
+	[replace]0x00A61458,Bio3Item,offset
+[subject]アイテム７:dir
+	[replace]0x00A6145C,Bio3Item,offset
+[subject]アイテム８:dir
+	[replace]0x00A61460,Bio3Item,offset
+[subject]アイテム９:dir
+	[replace]0x00A61464,Bio3Item,offset
+[subject]アイテム１０:dir
+	[replace]0x00A61468,Bio3Item,offset
+[root]
+
+[/script]
+
+[script]
+
+[title]BIOHAZARD3 MERCENARIES
+
+[process]BIO3_PC_MERCENARIES.EXE
+
+[maker]CAPCOM
+
+[creator]freecss
+
+[note]
+MERCENARIESの装備を変えることができる・・・はず。
+
+注意：各個人の責任において使用してください。
+これを使って成績を
+ランキングする事のないように！！
+あくまでも色んな条件下での
+ゲームを楽しむ為のものです。
+
+単位は　　表示しない・・・なし
+　　　　　通常・・・・・・個or発
+　　　　　パーセント・・・％
+　　　　　無限弾・・・・・無限
+の中から適当に選んでください。
+括弧内の色の表示は適当に選んで
+構わないと思います。
+
+[/note]
+[subject]所持可能アイテム数:calc,0x00A6142E,0x08,0x0A,signed,little_e
+[subject]アイテム１:dir
+	[replace]0x00A61304,Bio3Item,offset
+[subject]アイテム２:dir
+	[replace]0x00A61308,Bio3Item,offset
+[subject]アイテム３:dir
+	[replace]0x00A6130C,Bio3Item,offset
+[subject]アイテム４:dir
+	[replace]0x00A61310,Bio3Item,offset
+[subject]アイテム５:dir
+	[replace]0x00A61314,Bio3Item,offset
+[subject]アイテム６:dir
+	[replace]0x00A61318,Bio3Item,offset
+[subject]アイテム７:dir
+	[replace]0x00A6131C,Bio3Item,offset
+[subject]アイテム８:dir
+	[replace]0x00A61320,Bio3Item,offset
+[subject]アイテム９:dir
+	[replace]0x00A61324,Bio3Item,offset
+[subject]アイテム１０:dir
+	[replace]0x00A61328,Bio3Item,offset
+[root]
+
+[/script]
+
+[script]
+[title]GUNDAM TACTICS
+[process]GUNDAM.EXE
+[maker]BandaiDigitalEntertainment
+[creator]freecss
+[note]
+かなり古いゲームですから
+持ってる人が少ないかな。
+（へっぽこさんのSSGと
+組み合わせると便利かも）
+相手を強くすることも
+自分を強くすることも
+ご自由に。
+
+注意：各自の責任において使用してください。
+戦艦,モビルスーツ能力はあまり大きな値を選ぶと
+表示、動作がおかしくなります。
+適当な値を入力してください。
+
+[/note]
+
+[subject]戦艦能力変更:dir
+[subject]サラミス:dir
+	[replace]0x0043B538,BS_ability,offset
+[subject]マゼラン:dir
+	[replace]0x0043B562,BS_ability,offset
+[subject]ペガサス:dir
+	[replace]0x0043B58C,BS_ability,offset
+[subject]コロンブス:dir
+	[replace]0x0043B5B6,BS_ability,offset
+[subject]ムサイ:dir
+	[replace]0x0043B5E0,BS_ability,offset
+[subject]ムサイ後期型:dir
+	[replace]0x0043B60A,BS_ability,offset
+[subject]ザンジバル:dir
+	[replace]0x0043B634,BS_ability,offset
+[subject]チベ:dir
+	[replace]0x0043B65E,BS_ability,offset
+[subject]パゾク:dir
+	[replace]0x0043B688,BS_ability,offset
+[root]
+
+[subject]モビルスーツ能力変更:dir
+[subject]ボール:dir
+	[replace]0x0043B6B8,MS_ability,offset
+[subject]ザニー:dir
+	[replace]0x0043B6EE,MS_ability,offset
+[subject]ガンキャノン:dir
+	[replace]0x0043B724,MS_ability,offset
+[subject]コアブースター:dir
+	[replace]0x0043B75A,MS_ability,offset
+[subject]ジム:dir
+	[replace]0x0043B790,MS_ability,offset
+[subject]ジムコマンド:dir
+	[replace]0x0043B7C6,MS_ability,offset
+[subject]ガンダムＧダッシュ:dir
+	[replace]0x0043B7FC,MS_ability,offset
+[subject]ザク:dir
+	[replace]0x0043B832,MS_ability,offset
+[subject]高機動ザク:dir
+	[replace]0x0043B868,MS_ability,offset
+[subject]リック・ドム:dir
+	[replace]0x0043B89E,MS_ability,offset
+[subject]リック・ドムツヴァイ:dir
+	[replace]0x0043B8D4,MS_ability,offset
+[subject]ゲルググ:dir
+	[replace]0x0043B90A,MS_ability,offset
+[subject]ゲルググイェーガー:dir
+	[replace]0x0043B940,MS_ability,offset
+[subject]ビグロマイヤー:dir
+	[replace]0x0043B976,MS_ability,offset
+[root]
+
+[subject]パイロット能力変更:dir
+[subject]レイ　フレミング:dir
+	[replace]0x0043BA50,Pilot_ability,offset
+[subject]ジェームス　フェリエス:dir
+	[replace]0x0043BA88,Pilot_ability,offset
+[subject]デビット　バックナー:dir
+	[replace]0x0043BAC0,Pilot_ability,offset
+[subject]ケン　フランクリン:dir
+	[replace]0x0043BAF8,Pilot_ability,offset
+[subject]モチヅキ　セイザブロー:dir
+	[replace]0x0043BB30,Pilot_ability,offset
+[subject]アイバン　グレーザー:dir
+	[replace]0x0043BB68,Pilot_ability,offset
+[subject]マーレー　ハリス:dir
+	[replace]0x0043BBA0,Pilot_ability,offset
+[subject]ヘイデン　ヘリンズ:dir
+	[replace]0x0043BBD8,Pilot_ability,offset
+[subject]ハロルド　ウィック:dir
+	[replace]0x0043BC10,Pilot_ability,offset
+[subject]クリフォード　パリス:dir
+	[replace]0x0043BC48,Pilot_ability,offset
+[subject]デイル　キングストン:dir
+	[replace]0x0043BC80,Pilot_ability,offset
+[subject]ランディ　マシューズ:dir
+	[replace]0x0043BCB8,Pilot_ability,offset
+[subject]ジョセフ　ページ:dir
+	[replace]0x0043BCF0,Pilot_ability,offset
+[subject]ドミニク　カズンズ:dir
+	[replace]0x0043BD28,Pilot_ability,offset
+[subject]エリック　ワグナー:dir
+	[replace]0x0043BD60,Pilot_ability,offset
+[subject]ネルソン　グロスバード:dir
+	[replace]0x0043BD98,Pilot_ability,offset
+[subject]ロイド　ブリッジス:dir
+	[replace]0x0043BDD0,Pilot_ability,offset
+[subject]ゴードン　キンブル:dir
+	[replace]0x0043BE08,Pilot_ability,offset
+[subject]エドモンド　ハイマン:dir
+	[replace]0x0043BE40,Pilot_ability,offset
+[subject]ユベット　クレマン:dir
+	[replace]0x0043BE78,Pilot_ability,offset
+[subject]ニコラス　フレイム:dir
+	[replace]0x0043BEB0,Pilot_ability,offset
+[subject]アルビン　タシュラー:dir
+	[replace]0x0043BEE8,Pilot_ability,offset
+[subject]メリル　スコット:dir
+	[replace]0x0043BF20,Pilot_ability,offset
+[subject]ディック　アレン:dir
+	[replace]0x0043BF58,Pilot_ability,offset
+[subject]ブラン　ブルターク:dir
+	[replace]0x0043BF90,Pilot_ability,offset
+[subject]ベン　ウッダー:dir
+	[replace]0x0043BFC8,Pilot_ability,offset
+[subject]ライラ　ミラ　ライラ:dir
+	[replace]0x0043C000,Pilot_ability,offset
+[subject]ヤザン　ゲーブル:dir
+	[replace]0x0043C038,Pilot_ability,offset
+[subject]アーサー　ケニカット:dir
+	[replace]0x0043C070,Pilot_ability,offset
+[subject]ブライス　チャド:dir
+	[replace]0x0043C0A8,Pilot_ability,offset
+[subject]トニー　グッドマン:dir
+	[replace]0x0043C0E0,Pilot_ability,offset
+[subject]マイケル　チェン:dir
+	[replace]0x0043C118,Pilot_ability,offset
+[subject]トミー　ブラウン:dir
+	[replace]0x0043C150,Pilot_ability,offset
+[subject]テネス　コレブ:dir
+	[replace]0x0043C188,Pilot_ability,offset
+[subject]シャルル　キッシンガム:dir
+	[replace]0x0043C1C0,Pilot_ability,offset
+[subject]フランクリン　ノボトニー:dir
+	[replace]0x0043C1F8,Pilot_ability,offset
+[subject]ハインツ　ベア:dir
+	[replace]0x0043C230,Pilot_ability,offset
+[subject]デリス　ハノーバー:dir
+	[replace]0x0043C268,Pilot_ability,offset
+[subject]ハビー　ジャクソン:dir
+	[replace]0x0043C2A0,Pilot_ability,offset
+[subject]ロン　コウ:dir
+	[replace]0x0043C2D8,Pilot_ability,offset
+[subject]リド　ウォルフ:dir
+	[replace]0x0043C310,Pilot_ability,offset
+[subject]シロー　アマダ:dir
+	[replace]0x0043C348,Pilot_ability,offset
+[subject]ミケル　ニノリッチ:dir
+	[replace]0x0043C380,Pilot_ability,offset
+[subject]テリー　サンダース:dir
+	[replace]0x0043C3B8,Pilot_ability,offset
+[subject]カレン　ジョシュワ:dir
+	[replace]0x0043C3F0,Pilot_ability,offset
+[subject]エレドア　マシス:dir
+	[replace]0x0043C428,Pilot_ability,offset
+[subject]サウス　バニング:dir
+	[replace]0x0043C460,Pilot_ability,offset
+[subject]アルファ　ベイト:dir
+	[replace]0x0043C498,Pilot_ability,offset
+[subject]ベルナルド　モンシア:dir
+	[replace]0x0043C4D0,Pilot_ability,offset
+[subject]チャップ　アデル:dir
+	[replace]0x0043C508,Pilot_ability,offset
+[subject]リチャード　キール:dir
+	[replace]0x0043C540,Pilot_ability,offset
+[subject]ミクニ　トシユキ:dir
+	[replace]0x0043C578,Pilot_ability,offset
+[subject]トニー　ランドール:dir
+	[replace]0x0043C5B0,Pilot_ability,offset
+[subject]ジャン　ジャックアノー:dir
+	[replace]0x0043C5E8,Pilot_ability,offset
+[subject]ニール　カイル:dir
+	[replace]0x0043C620,Pilot_ability,offset
+[subject]ビンセント　ウォレス:dir
+	[replace]0x0043C658,Pilot_ability,offset
+[subject]ジョージ　ウェア:dir
+	[replace]0x0043C690,Pilot_ability,offset
+[subject]ロジェ　ミラー:dir
+	[replace]0x0043C6C8,Pilot_ability,offset
+[subject]バクラフ　マコビッチ:dir
+	[replace]0x0043C700,Pilot_ability,offset
+[subject]エノモト　シゲル:dir
+	[replace]0x0043C738,Pilot_ability,offset
+[subject]スミノフ　ストリチナヤ:dir
+	[replace]0x0043C770,Pilot_ability,offset
+[subject]スコット　クロフォード:dir
+	[replace]0x0043C7A8,Pilot_ability,offset
+[subject]アラン　チャンバース:dir
+	[replace]0x0043C7E0,Pilot_ability,offset
+[subject]ハリー　ストーン:dir
+	[replace]0x0043C818,Pilot_ability,offset
+[subject]バート　ケプル:dir
+	[replace]0x0043C850,Pilot_ability,offset
+[subject]マーク　ヘルプリン:dir
+	[replace]0x0043C888,Pilot_ability,offset
+[subject]トムヤム　クン:dir
+	[replace]0x0043C8C0,Pilot_ability,offset
+[subject]ボルガー　ニューハウザー:dir
+	[replace]0x0043C8F8,Pilot_ability,offset
+[subject]ライー　コインブラ:dir
+	[replace]0x0043C930,Pilot_ability,offset
+[subject]フレデリック　ヒールド:dir
+	[replace]0x0043C968,Pilot_ability,offset
+[subject]ジョージ　キューカー:dir
+	[replace]0x0043C9A0,Pilot_ability,offset
+[subject]ゲイリー:dir
+	[replace]0x0043C9D8,Pilot_ability,offset
+[subject]アダムスキー:dir
+	[replace]0x0043CA10,Pilot_ability,offset
+[subject]ボブ:dir
+	[replace]0x0043CA48,Pilot_ability,offset
+[subject]クルト:dir
+	[replace]0x0043CA80,Pilot_ability,offset
+[subject]コッセル:dir
+	[replace]0x0043CAB8,Pilot_ability,offset
+[subject]アポリー:dir
+	[replace]0x0043CAF0,Pilot_ability,offset
+[subject]ロベルト:dir
+	[replace]0x0043CB28,Pilot_ability,offset
+[subject]オウギュスト　ギダン:dir
+	[replace]0x0043CB60,Pilot_ability,offset
+[subject]ラカン　ダカラン:dir
+	[replace]0x0043CB98,Pilot_ability,offset
+[subject]ジェザ　ベレメニィ:dir
+	[replace]0x0043CBD0,Pilot_ability,offset
+[subject]ヨシダ　ツグアキ:dir
+	[replace]0x0043CC08,Pilot_ability,offset
+[subject]マイロ　ジェナス:dir
+	[replace]0x0043CC40,Pilot_ability,offset
+[subject]ハニバル　ホプキンス:dir
+	[replace]0x0043CC78,Pilot_ability,offset
+[subject]ブレニフ　オグス:dir
+	[replace]0x0043CCB0,Pilot_ability,offset
+[subject]ノルディット　バウアー:dir
+	[replace]0x0043CCE8,Pilot_ability,offset
+[subject]エリックマンスフィールド:dir
+	[replace]0x0043CD20,Pilot_ability,offset
+[subject]キャピー　ハザード:dir
+	[replace]0x0043CD58,Pilot_ability,offset
+[subject]グレンス　エスコット:dir
+	[replace]0x0043CD90,Pilot_ability,offset
+[subject]ロバート　ギリアム:dir
+	[replace]0x0043CDC8,Pilot_ability,offset
+[subject]ロンメル:dir
+	[replace]0x0043CE00,Pilot_ability,offset
+[subject]ジョディ　スターリング:dir
+	[replace]0x0043CE38,Pilot_ability,offset
+[subject]ジョニー　ライデン:dir
+	[replace]0x0043CE70,Pilot_ability,offset
+[subject]シン　マツナガ:dir
+	[replace]0x0043CEA8,Pilot_ability,offset
+[subject]ヴォルフガング　ヴァール:dir
+	[replace]0x0043CEE0,Pilot_ability,offset
+[subject]アナベル　ガトー:dir
+	[replace]0x0043CF18,Pilot_ability,offset
+[subject]シーマ　ガラハウ:dir
+	[replace]0x0043CF50,Pilot_ability,offset
+[subject]ケリィ　レズナー:dir
+	[replace]0x0043CF88,Pilot_ability,offset
+[subject]カリウス:dir
+	[replace]0x0043CFC0,Pilot_ability,offset
+[subject]アイナ　サハリン:dir
+	[replace]0x0043CFF8,Pilot_ability,offset
+[subject]連邦軍兵D:dir
+	[replace]0x0043D030,Pilot_ability,offset
+[subject]連邦軍兵D:dir
+	[replace]0x0043D068,Pilot_ability,offset
+[subject]連邦軍兵D:dir
+	[replace]0x0043D0A0,Pilot_ability,offset
+[subject]連邦軍兵C:dir
+	[replace]0x0043D0D8,Pilot_ability,offset
+[subject]連邦軍兵C:dir
+	[replace]0x0043D110,Pilot_ability,offset
+[subject]連邦軍兵C:dir
+	[replace]0x0043D148,Pilot_ability,offset
+[subject]連邦軍兵B:dir
+	[replace]0x0043D180,Pilot_ability,offset
+[subject]連邦軍兵B:dir
+	[replace]0x0043D1B8,Pilot_ability,offset
+[subject]連邦軍兵B:dir
+	[replace]0x0043D1F0,Pilot_ability,offset
+[subject]連邦軍兵A:dir
+	[replace]0x0043D228,Pilot_ability,offset
+[subject]連邦軍兵A:dir
+	[replace]0x0043D260,Pilot_ability,offset
+[subject]連邦軍兵A:dir
+	[replace]0x0043D298,Pilot_ability,offset
+[subject]連邦軍兵S:dir
+	[replace]0x0043D2D0,Pilot_ability,offset
+[subject]連邦軍兵S:dir
+	[replace]0x0043D308,Pilot_ability,offset
+[subject]連邦軍兵S:dir
+	[replace]0x0043D340,Pilot_ability,offset
+[subject]ジオン兵D:dir
+	[replace]0x0043D378,Pilot_ability,offset
+[subject]ジオン兵D:dir
+	[replace]0x0043D3B0,Pilot_ability,offset
+[subject]ジオン兵D:dir
+	[replace]0x0043D3E8,Pilot_ability,offset
+[subject]ジオン兵C:dir
+	[replace]0x0043D420,Pilot_ability,offset
+[subject]ジオン兵C:dir
+	[replace]0x0043D458,Pilot_ability,offset
+[subject]ジオン兵C:dir
+	[replace]0x0043D490,Pilot_ability,offset
+[subject]ジオン兵B:dir
+	[replace]0x0043D4C8,Pilot_ability,offset
+[subject]ジオン兵B:dir
+	[replace]0x0043D500,Pilot_ability,offset
+[subject]ジオン兵B:dir
+	[replace]0x0043D538,Pilot_ability,offset
+[subject]ジオン兵A:dir
+	[replace]0x0043D570,Pilot_ability,offset
+[subject]ジオン兵A:dir
+	[replace]0x0043D5A8,Pilot_ability,offset
+[subject]ジオン兵A:dir
+	[replace]0x0043D5E0,Pilot_ability,offset
+[subject]ジオン兵S:dir
+	[replace]0x0043D618,Pilot_ability,offset
+[subject]ジオン兵S:dir
+	[replace]0x0043D650,Pilot_ability,offset
+[subject]ジオン兵S:dir
+	[replace]0x0043D688,Pilot_ability,offset
+[root]
+
+[/script]
+
+[script]
+[title]銀河英雄伝説Ⅵ
+[process]GIN6.EXE
+[maker]Bothtec
+[creator]freecss
+[note]
+銀河英雄伝説ⅥのSSGです。
+バージョンは1.1.1です。
+艦隊構成の変更および
+将官の能力変更ができるかも。
+
+新たに艦船戦隊、空戦隊、
+艦隊幕僚を加える
+ことはできません。
+（輸送艦を戦艦等に変換した場合、
+未搭載のままになってますので、
+空戦隊は使用できません。）
+
+司令官、幕僚の能力を変更した後、
+１ターンが終わるまでは艦隊パラメーター
+に反映されません。
+（直接艦隊パラメータを
+変更する事をお勧めします）
+
+戦隊名も変更できますが、
+変更前より短い名前を付けた場合
+後ろにゴミが付きます。
+
+注意：個人の責任において使用してください。
+ネットワーク対戦においては
+使用しないで下さい。
+
+[/note]
+
+[subject]艦隊パラメータ:dir
+       [subject]001:dir
+	       [replace]0x005D44D0,Gin6kantai,offset
+       [subject]002:dir
+	       [replace]0x005D4608,Gin6kantai,offset
+       [subject]003:dir
+	       [replace]0x005D4740,Gin6kantai,offset
+       [subject]004:dir
+	       [replace]0x005D4878,Gin6kantai,offset
+       [subject]005:dir
+	       [replace]0x005D49B0,Gin6kantai,offset
+       [subject]006:dir
+	       [replace]0x005D4AE8,Gin6kantai,offset
+       [subject]007:dir
+	       [replace]0x005D4C20,Gin6kantai,offset
+       [subject]008:dir
+	       [replace]0x005D4D58,Gin6kantai,offset
+       [subject]009:dir
+	       [replace]0x005D4E90,Gin6kantai,offset
+       [subject]010:dir
+	       [replace]0x005D4FC8,Gin6kantai,offset
+       [subject]011:dir
+	       [replace]0x005D5100,Gin6kantai,offset
+       [subject]012:dir
+	       [replace]0x005D5238,Gin6kantai,offset
+       [subject]013:dir
+	       [replace]0x005D5370,Gin6kantai,offset
+       [subject]014:dir
+	       [replace]0x005D54A8,Gin6kantai,offset
+       [subject]015:dir
+	       [replace]0x005D55E0,Gin6kantai,offset
+       [subject]016:dir
+	       [replace]0x005D5718,Gin6kantai,offset
+       [subject]017:dir
+	       [replace]0x005D5850,Gin6kantai,offset
+       [subject]018:dir
+	       [replace]0x005D5988,Gin6kantai,offset
+[root]
+
+[subject]戦隊構成変更:dir
+       [subject]001:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D62CC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F1B6C,Gin6sentai,offset
+[back]
+       [subject]002:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D6388,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F1C28,Gin6sentai,offset
+[back]
+       [subject]003:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D6444,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F1CE4,Gin6sentai,offset
+[back]
+       [subject]004:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D6500,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F1DA0,Gin6sentai,offset
+[back]
+       [subject]005:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D65BC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F1E5C,Gin6sentai,offset
+[back]
+       [subject]006:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D6678,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F1F18,Gin6sentai,offset
+[back]
+       [subject]007:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D6734,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F1FD4,Gin6sentai,offset
+[back]
+       [subject]008:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D67F0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F2090,Gin6sentai,offset
+[back]
+       [subject]009:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D68AC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F214C,Gin6sentai,offset
+[back]
+       [subject]010:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D6968,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F2208,Gin6sentai,offset
+[back]
+       [subject]011:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D6A24,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F22C4,Gin6sentai,offset
+[back]
+       [subject]012:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D6AE0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F2380,Gin6sentai,offset
+[back]
+       [subject]013:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D6B9C,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F243C,Gin6sentai,offset
+[back]
+       [subject]014:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D6C58,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F24F8,Gin6sentai,offset
+ [back]
+      [subject]015:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D6D14,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F25B4,Gin6sentai,offset
+[back]
+       [subject]016:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D6DD0,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F2670,Gin6sentai,offset
+[back]
+       [subject]017:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D6E8C,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F272C,Gin6sentai,offset
+[back]
+       [subject]018:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D6F48,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F27E8,Gin6sentai,offset
+[back]
+       [subject]019:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D7004,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F28A4,Gin6sentai,offset
+[back]
+       [subject]020:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D70C0,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F2960,Gin6sentai,offset
+[back]
+       [subject]021:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D717C,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F2A1C,Gin6sentai,offset
+[back]
+       [subject]022:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D7238,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F2AD8,Gin6sentai,offset
+[back]
+       [subject]023:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D72F4,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F2B94,Gin6sentai,offset
+[back]
+       [subject]024:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D73B0,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F2C50,Gin6sentai,offset
+[back]
+       [subject]025:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D746C,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F2D0C,Gin6sentai,offset
+[back]
+       [subject]026:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D7528,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F2DC8,Gin6sentai,offset
+[back]
+       [subject]027:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D75E4,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F2E84,Gin6sentai,offset
+[back]
+       [subject]028:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D76A0,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F2F40,Gin6sentai,offset
+[back]
+       [subject]029:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D775C,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F2FFC,Gin6sentai,offset
+[back]
+       [subject]030:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D7818,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F30B8,Gin6sentai,offset
+[back]
+       [subject]031:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D78D4,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F3174,Gin6sentai,offset
+[back]
+       [subject]032:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D7990,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F3230,Gin6sentai,offset
+[back]
+       [subject]033:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D7A4C,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F32EC,Gin6sentai,offset
+[back]
+       [subject]034:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D7B08,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F33A8,Gin6sentai,offset
+[back]
+      [subject]035:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D7BC4,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F3464,Gin6sentai,offset
+[back]
+       [subject]036:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D7C80,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F3520,Gin6sentai,offset
+[back]
+       [subject]037:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D7D3C,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F35DC,Gin6sentai,offset
+[back]
+       [subject]038:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D7DF8,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F3698,Gin6sentai,offset
+[back]
+       [subject]039:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D7EB4,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F3754,Gin6sentai,offset
+[back]
+       [subject]040:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D7F70,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F3810,Gin6sentai,offset
+[back]
+       [subject]041:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D802C,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F38CC,Gin6sentai,offset
+[back]
+       [subject]042:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D80E8,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F3988,Gin6sentai,offset
+[back]
+       [subject]043:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D81A4,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F3A44,Gin6sentai,offset
+[back]
+       [subject]044:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D8260,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F3B00,Gin6sentai,offset
+[back]
+       [subject]045:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D831C,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F3BBC,Gin6sentai,offset
+[back]
+       [subject]046:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D83D8,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F3C78,Gin6sentai,offset
+[back]
+       [subject]047:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D8494,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F3D34,Gin6sentai,offset
+[back]
+      [subject]048:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D8550,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F3DF0,Gin6sentai,offset
+[back]
+       [subject]049:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D860C,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F3EAC,Gin6sentai,offset
+[back]
+      [subject]050:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D86C8,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F3F68,Gin6sentai,offset
+[back]
+       [subject]051:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D8784,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F4024,Gin6sentai,offset
+[back]
+       [subject]052:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D8840,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F40E0,Gin6sentai,offset
+[back]
+       [subject]053:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D88FC,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F419C,Gin6sentai,offset
+[back]
+       [subject]054:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D89B8,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F4258,Gin6sentai,offset
+[back]
+       [subject]055:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D8A74,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F4314,Gin6sentai,offset
+[back]
+       [subject]056:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D8B30,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x005F43D0,Gin6sentai,offset
+[back]
+       [subject]057:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D8BEC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F448C,Gin6sentai,offset
+[back]
+       [subject]058:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D8CA8,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F4548,Gin6sentai,offset
+[back]
+       [subject]059:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D8D64,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F4604,Gin6sentai,offset
+ [back]
+      [subject]060:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D8E20,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F46C0,Gin6sentai,offset
+[back]
+       [subject]061:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D8EDC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F477C,Gin6sentai,offset
+[back]
+       [subject]062:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D8F98,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F4838,Gin6sentai,offset
+[back]
+       [subject]063:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D9054,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F48F4,Gin6sentai,offset
+[back]
+       [subject]064:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D9110,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F49B0,Gin6sentai,offset
+[back]
+       [subject]065:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D91CC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F4A6C,Gin6sentai,offset
+[back]
+       [subject]066:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D9288,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F4B28,Gin6sentai,offset
+[back]
+       [subject]067:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D9344,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F4BE4,Gin6sentai,offset
+[back]
+       [subject]068:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D9400,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F4CA0,Gin6sentai,offset
+[back]
+       [subject]069:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D94BC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F4D5C,Gin6sentai,offset
+[back]
+       [subject]070:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D9578,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F4E18,Gin6sentai,offset
+[back]
+       [subject]071:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D9634,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F4ED4,Gin6sentai,offset
+[back]
+       [subject]072:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D96F0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F4F90,Gin6sentai,offset
+[back]
+       [subject]073:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D97AC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F504C,Gin6sentai,offset
+[back]
+       [subject]074:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D9868,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F5108,Gin6sentai,offset
+[back]
+       [subject]075:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D9924,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F51C4,Gin6sentai,offset
+[back]
+       [subject]076:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D99E0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F5280,Gin6sentai,offset
+[back]
+       [subject]077:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D9A9C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F533C,Gin6sentai,offset
+[back]
+       [subject]078:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D9B58,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F53F8,Gin6sentai,offset
+[back]
+       [subject]079:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D9C14,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F54B4,Gin6sentai,offset
+[back]
+       [subject]080:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D9CD0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F5570,Gin6sentai,offset
+[back]
+       [subject]081:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D9D8C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F562C,Gin6sentai,offset
+[back]
+       [subject]082:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D9E48,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F56E8,Gin6sentai,offset
+[back]
+       [subject]083:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D9F04,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F57A4,Gin6sentai,offset
+[back]
+       [subject]084:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005D9FC0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F5860,Gin6sentai,offset
+[back]
+       [subject]085:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DA07C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F591C,Gin6sentai,offset
+[back]
+       [subject]086:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DA138,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F59D8,Gin6sentai,offset
+[back]
+       [subject]087:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DA1F4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F5A94,Gin6sentai,offset
+[back]
+       [subject]088:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DA2B0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F5B50,Gin6sentai,offset
+[back]
+       [subject]089:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DA36C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F5C0C,Gin6sentai,offset
+[back]
+       [subject]090:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DA428,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F5CC8,Gin6sentai,offset
+[back]
+       [subject]091:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DA4E4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F5D84,Gin6sentai,offset
+[back]
+       [subject]092:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DA5A0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F5E40,Gin6sentai,offset
+[back]
+       [subject]093:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DA65C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F5EFC,Gin6sentai,offset
+[back]
+       [subject]094:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DA718,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F5FB8,Gin6sentai,offset
+[back]
+       [subject]095:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DA7D4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F6074,Gin6sentai,offset
+[back]
+       [subject]096:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DA890,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F6130,Gin6sentai,offset
+[back]
+       [subject]097:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DA94C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F61EC,Gin6sentai,offset
+[back]
+       [subject]098:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DAA08,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F62A8,Gin6sentai,offset
+[back]
+       [subject]099:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DAAC4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F6364,Gin6sentai,offset
+[back]
+       [subject]100:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DAB80,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F6420,Gin6sentai,offset
+[back]
+       [subject]101:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DAC3C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F64DC,Gin6sentai,offset
+[back]
+       [subject]102:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DACF8,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F6598,Gin6sentai,offset
+[back]
+       [subject]103:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DADB4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F6654,Gin6sentai,offset
+[back]
+       [subject]104:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DAE70,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F6710,Gin6sentai,offset
+[back]
+       [subject]105:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DAF2C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F67CC,Gin6sentai,offset
+[back]
+       [subject]106:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DAFE8,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F6888,Gin6sentai,offset
+[back]
+       [subject]107:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DB0A4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F6944,Gin6sentai,offset
+[back]
+       [subject]108:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DB160,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F6A00,Gin6sentai,offset
+[back]
+       [subject]109:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DB21C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F6ABC,Gin6sentai,offset
+[back]
+       [subject]110:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DB2D8,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F6B78,Gin6sentai,offset
+[back]
+       [subject]111:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DB394,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F6C34,Gin6sentai,offset
+[back]
+       [subject]112:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DB450,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F6CF0,Gin6sentai,offset
+[back]
+       [subject]113:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DB50C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005D6DAC,Gin6sentai,offset
+[back]
+       [subject]114:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DB5C8,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F6EF8,Gin6sentai,offset
+[back]
+       [subject]115:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DB684,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F6F24,Gin6sentai,offset
+[back]
+       [subject]116:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DB740,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F6FE0,Gin6sentai,offset
+[back]
+       [subject]117:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DB7FC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F709C,Gin6sentai,offset
+[back]
+      [subject]118:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DB8B8,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F7158,Gin6sentai,offset
+[back]
+       [subject]119:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DB974,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F7214,Gin6sentai,offset
+[back]
+       [subject]120:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DBA30,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F72D0,Gin6sentai,offset
+[back]
+       [subject]121:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DBAEC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F738C,Gin6sentai,offset
+[back]
+       [subject]122:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DBBA8,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F7448,Gin6sentai,offset
+[back]
+       [subject]123:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DBC64,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F7504,Gin6sentai,offset
+[back]
+       [subject]124:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DBD20,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F75C0,Gin6sentai,offset
+[back]
+       [subject]125:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DBDDC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F767C,Gin6sentai,offset
+[back]
+       [subject]126:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DBE98,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F7738,Gin6sentai,offset
+[back]
+       [subject]127:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DBF54,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F77F4,Gin6sentai,offset
+[back]
+       [subject]128:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DC010,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F78B0,Gin6sentai,offset
+[back]
+       [subject]129:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DC0CC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F796C,Gin6sentai,offset
+[back]
+       [subject]130:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DC188,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F7A28,Gin6sentai,offset
+[back]
+       [subject]131:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DC244,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F7AE4,Gin6sentai,offset
+[back]
+       [subject]132:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DC300,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F7BA0,Gin6sentai,offset
+[back]
+       [subject]133:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DC3BC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F7C5C,Gin6sentai,offset
+[back]
+      [subject]134:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DC478,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F7D18,Gin6sentai,offset
+[back]
+      [subject]135:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DC534,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F7DD4,Gin6sentai,offset
+[back]
+       [subject]136:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DC5F0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F7E90,Gin6sentai,offset
+[back]
+       [subject]137:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DC6AC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F7F4C,Gin6sentai,offset
+[back]
+       [subject]138:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DC768,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F8008,Gin6sentai,offset
+[back]
+       [subject]139:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DC824,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F80C4,Gin6sentai,offset
+[back]
+       [subject]140:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DC8E0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F8180,Gin6sentai,offset
+[back]
+       [subject]141:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DC99C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F823C,Gin6sentai,offset
+[back]
+       [subject]142:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DCA58,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F82F8,Gin6sentai,offset
+[back]
+       [subject]143:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DCB14,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F83B4,Gin6sentai,offset
+[back]
+       [subject]144:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DCBD0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F8470,Gin6sentai,offset
+[back]
+       [subject]145:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DCC8C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F852C,Gin6sentai,offset
+[back]
+       [subject]146:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DCD48,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F85E8,Gin6sentai,offset
+[back]
+       [subject]147:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DCE04,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F86A4,Gin6sentai,offset
+[back]
+       [subject]148:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DCEC0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F8760,Gin6sentai,offset
+[back]
+       [subject]149:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DCF7C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F881C,Gin6sentai,offset
+[back]
+       [subject]150:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DD038,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F88D8,Gin6sentai,offset
+[back]
+       [subject]151:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DD0F4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F8994,Gin6sentai,offset
+[back]
+       [subject]152:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DD1B0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F8A50,Gin6sentai,offset
+[back]
+       [subject]153:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DD26C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F8B0C,Gin6sentai,offset
+[back]
+       [subject]154:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DD328,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F8BC8,Gin6sentai,offset
+[back]
+       [subject]155:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DD3E4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F8C84,Gin6sentai,offset
+[back]
+       [subject]156:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DD4A0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F8D40,Gin6sentai,offset
+[back]
+       [subject]157:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DD55C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F8DFC,Gin6sentai,offset
+[back]
+       [subject]158:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DD618,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F8EB8,Gin6sentai,offset
+[back]
+       [subject]159:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DD6D4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F8F74,Gin6sentai,offset
+[back]
+       [subject]160:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DD790,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F9030,Gin6sentai,offset
+[back]
+       [subject]161:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DD84C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F90EC,Gin6sentai,offset
+[back]
+       [subject]162:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DD908,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F91A8,Gin6sentai,offset
+[back]
+       [subject]163:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DD9C4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F9264,Gin6sentai,offset
+[back]
+       [subject]164:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DDA80,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F9320,Gin6sentai,offset
+[back]
+       [subject]165:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DDB3C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F93DC,Gin6sentai,offset
+[back]
+       [subject]166:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DDBF8,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F9498,Gin6sentai,offset
+[back]
+       [subject]167:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DDCB4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F9554,Gin6sentai,offset
+[back]
+       [subject]168:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DDD70,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F9610,Gin6sentai,offset
+[back]
+       [subject]169:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DDE2C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F96CC,Gin6sentai,offset
+[back]
+       [subject]170:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DDEE8,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F9788,Gin6sentai,offset
+[back]
+      [subject]171:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DDFA4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F9844,Gin6sentai,offset
+[back]
+       [subject]172:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DE060,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F9900,Gin6sentai,offset
+[back]
+       [subject]173:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DE11C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F99BC,Gin6sentai,offset
+[back]
+       [subject]174:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DE1D8,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F9A78,Gin6sentai,offset
+[back]
+       [subject]175:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DE294,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F9B34,Gin6sentai,offset
+[back]
+       [subject]176:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DE350,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F9BF0,Gin6sentai,offset
+[back]
+       [subject]177:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DE40C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F9CAC,Gin6sentai,offset
+[back]
+       [subject]178:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DE4C8,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F9D68,Gin6sentai,offset
+[back]
+       [subject]179:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DE584,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F9E24,Gin6sentai,offset
+[back]
+       [subject]180:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DE640,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F9EE0,Gin6sentai,offset
+[back]
+       [subject]181:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DE6FC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005F9F9C,Gin6sentai,offset
+[back]
+       [subject]182:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DE7B8,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FA058,Gin6sentai,offset
+[back]
+       [subject]183:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DE874,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FA114,Gin6sentai,offset
+[back]
+       [subject]184:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DE930,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FA1D0,Gin6sentai,offset
+[back]
+       [subject]185:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DE9EC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FA28C,Gin6sentai,offset
+[back]
+      [subject]186:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DEAA8,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FA348,Gin6sentai,offset
+[back]
+       [subject]187:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DEB64,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FA404,Gin6sentai,offset
+[back]
+       [subject]188:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DEC20,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FA4C0,Gin6sentai,offset
+[back]
+       [subject]189:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DECDC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FA57C,Gin6sentai,offset
+[back]
+       [subject]190:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DED98,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FA638,Gin6sentai,offset
+[back]
+       [subject]191:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DEE54,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FA6F4,Gin6sentai,offset
+[back]
+       [subject]192:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DEF10,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FA7B0,Gin6sentai,offset
+[back]
+       [subject]193:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DEFCC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FA86C,Gin6sentai,offset
+[back]
+       [subject]194:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DF088,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FA928,Gin6sentai,offset
+[back]
+       [subject]195:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DF144,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FA9E4,Gin6sentai,offset
+[back]
+       [subject]196:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DF200,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FAAA0,Gin6sentai,offset
+[back]
+       [subject]197:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DF2BC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FAB6C,Gin6sentai,offset
+[back]
+       [subject]198:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DF378,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FAC18,Gin6sentai,offset
+[back]
+       [subject]199:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DF434,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FACD4,Gin6sentai,offset
+[back]
+       [subject]200:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DF4F0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FAD90,Gin6sentai,offset
+[back]
+       [subject]201:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DF5AC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FAE4C,Gin6sentai,offset
+[back]
+       [subject]202:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DF668,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FAF08,Gin6sentai,offset
+[back]
+       [subject]203:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DF724,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FAFC4,Gin6sentai,offset
+[back]
+       [subject]204:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DF7E0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FB080,Gin6sentai,offset
+[back]
+       [subject]205:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DF89C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FB13C,Gin6sentai,offset
+[back]
+       [subject]206:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DF958,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FB1F8,Gin6sentai,offset
+[back]
+       [subject]207:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DFA14,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FB2B4,Gin6sentai,offset
+[back]
+       [subject]208:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DFAD0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FB370,Gin6sentai,offset
+[back]
+       [subject]209:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DFB8C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FB42C,Gin6sentai,offset
+[back]
+       [subject]210:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DFC48,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FB4E8,Gin6sentai,offset
+[back]
+       [subject]211:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DFD04,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FB5A4,Gin6sentai,offset
+[back]
+       [subject]212:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DFDC0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FB660,Gin6sentai,offset
+[back]
+       [subject]213:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DFE7C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FB71C,Gin6sentai,offset
+[back]
+       [subject]214:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DFF38,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FB7D8,Gin6sentai,offset
+[back]
+      [subject]215:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005DFFF4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FB894,Gin6sentai,offset
+[back]
+       [subject]216:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005E00B0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FB950,Gin6sentai,offset
+[back]
+       [subject]217:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005E016C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FBA0C,Gin6sentai,offset
+[back]
+       [subject]218:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005E0228,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FBAC8,Gin6sentai,offset
+[back]
+       [subject]219:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005E02E4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FBB84,Gin6sentai,offset
+[back]
+       [subject]220:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005E03A0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FBC40,Gin6sentai,offset
+[back]
+       [subject]221:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005E045C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FBCFC,Gin6sentai,offset
+[back]
+       [subject]222:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005E0518,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FBDB8,Gin6sentai,offset
+[back]
+       [subject]223:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005E05D4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FBE74,Gin6sentai,offset
+[back]
+       [subject]224:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005E0690,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FBF30,Gin6sentai,offset
+[back]
+       [subject]225:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005E074C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FBFEC,Gin6sentai,offset
+[back]
+       [subject]226:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005E0808,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FC0A8,Gin6sentai,offset
+[back]
+       [subject]227:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005E08C4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FC164,Gin6sentai,offset
+[back]
+       [subject]228:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005E0980,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FC220,Gin6sentai,offset
+[back]
+       [subject]229:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005E0A3C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FC2DC,Gin6sentai,offset
+[back]
+       [subject]230:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005E0AF8,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FC398,Gin6sentai,offset
+[back]
+       [subject]231:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005E0BB4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FC454,Gin6sentai,offset
+[back]
+       [subject]232:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005E0C70,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FC510,Gin6sentai,offset
+[back]
+       [subject]233:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005E0D2C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FC5CC,Gin6sentai,offset
+[back]
+       [subject]234:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005E0DE8,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FC688,Gin6sentai,offset
+[back]
+       [subject]235:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005E0EA4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FC744,Gin6sentai,offset
+[back]
+       [subject]236:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005E0F60,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FC800,Gin6sentai,offset
+[back]
+       [subject]237:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005E101C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FC8BC,Gin6sentai,offset
+[back]
+       [subject]238:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005E10D8,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FC978,Gin6sentai,offset
+[back]
+       [subject]239:dir
+              [subject]艦戦隊:dir
+	       [replace]0x005E1194,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x005FCA34,Gin6sentai,offset
+[root]
+
+[subject]艦船能力:dir
+       [subject]帝国軍:dir
+              [subject]帝国軍標準戦艦:dir
+	              [replace]0x00610250,Gin6senkan,offset
+              [subject]帝国軍巡航艦:dir
+	              [replace]0x006103B8,Gin6senkan,offset
+              [subject]帝国軍駆逐艦:dir
+	              [replace]0x00610520,Gin6senkan,offset
+              [subject]帝国軍高速戦艦:dir
+	              [replace]0x00610688,Gin6senkan,offset
+              [subject]帝国軍輸送艦:dir
+	              [replace]0x0061073C,Gin6senkan,offset
+              [subject]帝国軍宇宙母艦:dir
+	              [replace]0x006108A4,Gin6senkan,offset
+              [subject]ワルキューレ:dir
+	              [replace]0x00610A0C,Gin6senkan,offset
+              [subject]帝国軍標準戦艦:dir
+	              [replace]0x00610B74,Gin6senkan,offset
+              [subject]帝国軍巡航艦:dir
+	              [replace]0x00610C28,Gin6senkan,offset
+              [subject]帝国軍駆逐艦:dir
+	              [replace]0x00610CDC,Gin6senkan,offset
+              [subject]帝国軍高速戦艦:dir
+	              [replace]0x00610D90,Gin6senkan,offset
+              [subject]帝国軍輸送艦:dir
+	              [replace]0x00610E44,Gin6senkan,offset
+              [subject]帝国軍宇宙母艦:dir
+	              [replace]0x00610EF8,Gin6senkan,offset
+[back]
+       [subject]同盟軍:dir
+              [subject]同盟軍標準戦艦:dir
+	              [replace]0x00610304,Gin6senkan,offset
+              [subject]同盟軍巡航艦:dir
+	              [replace]0x0061046C,Gin6senkan,offset
+              [subject]同盟軍駆逐艦:dir
+	              [replace]0x006105D4,Gin6senkan,offset
+              [subject]同盟軍輸送艦:dir
+	              [replace]0x006107F0,Gin6senkan,offset
+              [subject]同盟軍宇宙母艦:dir
+	              [replace]0x00610958,Gin6senkan,offset
+              [subject]スパルタニアン:dir
+	              [replace]0x00610AC0,Gin6senkan,offset
+[root]
+
+[subject]将官能力:dir
+	[subject]A～Z:dir
+       [subject]D.グリーンヒル:dir
+	       [replace]0x005CA070,Gin6shokan,offset
+       [subject]F.G.ヤン:dir
+	       [replace]0x005CF240,Gin6shokan,offset
+       [subject]F.グリーンヒル:dir
+	       [replace]0x005CA0E0,Gin6shokan,offset
+       [subject]F.マリーンドルフ:dir
+	       [replace]0x005CEC20,Gin6shokan,offset
+       [subject]H.マリーンドルフ:dir
+	       [replace]0x005CD3A0,Gin6shokan,offset
+       [subject]I.コーネフ:dir
+	       [replace]0x005CA150,Gin6shokan,offset
+[back]
+	[subject]あ行:dir
+       [subject]アイゼナッハ:dir
+	       [replace]0x005CA1C0,Gin6shokan,offset
+       [subject]アイヘンドルフ:dir
+	       [replace]0x005CA230,Gin6shokan,offset
+       [subject]アイランズ:dir
+	       [replace]0x005CE6E0,Gin6shokan,offset
+       [subject]アシュール:dir
+	       [replace]0x005CA2A0,Gin6shokan,offset
+       [subject]アッテンボロー:dir
+	       [replace]0x005CA310,Gin6shokan,offset
+       [subject]アップルトン:dir
+	       [replace]0x005CA380,Gin6shokan,offset
+       [subject]アムスドルフ:dir
+	       [replace]0x005CEC90,Gin6shokan,offset
+       [subject]アラルコン:dir
+	       [replace]0x005CA3F0,Gin6shokan,offset
+       [subject]アル・サレム:dir
+	       [replace]0x005CA460,Gin6shokan,offset
+       [subject]アルトリンゲン:dir
+	       [replace]0x005CA4D0,Gin6shokan,offset
+       [subject]アンスバッハ:dir
+	       [replace]0x005CA540,Gin6shokan,offset
+       [subject]ヴァーゲンザイル:dir
+	       [replace]0x005CA5B0,Gin6shokan,offset
+       [subject]ウィッティ:dir
+	       [replace]0x005CA620,Gin6shokan,offset
+       [subject]ウィンザー:dir
+	       [replace]0x005CE2F0,Gin6shokan,offset
+       [subject]ヴェーラー:dir
+	       [replace]0x005CA690,Gin6shokan,offset
+       [subject]ヴューゼンヒュッター:dir
+	       [replace]0x005CA700,Gin6shokan,offset
+       [subject]ウランフ:dir
+	       [replace]0x005CA770,Gin6shokan,offset
+       [subject]エーレンベルグ:dir
+	       [replace]0x005CE7C0,Gin6shokan,offset
+       [subject]エドワース:dir
+	       [replace]0x005CE750,Gin6shokan,offset
+       [subject]エベンス:dir
+	       [replace]0x005CA7E0,Gin6shokan,offset
+       [subject]エマーソン:dir
+	       [replace]0x005CEB40,Gin6shokan,offset
+       [subject]エルウィン・ヨーゼフⅡ:dir
+	       [replace]0x005CDAA0,Gin6shokan,offset
+       [subject]エルラッハ:dir
+	       [replace]0x005CA850,Gin6shokan,offset
+       [subject]オーベルシュタイン:dir
+	       [replace]0x005CA9A0,Gin6shokan,offset
+       [subject]オイゲン:dir
+	       [replace]0x005CA8C0,Gin6shokan,offset
+       [subject]オフレッサー:dir
+	       [replace]0x005CA930,Gin6shokan,offset
+       [subject]オルラウ:dir
+	       [replace]0x005CAA10,Gin6shokan,offset
+[back]
+	[subject]か行:dir
+       [subject]カールセン:dir
+	       [replace]0x005CAA80,Gin6shokan,offset
+       [subject]カムフーバー:dir
+	       [replace]0x005CAAF0,Gin6shokan,offset
+       [subject]カルナップ:dir
+	       [replace]0x005CAB60,Gin6shokan,offset
+       [subject]キスリング:dir
+	       [replace]0x005CABD0,Gin6shokan,offset
+       [subject]キャゼルヌ:dir
+	       [replace]0x005CAC40,Gin6shokan,offset
+       [subject]後方勤務部長キャゼルヌ中将:dir
+	       [replace]0x005CF320,Gin6shokan,offset
+       [subject]キルヒアイス:dir
+	       [replace]0x005CACB0,Gin6shokan,offset
+       [subject]キルヒアイス:dir
+	       [replace]0x005CEF30,Gin6shokan,offset
+       [subject]クーリヒ:dir
+	       [replace]0x005CAD20,Gin6shokan,offset
+       [subject]グエン:dir
+	       [replace]0x005CAD90,Gin6shokan,offset
+       [subject]クナップシュタイン:dir
+	       [replace]0x005CAE00,Gin6shokan,offset
+       [subject]クブルスリー:dir
+	       [replace]0x005CAE70,Gin6shokan,offset
+       [subject]グリース:dir
+	       [replace]0x005CED00,Gin6shokan,offset
+       [subject]グリーセンベック:dir
+	       [replace]0x005CAEE0,Gin6shokan,offset
+       [subject]クリスチアン:dir
+	       [replace]0x005CE440,Gin6shokan,offset
+       [subject]グリューネマン:dir
+	       [replace]0x005CAF50,Gin6shokan,offset
+       [subject]グリューネワルト:dir
+	       [replace]0x005CAFC0,Gin6shokan,offset
+       [subject]グリルパルツァー:dir
+	       [replace]0x005CB030,Gin6shokan,offset
+       [subject]クルーゼンシュテルン:dir
+	       [replace]0x005CB0A0,Gin6shokan,offset
+       [subject]グレーブナー:dir
+	       [replace]0x005CB110,Gin6shokan,offset
+       [subject]グローテヴォール:dir
+	       [replace]0x005CB1F0,Gin6shokan,offset
+       [subject]クロイツェル:dir
+	       [replace]0x005CB180,Gin6shokan,offset
+       [subject]ケスラー:dir
+	       [replace]0x005CB260,Gin6shokan,offset
+       [subject]ケラー:dir
+	       [replace]0x005CB2D0,Gin6shokan,offset
+       [subject]ケンプ:dir
+	       [replace]0x005CB340,Gin6shokan,offset
+       [subject]コーネフ:dir
+	       [replace]0x005CB3B0,Gin6shokan,offset
+       [subject]コールドウェル:dir
+	       [replace]0x005CB420,Gin6shokan,offset
+       [subject]コクラン:dir
+	       [replace]0x005CEAD0,Gin6shokan,offset
+       [subject]コナリー:dir
+	       [replace]0x005CB490,Gin6shokan,offset
+[back]
+	[subject]さ行:dir
+       [subject]ザーニアル:dir
+	       [replace]0x005CB500,Gin6shokan,offset
+       [subject]ザーム:dir
+	       [replace]0x005CB570,Gin6shokan,offset
+       [subject]ザウケン:dir
+	       [replace]0x005CB5E0,Gin6shokan,offset
+       [subject]ザンデルス:dir
+	       [replace]0x005CED70,Gin6shokan,offset
+       [subject]サンフォード:dir
+	       [replace]0x005CE280,Gin6shokan,offset
+       [subject]シェーンコップ:dir
+	       [replace]0x005CB650,Gin6shokan,offset
+       [subject]シトレ:dir
+	       [replace]0x005CF080,Gin6shokan,offset
+       [subject]統合作戦本部長シトレ元帥:dir
+	       [replace]0x005CB6C0,Gin6shokan,offset
+       [subject]シャウデン:dir
+	       [replace]0x005CB730,Gin6shokan,offset
+       [subject]シャフト:dir
+	       [replace]0x005CE9F0,Gin6shokan,offset
+       [subject]シャルチアン:dir
+	       [replace]0x005CB7A0,Gin6shokan,offset
+       [subject]シューマッハ:dir
+	       [replace]0x005CB810,Gin6shokan,offset
+       [subject]シュターデン:dir
+	       [replace]0x005CB880,Gin6shokan,offset
+       [subject]シュタインホフ:dir
+	       [replace]0x005CF160,Gin6shokan,offset
+       [subject]統帥本部総長シュタインホフ元帥:dir
+	       [replace]0x005CE830,Gin6shokan,offset
+       [subject]シュタインメッツ:dir
+	       [replace]0x005CB8F0,Gin6shokan,offset
+       [subject]シュトックハウゼン:dir
+	       [replace]0x005CE600,Gin6shokan,offset
+       [subject]シュトライト:dir
+	       [replace]0x005CB960,Gin6shokan,offset
+       [subject]シュトラウス:dir
+	       [replace]0x005CB9D0,Gin6shokan,offset
+       [subject]シュナイダー:dir
+	       [replace]0x005CBA40,Gin6shokan,offset
+       [subject]シュラー:dir
+	       [replace]0x005CBAB0,Gin6shokan,offset
+       [subject]シュライヤー:dir
+	       [replace]0x005CBB20,Gin6shokan,offset
+       [subject]ジンツァー:dir
+	       [replace]0x005CBB90,Gin6shokan,offset
+       [subject]スールズカリッター:dir
+	       [replace]0x005CBC00,Gin6shokan,offset
+       [subject]ストークス:dir
+	       [replace]0x005CBC70,Gin6shokan,offset
+       [subject]ゼークト:dir
+	       [replace]0x005CBCE0,Gin6shokan,offset
+       [subject]ゼーレ:dir
+	       [replace]0x005CE910,Gin6shokan,offset
+       [subject]ゾンネンフェルス:dir
+	       [replace]0x005CBD50,Gin6shokan,offset
+[back]
+	[subject]た行:dir
+       [subject]タールハイム:dir
+	       [replace]0x005CBDC0,Gin6shokan,offset
+       [subject]チェン:dir
+	       [replace]0x005CBE30,Gin6shokan,offset
+       [subject]チュン:dir
+	       [replace]0x005CBEA0,Gin6shokan,offset
+       [subject]ディッケル:dir
+	       [replace]0x005CBF10,Gin6shokan,offset
+       [subject]ディッタースドルフ:dir
+	       [replace]0x005CBF80,Gin6shokan,offset
+       [subject]デッシュ:dir
+	       [replace]0x005CBFF0,Gin6shokan,offset
+       [subject]ドーソン:dir
+	       [replace]0x005CE360,Gin6shokan,offset
+       [subject]トゥルナイゼン:dir
+	       [replace]0x005CC060,Gin6shokan,offset
+       [subject]トリューニヒト:dir
+	       [replace]0x005CF0F0,Gin6shokan,offset
+       [subject]国防委員長トリューニヒト:dir
+	       [replace]0x005CC0D0,Gin6shokan,offset
+       [subject]ドロイゼン:dir
+	       [replace]0x005CC140,Gin6shokan,offset
+[back]
+	[subject]な行:dir
+       [subject]ナイゼナッハ:dir
+	       [replace]0x005CC1B0,Gin6shokan,offset
+       [subject]ニルソン:dir
+	       [replace]0x005CC220,Gin6shokan,offset
+       [subject]ノルドハイム:dir
+	       [replace]0x005CC290,Gin6shokan,offset
+[back]
+	[subject]は行:dir
+       [subject]バイエルライン:dir
+	       [replace]0x005CC300,Gin6shokan,offset
+       [subject]バウンスゴール:dir
+	       [replace]0x005CE520,Gin6shokan,offset
+       [subject]パエッタ:dir
+	       [replace]0x005CC370,Gin6shokan,offset
+       [subject]バグダッシュ:dir
+	       [replace]0x005CC3E0,Gin6shokan,offset
+       [subject]パストーレ:dir
+	       [replace]0x005CC450,Gin6shokan,offset
+       [subject]パットリンケン:dir
+	       [replace]0x005CC530,Gin6shokan,offset
+       [subject]パトリチェフ:dir
+	       [replace]0x005CC4C0,Gin6shokan,offset
+       [subject]バルトハウザー:dir
+	       [replace]0x005CC5A0,Gin6shokan,offset
+       [subject]ハルバーシュタット:dir
+	       [replace]0x005CC610,Gin6shokan,offset
+       [subject]ビッテンフェルト:dir
+	       [replace]0x005CC680,Gin6shokan,offset
+       [subject]ビューロー:dir
+	       [replace]0x005CC6F0,Gin6shokan,offset
+       [subject]ビュコック:dir
+	       [replace]0x005CC760,Gin6shokan,offset
+       [subject]宇宙艦隊司令長官ビュコック元帥:dir
+	       [replace]0x005CF010,Gin6shokan,offset
+       [subject]ビュルメリンク:dir
+	       [replace]0x005CC7D0,Gin6shokan,offset
+       [subject]ビュンシェ:dir
+	       [replace]0x005CC840,Gin6shokan,offset
+       [subject]ヒルデスハイム:dir
+	       [replace]0x005CC8B0,Gin6shokan,offset
+       [subject]ビロライネン:dir
+	       [replace]0x005CC920,Gin6shokan,offset
+       [subject]フーセネガー:dir
+	       [replace]0x005CCAE0,Gin6shokan,offset
+       [subject]ファーレンハイト:dir
+	       [replace]0x005CC990,Gin6shokan,offset
+       [subject]ファイフェル:dir
+	       [replace]0x005CCA00,Gin6shokan,offset
+       [subject]フィッシャー:dir
+	       [replace]0x005CCA70,Gin6shokan,offset
+       [subject]フェルナー:dir
+	       [replace]0x005CCB50,Gin6shokan,offset
+       [subject]フォーク:dir
+	       [replace]0x005CCBC0,Gin6shokan,offset
+       [subject]フォーゲル:dir
+	       [replace]0x005CCC30,Gin6shokan,offset
+       [subject]フォンク:dir
+	       [replace]0x005CCCA0,Gin6shokan,offset
+       [subject]ブクステフーデ:dir
+	       [replace]0x005CCD10,Gin6shokan,offset
+       [subject]ブラウヒッチ:dir
+	       [replace]0x005CCD80,Gin6shokan,offset
+       [subject]ブラウンシュヴァイク:dir
+	       [replace]0x005CCDF0,Gin6shokan,offset
+       [subject]ブラッドジョー:dir
+	       [replace]0x005CCED0,Gin6shokan,offset
+       [subject]フリードリヒⅣ世:dir
+	       [replace]0x005CE670,Gin6shokan,offset
+       [subject]ブルームハルト:dir
+	       [replace]0x005CCE60,Gin6shokan,offset
+       [subject]フレーゲル:dir
+	       [replace]0x005CCF40,Gin6shokan,offset
+       [subject]ブレンターノ:dir
+	       [replace]0x005CCFB0,Gin6shokan,offset
+       [subject]ブロンズ:dir
+	       [replace]0x005CE590,Gin6shokan,offset
+       [subject]ベルゲングリューン:dir
+	       [replace]0x005CD020,Gin6shokan,offset
+       [subject]ホーウッド:dir
+	       [replace]0x005CD090,Gin6shokan,offset
+       [subject]ホフマイスター:dir
+	       [replace]0x005CD100,Gin6shokan,offset
+       [subject]ポプラン:dir
+	       [replace]0x005CD170,Gin6shokan,offset
+       [subject]ホルツバウアー:dir
+	       [replace]0x005CD1E0,Gin6shokan,offset
+       [subject]ボロディン:dir
+	       [replace]0x005CD250,Gin6shokan,offset
+[back]
+	[subject]ま行:dir
+       [subject]マイフォーハー:dir
+	       [replace]0x005CD2C0,Gin6shokan,offset
+       [subject]マシュンゴ:dir
+	       [replace]0x005CE4B0,Gin6shokan,offset
+       [subject]マスカーニ:dir
+	       [replace]0x005CD330,Gin6shokan,offset
+       [subject]マリネッティ:dir
+	       [replace]0x005CD410,Gin6shokan,offset
+       [subject]マリノ:dir
+	       [replace]0x005CD480,Gin6shokan,offset
+       [subject]マルクグラーフ:dir
+	       [replace]0x005CD4F0,Gin6shokan,offset
+       [subject]ミッターマイヤー:dir
+	       [replace]0x005CD560,Gin6shokan,offset
+       [subject]ミューゼル:dir
+	       [replace]0x005CEE50,Gin6shokan,offset
+       [subject]ミュッケンベルガー:dir
+	       [replace]0x005CD640,Gin6shokan,offset
+       [subject]ミュラー:dir
+	       [replace]0x005CD6B0,Gin6shokan,offset
+       [subject]ミュンヒンガー:dir
+	       [replace]0x005CD720,Gin6shokan,offset
+       [subject]ミンツ:dir
+	       [replace]0x005CD790,Gin6shokan,offset
+       [subject]ムーア:dir
+	       [replace]0x005CD800,Gin6shokan,offset
+       [subject]ムライ:dir
+	       [replace]0x005CD870,Gin6shokan,offset
+       [subject]メックリンガー:dir
+	       [replace]0x005CD8E0,Gin6shokan,offset
+       [subject]メルカッツ:dir
+	       [replace]0x005CD950,Gin6shokan,offset
+       [subject]モートン:dir
+	       [replace]0x005CD9C0,Gin6shokan,offset
+[back]
+	[subject]や・ら・わ行:dir
+       [subject]ヤン:dir
+	       [replace]0x005CDA30,Gin6shokan,offset
+       [subject]ライブル:dir
+	       [replace]0x005CDB10,Gin6shokan,offset
+       [subject]ラインハルト:dir
+	       [replace]0x005CEEC0,Gin6shokan,offset
+       [subject]銀河帝国皇帝ラインハルト:dir
+	       [replace]0x005CF2B0,Gin6shokan,offset
+       [subject]ラオ:dir
+	       [replace]0x005CDB80,Gin6shokan,offset
+       [subject]ラップ:dir
+	       [replace]0x005CDBF0,Gin6shokan,offset
+       [subject]ラング:dir
+	       [replace]0x005CE8A0,Gin6shokan,offset
+       [subject]ランズベルク:dir
+	       [replace]0x005CDC60,Gin6shokan,offset
+       [subject]リッチェル:dir
+	       [replace]0x005CDCD0,Gin6shokan,offset
+       [subject]リッテンハイム:dir
+	       [replace]0x005CDD40,Gin6shokan,offset
+       [subject]リヒテンラーデ:dir
+	       [replace]0x005CF1D0,Gin6shokan,offset
+       [subject]国務尚書リヒテンラーデ侯:dir
+	       [replace]0x005CEA60,Gin6shokan,offset
+       [subject]リュッケ:dir
+	       [replace]0x005CE980,Gin6shokan,offset
+       [subject]リンツ:dir
+	       [replace]0x005CDDB0,Gin6shokan,offset
+       [subject]リンチ:dir
+	       [replace]0x005CE3D0,Gin6shokan,offset
+       [subject]ルグランジュ:dir
+	       [replace]0x005CDE20,Gin6shokan,offset
+       [subject]ルッツ:dir
+	       [replace]0x005CDE90,Gin6shokan,offset
+       [subject]ルフェーブル:dir
+	       [replace]0x005CDF00,Gin6shokan,offset
+       [subject]レッケンドルフ:dir
+	       [replace]0x005CEDE0,Gin6shokan,offset
+       [subject]レフォルト:dir
+	       [replace]0x005CDF70,Gin6shokan,offset
+       [subject]レベロ:dir
+	       [replace]0x005CDFE0,Gin6shokan,offset
+       [subject]レムシャイド:dir
+	       [replace]0x005CEBB0,Gin6shokan,offset
+       [subject]レンネンカンプ:dir
+	       [replace]0x005CE050,Gin6shokan,offset
+       [subject]ローエングラム:dir
+	       [replace]0x005CD5D0,Gin6shokan,offset
+       [subject]宇宙艦隊副司令官ローエングラム元帥:dir
+	       [replace]0x005CF390,Gin6shokan,offset
+       [subject]ロイエンタール:dir
+	       [replace]0x005CE0C0,Gin6shokan,offset
+       [subject]ロックウェル:dir
+	       [replace]0x005CE130,Gin6shokan,offset
+       [subject]ロボス:dir
+	       [replace]0x005CE1A0,Gin6shokan,offset
+       [subject]宇宙艦隊司令長官ロボス元帥:dir
+	       [replace]0x005CEFA0,Gin6shokan,offset
+       [subject]ワーレン:dir
+	       [replace]0x005CE210,Gin6shokan,offset
+[root]
+
+[/script]
+
+[script]
+[title]銀河英雄伝説Ⅵ Ver.2.0.0
+[process]GIN6.EXE
+[maker]Bothtec
+[creator]freecss
+[note]
+銀河英雄伝説ⅥのSSGです。
+バージョンは2.0.0です。
+（シナリオジェネレーターが
+ついる奴：1.1.1をアップデート
+した物でSSG作成。）
+艦隊構成の変更および
+将官の能力変更ができるかも。
+
+新たに艦船戦隊、空戦隊、
+艦隊幕僚を加える
+ことはできません。
+（輸送艦を戦艦等に変換した場合、
+未搭載のままになってますので、
+空戦隊は使用できません。）
+
+司令官、幕僚の能力を変更した後、
+１ターンが終わるまでは艦隊パラメーター
+に反映されません。
+また、将官を変更した場合は、
+必ず積極性を入力を・・。
+（艦隊パラメータの士気の変更が
+出来なくなってます）
+
+戦隊名も変更できますが、
+変更前より短い名前を付けた場合
+後ろにゴミが付きます。
+
+注意：各個人の責任において使用してください。
+ネットワーク対戦においては
+使用しないで下さい。
+
+[/note]
+
+[subject]艦隊パラメータ:dir
+       [subject]001:dir
+	       [replace]0x006644D0,Gin6kantai,offset
+       [subject]002:dir
+	       [replace]0x00664608,Gin6kantai,offset
+       [subject]003:dir
+	       [replace]0x00664740,Gin6kantai,offset
+       [subject]004:dir
+	       [replace]0x00664878,Gin6kantai,offset
+       [subject]005:dir
+	       [replace]0x006649B0,Gin6kantai,offset
+       [subject]006:dir
+	       [replace]0x00664AE8,Gin6kantai,offset
+       [subject]007:dir
+	       [replace]0x00664C20,Gin6kantai,offset
+       [subject]008:dir
+	       [replace]0x00664D58,Gin6kantai,offset
+       [subject]009:dir
+	       [replace]0x00664E90,Gin6kantai,offset
+       [subject]010:dir
+	       [replace]0x00664FC8,Gin6kantai,offset
+       [subject]011:dir
+	       [replace]0x00665100,Gin6kantai,offset
+       [subject]012:dir
+	       [replace]0x00665238,Gin6kantai,offset
+       [subject]013:dir
+	       [replace]0x00665370,Gin6kantai,offset
+       [subject]014:dir
+	       [replace]0x006654A8,Gin6kantai,offset
+       [subject]015:dir
+	       [replace]0x006655E0,Gin6kantai,offset
+       [subject]016:dir
+	       [replace]0x00665718,Gin6kantai,offset
+       [subject]017:dir
+	       [replace]0x00665850,Gin6kantai,offset
+       [subject]018:dir
+	       [replace]0x00665988,Gin6kantai,offset
+[root]
+
+[subject]戦隊構成変更:dir
+       [subject]001:dir
+              [subject]艦戦隊:dir
+	       [replace]0x006662CC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00681B6C,Gin6sentai,offset
+[back]
+       [subject]002:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00666388,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00681C28,Gin6sentai,offset
+[back]
+       [subject]003:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00666444,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00681CE4,Gin6sentai,offset
+[back]
+       [subject]004:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00666500,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00681DA0,Gin6sentai,offset
+[back]
+       [subject]005:dir
+              [subject]艦戦隊:dir
+	       [replace]0x006665BC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00681E5C,Gin6sentai,offset
+[back]
+       [subject]006:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00666678,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00681F18,Gin6sentai,offset
+[back]
+       [subject]007:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00666734,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00681FD4,Gin6sentai,offset
+[back]
+       [subject]008:dir
+              [subject]艦戦隊:dir
+	       [replace]0x006667F0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00682090,Gin6sentai,offset
+[back]
+       [subject]009:dir
+              [subject]艦戦隊:dir
+	       [replace]0x006668AC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068214C,Gin6sentai,offset
+[back]
+       [subject]010:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00666968,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00682208,Gin6sentai,offset
+[back]
+       [subject]011:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00666A24,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x006822C4,Gin6sentai,offset
+[back]
+       [subject]012:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00666AE0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00682380,Gin6sentai,offset
+[back]
+       [subject]013:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00666B9C,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x0068243C,Gin6sentai,offset
+[back]
+       [subject]014:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00666C58,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x006824F8,Gin6sentai,offset
+ [back]
+      [subject]015:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00666D14,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x006825B4,Gin6sentai,offset
+[back]
+       [subject]016:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00666DD0,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x00682670,Gin6sentai,offset
+[back]
+       [subject]017:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00666E8C,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x0068272C,Gin6sentai,offset
+[back]
+       [subject]018:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00666F48,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x006827E8,Gin6sentai,offset
+[back]
+       [subject]019:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00667004,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x006828A4,Gin6sentai,offset
+[back]
+       [subject]020:dir
+              [subject]艦戦隊:dir
+	       [replace]0x006670C0,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x00682960,Gin6sentai,offset
+[back]
+       [subject]021:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066717C,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x00682A1C,Gin6sentai,offset
+[back]
+       [subject]022:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00667238,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x00682AD8,Gin6sentai,offset
+[back]
+       [subject]023:dir
+              [subject]艦戦隊:dir
+	       [replace]0x006672F4,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x00682B94,Gin6sentai,offset
+[back]
+       [subject]024:dir
+              [subject]艦戦隊:dir
+	       [replace]0x006673B0,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x00682C50,Gin6sentai,offset
+[back]
+       [subject]025:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066746C,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x00682D0C,Gin6sentai,offset
+[back]
+       [subject]026:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00667528,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x00682DC8,Gin6sentai,offset
+[back]
+       [subject]027:dir
+              [subject]艦戦隊:dir
+	       [replace]0x006675E4,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x00682E84,Gin6sentai,offset
+[back]
+       [subject]028:dir
+              [subject]艦戦隊:dir
+	       [replace]0x006676A0,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x00682F40,Gin6sentai,offset
+[back]
+       [subject]029:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066775C,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x00682FFC,Gin6sentai,offset
+[back]
+       [subject]030:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00667818,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x006830B8,Gin6sentai,offset
+[back]
+       [subject]031:dir
+              [subject]艦戦隊:dir
+	       [replace]0x006678D4,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x00683174,Gin6sentai,offset
+[back]
+       [subject]032:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00667990,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x00683230,Gin6sentai,offset
+[back]
+       [subject]033:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00667A4C,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x006832EC,Gin6sentai,offset
+[back]
+       [subject]034:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00667B08,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x006833A8,Gin6sentai,offset
+[back]
+      [subject]035:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00667BC4,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x00683464,Gin6sentai,offset
+[back]
+       [subject]036:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00667C80,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x00683520,Gin6sentai,offset
+[back]
+       [subject]037:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00667D3C,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x006835DC,Gin6sentai,offset
+[back]
+       [subject]038:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00667DF8,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x00683698,Gin6sentai,offset
+[back]
+       [subject]039:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00667EB4,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x00683754,Gin6sentai,offset
+[back]
+       [subject]040:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00667F70,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x00683810,Gin6sentai,offset
+[back]
+       [subject]041:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066802C,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x006838CC,Gin6sentai,offset
+[back]
+       [subject]042:dir
+              [subject]艦戦隊:dir
+	       [replace]0x006680E8,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x00683988,Gin6sentai,offset
+[back]
+       [subject]043:dir
+              [subject]艦戦隊:dir
+	       [replace]0x006681A4,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x00683A44,Gin6sentai,offset
+[back]
+       [subject]044:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00668260,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x00683B00,Gin6sentai,offset
+[back]
+       [subject]045:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066831C,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x00683BBC,Gin6sentai,offset
+[back]
+       [subject]046:dir
+              [subject]艦戦隊:dir
+	       [replace]0x006683D8,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x00683C78,Gin6sentai,offset
+[back]
+       [subject]047:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00668494,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x00683D34,Gin6sentai,offset
+[back]
+      [subject]048:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00668550,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x00683DF0,Gin6sentai,offset
+[back]
+       [subject]049:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066860C,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x00683EAC,Gin6sentai,offset
+[back]
+      [subject]050:dir
+              [subject]艦戦隊:dir
+	       [replace]0x006686C8,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x00683F68,Gin6sentai,offset
+[back]
+       [subject]051:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00668784,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x00684024,Gin6sentai,offset
+[back]
+       [subject]052:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00668840,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x006840E0,Gin6sentai,offset
+[back]
+       [subject]053:dir
+              [subject]艦戦隊:dir
+	       [replace]0x006688FC,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x0068419C,Gin6sentai,offset
+[back]
+       [subject]054:dir
+              [subject]艦戦隊:dir
+	       [replace]0x006689B8,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x00684258,Gin6sentai,offset
+[back]
+       [subject]055:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00668A74,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x00684314,Gin6sentai,offset
+[back]
+       [subject]056:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00668B30,Gin6sentai,offset
+              [subject]空戦隊:dir
+              [replace]0x006843D0,Gin6sentai,offset
+[back]
+       [subject]057:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00668BEC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068448C,Gin6sentai,offset
+[back]
+       [subject]058:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00668CA8,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00684548,Gin6sentai,offset
+[back]
+       [subject]059:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00668D64,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00684604,Gin6sentai,offset
+ [back]
+      [subject]060:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00668E20,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x006846C0,Gin6sentai,offset
+[back]
+       [subject]061:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00668EDC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068477C,Gin6sentai,offset
+[back]
+       [subject]062:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00668F98,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00684838,Gin6sentai,offset
+[back]
+       [subject]063:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00669054,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x006848F4,Gin6sentai,offset
+[back]
+       [subject]064:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00669110,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x006849B0,Gin6sentai,offset
+[back]
+       [subject]065:dir
+              [subject]艦戦隊:dir
+	       [replace]0x006691CC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00684A6C,Gin6sentai,offset
+[back]
+       [subject]066:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00669288,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00684B28,Gin6sentai,offset
+[back]
+       [subject]067:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00669344,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00684BE4,Gin6sentai,offset
+[back]
+       [subject]068:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00669400,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00684CA0,Gin6sentai,offset
+[back]
+       [subject]069:dir
+              [subject]艦戦隊:dir
+	       [replace]0x006694BC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00684D5C,Gin6sentai,offset
+[back]
+       [subject]070:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00669578,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00684E18,Gin6sentai,offset
+[back]
+       [subject]071:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00669634,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00684ED4,Gin6sentai,offset
+[back]
+       [subject]072:dir
+              [subject]艦戦隊:dir
+	       [replace]0x006696F0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00684F90,Gin6sentai,offset
+[back]
+       [subject]073:dir
+              [subject]艦戦隊:dir
+	       [replace]0x006697AC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068504C,Gin6sentai,offset
+[back]
+       [subject]074:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00669868,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00685108,Gin6sentai,offset
+[back]
+       [subject]075:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00669924,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x006851C4,Gin6sentai,offset
+[back]
+       [subject]076:dir
+              [subject]艦戦隊:dir
+	       [replace]0x006699E0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00685280,Gin6sentai,offset
+[back]
+       [subject]077:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00669A9C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068533C,Gin6sentai,offset
+[back]
+       [subject]078:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00669B58,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x006853F8,Gin6sentai,offset
+[back]
+       [subject]079:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00669C14,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x006854B4,Gin6sentai,offset
+[back]
+       [subject]080:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00669CD0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00685570,Gin6sentai,offset
+[back]
+       [subject]081:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00669D8C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068562C,Gin6sentai,offset
+[back]
+       [subject]082:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00669E48,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x006856E8,Gin6sentai,offset
+[back]
+       [subject]083:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00669F04,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x006857A4,Gin6sentai,offset
+[back]
+       [subject]084:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00669FC0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00685860,Gin6sentai,offset
+[back]
+       [subject]085:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066A07C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068591C,Gin6sentai,offset
+[back]
+       [subject]086:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066A138,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x006859D8,Gin6sentai,offset
+[back]
+       [subject]087:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066A1F4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00685A94,Gin6sentai,offset
+[back]
+       [subject]088:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066A2B0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00685B50,Gin6sentai,offset
+[back]
+       [subject]089:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066A36C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00685C0C,Gin6sentai,offset
+[back]
+       [subject]090:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066A428,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00685CC8,Gin6sentai,offset
+[back]
+       [subject]091:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066A4E4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00685D84,Gin6sentai,offset
+[back]
+       [subject]092:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066A5A0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00685E40,Gin6sentai,offset
+[back]
+       [subject]093:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066A65C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00685EFC,Gin6sentai,offset
+[back]
+       [subject]094:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066A718,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00685FB8,Gin6sentai,offset
+[back]
+       [subject]095:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066A7D4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00686074,Gin6sentai,offset
+[back]
+       [subject]096:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066A890,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00686130,Gin6sentai,offset
+[back]
+       [subject]097:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066A94C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x006861EC,Gin6sentai,offset
+[back]
+       [subject]098:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066AA08,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x006862A8,Gin6sentai,offset
+[back]
+       [subject]099:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066AAC4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00686364,Gin6sentai,offset
+[back]
+       [subject]100:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066AB80,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00686420,Gin6sentai,offset
+[back]
+       [subject]101:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066AC3C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x006864DC,Gin6sentai,offset
+[back]
+       [subject]102:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066ACF8,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00686598,Gin6sentai,offset
+[back]
+       [subject]103:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066ADB4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00686654,Gin6sentai,offset
+[back]
+       [subject]104:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066AE70,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00686710,Gin6sentai,offset
+[back]
+       [subject]105:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066AF2C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x006867CC,Gin6sentai,offset
+[back]
+       [subject]106:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066AFE8,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00686888,Gin6sentai,offset
+[back]
+       [subject]107:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066B0A4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00686944,Gin6sentai,offset
+[back]
+       [subject]108:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066B160,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00686A00,Gin6sentai,offset
+[back]
+       [subject]109:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066B21C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00686ABC,Gin6sentai,offset
+[back]
+       [subject]110:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066B2D8,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00686B78,Gin6sentai,offset
+[back]
+       [subject]111:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066B394,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00686C34,Gin6sentai,offset
+[back]
+       [subject]112:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066B450,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00686CF0,Gin6sentai,offset
+[back]
+       [subject]113:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066B50C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00686DAC,Gin6sentai,offset
+[back]
+       [subject]114:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066B5C8,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00686EF8,Gin6sentai,offset
+[back]
+       [subject]115:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066B684,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00686F24,Gin6sentai,offset
+[back]
+       [subject]116:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066B740,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00686FE0,Gin6sentai,offset
+[back]
+       [subject]117:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066B7FC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068709C,Gin6sentai,offset
+[back]
+      [subject]118:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066B8B8,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00687158,Gin6sentai,offset
+[back]
+       [subject]119:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066B974,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00687214,Gin6sentai,offset
+[back]
+       [subject]120:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066BA30,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x006872D0,Gin6sentai,offset
+[back]
+       [subject]121:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066BAEC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068738C,Gin6sentai,offset
+[back]
+       [subject]122:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066BBA8,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00687448,Gin6sentai,offset
+[back]
+       [subject]123:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066BC64,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00687504,Gin6sentai,offset
+[back]
+       [subject]124:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066BD20,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x006875C0,Gin6sentai,offset
+[back]
+       [subject]125:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066BDDC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068767C,Gin6sentai,offset
+[back]
+       [subject]126:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066BE98,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00687738,Gin6sentai,offset
+[back]
+       [subject]127:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066BF54,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x006877F4,Gin6sentai,offset
+[back]
+       [subject]128:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066C010,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x006878B0,Gin6sentai,offset
+[back]
+       [subject]129:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066C0CC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068796C,Gin6sentai,offset
+[back]
+       [subject]130:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066C188,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00687A28,Gin6sentai,offset
+[back]
+       [subject]131:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066C244,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00687AE4,Gin6sentai,offset
+[back]
+       [subject]132:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066C300,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00687BA0,Gin6sentai,offset
+[back]
+       [subject]133:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066C3BC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00687C5C,Gin6sentai,offset
+[back]
+      [subject]134:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066C478,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00687D18,Gin6sentai,offset
+[back]
+      [subject]135:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066C534,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00687DD4,Gin6sentai,offset
+[back]
+       [subject]136:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066C5F0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00687E90,Gin6sentai,offset
+[back]
+       [subject]137:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066C6AC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00687F4C,Gin6sentai,offset
+[back]
+       [subject]138:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066C768,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00688008,Gin6sentai,offset
+[back]
+       [subject]139:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066C824,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x006880C4,Gin6sentai,offset
+[back]
+       [subject]140:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066C8E0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00688180,Gin6sentai,offset
+[back]
+       [subject]141:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066C99C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068823C,Gin6sentai,offset
+[back]
+       [subject]142:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066CA58,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x006882F8,Gin6sentai,offset
+[back]
+       [subject]143:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066CB14,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x006883B4,Gin6sentai,offset
+[back]
+       [subject]144:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066CBD0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00688470,Gin6sentai,offset
+[back]
+       [subject]145:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066CC8C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068852C,Gin6sentai,offset
+[back]
+       [subject]146:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066CD48,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x006885E8,Gin6sentai,offset
+[back]
+       [subject]147:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066CE04,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x006886A4,Gin6sentai,offset
+[back]
+       [subject]148:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066CEC0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00688760,Gin6sentai,offset
+[back]
+       [subject]149:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066CF7C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068881C,Gin6sentai,offset
+[back]
+       [subject]150:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066D038,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x006888D8,Gin6sentai,offset
+[back]
+       [subject]151:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066D0F4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00688994,Gin6sentai,offset
+[back]
+       [subject]152:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066D1B0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00688A50,Gin6sentai,offset
+[back]
+       [subject]153:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066D26C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00688B0C,Gin6sentai,offset
+[back]
+       [subject]154:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066D328,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00688BC8,Gin6sentai,offset
+[back]
+       [subject]155:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066D3E4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00688C84,Gin6sentai,offset
+[back]
+       [subject]156:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066D4A0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00688D40,Gin6sentai,offset
+[back]
+       [subject]157:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066D55C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00688DFC,Gin6sentai,offset
+[back]
+       [subject]158:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066D618,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00688EB8,Gin6sentai,offset
+[back]
+       [subject]159:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066D6D4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00688F74,Gin6sentai,offset
+[back]
+       [subject]160:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066D790,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00689030,Gin6sentai,offset
+[back]
+       [subject]161:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066D84C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x006890EC,Gin6sentai,offset
+[back]
+       [subject]162:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066D908,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x006891A8,Gin6sentai,offset
+[back]
+       [subject]163:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066D9C4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00689264,Gin6sentai,offset
+[back]
+       [subject]164:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066DA80,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00689320,Gin6sentai,offset
+[back]
+       [subject]165:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066DB3C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x006893DC,Gin6sentai,offset
+[back]
+       [subject]166:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066DBF8,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00689498,Gin6sentai,offset
+[back]
+       [subject]167:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066DCB4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00689554,Gin6sentai,offset
+[back]
+       [subject]168:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066DD70,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00689610,Gin6sentai,offset
+[back]
+       [subject]169:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066DE2C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x006896CC,Gin6sentai,offset
+[back]
+       [subject]170:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066DEE8,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00689788,Gin6sentai,offset
+[back]
+      [subject]171:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066DFA4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00689844,Gin6sentai,offset
+[back]
+       [subject]172:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066E060,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00689900,Gin6sentai,offset
+[back]
+       [subject]173:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066E11C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x006899BC,Gin6sentai,offset
+[back]
+       [subject]174:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066E1D8,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00689A78,Gin6sentai,offset
+[back]
+       [subject]175:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066E294,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00689B34,Gin6sentai,offset
+[back]
+       [subject]176:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066E350,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00689BF0,Gin6sentai,offset
+[back]
+       [subject]177:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066E40C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00689CAC,Gin6sentai,offset
+[back]
+       [subject]178:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066E4C8,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00689D68,Gin6sentai,offset
+[back]
+       [subject]179:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066E584,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00689E24,Gin6sentai,offset
+[back]
+       [subject]180:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066E640,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00689EE0,Gin6sentai,offset
+[back]
+       [subject]181:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066E6FC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x00689F9C,Gin6sentai,offset
+[back]
+       [subject]182:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066E7B8,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068A058,Gin6sentai,offset
+[back]
+       [subject]183:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066E874,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068A114,Gin6sentai,offset
+[back]
+       [subject]184:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066E930,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068A1D0,Gin6sentai,offset
+[back]
+       [subject]185:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066E9EC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068A28C,Gin6sentai,offset
+[back]
+      [subject]186:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066EAA8,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068A348,Gin6sentai,offset
+[back]
+       [subject]187:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066EB64,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068A404,Gin6sentai,offset
+[back]
+       [subject]188:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066EC20,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068A4C0,Gin6sentai,offset
+[back]
+       [subject]189:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066ECDC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068A57C,Gin6sentai,offset
+[back]
+       [subject]190:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066ED98,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068A638,Gin6sentai,offset
+[back]
+       [subject]191:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066EE54,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068A6F4,Gin6sentai,offset
+[back]
+       [subject]192:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066EF10,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068A7B0,Gin6sentai,offset
+[back]
+       [subject]193:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066EFCC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068A86C,Gin6sentai,offset
+[back]
+       [subject]194:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066F088,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068A928,Gin6sentai,offset
+[back]
+       [subject]195:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066F144,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068A9E4,Gin6sentai,offset
+[back]
+       [subject]196:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066F200,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068AAA0,Gin6sentai,offset
+[back]
+       [subject]197:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066F2BC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068AB6C,Gin6sentai,offset
+[back]
+       [subject]198:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066F378,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068AC18,Gin6sentai,offset
+[back]
+       [subject]199:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066F434,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068ACD4,Gin6sentai,offset
+[back]
+       [subject]200:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066F4F0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068AD90,Gin6sentai,offset
+[back]
+       [subject]201:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066F5AC,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068AE4C,Gin6sentai,offset
+[back]
+       [subject]202:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066F668,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068AF08,Gin6sentai,offset
+[back]
+       [subject]203:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066F724,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068AFC4,Gin6sentai,offset
+[back]
+       [subject]204:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066F7E0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068B080,Gin6sentai,offset
+[back]
+       [subject]205:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066F89C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068B13C,Gin6sentai,offset
+[back]
+       [subject]206:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066F958,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068B1F8,Gin6sentai,offset
+[back]
+       [subject]207:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066FA14,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068B2B4,Gin6sentai,offset
+[back]
+       [subject]208:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066FAD0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068B370,Gin6sentai,offset
+[back]
+       [subject]209:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066FB8C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068B42C,Gin6sentai,offset
+[back]
+       [subject]210:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066FC48,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068B4E8,Gin6sentai,offset
+[back]
+       [subject]211:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066FD04,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068B5A4,Gin6sentai,offset
+[back]
+       [subject]212:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066FDC0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068B660,Gin6sentai,offset
+[back]
+       [subject]213:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066FE7C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068B71C,Gin6sentai,offset
+[back]
+       [subject]214:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066FF38,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068B7D8,Gin6sentai,offset
+[back]
+      [subject]215:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0066FFF4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068B894,Gin6sentai,offset
+[back]
+       [subject]216:dir
+              [subject]艦戦隊:dir
+	       [replace]0x006700B0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068B950,Gin6sentai,offset
+[back]
+       [subject]217:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0067016C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068BA0C,Gin6sentai,offset
+[back]
+       [subject]218:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00670228,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068BAC8,Gin6sentai,offset
+[back]
+       [subject]219:dir
+              [subject]艦戦隊:dir
+	       [replace]0x006702E4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068BB84,Gin6sentai,offset
+[back]
+       [subject]220:dir
+              [subject]艦戦隊:dir
+	       [replace]0x006703A0,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068BC40,Gin6sentai,offset
+[back]
+       [subject]221:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0067045C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068BCFC,Gin6sentai,offset
+[back]
+       [subject]222:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00670518,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068BDB8,Gin6sentai,offset
+[back]
+       [subject]223:dir
+              [subject]艦戦隊:dir
+	       [replace]0x006705D4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068BE74,Gin6sentai,offset
+[back]
+       [subject]224:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00670690,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068BF30,Gin6sentai,offset
+[back]
+       [subject]225:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0067074C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068BFEC,Gin6sentai,offset
+[back]
+       [subject]226:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00670808,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068C0A8,Gin6sentai,offset
+[back]
+       [subject]227:dir
+              [subject]艦戦隊:dir
+	       [replace]0x006708C4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068C164,Gin6sentai,offset
+[back]
+       [subject]228:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00670980,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068C220,Gin6sentai,offset
+[back]
+       [subject]229:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00670A3C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068C2DC,Gin6sentai,offset
+[back]
+       [subject]230:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00670AF8,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068C398,Gin6sentai,offset
+[back]
+       [subject]231:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00670BB4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068C454,Gin6sentai,offset
+[back]
+       [subject]232:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00670C70,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068C510,Gin6sentai,offset
+[back]
+       [subject]233:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00670D2C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068C5CC,Gin6sentai,offset
+[back]
+       [subject]234:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00670DE8,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068C688,Gin6sentai,offset
+[back]
+       [subject]235:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00670EA4,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068C744,Gin6sentai,offset
+[back]
+       [subject]236:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00670F60,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068C800,Gin6sentai,offset
+[back]
+       [subject]237:dir
+              [subject]艦戦隊:dir
+	       [replace]0x0067101C,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068C8BC,Gin6sentai,offset
+[back]
+       [subject]238:dir
+              [subject]艦戦隊:dir
+	       [replace]0x006710D8,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068C978,Gin6sentai,offset
+[back]
+       [subject]239:dir
+              [subject]艦戦隊:dir
+	       [replace]0x00671194,Gin6sentai,offset
+              [subject]空戦隊:dir
+	       [replace]0x0068CA34,Gin6sentai,offset
+[root]
+
+[subject]艦船能力:dir
+       [subject]帝国軍:dir
+              [subject]帝国軍標準戦艦:dir
+	              [replace]0x006A0250,Gin6senkan,offset
+              [subject]帝国軍巡航艦:dir
+	              [replace]0x006A03B8,Gin6senkan,offset
+              [subject]帝国軍駆逐艦:dir
+	              [replace]0x006A0520,Gin6senkan,offset
+              [subject]帝国軍高速戦艦:dir
+	              [replace]0x006A0688,Gin6senkan,offset
+              [subject]帝国軍輸送艦:dir
+	              [replace]0x006A073C,Gin6senkan,offset
+              [subject]帝国軍宇宙母艦:dir
+	              [replace]0x006A08A4,Gin6senkan,offset
+              [subject]ワルキューレ:dir
+	              [replace]0x006A0A0C,Gin6senkan,offset
+              [subject]帝国軍標準戦艦:dir
+	              [replace]0x006A0B74,Gin6senkan,offset
+              [subject]帝国軍巡航艦:dir
+	              [replace]0x006A0C28,Gin6senkan,offset
+              [subject]帝国軍駆逐艦:dir
+	              [replace]0x006A0CDC,Gin6senkan,offset
+              [subject]帝国軍高速戦艦:dir
+	              [replace]0x006A0D90,Gin6senkan,offset
+              [subject]帝国軍輸送艦:dir
+	              [replace]0x006A0E44,Gin6senkan,offset
+              [subject]帝国軍宇宙母艦:dir
+	              [replace]0x006A0EF8,Gin6senkan,offset
+[back]
+       [subject]同盟軍:dir
+              [subject]同盟軍標準戦艦:dir
+	              [replace]0x006A0304,Gin6senkan,offset
+              [subject]同盟軍巡航艦:dir
+	              [replace]0x006A046C,Gin6senkan,offset
+              [subject]同盟軍駆逐艦:dir
+	              [replace]0x006A05D4,Gin6senkan,offset
+              [subject]同盟軍輸送艦:dir
+	              [replace]0x006A07F0,Gin6senkan,offset
+              [subject]同盟軍宇宙母艦:dir
+	              [replace]0x006A0958,Gin6senkan,offset
+              [subject]スパルタニアン:dir
+	              [replace]0x006A0AC0,Gin6senkan,offset
+[root]
+
+[subject]将官能力:dir
+	[subject]A～Z:dir
+       [subject]D.グリーンヒル:dir
+	       [replace]0x0065A070,Gin6shokan,offset
+       [subject]F.G.ヤン:dir
+	       [replace]0x0065F240,Gin6shokan,offset
+       [subject]F.グリーンヒル:dir
+	       [replace]0x0065A0E0,Gin6shokan,offset
+       [subject]F.マリーンドルフ:dir
+	       [replace]0x0065EC20,Gin6shokan,offset
+       [subject]H.マリーンドルフ:dir
+	       [replace]0x0065D3A0,Gin6shokan,offset
+       [subject]I.コーネフ:dir
+	       [replace]0x0065A150,Gin6shokan,offset
+[back]
+	[subject]あ行:dir
+       [subject]アイゼナッハ:dir
+	       [replace]0x0065A1C0,Gin6shokan,offset
+       [subject]アイヘンドルフ:dir
+	       [replace]0x0065A230,Gin6shokan,offset
+       [subject]アイランズ:dir
+	       [replace]0x0065E6E0,Gin6shokan,offset
+       [subject]アシュール:dir
+	       [replace]0x0065A2A0,Gin6shokan,offset
+       [subject]アッテンボロー:dir
+	       [replace]0x0065A310,Gin6shokan,offset
+       [subject]アップルトン:dir
+	       [replace]0x0065A380,Gin6shokan,offset
+       [subject]アムスドルフ:dir
+	       [replace]0x0065EC90,Gin6shokan,offset
+       [subject]アラルコン:dir
+	       [replace]0x0065A3F0,Gin6shokan,offset
+       [subject]アル・サレム:dir
+	       [replace]0x0065A460,Gin6shokan,offset
+       [subject]アルトリンゲン:dir
+	       [replace]0x0065A4D0,Gin6shokan,offset
+       [subject]アンスバッハ:dir
+	       [replace]0x0065A540,Gin6shokan,offset
+       [subject]ヴァーゲンザイル:dir
+	       [replace]0x0065A5B0,Gin6shokan,offset
+       [subject]ウィッティ:dir
+	       [replace]0x0065A620,Gin6shokan,offset
+       [subject]ウィンザー:dir
+	       [replace]0x0065E2F0,Gin6shokan,offset
+       [subject]ヴェーラー:dir
+	       [replace]0x0065A690,Gin6shokan,offset
+       [subject]ヴューゼンヒュッター:dir
+	       [replace]0x0065A700,Gin6shokan,offset
+       [subject]ウランフ:dir
+	       [replace]0x0065A770,Gin6shokan,offset
+       [subject]エーレンベルグ:dir
+	       [replace]0x0065E7C0,Gin6shokan,offset
+       [subject]エドワース:dir
+	       [replace]0x0065E750,Gin6shokan,offset
+       [subject]エベンス:dir
+	       [replace]0x0065A7E0,Gin6shokan,offset
+       [subject]エマーソン:dir
+	       [replace]0x0065EB40,Gin6shokan,offset
+       [subject]エルウィン・ヨーゼフⅡ:dir
+	       [replace]0x0065DAA0,Gin6shokan,offset
+       [subject]エルラッハ:dir
+	       [replace]0x0065A850,Gin6shokan,offset
+       [subject]オーベルシュタイン:dir
+	       [replace]0x0065A9A0,Gin6shokan,offset
+       [subject]オイゲン:dir
+	       [replace]0x0065A8C0,Gin6shokan,offset
+       [subject]オフレッサー:dir
+	       [replace]0x0065A930,Gin6shokan,offset
+       [subject]オルラウ:dir
+	       [replace]0x0065AA10,Gin6shokan,offset
+[back]
+	[subject]か行:dir
+       [subject]カールセン:dir
+	       [replace]0x0065AA80,Gin6shokan,offset
+       [subject]カムフーバー:dir
+	       [replace]0x0065AAF0,Gin6shokan,offset
+       [subject]カルナップ:dir
+	       [replace]0x0065AB60,Gin6shokan,offset
+       [subject]キスリング:dir
+	       [replace]0x0065ABD0,Gin6shokan,offset
+       [subject]キャゼルヌ:dir
+	       [replace]0x0065AC40,Gin6shokan,offset
+       [subject]後方勤務部長キャゼルヌ中将:dir
+	       [replace]0x0065F320,Gin6shokan,offset
+       [subject]キルヒアイス:dir
+	       [replace]0x0065ACB0,Gin6shokan,offset
+       [subject]キルヒアイス:dir
+	       [replace]0x0065EF30,Gin6shokan,offset
+       [subject]クーリヒ:dir
+	       [replace]0x0065AD20,Gin6shokan,offset
+       [subject]グエン:dir
+	       [replace]0x0065AD90,Gin6shokan,offset
+       [subject]クナップシュタイン:dir
+	       [replace]0x0065AE00,Gin6shokan,offset
+       [subject]クブルスリー:dir
+	       [replace]0x0065AE70,Gin6shokan,offset
+       [subject]グリース:dir
+	       [replace]0x0065ED00,Gin6shokan,offset
+       [subject]グリーセンベック:dir
+	       [replace]0x0065AEE0,Gin6shokan,offset
+       [subject]クリスチアン:dir
+	       [replace]0x0065E440,Gin6shokan,offset
+       [subject]グリューネマン:dir
+	       [replace]0x0065AF50,Gin6shokan,offset
+       [subject]グリューネワルト:dir
+	       [replace]0x0065AFC0,Gin6shokan,offset
+       [subject]グリルパルツァー:dir
+	       [replace]0x0065B030,Gin6shokan,offset
+       [subject]クルーゼンシュテルン:dir
+	       [replace]0x0065B0A0,Gin6shokan,offset
+       [subject]グレーブナー:dir
+	       [replace]0x0065B110,Gin6shokan,offset
+       [subject]グローテヴォール:dir
+	       [replace]0x0065B1F0,Gin6shokan,offset
+       [subject]クロイツェル:dir
+	       [replace]0x0065B180,Gin6shokan,offset
+       [subject]ケスラー:dir
+	       [replace]0x0065B260,Gin6shokan,offset
+       [subject]ケラー:dir
+	       [replace]0x0065B2D0,Gin6shokan,offset
+       [subject]ケンプ:dir
+	       [replace]0x0065B340,Gin6shokan,offset
+       [subject]コーネフ:dir
+	       [replace]0x0065B3B0,Gin6shokan,offset
+       [subject]コールドウェル:dir
+	       [replace]0x0065B420,Gin6shokan,offset
+       [subject]コクラン:dir
+	       [replace]0x0065EAD0,Gin6shokan,offset
+       [subject]コナリー:dir
+	       [replace]0x0065B490,Gin6shokan,offset
+[back]
+	[subject]さ行:dir
+       [subject]ザーニアル:dir
+	       [replace]0x0065B500,Gin6shokan,offset
+       [subject]ザーム:dir
+	       [replace]0x0065B570,Gin6shokan,offset
+       [subject]ザウケン:dir
+	       [replace]0x0065B5E0,Gin6shokan,offset
+       [subject]ザンデルス:dir
+	       [replace]0x0065ED70,Gin6shokan,offset
+       [subject]サンフォード:dir
+	       [replace]0x0065E280,Gin6shokan,offset
+       [subject]シェーンコップ:dir
+	       [replace]0x0065B650,Gin6shokan,offset
+       [subject]シトレ:dir
+	       [replace]0x0065F080,Gin6shokan,offset
+       [subject]統合作戦本部長シトレ元帥:dir
+	       [replace]0x0065B6C0,Gin6shokan,offset
+       [subject]シャウデン:dir
+	       [replace]0x0065B730,Gin6shokan,offset
+       [subject]シャフト:dir
+	       [replace]0x0065E9F0,Gin6shokan,offset
+       [subject]シャルチアン:dir
+	       [replace]0x0065B7A0,Gin6shokan,offset
+       [subject]シューマッハ:dir
+	       [replace]0x0065B810,Gin6shokan,offset
+       [subject]シュターデン:dir
+	       [replace]0x0065B880,Gin6shokan,offset
+       [subject]シュタインホフ:dir
+	       [replace]0x0065F160,Gin6shokan,offset
+       [subject]統帥本部総長シュタインホフ元帥:dir
+	       [replace]0x0065E830,Gin6shokan,offset
+       [subject]シュタインメッツ:dir
+	       [replace]0x0065B8F0,Gin6shokan,offset
+       [subject]シュトックハウゼン:dir
+	       [replace]0x0065E600,Gin6shokan,offset
+       [subject]シュトライト:dir
+	       [replace]0x0065B960,Gin6shokan,offset
+       [subject]シュトラウス:dir
+	       [replace]0x0065B9D0,Gin6shokan,offset
+       [subject]シュナイダー:dir
+	       [replace]0x0065BA40,Gin6shokan,offset
+       [subject]シュラー:dir
+	       [replace]0x0065BAB0,Gin6shokan,offset
+       [subject]シュライヤー:dir
+	       [replace]0x0065BB20,Gin6shokan,offset
+       [subject]ジンツァー:dir
+	       [replace]0x0065BB90,Gin6shokan,offset
+       [subject]スールズカリッター:dir
+	       [replace]0x0065BC00,Gin6shokan,offset
+       [subject]ストークス:dir
+	       [replace]0x0065BC70,Gin6shokan,offset
+       [subject]ゼークト:dir
+	       [replace]0x0065BCE0,Gin6shokan,offset
+       [subject]ゼーレ:dir
+	       [replace]0x0065E910,Gin6shokan,offset
+       [subject]ゾンネンフェルス:dir
+	       [replace]0x0065BD50,Gin6shokan,offset
+[back]
+	[subject]た行:dir
+       [subject]タールハイム:dir
+	       [replace]0x0065BDC0,Gin6shokan,offset
+       [subject]チェン:dir
+	       [replace]0x0065BE30,Gin6shokan,offset
+       [subject]チュン:dir
+	       [replace]0x0065BEA0,Gin6shokan,offset
+       [subject]ディッケル:dir
+	       [replace]0x0065BF10,Gin6shokan,offset
+       [subject]ディッタースドルフ:dir
+	       [replace]0x0065BF80,Gin6shokan,offset
+       [subject]デッシュ:dir
+	       [replace]0x0065BFF0,Gin6shokan,offset
+       [subject]ドーソン:dir
+	       [replace]0x0065E360,Gin6shokan,offset
+       [subject]トゥルナイゼン:dir
+	       [replace]0x0065C060,Gin6shokan,offset
+       [subject]トリューニヒト:dir
+	       [replace]0x0065F0F0,Gin6shokan,offset
+       [subject]国防委員長トリューニヒト:dir
+	       [replace]0x0065C0D0,Gin6shokan,offset
+       [subject]ドロイゼン:dir
+	       [replace]0x0065C140,Gin6shokan,offset
+[back]
+	[subject]な行:dir
+       [subject]ナイゼナッハ:dir
+	       [replace]0x0065C1B0,Gin6shokan,offset
+       [subject]ニルソン:dir
+	       [replace]0x0065C220,Gin6shokan,offset
+       [subject]ノルドハイム:dir
+	       [replace]0x0065C290,Gin6shokan,offset
+[back]
+	[subject]は行:dir
+       [subject]バイエルライン:dir
+	       [replace]0x0065C300,Gin6shokan,offset
+       [subject]バウンスゴール:dir
+	       [replace]0x0065E520,Gin6shokan,offset
+       [subject]パエッタ:dir
+	       [replace]0x0065C370,Gin6shokan,offset
+       [subject]バグダッシュ:dir
+	       [replace]0x0065C3E0,Gin6shokan,offset
+       [subject]パストーレ:dir
+	       [replace]0x0065C450,Gin6shokan,offset
+       [subject]パットリンケン:dir
+	       [replace]0x0065C530,Gin6shokan,offset
+       [subject]パトリチェフ:dir
+	       [replace]0x0065C4C0,Gin6shokan,offset
+       [subject]バルトハウザー:dir
+	       [replace]0x0065C5A0,Gin6shokan,offset
+       [subject]ハルバーシュタット:dir
+	       [replace]0x0065C610,Gin6shokan,offset
+       [subject]ビッテンフェルト:dir
+	       [replace]0x0065C680,Gin6shokan,offset
+       [subject]ビューロー:dir
+	       [replace]0x0065C6F0,Gin6shokan,offset
+       [subject]ビュコック:dir
+	       [replace]0x0065C760,Gin6shokan,offset
+       [subject]宇宙艦隊司令長官ビュコック元帥:dir
+	       [replace]0x0065F010,Gin6shokan,offset
+       [subject]ビュルメリンク:dir
+	       [replace]0x0065C7D0,Gin6shokan,offset
+       [subject]ビュンシェ:dir
+	       [replace]0x0065C840,Gin6shokan,offset
+       [subject]ヒルデスハイム:dir
+	       [replace]0x0065C8B0,Gin6shokan,offset
+       [subject]ビロライネン:dir
+	       [replace]0x0065C920,Gin6shokan,offset
+       [subject]フーセネガー:dir
+	       [replace]0x0065CAE0,Gin6shokan,offset
+       [subject]ファーレンハイト:dir
+	       [replace]0x0065C990,Gin6shokan,offset
+       [subject]ファイフェル:dir
+	       [replace]0x0065CA00,Gin6shokan,offset
+       [subject]フィッシャー:dir
+	       [replace]0x0065CA70,Gin6shokan,offset
+       [subject]フェルナー:dir
+	       [replace]0x0065CB50,Gin6shokan,offset
+       [subject]フォーク:dir
+	       [replace]0x0065CBC0,Gin6shokan,offset
+       [subject]フォーゲル:dir
+	       [replace]0x0065CC30,Gin6shokan,offset
+       [subject]フォンク:dir
+	       [replace]0x0065CCA0,Gin6shokan,offset
+       [subject]ブクステフーデ:dir
+	       [replace]0x0065CD10,Gin6shokan,offset
+       [subject]ブラウヒッチ:dir
+	       [replace]0x0065CD80,Gin6shokan,offset
+       [subject]ブラウンシュヴァイク:dir
+	       [replace]0x0065CDF0,Gin6shokan,offset
+       [subject]ブラッドジョー:dir
+	       [replace]0x0065CED0,Gin6shokan,offset
+       [subject]フリードリヒⅣ世:dir
+	       [replace]0x0065E670,Gin6shokan,offset
+       [subject]ブルームハルト:dir
+	       [replace]0x0065CE60,Gin6shokan,offset
+       [subject]フレーゲル:dir
+	       [replace]0x0065CF40,Gin6shokan,offset
+       [subject]ブレンターノ:dir
+	       [replace]0x0065CFB0,Gin6shokan,offset
+       [subject]ブロンズ:dir
+	       [replace]0x0065E590,Gin6shokan,offset
+       [subject]ベルゲングリューン:dir
+	       [replace]0x0065D020,Gin6shokan,offset
+       [subject]ホーウッド:dir
+	       [replace]0x0065D090,Gin6shokan,offset
+       [subject]ホフマイスター:dir
+	       [replace]0x0065D100,Gin6shokan,offset
+       [subject]ポプラン:dir
+	       [replace]0x0065D170,Gin6shokan,offset
+       [subject]ホルツバウアー:dir
+	       [replace]0x0065D1E0,Gin6shokan,offset
+       [subject]ボロディン:dir
+	       [replace]0x0065D250,Gin6shokan,offset
+[back]
+	[subject]ま行:dir
+       [subject]マイフォーハー:dir
+	       [replace]0x0065D2C0,Gin6shokan,offset
+       [subject]マシュンゴ:dir
+	       [replace]0x0065E4B0,Gin6shokan,offset
+       [subject]マスカーニ:dir
+	       [replace]0x0065D330,Gin6shokan,offset
+       [subject]マリネッティ:dir
+	       [replace]0x0065D410,Gin6shokan,offset
+       [subject]マリノ:dir
+	       [replace]0x0065D480,Gin6shokan,offset
+       [subject]マルクグラーフ:dir
+	       [replace]0x0065D4F0,Gin6shokan,offset
+       [subject]ミッターマイヤー:dir
+	       [replace]0x0065D560,Gin6shokan,offset
+       [subject]ミューゼル:dir
+	       [replace]0x0065EE50,Gin6shokan,offset
+       [subject]ミュッケンベルガー:dir
+	       [replace]0x0065D640,Gin6shokan,offset
+       [subject]ミュラー:dir
+	       [replace]0x0065D6B0,Gin6shokan,offset
+       [subject]ミュンヒンガー:dir
+	       [replace]0x0065D720,Gin6shokan,offset
+       [subject]ミンツ:dir
+	       [replace]0x0065D790,Gin6shokan,offset
+       [subject]ムーア:dir
+	       [replace]0x0065D800,Gin6shokan,offset
+       [subject]ムライ:dir
+	       [replace]0x0065D870,Gin6shokan,offset
+       [subject]メックリンガー:dir
+	       [replace]0x0065D8E0,Gin6shokan,offset
+       [subject]メルカッツ:dir
+	       [replace]0x0065D950,Gin6shokan,offset
+       [subject]モートン:dir
+	       [replace]0x0065D9C0,Gin6shokan,offset
+[back]
+	[subject]や・ら・わ行:dir
+       [subject]ヤン:dir
+	       [replace]0x0065DA30,Gin6shokan,offset
+       [subject]ライブル:dir
+	       [replace]0x0065DB10,Gin6shokan,offset
+       [subject]ラインハルト:dir
+	       [replace]0x0065EEC0,Gin6shokan,offset
+       [subject]銀河帝国皇帝ラインハルト:dir
+	       [replace]0x0065F2B0,Gin6shokan,offset
+       [subject]ラオ:dir
+	       [replace]0x0065DB80,Gin6shokan,offset
+       [subject]ラップ:dir
+	       [replace]0x0065DBF0,Gin6shokan,offset
+       [subject]ラング:dir
+	       [replace]0x0065E8A0,Gin6shokan,offset
+       [subject]ランズベルク:dir
+	       [replace]0x0065DC60,Gin6shokan,offset
+       [subject]リッチェル:dir
+	       [replace]0x0065DCD0,Gin6shokan,offset
+       [subject]リッテンハイム:dir
+	       [replace]0x0065DD40,Gin6shokan,offset
+       [subject]リヒテンラーデ:dir
+	       [replace]0x0065F1D0,Gin6shokan,offset
+       [subject]国務尚書リヒテンラーデ侯:dir
+	       [replace]0x0065EA60,Gin6shokan,offset
+       [subject]リュッケ:dir
+	       [replace]0x0065E980,Gin6shokan,offset
+       [subject]リンツ:dir
+	       [replace]0x0065DDB0,Gin6shokan,offset
+       [subject]リンチ:dir
+	       [replace]0x0065E3D0,Gin6shokan,offset
+       [subject]ルグランジュ:dir
+	       [replace]0x0065DE20,Gin6shokan,offset
+       [subject]ルッツ:dir
+	       [replace]0x0065DE90,Gin6shokan,offset
+       [subject]ルフェーブル:dir
+	       [replace]0x0065DF00,Gin6shokan,offset
+       [subject]レッケンドルフ:dir
+	       [replace]0x0065EDE0,Gin6shokan,offset
+       [subject]レフォルト:dir
+	       [replace]0x0065DF70,Gin6shokan,offset
+       [subject]レベロ:dir
+	       [replace]0x0065DFE0,Gin6shokan,offset
+       [subject]レムシャイド:dir
+	       [replace]0x0065EBB0,Gin6shokan,offset
+       [subject]レンネンカンプ:dir
+	       [replace]0x0065E050,Gin6shokan,offset
+       [subject]ローエングラム:dir
+	       [replace]0x0065D5D0,Gin6shokan,offset
+       [subject]宇宙艦隊副司令官ローエングラム元帥:dir
+	       [replace]0x0065F390,Gin6shokan,offset
+       [subject]ロイエンタール:dir
+	       [replace]0x0065E0C0,Gin6shokan,offset
+       [subject]ロックウェル:dir
+	       [replace]0x0065E130,Gin6shokan,offset
+       [subject]ロボス:dir
+	       [replace]0x0065E1A0,Gin6shokan,offset
+       [subject]宇宙艦隊司令長官ロボス元帥:dir
+	       [replace]0x0065EFA0,Gin6shokan,offset
+       [subject]ワーレン:dir
+	       [replace]0x0065E210,Gin6shokan,offset
+[root]
+
+[/script]
+
+[script]
+
+[title]栄冠は君に４
+
+[process]EIKAN4.PRC
+
+[maker]ARTDINK
+
+[creator]freecss
+
+[note]
+選手の能力変更が可能・・・多分。
+(上限を1000以上にすると
+強制終了しますので気をつけて）
+
+また、予算も貰い放題
+・・・って意味ないか。(^^;
+
+注意：自己責任で使用してください。
+[/note]
+
+[subject]予算:calc,0x010FAE0C,0x000000,0xFFFFFF,unsigned,little_e
+[subject]１年生部員:dir
+	[subject]選手１:dir
+		[replace]0x010F97AD,eikan4,offset
+	[subject]選手２:dir
+		[replace]0x010F983D,eikan4,offset
+	[subject]選手３:dir
+		[replace]0x010F98CD,eikan4,offset
+	[subject]選手４:dir
+		[replace]0x010F995D,eikan4,offset
+	[subject]選手５:dir
+		[replace]0x010F99ED,eikan4,offset
+	[subject]選手６:dir
+		[replace]0x010F9A7D,eikan4,offset
+	[subject]選手７:dir
+		[replace]0x010F9B0D,eikan4,offset
+	[subject]選手８:dir
+		[replace]0x010F9B9D,eikan4,offset
+	[subject]選手９:dir
+		[replace]0x010F9C2D,eikan4,offset
+	[subject]選手１０:dir
+		[replace]0x010F9CBD,eikan4,offset
+	[subject]選手１１:dir
+		[replace]0x010F9D4D,eikan4,offset
+	[subject]選手１２:dir
+		[replace]0x010F9DDD,eikan4,offset
+[root]
+[subject]２年生部員:dir
+	[subject]選手１:dir
+		[replace]0x010F9E6D,eikan4,offset
+	[subject]選手２:dir
+		[replace]0x010F9EFD,eikan4,offset
+	[subject]選手３:dir
+		[replace]0x010F9F8D,eikan4,offset
+	[subject]選手４:dir
+		[replace]0x010FA01D,eikan4,offset
+	[subject]選手５:dir
+		[replace]0x010FA0AD,eikan4,offset
+	[subject]選手６:dir
+		[replace]0x010FA13D,eikan4,offset
+	[subject]選手７:dir
+		[replace]0x010FA1CD,eikan4,offset
+	[subject]選手８:dir
+		[replace]0x010FA25D,eikan4,offset
+	[subject]選手９:dir
+		[replace]0x010FA2ED,eikan4,offset
+	[subject]選手１０:dir
+		[replace]0x010FA37D,eikan4,offset
+	[subject]選手１１:dir
+		[replace]0x010FA40D,eikan4,offset
+	[subject]選手１２:dir
+		[replace]0x010FA49D,eikan4,offset
+[root]
+[subject]３年生部員:dir
+	[subject]選手１:dir
+		[replace]0x010FA52D,eikan4,offset
+	[subject]選手２:dir
+		[replace]0x010FA5BD,eikan4,offset
+	[subject]選手３:dir
+		[replace]0x010FA64D,eikan4,offset
+	[subject]選手４:dir
+		[replace]0x010FA6DD,eikan4,offset
+	[subject]選手５:dir
+		[replace]0x010FA76D,eikan4,offset
+	[subject]選手６:dir
+		[replace]0x010FA7FD,eikan4,offset
+	[subject]選手７:dir
+		[replace]0x010FA88D,eikan4,offset
+	[subject]選手８:dir
+		[replace]0x010FA91D,eikan4,offset
+	[subject]選手９:dir
+		[replace]0x010FA9AD,eikan4,offset
+	[subject]選手１０:dir
+		[replace]0x010FAA3D,eikan4,offset
+	[subject]選手１１:dir
+		[replace]0x010FAACD,eikan4,offset
+	[subject]選手１２:dir
+		[replace]0x010FAB5D,eikan4,offset
+[root]
+[/script]
+
+[script]
+
+[title]Master of Monsters 魔導王の試練
+
+[process]WINDOM.EXE
+
+[maker]Systemsoft
+
+[creator]freecss
+
+[note]
+種族、能力変更が可能・・・多分。
+
+種族変更した場合、名前が正しく表示されないかも。
+支配力に関しては不安が・・・(^^;
+
+注意：
+・自己責任で使用してください。
+・ゲームはフルスクリーンで
+　表示されるので、
+　Spoiler ALへの切り替えは
+　ALT+TAB、もしくはウィンドウキーで。
+・また、ゲームウィンドウが常に前面に出て
+　操作しづらいと言う方は、Vector等で
+　それなりのソフトを探して対処して下さい。
+[/note]
+
+[subject]青陣営:dir
+	[subject]マスター:dir
+		[subject]支配力:calc,0x0043CEB4,0x0000,0x6FFF,unsigned,little_e
+		[replace]0x0043CEF9,MofM_madou,offset
+	[subject]１:dir
+		[replace]0x0043CF25,MofM_madou,offset
+	[subject]２:dir
+		[replace]0x0043CF51,MofM_madou,offset
+	[subject]３:dir
+		[replace]0x0043CF7D,MofM_madou,offset
+	[subject]４:dir
+		[replace]0x0043CFA9,MofM_madou,offset
+	[subject]５:dir
+		[replace]0x0043CFD5,MofM_madou,offset
+	[subject]６:dir
+		[replace]0x0043D001,MofM_madou,offset
+	[subject]７:dir
+		[replace]0x0043D02D,MofM_madou,offset
+	[subject]８:dir
+		[replace]0x0043D059,MofM_madou,offset
+	[subject]９:dir
+		[replace]0x0043D085,MofM_madou,offset
+	[subject]１０:dir
+		[replace]0x0043D0B1,MofM_madou,offset
+	[subject]１１:dir
+		[replace]0x0043D0DD,MofM_madou,offset
+	[subject]１２:dir
+		[replace]0x0043D109,MofM_madou,offset
+	[subject]１３:dir
+		[replace]0x0043D135,MofM_madou,offset
+	[subject]１４:dir
+		[replace]0x0043D161,MofM_madou,offset
+	[subject]１５:dir
+		[replace]0x0043D18D,MofM_madou,offset
+	[subject]１６:dir
+		[replace]0x0043D1B9,MofM_madou,offset
+	[subject]１７:dir
+		[replace]0x0043D1E5,MofM_madou,offset
+	[subject]１８:dir
+		[replace]0x0043D211,MofM_madou,offset
+	[subject]１９:dir
+		[replace]0x0043D23D,MofM_madou,offset
+	[subject]２０:dir
+		[replace]0x0043D269,MofM_madou,offset
+	[subject]２１:dir
+		[replace]0x0043D295,MofM_madou,offset
+	[subject]２２:dir
+		[replace]0x0043D2C1,MofM_madou,offset
+	[subject]２３:dir
+		[replace]0x0043D2ED,MofM_madou,offset
+	[subject]２４:dir
+		[replace]0x0043D319,MofM_madou,offset
+	[subject]２５:dir
+		[replace]0x0043D345,MofM_madou,offset
+	[subject]２６:dir
+		[replace]0x0043D371,MofM_madou,offset
+	[subject]２７:dir
+		[replace]0x0043D39D,MofM_madou,offset
+	[subject]２８:dir
+		[replace]0x0043D3C9,MofM_madou,offset
+	[subject]２９:dir
+		[replace]0x0043D3F5,MofM_madou,offset
+	[subject]３０:dir
+		[replace]0x0043D421,MofM_madou,offset
+	[subject]３１:dir
+		[replace]0x0043D44D,MofM_madou,offset
+	[subject]３２:dir
+		[replace]0x0043D479,MofM_madou,offset
+	[subject]３３:dir
+		[replace]0x0043D4A5,MofM_madou,offset
+	[subject]３４:dir
+		[replace]0x0043D4D1,MofM_madou,offset
+	[subject]３５:dir
+		[replace]0x0043D4FD,MofM_madou,offset
+	[subject]３６:dir
+		[replace]0x0043D529,MofM_madou,offset
+	[subject]３７:dir
+		[replace]0x0043D555,MofM_madou,offset
+	[subject]３８:dir
+		[replace]0x0043D581,MofM_madou,offset
+	[subject]３９:dir
+		[replace]0x0043D5AD,MofM_madou,offset
+	[subject]４０:dir
+		[replace]0x0043D5D9,MofM_madou,offset
+	[subject]４１:dir
+		[replace]0x0043D605,MofM_madou,offset
+[root]
+
+[subject]赤陣営:dir
+	[subject]マスター:dir
+		[subject]支配力:calc,0x0043D634,0x0000,0x6FFF,unsigned,little_e
+		[replace]0x0043D679,MofM_madou,offset
+	[subject]１:dir
+		[replace]0x0043D6A5,MofM_madou,offset
+	[subject]２:dir
+		[replace]0x0043D6D1,MofM_madou,offset
+	[subject]３:dir
+		[replace]0x0043D6FD,MofM_madou,offset
+	[subject]４:dir
+		[replace]0x0043D729,MofM_madou,offset
+	[subject]５:dir
+		[replace]0x0043D755,MofM_madou,offset
+	[subject]６:dir
+		[replace]0x0043D781,MofM_madou,offset
+	[subject]７:dir
+		[replace]0x0043D7AD,MofM_madou,offset
+	[subject]８:dir
+		[replace]0x0043D7D9,MofM_madou,offset
+	[subject]９:dir
+		[replace]0x0043D805,MofM_madou,offset
+	[subject]１０:dir
+		[replace]0x0043D831,MofM_madou,offset
+	[subject]１１:dir
+		[replace]0x0043D85D,MofM_madou,offset
+	[subject]１２:dir
+		[replace]0x0043D889,MofM_madou,offset
+	[subject]１３:dir
+		[replace]0x0043D8B5,MofM_madou,offset
+	[subject]１４:dir
+		[replace]0x0043D8E1,MofM_madou,offset
+	[subject]１５:dir
+		[replace]0x0043D90D,MofM_madou,offset
+	[subject]１６:dir
+		[replace]0x0043D939,MofM_madou,offset
+	[subject]１７:dir
+		[replace]0x0043D965,MofM_madou,offset
+	[subject]１８:dir
+		[replace]0x0043D991,MofM_madou,offset
+	[subject]１９:dir
+		[replace]0x0043D9BD,MofM_madou,offset
+	[subject]２０:dir
+		[replace]0x0043D9E9,MofM_madou,offset
+	[subject]２１:dir
+		[replace]0x0043DA15,MofM_madou,offset
+	[subject]２２:dir
+		[replace]0x0043DA41,MofM_madou,offset
+	[subject]２３:dir
+		[replace]0x0043DA6D,MofM_madou,offset
+	[subject]２４:dir
+		[replace]0x0043DA99,MofM_madou,offset
+	[subject]２５:dir
+		[replace]0x0043DAC5,MofM_madou,offset
+	[subject]２６:dir
+		[replace]0x0043DAF1,MofM_madou,offset
+	[subject]２７:dir
+		[replace]0x0043DB1D,MofM_madou,offset
+	[subject]２８:dir
+		[replace]0x0043DB49,MofM_madou,offset
+	[subject]２９:dir
+		[replace]0x0043DB75,MofM_madou,offset
+	[subject]３０:dir
+		[replace]0x0043DBA1,MofM_madou,offset
+	[subject]３１:dir
+		[replace]0x0043DBCD,MofM_madou,offset
+	[subject]３２:dir
+		[replace]0x0043DBF9,MofM_madou,offset
+	[subject]３３:dir
+		[replace]0x0043DC25,MofM_madou,offset
+	[subject]３４:dir
+		[replace]0x0043DC51,MofM_madou,offset
+	[subject]３５:dir
+		[replace]0x0043DC7D,MofM_madou,offset
+	[subject]３６:dir
+		[replace]0x0043DCA9,MofM_madou,offset
+	[subject]３７:dir
+		[replace]0x0043DCD5,MofM_madou,offset
+	[subject]３８:dir
+		[replace]0x0043DD01,MofM_madou,offset
+	[subject]３９:dir
+		[replace]0x0043DD2D,MofM_madou,offset
+	[subject]４０:dir
+		[replace]0x0043DD59,MofM_madou,offset
+	[subject]４１:dir
+		[replace]0x0043DD85,MofM_madou,offset
+[root]
+[subject]黄陣営:dir
+  	[subject]マスター:dir
+		[subject]支配力:calc,0x0043DDB4,0x0000,0x6FFF,unsigned,little_e
+		[replace]0x0043DDF9,MofM_madou,offset
+	[subject]１:dir
+		[replace]0x0043DE25,MofM_madou,offset
+	[subject]２:dir
+		[replace]0x0043DE51,MofM_madou,offset
+	[subject]３:dir
+		[replace]0x0043DE7D,MofM_madou,offset
+	[subject]４:dir
+		[replace]0x0043DEA9,MofM_madou,offset
+	[subject]５:dir
+		[replace]0x0043DED5,MofM_madou,offset
+	[subject]６:dir
+		[replace]0x0043DF01,MofM_madou,offset
+	[subject]７:dir
+		[replace]0x0043DF2D,MofM_madou,offset
+	[subject]８:dir
+		[replace]0x0043DF59,MofM_madou,offset
+	[subject]９:dir
+		[replace]0x0043DF85,MofM_madou,offset
+	[subject]１０:dir
+		[replace]0x0043DFB1,MofM_madou,offset
+	[subject]１１:dir
+		[replace]0x0043DFDD,MofM_madou,offset
+	[subject]１２:dir
+		[replace]0x0043E009,MofM_madou,offset
+	[subject]１３:dir
+		[replace]0x0043E035,MofM_madou,offset
+	[subject]１４:dir
+		[replace]0x0043E061,MofM_madou,offset
+	[subject]１５:dir
+		[replace]0x0043E08D,MofM_madou,offset
+	[subject]１６:dir
+		[replace]0x0043E0B9,MofM_madou,offset
+	[subject]１７:dir
+		[replace]0x0043E0E5,MofM_madou,offset
+	[subject]１８:dir
+		[replace]0x0043E111,MofM_madou,offset
+	[subject]１９:dir
+		[replace]0x0043E13D,MofM_madou,offset
+	[subject]２０:dir
+		[replace]0x0043E169,MofM_madou,offset
+	[subject]２１:dir
+		[replace]0x0043E195,MofM_madou,offset
+	[subject]２２:dir
+		[replace]0x0043E1C1,MofM_madou,offset
+	[subject]２３:dir
+		[replace]0x0043E1ED,MofM_madou,offset
+	[subject]２４:dir
+		[replace]0x0043E219,MofM_madou,offset
+	[subject]２５:dir
+		[replace]0x0043E245,MofM_madou,offset
+	[subject]２６:dir
+		[replace]0x0043E271,MofM_madou,offset
+	[subject]２７:dir
+		[replace]0x0043E29D,MofM_madou,offset
+	[subject]２８:dir
+		[replace]0x0043E2C9,MofM_madou,offset
+	[subject]２９:dir
+		[replace]0x0043E2F5,MofM_madou,offset
+	[subject]３０:dir
+		[replace]0x0043E321,MofM_madou,offset
+	[subject]３１:dir
+		[replace]0x0043E34D,MofM_madou,offset
+	[subject]３２:dir
+		[replace]0x0043E379,MofM_madou,offset
+	[subject]３３:dir
+		[replace]0x0043E3A5,MofM_madou,offset
+	[subject]３４:dir
+		[replace]0x0043E3D1,MofM_madou,offset
+	[subject]３５:dir
+		[replace]0x0043E3FD,MofM_madou,offset
+	[subject]３６:dir
+		[replace]0x0043E429,MofM_madou,offset
+	[subject]３７:dir
+		[replace]0x0043E455,MofM_madou,offset
+	[subject]３８:dir
+		[replace]0x0043E481,MofM_madou,offset
+	[subject]３９:dir
+		[replace]0x0043E4AD,MofM_madou,offset
+	[subject]４０:dir
+		[replace]0x0043E4D9,MofM_madou,offset
+	[subject]４１:dir
+		[replace]0x0043E505,MofM_madou,offset
+[root]
+[/script]
+
+[script]
+[title]大戦略Ⅵ（兵器データ改造用）
+[process]DS6.EXE
+[maker]Systemsoft
+[creator]freecss
+[note]
+大戦略Ⅵ（シングルプレイ）用のSSGです。
+（ver.1.0.4.0にて作成）
+兵器の能力、装備変更ができる・・・かも。
+
+速度項目はなるべく変更しない方が・・・
+変なことが起こります。
+例えば、艦船の場合に値を小さくすると
+陸に上がったり空を飛んだり。
+宇宙戦艦大和だぁ！！^-^;
+
+注意：各個人の責任で使用してください。
+ネットワーク上での使用はしないで下さい。
+[/note]
+
+[subject]航空機:dir
+[subject]要撃機:dir
+[subject]F-14 Tomcat:dir
+	[replace]0x00FC10D6,DS6heiki,offset
+[subject]Tornade F.Mk3:dir
+	[replace]0x00FC11EA,DS6heiki,offset
+[subject]MiG31 Foxhound:dir
+	[replace]0x00FC1412,DS6heiki,offset
+[subject]Su27 Flanker:dir
+	[replace]0x00FC149C,DS6heiki,offset
+[subject]F-15J Eagle:dir
+	[replace]0x00FC15B0,DS6heiki,offset
+[back]
+[subject]戦闘機:dir
+[subject]F-22 Rapter:dir
+	[replace]0x00FC1976,DS6heiki,offset
+[subject]F-15 Eagle:dir
+	[replace]0x00FC1A00,DS6heiki,offset
+[subject]F-16 Fighting Falcon:dir
+	[replace]0x00FC1A8A,DS6heiki,offset
+[subject]EF-2000 Typhoon:dir
+	[replace]0x00FC1B9E,DS6heiki,offset
+[subject]Rafale D:dir
+	[replace]0x00FC1CB2,DS6heiki,offset
+[subject]Rafale M:dir
+	[replace]0x00FC1D3C,DS6heiki,offset
+[subject]Mirage 2000:dir
+	[replace]0x00FC1DC6,DS6heiki,offset
+[subject]Mirage F-1CT:dir
+	[replace]0x00FC1E50,DS6heiki,offset
+[subject]F-4F-ICE PhantomⅡ:dir
+	[replace]0x00FC1F64,DS6heiki,offset
+[subject]F-15 Baz:dir
+	[replace]0x00FC2102,DS6heiki,offset
+[subject]F-16 Netz:dir
+	[replace]0x00FC218C,DS6heiki,offset
+[subject]F-4E Kurnass 2000:dir
+	[replace]0x00FC2216,DS6heiki,offset
+[subject]Su-35:dir
+	[replace]0x00FC23B4,DS6heiki,offset
+[subject]Su-33 Flanker:dir
+	[replace]0x00FC243E,DS6heiki,offset
+[subject]MiG-29 Fulcrum:dir
+	[replace]0x00FC24C8,DS6heiki,offset
+[subject]殲撃11型:dir
+	[replace]0x00FC2666,DS6heiki,offset
+[subject]殲撃8型Ⅱ:dir
+	[replace]0x00FC26F0,DS6heiki,offset
+[back]
+[subject]戦闘攻撃機:dir
+[subject]FA-18E Super Hornet:dir
+	[replace]0x00FC2AB6,DS6heiki,offset
+[subject]FA-18E Hornet:dir
+	[replace]0x00FC2B40,DS6heiki,offset
+[subject]F-15E Strike Eagle:dir
+	[replace]0x00FC2BCA,DS6heiki,offset
+[subject]Harrier GR.Mk7:dir
+	[replace]0x00FC2C54,DS6heiki,offset
+[subject]Tornado GR.Mk4:dir
+	[replace]0x00FC2D68,DS6heiki,offset
+[subject]SeaHarrier FRS.Mk2:dir
+	[replace]0x00FC2DF2,DS6heiki,offset
+[subject]AV-8 HarrierⅡplus:dir
+	[replace]0x00FC2E7C,DS6heiki,offset
+[subject]Tornado IDS:dir
+	[replace]0x00FC301A,DS6heiki,offset
+[subject]F-15I Ra'am:dir
+	[replace]0x00FC31B8,DS6heiki,offset
+[subject]Kfir C7:dir
+	[replace]0x00FC3242,DS6heiki,offset
+[subject]Su-34:dir
+	[replace]0x00FC33E0,DS6heiki,offset
+[subject]Su-24 Fencer:dir
+	[replace]0x00FC346A,DS6heiki,offset
+[subject]F-2:dir
+	[replace]0x00FC357E,DS6heiki,offset
+[subject]F-4EJ改 PhantomⅡ:dir
+	[replace]0x00FC3608,DS6heiki,offset
+[subject]殲轟7型:dir
+	[replace]0x00FC37A6,DS6heiki,offset
+[back]
+[subject]攻撃機:dir
+[subject]F-117A Nighthawk:dir
+	[replace]0x00FC3B6C,DS6heiki,offset
+[subject]A-10A Thunderbolt:dir
+	[replace]0x00FC3BF6,DS6heiki,offset
+[subject]Jaguar GR.Mk1:dir
+	[replace]0x00FC3D0A,DS6heiki,offset
+[subject]Jaguar A:dir
+	[replace]0x00FC3E1E,DS6heiki,offset
+[subject]SuperEtendard:dir
+	[replace]0x00FC3EA8,DS6heiki,offset
+[subject]A-4N Ahit:dir
+	[replace]0x00FC4046,DS6heiki,offset
+[subject]Su-25 FrogFoot:dir
+	[replace]0x00FC415A,DS6heiki,offset
+[subject]F-1:dir
+	[replace]0x00FC426E,DS6heiki,offset
+[subject]強撃5型:dir
+	[replace]0x00FC4382,DS6heiki,offset
+[back]
+[subject]爆撃機:dir
+[subject]B-2A Spirit:dir
+	[replace]0x00FC485C,DS6heiki,offset
+[subject]B-1B Lancer:dir
+	[replace]0x00FC48E6,DS6heiki,offset
+[subject]B-52H Stratofortress:dir
+	[replace]0x00FC4970,DS6heiki,offset
+[subject]Tu-160 Blackjack:dir
+	[replace]0x00FC4CAC,DS6heiki,offset
+[subject]Tu-22 Backfire:dir
+	[replace]0x00FC4D36,DS6heiki,offset
+[subject]Tu-95 Bear:dir
+	[replace]0x00FC4DC0,DS6heiki,offset
+[subject]轟炸6型:dir
+	[replace]0x00FC4FE8,DS6heiki,offset
+[back]
+[subject]電子戦機:dir
+[subject]EA-6B Prowler:dir
+	[replace]0x00FC53AE,DS6heiki,offset
+[subject]DC-8:dir
+	[replace]0x00FC554C,DS6heiki,offset
+[subject]Tornado ECR:dir
+	[replace]0x00FC5660,DS6heiki,offset
+[subject]B-707:dir
+	[replace]0x00FC5774,DS6heiki,offset
+[subject]Su-27MP Fencer:dir
+	[replace]0x00FC5912,DS6heiki,offset
+[subject]An-12 Cub:dir
+	[replace]0x00FC599C,DS6heiki,offset
+[subject]EC-1:dir
+	[replace]0x00FC5B3A,DS6heiki,offset
+[back]
+[subject]早期警戒機:dir
+[subject]E-3 Sentry:dir
+	[replace]0x00FC5F00,DS6heiki,offset
+[subject]E-2C Hawk Eye:dir
+	[replace]0x00FC5F8A,DS6heiki,offset
+[subject]Phalcon707:dir
+	[replace]0x00FC61B2,DS6heiki,offset
+[subject]A-50 Mainstay:dir
+	[replace]0x00FC62C6,DS6heiki,offset
+[subject]E-767:dir
+	[replace]0x00FC6464,DS6heiki,offset
+[back]
+[subject]偵察機:dir
+[subject]E-8C JointSTARS:dir
+	[replace]0x00FC682A,DS6heiki,offset
+[subject]U-2S:dir
+	[replace]0x00FC68B4,DS6heiki,offset
+[subject]Tornado GR.Mk1A:dir
+	[replace]0x00FC6ADC,DS6heiki,offset
+[subject]Mirage F-1CR:dir
+	[replace]0x00FC6BF0,DS6heiki,offset
+[subject]EtendardIVP:dir
+	[replace]0x00FC6C7A,DS6heiki,offset
+[subject]Tornado RECCE:dir
+	[replace]0x00FC6D8E,DS6heiki,offset
+[subject]RF-4E Kurnass:dir
+	[replace]0x00FC6EA2,DS6heiki,offset
+[subject]Su-24MR Fencer:dir
+	[replace]0x00FC7040,DS6heiki,offset
+[subject]MiG-25R Foxbat:dir
+	[replace]0x00FC70CA,DS6heiki,offset
+[subject]RF-4EJ改 PhantomⅡ:dir
+	[replace]0x00FC71DE,DS6heiki,offset
+[subject]殲偵6型:dir
+	[replace]0x00FC737C,DS6heiki,offset
+[back]
+[subject]対潜哨戒機:dir
+[subject]S-3B Viking:dir
+	[replace]0x00FC77CC,DS6heiki,offset
+[subject]P-3C Orion:dir
+	[replace]0x00FC7856,DS6heiki,offset
+[subject]Nimrod MR-2:dir
+	[replace]0x00FC796A,DS6heiki,offset
+[subject]Atlantique2:dir
+	[replace]0x00FC7A7E,DS6heiki,offset
+[subject]Alize:dir
+	[replace]0x00FC7B08,DS6heiki,offset
+[subject]Atlantic:dir
+	[replace]0x00FC7C1C,DS6heiki,offset
+[subject]Il-38 May:dir
+	[replace]0x00FC7CA6,DS6heiki,offset
+[subject]Tu-142 BearF:dir
+	[replace]0x00FC7D30,DS6heiki,offset
+[subject]水轟5型:dir
+	[replace]0x00FC7ECE,DS6heiki,offset
+[back]
+[subject]輸送機:dir
+[subject]C-17 GlobemasterⅢ:dir
+	[replace]0x00FC8294,DS6heiki,offset
+[subject]C-141 Starlifter:dir
+	[replace]0x00FC831E,DS6heiki,offset
+[subject]C-130H Hercules:dir
+	[replace]0x00FC8432,DS6heiki,offset
+[subject]C-160:dir
+	[replace]0x00FC85D0,DS6heiki,offset
+[subject]An-124 Ruslan:dir
+	[replace]0x00FC876E,DS6heiki,offset
+[subject]Il-76M Candid:dir
+	[replace]0x00FC8882,DS6heiki,offset
+[subject]C-1:dir
+	[replace]0x00FC8996,DS6heiki,offset
+[subject]運輸8型:dir
+	[replace]0x00FC8AAA,DS6heiki,offset
+[back]
+[subject]空中給油機:dir
+[subject]KC-135:dir
+	[replace]0x00FC8E70,DS6heiki,offset
+[subject]Tristar K1:dir
+	[replace]0x00FC8F84,DS6heiki,offset
+[subject]C-160:dir
+	[replace]0x00FC9098,DS6heiki,offset
+[subject]KC-130H:dir
+	[replace]0x00FC9236,DS6heiki,offset
+[subject]Il-78 Midas:dir
+	[replace]0x00FC934A,DS6heiki,offset
+[subject]轟炸6型:dir
+	[replace]0x00FC94E8,DS6heiki,offset
+[back]
+[back]
+[subject]ヘリ:dir
+[subject]攻撃ヘリ:dir
+[subject]AH-64 Apache:dir
+	[replace]0x00FC99C2,DS6heiki,offset
+[subject]AH-1 Cobra:dir
+	[replace]0x00FC9A4C,DS6heiki,offset
+[subject]HAP-HAC Tiger:dir
+	[replace]0x00FC9B60,DS6heiki,offset
+[subject]SA342M Gazelle:dir
+	[replace]0x00FC9BEA,DS6heiki,offset
+[subject]UHU Tiger:dir
+	[replace]0x00FC9CFE,DS6heiki,offset
+[subject]PAH-1:dir
+	[replace]0x00FC9D88,DS6heiki,offset
+[subject]Ka-50 Hokum:dir
+	[replace]0x00FC9F26,DS6heiki,offset
+[subject]Mi-24 Hind:dir
+	[replace]0x00FC9FB0,DS6heiki,offset
+[back]
+[subject]兵員輸送ヘリ:dir
+[subject]V-22 Osprey:dir
+	[replace]0x00FCA376,DS6heiki,offset
+[subject]UH-60 Black Hawk:dir
+	[replace]0x00FCA48A,DS6heiki,offset
+[subject]UH-1 Iroquois:dir
+	[replace]0x00FCA514,DS6heiki,offset
+[subject]Lynx Mk.9:dir
+	[replace]0x00FCA628,DS6heiki,offset
+[subject]SA-330 Puma:dir
+	[replace]0x00FCA73C,DS6heiki,offset
+[subject]Mi-17 Hip-H:dir
+	[replace]0x00FCA8DA,DS6heiki,offset
+[subject]UH-60JA Black Hawk:dir
+	[replace]0x00FCA9EE,DS6heiki,offset
+[subject]UH-1J Iroquois:dir
+	[replace]0x00FCAA78,DS6heiki,offset
+[subject]直昇9型A:dir
+	[replace]0x00FCAB8C,DS6heiki,offset
+[back]
+[subject]大型輸送ヘリ:dir
+[subject]CH-47 Chinook:dir
+	[replace]0x00FCAF52,DS6heiki,offset
+[subject]CH-53 Super Stallion:dir
+	[replace]0x00FCAFDC,DS6heiki,offset
+[subject]AS-532 Cougar:dir
+	[replace]0x00FCB17A,DS6heiki,offset
+[subject]Mi-26 Halo:dir
+	[replace]0x00FCB28E,DS6heiki,offset
+[back]
+[subject]偵察ヘリ:dir
+[subject]RAH-66 Comanche:dir
+	[replace]0x00FCB654,DS6heiki,offset
+[subject]OH-58D Kiowa Warrior:dir
+	[replace]0x00FCB6DE,DS6heiki,offset
+[subject]SA-341B Gazelle:dir
+	[replace]0x00FCB7F2,DS6heiki,offset
+[subject]AS-532 Horizon:dir
+	[replace]0x00FCB906,DS6heiki,offset
+[subject]Bo-105M:dir
+	[replace]0x00FCBA1A,DS6heiki,offset
+[subject]Hughes500MD Defender:dir
+	[replace]0x00FCBB2E,DS6heiki,offset
+[subject]Ka-52 hokumB:dir
+	[replace]0x00FCBC42,DS6heiki,offset
+[subject]OH-1:dir
+	[replace]0x00FCBD56,DS6heiki,offset
+[subject]OH-6J Cayuse:dir
+	[replace]0x00FCBDE0,DS6heiki,offset
+[back]
+[subject]対潜ヘリ:dir
+[subject]SH-60 Sea Hawk:dir
+	[replace]0x00FCC1A6,DS6heiki,offset
+[subject]Sea King:dir
+	[replace]0x00FCC344,DS6heiki,offset
+[subject]Lynx Mk.7:dir
+	[replace]0x00FCC3CE,DS6heiki,offset
+[subject]AS-565SA Panther:dir
+	[replace]0x00FCC4E2,DS6heiki,offset
+[subject]Ka-27PL Helix:dir
+	[replace]0x00FCC680,DS6heiki,offset
+[subject]武直9型A:dir
+	[replace]0x00FCC81E,DS6heiki,offset
+[subject]SH-60 Sea Hawk:dir
+	[replace]0x00FCCBE4,DS6heiki,offset
+[subject]Lynx Mk.7:dir
+	[replace]0x00FCCD82,DS6heiki,offset
+[subject]AS-656SA Panther:dir
+	[replace]0x00FCCE96,DS6heiki,offset
+[subject]Ka-27PL Helix:dir
+	[replace]0x00FCD034,DS6heiki,offset
+[subject]武直9型A:dir
+	[replace]0x00FCD1D2,DS6heiki,offset
+[back]
+[subject]早期警戒ヘリ:dir
+[subject]Sea King AEW:dir
+	[replace]0x00FCD484,DS6heiki,offset
+[subject]Lynx Mk.5:dir
+	[replace]0x00FCD50E,DS6heiki,offset
+[subject]AS-656SB Panther:dir
+	[replace]0x00FCD6AC,DS6heiki,offset
+[subject]Ka-27PS Helix:dir
+	[replace]0x00FCD84A,DS6heiki,offset
+[subject]Lynx Mk.5:dir
+	[replace]0x00FCDEC2,DS6heiki,offset
+[subject]AS565SB Panther:dir
+	[replace]0x00FCE060,DS6heiki,offset
+[subject]Ka-27PS Helix:dir
+	[replace]0x00FCE1FE,DS6heiki,offset
+[back]
+[back]
+[subject]地上部隊:dir
+[subject]戦車:dir
+[subject]M-1A2 Abrams:dir
+	[replace]0x00FCE6D8,DS6heiki,offset
+[subject]M-1 Abrams:dir
+	[replace]0x00FCE762,DS6heiki,offset
+[subject]Challenger2:dir
+	[replace]0x00FCE900,DS6heiki,offset
+[subject]Challenger1:dir
+	[replace]0x00FCE98A,DS6heiki,offset
+[subject]Leclerc:dir
+	[replace]0x00FCEB28,DS6heiki,offset
+[subject]AMX-30B2 Brenus:dir
+	[replace]0x00FCEBB2,DS6heiki,offset
+[subject]Leopard2A5:dir
+	[replace]0x00FCED50,DS6heiki,offset
+[subject]Leopard2:dir
+	[replace]0x00FCEDDA,DS6heiki,offset
+[subject]MerkavaⅢ:dir
+	[replace]0x00FCEF78,DS6heiki,offset
+[subject]MerkavaⅡ:dir
+	[replace]0x00FCF002,DS6heiki,offset
+[subject]Magach7:dir
+	[replace]0x00FCF116,DS6heiki,offset
+[subject]T-90:dir
+	[replace]0x00FCF33E,DS6heiki,offset
+[subject]T-80UD:dir
+	[replace]0x00FCF3C8,DS6heiki,offset
+[subject]T-72M:dir
+	[replace]0x00FCF452,DS6heiki,offset
+[subject]90式戦車:dir
+	[replace]0x00FCF5F0,DS6heiki,offset
+[subject]74式戦車:dir
+	[replace]0x00FCF67A,DS6heiki,offset
+[subject]90式戦車Ⅱ:dir
+	[replace]0x00FCF8A2,DS6heiki,offset
+[subject]85式戦車ⅡM:dir
+	[replace]0x00FCF92C,DS6heiki,offset
+[back]
+[subject]歩兵戦闘車:dir
+[subject]M-2A3 Bradley:dir
+	[replace]0x00FD002E,DS6heiki,offset
+[subject]LAV-25:dir
+	[replace]0x00FD00B8,DS6heiki,offset
+[subject]Warrior:dir
+	[replace]0x00FD0256,DS6heiki,offset
+[subject]AMX-10P:dir
+	[replace]0x00FD03F4,DS6heiki,offset
+[subject]MarderA3:dir
+	[replace]0x00FD0592,DS6heiki,offset
+[subject]BMP-3:dir
+	[replace]0x00FD07BA,DS6heiki,offset
+[subject]BTR-T:dir
+	[replace]0x00FD0844,DS6heiki,offset
+[subject]89式歩兵戦闘車:dir
+	[replace]0x00FD0958,DS6heiki,offset
+[subject]86式歩兵戦闘車:dir
+	[replace]0x00FD0AF6,DS6heiki,offset
+[subject]WZ551:dir
+	[replace]0x00FD0C0A,DS6heiki,offset
+[subject]M-113:dir
+	[replace]0x00FD0FD0,DS6heiki,offset
+[back]
+[subject]兵員輸送車:dir
+[subject]AAV-7A1:dir
+	[replace]0x00FD105A,DS6heiki,offset
+[subject]FV432:dir
+	[replace]0x00FD11F8,DS6heiki,offset
+[subject]VAB:dir
+	[replace]0x00FD1396,DS6heiki,offset
+[subject]TPz-1 Fuchs:dir
+	[replace]0x00FD1534,DS6heiki,offset
+[subject]Achzarit:dir
+	[replace]0x00FD16D2,DS6heiki,offset
+[subject]BTR-80:dir
+	[replace]0x00FD1870,DS6heiki,offset
+[subject]BTR-D:dir
+	[replace]0x00FD18FA,DS6heiki,offset
+[subject]96式装甲車:dir
+	[replace]0x00FD1A0E,DS6heiki,offset
+[subject]73式装甲車:dir
+	[replace]0x00FD1A98,DS6heiki,offset
+[subject]85式装甲車:dir
+	[replace]0x00FD1C36,DS6heiki,offset
+[back]
+[subject]偵察車:dir
+[subject]M-3A3 Bradley:dir
+	[replace]0x00FD1FFC,DS6heiki,offset
+[subject]Savre:dir
+	[replace]0x00FD219A,DS6heiki,offset
+[subject]AMX-10RC:dir
+	[replace]0x00FD22AE,DS6heiki,offset
+[subject]ERC-90F4 Sagaie:dir
+	[replace]0x00FD2338,DS6heiki,offset
+[subject]VBL:dir
+	[replace]0x00FD23C2,DS6heiki,offset
+[subject]Fennek:dir
+	[replace]0x00FD24D6,DS6heiki,offset
+[subject]SPz-2 Luchs:dir
+	[replace]0x00FD2560,DS6heiki,offset
+[subject]Wiesel Mk20A1:dir
+	[replace]0x00FD25EA,DS6heiki,offset
+[subject]Ramta RBY:dir
+	[replace]0x00FD26FE,DS6heiki,offset
+[subject]BRM-1:dir
+	[replace]0x00FD289C,DS6heiki,offset
+[subject]BRDM-2:dir
+	[replace]0x00FD2926,DS6heiki,offset
+[subject]BMD-3:dir
+	[replace]0x00FD29B0,DS6heiki,offset
+[subject]87式偵察警戒車:dir
+	[replace]0x00FD2AC4,DS6heiki,offset
+[subject]63式戦車:dir
+	[replace]0x00FD2C62,DS6heiki,offset
+[subject]軽偵察車両:dir
+	[replace]0x00FD313C,DS6heiki,offset
+[back]
+[subject]戦車駆逐車:dir
+[subject]M-901ITV:dir
+	[replace]0x00FD32DA,DS6heiki,offset
+[subject]LAV-TOW:dir
+	[replace]0x00FD3364,DS6heiki,offset
+[subject]Striker:dir
+	[replace]0x00FD3502,DS6heiki,offset
+[subject]VCAC Hot Mephisto:dir
+	[replace]0x00FD3616,DS6heiki,offset
+[subject]RJPz-Jaguar2:dir
+	[replace]0x00FD37B4,DS6heiki,offset
+[subject]Wiesel TOW-A1:dir
+	[replace]0x00FD383E,DS6heiki,offset
+[subject]BRDM-2ATGW:dir
+	[replace]0x00FD39DC,DS6heiki,offset
+[subject]96式多目的誘導弾:dir
+	[replace]0x00FD3B7A,DS6heiki,offset
+[subject]89式対戦車自走砲:dir
+	[replace]0x00FD3C8E,DS6heiki,offset
+[subject]85式対戦車ミサイル車:dir
+	[replace]0x00FD3DA2,DS6heiki,offset
+[back]
+[subject]自走砲:dir
+[subject]M-109A6 Paradin:dir
+	[replace]0x00FD427C,DS6heiki,offset
+[subject]M-109:dir
+	[replace]0x00FD4306,DS6heiki,offset
+[subject]AS-90:dir
+	[replace]0x00FD44A4,DS6heiki,offset
+[subject]AMX-30GCT AU-F-1:dir
+	[replace]0x00FD45B8,DS6heiki,offset
+[subject]PzH2000:dir
+	[replace]0x00FD46CC,DS6heiki,offset
+[subject]Wiesel2 Mrs:dir
+	[replace]0x00FD4756,DS6heiki,offset
+[subject]2S19 MSTA-S:dir
+	[replace]0x00FD48F4,DS6heiki,offset
+[subject]2S3 Akatsiya:dir
+	[replace]0x00FD4A08,DS6heiki,offset
+[subject]2S9Anona:dir
+	[replace]0x00FD4B1C,DS6heiki,offset
+[subject]99式自走榴弾砲:dir
+	[replace]0x00FD4CBA,DS6heiki,offset
+[subject]75式自走榴弾砲:dir
+	[replace]0x00FD4D44,DS6heiki,offset
+[subject]PLZ45:dir
+	[replace]0x00FD4EE2,DS6heiki,offset
+[subject]83式自走榴弾砲:dir
+	[replace]0x00FD4FF6,DS6heiki,offset
+[back]
+[subject]自走ロケット砲:dir
+[subject]MLRS:dir
+	[replace]0x00FD53BC,DS6heiki,offset
+[subject]9A52 Smerch:dir
+	[replace]0x00FD55E4,DS6heiki,offset
+[subject]9P140 Uragan:dir
+	[replace]0x00FD566E,DS6heiki,offset
+[subject]75式自走ロケット砲:dir
+	[replace]0x00FD580C,DS6heiki,offset
+[subject]89式自走ロケット砲:dir
+	[replace]0x00FD59AA,DS6heiki,offset
+[back]
+[subject]自走対空砲:dir
+[subject]M-163:dir
+	[replace]0x00FD5D70,DS6heiki,offset
+[subject]Gepard:dir
+	[replace]0x00FD5F98,DS6heiki,offset
+[subject]2S6M Tunguska:dir
+	[replace]0x00FD6136,DS6heiki,offset
+[subject]ZSU-23-4 Shilka:dir
+	[replace]0x00FD61C0,DS6heiki,offset
+[subject]87式対空自走砲:dir
+	[replace]0x00FD62D4,DS6heiki,offset
+[subject]88式対空自走砲:dir
+	[replace]0x00FD6472,DS6heiki,offset
+[back]
+[subject]自走対空ミサイル:dir
+[subject]Avenger:dir
+	[replace]0x00FD6838,DS6heiki,offset
+[subject]Starstreak:dir
+	[replace]0x00FD694C,DS6heiki,offset
+[subject]Rapier:dir
+	[replace]0x00FD69D6,DS6heiki,offset
+[subject]AMX30R Roland:dir
+	[replace]0x00FD6B74,DS6heiki,offset
+[subject]Roland:dir
+	[replace]0x00FD6C88,DS6heiki,offset
+[subject]Wiesel2 LeFlaRakSys:dir
+	[replace]0x00FD6D9C,DS6heiki,offset
+[subject]Chaparral:dir
+	[replace]0x00FD6EB0,DS6heiki,offset
+[subject]Tor-M1:dir
+	[replace]0x00FD704E,DS6heiki,offset
+[subject]Strela-10M3:dir
+	[replace]0x00FD70D8,DS6heiki,offset
+[subject]93式近SAM:dir
+	[replace]0x00FD71EC,DS6heiki,offset
+[subject]81式短SAM:dir
+	[replace]0x00FD7276,DS6heiki,offset
+[subject]HQ-61A:dir
+	[replace]0x00FD7414,DS6heiki,offset
+[back]
+[subject]補給車:dir
+	[replace]0x00FD77DA,DS6heiki,offset
+[subject]砲兵車両:dir
+[subject]L-119:dir
+	[replace]0x00FD7B16,DS6heiki,offset
+[subject]MO-120RT:dir
+	[replace]0x00FD7BA0,DS6heiki,offset
+[back]
+[subject]対空ミサイル車両:dir
+[subject]Patriot:dir
+	[replace]0x00FD7EDC,DS6heiki,offset
+[subject]I-Hawk:dir
+	[replace]0x00FD807A,DS6heiki,offset
+[subject]Hawk:dir
+	[replace]0x00FD8104,DS6heiki,offset
+[subject]S-300PMU:dir
+	[replace]0x00FD83B6,DS6heiki,offset
+[subject]Buk-1M:dir
+	[replace]0x00FD8440,DS6heiki,offset
+[subject]FT-2000:dir
+	[replace]0x00FD85DE,DS6heiki,offset
+[back]
+[subject]対艦ミサイル車両:dir
+[subject]SSC-3:dir
+	[replace]0x00FD891A,DS6heiki,offset
+[subject]88式地対艦誘導弾:dir
+	[replace]0x00FD8A2E,DS6heiki,offset
+[subject]CSS-C-7:dir
+	[replace]0x00FD8B42,DS6heiki,offset
+[back]
+[subject]対砲レーダー車両:dir
+[subject]AN-TPQ-37:dir
+	[replace]0x00FD8F08,DS6heiki,offset
+[subject]Cymbeline:dir
+	[replace]0x00FD90A6,DS6heiki,offset
+[subject]RATAC:dir
+	[replace]0x00FD91BA,DS6heiki,offset
+[subject]GreenArcher:dir
+	[replace]0x00FD92CE,DS6heiki,offset
+[subject]SNAR-10:dir
+	[replace]0x00FD946C,DS6heiki,offset
+[subject]76式対砲レーダー:dir
+	[replace]0x00FD960A,DS6heiki,offset
+[subject]905式対砲レーダー:dir
+	[replace]0x00FD971E,DS6heiki,offset
+[subject]戦術防空レーダー:dir
+	[replace]0x00FD9AE4,DS6heiki,offset
+[back]
+[subject]歩兵:dir
+[subject]歩兵:dir
+	[replace]0x00FD9D96,DS6heiki,offset
+[subject]人民兵:dir
+	[replace]0x00FD9F34,DS6heiki,offset
+[subject]空挺部隊:dir
+	[replace]0x00FDA15C,DS6heiki,offset
+[subject]空降兵:dir
+	[replace]0x00FDA2FA,DS6heiki,offset
+[back]
+[subject]空中機動歩兵:dir
+[subject]空中機動歩兵2:dir
+	[replace]0x00FDA636,DS6heiki,offset
+[subject]空中機動歩兵3:dir
+	[replace]0x00FDA6C0,DS6heiki,offset
+[subject]空中機動歩兵4:dir
+	[replace]0x00FDA74A,DS6heiki,offset
+[back]
+[subject]機械化歩兵:dir
+[subject]乗車歩兵1:dir
+	[replace]0x00FDA8E8,DS6heiki,offset
+[subject]乗車歩兵2:dir
+	[replace]0x00FDA972,DS6heiki,offset
+[subject]乗車歩兵3:dir
+	[replace]0x00FDA9FC,DS6heiki,offset
+[back]
+[back]
+
+[subject]海上・海中:dir
+[subject]巡洋艦:dir
+[subject]Ticonderoga:dir
+	[replace]0x00FDAFEA,DS6heiki,offset
+[subject]Kirov:dir
+	[replace]0x00FDB29C,DS6heiki,offset
+[subject]Slava:dir
+	[replace]0x00FDB326,DS6heiki,offset
+[back]
+[subject]駆逐艦:dir
+[subject]Arleigh_Burke:dir
+	[replace]0x00FDB6EC,DS6heiki,offset
+[subject]Spruance:dir
+	[replace]0x00FDB776,DS6heiki,offset
+[subject]Birmingham:dir
+	[replace]0x00FDB914,DS6heiki,offset
+[subject]Cassard:dir
+	[replace]0x00FDBAB2,DS6heiki,offset
+[subject]Lutjens:dir
+	[replace]0x00FDBC50,DS6heiki,offset
+[subject]Sovremennyy:dir
+	[replace]0x00FDBE78,DS6heiki,offset
+[subject]Udaloy:dir
+	[replace]0x00FDBF02,DS6heiki,offset
+[subject]こんごう:dir
+	[replace]0x00FDC0A0,DS6heiki,offset
+[subject]むらさめ:dir
+	[replace]0x00FDC12A,DS6heiki,offset
+[subject]はたかぜ:dir
+	[replace]0x00FDC1B4,DS6heiki,offset
+[subject]旅海:dir
+	[replace]0x00FDC352,DS6heiki,offset
+[subject]旅滬:dir
+	[replace]0x00FDC3DC,DS6heiki,offset
+[subject]旅大:dir
+	[replace]0x00FDC466,DS6heiki,offset
+[back]
+[subject]フリゲート艦:dir
+[subject]Oliver_Hazard_Perry:dir
+	[replace]0x00FDCA54,DS6heiki,offset
+[subject]Norfork:dir
+	[replace]0x00FDCBF2,DS6heiki,offset
+[subject]LaFayette:dir
+	[replace]0x00FDCD06,DS6heiki,offset
+[subject]George_Leygues:dir
+	[replace]0x00FDCD90,DS6heiki,offset
+[subject]Sachsen:dir
+	[replace]0x00FDCEA4,DS6heiki,offset
+[subject]Brandenburg:dir
+	[replace]0x00FDCF2E,DS6heiki,offset
+[subject]Bremen:dir
+	[replace]0x00FDCFB8,DS6heiki,offset
+[subject]Eilat:dir
+	[replace]0x00FDD156,DS6heiki,offset
+[subject]Neustrashimy:dir
+	[replace]0x00FDD2F4,DS6heiki,offset
+[subject]あさぎり:dir
+	[replace]0x00FDD492,DS6heiki,offset
+[subject]あぶくま:dir
+	[replace]0x00FDD51C,DS6heiki,offset
+[subject]江衛:dir
+	[replace]0x00FDD6BA,DS6heiki,offset
+[back]
+[subject]高速攻撃艇:dir
+[subject]Type143A Gepard:dir
+	[replace]0x00FDDDBC,DS6heiki,offset
+[subject]Reshef:dir
+	[replace]0x00FDDF5A,DS6heiki,offset
+[subject]TarantulⅢ:dir
+	[replace]0x00FDE0F8,DS6heiki,offset
+[subject]ミサイル艇1号:dir
+	[replace]0x00FDE320,DS6heiki,offset
+[subject]侯新:dir
+	[replace]0x00FDE4BE,DS6heiki,offset
+[back]
+[subject]空母・ヘリ空母:dir
+[subject]Nimitz:dir
+	[replace]0x00FDEAAC,DS6heiki,offset
+[subject]Charles_de_Gaulle:dir
+	[replace]0x00FDECD4,DS6heiki,offset
+[subject]Clemenceau:dir
+	[replace]0x00FDED5E,DS6heiki,offset
+[subject]Admiral_Kuznetsov:dir
+	[replace]0x00FDEEFC,DS6heiki,offset
+[subject]Invincible:dir
+	[replace]0x00FDF2C2,DS6heiki,offset
+[back]
+[subject]揚陸艦:dir
+[subject]San_Antonio:dir
+	[replace]0x00FDF712,DS6heiki,offset
+[subject]Albion:dir
+	[replace]0x00FDF93A,DS6heiki,offset
+[subject]Foudre:dir
+	[replace]0x00FDFAD8,DS6heiki,offset
+[subject]Ivan_Rogov:dir
+	[replace]0x00FDFC76,DS6heiki,offset
+[subject]おおすみ:dir
+	[replace]0x00FDFE14,DS6heiki,offset
+[subject]玉亭:dir
+	[replace]0x00FDFFB2,DS6heiki,offset
+[back]
+[subject]輸送艦:dir
+	[replace]0x00FE0B04,DS6heiki,offset
+[subject]補給艦:dir
+	[replace]0x00FE0DB6,DS6heiki,offset
+[subject]潜水艦:dir
+[subject]Seawolf:dir
+	[replace]0x00FE1068,DS6heiki,offset
+[subject]Los_Angels:dir
+	[replace]0x00FE10F2,DS6heiki,offset
+[subject]Astute:dir
+	[replace]0x00FE1290,DS6heiki,offset
+[subject]Trafalgar:dir
+	[replace]0x00FE131A,DS6heiki,offset
+[subject]Rubis:dir
+	[replace]0x00FE14B8,DS6heiki,offset
+[subject]Agosta:dir
+	[replace]0x00FE15CC,DS6heiki,offset
+[subject]Type212:dir
+	[replace]0x00FE176A,DS6heiki,offset
+[subject]Type206A:dir
+	[replace]0x00FE17F4,DS6heiki,offset
+[subject]Dolphin:dir
+	[replace]0x00FE1992,DS6heiki,offset
+[subject]Gal:dir
+	[replace]0x00FE1A1C,DS6heiki,offset
+[subject]Severodvinsk:dir
+	[replace]0x00FE1C44,DS6heiki,offset
+[subject]AkuraⅡ:dir
+	[replace]0x00FE1CCE,DS6heiki,offset
+[subject]Kilo:dir
+	[replace]0x00FE1DE2,DS6heiki,offset
+[subject]おやしお:dir
+	[replace]0x00FE1F80,DS6heiki,offset
+[subject]はるしお:dir
+	[replace]0x00FE200A,DS6heiki,offset
+[subject]漢:dir
+	[replace]0x00FE21A8,DS6heiki,offset
+[subject]宋:dir
+	[replace]0x00FE22BC,DS6heiki,offset
+[back]
+[back]
+[subject]司令部:dir
+	[replace]0x00FE2B5C,DS6heiki,offset
+[subject]砲兵陣地:dir
+[subject]L-119:dir
+	[replace]0x00FE3036,DS6heiki,offset
+[subject]MO-120RT:dir
+	[replace]0x00FE30C0,DS6heiki,offset
+[back]
+[subject]対空ミサイル陣地:dir
+[subject]Patriot:dir
+	[replace]0x00FE33FC,DS6heiki,offset
+[subject]I-Hawk:dir
+	[replace]0x00FE359A,DS6heiki,offset
+[subject]Hawk:dir
+	[replace]0x00FE3624,DS6heiki,offset
+[subject]S-300PMU:dir
+	[replace]0x00FE38D6,DS6heiki,offset
+[subject]Buk-1M:dir
+	[replace]0x00FE3960,DS6heiki,offset
+[subject]FT-2000:dir
+	[replace]0x00FE3AFE,DS6heiki,offset
+[back]
+[subject]対艦ミサイル陣地:dir
+[subject]SSC-3:dir
+	[replace]0x00FE3E3A,DS6heiki,offset
+[subject]88式地対艦誘導弾:dir
+	[replace]0x00FE3F4E,DS6heiki,offset
+[subject]CSS-C-7:dir
+	[replace]0x00FE4062,DS6heiki,offset
+[back]
+[subject]対砲レーダー陣地:dir
+[subject]AN/TPQ-37:dir
+	[replace]0x00FE4428,DS6heiki,offset
+[subject]Cymbeline:dir
+	[replace]0x00FE45C6,DS6heiki,offset
+[subject]RATAC:dir
+	[replace]0x00FE4764,DS6heiki,offset
+[subject]Green Archer:dir
+	[replace]0x00FE4878,DS6heiki,offset
+[subject]SNAR-10:dir
+	[replace]0x00FE4A16,DS6heiki,offset
+[subject]76式対砲レーダー:dir
+	[replace]0x00FE4BB4,DS6heiki,offset
+[subject]905式対砲レーダー:dir
+	[replace]0x00FE4CC8,DS6heiki,offset
+[subject]戦術防空レーダー:dir
+	[replace]0x00FE508E,DS6heiki,offset
+[back]
+[root]
+
+[/script]
+
+[script]
+[title]大戦略Ⅵ（軍団データ改造用）
+[process]DS6.EXE
+[maker]Systemsoft
+[creator]freecss
+[note]
+大戦略Ⅵ（シングルプレイ）用のSSGです。
+（ver.1.0.4.0にて作成）
+小隊の兵種、数、燃料等の変更ができる・・・かも。
+
+注意：各個人の責任で使用してください。
+ネットワーク上での使用はしないで下さい。
+[/note]
+
+[subject]ＢＬＵＥ:dir
+[subject]全MAX:b_toggle,0x00FEC250,DS6gundanmax,offset
+[subject]部隊１:dir
+	[replace]0x00FEC250,DS6butai,offset
+[subject]部隊２:dir
+	[replace]0x00FEC3F2,DS6butai,offset
+[subject]部隊３:dir
+	[replace]0x00FEC594,DS6butai,offset
+[subject]部隊４:dir
+	[replace]0x00FEC736,DS6butai,offset
+[subject]部隊５:dir
+	[replace]0x00FEC8D8,DS6butai,offset
+[subject]部隊６:dir
+	[replace]0x00FECA7A,DS6butai,offset
+[subject]部隊７:dir
+	[replace]0x00FECC1C,DS6butai,offset
+[subject]部隊８:dir
+	[replace]0x00FECDBE,DS6butai,offset
+[subject]部隊９:dir
+	[replace]0x00FECF60,DS6butai,offset
+[subject]部隊１０:dir
+	[replace]0x00FED102,DS6butai,offset
+[subject]部隊１１:dir
+	[replace]0x00FED2A4,DS6butai,offset
+[subject]部隊１２:dir
+	[replace]0x00FED446,DS6butai,offset
+[subject]部隊１３:dir
+	[replace]0x00FED5E8,DS6butai,offset
+[subject]部隊１４:dir
+	[replace]0x00FED78A,DS6butai,offset
+[subject]部隊１５:dir
+	[replace]0x00FED92C,DS6butai,offset
+[subject]部隊１６:dir
+	[replace]0x00FEDACE,DS6butai,offset
+[subject]部隊１７:dir
+	[replace]0x00FEDC70,DS6butai,offset
+[subject]部隊１８:dir
+	[replace]0x00FEDE12,DS6butai,offset
+[subject]部隊１９:dir
+	[replace]0x00FEDFB4,DS6butai,offset
+[subject]部隊２０:dir
+	[replace]0x00FEE156,DS6butai,offset
+[subject]部隊２１:dir
+	[replace]0x00FEE2F8,DS6butai,offset
+[subject]部隊２２:dir
+	[replace]0x00FEE49A,DS6butai,offset
+[subject]部隊２３:dir
+	[replace]0x00FEE63C,DS6butai,offset
+[subject]部隊２４:dir
+	[replace]0x00FEE7DE,DS6butai,offset
+[subject]部隊２５:dir
+	[replace]0x00FEE980,DS6butai,offset
+[subject]部隊２６:dir
+	[replace]0x00FEEB22,DS6butai,offset
+[subject]部隊２７:dir
+	[replace]0x00FEECC4,DS6butai,offset
+[subject]部隊２８:dir
+	[replace]0x00FEEE66,DS6butai,offset
+[subject]部隊２９:dir
+	[replace]0x00FEF008,DS6butai,offset
+[subject]部隊３０:dir
+	[replace]0x00FEF1AA,DS6butai,offset
+[subject]部隊３１:dir
+	[replace]0x00FEF34C,DS6butai,offset
+[subject]部隊３２:dir
+	[replace]0x00FEF4EE,DS6butai,offset
+[subject]部隊３３:dir
+	[replace]0x00FEF690,DS6butai,offset
+[subject]部隊３４:dir
+	[replace]0x00FEF832,DS6butai,offset
+[subject]部隊３５:dir
+	[replace]0x00FEF9D4,DS6butai,offset
+[subject]部隊３６:dir
+	[replace]0x00FEFB76,DS6butai,offset
+[subject]部隊３７:dir
+	[replace]0x00FEFD18,DS6butai,offset
+[subject]部隊３８:dir
+	[replace]0x00FEFEBA,DS6butai,offset
+[subject]部隊３９:dir
+	[replace]0x00FF005C,DS6butai,offset
+[subject]部隊４０:dir
+	[replace]0x00FF01FE,DS6butai,offset
+[back]
+
+[subject]ＲＥＤ:dir
+[subject]全MAX:b_toggle,0x00FF03A0,DS6gundanmax,offset
+[subject]部隊１:dir
+	[replace]0x00FF03A0,DS6butai,offset
+[subject]部隊２:dir
+	[replace]0x00FF0542,DS6butai,offset
+[subject]部隊３:dir
+	[replace]0x00FF06E4,DS6butai,offset
+[subject]部隊４:dir
+	[replace]0x00FF0886,DS6butai,offset
+[subject]部隊５:dir
+	[replace]0x00FF0A28,DS6butai,offset
+[subject]部隊６:dir
+	[replace]0x00FF0BCA,DS6butai,offset
+[subject]部隊７:dir
+	[replace]0x00FF0D6C,DS6butai,offset
+[subject]部隊８:dir
+	[replace]0x00FF0F0E,DS6butai,offset
+[subject]部隊９:dir
+	[replace]0x00FF10B0,DS6butai,offset
+[subject]部隊１０:dir
+	[replace]0x00FF1252,DS6butai,offset
+[subject]部隊１１:dir
+	[replace]0x00FF13F4,DS6butai,offset
+[subject]部隊１２:dir
+	[replace]0x00FF1596,DS6butai,offset
+[subject]部隊１３:dir
+	[replace]0x00FF1738,DS6butai,offset
+[subject]部隊１４:dir
+	[replace]0x00FF18DA,DS6butai,offset
+[subject]部隊１５:dir
+	[replace]0x00FF1A7C,DS6butai,offset
+[subject]部隊１６:dir
+	[replace]0x00FF1C1E,DS6butai,offset
+[subject]部隊１７:dir
+	[replace]0x00FF1DC0,DS6butai,offset
+[subject]部隊１８:dir
+	[replace]0x00FF1F62,DS6butai,offset
+[subject]部隊１９:dir
+	[replace]0x00FF2104,DS6butai,offset
+[subject]部隊２０:dir
+	[replace]0x00FF22A6,DS6butai,offset
+[subject]部隊２１:dir
+	[replace]0x00FF2448,DS6butai,offset
+[subject]部隊２２:dir
+	[replace]0x00FF25EA,DS6butai,offset
+[subject]部隊２３:dir
+	[replace]0x00FF278C,DS6butai,offset
+[subject]部隊２４:dir
+	[replace]0x00FF292E,DS6butai,offset
+[subject]部隊２５:dir
+	[replace]0x00FF2AD0,DS6butai,offset
+[subject]部隊２６:dir
+	[replace]0x00FF2C72,DS6butai,offset
+[subject]部隊２７:dir
+	[replace]0x00FF2E14,DS6butai,offset
+[subject]部隊２８:dir
+	[replace]0x00FF2FB6,DS6butai,offset
+[subject]部隊２９:dir
+	[replace]0x00FF3158,DS6butai,offset
+[subject]部隊３０:dir
+	[replace]0x00FF32FA,DS6butai,offset
+[subject]部隊３１:dir
+	[replace]0x00FF349C,DS6butai,offset
+[subject]部隊３２:dir
+	[replace]0x00FF363E,DS6butai,offset
+[subject]部隊３３:dir
+	[replace]0x00FF37E0,DS6butai,offset
+[subject]部隊３４:dir
+	[replace]0x00FF3982,DS6butai,offset
+[subject]部隊３５:dir
+	[replace]0x00FF3B24,DS6butai,offset
+[subject]部隊３６:dir
+	[replace]0x00FF3CC6,DS6butai,offset
+[subject]部隊３７:dir
+	[replace]0x00FF3E68,DS6butai,offset
+[subject]部隊３８:dir
+	[replace]0x00FF400A,DS6butai,offset
+[subject]部隊３９:dir
+	[replace]0x00FF41AC,DS6butai,offset
+[subject]部隊４０:dir
+	[replace]0x00FF434E,DS6butai,offset
+[back]
+
+[subject]ＧＲＥＥＮ:dir
+[subject]全MAX:b_toggle,0x00FF44F0,DS6gundanmax,offset
+[subject]部隊１:dir
+	[replace]0x00FF44F0,DS6butai,offset
+[subject]部隊２:dir
+	[replace]0x00FF4692,DS6butai,offset
+[subject]部隊３:dir
+	[replace]0x00FF4834,DS6butai,offset
+[subject]部隊４:dir
+	[replace]0x00FF49D6,DS6butai,offset
+[subject]部隊５:dir
+	[replace]0x00FF4B78,DS6butai,offset
+[subject]部隊６:dir
+	[replace]0x00FF4D1A,DS6butai,offset
+[subject]部隊７:dir
+	[replace]0x00FF4EBC,DS6butai,offset
+[subject]部隊８:dir
+	[replace]0x00FF505E,DS6butai,offset
+[subject]部隊９:dir
+	[replace]0x00FF5200,DS6butai,offset
+[subject]部隊１０:dir
+	[replace]0x00FF53A2,DS6butai,offset
+[subject]部隊１１:dir
+	[replace]0x00FF5544,DS6butai,offset
+[subject]部隊１２:dir
+	[replace]0x00FF56E6,DS6butai,offset
+[subject]部隊１３:dir
+	[replace]0x00FF5888,DS6butai,offset
+[subject]部隊１４:dir
+	[replace]0x00FF5A2A,DS6butai,offset
+[subject]部隊１５:dir
+	[replace]0x00FF5BCC,DS6butai,offset
+[subject]部隊１６:dir
+	[replace]0x00FF5D6E,DS6butai,offset
+[subject]部隊１７:dir
+	[replace]0x00FF5F10,DS6butai,offset
+[subject]部隊１８:dir
+	[replace]0x00FF60B2,DS6butai,offset
+[subject]部隊１９:dir
+	[replace]0x00FF6254,DS6butai,offset
+[subject]部隊２０:dir
+	[replace]0x00FF63F6,DS6butai,offset
+[subject]部隊２１:dir
+	[replace]0x00FF6598,DS6butai,offset
+[subject]部隊２２:dir
+	[replace]0x00FF673A,DS6butai,offset
+[subject]部隊２３:dir
+	[replace]0x00FF68DC,DS6butai,offset
+[subject]部隊２４:dir
+	[replace]0x00FF6A7E,DS6butai,offset
+[subject]部隊２５:dir
+	[replace]0x00FF6C20,DS6butai,offset
+[subject]部隊２６:dir
+	[replace]0x00FF6DC2,DS6butai,offset
+[subject]部隊２７:dir
+	[replace]0x00FF6F64,DS6butai,offset
+[subject]部隊２８:dir
+	[replace]0x00FF7106,DS6butai,offset
+[subject]部隊２９:dir
+	[replace]0x00FF72A8,DS6butai,offset
+[subject]部隊３０:dir
+	[replace]0x00FF744A,DS6butai,offset
+[subject]部隊３１:dir
+	[replace]0x00FF75EC,DS6butai,offset
+[subject]部隊３２:dir
+	[replace]0x00FF778E,DS6butai,offset
+[subject]部隊３３:dir
+	[replace]0x00FF7930,DS6butai,offset
+[subject]部隊３４:dir
+	[replace]0x00FF7AD2,DS6butai,offset
+[subject]部隊３５:dir
+	[replace]0x00FF7C74,DS6butai,offset
+[subject]部隊３６:dir
+	[replace]0x00FF7E16,DS6butai,offset
+[subject]部隊３７:dir
+	[replace]0x00FF7FB8,DS6butai,offset
+[subject]部隊３８:dir
+	[replace]0x00FF815A,DS6butai,offset
+[subject]部隊３９:dir
+	[replace]0x00FF82FC,DS6butai,offset
+[subject]部隊４０:dir
+	[replace]0x00FF849E,DS6butai,offset
+[back]
+
+[subject]ＹＥＬＬＯＷ:dir
+[subject]全MAX:b_toggle,0x00FF8640,DS6gundanmax,offset
+[subject]部隊１:dir
+	[replace]0x00FF8640,DS6butai,offset
+[subject]部隊２:dir
+	[replace]0x00FF87E2,DS6butai,offset
+[subject]部隊３:dir
+	[replace]0x00FF8984,DS6butai,offset
+[subject]部隊４:dir
+	[replace]0x00FF8B26,DS6butai,offset
+[subject]部隊５:dir
+	[replace]0x00FF8CC8,DS6butai,offset
+[subject]部隊６:dir
+	[replace]0x00FF8E6A,DS6butai,offset
+[subject]部隊７:dir
+	[replace]0x00FF900C,DS6butai,offset
+[subject]部隊８:dir
+	[replace]0x00FF91AE,DS6butai,offset
+[subject]部隊９:dir
+	[replace]0x00FF9350,DS6butai,offset
+[subject]部隊１０:dir
+	[replace]0x00FF94F2,DS6butai,offset
+[subject]部隊１１:dir
+	[replace]0x00FF9694,DS6butai,offset
+[subject]部隊１２:dir
+	[replace]0x00FF9836,DS6butai,offset
+[subject]部隊１３:dir
+	[replace]0x00FF99D8,DS6butai,offset
+[subject]部隊１４:dir
+	[replace]0x00FF9B7A,DS6butai,offset
+[subject]部隊１５:dir
+	[replace]0x00FF9D1C,DS6butai,offset
+[subject]部隊１６:dir
+	[replace]0x00FF9EBE,DS6butai,offset
+[subject]部隊１７:dir
+	[replace]0x00FFA060,DS6butai,offset
+[subject]部隊１８:dir
+	[replace]0x00FFA202,DS6butai,offset
+[subject]部隊１９:dir
+	[replace]0x00FFA3A4,DS6butai,offset
+[subject]部隊２０:dir
+	[replace]0x00FFA546,DS6butai,offset
+[subject]部隊２１:dir
+	[replace]0x00FFA6E8,DS6butai,offset
+[subject]部隊２２:dir
+	[replace]0x00FFA88A,DS6butai,offset
+[subject]部隊２３:dir
+	[replace]0x00FFAA2C,DS6butai,offset
+[subject]部隊２４:dir
+	[replace]0x00FFABCE,DS6butai,offset
+[subject]部隊２５:dir
+	[replace]0x00FFAD70,DS6butai,offset
+[subject]部隊２６:dir
+	[replace]0x00FFAF12,DS6butai,offset
+[subject]部隊２７:dir
+	[replace]0x00FFB0B4,DS6butai,offset
+[subject]部隊２８:dir
+	[replace]0x00FFB256,DS6butai,offset
+[subject]部隊２９:dir
+	[replace]0x00FFB3F8,DS6butai,offset
+[subject]部隊３０:dir
+	[replace]0x00FFB59A,DS6butai,offset
+[subject]部隊３１:dir
+	[replace]0x00FFB73C,DS6butai,offset
+[subject]部隊３２:dir
+	[replace]0x00FFB8DE,DS6butai,offset
+[subject]部隊３３:dir
+	[replace]0x00FFBA80,DS6butai,offset
+[subject]部隊３４:dir
+	[replace]0x00FFBCC2,DS6butai,offset
+[subject]部隊３５:dir
+	[replace]0x00FFBDC4,DS6butai,offset
+[subject]部隊３６:dir
+	[replace]0x00FFBF66,DS6butai,offset
+[subject]部隊３７:dir
+	[replace]0x00FFC108,DS6butai,offset
+[subject]部隊３８:dir
+	[replace]0x00FFC2AA,DS6butai,offset
+[subject]部隊３９:dir
+	[replace]0x00FFC44C,DS6butai,offset
+[subject]部隊４０:dir
+	[replace]0x00FFC5EE,DS6butai,offset
+[back]
+[/script]
+
+
