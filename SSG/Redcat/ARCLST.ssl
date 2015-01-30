@@ -1,0 +1,41 @@
+[group]ARC_MA
+[note]wordwrap
+ディバインクルセイダーズ、もといＤ.Ｃ.に期待大(^ω^)
+
+以下、少々補足です。
+
+デバグ自動早：
+永続スキップ開発側専用モードが使用可能になります。
+
+好感度：
+音夢の方はそのままですが、名無しの少女２の方は「高い程バッドエンドに近くなる」ので注意。
+[/note]
+
+[subject]環境関連:dir
+	[subject]デバグ・自動早使用可/実行/_:b_toggle,0x41E0E2,ARCLST->ARC_a,real
+	[subject]マウスカーソル全開/実行/_:toggle,0x41DD85,09,06
+[/group]
+
+
+[group]ARC_PR
+[subject]好感度確認調整:dir
+	[subject]名無しの少女２/現在値/_:calc,0x10BB0F8,0x00,0x07,unsigned
+	[subject]朝倉音夢/現在値/_:calc,0x10BB0FC,0x00,0x04,unsigned
+[/group]
+
+
+[group]ARC_CG
+[subject]ＣＧ鑑賞:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x10B89B4,0x10B8AA7-01000000
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x10B89B4,0x10B8AA7-00
+[back]
+[subject]シーン回想:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x10B7A18,0x10B7B1F-01000000
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x10B7A18,0x10B7B1F-00
+[/group]
+
+
+[group]ARC_a
+0x41E0E2,04,03
+0x41E0F0,04,03
+[/group]
