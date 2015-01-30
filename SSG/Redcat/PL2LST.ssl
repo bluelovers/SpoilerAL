@@ -1,0 +1,380 @@
+[group]PL2_SSG
+[note]wordwrap
+暫定番。以後プレイに併せて補完していきます。…アイテム関係がちと手間かかり過ぎなのでどうしたものか。
+
+ＣＧモード関係は必ず以下の手順で実行すること。
+
+１）任意のおまけモードに入る
+２）改竄防止用復帰処理回避を実行チェック
+３）ＡＬＬ化させたい項目のＡＬＬＯＮに実行チェック
+４）そのままタイトル画面に戻る（システム再起動は×）
+５）タイトル画面に戻ったら、改竄防止用復帰処理回避の実行チェックを外す
+
+
+アイテム個別指定所持使用時は以下の点に注目
+
+１）数量-１が存在消去状態になります。
+２）数を変えただけでは効果が出ないものもあります(調査中)
+
+[/note]
+
+[subject]ＲＰＧパート関連:dir
+	[subject]戦闘時敵ＨＰＭＩＮ化/実行/固定:b_toggle,0x00,PL2LST->PL2_c,offset
+[root]
+
+[subject]パラメータ関連:dir
+[subject]所持金/現在値/_:calc,_[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]+0x110:]+0x14:],0x000000,0x01869F,unsigned
+[subject]はらぺこ指数/現在値/_:calc,_[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]+0x288:]+0x14:],0x0000,0x03E7,unsigned
+[subject]経験値/現在値/_:calc,_[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]+0xF0:]+0x14:]+0x04,0x000000,0x01869F,unsigned
+[subject]カナン基本能力:dir
+	[replace]_[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]+0x898:]+0x14:],PL2LST->PL2_a
+	[replace]_[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]+0x89C:]+0x14:],PL2LST->PL2_b
+	[subject]スキル任意セレクト:dir
+		[repeat]PL2LST->PL2REP1,0,6,1
+	[back]
+[back]
+[subject]セレスト基本能力:dir
+	[replace]_[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]+0x8B4:]+0x14:],PL2LST->PL2_a
+	[replace]_[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]+0x8B8:]+0x14:],PL2LST->PL2_b
+	[subject]スキル任意セレクト:dir
+		[repeat]PL2LST->PL2REP2,0,6,1
+	[back]
+[back]
+[subject]アイテム個別指定所持:dir
+	[subject]アイテム選択/_:list,0x436500,PL2LST->LST_d,0x00,0x01
+[size]4
+	[subject]_mem,_([\:0x436500\:1]*0x10)=>temp;[\:[\:[\:((MName\:\:SYS42VM.DLL)+0x53E68)+0x118\:]+$temp+0x14BC\:]+0x14\:],20,00,<No Item>'+'の個数/現在値/_:calc,_([:0x436500:1]*0x10)=>temp;[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]+$temp+0x14B8:]+0x14:]+0x0C,0xFFFFFFFF,0x00000063,signed
+[/size]
+[back]
+[subject]装備所持＆エディット:dir
+ [subject]装備選択/_:list,0x436504,PL2LST->LST_e,0x00,0x01
+ [subject]_mem,_([\:0x436504\:1]*0x14)=>temp;[\:[\:[\:((MName\:\:SYS42VM.DLL)+0x53E68)+0x118\:]+$temp+0x61C\:]+0x14\:],20,00,<No Item>'+'の所持/実行/_:toggle,_([:0x436504:1]*0x14)=>temp;[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]+$temp+0x60C:]+0x14:]+0x20,01000000,00000000
+  [subject]_mem,_([\:0x436504\:1]*0x14)=>temp;[\:[\:[\:((MName\:\:SYS42VM.DLL)+0x53E68)+0x118\:]+$temp+0x61C\:]+0x14\:],20,00,<No Item>'+'の基本能力:dir
+	[replace]_([:0x436504:1]*0x14)=>temp;[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]+$temp+0x610:]+0x14:],PL2LST->PL2_j
+	[subject]一括最強化/実行/_:toggle,_([:0x436504:1]*0x14)=>temp;[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]+$temp+0x610:]+0x14:],630000006300000063000000630000006300000063000000
+ [back]
+[back]
+[root]
+
+[subject]ＣＧモード関連:dir
+[subject]改竄防止用復帰処理回避/実行/_:toggle,_(MName::SYS42VM.DLL)+0x26CCC,EB00,7517
+ [subject]ビジュアル:dir
+	[replace]_[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]+0x94:]+0x14:],PL2LST->PL2_d
+ [back]
+ [subject]戦闘顔:dir
+	[replace]_[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]+0xA0:]+0x14:],PL2LST->PL2_e
+ [back]
+ [subject]男の子モンスター:dir
+	[replace]_[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]+0xA8:]+0x14:],PL2LST->PL2_f
+ [back]
+ [subject]モンスターその他:dir
+	[replace]_[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]+0xA4:]+0x14:],PL2LST->PL2_g
+ [back]
+ [subject]回想:dir
+	[replace]_[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]+0x98:]+0x14:],PL2LST->PL2_h
+ [back]
+ [subject]音楽:dir
+	[replace]_[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]+0x9C:]+0x14:],PL2LST->PL2_i
+[root]
+
+[/group]
+
+
+[group]PL2_a
+[e_with],0x0000,0x270F,unsigned
+[subject]現在ＨＰ/現在値/固定:calc,0x04
+[subject]最大ＨＰ/現在値/_:calc,0x08
+[subject]現在ＭＰ/現在値/固定:calc,0x0C
+[subject]最大ＭＰ/現在値/_:calc,0x10
+[/e_with]
+[/group]
+
+
+[group]PL2_b
+[e_with],0x0000,0x03E7,unsigned
+[subject]攻撃/現在値/_:calc,0x00
+[subject]防御/現在値/_:calc,0x04
+[subject]魔法/現在値/_:calc,0x08
+[subject]魔抵/現在値/_:calc,0x0C
+[subject]回避/現在値/_:calc,0x10
+[subject]行動/現在値/_:calc,0x14
+[/e_with]
+[/group]
+
+
+[group]PL2_c
+_[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]+0xF0C:]+0x14:]+0x10,01000000
+_[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]+0xF28:]+0x14:]+0x10,01000000
+_[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]+0xF44:]+0x14:]+0x10,01000000
+[/group]
+
+
+[group]PL2_d
+[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x0000,0x063F-01000000
+[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x0000,0x063F-00
+[/group]
+
+
+[group]PL2_e
+[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x0000,0x0127-01000000
+[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x0000,0x0127-00
+[/group]
+
+
+[group]PL2_f
+[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x00,0x5F-01000000
+[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x00,0x5F-00
+[/group]
+
+
+[group]PL2_g
+[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x0000,0x0237-01000000
+[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x0000,0x0237-00
+[/group]
+
+
+[group]PL2_h
+[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x0190,0x0B6F-01000000
+[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x0190,0x0B6F-00
+[/group]
+
+
+[group]PL2_i
+[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x00,0x47-01000000
+[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x00,0x47-00
+[/group]
+
+
+[group]PL2_j
+[e_with],0x00,0x63,unsigned
+[subject]攻撃/現在値/_:calc,0x00
+[subject]防御/現在値/_:calc,0x04
+[subject]魔法/現在値/_:calc,0x08
+[subject]魔抵/現在値/_:calc,0x0C
+[subject]回避/現在値/_:calc,0x10
+[subject]行動/現在値/_:calc,0x14
+[/e_with]
+[/group]
+
+
+[group]PL2REP1
+[subject][! @PL2LST->LST_a,$Val !]/_:d_list,_[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]+0x8A4:]+0x14:]+0x[! 0x04*$Val !],PL2LST->LST_b,0x00,0xFF,PL2LST->LST_c,offset
+[/group]
+
+
+[group]PL2REP2
+[subject][! @PL2LST->LST_a,$Val !]/_:d_list,_[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]+0x8C0:]+0x14:]+0x[! 0x04*$Val !],PL2LST->LST_b,0x00,0xFF,PL2LST->LST_c,offset
+[/group]
+
+
+[group]LST_a
+１スロット目
+２スロット目
+３スロット目
+４スロット目
+５スロット目
+６スロット目
+[/group]
+
+
+[group]LST_b
+なし
+攻撃
+攻撃
+全力攻撃
+全力攻撃２
+手加減攻撃
+手加減攻撃２
+みじん切り
+一閃刃
+一閃刃２
+乱撃
+激乱撃
+烈風斬り
+火炎斬り
+迅雷斬り
+ハニーフラッシュ
+炎の矢
+火爆破
+ファイヤーレーザー
+火加減
+雷撃
+氷の矢
+氷雪吹雪
+スノーレーザー
+ライト
+白色破壊光線
+ヒーリング
+ヒーリング２
+ヒーリング３
+ヒーリング＋
+ヒーリング＋２
+捕獲
+集中
+読心
+アイテム
+休む
+大根剣士
+染料
+闘うし
+宝箱
+宝箱２
+[/group]
+
+
+[group]LST_c
+,0x00=00
+,0x00=01
+,0x00=02
+,0x00=03
+,0x00=04
+,0x00=05
+,0x00=06
+,0x00=07
+,0x00=08
+,0x00=09
+,0x00=0A
+,0x00=0B
+,0x00=0C
+,0x00=0D
+,0x00=0E
+,0x00=14
+,0x00=15
+,0x00=16
+,0x00=17
+,0x00=18
+,0x00=19
+,0x00=1A
+,0x00=1B
+,0x00=1C
+,0x00=1D
+,0x00=1E
+,0x00=29
+,0x00=2A
+,0x00=2B
+,0x00=2C
+,0x00=2D
+,0x00=33
+,0x00=34
+,0x00=35
+,0x00=36
+,0x00=37
+,0x00=3D
+,0x00=3E
+,0x00=3F
+,0x00=40
+,0x00=41
+[/group]
+
+
+[group]LST_d
+世色癌
+世色癌２
+世色癌３
+竜角惨
+愚論酸
+離解印
+まんが肉
+爆発茸
+復活の小判
+帰り木
+捕獲ロープ
+バケツ
+さがりなし
+ベストグリーン
+えんじぼうず
+ベージュきのこ
+黒陸ワカメ
+鍋
+Ｄ１鍵（仮名）
+機械の破片
+イの木の花
+タの木の花
+コの木の花
+イタコの実
+マタタビの実
+マタドールの衣装
+無敵カウベル
+すいかの種
+注射器
+硫酸
+くじら
+花壇花（仮）
+ダンジョン茸（赤）
+ダンジョン茸（橙）
+にゃんじゃらし
+子分
+遺跡３の鍵
+遺跡４の鍵（仮）
+遺跡４の花１（仮）
+遺跡４の花２（仮）
+遺跡４の花３（仮）
+うし肉
+おかゆ壱番しぼり
+ちゃつみ
+よーでるタマネギ
+業雷にんじん
+男色イモ
+プリン
+にゃんにゃん
+金魚
+にぎり飯
+ほかほかごはん
+あんぱん
+あやしい薬
+ハニーカレー
+１日寝かせたカレー
+サハラマサラ
+哭きのルー
+こんにちはの塩辛
+ヒラミレモン
+ももの実
+だんごパウダー
+ゴールデン捕獲ロープ
+遺跡５の鍵
+カードキー
+除草剤２
+写真Ａ
+写真Ｂ
+写真１
+写真２
+写真３
+写真４
+写真５
+写真６
+[/group]
+
+
+[group]LST_e
+ナイフ
+ショートソード
+ロングソード
+バスターソード
+日本刀
+村正
+魔法の杖
+高級魔法杖
+アリスソード
+大根
+食通の剣
+王子の服
+従者の服
+魔法使いの服
+軽アーマー
+魔法アーマー
+真紅の鎧
+界陣の鎧
+うにアーマー
+フェロモンスーツ
+食通の鎧
+鍋
+しましまバンダナ
+アーヒルバンダナ
+炎の指輪
+雷の指輪
+氷の指輪
+光の指輪
+素早い変な虫
+ロイのサイン
+ぴよぴよサンダル
+[/group]
