@@ -1,0 +1,39 @@
+[group]STATUS
+	[subject]ALL: b_toggle,0x00,COD_ALTERNATIVE->STATUS_SET,offset
+	[subject]LV : calc,0x00,0,99
+/	[subject]HP(現在値): copy,0x04,0x54,2
+	[subject]HP(現在値): calc,0x04,0,9999
+	[subject]HP(最高値): calc,0x54,0,9999
+	[subject]EXP: calc,0x08,0,0xFFFF
+	[subject]STR: calc,0x5C,0,999
+	[subject]DEF: calc,0x60,0,999
+	[subject]SPD: calc,0x64,0,999
+	[subject]PTY: calc,0x68,0,999
+	[subject]SLOT: calc,0x28,2,12
+[/group]
+
+[group]STATUS_SET
+0x04,8813
+0x54,8813
+0x5C,F401
+0x60,F401
+0x64,F401
+0x68,F401
+[/group]
+
+[group]POSITION
+	[subject]位置:dir
+		[subject]北:b_calc,0x649FE8,COD_ALTERNATIVE->POSITION_ADD1,offset,0,100
+		[subject]東:b_calc,0x649FEC,COD_ALTERNATIVE->POSITION_ADD2,offset,0,100
+	[back]
+[/group]
+5DEFEE>5DF024
+[group]POSITION_ADD1
+0x00
+0x0C
+[/group]
+[group]POSITION_ADD2
+0x00
+0x04
+[/group]
+
