@@ -1,0 +1,376 @@
+/58d77c
+
+[group]plam
+[subject]HP/MP:dir
+	[subject]全部9999:toggle,0x00,0x0f-0f270000,00000000
+	[subject]現在HP:calc,0x00,0,9999
+	[subject]現在MP:calc,0x04,0,9999
+	[subject]最大HP:calc,0x08,0,9999
+	[subject]最大MP:calc,0x0c,0,9999
+	[back]
+[subject]能力値:dir
+	[subject]全部999:toggle,0x10,0x23-e7030000,00000000
+	[subject]全部9999:toggle,0x10,0x23-0f270000,00000000
+	[subject]耐久力:calc,0x10,0,9999
+	[subject]意思力:calc,0x14,0,9999
+	[subject]腕力:calc,0x18,0,9999
+	[subject]俊敏さ:calc,0x1c,0,9999
+	[subject]器用さ:calc,0x20,0,9999
+	[back]
+[subject]レベル:dir
+	[subject]全部999:toggle,0x24,0x3b-e7030000,00000000
+	[subject]全部9999:toggle,0x24,0x3b-0f270000,00000000
+	[subject]基本:calc,0x24,0,999
+	[subject]黒魔法:calc,0x28,0,999
+	[subject]白魔法:calc,0x2c,0,999
+	[subject]自然魔法:calc,0x30,0,999
+	[subject]錬金術:calc,0x34,0,999
+	[subject]戦闘術:calc,0x38,0,999
+	[back]
+[subject]経験値:dir
+	[subject]全部99:toggle,0x3c,0x53-63000000,00000000
+	[subject]基本:calc,0x3c,0,99
+	[subject]黒魔法:calc,0x40,0,99
+	[subject]白魔法:calc,0x44,0,99
+	[subject]自然魔法:calc,0x48,0,99
+	[subject]錬金術:calc,0x4c,0,99
+	[subject]戦闘術:calc,0x50,0,99
+	[back]
+[size]2
+[subject]スキル:dir
+	[subject]全部99:toggle,0x8a,0x0cd-6300,0000
+	[subject]全部999:toggle,0x8a,0x0cd-e703,0000
+	[subject]ファイア:calc,0x8a,0,99
+	[subject]フリーズ:calc,0x8c,0,99
+	[subject]サンダー:calc,0x8e,0,99
+	[subject]アシッドガス:calc,0x90,0,99
+	[subject]パニッシュ:calc,0x92,0,99
+	[subject]スリープ:calc,0x94,0,99
+	[subject]サック:calc,0x96,0,99
+	[subject]ドレイン:calc,0x98,0,99
+	[subject]チャーム:calc,0x9a,0,99
+	[subject]ヒール:calc,0x9c,0,99
+	[subject]トランス:calc,0x9e,0,99
+	[subject]フォース:calc,0xa0,0,99
+	[subject]リフレッシュ:calc,0xa2,0,99
+	[subject]リザレクト:calc,0xa4,0,99
+	[subject]サイコキネシス:calc,0xa6,0,99
+	[subject]ブレイク:calc,0xa8,0,99
+	[subject]リフレクト:calc,0xaa,0,99
+	[subject]ライト:calc,0xac,0,99
+	[subject]スロウ:calc,0xae,0,99
+	[subject]ヘイスト:calc,0xb0,0,99
+	[subject]ヒート:calc,0xb2,0,99
+	[subject]ウィーク:calc,0xb4,0,99
+	[subject]エイド:calc,0xb6,0,99
+	[subject]ペトロガス:calc,0xb8,0,99
+	[subject]メテオ:calc,0xba,0,99
+	[subject]全体化:calc,0xbc,0,99
+	[subject]合成:calc,0xbe,0,99
+	[subject]解錠:calc,0xc0,0,99
+	[subject]窃盗:calc,0xc2,0,99
+	[subject]武器鍛錬:calc,0xc4,0,99
+	[subject]集中力鍛錬:calc,0xc6,0,99
+	[subject]回避訓練:calc,0xc8,0,99
+	[subject]持久訓練:calc,0xca,0,99
+	[subject]精神鍛錬:calc,0xcc,0,99
+	[back]
+[/size]
+[/group]
+
+
+
+
+
+[group]武器ライルSSR
+	[size]2
+	[subject][! @maw3->武器ライル,$Val !]:calc,0x[! 0x58d77e+$Val*2 !],0,99
+	[/size]
+[/group]
+
+[group]武器モニカSSR
+	[size]2
+	[subject][! @maw3->武器モニカ,$Val !]:calc,0x[! 0x58d8be+$Val*2 !],0,99
+	[/size]
+[/group]
+
+[group]武器リサSSR
+	[size]2
+	[subject][! @maw3->武器リサ,$Val !]:calc,0x[! 0x58d7f6+$Val*2 !],0,99
+	[/size]
+[/group]
+
+[group]武器ジャスティンSSR
+	[size]2
+	[subject][! @maw3->武器ジャスティン,$Val !]:calc,0x[! 0x58d8e6+$Val*2 !],0,99
+	[/size]
+[/group]
+
+[group]武器フィリスSSR
+	[size]2
+	[subject][! @maw3->武器フィリス,$Val !]:calc,0x[! 0x58d86e+$Val*2 !],0,99
+	[/size]
+[/group]
+
+[group]武器瑞穂SSR
+	[size]2
+	[subject][! @maw3->武器瑞穂,$Val !]:calc,0x[! 0x58d7ce+$Val*2 !],0,99
+	[/size]
+[/group]
+
+[group]鎧SSR
+	[size]2
+	[subject][! @maw3->鎧,$Val !]:calc,0x[! 0x58d90e+$Val*2 !],0,99
+	[/size]
+[/group]
+
+[group]靴SSR
+	[size]2
+	[subject][! @maw3->靴,$Val !]:calc,0x[! 0x58d936+$Val*2 !],0,99
+	[/size]
+[/group]
+
+[group]アクセサリSSR
+	[size]2
+	[subject][! @maw3->アクセサリ,$Val !]:calc,0x[! 0x58d95e+$Val*2 !],0,99
+	[/size]
+[/group]
+
+[group]アイテム
+	[size]2
+	[subject]全部99個:toggle,0x0000,0x019f-6300,0000
+	[/size]
+[/group]
+
+
+
+
+
+
+
+[group]武器ライル
+ショートソード
+グラディウス
+カトラス
+ブロードソード
+ロングソード
+レイピア
+ファルシオン
+シミター
+サーベル
+フラガラッハ
+クラウ・ソナス
+グラム
+バルムルク
+(欠番)
+アンサラー
+フォトンブランド
+バスタードソード
+ツヴァイハンダー
+クレイモア
+フランベルジュ
+(欠番)
+(欠番)
+(欠番)
+(欠番)
+グレートソード
+残馬刀
+アイスブランド
+アヴェンジャー
+フルンティング
+エクスカリバー
+ジェイルの剣
+[/group]
+
+[group]武器瑞穂
+脇差し
+刀
+小太刀
+太刀
+孫六
+長光
+正宗
+虎徹
+村雨
+火燕
+ニヒル
+(欠番)
+(欠番)
+忍者刀
+柳生
+菊一文字
+武蔵
+鰐顎
+蝕み
+[/group]
+
+
+
+[group]武器リサ
+レザーグローブ
+メリケンサック
+ブロンズナックル
+ブラスナックル
+アイアンフィスト
+バグナグ
+パワーグローブ
+ベアクロー
+ねこグローブ
+闘魂グローブ
+(欠番)
+(欠番)
+(欠番)
+(欠番)
+(欠番)
+(欠番)
+(欠番)
+(欠番)
+(欠番)
+(欠番)
+グレイブ
+ヴージ
+ポールアックス
+クレセントアックス
+スコーピオン
+バルディナッシュ
+ハルバード
+ピナーカ
+ブリューナク
+ゲイ・ボルグ
+グングニル
+デスサイズ
+まじっくはんど
+(欠番)
+(欠番)
+(欠番)
+(欠番)
+(欠番)
+(欠番)
+(欠番)
+クラブ
+スパイククラブ
+メイス
+ウォーハンマー
+モーニングスター
+モール
+はりせん
+ミョルニル
+フライパン
+ピコピコハンマー
+[/group]
+
+[group]武器モニカ
+ロッド
+ワンド
+スカルロッド
+ハエたたき
+でんでん太鼓
+(欠番)
+(欠番)
+(欠番)
+(欠番)
+(欠番)
+スタッフ
+クォータースタッフ
+メイジスタッフ
+オークスタッフ
+カドゥケウスの杖
+レーヴァテイン
+虫取り網
+スタンドマイク
+[/group]
+
+[group]武器ジャスティン
+ダーツ
+ダーツ
+スリング
+ダガー
+ダガー
+ダーク
+手裏剣
+チャクラム
+トマホーク
+ブーメラン
+タスラム
+包丁
+十手
+[/group]
+
+[group]武器フィリス
+ショートボウ
+ロングボウ
+ハンターボウ
+グレートボウ
+サルンガ
+ミストルテイン
+和弓
+キューピットボウ
+(欠番)
+(欠番)
+(欠番)
+(欠番)
+(欠番)
+(欠番)
+(欠番)
+(欠番)
+(欠番)
+(欠番)
+(欠番)
+(欠番)
+ライトクロスボウ
+ヘビークロスボウ
+リピーター
+アルバレスト
+(欠番)
+(欠番)
+(欠番)
+(欠番)
+(欠番)
+(欠番)
+ハンドガン
+バイソン
+マグナム
+ショットガン
+タスラム
+光線銃
+[/group]
+
+[group]鎧
+ローブ
+クロス
+ソフトレザー
+ハードレザー
+ブレストプレート
+リングメイル
+チェインメイル
+スケイルアーマー
+ブリガンタイン
+プレートアーマー
+[/group]
+
+[group]靴
+サンダル
+シューズ
+ショートブーツ
+ミドルブーツ
+ロングブーツ
+スパイク
+バスケットブーツ
+[/group]
+
+[group]アクセサリ
+スカーフ
+チョーカー
+ブローチ
+ペンダント
+ブルーネックレス
+サークレット
+勾玉
+レッドネックレス
+グリーンネックレス
+イエローネックレス
+オレンジネックレス
+ホワイトネックレス
+ブラックネックレス
+パープルネックレス
+[/group]
