@@ -1,0 +1,32 @@
+[group]ANN_SSG
+[note]wordwrap
+もう少し捻れば化けそうな気もしますが…。過去の楓華とうまくいってた場合…ってのもあってもよかったんじゃないかと。
+
+おまけ・シネマちっくモード使用可能：
+シナリオ中に機能実行し、タイトル画面へ。
+[/note]
+
+[subject]ＣＧモード関連:dir
+	[subject]おまけ・シネマちっくモード使用可能/実行/_:toggle,0x53A010,01000001,00000000
+	[subject]ＣＧ鑑賞:dir
+		[subject]ＡＬＬ ＯＮ/実行/_:b_toggle,0x53A0D8,ANNLST->ANN_a,real
+		[subject]ＡＬＬ ＯＦＦ/実行/_:b_toggle,0x53A0D8,ANNLST->ANN_b,real
+[back]
+	[subject]シーン回想:dir
+		[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x53A3F8,0x53A409-0100
+		[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x53A3F8,0x53A409-0000
+[root]
+
+[/group]
+
+
+[group]ANN_a
+0x53A0D8,0x53A17F-0100
+0x53A268,0x53A3D7-0100
+[/group]
+
+
+[group]ANN_b
+0x53A0D8,0x53A17F-0000
+0x53A268,0x53A3D7-0000
+[/group]
