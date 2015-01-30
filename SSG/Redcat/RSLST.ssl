@@ -1,0 +1,37 @@
+[group]RS_SSG
+[note]wordwrap
+‚È‚¨‚ÌˆÙ—l‚È‰Âˆ¤‚ç‚µ‚³‚Æ”N—î‚É”ä—á‚µ‚È‚¢ŠOŒ©‚Ì’â‘Ø‚Í‚Ç‚¤‚¢‚¤‚±‚Æ‚©‚Æ¬ˆêŽžŠÔ‚—
+
+‚b‚fƒ‚[ƒhŠÖ˜AF
+”½‰f•û–@‚ÍAƒvƒŒƒC‚ðÅ‰‚©‚çŽn‚ß‹@”\‚ðŽÀsA‚»‚ÌŒã”CˆÓ‚ÌƒCƒxƒ“ƒg‚b‚f‚ð‚P–‡Œ©‚ê‚Î‚n‚j
+[/note]
+
+[subject]‚b‚fƒ‚[ƒhŠÖ˜A:dir
+ [subject]CG Recollection:dir
+	[subject]‚`‚k‚k ‚n‚m/ŽÀs/_:b_toggle,0x00,RSLST->RS_b,offset
+	[subject]‚`‚k‚k ‚n‚e‚e/ŽÀs/_:toggle,0x4B,0x5C-00
+ [back]
+ [subject]Scene Recollection:dir
+	[subject]‚`‚k‚k ‚n‚m/ŽÀs/_:b_toggle,0x00,RSLST->RS_c,offset
+	[subject]‚`‚k‚k ‚n‚e‚e/ŽÀs/_:b_toggle,0x00,RSLST->RS_d,offset
+[root]
+
+[/group]
+
+
+[group]RS_b
+0x4B,FE
+0x4C,0x5C-FF
+[/group]
+
+
+[group]RS_c
+0x12,80FFFF
+0x32,FFFFFF
+[/group]
+
+
+[group]RS_d
+0x12,000000
+0x32,000000
+[/group]
