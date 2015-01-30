@@ -1,0 +1,70 @@
+SSG for SpoilerAL ver 3.3
+
+[script]
+[title]ソーサレス・エンパイア (adjustment test)
+[maker]BlueBell
+[process]EMPIRE.EXE
+[creator]神音
+
+[adjustment]search,0x6e7a08,040800a0,heap2,heap2,0x04
+
+[subject]所持金			:calc,0x6E8060,0,9999
+[subject]ジェイ			:dir
+	[subject]MAX/StatusMax	:b_toggle,0x6E7B9C,SE_st_MAX,offset
+	[replace]0x6E7B9C,SE_status,offset
+[subject]ソフィ			:dir
+	[subject]MAX/StatusMax	:b_toggle,0x6E7D2C,SE_st_MAX,offset
+	[replace]0x6E7D2C,SE_status,offset
+[subject]リリー			:dir
+	[subject]MAX/StatusMax	:b_toggle,0x6E7EBC,SE_st_MAX,offset
+	[replace]0x6E7EBC,SE_status,offset
+[subject]アイテム		:dir
+	[subject]小間物屋	:dir
+		[subject]全品所持		:toggle,0x6E8078,0x6E8098-01000000,00000000
+		[subject]水色リボン/所持	:toggle,0x6E8078,01,00
+		[subject]袋入りポプリ/所持	:toggle,0x6E807C,01,00
+		[subject]ワンピース/所持	:toggle,0x6E8080,01,00
+		[subject]花の髪飾り/所持	:toggle,0x6E8084,01,00
+		[subject]貝殻のペンダント/所持	:toggle,0x6E8088,01,00
+		[subject]恋愛小説/所持		:toggle,0x6E8074,01,00
+		[subject]ぬいぐるみ/所持	:toggle,0x6E808C,01,00
+		[subject]化粧品/所持		:toggle,0x6E8090,01,00
+		[subject]銀製ブレスレット/所持	:toggle,0x6E8094,01,00
+		[subject]高級香水/所持		:toggle,0x6E8098,01,00
+		[back]
+	[subject]道具屋		:dir
+		[subject]全品所持		:toggle,0x6E81B4,0x6E81DC-01000000,00000000
+		[subject]高級なめし皮バンド/所持:toggle,0x6E81B4,01,00
+		[subject]ルビーの指輪/所持	:toggle,0x6E81B8,01,00
+		[subject]白銀の額冠/所持	:toggle,0x6E81BC,01,00
+		[subject]金のネックレス/所持	:toggle,0x6E81C0,01,00
+		[subject]絹のブーツ/所持	:toggle,0x6E81C4,01,00
+		[subject]フォルタインの腕輪/所持:toggle,0x6E81C8,01,00
+		[subject]アーキスの指輪/所持	:toggle,0x6E81CC,01,00
+		[subject]エルセイの額冠/所持	:toggle,0x6E81D0,01,00
+		[subject]メアリのチョーカー/所持:toggle,0x6E81D4,01,00
+		[subject]ベルダンの靴/所持	:toggle,0x6E81D8,01,00
+		[subject]アルバーの王冠/所持	:toggle,0x6E81DC,01,00
+		[back]
+	[subject]雑貨屋		:dir
+		[subject]全品所持		:toggle,0x6E809C,0x6E80B8-01000000,00000000
+		[subject]体力回復１/所持	:toggle,0x6E809C,01,00
+		[subject]体力回復２/所持	:toggle,0x6E80A0,01,00
+		[subject]体力回復３/所持	:toggle,0x6E80A4,01,00
+		[subject]体力回復４/所持	:toggle,0x6E80A8,01,00
+		[subject]行動力回復１/所持	:toggle,0x6E80AC,01,00
+		[subject]行動力回復２/所持	:toggle,0x6E80B0,01,00
+		[subject]行動力回復３/所持	:toggle,0x6E80B4,01,00
+		[subject]行動力回復４/所持	:toggle,0x6E80B8,01,00
+		[back]
+	[subject]古書屋		:dir
+		[subject]全品所持		:toggle,0x6E80C4,0x6E80DC-01000000,00000000
+		[subject]素早さの書/所持	:toggle,0x6E80C4,01,00
+		[subject]器用さの書/所持	:toggle,0x6E80C8,01,00
+		[subject]心眼の書/所持		:toggle,0x6E80CC,01,00
+		[subject]力の書/所持		:toggle,0x6E80D0,01,00
+		[subject]障壁の書/所持		:toggle,0x6E80D4,01,00
+		[subject]魔光の書/所持		:toggle,0x6E80D8,01,00
+		[subject]魔封の書/所持		:toggle,0x6E80DC,01,00
+[root]
+[/script]
