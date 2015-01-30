@@ -1,0 +1,40 @@
+[group]BP_SSG
+[note]wordwrap
+里美→千歳と攻略したので、ワールドではヒロイン全員陵辱されるかと思ってたのに…、なんですか自分の攻略順がそういうのばっかだったと(^^;
+
+おまけ項目全出現：
+機能実行してから再度タイトル画面に戻ると反映。
+
+ＣＧ・回想モード無条件ＡＬＬ化：
+セーブデータの内容無視で…ぶっちゃけファイルが無くてもＡＬＬ化。効果は機能実行中のみ。
+
+ver1.00 CRC32/
+バイナリィ・ポット通常版.EXE=25A0AFF0
+[/note]
+
+[subject]パラメータ関連:dir
+ [subject]好感度確認調整:dir
+	[repeat]BPLST->BPREP1,0,6,1
+[root]
+
+[subject]ＣＧモード関連:dir
+	[subject]おまけ項目全出現/実行/_:toggle,0x5944B0,0x5944BB-01000000
+	[subject]ＣＧ・回想モード無条件ＡＬＬ化/実行/_:toggle,0x40C521,EB00????EB,751C????74
+[root]
+
+[/group]
+
+
+[group]BPREP1
+[subject][! @BPLST->LST_a,$Val !]/現在値/_:calc,_0x593EBC+0x[! 0x04*$Val !],0x0000,0x03E8,unsigned
+[/group]
+
+
+[group]LST_a
+羽根井優希
+諏訪奈都子
+川中島里美
+吉野佳澄
+小津千歳
+ミリィ
+[/group]
