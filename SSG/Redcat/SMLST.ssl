@@ -1,0 +1,75 @@
+[group]SM_MA
+[note]wordwrap
+•s—ÏƒQ[‚Ë‚¥(^^;w‘“‚´‚ß‚½cx‚ÆŽ—‚½’É‚Ý‚ðŽv‚¢o‚µ‚Ü‚µ‚½BƒhƒƒhƒiÎj
+
+ˆÈ‰ºA­X•â‘«‚Å‚·B
+
+‚`‚u‚fƒp[ƒg‚‘¬‰»F
+ƒfƒtƒH‚Í‚â‚Í‚èƒLƒƒƒ‰‚ÌƒGƒtƒFƒNƒgƒJƒbƒg‚µ‚©‚µ‚Ä‚­‚ê‚È‚¢‚Ì‚ÅA‚a‚fŠÖŒW‚ÌƒtƒF[ƒhAƒuƒŒƒ“ƒh‹y‚Ñ‚»‚ê‚É•t‚·‚éƒEƒGƒCƒg‚ðƒXƒLƒbƒv‚·‚é‚æ‚¤‚É‚µ‚Ü‚µ‚½B
+
+Šg’£ƒVƒiƒŠƒIoŒ»F
+‘Oìƒtƒ@ƒ“‚Í‚Q“x‚¨‚¢‚µ‚¢H‚VŒŽ”­”„—\’è‚Ìwá‚Ì‚Æ‚¯‚é ‚ÉcInformationBookx‚ÌŠg’£ƒVƒiƒŠƒI‹@”\i‚½‚Ô‚ñƒpƒbƒ`j‚ÅŠJ••‚³‚ê‚é‚Å‚ ‚ë‚¤AƒVƒiƒŠƒI‚ðoŒ»‚³‚¹‚Ü‚·Bc‚VŒŽ”­”„‚¶‚á’x‰ß‚¬‚¾‚Á‚Ä(^^;
+
+¡‰ñ‚Ì‚b‚fƒ‚[ƒhŠÖ˜A‚ÍA‚h‚y‚t‚l‚n‚Ì‚æ‚¤‚ÈXV§Œä‚Í–³‚¢‚Ì‚ÅA‹@”\ŽÀs‚µ‚Ä‚©‚ç”CˆÓ‚ÌƒCƒxƒ“ƒg‚b‚f‚ð‚P–‡Œ©‚ê‚ÎA‚«‚¿‚ñ‚ÆXV‚³‚ê‚Ü‚·B‚¿‚È‚Ý‚ÉAŠg’£ƒVƒiƒŠƒI•ª‚Ì‚b‚fE‰ñ‘z‚à“ü‚Á‚Ä‚Ü‚·B
+[/note]
+
+[subject]‚`‚u‚fƒp[ƒgŠÖ˜A:dir
+	[subject]‚`‚u‚fƒp[ƒg‚‘¬‰»‹­‰»”Å/ŽÀs/_:b_toggle,0x42473F,SMLST->SM_a,real
+	[subject]Šg’£ƒVƒiƒŠƒIoŒ»/ŽÀs/_:toggle,0x498694,0100,0000
+[/group]
+
+
+[group]SM_CG
+[subject]‚b‚fƒ‚[ƒh:dir
+	[subject]‚`‚k‚k ‚n‚m/ŽÀs/_:b_toggle,0x00,SMLST->SM_b,offset
+	[subject]‚`‚k‚k ‚n‚e‚e/ŽÀs/_:b_toggle,0x00,SMLST->SM_c,offset
+[back]
+[subject]‰ñ‘zƒ‚[ƒh:dir
+	[subject]‚`‚k‚k ‚n‚m/ŽÀs/_:toggle,0x94,0xA5-2F
+	[subject]‚`‚k‚k ‚n‚e‚e/ŽÀs/_:b_toggle,0x00,SMLST->SM_d,offset
+[/group]
+
+
+[group]SM_a
+0x42473F,EB,75
+0x425FDC,EB00,740C
+0x427F96,EB00,7409
+0x429CA4,EB00,740A
+[/group]
+
+
+[group]SM_b
+0x04,0x1F-20
+0x24,0x2C-20
+0x34,0x3D-20
+0x44,0x49-20
+0x54,0x5B-20
+0x64,0x70-20
+0x74,0x8F-20
+[/group]
+
+
+[group]SM_c
+0x04,0x1B-10
+0x1C,0x1F-90
+0x24,0x2C-10
+0x34,0x3D-10
+0x44,0x49-10
+0x54,0x5B-10
+0x64,0x70-10
+0x74,0x8F-10
+[/group]
+
+
+[group]SM_d
+0x94,0xA4-10
+0xA5,90
+[/group]
+
+
+[group]SM_e
+0x4315B9,EB0490909090,0F8D94000000
+0x4315C7,EB00,744A
+0x4315E3,EB00,742E
+0x4315F5,EB00,751C
+[/group]
