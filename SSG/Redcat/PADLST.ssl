@@ -1,0 +1,73 @@
+[group]PAD_SSG
+[note]wordwrap
+プリズム・アーク同梱のDVD版対応です。
+
+実データ：
+ゲーム中に変化する値。
+
+データ保存用：
+週毎に実データからコピーされる値。セーブデータに保存されるのはこちらになる。
+
+※パラメータを大きくし過ぎると一部イベントが発生しなくなります。注意。
+[/note]
+
+
+[size]4
+
+[subject]パラメータ関連:dir
+ [subject]実データ:dir
+  [replace]0x00,PADLST->PAD_PR
+ [back]
+ [subject]データ保存用:dir
+  [replace]0x02EE40,PADLST->PAD_PR
+ [back]
+[back]
+
+[/size]
+
+[subject]ＣＧモード関連:dir
+ [subject]イベント・ＣＧ鑑賞ALL/ＯＮ／ＯＦＦ/_:toggle,0x467B28,0x46A8B7-*[0x3F::01000000*]*+020151,00
+[back]
+
+[/group]
+
+
+[group]PAD_PR
+[subject]マイステル能力:dir
+ [repeat]PADLST->PADREP1,0,5,1
+[back]
+[subject]好感度確認調整:dir
+ [repeat]PADLST->PADREP2,0,8,1
+[back]
+[/group]
+
+
+[group]PADREP1
+[subject][! @PADLST->LST_a,$Val !]'+'［'+'_mem,0x[! 0x4669FC+0x04*$Val !],4,num,<Nodata>,%d'+'］/現在値/_:calc,0x[! 0x4669FC+0x04*$Val !],0x0000,0x03E8,unsigned
+[/group]
+
+
+[group]PADREP2
+[subject][! @PADLST->LST_b,$Val !]'+'［'+'_mem,0x[! 0x465D78+0x0190*$Val !],4,num,<Nodata>,%d'+'］/現在値/_:calc,0x[! 0x465D78+0x0190*$Val !],0x0000,0x03E7,unsigned
+[/group]
+
+
+[group]LST_a
+タフ～
+はや～い
+つよ～い
+かしこ～い
+ステキ～
+[/group]
+
+
+[group]LST_b
+プリンセア
+コメート
+イーナ
+カミナ
+メイプル
+アーニャ
+アンジェ
+エコー
+[/group]
