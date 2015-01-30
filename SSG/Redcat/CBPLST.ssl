@@ -1,0 +1,116 @@
+[group]CBP_SSG
+[note]wordwrap
+情報提供：
+TAK さん／yuki さん／葵華 さん 御協力感謝。
+
+※注意　デバッグモード：
+機能実行後、システムメニューからタイトルへ戻ると発生（一例）。大体はシナリオスクリプト（システムイベントを含めた広義のそれ）が切り替わるたびに発生チェックが行われます。
+
+クリアフラグ／ＣＧ・回想ＡＬＬはもちろん、任意イベントやシステムテスト・体験版を見ることもできますが、少なからぬ割合（閲覧順により解決するものが多い）でエラー落ちする項目がありますので、利用前にはデータのバックアップを忘れずに。モードから抜けるには、任意のシナリオに入り、SSG側のデバッグモードのチェックを外してから、システムメニュー→タイトルに戻る等。
+[/note]
+
+[subject]環境関連:dir
+ [subject]デバッグモード/実行/_:toggle,_[:(MName::SYSTEM.UNT)+0x035584:]+0xC6,01,00
+[root]
+
+[subject]パラメータ関連:dir
+ [replace]_[:(MName::SYSTEM.UNT)+0x035584:],CBPLST->CBP_PR
+[root]
+
+[/group]
+
+
+[group]CBP_PR
+[subject]主人公パラメータ:dir
+ [subject]充実・熱血度:dir
+  [subject]充実度/現在値/固定:b_calc,0x2868,CBPLST->CBP_b,offset,0x00,0xC8,unsigned
+  [subject]NEXT/現在値/_:calc,0x286C,0x64,0xC8,unsigned
+  [subject]グレード/現在値/_:b_calc,0x2874,CBPLST->CBP_a,offset,0x00,0x03,unsigned
+  [subject]熱血化/実行/固定:toggle,0x287C,01000000,00000000
+ [back]
+ [repeat]CBPLST->CBPREP1,0,7,1
+[back]
+[subject]部活パラメータ:dir
+ [repeat]CBPLST->CBPREP2,0,14,1
+[back]
+[/group]
+
+
+[group]CBPREP1
+[subject][! @CBPLST->LST_a,$Val !]:dir
+ [subject][! @CBPLST->LST_a,$Val !]/現在値/_:calc,0x[! 0x289C+0x28*$Val !],0x0000,0x0100,unsigned
+ [subject]NEXT/現在値/_:calc,0x[! 0x28A0+0x28*$Val !],0x0000,0x0100,unsigned
+ [subject]グレード/現在値/_:b_calc,0x[! 0x2890+0x28*$Val !],CBPLST->CBP_c,offset,0x00,0x03,unsigned
+[back]
+[/group]
+
+
+[group]CBPREP2
+[subject][! @CBPLST->LST_b,$Val !]:dir
+ [subject]部員/現在値/_:b_calc,0x[! 0x29F8+0xA0*$Val !],CBPLST->CBP_d,offset,0x0000,0x03E8,unsigned
+ [subject]人気度/現在値/_:b_calc,0x[! 0x2A04+0xA0*$Val !],CBPLST->CBP_e,offset,0x0000,0x03E8,unsigned
+ [subject]グレード/現在値/_:b_calc,0x[! 0x2A08+0xA0*$Val !],CBPLST->CBP_e,offset,0x00,0x03,unsigned
+ [subject]準備度/現在値/_:b_calc,0x[! 0x2A0C+0xA0*$Val !],CBPLST->CBP_e,offset,0x0000,0x0100,unsigned
+ [subject]目標ランク/現在値/_:calc,0x[! 0x2A18+0xA0*$Val !],0x00,0x0A,unsigned
+[back]
+[/group]
+
+
+[group]LST_a
+鑑定
+音感
+知識
+器用
+巧拙
+強調
+持久
+[/group]
+
+
+[group]LST_b
+吹奏楽部
+料理部
+芸能部
+映像研究部
+化学部
+茶道部
+手芸部
+バレー部
+新体操部
+チアリーディング部
+バスケットボール部
+テニス部
+弓道部
+水泳部
+[/group]
+
+
+[group]CBP_a
+0x00
+0x04
+[/group]
+
+
+[group]CBP_b
+0x00
+0x1C
+[/group]
+
+
+[group]CBP_c
+0x00
+0x04
+0x20
+[/group]
+
+
+[group]CBP_d
+0x00
+0x68
+[/group]
+
+
+[group]CBP_e
+0x00
+0x60
+[/group]
