@@ -1,0 +1,1167 @@
+SSG for SpoilerAL ver 5.3
+
+
+[script]
+[title]王子さま Lv1.5 伊藤クイズ
+[process]SYSTEM39.EXE
+[maker]アリスブルー
+[creator]KEI
+[note]wordwrap
+System 3.9 Version5.32専用です。
+System 3.9のバージョンが違うと使用できません。
+Windows 98SEとWindows Meで動作を確認しています。
+アイテムやパラメーターなどを変更しても、画面データが更新されるまでは
+画面上では変化が無いように見えますが、画面が更新されると
+変更されたことがわかります。
+●パーフェクトフラグについて
+ここにチェックを入れて固定しておくと、クリア時にいつでもパーフェクトになります。
+[/note]
+[subject]StageNo    :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x1AC,0x0,0xFFFF,signed,little_e
+[subject]QuestionNo :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x1AE,0x0,0xFFFF,signed,little_e
+[subject]QuestionCount:calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x1B0,0x0,0xFFFF,signed,little_e
+[subject]ノルマ   :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x1B2,0x0,0xFFFF,signed,little_e
+[subject]ハートの数   :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x1B4,0x0,0xFFFF,signed,little_e
+[subject]ボーナスポイント   :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x1B6,0x0,0xFFFF,signed,little_e
+[subject]スコア        :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x1B8,0x0,0xFFFF,signed,little_e
+[subject]パーフェクトフラグ/固定必須      :toggle,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x1BA,01,??
+[/script]
+
+[script]
+[title]王子さま Lv1.5 白鳳の子分叩き
+[process]SYSTEM39.EXE
+[maker]アリスブルー
+[creator]KEI
+[note]wordwrap
+System 3.9 Version5.32専用です。
+System 3.9のバージョンが違うと使用できません。
+Windows 98SEとWindows Meで動作を確認しています。
+アイテムやパラメーターなどを変更しても、画面データが更新されるまでは
+画面上では変化が無いように見えますが、画面が更新されると
+変更されたことがわかります。
+[/note]
+//[subject]日:calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _],0x0,0xFFFF,signed,little_e
+[subject]残りタイム             :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x232,0x0,0xFFFF,signed,little_e
+[subject]得点            :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x234,0x0,0xFFFF,signed,little_e
+[subject]ハイスコア:calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x88,0x0,0xFFFF,signed,little_e
+[subject]Easyモードフラグ        :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x16A,0x0,0xFFFF,signed,little_e
+//[subject]☆回想モード        :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x16C,0x0,0xFFFF,signed,little_e
+[subject]個別カウント:dir
+[subject]子分カウント赤             :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x204,0x0,0xFFFF,signed,little_e
+[subject]子分カウント緑           :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x206,0x0,0xFFFF,signed,little_e
+[subject]子分カウント青            :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x208,0x0,0xFFFF,signed,little_e
+[subject]子分カウント橙          :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x20A,0x0,0xFFFF,signed,little_e
+[subject]子分カウントBackupRed       :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x20C,0x0,0xFFFF,signed,little_e
+[subject]子分カウントBackupGreen     :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x20E,0x0,0xFFFF,signed,little_e
+[subject]子分カウントBackupBlue      :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x210,0x0,0xFFFF,signed,little_e
+[subject]子分カウントBackupOrange    :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x212,0x0,0xFFFF,signed,little_e
+[subject]子分コンボ1               :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x214,0x0,0xFFFF,signed,little_e
+[subject]子分コンボ2               :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x216,0x0,0xFFFF,signed,little_e
+[subject]子分コンボ3               :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x218,0x0,0xFFFF,signed,little_e
+[subject]子分コンボ4               :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x21A,0x0,0xFFFF,signed,little_e
+[subject]子分コンボCount1          :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x21C,0x0,0xFFFF,signed,little_e
+[subject]子分コンボCount2          :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x21E,0x0,0xFFFF,signed,little_e
+[subject]子分コンボCount3          :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x220,0x0,0xFFFF,signed,little_e
+[subject]子分コンボCount4          :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x222,0x0,0xFFFF,signed,little_e
+[subject]子分コンボCount5          :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x224,0x0,0xFFFF,signed,little_e
+[subject]子分コンボCount6          :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x226,0x0,0xFFFF,signed,little_e
+[subject]子分コンボCount7          :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x228,0x0,0xFFFF,signed,little_e
+[subject]子分コンボCount8          :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x22A,0x0,0xFFFF,signed,little_e
+[subject]子分コンボCount9          :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x22C,0x0,0xFFFF,signed,little_e
+[subject]子分コンボCount10         :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x22E,0x0,0xFFFF,signed,little_e
+[subject]子分コンボCount11         :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x230,0x0,0xFFFF,signed,little_e
+[back]
+//[subject]kobunDataLevelScore       :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x236,0x0,0xFFFF,signed,little_e
+//[subject]kobunDataComboScore       :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x238,0x0,0xFFFF,signed,little_e
+//[subject]kobunDataMode             :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x23A,0x0,0xFFFF,signed,little_e
+//[subject]kobunDataLevel            :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x23C,0x0,0xFFFF,signed,little_e
+//[subject]kobunDataIndex            :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x23E,0x0,0xFFFF,signed,little_e
+//[subject]kobunDataTable            :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x240,0x0,0xFFFF,signed,little_e
+[subject]Ｎ親分戦クリア            :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x264,0x0,0xFFFF,signed,little_e
+[/script]
+
+[script]
+[title]王子さま Lv1.5 1/16
+[process]SYSTEM39.EXE
+[maker]アリスブルー
+[creator]KEI
+[note]wordwrap
+System 3.9 Version5.32専用です。
+System 3.9のバージョンが違うと使用できません。
+Windows 98SEとWindows Meで動作を確認しています。
+アイテムやパラメーターなどを変更しても、画面データが更新されるまでは
+画面上では変化が無いように見えますが、画面が更新されると
+変更されたことがわかります。
+[/note]
+[subject]日:calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x92,0x0,0xFFFF,signed,little_e
+[subject]曜日:list,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x94,王子15->曜日,1,1
+[subject]時刻:list,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x96,王子15->時刻,1,1
+[subject]金:calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x98,0x0,0xFFFF,signed,little_e
+[subject]ごきげん:calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x9A,0x0,0xFFFF,signed,little_e
+[subject]はらぺこ:calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x9C,0x0,0xFFFF,signed,little_e
+[subject]けだかさ              :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x9E,0x0,0xFFFF,signed,little_e
+[subject]かしこさ              :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xA0,0x0,0xFFFF,signed,little_e
+[subject]ごむたい              :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xA2,0x0,0xFFFF,signed,little_e
+[subject]体重                  :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xA4,0x0,0xFFFF,signed,little_e
+[subject]？:dir
+[subject]☆ごき                  :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xA6,0x0,0xFFFF,signed,little_e
+[subject]☆はら                  :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xA8,0x0,0xFFFF,signed,little_e
+[subject]☆けだ                  :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xAA,0x0,0xFFFF,signed,little_e
+[subject]☆かし                  :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xAC,0x0,0xFFFF,signed,little_e
+[subject]☆ごむ                  :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xAE,0x0,0xFFFF,signed,little_e
+[subject]☆体                    :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xB0,0x0,0xFFFF,signed,little_e
+[back]
+[subject]☆気取り                :list,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xB2,王子15->気取り,0,1
+[subject]行動:dir
+[subject]☆仕事中                :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xB4,0x0,0xFFFF,signed,little_e
+[subject]☆ごはんあげた          :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xB6,0x0,0xFFFF,signed,little_e
+[subject]☆同行動                :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xB8,0x0,0xFFFF,signed,little_e
+[subject]☆前回行動              :list,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xBA,王子15->予定,1,1
+[subject]☆かまって              :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xBC,0x0,0xFFFF,signed,little_e
+[subject]☆ふて寝                :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xBE,0x0,0xFFFF,signed,little_e
+[subject]☆レベル                :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xC0,0x0,0xFFFF,signed,little_e
+[subject]☆コマンドボナス        :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xC2,0x0,0xFFFF,signed,little_e
+[subject]☆あやしい              :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xC4,0x0,0xFFFF,signed,little_e
+[subject]☆行動セット            :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xC6,0x0,0xFFFF,signed,little_e
+[subject]☆予定行動１            :list,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xC8,王子15->予定,1,1
+[subject]☆予定行動２            :list,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xCA,王子15->予定,1,1
+[subject]☆予定行動３            :list,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xCC,王子15->予定,1,1
+[subject]☆予定行動４            :list,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xCE,王子15->予定,1,1
+[back]
+[subject]ターン数                :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xD0,0x0,0xFFFF,signed,little_e
+[subject]戦闘:dir
+[subject]戦闘ボーナス            :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xD2,0x0,0xFFFF,signed,little_e
+[subject]戦闘結果                :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xD4,0x0,0xFFFF,signed,little_e
+[subject]☆防御                  :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xD6,0x0,0xFFFF,signed,little_e
+[subject]☆魔法                  :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xD8,0x0,0xFFFF,signed,little_e
+[subject]☆攻撃                  :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xDA,0x0,0xFFFF,signed,little_e
+[subject]☆最大ＨＰ              :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xDC,0x0,0xFFFF,signed,little_e
+[subject]☆ＨＰ                  :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xDE,0x0,0xFFFF,signed,little_e
+[subject]ダメージ                :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xE0,0x0,0xFFFF,signed,little_e
+[subject]☆敵種類                :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xE2,0x0,0xFFFF,signed,little_e
+[subject]☆賞金                  :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xE4,0x0,0xFFFF,signed,little_e
+[subject]☆敵防御                :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xE6,0x0,0xFFFF,signed,little_e
+[subject]☆敵攻撃                :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xE8,0x0,0xFFFF,signed,little_e
+[subject]☆敵ＨＰ                :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xEA,0x0,0xFFFF,signed,little_e
+[subject]☆敵最大ＨＰ            :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xEC,0x0,0xFFFF,signed,little_e
+[subject]敵ダメージ              :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xEE,0x0,0xFFFF,signed,little_e
+[back]
+[subject]コンテスト:dir
+[subject]☆敵１けだかさ          :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xF0,0x0,0xFFFF,signed,little_e
+[subject]☆敵１かしこさ          :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xF2,0x0,0xFFFF,signed,little_e
+[subject]☆敵１お行儀            :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xF4,0x0,0xFFFF,signed,little_e
+[subject]☆敵１体重              :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xF6,0x0,0xFFFF,signed,little_e
+[subject]☆敵１乱数              :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xF8,0x0,0xFFFF,signed,little_e
+[subject]☆敵２けだかさ          :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xFA,0x0,0xFFFF,signed,little_e
+[subject]☆敵２かしこさ          :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xFC,0x0,0xFFFF,signed,little_e
+[subject]☆敵２お行儀            :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0xFE,0x0,0xFFFF,signed,little_e
+[subject]☆敵２体重              :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x100,0x0,0xFFFF,signed,little_e
+[subject]☆敵２乱数              :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x102,0x0,0xFFFF,signed,little_e
+[subject]☆王子けだかさ          :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x104,0x0,0xFFFF,signed,little_e
+[subject]☆王子かしこさ          :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x106,0x0,0xFFFF,signed,little_e
+[subject]☆王子お行儀            :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x108,0x0,0xFFFF,signed,little_e
+[subject]☆王子体重              :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x10A,0x0,0xFFFF,signed,little_e
+[subject]☆王子乱数              :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x10C,0x0,0xFFFF,signed,little_e
+[subject]☆部門賞金              :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x10E,0x0,0xFFFF,signed,little_e
+[subject]☆総合賞金              :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x110,0x0,0xFFFF,signed,little_e
+[subject]☆土曜結果              :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x112,0x0,0xFFFF,signed,little_e
+[subject]☆最終結果              :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x114,0x0,0xFFFF,signed,little_e
+[back]
+[subject]アイテム:dir
+[subject]全アイテム99個:toggle,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x116,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x12D-6300,??
+[subject]おやつ                :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x116,0x0,0x63,signed,little_e
+[subject]まんが肉              :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x118,0x0,0x63,signed,little_e
+[subject]チーズケーキ          :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x11A,0x0,0x63,signed,little_e
+[subject]いかなご              :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x11C,0x0,0x63,signed,little_e
+[subject]へちま水            :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x11E,0x0,0x63,signed,little_e
+[subject]しましまバンダナ            :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x120,0x0,0x63,signed,little_e
+[subject]参考書            :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x122,0x0,0x63,signed,little_e
+[subject]通販カタログ            :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x124,0x0,0x63,signed,little_e
+[subject]ハリセン            :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x126,0x0,0x63,signed,little_e
+[subject]ぬいぐるみ            :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x128,0x0,0x63,signed,little_e
+[subject]あぶふれくす            :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x12A,0x0,0x63,signed,little_e
+[subject]サウナスーツ            :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x12C,0x0,0x63,signed,little_e
+[back]
+//[subject]☆寝床                  :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x12E,0x0,0xFFFF,signed,little_e
+//[subject]☆回し車                :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x130,0x0,0xFFFF,signed,little_e
+//[subject]☆水飲み                :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x132,0x0,0xFFFF,signed,little_e
+//[subject]☆回想モード            :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x134,0x0,0xFFFF,signed,little_e
+//[subject]☆敵魔抵                :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x136,0x0,0xFFFF,signed,little_e
+[subject]contestNo               :calc,_ [_ [:[:[: 0x48EDA8 :]+0x04:]+0x04:]  _]+0x138,0x0,0xFFFF,signed,little_e
+//[subject]CGモード:toggle,_ [_ [: [:[: 0x48EDA8 :] +0x04:] +0x10 :] _],_ [_ [: [:[: 0x48EDA8 :] +0x04:] +0x10 :] _]+0x2B-0200,??
+//[subject]CGモード2:toggle,_ [_ [: [:[: 0x48EDA8 :] +0x04:] +0x1C :] _],_ [_ [: [:[: 0x48EDA8 :] +0x04:] +0x1C :] _]+0x17F-0200,??
+[/script]
+
+[script]
+[title]怪盗アプリコット
+[process]GSS.EXE
+[maker]TAKUYO
+[creator]KEI
+[note]wordwrap
+アップデートした、Ver1.46BとVer1.46C専用です。
+GSS.EXEのバージョンが違うと使用できません。
+Windows 98SEとWindows Meで動作を確認しています。
+[/note]
+[subject]1.46B用:dir
+[subject]神経衰弱ゲーム一瞬でクリア//_:b_toggle,0x400000,あんず->神経,offset
+[subject]放送部ゲーム一瞬でクリア//_:b_toggle,0x400000,あんず->放送,offset
+[subject]あんず拾いゲーム一瞬でクリア//_:b_toggle,0x400000,あんず->拾い,offset
+//[subject]アルバム全開:dir
+//[subject]必須コード//_:toggle,0x6029EC,1D18,??
+//[enabled][:0x6029EC:2] == 0x181D
+[subject]アルバム全開//_:b_toggle,0x600000,あんず->CG,offset
+//[subject]CG全開//_:b_toggle,0x60000,あんず->CG1,offset
+//[/enabled]
+[back]
+[subject]1.46C用:dir
+[subject]神経衰弱ゲーム一瞬でクリア//_:b_toggle,0x400000,あんず->神経c,offset
+[subject]放送部ゲーム一瞬でクリア//_:b_toggle,0x400000,あんず->放送c,offset
+[subject]あんず拾いゲーム一瞬でクリア//_:b_toggle,0x400000,あんず->拾いc,offset
+[subject]アルバム全開//_:b_toggle,0x74F890,あんず->CG,offset
+[back]
+[/script]
+
+[script]
+[title]DINO CRISIS2
+[process]DINO2.EXE
+[maker]CAPCOM
+[creator]KEI
+[note]wordwrap
+無敵ですが、出血状態になってもHPは減りませんが
+即死攻撃を受けた場合は死んでしまいますので
+注意して下さい。
+クレジットMAXは、少しでも増えるとMAXになります。
+武器一括所持は、ミニゲームでも使えます。
+[/note]
+[subject]クリア回数:calc,0x877E6D,0,255
+[subject]武器一括所持:b_toggle,0x877000,lib->DINO2_w,offset
+[subject]無限弾:toggle,0x877E72,FF0F03,000000
+[subject]無敵:b_toggle,0x400000,lib->DINO2_d,offset
+[subject]弾減らない:toggle,0x4965EC,9090909090909090,6629848EC4100000
+[subject]クレジットMAX:b_toggle,0x400000,lib->DINO2_g,offset
+[/script]
+
+[script]
+[title]J.LEAGUE プロサッカークラブをつくろう！
+[process]SAKATUKU.EXE
+[maker]SEGA
+[creator]KEI
+[note]wordwrap
+アップデートしたVer1.01専用です。
+値を変更する場合は、ホームタウンまたはオフィス画面で行ってください。
+練習画面などの他の場面で変更しても、元に戻ってしまいます。
+●行動前に戻すについて
+ここにチェックを入れると、練習が終了した後も再度練習が行えるようになります。
+ホームタウン画面に戻ってから変更して下さい。
+固定した場合もホームタウン画面に戻ってから再度練習画面に入ってください。
+●能力値・連携等について
+MAXにした後で値が増加するとおかしくなりますので、固定推奨です。
+●契約年数について
+16進数表示で、1の位が契約年数、10の位が経過年数です。
+例えば、24の場合は、4年契約の2年目、35の場合は、5年契約の3年目です。
+●獲得選手について
+既にリストアップされている選手を変更することができます。
+例えば3人リストアップされている場合、4人目を追加することはできません。
+選手獲得画面で変更しても元に戻ってしまいますので、オフィス画面か人事画面で変更して下さい。
+●全員疲労度0について
+①の方は、2バイトで0にしています。②の方は、4バイトです。
+違いは2バイトだと疲労度のみを0にしているだけですが
+4バイトだと、留学出来ませんが（翌週戻ってきます）代わりに怪我をしても翌週に復帰します。
+●試合中について
+home側とaway側を間違うとボロ負けしますので注意して下さい。
+自グラウンドで試合をする場合はhome側、遠征する場合はaway側です。
+代表試合の場合はhome側です。
+試合中に変更した場合は、試合中に作戦変更をするか前半終了時など選手画面で確認することが出来ます。
+[/note]
+[subject]資金:calc,0x29E7668,0,99999999
+[subject]人口:calc,0x2933D94,0,9999999
+[subject]行動前に戻す:b_toggle,0x2931489,lib->saka_1,offset
+[subject]全員疲労度0①:b_toggle,0x2931484,lib->saka_hirou,offset
+[subject]全員疲労度0②:b_toggle,0x2931484,lib->saka_hirou3,offset
+[subject]全員不満0:b_toggle,0x2931478,lib->saka_hirou3,offset
+[subject]全員コンディションBEST:b_toggle,0x2931476,lib->saka_con,offset
+//[subject]全員の能力MAX:b_toggle,0x2931380,lib->saka_max,offset
+[subject]全員の能力MAX:b_toggle,0x2931380,lib->saka_max2,offset
+[subject]全員の限界MAX:b_toggle,0x2931380,lib->saka_max3,offset
+[subject]全員の連携MAX:b_toggle,0x2933000,lib->saka_ren,offset
+[subject]試合中:dir
+	[subject]home側の強さ:d_list,0x1CDF44C,lib->saka_試合中1,0x0,0xFFFFFFFF,lib->saka_試合中3,offset
+	[subject]home側の調子:d_list,0x1CDF4B2,lib->saka_試合中2,0x0,0xFFFFFFFF,lib->saka_試合中4,offset
+	[subject]away側の強さ:d_list,0x1CE0110,lib->saka_試合中1,0x0,0xFFFFFFFF,lib->saka_試合中3,offset
+	[subject]away側の調子:d_list,0x1CE0176,lib->saka_試合中2,0x0,0xFFFFFFFF,lib->saka_試合中4,offset
+//[subject]敵最弱:b_toggle,0x2933000,lib->saka_teki0,real
+//[subject]敵絶不調:b_toggle,0x2933000,lib->saka_teki1,real
+//[subject]味方最強:b_toggle,0x2933000,lib->saka_mikata,real
+//[subject]味方絶好調:b_toggle,0x2933000,lib->saka_mikata1,real
+[subject]home側全員の連携MAX:b_toggle,0x2933000,lib->saka_ren2,real
+[subject]away側全員の連携MAX:b_toggle,0xCC4,lib->saka_ren2,offset
+[back]
+//[subject]全員の連携MAX2:toggle,0x2933550,0x293374F-*{ 00 :: 00 :: FF *},??
+[subject]年齢一括変更:b_calc,0x293148F,lib->saka_nen,offset,0,99 
+[subject]留学先:dir
+	[subject]ALLON:toggle,0x2933C78,FFFFFFFFFFFF0F,??
+	[subject]留学先:bitlist,0x2933C78,lib->saka_留学,4 
+	[subject]留学先2:bitlist,0x2933C7C,lib->saka_留学2,4 
+[back]
+[subject]獲得選手:dir
+	[subject]国内:dir
+		[repeat]lib->saka_mem2,0,5,1
+		[back]
+	[subject]国外:dir
+		[repeat]lib->saka_mem3,0,5,1
+		[back]
+[back]
+[subject]代表試合:dir
+	[subject]行動前に戻す:b_toggle,0x293BE85,lib->saka_1,offset
+	[subject]全員疲労度0:b_toggle,0x293BE80,lib->saka_hirou2,offset
+	[subject]全員コンディションBEST:b_toggle,0x293BE72,lib->saka_con,offset
+	[subject]全員の能力MAX:b_toggle,0x293BD7C,lib->saka_max2,offset
+[back]
+[subject]選手個別:dir
+	[repeat]lib->saka_mem,0,22,1
+[back]
+[subject]ユース選手個別:dir
+	[repeat]lib->saka_mem2y,0,16,1
+[back]
+[/script]
+
+[script]
+[title]式神の城EX
+[process]SHIKI.EXE
+[maker]AlfaSystem
+[creator]KEI
+[note]wordwrap
+無敵ですが、ダメージを受けてもライフは減りませんが
+当たり判定はあるため、武器がパワーアップします。
+レベルMAXは一度のレベルアップでMAXになります。
+[/note]
+[subject]Ver1.00用:dir
+	[subject]レベル:calc,0x6D4CEC,0,3
+	[subject]無敵//_:toggle,0x437B0D,90E9,0F8F
+	[subject]ボム減らない//_:toggle,0x439C92,90,48
+	[subject]一度のレベルUPでレベルMAX//_:toggle,0x437FCD,9090,7C07
+[back]
+[subject]Ver1.01用:dir
+	[subject]レベル:calc,0x6D5D1C,0,3
+	[subject]無敵//_:toggle,0x43826D,90E9,0F8F
+	[subject]ボム減らない//_:toggle,0x43A3F2,90,48
+	[subject]一度のレベルUPでレベルMAX//_:toggle,0x43872D,9090,7C07
+[back]
+[/script]
+
+[script]
+[title]J.LEAGUE プロサッカークラブをつくろう！パワーアップキット
+[process]SAKATUKU.EXE
+[maker]SEGA
+[creator]KEI
+[note]wordwrap
+アップデートしたVer1.03専用です。
+値を変更する場合は、ホームタウンまたはオフィス画面で行ってください。
+練習画面などの他の場面で変更しても、元に戻ってしまいます。
+●行動前に戻すについて
+ここにチェックを入れると、練習が終了した後も再度練習が行えるようになります。
+ホームタウン画面に戻ってから変更して下さい。
+固定した場合もホームタウン画面に戻ってから再度練習画面に入ってください。
+●能力値・連携等について
+MAXにした後で値が増加するとおかしくなりますので、固定推奨です。
+●契約年数について
+16進数表示で、1の位が契約年数、10の位が経過年数です。
+例えば、24の場合は、4年契約の2年目、35の場合は、5年契約の3年目です。
+●獲得選手について
+既にリストアップされている選手を変更することができます。
+例えば3人リストアップされている場合、4人目を追加することはできません。
+選手獲得画面で変更しても元に戻ってしまいますので、オフィス画面か人事画面で変更して下さい。
+●全員疲労度0について
+①の方は、2バイトで0にしています。②の方は、4バイトです。
+違いは2バイトだと疲労度のみを0にしているだけですが
+4バイトだと、留学出来ませんが（翌週戻ってきます）代わりに怪我をしても翌週に復帰します。
+●試合中について
+home側とaway側を間違うとボロ負けしますので注意して下さい。
+自グラウンドで試合をする場合はhome側、遠征する場合はaway側です。
+代表試合の場合はhome側です。
+試合中に変更した場合は、試合中に作戦変更をするか前半終了時など選手画面で確認することが出来ます。
+（即反映）の項目は試合中でも変更可能で、すぐに反映されますが、試合の場面以外で
+変更しようとするとエラーになりますので、試合中にのみ変更して下さい。
+（即反映）の項目を変更するときは、SpoilerALを試合中に再起動して下さい。
+試合中にのみ読み込まれるGAME.DLLのアドレスを読み込むためで
+試合中ではない時にSpoilerALを起動すると、GAME.DLLが読み込まれません。
+●ユースの選手について
+サブグラウンドを見たときに選択できますが、変更はできません。
+[/note]
+[subject]資金:calc,_0x29E7668-0x9DBF60,0,99999999
+[subject]人口:calc,_0x2933D94-0x9DBF60,0,9999999
+[subject]行動前に戻す:b_toggle,_0x2931489-0x9DBF60,lib->saka_1p,offset
+[subject]全員疲労度0①:b_toggle,_0x2931484-0x9DBF60,lib->saka_hirou,offset
+[subject]全員疲労度0②:b_toggle,_0x2931484-0x9DBF60,lib->saka_hirou3,offset
+[subject]全員不満0:b_toggle,_0x2931478-0x9DBF60,lib->saka_hirou3,offset
+[subject]全員コンディションBEST:b_toggle,_0x2931476-0x9DBF60,lib->saka_conp,offset
+//[subject]全員の能力MAX:b_toggle,0x2931380-0x9DBF60,lib->saka_max,offset
+[subject]全員の能力MAX:b_toggle,_0x2931380-0x9DBF60,lib->saka_max2p,offset
+[subject]全員の限界MAX:b_toggle,_0x2931380-0x9DBF60,lib->saka_max3p,offset
+[subject]全員の連携MAX:toggle,0x1F575F0,0x1F577D1-FF,??
+[subject]試合中:dir
+	[subject]home側の強さ:d_list,0x11A74EC,lib->saka_試合中1,0x0,0xFFFFFFFF,lib->saka_試合中3,offset
+	[subject]home側の調子:d_list,0x11A7552,lib->saka_試合中2,0x0,0xFFFFFFFF,lib->saka_試合中4,offset
+	[subject]away側の強さ:d_list,0x11A81B0,lib->saka_試合中1,0x0,0xFFFFFFFF,lib->saka_試合中3,offset
+	[subject]away側の調子:d_list,0x11A8216,lib->saka_試合中2,0x0,0xFFFFFFFF,lib->saka_試合中4,offset
+[subject]home側全員の連携MAX:toggle,_0x11A7FA2,0x11A817F-FF,??
+[subject]away側全員の連携MAX:toggle,_0x11A8C66,0x11A8E43-FF,??
+[subject]home側全員の連携:d_list,0x11A7FA2,lib->saka_試合中5,0x0,0xFFFFFFFF,lib->saka_試合中6,offset
+[subject]away側全員の連携:d_list,0x11A8C66,lib->saka_試合中5,0x0,0xFFFFFFFF,lib->saka_試合中6,offset
+[back]
+[subject]試合中（即反映）:dir
+[subject]味方側の強さ:d_list,_ (MName::GAME.DLL)+0x7E9128,lib->saka_試合中1d,0x0,0xFFFFFFFF,lib->saka_試合中3d,offset
+[subject]味方側の調子:d_list,_ (MName::GAME.DLL)+0x7E910E,lib->saka_試合中2d,0x0,0xFFFFFFFF,lib->saka_試合中4d,offset
+[subject]敵側の強さ:d_list,_ (MName::GAME.DLL)+0x7E6B08,lib->saka_試合中1d,0x0,0xFFFFFFFF,lib->saka_試合中3d,offset
+[subject]敵側の調子:d_list,_ (MName::GAME.DLL)+0x7E6AEE,lib->saka_試合中2d,0x0,0xFFFFFFFF,lib->saka_試合中4d,offset
+[subject]味方側全員の連携MAX:toggle,_ (MName::GAME.DLL)+0x7EA7F2,_ (MName::GAME.DLL)+0x7EAAA1-FF,??
+[subject]敵側全員の連携０:toggle,_ (MName::GAME.DLL)+0x7E81D2,_ (MName::GAME.DLL)+0x7E8481-00,??
+[subject]味方側全員の体力MAX:b_toggle,_ (MName::GAME.DLL) + 0x7E9120,lib->saka_体力1,offset
+[subject]敵側全員の体力０:b_toggle,_ (MName::GAME.DLL) + 0x7E6B00,lib->saka_体力2,offset
+[back]
+//[subject]全員の連携MAX2:toggle,_0x2933550,0x293374F-*{ 00 :: 00 :: FF *},??
+[subject]年齢一括変更:b_calc,_0x293148F-0x9DBF60,lib->saka_nen,offset,0,99 
+[subject]留学先:dir
+	[subject]ALLON:toggle,_0x2933C78-0x9DBF60,FFFFFFFFFFFF0F,??
+	[subject]留学先:bitlist,_0x2933C78-0x9DBF60,lib->saka_留学,4 
+	[subject]留学先2:bitlist,_0x2933C7C-0x9DBF60,lib->saka_留学2,4 
+[back]
+[subject]獲得選手:dir
+	[subject]国内:dir
+		[repeat]lib->saka_mem2p,0,5,1
+		[back]
+	[subject]国外:dir
+		[repeat]lib->saka_mem3p,0,5,1
+		[back]
+[back]
+[subject]代表試合:dir
+	[subject]行動前に戻す:b_toggle,_0x293BE85-0x9DBF60,lib->saka_1,offset
+	[subject]全員疲労度0:b_toggle,_0x293BE80-0x9DBF60,lib->saka_hirou2,offset
+	[subject]全員コンディションBEST:b_toggle,_0x293BE72-0x9DBF60,lib->saka_con,offset
+	[subject]全員の能力MAX:b_toggle,_0x293BD7C-0x9DBF60,lib->saka_max2,offset
+[back]
+[subject]選手個別:dir
+	[repeat]lib->saka_memp1,0,22,1
+[back]
+[subject]選手個別（名前反映）:dir
+	[repeat]lib->saka_memp,0,22,1
+[back]
+[subject]ユース選手個別:dir
+	[repeat]lib->saka_mem2yp,0,16,1
+[back]
+[/script]
+
+[script]
+[title]ダイナソア リザレクション
+[process]DIN_Win.EXE
+[maker]FALCOM
+[creator]KEI
+[note]wordwrap
+WindowsMe(512MB)で動作を確認しています。
+初回版（DVD版）とサポートプログラムのVer1.02に対応しています。
+アイテムの総数は40個なので超えないようにしてください。
+MAP表示や、ダメージ無効化、敵に遭遇しない、の項目は固定推奨です。
+固定しない場合は、255歩（あるいは255ターン）を過ぎると効果が切れます。
+●敵属性無効化について
+敵の属性を無くしますので、ダメージを与えることが出来ます。
+●敵一撃死について
+ダメージを与えることが出来れば一撃で倒せます。
+[/note]
+[subject]初回版用:dir
+[subject]資金:calc,_0x251191C,0,99999999
+[subject]MAP表示 ON:toggle,_0x25188E4,FF00FF00,00000000
+[subject]全ダメージ無効化 ON:toggle,_0x251167C,FFFFFFFFFF,0000000000
+[subject]敵に遭遇しない ON:toggle,_0x25188E3,FF,00
+[subject]状態正常化:toggle,_0x2511618,0x251162B-00,??
+[subject]必ずクリティカルHIT:b_toggle,_0x446000,lib2->DIN_hit,offset
+[subject]戦闘毎にレベルアップ:b_toggle,_0x43D000,lib2->DIN_lv0,offset
+[subject]敵属性無効化 ON:b_toggle,_0x251196E,lib2->DIN_zoku2,offset
+[subject]敵一撃死 ON:b_toggle,_0x446100,lib2->DIN_ichi1,offset
+[subject]メディアレス化 ON:b_toggle,_0x44E000,lib2->DIN_cd,offset
+[subject]ステイタス:dir
+	[subject]表シナリオ:dir
+	[subject]アッシュ:dir
+	[subject]LV:calc,_ [_ [: 0x25114A4 :]_],0,9999,unsigned
+	[subject]EXP:calc,_0x2511604,0,0x7FFFFFFF,unsigned
+	[replace]0x0, lib2->DIN_sta
+	[subject]オルリック:dir
+	[subject]LV:calc,_ [_ [: 0x25114A4 :]+0x106_],0,9999,unsigned
+	[subject]EXP:calc,_0x2511608,0,0x7FFFFFFF,unsigned
+	[replace]0x12, lib2->DIN_sta
+	[subject]ワッツ:dir
+	[subject]LV:calc,_ [_ [: 0x25114A4 :]+0x20C_],0,9999,unsigned
+	[subject]EXP:calc,_0x251160C,0,0x7FFFFFFF,unsigned
+	[replace]0x24, lib2->DIN_sta
+	[subject]ヒース:dir
+	[subject]LV:calc,_ [_ [: 0x25114A4 :]+0x312_],0,9999,unsigned
+	[subject]EXP:calc,_0x2511610,0,0x7FFFFFFF,unsigned
+	[replace]0x36, lib2->DIN_sta
+	[subject]エリス:dir
+	[subject]LV:calc,_ [_ [: 0x25114A4 :]+0x418_],0,9999,unsigned
+	[subject]EXP:calc,_0x2511614,0,0x7FFFFFFF,unsigned
+	[replace]0x48, lib2->DIN_sta
+	[back]
+	[subject]裏シナリオ:dir
+	[subject]アッシュ:dir
+	[subject]LV:calc,_ [_ [: 0x25114A4 :]_],0,9999,unsigned
+	[subject]EXP:calc,_0x2511604,0,0x7FFFFFFF,unsigned
+	[replace]0x0, lib2->DIN_sta
+	[subject]ルオン:dir
+	[subject]LV:calc,_ [_ [: 0x25114A4 :]+0x106_],0,9999,unsigned
+	[subject]EXP:calc,_0x2511608,0,0x7FFFFFFF,unsigned
+	[replace]0x12, lib2->DIN_sta
+	[subject]ヒルダ:dir
+	[subject]LV:calc,_ [_ [: 0x25114A4 :]+0x20C_],0,9999,unsigned
+	[subject]EXP:calc,_0x251160C,0,0x7FFFFFFF,unsigned
+	[replace]0x24, lib2->DIN_sta
+	[subject]ヒース:dir
+	[subject]LV:calc,_ [_ [: 0x25114A4 :]+0x312_],0,9999,unsigned
+	[subject]EXP:calc,_0x2511610,0,0x7FFFFFFF,unsigned
+	[replace]0x36, lib2->DIN_sta
+	[subject]ランディ:dir
+	[subject]LV:calc,_ [_ [: 0x25114A4 :]+0x418_],0,9999,unsigned
+	[subject]EXP:calc,_0x2511614,0,0x7FFFFFFF,unsigned
+	[replace]0x48, lib2->DIN_sta
+	[back]
+[back]
+[subject]技術:dir
+[subject]全員技術全て取得:toggle,_0x251155C,_0x25115AB-1700,??
+[subject]全員技術EXP全て99:toggle,_0x25115AC,_0x25115FB-6300,??
+[back]
+[subject]アイテム:dir
+	[repeat]lib2->DIN_item0,0,40,1
+[back]
+[root]
+[subject]Ver1.02用:dir
+[subject]資金:calc,_0x251191C-0x1A730,0,99999999
+[subject]MAP表示 ON:toggle,_0x25188E4-0x1A730,FF00FF00,00000000
+[subject]全ダメージ無効化 ON:toggle,_0x251167C-0x1A730,FFFFFFFFFF,0000000000
+[subject]敵に遭遇しない ON:toggle,_0x25188E3-0x1A730,FF,00
+[subject]状態正常化:toggle,_0x24F6EE8,0x24F6EFB-00,??
+[subject]必ずクリティカルHIT:b_toggle,_0x446000,lib2->DIN_hit2,offset
+[subject]LV100以上になる ON:toggle,_0x43D360,EB,7C
+[subject]戦闘毎にレベルアップ:b_toggle,_0x43D000,lib2->DIN_lv,offset
+[subject]敵属性無効化 ON:b_toggle,_0x24F723E,lib2->DIN_zoku2,offset
+[subject]敵一撃死 ON:b_toggle,_0x446200,lib2->DIN_ichi2,offset
+[subject]メディアレス化 ON:b_toggle,_0x44E000,lib2->DIN_cd2,offset
+[subject]ステイタス:dir
+	[subject]表シナリオ:dir
+	[subject]アッシュ:dir
+	[subject]LV:calc,_ [_ [: 0x24F6D74 :]_] ,0,9999,unsigned
+	[subject]EXP:calc,_0x2511604-0x1A730,0,0x7FFFFFFF,unsigned
+	[replace]0x0, lib2->DIN_sta2
+	[subject]オルリック:dir
+	[subject]LV:calc,_ [_ [: 0x24F6D74 :]+0x106_],0,9999,unsigned
+	[subject]EXP:calc,_0x2511608-0x1A730,0,0x7FFFFFFF,unsigned
+	[replace]0x12, lib2->DIN_sta2
+	[subject]ワッツ:dir
+	[subject]LV:calc,_ [_ [: 0x24F6D74 :]+0x20C_],0,9999,unsigned
+	[subject]EXP:calc,_0x251160C-0x1A730,0,0x7FFFFFFF,unsigned
+	[replace]0x24, lib2->DIN_sta2
+	[subject]ヒース:dir
+	[subject]LV:calc,_ [_ [: 0x24F6D74 :]+0x312_],0,9999,unsigned
+	[subject]EXP:calc,_0x2511610-0x1A730,0,0x7FFFFFFF,unsigned
+	[replace]0x36, lib2->DIN_sta2
+	[subject]エリス:dir
+	[subject]LV:calc,_ [_ [: 0x24F6D74 :]+0x418_],0,9999,unsigned
+	[subject]EXP:calc,_0x2511614-0x1A730,0,0x7FFFFFFF,unsigned
+	[replace]0x48, lib2->DIN_sta2
+	[back]
+	[subject]裏シナリオ:dir
+	[subject]アッシュ:dir
+	[subject]LV:calc,_ [_ [: 0x24F6D74 :] _],0,9999,unsigned
+	[subject]EXP:calc,_0x2511604-0x1A730,0,0x7FFFFFFF,unsigned
+	[replace]0x0, lib2->DIN_sta2
+	[subject]ルオン:dir
+	[subject]LV:calc,_ [_ [: 0x24F6D74 :]+0x106_],0,9999,unsigned
+	[subject]EXP:calc,_0x2511608-0x1A730,0,0x7FFFFFFF,unsigned
+	[replace]0x12, lib2->DIN_sta2
+	[subject]ヒルダ:dir
+	[subject]LV:calc,_ [_ [: 0x24F6D74 :]+0x20C_],0,9999,unsigned
+	[subject]EXP:calc,_0x251160C-0x1A730,0,0x7FFFFFFF,unsigned
+	[replace]0x24, lib2->DIN_sta2
+	[subject]ヒース:dir
+	[subject]LV:calc,_ [_ [: 0x24F6D74 :]+0x312_],0,9999,unsigned
+	[subject]EXP:calc,_0x2511610-0x1A730,0,0x7FFFFFFF,unsigned
+	[replace]0x36, lib2->DIN_sta2
+	[subject]ランディ:dir
+	[subject]LV:calc,_ [_ [: 0x24F6D74 :]+0x418_],0,9999,unsigned
+	[subject]EXP:calc,_0x2511614-0x1A730,0,0x7FFFFFFF,unsigned
+	[replace]0x48, lib2->DIN_sta2
+	[back]
+[back]
+[subject]技術:dir
+[subject]全員技術全て取得:toggle,_0x24F6E2C,_0x24F6E7B-1700,??
+[subject]全員技術EXP全て99:toggle,_0x24F6E7C,_0x24F6ECB-6300,??
+[back]
+[subject]アイテム:dir
+	[repeat]lib2->DIN_item02,0,40,1
+//[back]
+[root]
+[/script]
+
+[script]
+[title]Angel's Feather
+[process]AF.EXE
+[maker]BlueImpact
+[creator]KEI
+[note]wordwrap
+WindowsMe(512MB)とWindowsXP(512MB)とWindows98SE(128MB)で動作を確認しています。
+Ver1.00とアップデートしたVer1.01、Ver1.02に対応しています。
+●CP決定フラグに関して
+カップリングは、異世界での宿で夜相手のことを想うイベントが発生すると
+そのキャラクターに固定されます。
+このイベントが起こる前までは、恋愛第一段階のキスイベントは掛け持ち可能です。
+「夜想いイベント先行」にしたキャラクターが先に相手のことを考えますので
+このフラグは片方のキャラクターだけ設定してください。
+ここが0の場合は全てのキャラクターに対してイベントを起こすことが可能です。
+●経過時間について
+現代編で学校や寮での行動時に、特定のイベントが起こらない場合は
+一定の時間が経つと行動が終了します。
+この経過時間を変更します。
+●全員覚醒について
+予めチェックして固定しておくと、戦闘開始時に全員が覚醒している状態になります。
+現代編のイベント前でも覚醒可能です。
+●気合減らないについて
+特技使用時や覚醒時などで気合が減りません。
+●恋愛フラグについて
+チェックをすると、そのイベントが起こったことになります。
+項目名に？が付いているものは、使われていないフラグの可能性があります。
+●ザコ敵出ないについて
+エンカウントをしなくなりますので、ボスクラスの敵以外の戦闘が無くなります。
+●アイテムを入手or使用すると9999個について
+入手した道具やジェムの個数が9999個になります。
+また、使用しても減らないどころか個数が9999個になります。
+[/note]
+[subject]ザコ敵出ない//_:toggle,_0x47F33F,00,01
+[subject]気合減らない//_:b_toggle,_0x4A7EFF,lib2x->af_kiai,real
+//[subject]状態異常にならない//_:toggle,_0x4A2E57,EB,74
+[subject]全員覚醒//値の固定（固定推奨）:b_toggle,0x4AA000,lib2x->af_kakusei,real
+[subject]パラメータ:dir
+[subject]一括変更:dir
+	[subject]LV:b_calc,_0x168,lib2x->af_para2,offset,0,70
+	[subject]現在HP:b_calc,_0x16C,lib2x->af_para2,offset,0,99999
+	[subject]最大HP:b_calc,_0x174,lib2x->af_para2,offset,0,99999
+	[subject]気合:b_calc,_0x170,lib2x->af_para2,offset,0,600
+	[subject]経験値:b_calc,_0x36C,lib2x->af_para2,offset,0,499129
+	[subject]器用度:b_calc,_0x17C,lib2x->af_para2,offset,0,99999
+	[subject]敏捷度:b_calc,_0x180,lib2x->af_para2,offset,0,99999
+	[subject]筋力:b_calc,_0x188,lib2x->af_para2,offset,0,99999
+	[subject]知力:b_calc,_0x184,lib2x->af_para2,offset,0,99999
+	[subject]耐久力:b_calc,_0x18C,lib2x->af_para2,offset,0,99999
+	[subject]意志力:b_calc,_0x190,lib2x->af_para2,offset,0,99999
+//	[subject]状態正常化:b_toggle,_0x1E0,lib2x->af_bad2,offset
+[back]
+[subject]翔:dir
+  [replace]_[:[:[: 0x67B5F0 :]+0xC8:]:], lib2x->af_para
+[subject]櫂:dir
+  [replace]_[:[:[: 0x67B5F0 :]+0xC8:]+0x04:], lib2x->af_para
+[subject]来栖:dir
+  [replace]_[:[:[: 0x67B5F0 :]+0xC8:]+0x08:], lib2x->af_para
+[subject]水落:dir
+  [replace]_[:[:[: 0x67B5F0 :]+0xC8:]+0x0C:], lib2x->af_para
+[subject]杏里:dir
+  [replace]_[:[:[: 0x67B5F0 :]+0xC8:]+0x10:], lib2x->af_para
+[subject]東堂:dir
+  [replace]_[:[:[: 0x67B5F0 :]+0xC8:]+0x14:], lib2x->af_para
+[subject]不良学生１:dir
+  [replace]_[:[:[: 0x67B5F0 :]+0xC8:]+0x18:], lib2x->af_para
+[subject]不良学生２:dir
+  [replace]_[:[:[: 0x67B5F0 :]+0xC8:]+0x1C:], lib2x->af_para
+[back]
+[back]
+[subject]道具全て9999:toggle,_ [_ [: 0x67B5F0 :]+0xDC+0xCA_],_ [_ [: 0x67B5F0 :]+0xDC+0x11F_]-0F27,??
+[subject]アイテム入手or使用すると個数9999//_:b_toggle,0x4AA000,lib2x->af_item,offset
+[subject]ジェム:dir
+[subject]ジェム全て9999:toggle,_ [_ [: 0x67B5F0 :]+0xDC+0x02_],_ [_ [: 0x67B5F0 :]+0xDC+0x0D_]-0F27,??
+[subject]月:calc,_ [_ [: 0x67B5F0 :]+0xDC+0x0C_],0,9999,unsigned
+[subject]火:calc,_ [_ [: 0x67B5F0 :]+0xDC+0x02_],0,9999,unsigned
+[subject]水:calc,_ [_ [: 0x67B5F0 :]+0xDC+0x08_],0,9999,unsigned
+[subject]木:calc,_ [_ [: 0x67B5F0 :]+0xDC+0x04_],0,9999,unsigned
+[subject]金:calc,_ [_ [: 0x67B5F0 :]+0xDC+0x06_],0,9999,unsigned
+[subject]土:calc,_ [_ [: 0x67B5F0 :]+0xDC+0x0A_],0,9999,unsigned
+[back]
+[subject]経過時間:calc,_0x685A0C,0,10
+[subject]好感度:dir
+[subject]翔×櫂:calc,_0x685A60,0,100
+[subject]翔×水落:calc,_0x685A64,0,100
+[subject]翔×杏里:calc,_0x685A68,0,100
+[subject]櫂×翔:calc,_0x685A6C,0,100
+[subject]櫂×水落:calc,_0x685A70,0,100
+[subject]櫂×杏里:calc,_0x685A74,0,100
+[subject]来栖×翔:calc,_0x685A78,0,100
+[subject]来栖×櫂:calc,_0x685A7C,0,100
+[subject]来栖×水落:calc,_0x685A80,0,100
+[subject]来栖×杏里:calc,_0x685A84,0,100
+[subject]来栖×東堂:calc,_0x685A88,0,100
+[subject]水落×翔:calc,_0x685A8C,0,100
+[subject]水落×櫂:calc,_0x685A90,0,100
+[subject]水落×来栖:calc,_0x685A94,0,100
+[subject]水落×杏里:calc,_0x685A98,0,100
+[subject]東堂×翔:calc,_0x685A9C,0,100
+[subject]東堂×櫂:calc,_0x685AA0,0,100
+[subject]東堂×来栖:calc,_0x685AA4,0,100
+[subject]東堂×水落:calc,_0x685AA8,0,100
+[subject]東堂×杏里:calc,_0x685AAC,0,100
+[subject]翔×直人:calc,_0x685AB0,0,100
+[subject]櫂×凪:calc,_0x685AB4,0,100
+[back]
+[subject]H度:dir
+[subject]翔:calc,_0x685A14,0,100
+[subject]櫂:calc,_0x685A18,0,100
+[subject]来栖:calc,_0x685A1C,0,100
+[subject]水落:calc,_0x685A20,0,100
+[subject]杏里:calc,_0x685A24,0,100
+[subject]東堂:calc,_0x685A28,0,100
+[back]
+[subject]フラグ関係:dir
+[subject]恋愛フラグ初期化:b_toggle,0x685000,lib2x->af_fl,offset
+[subject]CP決定フラグ:dir
+[subject]翔:list,_0x685A2C,lib2x->af_cp,0,1
+[subject]櫂:list,_0x685A30,lib2x->af_cp,0,1
+[subject]来栖:list,_0x685A34,lib2x->af_cp,0,1
+[subject]水落:list,_0x685A38,lib2x->af_cp,0,1
+[subject]杏里:list,_0x685A3C,lib2x->af_cp,0,1
+[subject]東堂:list,_0x685A40,lib2x->af_cp,0,1
+[back]
+//[subject]恋愛フラグ関係:dir
+[subject]恋愛第一段階（現代）:d_toggle,0x685AB8,lib2x->af_cp0,lib2x->af_ad,offset
+[subject]恋愛第一段階（異世界）:d_toggle,0x685B10,lib2x->af_cp1,lib2x->af_ad,offset
+[subject]恋愛第二段階:d_toggle,0x685B60,lib2x->af_cp2,lib2x->af_ad,offset
+[subject]恋愛第三段階:d_toggle,0x685BB0,lib2x->af_cp3,lib2x->af_ad,offset
+//[back]
+
+[subject]来栖輪姦:toggle,_0x685A48,01,00
+[subject]東堂吐血:toggle,_0x685A4C,01,00
+[subject]凪×櫂:list,_0x685B0C,lib2x->af_nagi,0,1
+[back]
+[subject]CG・回想全開:toggle,_ [_ [:[: 0x68C0D0 :]+0x3C:]+0x04_],_ [_ [:[: 0x68C0D0 :]+0x3C:]+0x15B_]-*{ 10 :: 20 *},??
+[/script]
+
+[script]
+[title]夏神楽
+[process]MIKO.EXE
+[maker]Studio e.go!
+[creator]KEI
+[note]wordwrap
+[/note]
+[subject]パラメータ:dir
+	[subject]幹也:dir
+	[subject]現在体力:calc,_ [_ [: 0x4BF770 :]+0x14_],0,9999,unsigned
+	[subject]最大体力:b_calc,_0x0,lib2x->miko_hp,offset,0,9999
+	[subject]現在霊力:calc,_ [_ [: 0x4BF770 :]+0x18_],0,9999,unsigned
+	[subject]最大霊力:b_calc,_0x4,lib2x->miko_hp,offset,0,9999
+	[subject]攻撃力:b_calc,_0x8,lib2x->miko_hp,offset,0,9999
+	[subject]防御力:b_calc,_0xC,lib2x->miko_hp,offset,0,9999
+	[subject]移動:b_calc,_0x10,lib2x->miko_hp,offset,0,99
+[back]
+	[subject]桂香:dir
+	[subject]現在体力:calc,_ [_ [: 0x4BF770 :]+0x14+0x24_],0,9999,unsigned
+	[subject]最大体力:b_calc,_0x54,lib2x->miko_hp,offset,0,9999
+	[subject]現在霊力:calc,_ [_ [: 0x4BF770 :]+0x18+0x24_],0,9999,unsigned
+	[subject]最大霊力:b_calc,_0x58,lib2x->miko_hp,offset,0,9999
+	[subject]攻撃力:b_calc,_0x5C,lib2x->miko_hp,offset,0,9999
+	[subject]防御力:b_calc,_0x60,lib2x->miko_hp,offset,0,9999
+	[subject]移動:b_calc,_0x64,lib2x->miko_hp,offset,0,99
+[back]
+	[subject]初花:dir
+	[subject]現在体力:calc,_ [_ [: 0x4BF770 :]+0x14+0x48_],0,9999,unsigned
+	[subject]最大体力:b_calc,_0xA8,lib2x->miko_hp,offset,0,9999
+	[subject]現在霊力:calc,_ [_ [: 0x4BF770 :]+0x18+0x48_],0,9999,unsigned
+	[subject]最大霊力:b_calc,_0xAC,lib2x->miko_hp,offset,0,9999
+	[subject]攻撃力:b_calc,_0xB0,lib2x->miko_hp,offset,0,9999
+	[subject]防御力:b_calc,_0xB4,lib2x->miko_hp,offset,0,9999
+	[subject]移動:b_calc,_0xB8,lib2x->miko_hp,offset,0,99
+[back]
+[subject]召還妖怪:dir
+	[subject]最大体力:b_calc,_0x40C,lib2x->miko_para,offset,0,9999
+	[subject]最大霊力:b_calc,_0x410,lib2x->miko_para,offset,0,9999
+	[subject]攻撃力:b_calc,_0x414,lib2x->miko_para,offset,0,9999
+	[subject]防御力:b_calc,_0x418,lib2x->miko_para,offset,0,9999
+	[subject]移動:b_calc,_0x41C,lib2x->miko_para,offset,0,99
+[back]
+[/script]
+
+
+[script]
+[title]Rance6
+[process]SYSTEM40.EXE
+[maker]AliceSoft
+[creator]KEI
+[note]
+System 4.0 Version1.21専用です。
+System 4.0のバージョンが違うと使用できません。
+Windows XPとWindows Meで動作を確認しています。
+
+●CGモード全開について
+ゲーム起動時にセーブデータを読み直しますので、ゲームを再起動すると
+元に戻ってしまいます。
+保存する方法は、Config.asdを削除するか、別の場所に移動させてから
+ゲームを起動し、最初から始めてください。
+（セーブポイントが出てくるところまでで充分です。）
+CGモード全開の状態で、CGが登録されConfig.asdが作成されると
+全開の状態で保存されます。
+
+●ステイタスについて
+ステイタスの各値は、基礎値も増やしてください。
+表示されているものだけだと実際に有効になりません。
+
+●ザコ敵出ないについて
+遭遇確率等が100%を超えてもザコ敵が出なくなります。
+モンスターを探せば、戦闘することができます。
+ただし、ゲーム開始直後のダンジョンでは有効になりません。
+（遭遇確率などが増加するようになってから有効になります。）
+
+●アドレスが補足できなくなった場合
+ゲームを再起動したりロードしなおした場合や、仲間が増えるなどの場面が変わった場合などに
+アドレスが変動して値を補足できなくなることがあります。
+その場合は、SpoierALを一旦終了してから再起動してみてください。
+
+
+[/note]
+[subject]CGモード全開:toggle,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0xF4:]+0x0C:]+0x04,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0xF4:]+0x0C:]+0x374-01000000,??
+[subject]キャラコンプリート:b_toggle,0x400000,lib2->rance6_コンプ,real
+[subject]所持金:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x0:]+0x0C:]+0xA8,0,9999999
+[subject]冒険功績:dir
+[subject]冒険功績:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0xB4:]+0x0C:]+0x124,0,999
+[subject]カウントリセット:toggle,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0xB4:]+0x0C:]+0x120,00,??
+[back]
+[subject]ザコ敵出ない:toggle,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0xB4:]+0x0C:]+0xC0,01,00
+//[subject]ザコ敵出ない(固定推奨):toggle,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0xB4:]+0x0C:]+0x34,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0xB4:]+0x0C:]+0x47-00,??
+[subject]あげはレーダー:list,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]:]+0x0C:]+0xC4,lib2->rance6_あげは,0,1
+//[subject]ステイタス:dir
+//	[subject]ランス:dir
+//	[replace]_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x1930:]+0x0C:], lib2->rance6_st
+//	[subject]シィル・プライン:dir
+//	[replace]_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x193C:]+0x0C:], lib2->rance6_st
+//[back]
+[subject]敵の体力1:b_toggle,0x20,lib2->rance6_敵体力,offset
+[subject]動物玉:dir
+[subject]蟹玉:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3E9C:]+0x0C:]+0x4,0,999
+[subject]猿玉:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3EA4:]+0x0C:]+0x4,0,999
+[subject]鷲玉:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3EAC:]+0x0C:]+0x4,0,999
+[back]
+[subject]イベントアイテム:dir
+[subject]赤の鍵:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3EB4:]+0x0C:]+0x4,0,999
+[subject]青の鍵:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3EBC:]+0x0C:]+0x4,0,999
+[subject]緑の鍵:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3EC4:]+0x0C:]+0x4,0,999
+[subject]裸女看板:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3ECC:]+0x0C:]+0x4,0,999
+[subject]お帰り盆栽:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3ED4:]+0x0C:]+0x4,0,999
+[subject]惨めな土偶:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3EDC:]+0x0C:]+0x4,0,999
+[subject]青いハーモニカ:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3EE4:]+0x0C:]+0x4,0,999
+[subject]カチカチうんこ:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3EEC:]+0x0C:]+0x4,0,999
+[subject]山賊の鍵:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3EF4:]+0x0C:]+0x4,0,999
+[subject]ゼスＫＥＹ２２号:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3EFC:]+0x0C:]+0x4,0,999
+[subject]ハウスの鍵:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3F04:]+0x0C:]+0x4,0,999
+[subject]数学の鍵:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3F0C:]+0x0C:]+0x4,0,999
+[subject]国語の鍵:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3F14:]+0x0C:]+0x4,0,999
+[subject]赤いリンゴ:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3F1C:]+0x0C:]+0x4,0,999
+[subject]黒いリンゴ:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3F24:]+0x0C:]+0x4,0,999
+[subject]白いリンゴ:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3F2C:]+0x0C:]+0x4,0,999
+[subject]１００点メダル:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3F34:]+0x0C:]+0x4,0,999
+[subject]クリームパン:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3F3C:]+0x0C:]+0x4,0,999
+[subject]ペンタゴンの鍵:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3F44:]+0x0C:]+0x4,0,999
+[subject]ペンタゴンの鍵改:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3F4C:]+0x0C:]+0x4,0,999
+[subject]セクシー鎧:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3F54:]+0x0C:]+0x4,0,999
+[subject]にんじん:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3F5C:]+0x0C:]+0x4,0,999
+[subject]墓地管理室の鍵:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3F64:]+0x0C:]+0x4,0,999
+[subject]桜井家の鍵:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3F6C:]+0x0C:]+0x4,0,999
+[subject]銀行マンの鍵:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3F74:]+0x0C:]+0x4,0,999
+[subject]弾倉の鍵:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3F7C:]+0x0C:]+0x4,0,999
+[subject]体育館の鍵:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3F84:]+0x0C:]+0x4,0,999
+[subject]１００円キー:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3F8C:]+0x0C:]+0x4,0,999
+[subject]パパイアキー:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3F94:]+0x0C:]+0x4,0,999
+[subject]マンションキー:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3F9C:]+0x0C:]+0x4,0,999
+[subject]廃棄迷宮管理キー:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3FA4:]+0x0C:]+0x4,0,999
+[subject]煉獄の鍵束:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3FAC:]+0x0C:]+0x4,0,999
+[subject]女刑務所の鍵:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3FB4:]+0x0C:]+0x4,0,999
+[subject]マンゴーの鍵:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3FBC:]+0x0C:]+0x4,0,999
+[subject]セフレの鍵:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3FC4:]+0x0C:]+0x4,0,999
+[subject]冷蔵庫の鍵:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3FCC:]+0x0C:]+0x4,0,999
+[subject]レシピの鍵:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3FD4:]+0x0C:]+0x4,0,999
+[subject]非常口の鍵:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3FDC:]+0x0C:]+0x4,0,999
+[subject]ハニー城の鍵:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3FE4:]+0x0C:]+0x4,0,999
+[subject]ＴＶマンカード:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3FEC:]+0x0C:]+0x4,0,999
+[subject]マジノ２４カード:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3FF4:]+0x0C:]+0x4,0,999
+[subject]グナガンの挑戦状:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3FFC:]+0x0C:]+0x4,0,999
+[subject]サーナキアの躰:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x4004:]+0x0C:]+0x4,0,999
+[subject]兵法書:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x400C:]+0x0C:]+0x4,0,999
+[subject]ういろー:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x4014:]+0x0C:]+0x4,0,999
+[subject]いかなご:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x401C:]+0x0C:]+0x4,0,999
+[subject]赤い引換券:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x4024:]+0x0C:]+0x4,0,999
+[subject]黒い引換券:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x402C:]+0x0C:]+0x4,0,999
+[back]
+[subject]消費アイテム:dir
+[subject]消費アイテム999個:b_toggle,0x400000,lib2->rance6_アイテム一括,real
+[subject]世色癌:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x330C:]+0x0C:]+0x4,0,999
+[subject]竜角惨:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3314:]+0x0C:]+0x4,0,999
+[subject]プレゼント:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x331C:]+0x0C:]+0x4,0,999
+[subject]まんが肉:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3324:]+0x0C:]+0x4,0,999
+[subject]力のポテチ:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x332C:]+0x0C:]+0x4,0,999
+[subject]魔トマト:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3334:]+0x0C:]+0x4,0,999
+[subject]まもりのまりも:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x333C:]+0x0C:]+0x4,0,999
+[subject]忍耐わさび:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3344:]+0x0C:]+0x4,0,999
+[subject]ヒラリ茸:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x334C:]+0x0C:]+0x4,0,999
+[subject]毒入りまんが肉:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3354:]+0x0C:]+0x4,0,999
+[subject]毒入り力のポテチ:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x335C:]+0x0C:]+0x4,0,999
+[subject]毒入り魔トマト:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3364:]+0x0C:]+0x4,0,999
+[subject]毒入りまもりのまりも:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x336C:]+0x0C:]+0x4,0,999
+[subject]毒入り忍耐わさび:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3374:]+0x0C:]+0x4,0,999
+[subject]毒入りヒラリ茸:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x337C:]+0x0C:]+0x4,0,999
+[subject]経験食パン:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3384:]+0x0C:]+0x4,0,999
+[subject]超熟経験食パン:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x338C:]+0x0C:]+0x4,0,999
+//[subject]Ｃ防具饅（中）:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x341C:]+0x0C:]+0x4,0,999
+//[subject]？:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3424:]+0x0C:]+0x4,0,999
+[back]
+[subject]強化アイテム:dir
+[subject]強化アイテム999個:b_toggle,0x400000,lib2->rance6_アイテム一括2,real
+[subject]Ｃ武器卵（小）:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x33FC:]+0x0C:]+0x4,0,999
+[subject]Ｃ武器卵（中）:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3404:]+0x0C:]+0x4,0,999
+[subject]Ｃ武器卵（大）:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x340C:]+0x0C:]+0x4,0,999
+[subject]Ｃ防具饅（小）:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3414:]+0x0C:]+0x4,0,999
+[subject]Ｃ防具饅（中）:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x341C:]+0x0C:]+0x4,0,999
+[subject]Ｃ防具饅（大）:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3424:]+0x0C:]+0x4,0,999
+[subject]Ｂ武器卵（小）:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x342C:]+0x0C:]+0x4,0,999
+[subject]Ｂ武器卵（中）:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3434:]+0x0C:]+0x4,0,999
+[subject]Ｂ武器卵（大）:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x343C:]+0x0C:]+0x4,0,999
+[subject]Ｂ防具饅（小）:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3444:]+0x0C:]+0x4,0,999
+[subject]Ｂ防具饅（中）:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x344C:]+0x0C:]+0x4,0,999
+[subject]Ｂ防具饅（大）:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3454:]+0x0C:]+0x4,0,999
+[subject]Ａ武器卵（小）:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x345C:]+0x0C:]+0x4,0,999
+[subject]Ａ武器卵（中）:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3464:]+0x0C:]+0x4,0,999
+[subject]Ａ武器卵（大）:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x346C:]+0x0C:]+0x4,0,999
+[subject]Ａ防具饅（小）:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3474:]+0x0C:]+0x4,0,999
+[subject]Ａ防具饅（中）:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x347C:]+0x0C:]+0x4,0,999
+[subject]Ａ防具饅（大）:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3484:]+0x0C:]+0x4,0,999
+[subject]Ｓ武器卵（小）:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x348C:]+0x0C:]+0x4,0,999
+[subject]Ｓ武器卵（中）:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3494:]+0x0C:]+0x4,0,999
+[subject]Ｓ武器卵（大）:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x349C:]+0x0C:]+0x4,0,999
+[subject]Ｓ防具饅（小）:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x34A4:]+0x0C:]+0x4,0,999
+[subject]Ｓ防具饅（中）:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x34AC:]+0x0C:]+0x4,0,999
+[subject]Ｓ防具饅（大）:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x34B4:]+0x0C:]+0x4,0,999
+[back]
+[subject]装備アイテム:dir
+[subject]装備アイテム999個:b_toggle,0x400000,lib2->rance6_アイテム一括3,real
+[subject]素質のオカリナ:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x34EC:]+0x0C:]+0x4,0,999
+[subject]専属看護婦さん:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x34F4:]+0x0C:]+0x4,0,999
+[subject]ハニージッポ:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x34FC:]+0x0C:]+0x4,0,999
+[subject]きに竹刀:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3504:]+0x0C:]+0x4,0,999
+[subject]無視メガネ:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x350C:]+0x0C:]+0x4,0,999
+[subject]必勝ハチマキ:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3514:]+0x0C:]+0x4,0,999
+[subject]ねこる金貨:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x351C:]+0x0C:]+0x4,0,999
+[subject]ど根性巾着:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3524:]+0x0C:]+0x4,0,999
+[subject]ちょいマッチ:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x352C:]+0x0C:]+0x4,0,999
+[subject]守りドール:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3534:]+0x0C:]+0x4,0,999
+[subject]うさ仮面うさ:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x353C:]+0x0C:]+0x4,0,999
+[subject]防敵スプレー:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3544:]+0x0C:]+0x4,0,999
+[subject]告知箱:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x354C:]+0x0C:]+0x4,0,999
+[subject]信じる心:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3554:]+0x0C:]+0x4,0,999
+[subject]毒退くモンスター:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x355C:]+0x0C:]+0x4,0,999
+[subject]ラッキーカード:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3564:]+0x0C:]+0x4,0,999
+[subject]ドラ猫の鈴:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x356C:]+0x0C:]+0x4,0,999
+[subject]雷入りボール:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3574:]+0x0C:]+0x4,0,999
+[subject]守護の数珠:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x357C:]+0x0C:]+0x4,0,999
+[subject]ガラスの芸術:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3584:]+0x0C:]+0x4,0,999
+[subject]もじゃ人形:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x358C:]+0x0C:]+0x4,0,999
+[subject]素早い変な虫:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3594:]+0x0C:]+0x4,0,999
+[subject]エロい水着:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x359C:]+0x0C:]+0x4,0,999
+[subject]ハニー破壊許可書:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x35A4:]+0x0C:]+0x4,0,999
+[subject]ゾンビキラー任命書:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x35AC:]+0x0C:]+0x4,0,999
+[subject]マンハンター証明書:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x35B4:]+0x0C:]+0x4,0,999
+[subject]炎のリング:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x35BC:]+0x0C:]+0x4,0,999
+[subject]氷のリング:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x35C4:]+0x0C:]+0x4,0,999
+[subject]雷のリング:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x35CC:]+0x0C:]+0x4,0,999
+[subject]光のリング:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x35D4:]+0x0C:]+0x4,0,999
+[subject]闇のリング:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x35DC:]+0x0C:]+0x4,0,999
+[subject]炎のペンダント:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x35E4:]+0x0C:]+0x4,0,999
+[subject]氷のペンダント:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x35EC:]+0x0C:]+0x4,0,999
+[subject]雷のペンダント:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x35F4:]+0x0C:]+0x4,0,999
+[subject]光のペンダント:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x35FC:]+0x0C:]+0x4,0,999
+[subject]闇のペンダント:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x3604:]+0x0C:]+0x4,0,999
+[back]
+[subject]ステイタス一括処理:dir
+[subject]ＬＶ :b_calc,0x18,lib2->rance6_ad,offset,0,9999
+[subject]ＬＶ最大 :b_calc,0x1C,lib2->rance6_ad,offset,0,9999
+[subject]体力 :b_calc,0x20,lib2->rance6_ad,offset,0,999999
+[subject]体力最大 :b_calc,0x24,lib2->rance6_ad,offset,0,999999
+[subject]体力基礎値 :b_calc,0x28,lib2->rance6_ad,offset,0,999999
+[subject]活動力 :b_calc,0x2C,lib2->rance6_ad,offset,0,999999
+[subject]活動力最大 :b_calc,0x30,lib2->rance6_ad,offset,0,999999
+[subject]活動力基礎値 :b_calc,0x34,lib2->rance6_ad,offset,0,999999
+[subject]ＥＸＰ :b_calc,0x38,lib2->rance6_ad,offset,0,9999999
+[subject]ＥＸＰ＿ＮＥＸＴ :b_calc,0x3C,lib2->rance6_ad,offset,0,9999999
+[subject]ＥＸＰ基礎値 :b_calc,0x40,lib2->rance6_ad,offset,0,9999999
+[subject]物理攻撃力 :b_calc,0x44,lib2->rance6_ad,offset,0,99999
+[subject]物理防御力 :b_calc,0x48,lib2->rance6_ad,offset,0,99999
+[subject]魔法攻撃力 :b_calc,0x4C,lib2->rance6_ad,offset,0,99999
+[subject]魔法防御力 :b_calc,0x50,lib2->rance6_ad,offset,0,99999
+[subject]物理命中力 :b_calc,0x54,lib2->rance6_ad,offset,0,99999
+[subject]物理回避力 :b_calc,0x58,lib2->rance6_ad,offset,0,99999
+[subject]攻撃力基礎値 :b_calc,0x5C,lib2->rance6_ad,offset,0,99999
+[subject]防御力基礎値 :b_calc,0x60,lib2->rance6_ad,offset,0,99999
+[subject]魔法力基礎値 :b_calc,0x64,lib2->rance6_ad,offset,0,99999
+[subject]魔抵力基礎値 :b_calc,0x68,lib2->rance6_ad,offset,0,99999
+[subject]回避力基礎値 :b_calc,0x6C,lib2->rance6_ad,offset,0,99999
+[subject]命中力基礎値 :b_calc,0x70,lib2->rance6_ad,offset,0,99999
+[subject]貯め時間 :b_calc,0x74,lib2->rance6_ad,offset,0,99999
+[subject]戦闘速度 :b_calc,0x78,lib2->rance6_ad,offset,0,99999
+[subject]戦闘参加ターン :b_calc,0x7C,lib2->rance6_ad,offset,0,99999
+[subject]戦闘攻撃力強化 :b_calc,0x80,lib2->rance6_ad,offset,0,99999
+[subject]戦闘防御力強化 :b_calc,0x84,lib2->rance6_ad,offset,0,99999
+[subject]戦闘魔法力強化 :b_calc,0x88,lib2->rance6_ad,offset,0,99999
+[subject]戦闘魔抵力強化 :b_calc,0x8C,lib2->rance6_ad,offset,0,99999
+[subject]戦闘回避力強化 :b_calc,0x90,lib2->rance6_ad,offset,0,99999
+[subject]戦闘速度力強化 :b_calc,0x94,lib2->rance6_ad,offset,0,99999
+[subject]戦闘状態 :b_calc,0x98,lib2->rance6_ad,offset,0,99999
+[subject]戦闘本気 :b_calc,0x9C,lib2->rance6_ad,offset,0,99999
+[subject]戦闘取得経験値 :b_calc,0xA0,lib2->rance6_ad,offset,0,99999
+[back]
+[subject]ステイタス個別:dir
+[repeat]lib2->rance6_ステイタス,0,27,1
+[back]
+[subject]好感度:dir
+[repeat]lib2->rance6_好感度,0,27,1
+[subject]キムチ:dir
+[replace]_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x14D4:]+0x0C:], lib2->rance6_fr
+[back]
+[subject]装備パラメータ:dir
+	[subject]Dランク:dir
+	[repeat]lib2->rance6_武器パラD,0,27,1
+	[back]
+	[subject]Cランク:dir
+	[repeat]lib2->rance6_武器パラC,0,27,1
+	[back]
+	[subject]Bランク:dir
+	[repeat]lib2->rance6_武器パラB,0,27,1
+	[back]
+	[subject]Aランク:dir
+	[repeat]lib2->rance6_武器パラA,0,27,1
+	[back]
+	[subject]Sランク:dir
+	[repeat]lib2->rance6_武器パラS,0,27,1
+	[back]
+[back]
+[subject]敵ステイタス:dir
+[repeat]lib2->rance6_敵ステイタス,0,6,1
+[back]
+[subject]女の子モンスター:dir
+[subject]未捕獲のモンスターを全て捕獲:b_toggle,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x18AC:]+0x0C:]+0x28,lib2->rance6_モンスター捕獲,offset
+[subject]全て調教済:toggle,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x18AC:]+0x0C:]+0x28,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x18AC:]+0x0C:]+0xD0-02000000,00000000
+[subject]捕獲状態初期化:b_toggle,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x18AC:]+0x0C:]+0x28,lib2->rance6_モンスター初期化,offset
+[subject]捕獲（未調教）個別:d_toggle,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x18AC:]+0x0C:]+0x28,lib2->rance6_モンスター種類,lib2->rance6_モンスター処理1,offset
+[subject]調教済個別:d_toggle,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x18AC:]+0x0C:]+0x28,lib2->rance6_モンスター種類,lib2->rance6_モンスター処理2,offset
+[subject]女の子モンスター状態個別:dir
+[repeat]lib2->rance6_モンスター,0,43,1
+[back]
+[back]
+[subject]スキル一括処理:dir
+[subject]全部取得:b_toggle,0x4,lib2->rance6_sk1,offset
+[subject]痺れ追加:b_list,0x24,lib2->rance6_スキル痺れ,0,1,lib2->rance6_sk3,offset
+[subject]ため時間なし:b_toggle,0x28,lib2->rance6_sk2,offset
+[back]
+//[subject]スキル個別:dir
+//[repeat]lib2->rance6_スキル,0,184,1
+//[back]
+[subject]スキル個別:dir
+[subject]ランス:dir
+	[repeat]lib2->rance6_スキル2,0,7,1
+	[back]
+[subject]シィル:dir
+	[repeat]lib2->rance6_スキル2,7,14,1
+	[back]
+[subject]かなみ:dir
+	[repeat]lib2->rance6_スキル2,14,21,1
+	[back]
+[subject]マリア:dir
+	[repeat]lib2->rance6_スキル2,21,28,1
+	[back]
+[subject]志津香:dir
+	[repeat]lib2->rance6_スキル2,28,35,1
+	[back]
+[subject]カロリア:dir
+	[repeat]lib2->rance6_スキル2,35,42,1
+	[back]
+[subject]リズナ:dir
+	[repeat]lib2->rance6_スキル2,42,49,1
+	[back]
+[subject]コパンドン:dir
+	[repeat]lib2->rance6_スキル2,49,56,1
+	[back]
+[subject]ロッキー:dir
+	[repeat]lib2->rance6_スキル2,56,63,1
+	[back]
+[subject]バーナード:dir
+	[repeat]lib2->rance6_スキル2,63,70,1
+	[back]
+[subject]タマネギ:dir
+	[repeat]lib2->rance6_スキル2,70,77,1
+	[back]
+[subject]プリマ:dir
+	[repeat]lib2->rance6_スキル2,77,84,1
+	[back]
+[subject]カオル:dir
+	[repeat]lib2->rance6_スキル2,84,91,1
+	[back]
+[subject]アベルト:dir
+	[repeat]lib2->rance6_スキル2,91,98,1
+	[back]
+[subject]セスナ:dir
+	[repeat]lib2->rance6_スキル2,98,105,1
+	[back]
+[subject]メガデス:dir
+	[repeat]lib2->rance6_スキル2,105,112,1
+	[back]
+[subject]リック:dir
+	[repeat]lib2->rance6_スキル2,112,119,1
+	[back]
+[subject]復讐ちゃん:dir
+	[repeat]lib2->rance6_スキル2,119,126,1
+	[back]
+[subject]パットン:dir
+	[repeat]lib2->rance6_スキル2,126,133,1
+	[back]
+[subject]セヤダタラ:dir
+	[repeat]lib2->rance6_スキル2,133,140,1
+	[back]
+[subject]セル:dir
+	[repeat]lib2->rance6_スキル2,140,147,1
+	[back]
+[subject]マジック:dir
+	[repeat]lib2->rance6_スキル2,147,154,1
+	[back]
+[subject]ガンジー:dir
+	[repeat]lib2->rance6_スキル2,154,161,1
+	[back]
+[subject]ウルザ:dir
+	[repeat]lib2->rance6_スキル2,161,168,1
+	[back]
+[subject]サーナキア:dir
+	[repeat]lib2->rance6_スキル2,168,175,1
+	[back]
+[subject]アレックス:dir
+	[repeat]lib2->rance6_スキル2,175,182,1
+	[back]
+[subject]殺ちゃん:dir
+	[repeat]lib2->rance6_スキル2,182,189,1
+	[back]
+[back]
+[subject]ハニワ平原のハニー全滅回数:dir
+[subject]グリーンハニー:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x165C:]+0x0C:]+0x88,0,9999999
+[subject]ブルーハニー:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x165C:]+0x0C:]+0x8C,0,9999999
+[subject]レッドハニー:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x165C:]+0x0C:]+0x90,0,9999999
+[subject]ブラックハニー:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x165C:]+0x0C:]+0x94,0,9999999
+[back]
+[subject]フラグ:dir
+[repeat]lib2->rance6_フラグ1,0,98,1
+[back]
+[subject]フラグ2:dir
+[repeat]lib2->rance6_フラグ2,0,147,1
+[back]
+
+//[subject]イベント:dir
+//[repeat]lib2->rance6_イベント,0,27,1
+//[back]
+[back]
+
+//[subject]タマネギコンプ:calc,_[:[:[:(MName::SYS42VM.DLL) + 0x5DF98:]+0x139C:]+0x0C:]+0xF4,0,9999999
+
+[/script]
