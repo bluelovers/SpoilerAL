@@ -1,0 +1,159 @@
+SSG for SpoilerAL ver 3.4
+にうによるＳＳＧ　バージョン１．１
+[script]
+[title]MachineMaiden
+[process]MEGU.EXE
+[maker]Evolution
+[creator]にう
+[note]wordwrap
+かなり手抜きですいません。
+パラメータのみを変化させます。
+[/note]
+[subject]機体性能:calc,0x48B508,-2147483648,2147483647,signed,little_e
+[subject]データ:calc,0x48B50C,0x80000000,0x7FFFFFFF,signed,little_e
+[subject]擬似人格:calc,0x48B510,0x80000000,0x7FFFFFFF,signed,little_e
+[subject]従順度:calc,0x48B514,0x80000000,0x7FFFFFFF,signed,little_e
+[subject]愛情度:calc,0x48B518,0x80000000,0x7FFFFFFF,signed,little_e
+[/script]
+[script]
+[title]夢・天・使　Ｒ
+[process]MJ.EXX
+[maker]Triangle
+[creator]にう
+[note]wordwrap
+麻雀モードだけです。
+やっぱり手抜きですいません。
+[/note]
+[subject]１３面待:toggle,0x44544C,01091119212931323334353637,01091119212931323334353637
+[subject]テトラ役満:toggle,0x44544C,3131313232323333333434343535,3131313232323333333434343535
+[/script]
+[script]
+[title]夢・天・使
+[process]MJ.EXX
+[maker]Triangle
+[creator]にう
+[note]wordwrap
+麻雀モードだけです。
+手抜きですいません。
+[/note]
+[subject]自分持点:calc,0x44EA98,0,999999,signed,little_e
+[subject]相手持点:calc,0x44F6B4,0,999999,signed,little_e
+[subject]イカサマポイント:calc,0x44F3C8,0x00,0x63,signed,little_e
+[subject]１３面待:toggle,0x44E96C,01091119212931323334353637,01091119212931323334353637
+[subject]テトラ役満:toggle,0x44E96C,3131313232323333333434343535,3131313232323333333434343535
+[/script]
+[script]
+[title]猪名川で行こう！！（こみパ最大の決戦 Ver:1.01）
+[process]COMICQZ.EXE
+[maker]Leaf
+[creator]にう
+[note]wordwrap
+役に立たなくてすいません。
+[/note]
+[subject]ライフ:calc,0x4605C8,0x00,0x05,signed,little_e
+[subject]出題数:calc,0x4605BC,0x00000000,0xFF7F,signed,little_e
+[subject]正解数:calc,0x4605C0,0x00000000,0xFF7F,signed,little_e
+[subject]所要合計タイム（単位：ミリ秒）:calc,0x4605C4,0x00000000,0xFFFF7F00,signed,little_e
+[subject]好感度:dir
+	[subject]瑞希:calc,0x47784B,0x00,0x7F,signed,little_e
+	[subject]南:calc,0x47784C,0x00,0x7F,signed,little_e
+	[subject]由宇:calc,0x47784D,0x00,0x7F,signed,little_e
+	[subject]詠美:calc,0x47784E,0x00,0x7F,signed,little_e
+	[subject]彩:calc,0x47784F,0x00,0x7F,signed,little_e
+	[subject]あさひ:calc,0x477850,0x00,0x7F,signed,little_e
+	[subject]玲子:calc,0x477851,0x00,0x7F,signed,little_e
+	[subject]千紗:calc,0x477852,0x00,0x7F,signed,little_e
+	[back]
+[/script]
+[script]
+[title]ウイニングポスト４
+[process]WP4.EXE
+[maker]KOEI
+[creator]にう
+[note]wordwrap
+このssgファイルを使用した結果、
+いかなる損害が発生しようとも、
+にうは一切その責を負わない事とします。
+このファイルは、必ず自己の責任の元でご使用下さい。
+
+以下、難しそうな所だけを、
+簡単に説明します。
+
+大体において、値が高くなるほど、
+その能力が高くなります。
+ですが、気性だけが反対で、
+値が小さいほど大人しく、
+値が大きいほど気性が荒くなります。
+
+成長速度と値の対応表は以下の通りです。
+0:早熟
+1:普通早
+2:普通遅
+3:晩成
+
+毛と値の対応表は以下の通りです。
+0:白
+1:芦
+2:鹿
+3:黒鹿
+4:青鹿
+5:青
+6:栗
+7:栃栗
+
+顔の特徴と値の対応表は以下の通りです。
+0:無し
+1:星
+2:流星
+3:？？？
+注！：３にするとグラフィックがおかしくなります。
+[/note]
+//最後に、好きな馬(競走馬のみ)の能力値を書きかえる方法を記します。
+//ですが、これは、自分でssgファイルを書き換えなければならないので、
+//わかる人だけ行ってください。
+//なお、ここにかかれている事を実行した結果生じた損害に関して、
+//にうは一切の責任をとらないとものとします。
+//この事にご同意してくださる方のみ実行してください。
+//まず、１６進数を扱える電卓を用意してください。
+//暗算でも良いですが、Windows付属の電卓が便利でしょう。
+//以下、Windows付属電卓を使用していきます。
+//次に、下の"[subject]ShortCut"の前の"//"を削除した後、保存して、
+//SpoilerALを起動して拙作ssgを開いてください。
+//次に、WP4のショートカットの一番上に能力値を書き換えたい競争馬を登録してください。
+//そして、拙作ssgのShortCutをクリックしてください。右に電卓画面が開かれましたね。
+//現在の値を見てください。1xxxとなっているはずなので、最初の1を取ってください。以下、この値をｘとします。
+//さて、ここからWindows付属電卓の登場です。
+//電卓に１６進数で
+//ｘ*1E+11DA33C
+//を計算して、その結果を下の[subject]Addressのここに記入と置換して、
+//先頭の//を削除した後、保存しなおして、拙作ssgを開きなおしてください。
+//置換する際に、リトルエンディアンなどの心配はいりません。"0x"の後にそのまま置換してください。
+//次に、拙作ssgを開き、Addressをクリックしてください。やはり右に電卓画面が開かれましたね。
+//現在の値を見てください。その値を仮にｙとしましょう。
+//Windows付属電卓を使い、１６進数で
+//ｙ*0A
+//を計算して、その結果を下の"[subject]好きな馬"の中の"[replace]"の"ここに記入"と置換します。
+//置換する際に、リトルエンディアンなどの心配はいりません。"0x"の後にそのまま置換してください。
+//そして、その[subject]関係の行の先頭にある"//"を削除して、保存しなおして、拙作ssgを開きなおしてください。
+//以上です。
+[subject]馬能力:dir
+	[subject]サードステージ:dir
+		[replace]0x9402,wp4,offset
+		[back]
+	[subject]メイジガルダン:dir
+		[replace]0xB389,wp4,offset
+		[back]
+	[subject]ツキノヒカリ:dir
+		[replace]0xC968,wp4,offset
+		[back]
+	[subject]サンデーサイレンス:dir
+		[replace]0x0000,wp4,offset
+		[back]
+//	[subject]好きな馬:dir
+//		[replace]0xここに記入,wp4,offset
+//		[back]
+	[back]
+//[subject]ShortCut:calc,0x70DFE0,0x0000,0x8FFF,unsigned.little_e
+//[subject]Address:calc,0xここに記入,0x0000,0xFFFF,unsigned,little_e
+[subject]馬主獲得賞金:calc,0x125CA34,0,99999999,unsigned,little_e
+[/script]
