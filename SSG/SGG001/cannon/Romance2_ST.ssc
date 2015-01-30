@@ -1,0 +1,12 @@
+[subject]HP		:calc,0x00,0,999,signed,little_e
+[subject]HPMAX		:calc,0x04,0,999,signed,little_e
+[subject]MP		:calc,0x0C,0,999,signed,little_e
+[subject]MPMAX		:calc,0x10,0,999,signed,little_e
+[subject]‹Ø—Í		:calc,0x18,0,999,signed,little_e
+[subject]’m—Í		:calc,0x20,0,999,signed,little_e
+[subject]Ší—p		:calc,0x28,0,999,signed,little_e
+[subject]–hŒä		:calc,0x30,0,999,signed,little_e
+[subject]–‚–h		:calc,0x38,0,999,signed,little_e
+[subject]ˆÚ“®		:calc,0x40,0,999,signed,little_e
+[subject]•Ší•t‰Á‘®«	:bitlist,0x0114,Romance2_Zo,4
+[back]
