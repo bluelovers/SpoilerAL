@@ -1,0 +1,153 @@
+[group]WAP_SSG
+[note]wordwrap
+一年半ぶりのアリスソフト系解析がショタゲとは…(^^;
+
+反映処理を要するものが多いのですが、大抵何らかの行動後に効果が出ます。即時を期待するならクイックセーブ＆ロードを活用するとよいです。
+
+ＣＧモード関連：
+ソフト本体が細かく改竄防止用復旧処理を行ってます。書き換えタイミングは、贖罪儀式でＣＧが表示される時等。この直前に機能実行すべし。
+[/note]
+
+[subject]パラメータ関連:dir
+	[replace]_[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]+0x88:]+0x14:],WAPLST->WAP_c
+	[replace]_[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]+0x84:]+0x14:],WAPLST->WAP_b
+	[replace]_[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]+0x77C:]+0x14:],WAPLST->WAP_d
+	[replace]_[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]:]+0x14:],WAPLST->WAP_a
+ [subject]好感度確認調整:dir
+	[repeat]WAPLST->WAPREP1,0,4,1
+ [back]
+ [subject]アイテム関連:dir
+	[repeat]WAPLST->WAPREP2,0,10,1
+ [back]
+[root]
+
+[subject]ＣＧモード関連:dir
+ [subject]画:dir
+	[replace]_[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]+0xD0:]+0x14:],WAPLST->WAP_g
+ [back]
+ [subject]話＋その他:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:b_toggle,0x00,WAPLST->WAP_h,offset
+	[subject]ＡＬＬ ＯＦＦ/実行/_:b_toggle,0x00,WAPLST->WAP_i,offset
+[root]
+
+[/group]
+
+
+[group]WAP_a
+[subject]PlayPoints/現在値/_:calc,0x8C,0x0000,0x03E7,unsigned
+[subject]所持金/現在値/_:calc,0x84,0x000000,0x98967F,unsigned
+[subject]汎用フラグ確認/_:d_toggle,0x00,WAPLST->LST_b,WAPLST->LST_c,offset
+[/group]
+
+
+[group]WAP_b
+[subject]施設不満度/現在値/_:calc,0x04,0x00,0xC8,unsigned
+[/group]
+
+
+[group]WAP_c
+[subject]日付/現在値/_:calc,0x00,0x01,0xF0,unsigned
+[/group]
+
+
+[group]WAP_d
+[subject]セディア理性/現在値/_:calc,0x10,0x00,0x08,unsigned
+[subject]セディア理性Max値/現在値/_:calc,0x14,0x00,0x08,unsigned
+[subject]セディア興奮度/現在値/_:calc,0x08,0x00,0x64,unsigned
+[subject]セディア興奮度Max値/現在値/_:calc,0x0C,0x00,0x64,unsigned
+[/group]
+
+
+[group]WAPREP1
+[subject][! @WAPLST->LST_a,$Val !]/現在値/_:calc,_[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]:]+0x14:]+0x[! 0x04*$Val !]+0xCC,0x00,0x64,unsigned
+[/group]
+
+
+[group]LST_a
+ニス
+イーノ
+ジラン
+ミュウ
+[/group]
+
+
+[group]LST_b
+入店済み状態解除
+自慰出現
+宿屋出現
+ニス同行
+リオ同行
+[/group]
+//移動手段長靴
+//移動手段馬車
+
+[group]LST_c
+0x104=01000000/00000000
+0x10C=01000000/00000000
+0xF8=01000000/00000000
+0x118=01000000/00000000
+0x11C=01000000/00000000
+[/group]
+//0x128=01000000/00000000
+//0x12C=01000000/00000000
+
+[group]WAPREP2
+[subject][! @WAPLST->LST_d,$Val !]:dir
+[replace]_[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]+0x[!0x04*$Val!]+0x9B0:]+0x14:],WAPLST->WAP_f
+[back]
+[/group]
+
+
+[group]WAP_f
+[subject]アイテム種類/_:list,0x00,WAPLST->LST_e,0x00,0x01
+[subject]個数/現在値/_:calc,0x04,0x00,0x63,unsigned
+[/group]
+
+
+[group]LST_d
+１スロット目
+２スロット目
+３スロット目
+４スロット目
+５スロット目
+６スロット目
+７スロット目
+８スロット目
+９スロット目
+10スロット目
+[/group]
+
+
+[group]LST_e
+なし
+放乳促進剤
+ロープ
+真珠の首飾り
+異国の菓子折り
+長靴
+馬車
+リクリラの葉
+排尿促進剤
+特製ディルド
+ムチ
+猿ぐつわ
+三角木馬
+[/group]
+
+
+[group]WAP_g
+[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x0000,0x01D3-01000000
+[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x0000,0x01D3-00
+[/group]
+
+
+[group]WAP_h
+_[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]+0xC8:]+0x14:]+0x08,_[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]+0xC8:]+0x14:]+0x0F-01000000
+_[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]+0xCC:]+0x14:]+0x24,_[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]+0xCC:]+0x14:]+0x46B-01000000
+[/group]
+
+
+[group]WAP_i
+_[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]+0xC8:]+0x14:]+0x08,_[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]+0xC8:]+0x14:]+0x0F-00
+_[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]+0xCC:]+0x14:]+0x24,_[:[:[:((MName::SYS42VM.DLL)+0x53E68)+0x118:]+0xCC:]+0x14:]+0x46B-00
+[/group]
