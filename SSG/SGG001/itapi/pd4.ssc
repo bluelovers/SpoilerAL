@@ -1,0 +1,15 @@
+       [subject]AP:calc,0x00,0,99,signed,little_e
+       [subject]‘Î’n•â³’l:calc,0x04,0,99,signed,little_e
+       [subject]‘Î‹ó•â³’l:calc,0x06,0,99,signed,little_e
+       [subject]”’•º•â³’l:calc,0x08,0,99,signed,little_e
+       [subject]–hŒä•â³’l:calc,0x0A,0,99,signed,little_e
+       [subject]‹Z”\:dir
+               [subject]ô“G:toggle,0x1C,0,0xFF
+               [subject]H•º:toggle,0x1E,1,0xFF
+               [subject]’ÊM:toggle,0x20,2,0xFF
+               [subject]‰B•Á:toggle,0x22,3,0xFF
+               [subject]‘€c:toggle,0x24,4,0xFF
+               [subject]¬‰ÎŠí:toggle,0x26,5,0xFF
+               [subject]d‰ÎŠí:toggle,0x28,6,0xFF
+       [back]
+[back]
