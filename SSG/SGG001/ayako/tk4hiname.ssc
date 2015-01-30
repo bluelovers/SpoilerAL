@@ -1,0 +1,205 @@
+[subject]‹ã˜Z®ŠÍí:dir
+[replace]0x0,tk4hi,offset
+[subject]—ëí“ñˆêŒ^:dir
+[replace]0x20,tk4hi,offset
+[subject]—ëíO“ñŒ^:dir
+[replace]0x40,tk4hi,offset
+[subject]—ëí“ñ“ñŒ^:dir
+[replace]0x60,tk4hi,offset
+[subject]—ëíŒÜ“ñŒ^:dir
+[replace]0x80,tk4hi,offset
+[subject]—ó•—:dir
+[replace]0xA0,tk4hi,offset
+[subject]k“d‰ü:dir
+[replace]0xC0,tk4hi,offset
+[subject]—‹“d:dir
+[replace]0xE0,tk4hi,offset
+[subject]‡“d‰ü:dir
+[replace]0x100,tk4hi,offset
+[subject]k“d:dir
+[replace]0x120,tk4hi,offset
+[subject]‹k‰Ô:dir
+[replace]0x140,tk4hi,offset
+[subject]“ñ®…í:dir
+[replace]0x160,tk4hi,offset
+[subject]‹­•—:dir
+[replace]0x180,tk4hi,offset
+[subject]‹ã‹ã®ŠÍ”š:dir
+[replace]0x1A0,tk4hi,offset
+[subject]œa¯:dir
+[replace]0x1C0,tk4hi,offset
+[subject]‹ãµ®ŠÍU:dir
+[replace]0x1E0,tk4hi,offset
+[subject]“VR:dir
+[replace]0x200,tk4hi,offset
+[subject]—¬¯:dir
+[replace]0x220,tk4hi,offset
+[subject]‹ã˜Z®—¤U:dir
+[replace]0x240,tk4hi,offset
+[subject]ˆê®—¤U:dir
+[replace]0x260,tk4hi,offset
+[subject]‹â‰Í:dir
+[replace]0x280,tk4hi,offset
+[subject]Ê‰_:dir
+[replace]0x2A0,tk4hi,offset
+[subject]‹ãŒÜ®…’ã:dir
+[replace]0x2C0,tk4hi,offset
+[subject]—ë®…’ã:dir
+[replace]0x2E0,tk4hi,offset
+[subject]‰_:dir
+[replace]0x300,tk4hi,offset
+[subject]‹ãµ®”òs’ø:dir
+[replace]0x320,tk4hi,offset
+[subject]“ñ®”òs’ø:dir
+[replace]0x340,tk4hi,offset
+[subject]F2A ÊŞ¯Ì§Û°:dir
+[replace]0x360,tk4hi,offset
+[subject]F4F Ü²ÙÄŞ·¬¯Ä:dir
+[replace]0x380,tk4hi,offset
+[subject]F6F ÍÙ·¬¯Ä:dir
+[replace]0x3A0,tk4hi,offset
+[subject]F4U ºÙ¾±:dir
+[replace]0x3C0,tk4hi,offset
+[subject]F8F ÍŞ±·¬¯Ä:dir
+[replace]0x3E0,tk4hi,offset
+[subject]F7F À²¶Ş°·¬¯Ä:dir
+[replace]0x400,tk4hi,offset
+[subject]FD-1 Ì§İÄÑ:dir
+[replace]0x420,tk4hi,offset
+[subject]P-38 ×²ÄÆİ¸Ş:dir
+[replace]0x440,tk4hi,offset
+[subject]P-40 ³«°Î°¸:dir
+[replace]0x460,tk4hi,offset
+[subject]P-47D »İÀŞ°ÎŞÙÄ:dir
+[replace]0x480,tk4hi,offset
+[subject]P-51D Ñ½Àİ¸Ş:dir
+[replace]0x4A0,tk4hi,offset
+[subject]P-80 ¼­°Ã¨İ¸Ş½À°:dir
+[replace]0x4C0,tk4hi,offset
+[subject]SB2U ËŞİ¼Ş¹°À°:dir
+[replace]0x4E0,tk4hi,offset
+[subject]SBD ÄŞ°İÄÚ½:dir
+[replace]0x500,tk4hi,offset
+[subject]SB2C ÍÙÀŞ²ÊŞ°:dir
+[replace]0x520,tk4hi,offset
+[subject]B-25 Ğ¯ÁªÙ:dir
+[replace]0x540,tk4hi,offset
+[subject]B-26 ÏÛ°ÀŞ°:dir
+[replace]0x560,tk4hi,offset
+[subject]BD ÃŞÊŞ½Ã°À°:dir
+[replace]0x580,tk4hi,offset
+[subject]TBF ±ÍŞİ¼Ş¬°:dir
+[replace]0x5A0,tk4hi,offset
+[subject]AD ½¶²Ú°ÀŞ°:dir
+[replace]0x5C0,tk4hi,offset
+[subject]OS2U ·İ¸ŞÌ¨¯¼¬°:dir
+[replace]0x5E0,tk4hi,offset
+[subject]SC ¼°Î°¸:dir
+[replace]0x600,tk4hi,offset
+[subject]PBY ¶ÀØÅ:dir
+[replace]0x620,tk4hi,offset
+[subject]PBM ÏØÅ°:dir
+[replace]0x640,tk4hi,offset
+[subject]Ìª±Ø° ÌÙÏ°:dir
+[replace]0x660,tk4hi,offset
+[subject]¸Ş×Ïİ F4F Ï°ÄÚ¯Ä:dir
+[replace]0x680,tk4hi,offset
+[subject]Î°¶° ¼°ÊØ¹°İ:dir
+[replace]0x6A0,tk4hi,offset
+[subject]½°Êß°ÏØİ ¼°Ì§²±:dir
+[replace]0x6C0,tk4hi,offset
+[subject]Ìª±Ø° Ì§²±Ì×²:dir
+[replace]0x6E0,tk4hi,offset
+[subject]Î°¶° ¼°Ì­°Ø°:dir
+[replace]0x700,tk4hi,offset
+[subject]Î°¶° ¼°Î°¸:dir
+[replace]0x720,tk4hi,offset
+[subject]Î°¶° ÊØ¹°İMk-1:dir
+[replace]0x740,tk4hi,offset
+[subject]½Ëß¯ÄÌ§²±Mk-I:dir
+[replace]0x760,tk4hi,offset
+[subject]½Ëß¯ÄÌ§²±Mk-V:dir
+[replace]0x780,tk4hi,offset
+[subject]½Ëß¯ÄÌ§²±Mk-XIV:dir
+[replace]0x7A0,tk4hi,offset
+[subject]Î°¶° À²Ì°İ:dir
+[replace]0x7C0,tk4hi,offset
+[subject]Î°¶° ÃİÍß½Ä:dir
+[replace]0x7E0,tk4hi,offset
+[subject]¸ŞÛ½À° Ğ°Ã¨±:dir
+[replace]0x800,tk4hi,offset
+[subject]ÌŞ×¯¸ÊŞ°İ ½¸±:dir
+[replace]0x820,tk4hi,offset
+[subject]ÌŞØ½ÄÙ ÌŞÚÆÑ:dir
+[replace]0x840,tk4hi,offset
+[subject]³Ş¨¯¶°½ ³ªØİÄİ:dir
+[replace]0x860,tk4hi,offset
+[subject]ÃŞ¥ÊËŞ×İÄ Ó½·°Ä:dir
+[replace]0x880,tk4hi,offset
+[subject]Ìª±Ø° ¿°ÄŞÌ¨¯¼­:dir
+[replace]0x8A0,tk4hi,offset
+[subject]Ìª±Ø° ÊŞ×¸°ÀŞ:dir
+[replace]0x8C0,tk4hi,offset
+[subject]Ìª±Ø° ½Ëß±Ì¨¯¼­:dir
+[replace]0x8E0,tk4hi,offset
+[subject]ÌŞØ½ÄÙ ÎŞ°Ì«°Ä:dir
+[replace]0x900,tk4hi,offset
+[subject]ÌŞØ½ÄÙ ÎŞ°Ì§²À°:dir
+[replace]0x920,tk4hi,offset
+[subject]½°Êß°ÏØİ ³«°×½:dir
+[replace]0x940,tk4hi,offset
+[subject]½°Êß°ÏØİ ¼°µÀ°:dir
+[replace]0x960,tk4hi,offset
+[subject]Ò¯»°¼­Ğ¯Ä Bf109E:dir
+[replace]0x980,tk4hi,offset
+[subject]Ò¯»°¼­Ğ¯Ä Bf109F:dir
+[replace]0x9A0,tk4hi,offset
+[subject]Ò¯»°¼­Ğ¯Ä Bf109G:dir
+[replace]0x9C0,tk4hi,offset
+[subject]Ò¯»°¼­Ğ¯Ä Bf109T:dir
+[replace]0x9E0,tk4hi,offset
+[subject]Ò¯»°¼­Ğ¯Ä Bf110E:dir
+[replace]0xA00,tk4hi,offset
+[subject]Ì«¯¹³ÙÌ Fw190A8:dir
+[replace]0xA20,tk4hi,offset
+[subject]Ì«¯¹³ÙÌ Fw190D9:dir
+[replace]0xA40,tk4hi,offset
+[subject]Ì«¯¹³ÙÌ Ta152H:dir
+[replace]0xA60,tk4hi,offset
+[subject]Do335 ÌßÌ§²Ù:dir
+[replace]0xA80,tk4hi,offset
+[subject]Me262 ¼­ÜÙÍŞ:dir
+[replace]0xAA0,tk4hi,offset
+[subject]He162 »Ş×ÏİÀŞ°:dir
+[replace]0xAC0,tk4hi,offset
+[subject]ÎÙÃİ Ho229:dir
+[replace]0xAE0,tk4hi,offset
+[subject]Õİ¶°½ Ju87B ½Â°¶:dir
+[replace]0xB00,tk4hi,offset
+[subject]Õİ¶°½ Ju87D ½Â°¶:dir
+[replace]0xB20,tk4hi,offset
+[subject]Ê²İ¹Ù He111:dir
+[replace]0xB40,tk4hi,offset
+[subject]Õİ¶°½ Ju88:dir
+[replace]0xB60,tk4hi,offset
+[subject]ÄŞÙÆ´ Do217:dir
+[replace]0xB80,tk4hi,offset
+[subject]±×ÄŞ Ar234 ÌŞØ¯Â:dir
+[replace]0xBA0,tk4hi,offset
+[subject]Õİ¶°½ Ju87C ½Â°¶:dir
+[replace]0xBC0,tk4hi,offset
+[subject]±×ÄŞ Ar196:dir
+[replace]0xBE0,tk4hi,offset
+[subject]ÄŞÙÆ´ Do18:dir
+[replace]0xC00,tk4hi,offset
+[subject]Bv138:dir
+[replace]0xC20,tk4hi,offset
+[subject]Re2001:dir
+[replace]0xC40,tk4hi,offset
+[subject]ÒØÃŞ¨µÅØ Ro43:dir
+[replace]0xC60,tk4hi,offset
+[subject]Ì«¯¶° D.21:dir
+[replace]0xC80,tk4hi,offset
+[subject]Ì«¯¶° T.8:dir
+[replace]0xCA0,tk4hi,offset
+[back]
