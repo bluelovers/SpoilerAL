@@ -1,0 +1,469 @@
+[group]DCR_SSG
+[note]wordwrap
+※OHPの修正ファイルに対応しています。
+
+CRUSADER.EXE ver1.0.1
+CRC32=A103E30F
+
+CRUSADER.EXE ver1.0.2
+CRC32=FBC59425
+
+CRUSADER.EXE ver1.0.3
+CRC32=4455DE3E
+
+※始めたばかりなので、完全動作の保障はできません。不具合・機能追加の要素があれば、今後の更新で対応します。
+[/note]
+
+[subject]ver1.0.1:dir
+
+[subject]RPGパート関連:dir
+ [subject]味方無敵化/実行/_:toggle,0x411B55,EB00,7860
+ [subject]味方必ずクリティカル/実行/_:toggle,0x40FE9B,EB00,7468
+ [subject]スキルポイント減らない/実行/_:toggle,0x45DA33,EB00,2BD1
+ [subject]ＨＰ・ＭＰ最大値維持/実行/_:b_toggle,0x00,DCRLST->DCR_a,offset
+ [subject]ランダムエンカウンター操作/_:d_list,0x400000,DCRLST->LST_b,0x00000000,0xFFFFFFFF,DCRLST->LST_c,offset
+ [subject]入手経験値・お金ｎ倍化/_:d_list,0x400000,DCRLST->LST_d,0x00000000,0xFFFFFFFF,DCRLST->LST_e,offset
+ [subject]能力上昇値固定化/_:d_list,0x400000,DCRLST->LST_f,0x00000000,0xFFFFFFFF,DCRLST->LST_g,offset
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]GOLD［'+'_mem,0x5C8860,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x5C8860,0x00000000,0x05F5E0FF,unsigned
+ [subject]アイテム所持数:dir
+  [repeat]DCRLST->DCREP1,0,266,1
+ [back]
+[back]
+
+[subject]ＣＧモード関連:dir
+ [subject]CG GALLERY ALL/ＯＮ／ＯＦＦ/_:toggle,0x5E4E34,0x5E5717-01000000,00
+ [subject]EVENT ALL/ＯＮ／ＯＦＦ/_:toggle,0x5E5F30,0x5E5FEF-01000000,00
+[back]
+
+[back]
+
+[subject]ver1.0.2:dir
+
+[subject]RPGパート関連:dir
+ [subject]味方無敵化/実行/_:toggle,0x411D85,EB00,7860
+ [subject]味方必ずクリティカル/実行/_:toggle,0x4100CB,EB00,7468
+ [subject]スキルポイント減らない/実行/_:toggle,0x45DCC3,EB00,2BD1
+ [subject]ＨＰ・ＭＰ最大値維持/実行/_:b_toggle,0x0250,DCRLST->DCR_a,offset
+ [subject]ランダムエンカウンター操作/_:d_list,0x400250,DCRLST->LST_b,0x00000000,0xFFFFFFFF,DCRLST->LST_c,offset
+ [subject]入手経験値・お金ｎ倍化/_:d_list,0x400230,DCRLST->LST_d,0x00000000,0xFFFFFFFF,DCRLST->LST_e,offset
+ [subject]能力上昇値固定化/_:d_list,0x400250,DCRLST->LST_f,0x00000000,0xFFFFFFFF,DCRLST->LST_g,offset
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]GOLD［'+'_mem,0x5C8860,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x5C8860,0x00000000,0x05F5E0FF,unsigned
+ [subject]アイテム所持数:dir
+  [repeat]DCRLST->DCREP1,0,266,1
+ [back]
+[back]
+
+[subject]ＣＧモード関連:dir
+ [subject]CG GALLERY ALL/ＯＮ／ＯＦＦ/_:toggle,0x5E4E34,0x5E5717-01000000,00
+ [subject]EVENT ALL/ＯＮ／ＯＦＦ/_:toggle,0x5E5F30,0x5E5FEF-01000000,00
+[back]
+
+[back]
+
+[subject]ver1.0.3:dir
+
+[subject]RPGパート関連:dir
+ [subject]味方無敵化/実行/_:toggle,0x411DC5,EB00,7860
+ [subject]味方必ずクリティカル/実行/_:toggle,0x41010B,EB00,7468
+ [subject]スキルポイント減らない/実行/_:toggle,0x45DCE3,EB00,2BD1
+ [subject]ＨＰ・ＭＰ最大値維持/実行/_:b_toggle,0x02A0,DCRLST->DCR_a,offset
+ [subject]ランダムエンカウンター操作/_:d_list,0x4001B0,DCRLST->LST_b,0x00000000,0xFFFFFFFF,DCRLST->LST_c,offset
+ [subject]入手経験値・お金ｎ倍化/_:d_list,0x400270,DCRLST->LST_d,0x00000000,0xFFFFFFFF,DCRLST->LST_e,offset
+ [subject]能力上昇値固定化/_:d_list,0x4001B0,DCRLST->LST_f,0x00000000,0xFFFFFFFF,DCRLST->LST_g,offset
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]GOLD［'+'_mem,0x5C8860,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x5C8860,0x00000000,0x05F5E0FF,unsigned
+ [subject]アイテム所持数:dir
+  [repeat]DCRLST->DCREP1,0,266,1
+ [back]
+[back]
+
+[subject]ＣＧモード関連:dir
+ [subject]CG GALLERY ALL/ＯＮ／ＯＦＦ/_:toggle,0x5E4E34,0x5E5717-01000000,00
+ [subject]EVENT ALL/ＯＮ／ＯＦＦ/_:toggle,0x5E5F30,0x5E5FEF-01000000,00
+[back]
+
+[back]
+
+[subject]ver1.0.4:dir
+
+[subject]RPGパート関連:dir
+ [subject]味方無敵化/実行/_:toggle,0x411E95,EB00,7860
+ [subject]味方必ずクリティカル/実行/_:toggle,0x4101DB,EB00,7468
+ [subject]スキルポイント減らない/実行/_:toggle,0x45DD83,EB00,2BD1
+ [subject]ＨＰ・ＭＰ最大値維持/実行/_:b_toggle,0x02E0,DCRLST->DCR_a,offset
+ [subject]ランダムエンカウンター操作/_:d_list,0x4001A0,DCRLST->LST_b,0x00000000,0xFFFFFFFF,DCRLST->LST_c,offset
+ [subject]入手経験値・お金ｎ倍化/_:d_list,0x400000,DCRLST->LST_d,0x00000000,0xFFFFFFFF,DCRLST->LST_2e,offset
+ [subject]能力上昇値固定化/_:d_list,0x4001A0,DCRLST->LST_f,0x00000000,0xFFFFFFFF,DCRLST->LST_g,offset
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]GOLD［'+'_mem,0x5C8860,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x5C8860,0x00000000,0x05F5E0FF,unsigned
+ [subject]アイテム所持数:dir
+  [repeat]DCRLST->DCREP1,0,266,1
+ [back]
+[back]
+
+[subject]ＣＧモード関連:dir
+ [subject]CG GALLERY ALL/ＯＮ／ＯＦＦ/_:toggle,0x5E4E34,0x5E5717-01000000,00
+ [subject]EVENT ALL/ＯＮ／ＯＦＦ/_:toggle,0x5E5F30,0x5E5FEF-01000000,00
+[back]
+
+[back]
+
+[/group]
+
+
+[group]DCR_a
+0x407D32,D8,E0
+0x407D7A,DC,E4
+0x407DAE,8B8FD8725C00898FE0725C00B86400000090,8B87E0725C008B8FD8725C006BC06499F7F9
+0x407EB4,8B87DC725C008987E4725C00B86400000090,8B87E4725C008BBFDC725C006BC06499F7FF
+[/group]
+
+
+[group]LST_b
+デフォルト
+常時
+回避
+[/group]
+
+
+[group]LST_c
+,0x03A165=7409
+,0x03A165=EB00
+,0x03A165=EB09
+[/group]
+
+
+[group]LST_d
+デフォルト
+４倍化
+16倍化
+128倍化
+[/group]
+
+
+[group]LST_f
+デフォルト
+一律10
+一律25
+一律50
+一律100
+[/group]
+
+
+[group]LST_g
+,0x0363CD=F7BC24E0000000,0x03648A=F7BC24E4000000,0x036546=F7BC24E8000000,0x036602=F7BC24EC000000,0x0366BE=F7BC24F0000000,0x036777=F7BC24F4000000,0x036833=F7BC24F8000000,0x0368F6=83C205
+,0x0363CD=BA090000009090,0x03648A=BA090000009090,0x036546=BA090000009090,0x036602=BA090000009090,0x0366BE=BA090000009090,0x036777=BA090000009090,0x036833=BA090000009090,0x0368F6=B20A90
+,0x0363CD=BA180000009090,0x03648A=BA180000009090,0x036546=BA180000009090,0x036602=BA180000009090,0x0366BE=BA180000009090,0x036777=BA180000009090,0x036833=BA180000009090,0x0368F6=B21990
+,0x0363CD=BA310000009090,0x03648A=BA310000009090,0x036546=BA310000009090,0x036602=BA310000009090,0x0366BE=BA310000009090,0x036777=BA310000009090,0x036833=BA310000009090,0x0368F6=B23290
+,0x0363CD=BA630000009090,0x03648A=BA630000009090,0x036546=BA630000009090,0x036602=BA630000009090,0x0366BE=BA630000009090,0x036777=BA630000009090,0x036833=BA630000009090,0x0368F6=B26490
+[/group]
+
+
+[group]LST_e
+,0x00B4DF=8B44242C50,0x136BF0=00000000000000000000000000000000000000000000000000000000
+,0x00B4DF=E90CB71200,0x136BF0=8B442420C1E002894424208B44242CC1E0028944242C50E9D848EDFF
+,0x00B4DF=E90CB71200,0x136BF0=8B442420C1E004894424208B44242CC1E0048944242C50E9D848EDFF
+,0x00B4DF=E90CB71200,0x136BF0=8B442420C1E007894424208B44242CC1E0078944242C50E9D848EDFF
+[/group]
+
+
+[group]LST_2e
+,0x00B7DF=8B44242850,0x136EF0=00000000000000000000000000000000000000000000000000000000
+,0x00B7DF=E90CB71200,0x136EF0=8B442424C1E002894424248B442428C1E0028944242850E9D848EDFF
+,0x00B7DF=E90CB71200,0x136EF0=8B442424C1E004894424248B442428C1E0048944242850E9D848EDFF
+,0x00B7DF=E90CB71200,0x136EF0=8B442424C1E007894424248B442428C1E0078944242850E9D848EDFF
+[/group]
+
+
+[group]DCREP1
+[subject][! @DCRLST->LST_a,$Val !]:dir
+ [replace]_0x5C6648+0x[! 0x0C*$Val !],DCRLST->ipr
+[back]
+[/group]
+
+
+[group]ipr
+[subject]存在フラグ/ＯＮ／ＯＦＦ/_:toggle,0x00,01000000,00000000
+[subject]総所持数［'+'_mem,0x04,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x04,0x00,0x63,unsigned
+[subject]装備数［'+'_mem,0x08,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x08,0x00,0x63,unsigned
+[/group]
+
+
+[group]LST_a
+ポーション
+ハイポーション
+フルポーション
+Ｍポーション
+Ｍハイポーション
+Ｍフルポーション
+毒消し草
+マヒ消し草
+万能薬
+天使の水晶
+黄金の林檎
+スティレット
+ダガー
+ククリ
+マインゴーシュ
+ティターニア
+ビッグゲームナイフ
+影縫い
+魔法剣アゾット
+ハイウィンド
+双魔剣デルギデア
+ブロンズソード
+サーベル
+アイアンソード
+シャムシール
+ミスリルソード
+インセクトバスター
+シュツルムブレイド
+フロストブロンド
+サンダーサーベル
+ソームズ鉄の剣
+シンギングソード
+竜を断つもの
+エレ・ドヴェルグ
+ルゥ＝ラ・ヴァルド
+カイザーナックル
+グラップルナックル
+フレディナイトメア
+ストライクブリット
+バスタードソード
+グレートソード
+クレイモア
+フランベルジュ
+ハイランダー
+カラミティバスター
+断罪の大剣
+デーモンイーター
+バトルアクス
+グレートアクス
+アースシェイカー
+ミョルニル
+スコップ
+レイピア
+エペ
+ナイトカッツ
+テンプルブレード
+洗礼剣グリムシール
+クルセイダー
+聖剣バルディーン
+ルーレ・レガリア
+革の鞭
+ナインテール
+ローズウィップ
+ラブハンター
+神速の鞭
+脇差
+水心子正秀
+名刀・炎舞朱雀
+童子切
+妖刀月乃宮
+天津神守梅暗
+那由他
+神刀・十握剣
+苦無
+十字手裏剣
+チャクラム
+八方手裏剣
+ソームズ鉄の長槍
+ハルバード
+ソウルスティーラー
+ルーングレイブ
+神雷
+ショートボウ
+クロスボウ
+ロングボウ
+ハンティングボウ
+シュラークの長弓
+エルヴンボウ
+氷弓ボレアス
+翼を射抜くもの
+スターリットボウ
+夜明けの歌
+樫の杖
+見習い魔道師の杖
+魔道師の杖
+ヘルメスの杖
+知恵の蛇の杖
+祝福の杖
+賢人の杖
+石の杖
+癒しの杖
+ゲッシュの誓約杖
+ウィザードスタッフ
+天空王の杖
+武勇のリュート
+静寂の竪琴
+歌神ミューンの竪琴
+牧神の笛
+世界律の竪琴
+初等魔道書　火の章
+初等魔道書　氷の章
+初等魔道書　雷の章
+操人之巻
+中等魔道書　火の章
+中等魔道書　氷の章
+中等魔道書　雷の章
+破邪之巻
+スピードスター入門
+魂の拳
+聖刻印ルーンの書
+全知の書
+バンダナ
+旅人のバンダナ
+真紅のヘアバンド
+リボン
+鉄仮面
+嘆きの仮面
+月影のティアラ
+氷のサークレット
+クリスタルクラウン
+妖精王のリボン
+レザーヘルム
+ブロンズヘルム
+ホーンドヘルム
+アイアンヘルム
+蛮族の兜
+ミスリルヘルム
+騎士団の兜
+プラチナヘルム
+獣人の兜
+ドコ・ヘルメット
+ホーリーヘルム
+ドゥームヘルム
+レザーキャップ
+麦わら帽子
+羽根帽子
+白い帽子
+魔女の帽子
+編み笠
+学者の帽子
+導師の帽子
+シーブズキャップ
+道化師の帽子
+貴婦人の帽子
+デビルキャップ
+旅人の服
+チュニック
+戦士の服
+高級チュニック
+羊毛のケープ
+騎士団の服
+銀のケープ
+ココ・ランニング
+道化師の服
+忍装束
+妖精のケープ
+王家のガウン
+クロースアーマー
+レザージャケット
+バディットアーマー
+レザーアーマー
+スタデッドレザー
+クイルボイル
+ハードレザー
+ハイドアーマー
+歴戦の革鎧
+甲魔虫の軽鎧
+シーブズアーマー
+蛮族の鎧
+海竜の革鎧
+スケイルメイル
+チェインメイル
+ブレストプレート
+リングメイル
+スプリントメイル
+バンデッドメイル
+ブリガンダイン
+エルヴィンチェイン
+炎の胸当て
+ドラゴンスケイル
+忍びの帷子
+雷帝の鎧
+ブロンズアーマー
+プレートメイル
+ヘビーアーマー
+プレートアーマー
+ミスリルプレート
+スーツアーマー
+ソームズ鉄の鎧
+クリスタルアーマー
+ヴァルディーン
+鎧甲鬼・鳳凰丸
+サーコート
+オルテナの法衣
+クルセイダーコート
+一葉
+紅枝垂
+衣通姫
+白雪
+紅時雨
+情熱のドレス
+貴婦人のドレス
+女王のドレス
+麻のローブ
+魔道師のローブ
+純白のローブ
+漆黒のローブ
+金糸のローブ
+賢者のローブ
+マスターローブ
+バックラー
+ラウンドシールド
+マドゥ
+カイトシールド
+騎士の盾
+タワーシールド
+鬼面の盾
+水晶樹の盾
+ミラーシールド
+ホーリーシールド
+オルテナシールド
+力の護符
+護りの護符
+知恵の護符
+悟りの護符
+両道の護符
+鍛錬の護符
+修練の護符
+教示者の護符
+銅の指輪
+銀の指輪
+金の指輪
+ダイヤの指輪
+炎鬼の指輪
+氷王の指輪
+雷神の指輪
+魔封の指輪
+象牙の指輪
+薔薇のペンダント
+睡蓮のペンダント
+オーガの籠手
+忍びの籠手
+二の太刀の籠手
+ゴーレムの腕輪
+呪いの人形
+エルヴンブーツ
+北風のマント
+真知の眼鏡
+魔女のネックレス
+翡翠のイヤリング
+虚無のブローチ
+王者のベルト
+ロザリオ
+天使の羽根
+創造主のかけら
+創造主のかけら
+[/group]
