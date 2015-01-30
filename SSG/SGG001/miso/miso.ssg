@@ -1,0 +1,3471 @@
+SSG for SpoilerAL ver 3.2
+
+[script]
+[title]三國志　曹操伝
+[process]EKD5.EXE
+[maker]コーエー
+[creator]みそ
+[note]wordwrap
+どうも初めまして、みそです。
+えーっとこのような作業をしたのは今回が初めてですね。
+いつもは他の人が作ったものを使うのですが、あつさんにやってみないかといわれて「まあ、少しなら。」ということで始めました。
+しかしやってみると大変ですね。
+僕はあまり文字を打ったりしない方なので、ここまで仕上げるのにはかなり苦労しました。(約１週間)
+　今回、なぜ三國志曹操伝を選んだのかというと、曹操が好きだからです。（三國志６などをプレイするときは劉備を使うのですが・・・。）さらに言うなら曹操の部下の夏候惇が好きだからです。
+このままいくと三國志について延々と語りだしそうなので（約１０００行くらい）この辺でやめときます。
+　最後に一言、このデータを使ってくれる人にお礼を言いたいと思います。
+みなさんに納得していただけるように作ったつもりです。
+これからも時間があれば少しずつですがやっていきたいと思いますのでよろしくお願いします。
+ありがとうございました。
+※特殊な漢字の場合、環境によっては表示されないことがあるので、一部ふりがなをふってあります。
+[/note]
+[subject]レベル:dir
+	[subject]曹操:calc,0x49E934,0x0,0x32,signed,little_e
+	[subject]夏候惇:calc,0x49E97C,0x0,0x32,signed,little_e
+	[subject]張遼:calc,0x49E9C4,0x0,0x32,signed,little_e
+	[subject]曹彰:calc,0x49E9D4,0x0,0x32,signed,little_e
+	[subject]曹仁:calc,0x49EA9C,0x0,0x32,signed,little_e
+	[subject]夏候淵:calc,0x49EAE4,0x0,0x32,signed,little_e
+	[subject]曹丕:calc,0x49EB74,0x0,0x32,signed,little_e
+	[subject]張（ちょうこう）:calc,0x49EB2C,0x0,0x32,signed,little_e
+	[subject]徳（ほうとく）:calc,0x49EBBC,0x0,0x32,signed,little_e
+	[subject]楽進:calc,0x49EC04,0x0,0x32,signed,little_e
+	[subject]李典:calc,0x49EC4C,0x0,0x32,signed,little_e
+	[subject]曹洪:calc,0x49EC94,0x0,0x32,signed,little_e
+	[subject]徐晃:calc,0x49ECDC,0x0,0x32,signed,little_e
+	[subject]丁禁:calc,0x49ED24,0x0,0x32,signed,little_e
+	[subject]許（きょちょ）:calc,0x49ED6C,0x0,0x32,signed,little_e
+	[subject]典葦:calc,0x49EDB4,0x0,0x32,signed,little_e
+	[subject]貂蝉:calc,0x49EDFC,0x0,0x32,signed,little_e
+	[subject]劉嘩:calc,0x49EE44,0x0,0x32,signed,little_e
+	[subject]司馬懿:calc,0x49EE8C,0x0,0x32,signed,little_e
+	[subject]荀（かくか）:calc,0x49EED4,0x0,0x32,signed,little_e
+	[subject]程（ていいく）:calc,0x49EF1C,0x0,0x32,signed,little_e
+	[subject]郭嘉:calc,0x49EF64,0x0,0x32,signed,little_e
+	[subject]賈（かく）:calc,0x49EFAC,0x0,0x32,signed,little_e
+	[subject]荀攸:calc,0x49EFF4,0x0,0x32,signed,little_e
+	[subject]満寵:calc,0x49F03C,0x0,0x32,signed,little_e
+[back]
+[subject]現在HP:dir
+	[subject]一番目:calc,0x49CE90,0x1,0x01F4,signed,little_e
+	[subject]二番目:calc,0x49CEB4,0x1,0x01F4,signed,little_e
+	[subject]三番目:calc,0x49CED8,0x1,0x01F4,signed,little_e
+	[subject]四番目:calc,0x49CEFC,0x1,0x01F4,signed,little_e
+	[subject]五番目:calc,0x49CF20,0x1,0x01F4,signed,little_e
+	[subject]六番目:calc,0x49CF44,0x1,0x01F4,signed,little_e
+	[subject]七番目:calc,0x49CF68,0x1,0x01F4,signed,little_e
+	[subject]八番目:calc,0x49CF8C,0x1,0x01F4,signed,little_e
+	[subject]九番目:calc,0x49CFB0,0x1,0x01F4,signed,little_e
+	[subject]十番目:calc,0x49CFD4,0x1,0x01F4,signed,little_e
+	[subject]十一番目:calc,0x49DFF8,0x1,0x01F4,signed,little_e
+	[subject]十二番目:calc,0x49D01C,0x1,0x01F4,signed,little_e
+	[subject]十三番目:calc,0x49D040,0x1,0x01F4,signed,little_e
+	[subject]十四番目:calc,0x49D064,0x1,0x01F4,signed,little_e
+	[subject]十五番目:calc,0x49D088,0x1,0x01F4,signed,little_e
+[back]
+[subject]現在MP:dir
+	[subject]一番目:calc,0x49CE94,0x01,0xFA,signed,little_e
+	[subject]二番目:calc,0x49CEB8,0x01,0xFA,signed,little_e
+	[subject]三番目:calc,0x49CEDC,0x01,0xFA,signed,little_e
+	[subject]四番目:calc,0x49CF00,0x01,0xFA,signed,little_e
+	[subject]五番目:calc,0x49CF24,0x01,0xFA,signed,little_e
+	[subject]六番目:calc,0x49CF48,0x01,0xFA,signed,little_e
+	[subject]七番目:calc,0x49CF6C,0x01,0xFA,signed,little_e
+	[subject]八番目:calc,0x49CF90,0x01,0xFA,signed,little_e
+	[subject]九番目:calc,0x49CFB4,0x01,0xFA,signed,little_e
+	[subject]十番目:calc,0x49CFD8,0x01,0xFA,signed,little_e
+	[subject]十一番目:calc,0x49CFFC,0x01,0xFA,signed,little_e
+	[subject]十二番目:calc,0x49D020,0x01,0xFA,signed,little_e
+	[subject]十三番目:calc,0x49D044,0x01,0xFA,signed,little_e
+	[subject]十四番目:calc,0x49D068,0x01,0xFA,signed,little_e
+	[subject]十五番目:calc,0x49D08C,0x01,0xFA,signed,little_e
+[back]
+[subject]最大HP:dir
+	[subject]曹操HP:calc,0x49E924,0x1,0x01F4,signed,little_e
+	[subject]夏候惇HP:calc,0x49E96C,0x1,0x01F4,signed,little_e
+	[subject]張遼HP:calc,0x49E9B4,0x1,0x01F4,signed,little_e
+	[subject]曹彰HP:calc,0x49E9B4,0x1,0x01F4,signed,little_e
+	[subject]曹仁HP:calc,0x49EA8C,0x1,0x01F4,signed,little_e
+	[subject]夏候淵HP:calc,0x49EAD4,0x1,0x01F4,signed,little_e
+	[subject]曹丕HP:calc,0x49EB64,0x1,0x01F4,signed,little_e
+	[subject]張（ちょうこう）HP:calc,0x49EB1C,0x1,0x01F4,signed,little_e
+	[subject]徳（ほうとく）HP:calc,0x49EBAC,0x1,0x01F4,signed,little_e
+	[subject]楽進HP:calc,0x49EBF4,0x1,0x01F4,signed,little_e
+	[subject]李典HP:calc,0x49EC3C,0x1,0x01F4,signed,little_e
+	[subject]曹洪HP:calc,0x49EC84,0x1,0x01F4,signed,little_e
+	[subject]徐晃HP:calc,0x49ECCC,0x1,0x01F4,signed,little_e
+	[subject]丁禁HP:calc,0x49ED14,0x1,0x01F4,signed,little_e
+	[subject]許（きょちょ）HP:calc,0x49ED5C,0x1,0x01F4,signed,little_e
+	[subject]典葦HP:calc,0x49EDA4,0x1,0x01F4,signed,little_e
+	[subject]貂蝉HP:calc,0x49EDEC,0x1,0x01F4,signed,little_e
+	[subject]劉嘩HP:calc,0x49EE34,0x1,0x01F4,signed,little_e
+	[subject]司馬懿HP:calc,0x49EE7C,0x1,0x01F4,signed,little_e
+	[subject]荀（かくか）HP:calc,0x49EEC4,0x1,0x01F4,signed,little_e
+	[subject]程（ていいく）HP:calc,0x49EF0C,0x1,0x01F4,signed,little_e
+	[subject]郭嘉HP:calc,0x49EF54,0x1,0x01F4,signed,little_e
+	[subject]賈（かく）HP:calc,0x49EF9C,0x1,0x01F4,signed,little_e
+	[subject]荀攸HP:calc,0x49EFE4,0x1,0x01F4,signed,little_e
+	[subject]満寵HP:calc,0x49F02C,0x1,0x01F4,signed,little_e
+[back]
+[subject]最大MP:dir
+	[subject]曹操MP:calc,0x49E928,0x01,0xFA,signed,little_e
+	[subject]夏候惇MP:calc,0x49E970,0x01,0xFA,signed,little_e
+	[subject]張遼MP:calc,0x49E9B8,0x01,0xFA,signed,little_e
+	[subject]曹彰MP:calc,0x49EA48,0x01,0xFA,signed,little_e
+	[subject]曹仁MP:calc,0x49EA90,0x01,0xFA,signed,little_e
+	[subject]夏候淵MP:calc,0x49EAD8,0x01,0xFA,signed,little_e
+	[subject]曹丕MP:calc,0x49EB68,0x01,0xFA,signed,little_e
+	[subject]張（ちょうこう）MP:calc,0x49EB20,0x01,0xFA,signed,little_e
+	[subject]徳（ほうとく）MP:calc,0x49EBB0,0x01,0xFA,signed,little_e
+	[subject]楽進MP:calc,0x49EBF8,0x01,0xFA,signed,little_e
+	[subject]李典MP:calc,0x49EC40,0x01,0xFA,signed,little_e
+	[subject]曹洪MP:calc,0x49EC88,0x01,0xFA,signed,little_e
+	[subject]徐晃MP:calc,0x49ECD0,0x01,0xFA,signed,little_e
+	[subject]丁禁MP:calc,0x49ED18,0x01,0xFA,signed,little_e
+	[subject]許（きょちょ）MP:calc,0x49ED60,0x01,0xFA,signed,little_e
+	[subject]典葦MP:calc,0x49EDA8,0x01,0xFA,signed,little_e
+	[subject]貂蝉MP:calc,0x49EDF0,0x01,0xFA,signed,little_e
+	[subject]劉嘩MP:calc,0x49EE38,0x01,0xFA,signed,little_e
+	[subject]司馬懿MP:calc,0x49EE80,0x01,0xFA,signed,little_e
+	[subject]荀（かくか）MP:calc,0x49EEC8,0x01,0xFA,signed,little_e
+	[subject]程（ていいく）MP:calc,0x49EF10,0x01,0xFA,signed,little_e
+	[subject]郭嘉MP:calc,0x49EF58,0x01,0xFA,signed,little_e
+	[subject]賈（かく）MP:calc,0x49EFA0,0x01,0xFA,signed,little_e
+	[subject]荀攸MP:calc,0x49EFE8,0x01,0xFA,signed,little_e
+	[subject]満寵MP:calc,0x49F030,0x01,0xFA,signed,little_e
+[back]
+[subject]装備:dir
+	[subject]武器:dir
+		[subject]種類:dir
+			[subject]曹操:list,0x49E936,曹操伝種類,0x0,0x1
+			[subject]夏候惇:list,0x49E97E,曹操伝種類,0x0,0x1
+			[subject]張遼:list,0x49E9C6,曹操伝種類,0x0,0x1
+			[subject]曹彰:list,0x49EA56,曹操伝種類,0x0,0x1
+			[subject]曹仁:list,0x49EA9E,曹操伝種類,0x0,0x1
+			[subject]夏候淵:list,0x49EAE6,曹操伝種類,0x0,0x1
+			[subject]張（ちょうこう）:list,0x49EB2E,曹操伝種類,0x0,0x1
+			[subject]曹丕:list,0x49EB76,曹操伝種類,0x0,0x1
+			[subject]徳（ほうとく）:list,0x49EBBE,曹操伝種類,0x0,0x1
+			[subject]楽進:list,0x49EC06,曹操伝種類,0x0,0x1
+			[subject]李典:list,0x49EC4E,曹操伝種類,0x0,0x1
+			[subject]曹洪:list,0x49EC96,曹操伝種類,0x0,0x1
+			[subject]徐晃:list,0x49ECDE,曹操伝種類,0x0,0x1
+			[subject]丁禁:list,0x49ED26,曹操伝種類,0x0,0x1
+			[subject]許（きょちょ）:list,0x49ED6E,曹操伝種類,0x0,0x1
+			[subject]典葦:list,0x49EDB6,曹操伝種類,0x0,0x1
+			[subject]貂蝉:list,0x49EDFE,曹操伝種類,0x0,0x1
+			[subject]劉嘩:list,0x49EE46,曹操伝種類,0x0,0x1
+			[subject]司馬懿:list,0x49EE8E,曹操伝種類,0x0,0x1
+			[subject]荀（かくか）:list,0x49EED6,曹操伝種類,0x0,0x1
+			[subject]程（ていいく）:list,0x49EF1E,曹操伝種類,0x0,0x1
+			[subject]郭嘉:list,0x49EF66,曹操伝種類,0x0,0x1
+			[subject]賈（かく）:list,0x49EFAE,曹操伝種類,0x0,0x1
+			[subject]荀攸:list,0x49EFF6,曹操伝種類,0x0,0x1
+			[subject]満寵:list,0x49F03E,曹操伝種類,0x0,0x1
+		[back]
+		[subject]レベル:dir
+			[subject]曹操:calc,0x49E937,0x0,0xFF,signed,little_e
+			[subject]夏候惇:calc,0x49E97F,0x0,0xFF,signed,little_e
+			[subject]張遼:calc,0x49E9C7,0x0,0xFF,signed,little_e
+			[subject]曹彰:calc,0x49EA57,0x0,0xFF,signed,little_e
+			[subject]曹仁:calc,0x49EA9F,0x0,0xFF,signed,little_e
+			[subject]夏候淵:calc,0x49EAE7,0x0,0xFF,signed,little_e
+			[subject]張（ちょうこう）:calc,0x49EB2F,0x0,0xFF,signed,little_e
+			[subject]曹丕:calc,0x49EB77,0x0,0xFF,signed,little_e
+			[subject]徳（ほうとく）:calc,0x49EBBF,0x0,0xFF,signed,little_e
+			[subject]楽進:calc,0x49EC07,0x0,0xFF,signed,little_e
+			[subject]李典:calc,0x49EC4F,0x0,0xFF,signed,little_e
+			[subject]曹洪:calc,0x49EC97,0x0,0xFF,signed,little_e
+			[subject]徐晃:calc,0x49ECDF,0x0,0xFF,signed,little_e
+			[subject]丁禁:calc,0x49ED27,0x0,0xFF,signed,little_e
+			[subject]許（きょちょ）:calc,0x49ED6F,0x0,0xFF,signed,little_e
+			[subject]典葦:calc,0x49EDB7,0x0,0xFF,signed,little_e
+			[subject]貂蝉:calc,0x49EDFF,0x0,0xFF,signed,little_e
+			[subject]劉嘩:calc,0x49EE47,0x0,0xFF,signed,little_e
+			[subject]司馬懿:calc,0x49EE8F,0x0,0xFF,signed,little_e
+			[subject]荀（かくか）:calc,0x49EED7,0x0,0xFF,signed,little_e
+			[subject]程（ていいく）:calc,0x49EF1F,0x0,0xFF,signed,little_e
+			[subject]郭嘉:calc,0x49EF67,0x0,0xFF,signed,little_e
+			[subject]賈（かく）:calc,0x49EFAF,0x0,0xFF,signed,little_e
+			[subject]荀攸:calc,0x49EFF7,0x0,0xFF,signed,little_e
+			[subject]満寵:calc,0x49F03F,0x0,0xFF,signed,little_e
+		[back]
+	[back]
+	[subject]防具:dir
+		[subject]種類:dir
+			[subject]曹操:list,0x49E939,曹操伝種類,0x0,0x1
+			[subject]夏候惇:list,0x49E981,曹操伝種類,0x0,0x1
+			[subject]張遼:list,0x49E9C9,曹操伝種類,0x0,0x1
+			[subject]曹彰:list,0x49EA59,曹操伝種類,0x0,0x1
+			[subject]曹仁:list,0x49EAA1,曹操伝種類,0x0,0x1
+			[subject]夏候淵:list,0x49EAE9,曹操伝種類,0x0,0x1
+			[subject]張（ちょうこう）:list,0x49EB31,曹操伝種類,0x0,0x1
+			[subject]曹丕:list,0x49EB79,曹操伝種類,0x0,0x1
+			[subject]徳（ほうとく）:list,0x49EBC1,曹操伝種類,0x0,0x1
+			[subject]楽進:list,0x49EC09,曹操伝種類,0x0,0x1
+			[subject]李典:list,0x49EC51,曹操伝種類,0x0,0x1
+			[subject]曹洪:list,0x49EC99,曹操伝種類,0x0,0x1
+			[subject]徐晃:list,0x49ECE1,曹操伝種類,0x0,0x1
+			[subject]丁禁:list,0x49ED29,曹操伝種類,0x0,0x1
+			[subject]許（きょちょ）:list,0x49ED71,曹操伝種類,0x0,0x1
+			[subject]典葦:list,0x49EDB9,曹操伝種類,0x0,0x1
+			[subject]貂蝉:list,0x49EE01,曹操伝種類,0x0,0x1
+			[subject]劉嘩:list,0x49EE49,曹操伝種類,0x0,0x1
+			[subject]司馬懿:list,0x49EE91,曹操伝種類,0x0,0x1
+			[subject]荀（かくか）:list,0x49EED9,曹操伝種類,0x0,0x1
+			[subject]程（ていいく）:list,0x49EF21,曹操伝種類,0x0,0x1
+			[subject]郭嘉:list,0x49EF69,曹操伝種類,0x0,0x1
+			[subject]賈（かく）:list,0x49EFB1,曹操伝種類,0x0,0x1
+			[subject]荀攸:list,0x49EFF9,曹操伝種類,0x0,0x1
+			[subject]満寵:list,0x49F041,曹操伝種類,0x0,0x1
+	        [back]
+		[subject]レベル:dir
+			[subject]曹操:calc,0x49E93A,0x0,0xFF,signed,little_e
+			[subject]夏候惇:calc,0x49E982,0x0,0xFF,signed,little_e
+			[subject]張遼:calc,0x49E9CA,0x0,0xFF,signed,little_e
+			[subject]曹彰:calc,0x49EA5A,0x0,0xFF,signed,little_e
+			[subject]曹仁:calc,0x49EAA2,0x0,0xFF,signed,little_e
+			[subject]夏候淵:calc,0x49EAEA,0x0,0xFF,signed,little_e
+			[subject]張（ちょうこう）:calc,0x49EB32,0x0,0xFF,signed,little_e
+			[subject]曹丕:calc,0x49EB7A,0x0,0xFF,signed,little_e
+			[subject]徳（ほうとく）:calc,0x49EBC2,0x0,0xFF,signed,little_e
+			[subject]楽進:calc,0x49EC0A,0x0,0xFF,signed,little_e
+			[subject]李典:calc,0x49EC52,0x0,0xFF,signed,little_e
+			[subject]曹洪:calc,0x49EC9A,0x0,0xFF,signed,little_e
+			[subject]徐晃:calc,0x49ECE2,0x0,0xFF,signed,little_e
+			[subject]丁禁:calc,0x49ED2A,0x0,0xFF,signed,little_e
+			[subject]許（きょちょ）:calc,0x49ED72,0x0,0xFF,signed,little_e
+			[subject]典葦:calc,0x49EDBA,0x0,0xFF,signed,little_e
+			[subject]貂蝉:calc,0x49EE02,0x0,0xFF,signed,little_e
+			[subject]劉嘩:calc,0x49EE4A,0x0,0xFF,signed,little_e
+			[subject]司馬懿:calc,0x49EE92,0x0,0xFF,signed,little_e
+			[subject]荀（かくか）:calc,0x49EEDA,0x0,0xFF,signed,little_e
+			[subject]程（ていいく）:calc,0x49EF22,0x0,0xFF,signed,little_e
+			[subject]郭嘉:calc,0x49EF6A,0x0,0xFF,signed,little_e
+			[subject]賈（かく）:calc,0x49EFB2,0x0,0xFF,signed,little_e
+			[subject]荀攸:calc,0x49EFFA,0x0,0xFF,signed,little_e
+			[subject]満寵:calc,0x49F042,0x0,0xFF,signed,little_e
+		[back]
+	[back]
+	[subject]補助装備:dir
+		[subject]曹操:list,0x49E93C,曹操伝種類,0x0,0x1
+		[subject]夏候惇:list,0x49E984,曹操伝種類,0x0,0x1
+		[subject]張遼:list,0x49E9CC,曹操伝種類,0x0,0x1
+		[subject]曹彰:list,0x49EA5C,曹操伝種類,0x0,0x1
+		[subject]曹仁:list,0x49EAA4,曹操伝種類,0x0,0x1
+		[subject]夏候淵:list,0x49EAEC,曹操伝種類,0x0,0x1
+		[subject]張（ちょうこう）:list,0x49EB34,曹操伝種類,0x0,0x1
+		[subject]曹丕:list,0x49EB7C,曹操伝種類,0x0,0x1
+		[subject]徳（ほうとく）:list,0x49EBC4,曹操伝種類,0x0,0x1
+		[subject]楽進:list,0x49EC0C,曹操伝種類,0x0,0x1
+		[subject]李典:list,0x49EC54,曹操伝種類,0x0,0x1
+		[subject]曹洪:list,0x49EC9C,曹操伝種類,0x0,0x1
+		[subject]徐晃:list,0x49ECE4,曹操伝種類,0x0,0x1
+		[subject]丁禁:list,0x49ED2C,曹操伝種類,0x0,0x1
+		[subject]許（きょちょ）:list,0x49ED74,曹操伝種類,0x0,0x1
+		[subject]典葦:list,0x49EDBC,曹操伝種類,0x0,0x1
+		[subject]貂蝉:list,0x49EE04,曹操伝種類,0x0,0x1
+		[subject]劉嘩:list,0x49EE4C,曹操伝種類,0x0,0x1
+		[subject]司馬懿:list,0x49EE94,曹操伝種類,0x0,0x1
+		[subject]荀（かくか）:list,0x49EEDC,曹操伝種類,0x0,0x1
+		[subject]程（ていいく）:list,0x49EF24,曹操伝種類,0x0,0x1
+		[subject]郭嘉:list,0x49EF6C,曹操伝種類,0x0,0x1
+		[subject]賈（かく）:list,0x49EFB4,曹操伝種類,0x0,0x1
+		[subject]荀攸:list,0x49EFFC,曹操伝種類,0x0,0x1
+		[subject]満寵:list,0x49F044,曹操伝種類,0x0,0x1
+        [back]
+[back]
+[subject]アイテム:dir
+	[subject]効用:dir
+		[subject]回復の豆:list,0x49E770,曹操伝効用,0x12,0x1
+		[subject]回復の米:list,0x49E789,曹操伝効用,0x12,0x1
+		[subject]回復の桃:list,0x49E7A2,曹操伝効用,0x12,0x1
+		[subject]神秘の水:list,0x49EA5C,曹操伝効用,0x12,0x1
+		[subject]神秘の酒:list,0x49E7D4,曹操伝効用,0x12,0x1
+		[subject]解毒の薬:list,0x49E7ED,曹操伝効用,0x12,0x1
+		[subject]帰付け薬:list,0x49E806,曹操伝効用,0x12,0x1
+		[subject]塗り薬:list,0x49E81F,曹操伝効用,0x12,0x1
+		[subject]うがい薬:list,0x49E838,曹操伝効用,0x12,0x1
+		[subject]万能薬:list,0x49E851,曹操伝効用,0x12,0x1
+		[subject]印綬:list,0x49E86A,曹操伝効用,0x12,0x1
+	[back]
+	[subject]値段（Ｘ１００）:dir
+		[subject]回復の豆:calc,0x49E771,0x00,0xFF,signed,little_e
+		[subject]回復の米:calc,0x49E78A,0x00,0xFF,signed,little_e
+		[subject]回復の桃:calc,0x49E7A3,0x00,0xFF,signed,little_e
+		[subject]神秘の水:calc,0x49E7BC,0x00,0xFF,signed,little_e
+		[subject]神秘の酒:calc,0x49E7D5,0x00,0xFF,signed,little_e
+		[subject]解毒の薬:calc,0x49E7EE,0x00,0xFF,signed,little_e
+		[subject]帰付け薬:calc,0x49E807,0x00,0xFF,signed,little_e
+		[subject]塗り薬:calc,0x49E820,0x00,0xFF,signed,little_e
+		[subject]うがい薬:calc,0x49E839,0x00,0xFF,signed,little_e
+		[subject]万能薬:calc,0x49E852,0x00,0xFF,signed,little_e
+		[subject]印綬:calc,0x49E86B,0x00,0xFF,signed,little_e
+	[back]
+	[subject]アイコン:dir
+		[subject]回復の豆:list,0x49E772,曹操伝種類,0x0,0x1
+		[subject]回復の米:list,0x49E78B,曹操伝種類,0x0,0x1
+		[subject]回復の桃:list,0x49E7A3,曹操伝種類,0x0,0x1
+		[subject]神秘の水:list,0x49E7BD,曹操伝種類,0x0,0x1
+		[subject]神秘の酒:list,0x49E7D6,曹操伝種類,0x0,0x1
+		[subject]解毒の薬:list,0x49E7EF,曹操伝種類,0x0,0x1
+		[subject]気付け薬:list,0x49E808,曹操伝種類,0x0,0x1
+		[subject]塗り薬:list,0x48E821,曹操伝種類,0x0,0x1
+		[subject]うがい薬:list,0x49E93A,曹操伝種類,0x0,0x1
+		[subject]万能薬:list,0x49E853,曹操伝種類,0x0,0x1
+		[subject]印綬:list,0x49E86C,曹操伝種類,0x0,0x1
+	[back]
+	[subject]効果:dir
+		[subject]回復の豆:calc,0x49E774,0x00,0xFF,signed,little_e
+		[subject]回復の米:calc,0x49E78D,0x00,0xFF,signed,little_e
+		[subject]回復の桃:calc,0x49E7A6,0x00,0xFF,signed,little_e
+		[subject]神秘の水:calc,0x49E7BF,0x00,0xFF,signed,little_e
+		[subject]神秘の酒:calc,0x49E7D8,0x00,0xFF,signed,little_e
+[root]
+[subject]所持金:calc,0x4B048C,0x00,0x0F423F,signed,little_e
+[/script]
+
+[script]
+[title]三國志Ⅵ
+[process]SAN6.EXE
+[maker]光栄
+[creator]みそ
+[note]
+内政(軍事)が変更できます。
+
+内政(軍事)兵士数のMaxが0xB80B（47115)という
+不自然な値になっているのは、
+光栄さんが、上位バイトと下位バイトを
+SpoilerALとは逆に書き込んでいるために
+起こる現象です。
+まぁ深いことは気にせず
+B80Bで決定しちゃいましょう。
+[/note]
+[subject]内政(軍事):dir
+	[subject]大都市:dir
+	[subject]洛陽:dir
+		[subject]開発:calc,0x7328C8,0x0,0xA0,signed
+		[subject]商業:calc,0x7328D0,0x0,0xC8,signed
+		[replace]0x7328C0,三國志Ⅵ,offset
+	[subject]長安:dir
+		[subject]開発:calc,0x732958,0x0,0xB4,signed
+		[subject]商業:calc,0x732960,0x0,0xB4,signed
+		[replace]0x732950,三國志Ⅵ,offset
+	[subject]許昌:dir
+		[subject]開発:calc,0x732688,0x0,0xC8,signed
+		[subject]商業:calc,0x732690,0x0,0xA0,signed
+		[replace]0x732680,三國志Ⅵ,offset
+	[subject]ぎょう:dir
+		[subject]開発:calc,0x732208,0x0,0xB4,signed
+		[subject]商業:calc,0x732210,0x0,0xA0,signed
+		[replace]0x732200,三國志Ⅵ,offset
+	[subject]建業:dir
+		[subject]開発:calc,0x733498,0x0,0xC8,signed
+		[subject]商業:calc,0x7334A0,0x0,0xA0,signed
+		[replace]0x733490,三國志Ⅵ,offset
+	[subject]襄陽:dir
+		[subject]開発:calc,0x7330A8,0x0,0xA0,signed
+		[subject]商業:calc,0x7330B0,0x0,0xA0,signed
+		[replace]0x7330A0,三國志Ⅵ,offset
+	[subject]成都:dir
+		[subject]開発:calc,0x732D48,0x0,0xB4,signed
+		[subject]商業:calc,0x732D50,0x0,0xA0,signed
+		[replace]0x732D40,三國志Ⅵ,offset
+[back]
+[subject]中都市:dir
+	[subject]薊:dir
+		[subject]開発:calc,0x7320E8,0x0,0x8C,signed
+		[subject]商業:calc,0x7320F0,0x0,0x8C,signed
+		[replace]0x7320E0,三國志Ⅵ,offset
+	[subject]南皮:dir
+		[subject]開発:calc,0x732178,0x0,0x8C,signed
+		[subject]商業:calc,0x732180,0x0,0xA0,signed
+		[replace]0x732170,三國志Ⅵ,offset
+	[subject]北海:dir
+		[subject]開発:calc,0x732328,0x0,0x78,signed
+		[subject]商業:calc,0x732330,0x0,0xA0,signed
+		[replace]0x732320,三國志Ⅵ,offset
+	[subject]濮陽:dir
+		[subject]開発:calc,0x732568,0x0,0xA0,signed
+		[subject]商業:calc,0x732570,0x0,0x78,signed
+		[replace]0x732560,三國志Ⅵ,offset
+	[subject]下ひ:dir
+		[subject]開発:calc,0x732248,0x0,0x78,signed
+		[subject]商業:calc,0x732250,0x0,0xA0,signed
+		[replace]0x732240,三國志Ⅵ,offset
+	[subject]寿春:dir
+		[subject]開発:calc,0x733468,0x0,0x78,signed
+		[subject]商業:calc,0x733470,0x0,0xA0,signed
+		[replace]0x733460,三國志Ⅵ,offset
+	[subject]呉:dir
+		[subject]開発:calc,0x733528,0x0,0x8C,signed
+		[subject]商業:calc,0x733530,0x0,0x64,signed
+		[replace]0x733520,三國志Ⅵ,offset
+	[subject]汝南:dir
+		[subject]開発:calc,0x7327A8,0x0,0x8C,signed
+		[subject]商業:calc,0x7327B0,0x0,0x8C,signed
+		[replace]0x7327A0,三國志Ⅵ,offset
+	[subject]宛:dir
+		[subject]開発:calc,0x732F88,0x0,0x8C,signed
+		[subject]商業:calc,0x732F90,0x0,0xA0,signed
+		[replace]0x732F80,三國志Ⅵ,offset
+	[subject]江陵:dir
+		[subject]開発:calc,0x733138,0x0,0xA0,signed
+		[subject]商業:calc,0x733140,0x0,0x78,signed
+		[replace]0x733130,三國志Ⅵ,offset
+[back]
+[subject]小都市:dir
+	[subject]襄平:dir
+		[subject]開発:calc,0x731FC8,0x0,0x78,signed
+		[subject]商業:calc,0x731FD0,0x0,0x50,signed
+		[replace]0x731FC0,三國志Ⅵ,offset
+	[subject]北平:dir
+		[subject]開発:calc,0x732058,0x0,0x8C,signed
+		[subject]商業:calc,0x732060,0x0,0x64,signed
+		[replace]0x732050,三國志Ⅵ,offset
+	[subject]晋陽:dir
+		[subject]開発:calc,0x7323B8,0x0,0x64,signed
+		[subject]商業:calc,0x7323C0,0x0,0x78,signed
+		[replace]0x7323B0,三國志Ⅵ,offset
+	[subject]河内:dir
+		[subject]開発:calc,0x732838,0x0,0x8C,signed
+		[subject]商業:calc,0x732840,0x0,0x78,signed
+		[replace]0x732830,三國志Ⅵ,offset
+	[subject]陳留:dir
+		[subject]開発:calc,0x7325F8,0x0,0xA0,signed
+		[subject]商業:calc,0x732600,0x0,0x78,signed
+		[replace]0x7325F0,三國志Ⅵ,offset
+	[subject]しょう:dir
+		[subject]開発:calc,0x732718,0x0,0x78,signed
+		[subject]商業:calc,0x732720,0x0,0x8C,signed
+		[replace]0x732710,三國志Ⅵ,offset
+	[subject]小沛:dir
+		[subject]開発:calc,0x7324D8,0x0,0xA0,signed
+		[subject]商業:calc,0x7324E0,0x0,0x78,signed
+		[replace]0x7324D0,三國志Ⅵ,offset
+	[subject]安定:dir
+		[subject]開発:calc,0x732A78,0x0,0x78,signed
+		[subject]商業:calc,0x732A80,0x0,0x64,signed
+		[replace]0x732A70,三國志Ⅵ,offset
+	[subject]西涼:dir
+		[subject]開発:calc,0x732B08,0x0,0x64,signed
+		[subject]商業:calc,0x732B10,0x0,0x64,signed
+		[replace]0x732B00,三國志Ⅵ,offset
+	[subject]天水:dir
+		[subject]開発:calc,0x7329E8,0x0,0x64,signed
+		[subject]商業:calc,0x7329F0,0x0,0x64,signed
+		[replace]0x7329E0,三國志Ⅵ,offset
+	[subject]新野:dir
+		[subject]開発:calc,0x733018,0x0,0x50,signed
+		[subject]商業:calc,0x733020,0x0,0x50,signed
+		[replace]0x733010,三國志Ⅵ,offset
+	[subject]漢中:dir
+		[subject]開発:calc,0x732C28,0x0,0x78,signed
+		[subject]商業:calc,0x732C30,0x0,0x64,signed
+		[replace]0x732C20,三國志Ⅵ,offset
+	[subject]会稽:dir
+		[subject]開発:calc,0x7335B8,0x0,0xA0,signed
+		[subject]商業:calc,0x7335C0,0x0,0x64,signed
+		[replace]0x7335B0,三國志Ⅵ,offset
+	[subject]廬江:dir
+		[subject]開発:calc,0x7336D8,0x0,0x78,signed
+		[subject]商業:calc,0x7336E0,0x0,0x78,signed
+		[replace]0x7336D0,三國志Ⅵ,offset
+	[subject]柴桑:dir
+		[subject]開発:calc,0x733768,0x0,0x78,signed
+		[subject]商業:calc,0x733770,0x0,0x78,signed
+		[replace]0x733760,三國志Ⅵ,offset
+	[subject]江夏:dir
+		[subject]開発:calc,0x733408,0x0,0x78,signed
+		[subject]商業:calc,0x733410,0x0,0x78,signed
+		[replace]0x733400,三國志Ⅵ,offset
+	[subject]梓潼:dir
+		[subject]開発:calc,0x732CB8,0x0,0x78,signed
+		[subject]商業:calc,0x732CC0,0x0,0x64,signed
+		[replace]0x732CB0,三國志Ⅵ,offset
+	[subject]永安:dir
+		[subject]開発:calc,0x732E68,0x0,0x64,signed
+		[subject]商業:calc,0x732E70,0x0,0x64,signed
+		[replace]0x732E60,三國志Ⅵ,offset
+	[subject]江州:dir
+		[subject]開発:calc,0x732DD8,0x0,0x8C,signed
+		[subject]商業:calc,0x732DE0,0x0,0x64,signed
+		[replace]0x732DD0,三國志Ⅵ,offset
+	[subject]武陵:dir
+		[subject]開発:calc,0x7332E8,0x0,0x3C,signed
+		[subject]商業:calc,0x7332F0,0x0,0x28,signed
+		[replace]0x7332E0,三國志Ⅵ,offset
+	[subject]長沙:dir
+		[subject]開発:calc,0x7331C8,0x0,0x8C,signed
+		[subject]商業:calc,0x7331D0,0x0,0x64,signed
+		[replace]0x7331C0,三國志Ⅵ,offset
+	[subject]零陵:dir
+		[subject]開発:calc,0x733258,0x0,0x3C,signed
+		[subject]商業:calc,0x733260,0x0,0x28,signed
+		[replace]0x733250,三國志Ⅵ,offset
+	[subject]桂陽:dir
+		[subject]開発:calc,0x733378,0x0,0x3C,signed
+		[subject]商業:calc,0x733380,0x0,0x3C,signed
+		[replace]0x733370,三國志Ⅵ,offset
+	[subject]建寧:dir
+		[subject]開発:calc,0x732EF8,0x0,0x78,signed
+		[subject]商業:calc,0x732F00,0x0,0x64,signed
+		[replace]0x732EF0,三國志Ⅵ,offset
+	[subject]南海:dir
+		[subject]開発:calc,0x7337F8,0x0,0x3C,signed
+		[subject]商業:calc,0x733800,0x0,0x50,signed
+		[replace]0x7337F0,三國志Ⅵ,offset
+	[subject]交趾:dir
+		[subject]開発:calc,0x733888,0x0,0x3C,signed
+		[subject]商業:calc,0x733890,0x0,0x3C,signed
+		[replace]0x733880,三國志Ⅵ,offset
+[root]
+[subject]２０７年シナリオ開始時に存在する武将:dir
+[subject]武将能力値:dir
+[subject]あ行:dir
+	[subject]伊籍:dir
+		[replace]0x6F5EDC,三國志Ⅵ武将,offset
+	[subject]伊黙:dir
+		[replace]0x6F6230,三國志Ⅵ武将,offset
+	[subject]閻圃:dir
+		[replace]0x6F6E64,三國志Ⅵ武将,offset
+	[subject]王威:dir
+		[replace]0x6F6F80,三國志Ⅵ武将,offset
+	[subject]王伉:dir
+		[replace]0x6F7628,三國志Ⅵ武将,offset
+	[subject]王サン:dir
+		[replace]0x6F7860,三國志Ⅵ武将,offset
+	[subject]王平:dir
+		[replace]0x6F7F08,三國志Ⅵ武将,offset
+	[subject]王甫:dir
+		[replace]0x6F8024,三國志Ⅵ武将,offset
+	[subject]王累:dir
+		[replace]0x6F8140,三國志Ⅵ武将,offset
+	[subject]王朗:dir
+		[replace]0x6F825C,三國志Ⅵ武将,offset
+[back]
+[subject]か行:dir
+	[subject]カイ越:dir
+		[replace]0x6F8378,三國志Ⅵ武将,offset
+	[subject]カイ良:dir
+		[replace]0x6F8494,三國志Ⅵ武将,offset
+	[subject]賈キ:dir
+		[replace]0x6F86CC,三國志Ⅵ武将,offset
+	[subject]賈:dir
+		[replace]0x6F8A20,三國志Ⅵ武将,offset
+	[subject]郭嘉:dir
+		[replace]0x6F8C58,三國志Ⅵ武将,offset
+	[subject]霍峻:dir
+		[replace]0x6F8E90,三國志Ⅵ武将,offset
+	[subject]カク昭:dir
+		[replace]0x6F8FAC,三國志Ⅵ武将,offset
+		[subject]郭攸之:dir
+		[replace]0x6F91E4,三國志Ⅵ武将,offset
+	[subject]華キン:dir
+		[replace]0x6F87E8,三國志Ⅵ武将,offset
+	[subject]夏候惇:dir
+		[replace]0x6F9E18,三國志Ⅵ武将,offset
+	[subject]夏候淵:dir
+		[replace]0x6F9654,三國志Ⅵ武将,offset
+	[subject]夏候楙:dir
+		[replace]0x6FA050,三國志Ⅵ武将,offset
+	[subject]夏候徳:dir
+		[replace]0x6F9CFC,三國志Ⅵ武将,offset
+	[subject]夏候尚:dir
+		[replace]0x6F9BE0,三國志Ⅵ武将,offset
+	[subject]夏候恩:dir
+		[replace]0x6F9770,三國志Ⅵ武将,offset
+	[subject]関羽:dir
+		[replace]0x6FA814,三國志Ⅵ武将,offset
+	[subject]韓玄:dir
+		[replace]0x6FAB68,三國志Ⅵ武将,offset
+	[subject]韓浩:dir
+		[replace]0x6FAC84,三國志Ⅵ武将,offset
+	[subject]韓遂:dir
+		[replace]0x6FAFD8,三國志Ⅵ武将,offset
+	[subject]韓崇:dir
+		[replace]0x6FB0F4,三國志Ⅵ武将,offset
+	[subject]カン沢:dir
+		[replace]0x6FB32C,三國志Ⅵ武将,offset
+	[subject]韓当:dir
+		[replace]0x6FB564,三國志Ⅵ武将,offset
+	[subject]甘寧:dir
+		[replace]0x6FB680,三國志Ⅵ武将,offset
+	[subject]関平:dir
+		[replace]0x6FB9D4,三國志Ⅵ武将,offset
+	[subject]簡雍:dir
+		[replace]0x6FBAF0,三國志Ⅵ武将,offset
+	[subject]楽進:dir
+		[replace]0x6FBE44,三國志Ⅵ武将,offset
+	[subject]賀斉:dir
+		[replace]0x717A04,三國志Ⅵ武将,offset
+	[subject]鞏志:dir
+		[replace]0x6FC4DC,三國志Ⅵ武将,offset
+	[subject]許:dir
+		[replace]0x6FCB94,三國志Ⅵ武将,offset
+	[subject]許靖:dir
+		[replace]0x6FCA78,三國志Ⅵ武将,offset
+	[subject]金旋:dir
+		[replace]0x6FD004,三國志Ⅵ武将,offset
+	[subject]牛金:dir
+		[replace]0x6FD120,三國志Ⅵ武将,offset
+	[subject]魏延:dir
+		[replace]0x6FD23C,三國志Ⅵ武将,offset
+	[subject]虞翻:dir
+		[replace]0x6FD474,三國志Ⅵ武将,offset
+	[subject]ケイ道栄:dir
+		[replace]0x6FD590,三國志Ⅵ武将,offset
+	[subject]厳顔:dir
+		[replace]0x6FD7C8,三國志Ⅵ武将,offset
+	[subject]厳畯:dir
+		[replace]0x6FDA00,三國志Ⅵ武将,offset
+	[subject]黄蓋:dir
+		[replace]0x6FDD54,三國志Ⅵ武将,offset
+	[subject]黄権:dir
+		[replace]0x6FDF8C,三國志Ⅵ武将,offset
+	[subject]候成:dir
+		[replace]0x6FE518,三國志Ⅵ武将,offset
+	[subject]黄祖:dir
+		[replace]0x6FE638,三國志Ⅵ武将,offset
+	[subject]公孫康:dir
+		[replace]0x6FEAA4,三國志Ⅵ武将,offset
+	[subject]公孫恭:dir
+		[replace]0x6FE988,三國志Ⅵ武将,offset
+	[subject]黄忠:dir
+		[replace]0x6FEDF8,三國志Ⅵ武将,offset
+	[subject]高定:dir
+		[replace]0x6FF030,三國志Ⅵ武将,offset
+	[subject]高沛:dir
+		[replace]0x6FF14C,三國志Ⅵ武将,offset
+	[subject]孔融:dir
+		[replace]0x6FF384,三國志Ⅵ武将,offset
+	[subject]顧雍:dir
+		[replace]0x6FFA2C,三國志Ⅵ武将,offset
+	[subject]呉懿:dir
+		[replace]0x6FFB48,三國志Ⅵ武将,offset
+	[subject]呉蘭:dir
+		[replace]0x7001F0,三國志Ⅵ武将,offset
+[back]
+[subject]さ行:dir
+	[subject]崔エン:dir
+		[replace]0x70030C,三國志Ⅵ武将,offset
+	[subject]蔡和:dir
+		[replace]0x700428,三國志Ⅵ武将,offset
+	[subject]蔡勲:dir
+		[replace]0x700544,三國志Ⅵ武将,offset
+	[subject]蔡中:dir
+		[replace]0x700660,三國志Ⅵ武将,offset
+	[subject]蔡琩:dir
+		[replace]0x70077C,三國志Ⅵ武将,offset
+	[subject]周泰:dir
+		[replace]0x701294,三國志Ⅵ武将,offset
+	[subject]朱桓:dir
+		[replace]0x701704,三國志Ⅵ武将,offset
+	[subject]周瑜:dir
+		[replace]0x7015E8,三國志Ⅵ武将,offset
+	[subject]周倉:dir
+		[replace]0x701178,三國志Ⅵ武将,offset
+	[subject]朱然:dir
+		[replace]0x701A58,三國志Ⅵ武将,offset
+	[subject]朱治:dir
+		[replace]0x701B74,三國志Ⅵ武将,offset
+	[subject]朱霊:dir
+		[replace]0x701C90,三國志Ⅵ武将,offset
+	[subject]蒋幹:dir
+		[replace]0x701FE4,三國志Ⅵ武将,offset
+	[subject]鍾ヨウ:dir
+		[replace]0x7027A8,三國志Ⅵ武将,offset
+	[subject]蒋欽:dir
+		[replace]0x70221C,三國志Ⅵ武将,offset
+	[subject]諸葛瑾:dir
+		[replace]0x702AFC,三國志Ⅵ武将,offset
+	[subject]士燮:dir
+		[replace]0x7182E4,三國志Ⅵ武将,offset
+	[subject]士壱:dir
+		[replace]0x718400,三國志Ⅵ武将,offset
+	[subject]司馬朗:dir
+		[replace]0x703A84,三國志Ⅵ武将,offset
+	[subject]辛ピ:dir
+		[replace]0x70412C,三國志Ⅵ武将,offset
+	[subject]秦フク:dir
+		[replace]0x704364,三國志Ⅵ武将,offset
+	[subject]荀:dir
+		[replace]0x704480,三國志Ⅵ武将,offset
+	[subject]荀攸:dir
+		[replace]0x7046B8,三國志Ⅵ武将,offset
+	[subject]徐晃:dir
+		[replace]0x7048F0,三國志Ⅵ武将,offset
+	[subject]徐盛:dir
+		[replace]0x704C44,三國志Ⅵ武将,offset
+	[subject]徐バク:dir
+		[replace]0x717F90,三國志Ⅵ武将,offset
+	[subject]成宣:dir
+		[replace]0x704D60,三國志Ⅵ武将,offset
+	[subject]薛綜:dir
+		[replace]0x7050B4,三國志Ⅵ武将,offset
+	[subject]曹操:dir
+		[replace]0x7065C8,三國志Ⅵ武将,offset
+	[subject]曹丕:dir
+		[replace]0x706800,三國志Ⅵ武将,offset
+	[subject]曹仁:dir
+		[replace]0x706390,三國志Ⅵ武将,offset
+	[subject]曹純:dir
+		[replace]0x706274,三國志Ⅵ武将,offset
+	[subject]曹真:dir
+		[replace]0x706158,三國志Ⅵ武将,offset
+	[subject]曹彰:dir
+		[replace]0x705F20,三國志Ⅵ武将,offset
+	[subject]曹洪:dir
+		[replace]0x705CE8,三國志Ⅵ武将,offset
+	[subject]曹休:dir
+		[replace]0x705878,三國志Ⅵ武将,offset
+	[subject]蘇飛:dir
+		[replace]0x706EA8,三國志Ⅵ武将,offset
+	[subject]孫匡:dir
+		[replace]0x707550,三國志Ⅵ武将,offset
+	[subject]孫乾:dir
+		[replace]0x7079C0,三國志Ⅵ武将,offset
+	[subject]孫権:dir
+		[replace]0x707788,三國志Ⅵ武将,offset
+	[subject]孫韶:dir
+		[replace]0x707F4C,三國志Ⅵ武将,offset
+	[subject]孫静:dir
+		[replace]0x708068,三國志Ⅵ武将,offset
+	[subject]孫瑜:dir
+		[replace]0x7084D8,三國志Ⅵ武将,offset
+	[subject]孫朗:dir
+		[replace]0x708948,三國志Ⅵ武将,offset
+	[subject]ゾウ覇:dir
+		[replace]0x708A64,三國志Ⅵ武将,offset
+[back]
+[subject]た行:dir
+	[subject]太史慈:dir
+		[replace]0x708C9C,三國志Ⅵ武将,offset
+	[subject]譚雄:dir
+		[replace]0x70910C,三國志Ⅵ武将,offset
+	[subject]張允:dir
+		[replace]0x709228,三國志Ⅵ武将,offset
+	[subject]趙雲:dir
+		[replace]0x709344,三國志Ⅵ武将,offset
+	[subject]張衛:dir
+		[replace]0x70957C,三國志Ⅵ武将,offset
+	[subject]張燕:dir
+		[replace]0x709698,三國志Ⅵ武将,offset
+	[subject]張横:dir
+		[replace]0x7097B4,三國志Ⅵ武将,offset
+	[subject]張絋:dir
+		[replace]0x70A3E8,三國志Ⅵ武将,offset
+	[subject]張昭:dir
+		[replace]0x70AA90,三國志Ⅵ武将,offset
+	[subject]張:dir
+		[replace]0x70A2CC,三國志Ⅵ武将,offset
+	[subject]張遼:dir
+		[replace]0x70BB34,三國志Ⅵ武将,offset
+	[subject]張松:dir
+		[replace]0x70A974,三國志Ⅵ武将,offset
+	[subject]張任:dir
+		[replace]0x70ADE4,三國志Ⅵ武将,offset
+	[subject]趙範:dir
+		[replace]0x70B370,三國志Ⅵ武将,offset
+	[subject]張飛:dir
+		[replace]0x70B48C,三國志Ⅵ武将,offset
+	[subject]趙累:dir
+		[replace]0x70BC50,三國志Ⅵ武将,offset
+	[subject]張魯:dir
+		[replace]0x70BD6C,三國志Ⅵ武将,offset
+	[subject]陳矯:dir
+		[replace]0x70C0C0,三國志Ⅵ武将,offset
+	[subject]陳羣:dir
+		[replace]0x70C1DC,三國志Ⅵ武将,offset
+	[subject]陳登:dir
+		[replace]0x70C9A0,三國志Ⅵ武将,offset
+	[subject]陳武:dir
+		[replace]0x70CABC,三國志Ⅵ武将,offset
+	[subject]陳琳:dir
+		[replace]0x70CBD8,三國志Ⅵ武将,offset
+	[subject]程昱:dir
+		[replace]0x70CCF4,三國志Ⅵ武将,offset
+	[subject]程銀:dir
+		[replace]0x70CF2C,三國志Ⅵ武将,offset
+	[subject]程普:dir
+		[replace]0x70D164,三國志Ⅵ武将,offset
+	[subject]程秉:dir
+		[replace]0x70D39C,三國志Ⅵ武将,offset
+	[subject]丁奉:dir
+		[replace]0x70D4B8,三國志Ⅵ武将,offset
+	[subject]陳式:dir
+		[replace]0x70C530,三國志Ⅵ武将,offset
+	[subject]陳到:dir
+		[replace]0x7176B0,三國志Ⅵ武将,offset
+	[subject]田疇:dir
+		[replace]0x70DA44,三國志Ⅵ武将,offset
+	[subject]董允:dir
+		[replace]0x70DD98,三國志Ⅵ武将,offset
+	[subject]鄧賢:dir
+		[replace]0x70E208,三國志Ⅵ武将,offset
+	[subject]董襲:dir
+		[replace]0x70E570,三國志Ⅵ武将,offset
+	[subject]董昭:dir
+		[replace]0x70E794,三國志Ⅵ武将,offset
+	[subject]董和:dir
+		[replace]0x70F074,三國志Ⅵ武将,offset
+[back]
+[subject]は行:dir
+	[subject]馬玩:dir
+		[replace]0x70F954,三國志Ⅵ武将,offset
+	[subject]馬休:dir
+		[replace]0x70FA70,三國志Ⅵ武将,offset
+	[subject]馬岱:dir
+		[replace]0x70FEE0,三國志Ⅵ武将,offset
+	[subject]馬忠:dir
+		[replace]0x710118,三國志Ⅵ武将,offset
+	[subject]馬超:dir
+		[replace]0x710234,三國志Ⅵ武将,offset
+	[subject]馬鉄:dir
+		[replace]0x710350,三國志Ⅵ武将,offset
+	[subject]馬騰:dir
+		[replace]0x71046C,三國志Ⅵ武将,offset
+	[subject]潘濬:dir
+		[replace]0x70F4E4,三國志Ⅵ武将,offset
+	[subject]潘璋:dir
+		[replace]0x70F600,三國志Ⅵ武将,offset
+	[subject]費詩:dir
+		[replace]0x7109F8,三國志Ⅵ武将,offset
+	[subject]糜竺:dir
+		[replace]0x710B14,三國志Ⅵ武将,offset
+	[subject]糜芳:dir
+		[replace]0x710C30,三國志Ⅵ武将,offset
+	[subject]傅嬰:dir
+		[replace]0x710E68,三國志Ⅵ武将,offset
+	[subject]伏完:dir
+		[replace]0x710F84,三國志Ⅵ武将,offset
+	[subject]傅士仁:dir
+		[replace]0x7110A0,三國志Ⅵ武将,offset
+	[subject]傅トウ:dir
+		[replace]0x7113F4,三國志Ⅵ武将,offset
+	[subject]傅巽:dir
+		[replace]0x7112D8,三國志Ⅵ武将,offset
+	[subject]文聘:dir
+		[replace]0x711980,三國志Ⅵ武将,offset
+	[subject]法正:dir
+		[replace]0x711DF0,三國志Ⅵ武将,offset
+	[subject]徳(ほうとく):dir
+		[replace]0x712028,三國志Ⅵ武将,offset
+	[subject]鮑隆:dir
+		[replace]0x712144,三國志Ⅵ武将,offset
+	[subject]歩シツ:dir
+		[replace]0x712260,三國志Ⅵ武将,offset
+[back]
+[subject]ま行:dir
+	[subject]満寵:dir
+		[replace]0x7127EC,三國志Ⅵ武将,offset
+	[subject]毛カイ:dir
+		[replace]0x712A24,三國志Ⅵ武将,offset
+	[subject]孟達:dir
+		[replace]0x712C5C,三國志Ⅵ武将,offset
+[back]
+[subject]や行:dir
+	[subject]楊懐:dir
+		[replace]0x712E94,三國志Ⅵ武将,offset
+	[subject]楊修:dir
+		[replace]0x713304,三國志Ⅵ武将,offset
+	[subject]楊秋:dir
+		[replace]0x713420,三國志Ⅵ武将,offset
+	[subject]楊柏:dir
+		[replace]0x713774,三國志Ⅵ武将,offset
+[back]
+[subject]ら行:dir
+	[subject]雷銅:dir
+		[replace]0x713BE4,三國志Ⅵ武将,offset
+	[subject]雷薄:dir
+		[replace]0x713D00,三國志Ⅵ武将,offset
+	[subject]劉賢:dir
+		[replace]0x7143A8,三國志Ⅵ武将,offset
+	[subject]劉璋:dir
+		[replace]0x7144C4,三國志Ⅵ武将,offset
+	[subject]劉度:dir
+		[replace]0x714B6C,三國志Ⅵ武将,offset
+	[subject]劉備:dir
+		[replace]0x714EC0,三國志Ⅵ武将,offset
+	[subject]劉巴:dir
+		[replace]0x714C88,三國志Ⅵ武将,offset
+	[subject]劉表:dir
+		[replace]0x714DA4,三國志Ⅵ武将,offset
+	[subject]劉琮:dir
+		[replace]0x714934,三國志Ⅵ武将,offset
+	[subject]劉琦:dir
+		[replace]0x714170,三國志Ⅵ武将,offset
+	[subject]劉封:dir
+		[replace]0x7150F8,三國志Ⅵ武将,offset
+	[subject]劉嘩:dir
+		[replace]0x715330,三國志Ⅵ武将,offset
+	[subject]梁興:dir
+		[replace]0x7158BC,三國志Ⅵ武将,offset
+	[subject]凌統:dir
+		[replace]0x715AF4,三國志Ⅵ武将,offset
+	[subject]廖立:dir
+		[replace]0x715C10,三國志Ⅵ武将,offset
+	[subject]呂凱:dir
+		[replace]0x715D2C,三國志Ⅵ武将,offset
+	[subject]呂虔:dir
+		[replace]0x715F64,三國志Ⅵ武将,offset
+	[subject]呂範:dir
+		[replace]0x7162B8,三國志Ⅵ武将,offset
+	[subject]呂蒙:dir
+		[replace]0x7164F0,三國志Ⅵ武将,offset
+	[subject]李異:dir
+		[replace]0x71660C,三國志Ⅵ武将,offset
+	[subject]李恢:dir
+		[replace]0x716728,三國志Ⅵ武将,offset
+	[subject]陸遜:dir
+		[replace]0x716CB4,三國志Ⅵ武将,offset
+	[subject]陸績:dir
+		[replace]0x716B98,三國志Ⅵ武将,offset
+	[subject]李厳:dir
+		[replace]0x716DD0,三國志Ⅵ武将,offset
+	[subject]李典:dir
+		[replace]0x717124,三國志Ⅵ武将,offset
+	[subject]魯粛:dir
+		[replace]0x717478,三國志Ⅵ武将,offset
+[root]
+[/script]
+
+[script]
+[title]信長の野望 ～将星録～
+[process]NOBU7.EXE
+[maker]光栄
+[creator]みそ
+[note]
+内政(軍事)が変更できます。
+このデータはシナリオ１を元に
+作ったものなので、他のシナリオで
+城の名前が変わっていても、全部使
+えます。
+
+[/note]
+[subject]城データ:dir
+	[subject]内城:dir
+		[replace]0x5CB0D2,将星録城,offset
+	[subject]肝付城:dir
+		[replace]0x5CB162,将星録城1,offset
+	[subject]八代城:dir
+		[replace]0x5CB1F2,将星録城,offset
+	[subject]都於群城:dir
+		[replace]0x5CB282,将星録城,offset
+	[subject]佐賀城:dir
+		[replace]0x5CB312,将星録城,offset
+	[subject]立山花城:dir
+		[replace]0x5CB3A2,将星録城,offset
+	[subject]中津城:dir
+		[replace]0x5CB432,将星録城,offset
+	[subject]府内城:dir
+		[replace]0x5CB4C2,将星録城,offset
+	[subject]山口城:dir
+		[replace]0x5CB552,将星録城,offset
+	[subject]中村城:dir
+		[replace]0x5CB5E2,将星録城,offset
+	[subject]湯築城:dir
+		[replace]0x5CB672,将星録城1,offset
+	[subject]岡豊城:dir
+		[replace]0x5CB702,将星録城1,offset
+	[subject]福光城:dir
+		[replace]0x5CB792,将星録城1,offset
+	[subject]吉田群山城:dir
+		[replace]0x5CB822,将星録城,offset
+	[subject]福山城:dir
+		[replace]0x5CB8B2,将星録城1,offset
+	[subject]天霧城:dir
+		[replace]0x5CB942,将星録城2,offset
+	[subject]岡山城:dir
+		[replace]0x5CB9D2,将星録城2,offset
+	[subject]勝端城:dir
+		[replace]0x5CBA62,将星録城,offset
+	[subject]月山富田城:dir
+		[replace]0x5CBAF2,将星録城,offset
+	[subject]津山城:dir
+		[replace]0x5CBB82,将星録城2,offset
+	[subject]姫路城:dir
+		[replace]0x5CBC12,将星録城1,offset
+	[subject]雑賀城:dir
+		[replace]0x5CBCA2,将星録城1,offset
+	[subject]鳥取城:dir
+		[replace]0x5CBD32,将星録城,offset
+	[subject]八上城:dir
+		[replace]0x5CBDC2,将星録城2,offset
+	[subject]大坂城:dir
+		[replace]0x5CBE52,将星録城1,offset
+	[subject]大和群山城:dir
+		[replace]0x5CBEE2,将星録城,offset
+	[subject]二条城:dir
+		[replace]0x5CBF72,将星録城3,offset
+	[subject]建部山城:dir
+		[replace]0x5CC002,将星録城2,offset
+	[subject]大河内城:dir
+		[replace]0x5CC092,将星録城,offset
+	[subject]観音寺城:dir
+		[replace]0x5CC122,将星録城,offset
+	[subject]小谷城:dir
+		[replace]0x5CC1B2,将星録城2,offset
+	[subject]那古野城:dir
+		[replace]0x5CC242,将星録城2,offset
+	[subject]岡崎城:dir
+		[replace]0x5CC2D2,将星録城2,offset
+	[subject]稲葉山城:dir
+		[replace]0x5CC362,将星録城2,offset
+	[subject]一乗谷城:dir
+		[replace]0x5CC3F2,将星録城,offset
+	[subject]浜松城:dir
+		[replace]0x5CC482,将星録城2,offset
+	[subject]御山御坊城:dir
+		[replace]0x5CC512,将星録城1,offset
+	[subject]松倉城:dir
+		[replace]0x5CC5A2,将星録城3,offset
+	[subject]駿府城:dir
+		[replace]0x5CC632,将星録城1,offset
+	[subject]七尾城:dir
+		[replace]0x5CC6C2,将星録城2,offset
+	[subject]富山城:dir
+		[replace]0x5CC752,将星録城2,offset
+	[subject]深志城:dir
+		[replace]0x5CC7E2,将星録城2,offset
+	[subject]躑躅ヶ崎館:dir
+		[replace]0x5CC872,将星録城1,offset
+	[subject]小田原城:dir
+		[replace]0x5CC902,将星録城,offset
+	[subject]海津城:dir
+		[replace]0x5CC992,将星録城2,offset
+	[subject]久留里城:dir
+		[replace]0x5CCA22,将星録城,offset
+	[subject]箕輪城:dir
+		[replace]0x5CCAB2,将星録城1,offset
+	[subject]河越城:dir
+		[replace]0x5CCB42,将星録城,offset
+	[subject]春日山城:dir
+		[replace]0x5CCBD2,将星録城,offset
+	[subject]佐倉城:dir
+		[replace]0x5CCC62,将星録城1,offset
+	[subject]宇都宮城:dir
+		[replace]0x5CCCF2,将星録城1,offset
+	[subject]与板城:dir
+		[replace]0x5CCD82,将星録城1,offset
+	[subject]水戸城:dir
+		[replace]0x5CCE12,将星録城1,offset
+	[subject]棚倉城:dir
+		[replace]0x5CCEA2,将星録城1,offset
+	[subject]新発田城:dir
+		[replace]0x5CCF32,将星録城,offset
+	[subject]黒川城:dir
+		[replace]0x5CCFC2,将星録城,offset
+	[subject]小高城:dir
+		[replace]0x5CD052,将星録城,offset
+	[subject]山形城:dir
+		[replace]0x5CD0E2,将星録城1,offset
+	[subject]岩出山城:dir
+		[replace]0x5CD172,将星録城,offset
+	[subject]久保田城:dir
+		[replace]0x5CD202,将星録城,offset
+	[subject]高水寺城:dir
+		[replace]0x5CD292,将星録城,offset
+	[subject]弘前城:dir
+		[replace]0x5CD322,将星録城1,offset
+	[subject]水戸城:dir
+		[replace]0x5CD3B2,将星録城,offset
+	[subject]松前城:dir
+		[replace]0x5CD442,将星録城1,offset
+[/script]
+
+[script]
+[title]チンギスハーン ～蒼き狼と白き雌鹿Ⅳ～　パワーアップキット
+[process]CKW95.EXE
+[maker]光栄
+[creator]みそ
+[note]wordwrap
+一応チンギスハーン ～蒼き狼と白き雌鹿Ⅳ～　パワーアップキットのssg作り直しました。
+今回こそ、たぶん問題ないと思います。また何かあったらあつさんに連絡下さい。
+みそでした。
+
+URIELさん、しんちゃんさん報告有り難うございました！
+[/note]
+[subject]都市データ:dir
+[subject]1189年　草原を駈ける狼:dir
+	[subject]ロンドン:dir
+		[replace]0x5F2197,チンパ都市内政,offset
+	[subject]パリ:dir
+		[replace]0x5F225F,チンパ都市内政,offset
+	[subject]ケルン:dir
+		[replace]0x5F2327,チンパ都市内政,offset
+	[subject]ジェノヴァ:dir
+		[replace]0x5F23EF,チンパ都市内政,offset
+	[subject]トレド:dir
+		[replace]0x5F24B7,チンパ都市内政,offset
+	[subject]パレルモ:dir
+		[replace]0x5F257F,チンパ都市内政,offset
+	[subject]ベネチア:dir
+		[replace]0x5F2647,チンパ都市内政,offset
+	[subject]クラクフ:dir
+		[replace]0x5F270F,チンパ都市内政,offset
+	[subject]ペスト:dir
+		[replace]0x5F27D7,チンパ都市内政,offset
+	[subject]キエフ:dir
+		[replace]0x5F289F,チンパ都市内政,offset
+	[subject]コンスタンチノープル:dir
+		[replace]0x5F2967,チンパ都市内政,offset
+	[subject]マラケシュ:dir
+		[replace]0x5F2A2F,チンパ都市内政,offset
+	[subject]チェニス:dir
+		[replace]0x5F2AF7,チンパ都市内政,offset
+	[subject]カイロ:dir
+		[replace]0x5F2BBF,チンパ都市内政,offset
+	[subject]ダマスカス:dir
+		[replace]0x5F2C87,チンパ都市内政,offset
+	[subject]バグダード:dir
+		[replace]0x5F2D4F,チンパ都市内政,offset
+	[subject]サマルカンド:dir
+		[replace]0x5F2E17,チンパ都市内政,offset
+	[subject]デリー:dir
+		[replace]0x5F2EDF,チンパ都市内政,offset
+	[subject]カリカット:dir
+		[replace]0x5F2FA7,チンパ都市内政,offset
+	[subject]ラサ:dir
+		[replace]0x5F306F,チンパ都市内政,offset
+	[subject]ベラサグン:dir
+		[replace]0x5F3137,チンパ都市内政,offset
+	[subject]オノン:dir
+		[replace]0x5F31FF,チンパ都市内政,offset
+	[subject]ゴルゴナク:dir
+		[replace]0x5F32C7,チンパ都市内政,offset
+	[subject]興慶:dir
+		[replace]0x5F338F,チンパ都市内政,offset
+	[subject]会寧:dir
+		[replace]0x5F3457,チンパ都市内政,offset
+	[subject]燕京:dir
+		[replace]0x5F351F,チンパ都市内政,offset
+	[subject]臨安:dir
+		[replace]0x5F35E7,チンパ都市内政,offset
+	[subject]泉州:dir
+		[replace]0x5F36AF,チンパ都市内政,offset
+	[subject]開城:dir
+		[replace]0x5F3777,チンパ都市内政,offset
+	[subject]鎌倉:dir
+		[replace]0x5F383F,チンパ都市内政,offset
+	[subject]ゴール:dir
+		[replace]0x5F3907,チンパ都市内政,offset
+	[subject]ハノイ:dir
+		[replace]0x5F39CF,チンパ都市内政,offset
+	[subject]アンコール:dir
+		[replace]0x5F3A97,チンパ都市内政,offset
+	[subject]トーラ:dir
+		[replace]0x5F3B5F,チンパ都市内政,offset
+	[subject]ニシャプール:dir
+		[replace]0x5F3C27,チンパ都市内政,offset
+	[subject]太宰府:dir
+		[replace]0x5F3CEF,チンパ都市内政,offset
+	[subject]開封:dir
+		[replace]0x5F3DB7,チンパ都市内政,offset
+	[subject]敦煌:dir
+		[replace]0x5F3E7F,チンパ都市内政,offset
+	[subject]クチャ:dir
+		[replace]0x5F3F47,チンパ都市内政,offset
+	[subject]ノヴゴロド:dir
+		[replace]0x5F400F,チンパ都市内政,offset
+	[subject]ベルゲン:dir
+		[replace]0x5F40D7,チンパ都市内政,offset
+	[subject]平泉:dir
+		[replace]0x5F419F,チンパ都市内政,offset
+[back]
+[subject]1229年　群狼たちの咆哮:dir
+	[subject]ロンドン:dir
+		[replace]0x5F2197,チンパ都市内政,offset
+	[subject]パリ:dir
+		[replace]0x5F225F,チンパ都市内政,offset
+	[subject]ケルン:dir
+		[replace]0x5F2327,チンパ都市内政,offset
+	[subject]ベルゲン:dir
+		[replace]0x5F23EF,チンパ都市内政,offset
+	[subject]ジェノヴィア:dir
+		[replace]0x5F24B7,チンパ都市内政,offset
+	[subject]トレド:dir
+		[replace]0x5F257F,チンパ都市内政,offset
+	[subject]パレルモ:dir
+		[replace]0x5F2647,チンパ都市内政,offset
+	[subject]ベネチア:dir
+		[replace]0x5F270F,チンパ都市内政,offset
+	[subject]クラクフ:dir
+		[replace]0x5F27D7,チンパ都市内政,offset
+	[subject]ペスト:dir
+		[replace]0x5F289F,チンパ都市内政,offset
+	[subject]キエフ:dir
+		[replace]0x5F2967,チンパ都市内政,offset
+	[subject]ノヴゴロド:dir
+		[replace]0x5F2A2F,チンパ都市内政,offset
+	[subject]コンスタンチノープル:dir
+		[replace]0x5F2AF7,チンパ都市内政,offset
+	[subject]ニケーア:dir
+		[replace]0x5F2BBF,チンパ都市内政,offset
+	[subject]マラケシュ:dir
+		[replace]0x5F2C87,チンパ都市内政,offset
+	[subject]チェニス:dir
+		[replace]0x5F2D4F,チンパ都市内政,offset
+	[subject]カイロ:dir
+		[replace]0x5F2E17,チンパ都市内政,offset
+	[subject]ダマスカス:dir
+		[replace]0x5F2EDF,チンパ都市内政,offset
+	[subject]バグダード:dir
+		[replace]0x5F2FA7,チンパ都市内政,offset
+	[subject]サマルカンド:dir
+		[replace]0x5F306F,チンパ都市内政,offset
+	[subject]ニシャプール:dir
+		[replace]0x5F3137,チンパ都市内政,offset
+	[subject]デリー:dir
+		[replace]0x5F31FF,チンパ都市内政,offset
+	[subject]カリカット:dir
+		[replace]0x5F32C7,チンパ都市内政,offset
+	[subject]アルマリク:dir
+		[replace]0x5F338F,チンパ都市内政,offset
+	[subject]敦煌:dir
+		[replace]0x5F3457,チンパ都市内政,offset
+	[subject]ラサ:dir
+		[replace]0x5F351F,チンパ都市内政,offset
+	[subject]オノン:dir
+		[replace]0x5F35E7,チンパ都市内政,offset
+	[subject]会寧:dir
+		[replace]0x5F36AF,チンパ都市内政,offset
+	[subject]燕京:dir
+		[replace]0x5F3777,チンパ都市内政,offset
+	[subject]開封:dir
+		[replace]0x5F383F,チンパ都市内政,offset
+	[subject]臨安:dir
+		[replace]0x5F3907,チンパ都市内政,offset
+	[subject]泉州:dir
+		[replace]0x5F39CF,チンパ都市内政,offset
+	[subject]ハノイ:dir
+		[replace]0x5F3A97,チンパ都市内政,offset
+	[subject]パガン:dir
+		[replace]0x5F3B5F,チンパ都市内政,offset
+	[subject]開城:dir
+		[replace]0x5F3C27,チンパ都市内政,offset
+	[subject]平泉:dir
+		[replace]0x5F3CEF,チンパ都市内政,offset
+	[subject]鎌倉:dir
+		[replace]0x5F3DB7,チンパ都市内政,offset
+	[subject]太宰府:dir
+		[replace]0x5F3E7F,チンパ都市内政,offset
+[back]
+[subject]1271年　蒼き狼の末裔たち:dir
+	[subject]ロンドン:dir
+		[replace]0x5F2197,チンパ都市内政,offset
+	[subject]パリ:dir
+		[replace]0x5F225F,チンパ都市内政,offset
+	[subject]ケルン:dir
+		[replace]0x5F2327,チンパ都市内政,offset
+	[subject]ジェノヴァ:dir
+		[replace]0x5F23EF,チンパ都市内政,offset
+	[subject]トレド:dir
+		[replace]0x5F24B7,チンパ都市内政,offset
+	[subject]ナポリ:dir
+		[replace]0x5F257F,チンパ都市内政,offset
+	[subject]ベネチア:dir
+		[replace]0x5F2647,チンパ都市内政,offset
+	[subject]クラクフ:dir
+		[replace]0x5F270F,チンパ都市内政,offset
+	[subject]ペスト:dir
+		[replace]0x5F27D7,チンパ都市内政,offset
+	[subject]ノヴゴロド:dir
+		[replace]0x5F289F,チンパ都市内政,offset
+	[subject]コンスタンチノープル:dir
+		[replace]0x5F2967,チンパ都市内政,offset
+	[subject]マラケシュ:dir
+		[replace]0x5F2A2F,チンパ都市内政,offset
+	[subject]チェニス:dir
+		[replace]0x5F2AF7,チンパ都市内政,offset
+	[subject]タブリーズ:dir
+		[replace]0x5F2BBF,チンパ都市内政,offset
+	[subject]カイロ:dir
+		[replace]0x5F2C87,チンパ都市内政,offset
+	[subject]ダマスカス:dir
+		[replace]0x5F2D4F,チンパ都市内政,offset
+	[subject]バグダード:dir
+		[replace]0x5F2E17,チンパ都市内政,offset
+	[subject]ニシャプール:dir
+		[replace]0x5F2EDF,チンパ都市内政,offset
+	[subject]サマルカンド:dir
+		[replace]0x5F2FA7,チンパ都市内政,offset
+	[subject]デリー:dir
+		[replace]0x5F306F,チンパ都市内政,offset
+	[subject]カリカット:dir
+		[replace]0x5F3137,チンパ都市内政,offset
+	[subject]ラサ:dir
+		[replace]0x5F31FF,チンパ都市内政,offset
+	[subject]サライ:dir
+		[replace]0x5F32C7,チンパ都市内政,offset
+	[subject]アルマリク:dir
+		[replace]0x5F338F,チンパ都市内政,offset
+	[subject]エミール:dir
+		[replace]0x5F3457,チンパ都市内政,offset
+	[subject]カラコルム:dir
+		[replace]0x5F351F,チンパ都市内政,offset
+	[subject]大都:dir
+		[replace]0x5F35E7,チンパ都市内政,offset
+	[subject]成都:dir
+		[replace]0x5F36AF,チンパ都市内政,offset
+	[subject]臨安:dir
+		[replace]0x5F3777,チンパ都市内政,offset
+	[subject]泉州:dir
+		[replace]0x5F383F,チンパ都市内政,offset
+	[subject]開城:dir
+		[replace]0x5F3907,チンパ都市内政,offset
+	[subject]鎌倉:dir
+		[replace]0x5F39CF,チンパ都市内政,offset
+	[subject]パガン:dir
+		[replace]0x5F3A97,チンパ都市内政,offset
+	[subject]ハノイ:dir
+		[replace]0x5F3B5F,チンパ都市内政,offset
+	[subject]太宰府:dir
+		[replace]0x5F3C27,チンパ都市内政,offset
+	[subject]キエフ:dir
+		[replace]0x5F3CEF,チンパ都市内政,offset
+	[subject]襄陽:dir
+		[replace]0x5F3DB7,チンパ都市内政,offset
+	[subject]会寧:dir
+		[replace]0x5F3E7F,チンパ都市内政,offset
+	[subject]敦煌:dir
+		[replace]0x5F3F47,チンパ都市内政,offset
+	[subject]ベルゲン:dir
+		[replace]0x5F400F,チンパ都市内政,offset
+	[subject]平泉:dir
+		[replace]0x5F40D7,チンパ都市内政,offset
+[back]
+[subject]1370年　西洋よりいずる狼:dir
+	[subject]ロンドン:dir
+		[replace]0x5F2197,チンパ都市内政,offset
+	[subject]パリ:dir
+		[replace]0x5F225F,チンパ都市内政,offset
+	[subject]ケルン:dir
+		[replace]0x5F2327,チンパ都市内政,offset
+	[subject]オスロ:dir
+		[replace]0x5F23EF,チンパ都市内政,offset
+	[subject]トレド:dir
+		[replace]0x5F24B7,チンパ都市内政,offset
+	[subject]ミラノ:dir
+		[replace]0x5F257F,チンパ都市内政,offset
+	[subject]パレルモ:dir
+		[replace]0x5F2647,チンパ都市内政,offset
+	[subject]ベネチア:dir
+		[replace]0x5F270F,チンパ都市内政,offset
+	[subject]クラクフ:dir
+		[replace]0x5F27D7,チンパ都市内政,offset
+	[subject]ペスト:dir
+		[replace]0x5F289F,チンパ都市内政,offset
+	[subject]モスクワ:dir
+		[replace]0x5F2967,チンパ都市内政,offset
+	[subject]キエフ:dir
+		[replace]0x5F2A2F,チンパ都市内政,offset
+	[subject]サライ:dir
+		[replace]0x5F2AF7,チンパ都市内政,offset
+	[subject]コンスタンチノープス:dir
+		[replace]0x5F2BBF,チンパ都市内政,offset
+	[subject]マラケシュ:dir
+		[replace]0x5F2C87,チンパ都市内政,offset
+	[subject]チェニス:dir
+		[replace]0x5F2D4F,チンパ都市内政,offset
+	[subject]カイロ:dir
+		[replace]0x5F2E17,チンパ都市内政,offset
+	[subject]ダマスカス:dir
+		[replace]0x5F2EDF,チンパ都市内政,offset
+	[subject]ブルサ:dir
+		[replace]0x5F2FA7,チンパ都市内政,offset
+	[subject]バグダード:dir
+		[replace]0x5F306F,チンパ都市内政,offset
+	[subject]ニシャプール:dir
+		[replace]0x5F3137,チンパ都市内政,offset
+	[subject]サマルカンド:dir
+		[replace]0x5F31FF,チンパ都市内政,offset
+	[subject]アルマリク:dir
+		[replace]0x5F32C7,チンパ都市内政,offset
+	[subject]デリー:dir
+		[replace]0x5F338F,チンパ都市内政,offset
+	[subject]カリカット:dir
+		[replace]0x5F3457,チンパ都市内政,offset
+	[subject]ラサ:dir
+		[replace]0x5F351F,チンパ都市内政,offset
+	[subject]カラコルム:dir
+		[replace]0x5F35E7,チンパ都市内政,offset
+	[subject]敦煌:dir
+		[replace]0x5F36AF,チンパ都市内政,offset
+	[subject]北京:dir
+		[replace]0x5F3777,チンパ都市内政,offset
+	[subject]南京:dir
+		[replace]0x5F383F,チンパ都市内政,offset
+	[subject]成都:dir
+		[replace]0x5F3907,チンパ都市内政,offset
+	[subject]アユタヤ:dir
+		[replace]0x5F39CF,チンパ都市内政,offset
+	[subject]ハノイ:dir
+		[replace]0x5F3A97,チンパ都市内政,offset
+	[subject]開城:dir
+		[replace]0x5F3B5F,チンパ都市内政,offset
+	[subject]鎌倉:dir
+		[replace]0x5F3C27,チンパ都市内政,offset
+	[subject]京都:dir
+		[replace]0x5F3CEF,チンパ都市内政,offset
+	[subject]太宰府:dir
+		[replace]0x5F3DB7,チンパ都市内政,offset
+[root]
+[/script]
+
+
+[script]
+[title]三國志　孔明伝
+[process]EKD2W95.EXE
+[maker]光栄
+[creator]みそ
+[note]
+コーエースプリングキャンペーンで発売された孔明伝です。
+まあ、持っている人がいたら使ってください。
+やっぱり魏延は、最高です。
+[/note]
+[subject]レベル:dir
+	[subject]諸葛亮:calc,0x466F0D,0x0,0x63,signed,little_e
+	[subject]劉備:calc,0x466F43,0x0,0x63,signed,little_e
+	[subject]関羽:calc,0x466F79,0x0,0x63,signed,little_e
+	[subject]張飛:calc,0x466FAF,0x0,0x63,signed,little_e
+	[subject]趙雲:calc,0x467051,0x0,0x63,signed,little_e
+	[subject]孫乾:calc,0x4679CF,0x0,0x63,signed,little_e
+	[subject]糜竺:calc,0x467A05,0x0,0x63,signed,little_e
+	[subject]糜芳:calc,0x467A3B,0x0,0x63,signed,little_e
+	[subject]劉封:calc,0x467AA7,0x0,0x63,signed,little_e
+	[subject]関平:calc,0x467ADD,0x0,0x63,signed,little_e
+	[subject]周倉:calc,0x467B13,0x0,0x63,signed,little_e
+	[subject]馬謖:calc,0x46701B,0x0,0x63,signed,little_e
+	[subject]魏延:calc,0x467087,0x0,0x63,signed,little_e
+	[subject]黄忠:calc,0x4678F7,0x0,0x63,signed,little_e
+	[subject]馬岱:calc,0x467129,0x0,0x63,signed,little_e
+	[subject]馬超:calc,0x467201,0x0,0x63,signed,little_e
+	[subject]呉懿:calc,0x46741D,0x0,0x63,signed,little_e
+	[subject]呉班:calc,0x467453,0x0,0x63,signed,little_e
+	[subject]張翼:calc,0x467489,0x0,0x63,signed,little_e
+	[subject]李厳:calc,0x467561,0x0,0x63,signed,little_e
+	[subject]王平:calc,0x46715F,0x0,0x63,signed,little_e
+	[subject]関興:calc,0x4670BD,0x0,0x63,signed,little_e
+	[subject]関索:calc,0x46737B,0x0,0x63,signed,little_e
+	[subject]張ほう:calc,0x4670F3,0x0,0x63,signed,little_e
+	[subject]りょう化:calc,0x467345,0x0,0x63,signed,little_e
+	[subject]とう芝:calc,0x46730F,0x0,0x63,signed,little_e
+	[subject]呂凱:calc,0x46781F,0x0,0x63,signed,little_e
+	[subject]きょう維:calc,0x466FE5,0x0,0x63,signed,little_e
+	[subject]揚儀:calc,0x4672D9,0x0,0x63,signed,little_e
+	[subject]張ぎょく:calc,0x4674BF,0x0,0x63,signed,little_e
+	[subject]馬忠:calc,0x4674F5,0x0,0x63,signed,little_e
+	[subject]楊蘭:calc,0x467711,0x0,0x63,signed,little_e
+	[subject]蒋えん:calc,0x467237,0x0,0x63,signed,little_e
+	[subject]費い:calc,0x46726D,0x0,0x63,signed,little_e
+	[subject]諸葛せん:calc,0x4672A3,0x0,0x63,signed,little_e
+	[subject]趙統:calc,0x467855,0x0,0x63,signed,little_e
+	[subject]趙広:calc,0x46788B,0x0,0x63,signed,little_e
+	[subject]孟獲:calc,0x469571,0x0,0x63,signed,little_e
+	[subject]祝融:calc,0x4696B5,0x0,0x63,signed,little_e
+	[subject]孟優:calc,0x46967F,0x0,0x63,signed,little_e
+[back]
+[subject]経験値:dir
+	[subject]諸葛亮:calc,0x466F0E,0x0,0x64,signed,little_e
+	[subject]劉備:calc,0x466F44,0x0,0x64,signed,little_e
+	[subject]関羽:calc,0x466F7A,0x0,0x64,signed,little_e
+	[subject]張飛:calc,0x466FB0,0x0,0x64,signed,little_e
+	[subject]趙雲:calc,0x467052,0x0,0x64,signed,little_e
+	[subject]孫乾:calc,0x4679D0,0x0,0x64,signed,little_e
+	[subject]糜竺:calc,0x467A06,0x0,0x64,signed,little_e
+	[subject]糜芳:calc,0x467A3C,0x0,0x64,signed,little_e
+	[subject]劉封:calc,0x467AA8,0x0,0x64,signed,little_e
+	[subject]関平:calc,0x467ADE,0x0,0x64,signed,little_e
+	[subject]周倉:calc,0x467B14,0x0,0x64,signed,little_e
+	[subject]馬謖:calc,0x46701C,0x0,0x64,signed,little_e
+	[subject]魏延:calc,0x467088,0x0,0x64,signed,little_e
+	[subject]黄忠:calc,0x4678F8,0x0,0x64,signed,little_e
+	[subject]馬岱:calc,0x46712A,0x0,0x64,signed,little_e
+	[subject]馬超:calc,0x467202,0x0,0x64,signed,little_e
+	[subject]呉懿:calc,0x46741E,0x0,0x64,signed,little_e
+	[subject]呉班:calc,0x467454,0x0,0x64,signed,little_e
+	[subject]張翼:calc,0x46748A,0x0,0x64,signed,little_e
+	[subject]李厳:calc,0x467562,0x0,0x64,signed,little_e
+	[subject]王平:calc,0x467160,0x0,0x64,signed,little_e
+	[subject]関興:calc,0x4670BE,0x0,0x64,signed,little_e
+	[subject]関索:calc,0x46737C,0x0,0x64,signed,little_e
+	[subject]張ほう:calc,0x4670F4,0x0,0x64,signed,little_e
+	[subject]りょう化:calc,0x467346,0x0,0x64,signed,little_e
+	[subject]とう芝:calc,0x467310,0x0,0x64,signed,little_e
+	[subject]呂凱:calc,0x467820,0x0,0x64,signed,little_e
+	[subject]きょう維:calc,0x466FF6,0x0,0x64,signed,little_e
+	[subject]揚儀:calc,0x4672DA,0x0,0x64,signed,little_e
+	[subject]張ぎょく:calc,0x4674C0,0x0,0x64,signed,little_e
+	[subject]馬忠:calc,0x4674F6,0x0,0x64,signed,little_e
+	[subject]楊蘭:calc,0x467712,0x0,0x64,signed,little_e
+	[subject]蒋えん:calc,0x467238,0x0,0x64,signed,little_e
+	[subject]費い:calc,0x46726E,0x0,0x64,signed,little_e
+	[subject]諸葛せん:calc,0x4672A4,0x0,0x64,signed,little_e
+	[subject]趙統:calc,0x467856,0x0,0x64,signed,little_e
+	[subject]趙広:calc,0x46788C,0x0,0x64,signed,little_e
+	[subject]孟獲:calc,0x469572,0x0,0x64,signed,little_e
+	[subject]祝融:calc,0x4696B6,0x0,0x64,signed,little_e
+	[subject]孟優:calc,0x469680,0x0,0x64,signed,little_e
+[back]
+[subject]武力:dir
+	[replace]0x466F03,孔明伝,offset
+[subject]統率力:dir
+	[replace]0x466F04,孔明伝,offset
+[subject]知力:dir
+	[replace]0x466F05,孔明伝,offset
+[subject]最大耐久力:dir
+	[subject]諸葛亮:calc,0x466F06,0x0,0xFFFF,signed,little_e
+	[subject]劉備:calc,0x466F3C,0x0,0xFFFF,signed,little_e
+	[subject]関羽:calc,0x466F72,0x0,0xFFFF,signed,little_e
+	[subject]張飛:calc,0x466FA8,0x0,0xFFFF,signed,little_e
+	[subject]趙雲:calc,0x46704A,0x0,0xFFFF,signed,little_e
+	[subject]孫乾:calc,0x4679C8,0x0,0xFFFF,signed,little_e
+	[subject]糜竺:calc,0x4679FE,0x0,0xFFFF,signed,little_e
+	[subject]糜芳:calc,0x467A34,0x0,0xFFFF,signed,little_e
+	[subject]劉封:calc,0x467AA0,0x0,0xFFFF,signed,little_e
+	[subject]関平:calc,0x467AD6,0x0,0xFFFF,signed,little_e
+	[subject]周倉:calc,0x467B0C,0x0,0xFFFF,signed,little_e
+	[subject]馬謖:calc,0x467014,0x0,0xFFFF,signed,little_e
+	[subject]魏延:calc,0x467080,0x0,0xFFFF,signed,little_e
+	[subject]黄忠:calc,0x4678F0,0x0,0xFFFF,signed,little_e
+	[subject]馬岱:calc,0x467122,0x0,0xFFFF,signed,little_e
+	[subject]馬超:calc,0x4671FA,0x0,0xFFFF,signed,little_e
+	[subject]呉懿:calc,0x467416,0x0,0xFFFF,signed,little_e
+	[subject]呉班:calc,0x46744C,0x0,0xFFFF,signed,little_e
+	[subject]張翼:calc,0x467482,0x0,0xFFFF,signed,little_e
+	[subject]李厳:calc,0x46755A,0x0,0xFFFF,signed,little_e
+	[subject]王平:calc,0x467158,0x0,0xFFFF,signed,little_e
+	[subject]関興:calc,0x4670B6,0x0,0xFFFF,signed,little_e
+	[subject]関索:calc,0x467374,0x0,0xFFFF,signed,little_e
+	[subject]張ほう:calc,0x4670EC,0x0,0xFFFF,signed,little_e
+	[subject]りょう化:calc,0x46733E,0x0,0xFFFF,signed,little_e
+	[subject]とう芝:calc,0x467308,0x0,0xFFFF,signed,little_e
+	[subject]呂凱:calc,0x467818,0x0,0xFFFF,signed,little_e
+	[subject]きょう維:calc,0x466FDE,0x0,0xFFFF,signed,little_e
+	[subject]揚儀:calc,0x4672D2,0x0,0xFFFF,signed,little_e
+	[subject]張ぎょく:calc,0x4674B8,0x0,0xFFFF,signed,little_e
+	[subject]馬忠:calc,0x4674EE,0x0,0xFFFF,signed,little_e
+	[subject]楊蘭:calc,0x46770A,0x0,0xFFFF,signed,little_e
+	[subject]蒋えん:calc,0x467230,0x0,0xFFFF,signed,little_e
+	[subject]費い:calc,0x467266,0x0,0xFFFF,signed,little_e
+	[subject]諸葛せん:calc,0x46729C,0x0,0xFFFF,signed,little_e
+	[subject]趙統:calc,0x46784E,0x0,0xFFFF,signed,little_e
+	[subject]趙広:calc,0x467884,0x0,0xFFFF,signed,little_e
+	[subject]孟獲:calc,0x46956A,0x0,0xFFFF,signed,little_e
+	[subject]祝融:calc,0x4696AE,0x0,0xFFFF,signed,little_e
+	[subject]孟優:calc,0x469678,0x0,0xFFFF,signed,little_e
+[back]
+[subject]最大策略値:dir
+	[replace]0x466F0A,孔明伝,offset
+[subject]耐久力:dir
+	[subject]一番目:calc,0x45874F,0x0,0xFFFF,signed,little_e
+	[subject]二番目:calc,0x458766,0x0,0xFFFF,signed,little_e
+	[subject]三番目:calc,0x45877D,0x0,0xFFFF,signed,little_e
+	[subject]四番目:calc,0x458794,0x0,0xFFFF,signed,little_e
+	[subject]五番目:calc,0x4587AB,0x0,0xFFFF,signed,little_e
+	[subject]六番目:calc,0x4587C2,0x0,0xFFFF,signed,little_e
+	[subject]七番目:calc,0x4587D9,0x0,0xFFFF,signed,little_e
+	[subject]八番目:calc,0x4587F0,0x0,0xFFFF,signed,little_e
+	[subject]九番目:calc,0x458807,0x0,0xFFFF,signed,little_e
+	[subject]十番目:calc,0x45881E,0x0,0xFFFF,signed,little_e
+	[subject]十一番目:calc,0x458835,0x0,0xFFFF,signed,little_e
+	[subject]十二番目:calc,0x45884C,0x0,0xFFFF,signed,little_e
+	[subject]十三番目:calc,0x458863,0x0,0xFFFF,signed,little_e
+	[subject]十四番目:calc,0x45887A,0x0,0xFFFF,signed,little_e
+	[subject]十五番目:calc,0x458891,0x0,0xFFFF,signed,little_e
+[back]
+[subject]所持金:calc,0x454688,0x00,0xFFFF,signed,little_e
+[/script]
+
+[script]
+[title]織田信長伝
+[process]EKD4.EXE
+[maker]光栄
+[creator]みそ
+[note]wordwrap
+まあ、基本的なことですが、レベルをあげると、敵のレベルも上がり強くなるので気をつけて下さい。
+
+最大耐久値のMaxが0xE803（59395)という不自然な値になっているのは、光栄さんが、上位バイトと下位バイトをSpoilerALとは逆に書き込んでいるために起こる現象です。
+まぁ深いことは気にせずE803で決定しちゃいましょう。
+[/note]
+[subject]レベル:dir
+	[subject]織田信長:calc,0x49EC7B,0x0,0x63,signed,little_e
+	[subject]丹羽長秀:calc,0x49ED5B,0x0,0x63,signed,little_e
+	[subject]佐久間信盛:calc,0x49EF8B,0x0,0x63,signed,little_e
+	[subject]前田利家:calc,0x49EFFB,0x0,0x63,signed,little_e
+	[subject]池田恒興:calc,0x49F0DB,0x0,0x63,signed,little_e
+	[subject]河尻秀隆:calc,0x49F1BB,0x0,0x63,signed,little_e
+	[subject]佐々成政:calc,0x49F06B,0x0,0x63,signed,little_e
+	[subject]森可成:calc,0x49F22B,0x0,0x63,signed,little_e
+	[subject]柴田勝家:calc,0x49ECEB,0x0,0x63,signed,little_e
+	[subject]林秀貞:calc,0x49EF1B,0x0,0x63,signed,little_e
+	[subject]金森長近:calc,0x49F3EB,0x0,0x63,signed,little_e
+	[subject]木下藤吉朗:calc,0x49F6FB,0x0,0x63,signed,little_e
+	[subject]滝川一益:calc,0x49EE3B,0x0,0x63,signed,little_e
+	[subject]蜂須賀正勝:calc,0x49F45B,0x0,0x63,signed,little_e
+	[subject]明智光秀:calc,0x49EEAB,0x0,0x63,signed,little_e
+	[subject]不破光治:calc,0x49F37B,0x0,0x63,signed,little_e
+	[subject]九鬼嘉隆:calc,0x49F4CB,0x0,0x63,signed,little_e
+	[subject]蜂屋頼隆:calc,0x49F30B,0x0,0x63,signed,little_e
+	[subject]蒲生氏郷:calc,0x49F5AB,0x0,0x63,signed,little_e
+	[subject]細川藤孝:calc,0x49F14B,0x0,0x63,signed,little_e
+	[subject]筒井順慶:calc,0x49F53B,0x0,0x63,signed,little_e
+	[subject]森長可:calc,0x49F29B,0x0,0x63,signed,little_e
+	[subject]織田信忠:calc,0x49F61B,0x0,0x63,signed,little_e
+	[subject]羽柴秀吉:calc,0x49EDCB,0x0,0x63,signed,little_e
+[back]
+[subject]攻撃力:dir
+	[replace]0x49EC70,織田,offset
+[subject]防御力:dir
+	[replace]0x49EC71,織田,offset
+[subject]知力:dir
+	[replace]0x49EC72,織田,offset
+[subject]運気:dir
+	[replace]0x49EC73,織田,offset
+[subject]命中力:dir
+	[replace]0x49EC76,織田,offset
+[subject]素早さ:dir
+	[replace]0x49EC77,織田,offset
+[subject]刀:dir
+	[subject]織田信長:calc,0x49ECA6,0x0,0xFF,signed,little_e
+	[subject]丹羽長秀:calc,0x49ED86,0x0,0xFF,signed,little_e
+	[subject]佐久間信盛:calc,0x49EFB6,0x0,0xFF,signed,little_e
+	[subject]前田利家:calc,0x49F026,0x0,0xFF,signed,little_e
+	[subject]河尻秀隆:calc,0x49F1E6,0x0,0xFF,signed,little_e
+	[subject]佐々成政:calc,0x49F096,0x0,0xFF,signed,little_e
+	[subject]森可成:calc,0x49F256,0x0,0xFF,signed,little_e
+	[subject]柴田勝家:calc,0x49ED16,0x0,0xFF,signed,little_e
+	[subject]滝川一益:calc,0x49EE66,0x0,0xFF,signed,little_e
+	[subject]蜂須賀正勝:calc,0x49F486,0x0,0xFF,signed,little_e
+	[subject]明智光秀:calc,0x49EED6,0x0,0xFF,signed,little_e
+	[subject]不破光治:calc,0x49F3A6,0x0,0xFF,signed,little_e
+	[subject]九鬼嘉隆:calc,0x49F4F6,0x0,0xFF,signed,little_e
+	[subject]蜂屋頼隆:calc,0x49F336,0x0,0xFF,signed,little_e
+	[subject]蒲生氏郷:calc,0x49F5D6,0x0,0xFF,signed,little_e
+	[subject]細川藤孝:calc,0x49F176,0x0,0xFF,signed,little_e
+	[subject]筒井順慶:calc,0x49F566,0x0,0xFF,signed,little_e
+	[subject]森長可:calc,0x49F29C6,0x0,0xFF,signed,little_e
+	[subject]織田信忠:calc,0x49F646,0x0,0xFF,signed,little_e
+[back]
+[subject]槍:dir
+	[subject]織田信長:calc,0x49ECA7,0x0,0xFF,signed,little_e
+	[subject]佐久間信盛:calc,0x49EFB7,0x0,0xFF,signed,little_e
+	[subject]前田利家:calc,0x49F027,0x0,0xFF,signed,little_e
+	[subject]池田恒興:calc,0x49F107,0x0,0xFF,signed,little_e
+	[subject]河尻秀隆:calc,0x49F1E7,0x0,0xFF,signed,little_e
+	[subject]佐々成政:calc,0x49F097,0x0,0xFF,signed,little_e
+	[subject]森可成:calc,0x49F257,0x0,0xFF,signed,little_e
+	[subject]柴田勝家:calc,0x49ED17,0x0,0xFF,signed,little_e
+	[subject]林秀貞:calc,0x49EF47,0x0,0xFF,signed,little_e
+	[subject]金森長近:calc,0x49F417,0x0,0xFF,signed,little_e
+	[subject]木下藤吉朗:calc,0x49F727,0x0,0xFF,signed,little_e
+	[subject]蜂須賀正勝:calc,0x49F487,0x0,0xFF,signed,little_e
+	[subject]明智光秀:calc,0x49EED7,0x0,0xFF,signed,little_e
+	[subject]不破光治:calc,0x49F3A7,0x0,0xFF,signed,little_e
+	[subject]蜂屋頼隆:calc,0x49F337,0x0,0xFF,signed,little_e
+	[subject]蒲生氏郷:calc,0x49F5D7,0x0,0xFF,signed,little_e
+	[subject]筒井順慶:calc,0x49F567,0x0,0xFF,signed,little_e
+	[subject]森長可:calc,0x49F29C7,0x0,0xFF,signed,little_e
+	[subject]織田信忠:calc,0x49F647,0x0,0xFF,signed,little_e
+	[subject]羽柴秀吉:calc,0x49EDF7,0x0,0xFF,signed,little_e
+[back]
+[subject]弓:dir
+	[subject]織田信長:calc,0x49ECA8,0x0,0xFF,signed,little_e
+	[subject]丹羽長秀:calc,0x49ED88,0x0,0xFF,signed,little_e
+	[subject]前田利家:calc,0x49EFF8,0x0,0xFF,signed,little_e
+	[subject]池田恒興:calc,0x49F108,0x0,0xFF,signed,little_e
+	[subject]佐々成政:calc,0x49F098,0x0,0xFF,signed,little_e
+	[subject]林秀貞:calc,0x49EF48,0x0,0xFF,signed,little_e
+	[subject]明智光秀:calc,0x49EED8,0x0,0xFF,signed,little_e
+	[subject]不破光治:calc,0x49F3A8,0x0,0xFF,signed,little_e
+	[subject]蜂屋頼隆:calc,0x49F338,0x0,0xFF,signed,little_e
+	[subject]蒲生氏郷:calc,0x49F5D8,0x0,0xFF,signed,little_e
+	[subject]細川藤孝:calc,0x49F178,0x0,0xFF,signed,little_e
+[back]
+[subject]鉄砲:dir
+	[subject]織田信長:calc,0x49ECA9,0x0,0xFF,signed,little_e
+	[subject]佐久間信盛:calc,0x49EFB9,0x0,0xFF,signed,little_e
+	[subject]前田利家:calc,0x49F029,0x0,0xFF,signed,little_e
+	[subject]池田恒興:calc,0x49F109,0x0,0xFF,signed,little_e
+	[subject]河尻秀隆:calc,0x49F1E9,0x0,0xFF,signed,little_e
+	[subject]佐々成政:calc,0x49F099,0x0,0xFF,signed,little_e
+	[subject]森可成:calc,0x49F259,0x0,0xFF,signed,little_e
+	[subject]金森長近:calc,0x49F419,0x0,0xFF,signed,little_e
+	[subject]木下藤吉朗:calc,0x49F729,0x0,0xFF,signed,little_e
+	[subject]滝川一益:calc,0x49EE69,0x0,0xFF,signed,little_e
+	[subject]蜂須賀正勝:calc,0x49F489,0x0,0xFF,signed,little_e
+	[subject]明智光秀:calc,0x49EED9,0x0,0xFF,signed,little_e
+	[subject]不破光治:calc,0x49F3A9,0x0,0xFF,signed,little_e
+	[subject]九鬼嘉隆:calc,0x49F4F9,0x0,0xFF,signed,little_e
+	[subject]蜂屋頼隆:calc,0x49F339,0x0,0xFF,signed,little_e
+	[subject]蒲生氏郷:calc,0x49F5D9,0x0,0xFF,signed,little_e
+	[subject]筒井順慶:calc,0x49F569,0x0,0xFF,signed,little_e
+	[subject]森長可:calc,0x49F29C9,0x0,0xFF,signed,little_e
+	[subject]羽柴秀吉:calc,0x49EDF9,0x0,0xFF,signed,little_e
+[back]
+[subject]大砲:dir
+	[subject]丹羽長秀:calc,0x49ED8A,0x0,0xFF,signed,little_e
+	[subject]金森長近:calc,0x49F41A,0x0,0xFF,signed,little_e
+	[subject]九鬼嘉隆:calc,0x49F4FA,0x0,0xFF,signed,little_e
+[back]
+[subject]軍配:dir
+	[subject]林秀貞:calc,0x49EF4C,0x0,0xFF,signed,little_e
+	[subject]木下藤吉朗:calc,0x49F72C,0x0,0xFF,signed,little_e
+	[subject]細川藤孝:calc,0x49F17C,0x0,0xFF,signed,little_e
+[back]
+[subject]忍具:dir
+	[subject]滝川一益:calc,0x49EE6B,0x0,0xFF,signed,little_e
+	[subject]蜂須賀正勝:calc,0x49F48B,0x0,0xFF,signed,little_e
+[back]
+[subject]最大耐久力:dir
+	[subject]織田信長:calc,0x49EC50,0x0,0xE803,signed,little_e
+	[subject]丹羽長秀:calc,0x49ED30,0x0,0xE803,signed,little_e
+	[subject]佐久間信盛:calc,0x49EF60,0x0,0xE803,signed,little_e
+	[subject]前田利家:calc,0x49EFD0,0x0,0xE803,signed,little_e
+	[subject]池田恒興:calc,0x49F0B0,0x0,0xE803,signed,little_e
+	[subject]河尻秀隆:calc,0x49F190,0x0,0xE803,signed,little_e
+	[subject]佐々成政:calc,0x49F040,0x0,0xE803,signed,little_e
+	[subject]森可成:calc,0x49F200,0x0,0xE803,signed,little_e
+	[subject]柴田勝家:calc,0x49ECC0,0x0,0xE803,signed,little_e
+	[subject]林秀貞:calc,0x49EEF0,0x0,0xE803,signed,little_e
+	[subject]金森長近:calc,0x49F3C0,0x0,0xE803,signed,little_e
+	[subject]木下藤吉朗:calc,0x49F6D0,0x0,0xE803,signed,little_e
+	[subject]滝川一益:calc,0x49EE10,0x0,0xE803,signed,little_e
+	[subject]蜂須賀正勝:calc,0x49F430,0x0,0xE803,signed,little_e
+	[subject]明智光秀:calc,0x49EE80,0x0,0xE803,signed,little_e
+	[subject]不破光治:calc,0x49F350,0x0,0xE803,signed,little_e
+	[subject]九鬼嘉隆:calc,0x49F4A0,0x0,0xE803,signed,little_e
+	[subject]蜂屋頼隆:calc,0x49F2E0,0x0,0xE803,signed,little_e
+	[subject]蒲生氏郷:calc,0x49F580,0x0,0xE803,signed,little_e
+	[subject]細川藤孝:calc,0x49F120,0x0,0xE803,signed,little_e
+	[subject]筒井順慶:calc,0x49F510,0x0,0xE803,signed,little_e
+	[subject]森長可:calc,0x49F270,0x0,0xE803,signed,little_e
+	[subject]織田信忠:calc,0x49F5F0,0x0,0xE803,signed,little_e
+	[subject]羽柴秀吉:calc,0x49EDA0,0x0,0xE803,signed,little_e
+[back]
+[subject]耐久力:dir
+	[subject]織田信長:calc,0x49ECB0,0x0,0xE803,signed,little_e
+	[subject]丹羽長秀:calc,0x49ED90,0x0,0xE803,signed,little_e
+	[subject]佐久間信盛:calc,0x49EFC0,0x0,0xE803,signed,little_e
+	[subject]前田利家:calc,0x49F030,0x0,0xE803,signed,little_e
+	[subject]池田恒興:calc,0x49F110,0x0,0xE803,signed,little_e
+	[subject]河尻秀隆:calc,0x49F1F0,0x0,0xE803,signed,little_e
+	[subject]佐々成政:calc,0x49F0A0,0x0,0xE803,signed,little_e
+	[subject]森可成:calc,0x49F260,0x0,0xE803,signed,little_e
+	[subject]柴田勝家:calc,0x49ED20,0x0,0xE803,signed,little_e
+	[subject]林秀貞:calc,0x49EF50,0x0,0xE803,signed,little_e
+	[subject]金森長近:calc,0x49F420,0x0,0xE803,signed,little_e
+	[subject]木下藤吉朗:calc,0x49F730,0x0,0xE803,signed,little_e
+	[subject]滝川一益:calc,0x49EE70,0x0,0xE803,signed,little_e
+	[subject]滝川一益:calc,0x49F490,0x0,0xE803,signed,little_e
+	[subject]明智光秀:calc,0x49EEE0,0x0,0xE803,signed,little_e
+	[subject]不破光治:calc,0x49F3B0,0x0,0xE803,signed,little_e
+	[subject]九鬼嘉隆:calc,0x49F500,0x0,0xE803,signed,little_e
+	[subject]蜂屋頼隆:calc,0x49F340,0x0,0xE803,signed,little_e
+	[subject]蒲生氏郷:calc,0x49F5E0,0x0,0xE803,signed,little_e
+	[subject]細川藤孝:calc,0x49F180,0x0,0xE803,signed,little_e
+	[subject]筒井順慶:calc,0x49F570,0x0,0xE803,signed,little_e
+	[subject]森長可:calc,0x49F2D0,0x0,0xE803,signed,little_e
+	[subject]織田信忠:calc,0x49F650,0x0,0xE803,signed,little_e
+	[subject]羽柴秀吉:calc,0x49EE00,0x0,0xE803,signed,little_e
+[back]
+[subject]所持金:calc,0x4BAC78,0x00,0xFFFF,signed,little_e
+[/script]
+
+[script]
+[title]Seqence Palladium ver1.6.0.1
+[process]SSP.EXE
+[maker]工画堂スタジオ
+[creator]みそ
+[note]
+verが0.1違うだけでも
+正常に動作しません。
+[/note]
+[subject]パラスィート属性:dir
+	[subject]ジル:list,0x4AEBCE,SP属性,0,1
+	[subject]ラシュペル:list,0x4AEC09,SP属性,0,1
+	[subject]ドナ:list,0x4AEC44,SP属性,0,1
+	[subject]コリエル:list,0x4AEC7F,SP属性,0,1
+	[subject]ケスト:list,0x4AECBA,SP属性,0,1
+	[subject]シャノン:list,0x4AECF5,SP属性,0,1
+	[subject]エレミー:list,0x4AED30,SP属性,0,1
+	[subject]ティファ:list,0x4AED6B,SP属性,0,1
+	[subject]クリスティン:list,0x4AEDA6,SP属性,0,1
+	[subject]レイハ:list,0x4AEDE1,SP属性,0,1
+	[subject]アトワイス:list,0x4AEE1C,SP属性,0,1
+	[subject]キッス:list,0x4AEE57,SP属性,0,1
+	[subject]リナリー:list,0x4AEE92,SP属性,0,1
+	[subject]メル:list,0x4AEECD,SP属性,0,1
+	[subject]チェルニー:list,0x4AEF08,SP属性,0,1
+	[subject]ラミ:list,0x4AEF43,SP属性,0,1
+[root]
+[subject]キャラフラグ:dir
+	[subject]パラスィート:dir
+		[subject]ジル/いる:toggle,0x4AEBF5,01,00
+		[subject]ラシュペル/いる:toggle,0x4AEC30,01,00
+		[subject]ドナ/いる:toggle,0x4AEC6B,01,00
+		[subject]コリエル/いる:toggle,0x4AECA6,01,00
+		[subject]ケスト/いる:toggle,0x4AECE1,01,00
+		[subject]シャノン/いる:toggle,0x4AED1C,01,00
+		[subject]エレミー/いる:toggle,0x4AED57,01,00
+		[subject]ティファ/いる:toggle,0x4AED92,01,00
+		[subject]クリスティン/いる:toggle,0x4AEDCD,01,00
+		[subject]レイハ/いる:toggle,0x4AEE08,01,00
+		[subject]アトワイス/いる:toggle,0x4AEE43,01,00
+		[subject]キッス/いる:toggle,0x4AEE7E,01,00
+		[subject]リナリー/いる:toggle,0x4AEEB9,01,00
+		[subject]メル/いる:toggle,0x4AEEF4,01,00
+		[subject]チェルニー/いる:toggle,0x4AEF2F,01,00
+		[subject]ラミ/いる:toggle,0x4AEF6A,01,00
+	[back]
+	[subject]騎士:dir
+		[subject]レヴィン/いる:toggle,0x4AEFA5,01,00
+		[subject]セレート/いる:toggle,0x4AEFE0,01,00
+		[subject]オルフェ/いる:toggle,0x4AF01B,01,00
+		[subject]イェルファン/いる:toggle,0x4AF056,01,00
+		[subject]ナハト/いる:toggle,0x4AF091,01,00
+		[subject]フィッテ/いる:toggle,0x4AF0CC,01,00
+		[subject]モルガン/いる:toggle,0x4AF107,01,00
+		[subject]ファルシス/いる:toggle,0x4AF142,01,00
+		[subject]バウニー/いる:toggle,0x4AF17D,01,00
+		[subject]ケリー/いる:toggle,0x4AF1B8,01,00
+		[subject]ディラン/いる:toggle,0x4AF1F3,01,00
+		[subject]リップ/いる:toggle,0x4AF22E,01,00
+		[subject]ルカ/いる:toggle,0x4AF269,01,00
+		[subject]アスプリージャ/いる:toggle,0x4AF2A4,01,00
+		[subject]フェンネル/いる:toggle,0x4AF2DF,01,00
+		[subject]クレッセン/いる:toggle,0x4AF31A,01,00
+		[subject]ティアス/いる:toggle,0x4AF355,01,00
+		[subject]ガラリア/いる:toggle,0x4AF390,01,00
+		[subject]スー/いる:toggle,0x4AF3CB,01,00
+		[subject]マイス/いる:toggle,0x4AF406,01,00
+		[subject]ジェスター/いる:toggle,0x4AF441,01,00
+		[subject]セラジン/いる:toggle,0x4AF47C,01,00
+		[subject]バド/いる:toggle,0x4AF4B7,01,00
+		[subject]カイン/いる:toggle,0x4AF4F2,01,00
+		[subject]アレス/いる:toggle,0x4AF52D,01,00
+		[subject]ザイン/いる:toggle,0x4AF568,01,00
+	[back]
+	[subject]先生:dir
+		[subject]フォッシュ/いる:toggle,0x4AF705,01,00
+		[subject]シュナイドラー/いる:toggle,0x4AF740,01,00
+		[subject]ゴスペル/いる:toggle,0x4AF77B,01,00
+		[subject]ウィドリオ/いる:toggle,0x4AF7B6,01,00
+		[subject]ムパ/いる:toggle,0x4AF7F1,01,00
+		[subject]レジオン/いる:toggle,0x4AF867,01,00
+		[subject]ティーエ/いる:toggle,0x4AF8DD,01,00
+		[subject]ナバ/いる:toggle,0x4AF918,01,00
+		[subject]パペッシュ/いる:toggle,0x4AF953,01,00
+[root]
+[subject]キャラクター能力値:dir
+	[subject]騎士:dir
+	[subject]強靱さ:dir
+		[subject]レヴィン:calc,0x4AEF80,0x0,0x14,signed,little_e
+		[subject]セレート:calc,0x4AEFBB,0x0,0x14,signed,little_e
+		[subject]オルフェ:calc,0x4AEFF6,0x0,0x14,signed,little_e
+		[subject]ナハト:calc,0x4AF06C,0x0,0x14,signed,little_e
+		[subject]フィッテ:calc,0x4AF0A7,0x0,0x14,signed,little_e
+		[subject]ファルシス:calc,0x4AF11D,0x0,0x14,signed,little_e
+		[subject]ケリー:calc,0x4AF193,0x0,0x14,signed,little_e
+		[subject]ディラン:calc,0x4AF1CE,0x0,0x14,signed,little_e
+		[subject]ルカ:calc,0x4AF244,0x0,0x14,signed,little_e
+		[subject]フェンネル:calc,0x4AF2BA,0x0,0x14,signed,little_e
+		[subject]カイン:calc,0x4AF4CD,0x0,0x14,signed,little_e
+		[subject]アレス:calc,0x4AF508,0x0,0x14,signed,little_e
+		[subject]モルガン:calc,0x4AF0E2,0x0,0x14,signed,little_e
+		[subject]アスプリージャ:calc,0x4AF27F,0x0,0x14,signed,little_e
+		[subject]リップ:calc,0x4AF209,0x0,0x14,signed,little_e
+		[subject]バド:calc,0x4AF492,0x0,0x14,signed,little_e
+		[subject]イェルファン:calc,0x4AF031,0x0,0x14,signed,little_e
+		[subject]バウニー:calc,0x4AF158,0x0,0x14,signed,little_e
+		[subject]ティアス:calc,0x4AF330,0x0,0x14,signed,little_e
+		[subject]ジェスター:calc,0x4AF41C,0x0,0x14,signed,little_e
+		[subject]クレッセン:calc,0x4AF2F5,0x0,0x14,signed,little_e
+		[subject]ガラリア:calc,0x4AF36B,0x0,0x14,signed,little_e
+		[subject]スー:calc,0x4AF3A6,0x0,0x14,signed,little_e
+		[subject]マイス:calc,0x4AF3E1,0x0,0x14,signed,little_e
+		[subject]セラジン:calc,0x4AF457,0x0,0x14,signed,little_e
+		[subject]ザイン:calc,0x4AF543,0x0,0x14,signed,little_e
+	[back]
+	[subject]敏捷性:dir
+		[subject]レヴィン:calc,0x4AEF81,0x0,0x14,signed,little_e
+		[subject]セレート:calc,0x4AEFBC,0x0,0x14,signed,little_e
+		[subject]オルフェ:calc,0x4AEFF7,0x0,0x14,signed,little_e
+		[subject]ナハト:calc,0x4AF06D,0x0,0x14,signed,little_e
+		[subject]フィッテ:calc,0x4AF0A8,0x0,0x14,signed,little_e
+		[subject]ファルシス:calc,0x4AF11E,0x0,0x14,signed,little_e
+		[subject]ケリー:calc,0x4AF194,0x0,0x14,signed,little_e
+		[subject]ディラン:calc,0x4AF1CF,0x0,0x14,signed,little_e
+		[subject]ルカ:calc,0x4AF245,0x0,0x14,signed,little_e
+		[subject]フェンネル:calc,0x4AF2BB,0x0,0x14,signed,little_e
+		[subject]カイン:calc,0x4AF4CE,0x0,0x14,signed,little_e
+		[subject]アレス:calc,0x4AF509,0x0,0x14,signed,little_e
+		[subject]モルガン:calc,0x4AF0E3,0x0,0x14,signed,little_e
+		[subject]アスプリージャ:calc,0x4AF280,0x0,0x14,signed,little_e
+		[subject]リップ:calc,0x4AF20A,0x0,0x14,signed,little_e
+		[subject]バド:calc,0x4AF493,0x0,0x14,signed,little_e
+		[subject]イェルファン:calc,0x4AF032,0x0,0x14,signed,little_e
+		[subject]バウニー:calc,0x4AF159,0x0,0x14,signed,little_e
+		[subject]ティアス:calc,0x4AF331,0x0,0x14,signed,little_e
+		[subject]ジェスター:calc,0x4AF41D,0x0,0x14,signed,little_e
+		[subject]クレッセン:calc,0x4AF2F6,0x0,0x14,signed,little_e
+		[subject]ガラリア:calc,0x4AF36C,0x0,0x14,signed,little_e
+		[subject]スー:calc,0x4AF3A7,0x0,0x14,signed,little_e
+		[subject]マイス:calc,0x4AF3E2,0x0,0x14,signed,little_e
+		[subject]セラジン:calc,0x4AF458,0x0,0x14,signed,little_e
+		[subject]ザイン:calc,0x4AF544,0x0,0x14,signed,little_e
+	[back]
+	[subject]知力:dir
+		[subject]レヴィン:calc,0x4AEF82,0x0,0x14,signed,little_e
+		[subject]セレート:calc,0x4AEFBD,0x0,0x14,signed,little_e
+	[subject]オルフェ:calc,0x4AEFF8,0x0,0x14,signed,little_e
+	[subject]ナハト:calc,0x4AF06E,0x0,0x14,signed,little_e
+	[subject]フィッテ:calc,0x4AF0A9,0x0,0x14,signed,little_e
+	[subject]ファルシス:calc,0x4AF11F,0x0,0x14,signed,little_e
+	[subject]ケリー:calc,0x4AF195,0x0,0x14,signed,little_e
+	[subject]ディラン:calc,0x4AF1D0,0x0,0x14,signed,little_e
+	[subject]ルカ:calc,0x4AF246,0x0,0x14,signed,little_e
+	[subject]フェンネル:calc,0x4AF2BC,0x0,0x14,signed,little_e
+	[subject]カイン:calc,0x4AF4CF,0x0,0x14,signed,little_e
+	[subject]アレス:calc,0x4AF50A,0x0,0x14,signed,little_e
+	[subject]モルガン:calc,0x4AF0E4,0x0,0x14,signed,little_e
+	[subject]アスプリージャ:calc,0x4AF281,0x0,0x14,signed,little_e
+	[subject]リップ:calc,0x4AF20B,0x0,0x14,signed,little_e
+	[subject]バド:calc,0x4AF494,0x0,0x14,signed,little_e
+	[subject]イェルファン:calc,0x4AF033,0x0,0x14,signed,little_e
+	[subject]バウニー:calc,0x4AF159,0x0,0x14,signed,little_e
+	[subject]ティアス:calc,0x4AF332,0x0,0x14,signed,little_e
+	[subject]ジェスター:calc,0x4AF41E,0x0,0x14,signed,little_e
+	[subject]クレッセン:calc,0x4AF2F7,0x0,0x14,signed,little_e
+	[subject]ガラリア:calc,0x4AF36D,0x0,0x14,signed,little_e
+	[subject]スー:calc,0x4AF3A8,0x0,0x14,signed,little_e
+	[subject]マイス:calc,0x4AF3E3,0x0,0x14,signed,little_e
+	[subject]セラジン:calc,0x4AF459,0x0,0x14,signed,little_e
+	[subject]ザイン:calc,0x4AF545,0x0,0x14,signed,little_e
+[back]
+[subject]敬虔:dir
+	[subject]レヴィン:calc,0x4AEF83,0x0,0x14,signed,little_e
+	[subject]セレート:calc,0x4AEFBE,0x0,0x14,signed,little_e
+	[subject]オルフェ:calc,0x4AEFF9,0x0,0x14,signed,little_e
+	[subject]ナハト:calc,0x4AF06F,0x0,0x14,signed,little_e
+	[subject]フィッテ:calc,0x4AF0AA,0x0,0x14,signed,little_e
+	[subject]ファルシス:calc,0x4AF120,0x0,0x14,signed,little_e
+	[subject]ケリー:calc,0x4AF196,0x0,0x14,signed,little_e
+	[subject]ディラン:calc,0x4AF1D1,0x0,0x14,signed,little_e
+	[subject]ルカ:calc,0x4AF247,0x0,0x14,signed,little_e
+	[subject]フェンネル:calc,0x4AF2BD,0x0,0x14,signed,little_e
+	[subject]カイン:calc,0x4AF4D0,0x0,0x14,signed,little_e
+	[subject]アレス:calc,0x4AF50B,0x0,0x14,signed,little_e
+	[subject]モルガン:calc,0x4AF0E5,0x0,0x14,signed,little_e
+	[subject]アスプリージャ:calc,0x4AF282,0x0,0x14,signed,little_e
+	[subject]リップ:calc,0x4AF20C,0x0,0x14,signed,little_e
+	[subject]バド:calc,0x4AF495,0x0,0x14,signed,little_e
+	[subject]イェルファン:calc,0x4AF034,0x0,0x14,signed,little_e
+	[subject]バウニー:calc,0x4AF15A,0x0,0x14,signed,little_e
+	[subject]ティアス:calc,0x4AF333,0x0,0x14,signed,little_e
+	[subject]ジェスター:calc,0x4AF41F,0x0,0x14,signed,little_e
+	[subject]クレッセン:calc,0x4AF2F8,0x0,0x14,signed,little_e
+	[subject]ガラリア:calc,0x4AF36E,0x0,0x14,signed,little_e
+	[subject]スー:calc,0x4AF3A9,0x0,0x14,signed,little_e
+	[subject]マイス:calc,0x4AF3E4,0x0,0x14,signed,little_e
+	[subject]セラジン:calc,0x4AF45A,0x0,0x14,signed,little_e
+	[subject]ザイン:calc,0x4AF546,0x0,0x14,signed,little_e
+[back]
+[subject]精神力:dir
+	[subject]レヴィン:calc,0x4AEF84,0x0,0x14,signed,little_e
+	[subject]セレート:calc,0x4AEFBF,0x0,0x14,signed,little_e
+	[subject]オルフェ:calc,0x4AEFFA,0x0,0x14,signed,little_e
+	[subject]ナハト:calc,0x4AF070,0x0,0x14,signed,little_e
+	[subject]フィッテ:calc,0x4AF0AB,0x0,0x14,signed,little_e
+	[subject]ファルシス:calc,0x4AF121,0x0,0x14,signed,little_e
+	[subject]ケリー:calc,0x4AF197,0x0,0x14,signed,little_e
+	[subject]ディラン:calc,0x4AF1D2,0x0,0x14,signed,little_e
+	[subject]ルカ:calc,0x4AF248,0x0,0x14,signed,little_e
+	[subject]フェンネル:calc,0x4AF2BE,0x0,0x14,signed,little_e
+	[subject]カイン:calc,0x4AF4D1,0x0,0x14,signed,little_e
+	[subject]アレス:calc,0x4AF50C,0x0,0x14,signed,little_e
+	[subject]モルガン:calc,0x4AF0E6,0x0,0x14,signed,little_e
+	[subject]アスプリージャ:calc,0x4AF283,0x0,0x14,signed,little_e
+	[subject]リップ:calc,0x4AF20D,0x0,0x14,signed,little_e
+	[subject]バド:calc,0x4AF495,0x0,0x14,signed,little_e
+	[subject]イェルファン:calc,0x4AF035,0x0,0x14,signed,little_e
+	[subject]バウニー:calc,0x4AF15B,0x0,0x14,signed,little_e
+	[subject]ティアス:calc,0x4AF334,0x0,0x14,signed,little_e
+	[subject]ジェスター:calc,0x4AF420,0x0,0x14,signed,little_e
+	[subject]クレッセン:calc,0x4AF2F9,0x0,0x14,signed,little_e
+	[subject]ガラリア:calc,0x4AF36F,0x0,0x14,signed,little_e
+	[subject]スー:calc,0x4AF3AA,0x0,0x14,signed,little_e
+	[subject]マイス:calc,0x4AF3E5,0x0,0x14,signed,little_e
+	[subject]セラジン:calc,0x4AF45B,0x0,0x14,signed,little_e
+	[subject]ザイン:calc,0x4AF547,0x0,0x14,signed,little_e
+[back]
+[subject]感性:dir
+	[subject]レヴィン:calc,0x4AEF85,0x0,0x14,signed,little_e
+	[subject]セレート:calc,0x4AEFC0,0x0,0x14,signed,little_e
+	[subject]オルフェ:calc,0x4AEFFB,0x0,0x14,signed,little_e
+	[subject]ナハト:calc,0x4AF071,0x0,0x14,signed,little_e
+	[subject]フィッテ:calc,0x4AF0AC,0x0,0x14,signed,little_e
+	[subject]ファルシス:calc,0x4AF122,0x0,0x14,signed,little_e
+	[subject]ケリー:calc,0x4AF198,0x0,0x14,signed,little_e
+	[subject]ディラン:calc,0x4AF1D3,0x0,0x14,signed,little_e
+	[subject]ルカ:calc,0x4AF249,0x0,0x14,signed,little_e
+	[subject]フェンネル:calc,0x4AF2BF,0x0,0x14,signed,little_e
+	[subject]カイン:calc,0x4AF4D2,0x0,0x14,signed,little_e
+	[subject]アレス:calc,0x4AF50C,0x0,0x14,signed,little_e
+	[subject]モルガン:calc,0x4AF0E7,0x0,0x14,signed,little_e
+	[subject]アスプリージャ:calc,0x4AF284,0x0,0x14,signed,little_e
+	[subject]リップ:calc,0x4AF20E,0x0,0x14,signed,little_e
+	[subject]バド:calc,0x4AF496,0x0,0x14,signed,little_e
+	[subject]イェルファン:calc,0x4AF036,0x0,0x14,signed,little_e
+	[subject]バウニー:calc,0x4AF15C,0x0,0x14,signed,little_e
+	[subject]ティアス:calc,0x4AF335,0x0,0x14,signed,little_e
+	[subject]ジェスター:calc,0x4AF421,0x0,0x14,signed,little_e
+	[subject]クレッセン:calc,0x4AF2FA,0x0,0x14,signed,little_e
+	[subject]ガラリア:calc,0x4AF370,0x0,0x14,signed,little_e
+	[subject]スー:calc,0x4AF3AB,0x0,0x14,signed,little_e
+	[subject]マイス:calc,0x4AF3E6,0x0,0x14,signed,little_e
+	[subject]セラジン:calc,0x4AF45C,0x0,0x14,signed,little_e
+	[subject]ザイン:calc,0x4AF548,0x0,0x14,signed,little_e
+[back]
+[subject]感受性(ＫＥＹ):dir
+	[subject]レヴィン:calc,0x4AEF9E,0x0,0x9,signed,little_e
+	[subject]セレート:calc,0x4AEFD9,0x0,0x9,signed,little_e
+	[subject]オルフェ:calc,0x4AF014,0x0,0x9,signed,little_e
+	[subject]イェルファン:calc,0x4AF04F,0x0,0x9,signed,little_e
+	[subject]ナハト:calc,0x4AF08A,0x0,0x9,signed,little_e
+	[subject]フィッテ:calc,0x4AF0C5,0x0,0x9,signed,little_e
+	[subject]モルガン:calc,0x4AF100,0x0,0x9,signed,little_e
+	[subject]ファルシス:calc,0x4AF13B,0x0,0x9,signed,little_e
+	[subject]バウニー:calc,0x4AF176,0x0,0x9,signed,little_e
+	[subject]ケリー:calc,0x4AF1B1,0x0,0x9,signed,little_e
+	[subject]ディラン:calc,0x4AF1EC,0x0,0x9,signed,little_e
+	[subject]リップ:calc,0x4AF227,0x0,0x9,signed,little_e
+	[subject]ルカ:calc,0x4AF152,0x0,0x9,signed,little_e
+	[subject]アスプリージャ:calc,0x4AF29D,0x0,0x9,signed,little_e
+	[subject]フェンネル:calc,0x4AF2D8,0x0,0x9,signed,little_e
+	[subject]クレッセン:calc,0x4AF313,0x0,0x9,signed,little_e
+	[subject]ティアス:calc,0x4AF34E,0x0,0x9,signed,little_e
+	[subject]ガラリア:calc,0x4AF389,0x0,0x9,signed,little_e
+	[subject]スー:calc,0x4AF3C4,0x0,0x9,signed,little_e
+	[subject]マイス:calc,0x4AF3FF,0x0,0x9,signed,little_e
+	[subject]ジェスター:calc,0x4AF43A,0x0,0x9,signed,little_e
+	[subject]セラジン:calc,0x4AF475,0x0,0x9,signed,little_e
+	[subject]バド:calc,0x4AF4B0,0x0,0x9,signed,little_e
+	[subject]カイン:calc,0x4AF4EB,0x0,0x9,signed,little_e
+	[subject]アレス:calc,0x4AF526,0x0,0x9,signed,little_e
+	[subject]ザイン:calc,0x4AF561,0x0,0x9,signed,little_e
+[back]
+[back]
+[subject]パラスィート:dir
+[subject]強靱さ:dir
+	[subject]ジル:calc,0x4AEBD0,0x0,0x14,signed,little_e
+	[subject]ラシュペル:calc,0x4AEC0B,0x0,0x14,signed,little_e
+	[subject]ドナ:calc,0x4AEC46,0x0,0x14,signed,little_e
+	[subject]シャノン:calc,0x4AECF7,0x0,0x14,signed,little_e
+	[subject]エレミー:calc,0x4AED32,0x0,0x14,signed,little_e
+	[subject]ティファ:calc,0x4AED6D,0x0,0x14,signed,little_e
+	[subject]クリスティン:calc,0x4AEDA8,0x0,0x14,signed,little_e
+	[subject]レイハ:calc,0x4AEDE3,0x0,0x14,signed,little_e
+	[subject]キッス:calc,0x4AEE59,0x0,0x14,signed,little_e
+	[subject]チェルニー:calc,0x4AEF0A,0x0,0x14,signed,little_e
+	[subject]ケスト:calc,0x4AECBC,0x0,0x14,signed,little_e
+	[subject]メル:calc,0x4AEECF,0x0,0x14,signed,little_e
+	[subject]ラミ:calc,0x4AEF45,0x0,0x14,signed,little_e
+	[subject]アトワイス:calc,0x4AEE1E,0x0,0x14,signed,little_e
+	[subject]リナリー:calc,0x4AEE94,0x0,0x14,signed,little_e
+	[subject]ユリエル:calc,0x4AEC81,0x0,0x14,signed,little_e
+[back]
+[subject]敏捷性:dir
+	[subject]ジル:calc,0x4AEBD1,0x0,0x14,signed,little_e
+	[subject]ラシュペル:calc,0x4AEC0C,0x0,0x14,signed,little_e
+	[subject]ドナ:calc,0x4AEC47,0x0,0x14,signed,little_e
+	[subject]シャノン:calc,0x4AECF8,0x0,0x14,signed,little_e
+	[subject]エレミー:calc,0x4AED33,0x0,0x14,signed,little_e
+	[subject]ティファ:calc,0x4AED6E,0x0,0x14,signed,little_e
+	[subject]クリスティン:calc,0x4AEDA9,0x0,0x14,signed,little_e
+	[subject]レイハ:calc,0x4AEDE4,0x0,0x14,signed,little_e
+	[subject]キッス:calc,0x4AEE5A,0x0,0x14,signed,little_e
+	[subject]チェルニー:calc,0x4AEF0B,0x0,0x14,signed,little_e
+	[subject]ケスト:calc,0x4AECBD,0x0,0x14,signed,little_e
+	[subject]メル:calc,0x4AEED0,0x0,0x14,signed,little_e
+	[subject]ラミ:calc,0x4AEF46,0x0,0x14,signed,little_e
+	[subject]アトワイス:calc,0x4AEE1F,0x0,0x14,signed,little_e
+	[subject]リナリー:calc,0x4AEE95,0x0,0x14,signed,little_e
+	[subject]ユリエル:calc,0x4AEC82,0x0,0x14,signed,little_e
+[back]
+[subject]知力:dir
+	[subject]ジル:calc,0x4AEBD2,0x0,0x14,signed,little_e
+	[subject]ラシュペル:calc,0x4AEC0D,0x0,0x14,signed,little_e
+	[subject]ドナ:calc,0x4AEC48,0x0,0x14,signed,little_e
+	[subject]シャノン:calc,0x4AECF9,0x0,0x14,signed,little_e
+	[subject]エレミー:calc,0x4AED34,0x0,0x14,signed,little_e
+	[subject]ティファ:calc,0x4AED6F,0x0,0x14,signed,little_e
+	[subject]クリスティン:calc,0x4AEDAA,0x0,0x14,signed,little_e
+	[subject]レイハ:calc,0x4AEDE5,0x0,0x14,signed,little_e
+	[subject]キッス:calc,0x4AEE5B,0x0,0x14,signed,little_e
+	[subject]チェルニー:calc,0x4AEF0C,0x0,0x14,signed,little_e
+	[subject]ケスト:calc,0x4AECBE,0x0,0x14,signed,little_e
+	[subject]メル:calc,0x4AEED1,0x0,0x14,signed,little_e
+	[subject]ラミ:calc,0x4AEF47,0x0,0x14,signed,little_e
+	[subject]アトワイス:calc,0x4AEE20,0x0,0x14,signed,little_e
+	[subject]リナリー:calc,0x4AEE96,0x0,0x14,signed,little_e
+	[subject]ユリエル:calc,0x4AEC83,0x0,0x14,signed,little_e
+[back]
+[subject]敬虔:dir
+	[subject]ジル:calc,0x4AEBD3,0x0,0x14,signed,little_e
+	[subject]ラシュペル:calc,0x4AEC0E,0x0,0x14,signed,little_e
+	[subject]ドナ:calc,0x4AEC49,0x0,0x14,signed,little_e
+	[subject]シャノン:calc,0x4AECFA,0x0,0x14,signed,little_e
+	[subject]エレミー:calc,0x4AED35,0x0,0x14,signed,little_e
+	[subject]ティファ:calc,0x4AED70,0x0,0x14,signed,little_e
+	[subject]クリスティン:calc,0x4AEDAB,0x0,0x14,signed,little_e
+	[subject]レイハ:calc,0x4AEDE6,0x0,0x14,signed,little_e
+	[subject]キッス:calc,0x4AEE5C,0x0,0x14,signed,little_e
+	[subject]チェルニー:calc,0x4AEF0D,0x0,0x14,signed,little_e
+	[subject]ケスト:calc,0x4AECBF,0x0,0x14,signed,little_e
+	[subject]メル:calc,0x4AEED2,0x0,0x14,signed,little_e
+	[subject]ラミ:calc,0x4AEF48,0x0,0x14,signed,little_e
+	[subject]アトワイス:calc,0x4AEE21,0x0,0x14,,little_e
+	[subject]リナリー:calc,0x4AEE97,0x0,0x14,signed,little_e
+	[subject]ユリエル:calc,0x4AEC84,0x0,0x14,signed,little_e
+[back]
+[subject]精神力:dir
+	[subject]ジル:calc,0x4AEBD4,0x0,0x14,signed,little_e
+	[subject]ラシュペル:calc,0x4AEC0F,0x0,0x14,signed,little_e
+	[subject]ドナ:calc,0x4AEC4A,0x0,0x14,signed,little_e
+	[subject]シャノン:calc,0x4AECFB,0x0,0x14,signed,little_e
+	[subject]エレミー:calc,0x4AED36,0x0,0x14,signed,little_e
+	[subject]ティファ:calc,0x4AED71,0x0,0x14,signed,little_e
+	[subject]クリスティン:calc,0x4AEDAC,0x0,0x14,signed,little_e
+	[subject]レイハ:calc,0x4AEDE7,0x0,0x14,signed,little_e
+	[subject]キッス:calc,0x4AEE5D,0x0,0x14,signed,little_e
+	[subject]チェルニー:calc,0x4AEF0E,0x0,0x14,signed,little_e
+	[subject]ケスト:calc,0x4AECC0,0x0,0x14,signed,little_e
+	[subject]メル:calc,0x4AEED3,0x0,0x14,signed,little_e
+	[subject]ラミ:calc,0x4AEF49,0x0,0x14,signed,little_e
+	[subject]アトワイス:calc,0x4AEE22,0x0,0x14,signed,little_e
+	[subject]リナリー:calc,0x4AEE98,0x0,0x14,signed,little_e
+	[subject]ユリエル:calc,0x4AEC85,0x0,0x14,signed,little_e
+[back]
+[subject]感性:dir
+	[subject]ジル:calc,0x4AEBD5,0x0,0x14,signed,little_e
+	[subject]ラシュペル:calc,0x4AEC10,0x0,0x14,signed,little_e
+	[subject]ドナ:calc,0x4AEC4B,0x0,0x14,signed,little_e
+	[subject]シャノン:calc,0x4AECFC,0x0,0x14,signed,little_e
+	[subject]エレミー:calc,0x4AED37,0x0,0x14,signed,little_e
+	[subject]ティファ:calc,0x4AED72,0x0,0x14,signed,little_e
+	[subject]クリスティン:calc,0x4AEDAD,0x0,0x14,signed,little_e
+	[subject]レイハ:calc,0x4AEDE8,0x0,0x14,signed,little_e
+	[subject]キッス:calc,0x4AEE5E,0x0,0x14,signed,little_e
+	[subject]チェルニー:calc,0x4AEF0F,0x0,0x14,signed,little_e
+	[subject]ケスト:calc,0x4AECC1,0x0,0x14,signed,little_e
+	[subject]メル:calc,0x4AEED4,0x0,0x14,signed,little_e
+	[subject]ラミ:calc,0x4AEF4A,0x0,0x14,signed,little_e
+	[subject]アトワイス:calc,0x4AEE23,0x0,0x14,signed,little_e
+	[subject]リナリー:calc,0x4AEE99,0x0,0x14,signed,little_e
+	[subject]ユリエル:calc,0x4AEC86,0x0,0x14,signed,little_e
+[back]
+[subject]感受性(ＫＥＹ):dir
+	[subject]ジル:calc,0x4AEBEE,0x0,0x9,signed,little_e
+	[subject]ラシュペル:calc,0x4AEC29,0x0,0x9,signed,little_e
+	[subject]ドナ:calc,0x4AEC64,0x0,0x9,signed,little_e
+	[subject]コリエル:calc,0x4AEC9F,0x0,0x9,signed,little_e
+	[subject]ケスト:calc,0x4AECDA,0x0,0x9,signed,little_e
+	[subject]シャノン:calc,0x4AED15,0x0,0x9,signed,little_e
+	[subject]エレミー:calc,0x4AED50,0x0,0x9,signed,little_e
+	[subject]ティファ:calc,0x4AED8B,0x0,0x9,signed,little_e
+	[subject]クリスティン:calc,0x4AEDC6,0x0,0x9,signed,little_e
+	[subject]レイハ:calc,0x4AEE01,0x0,0x9,signed,little_e
+	[subject]アトワイス:calc,0x4AEE3C,0x0,0x9,signed,little_e
+	[subject]キッス:calc,0x4AEE77,0x0,0x9,signed,little_e
+	[subject]リナリー:calc,0x4AEEB2,0x0,0x9,signed,little_e
+	[subject]メル:calc,0x4AEEED,0x0,0x9,signed,little_e
+	[subject]チェルニー:calc,0x4AEF28,0x0,0x9,signed,little_e
+	[subject]ラミ:calc,0x4AEF63,0x0,0x9,signed,little_e
+[back]
+[back]
+[subject]先生:dir
+[subject]強靱さ:dir
+	[subject]フォッシュ:calc,0x4AF6E0,0x0,0x14,signed,little_e
+	[subject]ゴスペル:calc,0x4AF756,0x0,0x14,signed,little_e
+	[subject]ウィドリオ:calc,0x4AF791,0x0,0x14,signed,little_e
+	[subject]ムパ:calc,0x4AF7CC,0x0,0x14,signed,little_e
+	[subject]シュナイドラー:calc,0x4AF71B,0x0,0x14,signed,little_e
+	[subject]パペッシュ:calc,0x4AF92E,0x0,0x14,signed,little_e
+[back]
+[subject]敏捷性:dir
+	[subject]フォッシュ:calc,0x4AF6E1,0x0,0x14,signed,little_e
+	[subject]ゴスペル:calc,0x4AF757,0x0,0x14,signed,little_e
+	[subject]ウィドリオ:calc,0x4AF792,0x0,0x14,signed,little_e
+	[subject]ムパ:calc,0x4AF7CD,0x0,0x14,signed,little_e
+	[subject]シュナイドラー:calc,0x4AF71C,0x0,0x14,signed,little_e
+	[subject]パペッシュ:calc,0x4AF92F,0x0,0x14,signed,little_e
+[back]
+[subject]知力:dir
+	[subject]フォッシュ:calc,0x4AF6E2,0x0,0x14,signed,little_e
+	[subject]ゴスペル:calc,0x4AF758,0x0,0x14,signed,little_e
+	[subject]ウィドリオ:calc,0x4AF793,0x0,0x14,signed,little_e
+	[subject]ムパ:calc,0x4AF7CE,0x0,0x14,signed,little_e
+	[subject]シュナイドラー:calc,0x4AF71D,0x0,0x14,signed,little_e
+	[subject]パペッシュ:calc,0x4AF930,0x0,0x14,signed,little_e
+[back]
+[subject]敬虔:dir
+	[subject]フォッシュ:calc,0x4AF6E3,0x0,0x14,signed,little_e
+	[subject]ゴスペル:calc,0x4AF759,0x0,0x14,signed,little_e
+	[subject]ウィドリオ:calc,0x4AF794,0x0,0x14,signed,little_e
+	[subject]ムパ:calc,0x4AF7CF,0x0,0x14,signed,little_e
+	[subject]シュナイドラー:calc,0x4AF71E,0x0,0x14,signed,little_e
+	[subject]パペッシュ:calc,0x4AF931,0x0,0x14,signed,little_e
+[back]
+[subject]精神力:dir
+	[subject]フォッシュ:calc,0x4AF6E4,0x0,0x14,signed,little_e
+	[subject]ゴスペル:calc,0x4AF75A,0x0,0x14,signed,little_e
+	[subject]ウィドリオ:calc,0x4AF795,0x0,0x14,signed,little_e
+	[subject]ムパ:calc,0x4AF7D0,0x0,0x14,signed,little_e
+	[subject]シュナイドラー:calc,0x4AF71F,0x0,0x14,signed,little_e
+	[subject]パペッシュ:calc,0x4AF932,0x0,0x14,signed,little_e
+[back]
+[subject]感性:dir
+	[subject]フォッシュ:calc,0x4AF6E5,0x0,0x14,signed,little_e
+	[subject]ゴスペル:calc,0x4AF75B,0x0,0x14,signed,little_e
+	[subject]ウィドリオ:calc,0x4AF796,0x0,0x14,signed,little_e
+	[subject]ムパ:calc,0x4AF7D1,0x0,0x14,signed,little_e
+	[subject]シュナイドラー:calc,0x4AF720,0x0,0x14,signed,little_e
+	[subject]パペッシュ:calc,0x4AF933,0x0,0x14,signed,little_e
+[root]
+[subject]所持品:dir
+	[subject]機体:dir
+		[subject]シュリンガム:calc,0x4B26D9,0x0,0x63,signed,little_e
+		[subject]シュリンガム 3011:calc,0x4B26DA,0x0,0x63,signed,little_e
+		[subject]シュリンガム 3030:calc,0x4B26DB,0x0,0x63,signed,little_e
+		[subject]エリュシュオン:calc,0x4B26DC,0x0,0x63,signed,little_e
+		[subject]エリュシュオン 3029:calc,0x4B26DD,0x0,0x63,signed,little_e
+		[subject]ベルスターム:calc,0x4B26DE,0x0,0x63,signed,little_e
+		[subject]ベルスターム 3028:calc,0x4B26DF,0x0,0x63,signed,little_e
+		[subject]ハイドラ:calc,0x4B26E0,0x0,0x63,signed,little_e
+		[subject]ディッファー:calc,0x4B26E1,0x0,0x63,signed,little_e
+		[subject]サンクリスト:calc,0x4B26E2,0x0,0x63,signed,little_e
+		[subject]パイドル・スパイン:calc,0x4B26E3,0x0,0x63,signed,little_e
+		[subject]ドラゴン・スフィア:calc,0x4B26E4,0x0,0x63,signed,little_e
+		[subject]イシュザーク:calc,0x4B26E5,0x0,0x63,signed,little_e
+		[subject]パラダイン:calc,0x4B26E6,0x0,0x63,signed,little_e
+		[subject]デルピエス:calc,0x4B26E7,0x0,0x63,signed,little_e
+		[subject]デュラキス:calc,0x4B26E8,0x0,0x63,signed,little_e
+		[subject]ブラウド:calc,0x4B26E9,0x0,0x63,signed,little_e
+		[subject]アルゴ:calc,0x4B26EA,0x0,0x63,signed,little_e
+		[subject]シュリンガムスカラー:calc,0x4B26EB,0x0,0x63,signed,little_e
+		[subject]予備02:calc,0x4B26EC,0x0,0x63,signed,little_e
+		[subject]予備03:calc,0x4B26ED,0x0,0x63,signed,little_e
+		[subject]予備04:calc,0x4B26EE,0x0,0x63,signed,little_e
+		[subject]Type_K:calc,0x4B26EF,0x0,0x63,signed,little_e
+		[subject]Type_Q:calc,0x4B26F0,0x0,0x63,signed,little_e
+	[back]
+	[subject]物理装備:dir
+		[subject]レイピア:calc,0x4B2659,0x0,0x63,signed,little_e
+		[subject]ショートソード:calc,0x4B265A,0x0,0x63,signed,little_e
+		[subject]ソミター:calc,0x4B265B,0x0,0x63,signed,little_e
+		[subject]ブロードソード:calc,0x4B265C,0x0,0x63,signed,little_e
+		[subject]ロングソード:calc,0x4B265D,0x0,0x63,signed,little_e
+		[subject]ハルバード:calc,0x4B265E,0x0,0x63,signed,little_e
+		[subject]グレートアクス:calc,0x4B265F,0x0,0x63,signed,little_e
+		[subject]ショートボウ(アロウ):calc,0x4B2660,0x0,0x63,signed,little_e
+		[subject]ショートボウ(ストライクアロウ):calc,0x4B2661,0x0,0x63,signed,little_e
+		[subject]ショートボウ(ハードアロウ):calc,0x4B2662,0x0,0x63,signed,little_e
+		[subject]ロングボウ(アロウ):calc,0x4B2663,0x0,0x63,signed,little_e
+		[subject]ロングボウ(ストライクアロウ):calc,0x4B2664,0x0,0x63,signed,little_e
+		[subject]ロングボウ(ハードアロウ):calc,0x4B2665,0x0,0x63,signed,little_e
+		[subject]ライトクロスボウ(クォレル):calc,0x4B2666,0x0,0x63,signed,little_e
+		[subject]ライトクロスボウ(ライトクォレル):calc,0x4B2667,0x0,0x63,signed,little_e
+		[subject]ライトクロスボウ(ハードクォレル):calc,0x4B2668,0x0,0x63,signed,little_e
+		[subject]ヘヴィクロスボウ(クォレル):calc,0x4B2669,0x0,0x63,signed,little_e
+		[subject]ヘヴィクロスボウ(ライトクォレル):calc,0x4B266A,0x0,0x63,signed,little_e
+		[subject]ヘヴィクロスボウ(ハードクォレル):calc,0x4B266B,0x0,0x63,signed,little_e
+		[subject]スモールシールド:calc,0x4B266C,0x0,0x63,signed,little_e
+		[subject]ミドルシールド:calc,0x4B266D,0x0,0x63,signed,little_e
+		[subject]ラージシールド:calc,0x4B266E,0x0,0x63,signed,little_e
+		[subject]タワーシールド:calc,0x4B266F,0x0,0x63,signed,little_e
+		[subject]トライデント:calc,0x4B2670,0x0,0x63,signed,little_e
+		[subject]ハンドアックス:calc,0x4B2671,0x0,0x63,signed,little_e
+		[subject]神竜の鱗:calc,0x4B2672,0x0,0x63,signed,little_e
+		[subject]バトルアックス:calc,0x4B2673,0x0,0x63,signed,little_e
+		[subject]ナイフ:calc,0x4B2674,0x0,0x63,signed,little_e
+		[subject]グレートソード:calc,0x4B2675,0x0,0x63,signed,little_e
+		[subject]クレイモア:calc,0x4B2676,0x0,0x63,signed,little_e
+		[subject]フランベルジュ:calc,0x4B2677,0x0,0x63,signed,little_e
+		[subject]メイス:calc,0x4B2678,0x0,0x63,signed,little_e
+		[subject]モーニングスター:calc,0x4B2679,0x0,0x63,signed,little_e
+		[subject]正宗:calc,0x4B267A,0x0,0x63,signed,little_e
+		[subject]トゥールハンマー:calc,0x4B267B,0x0,0x63,signed,little_e
+		[subject]ジキルシード:calc,0x4B267C,0x0,0x63,signed,little_e
+		[subject]ハイドソード:calc,0x4B267D,0x0,0x63,signed,little_e
+		[subject]ストライクボウ:calc,0x4B267E,0x0,0x63,signed,little_e
+		[subject]火焔の杖:calc,0x4B267F,0x0,0x63,signed,little_e
+		[subject]雷の杖:calc,0x4B2680,0x0,0x63,signed,little_e
+		[subject]氷嵐の杖:calc,0x4B2681,0x0,0x63,signed,little_e
+		[subject]大地の杖:calc,0x4B2682,0x0,0x63,signed,little_e
+		[subject]ウォーハンマー:calc,0x4B2683,0x0,0x63,signed,little_e
+		[subject]スピアー:calc,0x4B2684,0x0,0x63,signed,little_e
+		[subject]ポールアックス:calc,0x4B2685,0x0,0x63,signed,little_e
+		[subject]クリスタルランス:calc,0x4B268A,0x0,0x63,signed,little_e
+		[subject]エメラルドランス:calc,0x4B268B,0x0,0x63,signed,little_e
+		[subject]隠刀:calc,0x4B268C,0x0,0x63,signed,little_e
+		[subject]冥府の盾:calc,0x4B268D,0x0,0x63,signed,little_e
+		[subject]鎌:calc,0x4B268E,0x0,0x63,signed,little_e
+		[subject]牙:calc,0x4B268F,0x0,0x63,signed,little_e
+		[subject]鋸歯牙:calc,0x4B2690,0x0,0x63,signed,little_e
+		[subject]鋼牙:calc,0x4B2691,0x0,0x63,signed,little_e
+	[back]
+	[subject]呪文:dir
+		[subject]ウィザードアロウ:calc,0x4B27B9,0x0,0x63,signed,little_e
+		[subject]フレイグラントスリープ:calc,0x4B27BA,0x0,0x63,signed,little_e
+		[subject]アウェイニング:calc,0x4B27BB,0x0,0x63,signed,little_e
+		[subject]ウィザードシールド:calc,0x4B27BC,0x0,0x63,signed,little_e
+		[subject]ディテクトマジック:calc,0x4B27BD,0x0,0x63,signed,little_e
+		[subject]ウィザードウェブ:calc,0x4B27BE,0x0,0x63,signed,little_e
+		[subject]イリュージョン:calc,0x4B27BF,0x0,0x63,signed,little_e
+		[subject]ストレンジヘイズ:calc,0x4B27C0,0x0,0x63,signed,little_e
+		[subject]インジビリティ:calc,0x4B27C1,0x0,0x63,signed,little_e
+		[subject]エンチャントウェポン:calc,0x4B27C2,0x0,0x63,signed,little_e
+		[subject]ムーブイリュージョン:calc,0x4B27C3,0x0,0x63,signed,little_e
+		[subject]マジックミラージュ:calc,0x4B27C4,0x0,0x63,signed,little_e
+		[subject]ポイズンミスト:calc,0x4B27C5,0x0,0x63,signed,little_e
+		[subject]ウィザードシール:calc,0x4B27C6,0x0,0x63,signed,little_e
+		[subject]レジストマジック:calc,0x4B27C7,0x0,0x63,signed,little_e
+		[subject]ガイア:calc,0x4B27C8,0x0,0x63,signed,little_e
+		[subject]ウィンドプロテクション:calc,0x4B27C9,0x0,0x63,signed,little_e
+		[subject]ライトニングダンス:calc,0x4B27CA,0x0,0x63,signed,little_e
+		[subject]ファイアイクスプロージョン:calc,0x4B27CB,0x0,0x63,signed,little_e
+		[subject]ヘースト:calc,0x4B27CC,0x0,0x63,signed,little_e
+		[subject]スロウ:calc,0x4B27CD,0x0,0x63,signed,little_e
+		[subject]ディスペルマジック:calc,0x4B27CE,0x0,0x63,signed,little_e
+		[subject]ストーンバイス:calc,0x4B27CF,0x0,0x63,signed,little_e
+		[subject]コールドストーム:calc,0x4B27D0,0x0,0x63,signed,little_e
+		[subject]リムーブシール:calc,0x4B27D1,0x0,0x63,signed,little_e
+		[subject]ディレイ:calc,0x4B27D2,0x0,0x63,signed,little_e
+		[subject]イクスペディション:calc,0x4B27D3,0x0,0x63,signed,little_e
+		[subject]リプロデュースプランツ:calc,0x4B27D4,0x0,0x63,signed,little_e
+		[subject]ウィザードアイ:calc,0x4B27D5,0x0,0x63,signed,little_e
+		[subject]W.O.F:calc,0x4B27D6,0x0,0x63,signed,little_e
+		[subject]W.O.C.S:calc,0x4B27D7,0x0,0x63,signed,little_e
+		[subject]パラライズクラウド:calc,0x4B27D8,0x0,0x63,signed,little_e
+		[subject]コンフュージョン:calc,0x4B27D9,0x0,0x63,signed,little_e
+		[subject]ディストラクション:calc,0x4B27DA,0x0,0x63,signed,little_e
+		[subject]ディメンションゲート:calc,0x4B27DB,0x0,0x63,signed,little_e
+		[subject]ストーンコート:calc,0x4B27DC,0x0,0x63,signed,little_e
+		[subject]フローズンオーバー:calc,0x4B27DD,0x0,0x63,signed,little_e
+		[subject]ファイアレージ:calc,0x4B27DE,0x0,0x63,signed,little_e
+		[subject]サンダーボルト:calc,0x4B27DF,0x0,0x63,signed,little_e
+		[subject]アブソリュートゼロ:calc,0x4B27E0,0x0,0x63,signed,little_e
+		[subject]アースクウェイク:calc,0x4B27E1,0x0,0x63,signed,little_e
+		[subject]リフューズマジック:calc,0x4B27E2,0x0,0x63,signed,little_e
+		[subject]スタチュー:calc,0x4B27E3,0x0,0x63,signed,little_e
+		[subject]C.Earth.E:calc,0x4B27E4,0x0,0x63,signed,little_e
+		[subject]C.Wind.E:calc,0x4B27E5,0x0,0x63,signed,little_e
+		[subject]C.Water.E:calc,0x4B27E6,0x0,0x63,signed,little_e
+		[subject]C.Fire.E:calc,0x4B27E7,0x0,0x63,signed,little_e
+		[subject]デススペル:calc,0x4B27E8,0x0,0x63,signed,little_e
+		[subject]ディスインテグレイト:calc,0x4B27E9,0x0,0x63,signed,little_e
+		[subject]シューティングスター:calc,0x4B27EA,0x0,0x63,signed,little_e
+		[subject]ベイパライズウォーター:calc,0x4B27EB,0x0,0x63,signed,little_e
+		[subject]コールヘッド:calc,0x4B27EC,0x0,0x63,signed,little_e
+		[subject]ディストレーション:calc,0x4B27ED,0x0,0x63,signed,little_e
+	[back]
+	[subject]聖句:dir
+		[subject]キュアライト:calc,0x4B27EE,0x0,0x63,signed,little_e
+		[subject]ホーリィライト:calc,0x4B27EF,0x0,0x63,signed,little_e
+		[subject]ブレス:calc,0x4B27F0,0x0,0x63,signed,little_e
+		[subject]ディテクトマジック:calc,0x4B27F1,0x0,0x63,signed,little_e
+		[subject]アウェイニング:calc,0x4B27F2,0x0,0x63,signed,little_e
+		[subject]ヒールライトウーンズ:calc,0x4B27F3,0x0,0x63,signed,little_e
+		[subject]ファーストエイド:calc,0x4B27F4,0x0,0x63,signed,little_e
+		[subject]デーモンスクリーム:calc,0x4B27F5,0x0,0x63,signed,little_e
+		[subject]ストライキング:calc,0x4B27F6,0x0,0x63,signed,little_e
+		[subject]ホワイトシールド:calc,0x4B27F7,0x0,0x63,signed,little_e
+		[subject]カウンタラクトポイズン:calc,0x4B27F8,0x0,0x63,signed,little_e
+		[subject]サイレンス:calc,0x4B27F9,0x0,0x63,signed,little_e
+		[subject]キュアシリアス:calc,0x4B27FA,0x0,0x63,signed,little_e
+		[subject]ホーリィコート:calc,0x4B27FB,0x0,0x63,signed,little_e
+		[subject]リムーブパラリシス:calc,0x4B27FC,0x0,0x63,signed,little_e
+		[subject]トランクルマインド:calc,0x4B27FD,0x0,0x63,signed,little_e
+		[subject]リジェレネーション:calc,0x4B27FE,0x0,0x63,signed,little_e
+		[subject]ヘルファイア:calc,0x4B27FF,0x0,0x63,signed,little_e
+		[subject]コミューンウィズアニマル:calc,0x4B2800,0x0,0x63,signed,little_e
+		[subject]ホールドモンスター:calc,0x4B2801,0x0,0x63,signed,little_e
+		[subject]ヒールシリアスウーンズ:calc,0x4B2802,0x0,0x63,signed,little_e
+		[subject]リムーブストーン:calc,0x4B2803,0x0,0x63,signed,little_e
+		[subject]カース:calc,0x4B2804,0x0,0x63,signed,little_e
+		[subject]コミューンウィズツリー:calc,0x4B2806,0x0,0x63,signed,little_e
+		[subject]サンクチュアリ:calc,0x4B2807,0x0,0x63,signed,little_e
+		[subject]キュアクリティカル:calc,0x4B2808,0x0,0x63,signed,little_e
+		[subject]リージョナルサイエンス:calc,0x4B2809,0x0,0x63,signed,little_e
+		[subject]サクリファイス:calc,0x4B280A,0x0,0x63,signed,little_e
+		[subject]コミューンウィズザデッド:calc,0x4B280B,0x0,0x63,signed,little_e
+		[subject]リフューズスペル:calc,0x4B280C,0x0,0x63,signed,little_e
+		[subject]スタチュー:calc,0x4B280D,0x0,0x63,signed,little_e
+		[subject]ホーリィキャッスル:calc,0x4B280E,0x0,0x63,signed,little_e
+		[subject]モンスターコントロール:calc,0x4B280F,0x0,0x63,signed,little_e
+		[subject]ヒールクリティカルウーンズ:calc,0x4B2810,0x0,0x63,signed,little_e
+		[subject]ディザスター:calc,0x4B2811,0x0,0x63,signed,little_e
+		[subject]デジャヴュ:calc,0x4B2812,0x0,0x63,signed,little_e
+		[subject]コールデモニックナイト:calc,0x4B2813,0x0,0x63,signed,little_e
+		[subject]リカバー:calc,0x4B2814,0x0,0x63,signed,little_e
+		[subject]シルバーシールド:calc,0x4B2815,0x0,0x63,signed,little_e
+		[subject]ディバインパニッシュメント:calc,0x4B2816,0x0,0x63,signed,little_e
+		[subject]コミューンウィズザゴッズ:calc,0x4B2817,0x0,0x63,signed,little_e
+		[subject]ウィッシュ:calc,0x4B2818,0x0,0x63,signed,little_e
+		[subject]ホーリィスピリット:calc,0x4B2819,0x0,0x63,signed,little_e
+		[subject]デイジャーコール:calc,0x4B281A,0x0,0x63,signed,little_e
+		[subject]ダミー魔法99:calc,0x4B281B,0x0,0x63,signed,little_e
+	[back]
+	[subject]戦闘技能:dir
+		[subject]ブロウ:calc,0x4B2799,0x0,0x63,signed,little_e
+		[subject]スマッシュ:calc,0x4B279A,0x0,0x63,signed,little_e
+		[subject]クリティカルスマッシュ:calc,0x4B279B,0x0,0x63,signed,little_e
+		[subject]ジェントルブリーズ:calc,0x4B279C,0x0,0x63,signed,little_e
+		[subject]フレッシュブリーズ:calc,0x4B279D,0x0,0x63,signed,little_e
+		[subject]クリティカルブリーズ:calc,0x4B279E,0x0,0x63,signed,little_e
+		[subject]カットダウン1:calc,0x4B279F,0x0,0x63,signed,little_e
+		[subject]カットダウン2:calc,0x4B27A0,0x0,0x63,signed,little_e
+		[subject]カットダウン3:calc,0x4B27A1,0x0,0x63,signed,little_e
+		[subject]トゥーアタック:calc,0x4B27A2,0x0,0x63,signed,little_e
+		[subject]コンセントレーション1:calc,0x4B27A3,0x0,0x63,signed,little_e
+		[subject]コンセントレーション2:calc,0x4B27A4,0x0,0x63,signed,little_e
+		[subject]コンセントレーション3:calc,0x4B27A5,0x0,0x63,signed,little_e
+		[subject]ハードショット:calc,0x4B27A6,0x0,0x63,signed,little_e
+		[subject]ダブルショット:calc,0x4B27A7,0x0,0x63,signed,little_e
+		[subject]トリプルショット:calc,0x4B27A8,0x0,0x63,signed,little_e
+		[subject]トゥワイスショット:calc,0x4B27A9,0x0,0x63,signed,little_e
+		[subject]スライスショット:calc,0x4B27AA,0x0,0x63,signed,little_e
+		[subject]パリィ1:calc,0x4B27AB,0x0,0x63,signed,little_e
+		[subject]パリィ2:calc,0x4B27AC,0x0,0x63,signed,little_e
+		[subject]パリィ3:calc,0x4B27AD,0x0,0x63,signed,little_e
+		[subject]イベイド1:calc,0x4B27AE,0x0,0x63,signed,little_e
+		[subject]イベイド2:calc,0x4B27AF,0x0,0x63,signed,little_e
+		[subject]イベイド3:calc,0x4B27B0,0x0,0x63,signed,little_e
+		[subject]スワロー:calc,0x4B27B1,0x0,0x63,signed,little_e
+		[subject]フルターンパリィ:calc,0x4B27B2,0x0,0x63,signed,little_e
+		[subject]フルターンイベイド:calc,0x4B27B3,0x0,0x63,signed,little_e
+		[subject]スリーアタック:calc,0x4B27B4,0x0,0x63,signed,little_e
+	[back]
+	[subject]拡張:dir
+		[subject]コンバット・ブースターⅠ:calc,0x4B2759,0x0,0x63,signed,little_e
+		[subject]コンバット・ブースターⅡ:calc,0x4B275A,0x0,0x63,signed,little_e
+		[subject]コンバット・ブースターⅢ:calc,0x4B275B,0x0,0x63,signed,little_e
+		[subject]セカンドサイト:calc,0x4B275C,0x0,0x63,signed,little_e
+		[subject]トゥルース・サイト・ストーン:calc,0x4B275D,0x0,0x63,signed,little_e
+		[subject]ショートレンジ・ゴートⅠ:calc,0x4B275E,0x0,0x63,signed,little_e
+		[subject]ショートレンジ・ゴートⅡ:calc,0x4B275F,0x0,0x63,signed,little_e
+		[subject]ショートレンジ・ゴートⅢ:calc,0x4B2760,0x0,0x63,signed,little_e
+		[subject]ロングレンジ・ゴートⅠ:calc,0x4B2761,0x0,0x63,signed,little_e
+		[subject]ロングレンジ・ゴートⅡ:calc,0x4B2762,0x0,0x63,signed,little_e
+		[subject]ロングレンジ・ゴートⅢ:calc,0x4B2763,0x0,0x63,signed,little_e
+		[subject]ディフェンス・ゴートⅠ:calc,0x4B2764,0x0,0x63,signed,little_e
+		[subject]ディフェンス・ゴートⅡ:calc,0x4B2765,0x0,0x63,signed,little_e
+		[subject]ディフェンス・ゴートⅢ:calc,0x4B2766,0x0,0x63,signed,little_e
+		[subject]スペル・ゴートⅠ:calc,0x4B2767,0x0,0x63,signed,little_e
+		[subject]スペル・ゴートⅡ:calc,0x4B2768,0x0,0x63,signed,little_e
+		[subject]スペル・ゴートⅢ:calc,0x4B2769,0x0,0x63,signed,little_e
+		[subject]ワード・ゴートⅠ:calc,0x4B276A,0x0,0x63,signed,little_e
+		[subject]ワード・ゴートⅡ:calc,0x4B276B,0x0,0x63,signed,little_e
+		[subject]ワード・ゴートⅢ:calc,0x4B276C,0x0,0x63,signed,little_e
+		[subject]ヒーリング・ゴートⅠ:calc,0x4B276D,0x0,0x63,signed,little_e
+		[subject]ヒーリング・ゴートⅡ:calc,0x4B276E,0x0,0x63,signed,little_e
+		[subject]ヒーリング・ゴートⅢ:calc,0x4B276F,0x0,0x63,signed,little_e
+		[subject]エレメンタル・アシストⅠ:calc,0x4B2770,0x0,0x63,signed,little_e
+		[subject]エレメンタル・アシストⅡ:calc,0x4B2771,0x0,0x63,signed,little_e
+		[subject]エレメンタル・アシストⅢ:calc,0x4B2772,0x0,0x63,signed,little_e
+	[back]
+	[subject]育成アイテム:dir
+		[subject]ラハシュスターの祝福:calc,0x4B2839,0x0,0x63,signed,little_e
+		[subject]ラハシュスターの書:calc,0x4B283A,0x0,0x63,signed,little_e
+		[subject]ラハシュスターの護符:calc,0x4B283B,0x0,0x63,signed,little_e
+		[subject]ラハシュスターの滴:calc,0x4B283C,0x0,0x63,signed,little_e
+		[subject]ラハシュスターの灯火:calc,0x4B283D,0x0,0x63,signed,little_e
+		[subject]テピオンの祝福:calc,0x4B283E,0x0,0x63,signed,little_e
+		[subject]テピオンの書:calc,0x4B283F,0x0,0x63,signed,little_e
+		[subject]テピオンの護符:calc,0x4B2840,0x0,0x63,signed,little_e
+		[subject]テピオンの滴:calc,0x4B2841,0x0,0x63,signed,little_e
+		[subject]テピオンの灯火:calc,0x4B2842,0x0,0x63,signed,little_e
+		[subject]ピア・ラズリの祝福:calc,0x4B2843,0x0,0x63,signed,little_e
+		[subject]ピア・ラズリの書:calc,0x4B2844,0x0,0x63,signed,little_e
+		[subject]ピア・ラズリの護符:calc,0x4B2845,0x0,0x63,signed,little_e
+		[subject]ピア・ラズリの滴:calc,0x4B2846,0x0,0x63,signed,little_e
+		[subject]ピア・ラズリの灯火:calc,0x4B2847,0x0,0x63,signed,little_e
+		[subject]カナーシャの祝福:calc,0x4B2848,0x0,0x63,signed,little_e
+		[subject]カナーシャの書:calc,0x4B2849,0x0,0x63,signed,little_e
+		[subject]カナーシャの護符:calc,0x4B284A,0x0,0x63,signed,little_e
+		[subject]カナーシャの滴:calc,0x4B284B,0x0,0x63,signed,little_e
+		[subject]カナーシャの灯火:calc,0x4B284C,0x0,0x63,signed,little_e
+		[subject]バハダイズの祝福:calc,0x4B284D,0x0,0x63,signed,little_e
+		[subject]バハダイズの書:calc,0x4B284E,0x0,0x63,signed,little_e
+		[subject]バハダイズの護符:calc,0x4B284F,0x0,0x63,signed,little_e
+		[subject]バハダイズの滴:calc,0x4B2850,0x0,0x63,signed,little_e
+		[subject]バハダイズの灯火:calc,0x4B2851,0x0,0x63,signed,little_e
+		[subject]リオ・ピニスの祝福:calc,0x4B2852,0x0,0x63,signed,little_e
+		[subject]リオ・ピニスの書:calc,0x4B2853,0x0,0x63,signed,little_e
+		[subject]リオ・ピニスの護符:calc,0x4B2854,0x0,0x63,signed,little_e
+		[subject]リオ・ピニスの滴:calc,0x4B2855,0x0,0x63,signed,little_e
+		[subject]リオ・ピニスの灯火:calc,0x4B2856,0x0,0x63,signed,little_e
+		[subject]ラハシュターの鏡:calc,0x4B2857,0x0,0x63,signed,little_e
+		[subject]テピオンの鏡:calc,0x4B2858,0x0,0x63,signed,little_e
+		[subject]ピア・ラズリの鏡:calc,0x4B2859,0x0,0x63,signed,little_e
+		[subject]カナーシャの鏡:calc,0x4B285A,0x0,0x63,signed,little_e
+		[subject]バハダイズの鏡:calc,0x4B285B,0x0,0x63,signed,little_e
+		[subject]リオ・ピニスの鏡:calc,0x4B285C,0x0,0x63,signed,little_e
+		[subject]炎の精霊酒:calc,0x4B285D,0x0,0x63,signed,little_e
+		[subject]泉の精霊酒:calc,0x4B285E,0x0,0x63,signed,little_e
+		[subject]大地の精霊酒:calc,0x4B285F,0x0,0x63,signed,little_e
+		[subject]風の精霊酒:calc,0x4B2860,0x0,0x63,signed,little_e
+		[subject]光の精霊酒:calc,0x4B2861,0x0,0x63,signed,little_e
+		[subject]闇の精霊酒:calc,0x4B2862,0x0,0x63,signed,little_e
+		[subject]聖水:calc,0x4B2863,0x0,0x63,signed,little_e
+		[subject]覇者の地図:calc,0x4B2864,0x0,0x63,signed,little_e
+		[subject]時の扉:calc,0x4B2865,0x0,0x63,signed,little_e
+		[subject]祝福の鍵:calc,0x4B2866,0x0,0x63,signed,little_e
+		[subject]クラステルン:calc,0x4B2867,0x0,0x63,signed,little_e
+		[subject]勇気の燭台:calc,0x4B2868,0x0,0x63,signed,little_e
+		[subject]千里鏡:calc,0x4B2869,0x0,0x63,signed,little_e
+		[subject]風の旋律:calc,0x4B286A,0x0,0x63,signed,little_e
+		[subject]魅惑のハープ:calc,0x4B286B,0x0,0x63,signed,little_e
+		[subject]真実の聖冠:calc,0x4B286C,0x0,0x63,signed,little_e
+		[subject]輝ける賢者の銀輪:calc,0x4B286D,0x0,0x63,signed,little_e
+		[subject]秘めたる王の護符:calc,0x4B286E,0x0,0x63,signed,little_e
+		[subject]炎の約束:calc,0x4B286F,0x0,0x63,signed,little_e
+		[subject]光の約束:calc,0x4B2870,0x0,0x63,signed,little_e
+		[subject]大人への階段:calc,0x4B2871,0x0,0x63,signed,little_e
+		[subject]蒼月の駿弓:calc,0x4B2872,0x0,0x63,signed,little_e
+		[subject]炎の剣:calc,0x4B2873,0x0,0x63,signed,little_e
+		[subject]風の剣:calc,0x4B2874,0x0,0x63,signed,little_e
+		[subject]思い出の時:calc,0x4B2875,0x0,0x63,signed,little_e
+		[subject]甘い時間:calc,0x4B2876,0x0,0x63,signed,little_e
+		[subject]悦楽の吐息:calc,0x4B2877,0x0,0x63,signed,little_e
+[root]
+[/script]
+
+
+[script]
+[title]約束の絆
+[process]KIZUNA.EXE
+[maker]コーエー
+[creator]みそ
+[note]wordwrap
+もともと三国志や信長伝などの歴史物が好きなので、こういう恋愛ゲームをやる機会はあまりないのですが（←大ウソ）ご贔屓にしてるKOEIさんが出しちゃったので、つい手に入れてしまいました。
+結局、やり始めると止まらないもので主人公の名前まで変更可能にしちゃいました。
+個人的には名前を「直人」にして、あだなを「猿」にするのがよさげ。
+by太閤立志伝
+
+例のごとく所持金は上位バイトと下位バイトが逆なので注意して下さい。
+
+[/note]
+[subject]愛情値:dir
+	[subject]伊吹まどか:calc,0x44F1C6,0x1,0x64,signed,little_e
+	[subject]中馬かなえ:calc,0x44F236,0x1,0x64,signed,little_e
+	[subject]秋月静香:calc,0x44F2A6,0x1,0x64,signed,little_e
+	[subject]楠本佳乃:calc,0x44F316,0x1,0x64,signed,little_e
+	[subject]米崎美幸:calc,0x44F386,0x1,0x64,signed,little_e
+	[subject]本郷明音:calc,0x44F3F6,0x1,0x64,signed,little_e
+	[subject]藤村美紗姫:calc,0x44F466,0x1,0x64,signed,little_e
+	[subject]津野響子:calc,0x44F4D6,0x1,0x64,signed,little_e
+	[subject]夏目愛華:calc,0x44F546,0x1,0x64,signed,little_e
+[back]
+[subject]アイテム:dir
+	[subject]マフラー/所持:toggle,0x447117,10,00
+	[subject]帽子/所持:toggle,0x447137,10,00
+	[subject]口紅/所持:toggle,0x447157,10,00
+	[subject]香水/所持:toggle,0x447177,10,00
+	[subject]ファッションリング/所持:toggle,0x447197,10,00
+	[subject]安いリング/所持:toggle,0x4471B7,10,00
+	[subject]ペンダント/所持:toggle,0x4471D7,10,00
+	[subject]変なペンダント/所持:toggle,0x4471F7,10,00
+	[subject]花束/所持:toggle,0x447217,10,00
+	[subject]ぬいぐるみ/所持:toggle,0x447237,10,00
+	[subject]変なぬいぐるみ/所持:toggle,0x447257,10,00
+	[subject]ヒットＣＤ・ポップス/所持:toggle,0x447277,10,00
+	[subject]ヒットＣＤ・ロック/所持:toggle,0x447297,10,00
+	[subject]ヒットＣＤ・ダンス系/所持:toggle,0x4472B7,10,00
+	[subject]ゲーム/所持:toggle,0x4472D7,10,00
+	[subject]ファッション雑誌/所持:toggle,0x4472F7,10,00
+	[subject]タウン情報誌/所持:toggle,0x447317,10,00
+	[subject]エッセンシャルオイル/所持:toggle,0x447337,10,00
+	[subject]お守り（開運）/所持:toggle,0x447357,10,00
+	[subject]お守り（学業成就）/所持:toggle,0x447377,10,00
+	[subject]スケッチブック/所持:toggle,0x447397,10,00
+	[subject]ラブレター/所持:toggle,0x4473B7,10,00
+	[subject]マスコット人形/所持:toggle,0x4473D7,10,00
+	[subject]携帯電話/所持:toggle,0x4473F7,10,00
+[back]
+[subject]所持金:calc,0x44F5BE,0x0000,0x0F27,signed,little_e
+[subject]名前:dir
+	[subject]主人公名字:string,0x44F598,7,null
+	[subject]主人公名前:string,0x44F5A0,7,null
+	[subject]主人公ニックネーム:string,0x44F5A8,0x11,null
+	[subject]伊吹まどか名字:string,0x44F1A8,7,null
+	[subject]伊吹まどか名前:string,0x44F1B0,7,null
+	[subject]中馬かなえ名字:string,0x44F218,7,null
+	[subject]中馬かなえ名前:string,0x44F220,7,null
+	[subject]秋月静香名字:string,0x44F288,7,null
+	[subject]秋月静香名前:string,0x44F290,7,null
+	[subject]楠本佳乃名字:string,0x44F2F8,7,null
+	[subject]楠本佳乃名前:string,0x44F300,7,null
+	[subject]米崎美幸名字:string,0x44F368,7,null
+	[subject]米崎美幸名前:string,0x44F370,7,null
+	[subject]本郷明音名字:string,0x44F3D8,7,null
+	[subject]本郷明音名前:string,0x44F3E0,7,null
+	[subject]藤村美紗姫名字:string,0x44F448,7,null
+	[subject]藤村美紗姫名前:string,0x44F450,7,null
+	[subject]津野響子名字:string,0x44F4B8,7,null
+	[subject]津野響子名前:string,0x44F4C0,7,null
+	[subject]夏目愛華名字:string,0x44F528,7,null
+	[subject]夏目愛華名前:string,0x44F530,7,null
+[/script]
+
+[script]
+[title]闘神都市Ⅱ
+[process]SYSTEM35.EXE
+[maker]アリスソフト
+[creator]みそ
+[note]wordwrap
+えっと、最近やってなかったんですが、チーズケーキのアドレスを教えて下さった方がいたので、付け加えときました。
+無責任でごめんなさい。
+二段階で、1でラキラに「チーズケーキ」を頼まれる。2で「チーズケーキ」を入手です。
+[/note]
+[subject]基本能力:dir
+	[subject]レベル:calc,0x43A71A,0x0,0xFFFF,signed,little_e
+	[subject]EXP:calc,0x43A71C,0x0,0xFFFF,signed,little_e
+	[subject]最大HP:calc,0x43A720,0x0,0xFFFF,signed,little_e
+	[subject]最大SP:calc,0x43A724,0x0,0xFFFF,signed,little_e
+	[subject]HP:calc,0x43A71E,0x0,0xFFFF,signed,little_e
+	[subject]SP:calc,0x43A722,0x0,0xFFFF,signed,little_e
+	[subject]攻撃力:calc,0x43A726,0x0,0xFFFF,signed,little_e
+	[subject]防御力:calc,0x43A728,0x0,0xFFFF,signed,little_e
+	[subject]魔力:calc,0x43A72A,0x0,0xFFFF,signed,little_e
+	[subject]抵抗力:calc,0x43A72C,0x0,0xFFFF,signed,little_e
+	[subject]命中:calc,0x43A72E,0x0,0xFFFF,signed,little_e
+	[subject]回避:calc,0x43A730,0x0,0xFFFF,signed,little_e
+	[subject]必殺:calc,0x43A732,0x0,0xFFFF,signed,little_e
+[back]
+[subject]剣:dir
+	[subject]剣類全て/所持:toggle,0x43A7B6,0x43A7D6-01,00
+	[subject]ロングソード/所持:toggle,0x43A7B6,01,00
+	[subject]ロングソード２/所持:toggle,0x43A7B8,01,00
+	[subject]イナズマの剣/所持:toggle,0x43A7BA,01,00
+	[subject]日本刀/所持:toggle,0x43A7BC,01,00
+	[subject]バスターソード/所持:toggle,0x43A7BE,01,00
+	[subject]オーラブレード/所持:toggle,0x43A7C0,01,00
+	[subject]村正/所持:toggle,0x43A7C2,10,00
+	[subject]Ｄ・スレイヤー/所持:toggle,0x43A7C4,01,00
+	[subject]必殺の剣/所持:toggle,0x43A7C6,01,00
+	[subject]ライトソード/所持:toggle,0x43A7C8,01,00
+	[subject]火炎ブレード/所持:toggle,0x43A7CA,01,00
+	[subject]氷山の剣/所持:toggle,0x43A7CC,01,00
+	[subject]アリスソード/所持:toggle,0x43A7CE,01,00
+	[subject]人切りの剣/所持:toggle,0x43A7D0,01,00
+	[subject]鬼切りの剣/所持:toggle,0x43A7D2,01,00
+	[subject]豪華な剣/所持:toggle,0x43A7D4,01,00
+	[subject]はにわソード/所持:toggle,0x43A7D8,01,00
+	[subject]アタナイフ/所持:toggle,0x43A7DA,01,00
+	[subject]ＭＸブレード/所持:toggle,0x43A7DC,01,00
+	[subject]瑞原の剣/所持:toggle,0x43A7D6,01,00
+[back]
+[subject]盾:dir
+	[subject]盾類全て/所持:toggle,0x43A7DE,0x43A804-01,00
+	[subject]シールド/所持:toggle,0x43A7DE,01,00
+	[subject]避けの盾/所持:toggle,0x43A7E0,01,00
+	[subject]炎の盾/所持:toggle,0x43A7E2,01,00
+	[subject]氷の盾/所持:toggle,0x43A7E4,01,00
+	[subject]雷の盾/所持:toggle,0x43A7E6,01,00
+	[subject]ネイシールド/所持:toggle,0x43A7E8,01,00
+	[subject]Ｔ３３試作/所持:toggle,0x43A7EA,01,00
+	[subject]Ｔ３４Ｄ/所持:toggle,0x43A7EC,01,00
+	[subject]フルシールド/所持:toggle,0x43A7EE,01,00
+	[subject]金持ちの盾/所持:toggle,0x43A7F0,01,00
+	[subject]アームバリア/所持:toggle,0x43A7F2,01,00
+	[subject]女の子の盾/所持:toggle,0x43A7F4,01,00
+	[subject]ＭＸシールド/所持:toggle,0x43A7F6,01,00
+	[subject]戦闘盾/所持:toggle,0x43A7F8,01,00
+	[subject]魔法嫌いの盾/所持:toggle,0x43A7FA,01,00
+	[subject]なおみの盾/所持:toggle,0x43A7FC,01,00
+	[subject]回復の盾/所持:toggle,0x43A7FE,01,00
+	[subject]ブルーシールド/所持:toggle,0x43A800,01,00
+	[subject]鏡の盾/所持:toggle,0x43A802,01,00
+	[subject]かにの盾/所持:toggle,0x43A804,01,00
+[back]
+[subject]鎧:dir
+	[subject]鎧類全て/所持:toggle,0x43A808,0x43A82E-01,00
+	[subject]アーマー/所持:toggle,0x43A808,01,00
+	[subject]アーマー2/所持:toggle,0x43A80A,01,00
+	[subject]重装鎧/所持:toggle,0x43A80C,01,00
+	[subject]軽装鎧/所持:toggle,0x43A80E,01,00
+	[subject]魔法鎧/所持:toggle,0x43A810,01,00
+	[subject]真紅の鎧/所持:toggle,0x43A812,01,00
+	[subject]コースアーマー/所持:toggle,0x43A814,01,00
+	[subject]コースアーマー2/所持:toggle,0x43A816,01,00
+	[subject]鋼鉄の鎧/所持:toggle,0x43A818,01,00
+	[subject]豪華な鎧/所持:toggle,0x43A81A,01,00
+	[subject]ライオット/所持:toggle,0x43A81C,01,00
+	[subject]ライオットＲ/所持:toggle,0x43A81E,01,00
+	[subject]こーす３/所持:toggle,0x43A820,01,00
+	[subject]フェロモン・Ｓ/所持:toggle,0x43A822,01,00
+	[subject]鬼人の鎧/所持:toggle,0x43A824,01,00
+	[subject]復元の鎧/所持:toggle,0x43A826,01,00
+	[subject]ナオミの鎧/所持:toggle,0x43A828,01,00
+	[subject]ミラクルＪ/所持:toggle,0x43A82A,01,00
+	[subject]どてらスーツ/所持:toggle,0x43A82C,01,00
+	[subject]王様の鎧/所持:toggle,0x43A82E,01,00
+[back]
+[subject]指輪:dir
+	[subject]指輪類全て/所持:toggle,0x43A830,0x43A846-01,00
+	[subject]守りの指輪/所持:toggle,0x43A830,01,00
+	[subject]力の指輪/所持:toggle,0x43A832,01,00
+	[subject]パルスリング/所持:toggle,0x43A834,01,00
+	[subject]形見の指輪/所持:toggle,0x43A836,01,00
+	[subject]ダイアリング/所持:toggle,0x43A838,01,00
+	[subject]魔力の指輪/所持:toggle,0x43A83A,01,00
+	[subject]モンスター・Ｒ/所持:toggle,0x43A83C,01,00
+	[subject]クリスタル・Ｒ/所持:toggle,0x43A83E,01,00
+	[subject]戦士の指輪/所持:toggle,0x43A840,01,00
+	[subject]回復の指輪/所持:toggle,0x43A842,01,00
+	[subject]ナオミの指輪/所持:toggle,0x43A844,01,00
+	[subject]夢見る指輪/所持:toggle,0x43A846,01,00
+[back]
+[subject]通常アイテム:dir
+	[subject]世色癌:calc,0x43A932,0x0,0x63,signed,little_e
+	[subject]世色癌２:calc,0x43A934,0x0,0x63,signed,little_e
+	[subject]竜角惨:calc,0x43A936,0x0,0x63,signed,little_e
+	[subject]経験値の元:calc,0x43A938,0x0,0x63,signed,little_e
+	[subject]爆発茸:calc,0x43A93A,0x0,0x63,signed,little_e
+	[subject]帰り木:calc,0x43A93C,0x0,0x63,signed,little_e
+	[subject]世色癌３:calc,0x43A93E,0x0,0x63,signed,little_e
+	[subject]版紙龍:calc,0x43A940,0x0,0x63,signed,little_e
+	[subject]赤ぴこハンマー:calc,0x43A942,0x0,0x63,signed,little_e
+	[subject]青ぴこハンマー:calc,0x43A944,0x0,0x63,signed,little_e
+	[subject]緑ぴこハンマー:calc,0x43A946,0x0,0x63,signed,little_e
+	[subject]SM捕獲ロープ:calc,0x43A948,0x0,0x63,signed,little_e
+	[subject]おかし:calc,0x43A94A,0x0,0x63,signed,little_e
+	[subject]まんが肉:calc,0x43A94C,0x0,0x63,signed,little_e
+	[subject]力のポテチ:calc,0x43A94E,0x0,0x63,signed,little_e
+	[subject]守りのリンゴ:calc,0x43A950,0x0,0x63,signed,little_e
+	[subject]必殺のスイカ:calc,0x43A952,0x0,0x63,signed,little_e
+	[subject]魔力の石:calc,0x43A954,0x0,0x63,signed,little_e
+	[subject]命中の羽:calc,0x43A956,0x0,0x63,signed,little_e
+	[subject]回避の虫:calc,0x43A958,0x0,0x63,signed,little_e
+	[subject]良いハニーCARD:calc,0x43A95A,0x0,0x63,signed,little_e
+	[subject]免罪符:calc,0x43A95C,0x0,0x63,signed,little_e
+	[subject]梅昆布:calc,0x43A95E,0x0,0x63,signed,little_e
+	[subject]気力元薬:calc,0x43A960,0x0,0x63,signed,little_e
+	[subject]写真A:calc,0x43A962,0x0,0x05,signed,little_e
+	[subject]写真B:calc,0x43A964,0x0,0x05,signed,little_e
+	[subject]写真C:calc,0x43A966,0x0,0x05,signed,little_e
+	[subject]写真D:calc,0x43A968,0x0,0x05,signed,little_e
+	[subject]写真E:calc,0x43A96A,0x0,0x05,signed,little_e
+	[subject]写真F:calc,0x43A96C,0x0,0x05,signed,little_e
+	[subject]Ｓ捕獲ロープ:calc,0x43A96E,0x0,0x63,signed,little_e
+	[subject]復活の小判:calc,0x43A974,0x0,0x63,signed,little_e
+	[subject]くじら:calc,0x43A9A0,0x0,0x63,signed,little_e
+[back]
+[subject]イベントアイテム:dir
+	[subject]シィルの写真/所持:toggle,0x43A970,01,00
+	[subject]美樹の写真/所持:toggle,0x43A972,01,00
+	[subject]迷宮の鍵/所持:toggle,0x43A976,01,00
+	[subject]３Ｆの鍵/所持:toggle,0x43A978,01,00
+	[subject]４Ｆの鍵/所持:toggle,0x43A97A,01,00
+	[subject]納骨堂の鍵/所持:toggle,0x43A97C,01,00
+	[subject]シュリのサイン/所持:toggle,0x43A97E,01,00
+	[subject]魔王の鍵/所持:toggle,0x43A980,01,00
+	[subject]なぞ王の鍵/所持:toggle,0x43A982,01,00
+	[subject]ブルーCARD/所持:toggle,0x43A984,01,00
+	[subject]レッドCARD/所持:toggle,0x43A986,01,00
+	[subject]グリーンCARD/所持:toggle,0x43A988,01,00
+	[subject]水袋/所持:toggle,0x43A98A,01,00
+	[subject]Ｓハンマー/所持:toggle,0x43A98C,01,00
+	[subject]Ｌハンマー/所持:toggle,0x43A98E,01,00
+	[subject]鍵A/所持:toggle,0x43A990,01,00
+	[subject]鍵B/所持:toggle,0x43A992,01,00
+	[subject]天者のCARD/所持:toggle,0x43A994,01,00
+	[subject]紫鳥の鍵/所持:toggle,0x43A996,01,00
+	[subject]地下牢の鍵/所持:toggle,0x43A998,01,00
+	[subject]触手バイブ/所持:toggle,0x43A998,01,00
+	[subject]親父Ｖ/所持:toggle,0x43A99C,01,00
+	[subject]信じる心/所持:toggle,0x43A99E,01,00
+	[subject]チーズケーキ/所持:toggle,0x43AAAE,00,02
+[back]
+[subject]技能:dir
+	[subject]技能全て/所持:toggle,0x43A9A4,0x43A9C8-01,00
+	[subject]逃げる/所持:toggle,0x43A9A4,01,00
+	[subject]宝箱1/所持:toggle,0x43A9A6,01,00
+	[subject]両手持ち/所持:toggle,0x43A9A8,01,00
+	[subject]宝箱２/所持:toggle,0x43A9AA,01,00
+	[subject]泳ぐ/所持:toggle,0x43A9B4,01,00
+	[subject]手加減1/所持:toggle,0x43A9B4,01,00
+	[subject]手加減2/所持:toggle,0x43A9B6,01,00
+	[subject]火炎絶対防御/所持:toggle,0x43A9B8,01,00
+	[subject]体力回復/所持:toggle,0x43A9BA,01,00
+	[subject]ジャンプ/所持:toggle,0x43A9BC,01,00
+	[subject]剣奥義1/所持:toggle,0x43A9BE,01,00
+	[subject]剣奥義2/所持:toggle,0x43A9C0,01,00
+	[subject]レベルボーナス/所持:toggle,0x43A9C6,01,00
+	[subject]気力回復/所持:toggle,0x43A9C8,01,00
+[back]
+[subject]奥義:dir
+	[subject]瑞原風の剣:calc,0x43A9AC,0x0,0x0A,signed,little_e
+	[subject]瑞原烈の剣:calc,0x43A9AE,0x0,0x0A,signed,little_e
+	[subject]瑞原天の剣:calc,0x43A9B0,0x0,0x0A,signed,little_e
+[back]
+[subject]攻撃魔法:dir
+	[subject]炎の矢/所持:toggle,0x43A848,01,00
+	[subject]氷の矢/所持:toggle,0x43A84E,01,00
+	[subject]火炎爆/所持:toggle,0x43A856,01,00
+	[subject]雷撃/所持:toggle,0x43A858,01,00
+	[subject]光の槍/所持:toggle,0x43A85A,01,00
+	[subject]黒の波動/所持:toggle,0x43A85C,01,00
+	[subject]ファイヤー・レーザー/所持:toggle,0x43A85E,01,00
+	[subject]スノー・レーザー/所持:toggle,0x43A862,01,00
+[back]
+[subject]支援魔法:dir
+	[subject]魔法禁止/所持:toggle,0x43A84A,01,00
+	[subject]物品禁止/所持:toggle,0x43A84C,01,00
+	[subject]リーダー/所持:toggle,0x43A850,01,00
+	[subject]アタレーヤ/所持:toggle,0x43A852,01,00
+	[subject]ハズレーヤ/所持:toggle,0x43A854,01,00
+	[subject]バリアー/所持:toggle,0x43A860,01,00
+[back]
+[subject]女の子モンスター:dir
+	[subject]きゃんきゃん:calc,0x43A8A4,0x0,0x9,signed,little_e
+	[subject]ラルカット:calc,0x43A8A6,0x0,0x9,signed,little_e
+	[subject]やもりん:calc,0x43A8A8,0x0,0x9,signed,little_e
+	[subject]マジ・スコ:calc,0x43A8AA,0x0,0x9,signed,little_e
+	[subject]てんてん:calc,0x43A8AC,0x0,0x9,signed,little_e
+	[subject]めいどさん:calc,0x43A8AE,0x0,0x9,signed,little_e
+	[subject]おかし女:calc,0x43A8B0,0x0,0x9,signed,little_e
+	[subject]うし使い:calc,0x43A8B2,0x0,0x9,signed,little_e
+	[subject]うしうしバンバン:calc,0x43A8B4,0x0,0x9,signed,little_e
+	[subject]金魚使い:calc,0x43A8B6,0x0,0x9,signed,little_e
+	[subject]ハチ女:calc,0x43A8B8,0x0,0x9,signed,little_e
+	[subject]カエル魔女:calc,0x43A8BA,0x0,0x9,signed,little_e
+	[subject]やぎさん:calc,0x43A8BC,0x0,0x9,signed,little_e
+	[subject]ざしきわらし:calc,0x43A8BE,0x0,0x9,signed,little_e
+	[subject]とっこーちゃん:calc,0x43A8C0,0x0,0x9,signed,little_e
+	[subject]スモッグシルフ:calc,0x43A8C2,0x0,0x9,signed,little_e
+	[subject]フローズン:calc,0x43A8C4,0x0,0x9,signed,little_e
+	[subject]ちょーちん:calc,0x43A8C6,0x0,0x9,signed,little_e
+	[subject]プールポニー:calc,0x43A8C8,0x0,0x9,signed,little_e
+	[subject]チャプチャプ:calc,0x43A8CA,0x0,0x9,signed,little_e
+	[subject]海の幸:calc,0x43A8CC,0x0,0x9,signed,little_e
+	[subject]キャプテンばにら:calc,0x43A8CE,0x0,0x9,signed,little_e
+	[subject]山の幸:calc,0x43A8D0,0x0,0x9,signed,little_e
+	[subject]ネコまたまた:calc,0x43A8D2,0x0,0x9,signed,little_e
+	[subject]へびさん:calc,0x43A8D4,0x0,0x9,signed,little_e
+	[subject]バタバタ:calc,0x43A8D6,0x0,0x9,signed,little_e
+	[subject]まじしゃん:calc,0x43A8D8,0x0,0x9,signed,little_e
+	[subject]ハミング:calc,0x43A8DA,0x0,0x9,signed,little_e
+	[subject]おてて:calc,0x43A8DC,0x0,0x9,signed,little_e
+	[subject]夜逃げちゃん:calc,0x43A8DE,0x0,0x9,signed,little_e
+	[subject]人形と一緒:calc,0x43A8E0,0x0,0x9,signed,little_e
+	[subject]粉洗い:calc,0x43A8E2,0x0,0x9,signed,little_e
+	[subject]かえる女戦士:calc,0x43A8E4,0x0,0x9,signed,little_e
+	[subject]みのりん:calc,0x43A8E6,0x0,0x9,signed,little_e
+	[subject]怪獣王女:calc,0x43A8E8,0x0,0x9,signed,little_e
+	[subject]フィールドリンクス:calc,0x43A8EA,0x0,0x9,signed,little_e
+	[subject]ぴこちゃん:calc,0x43A8EC,0x0,0x9,signed,little_e
+	[subject]言霊:calc,0x43A8EE,0x0,0x9,signed,little_e
+	[subject]コンテ:calc,0x43A8F0,0x0,0x9,signed,little_e
+	[subject]髪長姫:calc,0x43A8F2,0x0,0x9,signed,little_e
+	[subject]ハンマーカーン:calc,0x43A8F4,0x0,0x9,signed,little_e
+	[subject]バルッコ:calc,0x43A8F6,0x0,0x9,signed,little_e
+	[subject]バルキリー:calc,0x43A8F8,0x0,0x9,signed,little_e
+	[subject]神風:calc,0x43A8FA,0x0,0x9,signed,little_e
+	[subject]ワンピギィ:calc,0x43A8FC,0x0,0x9,signed,little_e
+	[subject]ツーピギィ:calc,0x43A8FE,0x0,0x9,signed,little_e
+	[subject]スリーピギィ:calc,0x43A900,0x0,0x9,signed,little_e
+	[subject]ライカンスロープ:calc,0x43A902,0x0,0x9,signed,little_e
+	[subject]ワーチアガール:calc,0x43A904,0x0,0x9,signed,little_e
+	[subject]ワーOL:calc,0x43A906,0x0,0x9,signed,little_e
+	[subject]ワー消防士さん:calc,0x43A908,0x0,0x9,signed,little_e
+	[subject]ワーボクサー:calc,0x43A90A,0x0,0x9,signed,little_e
+	[subject]ワー花嫁:calc,0x43A90C,0x0,0x9,signed,little_e
+	[subject]ラム:calc,0x43A90E,0x0,0x9,signed,little_e
+	[subject]エンジェルナイト:calc,0x43A90E,0x0,0x9,signed,little_e
+[back]
+[subject]クラス:list,0x43A718,闘神,0x0,0x1
+[subject]GOLD:calc,0x43A734,0x0,0xFFFF,signed,little_e
+[/script]
+
+[script]
+[title]王道勇者
+[process]SYSTEM35.EXE
+[maker]アリスソフト
+[creator]みそ
+[note]wordwrap
+今回は、久々にがんばりました(でも、テスト中・・・)。
+と、言うわけでみなさん使って下さいね。
+[/note]
+[subject]基本能力:dir
+	[subject]レベル:calc,0x693F82,0x0,0x03E7,signed,little_e
+	[subject]最大HP:calc,0x693F86,0x0,0x270F,signed,little_e
+	[subject]最大MP:calc,0x693F8A,0x0,0x270F,signed,little_e
+	[subject]HP:calc,0x693F84,0x0,0x270F,signed,little_e
+	[subject]MP:calc,0x693F88,0x0,0x270F,signed,little_e
+	[subject]戦闘技術:calc,0x693F96,0x0,0xFFFF,signed,little_e
+	[subject]攻撃力修整:calc,0x693F98,0x0,0xFFFF,signed,little_e
+	[subject]防御力修整:calc,0x693F9A,0x0,0xFFFF,signed,little_e
+	[subject]魔法攻撃力:calc,0x693F9C,0x0,0xFFFF,signed,little_e
+	[subject]属性防御力:dir
+		[subject]光:calc,0x693FAE,0x0,0x64,signed,little_e
+		[subject]闇:calc,0x693FAC,0x0,0x64,signed,little_e
+		[subject]水:calc,0x693FA6,0x0,0x64,signed,little_e
+		[subject]火:calc,0x693FA8,0x0,0x64,signed,little_e
+		[subject]風:calc,0x693FAA,0x0,0x64,signed,little_e
+		[subject]地:calc,0x693FA4,0x0,0x64,signed,little_e
+[back]
+[back]
+[subject]必殺技:dir
+	[subject]必殺技一括/所持:toggle,0x693FBC,0x693FD0-01,00
+	[subject]復興気/所持:toggle,0x693FBC,01,00
+	[subject]高復気/所持:toggle,0x693FBE,01,00
+	[subject]全復気/所持:toggle,0x693FC0,01,00
+	[subject]羅漢斬/所持:toggle,0x693FC2,01,00
+	[subject]突破荒漢斬/所持:toggle,0x693FC4,01,00
+	[subject]防耐斬風/所持:toggle,0x693FC6,01,00
+	[subject]避耐斬風/所持:toggle,0x693FC8,01,00
+	[subject]互殺雪崩/所持:toggle,0x693FCA,01,00
+	[subject]互殺怒濤/所持:toggle,0x693FCC,01,00
+	[subject]銀刃乱舞/所持:toggle,0x693FCE,01,00
+	[subject]熱血円舞/所持:toggle,0x693FD0,01,00
+[back]
+[subject]通常アイテム:dir
+	[subject]通常アイテム一括(99個所持)/所持:toggle,0x693DA2,0x693DC0-63,00
+	[subject]青銅の卵:calc,0x693DA2,0x0,0x63,signed,little_e
+	[subject]白銀の卵:calc,0x693DA4,0x0,0x63,signed,little_e
+	[subject]黄金の卵:calc,0x693DA6,0x0,0x63,signed,little_e
+	[subject]パン:calc,0x693DA8,0x0,0x63,signed,little_e
+	[subject]解毒剤　毒:calc,0x693DAA,0x0,0x63,signed,little_e
+	[subject]解毒剤　麻痺:calc,0x693DAC,0x0,0x63,signed,little_e
+	[subject]解毒剤　盲目:calc,0x693DAE,0x0,0x63,signed,little_e
+	[subject]解毒剤　石化:calc,0x693DB0,0x0,0x63,signed,little_e
+	[subject]石槍符:calc,0x693DB2,0x0,0x63,signed,little_e
+	[subject]水刃符:calc,0x693DB4,0x0,0x63,signed,little_e
+	[subject]神炎符:calc,0x693DB6,0x0,0x63,signed,little_e
+	[subject]天雷符:calc,0x693DB8,0x0,0x63,signed,little_e
+	[subject]魔石:calc,0x693DBC,0x0,0x63,signed,little_e
+	[subject]大魔石:calc,0x693DBE,0x0,0x63,signed,little_e
+	[subject]解毒剤　万能薬:calc,0x693DC0,0x0,0x63,signed,little_e
+	[subject]滅符:calc,0x693DBA,0x0,0x63,signed,little_e
+[back]
+[subject]イベントアイテム:dir
+	[subject]イベントアイテム一括/所持:toggle,0x693DC2,0x693DF8-01,00
+	[subject]船室の鍵/所持:toggle,0x693DC2,01,00
+	[subject]海賊の鍵/所持:toggle,0x693DC4,01,00
+	[subject]タロット/所持:toggle,0x693DC6,01,00
+	[subject]塔の鍵/所持:toggle,0x693DC8,01,00
+	[subject]山小屋の鍵/所持:toggle,0x693DCA,01,00
+	[subject]ロープ/所持:toggle,0x693DCC,01,00
+	[subject]斧/所持:toggle,0x693DCE,01,00
+	[subject]氷の花/所持:toggle,0x693DD0,01,00
+	[subject]ハートストーン/所持:toggle,0x693DD2,01,00
+	[subject]闇の結晶/所持:toggle,0x693DD4,01,00
+	[subject]宝物庫の鍵/所持:toggle,0x693DD6,01,00
+	[subject]牢屋の鍵/所持:toggle,0x693DD8,01,00
+	[subject]古びた鍵/所持:toggle,0x693DDA,01,00
+	[subject]星形のコイン/所持:toggle,0x693DDC,01,00
+	[subject]三角形のコイン/所持:toggle,0x693DDE,01,00
+	[subject]ひし型のコイン/所持:toggle,0x693DE0,01,00
+	[subject]コイン/所持:toggle,0x693DE2,01,00
+	[subject]虹の花/所持:toggle,0x693DE4,01,00
+	[subject]宝石/所持:toggle,0x693DE6,01,00
+	[subject]通行書/所持:toggle,0x693DE8,01,00
+	[subject]ブラックロータス/所持:toggle,0x693DEE,01,00
+	[subject]スピニッッシュ/所持:toggle,0x693DEA,01,00
+	[subject]ペパーポット/所持:toggle,0x693DEC,01,00
+	[subject]奥義書/所持:toggle,0x693DF0,01,00
+	[subject]ジェット/所持:toggle,0x693DF2,01,00
+	[subject]アウイン/所持:toggle,0x693DF4,01,00
+	[subject]バイローブ/所持:toggle,0x693DF6,01,00
+	[subject]セレスタイン/所持:toggle,0x693DF8,01,00
+[back]
+[subject]装備:dir
+	[subject]剣:dir
+		[subject]剣一括/所持:toggle,0x693E3E,0x693E7E-01,00
+		[subject]カトラス/所持:toggle,0x693E3E,01,00
+		[subject]ハンガー/所持:toggle,0x693E40,01,00
+		[subject]ショートソード/所持:toggle,0x693E42,01,00
+		[subject]ブロードソード/所持:toggle,0x693E44,01,00
+		[subject]勇者の剣/所持:toggle,0x693E46,01,00
+		[subject]バスタードソード/所持:toggle,0x693E48,01,00
+		[subject]ブラッドサッカー/所持:toggle,0x693E4A,01,00
+		[subject]グリーム/所持:toggle,0x693E4C,01,00
+		[subject]グレートソード/所持:toggle,0x693E4E,01,00
+		[subject]無銘正宗/所持:toggle,0x693E50,01,00
+		[subject]ボーパルブレード/所持:toggle,0x693E52,01,00
+		[subject]安綱/所持:toggle,0x693E54,01,00
+		[subject]ガロウズバード/所持:toggle,0x693E56,01,00
+		[subject]竜の剣/所持:toggle,0x693E58,01,00
+		[subject]C・エッジ/所持:toggle,0x693E5A,01,00
+		[subject]センチュリオン/所持:toggle,0x693E5C,01,00
+		[subject]ミレニアム/所持:toggle,0x693E5E,01,00
+		[subject]天牙/所持:toggle,0x693E60,01,00
+		[subject]ファング/所持:toggle,0x693E62,01,00
+		[subject]ヘリオン/所持:toggle,0x693E64,01,00
+		[subject]ライトニング/所持:toggle,0x693E66,01,00
+		[subject]水心子正秀/所持:toggle,0x693E68,01,00
+		[subject]男の剣/所持:toggle,0x693E6A,01,00
+		[subject]ミンチメーカー/所持:toggle,0x693E6C,01,00
+		[subject]闇(ビター)/所持:toggle,0x693E6E,01,00
+		[subject]テンペスト/所持:toggle,0x693E70,01,00
+		[subject]ブラスティー/所持:toggle,0x693E72,01,00
+		[subject]エファルジェンス/所持:toggle,0x693E74,01,00
+		[subject]デス/所持:toggle,0x693E76,01,00
+		[subject]マロードウィング/所持:toggle,0x693E78,01,00
+		[subject]Ｓ＝Ｅ/所持:toggle,0x693E7A,01,00
+		[subject]村正/所持:toggle,0x693E7C,01,00
+		[subject]レジェンド/所持:toggle,0x693E7E,01,00
+	[back]
+	[subject]盾:dir
+		[subject]盾一括/所持:toggle,0x693E80,0x693EC0-01,00
+		[subject]海賊の盾/所持:toggle,0x693E80,01,00
+		[subject]タージ/所持:toggle,0x693E82,01,00
+		[subject]ベルタ/所持:toggle,0x693E84,01,00
+		[subject]ラウンド/所持:toggle,0x693E86,01,00
+		[subject]カイト/所持:toggle,0x693E88,01,00
+		[subject]ヒーター/所持:toggle,0x693E8A,01,00
+		[subject]クレセント/所持:toggle,0x693E8C,01,00
+		[subject]グリーム/所持:toggle,0x693E8E,01,00
+		[subject]サウンドスパウト/所持:toggle,0x693E90,01,00
+		[subject]フレアリング/所持:toggle,0x693E92,01,00
+		[subject]エアカレント/所持:toggle,0x693E94,01,00
+		[subject]ホークスピル/所持:toggle,0x693E96,01,00
+		[subject]エディ/所持:toggle,0x693E98,01,00
+		[subject]ゲイナー/所持:toggle,0x693E9A,01,00
+		[subject]C・フェンス/所持:toggle,0x693E9C,01,00
+		[subject]ゲインセイヤ/所持:toggle,0x693E9E,01,00
+		[subject]エアグロウ/所持:toggle,0x693EA0,01,00
+		[subject]スカイゼル/所持:toggle,0x693EA2,01,00
+		[subject]タレイア/所持:toggle,0x693EA4,01,00
+		[subject]ウラニヤ/所持:toggle,0x693EA6,01,00
+		[subject]クレイオ/所持:toggle,0x693EA8,01,00
+		[subject]エラト/所持:toggle,0x693EAA,01,00
+		[subject]男の盾/所持:toggle,0x693EAC,01,00
+		[subject]虹彩/所持:toggle,0x693EAE,01,00
+		[subject]ビター/所持:toggle,0x693EB0,01,00
+		[subject]不動/所持:toggle,0x693EB2,01,00
+		[subject]炎揺/所持:toggle,0x693EB4,01,00
+		[subject]雷閃/所持:toggle,0x693EB6,01,00
+		[subject]霧氷/所持:toggle,0x693EB8,01,00
+		[subject]光輪/所持:toggle,0x693EBA,01,00
+		[subject]常闇/所持:toggle,0x693EBC,01,00
+		[subject]カリオペ/所持:toggle,0x693EBE,01,00
+		[subject]レジェンド/所持:toggle,0x693EC0,01,00
+	[back]
+	[subject]鎧:dir
+		[subject]鎧一括/所持:toggle,0x693EC2,0x693F02-01,00
+		[subject]海賊の鎧/所持:toggle,0x693EC2,01,00
+		[subject]レザー/所持:toggle,0x693EC4,01,00
+		[subject]チェイン/所持:toggle,0x693EC6,01,00
+		[subject]ブレスト/所持:toggle,0x693EC8,01,00
+		[subject]勇者の鎧/所持:toggle,0x693ECA,01,00
+		[subject]胴鎧/所持:toggle,0x693ECC,01,00
+		[subject]ハーフブレード/所持:toggle,0x693ECE,01,00
+		[subject]グリーム/所持:toggle,0x693ED0,01,00
+		[subject]フィールド/所持:toggle,0x693ED2,01,00
+		[subject]クィラサー/所持:toggle,0x693ED4,01,00
+		[subject]ゲームニス/所持:toggle,0x693ED6,01,00
+		[subject]スーツプレード/所持:toggle,0x693ED8,01,00
+		[subject]エレメンツ/所持:toggle,0x693EDA,01,00
+		[subject]ルミネス/所持:toggle,0x693EDC,01,00
+		[subject]C・ブレスト/所持:toggle,0x693EDE,01,00
+		[subject]ジョースト/所持:toggle,0x693EE0,01,00
+		[subject]クレリブガーブ/所持:toggle,0x693EE2,01,00
+		[subject]リーンフォース/所持:toggle,0x693EE4,01,00
+		[subject]ギャノイド/所持:toggle,0x693EE6,01,00
+		[subject]風雲帯衣/所持:toggle,0x693EE8,01,00
+		[subject]霊水帯衣/所持:toggle,0x693EEA,01,00
+		[subject]男の鎧/所持:toggle,0x693EEC,01,00
+		[subject]グランゼル/所持:toggle,0x693EEE,01,00
+		[subject]ビター/所持:toggle,0x693EF0,01,00
+		[subject]不動/所持:toggle,0x693EF2,01,00
+		[subject]炎揺/所持:toggle,0x693EF4,01,00
+		[subject]雷閃/所持:toggle,0x693EF6,01,00
+		[subject]霧氷/所持:toggle,0x693EF8,01,00
+		[subject]光輪/所持:toggle,0x693EFA,01,00
+		[subject]常闇/所持:toggle,0x693EFC,01,00
+		[subject]四霊聖衣/所持:toggle,0x693EFE,01,00
+		[subject]バールグリッダー/所持:toggle,0x693F00,01,00
+		[subject]レジェンド/所持:toggle,0x693F02,01,00
+	[back]
+	[subject]装飾品:dir
+		[subject]装飾品一括/所持:toggle,0x693F04,0x693F44-01,00
+		[subject]愚者の護符/所持:toggle,0x693F04,01,00
+		[subject]パワーリング/所持:toggle,0x693F06,01,00
+		[subject]ガードリング/所持:toggle,0x693F08,01,00
+		[subject]鷹の目/所持:toggle,0x693F0A,01,00
+		[subject]風の指輪/所持:toggle,0x693F0C,01,00
+		[subject]魔術師の人差し指/所持:toggle,0x693F0E,01,00
+		[subject]流水のタリスマン/所持:toggle,0x693F10,01,00
+		[subject]スキルリング/所持:toggle,0x693F12,01,00
+		[subject]魔除け/所持:toggle,0x693F14,01,00
+		[subject]魔寄せ/所持:toggle,0x693F16,01,00
+		[subject]銀の眼鏡/所持:toggle,0x693F18,01,00
+		[subject]金の眼鏡/所持:toggle,0x693F1A,01,00
+		[subject]琥珀の首飾り/所持:toggle,0x693F1C,01,00
+		[subject]白い魔導器/所持:toggle,0x693F1E,01,00
+		[subject]黒曜石の小鳥/所持:toggle,0x693F20,01,00
+		[subject]瑪瑙の小鳥/所持:toggle,0x693F22,01,00
+		[subject]瑠璃の小鳥/所持:toggle,0x693F24,01,00
+		[subject]天秤/所持:toggle,0x693F26,01,00
+		[subject]白銀の眼鏡/所持:toggle,0x693F28,01,00
+		[subject]フォースリング/所持:toggle,0x693F2A,01,00
+		[subject]プロテクトリング/所持:toggle,0x693F2C,01,00
+		[subject]男の証/所持:toggle,0x693F2E,01,00
+		[subject]砂時計/所持:toggle,0x693F30,01,00
+		[subject]魔人の右目/所持:toggle,0x693F32,01,00
+		[subject]魔人の左目/所持:toggle,0x693F34,01,00
+		[subject]兎の足/所持:toggle,0x693F36,01,00
+		[subject]プリズム/所持:toggle,0x693F38,01,00
+		[subject]紅い魔導器/所持:toggle,0x693F3A,01,00
+		[subject]鏖殺の指輪/所持:toggle,0x693F3C,01,00
+		[subject]翡翠の翼/所持:toggle,0x693F3E,01,00
+		[subject]愚断の護符/所持:toggle,0x693F40,01,00
+		[subject]虹色のタリスマン/所持:toggle,0x693F42,01,00
+		[subject]幸福の指輪/所持:toggle,0x693F44,01,00
+	[back]
+[back]
+[subject]GOLD:calc,0x693F90,0x0,0xFFFF,signed,little_e
+[back]
+[/script]
+
+[script]
+[title]三國志Ⅵパワーアップキット
+[process]SAN6.EXE
+[maker]コーエー
+[creator]みそ
+[note]wordwrap
+歴史イベントコレクションの中に入ってからチェックを入れてね。
+じゃないと、強制終了がかかるよ。
+値の固定もしないほうがいいよ。
+
+[/note]
+[subject]歴史イベントFULL:toggle,0xAFFCC8,0xAFFCD4-FF,01
+[/script]
+
+[script]
+[title]下級生
+[process]AI5WIN.EXE
+[maker]エルフ
+[creator]みそ
+[note]
+最近疲れ気味。
+でも下級生。
+曹操サイコー！
+でも下級生。
+時間がないッス。
+でも下級生。
+[/note]
+[subject]愛情値:dir
+	[subject]結城瑞穂:calc,0x46359C,0x0,0xFF,signed,little_e
+	[subject]神山みこ:calc,0x46359A,0x0,0xFF,signed,little_e
+	[subject]南里愛:calc,0x4635A8,0x0,0xFF,signed,little_e
+	[subject]持田真歩子:calc,0x4635AC,0x0,0xFF,signed,little_e
+	[subject]新藤麗子:calc,0x463598,0x0,0xFF,signed,little_e
+	[subject]橘真由美:calc,0x46359E,0x0,0xFF,signed,little_e
+	[subject]加納涼子:calc,0x4635A0,0x0,0xFF,signed,little_e
+	[subject]三月静香:calc,0x4635AA,0x0,0xFF,signed,little_e
+	[subject]飯島美雪:calc,0x4635A6,0x0,0xFF,signed,little_e
+	[subject]皆川奈々:calc,0x4635A4,0x0,0xFF,signed,little_e
+	[subject]ティナ:calc,0x4635A2,0x0,0xFF,signed,little_e
+	[subject]山下美夏:calc,0x4635AE,0x0,0xFF,signed,little_e
+	[subject]緑谷麻紀:calc,0x4635B0,0x0,0xFF,signed,little_e
+[back]
+[subject]アイテム:dir
+	[subject]アイテム一括:toggle,0x4624EF,0x46250F-0F,01
+	[subject]枯れない花束:calc,0x4624EF,0x0,0x0F,signed,little_e
+	[subject]愛と感動の詩集:calc,0x4624F0,0x0,0x0F,signed,little_e
+	[subject]愛と感動の小説:calc,0x4624F1,0x0,0x0F,signed,little_e
+	[subject]ファニーブック:calc,0x4624F2,0x0,0x0F,signed,little_e
+	[subject]はやり物大全集:calc,0x4624F3,0x0,0x0F,signed,little_e
+	[subject]芸術家の写真集:calc,0x4624F4,0x0,0x0F,signed,little_e
+	[subject]貝がらのオルゴール:calc,0x4624F5,0x0,0x0F,signed,little_e
+	[subject]頭蓋骨のオルゴール:calc,0x4624F6,0x0,0x0F,signed,little_e
+	[subject]おしゃれな小物入れ:calc,0x4624F7,0x0,0x0F,signed,little_e
+	[subject]ブリキでできた玩具:calc,0x4624F8,0x0,0x0F,signed,little_e
+	[subject]ブランド物スカーフ:calc,0x4624F9,0x0,0x0F,signed,little_e
+	[subject]小さな額付き風景画:calc,0x4624FA,0x0,0x0F,signed,little_e
+	[subject]純銀スイングビアス:calc,0x4624FB,0x0,0x0F,signed,little_e
+	[subject]純銀スイングリング:calc,0x4624FC,0x0,0x0F,signed,little_e
+	[subject]純銀スイングピアス:calc,0x4624FD,0x0,0x0F,signed,little_e
+	[subject]純金スイングリング:calc,0x4624FE,0x0,0x0F,signed,little_e
+	[subject]腐らない鮮魚:calc,0x46250C,0x0,0x0F,signed,little_e
+	[subject]糖衣錠剤新薬風薬:calc,0x46250D,0x0,0x0F,signed,little_e
+	[subject]風邪根治中国漢方薬:calc,0x46250E,0x0,0x0F,signed,little_e
+	[subject]宇宙的効果之風邪薬:calc,0x46250F,0x0,0x0F,signed,little_e
+	[subject]ブルセラアイテム:dir
+	[subject]ブルセラアイテム一括:toggle,0x462510,0x462513-0F,01
+		[subject]シミつきパンティ:calc,0x462510,0x0,0x0F,signed,little_e
+		[subject]名前入りブルマ:calc,0x462511,0x0,0x0F,signed,little_e
+		[subject]かぐわしい白の靴下:calc,0x462512,0x0,0x0F,signed,little_e
+		[subject]着古したセーラー服:calc,0x462513,0x0,0x0F,signed,little_e
+[back]
+[back]
+[subject]主人公名前:string,0x464330,7,null
+[subject]所持金:calc,0x4633EC,0x0,0x0F41DC,signed,little_e
+[/script]
+
+[script]
+[title]臭作
+[process]AIWIN.EXE
+[maker]エルフ
+[creator]みそ
+[note]wordwrap
+くっくっく、臭作様のお通りだーーー！！！
+
+…はぁ、いやしかし
+いい加減、勘弁して下さい。
+兄弟そろってあなた方、鬼畜の顔はきつすぎます。
+放射能でてますって。絶対。
+[/note]
+[subject]アイテム:dir
+	[subject]ビデオカメラ:calc,0x8033C8,0x0,0x0F,signed,little_e
+	[subject]デジタルカメラ:calc,0x8033CA,0x0,0x0F,signed,little_e
+	[subject]カミソリ:calc,0x8033CC,0x0,0x0F,signed,little_e
+	[subject]媚薬:calc,0x8033CE,0x0,0x0F,signed,little_e
+	[subject]なわ:calc,0x8033D0,0x0,0x0F,signed,little_e
+[back]
+[/script]
+
+[script]
+[title]戦国美少女絵巻 空を斬る!! ～春風の章～
+[process]HARUKAZE.EXE
+[maker]TGL
+[creator]みそ
+[note]wordwrap
+TGLの戦国美少女絵巻　空を斬る!!～春風の章～
+です。
+
+[/note]
+[subject]能力値:dir
+	[subject]ひな:dir
+		[replace]0x4DD960,空を斬る,offset
+	[subject]伊夜:dir
+		[replace]0x4DD9EC,空を斬る,offset
+	[subject]義行:dir
+		[replace]0x4DDA78,空を斬る,offset
+	[subject]由衣:dir
+		[replace]0x4DDB04,空を斬る,offset
+	[subject]静香:dir
+		[replace]0x4DDB90,空を斬る,offset
+	[subject]こころ:dir
+		[replace]0x4DDC1C,空を斬る,offset
+[back]
+[subject]所持金:calc,0x4DE660,0x0,0xFFFF,signed,little_e
+[/script]
+
+[script]
+[title]ヒロイン
+[process]HEROINE.EXE
+[maker]ちぇりーそふと
+[creator]みそ
+[note]wordwrap
+体力と演技力の値が変更できます。
+
+ども、みなさんお久しぶりです。みそです。
+最近家の愛機PC9821V200ちゃんのCD-ROMの機嫌が大変悪く、ＣＤをいれても認識してくれないんですよ。だから、このゲームを
+インストールした時はとても大変でしたね。
+インストール中にCDが止まるんですよ。
+だからCDを抜いてもういっぺん入れ直さなきゃならないんです。
+それを繰り返すこと約10回時間にして約15分。
+友達にもCD-ROMの買い換えを進められるのですが、いかんせんお金がないんですよ。
+と、いうわけでSSGを前みたいにたくさん作ることは、現段階ではちょっと不可能に近いですね。
+みなさんごめんなさい。
+ああ～、誰かこの迷える子羊に愛の手を～。
+[/note]
+[subject]佐々木恵:dir
+	[replace]0x437336,ヒロイン,offset
+[subject]村岡陽子:dir
+	[replace]0x437338,ヒロイン,offset
+[subject]雨宮由美:dir
+	[replace]0x43733A,ヒロイン,offset
+[subject]中尾香織:dir
+	[replace]0x43733C,ヒロイン,offset
+[subject]小林朋子:dir
+	[replace]0x43733E,ヒロイン,offset
+[back]
+[/script]
+
+[script]
+[title]新世紀エヴァンゲリオン　エヴァと愉快な仲間達
+[process]EVA.EXE
+[maker]ガイナックス
+[creator]みそ
+[note]wordwrap
+改造対策(?)のためか、牌を書き換えた天和の場合、場がすすみません。
+（詳しく調べていないので、書き換え自体をチェックしているのかは、分かりませんけど。）
+
+どちらにしろ天和なり国士なりで点数を稼いで、改造なしで流局を続ければそのうち終わるでしょうしね(^^;)
+[/note]
+[subject]得点:dir
+	[subject]プレイヤー:calc,0x4bada4,0x0,0x1000000,signed,little_e
+	[subject]対戦者1:calc,0x4badc4,0x0,0x1000000,signed,little_e
+	[subject]対戦者2:calc,0x4bade4,0x0,0x1000000,signed,little_e
+	[subject]対戦者3:calc,0x4bae04,0x0,0x1000000,signed,little_e
+[back]
+[subject]配牌変更:dir
+	[subject]自牌01:list,0x4BAB48,Eva牌,0,1
+	[subject]自牌02:list,0x4BAB49,Eva牌,0,1
+	[subject]自牌03:list,0x4BAB4A,Eva牌,0,1
+	[subject]自牌04:list,0x4BAB4B,Eva牌,0,1
+	[subject]自牌05:list,0x4BAB4C,Eva牌,0,1
+	[subject]自牌06:list,0x4BAB4D,Eva牌,0,1
+	[subject]自牌07:list,0x4BAB4E,Eva牌,0,1
+	[subject]自牌08:list,0x4BAB4F,Eva牌,0,1
+	[subject]自牌09:list,0x4BAB50,Eva牌,0,1
+	[subject]自牌10:list,0x4BAB51,Eva牌,0,1
+	[subject]自牌11:list,0x4BAB52,Eva牌,0,1
+	[subject]自牌12:list,0x4BAB53,Eva牌,0,1
+	[subject]自牌13:list,0x4BAB54,Eva牌,0,1
+	[subject]ツモった牌:list,0x4BAB55,Eva牌,0,1
+[/script]
+
+[script]
+[title]《TGL2000円シリーズ》ファーランドサーガ
+[process]FS.EXE
+[maker]TGL
+[creator]みそ
+[note]wordwrap
+えー、お久しぶりです。みそです!!最近改造をするよりも純粋にゲームを
+楽しむことにはまっていたのでまったく改造をやっておりませんでした。
+まっ、その他にも昨年の競馬秋のＧ１戦線、堅く(４０倍前後の馬連)
+いったら万馬券、万馬券狙ったら堅く収まるなどして、勝ったのはマイルチャンピョンシップの１レースだけ・・・、
+などという具合で改造意欲がわかなかったのであります。
+しかし、スプリンターズＳ信じていたトキオパーフェクト(鞍上岡部)何やってんだー!!!
+そういうわけで私がしばらくssgを作っていなかった間にいろいろな方々がいろいろなゲームを改造していますねぇ、
+っというわけでこれから皆さんよろしくお願いします(何をや!)。
+[/note]
+[subject]能力:dir
+	[subject]レオン:dir
+		[replace]0x471E04,ファーランド,offset
+	[subject]ラルフ:dir
+		[replace]0x471E80,ファーランド,offset
+	[subject]ブライアン:dir
+		[replace]0x471EFC,ファーランド,offset
+	[subject]ファム:dir
+		[replace]0x471F78,ファーランド,offset
+	[subject]マーシア:dir
+		[replace]0x471FF4,ファーランド,offset
+	[subject]カリン:dir
+		[replace]0x472070,ファーランド,offset
+	[subject]オフィーリア:dir
+		[replace]0x4720EC,ファーランド,offset
+	[subject]Ｔ.Ｔ.:dir
+		[replace]0x472168,ファーランド,offset
+	[subject]リアン:dir
+		[replace]0x4721E4,ファーランド,offset
+	[back]
+[subject]装備:dir
+	[subject]武器装備:dir
+		[subject]レオン:list,0x471E14,ファーランド武器,0x0,0x1
+		[subject]ラルフ:list,0x471E90,ファーランド武器,0x0,0x1
+		[subject]ブライアン:list,0x471F0C,ファーランド武器,0x0,0x1
+		[subject]ファム:list,0x471F88,ファーランド武器,0x0,0x1
+		[subject]マーシア:list,0x472004,ファーランド武器,0x0,0x1
+		[subject]カリン:list,0x472080,ファーランド武器,0x0,0x1
+		[subject]オフィーリア:list,0x4720FC,ファーランド武器,0x0,0x1
+		[subject]Ｔ.Ｔ.:list,0x472178,ファーランド武器,0x0,0x1
+		[subject]リアン:list,0x4721F4,ファーランド武器,0x0,0x1
+	[back]
+	[subject]防具装備:dir
+		[subject]レオン:list,0x471E16,ファーランド武器,0x0,0x1
+		[subject]ラルフ:list,0x471E92,ファーランド武器,0x0,0x1
+		[subject]ブライアン:list,0x471F0E,ファーランド武器,0x0,0x1
+		[subject]ファム:list,0x471F8A,ファーランド武器,0x0,0x1
+		[subject]マーシア:list,0x472006,ファーランド武器,0x0,0x1
+		[subject]カリン:list,0x472082,ファーランド武器,0x0,0x1
+		[subject]オフィーリア:list,0x4720FE,ファーランド武器,0x0,0x1
+		[subject]Ｔ.Ｔ.:list,0x47217A,ファーランド武器,0x0,0x1
+		[subject]リアン:list,0x4721F6,ファーランド武器,0x0,0x1
+	[back]
+	[subject]装備１:dir
+		[subject]レオン:list,0x471E18,ファーランド武器,0x0,0x1
+		[subject]ラルフ:list,0x471E94,ファーランド武器,0x0,0x1
+		[subject]ブライアン:list,0x471F10,ファーランド武器,0x0,0x1
+		[subject]ファム:list,0x471F8C,ファーランド武器,0x0,0x1
+		[subject]マーシア:list,0x472008,ファーランド武器,0x0,0x1
+		[subject]カリン:list,0x472084,ファーランド武器,0x0,0x1
+		[subject]オフィーリア:list,0x472100,ファーランド武器,0x0,0x1
+		[subject]Ｔ.Ｔ.:list,0x47217C,ファーランド武器,0x0,0x1
+		[subject]リアン:list,0x4721F8,ファーランド武器,0x0,0x1
+	[back]
+	[subject]装備２:dir
+		[subject]レオン:list,0x471E1A,ファーランド武器,0x0,0x1
+		[subject]ラルフ:list,0x471E96,ファーランド武器,0x0,0x1
+		[subject]ブライアン:list,0x471F12,ファーランド武器,0x0,0x1
+		[subject]ファム:list,0x471F8E,ファーランド武器,0x0,0x1
+		[subject]マーシア:list,0x47200A,ファーランド武器,0x0,0x1
+		[subject]カリン:list,0x472086,ファーランド武器,0x0,0x1
+		[subject]オフィーリア:list,0x472102,ファーランド武器,0x0,0x1
+		[subject]Ｔ.Ｔ.:list,0x47217E,ファーランド武器,0x0,0x1
+		[subject]リアン:list,0x4721FA,ファーランド武器,0x0,0x1
+	[back]
+[/script]
+
+[script]
+[title]フィルムノワール
+[process]FNOIR.EXE
+[maker]Sophia
+[creator]みそ
+[note]
+所持金を変更可能にしました。
+[/note]
+[subject]所持金:calc,0x506AC8,0x0000,999999,signed,little_e
+[/script]
+
+[script]
+[title]Castle Fantasia～エレンシア戦記～
+[process]CF3.EXE
+[maker]Studio e.go!
+[creator]みそ
+[note]wordwrap
+とりあえず、能力変更を可能にしました。使ってくれたら幸いです。
+[/note]
+[subject]ファイゼル:dir
+	[subject]兵数:calc,0x48E04C,0x0000,5,signed
+		[replace]0x48E050,CF3,offset
+[subject]ミンファ:dir
+	[subject]兵数:calc,0x48E098,0x0000,5,signed
+		[replace]0x48E09C,CF3,offset
+[subject]ラピス:dir
+	[subject]兵数:calc,0x48E0E4,0x0000,5,signed
+		[replace]0x48E0E8,CF3,offset
+[subject]テルル:dir
+	[subject]兵数:calc,0x48E130,0x0000,5,signed
+		[replace]0x48E134,CF3,offset
+[subject]チャイカ:dir
+	[subject]兵数:calc,0x48E17C,0x0000,5,signed
+		[replace]0x48E180,CF3,offset
+[subject]ナガレ:dir
+	[subject]兵数:calc,0x48E1C8,0x0000,5,signed
+		[replace]0x48E1CC,CF3,offset
+[subject]クリームヒルト:dir
+	[subject]兵数:calc,0x48E214,0x0000,3,signed
+		[replace]0x48E218,CF3,offset
+[subject]セリカ:dir
+	[subject]兵数:calc,0x48E260,0x0000,5,signed
+		[replace]0x48E264,CF3,offset
+[root]
+[/script]
+
+[script]
+[title]イースⅡ・エターナル
+[process]YS2_WIN.EXE
+[maker]日本ファルコム
+[creator]みそ
+[note]wordwrap
+とりあえずこれさえあれば何とかなると思われるものを
+サーチしときました。もしかしたらこれからもうちょっと
+増えるかも・・・。
+[/note]
+[subject]アドル:dir
+	[subject]経験値:calc,0x605F4C,0x0000,100001,signed
+	[subject]ＨＰ:calc,0x605F2C,0x0000,256,signed
+	[subject]ＭＰ:calc,0x605F34,0x0000,256,signed
+[back]
+[subject]GOLD:calc,0x605F48,0x0000,100001,signed
+[/script]
