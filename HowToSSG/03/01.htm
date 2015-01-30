@@ -1,0 +1,210 @@
+<html><head>
+<title>HowToSSG:[adjustment]</title>
+<BASE TARGET="_self">
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../style.css">
+</head><BODY>
+
+
+<table class="difficultBOX">
+<tr><td class="difficultLevel">難解度「AA+」</td></tr>
+<tr><td>
+※このページ全体の難解度です。
+</td></tr>
+</table>
+
+
+<TABLE CLASS=titleBOX><TR><TD>アドレス補正属性</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　環境や対象プロセスによって読み書きすべきアドレスが移動する場合に、その差を補正する属性です。書式は
+<table CLASS=exaBOX><tr><td NOWRAP>
+[adjustment]補正方法,オプション<BR>
+[/adjustment]
+</td></tr></table>
+です。補正方法は複数あり、それぞれオプションや仕組みが違います。順々に説明していきますね。
+</TD></TR></TABLE><BR>
+<BR>
+
+
+<TABLE CLASS=titleBOX><TR><TD>search</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　サーチ補正。読み書きする値と一緒に移動するものの、常に変わらない値がある場合、その「常に変わらない値（バイト列）」を探すことで補正します。書式は
+<table CLASS=exaBOX><tr><td NOWRAP>
+[adjustment]search, 基準アドレス, 固定バイト列,<BR>
+　　　　　　探査前端, 探査後端, ステップ<BR>
+</td></tr></table>
+です。表記上２行で書いてますが、実際は１行で書いて下さいね。
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>基準アドレス</td><td>探査を開始するアドレスであるとともに、補正の基準となるアドレスです。固定バイト列が見つかったアドレスと、基準アドレスとの差が補正値になります。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>固定バイト列</td><td>書き換えたい値と同量のアドレス移動を起こし、かつ常に変わらない値を、バイト列として指定します。バイト列の詳細は、<A HREF="../0A/00.htm">《B-バイト列》</a>を参照。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>探査前端</td><td>サーチ範囲の最小アドレスを指定します。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>探査後端</td><td>サーチ範囲の最大アドレスを指定します。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>ステップ</td><td>16バイト単位でメモリを区切ったとき、常に1バイト目に固定バイト列がくると分かっている場合、「1バイト進めて比較して」を繰り返すよりも、「16バイト進めて比較して」を繰り返す方が遙かに効率的です。その比較毎のとび幅を指定します。</td></tr>
+</table>
+当然ながら、固定バイト列はユニークな値（メモリ中では非常に稀な値）でないと、関係のないところでもヒットしてしまいますので、注意してください。<BR>
+　なお、通常は「固定バイト列が見つかったアドレスと、基準アドレスとの差」が補正値になりますが、この差から補正値を選択するという方法もあります。
+<table CLASS=exaBOX><tr><td NOWRAP>
+[adjustment]search, 基準アドレス, 固定バイト列,<BR>
+　　　　　　探査前端, 探査後端, ステップ,<BR>
+　　　　　　差=補正値 / 差=補正値 / 差=補正値<BR>
+</td></tr></table>
+このような書き方（1行で書きます）をしますが、ステップのあとに','で区切って、「差=補正値」という形で、必要分だけ'/'で分けて連ねます。このとき該当する差がない場合は、補正値は0になります。<BR>
+　サーチ補正の使用例は、
+<table CLASS=exaBOX><tr><td NOWRAP>
+[adjustment]search, 0x500000, 11FF22CC33, 0x500000, 0x60FFFF, 1<BR>
+[adjustment]search, 0x800000, CC??CCFF, 0x500000, 0xAFFFFF, 8<BR>
+[adjustment]search, heap2, 01FF 0100 01FF, heap2, heap3, 1,<BR>
+　　　　　　　　　　　　　　0x20=0x40/ 0x30=0x10/ 0x40=0x50
+</td></tr></table>
+などです。
+</TD></TR></TABLE><BR>
+<BR>
+
+
+<TABLE CLASS=titleBOX><TR><TD>dialog</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　ダイアログ補正。基本的にはサーチ補正と同じですが、固定バイト列を「ユーザーの入力から生成」します。
+書式は
+<table CLASS=exaBOX><tr><td NOWRAP>
+[adjustment]dialog, 基準アドレス, ADJファイル,<BR>
+　　　　　　探査前端, 探査後端, ステップ<BR>
+</td></tr></table>
+です。表記上２行で書いてますが、実際は１行で書いて下さいね。
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>基準アドレス<BR>探査前端<BR>探査後端<BR>ステップ</td><td>サーチ補正に準じます。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>ADJファイル</td><td>サーチするバイト列を規定するための、ユーザーの入力方法を記述したADJファイルを指定します。（ADJファイルについては後述します。）ファイル指定の詳細は、<A HREF="../0A/01.htm">《C-ファイル指定》</a>を参照。</td></tr>
+</table>
+　さて、サーチ補正でいうところのバイト列を、ADJファイルではどのように記述していくのか、順を追って説明します。<BR>
+<BR>
+　ADJファイルには、スクリプトと同様にいくつかの命令があります。まずはその命令の解説から行きましょう。
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>命令種別</td><td align="center">※　説明　※</td></tr>
+<tr><td CLASS=flameTD NOWRAP>[val]</td><td>サーチするバイト列を記述します。ただし、この場合に限り"*."という置き換え記号を用いることができます。置き換え記号に関しては後述します。
+<table CLASS=exaBOX><tr><td NOWRAP>
+[val]*.*.*.
+</td></tr></table>
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>[input]</td><td>値入力用のコントールを作成します。
+<table CLASS=exaBOX><tr><td NOWRAP>
+[input]名称:項目種別, 未入力の可否, オプション
+</td></tr></table>
+　「未入力の可否」以外のオプションは、項目種別に準じます。「未入力の可否」には、 <B>ok</b> か <b>no</b> を指定します。 <B>ok</b> を指定した場合、値が未入力でもサーチを行います。その際、入力値は必要バイト分のスキップ処理に置き換わります。<BR>
+　利用可能な項目種別の詳細は、後述します。
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>[note]</td><td>[note]～[/note]までの間に、注釈を記述できます。[note]の後ろには <b>wordwrap</b> オプションをつけて自動で折り返すこともできます。
+<table CLASS=exaBOX><tr><td NOWRAP>
+[note]wordwrap<BR>
+ステータス画面に入ってから、入力してください<BR>
+[/note]
+</td></tr></table>
+</td></tr>
+</table>
+　[val]は基本的にバイト列ですし、他の命令も類似の項目に準じていますので、そこまで難しくはないと思います。<BR>
+　続けて、[input]命令の項目種別を見ていきます。
+</TD></TR></TABLE><BR>
+<BR>
+
+
+<TABLE CLASS=titleBOX><TR><TD>[input]命令</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　[input]で始まる値入力命令は、[subject]と非常に似た構文を取ります。項目種別ごとのオプションと実例を、以下に示します。
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>命令種別</td><td align="center">※　説明　※</td></tr>
+<tr><td CLASS=flameTD NOWRAP>calc</td><td>数値入力用のエディットボックスを作成します。
+<table CLASS=exaBOX><tr><td NOWRAP>
+[input]名称:calc, 未入力の可否, 最小値, 最大値, 符号の有無, エンディアン
+</td></tr></table>
+　「未入力の可否」以外のオプションは、電卓項目に準じます。表示は、<BR>
+<form>名称：<input type=text size=32></form>
+といった感じになります。
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>toggle</td><td>選択用のラジオグループを作成します。
+<table CLASS=exaBOX><tr><td NOWRAP>
+[input]見出し, ONの名称, OFFの名称:toggle, 未入力の可否,<BR>
+　　　　　　　　　　　ONのバイト列, OFFのバイト列
+</td></tr></table>
+　「未入力の可否」以外のオプションは、トグル項目に準じます。表示は、<BR>
+<form>未入力の可否が <b>no</b> ならば
+<table border=1><tr><td>見出し<BR>
+<input type=radio CHECKED>ONの名称　<input type=radio>OFFの名称</table>
+といった感じになり、 <B>ok</b> ならば
+<table border=1><tr><td>見出し<BR>
+<input type=radio CHECKED>ONの名称　<input type=radio>OFFの名称　<input type=radio>不明</table>
+のようになります。
+</form>
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>string</td><td>文字列入力用のエディットボックスを作成します。
+<table CLASS=exaBOX><tr><td NOWRAP>
+[input]名称:string, 未入力の可否, 最大文字数, 末尾にNULL付加
+</td></tr></table>
+　「未入力の可否」以外のオプションは、文字列項目に準じます。表示は、<BR>
+<form>名称：<input type=text size=32></form>
+といった感じになります。
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>list</td><td>一覧選択用のコンボボックスを作成します。
+<table CLASS=exaBOX><tr><td NOWRAP>
+[input]名称:list, 未入力の可否, リストファイル, 初項, 公差
+</td></tr></table>
+　「未入力の可否」以外のオプションは、リスト項目に準じます。表示は、<BR>
+<form>名称：<select><option>値1</option><option>値2</option><option>値3</option></select></form>
+といった感じになります。
+</td></tr>
+</table>
+
+　これらの命令を使って、サーチするバイト列を作ります。先ほど「後述する」と書いた置き換え記号(*.)ですが、これは、[val]と[note]（[/note]）以外の[input]命令の<font color="#FF0000">入力値と置き換えられる</font>特殊な記号です。例を挙げましょう。
+<table CLASS=exaBOX><tr><td NOWRAP>
+[input]体力:calc,no,0,0xFFFF<BR>
+[val]FF*.FF<BR>
+</td></tr></table>
+　上記のようなADJファイルで、「体力」に500を指定したとします。500は16進数で01F4、この項目は2バイト使用する（範囲が0～0xFFFF）ので、リトルエンディアンに変換するとF401。サーチに使うバイト列は、「FF F401 FF」となります。<BR>
+　なんとなく察しが付いたでしょうか？なお、選択できる項目の数と「置き換え記号(*.)」の数は一致しなくてはなりません。<BR>
+<BR>
+　このようにして作られたバイト列をサーチし、見つかったアドレスと基準アドレスの差が補正値になります。
+</TD></TR></TABLE><BR>
+<BR>
+
+
+<TABLE CLASS=titleBOX><TR><TD>heap</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　ヒープ補正。メモリの搭載量等の環境によって、ヒープ領域の範囲に差が出てくることがあります。このとき、「ヒープnの開始アドレスから、Xバイトの位置に値を格納」といった形でメモリを使用するソフトの場合、読み書きは特定のアドレスではなく、「ヒープnの開始アドレス」からの相対アドレスに補正する必要があります。<BR>
+　書式は
+<table CLASS=exaBOX><tr><td NOWRAP>
+[adjustment]heap, heap番号=開始アドレス>終端アドレス
+</td></tr></table>
+です。必要分だけ、','で区切って連ねます。用例も併せて見てください。
+<table CLASS=exaBOX><tr><td NOWRAP>
+[adjustment]heap, heap2=0x600000>0x7FFFFF<BR>
+[adjustment]heap, heap2=0x500000>0x6FFFFF, heap3=0x700000>0x9FFFFF
+</td></tr></table>
+このようにしてヒープ範囲を定義しておくと、読み書きするアドレスが定義済みのヒープに属しているならば、実行環境のヒープ範囲と照らし合わせ、自動的に補正をかけます。（定義範囲に含まれないならば、そのままのアドレスを使います。）なお、ヒープ番号は1からはじまります。
+</TD></TR></TABLE><BR>
+<BR>
+
+
+<TABLE CLASS=titleBOX><TR><TD>crc</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　CRC補正。ファイル内容を、計算式によって32ビットの数値に変換したものがCRCです。1バイトでも内容が違うと異なる値になることから、データの正当性を示す指標として使われています。
+　書式は
+<table CLASS=exaBOX><tr><td NOWRAP>
+[adjustment]crc, CRC=補正値
+</td></tr></table>
+です。必要分だけ、','で区切って連ねます。用例としては
+<table CLASS=exaBOX><tr><td NOWRAP>
+[adjustment]crc, 0015D02C=0x1F00<BR>
+[adjustment]crc, CC52F099=0x20, DE7716F2=0x60
+</td></tr></table>
+のようになります。指定プロセスの32ビットCRCが、定義したCRCと一致した場合、'='で連結された補正値を、読み書きするアドレスに加算します。もし定義したCRCのどれとも一致しなければ、補正値は0になります。
+</TD></TR></TABLE><BR>
+<BR>
+
+
+
+<BR>
+<BR>
+<A HREF="02.htm">ねくすと　せくしょん⇒</A>
+<BR>
+<BR>
+<A HREF="00.htm">≪せくしょん　ばっく</A>
+<P><BR></P>
+
+
+</body></html>

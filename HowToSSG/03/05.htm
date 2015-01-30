@@ -1,0 +1,50 @@
+<html><head>
+<title>HowToSSG:[enabled]</title>
+<BASE TARGET="_self">
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../style.css">
+</head><BODY>
+
+
+<table class="difficultBOX">
+<tr><td class="difficultLevel">難解度「A+」</td></tr>
+<tr><td>
+※このページ全体の難解度です。
+</td></tr>
+</table>
+
+<TABLE CLASS=titleBOX><TR><TD>有効条件属性</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　[enabled]と[/enabled]で括った項目を、条件によって「有効か無効か」切り替える属性です。原則として、全ての項目で使用できます。書式は
+<table CLASS=exaBOX><tr><td NOWRAP>
+[enabled]条件式<BR>
+[/enabled]
+</td></tr></table>
+になります。<BR>
+「条件式」には、アドレスコーディングと同様の演算子が使用可能です。<BR><BR>
+以下に例を示します。仮に
+<table CLASS=exaBOX><tr><td NOWRAP>
+[enabled][:0x400000:1] == 0<BR>
+<font color="#C000C0">[subject]</font>体力:calc,0x500000<BR>
+<font color="#C000C0">[subject]</font>知力:calc,0x500004<BR>
+[/enabled]
+</td></tr></table>
+とした場合、<font color="#0000FF">アドレス0x400000の値が00のときのみ</font>、体力及び知力を読み書きできるようになります。<BR>
+<BR>
+[enabled]属性の条件式で偽判定となり、無効扱いの項目を書き換えようとすると、<BR>
+<font color="#008000" style="background-color:#FFFFFF">"条件属性[enabled]が偽判定です。<BR>
+正しい条件で使用していますか？"</font><BR>
+というエラーが表示されます。ただし、値の固定による一定周期の書き換えでは、何もせずに通過するだけで、エラーメッセージを出しません。
+</TD></TR></TABLE><BR>
+<BR>
+
+
+<BR>
+<BR>
+<A HREF="06.htm">ねくすと　せくしょん⇒</A>
+<BR>
+<BR>
+<A HREF="04.htm">≪せくしょん　ばっく</A>
+<P><BR></P>
+
+
+</body></html>

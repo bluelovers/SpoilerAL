@@ -1,0 +1,80 @@
+<html><head>
+<title>HowToSSG:[subject]list/string</title>
+<BASE TARGET="_self">
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../style.css">
+</head><BODY>
+
+
+<TABLE CLASS=titleBOX><TR><TD>リスト項目</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　ゲーム中での装備品などは、「未装備=0」「ひのきの棒=1」「革の鞭=2」などのように、番号で管理していることが多いです。そういうときに、この項目を使います。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>項目名: list, アドレス, リストファイル, 初項, 公差
+</td></tr></table>
+です。
+
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>アドレス</td><td>読み書きする対象のアドレスです。詳しいアドレスの書き方は、<A HREF="../0A/index.htm">《A-アドレス》</a>を参照。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>リストファイル</td><td>選択できる一覧として表示するリストファイルを指定します。ファイル指定の詳細は、<A HREF="../0A/01.htm">《C-ファイル指定》</a>を参照。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>初項</td><td>最初の行を選択したときに、書き込む数値を指定します。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>公差</td><td>読み書きする値は、「行番号Ｘ公差＋初項」となります。（行番号は0からはじまります。）初項が0で、公差が2のとき、指定の行番号が3なら、値は6となります。
+</td></tr>
+</table>
+　項目名は、"/"区切りで表示先を分けることができます。電卓項目の場合、以下の様になります。（何番目の区切りがどの表示にあたるかは項目によります）<BR>
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>項目名</td><td>ツリー表示される文字列です。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>値の固定名</td><td>項目のロックを切り替えるチェックボックスに表示する文字列です。省略した場合、「値の固定」になります。なお、アンダーバー(_)を指定すると、値の固定をできなくします。</td></tr>
+</td></tr></table>
+<BR>
+
+　まとめとして、いくつかのパターンでリスト項目を書いておきますね。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>装備中の武器:list,0x400000,武器リスト,0,1<BR>
+<font color="#C000C0">[subject]</font>装備中の防具:list,0x400000,装備品->防具,0,1<BR>
+<font color="#C000C0">[subject]</font>装備中の防具/常に装備:calc,0x400000,1,2<BR>
+</td></tr></table>
+値は「行番号Ｘ公差＋初項」という性質上、規則性があります。もしそういった規則性がない場合は、<A HREF="../02/04.htm">「d_list（DoubleList）項目」</a>を使ってみるのも良いでしょう。
+</TD></TR></TABLE><BR>
+<BR>
+
+
+<TABLE CLASS=titleBOX><TR><TD>文字列項目</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　主人公の名前など、文字列を扱うときにこの項目を使います。書式は
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>項目名: string, アドレス, 最大文字数, 末尾に付加するバイト列
+</td></tr></table>
+です。
+
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>アドレス</td><td>読み書きする対象のアドレスです。詳しいアドレスの書き方は、<A HREF="../0A/index.htm">《A-アドレス》</a>を参照。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>最大文字数</td><td>入力できる文字数を、バイト単位で指定します。日本語文字は２バイトですから、その点にも注意。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>末尾に付加するバイト列</td><td>多くの文字列処理では、「文字列はここで終わり」という印しに、NULL文字（16進数で00）を使います。これらの終端符号を、バイト列で指定します。バイト列の詳細は、<A HREF="../0A/00.htm">《B-バイト列》</a>を参照。省略した場合は、何も書き込みません。また、 <b>null</b> を指定すると、NULL文字(00)と解釈します。ただし、最大文字数に8を指定してNULL文字を付加すると、書き込まれる最大文字数は9になります。</td></tr>
+</table>
+　項目名は、"/"区切りで表示先を分けることができます。<BR>
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>項目名</td><td>ツリー表示される文字列です。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>値の固定名</td><td>項目のロックを切り替えるチェックボックスに表示する文字列です。省略した場合、「値の固定」になります。なお、アンダーバー(_)を指定すると、値の固定をできなくします。</td></tr>
+</td></tr></table>
+<BR>
+
+　まとめとして、いくつかのパターンで文字列項目を書いておきますね。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>お名前:string,0x400000,7,00<BR>
+<font color="#C000C0">[subject]</font>愛称/変えない:string,0x400000,8
+</td></tr></table>
+文字列書き換えってのは、ゲームの難易度等の変更には無関係なことが殆どなので、純粋に趣味の書き換えってことが多くなる項目ですね。
+</TD></TR></TABLE><BR>
+<BR>
+
+
+<BR>
+<BR>
+<A HREF="03.htm">ねくすと　せくしょん⇒</A>
+<BR>
+<BR>
+<A HREF="01.htm">≪せくしょん　ばっく</A>
+<P><BR></P>
+
+
+</body></html>

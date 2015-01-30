@@ -1,0 +1,145 @@
+<html><head>
+<title>HowToSSG:アドレスネーミング</title>
+<BASE TARGET="_self">
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../style.css">
+</head><BODY>
+
+
+<table class="difficultBOX">
+<tr><td class="difficultLevel">難解度「AAA+」</td></tr>
+<tr><td>
+
+<TABLE CLASS=titleBOX><TR><TD>アドレスネーミング</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　アドレスネーミングとは、直接文字列を記述するのではなく、<FONT COLOR="#FF0000">目的の文字列を「メモリ中の指定範囲から所得する」</FONT>機能です。<BR>
+　項目名などで使用でき、書式は以下の様になります。
+<table CLASS=exaBOX><tr><td NOWRAP>
+_mem, アドレス, 最大文字数, 末尾に付加するバイト列, エラー時の代替え文字列<BR>
+_mem, アドレス, サイズ, list, エラー時の代替え文字列, リストファイル名, 初項, 公差<BR>
+_mem, アドレス, サイズ, free_list, エラー時の代替え文字列, リストファイル名<BR>
+_mem, アドレス, サイズ, num, エラー時の代替え文字列, 書式指定フィールド
+</td></tr></table>
+書式が複数用意されていますが、基本は１行目の書式（<FONT COLOR="#FF0000">文字列書式</FONT>）で、このオプションの大半は、<A HREF="../02/02.htm">文字列項目(string)</a>とほぼ同じになります。
+<BR>
+
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>_mem</td><td>アドレスネーミング機能を示すキーワード。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>アドレス</td><td>読み込む対象のアドレスです。詳しいアドレスの書き方は、<A HREF="../0A/index.htm">《A-アドレス》</a>を参照。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>最大文字数</td><td>入力できる文字数を、バイト単位で指定します。日本語文字は２バイトですから、その点にも注意。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>末尾に付加するバイト列</td><td>多くの文字列処理では、「文字列はここで終わり」という印しに、NULL文字（16進数で00）を使います。これらの終端符号を、バイト列で指定します。バイト列の詳細は、<A HREF="../0A/00.htm">《B-バイト列》</a>を参照。省略した場合は、NULL文字(00)と解釈します。ただし、最大文字数に8を指定してNULL文字を付加すると、読み込む最大文字数は9になります。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>エラー時の代替え文字列</td><td>値をメモリから読み込む関係上、プロセスを起動していないなどの原因で、値を所得できない場合があります。その際に利用する文字列を、このオプションで指定します。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>サイズ</td><td>２行目・３行目の書式は、メモリ中から<font color="#0000FF">文字列ではなく数値を所得し、</font>その<font color="#FF0000">数値に対応する文字列を、リストファイルから取り出す形式</font>です。また、４行目の書式は、メモリ中から<font color="#0000FF">文字列ではなく数値を所得し、</font><font color="#FF0000">指定の書式で表示する形式</font>です。「サイズ」オプションは「最大文字数」オプションと大して意味は変わりませんが、読み出す数値サイズを<b>1～4バイト</b>の範囲で指定します。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>list<BR>free_list<br>num</td><td>「末尾に付加するバイト列」オプションが<FONT COLOR="#0000FF">「<b>list</b>」か「<b>free_list</b>」の場合</FONT>、リスト形書式（２・３行目の書式）であると見なします。２行目の書式（<FONT COLOR="#FF0000">リスト書式</FONT>）は、「<b>list</b>」を指定することで選択されます。３行目の書式（<FONT COLOR="#FF0000">フリーリスト書式</FONT>）は、「<b>free_list</b>」を指定することで選択されます。<br>また、「<b>num</b>」を指定すると、数値型書式（４行目の書式）と見なします。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>リストファイル名</td><td>対応する文字列の一覧を書いたリストファイルを指定します。ファイル指定の詳細は、<A HREF="../0A/01.htm">《C-ファイル指定》</a>を参照。「<FONT COLOR="#FF0000">リスト書式</FONT>」の場合、リストファイルには表示する文字列を単純に羅列します。リスト内の<FONT COLOR="#0000FF">「<b>所得した値</b>Ｘ<b>公差</b>＋<b>初項</b>」の行</FONT>が、実際に表示される文字列となります。<BR>
+「<FONT COLOR="#FF0000">フリーリスト書式</FONT>」の場合、リストは「<b>数値</b>=<b>文字列</b>」という形式で<FONT COLOR="#0000FF">値と文字列をセットにして記述</FONT>します。所得した値が、特定行の「<b>数値</b>」と一致した場合、"="で結ばれた「<b>文字列</b>」が表示される仕組みです。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>初項、公差</td><td><A HREF="../02/02.htm">リスト項目(list)</a>を参照。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>書式指定フィールド</td><td>C言語のprintf関数に用いるものとほぼ同じです。簡単に説明すると、<br>
+<FONT COLOR="#0000FF">%[flags][width]type</FONT><br>
+という構文をとり、各部位の詳細は以下のようになります。<br>
+<table CLASS=exaBOX><tr><td NOWRAP>
+[flags]：次のうちいずれか。（省略可能）
+</td></tr><tr><td>
+<ul>
+<li><FONT COLOR="#FF0000">-</FONT>：指定されたフィールド幅に結果を左詰めする。</li>
+<li><FONT COLOR="#FF0000">+</FONT>：出力値が符号付きの場合は、出力値の前に + または - の符号を付ける。</li>
+<li><FONT COLOR="#FF0000">0</FONT>：[width] の前に 0 を付けると、最小幅まで 0 が付加される。0 と - を指定すると、0 は無視される。整数書式 (i、u、x、X、o、d) と一緒に指定すると、0 は無視される。</li>
+<li><FONT COLOR="#FF0000">&nbsp;</FONT>：（半角スペース）出力値が符号付きで整数であると、出力値の前に空白が付く。空白フラグと + フラグの両方を指定すると、空白フラグは無視される。</li>
+<li><FONT COLOR="#FF0000">#</FONT>：o、x、X の各書式と一緒に使うと、0 以外のすべての出力値の前にそれぞれ 0、0x、0X が付く。 空白は表示されない。e、E、f の各書式と一緒に使うと、必ず出力値に強制的に小数点が入る。g または G の書式と一緒に使うと、必ず出力値に強制的に小数点が入り、後続する 0 が切り捨てられない。c、d、i、u、s のいずれかと一緒に使うと無視される。 </li>
+</ul>
+</td></tr></table>
+
+<table CLASS=exaBOX><tr><td NOWRAP>
+[width]：（省略可能）
+</td></tr><tr><td>
+　<FONT COLOR="#0000FF">負でない 10 進整数を指定</FONT>して、表示する最小文字数を制御します。出力値の文字数が指定幅より少ない場合は、- フラグ (左詰め) 指定の有無によって、値の左または右に最小幅まで空白が追加されます。width の前に 0 を付けると、最小幅まで 0 が追加されます (左詰めの数には無効)。
+</td></tr></table>
+
+<table CLASS=exaBOX><tr><td NOWRAP>
+type：次のうちいずれか。（必須）
+</td></tr><tr><td>
+<ul>
+<li><FONT COLOR="#FF0000">d</FONT>：符号付き 10 進整数</li>
+<li><FONT COLOR="#FF0000">i</FONT>：符号付き 8 進整数</li>
+<li><FONT COLOR="#FF0000">o</FONT>：符号なし 8 進整数</li>
+<li><FONT COLOR="#FF0000">u</FONT>：符号なし 10 進整数</li>
+<li><FONT COLOR="#FF0000">x</FONT>：符号なし 16 進整数、"abcdef" を使用。</li>
+<li><FONT COLOR="#FF0000">X</FONT>：符号なし 16 進整数、"ABCDEF" を使用。</li>
+<li><FONT COLOR="#FF0000">e</FONT>：[-]d.dddd e [sign]ddd 形式符号付きの値。d は 1 個の 10 進数、dddd は 1 個または複数の 10 進数、ddd は正確に 3 桁の 10 進数、sign は + または -。</li>
+<li><FONT COLOR="#FF0000">E</FONT>：指数の前に付くのが e ではなく E である点を除いて、e の書式と同じ。</li>
+<li><FONT COLOR="#FF0000">f</FONT>：[-]dddd.dddd 形式の符号付きの値。dddd は、1 個または複数の 10 進数。小数点の前の桁数はその数の絶対値によって決定され、小数点の後の桁数は要求された精度によって決定される。</li>
+<li><FONT COLOR="#FF0000">g</FONT>：f または e の書式のうち、指定された値および精度を表現できる短い方の書式。e 書式は、値の指数部が、-4 より小さいか precision で指定された数よりも大きい場合にのみ使う。後に続く 0 は切り捨てられ、小数点は 1 個または複数の数字が続く場合にのみ表示される。</li>
+<li><FONT COLOR="#FF0000">G</FONT>：指数の前にあるのが e ではなく E である点を除いて、g の書式と同じ (該当する場合)。</li>
+</ul>
+</td></tr></table>
+となります。下記の具体例を見て、色々と模索してみるのも良いでしょう。
+<table CLASS=exaBOX>
+<tr><td>%d</td><td>：10進数で表示</td></tr>
+<tr><td>%X</td><td>：16進数で表示</td></tr>
+<tr><td>%08X</td><td>：8桁の16進数で表示（値が4桁分しかなくても、残りの4桁を0で埋める）</td></tr>
+</table>
+
+</td></tr>
+</table>
+<BR>
+
+　まとめとして、いくつかのパターンでアドレスネーミングを用いた項目例を書いておきます。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>_mem, 0x450000, 7, 00, 主人公:dir<BR>
+<font color="#C000C0">[subject]</font>_mem, 0x480000, 7, 00, &lt;Name Read Error&gt;:calc,0x400000,0,100<BR>
+<font color="#C000C0">[subject]</font>_mem, 0x490000, 4, list, １人目, リスト1, 0,1:dir<BR>
+<font color="#C000C0">[subject]</font>_mem, 0x4C0000, 1, free_list, １個目, リスト2:dir<BR>
+<font color="#C000C0">[subject]</font>_mem, 0x4C0000, 4, num, 体力値[読み込み不可], %d:dir<BR>
+<HR><center style="background-color:#C0C0FF">リスト1.LST</center>
+一郎<BR>
+次郎<BR>
+佐武郎<BR>
+<HR><center style="background-color:#C0C0FF">リスト2.LST</center>
+1=ひのきの棒<BR>
+5=革の鞭<BR>
+20=短剣
+</td></tr></table>
+　多数のキャラクタデータが連続していて、しかもその並びがゲーム中でよく変動する場合などに、アドレスネーミングは有効です。ただし、「エラー時の代替え文字列」の説明で述べた様に、メモリから値を所得できない場合の対応も考えて利用して下さいね。<BR>
+<BR>
+　なお、アドレスネーミング中にアドレスコーディングを混在させる場合、項目名との区切りであるコロン（<b>:</b>）と、ポインタ変換演算子（<b>[:</b>や<b>:]</b>）が重複を起こします。その際は、ポインタ変換演算子のコロンを一旦エスケープシーケンス（<b>\</b>）で回避させて記述します。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>_mem, [:0x450000:], 7, 00, 主人公:dir<BR>
+<font color="#C06000">//　↑この場合、項目名は“<b><font color="#C000C0">[subject]</font>_mem, [</b>”だと誤認します。</font><BR>
+<font color="#C000C0">[subject]</font>_mem, [\:0x450000\:], 7, 00, 主人公:dir<BR>
+<font color="#C06000">//　↑この様にすることで、正しく認識します。
+</td></tr></table>
+
+</TD></TR></TABLE>
+</td></tr>
+</table>
+<BR>
+<BR>
+
+
+
+<TABLE CLASS=titleBOX><TR><TD>文字列連結</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　アドレスネーミングの拡張機能を用いることで、複数のアドレスネーミング構文や、ただの文字列を連結して出力することが出来ます。<BR>
+　書式も単純で、結合したい文字列同士の間に、「<b><FONT COLOR="#FF0000">'+'</FONT></b>」を記述するだけです。<br>
+　深く説明することもないので、用例だけを以下に示します。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>_mem, 0x450000, 7, 00, 武将名'+'の部下'+'<BR>
+　　　　 _mem, 0x480000, 7, 00, 部下名'+'の体力<BR>
+　　　　　　　　　　　　:calc,0x400000,0,100<BR>
+<font color="#C06000">////////////////////　↑実際は一行で書きます</font>
+</td></tr></table>
+
+</TD></TR></TABLE><BR>
+<BR>
+
+
+
+<BR>
+<BR>
+<A HREF="../top.htm">ねくすと　せくしょん⇒</A>
+<BR>
+<BR>
+<A HREF="01.htm">≪せくしょん　ばっく</A>
+<P><BR></P>
+
+
+</body></html>

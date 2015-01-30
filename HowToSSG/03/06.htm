@@ -1,0 +1,46 @@
+<html><head>
+<title>HowToSSG:[adjust_check]</title>
+<BASE TARGET="_self">
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../style.css">
+</head><BODY>
+
+
+<TABLE CLASS=titleBOX><TR><TD>アドレス補正の試作利用規定属性</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　[adjust_check]と[/adjust_check]で括った項目を、「アドレス補正の試作」機能使用時に、どう扱うかを指定する属性です。直接、読み書きに関係があるわけではありません。原則として、全ての項目で使用できます。書式は
+<table CLASS=exaBOX><tr><td NOWRAP>
+[adjust_check]条件<BR>
+[/enabled]
+</td></tr></table>
+になります。<BR>
+「条件」には、<b>"true","false","must"</b>のうち、いずれか一つを指定します。<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>true</td><td>その項目を、「アドレス補正の試作」に使うことを<font color="#FF0000">推奨する場合</font>に使います。対象の項目は、デフォルトで選択された状態になります。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>false</td><td>その項目を、「アドレス補正の試作」に使うことを<font color="#FF0000">禁止する場合</font>に使います。対象の項目を、選択することができなくなります。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>must</td><td>その項目を、「アドレス補正の試作」に使うことを<font color="#FF0000">必須とする場合</font>に使います。対象の項目は、常に選択された状態になります。</td></tr>
+</table>
+
+<BR><BR>
+以下に例を示します。仮に
+<table CLASS=exaBOX><tr><td NOWRAP>
+[adjust_check]must<BR>
+<font color="#C000C0">[subject]</font>体力:calc,0x500000<BR>
+<font color="#C000C0">[subject]</font>知力:calc,0x500004<BR>
+[/adjust_check]
+<font color="#C000C0">[subject]</font>魔力:calc,0x500008<BR>
+</td></tr></table>
+とした場合、「アドレス補正の試作」機能を実行する際、「体力」と「知力」は必ず選択されますが、「魔力」を選択するかどうかはユーザーの意志に任されます。<BR>
+
+</TD></TR></TABLE><BR>
+<BR>
+
+
+<BR>
+<BR>
+<A HREF="07.htm">ねくすと　せくしょん⇒</A>
+<BR>
+<BR>
+<A HREF="05.htm">≪せくしょん　ばっく</A>
+<P><BR></P>
+
+
+</body></html>

@@ -1,0 +1,89 @@
+<html><head>
+<title>HowToSSG:[subject]dir</title>
+<BASE TARGET="_self">
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../style.css">
+</head><BODY>
+
+
+<TABLE CLASS=titleBOX><TR><TD>階層項目</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　項目の中ではちょっと例外に当たりますが、階層項目(dir)です。仲間A、仲間Bそれぞれのステータスを書き換える項目がある場合、
+<table CLASS=exaBOX><tr><td NOWRAP>
+仲間┬Ａ┬体力<BR>
+　　│　└魔力<BR>
+　　│<BR>
+　　└Ｂ┬体力<BR>
+　　　　└魔力<BR>
+</td></tr></table>
+このように仲間A/Bをそれぞれ階層で分けた方がすっきりします。こういった階層構造を作る時に、この項目を使用します。書式は
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>項目名 : dir
+</td></tr></table>
+これだけです(^^;オプションはありません。<BR>
+<BR>
+<BR>
+　階層項目を記述すると、その次の項目から階層が一段深くなります（階層を掘った）。それに対し階層を一段戻したい場合ですが、<BR>
+<table CLASS=exaBOX><tr><td NOWRAP>
+[back]
+</td></tr></table>
+と記述します。厳密には項目ではないので、項目名やオプションを考える必要はありません。２階層戻したいときは、２行"[back]"を書くだけです。<BR>
+　さらにもう一つ。階層を頭に戻す場合は、"[back]"を連ねるよりも
+<table CLASS=exaBOX><tr><td NOWRAP>
+[root]
+</td></tr></table>
+を使った方が効率的です。これ一つで、一気に先頭まで戻します。<BR>
+<BR>
+
+　まとめとして、上記の例を試しに項目化してみましょう。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>仲間:dir<BR>
+&nbsp;&nbsp;<font color="#C000C0">[subject]</font>Ａ:dir<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#C000C0">[subject]</font>体力:calc,0x400000,0,100<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#C000C0">[subject]</font>魔力:calc,0x400004,0,100<BR>
+&nbsp;&nbsp;[back]<BR>
+&nbsp;&nbsp;<font color="#C000C0">[subject]</font>Ｂ:dir<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#C000C0">[subject]</font>体力:calc,0x400010,0,100<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#C000C0">[subject]</font>魔力:calc,0x400014,0,100<BR>
+[root]
+</td></tr></table>
+と、まぁこういった一例が考えられます。段組を効果的に使えば、結構使いやすさが変わってきますよっ♪
+</TD></TR></TABLE><BR>
+<BR>
+
+<table class="difficultBOX">
+<tr><td class="difficultLevel">難解度「AA+」</td></tr>
+<tr><td>
+
+<TABLE CLASS=titleBOX><TR><TD>下位項目の一括書き換え</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　<font color="#0000FF">※はじめてSSGに触れる方にはちょっと分かりにくい機能ですので、ここはいったん読み飛ばして、一通り目を通した後に、改めて読むことをおすすめします。</font><BR>
+　階層項目の下位の項目が、全て<b>ある一定の類似性</b>を持っている場合、その階層項目から直接、下位項目を一括して書き換えることができます。ここでいう「類似性」とは、<font color="#FF0000">項目種別が同じであること</font>と、<font color="#FF0000">ユーザーインターフェースに関わるオプションが同じであること</font>です。後者は、電卓項目における最小値や最大値、リスト項目におけるリストファイル名が同じ、ということです。実際に一括処理を行えるのは実行時ですが、この機能を巧く使うことで、一括系の項目を使わずに同様の処理を実現することもできます。
+</TD></TR></TABLE>
+
+</td></tr>
+</table>
+<BR>
+<BR>
+
+
+<TABLE CLASS=titleBOX><TR><TD>項目名</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　<FONT COLOR="#0000FF">項目名に"<b>/</b>"や"<b>:</b>"、"<b>,</b>"、"<b>/</b>"、"<b>=</b>"を使いたい場合は、エスケープシーケンス("<b>\</b>"）を用います。</FONT>「A\/M \: P\/M」と書けば「AM : PM」になります。（"\"を出す場合は"\\"）<BR>
+<BR>
+　また、<FONT COLOR="#FF0000">項目名の頭にアンダーバー("_")を付けると、以降を<b>アドレスネーミング</b>として扱います。</FONT>詳しいアドレスネーミングの書き方は、<A HREF="../0A/02.htm">《D-アドレスネーミング》</a>を参照。
+
+</TD></TR></TABLE><BR>
+<BR>
+
+
+
+<BR>
+<BR>
+<A HREF="01.htm">ねくすと　せくしょん⇒</A>
+<BR>
+<BR>
+<A HREF="index.htm">≪せくしょん　ばっく</A>
+<P><BR></P>
+
+
+</body></html>

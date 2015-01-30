@@ -1,0 +1,2 @@
+[message]10,160,390,180
+[back]splash.jpg

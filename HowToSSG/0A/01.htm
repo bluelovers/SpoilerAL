@@ -1,0 +1,114 @@
+<html><head>
+<title>HowToSSG:ファイル指定</title>
+<BASE TARGET="_self">
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../style.css">
+</head><BODY>
+
+
+<TABLE CLASS=titleBOX><TR><TD>ファイル指定</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　SpoilerALは、ファイルの拡張子に比較的厳密です。そのため、スクリプト中から何らかのファイルを指定するときは、拡張子を記述しない書式にしてあります。まず、以下にファイルの種類とその拡張子の一覧を示します。
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>種類</td><td align="center">※　説明　※</td></tr>
+<tr><td CLASS=flameTD NOWRAP>リストファイル</td><td>拡張子は <b>.LST</b> 。リスト系項目からよく利用されます。一覧として使用するファイルが多いです。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>チェインファイル</td><td>拡張子は <b>.CHN</b> 。一括系の項目からよく利用されます。連続した処理を記述するファイルが多いです。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>SSCファイル</td><td>拡張子は <b>.SSC</b> 。"Spoiler Scripts Child"の頭文字を取ってSSCファイルと呼ばれます。置き換え命令の一つ、<font color="#C000C0">[<font color="#00C000">replace</font>]</font>で使用されます。（アドレス部分は変わるが、）何度も使用されるであろうスクリプトを記述したファイルです。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>SSRファイル</td><td>拡張子は <b>.SSR</b> 。置き換え命令の一つ、[repeart]で使用されます。数値や文字列が一部変化するが、連続して何度も連ねたいスクリプトを記述したファイルです。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>ADJファイル</td><td>拡張子は <b>.ADJ</b> 。アドレス補正(ADJustment)ファイル。別名「アドレス追撃ファイル」と呼ばれ、[attribute][/atteribute]属性の[adjustment]命令の一つ、ダイアログ補正で使われます。ADJ書式に従って記述されたファイルです。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>ファンネルファイル</td><td>拡張子は <b>.SSF</b> 。[attribute][/atteribute]属性のファンネルライト([funnel])で使用されます。条件式と、真のとき処理するバイト列を羅列したファイルです。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>ライブラリファイル</td><td>拡張子は <b>.SSL</b> 。後述します。</td></tr>
+</table>
+　このような種類がありますが、これらのファイル数が多くなってくると、管理の煩雑化やファイル検索の低速化を招いてしまいます。そのため、これらのファイル指定をグループ指定にすることで、ファイルを一つで済ませる方法が用意されています。<BR>
+<BR>
+　使用するファイルは、ライブラリファイル（拡張子は <b>.SSL</b> ）一つです。ライブラリファイルには、
+<table CLASS=exaBOX><tr><td NOWRAP>
+[group]グループ名<BR>
+ファイルの中身<BR>
+[/group]
+</td></tr></table>
+という形で、グループを記述していきます。グループは幾つあっても構いません。そして、スクリプトからファイルを指定するときは、
+<table CLASS=exaBOX><tr><td NOWRAP>
+ライブラリファイル名->グループ名
+</td></tr></table>
+という書き方をします。グループに拡張子はありませんし、ライブラリファイルの拡張子は<b>.SSL</b>固定なので、スクリプトに拡張子を記述しないという点は変わりません。ただし、ライブラリファイル以外の拡張子を意識する必要は無くなるわけです。<BR>
+<BR>
+最後に、ライブラリファイルを用いたファイル指定の一例を示します。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>使用武器:list,0x400000,汎用->武器一覧,0,1<BR>
+<font color="#C000C0">[<font color="#00C000">replace</font>]</font>0x500000, 汎用->ステータス
+
+<HR><center style="background-color:#C0C0FF">汎用.SSL</center>
+[group]武器一覧<BR>
+ひのきの棒<BR>
+革の鞭<BR>
+短剣<BR>
+[/group]<BR>
+<BR>
+[group]ステータス<BR>
+[script]体力:calc,0x00,0,99<BR>
+[script]魔力:calc,0x04,0,99<BR>
+[/group]
+</td></tr>
+</table>
+　同一スクリプトで使われるファイルは全てグループ化して、スクリプトタイトル.SSLなどのライブラリファイルにまとめてしまえば、管理も大分楽になりますよねっ。
+</td></tr>
+</TABLE>
+
+</TD></TR></TABLE><BR>
+<BR>
+
+
+<table class="difficultBOX">
+<tr><td class="difficultLevel">難解度「AAA+」</td></tr>
+<tr><td>
+
+<TABLE CLASS=titleBOX><TR><TD>リスト抽出</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　「リスト抽出」とは、名前の通り<font color="#0000FF">「<b>メモリから</b>文字列リストを抽出する」機能</font>のことです。前述した一般的なファイル指定は、事前にファイルとしてデータ（文字列）を記述しておく必要があり、また実行時にその内容が変わることはありません。しかし、メモリから文字列を抽出し、リスト化する機能があったとすれば、どうでしょう？　そうです、実行中に内容が変わる文字列であっても、このリスト抽出機能を用いれば、<FONT COLOR="#FF0000">その時その時の状態を反映したリストを作成・利用できる</font>のです。平たく言えば、<A HREF="02.htm">アドレスネーミング</A>機能の複数行版です。<BR>
+　ファイル指定オプションすべてに使用でき、<font color="#0000FF">頭に<b>アンダーバー(_)</b></font>を入れることで、抽出リスト機能と判断します。<BR>
+　書式は以下の様になります。
+<table CLASS=exaBOX><tr><td NOWRAP>
+_mem/ アドレス/ 1行の最大文字数/ 行数/ ステップサイズ/ 終端バイト列/ エラー時の代替え文字列<BR>
+_mem/ アドレス/ サイズ/ 行数/ ステップサイズ/ num/ エラー時の代替え文字列<BR>
+_mem/ アドレス/ サイズ/ 行数/ ステップサイズ/ num_big_e/ エラー時の代替え文字列
+</td></tr></table>
+です。<b>","</b>区切りではなく、<b>"/"</b>区切りであることにも注意して下さい。
+<BR>
+
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>アドレス</td><td>読み込む開始アドレスです。詳しいアドレスの書き方は、<A HREF="../0A/index.htm">《A-アドレス》</a>を参照。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>1行の最大文字数</td><td>リスト化する関係上、1行が最大何文字で構成されるかを指定する必要があります。その最大文字数を、バイト単位で指定します。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>行数</td><td>リスト化した際の行数が幾つになるかを指定します。これにより、読み込まれる合計サイズは<font color="#0000FF">「1行の最大文字数×行数」</font>となります。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>ステップサイズ</td><td>各行データの間隔をバイト単位で指定します。データは必ずしも隣り合わせで連続しているとは限りませんので、一定サイズの読み飛ばしも可能にしてあります。当然、<font color="#0000FF">「1行の最大文字数」と同じか、それより大きな値を指定</font>します。仮にステップサイズが<b>0x10</b>のとき、1行目のデータを<b>0x400000</b>から所得したとすれば、2行目のデータは<b>0x400010</b>から所得します。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>終端バイト列</td><td>多くの文字列処理では、「文字列はここで終わり」という印しに、NULL文字（16進数で00）を使います。これらの終端符号を、バイト列で指定します。バイト列の詳細は、<A HREF="../0A/00.htm">《B-バイト列》</a>を参照。省略した場合は、NULL文字(00)と解釈します。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>エラー時の代替え文字列</td><td>値をメモリから読み込む関係上、プロセスを起動していないなどの原因で、値を所得できない場合があります。その際に利用する文字列を、このオプションで指定します。（結果的に、返されるリストは、この「エラー時の代替え文字列」1行だけのリストとなります。）</td></tr>
+<tr><td CLASS=flameTD NOWRAP>num<br>num_big_e</td><td>メモリから読みとれる値は、何も文字列ばかりではありません。メモリ中のデータを<font color="#FF0000"><b>数値として抽出し、文字列化してリストに再構成</b></font>することもできます。その機能を使う場合に、<font color="#0000FF">「num」</font>あるいは<font color="#FF0000">「num_big_e」</font>キーワードを「終端バイト列」オプションに指定します。なお、<font color="#0000FF">「num」</font>を指定した場合は、メモリから読み込んだデータをそのまま文字列化しますが、<font color="#FF0000">「num_big_e」</font>を指定した場合は、いったんエンディアンを反転（ビッグエンディアン化）してから文字列化します。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>サイズ</td><td>「サイズ」オプションは「1行の最大文字数」オプションと大して意味は変わりませんが、読み出す数値サイズを<b>1～4バイト</b>の範囲で指定します。</td></tr>
+</table>
+<BR>
+
+　まとめとして、いくつかのパターンでリスト抽出を用いた項目例を書いておきます。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>武器:list, 0x400000,_mem/ 0x410000/ 15/ 20/ 15/ 00/Read Error!, 0, 1<BR>
+<font color="#C000C0">[subject]</font>ステータス:bitlist, 0x420000,_mem/ 0x450000/ 31/ 8/ 31/ 00/Read Error!, 1<BR>
+<font color="#C000C0">[subject]</font>武器一覧:b_list, 0x500000,_mem/ 0x510000/ 31/ 20/ 31/ 00/Read Error!,0, 1,<BR>　　　　　　　　　　　　　　　　　_mem/ 0x520000/ 4/ 20/ 4/ num/Read Error!, offset<BR>
+<font color="#C06000">////////////////////　↑実際は一行で書きます</font>
+</td></tr></table>
+　それなりに負荷がかかりますので、「手打ちが面倒だから」という理由では使用しない方がよいかと思います(^^;。ただし、「エラー時の代替え文字列」の説明で述べた様に、メモリから値を所得できない場合の対応も考えて利用して下さいね。
+</TD></TR></TABLE>
+</td></tr>
+</table>
+<BR>
+<BR>
+
+
+<BR>
+<BR>
+<A HREF="02.htm">ねくすと　せくしょん⇒</A>
+<BR>
+<BR>
+<A HREF="00.htm">≪せくしょん　ばっく</A>
+<P><BR></P>
+
+
+</body></html>

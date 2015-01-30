@@ -1,0 +1,42 @@
+<html><head>
+<title>HowToSSG:[e_with]</title>
+<BASE TARGET="_self">
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../style.css">
+</head><BODY>
+
+
+<TABLE CLASS=titleBOX><TR><TD>末尾付加属性</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　[e_with]と[/e_with]で括った項目のオプションを、省略して書くときに使います。あくまでオプションの省略なので、項目種別などを含めることは出来ません。書式は
+<table CLASS=exaBOX><tr><td NOWRAP>
+[e_with]末尾に付加する文字列<BR>
+[/e_with]
+</td></tr></table>
+になります。<BR>
+以下に例を示します。仮に
+<table CLASS=exaBOX><tr><td NOWRAP>
+[e_with],0,100,unsigned,big_e<BR>
+<font color="#C000C0">[subject]</font>体力:calc,0x400000<BR>
+<font color="#C000C0">[subject]</font>知力:calc,0x400004<BR>
+[/e_with]
+</td></tr></table>
+とした場合、
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>体力:calc,0x400000,0,100,unsigned,big_e<BR>
+<font color="#C000C0">[subject]</font>知力:calc,0x400004,0,100,unsigned,big_e
+</td></tr></table>
+と書いたときと同じ動作をします。
+</TD></TR></TABLE><BR>
+<BR>
+
+
+<BR>
+<BR>
+<A HREF="05.htm">ねくすと　せくしょん⇒</A>
+<BR>
+<BR>
+<A HREF="02.htm">≪せくしょん　ばっく</A>
+<P><BR></P>
+
+
+</body></html>

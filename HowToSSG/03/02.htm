@@ -1,0 +1,64 @@
+<html><head>
+<title>HowToSSG:[funnel]</title>
+<BASE TARGET="_self">
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../style.css">
+</head><BODY>
+
+
+<table class="difficultBOX">
+<tr><td class="difficultLevel">難解度「AA」</td></tr>
+<tr><td>
+※このページ全体の難解度です。
+</td></tr>
+</table>
+
+<TABLE CLASS=titleBOX><TR><TD>ファンネルライト属性</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　[funnel]と[/funnel]で括った項目が数値の書き込みを行うとき、付随して書き込み処理を行わせることが出来ます。書式は
+<table CLASS=exaBOX><tr><td NOWRAP>
+[funnel]ファンネルファイル<BR>
+[/funnel]
+</td></tr></table>
+になります。オプションとして、書き込む処理を記述したファンネルファイルを指定します。ファイル指定の詳細は、<A HREF="../0A/01.htm">《C-ファイル指定》</a>を参照。<BR>
+<BR>
+　ファンネルファイル内には、
+<table CLASS=exaBOX><tr><td NOWRAP>
+条件式, 書き込むアドレス, 書き込むバイト列
+</td></tr></table>
+という書式で連ねます。
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>条件式</td><td>アドレスコーディングと同様の演算子が使用可能。<font color="#FF0000">最終的な演算結果が真(0以外)</font>ならば、「書き込むアドレス」に「書き込むバイト列」を処理します。なお、この属性の適用を受ける項目が「書き込む」ときに付随するのがファンネルライトなので、「項目が書き込んだ値」によって処理を分けることが出来るように、条件式には <b>$Val</b> という「書き込み値」を指す擬似変数を用いることが出来ます。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>書き込むアドレス</td><td>条件式が真のときに、「書き込むバイト列」を処理するアドレスを記述します。詳しいアドレスの書き方は、<A HREF="../0A/index.htm">《A-アドレス》</a>を参照。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>書き込むバイト列</td><td>条件式が真のときに、処理されるバイト列を記述します。バイト列の詳細は、<A HREF="../0A/00.htm">《B-バイト列》</a>を参照。</td></tr>
+</table>
+このようにして連ねた条件式を、上から順に評価していきます。条件式が真の処理を行ったところで、評価処理を抜けます。つまり、以降の条件式は評価しません。ただし、条件式には以下のキーワードを用いることも出来、それ以降の条件式の評価は、キーワードの性質に準じます。
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>default</td><td>常に真を指します。バイト列を処理後、以降の条件式を評価せずに抜けます。条件式に"0"以外の値を記述するのと同じことですが、必ず処理されることを明示する意味で使用すると良いでしょう。
+<table CLASS=exaBOX><tr><td NOWRAP>
+$Val>80, 0x400000, 03<BR>
+$Val>50, 0x400000, 02<BR>
+$Val>10, 0x400000, 01<BR>
+default, 0x400000, FF
+</td></tr></table>
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>use</td><td>常に真を指します。バイト列を処理後も、以降の条件式を評価します。つまり、必ず処理させたいバイト列を指定するときに使います。<table CLASS=exaBOX><tr><td NOWRAP>
+use, 0x400001, FF<BR>
+$Val>50, 0x400000, 01
+</td></tr></table>
+</td></tr>
+</table>
+[funnel][/funnel]で括らずにファンネルライト属性を用いる項目としてトレース項目がありますが、この項目のファンネルファイルは、条件式に <b>use</b> キーワードを使うこともあるでしょう。（$Val(書き込み値)が存在しないため、条件式で値分岐させる必要がない）
+</TD></TR></TABLE><BR>
+<BR>
+
+
+<BR>
+<BR>
+<A HREF="03.htm">ねくすと　せくしょん⇒</A>
+<BR>
+<BR>
+<A HREF="01.htm">≪せくしょん　ばっく</A>
+<P><BR></P>
+
+
+</body></html>

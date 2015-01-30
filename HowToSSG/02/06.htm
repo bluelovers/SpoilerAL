@@ -1,0 +1,93 @@
+<html><head>
+<title>HowToSSG:[subject]trace/copy</title>
+<BASE TARGET="_self">
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../style.css">
+</head><BODY>
+
+<table class="difficultBOX">
+<tr><td class="difficultLevel">難解度「A」</td></tr>
+<tr><td>
+※このページ全体の難解度です。
+</td></tr>
+</table>
+
+
+<TABLE CLASS=titleBOX><TR><TD>トレース項目</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　トレース項目の説明には、[attribute][/atteribute]命令の<A HREF="../03/02.htm">ファンネルライト属性（[funnel]）</a>の理解が必要不可欠です。ハッキリ言ってしまえば、トレース項目とはファンネルライト属性を呼び出すだけで、機能としてはただのロック項目にすぎないのです。<BR>
+　書式は
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>項目名: trace,ファンネルファイル
+</td></tr></table>
+です。恐ろしく簡素でしょ？(^^;<BR>
+
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>ファンネルファイル</td><td>一定周期で書き込みを行う処理を記述した、ファンネルファイルを指定します。ファイル指定の詳細は、<A HREF="../0A/01.htm">《C-ファイル指定》</a>を参照。</td></tr>
+</table>
+　項目名は、"/"区切りで表示先を分けることができます。
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>項目名</td><td>ツリー表示される文字列です。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>値の固定名</td><td>項目のロックを切り替えるチェックボックスに表示する文字列です。省略した場合、「値の固定」になります。</td></tr>
+</td></tr></table>
+<BR>
+<BR>
+
+
+　まとめとして、トレース項目の例を書いておきますね。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>お腹の空き具合:trace,0x400000,満腹化<BR>
+<HR><center style="background-color:#C0C0FF">満腹化.SSF</center>
+use, 0x400000, FF
+</td></tr></table>
+ファンネルファイルの書式は、<A HREF="../03/02.htm">《3.2-funnel》</a>を参照をして下さい。なお、トレース項目から指定するファンネルファイルの条件式は、原則として <b>use</b> キーワードを指定します。ただし、条件式を駆使して、特定アドレスの値によって処理を分けると言った場合は、これに含まれません。例を挙げると、<BR>
+<table CLASS=exaBOX><tr><td NOWRAP>
+ [:0x400000:1]==0, 0x500000, 00<BR>
+([:0x400000:1]>0)&amp;&amp;([:0x400000:1]<5), 0x500000, 01<BR>
+default, 0x500000, FF
+</td></tr></table>
+といった条件式です。この場合、アドレス0x400000にある(1BYTEの)値が、0か1～4かそれ以外かによって、0x500000に書き込む値を変えています。
+
+
+</TD></TR></TABLE><BR>
+<BR>
+
+
+<TABLE CLASS=titleBOX><TR><TD>コピー項目</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　多くの項目はユーザーの入力した値を書き込むタイプですが、コピー項目は、文字通り別のアドレスの値をコピーする項目です。
+<BR>
+　書式は
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>項目名: copy, アドレス, コピー元アドレス, バイトサイズ
+</td></tr></table>
+です。<BR>
+
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>アドレス</td><td>値を書きこむ対象のアドレスです。詳しいアドレスの書き方は、<A HREF="../0A/index.htm">《A-アドレス》</a>を参照。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>コピー元アドレス</td><td>コピーする値を読み込む対象のアドレスです。詳しいアドレスの書き方は、<A HREF="../0A/index.htm">《A-アドレス》</a>を参照。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>バイトサイズ</td><td>コピー元アドレスから、何バイトの値を読み、また書き込むのかをバイト単位で指定します。</td></tr>
+</table>
+　項目名は、"/"区切りで表示先を分けることができます。詳細はトレース項目に準じます。<BR>
+<BR>
+　バイトサイズが4バイト以下の場合は数値と見なせるため、ファンネルライト属性[funnnel]や入出力変換属性[io_fep]を適用することが出来ます。つまり、値を演算してから書き込むといった処理も可能です。ただし、演算の結果元のバイトサイズを超える値になったとしても、書き込みはやはり元のバイトサイズ分しか行われません。<BR>
+<BR>
+　まとめとして、コピー項目の例を書いておきますね。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>現在体力:copy,0x400000,0x500000,4<BR>
+</td></tr></table>
+
+</TD></TR></TABLE><BR>
+<BR>
+
+
+
+<BR>
+<BR>
+<A HREF="07.htm">ねくすと　せくしょん⇒</A>
+<BR>
+<BR>
+<A HREF="05.htm">≪せくしょん　ばっく</A>
+<P><BR></P>
+
+
+</body></html>

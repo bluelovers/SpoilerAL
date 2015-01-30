@@ -1,0 +1,59 @@
+<html>
+<head>
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=Shift_JIS">
+<META NAME="Author" CONTENT="あつ">
+<BASE TARGET="main">
+<LINK REL="Next"     HREF="none">
+<LINK REL="Previous" HREF="none">
+<LINK REL="Parent"   HREF="index.html">
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="../HowToSSG/style.css">
+<title>HowToSplash</title>
+</head>
+
+<BODY>
+
+<DIV ALIGN="RIGHT">
+<FONT FACE="Impact" size="200%">How To Splash!</FONT>
+</DIV>
+
+<TABLE CLASS=titleBOX><TR><TD>“<font color="#0">スプラッシュ</font>”とは？</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　SpoilerAL ver3.9から搭載された機能で、時間のかかる処理を行うときに、経過表示を行うものです。現在、SSGファイル検索時に利用されています。
+</TD></TR></TABLE><BR>
+<BR>
+
+<TABLE CLASS=titleBOX><TR><TD>スプラッシュの構成</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　実は非常に単純です。<FONT COLOR="#0000FF">背景画像と、経過表示用の領域</font>。最低この二つを、テキストファイル(*.TXT)に記述すれば成り立ちます。<BR>
+<BR>
+記述の仕方は、SSGやCLDと同じように、命令（指定項目）を <b>[</b> と <b>]</b>で囲み、その後ろにオプション（指定内容）を書いていきます。<BR>
+<BR>
+現在のスプラッシュ書式では、下記のような命令がサポートされています。
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>命令</td><td align="center">オプション</td></tr>
+<tr><td CLASS=flameTD NOWRAP>[back]</td><td>背景として使う画像のファイル名を書きます。スプラッシュ定義ファイルを基準とした相対パスになります。
+<table CLASS=exaBOX><tr><td NOWRAP>
+[back]splash.jpg
+</tr></td></table>
+<tr><td CLASS=flameTD NOWRAP>[message]</td><td>経過表示を行う領域を、ピクセル単位で「左端, 上端, 右端, 下端」の順に書きます。なお、左端と上端のピクセルは範囲に含まれますが、右端と下端のピクセルは範囲に含まれません。
+<table CLASS=exaBOX><tr><td NOWRAP>
+[message]10,160,390,180
+</tr></td></table>
+<tr><td CLASS=flameTD NOWRAP>[gage]</td><td>経過表示は、<b>処理内容を表す文章</b>と、<b>経過量</b>に分けられます。[gage]命令が書かれていない場合は、経過表示領域に両方が表示されますが、[gage]命令を使うと、<FONT COLOR="#0000FF">%単位で指定画像を上書描画</font>させることができます。<BR>
+　オプションの書式は、「ファイル名, 描画するX座標, 描画するY座標」となります。「ファイル名」には、段階表示させる画像ファイル名を書きます。X/Y座標には、画像を描画する位置を指定して下さい。
+<table CLASS=exaBOX><tr><td NOWRAP>
+[gage]gage.jpg,0,0
+</tr></td></table>
+　なお、現在のゲージ表示は、左から右へ流す形式のみです。
+</tr></td></table>
+　このようにして記述したスプラッシュ定義ファイルを、適当なテキストファイル(*.TXT)として保存し、必要な画像等も揃えた上で、SpoilerALのメニューから[表示(V)]->[カスタマイズ(T)...]を選択し、背景画像タブから作成したスプラッシュ定義ファイルを指定してください。<BR>
+　オリジナルのスプラッシュで経過表示させることができます。
+</TD></TR></TABLE><BR>
+
+
+
+<BR>
+<BR>
+<P><BR></P>
+
+</body></html>

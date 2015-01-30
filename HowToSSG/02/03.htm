@@ -1,0 +1,182 @@
+<html><head>
+<title>HowToSSG:[subject]Bundle</title>
+<BASE TARGET="_self">
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../style.css">
+</head><BODY>
+
+<table class="difficultBOX">
+<tr><td class="difficultLevel">難解度「A+」</td></tr>
+<tr><td>
+※このページ全体の難解度です。
+</td></tr>
+</table>
+
+<TABLE CLASS=titleBOX><TR><TD>一括系</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　例えば、体力の値を別々の２カ所に記録していて、両方の値を書き換えなくてはならないという場合、この一括（Bundle：バンドル）系を利用します。一括系には、BundleCalc（b_calc：一括電卓）やBundleToggle（b_toggle：一括トグル）、BundleList（b_list：一括リスト）などがあります。
+</TD></TR></TABLE><BR>
+<BR>
+
+
+
+<TABLE CLASS=titleBOX><TR><TD>一括電卓項目</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　バンドルカルク項目(b_calc)です。アイテムがたくさんあって、全てを書き換えるときなどに便利ですね。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>項目名: b_calc, アドレス, チェインファイル, オフセットか,<BR>
+　　　　　　　　　　最小値, 最大値, 符号の有無, エンディアン
+</td></tr></table>
+です。表記上２行で書いてますが、実際は１行で書いて下さいね。
+
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>アドレス</td><td>読み書きする対象のアドレスです。詳しいアドレスの書き方は、<A HREF="../0A/index.htm">《A-アドレス》</a>を参照。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>チェインファイル</td><td>読み書きするアドレスを羅列したチェインファイルを指定します。ファイル指定の詳細は、<A HREF="../0A/01.htm">《C-ファイル指定》</a>を参照。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>オフセットか</td><td>チェインファイルに記述したアドレスに、この項目のアドレスを加算するかを指定します。 <b>offset</b> を指定すると、読み書きするアドレスは、「チェインファイルに書いたアドレス＋項目のアドレス」になります。 <b>real</b> を指定すると、チェインファイルに書いたアドレスがそのまま読み書きするアドレスとなります。つまり、オプションに <b>real</b> を指定したとき、項目のアドレスは不要になります。省略すると、 <b>offset</b> が選択されます。<br>　なお、<font color="#FF0000">「チェインファイルに書いたアドレス」は[replace]等の属性の影響を受けます</font>が、<font color="#0000FF">オフセット値は属性に関係なく、書いたとおりの値</font>が採用されます。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>最小値<BR>最大値<BR>符号の有無<BR>エンディアン</td><td>電卓項目に準じます｡</td></tr>
+</table>
+　項目名は、"/"区切りで表示先を分けることができます。詳細は電卓項目に準じます。
+<BR>
+
+　まとめとして、いくつかのパターンで一括電卓項目を書いておきますね。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>薬草類　個数:b_calc,0,アドレスリスト1,real,0,99<BR>
+<font color="#C000C0">[subject]</font>毒薬類　個数:b_calc,0x500000,アドレスリスト2,offset,0,99
+
+<HR><center style="background-color:#C0C0FF">アドレスリスト1.CHN</center>
+0x400000<BR>
+0x400004<BR>
+0x400008<BR>
+0x40000C<BR>
+0x400010
+
+<HR><center style="background-color:#C0C0FF">アドレスリスト2.CHN</center>
+0x00<BR>
+0x04<BR>
+0x08<BR>
+0x0C<BR>
+0x10
+</td></tr>
+</table>
+なお一括電卓項目での現在値は、「羅列された全てのアドレスの値」の平均になります。
+
+</TD></TR></TABLE><BR>
+<BR>
+
+
+<TABLE CLASS=titleBOX><TR><TD>一括トグル項目</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　一括電卓項目のトグル版です。ちゃちゃっと行きますよ～！
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>項目名: b_toggle, アドレス, チェインファイル, オフセットか<BR>
+</td></tr></table>
+です。チェインファイル中には、
+<table CLASS=exaBOX><tr><td NOWRAP>
+アドレス, ONのバイト列, OFFのバイト列
+</td></tr></table>
+という形で連ねていきます。（バイト列の詳細は、<A HREF="../0A/00.htm">《B-バイト列》</a>を参照。）
+
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>アドレス</td><td>読み書きする対象のアドレスです。詳しいアドレスの書き方は、<A HREF="../0A/index.htm">《A-アドレス》</a>を参照。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>チェインファイル</td><td>読み書きするアドレスとバイト列を羅列したチェインファイルを指定します。ファイル指定の詳細は、<A HREF="../0A/01.htm">《C-ファイル指定》</a>を参照。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>オフセットか</td><td>チェインファイルに記述したアドレスに、この項目のアドレスを加算するかを指定します。ファイル中のアドレスとオフセット値の扱いについては、<A HREF="../02/03.htm">《2.3-bundle-一括電卓項目》</a>を参照。</td></tr>
+</table>
+　項目名は、"/"区切りで表示先を分けることができます。詳細はトグル項目に準じます。<BR>
+
+　まとめとして、一括トグル項目の例を書いておきますね。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>CGモード一覧:b_toggle,0x400000,トグルリスト,offset<BR>
+<HR><center style="background-color:#C0C0FF">トグルリスト.CHN</center>
+0x00,01,00<BR>
+0x04,01,00<BR>
+0x08,0x10-01000000,00000000
+</td></tr></table>
+なお一括トグル項目の場合、羅列されたバイト列の、どれか一つでもONでないならば、全体としてはOFFとして扱われます。
+</TD></TR></TABLE><BR>
+<BR>
+
+
+<TABLE CLASS=titleBOX><TR><TD>一括リスト項目</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　一括電卓項目のリスト版です。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>項目名: b_list, アドレス, リストファイル, 初項, 公差,<BR>
+　　　　　　　　チェインファイル, オフセットか
+</td></tr></table>
+です。チェインファイル中には、読み書きするアドレスを羅列します。
+
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>アドレス</td><td>読み書きする対象のアドレスです。詳しいアドレスの書き方は、<A HREF="../0A/index.htm">《A-アドレス》</a>を参照。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>リストファイル<BR>初項<BR>公差</td><td>リスト項目に準じます｡</td></tr>
+<tr><td CLASS=flameTD NOWRAP>チェインファイル</td><td>読み書きするアドレスを羅列したチェインファイルを指定します。ファイル指定の詳細は、<A HREF="../0A/01.htm">《C-ファイル指定》</a>を参照。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>オフセットか</td><td>チェインファイルに記述したアドレスに、この項目のアドレスを加算するかを指定します。ファイル中のアドレスとオフセット値の扱いについては、<A HREF="../02/03.htm">《2.3-bundle-一括電卓項目》</a>を参照。</td></tr>
+</table>
+　項目名は、"/"区切りで表示先を分けることができます。詳細はリスト項目に準じます。<BR>
+
+　まとめとして、一括リスト項目の例を書いておきますね。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>武器一覧:b_list,0x400000,武器リスト,0,1,アドレスリスト,offset<BR>
+<HR><center style="background-color:#C0C0FF">武器リスト.LST</center>
+ひのきの棒<BR>
+革の鞭<BR>
+短剣
+<HR><center style="background-color:#C0C0FF">アドレスリスト.CHN</center>
+0x00<BR>
+0x04<BR>
+0x08
+</td></tr></table>
+なお一括リスト項目の現在値（選択行）は、「（（「羅列された全てのアドレスの値」の平均）－初項）／公差」になります。
+</TD></TR></TABLE><BR>
+<BR>
+
+
+
+<TABLE CLASS=titleBOX><TR><TD>一括実数電卓項目</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　後述する実数電卓項目（f_calc）の、一括版です。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>項目名: bf_calc, アドレス, チェインファイル, オフセットか,<BR>
+　　　　　　　　　　最小値, 最大値, サイズ記号, エンディアン
+</td></tr></table>
+です。表記上２行で書いてますが、実際は１行で書いて下さいね。<BR>
+　各オプションは、一括電卓項目及び実数電卓項目のそれに準じますので、詳細はそちらを参照してください。<BR>
+<BR>
+　項目名は、"/"区切りで表示先を分けることができます。詳細は電卓項目に準じます。
+<BR>
+
+　まとめとして、いくつかのパターンで一括実数電卓項目を書いておきますね。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>各国取引額:bf_calc,0,アドレスリスト1,real, 2550.0, 9999.91<BR>
+<font color="#C000C0">[subject]</font>全国平均:bf_calc,0x500000,アドレスリスト2,offset, -9999.99, 999999.99
+
+<HR><center style="background-color:#C0C0FF">アドレスリスト1.CHN</center>
+0x400000<BR>
+0x400004<BR>
+0x400008<BR>
+0x40000C<BR>
+0x400010
+
+<HR><center style="background-color:#C0C0FF">アドレスリスト2.CHN</center>
+0x00<BR>
+0x04<BR>
+0x08<BR>
+0x0C<BR>
+0x10
+</td></tr>
+</table>
+なお一括電卓項目での現在値は、「羅列された全てのアドレスの値」の平均になります。
+
+</TD></TR></TABLE><BR>
+<BR>
+
+
+
+<BR>
+<BR>
+<A HREF="04.htm">ねくすと　せくしょん⇒</A>
+<BR>
+<BR>
+<A HREF="02.htm">≪せくしょん　ばっく</A>
+<P><BR></P>
+
+
+</body></html>

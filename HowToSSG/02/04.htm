@@ -1,0 +1,169 @@
+<html><head>
+<title>HowToSSG:[subject]Double</title>
+<BASE TARGET="_self">
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../style.css">
+</head><BODY>
+
+
+<table class="difficultBOX">
+<tr><td class="difficultLevel">難解度「AA」</td></tr>
+<tr><td>
+※このページ全体の難解度です。
+</td></tr>
+</table>
+
+
+<TABLE CLASS=titleBOX><TR><TD>ダブル系</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　リスト形式で扱われる項目の一種ですが、表示用のリストと、処理用のリストの二種類を使うことから、ダブル系と呼ばれます。二つのリストは行単位で関連しており、表示用のリストで2行目を選択した場合、処理用リストの2行目が処理されるという特徴をもっています。
+</TD></TR></TABLE><BR>
+<BR>
+
+
+
+<TABLE CLASS=titleBOX><TR><TD>ダブルリスト項目</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　リスト項目の場合、書き込む値は「初項＋行数＊公差」で固定のため、書き換えを行わない行を作ったり、書き込む値をバラバラに配置することができません。それに対しダブルリスト項目(d_list)は、書き込む値を処理用のリストに記述するため、それら複雑な処理も可能になります。書式は
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>項目名: d_list, アドレス, リストファイル1, <BR>
+　　　　　　　　最小値, 最大値, リストファイル2, オフセットか
+</tr></td></table>
+です。表記上２行で書いてますが、実際は１行で書いて下さいね。
+
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>アドレス</td><td>読み書きする対象のアドレスです。詳しいアドレスの書き方は、<A HREF="../0A/index.htm">《A-アドレス》</a>を参照。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>リストファイル1</td><td>選択できる一覧として表示するリストファイルを指定します。ファイル指定の詳細は、<A HREF="../0A/01.htm">《C-ファイル指定》</a>を参照。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>最小値</td><td>読み書きする値が取りうる最小値を記述します｡</td></tr>
+<tr><td CLASS=flameTD NOWRAP>最大値</td><td>読み書きする値が取りうる最大値を記述します｡</td></tr>
+<tr><td CLASS=flameTD NOWRAP>リストファイル2</td><td>リストファイル1で特定行を選択したとき、処理する内容を記述したリストファイルを指定します。ファイル指定の詳細は、<A HREF="../0A/01.htm">《C-ファイル指定》</a>を参照。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>オフセットか</td><td>リストファイル2に記述したアドレスに、この項目のアドレスを加算するかを指定します。 <b>offset</b> を指定すると、読み書きするアドレスは、「リストファイル2に書いたアドレス＋項目のアドレス」になります。 <b>real</b> を指定すると、リストファイル2に書いたアドレスがそのまま読み書きするアドレスとなります。ただし、後述する「書き込む値」の場合のアドレスは、「項目のアドレス」ですので、オプションに <b>real</b> を指定したからといって、必ずしも項目のアドレスが不要というわけではありません。省略すると、 <b>offset</b> が選択されます。ファイル中のアドレスとオフセット値の扱いについては、<A HREF="../02/03.htm">《2.3-bundle-一括電卓項目》</a>を参照。</td></tr>
+</table>
+　項目名は、"/"区切りで表示先を分けることができます。詳細はリスト項目に準じます。<BR>
+<BR>
+
+リストファイル2には、
+<table CLASS=exaBOX><tr><td NOWRAP>
+書き込む値<BR>
+(空行)<BR>
+,アドレス=バイト列<BR>
+,アドレス=バイト列,アドレス=バイト列<BR>
+,開始アドレス=終了アドレス-バイト列<BR>
+@チェインファイル名
+</tr></td></table>
+のように、幾つかの方法で処理を指定できます。（バイト列の詳細は、<A HREF="../0A/00.htm">《B-バイト列》</a>を参照。）
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>書き込む値</td><td>400や0xFFなど、そのまま数値を指定します。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>(空行)</td><td>何も書かれていない行ならば、処理を行いません。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>,アドレス=バイト列</td><td>行頭に','があると、以降を','区切りで複数指定可能なバイト列として処理します。「アドレス」に指定したアドレスから、「バイト列」を処理します。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>,アドレス=バイト列,アドレス=バイト列</td><td>複数指定する場合の例です。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>,開始アドレス=終了アドレス-バイト列</td><td>繰り返し処理も可能です。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>@チェインファイル名</td><td>「アドレス, バイト列」という書式で羅列した、チェインファイルの指定も可能です。</td></tr>
+</table>
+<BR>
+
+　まとめとして、いくつかのパターンでダブルリスト項目を書いておきますね。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>装備中の武器:d_list,0x400000,リスト1,0,999,リスト2,offset<BR>
+<font color="#C000C0">[subject]</font>装備中の防具:d_list,0x500000,リスト3,0,999,リスト4,real
+
+<HR><center style="background-color:#C0C0FF">リスト1.LST</center>
+ひのきの棒<BR>
+日本刀<BR>
+銀の斧<BR>
+ブーメラン<BR>
+和太鼓
+<HR><center style="background-color:#C0C0FF">リスト2.LST</center>
+0x1B<BR>
+200<BR>
+72<BR>
+,0x20=C03A<BR>
+,0x40=0x60-FFFF
+<HR><center style="background-color:#C0C0FF">リスト3.LST</center>
+人民服<BR>
+薄手のローブ<BR>
+皮の鎧<BR>
+シルバークロス<BR>
+紋付き
+<HR><center style="background-color:#C0C0FF">リスト4.LST</center>
+0x1B<BR>
+200<BR>
+72<BR>
+,0x500020=C03A<BR>
+,0x500040=0x500060-FFFF<BR>
+@処理リスト2
+</tr></td>
+</table>
+ダブルリスト項目での現在値(選択行)は、一致する「書き込む値」がある行か、全てのバイト列が一致する行になります。
+
+</TD></TR></TABLE><BR>
+<BR>
+
+
+<TABLE CLASS=titleBOX><TR><TD>ダブルトグル項目</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　アイテムの所持/非所持を書き換えるときに使う項目といえば、トグル項目があがります。一片にアイテム全部の所持/非所持を書き換えるなら、一括トグル項目を使うでしょう。では、アイテムごとに所持/非所持を分けたい場合で、アイテム全てを操作できるようにするにはどうしたらいいでしょう？<BR>
+　単純な方法は、トグル項目を必要分書くことです。そしてもう一つの方法としてあげられるのが、このダブルトグル項目です。ダブルトグル項目で表示するリストは、他の一般的なリストのように「どれか一つを選ぶ」という形ではなく、各行ごとに「選択している/していない」を切り替える形式です。…察しが付いたでしょうか？リスト形式で各行ごとに「選択している(ON)/していない(OFF)」を指定する、いわばトグル項目の配列を作れるというわけです。<BR>
+　書式は
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>項目名: d_toggle, アドレス, リストファイル1,<BR>
+　　　　　　　　リストファイル2, オフセットか
+</tr></td></table>
+です。表記上２行で書いてますが、実際は１行で書いて下さいね。<BR>
+
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>アドレス</td><td>読み書きする対象のアドレスです。詳しいアドレスの書き方は、<A HREF="../0A/index.htm">《A-アドレス》</a>を参照。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>リストファイル1</td><td>選択できる一覧として表示するリストファイルを指定します。ファイル指定の詳細は、<A HREF="../0A/01.htm">《C-ファイル指定》</a>を参照。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>リストファイル2</td><td>リストファイル1で特定行を選択したとき、処理する内容を記述したリストファイルを指定します。ファイル指定の詳細は、<A HREF="../0A/01.htm">《C-ファイル指定》</a>を参照。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>オフセットか</td><td>リストファイル2に記述したアドレスに、この項目のアドレスを加算するかを指定します。 <b>offset</b> を指定すると、読み書きするアドレスは、「リストファイル2に書いたアドレス＋項目のアドレス」になります。 <b>real</b> を指定すると、リストファイル2に書いたアドレスがそのまま読み書きするアドレスとなります。つまり、オプションに <b>real</b> を指定したとき、項目のアドレスは不要になります。ファイル中のアドレスとオフセット値の扱いについては、<A HREF="../02/03.htm">《2.3-bundle-一括電卓項目》</a>を参照。</td></tr>
+</table>
+　項目名は、"/"区切りで表示先を分けることができます。詳細はトグル項目に準じます。<BR><BR>
+　リストファイル1中での空行(改行のみの行)は、「選択できない行」として扱われます。選択して欲しくない内容の行は初めから書かなければいいのですが、リスト中の空行は、画面上では空白行として表示されるので、仕切りとして使う方法もあります。<BR>
+<BR>
+リストファイル2には、リストファイル1と行ごとに対応するよう、
+<table CLASS=exaBOX><tr><td NOWRAP>
+アドレス=ONのバイト列/OFFのバイト列
+</tr></td></table>
+という形で書いていきます。（バイト列の詳細は、<A HREF="../0A/00.htm">《B-バイト列》</a>を参照。）','区切りで、一行内に複数指定することも可能です。<BR>
+また、ダブルリスト項目と同様に、行頭に'@'を付けてのチェインファイル指定も可能です。
+その際、チェインファイルの書式は
+<table CLASS=exaBOX><tr><td NOWRAP>
+アドレス, ONのバイト列, OFFのバイト列
+</tr></td></table>
+のようになるので注意して下さい。<BR>
+<BR>
+
+　まとめとして、ダブルトグル項目の例を書いておきますね。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>CGモード一覧:d_toggle,0x400000,表示リスト,処理リスト,offset<BR>
+<HR><center style="background-color:#C0C0FF">表示リスト.LST</center>
+城A攻略済み<BR>
+城B攻略済み<BR>
+城C攻略済み<BR>
+城D攻略済み<BR>
+城E攻略済み
+<HR><center style="background-color:#C0C0FF">処理リスト.LST</center>
+0x10=00/FF<BR>
+0x12=00/FF<BR>
+0x30=0x40-00/01<BR>
+0x20=00/FF, 0x30=0x40-00/01<BR>
+@処理リスト2
+</tr></td></table>
+なおダブルトグル項目の場合、ONのバイト列と一致する行が選択されます。また、','による複数指定の場合は、全てのONのバイト列と一致したときに選択されます。（前述の通り、選択行は複数になることもあります。）<BR>
+<BR>
+<font color="#FF0000"><B>＊　捕捉　＊</b></font><BR>
+　ダブルトグル項目は、複数の<font color="#0000FF">「違ったアドレスを書き換える」</font>トグル項目を一つにまとめて、「<b>個別にON/OFF切り替えしたい</b>」、といったときに使うことになるでしょう。同じアドレスを書き換えるのであれば、どれか一つを選択するダブルリスト項目などを使います。
+</TD></TR></TABLE><BR>
+<BR>
+
+
+
+<BR>
+<BR>
+<A HREF="05.htm">ねくすと　せくしょん⇒</A>
+<BR>
+<BR>
+<A HREF="03.htm">≪せくしょん　ばっく</A>
+<P><BR></P>
+
+
+</body></html>

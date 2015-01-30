@@ -1,0 +1,183 @@
+<html>
+<head>
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=Shift_JIS">
+<META NAME="Author" CONTENT="あつ">
+<BASE TARGET="_self">
+<LINK REL="Next"     HREF="23.htm">
+<LINK REL="Previous" HREF="21.htm">
+<LINK REL="Parent"   HREF="index.htm">
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="../HowToSSG/style.css">
+<title>SpoilerAL Help:じゃ、使ってみよう！</title>
+</head>
+<body bgcolor="#e0e0e0" text="#000000" link="#0000FF" vlink="#4080FF">
+
+
+<table border="3" bgcolor="#FFFFC0" cellspacing="5">
+<tr><td>
+SpoilerALは<b>メモリエディタ</b>の一種です。
+<br>そのため、各書き換えを行うときは原則として、<b>SpoilerALと対象のプロセス（プログラム）</b>が<b><font color="#FF0000">共に起動</font></b>している必要があります。
+</td></tr>
+</table>
+<br>
+<br>
+
+
+<table border="3" bgcolor="#FFFFFF" cellspacing="5">
+<tr><td style="background-color:#0000FF; color:#FFFFFF; font-weight:bold;">じゃ、使ってみよう！</td></tr>
+
+<tr><td rowspan="3"><center><img src="images/2200.png" width="447" height="361" border="1" alt="初期画面">
+</center></td><td>
+さて、タイトルを選択して「ＯＫ」を押しますと、このような画面に移ります。
+<br>（この例では、「ＤＡＬＫ」を選択しています）
+<hr>
+基本的に、書き換えたい項目を左のボックスから選択し、
+右のパネルで、どんな値に書き換えるのかを指定します。
+<br>※パネル位置は、左右に切り替え可能です。
+
+</td></tr>
+<td>
+マウスカーソルを左のボックス内に移動させると、その位置の項目が反転表示されます。
+<br><img src="images/2201.png" width="160" height="80" border="1" alt="反転表示例">
+</td></tr>
+<tr><td>
+※パネルとボックスの境目をドラッグすることで、パネルサイズを変更できます。
+<br>なお、正確なサイズを知りたい場合は、「カスタマイズ」から指定して下さい。
+</td></tr>
+</table>
+
+<br>
+<table border="3" bgcolor="#E0FFE0" cellspacing="5">
+<tr><td>
+SpoilerALで用いられる項目は複数ありますが、見た目上区別がつかない項目もありますので、実質使う側としては５項目ほどと見ていいでしょう。
+<br>では、各項目の説明に移りましょう。
+</td></tr>
+</table>
+<br>
+
+<table border="3" bgcolor="#FFFFFF" cellspacing="5">
+<tr><td style="background-color:#0000FF; color:#FFFFFF; font-weight:bold;" colspan="2">階層項目＜ＤＩＲ＞</td></tr>
+
+<tr><td><center><img src="images/2201.png" width="160" height="80" border="1" alt="階層項目押す前">
+</td><td>
+階層項目というのは、各項目を分類し、見やすくするための特殊な項目で、何か値を書き換えるための物ではありません。
+<br>いうなればフォルダみたいなものですね。
+</td></tr>
+<tr><td><center>
+<img src="images/2202.png" width="160" height="80" border="1" alt="階層項目押したとき"></center>
+</td><td>
+階層項目（デフォルトでは白色表示）をクリックすると、その下の階層にある項目が表示されます。
+<br>もう一度同じ階層項目をクリックすると、その階層を閉じます。
+<br>早い話がエクスプローラの操作法と同じです。
+<br>初めは深く考えずに、一通りクリックしちゃいましょう（笑)
+</td></tr>
+<tr><td colspan="2" bgcolor="#FFF8F0">
+　もし、下の階層にある項目が、全て似通っている場合、それらを<b>まとめて書き換える機能</b>も利用できます。通常、階層項目をクリックした際、パネルに表示されるのは「メモ（注意書き）」のみです。しかし、例えば（このあと説明する）電卓やチェックボックスなどが出現していれば、それらを操作することで、下の階層の項目全てを書き換えることが出来ます。上手く活用して下さいね。
+</td></tr>
+</table>
+
+<br>
+
+<table border="3" bgcolor="#FFFFFF" cellspacing="5">
+<tr><td style="background-color:#0000FF; color:#FFFFFF; font-weight:bold;" colspan="2">電卓項目＜ＣＡＬＣ＞・一括電卓項目＜BUNDLE　CALC＞</td></tr>
+
+<tr><td rowspan="2"><center><img src="images/2203.png" width="220" height="306" border="1" alt="パネル：電卓項目"></center>
+</td><td>
+電卓項目（デフォルトでは水色表示）をクリックすると、右側のパネルに電卓が出現します。
+</td></tr><tr><td>
+<img src="../HowToCLD/images/01.png" width="81" height="74" border="1" alt="ボタン画像">
+<br>電卓上のボタンをクリックするか、キーボードから値を入力します。
+<br>電卓画像の設定によって多少変わりますが、値はエディットボックス等に表示されますので、適当な値を入力したら「決定」を押して下さい。
+<hr>
+★注意★<br>
+[Min]より少ない値や[Max]より大きい値は入力できません！
+</td></tr>
+
+<tr><td><center>
+<img src="../HowToCLD/images/00.png" width="196" height="200" border="1" alt="１０進／１６進"></center>
+</td><td>
+左の例で言うと「<font color="#FF0000">所持金[?]</font>」の"<b>?</b>"の部分に、現在値が表示されます。
+<br>もしここが"?"のままのときは、対象のプロセスが起動していないなど、
+そのままでは書き換えを行えない、ということを意味しています。
+<hr>
+１０進／１６進ボタンは、クリックするたびに交互に切り替わります。
+<br>MaxやMinの値も同時に切り替わりますので、自分の好みに合わせて使い分けて下さい。
+<hr>
+一括電卓項目の操作も、電卓項目と同じです。
+<br>ただし、一括電卓項目は、「現在の値」に、操作する値の<strong>平均</strong>が表示されます。
+<br>また、入力した数値は、操作する値すべてに書き込まれます。
+</td></tr>
+<tr><td colspan="2" style="background-color:#800000l; color:#FFFFFF; font-weight:bold;">値の固定</td></tr>
+<tr><td><img src="images/2204.png" width="89" height="21" border="1" alt="値の固定チェックボックス"><br>
+↓チェック時↓<br>
+<img src="images/2205.png" width="160" height="80" border="1" alt="反転色で囲まれる">
+</td><td>
+「値の固定」というチェクボックスをチェックすることで、
+<br>周期的に（自動的に何回も）値を書き換えさせることが出来ます。
+<br>禁止されている場合を除き、階層項目以外のほぼ全ての項目で使用可能なので、上手く活用して下さいね。
+</td></tr>
+</table>
+<br>
+
+<table border="3" bgcolor="#FFFFFF" cellspacing="5">
+<tr><td colspan="2" style="background-color:#FF0000; color:#FFFFFF; font-weight:bold;">♪値の固定で一工夫♪</td></tr>
+<tr><td>
+対象のプロセスを起動していなくても、「値の固定」は可能です。
+<br>これを利用すれば、<b><font color="#FF00FF">
+「一度起動すると、他のウィンドウに切り替えることが出来ないプログラム」
+</b></font>の値も、書き換えることができます。
+<hr>
+先にSpoilerALを起動し、値を固定。
+<br>好きな数値を入力して決定すれば、バックグラウンドで書き換え続けてくれます(^^)
+</td></tr>
+</table>
+<br>
+
+<table border="3" bgcolor="#FFFFFF" cellspacing="5">
+<tr><td style="background-color:#0000FF; color:#FFFFFF; font-weight:bold;" colspan="2">トグル項目＜ＴＯＧＧＬＥ＞・一括トグル項目＜BUNDLE TOGGLE＞</td></tr>
+<tr><td><center><img src="images/2206.png" width="220" height="315" border="1" alt="トグル項目"></center>
+</td><td>
+トグル項目や一括トグル項目（デフォルトでは赤色表示）には、ＯＮかＯＦＦしかありません。
+<br>チェクしていればＯＮ、チェックしていなければＯＦＦになります。
+<hr>
+なお、値を固定するときには、ちょっと注意して下さい。
+<br><b>チェックが付いていない</b>状態で値を固定すると、<b>ＯＦＦの値</b>に書き換え続けます。
+<br>常にＯＮの値にしたいときは、チェックを付けてから値の固定を押して下さい。
+<br>（勿論、値を固定した後にＯＮ／ＯＦＦを切り替えても構いません)
+</td></tr>
+</table>
+<br>
+
+<table border="3" bgcolor="#FFFFFF" cellspacing="5">
+<tr><td style="background-color:#0000FF; color:#FFFFFF; font-weight:bold;" colspan="2">リスト項目＜LIST＞・一括リスト項目＜B_LIST＞・ダブルリスト項目＜D_LIST＞・ビットリスト項目＜BITLIST＞</td></tr>
+<tr><td><center><img src="images/2207.png" width="220" height="315" border="1" alt="パネル：リスト項目"></center>
+</td><td>
+リスト項目（デフォルトでは薄紫色表示）は、<br>装備やアイテムなどでよく使われそうですね。
+<br>パネルに表示されたリストボックスから、<br>変更したい値をクリックするだけで書き換わります。
+<br>なお、ビットリスト項目やダブルリスト項目など（デフォルトでは黄色表示）は、チェックボックスリスト形式です。ONにしたい行に、チェックを入れてください。
+</td></tr>
+</table>
+<br>
+
+<table border="3" bgcolor="#FFFFFF" cellspacing="5">
+<tr><td style="background-color:#0000FF; color:#FFFFFF; font-weight:bold;" colspan="2">文字項目＜ＳＴＲＩＮＧ＞</td></tr>
+<tr><td><center><img src="images/2208.png" width="220" height="315" border="1" alt="パネル：文字項目"></center>
+</td><td>
+最後は文字項目（デフォルトでは紫色表示）です。
+<br>パネルに表示されたエディットボックスに、書き換えたい値を入力して
+<br>「決定」ボタンを押せば書き換え完了です。
+<br>（入力する文字数は、[max]の値以下にして下さいね！）
+</td></tr>
+</table>
+
+<br>
+<br>
+<a href="23.htm">次のページ（キーボードで操作する）へ</a>
+<br>
+<a href="21.htm">前のページ（SSGの導入）へ</a>
+
+<p><br></p>
+<p><br></p>
+<p><br></p>
+
+</body>
+</html>

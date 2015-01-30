@@ -1,0 +1,169 @@
+<html><head>
+<title>HowToSSG:[repeat]</title>
+<BASE TARGET="_self">
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../style.css">
+</head><BODY>
+
+
+<table class="difficultBOX">
+<tr><td class="difficultLevel">難解度「AAA」</td></tr>
+<tr><td>
+※このページ全体の難解度です。
+</td></tr>
+</table>
+
+<TABLE CLASS=titleBOX><TR><TD>repeat</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　BASICやC/C++でいうFOR文に近い仕組みを持ち、現在のループ回数を示す擬似変数 <b>$Val</b> を利用することで、様々な変換を含む置き換えを可能とします。書式は
+<table CLASS=exaBOX><tr><td NOWRAP>
+[repeat]SSRファイル, 開始値, 終了値, 増加値<BR>
+[repeat]SSRファイル, ループ値リストファイル
+</td></tr></table>
+の、いずれかです。
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>SSRファイル</td><td>置き換えるスクリプトを記述したSSRファイルを指定します。SSRファイルについては後述します。ファイル指定の詳細は、<A HREF="../0A/01.htm">《C-ファイル指定》</a>を参照。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>開始値</td><td>ループ変数の開始値を記述します。ループ変数は、「開始値」から始まり、ループ毎に「増加値」ずつ増え、「終了値」以上になると終了します。（ループ変数が「終了値」のときの処理は行いません）</td></tr>
+<tr><td CLASS=flameTD NOWRAP>終了値</td><td>ループ変数の終了値を記述します。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>増加値</td><td>ループ変数のループ毎の増加量を記述します。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>ループ値<BR>リストファイル</td><td>開始値・終了値・を用いる場合、ループ変数はその間で（増加値に従って）変化していくわけですが、増加値が固定でない場合は、直接ループ変数の値を羅列したリストファイルを指定することも出来ます。ファイル指定の詳細は、<A HREF="../0A/01.htm">《C-ファイル指定》</a>を参照。</td></tr>
+</TABLE>
+　SSRファイルの記述法は少々説明が必要ですので、ちょっと本腰入れていきましょうかっ！
+</TD></TR></TABLE><BR>
+<BR>
+
+
+<TABLE CLASS=titleBOX><TR><TD>SSRファイル</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　SSRファイルに記述されたスクリプトは、いったん「不変文字列」と「変換式」の二種類に分けて処理されます。「不変文字列」とは、文字通りループ中でも常に変わらない部分です。それに対し「変換式」は、 <b>[!</b> と <b>!]</b> で囲まれた「ループ中に変化する（と思われる）」部分になります。この変換式をうまく活用することで、様々な置き換えを可能とします。<BR>
+　変換式は、その変換形式によっていくつかの種類に分かれます。以下にその一覧を示します。
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>式号</td><td align="center">※　概要　※</td></tr>
+<tr><td CLASS=flameTD NOWRAP>[! n !]</td><td>nの16進数値を出力。ただし、出力はバイト数を0でそろえた16進数（仮に「3E7」なら、「03E7」）になります。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>[! Ln !]</td><td>nの10進数値を出力。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>[! #n !]</td><td>nの16進数値(ReverseEndian)を出力。基本は[! n !]と同じですが、演算値(n)のエンディアンを反転してから出力する点が違います。バイト列の場合、表記上リトルエンディアンで記述しますので、そういったときに用いることが多いでしょう。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>[! #Ln !]</td><td>nの10進数値(ReverseEndian)を出力。これも、エンディアン反転を行う[! Ln !]に同じです。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>[! @,n !]</td><td>@ファイル名のn行目の文字列を出力。演算で算出される数値と違い、規則性のない名称などは、一覧にしたファイルから引き出す方が効率的です。その際に、この形式を用います。「@ファイル名」には、文字列を羅列したリストファイルを指定します。ファイル指定の詳細は、<A HREF="../0A/01.htm">《C-ファイル指定》</a>を参照。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>[! Rn,文字列 !]</td><td>指定した「文字列」を、n回出力。他と異なり、<b>ワードリピート</b>機能と呼ばれます。アドレスコーディングにおけるポインタ変換演算子([: :])などを、条件に応じて複数回重ねたい場合に効果的です。感覚的には、リピートファイル中でさらにリピートをかけるような扱いになります。なお、不変文字列に<font color="#FF0000"><b>[!</b></font>などを使いたい場合は、<font color="#FF0000"><b>[ !</b></font>などとして、間に空白を挟んで対処して下さい。展開時に、自動で空白を除去して連結します。</td></tr>
+</TABLE>
+実例を示します。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>主人公:dir<BR>
+&nbsp;&nbsp;<font color="#C000C0">[subject]</font>死亡フラグ:toggle,0x700004,09,00<BR>
+&nbsp;&nbsp;<font color="#C000C0">[subject]</font>デバッグモード:toggle,[:0x710000:],01,00<BR>
+&nbsp;&nbsp;<font color="#C000C0">[<font color="#00C000">replace</font>]</font>0x790000,SSCファイル<BR>
+<font color="#C000C0">[subject]</font>ヒロイン:dir<BR>
+&nbsp;&nbsp;<font color="#C000C0">[subject]</font>死亡フラグ:toggle,0x700008,0A,00<BR>
+&nbsp;&nbsp;<font color="#C000C0">[subject]</font>デバッグモード:toggle,[:[:0x710000:]:],01,00<BR>
+&nbsp;&nbsp;<font color="#C000C0">[<font color="#00C000">replace</font>]</font>0x790004,SSCファイル<BR>
+<font color="#C000C0">[subject]</font>脇役:dir<BR>
+&nbsp;&nbsp;<font color="#C000C0">[subject]</font>死亡フラグ:toggle,0x70000C,0B,00<BR>
+&nbsp;&nbsp;<font color="#C000C0">[subject]</font>デバッグモード:toggle,[:[:[:0x710000:]:]:],01,00<BR>
+&nbsp;&nbsp;<font color="#C000C0">[<font color="#00C000">replace</font>]</font>0x790008,SSCファイル
+</td></tr></table>
+上記のようなスクリプトを[repeat]を用いて最適化すると、
+<table CLASS=exaBOX><tr><td NOWRAP>
+[repeat]SSRファイル,0,3,1<BR>
+
+<HR><center style="background-color:#C0C0FF">SSRファイル.SSR</center>
+<font color="#C000C0">[subject]</font>[! @キャラ名リスト, $Val !]:dir<BR>
+&nbsp;&nbsp;<font color="#C000C0">[subject]</font>死亡フラグ:toggle,0x[! 0x700004+ $Val*4 !], <BR>
+　　　　　　　　　　　[!# 0x09+$Val !],00<BR>
+<font color="#C06000">////////////////////　↑実際は一行で書きます</font><BR>
+&nbsp;&nbsp;<font color="#C000C0">[subject]</font>デバッグモード:toggle,[!R($Val+1), [: !] 0x710000<BR>
+　　　　　　　　　　　[!R($Val+1), :] !],01,00<BR>
+<font color="#C06000">////////////////////　↑実際は一行で書きます</font><BR>
+&nbsp;&nbsp;<font color="#C000C0">[<font color="#00C000">replace</font>]</font>0x[! 0x790000+ $Val*4 !],SSCファイル<BR>
+
+<HR><center style="background-color:#C0C0FF">キャラ名リスト.LST</center>
+主人公<BR>
+ヒロイン<BR>
+脇役
+</td></tr></table>
+のようになります。元のスクリプトに残るのは、<BR>
+[repeat]SSRファイル,0,3,1<BR>
+の一行のみです。このとき、[repeat]のオプションに「0,3,1」と指定しているので、ループ変数(<b>$Val</b>)は「0→1→2→終了」と変化していきます。これを踏まえた上で、上記SSRファイルの詳しい説明に移ります。
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP><font color="#C000C0">[subject]</font></td><td>不変文字列。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>[! @キャラ名リスト, $Val !]</td><td>ループ毎に、「キャラ名リスト.LST」の任意の行に置き換わります。行数を示す部分には「$Val」とあるので、「0行目→1行目→2行目」を順々に引っ張ります。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>:dir</td><td>不変文字列。</td></tr>
+<tr><td CLASS=flameTD NOWRAP><font color="#C000C0">[subject]</font>死亡フラグ:toggle,0x</td><td>不変文字列。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>[! 0x700004+ $Val*4 !]</td><td>最終的に16進数値を出力する計算式です。不変の数値0x700004に、$Val*4を足しあわせた16進値。つまり「700004→700008→70000A」と変化していきます。さらにこれを16進数として認識させるために、直前に不変文字列として「0x」を配してあります。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>,</td><td>不変文字列。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>[!# 0x09+$Val !]</td><td>最終的にエンディアン反転をかけた16進数値を出力する計算式です。ちなみにこの例では1バイト固定ですので、実際はエンディアン反転をかける意味はありません。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>,00</td><td>不変文字列。</td></tr>
+<tr><td CLASS=flameTD NOWRAP><font color="#C000C0">[subject]</font>デバッグモード:toggle,</td><td>不変文字列。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>[!R($Val+1), [: !]</td><td>文字列<font color="#FF0000">[:</font>を、<font color="#0000FF">$Val+1</font>回出力します。つまり、「[:→[:[:→[:[:[:」と変化します。ちなみに、「$Val+1」を括っている()は、範囲を分かりやすくするために付けただけなので、無くても構いません。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>0x710000</td><td>不変文字列。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>[!R($Val+1), :] !]</td><td>文字列<font color="#FF0000">:]</font>を、<font color="#0000FF">$Val+1</font>回出力します。つまり、「:]→:]:]→:]:]:]」と変化します。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>,01,00</td><td>不変文字列。</td></tr>
+<tr><td CLASS=flameTD NOWRAP><font color="#C000C0">[<font color="#00C000">replace</font>]</font>0x</td><td>不変文字列。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>[! 0x790000+ $Val*4 !]</td><td>前述の計算式[! 0x700004+ $Val*4 !]と同様です。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>,SSCファイル</td><td>不変文字列。</td></tr>
+</TABLE>
+　変数などのプログラミング的な考えが混じるため、変換式の理解にとまどうかと思いまが、似たようなスクリプトが何十も繰り返されるスクリプトであれば、[repeat]を使うことで大幅に手間を省くことができるでしょう。
+<table CLASS=exaBOX><tr><td>
+さて、ここまでが増加値（開始値・終了値）を用いた場合の説明ですが、「ループ値リストファイル」を用いた場合の説明を付け足しましょう。<BR>
+<HR><center style="background-color:#C0C0FF">リストファイル.LST</center>
+1<BR>2<BR>5<BR>7<BR>8
+<HR>
+このようなリストファイルを用意した場合、ループ変数<b>$Val</b>は、[1→2→5→7→8]と変化して、5回ループを回ったところで処理を終えます。なお、リストファイル中の空白行は無視されます。
+</td></tr></table>
+
+</TD></TR></TABLE><BR>
+<BR>
+
+
+<table class="difficultBOX">
+<tr><td class="difficultLevel">難解度「AAA+」</td></tr>
+<tr><td>
+
+<TABLE CLASS=titleBOX><TR><TD>静的展開</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　[repeat]は<font color="#C000C0">[<font color="#00C000">replace</font>]</font>と違い、SSGを展開するときに全てのオプションが評価されます。これはどういうことかというと、
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[<font color="#00C000">replace</font>]</font>_[:0x400000:], SSCファイル<BR>
+[repeat]SSRファイル,0,1,1<BR>
+<HR><center style="background-color:#C0C0FF">SSCファイル.SSC</center>
+<font color="#C000C0">[subject]</font>体力:calc,0x00,0,99<BR>
+<HR><center style="background-color:#C0C0FF">SSRファイル.SSR</center>
+<font color="#C000C0">[subject]</font>体力:calc,0x[! [:0x400000:] !],0,99<BR>
+</td></tr></table>
+といった二つの置き換え命令の処理結果は、必ずしも同じになりません。それどころか、[repeat]命令の方は不正な使用法を用いています。<BR>
+　これは、[repeat]命令のオプションであるSSRファイルの解析処理が、SSG展開時に行われるためです。上記の例では、電卓項目のアドレスを、ポインタ変換演算子([::])を用いてメモリから所得しています。しかし、この「メモリから所得」するタイミングが、[repeat]と<font color="#C000C0">[<font color="#00C000">replace</font>]</font>では異なるのです。<br>
+　<font color="#C000C0">[<font color="#00C000">replace</font>]</font>は、項目にアクセスしたときに（アドレスを）計算する<font color="#0000FF">「<b>動的</b>展開」</font>を行いますが、[repeat]はSSG展開時に計算する<font color="#0000FF">「<b>静的</b>展開」</font>を行います。このため、上記の例ではSSGを展開した瞬間のメモリ内容しか反映されず、結果としてSSG展開の瞬間に<font color="#FF0000">対象のプロセスが起動されていなければ正常な値は返ってきません。</font>また、内部処理の関係上、たとえ展開の瞬間に対象のプロセスが起動されていても、正確な値は所得出来ないと思った方がよいでしょう。
+　<p style="background-color:#FFFFFF">では、具体的に上記の例のどこが悪かったのでしょう？</p>
+<table CLASS=exaBOX><tr><td NOWRAP>
+0x[! [:0x400000:] !]
+</td></tr></table>
+　ズバリ、SSRファイルにおける上の部分です。変換式（<b>[! !]</b>）の中身はSSG展開時に「静的展開」されます。しかし、それ以外の箇所は[repeat]が展開する箇所ではないため、「静的展開」処理は行われません。つまり、
+<table CLASS=exaBOX><tr><td NOWRAP>
+0x[! [:0x400000:] !]&nbsp;&nbsp;<font color="#C06000">//×</font><BR>
+[:0x400000:] + [! !]&nbsp;&nbsp;<font color="#C06000">//○</font>
+</td></tr></table>
+この２行が意図するところは同じでも、２行目の使用法は適性で、１行目の使用法は不正なのです。（なお、２行目は適性ですがSSRにする意味がありません。）<br>
+
+<table CLASS=exaBOX><tr><td NOWRAP>
+<center style="background-color:#C0C0FF">まとめ</center>
+<b>
+変換式<font color="#0000FF">[! !]</font>の中に、ポインタ変換演算子<font color="#0000FF">[: :]</font>があるときは、<font color="#FF0000">不正！</font>
+</b>
+</td></tr></table>
+
+</TD></TR></TABLE>
+
+</td></tr>
+</table>
+<BR>
+<BR>
+
+
+<BR>
+<BR>
+<A HREF="02.htm">ねくすと　せくしょん⇒</A>
+<BR>
+<BR>
+<A HREF="00.htm">≪せくしょん　ばっく</A>
+<P><BR></P>
+
+
+</body></html>

@@ -1,0 +1,145 @@
+<html><head>
+<title>HowToSSG:[subject]</title>
+<BASE TARGET="_self">
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../style.css">
+</head><BODY>
+
+
+<TABLE CLASS=titleBOX><TR><TD>[subject]</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　スクリプトの基本となるのが、<font color="#C000C0">[subject]</font>(項目)です。SpoilerALを使ってどこをどう読み書きするかは、この項目を使って書いていくのです。<BR>
+　<font color="#C000C0">[subject]</font>は、基本的に以下のような形式をとります。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>項目名 : 項目種別 , オプション
+</td></tr></table>
+項目種別とその概要を示します。各項目とも次セクションから詳しく説明しますので、この場は流し読みで構いません(^^;
+
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>項目種別</td><td align="center">※　概要　※</td></tr>
+<tr><td CLASS=flameTD NOWRAP>dir</td><td>階層項目。表示する際の階層を、一段下げます。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>項目名:dir
+</td></tr></table>
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>calc</td><td>電卓項目。プレーヤーのステータスなど、数値で表現されるものに使用します。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>項目名:calc,0x400000,0,100
+</td></tr></table>
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>toggle</td><td>トグル項目。画像を見た／見ていないなど、ON/OFFで表現されるものに使用します。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>項目名:toggle,0x400000,FF,00
+</td></tr></table>
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>list</td><td>リスト項目。装備している武器など、一定範囲の数値から、どれか一つを選択するものに使用します。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>項目名:list,0x400000,リストファイル,0,1
+</td></tr></table>
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>string</td><td>文字列項目。プレーヤーの名前など、文字列で表現されるものに使用します。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>項目名:string,0x400000,7,null
+</td></tr></table>
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>b_calc</td><td>一括(バンドル)電卓項目。メンバー全員のステータスを、まとめて書き換えたいときなどに使用します。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>項目名:b_calc,0x400000,チェインファイル,offset,0,100
+</td></tr></table>
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>b_toggle</td><td>一括(バンドル)トグル項目。CGモードの画像閲覧済みON/OFFを、まとめて書き換えたいときなどに使用します。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>項目名:b_toggle,0x400000,チェインファイル,offset
+</td></tr></table>
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>b_list</td><td>一括(バンドル)リスト項目。メンバー全員の装備を、まとめて書き換えたいときなどに使用します。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>項目名:b_list,0x400000,リストファイル,0,1,チェインファイル,offset
+</td></tr></table>
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>d_list</td><td>ダブルリスト項目。リスト項目と同様、一覧から選択するものに使用します。リスト項目は書き込む値に規則性を求められるため、一覧の順番や行数に厳密ですが、ダブルリスト項目はファイルを二つ利用することで、値を自由に指定できます。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>項目名:d_list,0x400000,リストファイル1,0,99,リストファイル2
+</td></tr></table>
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>d_toggle</td><td>ダブルトグル項目。トグル項目とダブルリスト項目の複合版といった感じの項目です。一覧に書いた一つ一つに対し、ONにするかOFFにするかを選択できます。なお、「どれか一つを選ぶ」というわけではありません。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>項目名:d_toggle,0x400000,リストファイル1,リストファイル2,offset
+</td></tr></table>
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>bitlist</td><td>ビットリスト項目。多くの値はバイト単位で管理されていますが、まれに所持品などにビット単位のON/OFFを使用している物があります。そういった値に、この項目を使います。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>項目名:bitlist,0x400000,リストファイル,1
+</td></tr></table>
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>f_calc</td><td>実数電卓項目。基本的な部分は電卓項目と同じですが、扱う数値が実数（小数点を含む数値を許可）である点が異なります。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>項目名:f_calc,0x400000, 0.2, 82.05, float
+</td></tr></table>
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>bf_calc</td><td>一括(バンドル)実数電卓項目。実数を扱う一括電卓項目です。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>項目名:bf_calc,0x400000, チェインファイル, offset, 0.2, 82.05, float
+</td></tr></table>
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>trace</td><td>トレース項目。属性を付加する[attribute][/atteribute]命令の一つに、ファンネルライトという属性があります。この属性を利用することで、「定期的に値を監視して、書き換える項目」というのを作ることができます。これを簡潔に利用するときに、トレース項目を使用します。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>項目名:trace,ファンネルファイル
+</td></tr></table>
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>copy</td><td>コピー項目。他の項目のように、ユーザーが値を入力する形式ではなく、特定アドレスの値を別のアドレスにコピーしたいときに、この項目を使用します。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>項目名:copy,0x400000,0x500000,4
+</td></tr></table>
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>split</td><td>分割項目。読み書きを行うための項目ではなく、区切り線などを表示するための項目です。項目数が多く、紛らわしいときなどに、この項目を使用します。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>項目名:split,描画オプション,インデント,パラメータ1,パラメータ2,パラメータ3
+</td></tr></table>
+</td></tr>
+</TABLE>
+
+　これらの項目が存在しますが、ほとんどの読み書きは、calcとtoggleで事足ります(^-^;)もちろん他の項目を使うことで、より楽に、直感的に利用できることも多いと思いますので、色々挑戦してみてくださいねっ♪
+
+</TD></TR></TABLE><BR>
+<BR>
+
+
+<TABLE CLASS=titleBOX><TR><TD>コメント規則</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　ちょっとここで補足です。SSG中では、"<b>[</b>"からはじまる行があった場合、まずそれが命令かどうかを調べます。もし"["で始まっていなかったり、"[foo]"のように、命令として定義されていない文字列なら、コメントとみなしその行を読みとばします。<BR>
+　また、1バイト空白やタブ文字は無視されるので、
+<table CLASS=exaBOX><tr><td NOWRAP>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#C000C0">[subject]</font>項目名:dir
+</td></tr></table>
+上記のようにしても、項目として認識されます。（2バイト空白は無視されません）<BR>なお、命令はそれぞれ一行単位で書きます。当然、
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>項目名:calc,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;0x40000,0,100
+</td></tr></table>
+こういった書き方はできませんので、注意してください。
+</TD></TR></TABLE><BR>
+<BR>
+
+
+<TABLE CLASS=titleBOX><TR><TD>コラム：数値表記</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+SpoilerALでの数値の扱いは、10進数ならそのまま書き、16進数の場合は頭に <b>0x</b> を付けて表記します。
+<table CLASS=exaBOX><tr><td NOWRAP>
+999<BR>
+0x03E7<BR>
+0x3E7
+</td></tr></table>
+これらはすべて同じ値を示すということです。
+</TD></TR></TABLE><BR>
+<BR>
+
+<BR>
+<BR>
+<A HREF="00.htm">ねくすと　せくしょん⇒</A>
+<BR>
+<BR>
+<A HREF="../01/index.htm">≪せくしょん　ばっく</A>
+<P><BR></P>
+
+
+</body></html>

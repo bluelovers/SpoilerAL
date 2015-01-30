@@ -1,0 +1,136 @@
+<html>
+<head>
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=Shift_JIS">
+<META NAME="Author" CONTENT="あつ">
+<BASE TARGET="_self">
+<LINK REL="Next"     HREF="50.htm">
+<LINK REL="Previous" HREF="41.htm">
+<LINK REL="Parent"   HREF="index.htm">
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="../HowToSSG/style.css">
+<title>SpoilerAL Help:その他の機能3(サーチ補正)</title>
+</head>
+<body bgcolor="#e0e0e0" text="#000000" link="#0000FF" vlink="#4080FF">
+
+
+
+<br>
+<table border="3" bgcolor="#FFFFC0" cellspacing="5">
+<tr><td align="center" style="background-color:#004000; color:#FFFFFF; font-size:180%;">
+アドレス追撃、<b style="color:#FFD0D0">サーチ補正！</b>
+</td></tr>
+<tr><td>
+　このページでは、サーチ補正関連の説明を行います。
+<br>書き換えるべきアドレスが想定したものと違う場合、<font color="#FF0000">そのままの状態で書き換えを行っても、期待通りの結果が得られない</font>ことがあります。このようなときに、<b>現在分かっている値</b>や、あらかじめ指定された値などを基準に、書き換えるべき正しいアドレスを探すのが「サーチ補正」の役割です。
+</td></tr>
+</table>
+<br>
+
+<table border="3" bgcolor="#FFFFFF" cellspacing="5">
+<tr><td bgcolor="#0000FF"><font color="#FFFFFF"><b>アドレス補正</b></font></td></tr>
+
+<tr><td>
+<img src="images/4200.png" width="312" height="194" border="1" alt="サーチ補正の役割" align="left">
+　そもそも、「～補正」とは何なのでしょうか？　一言で言ってしまえば、それは<font color="#FF0000">「アドレス補正」</font>という機能のことです。<br>
+　左の図が、アドレス補正を必要とする場合のイメージです。<br>
+SpoilerALは、<b>体力</b>を書き換えようとアドレス<b><font color="#008000">0x40001</font></b>へアクセスしますが、実際は無関係の値が入っているため、期待外の結果になります。<br>
+そこで実際のメモリ内容に合うよう、アクセス先のアドレスに<font color="#0000FF">2を加算</font>すると、アドレス<b><font color="#008000">0x40003</font></b>へアクセスすることになり、期待通りの結果が得られます。<br>
+このとき、<font color="#0000FF">幾つ加算すればいいか</font>を求めるのが、「サーチ補正」などの<b>アドレス補正</b>機能なのです。<br><br>
+　このように、想定したアドレスと実際のアドレスが食い違うことは、現在のメモリ環境・OS環境では、容易に回避しきれない問題です。このため、アドレス補正、またそのための「サーチ」に関する知識は、最低限必要なものとなりつつあります。
+</td></tr>
+</table>
+
+<br>
+<table border="3" bgcolor="#FFFFFF" cellspacing="5">
+<tr><td bgcolor="#0000FF" colspan="2"><font color="#FFFFFF"><b>サーチウィンドウ</b></font></td></tr>
+
+<tr><td>
+<img src="images/4201.png" width="230" height="345" border="1" alt="サーチウィンドウ">
+</td>
+<td>
+　サーチ補正を必要とする項目を選んだとき、またはメニューの[表示(V)]→[サーチ補正(S)]で表示されるのが、左の<b>サーチウィンドウ</b>です。各部位について、軽く説明します。<br>
+<table CLASS=exaBOX><tr>
+<td nowrap><b>対象項目名</b></td><td>
+現在サーチ対象になっている項目の、項目名が表示されます。なお、サーチ補正指定のない項目を選択しても、この部分は更新されません。
+</td></tr></table>
+<table CLASS=exaBOX><tr>
+<td nowrap><b>進行状況</b></td><td>
+サーチ範囲と、現在のサーチ位置が表示される領域です。レイアウト的には
+<table border=0 bgcolor="#FFF0A0">
+<tr><td align="left">サーチ下端→　</td><td align="right">　←サーチ上端</td></tr>
+<tr><td align="center" colspan=2>現在位置</td></tr>
+<tr><td align="center" colspan=2>進行状況のゲージ表示</td></tr>
+</table>
+といった感じになります。ゲージは初期状態で緑色ですが、サーチ済みの部分は濃い青で塗られていきます。
+</td></tr></table>
+<table CLASS=exaBOX><tr>
+<td nowrap><b>ツールボタン</b></td><td>
+サーチを開始したり、サーチ範囲を変更したりするボタンが並びます。詳細は後述します。
+</td></tr></table>
+<table CLASS=exaBOX><tr>
+<td nowrap><b>該当済み補正値一覧</b></td><td>
+想定したアドレスと、実際のアドレスの差を<b><font color="#FF0000">補正値</font></b>と呼びます。値をサーチした結果、見つかったアドレスとその補正値を順に表示していくのがこの領域です。発見した補正値を適用するには、<font color="#0000FF">一覧上でダブルクリック</font>して下さい。なお初期状態でも一覧に登録されているように、<b>指定しない場合の補正値は「0」</b>になります。
+</td></tr></table>
+
+</td></tr>
+<tr><td colspan=2>
+<center style="background-color:#F0D0FF">ツールボタン</center>
+<hr>
+左から順に説明します。
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP><img src="images/4202.png" width="16" height="16" alt="サーチ開始">サーチ開始</td><td>　サーチを開始するボタンです。</td></tr>
+<tr><td CLASS=flameTD NOWRAP><img src="images/4203.png" width="16" height="16" alt="サーチ停止">サーチ停止</td><td>　サーチを停止するボタンです。</td></tr>
+<tr><td CLASS=flameTD NOWRAP><img src="images/4204.png" width="16" height="16" alt="スキップ">スキップ</td><td>　サーチ位置をスキップするボタンです。明らかに今サーチしている部分に、目的の値がないであろう時は、このボタンで指定量分サーチ位置を飛ばす事が出来ます。</td></tr>
+<tr><td CLASS=flameTD NOWRAP><img src="images/4205.png" width="16" height="16" alt="補正値の直接入力">補正値の直接入力</td><td>　補正値を直接入力するボタンです。入力した補正値は、順次一覧に追加されます。</td></tr>
+<tr><td CLASS=flameTD NOWRAP><img src="images/4206.png" width="16" height="16" alt="バイト列の直接変更">バイト列の直接変更</td><td>　サーチに用いるバイト列（値）を、変更するボタンです。SSGの書式（特にバイト列関連）に知識がない場合は、無理に使用しない方が無難です。</td></tr>
+<tr><td CLASS=flameTD NOWRAP><img src="images/4207.png" width="16" height="16" alt="値の再入力">値の再入力</td><td>　ダイアログ補正にのみ使用可能なボタンです。ダイアログ補正の場合、サーチに用いる値をユーザーが入力しますが、一旦決定した後で、また変更したいという場合があるかと思います。そんなときは、このボタンで再度入力画面を開く事が出来ます。値もアドレスも頻繁に移動する場合などは、特に有効な機能です。</td></tr>
+<tr><td CLASS=flameTD NOWRAP><img src="images/4208.png" width="16" height="16" alt="絞り込みサーチ">絞り込みサーチ</td><td>　ダイアログ補正にのみ使用可能なボタンです。「値の再入力」は、サーチに用いる値を変更し、<b>サーチし直す</b>場合に利用しますが、「絞り込みサーチ」ボタンは、<font color="#0000FF">補正値の候補が沢山ある場合</font>に、正しいと思われる<b>候補を絞り込む</b>ときに使用します。「値の再入力」のときと同様、再度入力画面が開きますので、<font color="#FF0000">ゲームを進めて前回とは違う値にしてから</font>、その値を入力してください。絞り込んだ結果は、即反映されます。</td></tr>
+<tr><td CLASS=flameTD NOWRAP><img src="images/4209.png" width="16" height="16" alt="サーチ範囲の変更">サーチ範囲の変更</td><td>　サーチに用いる範囲を変更するボタンです。サーチをかけても目的の値が該当しない場合、範囲を広げてみるとうまくいく場合があります。</td></tr>
+</table>
+
+</td></tr>
+</table>
+
+<br>
+<table border="3" bgcolor="#FFFFFF" cellspacing="5">
+<tr><td bgcolor="#0000FF"><font color="#FFFFFF"><b>一般的なサーチ手順</b></font></td></tr>
+<tr><td>
+　ほとんど説明するまでもありませんが、
+<OL TYPE=A>
+<LI><b>最初。</b></LI>
+	<OL>
+	<LI>サーチ開始ボタン(<img src="images/4202.png" width="16" height="16" alt="サーチ開始">)を押す。</LI>
+	<LI>該当するアドレスが見つかるまで待つ。（最後まで見つからなかった場合、Cへ。）</LI>
+	<LI>見つかったアドレス（補正値）を<b>ダブルクリック</b>して、項目が正常に書き換え可能かを調べる。</LI>
+	<LI>正常に書き換えられたなら、Bへ。期待外の動作なら、他のアドレスが該当するのを待つ（2へ戻る）。</LI>
+	<LI><font color="#FF0000"><b>ダイアログ補正の場合：</b></font>補正値候補が多い場合は、絞り込みサーチボタン(<img src="images/4208.png" width="16" height="16" alt="サーチ開始">)を押して、再度値を入力し、補正値候補を絞り込む。</LI>
+	</OL>
+<LI><b>目的のアドレスを発見できた場合。</b></LI>
+	<OL>
+	<LI>サーチ停止ボタン(<img src="images/4203.png" width="16" height="16" alt="サーチ停止">)を押す。</LI>
+	<LI>必要なら、補正値をメモしておく。</LI>
+	<LI>あとは通常時と同じように書き換えを行う。</LI>
+	</OL>
+<LI><b>最後まで目的のアドレスが見つからない場合。</b></LI>
+	<OL>
+	<LI>サーチ範囲を広げたり(<img src="images/4209.png" width="16" height="16" alt="サーチ範囲の変更">)、サーチを行う場面を変えて（ゲームなら、ステータス画面を開くなど）再度Aから試してみる。</LI>
+	<LI>考えられる限りの事を試してみたが見つからない場合は、サポート掲示板などに、「自分の環境(OS)」「対象プロセス(ゲーム等)の正式なタイトルやバージョン」「サーチを試してみた場面」「使用したSSGの、SSG作者名」などを含めて報告してみると、回答が得られるかもしれません。こればっかりはもう他力本願ですが…。（※<font color="#FF0000">間違ってもメーカーさん(ソフトハウス等)に問い合わせたりしてはいけません。</font>メモリ書き換えは自己責任で行うため、サポート対象外です。）</LI>
+	</OL>
+</OL>
+</td></tr>
+</table>
+<br>
+
+
+
+<br>
+<br>
+<a href="50.htm">次のページ（Ｑ＆Ａ）へ</a>
+<br>
+<a href="41.htm">前のページ（その他の機能2）へ</a>
+
+<p><br></p>
+<p><br></p>
+<p><br></p>
+
+</body>
+</html>

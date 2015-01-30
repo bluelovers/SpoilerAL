@@ -1,0 +1,69 @@
+<html><head>
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=Shift_JIS">
+<META NAME="Author" CONTENT="あつ">
+<BASE TARGET="_self">
+<LINK REL="Previous" HREF="40.htm">
+<LINK REL="Parent"   HREF="index.htm">
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="../HowToSSG/style.css">
+<title>SpoilerAL Help:Ｑ＆Ａ</title>
+</head><BODY>
+
+
+<TABLE CLASS=titleBOX><TR><TD>Q．SpoilerALを実行しようとすると、「BORLNDMM.DLLが見つかりません」等のメッセージが出る。</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+A．SpoilerALはBorlandC++Builder（以下、BCB）で作成されていますので、実行にはランタイムが必要となります。このエラーが出た場合は、ランタイムが入っていない、ということを指します。
+</TD></TR></TABLE><BR>
+<BR>
+
+<TABLE CLASS=titleBOX><TR><TD>Q．BCBのランタイムはどこにありますか？</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+A．Vector（ <a target="_blank" href="http://www.vector.co.jp/vpack/filearea/win95/util/runtime/index.html">http://www.vector.co.jp/vpack/filearea/win95/util/runtime/index.html</a> ）等で手に入れることが出来ます。BCBにもバージョンがありますので、注意してください。参考までに書くと、SpoilerAL ver3.4まではBCB4のランタイムを、SpoilerAL ver3.5以降には、BCB5のランタイムをご使用下さい。
+</TD></TR></TABLE><BR>
+<BR>
+
+<TABLE CLASS=titleBOX><TR><TD>Q．ランタイムの入れ方が分かりません。</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+A．ダウンロード（以下、DL）したファイルを解凍し、～.DLL や～.BPL や～.JPN といったファイルを、Windows/System フォルダーに入れます。WindowsがCドライブにインストールされているならば、C:\Windows\System\ ですね。<font color="#FF0000">フォルダごと入れないように</font>注意してください。また、上記VectorよりDLできる海人さんのランタイムであれば、～.inf というファイルを右クリックして「インストール」という項目を選ぶことでもインストールできます。
+</TD></TR></TABLE><BR>
+<BR>
+
+<TABLE CLASS=titleBOX><TR><TD>Q．起動したが、左右のボックスに何も表示されない。</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+A．SpoilerALは、それ単体では役に立ちません。各SSG作者さんが作られたSSGを、「SSGの場所」に指定したフォルダに（解凍して）入れてください。「SSGの場所」は、SpoilerALのメインウィンドウにて、メニューの「表示(V)→カスタマイズ(T)」から確認、変更することができます。なお、初回起動時は自動的に、「SpoilerAL.exeのあるフォルダにある」、SSGというフォルダになります。（ssg.txtというファイルの入っているフォルダですね）
+</TD></TR></TABLE><BR>
+<BR>
+
+<TABLE CLASS=titleBOX><TR><TD>Q．以前はタイトルが表示されたのに、表示されなくなった。</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+A．SSGを移動していませんか？「表示(V)→カスタマイズ(T)」で「SSGの場所」を確認してみてください。
+</TD></TR></TABLE><BR>
+<BR>
+
+<TABLE CLASS=titleBOX><TR><TD>Q．電卓項目の、現在の値が[?]のまま。</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+A．書き換えたいゲームやアプリケーションを起動していますか？SpoilerAL単体での改造はできません。
+</TD></TR></TABLE><BR>
+<BR>
+
+<TABLE CLASS=titleBOX><TR><TD>Q．書き込もうとすると、「Can't Read Memory!」や「Can't Write Memory!」と表示される。</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+A．期待した読み書きが行われなかったことを意味します。対象のゲームやアプリケーションのバージョンは、「SSG作者さんの使ったもの」と同じですか？　ゲームの場合、頻繁にバージョンアップされるものもありますので、注意してください。また、OSや積んでいるメモリー容量が違うことが原因となっている場合もあります。特に、Windows95/98で動作していたSSGがWindowsMeで動作しない、またその逆という症状があります。多少知識が必要ですが、サーチ補正などのアドレス補正機能を使うことで、対応できることもあります。
+</TD></TR></TABLE><BR>
+<BR>
+
+<TABLE CLASS=titleBOX><TR><TD>Q．実行すると最大化されるゲームを改造するには？</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+A．最も単純な方法は、「ALTキー押しながらTABキーを押す」です。これでアクティブなウィンドウを切り替えることが出来ますので、ゲームからSpoilerALへ切り替えて、書き換えを行います。
+</TD></TR></TABLE><BR>
+<BR>
+
+<TABLE CLASS=titleBOX><TR><TD>Q．「ALT＋TABキー」でも切り替わらないゲームを改造するには？</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+A．「値の固定」を使います。ゲームを起動する前にSpoilerALを予め起動し、書き換えたい電卓項目などを選択します。任意の値を入力し、「値の固定」チェックボックスをチェックします。ツリー上の項目が枠で囲まれていれば、その項目は一定時間毎に自動で固定した値に書き換えを行います。なお、更新周期はメニューの[メモリ・プロセス]→[設定]から変更できます。値の固定を使いがたい状況であれば、メニューの[表示(V)]→[極前面機能(G)]を使う手もあります。
+</TD></TR></TABLE><BR>
+<BR>
+
+
+
+
+</body></html>

@@ -1,0 +1,53 @@
+TABLE.flameBOX{
+	color: #0;
+	background-color: #FFFFFF;
+	border-color: #FF8000;
+	border-width: 2;
+	border-style: dotted;
+}
+TD.flameTD{
+	font-weight: bold;
+	background-color: #C0FFC0;
+	border-width: 1;
+	border-style: solid;
+}
+TD.exaTD{
+	background-color: #FFFFFF;
+	border-width: 1;
+	border-style: solid;
+	border-color: #8000FF;
+}
+
+TABLE.exaBOX{
+	color: #0;
+	background-color: #FFFFFF;
+	border-width: 3;
+	border-style: double;
+	border-color: #8080FF;
+	font-family: ÇlÇr ÉSÉVÉbÉN;
+}
+TABLE.titleBOX{
+	font-size: 250%;
+	font-weight: bold;
+	background-color: #3030FF;
+	background-image : URL("images/boxbg.jpg");
+	color: #FFFF00;
+	border-width: 3;
+	border-style: double;
+	border-color: #FF8080;
+	width: 100%;
+}
+TABLE.difficultBOX{
+	border-style: dashed;
+	border-width: 2px;
+	border-color: #669966;
+}
+TD.difficultLevel{
+	color: #FFFFFF; 
+	font-weight: bold;
+	background-color: #CD5C5C;
+}
+
+A:hover{ color: #FF0000; background: #A0FFA0;  text-decoration: none; font-weight: bold; }
+A:link{ color: #008000; text-decoration:none; }
+A:visited{ color: #008080; text-decoration:none; }

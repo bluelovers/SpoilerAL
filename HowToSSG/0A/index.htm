@@ -1,0 +1,300 @@
+<html><head>
+<title>HowToSSG:アドレス</title>
+<BASE TARGET="_self">
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../style.css">
+</head><BODY>
+
+
+
+<TABLE CLASS=titleBOX><TR><TD>アドレス</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　ストレートにいうと、読み書きする場所です。大抵は、頭に0xを付けた16進数もしくは10進数で書きますが、特殊な演算を必要とする場合、「アドレスコーディング」と呼ばれる計算式で書くことも出来ます。
+<table CLASS=exaBOX><tr><td NOWRAP>
+0x400000<BR>
+4194304<BR>
+_ 0x400 * 52 +10<BR>
+_ 0x400 * (52 +10)<BR>
+_ [: 0x400000 :]<BR>
+_ [_ [: 0x400000 :] _]
+</td></tr></table>
+　上から2行はただの数値ですので、改めて説明する必要はないと思います。どちらもアドレスは0x40000になります。
+
+<table class="difficultBOX">
+<tr><td class="difficultLevel">難解度「AA」</td></tr>
+<tr><td>
+
+　問題はその下、アンダーバー(_)ではじまる「アドレスコーディング」を用いた計算式です。アドレスコーディングでは、数値（オペランド）の他に演算子を含むことができ、すべての演算子を処理した結果（必ず数値になる）が、実際に読み書きするアドレスになります。
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>演算子</td><td align="center">※　説明　※</td></tr>
+<tr><td CLASS=flameTD NOWRAP>+</td><td>
+加算演算子。算術演算子の一つ。前後2つのオペランドを加算します。<BR>
+<table CLASS=exaBOX align="left"><tr><td NOWRAP>
+_ 0x400+0x20
+</td></tr></table>
+※この結果は0x0420 です。
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>-</td><td>
+減算演算子。算術演算子の一つ。前のオペランドから後ろのオペランドを減算します。<BR>
+<table CLASS=exaBOX align="left"><tr><td NOWRAP>
+_ 0x400-0x20
+</td></tr></table>
+※この結果は0x03E0 です。
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>*</td><td>
+乗算演算子。算術演算子の一つ。前後2つのオペランドを乗算（掛け合わせる）します。<BR>
+<table CLASS=exaBOX align="left"><tr><td NOWRAP>
+_ 0x400*0x20
+</td></tr></table>
+※この結果は0x8000 です。
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>/</td><td>
+除算演算子。算術演算子の一つ。前のオペランドを後ろのオペランドで除算した（割った）商を返します。<BR>
+<table CLASS=exaBOX align="left"><tr><td NOWRAP>
+_ 0x400/0x20
+</td></tr></table>
+※この結果は0x20 です。
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>%</td><td>
+除算演算子。算術演算子の一つ。前のオペランドを後ろのオペランドで除算した（割った）剰余（余り）を返します。<BR>
+<table CLASS=exaBOX align="left"><tr><td NOWRAP>
+_ 0x400%0x20
+</td></tr></table>
+※この結果は0 です。
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>&amp;</td><td>
+ビットごとのAND演算子。算術演算子の一つ。前後2つのオペランドでビットごとに論理積を取ります。<BR>
+<table CLASS=exaBOX align="left"><tr><td NOWRAP>
+_ 0x400&amp;0x20
+</td></tr></table>
+※この結果は0 です。
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>^</td><td>
+ビットごとのXOR演算子。算術演算子の一つ。前後2つのオペランドでビットごとに排他論理和を取ります。<BR>
+<table CLASS=exaBOX align="left"><tr><td NOWRAP>
+_ 0x421^0x20
+</td></tr></table>
+※この結果は0x401 です。
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>|</td><td>
+ビットごとのOR演算子。算術演算子の一つ。前後2つのオペランドでビットごとに論理和を取ります。<BR>
+<table CLASS=exaBOX align="left"><tr><td NOWRAP>
+_ 0x400|0x20
+</td></tr></table>
+※この結果は0x420 です。
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>~</td><td>
+ビットごとのNOT演算子。拡張された算術演算子の一つ。後ろのオペランドに0でないビットが存在するとき、前のオペランドの対応するビットを反転（論理否定）させます。<BR>
+<table CLASS=exaBOX align="left"><tr><td NOWRAP>
+_ 0x430~0x20
+</td></tr></table>
+※この結果は0x410 です。<br>（0x30は2進数で11 0000。0x20は2進数で10 0000。0x10は2進数で01 0000。）
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>&lt;</td><td>
+関係演算子の一つ。前のオペランドが後ろのオペランドより小さいなら、1 を返し、それ以外なら0 を返します。<BR>
+<table CLASS=exaBOX align="left"><tr><td NOWRAP>
+_ 0x400&lt;0x20
+</td></tr></table>
+※この結果は0 です。
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>&lt;=</td><td>
+関係演算子の一つ。前のオペランドが後ろのオペランド以下なら、1 を返し、それ以外なら0 を返します。<BR>
+<table CLASS=exaBOX align="left"><tr><td NOWRAP>
+_ 0x400&lt;=0x20
+</td></tr></table>
+※この結果は0 です。
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>&gt;</td><td>
+関係演算子の一つ。前のオペランドが後ろのオペランドより大きいなら、1 を返し、それ以外なら0 を返します。<BR>
+<table CLASS=exaBOX align="left"><tr><td NOWRAP>
+_ 0x400&gt;0x20
+</td></tr></table>
+※この結果は1 です。
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>&gt;=</td><td>
+関係演算子の一つ。前のオペランドが後ろのオペランド以上なら、1 を返し、それ以外なら0 を返します。<BR>
+<table CLASS=exaBOX align="left"><tr><td NOWRAP>
+_ 0x400&gt;=0x20
+</td></tr></table>
+※この結果は1 です。
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>==</td><td>
+等値演算子の一つ。前後2つのオペランドが等しいときは1 を、そうでなければ0 を返します。<BR>
+<table CLASS=exaBOX align="left"><tr><td NOWRAP>
+_ 0x400==0x20
+</td></tr></table>
+※この結果は0 です。
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>!=</td><td>
+等値演算子の一つ。前後2つのオペランドが等しくなければ1 を、等しければ0 を返します。<BR>
+<table CLASS=exaBOX align="left"><tr><td NOWRAP>
+_ 0x400!=0x20
+</td></tr></table>
+※この結果は1 です。
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>&amp;&amp;</td><td>
+論理AND演算子。論理演算子の一つ。前後のオペランドが 0 以外の値のとき、1 を返します。どちらかのオペランドが 0 のときは、0 を返します。なお前のオペランドが 0 のときは、後ろのオペランドを評価しません。<BR>
+<table CLASS=exaBOX align="left"><tr><td NOWRAP>
+_ 0x400&amp;&amp;0x20
+</td></tr></table>
+※この結果は1 です。
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>||</td><td>
+論理OR演算子。論理演算子の一つ。前後のオペランドが 0 のとき、0 を返します。どちらかのオペランドが 0 以外のときは、1 を返します。前のオペランドが 0 以外のときは、後ろのオペランドを評価しません。<BR>
+<table CLASS=exaBOX align="left"><tr><td NOWRAP>
+_ 0x400||0x20
+</td></tr></table>
+※この結果は1 です。
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>[: :]</td><td>
+<table class="difficultBOX">
+<tr><td class="difficultLevel">難解度「AA+」</td></tr>
+<tr><td>
+ポインタ変換演算子。括ったオペランドをポインタと見なし、そのアドレスにある4バイトの数値を返します。<BR>
+<table CLASS=exaBOX><tr><td NOWRAP>
+_ [: 0x400000 :]
+</td></tr></table>
+※この結果は、アドレス0x400000 にある4バイトの数値です。<BR>
+<BR>
+なお、所得を4バイト未満にしたい場合は、閉じ括りにバイト数を挟むことで可能になります。
+<table CLASS=exaBOX><tr><td NOWRAP>
+_ [: 0x400000 :3]<BR>
+_ [: 0x400000 :2]<BR>
+_ [: 0x400000 :1]
+</td></tr></table>
+</td></tr>
+</table>
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>[_ _]</td><td>
+アドレス補正演算子。括ったオペランドに、[adjustment]によるアドレス補正をかけた値を返します。<BR>
+<table CLASS=exaBOX><tr><td NOWRAP>
+_ [_ 0x400000 _]
+</td></tr></table>
+※この結果は、0x400000 にアドレス補正をかけた数値です。アドレス補正属性がないなら、0x400000 がそのまま使われます。
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>[. .]</td><td>
+オフセット演算子。括ったオペランドに、<font color="#C000C0">[<font color="#00C000">replace</font>]</font>によるオフセット値を加算した値を返します。<BR>
+<table CLASS=exaBOX><tr><td NOWRAP>
+_ [. 0x400000 .]
+</td></tr></table>
+※この結果は、0x400000 に<font color="#C000C0">[<font color="#00C000">replace</font>]</font>のオフセット値を加算した数値です。オフセット値がないなら、0x400000 がそのまま使われます。
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>[~ ~]</td><td>
+エンディアン反転演算子。括ったオペランドに、4バイト単位でエンディアン反転を行った値を返します。<BR>
+<table CLASS=exaBOX><tr><td NOWRAP>
+_ [~ 0xFF00AA55 ~]
+</td></tr></table>
+※この結果は、0x55AA00FF です。<BR>
+<BR>
+なお、反転するバイト範囲を4バイト未満にしたい場合は、閉じ括りにバイト数を挟むことで可能になります。
+<table CLASS=exaBOX><tr><td NOWRAP>
+_ [~ 0x400000 ~3]<BR>
+_ [~ 0x4000 ~2]
+</td></tr></table>
+※バイト単位での反転なので、1バイト用はありません。
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>MName::</td><td>
+モジュールアドレス演算子。次に続く文字オペランドをモジュール名に持つモジュールの、開始アドレスを返します。<BR>
+<table CLASS=exaBOX><tr><td NOWRAP>
+_ MName::GDI32.dll
+</td></tr></table>
+※この結果は、対象プロセスにおけるモジュール「GDI32.dll」の開始アドレスです。<BR>
+<BR>
+なお、オペランドの連続は許されていないので、「MName::GDI32.dll 0x400」といった書き方はあり得ませんが、読みにくいようなら、()による表記で対応しても良いでしょう。<table CLASS=exaBOX><tr><td NOWRAP>
+_ (MName::GDI32.dll) + 0x400<BR>
+_ 200 - (MName::KERNEL32.dll) + 0x20
+</td></tr></table>
+※モジュール名は、大文字小文字を区別しません。
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>HNumber::</td><td>
+ヒープアドレス演算子。次に続く数値オペランド番目のヒープの、開始アドレスを返します。<BR>
+<table CLASS=exaBOX><tr><td NOWRAP>
+_ HNumber::1
+</td></tr></table>
+※この結果は、対象プロセスにおける1番目のヒープ(Heap1)の開始アドレスです。<BR>
+※ヒープ番号は、1から始まります。
+<tr><td CLASS=flameTD NOWRAP>$変数名</td><td>
+擬似変数。演算子ではなくオペランドの一種です。次に説明する変数代入と組み合わせて使います。「変数名」の指す変数の値を返します。<BR>
+<table CLASS=exaBOX><tr><td NOWRAP>
+_ $tmp + 2
+</td></tr></table>
+※変数「tmp」が一度も代入されていないため、$tmpは0として扱われ、この結果は2になります。
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>=> 変数名</td><td>
+変数代入演算子。「=>」に続く変数名の変数を定義し、前のオペランドの値を代入します。ただし、$Valは予約語変数のため、ここでは使用できません。<BR>
+<table CLASS=exaBOX><tr><td NOWRAP>
+_ 0x400 => tmp; $tmp+0x10;
+</td></tr></table>
+※この結果は、0x410 です。<BR>
+なお、例中の「<b>;</b>」については、次節「アドレスコーディングの分割」を参照してください。
+</td></tr>
+
+</td></tr>
+</TABLE>
+各演算子の優先順位は、高い順に並べると
+<table CLASS=exaBOX><tr><td NOWRAP>
+MName::, HNumber::<BR>
+*, /, %<BR>
++, -<BR>
+=><BR>
+&lt;, &gt;, &lt;=, &gt;=<BR>
+==, !=<BR>
+&amp, ^, |<BR>
+&amp;&amp;, ||<BR>
+[: :], [~ ~], [. .], [_ _]<BR>
+</td></tr></table>
+です。同順位の演算子は、前にある方から処理されます。なお、括弧()を使って、演算の順位を変えることも出来ます。<BR>
+　多くの場合アドレスコーディングを使うことはありませんが、一部特殊な変換を必要とするプロセスの場合、その威力を発揮します。必要になってから学んでもいいかもしれません(笑)
+</td></tr>
+</table>
+<BR>
+　※一括系等でアドレスを羅列したリストの場合、ちょっと注意が必要です。項目自体のアドレスには[replace]のオフセット加算やアドレス補正が適用されますが、リスト内のアドレスは、数値変換のみ行われます。リスト内のアドレスにも変換を行う場合は、アドレスコーディングを使って明示してください。<BR>
+<BR>
+なお、主にアドレス補正属性等で使用する手ですが、以下のように対象プロセスのヒープやモジュールの開始アドレスを示す指定法もあります。
+<table CLASS=exaBOX><tr><td NOWRAP>
+heap1<BR>
+module1
+</td></tr></table>
+heap<b>N</b>は、<b>N</b>番目のヒープの開始アドレスを指します。<BR>
+module<b>N</b>は、<b>N</b>番目のモジュールの開始アドレスを指します。<BR>
+ともに、添字Nは1から始まります。
+</TD></TR></TABLE><BR>
+<BR>
+
+
+<table class="difficultBOX">
+<tr><td class="difficultLevel">難解度「AA+」</td></tr>
+<tr><td>
+<TABLE CLASS=titleBOX><TR><TD>アドレスコーディングの分割</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　変数代入演算子の説明で使用していますが、アドレスコーディングはセミコロン(<b>;</b>)単位で分割することが出来ます。この場合、最後の処理結果が採用されるわけですが、今のところ変数代入演算子を使わない限り、利用価値はないと思われます。
+<hr>
+　もうひとつ、アドレスコーディングは'_'から始まると書きましたが、@から始める記述法もあります。この場合、別ファイルにアドレスコーディングを記述できます。書式は
+<table CLASS=exaBOX><tr><td NOWRAP>
+@チェインファイル名
+</td></tr></table>
+となります。（ファイル指定の詳細は、<A href="../0A/01.htm">《C-ファイル指定》</A>を参照。）<br>
+　このようにして呼び出されるチェインファイル内には、複数行に渡ってアドレスコーディングを記述できます。（最初に'_'は不要）<br>
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>体力:calc,@チェインファイル,0,99<BR>
+<HR><center style="background-color:#C0C0FF">チェインファイル.CHN</center>
+[:0x400000:] + [:0x400010:] => フラグ;<BR>
+[: $フラグ :] + $フラグ;
+</td></tr></table>
+　アドレスコーディング部分が長くなりすぎる場合などに利用すると、分かりやすく記述できるでしょう。
+</TD></TR></TABLE>
+</td></tr>
+</table>
+<BR>
+<BR>
+
+
+<BR>
+<BR>
+<A HREF="00.htm">ねくすと　せくしょん⇒</A>
+<BR>
+<BR>
+<A HREF="../04/02.htm">≪せくしょん　ばっく</A>
+<P><BR></P>
+
+
+</body></html>

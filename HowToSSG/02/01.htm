@@ -1,0 +1,112 @@
+<html><head>
+<title>HowToSSG:[subject]calc/toggle</title>
+<BASE TARGET="_self">
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../style.css">
+</head><BODY>
+
+
+<TABLE CLASS=titleBOX><TR><TD>電卓項目</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　体力や所持金など、適当な数値を入力したい場合に、この項目を使います。書式は
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>項目名: calc, アドレス, 最小値, 最大値, 符号の有無, エンディアン
+</td></tr></table>
+です。順に説明していきますので、付いてきてくださいよーっ！
+
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>アドレス</td><td>読み書きする対象のアドレスです。詳しいアドレスの書き方は、<A HREF="../0A/index.htm">《A-アドレス》</a>を参照。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>最小値</td><td>入力できる値の最小値を書きます。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>最大値</td><td>入力できる値の最大値を書きます。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>符号の有無</td><td>値が、負の値(-)になるのであれば、 <b>signed</b> と書き、常に正の値であれば、 <b>unsigned</b> と書きます。省略した場合、「signed」になります。<BR>※読み書きするバイト数が同じでも、符号の有無によって、扱う数値の範囲が変わってきます。
+<table border=1 >
+<tr><td></td><td>1バイト</td><td>2バイト</td><td>4バイト</td></tr>
+<tr><td>signed</td><td>-128 ～ +127</td><td>-32,768 ～ +32,767</td><td>-2,147,483,648 ～ +2,147,483,647</td></tr>
+<tr><td>unsigned</td><td>0 ～ 255</td><td>0 ～ 65,535</td><td>0 ～ 4,294,967,295</td></tr>
+</table></td></tr>
+<tr><td CLASS=flameTD NOWRAP>エンディアン</td><td>
+
+<table class="difficultBOX">
+<tr><td class="difficultLevel">難解度「A+」</td></tr>
+<tr><td>
+　10進数の999を16進数で表すと、「03E7」です。2進数であらわすと「0000011 11100111」となり、大きい桁のバイトが左側に来ています。この状態をビッグエンディアンと呼びます。しかしWindowsのメモリ上では、この配置がバイト単位で逆（リトルエンディアン）になります。2進数で「11100111 00000011」、16進数で「E703」になるのです。<BR>
+　このエンディアン変換は、通常自動で行われるので意識する必要はありませんが、中には手動でこのエンディアンをビッグエンディアンに反転させているソフトもあります。そういった場合、このオプションに <b>big_e</b> を指定します。通常は、省略したときに適用される <b>little_e</b> で構いません。
+</td></tr>
+</table>
+
+</td></tr>
+
+</td></tr>
+</table>
+　項目名は、"/"区切りで表示先を分けることができます。電卓項目の場合、以下の様になります。（何番目の区切りがどの表示にあたるかは項目によります）<BR>
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>項目名</td><td>ツリー表示される文字列です。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>現在値前部補足文字</td><td>現在値の前に置かれる補足文字です。省略した場合、項目名が使われます。なお、アンダーバー(_)を指定すると何も表示しません。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>値の固定名</td><td>項目のロックを切り替えるチェックボックスに表示する文字列です。省略した場合、「値の固定」になります。なお、アンダーバー(_)を指定すると、値の固定をできなくします。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>現在値後部補足文字</td><td>現在値の後ろに置かれる補足文字です。</td></tr>
+</td></tr></table>
+補足文字がちょっと分かりにくいかと思いますが、電卓項目での現在値の表示は
+<table CLASS=exaBOX><tr><td NOWRAP>
+現在値前部補足文字 <b>[</b> 現在値 <b>]</b> 現在値後部補足文字
+</td></tr></table>
+となることを考えれば、なんとなくつかめるかと思います。<BR>
+<BR>
+
+　まとめとして、いくつかのパターンで電卓項目を書いておきますね。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>体力:calc,0x400000,0,100<BR>
+<font color="#C000C0">[subject]</font>気温:calc,0x400000,-273,9999<BR>
+<font color="#C000C0">[subject]</font>資本金:calc,0x400000,0,0xFFFFFFFF,unsigned<BR>
+<font color="#C000C0">[subject]</font>機数/残り//機:calc,0x400000,0,10<BR>
+</td></tr></table>
+さぁ、電卓項目を使えれば、もう大抵の書き換えができると思いますよっ♪早々とSSGを書いてみるのもいいかもっ。
+</TD></TR></TABLE><BR>
+<BR>
+
+
+<TABLE CLASS=titleBOX><TR><TD>トグル項目</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　CGを[見た/見ていない]や、アイテムを[持っている/持っていない]など、ON/OFFで表現できる場合に、この項目を使います。書式は
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>項目名: toggle, アドレス, ONのバイト列, OFFのバイト列<BR>
+<font color="#C000C0">[subject]</font>項目名: toggle, 開始アドレス, 終了アドレス-ONのバイト列, OFFのバイト列
+</td></tr></table>
+です。書式が二種類ありますが、ちょこっと変わるだけです。
+
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>アドレス</td><td>読み書きする対象のアドレスです。詳しいアドレスの書き方は、<A HREF="../0A/index.htm">《A-アドレス》</a>を参照。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>ONのバイト列</td><td>ONを選択したときに、書き込まれるバイト列です。バイト列の詳細は、<A HREF="../0A/00.htm">《B-バイト列》</a>を参照。また、現在値がONかOFFかの判定も、この「ONのバイト列」が基準になります。（OFFのバイト列と一致しなくても、ONのバイト列でなければ「OFF」とする）</td></tr>
+<tr><td CLASS=flameTD NOWRAP>OFFのバイト列</td><td>OFFを選択したときに、書き込まれるバイト列です。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>開始アドレス</td><td>繰り返し処理を行うときに便宜的にこう呼ぶだけで、「アドレス」と同じものです。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>終了アドレス</td><td>「終了アドレス-ONのバイト列」という書き方をすると、「開始アドレス～終了アドレス」の間を、ON/OFF値を繰り返して埋めるという、「繰り返し処理」を行うことができます。このとき、開始アドレスから書き込みが開始されますが、<FONT COLOR="#FF0000">終了アドレスまで書き込む</FONT>点に注意して下さい。
+</td></tr>
+
+</td></tr>
+</table>
+　項目名は、"/"区切りで表示先を分けることができます。<BR>
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>項目名</td><td>ツリー表示される文字列です。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>値の固定名</td><td>項目のロックを切り替えるチェックボックスに表示する文字列です。省略した場合、「値の固定」になります。なお、アンダーバー(_)を指定すると、値の固定をできなくします。</td></tr>
+</td></tr></table>
+<BR>
+
+　まとめとして、いくつかのパターンでトグル項目を書いておきますね。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>ひのきの棒:toggle,0x400000,01,00<BR>
+<font color="#C000C0">[subject]</font>棒4種:toggle,0x400000,0x400004-01,00<BR>
+<font color="#C000C0">[subject]</font>棒/常に持つ:calc,0x400000,01,00<BR>
+</td></tr></table>
+トグル項目で使う「バイト列」は、結構色々な使い方があります。応用次第で大抵の書き換えはできますよ～！
+</TD></TR></TABLE><BR>
+<BR>
+
+
+<BR>
+<BR>
+<A HREF="02.htm">ねくすと　せくしょん⇒</A>
+<BR>
+<BR>
+<A HREF="00.htm">≪せくしょん　ばっく</A>
+<P><BR></P>
+
+
+</body></html>

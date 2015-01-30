@@ -1,0 +1,103 @@
+<html><head>
+<title>HowToSSG:識別情報</title>
+<BASE TARGET="_self">
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../style.css">
+</head><BODY>
+
+
+<TABLE CLASS=titleBOX><TR><TD>識別情報</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　基本となる識別情報は全部で５種類ありますが、出来る限りすべて記述するようにしてください。<BR>
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>[title]</td><td>ゲームのタイトルなどを書きます。
+<table CLASS=exaBOX><tr><td NOWRAP>
+[title]サンプルゲーム
+</td></tr></table>
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>[creator]</td><td>SSGを書いた人の名前を書きます。
+<table CLASS=exaBOX><tr><td NOWRAP>
+[creator]あつ
+</td></tr></table>
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>[maker]</td><td>改造対象がゲームなら、対象とするゲームを作ったソフトハウス（メーカー）を書きます。
+<table CLASS=exaBOX><tr><td NOWRAP>
+[maker]W'C'S
+</td></tr></table>
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>[process]</td><td>対象のプロセス名を書きます。大文字小文字を区別しませんが、大抵のプロセス名は大文字表記のようです。なお、識別情報の中では[process]のみ、複数書いて構いません。先に書かれているものから、優先して検索します。<br>
+<table class="difficultBOX">
+<tr><td class="difficultLevel">難解度「A+」</td></tr>
+<tr><td>
+　また、プロセス名はワイルドカードにも対応しています。「?」ならば任意の一文字を指し、「*」ならば0個以上の任意の文字を指します。仮に「A?B.EXE」と指定した場合、「AAB.EXE」や「A3B.EXE」などにまとめて対応できます。
+</td></tr>
+</table>
+<table CLASS=exaBOX><tr><td NOWRAP>
+[process]SAMPLE.EXE
+</td></tr></table>
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>[note]<BR>[/note]</td><td>[note]～[/note]で囲んだ部分に、注釈を書きます。[note]の後ろに「<b>wordwrap</b>」と書くと、自動で折り返し表示します。
+<table CLASS=exaBOX><tr><td>
+[note]wordwrap<BR>
+＜サーチ環境＞<BR>
+OS:Win98SE<BR>
+ゲームver:1.02<BR>
+ステータス画面に入ってから、書き換えを行ってください。<BR>
+[/note]
+</td></tr></table>
+</td></tr>
+</TABLE>
+
+　これらの識別情報を記述することで、タイトルセレクト時に一覧から選択することが出来るようになります。ここまで理解できたなら、読み書きを行わないとはいえ、選択・表示できるスクリプトは書けるはずです♪<BR>
+　まとめとして例を示しますので、実際に表示できるか実践してみてくださいっ！
+<table CLASS=exaBOX><tr><td>
+[script]<BR>
+[title]サンプルゲーム<BR>
+[creator]あつ<BR>
+[maker]W'C'S<BR>
+[process]SAMPLE.EXE<BR>
+[note]wordwrap<BR>
+＜サーチ環境＞<BR>
+OS:Win98SE<BR>
+ゲームver:1.02<BR>
+ステータス画面に入ってから、書き換えを行ってください。<BR>
+[/note]<BR>
+[/script]
+</td></tr></table>
+
+</TD></TR></TABLE><BR>
+<BR>
+
+
+<table class="difficultBOX">
+<tr><td class="difficultLevel">難解度「A」</td></tr>
+<tr><td>
+
+<TABLE CLASS=titleBOX><TR><TD>自由定義　識別情報</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　前述の識別情報は、基本となる識別情報です。が、識別情報そのものは、実際のところ自由に定義できます。<BR>
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>[distinction]</td><td>後に続く<font color="#0000FF">「<b>識別名</b>=<b>値</b>」</font>を、識別情報として登録します。<BR>
+<table CLASS=exaBOX><tr><td NOWRAP>
+[distinction]発売日=2002/12/25
+</td></tr></table>
+　もちろん基本的な識別情報ではないため、他のタイトルでも定義されているとは限りませんが、仲間内で申し合わせて定義することで、ソート順などを自由に拡張することが出来るでしょう。なお、ソート基準はあくまで「値のアイウエオ順」となりますので注意。
+</TD></TR></TABLE>
+</td></tr></table>
+
+</td></tr>
+</table>
+
+<BR>
+<BR>
+
+
+<BR>
+<BR>
+<A HREF="../02/index.htm">ねくすと　せくしょん⇒</A>
+<BR>
+<BR>
+<A HREF="../00/index.htm">≪せくしょん　ばっく</A>
+<P><BR></P>
+
+
+</body></html>

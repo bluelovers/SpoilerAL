@@ -1,0 +1,117 @@
+<html>
+
+<head>
+<title>How To CLD!</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META NAME="author" CONTENT="あつ">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#4080FF">
+
+<center>
+<table cellpadding=5 border=1>
+<tr><td align="center" bgcolor="#0000FF"><i><font color="#FFFFFF" size=5>
+★How To CLD!★</i></font><hr><font size=3 color="#FFFFFF">みんなで作ろっ</font><hr><font size=5 color="#FFFFFF">電卓定義ファイル～
+</font></td></tr>
+</table></center>
+<br><hr><br>
+
+さて皆さんに質問です。<br>
+これから作ろうとしている電卓ですが、電卓として機能するためには、まず何が必要でしょうか？
+<br><br>
+そうです。<font color="#FF0000">ボタン</font>です。
+<br>数値を入力できないと困りますから、まずは<b>1</b>とか<b>6</b>とか入力するための<font color="#FF0000">ボタン</font>が必要です。
+<br>それから、入力した値と、現在の値を表示する<font color="#006000">ボックス</font>がいりますね。
+<br>
+<br>
+電卓定義ファイル(CLD)には、これらの<font color="#FF0000">ボタン</font>と<font color="#006000">ボックス</font>の位置や大きさを記述すればいいのです。
+<br>
+<table cellpadding=0 border=0>
+<tr><td>
+右の電卓画像を見てください。
+<br>ポコポコと<font color="#FF0000">ボタン</font>が並んでますね？
+<br>が、これはあくまで「画像」としてすでに描かれている物なので、
+実行中に<font color="#FF0000">ボタン</font>をくっつけたわけではありませんし、そういう機能はありません(^^;)
+<br>言い換えれば、<font color="#FF0000">ボタン</font>に見えるような感じで、<b>あらかじめ画像を作っておく</b>必要があるのです。
+<br>（もちろん、必ずボタンっぽくしろ、と言うわけではありません。好きに作っていいのです）
+<br><br>
+それから上部の<font color="#006000">ボックス</font>ですが、これを描く必要はありません。
+<br><font color="#FF0000">ボタン</font>と違い、これは実行時に上から貼り付けます。
+
+</td><td><img src="images/00.png" width="196" height="200" border="0" alt="電卓サンプル">
+</td></tr>
+</table>
+<br>
+
+<hr>
+
+<table cellpadding="0" border="0" width="100%">
+<tr><td>
+右の拡大した<font color="#FF0000">ボタン</font>を見てください。
+<br>Aの<font color="#FF0000">ボタン</font>がへこんでいるのが分かるでしょうか。
+<br>先ほど<b>「あらかじめ画像を作っておく」</b>と書きましたが、実は2枚描く必要があるのです。
+<br><b>「押す前の画像」</b>と<b>「押したときの画像」</b>です。
+<br>
+<br>察しのいい方は気づかれたことでしょう。
+<br>右の状態は、0やBの<font color="#FF0000">ボタン</font>が<b>「押す前の画像」</b>で、Aの<font color="#FF0000">ボタン</font>が<b>「押したときの画像」</b>になっているのです。
+</td><td align="right"><img src="images/01.png" width="128" height="96" border="0" alt="ボタンサンプル">
+</td></tr>
+</table>
+
+<br>ちょっと難しいこと言いますから、理解できるまで何度か読み返してください。
+<br>
+<table border="1" cellpadding="3"><tr><td bgcolor="#0000FF">
+<font color="#FFFF00">0ボタンの範囲内でクリックしたとき、0ボタンの画像を「押す前の画像」から、「押したときの画像」に切り替える</font>
+</td></tr></table>
+この処理を、各ボタンに対し、行っているのです。
+<br>ただし、例外として16進/10進<font color="#FF0000">ボタン</font>は、<b>16進が「押す前の画像」、10進が「押したときの画像」</b>に割り当てられます。
+
+<br><br>
+では<font color="#FF0000">ボタン</font>や<font color="#006000">ボックス</font>の範囲、つまり<b>位置や大きさ</b>は、どのように書けばよいのでしょうか。
+<br>
+
+<hr>
+
+<table cellpadding="0" border="0" width="100%">
+<tr><td>
+さらに拡大した<font color="#FF0000">ボタン</font>です。
+<br><font color="#FF0000">ボタン</font>の左上隅と右下隅に、赤い線と黄色の点が見えるでしょうか？
+<br>この黄色の点こそが、CLDに記述すべき<b>座標</b>なのです。
+<br>じっくり考えてください。
+<br><font color="#FF0000">ボタン</font>の左上は、電卓全体でいうと、どの位置にあるのか。また<font color="#FF0000">ボタン</font>の右下は、電卓全体で言うと、どの位置にあるのか。
+<br>それが分かれば、<font color="#FF0000">ボタン</font>の<b>位置や大きさ</b>、つまり<b>ボタンの範囲</b>が分かるのです。
+</td><td align="right"><img src="images/02.png" width="144" height="124" border="0" alt="ボタンサンプル2">
+</td></tr>
+</table>
+<br>
+結論を言います。これを理解できなければ一歩も進みませんので、頑張って理解してください。
+<br>
+<table border="1" cellpadding="3"><tr><td bgcolor="#0000FF">
+<font color="#FFFF00">CLDには、ボタンの左上隅のX,Y座標と、ボタンの右下隅のX,Y座標を記述する。</font>
+</td></tr></table>
+<br>理解できましたか？実際に書くときには、「ボタンの左上隅のX,Y,ボタンの右下隅のX,Y」の様に書きます。ただし、左上隅のX,Y座標に指定した点は含みますが、右下隅のX,Y座標に指定した点は含みません。
+<br>上のデフォルト電卓でいうAボタンの場合、
+<br><b>5,171,34,195</b>
+<br>と書くことになります。（X34,Y195の点は含みません）
+<br><br>
+今説明した<b>座標の書き方</b>、これが分かればもう大丈夫です。
+<br>あとは容易に理解できるでしょう。
+<br>さ、次のステップ（というか最終ステップ）に進みましょう！
+
+<br><hr>
+<br><center>
+ver2.9以前と以降では、CLDの書き方がちょっと変わります。
+使用する書式を選んでくださいなっ♪
+<br><br>
+<table border=2 cellpadding=5><tr><td>
+<a href="calc_old.htm">ver2.9以前の書式を使用する（旧verのSpoilerALでも使用可能）</a>
+</td></tr>
+<tr><td>
+<a href="calc_new.htm">ver3.0以降の書式を使用する（旧verのSpoilerALでは使用不可だが、こちらを推奨）</a>
+</td></tr>
+</table>
+</center>
+
+<br><br><br><br>
+</body>
+</html>

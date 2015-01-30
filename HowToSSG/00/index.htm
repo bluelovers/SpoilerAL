@@ -1,0 +1,67 @@
+<html><head>
+<title>HowToSSG:[script]</title>
+<BASE TARGET="_self">
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../style.css">
+</head><BODY>
+
+
+<TABLE CLASS=titleBOX><TR><TD>スクリプト</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　SSGとは、その名の示すとおり「Scripts Group（スクリプトの集まり）」です。このスクリプトをSSGに記述することで、SpoilerALに様々な動作をさせることが出来ます。<BR>
+　SSGファイルでは、<b>[script]</b>から<b>[/script]</b>までを一つのスクリプトとして認識します。
+<table CLASS=exaBOX><tr><td>
+[script]<BR>
+スクリプトの中身を記述<BR>
+[/script]
+</font></td></tr></table>
+　こんな感じです。SSGファイルには、こういったスクリプトを幾つでも記述することができます。ちなみに、「ゲーム1.SSG、ゲーム2.SSG」のようにスクリプトごとにSSGファイルを作るよりも、ある程度(50KB前後)までは<font color="#0000FF">一つのSSGにまとめた方が良いです。</font><BR>
+　ファイルの構成としては、以下のようになります。
+<table CLASS=exaBOX><tr><td>
+SSG for SpoilerAL ver 5.4<BR>
+<BR>
+[script]<BR>
+スクリプト１の中身を記述<BR>
+[/script]<BR>
+<BR>
+[script]<BR>
+スクリプト２の中身を記述<BR>
+[/script]
+</font></td></tr></table>
+
+</TD></TR></TABLE><BR>
+<BR>
+
+<TABLE CLASS=titleBOX><TR><TD>スクリプトの構成</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　スクリプトの中身は、大きく４つに分けられます。
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>識別情報</td><td>ゲームのタイトルやSSGを書いた人の名前など、タイトルセレクト画面等で使用されるもの。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>[subject]</td><td>SSGの大部分を占める「項目」です。詳細は後述しますが、これらを用いてどのように読み書きするかを指定します。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>[atteribute]<BR>[/atteribute]</td><td>[命令]から[/命令]までの項目に、様々な属性を付加します。原則として、同じ種類の属性は多段使用<sup style="color:#0000FF">*1</sup>出来ません。<HR><FONT COLOR="#FF0000"><sup>*1</sup>多段使用不可</FONT><BR>
+<table CLASS=exaBOX><tr><td NOWRAP>
+[atteribute A]1<BR>
+　[atteribute B]1<BR>
+　　[atteribute A]2<BR>
+　　　ここで適用されるのは、B1とA2のみ。<BR>
+　　[/atteribute A]<BR>
+　[/atteribute B]
+</td></tr></table>
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>置き換え命令</td><td>[replace]や[repeat]などがあげられますが、似たような項目をたくさん書く場合、これらの命令を使うことで非常に簡略化することができます。つまり、「なくても書けるがあると楽」な命令です。</td></tr>
+</table>
+これらを組み合わせて、自由にスクリプトを書いていきます。次のセクションからは、この４つを順に説明していきます。
+</TD></TR></TABLE><BR>
+<BR>
+
+
+
+<BR>
+<BR>
+<A HREF="../01/index.htm">ねくすと　せくしょん⇒</A>
+<BR>
+<BR>
+<A HREF="../top.htm">≪せくしょん　ばっく</A>
+<P><BR></P>
+
+
+</body></html>

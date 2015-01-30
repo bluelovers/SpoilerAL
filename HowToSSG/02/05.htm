@@ -1,0 +1,82 @@
+<html><head>
+<title>HowToSSG:[subject]bitlist/f_calc</title>
+<BASE TARGET="_self">
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../style.css">
+</head><BODY>
+
+<table class="difficultBOX">
+<tr><td class="difficultLevel">難解度「A+」</td></tr>
+<tr><td>
+
+<TABLE CLASS=titleBOX><TR><TD>ビットリスト項目</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　多くの数値はバイト単位で扱われますが、ときにはビット単位のON/OFFで判別しているものもあるでしょう。毒・眠り・麻痺など、キャラクターの（ON/OFFの絡む）ステータスなどに、利用されているかもしれませんね。書式は
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>項目名: bitlist, アドレス, リストファイル, バイトサイズ
+</td></tr></table>
+です。<BR>
+
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>アドレス</td><td>読み書きする対象のアドレスです。詳しいアドレスの書き方は、<A HREF="../0A/index.htm">《A-アドレス》</a>を参照。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>リストファイル</td><td>選択できる一覧として表示するリストファイルを指定します。なお、リストファイル中で空行にあたるビットは、マスクするものとして扱います。ファイル指定の詳細は、<A HREF="../0A/01.htm">《C-ファイル指定》</a>を参照。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>バイトサイズ</td><td>選択はビット単位とはいえ、読み書きはあくまでバイト単位です。その際、何バイト使用するかを1～4のいずれかで指定します。</td></tr>
+</table>
+　項目名は、"/"区切りで表示先を分けることができます。詳細はリスト項目に準じます。
+<p style="background-color:#F0F0FF">
+　リストファイル中での空行(改行のみの行)は、「マスクするビット」であることを意味します。ビット単位でマスクをかけたい場合等に活用してください。画面上ではその行を省いて表示されるので、使用者側が意識することはありません。<BR>
+</p>
+　まとめとして、いくつかのパターンでビットリスト項目を書いておきますね。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>ステータス:bitlist,0x400000,状態リスト,1<BR>
+<font color="#C000C0">[subject]</font>技能/固定する:bitlist,0x500000,技能リスト,2
+</td></tr>
+</table>
+ビットリストは、（マスクビットを使わない場合、）0行目が1、1行目が2、2行目が4、3行目が8、のように、2の乗数で管理しています（ビット単位）。バイトサイズに指定したサイズを越えるような行数にならないよう、気を付けてくださいね。
+</TD></TR></TABLE>
+
+</td></tr>
+</table>
+<BR>
+<BR>
+
+
+<TABLE CLASS=titleBOX><TR><TD>実数電卓項目</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　基本的な部分は、電卓項目と同じです。ただし、扱う数値は整数ではなく実数（小数点を含む数値を許可。厳密には浮動小数点形式）になります。整数と実数ではメモリ中でのデータ表現が異なるため、整数の42と実数の42では、全く違うメモリ内容になります。書式は
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>項目名: f_calc, アドレス, 最小値, 最大値, サイズ記号, エンディアン
+</td></tr></table>
+です。
+
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>アドレス</td><td>読み書きする対象のアドレスです。詳しいアドレスの書き方は、<A HREF="../0A/index.htm">《A-アドレス》</a>を参照。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>最小値<BR>最大値</td><td>電卓項目に準じます｡</td></tr>
+<tr><td CLASS=flameTD NOWRAP>サイズ記号</td><td>この項目で読み書きするバイトサイズを、「<b>float</b>」か「<b>double</b>」のどちらかで指定します。floatは単精度浮動小数点で<b>4</b>バイト。doubleなら倍精度浮動小数点で<b>8</b>バイトを使用します。<font color="#FF0000">省略した場合や、サイズ記号が「<b>float</b>」でない場合、「<b>double</b>」になります。</font>なお、サイズ記号よりも[size]属性を優先しますが、その場合も4バイト以内ならfloat、それ以外はdoubleと見なされます。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>エンディアン</td><td>電卓項目に準じます｡</td></tr>
+</table>
+　項目名は、"/"区切りで表示先を分けることができます。詳細は電卓項目に準じます。
+<BR>
+　「符号の有無」の代わりに「サイズ記号」となっていますが、<font color="#0000FF">実数電卓では全てsigned（符号有り）</font>として解釈されるためです。<BR>
+
+　まとめとして、いくつかのパターンで実数電卓項目を書いておきます。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>単精度:f_calc,0x400000, 0.82, 2500, float<BR>
+<font color="#C000C0">[subject]</font>倍精度:f_calc,0x500000, -3, 23.55, double
+</td></tr>
+</table>
+なお、実数電卓項目に対する[io_fep]属性は、入出力演算も小数点を考慮して行われますが、その場合に使用できる演算子は、%（剰余演算子）を除く算術演算子と、関係演算子や論理演算子などの比較演算子のみとなります。
+
+</TD></TR></TABLE><BR>
+<BR>
+
+
+<BR>
+<BR>
+<A HREF="06.htm">ねくすと　せくしょん⇒</A>
+<BR>
+<BR>
+<A HREF="04.htm">≪せくしょん　ばっく</A>
+<P><BR></P>
+
+
+</body></html>

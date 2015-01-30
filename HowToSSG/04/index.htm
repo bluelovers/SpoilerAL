@@ -1,0 +1,47 @@
+<html><head>
+<title>HowToSSG:置き換え命令</title>
+<BASE TARGET="_self">
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../style.css">
+</head><BODY>
+
+
+<TABLE CLASS=titleBOX><TR><TD>置き換え命令</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　使用しなくても、同機能のスクリプトを作成することは出来ますが、同じような構文が繰り返し頻出するような場合には、この命令を使うことで大幅に手間を省くことが出来ます。
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>命令種別</td><td align="center">※　概要　※</td></tr>
+<tr><td CLASS=flameTD NOWRAP>replace</td><td>項目名やオプションは変わらず、アドレスだけが変化するブロックに使います。置き換えた項目のアドレスに、オフセット分を加算する仕組みなので、置き換えと言うより属性に近いですね。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[<font color="#00C000">replace</font>]</font>0x400000, パラメータ
+</td></tr></table>
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>repeat</td><td>若干難解ですが、規則的な数値だけでなく、不規則に変化する文字列を含むブロックにも使用出来ます。BASICやC/C++でいうFOR文に近い仕組みを持ちます。
+<table CLASS=exaBOX><tr><td NOWRAP>
+[repeat]キャラデータ, 0, 3, 1
+</td></tr></table>
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>involve</td><td>他の置き換え命令とはちょっと意味合いが異なる命令ですが、SSG(/SSC)ファイル内に、擬似的にSSLファイルを埋め込むことが出来ます。
+<table CLASS=exaBOX><tr><td NOWRAP>
+[involve]使用データ<BR>
+[group]武器<BR>
+剣<BR>
+[/group]<BR>
+[/involve]
+</td></tr></table>
+</td></tr>
+</TABLE>
+　階層項目や配置の仕方を工夫して規則性のあるスクリプトにすれば、これら置き換え命令をより効率的に使用することが出来ます。大量の項目を書く必要がある場合は、置き換え命令を使用できるかどうか、ちょっと考えてみるといいかもしれませんね。
+</TD></TR></TABLE><BR>
+<BR>
+
+
+<BR>
+<BR>
+<A HREF="00.htm">ねくすと　せくしょん⇒</A>
+<BR>
+<BR>
+<A HREF="../03/05.htm">≪せくしょん　ばっく</A>
+<P><BR></P>
+
+
+</body></html>

@@ -1,0 +1,44 @@
+<html><head>
+<title>HowToSSG:[involve]</title>
+<BASE TARGET="_self">
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../style.css">
+</head><BODY>
+
+
+<TABLE CLASS=titleBOX><TR><TD>involve</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　他の置き換え命令とはちょっと意味合いが異なる命令ですが、SSG(またはSSC)ファイル内に、擬似的にSSLファイルを埋め込むことが出来ます。書式は
+<table CLASS=exaBOX><tr><td NOWRAP>
+[involve]SSLファイル<BR>
+[/involve]
+</td></tr></table>
+です。<BR>
+　「SSLファイル」には、擬似的に埋め込むSSLファイルの名前を書きます。なお、SSLファイル固定ですので、拡張子は必要ありません。あとは[/involve]で括り終わるまでを、SSLファイルと見なします。SSLファイルの詳細は、<A HREF="../0A/01.htm">《C-ファイル指定》</a>を参照。<BR>
+　最後に例を示します。
+<table CLASS=exaBOX><tr><td NOWRAP>
+[involve]使用データ<BR>
+[group]武器<BR>
+剣<BR>
+槍<BR>
+杖<BR>
+[/group]<BR>
+[/involve]<BR>
+[subject]実験項目:list,0x400000,使用データ->武器,0,1
+</td></tr></table>
+<b>
+※なお、ある項目から[involve]で埋め込んだSSLファイルを使用する場合、<font color="#FF0000">その項目よりも前に、使用する[involve]を書くようにして下さい。</font>
+</b>
+</TD></TR></TABLE><BR>
+<BR>
+
+
+<BR>
+<BR>
+<A HREF="../0A/index.htm">ねくすと　せくしょん⇒</A>
+<BR>
+<BR>
+<A HREF="01.htm">≪せくしょん　ばっく</A>
+<P><BR></P>
+
+
+</body></html>

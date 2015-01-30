@@ -1,0 +1,74 @@
+<html><head>
+<title>HowToSSG:[subject]trace/copy</title>
+<BASE TARGET="_self">
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../style.css">
+</head><BODY>
+
+
+<TABLE CLASS=titleBOX><TR><TD>分割項目</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　分割項目は読み書きを行う項目ではなく、画面表示を助けるための項目です。具体的には、分割線を引いたりするのに使えます。<BR>
+　書式は
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>項目名: split, 描画オプション, インデント, パラメータ1, パラメータ2
+</td></tr></table>
+です。パラメータ1,2は描画オプションによって異なります。<BR>
+
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>描画オプション</td><td>線を引く<b>line</b>、文字列を繰り返す<b>roll</b>、文字列を描く<b>label</b>のいずれかを指定します。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>インデント</td><td>原則として各項目はその項目の「階層位置」が描画位置となりますが、分割項目はこのインデントを用いて描画位置を指定できます。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<b>n<br>
+-<b>n<br>
+<b>root<br>
+<b>center
+</td></tr></table>
+※<b>n</b>は任意の数値<br>
+　<b>n</b>階層分だけ、描画位置をずらします。つまり、<b>n</b>が0のとき、描画位置は階層位置と等しくなります。<br>
+　<b>root</b>を指定すると、階層位置0に描画します。<br>
+　<b>center</b>を指定すると、横方向の中央に描画します。
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>パラメータ1</td><td>描画オプションによって意味合いが異なります。<br>
+・<b>line</b>の場合<br>
+　線の幅を、描画位置から右端までを100%とした100分率で指定します。なお、小数点以下は無視します。<br>
+・<b>roll</b>の場合<br>
+　繰り返し描画する文字列を指定します。<br>
+・<b>label</b>の場合<br>
+　描画する文字列を指定します。
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>パラメータ2</td><td>描画オプションによって意味合いが異なります。<br>
+・<b>line</b>の場合<br>
+　線の高さを、100分率で指定します。なお、小数点以下は無視します。<br>
+・<b>roll</b>の場合<br>
+　繰り返す幅を、描画位置から右端までを100%とした100分率で指定します。なお、小数点以下は無視します。<br>
+・<b>label</b>の場合<br>
+　不要。
+</td></tr>
+</table>
+　画面中には描画されませんが、名称検索に利用できるよう、項目名も指定可能です。
+<BR>
+<BR>
+
+　まとめとして、分割項目の例を書いておきますね。
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>分割1:split,line,0,80,30<br>
+<font color="#C000C0">[subject]</font>分割2:split,roll,root,☆,70<br>
+<font color="#C000C0">[subject]</font>分割3:split,label,center,＜区切り＞<br>
+</td></tr></table>
+利用頻度の高い項目ではありませんが、使い方次第で、項目のレイアウトをより工夫することが出来るでしょう。
+</TD></TR></TABLE><BR>
+<BR>
+
+
+
+
+<BR>
+<BR>
+<A HREF="../03/index.htm">ねくすと　せくしょん⇒</A>
+<BR>
+<BR>
+<A HREF="06.htm">≪せくしょん　ばっく</A>
+<P><BR></P>
+
+
+</body></html>

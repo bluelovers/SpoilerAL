@@ -1,0 +1,67 @@
+<html><head>
+<title>HowToSSG:[replace]</title>
+<BASE TARGET="_self">
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../style.css">
+</head><BODY>
+
+
+<table class="difficultBOX">
+<tr><td class="difficultLevel">難解度「AA」</td></tr>
+<tr><td>
+※このページ全体の難解度です。
+</td></tr>
+</table>
+
+<TABLE CLASS=titleBOX><TR><TD>replace</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　項目名やオプションは変わらず、アドレスだけが変化するブロックに使います。置き換えた項目等のアドレスに、指定のオフセットを加算します。書式は
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[<font color="#00C000">replace</font>]</font>オフセット値, SSCファイル
+</td></tr></table>
+です。
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>オフセット値</td><td>呼び出し先のアドレスに加算する数値を指定します。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>SSCファイル</td><td>置き換えるスクリプトを記述したSSCファイルを指定します。ファイル指定の詳細は、<A HREF="../0A/01.htm">《C-ファイル指定》</a>を参照。</td></tr>
+</TABLE>
+　<font color="#C000C0">[<font color="#00C000">replace</font>]</font>によって呼び出されたSSCファイル内のスクリプトは、アドレスにオフセット分を加算し、呼び出した位置に挿入されます。実例で言えば、
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>主人公:dir<BR>
+&nbsp;&nbsp;<font color="#C000C0">[<font color="#00C000">replace</font>]</font>0x400000, 子ファイル<BR>
+<font color="#C000C0">[subject]</font>ヒロイン:dir<BR>
+&nbsp;&nbsp;<font color="#C000C0">[<font color="#00C000">replace</font>]</font>0x400010, 子ファイル<BR>
+
+<HR><center style="background-color:#C0C0FF">子ファイル.SSC</center>
+&nbsp;&nbsp;<font color="#C000C0">[subject]</font>体力:calc,0x00,0,99<BR>
+&nbsp;&nbsp;<font color="#C000C0">[subject]</font>知力:calc,0x04,0,99<BR>
+&nbsp;&nbsp;<font color="#C000C0">[subject]</font>技術:calc,0x08,0,99<BR>
+[back]
+</td></tr></table>
+上記のスクリプトは、読み込み時に<font color="#C000C0">[<font color="#00C000">replace</font>]</font>も処理され、
+<table CLASS=exaBOX><tr><td NOWRAP>
+<font color="#C000C0">[subject]</font>主人公:dir<BR>
+&nbsp;&nbsp;<font color="#C000C0">[subject]</font>体力:calc,0x400000,0,99<BR>
+&nbsp;&nbsp;<font color="#C000C0">[subject]</font>知力:calc,0x400004,0,99<BR>
+&nbsp;&nbsp;<font color="#C000C0">[subject]</font>技術:calc,0x400008,0,99<BR>
+[back]<BR>
+<font color="#C000C0">[subject]</font>ヒロイン:dir<BR>
+&nbsp;&nbsp;<font color="#C000C0">[subject]</font>体力:calc,0x400010,0,99<BR>
+&nbsp;&nbsp;<font color="#C000C0">[subject]</font>知力:calc,0x400014,0,99<BR>
+&nbsp;&nbsp;<font color="#C000C0">[subject]</font>技術:calc,0x400018,0,99<BR>
+[back]
+</td></tr></table>
+このように展開されます。
+
+</TD></TR></TABLE><BR>
+<BR>
+
+
+<BR>
+<BR>
+<A HREF="01.htm">ねくすと　せくしょん⇒</A>
+<BR>
+<BR>
+<A HREF="index.htm">≪せくしょん　ばっく</A>
+<P><BR></P>
+
+
+</body></html>

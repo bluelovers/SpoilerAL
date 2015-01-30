@@ -1,0 +1,48 @@
+<html><head>
+<title>HowToSSG:[io_fep]</title>
+<BASE TARGET="_self">
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../style.css">
+</head><BODY>
+
+<table class="difficultBOX">
+<tr><td class="difficultLevel">難解度「A+」</td></tr>
+<tr><td>
+※このページ全体の難解度です。
+</td></tr>
+</table>
+
+<TABLE CLASS=titleBOX><TR><TD>入出力変換属性</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　[io_fep]と[/io_fep]で括った項目が数値の読み書きを行うとき、その値に表示と書き込み値の間で演算をさせることが出来ます。書式は
+<table CLASS=exaBOX><tr><td NOWRAP>
+[io_fep]入力値への演算, 出力値への演算<BR>
+[/io_fep]
+</td></tr></table>
+になります。
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>入力値への演算</td><td>あべこべにならないようにしてくださいね。<font color="#FF0000">ユーザーの入力値に対し、行う演算</font>を記述します。ユーザーの入力値を指す擬似変数 <b>$Val</b> や、アドレスコーディングで使用できる演算子を用いて演算された値が、メモリに書き込まれることになります。</td></tr>
+<tr><td CLASS=flameTD NOWRAP>出力値への演算</td><td>メモリにある値を、ユーザーの見る<font color="#FF0000">画面に出力するときに行う演算</font>を記述します。構文は「入力値への演算」に同じです。</td></tr>
+</table>
+例を見た方が早いです。仮に
+<table CLASS=exaBOX><tr><td NOWRAP>
+[io_fep]$Val*100, $Val/100<BR>
+	<font color="#C000C0">[subject]</font>所持金:calc,0x400000,0,100<BR>
+[/io_fep]
+</td></tr></table>
+このようなとき、所持金にユーザーが10を入力すると*100された1000がメモリに書き込まれます。逆に、メモリ上の値が200なら、/100した2と画面表示されます。なお、最小値・最大値も、FEPを通した値で溢れ判定を行います。<BR>
+<BR>
+　また、実数電卓項目（[f_calc]）のように小数による表現を用いる項目の場合、[io_fep]の入出力演算も<font color="#FF0000">小数点を考慮した演算</font>を行います。ただし、その場合に使用できる演算子は、<font color="#0000FF">%（剰余演算子）を除く算術演算子と、比較演算子のみ</font>となります。
+</TD></TR></TABLE><BR>
+<BR>
+
+
+<BR>
+<BR>
+<A HREF="04.htm">ねくすと　せくしょん⇒</A>
+<BR>
+<BR>
+<A HREF="02.htm">≪せくしょん　ばっく</A>
+<P><BR></P>
+
+
+</body></html>

@@ -1,0 +1,68 @@
+<html><head>
+<title>HowToSSG:[attribute]</title>
+<BASE TARGET="_self">
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../style.css">
+</head><BODY>
+
+
+<TABLE CLASS=titleBOX><TR><TD>[attribute]</TD></TR></TABLE>
+<TABLE WIDTH="100%" BORDER=0 bgcolor="#FFFFE0"><TR><TD>
+　[attribute]から[/attribute]の間にある項目に、様々な属性を付加する機能です。操作を容易にするものから、特殊な読み書きに使うものなど、様々な属性があります。<BR>
+　属性種別とその概要を示します。各属性とも次セクションから詳しく説明しますので、この場は流し読みで構いません。
+
+<table CLASS=flameBOX>
+<tr><td CLASS=flameTD NOWRAP>属性種別</td><td align="center">※　概要　※</td></tr>
+<tr><td CLASS=flameTD NOWRAP>size</td><td>サイズ属性。読み書きするバイト数を指定します。電卓項目などは通常、最小値と最大値から使用バイト数を判断しますが、バイトサイズ属性がある場合は、属性を優先します。
+<table CLASS=exaBOX><tr><td NOWRAP>
+[size]3
+</td></tr></table>
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>adjustment</td><td>アドレス補正属性。環境や対象プロセスによって読み書きすべきアドレスが移動する場合に、その差を補正する属性です。補正の方法は複数あります。
+<table CLASS=exaBOX><tr><td NOWRAP>
+[adjustment]search, 0x500000, 11FF22CC33, 0x500000, 0x60FFFF, 1<BR>
+[adjustment]dialog, 0xA00000, ADJファイル,0x800000, 0xCBFFFF, 1<BR>
+[adjustment]heap, heap2=0xA90000>0xB9FFFF,heap3=0xBA0000>0x10AFFFF<BR>
+[adjustment]crc, CC52F099=0x20, DE7716F2=0x60
+</td></tr></table>
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>funnel</td><td>ファンネルライト属性。この属性を持つ項目が書き込み処理を行ったとき、続けて規定の書き込みを行う属性です。項目が書き込んだ値によって、処理を分岐させることもできます。
+<table CLASS=exaBOX><tr><td NOWRAP>
+[funnel]ファンネルファイル
+</td></tr></table>
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>io_fep</td><td>入出力変換属性。値の読み書きにおいて、画面に表示する値と実際にメモリに配置する値との間で相互に変換を行わせる属性です。常に100単位で変化する値であれば、入力値に自動で100をかけて書き込む、といった処理が可能になります。
+<table CLASS=exaBOX><tr><td NOWRAP>
+[io_fep]$Val*100, $Val/100
+</td></tr></table>
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>e_with</td><td>末尾付加属性。同じオプションの項目が連続するときに、省略して記述できるようにする属性です。あくまでオプションの省略なので、項目種別などを含めることは出来ません。
+<table CLASS=exaBOX><tr><td NOWRAP>
+[e_with],0,100,unsigned,big_e
+</td></tr></table>
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>enabled</td><td>有効条件属性。特定の条件によって、読み書きが「有効か無効か」を切り替える属性です。ある条件下でのみ、読み書きを行いたい項目がある場合に使用します。
+<table CLASS=exaBOX><tr><td NOWRAP>
+[enabled][:0x400000:1] == 0
+</td></tr></table>
+</td></tr>
+<tr><td CLASS=flameTD NOWRAP>adjust_check</td><td>アドレス補正の試作利用規定属性。長ったらしい名前ですが、「アドレス補正の試作」機能使用時に、デフォルトで使用するか否かなどを指定するときに使う属性です。直接、読み書きに関係があるわけではありません。
+<table CLASS=exaBOX><tr><td NOWRAP>
+[adjust_check]true
+</td></tr></table>
+</td></tr>
+</TABLE>
+　基本的に、属性は「特殊な場合」を想定した機能のため、若干仕組みを理解しにくい物もあります。読むだけではなくて、実際に使いながら覚えた方がいいかも知れませんね♪
+</TD></TR></TABLE><BR>
+<BR>
+
+
+<BR>
+<BR>
+<A HREF="00.htm">ねくすと　せくしょん⇒</A>
+<BR>
+<BR>
+<A HREF="../02/07.htm">≪せくしょん　ばっく</A>
+<P><BR></P>
+
+
+</body></html>
