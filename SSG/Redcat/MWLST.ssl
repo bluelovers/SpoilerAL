@@ -1,0 +1,103 @@
+[group]MW_MA
+[note]wordwrap
+以下、少々補足です。
+
+■環境関連
+１度に使用できる項目は１つだけ。要注意。
+
+いずれかにチェック後「ファイル」→「最初から始める」で効果がでます。チェック解除後、上記と同じ作業で、元の環境に復帰します。
+
+■フラグ関連
+「晶の日記」の正確な出現条件は以下。
+
+鷹梨千尋／工藤亜由美のクリアフラグと、七瀬晶の累計好感度１８以上。
+
+フラグに関して、ＯＮ：チェック有り／ＯＦＦ：チェック無です。
+[/note]
+
+[subject]環境関連:dir
+	[subject]メーカーロゴスキップ他:b_toggle,0x414D3F,MWLST->MW_a,real
+	[subject]デバッグモード:dir
+		[subject]ＣＧ確認用モード:b_toggle,0x414D49,MWLST->MW_b,real
+		[subject]動作確認用モード:b_toggle,0x414D49,MWLST->MW_c,real
+	[back]
+	[subject]体験版？鑑賞:b_toggle,0x414D49,MWLST->MW_d,real
+[/group]
+
+
+[group]MW_F12
+[subject]好感度編集:dir
+	[repeat]MWLST->MWREP1,0,10,1
+[back]
+[subject]クリアフラグ編集:dir
+	[repeat]MWLST->MWREP2,0,10,1
+	[subject]晶累積好感度:calc,_[:[_0x100560C_]+0x3C:]+0x8058,0x00,0x63,unsigned
+[back]
+[subject]「晶の日記」出現:b_toggle,_[:[_0x100560C_]+0x3C:],MW_f,offset
+[/group]
+
+
+[group]MW_CG
+[subject]ＣＧモード:dir
+	[subject]ＡＬＬ ＯＮ:toggle,0x402C,0x423B-*_???????????????1
+	[subject]ＡＬＬ ＯＦＦ:toggle,0x402C,0x423B-00
+[/group]
+
+
+[group]MW_a
+0x414D3F,EB00,721D
+0x414D4B,EB00,7505
+[/group]
+
+
+[group]MW_b
+0x414D49,C70773746172,85D27505BF00
+0x414D4F,EB5790,C45A00
+0x414D97,C70730393939,909090909090
+0x414D9D,EBB3,9090
+0x414DA8,81C704000000,909090909090
+0x414DAE,EBE7,9090
+[/group]
+
+
+[group]MW_c
+0x414D49,C70774657374,85D27505BF00
+0x414D4F,EB0190,C45A00
+[/group]
+
+
+[group]MW_d
+0x414D49,C70764656D6F,85D27505BF00
+0x414D4F,EB0190,C45A00
+[/group]
+
+
+[group]MW_f
+0x8034,01
+0x8038,01
+0x8058,*_???????????1??1?
+[/group]
+
+
+[group]MWREP1
+[subject][! @MWLST->LST_a,$Val !]/現在値/_:calc,_[:[_0x100560C_]+0x3C:]+0x[! 0x2AD48+$Val*4 !],0x00,0x14,unsigned
+[/group]
+
+
+[group]MWREP2
+[subject][! @MWLST->LST_a,$Val !]/実行/_:toggle,_[:[_0x100560C_]+0x3C:]+0x[! 0x802C+$Val*4 !],01,00
+[/group]
+
+
+[group]LST_a
+結城倫
+七瀬晶
+鷹梨千尋
+工藤亜由美
+東条恋水
+東条悠
+橋本さゆら
+高坂繭
+刹那
+御影咲夜
+[/group]
