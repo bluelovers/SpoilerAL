@@ -1,0 +1,111 @@
+[group]TOL_SSG
+[note]wordwrap
+経験値、到達階数以外は起動中のみ有効な一時的な効果です。効果を出すにはパーティ編成画面以外で能力の変更をする必要があります。
+[/note]
+
+[subject]リーフの塔ver1.00:dir
+ [io_fep]$Val-1, $Val+1
+  [subject]到達階数/現在値/_:calc,0x525064,0x00,0x31,unsigned
+ [/io_fep]
+[subject]経験値/現在値/_:calc,0x5254C8,0x0000,0x1387,unsigned
+ [subject]パーティステータス:dir
+[subject]仲間全員の基本能力値極大化/実行/_:b_toggle,0x4A1E50,TOLLST->TOL_c,offset
+	[repeat]TOLLST->TOLREP1,0,12,1
+[root]
+
+[subject]リーフの塔ver1.01:dir
+ [io_fep]$Val-1, $Val+1
+  [subject]到達階数/現在値/_:calc,0x525064,0x00,0x31,unsigned
+ [/io_fep]
+[subject]経験値/現在値/_:calc,0x5254C8,0x0000,0x1387,unsigned
+ [subject]パーティステータス:dir
+[subject]仲間全員の基本能力値極大化/実行/_:b_toggle,0x4A1F00,TOLLST->TOL_c,offset
+	[repeat]TOLLST->TOLREP2,0,12,1
+[root]
+
+[/group]
+
+
+[group]TOLREP1
+[subject][! @TOLLST->LST_a,$Val !]:dir
+	[replace]_0x4A1E50+0x[! 0x78*$Val !],TOLLST->TOL_a
+[/group]
+
+
+[group]TOLREP2
+[subject][! @TOLLST->LST_a,$Val !]:dir
+	[replace]_0x4A1F00+0x[! 0x78*$Val !],TOLLST->TOL_a
+[/group]
+
+
+[group]LST_a
+健太郎
+スフィー
+リアン
+蝉丸
+月代
+高子
+宗一
+皐月
+ゆかり
+ハクオロ
+エルルゥ
+アルルゥ
+[/group]
+
+
+[group]TOL_a
+[subject]一括極大化/実行/_:b_toggle,0x00,TOLLST->TOL_b,offset
+[e_with],0x00,0x64,unsigned
+ [subject]火属性/現在値/_:calc,0x00
+ [subject]水属性/現在値/_:calc,0x04
+ [subject]地属性/現在値/_:calc,0x08
+ [subject]風属性/現在値/_:calc,0x0C
+[/e_with]
+[e_with],0x0001,0x3E7,unsigned
+ [subject]最大ＨＰ係数/現在値/_:calc,0x10
+ [subject]最大ＭＰ係数/現在値/_:calc,0x14
+[/e_with]
+[e_with],0,999,double
+ [subject]基本STR/現在値/_:f_calc,0x20
+ [subject]基本DEX/現在値/_:f_calc,0x28
+ [subject]基本VIT/現在値/_:f_calc,0x30
+ [subject]基本INT/現在値/_:f_calc,0x38
+ [subject]基本MND/現在値/_:f_calc,0x40
+[/e_with]
+[back]
+[/group]
+
+
+[group]TOL_b
+0x00,64000000640000006400000064000000E7030000E7030000
+0x20,0x47-0000000000388F40
+[/group]
+
+
+[group]TOL_c
+0x00,640000006400000064000000640000006300000063000000
+0x20,0x47-0000000000C05840
+0x78,640000006400000064000000640000006300000063000000
+0x98,0xBF-0000000000C05840
+0xF0,640000006400000064000000640000006300000063000000
+0x110,0x137-0000000000C05840
+0x168,640000006400000064000000640000006300000063000000
+0x188,0x1AF-0000000000C05840
+0x1E0,640000006400000064000000640000006300000063000000
+0x200,0x227-0000000000C05840
+0x258,640000006400000064000000640000006300000063000000
+0x278,0x29F-0000000000C05840
+0x2D0,640000006400000064000000640000006300000063000000
+0x2F0,0x317-0000000000C05840
+0x348,640000006400000064000000640000006300000063000000
+0x368,0x38F-0000000000C05840
+0x3C0,640000006400000064000000640000006300000063000000
+0x3E0,0x417-0000000000C05840
+0x438,640000006400000064000000640000006300000063000000
+0x458,0x47F-0000000000C05840
+0x4B0,640000006400000064000000640000006300000063000000
+0x4D0,0x4F7-0000000000C05840
+0x528,640000006400000064000000640000006300000063000000
+0x548,0x56F-0000000000C05840
+[/group]
