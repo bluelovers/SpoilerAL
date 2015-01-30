@@ -92,158 +92,7 @@ AVGパート高速化強化版：
 	[replace]_[:0x56B8E4:],IZEXLST->IZ_CG
 [back]
 
-[back]
-
-[subject]学園狂想曲同梱版(ver1.13):dir
-
-[subject]ＲＰＧパート関連:dir
-	[subject]敵攻撃完全無効化/実行/_:b_toggle,0x41D141,IZEXLST->IZ_2b,real
-	[subject]霊力減らない/実行/_:b_toggle,0x445A16,IZEXLST->IZ_2c,real
-	[subject]戦闘入手経験値Ｘ倍化/_:d_list,0x421087,IZEXLST->LST_c,0x00,0xFFFFFFFF,IZEXLST->LST_2d,offset
-	[subject]エンカウンター操作/_:d_list,0x4AC232,IZEXLST->LST_a,0x00,0xFFFFFFFF,IZEXLST->LST_2b,offset
-	[subject]エンディングセレクト/_:d_list,0x55EAB4,IZEXLST->LST_f,0x0000,0x0006,IZEXLST->LST_g,offset
-[back]
-
-[subject]環境関連:dir
-	[subject]LV調整用ダイアログ出現/実行/_:toggle,0x42208B,EB00,743A
-	[subject]AVGパート高速化強化版/実行/_:b_toggle,0x1200,IZEXLST->IZ_a,offset
-[back]
-
-[subject]パラメータ関連:dir
- [subject]勾玉全種最大数所持/ＯＮ／全消去/_:b_toggle,0x541478,IZEXLST->IZ_PR23,real
- [subject]イベント関与勾玉個別指定数量変化:dir
- 	[subject]変更イベント関与勾玉指定/_:list,0x510B68,IZEXLST->LST_h,0x00,0x01
- 	[subject]_mem,_([\:0x510B68\:])*0x0176=>temp;[\:0x541224\:]+0x160C+$temp,16,00,<ReadError>'+'の数量/現在値/_:calc,_([:0x510B68:]*0x04)=>temp;0x5414BA+$temp,0x0000,0x03E7,unsigned
- [back]
- [subject]アイテムエディタ:dir
-	[subject]数量指定/現在値/_:calc,0x510B60,0x00,0x63,unsigned
-	[subject]一括変更/実行/_:toggle,0x541244,0x54139F-$2[:0x510B60:]$$
-  [subject]個別指定数量変化:dir
-	[subject]変更アイテム指定/_:list,0x510B64,IZEXLST->LST_e,0x00,0x01
-	[subject]_mem,_([\:0x510B64\:])*0xBA=>temp;[\:0x541474\:]+$temp+0x02,16,00,<ReadError>'+'の数量/現在値/_:calc,_([:0x510B64:])*0xBA=>temp;[:[:0x541474:]+$temp:2]=>temp;0x541244+$temp*2,0x00,0x63,unsigned
-  [back]
- [back]
- [subject]仲間のステータス:dir
-  [subject]塔馬ヒカル:dir
-	[subject]基本ステータス:dir
-	[replace]_[:[:0x54146C:]:],IZEXLST->IZ_PR1
-	[subject]現在ステータス:dir
-	[replace]_[:[:0x54146C:]:],IZEXLST->IZ_PR2
-  [back]
-  [subject]水瀬七海:dir
-	[subject]基本ステータス:dir
-	[replace]_[:[:[:0x54146C:]:]:],IZEXLST->IZ_PR1
-	[subject]現在ステータス:dir
-	[replace]_[:[:[:0x54146C:]:]:],IZEXLST->IZ_PR2
-  [back]
-  [subject]橘綾香:dir
-	[subject]基本ステータス:dir
-	[replace]_[:[:[:[:0x54146C:]:]:]:],IZEXLST->IZ_PR1
-	[subject]現在ステータス:dir
-	[replace]_[:[:[:[:0x54146C:]:]:]:],IZEXLST->IZ_PR2
-  [back]
-  [subject]倉島渚:dir
-	[subject]基本ステータス:dir
-	[replace]_[:[:[:[:[:0x54146C:]:]:]:]:],IZEXLST->IZ_PR1
-	[subject]現在ステータス:dir
-	[replace]_[:[:[:[:[:0x54146C:]:]:]:]:],IZEXLST->IZ_PR2
-  [back]
-  [subject]天照:dir
-	[subject]基本ステータス:dir
-	[replace]_[:[:[:[:[:[:0x54146C:]:]:]:]:]:],IZEXLST->IZ_PR1
-	[subject]現在ステータス:dir
-	[replace]_[:[:[:[:[:[:0x54146C:]:]:]:]:]:],IZEXLST->IZ_PR2
-  [back]
-  [subject]塔馬美由紀:dir
-	[subject]基本ステータス:dir
-	[replace]_[:[:[:[:[:[:[:0x54146C:]:]:]:]:]:]:],IZEXLST->IZ_PR1
-	[subject]現在ステータス:dir
-	[replace]_[:[:[:[:[:[:[:0x54146C:]:]:]:]:]:]:],IZEXLST->IZ_PR2
-  [back]
- [back]
-[back]
-
-[subject]ＣＧモード関連:dir
-	[replace]_[:0x569A44:],IZEXLST->IZ_CG
-[back]
-
-[back]
-
-
-[subject]IZUMO3同梱版(ver1.14):dir
-
-[subject]ＲＰＧパート関連:dir
- [subject]敵攻撃完全無効化/実行/_:b_toggle,0x41D141,IZEXLST->IZ_2b,real
- [subject]霊力減らない/実行/_:b_toggle,0x445A16,IZEXLST->IZ_2c,real
- [subject]戦闘入手経験値Ｘ倍化/_:d_list,0x421087,IZEXLST->LST_c,0x00,0xFFFFFFFF,IZEXLST->LST_2d,offset
- [subject]エンカウンター操作/_:d_list,0x4AC232,IZEXLST->LST_a,0x00,0xFFFFFFFF,IZEXLST->LST_2b,offset
- [subject]エンディングセレクト/_:d_list,0x55FBB4,IZEXLST->LST_f,0x0000,0x0006,IZEXLST->LST_g,offset
-[back]
-
-[subject]環境関連:dir
- [subject]LV調整用ダイアログ出現/実行/_:toggle,0x42208B,EB00,743A
- [subject]AVGパート高速化強化版/実行/_:b_toggle,0x1190,IZEXLST->IZ_a,offset
-[back]
-
-[subject]パラメータ関連:dir
- [subject]勾玉全種最大数所持/ＯＮ／全消去/_:b_toggle,0x1100,IZEXLST->IZ_PR23,offset
- [subject]イベント関与勾玉個別指定数量変化:dir
-  [subject]変更イベント関与勾玉指定/_:list,0x511038,IZEXLST->LST_h,0x00,0x01
-  [subject]_mem,_([\:0x511038\:])*0x0176=>temp;[\:0x542324\:]+0x160C+$temp,16,00,<ReadError>'+'の数量/現在値/_:calc,_([:0x511038:]*0x04)=>temp;0x5425BA+$temp,0x0000,0x03E7,unsigned
- [back]
- [subject]アイテムエディタ:dir
-  [subject]数量指定/現在値/_:calc,0x511030,0x00,0x63,unsigned
-  [subject]一括変更/実行/_:toggle,0x542344,0x54249F-$2[:0x511030:]$$
-  [subject]個別指定数量変化:dir
-   [subject]変更アイテム指定/_:list,0x511034,IZEXLST->LST_e,0x00,0x01
-   [subject]_mem,_([\:0x511034\:])*0xBA=>temp;[\:0x542574\:]+$temp+0x02,16,00,<ReadError>'+'の数量/現在値/_:calc,_([:0x511034:])*0xBA=>temp;[:[:0x542574:]+$temp:2]=>temp;0x542344+$temp*2,0x00,0x63,unsigned
-  [back]
- [back]
- [subject]仲間のステータス:dir
-  [subject]塔馬ヒカル:dir
-   [subject]基本ステータス:dir
-   [replace]_[:[:0x54256C:]:],IZEXLST->IZ_PR1
-   [subject]現在ステータス:dir
-   [replace]_[:[:0x54256C:]:],IZEXLST->IZ_PR2
-  [back]
-  [subject]水瀬七海:dir
-   [subject]基本ステータス:dir
-   [replace]_[:[:[:0x54256C:]:]:],IZEXLST->IZ_PR1
-   [subject]現在ステータス:dir
-   [replace]_[:[:[:0x54256C:]:]:],IZEXLST->IZ_PR2
-  [back]
-  [subject]橘綾香:dir
-   [subject]基本ステータス:dir
-   [replace]_[:[:[:[:0x54256C:]:]:]:],IZEXLST->IZ_PR1
-   [subject]現在ステータス:dir
-   [replace]_[:[:[:[:0x54256C:]:]:]:],IZEXLST->IZ_PR2
-  [back]
-  [subject]倉島渚:dir
-   [subject]基本ステータス:dir
-   [replace]_[:[:[:[:[:0x54256C:]:]:]:]:],IZEXLST->IZ_PR1
-   [subject]現在ステータス:dir
-   [replace]_[:[:[:[:[:0x54256C:]:]:]:]:],IZEXLST->IZ_PR2
-  [back]
-  [subject]天照:dir
-   [subject]基本ステータス:dir
-   [replace]_[:[:[:[:[:[:0x54256C:]:]:]:]:]:],IZEXLST->IZ_PR1
-   [subject]現在ステータス:dir
-   [replace]_[:[:[:[:[:[:0x54256C:]:]:]:]:]:],IZEXLST->IZ_PR2
-  [back]
-  [subject]塔馬美由紀:dir
-   [subject]基本ステータス:dir
-   [replace]_[:[:[:[:[:[:[:0x54256C:]:]:]:]:]:]:],IZEXLST->IZ_PR1
-   [subject]現在ステータス:dir
-   [replace]_[:[:[:[:[:[:[:0x54256C:]:]:]:]:]:]:],IZEXLST->IZ_PR2
-  [back]
- [back]
-[back]
-
-[subject]ＣＧモード関連:dir
- [replace]_[:0x56AB44:],IZEXLST->IZ_CG
-[back]
-
-[back]
+[root]
 
 [/group]
 
@@ -263,23 +112,10 @@ AVGパート高速化強化版：
 [/group]
 
 
-[group]IZ_2b
-0x41D141,8B0983792C067F27EB029090,8B8DD0FCFFFF83792C007423
-0x41D16C,20,1E
-[/group]
-
-111
 [group]IZ_c
 0x445405,34EB00,582BD0
 0x445AF2,34EB00,582BC8
 0x446185,34EB00,582BD0
-[/group]
-
-
-[group]IZ_2c
-0x445A16,34EB00,582BD0
-0x446103,34EB00,582BC8
-0x446796,34EB00,582BD0
 [/group]
 
 
@@ -342,13 +178,6 @@ AVGパート高速化強化版：
 [/group]
 
 
-[group]LST_2b
-,0x00=83C201,0x1B=7D6C
-,0x00=33D290,0x1B=EB6C
-,0x00=83C201,0x1B=EB00
-[/group]
-
-
 [group]LST_c
 デフォルト
 ８倍化
@@ -365,23 +194,9 @@ AVGパート高速化強化版：
 [/group]
 
 
-[group]LST_2d
-,0x00=3B4D947E068B
-,0x00=C1E10389CA89
-,0x00=C1E10489CA89
-,0x00=C1E10889CA89
-[/group]
-
-
 [group]IZ_PR3
 0x543318,0x543359-E703,0000
 0x54335A,0x543377-E7030000,00000000
-[/group]
-
-
-[group]IZ_PR23
-0x541478,0x5414B9-E703,0000
-0x5414BA,0x5414D7-E7030000,00000000
 [/group]
 
 
