@@ -1,0 +1,8 @@
+[group]ÉTÅ[É`
+[size]4
+ [val]*.*.*.
+ [calc]Food,no,0,999999
+ [calc]Wood,no,0,999999
+ [calc]Stone,no,0,999999
+[/size]
+[/group]
