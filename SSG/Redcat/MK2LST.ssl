@@ -1,0 +1,16 @@
+[group]mk2_SSG
+
+[subject]無敵化/実行/_:toggle,0x407DFA,E94D01000090,391538F74600
+[subject]必殺技使用時敵一撃死化/実行/_:toggle,0x403A5B,89B8D4A6460090,8380D4A64600CE
+[subject]無減多段ジャンプ化/実行/_:toggle,0x403513,EB04,7522
+[subject]ロングジャンプ化/実行/_:toggle,0x403522,20C1,A0C0
+[subject]自機数/現在値/_:calc,0x46F720,0x0001,0x03E7,unsigned
+[subject]お札使い放題/実行/_:b_toggle,0x00,MK2LST->mk2_a,offset
+
+[/group]
+
+
+[group]mk2_a
+0x403CB6,C70504F74600E70300009090,393504F746000F8EE8000000
+0x403673,C705A8EE4600E70300009090,392DA8EE46000F8E39010000
+[/group]
