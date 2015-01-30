@@ -1,0 +1,206 @@
+SSG for SpoilerAL ver 3.4
+
+// Code Created by べーえむ
+// 最終更新2001/01/16＠セラミュー千秋楽、神田マーズ卒業記念更新
+// 細田アスタルテのラ・ソウルジャーも貴重で見ごたえありました。
+// 春公演は3/18～4/8＠サンシャイン劇場他で僕と握手！（ィャ
+
+[script]
+[title]電車でGo!２高速編
+[process]DENGO2.EXE
+[maker]unbalance
+[creator]べーえむ
+[note]
+隠し路線出現／無敵化
+（起動前に値を固定）
+[/note]
+[subject]京浜東北線(横浜－品川):toggle,0x46DF38,0A,05
+[subject]秋田新幹線(大曲－盛岡):toggle,0x46DF3C,02,00
+[subject]はくたか(直江津－六日町):toggle,0x411B57,00,02
+[subject]時間減らない(走行時):toggle,0x418FDA,46,31
+[subject]時間減らない(停車時):toggle,0x41D64F,9090,2BEE
+[subject]Window表示:toggle,0x40331A,B300,B301
+[/script]
+
+[script]
+[title]Ｋａｎｏｎ
+[process]AVG3216M.EXE
+[maker]Key
+[creator]べーえむ
+[note]
+ＣＧ表示高速化
+[/note]
+[subject]ＣＧ表示高速化:toggle,0x406844,73,75
+[/script]
+
+[script]
+[title]加奈～いもうと～
+[process]KANA.EXE
+[maker]D.O.
+[creator]べーえむ
+[note]
+Leaf-Font表示可
+（修正版専用）
+[/note]
+[subject]Font選択肢拡大:toggle,0x40D15D,03,01
+[/script]
+
+[script]
+[title]淫声～うたごえ～
+[process]SDGU.EXE
+[maker]SUCCUBUS
+[creator]べーえむ
+[note]
+歌を中断
+[/note]
+[subject]歌を中断:toggle,0x481A76,00,72
+[/script]
+
+[script]
+[title]恋愛組曲
+[process]恋愛組曲.EXE
+[maker]LIBIDO
+[creator]べーえむ
+[note]
+・メッセージスキップ
+・演奏成功
+[/note]
+[subject]メッセージスキップ:toggle,0x40E1BA,89467C3BC0,8B4E7C3BC8
+[subject]演奏成功:toggle,0x419537,EB,7D
+[/script]
+
+[script]
+[title]GREEN～秋空のスクリーン～
+[process]GREEN.EXE
+[maker]Jellyfish
+[creator]べーえむ
+[note]
+・ＣＧ表示高速化
+・進行ウェイト解除
+（Ver1.02専用）
+[/note]
+[subject]ＣＧ表示高速化:toggle,0x1000B983,00,02
+[subject]進行ウェイト解除:toggle,0x100015F2,00,5C
+[/script]
+
+[script]
+[title]電車でGo!
+[process]DENGO.EXE
+[maker]unbalance
+[creator]べーえむ
+[note]
+無敵化
+（起動前に値を固定）
+[/note]
+[subject]時間減らない(走行時):toggle,0x418BA4,83EA00,83EA01
+[subject]時間減らない(停車時):toggle,0x41EED4,2B55E8,2B45E8
+[subject]Window表示:toggle,0x4037BA,B300,B301
+[/script]
+
+[script]
+[title]猪名川でいこう!!
+[process]COMICQZ.EXE
+[maker]Leaf
+[creator]べーえむ
+[note]
+こみパ最大の決戦(Ver1.01)
+クイズ無敵化
+[/note]
+[subject]１番が正解:toggle,0x41A07C,EB6C,736C
+[subject]ゲージ減らない:toggle,0x41CDCC,2BC0,2BD0
+// for Ver1.00
+// [subject]１番が正解:toggle,0x418351,EB75,7375
+// [subject]ゲージ減らない:toggle,0x41B03B,2BC9,2BC1
+[/script]
+
+[script]
+[title]電車でGo!２ 3000番台
+[process]DENGO3K.EXE
+[maker]unbalance
+[creator]べーえむ
+[note]
+無敵化
+（起動前に値を固定）
+[/note]
+[subject]時間減らない(走行時):toggle,0x4100FE,8E34,8E0D
+[subject]時間減らない(停車時):toggle,0x414694,2BFF,2BEF
+[subject]Window表示:toggle,0x429E70,720A,740A
+// [subject]未確認:toggle,0x425CEF,7367,7411
+[/script]
+
+[script]
+[title]PINUP GIRLS
+[process]PINUP GIRLS.EXE
+[maker]LIBIDO
+[creator]べーえむ
+[note]
+・メッセージスキップ
+・演奏成功
+[/note]
+[subject]メッセージスキップ:toggle,0x425D51,89467C3BC0,8B4E7C3BC8
+[subject]演奏成功:toggle,0x421885,B064,F7F9
+[/script]
+
+[script]
+[title]DERBY STALLION for Win
+[process]DSRACE.EXE
+[maker]ASCII
+[creator]べーえむ
+[note]
+レース高速化
+（値を固定）
+[/note]
+[subject]レース高速化:toggle,0x40F7B4,6A08,6AFF
+[/script]
+
+[script]
+[title]DERBY STALLION for Win
+[process]DSWIN.EXE
+[maker]ASCII
+[creator]べーえむ
+[note]
+セリ高速化
+※レース高速化を
+　併用したい時は
+　この書換が先
+[/note]
+[subject]セリ&パドック高速化:toggle,0x467A34,6A08,6AFF
+[/script]
+
+[script]
+[title]YsⅡ ETERNAL v1.10
+[process]YS2_WIN.EXE
+[maker]日本Falcom
+[creator]べーえむ
+[note]
+＜使用上の注意＞
+起動前に値を固定
+DVD版/CD版ともにＯＫ
+Ver1.10専用
+[/note]
+[subject]無敵:toggle,0x40705B,7400,7402
+[subject]MP固定(Fire):toggle,0x405C6B,EB40,7C13
+[subject]MP固定(明＆獣):toggle,0x44CA4F,BA00,BA01
+[subject]経験値２倍:toggle,0x407253,D1E1,7E02
+[subject]GOLD２倍:toggle,0x407284,03FA3BF8,8BCF3BC8
+// for orginal
+// 無敵:toggle,0x406E07,7400,7402
+// MP固定(Fire):toggle,0x405ADB,EB40,7C13
+// MP固定(明＆獣):toggle,0x44E33C,BA00,BA01
+// 経験値２倍:toggle,0x406FD7,D1E1,7E02
+// GOLD２倍:toggle,0x40700A,03F23BF0,8BCE3BC8
+[/script]
+
+[script]
+[title]大人の缶詰YU-NO伏字解除
+[process]AI5WIN.EXE
+[maker]elf
+[creator]べーえむ
+[note]
+某所に公開したもの
+と同じです。
+YU-NO起動後にパッチ
+当てを行います。
+[/note]
+[subject]YU-NO伏字解除:b_toggle,0x400000,bm_yuno,offset
+[/script]
