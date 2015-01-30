@@ -1,0 +1,51 @@
+SSG for SpoilerAL ver 3.5
+
+//メモリエディタでは初めての作成。2001/08/23
+
+[script]
+[title]SequencePalladium2
+[creator]あるす
+[maker](株)工画堂スタジオ うさぎさんチーム
+[process]sp2.EXE
+[note]
+＜サーチ環境＞
+　OS:WinME
+　ver1,0,0,1
+　基本的に戦略的サポートを行います。
+　ゲームバランスを著しく崩しますので、
+　十分楽しんだ方以外はお勧めしません。
+　普通に楽しみたい人は、
+　六道さんのＳＳＧをお勧めします。
+
+※フォーン様の手ほどきでは
+　インビジ+ガイア+シルバー+ミラージュ
+　レジスト+リジェネ+ディテクト+デインジャー
+　あとはブレスを付加します。
+　フェイス対応未定。
+※番外では
+　強制的に各パラメータの経験値を限界まであげます。
+　経験値だけなので、育成等を行ってください。
+	17:58 2001/08/24
+[/note]
+[subject]フォーン様の手ほどき:dir
+	[subject]アインにほにゃらら/チェック:b_toggle,0x564A44,arusu-sp2chn1,offset
+	[subject]グレイにほにゃらら/チェック:b_toggle,0x564E1C,arusu-sp2chn1,offset
+	[subject]ホークにほにゃらら/チェック:b_toggle,0x5651F4,arusu-sp2chn1,offset
+	[subject]マンティスにほにゃらら/チェック:b_toggle,0x5655CC,arusu-sp2chn1,offset
+	[subject]リプリットにほにゃらら/チェック:b_toggle,0x5659A4,arusu-sp2chn1,offset
+[root]
+[subject]番外・・・:dir
+	[subject]経験と相性？:dir
+		[subject]てぃあ/ON:b_toggle,0x559A4C,arusu-sp2chn2,offset
+		[subject]ぷりむ/ON:b_toggle,0x559A8C,arusu-sp2chn2,offset
+		[subject]るぴなす/ON:b_toggle,0x559ACC,arusu-sp2chn2,offset
+		[subject]らっしゅ/ON:b_toggle,0x559B0C,arusu-sp2chn2,offset
+		[subject]らんでぃ/ON:b_toggle,0x559B4C,arusu-sp2chn2,offset
+		[subject]あいん/ON:b_toggle,0x559E4C,arusu-sp2chn2,offset
+		[subject]ぐれい/ON:b_toggle,0x559E8C,arusu-sp2chn2,offset
+		[subject]ほーく/ON:b_toggle,0x559ECC,arusu-sp2chn2,offset
+		[subject]ふぇいす/ON:b_toggle,0x559F0C,arusu-sp2chn2,offset
+		[subject]まんてぃす/ON:b_toggle,0x559F4C,arusu-sp2chn2,offset
+		[subject]りぷりっと/ON:b_toggle,0x559F8C,arusu-sp2chn2,offset
+	[back]
+[/script] 
