@@ -1,0 +1,174 @@
+SSG for SpoilerAL ver 5.41
+
+[script]
+	[title]かえるにょ国にょアリス in 20th Century Alice
+	[process]SYSTEM39.EXE
+	[maker]Alice Soft
+	[creator]風月
+
+[note]wordwrap
+このSSG はアリスソフトのサイトにて配布されている
+追加キャラパックを全てインストールしたものです。
+なので、ノーマル状態で動作するかは未検証です。
+[/note]
+	[size]2
+		[subject]所持金:calc,0xA04FB4,0x0,0xFFFF,signed,little_e
+	[/size]
+
+	[subject]ステータス:dir
+		[subject]アリス:dir
+			[replace]0xB31010,fugetsu-lst->rtn_alice,offset
+		[subject]シィル:dir
+			[replace]0xB31012,fugetsu-lst->rtn_alice,offset
+		[subject]ライセン:dir
+			[replace]0xB31014,fugetsu-lst->rtn_alice,offset
+		[subject]アリエッタ:dir
+			[replace]0xB31016,fugetsu-lst->rtn_alice,offset
+		[subject]凶アリア:dir
+			[replace]0xB31018,fugetsu-lst->rtn_alice,offset
+		[subject]葉月:dir
+			[replace]0xB3101A,fugetsu-lst->rtn_alice,offset
+		[subject]コレット:dir
+			[replace]0xB3101C,fugetsu-lst->rtn_alice,offset
+		[subject]マリア:dir
+			[replace]0xB3101E,fugetsu-lst->rtn_alice,offset
+		[subject]シグルーン:dir
+			[replace]0xB31020,fugetsu-lst->rtn_alice,offset
+		[subject]志津香:dir
+			[replace]0xB31022,fugetsu-lst->rtn_alice,offset
+		[subject]初音:dir
+			[replace]0xB31024,fugetsu-lst->rtn_alice,offset
+		[subject]ランス:dir
+			[replace]0xB31028,fugetsu-lst->rtn_alice,offset
+		[subject]リック:dir
+			[replace]0xB3102A,fugetsu-lst->rtn_alice,offset
+		[subject]斎藤 美華（スパイ斎藤／クリティカルUP）:dir
+			[replace]0xB31036,fugetsu-lst->rtn_alice,offset
+		[subject]みゅう:dir
+			[replace]0xB3103A,fugetsu-lst->rtn_alice,offset
+		[subject]バレス（移動力UP）:dir
+			[replace]0xB31040,fugetsu-lst->rtn_alice,offset
+		[subject]アズライト:dir
+			[replace]0xB3104E,fugetsu-lst->rtn_alice,offset
+		[subject]涼:dir
+			[replace]0xB31050,fugetsu-lst->rtn_alice,offset
+		[subject]五十六:dir
+			[replace]0xB31052,fugetsu-lst->rtn_alice,offset
+		[subject]かなみ:dir
+			[replace]0xB31054,fugetsu-lst->rtn_alice,offset
+		[subject]リゼル:dir
+			[replace]0xB31056,fugetsu-lst->rtn_alice,offset
+		[subject]有馬（横にいるのはアスタロト）:dir
+			[replace]0xB31058,fugetsu-lst->rtn_alice,offset
+		[subject]クルピス兄弟:dir
+			[replace]0xB3105A,fugetsu-lst->rtn_alice,offset
+		[subject]はぐれバニラ:dir
+			[replace]0xB3105C,fugetsu-lst->rtn_alice,offset
+		[back]
+[/script]
+
+
+[script]
+	[title]守り神様
+	[process]SYSTEM36.EXE
+	[maker]Alice Soft
+	[creator]風月
+	[subject]神力:calc,0x8A6380,0,999,signed,little_e
+[/script]
+
+
+[script]
+	[title]学園KING in Alice CD
+	[process]SYSTEM35.EXE
+	[maker]Alice Soft
+	[creator]風月
+		[subject]おこづかい:calc,0xBA2158,0x0,0xFFFF,signed,little_e
+		[subject]待機兵数:calc,0xBA2146,0x0,0xFFFF,signed,little_e
+		[subject]先頭部隊必殺回数:calc,0xBA214C,0,5,signed,little_e
+		[subject]先頭部隊攻撃力:calc,0xBA2148,0,999,signed,little_e
+		[subject]先頭部隊防御力:calc,0xBA214A,0,999,signed,little_e
+		[subject]自軍残存兵数:calc,0xBA2140,0,999,signed,little_e
+[/script]
+
+
+[script]
+	[title]DAWN*SLAVE in DS1&2
+	[process]DAWNSLAVE.EXE
+	[maker]U・ME・SOFT
+	[creator]風月
+
+[note]wordwrap
+体型は下一桁が小数点第一位となります。
+例：入力した値＞1325
+    ゲーム中の値＞132.5
+[/note]
+
+	[subject]日付:calc,0xD11D10,1,30,signed,little_e
+	[subject]絶食:calc,0xD11D3A,0,200,signed,little_e
+	[subject]不眠:calc,0xD11D38,0,200,signed,little_e
+
+	[subject]体型:dir
+		[subject]バスト:calc,0xD11D24,0,2000,signed,little_e
+		[subject]ウェスト:calc,0xD11D28,0,2000,signed,little_e
+		[subject]ヒップ:calc,0xD11D2C,0,2000,signed,little_e
+	[back]
+
+	[subject]ステータス・左側:dir
+		[subject]体力:calc,0xD11D45,0,99,signed,little_e
+		[subject]精神力:calc,0xD11D46,0,99,signed,little_e
+		[subject]好色度:calc,0xD11D47,0,99,signed,little_e
+		[subject]変態度:calc,0xD11D4A,0,99,signed,little_e
+		[subject]膣:calc,0xD11D4C,0,99,signed,little_e
+	[back]
+
+	[subject]ステータス・右側:dir
+		[subject]自尊心:calc,0xD11D44,0,99,signed,little_e
+		[subject]好意:calc,0xD11D49,0,99,signed,little_e
+		[subject]性欲:calc,0xD11D48,0,99,signed,little_e
+		[subject]性技:calc,0xD11D4B,0,99,signed,little_e
+		[subject]肛門:calc,0xD11D4D,0,99,signed,little_e
+	[back]
+
+	[subject]薬棚:dir
+		[subject]鎮静剤:calc,0xD11D9E,0,3,signed,little_e
+		[subject]興奮剤:calc,0xD11DA0,0,3,signed,little_e
+		[subject]強壮薬:calc,0xD11DA2,0,3,signed,little_e
+		[subject]治癒薬:calc,0xD11DA4,0,3,signed,little_e
+	[back]
+
+	[subject]調教結果:dir
+		[subject]絶頂:calc,0xD11D64,0,99,signed,little_e
+		[subject]潮吹:calc,0xD11D66,0,99,signed,little_e
+		[subject]失禁:calc,0xD11D68,0,99,signed,little_e
+		[subject]嘔吐:calc,0xD11D62,0,99,signed,little_e
+		[subject]隷嬢:calc,0xD11D6A,0,99,signed,little_e
+	[back]
+
+	[subject]生理周期:calc,0xD11D30,1,21,signed,little_e
+[/script]
+
+
+[script]
+	[title]DAWN*SLAVES2 in DS1&2 
+	[process]DS2.EXE
+	[maker]Ｕ・ＭＥ・ＳＯＦＴ
+	[creator]風月
+	[adjustment]dialog,0xD3DCB5,fugetsu-lst->ds2in12_adj,0xD3D000,0xD4BBBB,1
+
+[note]wordwrap
+補正基値入力画面が非常に見にくいとは思いますがご容赦を。
+
+繁彰の疲労度は・・・何の役に立つんでしょ？
+変えてもあまり意味はないように見えるし・・・
+[/note]
+	[subject]所持金:calc,0xD3DC91,0,99999,signed,little_e
+
+	[subject]ステータス:dir
+		[subject]オリガ:dir
+			[replace]0xD3DCB5,fugetsu-lst->ds2in12_cld,offset
+		[subject]タチアナ:dir
+			[replace]0xD3DE3D,fugetsu-lst->ds2in12_cld,offset
+		[subject]繁彰:dir
+			[subject]疲労度:calc,0xD3DEE5,0,999,signed,little_e
+		[back]
+[/script]
