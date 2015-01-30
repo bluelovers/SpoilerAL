@@ -1,0 +1,31 @@
+[group]ENS_SSG
+[note]wordwrap
+あれだけひっぱっといて最後があっさりし過ぎかなと。
+
+ver1.00-CRC32/
+SYSTEM.UNT=286CD796
+
+＊フラグ項目なので反映させるために、モードの出入り等を行ってください。
+EXMODEの入り口は一端コンフィグに入り、機能実行。タイトルに戻り、コンフィグ右下に入り口があるのでそこをクリックすればOK。
+[/note]
+
+[subject]ＣＧモード関連:dir
+	[replace]_[:(MName::SYSTEM.UNT)+0x34574:],ENSLST->ENS_CG
+[root]
+
+[/group]
+
+
+[group]ENS_CG
+[subject]EXMODE使用可能/実行/固定:toggle,0x54,01000000,00000000
+[subject]EX-STORY閲覧可能/実行/_:toggle,0x1194,010101010101,000000000000
+[subject]MOVIE ALLON/実行/_:toggle,0x119C,0101,0000
+[subject]GRAPHIC:dir
+[subject]ＡＬＬ ＯＮ/実行/_:toggle,0xDAC,0xFDD-01
+[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0xDAC,0xFDD-00
+[back]
+[subject]H-REPLAY:dir
+[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x119E,0x11C7-01
+[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x119E,0x11C7-00
+[back]
+[/group]
