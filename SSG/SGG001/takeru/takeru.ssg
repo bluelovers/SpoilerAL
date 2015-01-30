@@ -1,0 +1,104 @@
+SSG for SpoilerAL ver 2.8
+
+[script]
+[title]彩季憧
+[process]MAIN.EXE
+[maker]IMAGE CLUB
+[creator]TAKERU
+[subject]体力:calc,0x476ff0,0,255,unsigned
+[subject]技術力:calc,0x476ff4,0,255,unsigned
+[subject]所持金:calc,0x476ff8,0,9999,unsigned
+[back]
+[/script]
+
+[script]
+[title]悪っ外伝！～悪夢のラッシュアワー～
+[process]WARUG.EXE
+[maker]インターハート
+[creator]TAKERU
+
+[subject]早川優梨:dir
+	[subject]忍耐度:calc,0x4b182c,0,255,unsigned
+	[subject]反応度:calc,0x4b1838,0,255,unsigned
+	[subject]逃げ指数:calc,0x4b1844,0,255,unsigned
+[back]
+
+[subject]篠宮さやか:dir
+	[subject]忍耐度:calc,0x4b19d8,0,255,unsigned
+	[subject]反応度:calc,0x4b19e4,0,255,unsigned
+	[subject]逃げ指数:calc,0x4b19f0,0,255,unsigned
+[back]
+
+[subject]天野勇:dir
+	[subject]忍耐度:calc,0x4b1b84,0,255,unsigned
+	[subject]反応度:calc,0x4b1b90,0,255,unsigned
+	[subject]逃げ指数:calc,0x4b1b9c,0,255,unsigned
+[back]
+
+[subject]松本慶子:dir
+	[subject]忍耐度:calc,0x4b1d30,0,255,unsigned
+	[subject]反応度:calc,0x4b1d3c,0,255,unsigned
+	[subject]逃げ指数:calc,0x4b1d48,0,255,unsigned
+[back]
+
+[subject]水内亜矢:dir
+	[subject]忍耐度:calc,0x4b1edc,0,255,unsigned
+	[subject]反応度:calc,0x4b1ee8,0,255,unsigned
+	[subject]逃げ指数:calc,0x4b1ef4,0,255,unsigned
+[back]
+
+[subject]村井順子:dir
+	[subject]忍耐度:calc,0x4b2088,0,255,unsigned
+	[subject]反応度:calc,0x4b2094,0,255,unsigned
+	[subject]逃げ指数:calc,0x4b20a0,0,255,unsigned
+[back]
+
+[subject]相田みずき:dir
+	[subject]忍耐度:calc,0x4b2234,0,255,unsigned
+	[subject]反応度:calc,0x4b2240,0,255,unsigned
+	[subject]逃げ指数:calc,0x4b224c,0,255,unsigned
+[back]
+
+[subject]河合遥:dir
+	[subject]忍耐度:calc,0x4b23e0,0,255,unsigned
+	[subject]反応度:calc,0x4b23fc,0,255,unsigned
+	[subject]逃げ指数:calc,0x4b23f8,0,255,unsigned
+[back]
+
+[subject]和田美和:dir
+	[subject]忍耐度:calc,0x4b258c,0,255,unsigned
+	[subject]反応度:calc,0x4b2598,0,255,unsigned
+	[subject]逃げ指数:calc,0x4b25a4,0,255,unsigned
+[back]
+
+[subject]新藤絵利:dir
+	[subject]忍耐度:calc,0x4b2738,0,255,unsigned
+	[subject]反応度:calc,0x4b2744,0,255,unsigned
+	[subject]逃げ指数:calc,0x4b2750,0,255,unsigned
+[back]
+
+[subject]安藤めぐみ:dir
+	[subject]忍耐度:calc,0x4b28e4,0,255,unsigned
+	[subject]反応度:calc,0x4b28f0,0,255,unsigned
+	[subject]逃げ指数:calc,0x4b28fc,0,255,unsigned
+[back]
+
+[subject]一条緋美子:dir
+	[subject]忍耐度:calc,0x4b2a90,0,255,unsigned
+	[subject]反応度:calc,0x4b2a9c,0,255,unsigned
+	[subject]逃げ指数:calc,0x4b2aa8,0,255,unsigned
+[back]
+
+[subject]藤田麻美:dir
+	[subject]忍耐度:calc,0x4b2c3c,0,255,unsigned
+	[subject]反応度:calc,0x4b2c48,0,255,unsigned
+	[subject]逃げ指数:calc,0x4b2c54,0,255,unsigned
+[back]
+
+[subject]星野瞳:dir
+	[subject]忍耐度:calc,0x4b2de8,0,255,unsigned
+	[subject]反応度:calc,0x4b2df4,0,255,unsigned
+	[subject]逃げ指数:calc,0x4b2e00,0,255,unsigned
+[back]
+
+[/script]
