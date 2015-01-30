@@ -1,0 +1,205 @@
+[group]BR2_MA
+[note]wordwrap
+以下、少々補足です
+
+■環境関連
+種を明かすと、スキップ機能からエフェクト制御を奪うコードなので、発動には一瞬でもスキップしないとダメという…(^^;
+
+■ＣＧモード関連
+回想ＡＬＬはＥＤ回想部分を除外。それらはＥＤ鑑賞ＡＬＬにより補完。
+[/note]
+
+[subject]環境関連:dir
+	[subject]ＡＶＧパート高速化/実行/_:b_toggle,0x4107D8,BRLST->BR2_q,real
+[/group]
+
+
+[group]BR2_F1
+[subject]外出回数リセット/実行/_:toggle,0x461328,00
+[subject]思索回数リセット/実行/_:toggle,0x461324,00
+[subject]外出済フラグ全解除/実行/_:toggle,0x461334,0x46134C-01
+[subject]思索済フラグ全解除/実行/_:toggle,0x46135C,0x461370-01
+[subject]カレン会話封印解除/実行/_:toggle,0x4613AC,00
+[subject]桜会話封印解除/実行/_:toggle,0x4613B0,00
+[subject]アンジェ会話封印解除/実行/_:toggle,0x4613B4,00
+[/group]
+
+
+[group]BR2_PR
+[subject]日数/現在値/_:calc,0x4612C0,0x02,0x30,unsigned
+[subject]週数/現在値/_:calc,0x4612C4,0x01,0x7,unsigned
+[subject]魔王度/現在値/_:calc,0x4612CC,0x00,0x64,unsigned
+[subject]ヒロイン別能力:dir
+	[subject]カレン:dir
+		[replace]0x46144C,BR2LST->BR2_l
+	[subject]桜:dir
+		[replace]0x4615DC,BR2LST->BR2_l
+	[subject]アンジェ:dir
+		[replace]0x46176C,BR2LST->BR2_l
+[/group]
+
+
+[group]BR2_CG
+[subject]ＣＧ鑑賞:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:b_toggle,0x460188,BRLST->BR2_m,real
+	[subject]ＡＬＬ ＯＦＦ/実行/_:b_toggle,0x460188,BRLST->BR2_n,real
+[back]
+[subject]回想鑑賞:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:b_toggle,0x45C498,BRLST->BR2_o,real
+	[subject]ＡＬＬ ＯＦＦ/実行/_:b_toggle,0x45C498,BRLST->BR2_p,real
+[back]
+[subject]エンディング鑑賞:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x45D758,0x45D7A4-01000000
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x45D758,0x45D7A4-00000000
+[/group]
+
+
+[group]BR2_a
+0x4612F4,01
+0x461328,00
+[/group]
+
+
+[group]BR2_b
+0x4612F4,01
+0x461324,00
+[/group]
+
+
+[group]BR2_c
+愛情
+好意
+普通
+不信
+嫌悪
+[/group]
+
+
+[group]BR2_d
+0x00
+0x01
+0x02
+0x03
+0x04
+[/group]
+
+
+[group]BR2_e
+高貴
+庶民
+奴隷
+娼婦
+[/group]
+
+
+[group]BR2_f
+0x00
+0x01
+0x02
+0x03
+[/group]
+
+
+[group]BR2_g
+なし
+病気
+[/group]
+
+
+[group]BR2_h
+0x00
+0x01
+[/group]
+
+
+[group]BR2_i
+なし
+狂気
+[/group]
+
+
+[group]BR2_j
+なし
+変態
+[/group]
+
+
+[group]BR2_k
+なし
+淫乱
+[/group]
+
+
+[group]BR2_l
+[e_with],0x0000,0x0100,unsigned
+	[subject]体力/現在値/_:calc,0x00
+	[subject]精神力/現在値/_:calc,0x04
+	[subject]従順/現在値/_:calc,0x08
+	[subject]変態/現在値/_:calc,0x0C
+	[subject]性技/現在値/_:calc,0x10
+	[subject]肉欲/現在値/_:calc,0x14
+	[subject]気品/現在値/_:calc,0x18
+	[subject]好感度/現在値/_:calc,0x1C
+[/e_with]
+[subject]ステータス関係:dir
+	[subject]ステータス１/_:d_list,0x24,BR2LST->BR2_c,0x00,0x04,BR2LST->BR2_d
+	[subject]ステータス２/_:d_list,0x28,BR2LST->BR2_e,0x00,0x04,BR2LST->BR2_f
+	[subject]ステータス３/_:d_list,0x2C,BR2LST->BR2_g,0x00,0x04,BR2LST->BR2_h
+	[subject]ステータス４/_:d_list,0x30,BR2LST->BR2_i,0x00,0x04,BR2LST->BR2_h
+	[subject]ステータス５/_:d_list,0x34,BR2LST->BR2_j,0x00,0x04,BR2LST->BR2_h
+	[subject]ステータス６/_:d_list,0x38,BR2LST->BR2_k,0x00,0x04,BR2LST->BR2_h
+[back]
+[subject]各能力ＬＶ:dir
+	[e_with],0x01,0x05,unsigned
+	[subject]性交系/現在値/_:calc,0x64
+	[subject]奉仕系/現在値/_:calc,0x68
+	[subject]肛虐系/現在値/_:calc,0x6C
+	[subject]ＳＭ系/現在値/_:calc,0x70
+	[subject]変態系/現在値/_:calc,0x74
+	[/e_with]
+[back]
+[back]
+[/group]
+
+
+[group]BR2_m
+0x460188,0x460330-01000000
+0x4604A8,0x460648-01000000
+0x4607C8,0x460928-01000000
+0x460958,0x460A0C-01000000
+[/group]
+
+
+[group]BR2_n
+0x460188,0x460330-00000000
+0x4604A8,0x460648-00000000
+0x4607C8,0x460928-00000000
+0x460958,0x460A0C-00000000
+[/group]
+
+
+[group]BR2_o
+0x45C498,01000000
+0x45D2A8,0x45D330-01000000
+0x45D438,0x45D4D8-01000000
+0x45D5C8,0x45D630-01000000
+0x45D6B8,0x45D6C0-01000000
+0x45D708,0x45D740-01000000
+[/group]
+
+
+[group]BR2_p
+0x45C498,00000000
+0x45D2A8,0x45D330-00000000
+0x45D438,0x45D4D8-00000000
+0x45D5C8,0x45D630-00000000
+0x45D6B8,0x45D6C0-00000000
+0x45D708,0x45D740-00000000
+[/group]
+
+
+[group]BR2_q
+0x4107D8,EB00,744A
+0x410811,EB1490,894208
+0x410827,C7420801000000EBE4,909090909090909090
+[/group]
