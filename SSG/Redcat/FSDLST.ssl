@@ -1,0 +1,481 @@
+[group]FSD_SSG
+[note]wordwrap
+御利用のWindowsにあったSSGファイルを読み込んでください。
+
+Windows2000上における動作テストとイメージ名確認を"Ak"さんがしてくださいました。今回は２の１６文字制限になるようです。御報告感謝。
+
+参考：SpoilerALのWindows2000上におけるプロセス展開に関する問題
+http://onionimu.hp.infoseek.co.jp/usr/redcat/004/01.html
+[/note]
+
+[subject]ver1.100:dir
+
+[subject]アクションパート関連:dir
+ [subject]ＰＣ体力＆必殺技ゲージ自動回復/実行/_:b_toggle,0x73DF09,FSDLST->FSD_a,real
+ [subject]ＰＣ必殺技ゲージ自動回復（上記と排他）/実行/_:b_toggle,0x73DF10,FSDLST->FSD_b,real
+ [subject]ＰＣ当たり判定回避/実行/_:b_toggle,0x73DEED,FSDLST->FSD_c,real
+ [subject]ＰＣオートガード化/実行/_:toggle,0x737D0C,??85????????EB1D9090909090,??8E????????833D20A95C0100
+ [subject]ＰＣガードゲージ最大維持/実行/_:b_toggle,0x7435E6,FSDLST->FSD_d,real
+ [subject]宝具無限使用可能化/実行/_:toggle,0x6D8F17,33C98988FC28BC00EB029090,8B88FC28BC0069C92C010000
+ [subject]無限多段ジャンプ化/実行/_:toggle,0x75AA58,EB0490909090,0F8552010000
+ [subject]無限多段空中ダッシュ化/実行/_:toggle,0x46DB50,EB00,7523
+ [subject]UnlimitedBladeWorks速攻発動/実行/_:toggle,0x476680,B00890,83C001
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]１Ｐ:dir
+	[replace]0x0000,FSDLST->FSD_PR
+ [back]
+ [subject]２Ｐ:dir
+	[replace]0x0408,FSDLST->FSD_PR
+ [back]
+[back]
+
+[subject]フラグ関連:dir
+ [subject]ギルガメッシュ使用可能/実行/_:toggle,0x0246C07C,0x0246C09B-01000000,00
+ [subject]タイガー使用可能/実行/_:toggle,0x015FB668,0x015FB687-01000000,00
+[back]
+
+[back]
+
+[subject]ver1.102:dir
+
+[subject]アクションパート関連:dir
+ [subject]ＰＣ体力＆必殺技ゲージ自動回復/実行/_:b_toggle,0x73E802,FSDLST->FSD_2a,real
+ [subject]ＰＣ必殺技ゲージ自動回復（上記と排他）/実行/_:b_toggle,0x73E809,FSDLST->FSD_2b,real
+ [subject]ＰＣ当たり判定無効化/実行/_:b_toggle,0x73E7E6,FSDLST->FSD_2c,real
+ [subject]ＰＣオートガード化/実行/_:toggle,0x7384FC,??85????????EB1D9090909090,??8E????????833D789B5D0100
+ [subject]ＰＣガードゲージ最大維持/実行/_:b_toggle,0x743FB6,FSDLST->FSD_2d,real
+ [subject]宝具無限使用可能化/実行/_:toggle,0x6D96E7,33C98988CC0FBD00EB029090,8B88CC0FBD0069C92C010000
+ [subject]無限多段ジャンプ化/実行/_:toggle,0x75BCFE,EB0490909090,0F8552010000
+ [subject]無限多段空中ダッシュ化/実行/_:toggle,0x46D980,EB00,7523
+ [subject]UnlimitedBladeWorks速攻発動/実行/_:toggle,0x476530,B00890,83C001
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]１Ｐ:dir
+	[replace]0xE6D0,FSDLST->FSD_PR
+ [back]
+ [subject]２Ｐ:dir
+	[replace]0xEAD8,FSDLST->FSD_PR
+ [back]
+[back]
+
+[subject]フラグ関連:dir
+ [subject]ギルガメッシュ使用可能/実行/_:toggle,0x0247B324,0x0247B343-01000000,00
+ [subject]タイガー使用可能/実行/_:toggle,0x0160A8C0,0x0160A8DF-01000000,00
+[back]
+
+[back]
+
+[subject]ver1.105:dir
+
+[subject]アクションパート関連:dir
+ [subject]ＰＣ体力＆必殺技ゲージ自動回復/実行/_:b_toggle,0x699399,FSDLST->FSD_3a,real
+ [subject]ＰＣ必殺技ゲージ自動回復（上記と排他）/実行/_:b_toggle,0x69939F,FSDLST->FSD_3b,real
+ [subject]ＰＣ当たり判定無効化/実行/_:b_toggle,0x699349,FSDLST->FSD_3c,real
+ [subject]ＰＣオートガード化/実行/_:toggle,0x69339A,??85????????EB1D9090909090,??8E????????833D80C91B0100
+ [subject]ＰＣガードゲージ最大維持/実行/_:b_toggle,0x69D6AA,FSDLST->FSD_3d,real
+ [subject]宝具無限使用可能化/実行/_:toggle,0x648003,33C989881C4D7B00EB029090,8B881C4D7B0069C92C010000
+ [subject]無限多段ジャンプ化/実行/_:toggle,0x6B120D,EB0490909090,0F8552010000
+ [subject]無限多段空中ダッシュ化/実行/_:toggle,0x4580BC,EB00,7523
+ [subject]UnlimitedBladeWorks速攻発動/実行/_:toggle,0x45F5A3,B00890,83C001
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]１Ｐ:dir
+	[replace]0x0000,FSDLST->FSD_2PR
+ [back]
+ [subject]２Ｐ:dir
+	[replace]0x0408,FSDLST->FSD_2PR
+ [back]
+[back]
+
+[subject]フラグ関連:dir
+ [subject]ギルガメッシュ使用可能/実行/_:toggle,0x01C42F08,0x01C42F27-01000000,00
+ [subject]タイガー使用可能/実行/_:toggle,0x011ED6C8,0x011ED6E7-01000000,00
+[back]
+
+[back]
+
+[subject]ver1.106:dir
+
+[subject]アクションパート関連:dir
+ [subject]ＰＣ体力＆必殺技ゲージ自動回復/実行/_:b_toggle,0x69989A,FSDLST->FSD_4a,real
+ [subject]ＰＣ必殺技ゲージ自動回復（上記と排他）/実行/_:b_toggle,0x6998A0,FSDLST->FSD_4b,real
+ [subject]ＰＣ当たり判定無効化/実行/_:b_toggle,0x69984A,FSDLST->FSD_4c,real
+ [subject]ＰＣオートガード化/実行/_:toggle,0x6937FA,??85????????EB1D9090909090,??8E????????833D80D91B0100
+ [subject]ＰＣガードゲージ最大維持/実行/_:b_toggle,0x69DDEA,FSDLST->FSD_4d,real
+ [subject]宝具無限使用可能化/実行/_:toggle,0x648463,33C989881C5D7B00EB029090,8B881C5D7B0069C92C010000
+ [subject]無限多段ジャンプ化/実行/_:toggle,0x6B195D,EB0490909090,0F8552010000
+ [subject]無限多段空中ダッシュ化/実行/_:toggle,0x45AABE,EB00,7523
+ [subject]UnlimitedBladeWorks速攻発動/実行/_:toggle,0x45F813,B00890,83C001
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]１Ｐ:dir
+	[replace]0x1000,FSDLST->FSD_2PR
+ [back]
+ [subject]２Ｐ:dir
+	[replace]0x1408,FSDLST->FSD_2PR
+ [back]
+[back]
+
+[subject]フラグ関連:dir
+ [subject]ギルガメッシュ使用可能/実行/_:toggle,0x01C43F08,0x01C43F27-01000000,00
+ [subject]タイガー使用可能/実行/_:toggle,0x011EE6C8,0x011EE6E7-01000000,00
+[back]
+
+[back]
+
+[subject]ver1.107:dir
+
+[subject]アクションパート関連:dir
+ [subject]ＰＣ体力＆必殺技ゲージ自動回復/実行/_:b_toggle,0x689613,FSDLST->FSD_5a,real
+ [subject]ＰＣ必殺技ゲージ自動回復（上記と排他）/実行/_:b_toggle,0x689619,FSDLST->FSD_5b,real
+ [subject]ＰＣ当たり判定無効化/実行/_:b_toggle,0x6895C3,FSDLST->FSD_5c,real
+ [subject]ＰＣオートガード化/実行/_:toggle,0x6834EA,??85????????EB1D9090909090,??8E????????833D80C91A0100
+ [subject]ＰＣガードゲージ最大維持/実行/_:b_toggle,0x68DBDA,FSDLST->FSD_5d,real
+ [subject]宝具無限使用可能化/実行/_:toggle,0x4E1160,EB12,7522
+ [subject]無限多段ジャンプ化/実行/_:toggle,0x6A174D,EB0490909090,0F8552010000
+ [subject]無限多段空中ダッシュ化/実行/_:toggle,0x45AB1E,EB00,7523
+ [subject]UnlimitedBladeWorks速攻発動/実行/_:toggle,0x45F8A3,B00890,83C001
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]１Ｐ:dir
+	[replace]0x0000,FSDLST->FSD_3PR
+ [back]
+ [subject]２Ｐ:dir
+	[replace]0x0408,FSDLST->FSD_3PR
+ [back]
+[back]
+
+[subject]フラグ関連:dir
+ [subject]ギルガメッシュ使用可能/実行/_:toggle,0x01C32F08,0x01C32F27-01000000,00
+ [subject]タイガー使用可能/実行/_:toggle,0x011DD6C8,0x011DD6E7-01000000,00
+[back]
+
+[back]
+
+[subject]ver1.200（誤字パッチ適用）/1.202:dir
+
+[subject]アクションパート関連:dir
+ [subject]ＰＣ体力＆必殺技ゲージ自動回復/実行/_:b_toggle,0x6896F6,FSDLST->FSD_6a,real
+ [subject]ＰＣ必殺技ゲージ自動回復（上記と排他）/実行/_:b_toggle,0x6896FC,FSDLST->FSD_6b,real
+ [subject]ＰＣ当たり判定無効化/実行/_:b_toggle,0x6896A6,FSDLST->FSD_6c,real
+ [subject]ＰＣオートガード化/実行/_:toggle,0x68354A,??85????????EB1D9090909090,??8E????????833D80C91A0100
+ [subject]ＰＣガードゲージ最大維持/実行/_:b_toggle,0x1068DCBA,FSDLST->FSD_6d,real
+ [subject]宝具無限使用可能化/実行/_:toggle,0x4E1160,EB12,7522
+ [subject]無限多段ジャンプ化/実行/_:toggle,0x6A182D,EB0490909090,0F8552010000
+ [subject]無限多段空中ダッシュ化/実行/_:toggle,0x45838C,EB00,7523
+ [subject]UnlimitedBladeWorks速攻発動/実行/_:toggle,0x45F8A3,B00890,83C001
+[back]
+
+[subject]パラメータ関連:dir
+ [subject]１Ｐ:dir
+	[replace]0x0000,FSDLST->FSD_3PR
+ [back]
+ [subject]２Ｐ:dir
+	[replace]0x0408,FSDLST->FSD_3PR
+ [back]
+[back]
+
+[subject]フラグ関連:dir
+ [subject]ギルガメッシュ使用可能/実行/_:toggle,0x01C32F08,0x01C32F27-01000000,00
+ [subject]タイガー使用可能/実行/_:toggle,0x011DD6C8,0x011DD6E7-01000000,00
+[back]
+
+[back]
+
+[/group]
+
+
+[group]FSD_PR
+[subject]体力ゲージ（緑）/現在値/固定:f_calc,0xBC2844,0,26000,float
+[subject]体力ゲージ（赤）/現在値/固定:f_calc,0xBC285C,0,26000,float
+[subject]必殺技ゲージ/現在値/固定:f_calc,0xBC28B0,0,300,float
+[subject]ガードゲージ/現在値/固定:f_calc,0xBC28B8,0,100,float
+[/group]
+
+
+[group]FSD_2PR
+[subject]体力ゲージ（緑）/現在値/固定:f_calc,0x7B4C64,0,26000,float
+[subject]体力ゲージ（赤）/現在値/固定:f_calc,0x7B4C7C,0,26000,float
+[subject]必殺技ゲージ/現在値/固定:f_calc,0x7B4CD0,0,300,float
+[subject]ガードゲージ/現在値/固定:f_calc,0x7B4CD8,0,100,float
+[/group]
+
+
+[group]FSD_3PR
+[subject]体力ゲージ（緑）/現在値/固定:f_calc,0x7A4C64,0,26000,float
+[subject]体力ゲージ（赤）/現在値/固定:f_calc,0x7A4C7C,0,26000,float
+[subject]必殺技ゲージ/現在値/固定:f_calc,0x7A4CD0,0,300,float
+[subject]ガードゲージ/現在値/固定:f_calc,0x7A4CD8,0,100,float
+[/group]
+
+
+[group]FSD_a
+0x73DF09,8B8A2028BC0085C98BCA0F855C0100008BCAEB029090,833D20A95C01000F8E5F0100008B55FC69D208040000
+0x73E001,EB00,7572
+[/group]
+
+
+[group]FSD_2a
+0x73E802,8B8AF00EBD0085C98BCA0F855C0100008BCAEB029090,833D789B5D01000F8E5F0100008B55FC69D208040000
+0x73E8FA,EB00,7572
+[/group]
+
+
+[group]FSD_3a
+0x699399,BA404C7B00000F8F,3D80C91B01000F8E
+0x6994B4,EB0490909090,0F8581000000
+[/group]
+
+
+[group]FSD_4a
+0x69989A,BA405C7B00000F8F,3D80D91B01000F8E
+0x6999B5,EB0490909090,0F8581000000
+[/group]
+
+
+[group]FSD_5a
+0x689613,BA404C7A00000F8F,3D80D91B01000F8E
+0x68972E,EB0490909090,0F8581000000
+[/group]
+
+
+[group]FSD_6a
+0x6896F6,BA404C7A00000F8F,3D80C91A01000F8E
+0x689811,EB0490909090,0F8581000000
+[/group]
+
+
+[group]FSD_b
+0x73DF10,E9E500000090,0F8E5F010000
+0x73DFFA,8B812028BC0085C08BC1756F8BC1EB029090,833D749E96010175728B45FC69C008040000
+[/group]
+
+
+[group]FSD_2b
+0x73E809,E9E500000090,0F8E5F010000
+0x73E8F3,8B81F00EBD0085C08BC1756F8BC1EB029090,833D1C9197010175728B4DFC69C008040000
+[/group]
+
+
+[group]FSD_3b
+0x69939F,E90901000090,0F8E96010000
+0x6994AE,BA404C7B0000,3D1868310101
+[/group]
+
+
+[group]FSD_4b
+0x6998A0,E90901000090,0F8E96010000
+0x6999AF,BA405C7B0000,3D1878310101
+[/group]
+
+
+[group]FSD_5b
+0x689619,E90901000090,0F8E96010000
+0x689728,BA404C7A0000,3D1868300101
+[/group]
+
+
+[group]FSD_6b
+0x6896FC,E90901000090,0F8E96010000
+0x68980B,BA404C7A0000,3D1868300101
+[/group]
+
+
+[group]FSD_c
+0x73DEED,E92EE81800EB15,833D005EE400007E13
+0x8CC720,BA2028BC00,CCCCCCCCCC
+0x8CC725,33C9,CCCC
+0x8CC727,B102,CCCC
+0x8CC729,833A00,CCCCCC
+0x8CC72C,7507,CCCC
+0x8CC72E,C7426C01000000,CCCCCCCCCCCCCC
+0x8CC735,81C208040000,CCCCCCCCCCCC
+0x8CC73B,E0EC,CCCC
+0x8CC73D,8B4DFC,CCCCCC
+0x8CC740,69C908040000,CCCCCCCCCCCC
+0x8CC746,8BD1,CCCC
+0x8CC748,E9BC17E7FF90,CCCCCCCCCCCC
+[/group]
+
+
+[group]FSD_2c
+0x73E7E6,E9058919009090,833DC84EE50000
+0x8D70F0,BAF00EBD00,CCCCCCCCCC
+0x8D70F5,33C9,CCCC
+0x8D70F7,B102,CCCC
+0x8D70F9,833A00,CCCCCC
+0x8D70FC,7507,CCCC
+0x8D70FE,C7426C01000000,CCCCCCCCCCCCCC
+0x8D7105,81C208040000,CCCCCCCCCCCC
+0x8D710B,E0EC,CCCC
+0x8D710D,8B4DFC,CCCCCC
+0x8D7110,69C908040000,CCCCCCCCCCCC
+0x8D7116,8BD1,CCCC
+0x8D7118,E9E576E6FF90,CCCCCCCCCCCC
+[/group]
+
+
+[group]FSD_3c
+0x699349,E90AC60E0090,69D208040000
+0x785958,B8404C7B00,0000000000
+0x78595D,33C9,0000
+0x78595F,B102,0000
+0x785961,833800,000000
+0x785964,7507,0000
+0x785966,C7406C01000000,00000000000000
+0x78596D,0508040000,0000000000
+0x785972,E0ED,0000
+0x785974,69D208040000,000000000000
+0x78597A,E9D039F1FF90,000000000000
+[/group]
+
+
+[group]FSD_4c
+0x69984A,E9C9C80E0090,69D208040000
+0x786118,B8405C7B00,0000000000
+0x78611D,33C9,0000
+0x78611F,B102,0000
+0x786121,833800,000000
+0x786124,7507,0000
+0x786126,C7406C01000000,00000000000000
+0x78612D,0508040000,0000000000
+0x786132,E0ED,0000
+0x786134,69D208040000,000000000000
+0x78613A,E91137F1FF90,000000000000
+[/group]
+
+
+[group]FSD_5c
+0x6895C3,E940C90E0090,69C908040000
+0x775F08,B8404C7A00,0000000000
+0x775F0D,33C9,0000
+0x775F0F,B102,0000
+0x775F11,833800,000000
+0x775F14,7507,0000
+0x775F16,C7406C01000000,00000000000000
+0x775F1D,0508040000,0000000000
+0x775F22,E0ED,0000
+0x775F24,69C908040000,000000000000
+0x775F2A,E99A36F1FF90,000000000000
+[/group]
+
+
+[group]FSD_6c
+0x6896A6,E98DA5110090,69C908040000
+0x7A3C38,B8404C7A00,0000000000
+0x7A3C3D,33C9,0000
+0x7A3C3F,B102,0000
+0x7A3C41,833800,000000
+0x7A3C44,7507,0000
+0x7A3C46,C7406C01000000,00000000000000
+0x7A3C4D,0508040000,0000000000
+0x7A3C52,E0ED,0000
+0x7A3C54,69C908040000,000000000000
+0x7A3C5A,E94D5AEEFF90,000000000000
+[/group]
+
+
+[group]FSD_d
+0x7435E6,E965911800,681F010000
+0x8CC750,B82028BC00,CCCCCCCCCC
+0x8CC755,833800,CCCCCC
+0x8CC758,750A,CCCC
+0x8CC75A,C780980000000000C642,CCCCCCCCCCCCCCCCCCCC
+0x8CC764,0508040000,CCCCCCCCCC
+0x8CC769,833800,CCCCCC
+0x8CC76C,750A,CCCC
+0x8CC76E,C780980000000000C642,CCCCCCCCCCCCCCCCCCCC
+0x8CC778,33C0,CCCC
+0x8CC77A,681F010000,CCCCCCCCCC
+0x8CC77F,E9676EE7FF90,CCCCCCCCCCCC
+[/group]
+
+
+[group]FSD_2d
+0x743FB6,E965311900,681F010000
+0x8D7120,B8F00EBD00,CCCCCCCCCC
+0x8D7125,833800,CCCCCC
+0x8D7128,750A,CCCC
+0x8D712A,C780980000000000C642,CCCCCCCCCCCCCCCCCCCC
+0x8D7134,0508040000,CCCCCCCCCC
+0x8D7139,833800,CCCCCC
+0x8D713C,750A,CCCC
+0x8D713E,C780980000000000C642,CCCCCCCCCCCCCCCCCCCC
+0x8D7148,33C0,CCCC
+0x8D714A,681F010000,CCCCCCCCCC
+0x8D714F,E967CEE6FF90,CCCCCCCCCCCC
+[/group]
+
+
+[group]FSD_3d
+0x69D6AA,E9A99A2300,681F010000
+0x8D7158,B8404C7B00,0000000000
+0x8D715D,8BD1,0000
+0x8D715F,33C9,0000
+0x8D7161,B102,0000
+0x8D7163,833801,000000
+0x8D7166,740A,0000
+0x8D7168,C780980000000000C642,00000000000000000000
+0x8D7172,0508040000,00000000
+0x8D7177,E0EA,0000
+0x8D7179,8BCA,0000
+0x8D717B,681F010000,0000000000
+0x8D7180,E92A65DCFF90,000000000000
+[/group]
+
+
+[group]FSD_4d
+0x69DDEA,E959830E00,681F010000
+0x786148,B8405C7B00,0000000000
+0x78614D,8BD1,0000
+0x78614F,33C9,0000
+0x786151,B102,0000
+0x786153,833801,000000
+0x786156,740A,0000
+0x786158,C780980000000000C642,00000000000000000000
+0x786162,0508040000,00000000
+0x786167,E0EA,0000
+0x786169,8BCA,0000
+0x78616B,681F010000,0000000000
+0x786170,E97A7CF1FF90,000000000000
+[/group]
+
+
+[group]FSD_5d
+0x68DBDA,E959830E00,681F010000
+0x775F38,B8404C7A00,0000000000
+0x775F3D,8BD1,0000
+0x775F3F,33C9,0000
+0x775F41,B102,0000
+0x775F43,833801,000000
+0x775F46,740A,0000
+0x775F48,C780980000000000C642,00000000000000000000
+0x775F52,0508040000,00000000
+0x775F57,E0EA,0000
+0x775F59,8BCA,0000
+0x775F5B,681F010000,0000000000
+0x775F60,E97A7CF1FF90,000000000000
+[/group]
+
+
+[group]FSD_6d
+0x68DCBA,E9495F1100,681F010000
+0x7A3C08,B8404C7A00,0000000000
+0x7A3C0D,8BD1,0000
+0x7A3C0F,33C9,0000
+0x7A3C11,B102,0000
+0x7A3C13,833801,000000
+0x7A3C16,740A,0000
+0x7A3C18,C780980000000000C642,00000000000000000000
+0x7A3C22,0508040000,00000000
+0x7A3C27,E0EA,0000
+0x7A3C29,8BCA,0000
+0x7A3C2B,681F010000,0000000000
+0x7A3C30,E98AA0EEFF,000000000000
+[/group]
