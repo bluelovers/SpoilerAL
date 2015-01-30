@@ -1,0 +1,20 @@
+  [subject]体力Max:calc,0x40,0x00,0x3E7,signed,little_e
+  [subject]体力Now:calc,0x7C,0x00,0x3E7,signed,little_e
+  [subject]精神Max:calc,0x44,0x00,0x3E7,signed,little_e
+  [subject]精神Now:calc,0x80,0x00,0x3E7,signed,little_e
+  [subject]愛情度:calc,0x48,0x00,0x3E7,signed,little_e
+  [subject]忠誠度:calc,0x4C,0x00,0x3E7,signed,little_e
+  [subject]攻撃力:calc,0x50,0x00,0x3E7,signed,little_e
+  [subject]防御力:calc,0x54,0x00,0x3E7,signed,little_e
+  [subject]敏捷力:calc,0x58,0x00,0x3E7,signed,little_e
+  [subject]魔力:calc,0x5C,0x00,0x3E7,signed,little_e
+[back]
+[subject]LV、お金:dir
+  [subject]LV:calc,0x36,0x00,0x63,signed,little_e
+//お金は多分FFFFFFFFまでもてると思うが
+//桁表示があふれるので999999で止めておく
+  [subject]お金:calc,0x3C,0x00,0xF423F,little_e
+//アイテムについては現在調査中
+//[subject]武器/Wepon:calc,0x??,MayWP,0x??,0x??
+//[subject]防具/Armer:calc,0x??,MayAM,0x??,0x??
+[back]
