@@ -1,0 +1,16 @@
+[group]PTM_SSG
+[note]wordwrap
+２人のヒロイン双方が癒し系なので、終始和みまくりｗ
+
+アルバム利用可能：
+フラグ項目ですので、機能実行後は一度オプション画面を出入りする等を行い反映させてください。
+[/note]
+
+[subject]ＣＧモード関連:dir
+[subject]アルバム利用可能/実行/_:toggle,0x61A38C,01000000
+ [subject]ＣＧ鑑賞・シーン回想:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x61A524,0x61A5CC-01000000
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x61A524,0x61A5CC-00
+[root]
+
+[/group]
