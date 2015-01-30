@@ -1,0 +1,155 @@
+[group]PM4_SSG
+[note]wordwrap
+※通常進行用と実データの関係は所謂ＬＶと経験値のようなもの。比率は1：100。ゲーム進行は通常進行用が利用されるが、値の増減は実データに行われ、その1/100が通常進行用に割り当てられる。
+※実データ書き換えを通常進行用に反映させるには、着替えを行うのが簡易。
+※技術ＬＶＵＰには経験値と対象能力双方が必要となる。
+※信頼度は他にも割り当て対象がいると思われる。後の更新で補完する予定。
+[/note]
+
+[subject]パラメータ関連:dir
+ [replace]_[:[:[:0x524354:]+0xB8:]+0xBC:],PM4LST->PM4_PR
+[back]
+
+[subject]ＣＧモード関連:dir
+ [replace]_[:[:[:0x524354:]+0xC8:]+0x0530:],PM4LST->PM4_CG
+[back]
+
+[/group]
+
+
+[group]PM4_PR
+[subject]所持金'+'［'+'_mem,0x70,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x70,0x000000,0x0F423F,unsigned
+[subject]通常進行用:dir
+ [subject]娘のステータス:dir
+  [repeat]PM4LST->PM4REP1,0,5,1
+  [repeat]PM4LST->PM4REP2,0,13,1
+ [back]
+ [subject]信頼度その他:dir
+  [repeat]PM4LST->PM4REP3,0,9,1
+ [back]
+[back]
+[subject]実データ:dir
+ [subject]娘のステータス:dir
+  [repeat]PM4LST->PM4REP4,0,5,1
+  [repeat]PM4LST->PM4REP5,0,13,1
+ [back]
+ [subject]信頼度その他:dir
+  [repeat]PM4LST->PM4REP6,0,9,1
+ [back]
+[back]
+[subject]技術関係データ:dir
+ [repeat]PM4LST->PM4REP7,0,20,1
+[back]
+[/group]
+
+
+[group]PM4_2PR
+[subject]実行回数'+'［'+'_mem,0x00,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x00,0x0000,0x270F,unsigned
+[subject]技術経験値'+'［'+'_mem,0x60,4,num,<Nodata>,%d'+'］/現在値/_:calc,0x60,0x0000,0x270F,unsigned
+[subject]技術LV'+'［'+'_mem,0xC0,4,num,<Nodata>,%d'+'］/現在値/_:calc,0xC0,0x00,0x03,unsigned
+[/group]
+
+
+[group]PM4_CG
+[subject]アルバムALL/ＯＮ／ＯＦＦ/_:toggle,0x00,0x11-FF,00
+[/group]
+
+
+[group]PM4REP1
+[subject][! @PM4LST->LST_c,$Val !]'+'［'+'_mem,0x[! 0x80+0x04*$Val !],4,num,<Nodata>,%d'+'］/現在値/_:calc,0x[! 0x80+0x04*$Val !],0x00,0xC8,unsigned
+[/group]
+
+
+[group]PM4REP2
+[subject][! @PM4LST->LST_d,$Val !]'+'［'+'_mem,0x[! 0xB0+0x04*$Val !],4,num,<Nodata>,%d'+'］/現在値/_:calc,0x[! 0xB0+0x04*$Val !],0x0000,0x03E7,unsigned
+[/group]
+
+
+[group]PM4REP3
+[subject][! @PM4LST->LST_b,$Val !]'+'［'+'_mem,0x[! 0xF8+0x04*$Val !],4,num,<Nodata>,%d'+'］/現在値/_:calc,0x[! 0xF8+0x04*$Val !],0x0000,0x03E7,unsigned
+[/group]
+
+
+[group]PM4REP4
+[subject][! @PM4LST->LST_c,$Val !]'+'［'+'_mem,0x[! 0x0154+0x04*$Val !],4,num,<Nodata>,%d'+'］/現在値/_:calc,0x[! 0x0154+0x04*$Val !],0x0000,0x4E20,unsigned
+[/group]
+
+
+[group]PM4REP5
+[subject][! @PM4LST->LST_d,$Val !]'+'［'+'_mem,0x[! 0x0120+0x04*$Val !],4,num,<Nodata>,%d'+'］/現在値/固定:calc,0x[! 0x0120+0x04*$Val !],0x000000,0x01869F,unsigned
+[/group]
+
+
+[group]PM4REP6
+[subject][! @PM4LST->LST_b,$Val !]'+'［'+'_mem,0x[! 0x0168+0x04*$Val !],4,num,<Nodata>,%d'+'］/現在値/_:calc,0x[! 0x0168+0x04*$Val !],0x000000,0x01869F,unsigned
+[/group]
+
+
+[group]PM4REP7
+[subject][! @PM4LST->LST_a,$Val !]:dir
+ [replace]0x[! 0x0388+0x04*$Val !],PM4LST->PM4_2PR
+[back]
+[/group]
+
+
+[group]LST_a
+座学
+武術
+魔術
+礼法
+芸術
+舞踊
+家事手伝い
+子守り
+農場
+教会
+料理屋
+メイド
+木こり
+宿屋
+市場
+酒場
+家庭教師
+メイド酒場
+怪しい酒場
+カジノ
+[/group]
+
+
+[group]LST_b
+魔族化進行度
+父親信頼度
+シャルル信頼度
+ヴァロア信頼度
+リー信頼度
+リーゼ信頼度
+クリスチーナ信頼度
+マリー信頼度
+キューブ信頼度
+[/group]
+
+
+[group]LST_c
+身長
+体重
+Ｂ
+Ｗ
+Ｈ
+[/group]
+
+
+[group]LST_d
+体力
+知力
+魅力
+プライド
+モラル
+気品
+感受性
+気立て
+知名度
+武術能力
+魔術能力
+因業
+疲労度
+[/group]
