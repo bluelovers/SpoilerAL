@@ -1,0 +1,65 @@
+[group]MKN_SSG
+[note]wordwrap
+シゲ～ル兄さんとシスターナースですよ、やはりｗ
+
+以下、少々補足です。
+
+好感度/制服投票状況：
+一部イベントやエンディング時の制服によって若干台詞が変わったりしますので、全パターン回収を効率的に行える機能になります。なお、カンスト値はありません。適当に常識的な値を設定しただけです。
+[/note]
+
+[subject]パラメータ関連:dir
+[size]4
+ [subject]好感度確認調整:dir
+	[repeat]MKNLST->MKNREP1,0,5,1
+  [subject]ここまで:split,roll,-2,-,100
+ [back]
+ [subject]制服投票状況:dir
+	[repeat]MKNLST->MKNREP2,0,4,1
+ [back]
+[/size]
+[subject]ここまで:split,line,-1,100,5
+[root]
+
+[subject]ＣＧモード関連:dir
+	[replace]_[:[:0x4A2AC8:]+0x2984:],MKNLST->MKN_a
+ [subject]ここまで:split,line,-1,100,5
+[root]
+
+[/group]
+
+
+[group]MKN_a
+[subject]おまけモード出現/ＯＮ／ＯＦＦ/_:toggle,0x2C,01,00
+[subject]おまけモード:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x0038,0x022C-01000000
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x0038,0x022C-00
+[back]
+[/group]
+
+
+[group]MKNREP1
+[subject][! @MKNLST->LST_a,$Val !]/現在値/_:calc,_[:[:0x4A2AC8:]+0x296C:]+0x40+0x[! 0x04*$Val !],0xFFFFFF01,0x000000FF
+[/group]
+
+
+[group]MKNREP2
+[subject][! @MKNLST->LST_b,$Val !]/現在値/_:calc,_[:[:0x4A2AC8:]+0x296C:]+0x68+0x[! 0x04*$Val !],0x00,0xFF,unsigned
+[/group]
+
+
+[group]LST_a
+御子柴二葉
+須藤美希
+佐和遼子
+鮎川ひとみ
+東条院遥
+[/group]
+
+
+[group]LST_b
+巫女
+シスター
+ナース
+チャイナ
+[/group]
