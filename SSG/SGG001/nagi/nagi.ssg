@@ -1,0 +1,48 @@
+SSG for SpoilerAL ver 3.2
+
+[script]
+[title]BLOOD ROYAL
+[process]BR.EXE
+[maker]ちぇりーそふと
+[creator]なぎ
+[note]
+所有するアイテムによって調教
+コマンドとグラフィックが変化
+します。
+[/note]
+[subject]日数:calc,0x450B7E,0x0,0x2D,signed,little_e
+[subject]所持金:calc,0x450B9A,0x0,0x270F,signed,little_e
+
+[subject]ミルテ:dir
+	[replace]0x450BAE,brﾊﾟﾗﾒｰﾀ,offset
+[subject]咲夜:dir
+	[replace]0x450BC2,brﾊﾟﾗﾒｰﾀ,offset
+
+[subject]アイテム:dir
+	[subject]アイテム一括/有:toggle,0x450D16,0x450D44-0100,0000
+	[subject]珊瑚        /有:toggle,0x450D16,01,00
+	[subject]真珠        /有:toggle,0x450D18,01,00
+	[subject]象牙        /有:toggle,0x450D1A,01,00
+	[subject]アナルビーズ/有:toggle,0x450D1C,01,00
+	[subject]アナルバイブ/有:toggle,0x450D1E,01,00
+	[subject]メイドの服  /有:toggle,0x450D20,01,00
+	[subject]お姫様の服  /有:toggle,0x450D22,01,00
+	[subject]ふつうの服  /有:toggle,0x450D24,01,00
+	[subject]ローソク    /有:toggle,0x450D26,01,00
+	[subject]水槽        /有:toggle,0x450D28,01,00
+	[subject]ロープ      /有:toggle,0x450D2A,01,00
+	[subject]首輪セット  /有:toggle,0x450D2C,01,00
+	[subject]鞭          /有:toggle,0x450D2E,01,00
+	[subject]鎖セット    /有:toggle,0x450D30,01,00
+	[subject]拘束具      /有:toggle,0x450D32,01,00
+	[subject]三角木馬    /有:toggle,0x450D34,01,00
+	[subject]ナイフ      /有:toggle,0x450D36,01,00
+	[subject]ローション  /有:toggle,0x450D38,01,00
+	[subject]媚薬        /有:toggle,0x450D3A,01,00
+	[subject]刺青材料    /有:toggle,0x450D3C,01,00
+	[subject]スライムの薬/有:toggle,0x450D3E,01,00
+	[subject]剃毛セット  /有:toggle,0x450D40,01,00
+	[subject]浣腸セット  /有:toggle,0x450D42,01,00
+	[subject]ピアスセット/有:toggle,0x450D44,01,00
+[back]
+[/script]
