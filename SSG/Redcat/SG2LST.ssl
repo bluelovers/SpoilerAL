@@ -1,0 +1,19 @@
+[group]SG2_PR
+[note]wordwrap
+偉誤って名前だけでもツボだった。そりゃ、えらく間違ってるしｗ
+ゲームがどうこういう以前に、笑うことしかできネェ～(^^;
+[/note]
+
+[subject]パラメータ関連:dir
+	[subject]ＰＣ持ち時間無限化/実行/固定:toggle,0x47E5F4,808D5B00
+	[subject]ＣＰＵ持ち時間消滅（即勝利）/実行/固定:toggle,0x47E644,00000000
+	[e_with],0x0000,0x04B0,unsigned
+		[subject]ＰＣイカサマゲージ/現在値/_:calc,0x47E5F8
+		[subject]ＣＰＵイカサマゲージ/現在値/_:calc,0x47E648
+	[/e_with]
+[/group]
+
+
+[group]SG2_F2
+[subject]全キャラ使用可能/実行/_:toggle,0x47E6ED,FF01
+[/group]
