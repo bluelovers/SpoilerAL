@@ -1,0 +1,30 @@
+[group]WSD_SSG
+[note]wordwrap
+Œö®‚ÌĞ‰îƒy[ƒW’Ê‚è‹N•š–³‚µ‚Å‚·‚ªAç‰Ä‚Ì–³‹C—Í‚Èu‚¦[v‚É‚ÍÎ‚¦‚Ü‚·B‹t‚ÉŒ¾‚¤‚Æ‚»‚ê‚¾‚¯‚Á‚Û‚¢(^^;
+
+UIDIARY.EXE ver1.00/
+CRC32=230E04C3
+[/note]
+
+[subject]‚b‚fƒ‚[ƒhŠÖ˜A:dir
+	[replace]0x48C7F4,WSDLST->WSD_CG
+[root]
+
+[/group]
+
+
+[group]WSD_CG
+[subject]‚¨‚Ü‚¯€–Ú‘SoŒ»/Às/_:toggle,0x04,01,00
+[subject]‚b‚f:dir
+	[subject]‚`‚k‚k ‚n‚m/Às/_:toggle,0x10,0x41-FF
+	[subject]‚`‚k‚k ‚n‚e‚e/Às/_:toggle,0x10,0x41-00
+[back]
+[subject]‰ñ‘z:dir
+	[subject]‚`‚k‚k ‚n‚m/Às/_:toggle,0x42,FFFFFFFF
+	[subject]‚`‚k‚k ‚n‚e‚e/Às/_:toggle,0x42,00000000
+[back]
+[subject]ƒVƒiƒŠƒI:dir
+	[subject]‚`‚k‚k ‚n‚m/Às/_:toggle,_0x489788-[_0_],01000000010000000100000001000000
+	[subject]‚`‚k‚k ‚n‚e‚e/Às/_:toggle,_0x489788-[_0_],00000000000000000000000000000000
+[back]
+[/group]
