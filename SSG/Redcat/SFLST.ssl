@@ -1,0 +1,32 @@
+[group]SF_MA
+[note]wordwrap
+‚±‚¤‚¢‚¤\¬‚Í‚e•‚b‚Ì‚¨‰ÆŒ|‚Å‚·‚©‚ËBc‚Ü‚½éx‚³‚ê‚Ä‚µ‚Ü‚Á‚½(^^;
+[/note]
+
+[subject]ŠÂ‹«ŠÖ˜A:dir
+	[subject]–¢“Ç§ŒÀ‰ğœ/Às/_:b_toggle,0x1002154D,SFLST->SF_a,real
+[/group]
+
+
+[group]SF_CG
+[subject]v‚¢o‚ÌƒAƒ‹ƒoƒ€:dir
+	[subject]‚`‚k‚k ‚n‚m/Às/_:toggle,0x12C,0x185-01
+	[subject]‚`‚k‚k ‚n‚e‚e/Às/_:toggle,0x12C,0x185-00
+[back]
+[subject]v‚¢o‚Ì‚ ‚Æ‚³‚«:dir
+	[subject]‚`‚k‚k ‚n‚m/Às/_:toggle,0x1F4,0x1FF-01
+	[subject]‚`‚k‚k ‚n‚e‚e/Às/_:toggle,0x1F4,0x1FF-00
+[/group]
+
+
+[group]SF_a
+0x1002154D,E940,85D2
+0x1002154F,F90000,0F95C2
+0x10030E92,83F86D,000000
+0x10030E95,7504,0000
+0x10030E97,B201,0000
+0x10030E99,EB05,0000
+0x10030E9B,85D2,0000
+0x10030E9D,0F95C2,000000
+0x10030EA0,E9AD06FFFF90,000000000000
+[/group]
