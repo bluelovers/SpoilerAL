@@ -1,0 +1,149 @@
+SSG for SpoilerAL ver 3.4
+1999 8/13製造  日付はおかしいので使わないでね。
+補足、というか蛇足
+ なぜ日付変更が出来ないのに残してあるのかというと、単に未練がましいだけなのです。
+//を外せば当然Spoiler上では表示されます。しかし使えないのです（笑）。一様変わり
+ますよ、数字だけ。でも翌日になると元に戻ってます。ゲーム上でも本来の日付で進め
+られ、変わっているのは日付の表示だけです。本当に日付を表示しているのは別の所に
+あるのでしょうが、いかせん面倒なのでやりません。という事で、本当に意味無しなの
+であしからず。
+[script]
+[title]メイド物語
+[process]MD.EXE
+[maker]C'swareBlitz
+[creator]捨三
+[note]wordwrap
+体力上げすぎると表示がおかしくなるので限界値は自主規制です。好感度の表示は、日付が変わる時に読み込むみたいなので、変えてすぐはハートが増えてなくても、内部では変化しているようです。 調教進行度を100％にしてしまうと、ホントやること無いですよー。微妙な調教過程の変化が楽しめないし（笑）。
+[/note]
+[subject]体力全員MAX:b_toggle,0x0044F600,メイド物語体力,offset
+[subject]調教進行度全員MAX:b_toggle,0x00440000,メイド物語調教,offset
+[subject]アイテムALL:toggle,0x44F27A,0x44F2CC-0100,0000
+[subject]松本ヒトミ:dir
+     [subject]好感度:calc,0x0044F258,0x0,0x64,signed,little_e
+[back] 
+[subject]結城サナエ:dir
+     [subject]好感度:calc,0x0044F25C,0x0,0x64,signed,little_e
+[back]
+[subject]小早川梓:dir
+     [subject]好感度:calc,0x0044F260,0x0,0x64,signed,little_e
+[back] 
+[subject]所持金:calc,0x0044F400,0x0,0xFFFF,signed,little_e
+//[subject]日付:calc,0x00450234,0x0,0x005A,signed,little_e
+[/script]
+
+2000 5/23出荷 淡白なゲーム。マウスの押しすぎで手首が痛い。せっかくきゃらが可愛いのに淡々としている戦闘パートのおかげで全然愛着が湧きません（笑）。パワードールくらいには楽しませて欲しかったな。少しジャンルが違いますが、シュミレーションＲＰＧ（で良いのだろうか）の中では、セガサターンのクオヴァディス２が好きです。２回ぐらいこしました。やっぱりねぇ、きゃらに愛着ないとやってて辛いっス（偏見）。
+[script]
+[title]Sequence Palladium2(Ver:1.0.0.1)
+[process]SP2.EXE
+[maker]工画堂スタジオ
+[creator]捨三
+[note]wordwrap
+バージョン1,0,0,1用です。
+適当に作ってあります。単機で出撃させれば問題なく使えると思いますが、二機以上出すと、少々具合が悪いようです。一人分しか作ってないけど（しかも中途半端）、クリアするだけならこれで十分・・ですよね。他の制作者さん達とは違って、全てのパラメーターやアイテムを制覇せにゃ気がすまんっ・・と言った情熱がないものですから。
+[/note]
+[subject]一番目:dir
+       [subject]パラメーター:dir
+	[subject]能力:b_toggle,0x559000,シーパラ2_2,offset
+	[subject]死ねない:b_toggle,0x00564000,シーパラ2_1,offset
+	[subject]一人目相性:calc,0x00559E65,0x0,0xFF,signed,little_e
+//	[subject]一人目近接:calc,0x00564A50,0x0,0xFF,signed,little_e
+//	[subject]一人目遠隔:calc,0x00564A51,0x0,0xFF,signed,little_e
+//	[subject]一人目防御:calc,0x00564A52,0x0,0xFF,signed,little_e
+//	[subject]二人目ＡＰ:calc,0x00564E20,0x0,0xFF,signed,little_e
+//	[subject]二人目AP最:calc,0x00564E21,0x0,0xFF,signed,little_e
+//	[subject]二人目ＨＰ:calc,0x00564E1C,0x0,0xFF,signed,little_e
+//	[subject]二人目HP最:calc,0x00564E1E,0x0,0xFF,signed,little_e
+//	[subject]二人目魔術:calc,0x00564E26,0x0,0xFF,signed,little_e
+//	[subject]二人目法術:calc,0x00564E27,0x0,0xFF,signed,little_e
+//	[subject]二人目近接:calc,0x00564E28,0x0,0xFF,signed,little_e
+//	[subject]二人目遠隔:calc,0x00564E29,0x0,0xFF,signed,little_e
+//	[subject]二人目防御:calc,0x00564E2A,0x0,0xFF,signed,little_e
+	[back]
+//     [subject]ボーナスコンディション:dir
+//	[subject]エンチャントウエポン:calc,0x00564AFF,0x0,0xFF,signed,little_e  //	[subject]ウィザードシールド:calc,0x00564B00,0x0,0xFF,signed,little_e
+//	[subject]ガイア:calc,0x00564B06,0x0,0xFF,signed,little_e
+//	[subject]ダブル:calc,0x,0x0,0xFF,signed,little_e
+//	[subject]ウインドプロテクション:calc,0x00564B0D,0x0,0xFF,signed,little_e//
+//	[subject]レジストマジック:calc,0x00564B0B,0x0,0xFF,signed,little_e
+//	[subject]マジックミラージュ:calc,0x00564B08,0x0,0xFF,signed,little_e
+//	[subject]インビジビリティイ:calc,0x,0x0,0xFF,signed,little_e
+//	[subject]ディテクトマジック:calc,0x00564B2B,0x0,0xFF,signed,little_e
+//	[subject]不明:calc,0x00564B0F,0x0,0xFF,signed,little_e
+//	[subject]不明:calc,0x00564B1C,0x0,0xFF,signed,little_e
+//	[subject]エレメンタル:calc,0x4,0x0,0xFF,signed,little_e
+//	[subject]ホワイトシールド:calc,0x00564B02,0x0,0xFF,signed,little_e
+//	[subject]シルバーシールド:calc,0x,0x0,0xFF,signed,little_e
+//	[subject]デンジャーコール:calc,0x00564B2C,0x0,0xFF,signed,little_e
+//	[subject]不明:calc,0x00564B23,0x0,0xFF,signed,little_e
+//	[subject]ブレス:calc,0x00564A54,0x0,0xFF,signed,little_e
+//     [back]
+//     [subject]ペナルティコンディション:dir
+//	[subject]眠り:calc,0x00564BE0,0x0,0xFF,signed,little_e
+//	[subject]毒:calc,0x00564BD9,0x0,0xFF,signed,little_e
+//	[subject]麻痺:calc,0x00564BE8,0x0,0xFF,signed,little_e
+//	[subject]不明:calc,0x00564BE0,0x0,0xFF,signed,little_e
+//	[subject]石化:calc,0x00564BEB,0x0,0xFF,signed,little_e
+//	[subject]呪い:calc,0x00564BF0,0x0,0xFF,signed,little_e
+//	[subject]神罰:calc,0x00564BF8,0x0,0xFF,signed,little_e
+//	[subject]凍結:calc,0x00564BEC,0x0,0xFF,signed,little_e
+//	[subject]捕縛:
+//　 　[back]
+[root]
+[subject]育成アイテム:toggle,0x0055DBA1,0x0055DBBE-63,63
+[back]
+[/script]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+題：わーのわーの、ペルシャみんなに会えてとっても嬉しいですの！
+
+　前回から早９ヶ月。お腹の子供も生まれるころ。ご機嫌いかがでしょうか、捨三です。９ヶ月かぁー。そんなにも多くの時を過ごしたのかな。私の人間性も、社会的地位も、まるで向上していません。友達も一人も増えてません（泣）。増えたのはエロげーをクリアした数くらいだ（号泣）。
+　最近はね、あまり気力がないですの。だから早めに切り上げます。気が向いたらまた作ります。１年以上たってしまったら死んだものだと思ってください（笑）。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+おまけ
+
+文芸ｓｓｇ　第一回
+　　「　　陰　－インー　　」
+　朝。目が覚めると、僕は熊だった。生え変わる冬毛をブラシですき落とし、川まで顔を洗いに行く。川の水は冷たい。ひんやりとした水がぼくの思考をはっきりさせていく。大きく伸びをして夜明け前の冷たい空気を肺に吸い込む。十分な酸素が行き渡り、血液が全身をかけめぐる。僕の一日が始まる。そうして目覚めた後は、カエルとアリを一匹一匹踏みつぶしながら家へ帰ってご飯を食べる。
+　僕の家族は父と妹と僕の三人で、母は僕が三歳の誕生日の日、盛りになった父が勢い余って頭蓋（ズガイ）を粉砕してしまった。だからもうこの世に存在していない。当時まだ幼稚園にも行っていない僕を見た父は、その日、右側頭部が欠落した母の骸（ムクロ）の横で性転換を決意した。名前も「平八」から「シャンポール」に変え、仕事も大工からドイツ人になった。
+　そんな彼と妹で、今日も目玉焼きとキュウリ一本オンリーの朝食を、シャリシャリ言わせながら喰らう。妹は両手でキュウリをたてに持ち、その小さく愛らしい口をわずかに開いてコリコリと食べる。しかし父は違った。僕は父のキュウリの皮をむいてからチュパチュパ言わす食べ方が気に入らなくて、近頃はやりの僕のピカチュウでピカリとしてやったら、なんかあっさり死にやがった。
+　僕はこれから、残された幼い妹のために雌熊の皮を‥‥‥。
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　（終）
