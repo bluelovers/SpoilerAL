@@ -1,0 +1,906 @@
+SSG for SpoilerAL ver 4.2
+
+
+[script]
+[title]ファンタスティックフォーチュン（WindowsMe用）
+[process]ﾌｧﾝﾀｽﾃｨｯｸﾌｫｰﾁｭﾝ.EXE
+[maker]富士通パレックス
+[creator]KEI
+[adjustment]heap,heap2=0xA20000>0xF2FFFF,heap3=0xF30000>0x143FFFF,heap4=0x1440000>0x154FFFF
+[note]wordwrap
+WindowsMeで確認しています。
+Windows98では多分動作しません。
+●富士通版、サイバーフロント版両方に対応しています。
+富士通販をお使いの方は、公式ページで差分ファイルをダウンロードして
+アップデートしてください。
+バージョンが違うと使用できません。
+●ミュージアムについて
+直接セーブデータを参照しているようですので、別プログラムの
+ミュージアム全開プログラムを使用して下さい。
+[/note]
+[subject]プレイキャラ:list,0x1475C06,ファンタキャラ,0,1
+[subject]日付:d_list,0x1475C0A,ファンタ日付1,0x00,0xFFFFFFFFFFFFFFFFFF,ファンタ日付2,offset
+[subject]能力値:dir
+	[subject]教養・知力・成績:calc,0x1475C1A,0,100,unsigned,little_e
+	[subject]気品・騎士道・道徳:calc,0x1475C1E,0,100,unsigned,little_e
+	[subject]社交術・武術・魔法術:calc,0x1475C22,0,100,unsigned,little_e
+	[subject]魅力・勇気・人気:calc,0x1475C26,0,100,unsigned,little_e
+	[subject]ストレス:calc,0x1475C2A,0,100,unsigned,little_e
+[back]
+[subject]親密度:dir
+	[subject]ディアーナ:calc,0x1475C2E,0,100,unsigned,little_e
+	[subject]シルフィス:calc,0x1475C32,0,100,unsigned,little_e
+	[subject]メイ:calc,0x1475C36,0,100,unsigned,little_e
+	[subject]セイリオス:calc,0x1475C3A,0,100,unsigned,little_e
+	[subject]シオン:calc,0x1475C3E,0,100,unsigned,little_e
+	[subject]アイシュ:calc,0x1475C42,0,100,unsigned,little_e
+	[subject]レオニス:calc,0x1475C46,0,100,unsigned,little_e
+	[subject]ガゼル:calc,0x1475C4A,0,100,unsigned,little_e
+	[subject]キール:calc,0x1475C4E,0,100,unsigned,little_e
+	[subject]イーリス:calc,0x1475C52,0,100,unsigned,little_e
+[back]
+[/script]
+
+[script]
+[title]ファンタスティックフォーチュン（Windows98用）
+[process]ﾌｧﾝﾀｽﾃｨｯｸﾌｫｰﾁｭﾝ.EXE
+[maker]富士通パレックス
+[creator]KEI
+[adjustment]heap,heap2=0xA20000>0xB2FFFF,heap3=0xB30000>0x103FFFF,heap4=0x1040000>0x154FFFF
+[note]wordwrap
+Windows98SEで確認しています。
+WindowsMeでは多分動作しません。
+●富士通版、サイバーフロント版両方に対応しています。
+富士通販をお使いの方は、公式ページで差分ファイルをダウンロードして
+アップデートしてください。
+バージョンが違うと使用できません。
+●ミュージアムについて
+直接セーブデータを参照しているようですので、別プログラムの
+ミュージアム全開プログラムを使用して下さい。
+[/note]
+[subject]プレイキャラ:list,_0x1475C06-0xA1DE14,ファンタキャラ,0,1
+[subject]日付:d_list,_0x1475C0A-0xA1DE14,ファンタ日付1,0x00,0xFFFFFFFFFFFFFFFFFF,ファンタ日付2,offset
+[subject]能力値:dir
+	[subject]教養・知力・成績:calc,_0x1475C1A-0xA1DE14,0,100,unsigned,little_e
+	[subject]気品・騎士道・道徳:calc,_0x1475C1E-0xA1DE14,0,100,unsigned,little_e
+	[subject]社交術・武術・魔法術:calc,_0x1475C22-0xA1DE14,0,100,unsigned,little_e
+	[subject]魅力・勇気・人気:calc,_0x1475C26-0xA1DE14,0,100,unsigned,little_e
+	[subject]ストレス:calc,_0x1475C2A-0xA1DE14,0,100,unsigned,little_e
+[back]
+[subject]親密度:dir
+	[subject]ディアーナ:calc,_0x1475C2E-0xA1DE14,0,100,unsigned,little_e
+	[subject]シルフィス:calc,_0x1475C32-0xA1DE14,0,100,unsigned,little_e
+	[subject]メイ:calc,_0x1475C36-0xA1DE14,0,100,unsigned,little_e
+	[subject]セイリオス:calc,_0x1475C3A-0xA1DE14,0,100,unsigned,little_e
+	[subject]シオン:calc,_0x1475C3E-0xA1DE14,0,100,unsigned,little_e
+	[subject]アイシュ:calc,_0x1475C42-0xA1DE14,0,100,unsigned,little_e
+	[subject]レオニス:calc,_0x1475C46-0xA1DE14,0,100,unsigned,little_e
+	[subject]ガゼル:calc,_0x1475C4A-0xA1DE14,0,100,unsigned,little_e
+	[subject]キール:calc,_0x1475C4E-0xA1DE14,0,100,unsigned,little_e
+	[subject]イーリス:calc,_0x1475C52-0xA1DE14,0,100,unsigned,little_e
+[back]
+[/script]
+
+[script]
+[title]遙かなる時空の中で２（WindowsMe用）
+[process]HARUKA2.EXE
+[maker]コーエー
+[creator]KEI
+[adjustment]heap,heap2=0xB90000>0xD9FFFF,heap3=0xDA0000>0x101FFFF,heap4=0x1020000>0x1A7FFFF
+[note]wordwrap
+WindowsMeで確認しています。
+Windows98では戦闘中のところが有効になりません。
+●バージョンについて。
+ゲーム起動時に「しばらくお待ちください」と表示が出るものがプロテクト版です。
+購入したりWEBからアップデートしたバージョンはこちらです。
+起動しないためにメーカーから送られてきたバージョンはノンプロテクト版です。
+こちらは起動するとすぐにゲームが始まります。
+KUpdate30.EXEでアップデートしたものも対応しています。
+特にKUpdate30版と分けていない項目は共通です。
+●戦闘時の不具合修正について
+術使用時にプログラムの仕様上で想う心しかUPしなかったのを
+信じる心もUPするように修正します。
+●日付の変更について
+固定イベントが起こるときに、章が違っていたりすると
+ゲームが強制終了することがありますので、注意してください。
+●八葉の心について
+敵側の八葉が情報に登場する前の序章などで
+敵側の八葉の心を上げ過ぎると迎えに来たりしますので注意してください。
+●麗気流転回数無制限をONにすると何回でもできますが
+気流の速度を変更する札に当たった場合、ハズレと同様何も起こりません。
+速度はミニゲーム中のみ変更が出来ます。0が最も遅く、4が最も速いです。
+●方忌み、同行者について
+変更したあと、ゲーム中で再読み込みする必要がありますので
+変更後行くことが可能な場所に移動すれば有効になります。
+●イベントについて
+通常恋愛の場合は最終的に4、急展開恋愛の場合は9、八葉以外のキャラの場合は12です。
+この数字になっているとそのキャラとのエンディングが見れます。
+イベントを失敗すると数値が大きく外れます。
+●戦闘中のコードについて
+このコードも変更後にゲームを再描写しないといけません。
+例えば「一発封印セット」を選択した直後は、封印が選択できませんが
+行動可能な別の行動（例えば応援など）を選んでキャンセルすれば再描写されるので
+封印が選択できるようになります。
+●値の固定について
+あまりたくさん固定するとゲームが不安定になることが多いので
+「時間経たない」と「方忌み無効」以外はあまり固定しないほうが良いかもしれません。
+「時間経たない」と「方忌み無効」は固定にしないと有効になりません。
+時間が3になったら1に戻すという働きをしていますので、館に帰れば夜になります。
+●無敵について
+自軍を無敵にすると、一切のダメージを受けなくなります。
+状態異常にならない、も併用するとラスボスでもノーダメージでクリア出来ます。
+怨霊も無敵にすると戦闘が終了しないので、応援言葉など色々試せます。
+術使用で集中力減らないは、術を使用しても集中力は減りませんが、
+応援を失敗すると減ってしまいます。
+●怨霊袋叩きセットについて
+装備に関係なく全員3回攻撃できます。それ以上の回数にしたい場合は攻撃回数で変更して下さい。
+●攻撃回数について
+初期値は3になっていますが、これは平均値なので3回にしたかったら3を書き込んでください。
+もちろん10回でも20回でも可能です。
+●戦闘中の装備について
+戦闘中に装備が変更できますが、戦闘が終了すると元の装備に戻ります。
+●封印可能について
+親ディレクトリにある方の「封印可能」はチェックを入れておくと
+その後の戦闘時にイベント前でも封印ができるようになります。
+戦闘中にチェックを入れても有効になりません。
+戦闘中は戦闘中ディレクトリの方の「封印可能」にチェックを入れてください。
+チェック後、応援などの選択できる項目を選びキャンセルすると再描写されるので有効になります。
+●怨霊復活・封印について
+封印後の怨霊も復活できます。
+情報などの項目を選び、戻ると再描写されて復活しています。
+●戦闘中の立ち絵キャラ入れ替えについて
+戦闘中の立ち絵キャラを入れ替えると、闘っているミニキャラの台詞を
+立ち絵キャラがしゃべるようになります。
+応援言葉の成功は、入れ替えた立ち絵キャラに準じます。
+術は四神召還以外は使用しないで下さい。
+それ以外の術を使用した場合、ミニキャラと立ち絵キャラが違うとフリーズします。
+●土地のアイテムクリアについて
+ここをチェックすると、その土地の取得済アイテムが未取得ということになり
+再びアイテムが取れるようになります。
+毎回ミニゲームをするとパーフェクト時に誉められます。
+もしかしたらイベントが再び起こってしまうかもしれません。（苦笑
+●戦闘中の応援言葉について
+応援言葉増加にチェックを入れると、札を使用した状態を同様に
+応援言葉が増加します。
+前回応援した八葉を入れ替えたり、応援言葉に好きなものが出てくるように
+変更することが出来ます。
+応援コンボも初回から毎回でも成功可能です。
+変更してから、「応援」を選択すると有効になっています。
+●紫姫と長話ONについて
+紫姫と話をするときに、ここにチェックを入れると話が永遠に続きます。
+話を終らせたい場合は、チェックを外してください。
+●主人公の名前について
+ゲームの途中でも名前の変更が出来ます。
+半角文字は使用出来ないようです。
+苗字、名前とも全角で3文字までです。
+全角なら数字、アルファベット、記号なども可能です。
+[/note]
+[subject]戦闘時の不具合修正:dir
+	[subject]戦闘時の不具合修正/術使用時に信じる心UP/_:toggle,0x40800E,FE6F,2E71
+	[subject]戦闘時の不具合修正KUpdate30版/術使用時に信じる心UP/_:toggle,0x40800E,7E6F,AE70
+[back]
+[subject]日付（経過日数）:calc,0x596CB0,0,65535,unsigned,little_e
+[subject]時間:calc,0x596CB4,0,5,unsigned,little_e
+[subject]時間経たないON/時間経たない(固定推奨):toggle,0x596CB4,*{ 03 :: 01 *},??
+[subject]方忌み無効ON/方忌み無効(固定推奨):toggle,0x596CCC,*{ 07 :: ?? :: 07 *},??
+[subject]天候:list,0x596CC4,遙天候,0,1
+[subject]方忌み:d_list,0x596CCC,遙方1,0,255,遙方2,offset
+[subject]香:list,0x596824,遙香,0,1
+[subject]主人公の属:list,0x5967F4,遙属,0,1
+[subject]主人公の側:list,0x596CDC,遙側,1,1
+[subject]主人公の名前:dir
+	[subject]苗字:string,0x5967FC,6,null
+	[subject]名前:string,0x596803,6,null
+[back]
+[subject]道具全部:b_toggle,0x596AE0,haruka2,offset
+[subject]封印可能/封印可能/_:toggle,0x596820,01,00
+[subject]土地の力MAX//_:b_toggle,0x596000,遙土地,offset
+[subject]全怨霊復活//_:b_toggle,0x596004,遙土地1,offset
+[subject]全怨霊封印//_:b_toggle,0x596004,遙土地2,offset
+[subject]土地のアイテムクリア//_:b_toggle,0x596009,遙土地3,offset
+[subject]紫姫と長話ON/話が終らない/_:toggle,0x4433DA,909090,880C30
+[subject]同行者:dir
+	[subject]一人目（左側）:d_list,0x596CBC,遙同行1,0x00,0x36,遙同行2,offset
+	[subject]二人目（右側）:d_list,0x596CC0,遙同行1,0x00,0x36,遙同行2,offset
+[back]
+[subject]五行の力:dir
+	[subject]全五行の力99:b_toggle,0x596800,遙五行,offset
+	[subject]木:calc,0x59680C,0,99,unsigned,little_e
+	[subject]火:calc,0x596810,0,99,unsigned,little_e
+	[subject]土:calc,0x596814,0,99,unsigned,little_e
+	[subject]金:calc,0x596818,0,99,unsigned,little_e
+	[subject]水:calc,0x59681C,0,99,unsigned,little_e
+[back]
+[subject]装備:dir
+	[subject]自分:dir
+		[subject]1つ目:d_list,0x59684E,遙装備1,0x00,0x36,遙装備2,offset
+		[subject]2つ目:d_list,0x59684F,遙装備1,0x00,0x36,遙装備2,offset
+	[back]
+	[subject]源頼忠:dir
+		[subject]1つ目:d_list,0x596850,遙装備1,0x00,0x36,遙装備2,offset
+		[subject]2つ目:d_list,0x596851,遙装備1,0x00,0x36,遙装備2,offset
+	[back]
+	[subject]平勝真:dir
+		[subject]1つ目:d_list,0x596852,遙装備1,0x00,0x36,遙装備2,offset
+		[subject]2つ目:d_list,0x596853,遙装備1,0x00,0x36,遙装備2,offset
+	[back]
+	[subject]イサト:dir
+		[subject]1つ目:d_list,0x596854,遙装備1,0x00,0x36,遙装備2,offset
+		[subject]2つ目:d_list,0x596855,遙装備1,0x00,0x36,遙装備2,offset
+	[back]
+	[subject]彰紋:dir
+		[subject]1つ目:d_list,0x596856,遙装備1,0x00,0x36,遙装備2,offset
+		[subject]2つ目:d_list,0x596857,遙装備1,0x00,0x36,遙装備2,offset
+	[back]
+	[subject]藤原幸鷹:dir
+		[subject]1つ目:d_list,0x596858,遙装備1,0x00,0x36,遙装備2,offset
+		[subject]2つ目:d_list,0x596859,遙装備1,0x00,0x36,遙装備2,offset
+	[back]
+	[subject]翡翠:dir
+		[subject]1つ目:d_list,0x59685A,遙装備1,0x00,0x36,遙装備2,offset
+		[subject]2つ目:d_list,0x59685B,遙装備1,0x00,0x36,遙装備2,offset
+	[back]
+	[subject]源泉水:dir
+		[subject]1つ目:d_list,0x59685C,遙装備1,0x00,0x36,遙装備2,offset
+		[subject]2つ目:d_list,0x59685D,遙装備1,0x00,0x36,遙装備2,offset
+	[back]
+	[subject]安部泰継:dir
+		[subject]1つ目:d_list,0x59685E,遙装備1,0x00,0x36,遙装備2,offset
+		[subject]2つ目:d_list,0x59685F,遙装備1,0x00,0x36,遙装備2,offset
+	[back]
+[back]
+[subject]初期能力値:dir
+	[subject]自分:dir
+		[subject]攻撃力:calc,0x499070,0,255,unsigned,little_e
+		[subject]耐久力:calc,0x499074,0,255,unsigned,little_e
+		[subject]霊力:calc,0x499078,0,255,unsigned,little_e
+	[back]
+	[subject]源頼忠:dir
+		[subject]攻撃力:calc,0x49907C,0,255,unsigned,little_e
+		[subject]耐久力:calc,0x499080,0,255,unsigned,little_e
+		[subject]霊力:calc,0x499084,0,255,unsigned,little_e
+	[back]
+	[subject]平勝真:dir
+		[subject]攻撃力:calc,0x499088,0,255,unsigned,little_e
+		[subject]耐久力:calc,0x49908C,0,255,unsigned,little_e
+		[subject]霊力:calc,0x499090,0,255,unsigned,little_e
+	[back]
+	[subject]イサト:dir
+		[subject]攻撃力:calc,0x499094,0,255,unsigned,little_e
+		[subject]耐久力:calc,0x499098,0,255,unsigned,little_e
+		[subject]霊力:calc,0x49909C,0,255,unsigned,little_e
+	[back]
+	[subject]彰紋:dir
+		[subject]攻撃力:calc,0x4990A0,0,255,unsigned,little_e
+		[subject]耐久力:calc,0x4990A4,0,255,unsigned,little_e
+		[subject]霊力:calc,0x4990A8,0,255,unsigned,little_e
+	[back]
+	[subject]藤原幸鷹:dir
+		[subject]攻撃力:calc,0x4990AC,0,255,unsigned,little_e
+		[subject]耐久力:calc,0x4990B0,0,255,unsigned,little_e
+		[subject]霊力:calc,0x4990B4,0,255,unsigned,little_e
+	[back]
+	[subject]翡翠:dir
+		[subject]攻撃力:calc,0x4990B8,0,255,unsigned,little_e
+		[subject]耐久力:calc,0x4990BC,0,255,unsigned,little_e
+		[subject]霊力:calc,0x4990C0,0,255,unsigned,little_e
+	[back]
+	[subject]源泉水:dir
+		[subject]攻撃力:calc,0x4990C4,0,255,unsigned,little_e
+		[subject]耐久力:calc,0x4990C8,0,255,unsigned,little_e
+		[subject]霊力:calc,0x4990CC,0,255,unsigned,little_e
+	[back]
+	[subject]安部泰継:dir
+		[subject]攻撃力:calc,0x4990D0,0,255,unsigned,little_e
+		[subject]耐久力:calc,0x4990D4,0,255,unsigned,little_e
+		[subject]霊力:calc,0x4990D8,0,255,unsigned,little_e
+	[back]
+[back]
+[subject]心・信頼・イベント・相性:dir
+	[subject]源頼忠:dir
+		[subject]信じる心:calc,0x596860,0,1000,unsigned,little_e
+		[replace]0x596908,haruka1
+		[replace]0x596908,haruka_1
+		[subject]イベント:calc,0x596868,0,255,unsigned,little_e
+		[subject]相性:dir
+			[subject]信じる心:calc,0x596864,0,100,unsigned,little_e
+			[subject]想う心:calc,0x59690C,0,100,unsigned,little_e
+		[back]
+	[back]
+	[subject]平勝真:dir
+		[subject]信じる心:calc,0x59686C,0,1000,unsigned,little_e
+		[replace]0x596944,haruka1
+		[replace]0x596944,haruka_2
+		[subject]イベント:calc,0x596874,0,255,unsigned,little_e
+		[subject]相性:dir
+			[subject]信じる心:calc,0x596870,0,100,unsigned,little_e
+			[subject]想う心:calc,0x596948,0,100,unsigned,little_e
+		[back]
+	[back]
+	[subject]イサト:dir
+		[subject]信じる心:calc,0x596878,0,1000,unsigned,little_e
+		[replace]0x596980,haruka1
+		[replace]0x596980,haruka_3
+		[subject]イベント:calc,0x596880,0,255,unsigned,little_e
+		[subject]相性:dir
+			[subject]信じる心:calc,0x59687C,0,100,unsigned,little_e
+			[subject]想う心:calc,0x596984,0,100,unsigned,little_e
+		[back]
+	[back]
+	[subject]彰紋:dir
+		[subject]信じる心:calc,0x596884,0,1000,unsigned,little_e
+		[replace]0x5969BC,haruka1
+		[replace]0x5969BC,haruka_4
+		[subject]イベント:calc,0x59688C,0,255,unsigned,little_e
+		[subject]相性:dir
+			[subject]信じる心:calc,0x596888,0,100,unsigned,little_e
+			[subject]想う心:calc,0x5969C0,0,100,unsigned,little_e
+		[back]
+	[back]
+	[subject]藤原幸鷹:dir
+		[subject]信じる心:calc,0x596890,0,1000,unsigned,little_e
+		[replace]0x5969F8,haruka1
+		[replace]0x5969F8,haruka_5
+		[subject]イベント:calc,0x596898,0,255,unsigned,little_e
+		[subject]相性:dir
+			[subject]信じる心:calc,0x596894,0,100,unsigned,little_e
+			[subject]想う心:calc,0x5969FC,0,100,unsigned,little_e
+		[back]
+	[back]
+	[subject]翡翠:dir
+		[subject]信じる心:calc,0x59689C,0,1000,unsigned,little_e
+		[replace]0x596A34,haruka1
+		[replace]0x596A34,haruka_6
+		[subject]イベント:calc,0x5968A4,0,255,unsigned,little_e
+		[subject]相性:dir
+			[subject]信じる心:calc,0x5968A0,0,100,unsigned,little_e
+			[subject]想う心:calc,0x596A38,0,100,unsigned,little_e
+		[back]
+	[back]
+	[subject]源泉水:dir
+		[subject]信じる心:calc,0x5968A8,0,1000,unsigned,little_e
+		[replace]0x596A70,haruka1
+		[replace]0x596A70,haruka_7
+		[subject]イベント:calc,0x5968B0,0,255,unsigned,little_e
+		[subject]相性:dir
+			[subject]信じる心:calc,0x5968AC,0,100,unsigned,little_e
+			[subject]想う心:calc,0x596A74,0,100,unsigned,little_e
+		[back]
+	[back]
+	[subject]安部泰継:dir
+		[subject]信じる心:calc,0x5968B4,0,1000,unsigned,little_e
+		[replace]0x596AAC,haruka1
+		[replace]0x596AAC,haruka_8
+		[subject]イベント:calc,0x5968BC,0,255,unsigned,little_e
+		[subject]相性:dir
+			[subject]信じる心:calc,0x5968B8,0,100,unsigned,little_e
+			[subject]想う心:calc,0x596AB0,0,100,unsigned,little_e
+		[back]
+	[back]
+	[subject]アクラム:dir
+		[subject]信じる心:calc,0x5968C0,0,1000,unsigned,little_e
+		[subject]イベント:calc,0x5968C8,0,255,unsigned,little_e
+		[subject]相性：信じる心:calc,0x5968C4,0,100,unsigned,little_e
+	[back]
+	[subject]平千歳:dir
+		[subject]信じる心:calc,0x5968F0,0,1000,unsigned,little_e
+		[subject]イベント:calc,0x5968F8,0,255,unsigned,little_e
+		[subject]相性：信じる心:calc,0x5968F4,0,100,unsigned,little_e
+	[back]
+	[subject]紫:dir
+		[subject]信じる心:calc,0x5968FC,0,1000,unsigned,little_e
+		[subject]イベント:calc,0x596904,0,255,unsigned,little_e
+		[subject]相性：信じる心:calc,0x596900,0,100,unsigned,little_e
+	[back]
+[back]
+[subject]戦闘中:dir
+	[subject]ターミネーターモード:dir
+		[subject]ターミネーターモード/自軍無敵（ダメージ受けない）/_:b_toggle,0x415200,遙戦闘3,offset
+		[subject]ターミネーターモードKUpdate30版/自軍無敵（ダメージ受けない）/_:b_toggle,0x415220,遙戦闘3_,offset
+	[back]
+	[subject]状態異常にならない:dir
+		[subject]状態異常にならない/状態異常にならない/_:b_toggle,0x415200,遙戦闘5,offset
+		[subject]状態異常にならないKUpdate30版/状態異常にならない/_:b_toggle,0x415220,遙戦闘5,offset
+	[back]
+	[subject]術使用しても集中力減らない/術使用しても集中力減らない/_:b_toggle,0x408200,遙戦闘4,offset
+	[subject]五行の力減らない:dir
+		[subject]五行の力減らない/術使用で99になる/_:b_toggle,0x43FF00,遙戦闘9,offset
+		[subject]五行の力減らないKUpdate30版/術使用で99になる/_:b_toggle,0x43FE80,遙戦闘9,offset
+	[back]
+	[subject]悪夢モード:dir
+		[subject]悪夢モード/怨霊無敵（怨霊へのダメージ無効）/_:b_toggle,0x414200,遙戦闘6,offset
+		[subject]悪夢モードKUpdate30版/怨霊無敵（怨霊へのダメージ無効）/_:b_toggle,0x414220,遙戦闘6,offset
+	[back]
+	[subject]怨霊袋叩きセット/全員攻撃3回/_:b_toggle,0x40A300,遙戦闘8a,offset
+	[subject]全員の攻撃回数//_:b_calc,0,遙戦闘8,real,0,99
+	[subject]プロテクト版:dir
+		[subject]封印可能/封印可能/_:toggle,0x1536684,01,00
+		[subject]応援言葉増加/応援言葉増加/_:toggle,0x15366C5,01,00
+		[subject]怨霊タコ殴りセット/自軍最強/_:b_toggle,0x1536000,遙戦闘1,offset
+		[subject]一発封印セット/自軍最強・敵気力1/_:b_toggle,0x1536000,遙戦闘2,offset
+		[subject]立ち絵キャラ入れ替え:dir
+			[subject]左側の八葉:d_list,0x1536000,遙同行1,0x0,0x2B,遙同行3,offset
+			[subject]右側の八葉:d_list,0x1536000,遙同行1,0x0,0x2B,遙同行4,offset
+		[back]
+		[subject]自分:dir
+			[replace]0x1536670,haruka2
+		[subject]左側の八葉:dir
+			[replace]0x1536688,haruka2
+		[subject]右側の八葉:dir
+			[replace]0x15366A0,haruka2
+		[subject]敵:dir
+			[replace]0x15366B8,haruka2
+		[subject]応援言葉:dir
+			[subject]前回応援した八葉:list,0x15366C6,遙応援1,0,1
+			[subject]前回の応援言葉:list,0x15366C7,遙応援,0,1
+			[subject]1つ目の応援言葉:list,0x15366EC,遙応援,0,1
+			[subject]2つ目の応援言葉:list,0x15366F0,遙応援,0,1
+			[subject]3つ目の応援言葉:list,0x15366F4,遙応援,0,1
+			[subject]4つ目の応援言葉:list,0x15366F8,遙応援,0,1
+			[subject]5つ目の応援言葉:list,0x15366FC,遙応援,0,1
+			[subject]6つ目の応援言葉:list,0x1536700,遙応援,0,1
+		[back]
+	[back]
+	[subject]ノンプロテクト版:dir
+		[subject]封印可能/封印可能/_:toggle,0xFB6684,01,00
+		[subject]応援言葉増加/応援言葉増加/_:toggle,0xFB66C5,01,00
+		[subject]怨霊タコ殴りセット/自軍最強/_:b_toggle,0xFB6000,遙戦闘1,offset
+		[subject]一発封印セット/自軍最強・敵気力1/_:b_toggle,0xFB6000,遙戦闘2,offset
+		[subject]立ち絵キャラ入れ替え:dir
+			[subject]左側の八葉:d_list,0xFB6000,遙同行1,0x0,0x2B,遙同行3,offset
+			[subject]右側の八葉:d_list,0xFB6000,遙同行1,0x0,0x2B,遙同行4,offset
+		[back]
+		[subject]自分:dir
+			[replace]0xFB6670,haruka2
+		[subject]左側の八葉:dir
+			[replace]0xFB6688,haruka2
+		[subject]右側の八葉:dir
+			[replace]0xFB66A0,haruka2
+		[subject]敵:dir
+			[replace]0xFB66B8,haruka2
+		[subject]応援言葉:dir
+			[subject]前回応援した八葉:list,0xFB66C6,遙応援1,0,1
+			[subject]前回の応援言葉:list,0xFB66C7,遙応援,0,1
+			[subject]1つ目の応援言葉:list,0xFB66EC,遙応援,0,1
+			[subject]2つ目の応援言葉:list,0xFB66F0,遙応援,0,1
+			[subject]3つ目の応援言葉:list,0xFB66F4,遙応援,0,1
+			[subject]4つ目の応援言葉:list,0xFB66F8,遙応援,0,1
+			[subject]5つ目の応援言葉:list,0xFB66FC,遙応援,0,1
+			[subject]6つ目の応援言葉:list,0xFB6700,遙応援,0,1
+		[back]
+	[back]
+[back]
+[subject]ミニゲーム:dir
+	[subject]貝並合見全問正解ON:dir
+		[subject]貝並合見全問正解ON//_:toggle,0x463D1A,EB,74
+		[subject]貝並合見全問正解ON KUpdate30版//_:toggle,0x463C9A,EB,74
+	[back]
+	//[subject]麗気流転回数無制限ON//_:toggle,0x464F10,9090,7409
+	[subject]麗気流転回数無制限ON:dir
+		[subject]麗気流転回数無制限ON//_:b_toggle,0x460000,遙流転1,offset
+		[subject]麗気流転回数無制限ON KUpdate30版//_:b_toggle,0x45FF80,遙流転1,offset
+		[subject]麗気流転気流速度//_:calc,0xB7ECE0,0,4,unsigned,little_e
+	[back]
+	[subject]遊気野祭時間無制限ON:dir
+		[subject]遊気野祭時間無制限ON//_:toggle,0x4665AA,EB,73
+		[subject]遊気野祭時間無制限ON KUpdate30版//_:toggle,0x46652A,EB,73
+	[back]
+	[subject]蹴鞠演義回数無制限ON:dir
+		[subject]蹴鞠演義回数無制限ON//_:toggle,0x4698D3,90E9,0F85
+		[subject]蹴鞠演義回数無制限ON KUpdate30版//_:toggle,0x469883,90E9,0F85
+	[back]
+[back]
+[subject]おまけ全開:b_toggle,0x596F00,遙おまけ,offset
+[/script]
+
+[script]
+[title]遙かなる時空の中で２（Windows98用）
+[process]HARUKA2.EXE
+[maker]コーエー
+[creator]KEI
+[adjustment]heap,heap2=0xB90000>0xE0FFFF,heap3=0xE10000>0x131DFFF,heap4=0x131E000>0x131EFFF
+[note]wordwrap
+Windows98で確認しています。
+WindowsMeでは戦闘中のところが有効になりません。
+●バージョンについて。
+ゲーム起動時に「しばらくお待ちください」と表示が出るものがプロテクト版です。
+購入したりWEBからアップデートしたバージョンはこちらです。
+起動しないためにメーカーから送られてきたバージョンはノンプロテクト版です。
+こちらは起動するとすぐにゲームが始まります。
+KUpdate30.EXEでアップデートしたものも対応しています。
+特にKUpdate30版と分けていない項目は共通です。
+●戦闘時の不具合修正について
+術使用時にプログラムの仕様上で想う心しかUPしなかったのを
+信じる心もUPするように修正します。
+●日付の変更について
+固定イベントが起こるときに、章が違っていたりすると
+ゲームが強制終了することがありますので、注意してください。
+●八葉の心について
+敵側の八葉が情報に登場する前の序章などで
+敵側の八葉の心を上げ過ぎると迎えに来たりしますので注意してください。
+●麗気流転回数無制限をONにすると何回でもできますが
+気流の速度を変更する札に当たった場合、ハズレと同様何も起こりません。
+速度はミニゲーム中のみ変更が出来ます。0が最も遅く、4が最も速いです。
+●方忌み、同行者について
+変更したあと、ゲーム中で再読み込みする必要がありますので
+変更後行くことが可能な場所に移動すれば有効になります。
+●イベントについて
+通常恋愛の場合は最終的に4、急展開恋愛の場合は9、八葉以外のキャラの場合は12です。
+この数字になっているとそのキャラとのエンディングが見れます。
+イベントを失敗すると数値が大きく外れます。
+●戦闘中のコードについて
+このコードも変更後にゲームを再描写しないといけません。
+例えば「一発封印セット」を選択した直後は、封印が選択できませんが
+行動可能な別の行動（例えば応援など）を選んでキャンセルすれば再描写されるので
+封印が選択できるようになります。
+●値の固定について
+あまりたくさん固定するとゲームが不安定になることが多いので
+「時間経たない」と「方忌み無効」以外はあまり固定しないほうが良いかもしれません。
+「時間経たない」と「方忌み無効」は固定にしないと有効になりません。
+時間が3になったら1に戻すという働きをしていますので、館に帰れば夜になります。
+●無敵について
+自軍を無敵にすると、一切のダメージを受けなくなります。
+状態異常にならない、も併用するとラスボスでもノーダメージでクリア出来ます。
+怨霊も無敵にすると戦闘が終了しないので、応援言葉など色々試せます。
+術使用で集中力減らないは、術を使用しても集中力は減りませんが、
+応援を失敗すると減ってしまいます。
+●怨霊袋叩きセットについて
+装備に関係なく全員3回攻撃できます。それ以上の回数にしたい場合は攻撃回数で変更して下さい。
+●攻撃回数について
+初期値は3になっていますが、これは平均値なので3回にしたかったら3を書き込んでください。
+もちろん10回でも20回でも可能です。
+●戦闘中の装備について
+戦闘中に装備が変更できますが、戦闘が終了すると元の装備に戻ります。
+●封印可能について
+親ディレクトリにある方の「封印可能」はチェックを入れておくと
+その後の戦闘時にイベント前でも封印ができるようになります。
+戦闘中にチェックを入れても有効になりません。
+戦闘中は戦闘中ディレクトリの方の「封印可能」にチェックを入れてください。
+チェック後、応援などの選択できる項目を選びキャンセルすると再描写されるので有効になります。
+●怨霊復活・封印について
+封印後の怨霊も復活できます。
+情報などの項目を選び、戻ると再描写されて復活しています。
+●戦闘中の立ち絵キャラ入れ替えについて
+戦闘中の立ち絵キャラを入れ替えると、闘っているミニキャラの台詞を
+立ち絵キャラがしゃべるようになります。
+応援言葉の成功は、入れ替えた立ち絵キャラに準じます。
+術は四神召還以外は使用しないで下さい。
+それ以外の術を使用した場合、ミニキャラと立ち絵キャラが違うとフリーズします。
+●土地のアイテムクリアについて
+ここをチェックすると、その土地の取得済アイテムが未取得ということになり
+再びアイテムが取れるようになります。
+毎回ミニゲームをするとパーフェクト時に誉められます。
+もしかしたらイベントが再び起こってしまうかもしれません。（苦笑
+●戦闘中の応援言葉について
+応援言葉増加にチェックを入れると、札を使用した状態を同様に
+応援言葉が増加します。
+前回応援した八葉を入れ替えたり、応援言葉に好きなものが出てくるように
+変更することが出来ます。
+応援コンボも初回から毎回でも成功可能です。
+変更してから、「応援」を選択すると有効になっています。
+●紫姫と長話ONについて
+紫姫と話をするときに、ここにチェックを入れると話が永遠に続きます。
+話を終らせたい場合は、チェックを外してください。
+●主人公の名前について
+ゲームの途中でも名前の変更が出来ます。
+半角文字は使用出来ないようです。
+苗字、名前とも全角で3文字までです。
+全角なら数字、アルファベット、記号なども可能です。
+[/note]
+[subject]戦闘時の不具合修正:dir
+	[subject]戦闘時の不具合修正/術使用時に信じる心UP/_:toggle,0x40800E,FE6F,2E71
+	[subject]戦闘時の不具合修正KUpdate30版/術使用時に信じる心UP/_:toggle,0x40800E,7E6F,AE70
+[back]
+[subject]日付（経過日数）:calc,0x596CB0,0,65535,unsigned,little_e
+[subject]時間:calc,0x596CB4,0,5,unsigned,little_e
+[subject]時間経たないON/時間経たない(固定推奨):toggle,0x596CB4,*{ 03 :: 01 *},??
+[subject]方忌み無効ON/方忌み無効(固定推奨):toggle,0x596CCC,*{ 07 :: ?? :: 07 *},??
+[subject]天候:list,0x596CC4,遙天候,0,1
+[subject]方忌み:d_list,0x596CCC,遙方1,0,255,遙方2,offset
+[subject]香:list,0x596824,遙香,0,1
+[subject]主人公の属:list,0x5967F4,遙属,0,1
+[subject]主人公の側:list,0x596CDC,遙側,1,1
+[subject]主人公の名前:dir
+	[subject]苗字:string,0x5967FC,6,null
+	[subject]名前:string,0x596803,6,null
+[back]
+[subject]道具全部:b_toggle,0x596AE0,haruka2,offset
+[subject]封印可能/封印可能/_:toggle,0x596820,01,00
+[subject]土地の力MAX//_:b_toggle,0x596000,遙土地,offset
+[subject]全怨霊復活//_:b_toggle,0x596004,遙土地1,offset
+[subject]全怨霊封印//_:b_toggle,0x596004,遙土地2,offset
+[subject]土地のアイテムクリア//_:b_toggle,0x596009,遙土地3,offset
+[subject]紫姫と長話ON/話が終らない/_:toggle,0x4433DA,909090,880C30
+[subject]同行者:dir
+	[subject]一人目（左側）:d_list,0x596CBC,遙同行1,0x00,0x36,遙同行2,offset
+	[subject]二人目（右側）:d_list,0x596CC0,遙同行1,0x00,0x36,遙同行2,offset
+[back]
+[subject]五行の力:dir
+	[subject]全五行の力99:b_toggle,0x596800,遙五行,offset
+	[subject]木:calc,0x59680C,0,99,unsigned,little_e
+	[subject]火:calc,0x596810,0,99,unsigned,little_e
+	[subject]土:calc,0x596814,0,99,unsigned,little_e
+	[subject]金:calc,0x596818,0,99,unsigned,little_e
+	[subject]水:calc,0x59681C,0,99,unsigned,little_e
+[back]
+[subject]装備:dir
+	[subject]自分:dir
+		[subject]1つ目:d_list,0x59684E,遙装備1,0x00,0x36,遙装備2,offset
+		[subject]2つ目:d_list,0x59684F,遙装備1,0x00,0x36,遙装備2,offset
+	[back]
+	[subject]源頼忠:dir
+		[subject]1つ目:d_list,0x596850,遙装備1,0x00,0x36,遙装備2,offset
+		[subject]2つ目:d_list,0x596851,遙装備1,0x00,0x36,遙装備2,offset
+	[back]
+	[subject]平勝真:dir
+		[subject]1つ目:d_list,0x596852,遙装備1,0x00,0x36,遙装備2,offset
+		[subject]2つ目:d_list,0x596853,遙装備1,0x00,0x36,遙装備2,offset
+	[back]
+	[subject]イサト:dir
+		[subject]1つ目:d_list,0x596854,遙装備1,0x00,0x36,遙装備2,offset
+		[subject]2つ目:d_list,0x596855,遙装備1,0x00,0x36,遙装備2,offset
+	[back]
+	[subject]彰紋:dir
+		[subject]1つ目:d_list,0x596856,遙装備1,0x00,0x36,遙装備2,offset
+		[subject]2つ目:d_list,0x596857,遙装備1,0x00,0x36,遙装備2,offset
+	[back]
+	[subject]藤原幸鷹:dir
+		[subject]1つ目:d_list,0x596858,遙装備1,0x00,0x36,遙装備2,offset
+		[subject]2つ目:d_list,0x596859,遙装備1,0x00,0x36,遙装備2,offset
+	[back]
+	[subject]翡翠:dir
+		[subject]1つ目:d_list,0x59685A,遙装備1,0x00,0x36,遙装備2,offset
+		[subject]2つ目:d_list,0x59685B,遙装備1,0x00,0x36,遙装備2,offset
+	[back]
+	[subject]源泉水:dir
+		[subject]1つ目:d_list,0x59685C,遙装備1,0x00,0x36,遙装備2,offset
+		[subject]2つ目:d_list,0x59685D,遙装備1,0x00,0x36,遙装備2,offset
+	[back]
+	[subject]安部泰継:dir
+		[subject]1つ目:d_list,0x59685E,遙装備1,0x00,0x36,遙装備2,offset
+		[subject]2つ目:d_list,0x59685F,遙装備1,0x00,0x36,遙装備2,offset
+	[back]
+[back]
+[subject]初期能力値:dir
+	[subject]自分:dir
+		[subject]攻撃力:calc,0x499070,0,255,unsigned,little_e
+		[subject]耐久力:calc,0x499074,0,255,unsigned,little_e
+		[subject]霊力:calc,0x499078,0,255,unsigned,little_e
+	[back]
+	[subject]源頼忠:dir
+		[subject]攻撃力:calc,0x49907C,0,255,unsigned,little_e
+		[subject]耐久力:calc,0x499080,0,255,unsigned,little_e
+		[subject]霊力:calc,0x499084,0,255,unsigned,little_e
+	[back]
+	[subject]平勝真:dir
+		[subject]攻撃力:calc,0x499088,0,255,unsigned,little_e
+		[subject]耐久力:calc,0x49908C,0,255,unsigned,little_e
+		[subject]霊力:calc,0x499090,0,255,unsigned,little_e
+	[back]
+	[subject]イサト:dir
+		[subject]攻撃力:calc,0x499094,0,255,unsigned,little_e
+		[subject]耐久力:calc,0x499098,0,255,unsigned,little_e
+		[subject]霊力:calc,0x49909C,0,255,unsigned,little_e
+	[back]
+	[subject]彰紋:dir
+		[subject]攻撃力:calc,0x4990A0,0,255,unsigned,little_e
+		[subject]耐久力:calc,0x4990A4,0,255,unsigned,little_e
+		[subject]霊力:calc,0x4990A8,0,255,unsigned,little_e
+	[back]
+	[subject]藤原幸鷹:dir
+		[subject]攻撃力:calc,0x4990AC,0,255,unsigned,little_e
+		[subject]耐久力:calc,0x4990B0,0,255,unsigned,little_e
+		[subject]霊力:calc,0x4990B4,0,255,unsigned,little_e
+	[back]
+	[subject]翡翠:dir
+		[subject]攻撃力:calc,0x4990B8,0,255,unsigned,little_e
+		[subject]耐久力:calc,0x4990BC,0,255,unsigned,little_e
+		[subject]霊力:calc,0x4990C0,0,255,unsigned,little_e
+	[back]
+	[subject]源泉水:dir
+		[subject]攻撃力:calc,0x4990C4,0,255,unsigned,little_e
+		[subject]耐久力:calc,0x4990C8,0,255,unsigned,little_e
+		[subject]霊力:calc,0x4990CC,0,255,unsigned,little_e
+	[back]
+	[subject]安部泰継:dir
+		[subject]攻撃力:calc,0x4990D0,0,255,unsigned,little_e
+		[subject]耐久力:calc,0x4990D4,0,255,unsigned,little_e
+		[subject]霊力:calc,0x4990D8,0,255,unsigned,little_e
+	[back]
+[back]
+[subject]心・信頼・イベント・相性:dir
+	[subject]源頼忠:dir
+		[subject]信じる心:calc,0x596860,0,1000,unsigned,little_e
+		[replace]0x596908,haruka1
+		[replace]0x596908,haruka_1
+		[subject]イベント:calc,0x596868,0,255,unsigned,little_e
+		[subject]相性:dir
+			[subject]信じる心:calc,0x596864,0,100,unsigned,little_e
+			[subject]想う心:calc,0x59690C,0,100,unsigned,little_e
+		[back]
+	[back]
+	[subject]平勝真:dir
+		[subject]信じる心:calc,0x59686C,0,1000,unsigned,little_e
+		[replace]0x596944,haruka1
+		[replace]0x596944,haruka_2
+		[subject]イベント:calc,0x596874,0,255,unsigned,little_e
+		[subject]相性:dir
+			[subject]信じる心:calc,0x596870,0,100,unsigned,little_e
+			[subject]想う心:calc,0x596948,0,100,unsigned,little_e
+		[back]
+	[back]
+	[subject]イサト:dir
+		[subject]信じる心:calc,0x596878,0,1000,unsigned,little_e
+		[replace]0x596980,haruka1
+		[replace]0x596980,haruka_3
+		[subject]イベント:calc,0x596880,0,255,unsigned,little_e
+		[subject]相性:dir
+			[subject]信じる心:calc,0x59687C,0,100,unsigned,little_e
+			[subject]想う心:calc,0x596984,0,100,unsigned,little_e
+		[back]
+	[back]
+	[subject]彰紋:dir
+		[subject]信じる心:calc,0x596884,0,1000,unsigned,little_e
+		[replace]0x5969BC,haruka1
+		[replace]0x5969BC,haruka_4
+		[subject]イベント:calc,0x59688C,0,255,unsigned,little_e
+		[subject]相性:dir
+			[subject]信じる心:calc,0x596888,0,100,unsigned,little_e
+			[subject]想う心:calc,0x5969C0,0,100,unsigned,little_e
+		[back]
+	[back]
+	[subject]藤原幸鷹:dir
+		[subject]信じる心:calc,0x596890,0,1000,unsigned,little_e
+		[replace]0x5969F8,haruka1
+		[replace]0x5969F8,haruka_5
+		[subject]イベント:calc,0x596898,0,255,unsigned,little_e
+		[subject]相性:dir
+			[subject]信じる心:calc,0x596894,0,100,unsigned,little_e
+			[subject]想う心:calc,0x5969FC,0,100,unsigned,little_e
+		[back]
+	[back]
+	[subject]翡翠:dir
+		[subject]信じる心:calc,0x59689C,0,1000,unsigned,little_e
+		[replace]0x596A34,haruka1
+		[replace]0x596A34,haruka_6
+		[subject]イベント:calc,0x5968A4,0,255,unsigned,little_e
+		[subject]相性:dir
+			[subject]信じる心:calc,0x5968A0,0,100,unsigned,little_e
+			[subject]想う心:calc,0x596A38,0,100,unsigned,little_e
+		[back]
+	[back]
+	[subject]源泉水:dir
+		[subject]信じる心:calc,0x5968A8,0,1000,unsigned,little_e
+		[replace]0x596A70,haruka1
+		[replace]0x596A70,haruka_7
+		[subject]イベント:calc,0x5968B0,0,255,unsigned,little_e
+		[subject]相性:dir
+			[subject]信じる心:calc,0x5968AC,0,100,unsigned,little_e
+			[subject]想う心:calc,0x596A74,0,100,unsigned,little_e
+		[back]
+	[back]
+	[subject]安部泰継:dir
+		[subject]信じる心:calc,0x5968B4,0,1000,unsigned,little_e
+		[replace]0x596AAC,haruka1
+		[replace]0x596AAC,haruka_8
+		[subject]イベント:calc,0x5968BC,0,255,unsigned,little_e
+		[subject]相性:dir
+			[subject]信じる心:calc,0x5968B8,0,100,unsigned,little_e
+			[subject]想う心:calc,0x596AB0,0,100,unsigned,little_e
+		[back]
+	[back]
+	[subject]アクラム:dir
+		[subject]信じる心:calc,0x5968C0,0,1000,unsigned,little_e
+		[subject]イベント:calc,0x5968C8,0,255,unsigned,little_e
+		[subject]相性：信じる心:calc,0x5968C4,0,100,unsigned,little_e
+	[back]
+	[subject]平千歳:dir
+		[subject]信じる心:calc,0x5968F0,0,1000,unsigned,little_e
+		[subject]イベント:calc,0x5968F8,0,255,unsigned,little_e
+		[subject]相性：信じる心:calc,0x5968F4,0,100,unsigned,little_e
+	[back]
+	[subject]紫:dir
+		[subject]信じる心:calc,0x5968FC,0,1000,unsigned,little_e
+		[subject]イベント:calc,0x596904,0,255,unsigned,little_e
+		[subject]相性：信じる心:calc,0x596900,0,100,unsigned,little_e
+	[back]
+[back]
+[subject]戦闘中:dir
+	[subject]ターミネーターモード:dir
+		[subject]ターミネーターモード/自軍無敵（ダメージ受けない）/_:b_toggle,0x415200,遙戦闘3,offset
+		[subject]ターミネーターモードKUpdate30版/自軍無敵（ダメージ受けない）/_:b_toggle,0x415220,遙戦闘3_,offset
+	[back]
+	[subject]状態異常にならない:dir
+		[subject]状態異常にならない/状態異常にならない/_:b_toggle,0x415200,遙戦闘5,offset
+		[subject]状態異常にならないKUpdate30版/状態異常にならない/_:b_toggle,0x415220,遙戦闘5,offset
+	[back]
+	[subject]術使用しても集中力減らない/術使用しても集中力減らない/_:b_toggle,0x408200,遙戦闘4,offset
+	[subject]五行の力減らない:dir
+		[subject]五行の力減らない/術使用で99になる/_:b_toggle,0x43FF00,遙戦闘9,offset
+		[subject]五行の力減らないKUpdate30版/術使用で99になる/_:b_toggle,0x43FE80,遙戦闘9,offset
+	[back]
+	[subject]悪夢モード:dir
+		[subject]悪夢モード/怨霊無敵（怨霊へのダメージ無効）/_:b_toggle,0x414200,遙戦闘6,offset
+		[subject]悪夢モードKUpdate30版/怨霊無敵（怨霊へのダメージ無効）/_:b_toggle,0x414220,遙戦闘6,offset
+	[back]
+	[subject]怨霊袋叩きセット/全員攻撃3回/_:b_toggle,0x40A300,遙戦闘8a,offset
+	[subject]全員の攻撃回数//_:b_calc,0,遙戦闘8,real,0,99
+	[subject]プロテクト版:dir
+		[subject]封印可能/封印可能/_:toggle,0x1326684,01,00
+		[subject]応援言葉増加/応援言葉増加/_:toggle,0x13266C5,01,00
+		[subject]怨霊タコ殴りセット/自軍最強/_:b_toggle,0x1326000,遙戦闘1,offset
+		[subject]一発封印セット/自軍最強・敵気力1/_:b_toggle,0x1326000,遙戦闘2,offset
+		[subject]立ち絵キャラ入れ替え:dir
+			[subject]左側の八葉:d_list,0x1326000,遙同行1,0x0,0x2B,遙同行3,offset
+			[subject]右側の八葉:d_list,0x1326000,遙同行1,0x0,0x2B,遙同行4,offset
+		[back]
+		[subject]自分:dir
+			[replace]0x1326670,haruka2
+		[subject]左側の八葉:dir
+			[replace]0x1326688,haruka2
+		[subject]右側の八葉:dir
+			[replace]0x13266A0,haruka2
+		[subject]敵:dir
+			[replace]0x13266B8,haruka2
+		[subject]応援言葉:dir
+			[subject]前回応援した八葉:list,0x13266C6,遙応援1,0,1
+			[subject]前回の応援言葉:list,0x13266C7,遙応援,0,1
+			[subject]1つ目の応援言葉:list,0x13266EC,遙応援,0,1
+			[subject]2つ目の応援言葉:list,0x13266F0,遙応援,0,1
+			[subject]3つ目の応援言葉:list,0x13266F4,遙応援,0,1
+			[subject]4つ目の応援言葉:list,0x13266F8,遙応援,0,1
+			[subject]5つ目の応援言葉:list,0x13266FC,遙応援,0,1
+			[subject]6つ目の応援言葉:list,0x1326700,遙応援,0,1
+		[back]
+		[back]
+	[subject]ノンプロテクト版:dir
+		[subject]封印可能/封印可能/_:toggle,0xDA6684,01,00
+		[subject]応援言葉増加/応援言葉増加/_:toggle,0xDA66C5,01,00
+		[subject]怨霊タコ殴りセット/自軍最強/_:b_toggle,0xDA6000,遙戦闘1,offset
+		[subject]一発封印セット/自軍最強・敵気力1/_:b_toggle,0xDA6000,遙戦闘2,offset
+		[subject]立ち絵キャラ入れ替え:dir
+			[subject]左側の八葉:d_list,0xDA6000,遙同行1,0x0,0x2B,遙同行3,offset
+			[subject]右側の八葉:d_list,0xDA6000,遙同行1,0x0,0x2B,遙同行4,offset
+		[back]
+		[subject]自分:dir
+			[replace]0xDA6670,haruka2
+		[subject]左側の八葉:dir
+			[replace]0xDA6688,haruka2
+		[subject]右側の八葉:dir
+			[replace]0xDA66A0,haruka2
+		[subject]敵:dir
+			[replace]0xDA66B8,haruka2
+		[subject]応援言葉:dir
+			[subject]前回応援した八葉:list,0xDA66C6,遙応援1,0,1
+			[subject]前回の応援言葉:list,0xDA66C7,遙応援,0,1
+			[subject]1つ目の応援言葉:list,0xDA66EC,遙応援,0,1
+			[subject]2つ目の応援言葉:list,0xDA66F0,遙応援,0,1
+			[subject]3つ目の応援言葉:list,0xDA66F4,遙応援,0,1
+			[subject]4つ目の応援言葉:list,0xDA66F8,遙応援,0,1
+			[subject]5つ目の応援言葉:list,0xDA66FC,遙応援,0,1
+			[subject]6つ目の応援言葉:list,0xDA6700,遙応援,0,1
+		[back]
+	[back]
+[back]
+[subject]ミニゲーム:dir
+	[subject]貝並合見全問正解ON:dir
+		[subject]貝並合見全問正解ON//_:toggle,0x463D1A,EB,74
+		[subject]貝並合見全問正解ON KUpdate30版//_:toggle,0x463C9A,EB,74
+	[back]
+	//[subject]麗気流転回数無制限ON//_:toggle,0x464F10,9090,7409
+	[subject]麗気流転回数無制限ON:dir
+		[subject]麗気流転回数無制限ON//_:b_toggle,0x460000,遙流転1,offset
+		[subject]麗気流転回数無制限ON KUpdate30版//_:b_toggle,0x45FF80,遙流転1,offset
+		[subject]麗気流転気流速度//_:calc,0xB7ECE0,0,4,unsigned,little_e
+	[back]
+	[subject]遊気野祭時間無制限ON:dir
+		[subject]遊気野祭時間無制限ON//_:toggle,0x4665AA,EB,73
+		[subject]遊気野祭時間無制限ON KUpdate30版//_:toggle,0x46652A,EB,73
+	[back]
+	[subject]蹴鞠演義回数無制限ON:dir
+		[subject]蹴鞠演義回数無制限ON//_:toggle,0x4698D3,90E9,0F85
+		[subject]蹴鞠演義回数無制限ON KUpdate30版//_:toggle,0x469883,90E9,0F85
+	[back]
+[back]
+[subject]おまけ全開:b_toggle,0x596F00,遙おまけ,offset
+[/script]
