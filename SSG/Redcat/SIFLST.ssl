@@ -1,0 +1,141 @@
+[group]SIF_SSG
+[note]wordwrap
+データを先行投稿頂いたyukiさん、情報をお寄せ頂いた葉月さん、SSGデータを寄稿頂いた通りすがりZさんに感謝致します。
+
+
+＊戦闘ステータスは戦闘時に有効になります。仕様上データの無い場所でもゴミが出てしまいますが(^^;また、各種ステータスは最大値以内に収めないと頻繁に落ちることがあります。
+[/note]
+
+[subject]SLGパート関連:dir
+	[subject]週数経過しない（同週ループ）/実行/_:toggle,0x4AFB5F,00,01
+[root]
+
+[subject]パラメータ関連:dir
+	[subject]週数/現在値/_:calc,_[:[:0x56413C:]+0x2FD8:]+0x429C,0x01,0x04,unsigned
+ 	[subject]主要ヒロインのストレス全快/実行/固定:b_toggle,_[:[:0x56413C:]+0x2FC0:]+0x30,SIFLST->SIF_a,offset
+ [subject]基本ステータス確認調整:dir
+	[repeat]SIFLST->SIFREP1,0,5,1
+ [back]
+ [subject]好感度確認調整:dir
+	[repeat]SIFLST->SIFREP2,0,5,1
+	[repeat]SIFLST->SIFREP3,0,5,1
+ [back]
+ [subject]戦闘ステータス関係:dir
+	[repeat]SIFLST->SIFREP4,0,16,1
+[root]
+
+[subject]ＣＧモード関連:dir
+	[replace]_[:[:0x56413C:]+0x2FB4:]+0x014C40,SIFLST->SIF_1CG
+	[replace]_[:[:0x56413C:]+0x2FB4:]+0x014C4E,SIFLST->SIF_2CG
+[root]
+
+[/group]
+
+
+[group]LST_a
+ミルフィ
+ミオリ
+ノエル
+リュミエール
+アルエット
+[/group]
+
+
+[group]LST_b
+ミルフィ最大値
+ミオリ最大値
+ノエル最大値
+リュミエール最大値
+アルエット最大値
+[/group]
+
+
+[group]SIFREP1
+[subject][! @SIFLST->LST_a,$Val !]:dir
+	[replace]_[:[:0x56413C:]+0x2FC0:]+0x[! 0x190*$Val !]+0x30,SIFLST->SIF_PR
+[back]
+[/group]
+
+
+[group]SIFREP2
+[subject][! @SIFLST->LST_a,$Val !]/現在値/_:calc,_[:[:0x56413C:]+0x2FC0:]+0x[! 0x190*$Val !]+0x84,0x0000,0x03E7,unsigned
+[/group]
+
+
+[group]SIFREP3
+[subject][! @SIFLST->LST_b,$Val !]/現在値/_:calc,_[:[:0x56413C:]+0x2FC0:]+0x[! 0x190*$Val !]+0x88,0x0000,0x03E7,unsigned
+[/group]
+
+
+[group]SIFREP4
+[subject]_mem,_[\:[\:0x56413C\:]+0x364C\:]+0x[! 0x05AC*$Val !]+0x20,32,00,<Read Error!>:dir
+	[replace]_[:[:0x56413C:]+0x364C:]+0x[! 0x05AC*$Val !]+0x4C,SIFLST->SIF_BPR
+[back]
+[/group]
+
+
+[group]SIF_PR
+[e_with],0x0000,0x03E7,unsigned
+ [subject]ＨＰ/現在値/_:calc,0x00
+ [subject]ＭＰ/現在値/_:calc,0x0C
+ [subject]魔力/現在値/_:calc,0x18
+ [subject]精神力/現在値/_:calc,0x24
+ [subject]ＡＰ/現在値/_:calc,0x30
+ [subject]速度/現在値/_:calc,0x3C
+ [subject]ストレス/現在値/_:calc,0x48
+ [subject]ＨＰ最大値/現在値/_:calc,0x04
+ [subject]ＭＰ最大値/現在値/_:calc,0x10
+ [subject]魔力最大値/現在値/_:calc,0x1C
+ [subject]精神力最大値/現在値/_:calc,0x28
+ [subject]ＡＰ最大値/現在値/_:calc,0x34
+ [subject]速度最大値/現在値/_:calc,0x40
+ [subject]ストレス最大値/現在値/_:calc,0x4C
+ [subject]魔法全習得/実行/_:toggle,0x84,0xCB-01000000
+[/e_with]
+[/group]
+
+
+[group]SIF_BPR
+[e_with],SIFLST->SIF_b,offset,0x0000,0x03E7
+ [subject]現在ＨＰ/現在値/固定:b_calc,0x00
+ [subject]現在ＭＰ/現在値/固定:b_calc,0x0C
+ [subject]魔力/現在値/_:b_calc,0x18
+ [subject]精神力/現在値/_:b_calc,0x24
+ [subject]速度/現在値/_:b_calc,0x3C
+ [subject]ＨＰ最大値/現在値/固定:b_calc,0x04
+ [subject]ＭＰ最大値/現在値/固定:b_calc,0x10
+ [subject]魔力最大値/現在値/_:b_calc,0x1C
+ [subject]精神力最大値/現在値/_:b_calc,0x28
+ [subject]速度最大値/現在値/_:b_calc,0x40
+[/e_with]
+[/group]
+
+
+[group]SIF_a
+0x48,00000000
+0x1D8,00000000
+0x368,00000000
+0x4F8,00000000
+0x688,00000000
+[/group]
+
+
+[group]SIF_b
+0x00
+0x0400
+[/group]
+
+[group]SIF_1CG
+[subject]ＣＧモードＡＬＬ/実行/_:b_toggle,0x00,SIFLST->SIF_c,offset
+[/group]
+
+
+[group]SIF_2CG
+[subject]回想モードＡＬＬ/実行/_:toggle,0xB1,0xDB-FF,00
+[/group]
+
+
+[group]SIF_c
+0x00,FF,00
+0x0E,0x8A-FF,00
+[/group]
