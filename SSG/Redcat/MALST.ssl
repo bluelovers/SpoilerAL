@@ -1,0 +1,217 @@
+[group]MA_MA2
+[note]wordwrap
+以下、少々補足です
+
+■五月雨堂経営部分
+殆どのコードに永続性（任意のデータ更新時に発動する型）があります。
+
+「最初から始める」：週の行動予定決定時毎日の仕事終了時等のタイミングで効果。所持金１６倍は効果ありすぎるので多用しないべきかと。
+
+■パラメータ関連
+経過日数：
+７×経過週数＋６という数値以外での正常進行保障不可です。
+
+■フラグ関連
+移動単位と場所封印に関して、値を固定。
+レアアンティークに関して、シナリオフラグに直結するものもあるので、購入はよく考えてのうえで利用して下さい。
+
+■ＣＧモード関連
+フラグの改造なので、入力後に一旦終了させれば自動的にセーブデータも更新されます。
+[/note]
+
+[subject]五月雨堂経営パート関連:dir
+	[subject]体力減らず毎日最大回復/実行/_:b_toggle,0x43DC25,MALST->MA_a,real
+	[subject]気力減らず毎日最大回復/実行/_:b_toggle,0x43DC3A,MALST->MA_b,real
+	[subject]最初から「超機嫌良い」まま/実行/_:b_toggle,0x435865,MALST->MA_c,real
+	[subject]売却１回で所持金２倍/実行/_:toggle,0x43E591,5620,5708
+	[subject]売却１回で所持金１６倍/実行/_:b_toggle,0x43E591,MALST->MA_d,real
+	[subject]パラメータデータ更新時…:dir
+	[subject]器用さ／目利き／魅力常時ＭＡＸ/実行/_:b_toggle,0x43DC51,MALST->MA_e,real
+	[subject]整頓／清掃／評判経験値常時ＭＡＸ/実行/_:b_toggle,0x43DCC0,MALST->MA_f,real
+[back]
+[subject]マナ値関連:dir
+	[subject]増減なし/実行/_:toggle,0x43F754,EB00,03C8
+	[subject]常に０/実行/_:toggle,0x43F75E,EB00,7D07
+	[subject]常に最大/実行/_:toggle,0x43F771,EB00,7E03
+[back]
+	[subject]マナ値の代わりに好感度が上昇/実行/_:b_toggle,0x43F753,MALST->MA_j,real
+	[subject]取引時、所持金減らない/実行/_:toggle,0x43775B,EB00,2BE8
+	[subject]上記の長瀬店バージョン/実行/_:toggle,0x4376B9,EB00,2BCA
+[/group]
+
+
+[group]MA_PR
+	[repeat]MALST->MAREP1,0,4,1
+[subject]スフィーＬＶ/現在値/_:calc,0x4A733C,0x01,0x04,unsigned
+[subject]所持金/現在値/_:calc,0x4A7344,0x00,0x5F5E09C,unsigned
+	[repeat]MALST->MAREP2,0,3,1
+[subject]機嫌/現在値/_:calc,0x4A7371,0x00,0x03,unsigned
+	[repeat]MALST->MAREP3,0,3,1
+	[repeat]MALST->MAREP4,0,3,1
+[subject]経過日数/現在値/_:calc,0x4A73A8,0x06,0xBC,unsigned
+[/group]
+
+
+[group]MAREP1
+[subject][! @MALST->LST_a,$Val !]/現在値/_:calc,0x[! 0x4A732C+$Val*4 !],0x00,0x63,unsigned
+[/group]
+
+
+[group]MAREP2
+[subject][! @MALST->LST_b,$Val !]/現在値/_:calc,0x[! 0x4A7349+$Val*4 !],0x00,0xC8,unsigned
+[/group]
+
+
+[group]MAREP3
+[subject][! @MALST->LST_c,$Val !]/現在値/_:calc,0x[! 0x4A7375+$Val*4 !],0x00,0x12B,unsigned
+[/group]
+
+
+[group]MAREP4
+[subject][! @MALST->LST_d,$Val !]/現在値/_:calc,0x[! 0x4A7390+$Val*4 !],0x00,0x0A,unsigned
+[/group]
+
+
+[group]LST_a
+最大体力
+最大気力
+現在体力
+現在気力
+[/group]
+
+
+[group]LST_b
+器用さ
+目利き
+魅力
+[/group]
+
+
+[group]LST_c
+清掃経験値
+整頓経験値
+評判経験値
+[/group]
+
+
+[group]LST_d
+清掃ＬＶ
+整頓ＬＶ
+評判ＬＶ
+[/group]
+
+
+[group]MA_F1
+[subject]マナ現在値:calc,0x4A7369,0x00,0xC7,unsigned
+[e_with],0x00,0xC8,unsigned
+	[subject]スフィー好感度/現在値/_:calc,0x4A736D
+	[subject]リアン好感度/現在値/_:calc,0x4A73D9
+	[subject]結花好感度/現在値/_:calc,0x4A73DD
+[/e_with]
+[subject]休日行動単位最大/実行/固定:toggle,0x4A6930,03
+[subject]休日行動場所封印解除/実行/固定:toggle,0x4A6958,00000000
+[subject]全レアアンティーク出現/実行/_:b_toggle,0x4AA70C,MALST->MA_g,real
+	[repeat]MALST->MAREP5,0,3,1
+[subject]スフィー昏倒回数/現在値/_:calc,0x4A756D,0x00,0x02,unsigned 
+[subject]仕事連続成功回数/現在値/_:calc,0x4A75A4,0x0000,0x3E7,unsigned
+[/group]
+
+
+[group]MAREP5
+[subject][! @MALST->LST_e,$Val !]/現在値/_:calc,0x[! 0x4AB5A8+$Val*4 !],0x00,0xFF,unsigned
+[/group]
+
+
+[group]LST_e
+遊園地来訪回数
+五月雨堂移動回数
+アルバイト回数
+[/group]
+
+
+[group]MA_CG
+[subject]ＣＧ鑑賞モード:dir
+	[subject]ＡＬＬＯＮ/実行/_:b_toggle,0x4ADAD4,MALST->MA_k,real
+	[subject]ＡＬＬＯＦＦ/実行/_:toggle,0x4ADAD4,0x4ADBD5-00,??
+[/group]
+
+
+[group]MA_a
+0x43DC25,EB00,7D03
+0x43F0EA,08,10
+0x43F0FB,EB00,03DF
+0x43F33F,08,10
+0x43F354,EB00,03DF
+[/group]
+
+
+[group]MA_b
+0x43DC3A,EB00,7D03
+0x43F303,0C,14
+0x43F30C,EB00,2BFB
+[/group]
+
+
+[group]MA_c
+0x435865,E9,E1
+0x43F361,03,01
+0x43DC6A,EB00,7E03
+[/group]
+
+
+[group]MA_d
+0x43E591,6E20C1E504,57088B6E20
+0x43E59C,EB00,03EA
+[/group]
+
+
+[group]MA_e
+0x43DC51,EB00,7E03
+0x43DC7A,EB00,7E03
+0x43DC8A,EB00,7E03
+[/group]
+
+
+[group]MA_f
+0x43DCC0,EB00,7E03
+0x43DCD0,EB00,7E03
+0x43DCE3,EB00,7E03
+[/group]
+
+
+[group]MA_g
+0x4AA70C,0x4AA70E-03
+0x4AA714,03
+0x4AA71F,03
+0x4AA720,0x4AA725-03
+0x4AA734,0x4AA74D-03
+[/group]
+
+
+[group]MA_h
+0x4A6080,0x4A60B1-01
+0x4A60B6,0x4A60CB-01
+0x4A60EC,0x4A6100-01
+0x4A6122,0x4A612C-01
+0x4A6158,0x4A616A-01
+[/group]
+
+
+[group]MA_i
+0x4A6080,0x4A60B1-00
+0x4A60B6,0x4A60CB-00
+0x4A60EC,0x4A6100-00
+0x4A6122,0x4A612C-00
+0x4A6158,0x4A616A-00
+[/group]
+
+
+[group]MA_j
+0x43F753,48,44
+0x43F758,48,44
+[/group]
+
+
+[group]MA_k
+0x4ADAD4,1010801000200120601000403130303020205030D0107010401042104110D11011101312111290103010A0102010B010C01000101212101200125010C091F091F191B091A091D091E091301220129091919192919391309140915191509160916191F0901091209121910091E09000305130523053304030413020306030613090B091B0A0B081B080B082B070B0B030C030C130212010204020412042204320502060A061A062A063A065A064A070A071A090A080A081A082A0A020B0200220104030C031C032C020C060C04140404042406040005001501050A050025040D030D031D050D051D052D053D054D055D056D057D07050605061501412151230201030
+[/group]
