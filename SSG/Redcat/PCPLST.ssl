@@ -1,0 +1,170 @@
+[group]PCP_SSG
+[note]wordwrap
+始めたばかりなので、完全動作に関する保障はできません。データのバックアップは忘れずに。
+
+時間制限系機能に関して：
+ＰＣＣ時同様動作確認済みですが、改造対策にかかってしまうという方は、ダンジョン内制限時間を直接操作してください。トラップ発動の基準は、ダンジョン突入時の値よりも書き込んだ値が大きくなった場合です。
+[/note]
+
+[subject]ぱすちゃＱ＋＋:dir
+ [subject]ザッカ/現在値/_:calc,_[:[:[:(MName::Sys42VM.dll)+0x067D48:]+0x5F90:]+0x10:]+0x40,0x000000,0x01869F,unsigned
+ [subject]ダンジョン内制限時間/現在値/固定:calc,_[:[:[:(MName::Sys42VM.dll)+0x067D48:]+0x0628:]+0x10:]+0x14,0x000000,0x01CCF0,unsigned
+ [subject]制限時間59分化/実行/固定:b_toggle,0x00,PCPLST->PCP_e,offset
+ [subject]ユウキ基本ステータス:dir
+  [replace]_[:[:[:(MName::Sys42VM.dll)+0x067D48:]+0x5F90:]+0x10:],PCPLST->PCP_a
+  [replace]_[:[:[:(MName::Sys42VM.dll)+0x067D48:]+0x5F9C:]+0x10:],PCPLST->PCP_b
+  [replace]_[:[:[:(MName::Sys42VM.dll)+0x067D48:]+0x5FBC:]+0x10:],PCPLST->PCP_f
+ [back]
+ [subject]ダンジョンフィールド用:dir
+  [replace]_[:[:[:(MName::Sys42VM.dll)+0x067D48:]+0x5FA4:]+0x10:],PCPLST->PCP_b
+  [replace]_[:[:[:(MName::Sys42VM.dll)+0x067D48:]+0x5FA0:]+0x10:],PCPLST->PCP_c
+ [back]
+ [subject]戦闘中のステータス:dir
+  [replace]_[:[:[:(MName::Sys42VM.dll)+0x067D48:]+0x5144:]+0x10:],PCPLST->PCP_d
+ [back]
+ [subject]仲間のステータス:dir
+  [repeat]PCPLST->PCPREP1,0,4,1
+  [repeat]PCPLST->PCPREP1,10,19,1
+  [repeat]PCPLST->PCPREP1,20,25,1
+  [repeat]PCPLST->PCPREP1,40,47,1
+ [back]
+[root]
+
+[/group]
+
+
+[group]PCPREP1
+[subject]_mem,_0x[! 0x48*$Val !]=>temp;[\:[\:[\:(MName\:\:Sys42VM.dll)+0x067D48\:]+$temp+0x6264\:]+0x10\:],20,00,<NoData>:dir
+ [replace]_0x[! 0x48*$Val !]=>temp;[:[:[:(MName::Sys42VM.dll)+0x067D48:]+$temp+0x6260:]+0x10:],PCPLST->PCP_a
+ [replace]_0x[! 0x48*$Val !]=>temp;[:[:[:(MName::Sys42VM.dll)+0x067D48:]+$temp+0x626C:]+0x10:],PCPLST->PCP_b
+ [replace]_0x[! 0x48*$Val !]=>temp;[:[:[:(MName::Sys42VM.dll)+0x067D48:]+$temp+0x628C:]+0x10:],PCPLST->PCP_f
+[back]
+[/group]
+
+
+[group]PCP_a
+[subject]存在フラグ/実行/_:toggle,0x54,01000000,00000000
+[e_with],0x01,0x09,unsigned
+ [subject]心/現在値/_:calc,0x0C
+ [subject]技/現在値/_:calc,0x10
+ [subject]体/現在値/_:calc,0x14
+[/e_with]
+[/group]
+
+
+[group]PCP_b
+[e_with],0x01,0x63,unsigned
+ [subject]基本HP/現在値/_:calc,0x04
+ [subject]基本MP/現在値/_:calc,0x08
+ [subject]基本CP/現在値/_:calc,0x0C
+ [subject]基本攻撃/現在値/_:calc,0x10
+[/e_with]
+[/group]
+
+
+[group]PCP_c
+[e_with],0x00,0x63,unsigned
+ [subject]現在HP/現在値/_:calc,0x04
+ [subject]現在MP/現在値/_:calc,0x08
+ [subject]現在CP/現在値/_:calc,0x0C
+ [subject]現在攻撃/現在値/_:calc,0x10
+[/e_with]
+[/group]
+
+
+[group]PCP_d
+[e_with],0x00,0x63,unsigned
+ [subject]現在HP/現在値/固定:calc,0x04
+ [subject]現在MP/現在値/固定:calc,0x08
+ [subject]現在CP/現在値/固定:calc,0x0C
+ [subject]現在攻撃/現在値/固定:calc,0x10
+[/e_with]
+[/group]
+
+
+[group]PCP_e
+_[:[:[:(MName::Sys42VM.dll)+0x067D48:]+0xA0:]+0x10:]+0x1C,3C0000003C000000
+_[:[:[:(MName::Sys42VM.dll)+0x067D48:]+0x0628:]+0x10:]+0x14,F0CC0100
+[/group]
+
+
+[group]PCP_f
+[e_with],PCPLST->LST_a,0x00,0xFF,PCPLST->LST_b,offset
+ [subject]第一スキル/_:d_list,0x04
+ [subject]第二スキル/_:d_list,0x08
+ [subject]第三スキル/_:d_list,0x0C
+ [subject]第四スキル/_:d_list,0x10
+[/e_with]
+[/group]
+
+
+[group]LST_a
+なし
+開錠
+罠解除
+宝感知
+危険感知
+逃走
+突撃
+グループ攻撃
+貫通攻撃
+連撃
+乱打
+回復
+大回復
+活性・攻撃
+活性・命中
+活性・回避
+攻撃魔法
+グループ魔法
+障壁
+魔法障壁
+時間短縮
+アリスマスター
+ぱすちゃＣマスター
+アニメファン
+ゲーマー
+映画好き
+マンガ通
+特撮マニア
+食いしん坊
+エロスの泉
+成績優秀
+物知り博士
+[/group]
+
+
+[group]LST_b
+,0x00=00000000
+,0x00=01000000
+,0x00=02000000
+,0x00=03000000
+,0x00=04000000
+,0x00=05000000
+,0x00=06000000
+,0x00=07000000
+,0x00=08000000
+,0x00=09000000
+,0x00=0A000000
+,0x00=0B000000
+,0x00=0C000000
+,0x00=0D000000
+,0x00=0E000000
+,0x00=0F000000
+,0x00=10000000
+,0x00=11000000
+,0x00=12000000
+,0x00=13000000
+,0x00=14000000
+,0x00=1F000000
+,0x00=20000000
+,0x00=21000000
+,0x00=22000000
+,0x00=23000000
+,0x00=24000000
+,0x00=25000000
+,0x00=26000000
+,0x00=27000000
+,0x00=28000000
+,0x00=29000000
+[/group]
