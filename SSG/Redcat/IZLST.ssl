@@ -1,0 +1,341 @@
+[group]IZ_MA
+[note]wordwrap
+エゴ初のお兄ちゃんゲーっぽいですね(^^;　全マップに１章時並に細かい会話イベントとかがあったら、こんなに単調には感じなかったと思います。ちと残念。
+
+以下、少々補足です。
+■ＲＰＧパート関連
+ノーダメージ化：
+敵の通常・呪法攻撃によるダメージを一律０にし、対象キャラの体力を全快させます。無敵と同意。
+
+味方攻撃力８倍：
+単純に与えるダメージ×８と考えて差し支えないです。要望があれば２５６倍までは楽に増やせますが…意味ないでしょ？(^^;
+
+霊力無限化：
+技・呪法使用時の消費霊力０で、且つ実行キャラの霊力が全回復します。
+
+即ＬＶＭＡＸ化：
+１はとにかくＭＡＸ化すれば良い人向け。こだわる方は２の方でどうぞ。
+
+ＬＶＵＰ時ステータスＭＡＸ化：
+即ＬＶＭＡＸ化との併用をお勧め。
+
+エンカウント処理関係：
+玉藻の装備状態を問題とせず、エンカウント完全回避と、常時成立の変更が可能。つか、１章開始後すぐに作った機能だったんで(^^;
+
+
+■パラメータ関連
+注：１周目に仲間に入っていない状態での、当該キャラのステータス変更は不可です。基本データを置いて後、各キャラのステータスはループしているので、仮に２人しかいないと、３人目（本来は綾香）に基本データ、４人目と５人目に再びヒカルと七海、６人目に再度基本データという並びになります。リプレイ２周目以降は、キャラのデータが最初から全て残っているため、この制限はありません。
+
+基本ステータス：キャラ毎の標準能力です。
+現在ステータス：装備等を考慮した現時点での能力です。
+＊基本ステータス＋装備＆勾玉＝現在ステータス
+
+
+■フラグ関連
+隠しイベント：
+９章では美由紀ＥＮＤ確定イベント→綾香との会話→美由紀との保健室イベントと続きますが、フラグを起てている状態だと最後の保健室イベントの内容が変わります。またこのイベントは新規のＣＧ・回想枠に登録されます。
+
+エンディング分岐判定：
+利用法は以下の２つ。
+
+１）９章学園パートで、フラグを破棄することにより複数ヒロインの同時進行が可能になります。
+
+２）ラスボス撃破後直後のイベント辺りで、セーブしておき、フラグ内容を変更することにより、全エンディングを容易に回収できます。
+
+…今回は好感度とかの要素は無いです。１章の選択肢とかも、攻略には意味無しだったようで(^^;
+
+
+■環境関連
+デバッグダイアログボックス：
+機能実行時、戦闘中にＬＶ調整用のデバッグダイアログボックスを強制出現させます。パラメータ関連がうまく使えない方はこちらでどうぞ。変更時には体力・霊力も全快するおまけつき。なお、実行したままだとボックスが出現しつづけますので、機能を解除した後、ダイアログボックスのキャンセルボタン等で終了させてください。
+
+
+ＡＶＧパート高速化：
+デフォのエフェクトスキップはキャラ関係部分しか効果が無いので、ＢＧや特殊エフェクトのスキップ、及びデフォには無かったウエイト処理解除を追化しました。最初の美由紀との会話シーンあたりを見比べれば、違いはわかると思います。
+
+
+■ＣＧモード関連
+注：ＣＧフラグの更新は、新規回収時のみに当該アドレス対象部分のみを更新。同時にモード表示用に、メモリ上ではなく随時更新されたセーブデータよりフラグをロードし直し、表示用フラグに反映させる仕様らしいので、以下の手順に従って下さい。
+
+１）それぞれのＡＬＬ化の機能を実行。この時点では表示用のフラグ（変動・消滅型）、セーブデータ共に変動しません。取得済みフラグのみＡＬＬ化状態です。
+
+２）ＣＧフラグ更新制御解除を実行。ＯＦＦ化させる場合はＯＦＦ化用オプションも実行すること。
+
+３）シナリオ内で任意のＣＧを回収（ＯＰの最初の部分でＯＫ）。
+
+これで、表示用のフラグ、セーブデータも同時にＡＬＬ化します。
+[/note]
+
+[subject]ＲＰＧパート関連:dir
+	[subject]戦闘内処理一般:dir
+		[subject]敵攻撃ノーダメージ化/実行/_:b_toggle,0x41D064,IZLST->IZ_a,real
+		[subject]味方攻撃力８倍化/実行/_:b_toggle,0x41D05E,IZLST->IZ_b,real
+		[subject]霊力無限化/実行/_:b_toggle,0x4459DA,IZLST->IZ_c,real
+	[back]
+	[subject]戦闘後処理一般:dir
+		[subject]戦闘後即ＬＶＭＡＸ化（１/実行/_:toggle,0x443EF5,EB00,7F22
+		[subject]戦闘後即ＬＶＭＡＸ化（２/実行/_:b_toggle,0x420ED1,IZLST->IZ_d,real
+		[subject]ＬＶＵＰ時ステータスＡＬＬＭＡＸ化/実行/_:b_toggle,0x443A5F,IZLST->IZ_e,real
+		[subject]戦闘後対象勾玉増殖化/実行/_:toggle,0x44D842,EB,7D
+	[back]
+	[subject]エンカウント処理:dir
+		[subject]戦闘エンカウント完全回避/実行/_:b_toggle,0x4A0100,IZLST->IZ_f,real
+		[subject]一歩毎にエンカウント成立/実行/_:toggle,0x4A011B,EB00,7D6C
+	[back]
+[/group]
+
+
+[group]IZ_PR
+[subject]塔馬ヒカル:dir
+	[subject]基本ステータス:dir
+	[replace]_[:[:0x4FEFE4:]:],IZLST->IZ_g1
+	[subject]現在ステータス:dir
+	[replace]_[:[:0x4FEFE4:]:],IZLST->IZ_g2
+[back]
+[subject]水瀬七海:dir
+	[subject]基本ステータス:dir
+	[replace]_[:[:[:0x4FEFE4:]:]:],IZLST->IZ_g1
+	[subject]現在ステータス:dir
+	[replace]_[:[:[:0x4FEFE4:]:]:],IZLST->IZ_g2
+[back]
+[subject]橘綾香:dir
+	[subject]基本ステータス:dir
+	[replace]_[:[:[:[:0x4FEFE4:]:]:]:],IZLST->IZ_g1
+	[subject]現在ステータス:dir
+	[replace]_[:[:[:[:0x4FEFE4:]:]:]:],IZLST->IZ_g2
+[back]
+[subject]倉島渚:dir
+	[subject]基本ステータス:dir
+	[replace]_[:[:[:[:[:0x4FEFE4:]:]:]:]:],IZLST->IZ_g1
+	[subject]現在ステータス:dir
+	[replace]_[:[:[:[:[:0x4FEFE4:]:]:]:]:],IZLST->IZ_g2
+[back]
+[subject]天照:dir
+	[subject]基本ステータス:dir
+	[replace]_[:[:[:[:[:[:0x4FEFE4:]:]:]:]:]:],IZLST->IZ_g1
+	[subject]現在ステータス:dir
+	[replace]_[:[:[:[:[:[:0x4FEFE4:]:]:]:]:]:],IZLST->IZ_g2
+[back]
+[subject]塔馬美由紀:dir
+	[subject]基本ステータス:dir
+	[replace]_[:[:[:[:[:[:[:0x4FEFE4:]:]:]:]:]:]:],IZLST->IZ_g1
+	[subject]現在ステータス:dir
+	[replace]_[:[:[:[:[:[:[:0x4FEFE4:]:]:]:]:]:]:],IZLST->IZ_g2
+[back]
+[/group]
+
+
+[group]IZ_F1
+[subject]隠しイベント及びＣＧ・回想枠出現/実行/_:toggle,0x518332,01,00
+[subject]エンディング分岐判定/_:d_list,0x51836C,IZLST->LST_a,0x0000,0x0006,IZLST->LST_b,offset
+[subject]装備品全種所持/実行/_:toggle,0x4FEDD6,0x4FEF2F-6300
+[subject]勾玉全種ＭＡＸ所持/実行/_:b_toggle,0x4FEFF4,IZLST->IZ_h,real
+[/group]
+
+
+[group]IZ_CG
+[subject]フラグ更新制御解除/実行/_:b_toggle,0x4C34E6,IZLST->IZ_j,real
+[subject]ＯＦＦ化用オプション/実行/_:toggle,0x4C3517,10,20
+[replace]_[:0x52330C:],IZLST->IZ_i
+[/group]
+
+
+[group]IZ_EX
+[subject]デバッグダイアログボックス出現/実行/_:toggle,0x421EDF,EB00,743A
+[subject]ＡＶＧパート高速化強化版/実行/_:b_toggle,0x4B0822,IZLST->IZ_k,real
+[/group]
+
+
+[group]IZ_EX2
+[subject]通常攻撃（ヒカル）全体化/実行/固定推奨:toggle,0x2A3E,0C,01
+[subject]無拍子全体化/実行/固定推奨:toggle,0x2E12,0C,01
+[/group]
+
+
+[group]IZ_a
+0x41D064,E925,8B0A
+0x41D066,AD0C00,2B4808
+0x4E7D8E,817AAC07000000,00000000000000
+0x4E7D95,7D0A,0000
+0x4E7D97,33C9,0000
+0x4E7D99,894808,000000
+0x4E7D9C,8B4ADC,000000
+0x4E7D9F,EB05,0000
+0x4E7DA1,8B0A,0000
+0x4E7DA3,2B4808,000000
+0x4E7DA6,E9BE52F3FF90,000000000000
+[/group]
+
+
+[group]IZ_b
+0x41D05E,E949AD0C0090,8B85D0FCFFFF
+0x4E7DAC,8B85D0FCFFFF,000000000000
+0x4E7DB2,817AAC06000000,00000000000000
+0x4E7DB9,7204,0000
+0x4E7DBB,C1600803,00000000
+0x4E7DBF,E9A052F3FF90,000000000000
+[/group]
+
+
+[group]IZ_c
+0x4459DA,E9E623,8B5158
+0x4459DD,0A00,2BD0
+0x4460C7,E92D1D,8B4A58
+0x4460CA,0A00,2BC8
+0x4E7DC5,813A07000000,000000000000
+0x4E7DCB,7D05,0000
+0x4E7DCD,8B4A34,000000
+0x4E7DD0,EB05,0000
+0x4E7DD2,8B4A58,000000
+0x4E7DD5,2BC8,0000
+0x4E7DD7,E903DCF5FF90,000000000000
+0x4E7DF9,813907000000,000000000000
+0x4E7DFF,7D05,0000
+0x4E7E01,8B5134,000000
+0x4E7E04,EB05,0000
+0x4E7E06,8B5158,000000
+0x4E7E09,2BD0,0000
+0x4E7E0B,E9BCE2F5FF90,000000000000
+[/group]
+
+
+[group]IZ_d
+0x420ED1,B9FFFFFF7F90,8B8D1CFEFFFF
+0x420EE0,EB00,7E06
+0x443E69,EB,7C
+0x443E80,EB00,7D10
+0x443E8A,EB0190,2B5108
+[/group]
+
+
+[group]IZ_e
+0x443A5F,E97943,8B4DB8
+0x443A62,0A009090,894C900C
+0x4E7DDD,813807000000,000000000000
+0x4E7DE3,7D07,0000
+0x4E7DE5,C745B80F270000,00000000000000
+0x4E7DEC,8B4DB8,000000
+0x4E7DEF,894C900C,00000000
+0x4E7DF3,E92CBBF5FF90,000000000000
+[/group]
+
+
+[group]IZ_f
+0x4A0100,33D290,83C201
+0x4A011B,EB,7D
+[/group]
+
+
+[group]IZ_g1
+[subject]ＬＶ/現在値/_:calc,0x0C,0x01,0x63,unsigned
+[subject]経験値/現在値/_:calc,0x10,0x00000000,0x7FFFFFFF
+[e_with],0x0000,0x270F,unsigned
+	[subject]最大体力/現在値/_:calc,0x14
+	[subject]最大霊力/現在値/_:calc,0x18
+	[subject]腕力/現在値/_:calc,0x1C
+	[subject]精神力/現在値/_:calc,0x20
+	[subject]素早さ/現在値/_:calc,0x24
+	[subject]命中率/現在値/_:calc,0x28
+	[subject]回避/現在値/_:calc,0x2C
+	[subject]物理防御/現在値/_:calc,0x30
+	[subject]呪法防御/現在値/_:calc,0x34
+[/e_with]
+[subject]呪法ＬＶＡＬＬＭＡＸ化/実行/_:toggle,0x6C,0xE7-02000000DE930400
+[back]
+[/group]
+
+
+[group]IZ_g2
+[e_with],0x0000,0x270F,unsigned
+	[subject]最大体力/現在値/_:calc,0x38
+	[subject]最大霊力/現在値/_:calc,0x3C
+	[subject]現在体力/現在値/固定:calc,0x5C
+	[subject]現在霊力/現在値/固定:calc,0x60
+	[subject]腕力/現在値/_:calc,0x40
+	[subject]精神力/現在値/_:calc,0x44
+	[subject]素早さ/現在値/_:calc,0x48
+	[subject]命中率/現在値/_:calc,0x4C
+	[subject]回避/現在値/_:calc,0x50
+	[subject]物理防御/現在値/_:calc,0x54
+	[subject]呪法防御/現在値/_:calc,0x58
+[/e_with]
+[back]
+[/group]
+
+
+[group]IZ_h
+0x4FEFF4,0x4FF02F-E703
+0x4FF030,0x4FF04F-0000E703
+[/group]
+
+
+[group]IZ_i
+[subject]ＣＧモード:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:b_toggle,0x00,IZLST->IZ_l,offset
+	[subject]ＡＬＬ ＯＦＦ/実行/_:b_toggle,0x00,IZLST->IZ_n,offset
+[back]
+[subject]回想モード:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:b_toggle,0x00,IZLST->IZ_m,offset
+	[subject]ＡＬＬ ＯＦＦ/実行/_:b_toggle,0x00,IZLST->IZ_o,offset
+[/group]
+
+
+[group]IZ_j
+0x4C34E6,EB00,7D73
+0x4C34F1,EB00,740D
+0x4C34FE,EB00,741A
+0x4C3510,EB00,7508
+[/group]
+
+
+[group]IZ_k
+0x4B0822,EB,75
+0x4B1DCD,EB00,740A
+0x4B1FEE,EB00,740C
+0x4B39DA,EB00,7409
+0x4B60D6,EB00,740A
+[/group]
+
+
+[group]IZ_l
+0x04,0x7E-20
+0x7F,00
+[/group]
+
+
+[group]IZ_m
+0x84,0x9D-2F
+0x9E,00
+[/group]
+
+
+[group]IZ_n
+0x04,0x7D-10
+0x7E,9000
+[/group]
+
+
+[group]IZ_o
+0x84,0x9C-10
+0x9D,9000
+[/group]
+
+
+[group]LST_a
+既成関係破棄（爆）
+水瀬七海
+橘綾香
+倉島渚
+天照
+塔馬美由紀
+[/group]
+
+
+[group]LST_b
+,0x00=0000
+,0x00=0200
+,0x00=0300
+,0x00=0400
+,0x00=0500
+,0x00=0600
+[/group]
