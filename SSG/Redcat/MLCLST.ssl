@@ -1,0 +1,37 @@
+[group]MLC_VN
+[note]wordwrap
+以下、少々補足です。
+
+永続文章スキップ：
+クリック中のみ停止します。任意んもクリック中にもう一方のクリックボタンを押すことによりポップアップメニューが呼び出せます。
+
+七瀬編出現：
+初期状態からの実行が御勧め。それ以外でも選択は可能。
+
+時間停止＋減点回避：
+人間違いによる減点も回避します。
+[/note]
+
+[subject]ビジュアルショートノベル:dir
+	[subject]永続文章スキップ/ＯＮ/_:b_toggle,0x41C05E,MLCLST->MLC_a,real
+	[subject]七瀬編選択可能/実行/_:toggle,0x4B15CC,FEFF0000
+[/group]
+
+
+[group]MLC_AT
+[subject]時間停止＋減点回避/ＯＮ/_:toggle,0x4393DD,EB00,2BC7
+[subject]得点/現在値/_:calc,0x4AF808,0x0000,0x03E7,unsigned
+[/group]
+
+
+[group]MLC_CG
+[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x4B16B0,0x4B16C7-D12F0100
+[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x4B16B0,0x4B16C7-00
+[/group]
+
+
+[group]MLC_a
+0x41C05E,EB00,7435
+0x41C067,EB00,742C
+0x41C070,EB00,7523
+[/group]
