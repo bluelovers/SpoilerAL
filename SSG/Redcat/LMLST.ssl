@@ -1,0 +1,29 @@
+[group]LM_a
+[subject]‚r‚o‚d‚b‚h‚`‚kg—p‰Â/Às/_:toggle,0x04,01000000
+	[subject]‚b‚f ‚f‚`‚k‚k‚d‚q‚x:dir
+		[subject]‚`‚k‚k ‚n‚m/Às/_:toggle,0x194,0x704-01000000
+		[subject]‚`‚k‚k ‚n‚e‚e/Às/_:toggle,0x194,0x704-00000000
+	[back]
+	[subject]‚g ‚l‚d‚l‚n‚q‚x:dir
+		[subject]‚`‚k‚k ‚n‚m/Às/_:toggle,0xC80,0xD4B-01000000
+		[subject]‚`‚k‚k ‚n‚e‚e/Às/_:toggle,0xC80,0xD4B-00000000
+[/group]
+
+
+[group]LM_b
+0x194,0x2D7-01000000
+0x36C,01000000
+0x3C4,0x434-01000000
+0x554,0x59F-01000000
+0x704,01000000
+[/group]
+
+
+[group]LM_c
+[e_with],0x00,0x06,unsigned
+[subject]ƒZƒŠƒADŠ´“x/Œ»İ’l/_:calc,0x320
+[subject]ƒeƒBƒiDŠ´“x/Œ»İ’l/_:calc,0x324
+[subject]ƒƒCDŠ´“x/Œ»İ’l/_:calc,0x328
+[subject]ƒ~ƒƒƒEDŠ´“x/Œ»İ’l/_:calc,0x32C
+[/e_with]
+[/group]
