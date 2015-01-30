@@ -1,0 +1,97 @@
+SSG for SpoilerAL ver 6.0
+
+[script]
+[title]Œä_Šy­—’T’ã’c(verC³‚È‚µ)
+[creator]DANA
+[maker]ƒGƒ‹ƒt
+[process]mika.exe
+[replace]0x00,mikagura->mika1_ssg
+[/script]
+
+[script]
+[title]‘±EŒä_Šy­—’T’ã’c`Š®Œ‹•Ò`(verC³‚È‚µ)
+[creator]DANA
+[maker]ƒGƒ‹ƒt
+[process]mika.exe
+[replace]0x00,mikagura->mika2_ssg
+[/script]
+
+[script]
+[title]VEŒä_Šy­—’T’ã’c(verC³‚È‚µ)
+[creator]DANA
+[maker]ƒGƒ‹ƒt
+[process]mika.exe
+[replace]0x00,mikagura->mika3_ssg
+[/script]
+
+[script]
+[title]ƒeƒlƒŒƒbƒcƒ@(ver1.0.0.1)
+[creator]DANA
+[maker]AQUAPLUS
+[process]Tenerezza.exe
+[replace]0x00,tene->tene_ssg
+[/script]
+
+[script]
+[title]ƒJƒIƒX ƒŒƒMƒIƒ“(verC³‚È‚µ)
+[creator]DANA
+[maker]CAPCOM
+[process]ChaosLegion.exe
+[replace]0x00,chaos->chaos_ssg
+[/script]
+
+[script]
+[title]–‚–@íŽmƒXƒC[ƒgƒiƒCƒc‚Q |ƒƒbƒcƒ@[”¾—|(VER1.02)
+[creator]DANA
+[maker]Triangle
+[process]SK2.EXE
+[replace]0x00,sweet2->sweet2_ssg
+[/script]
+
+[script]
+[title]“Œ•û—dX–²@` Perfect Cherry Blossom.
+[creator]DANA
+[maker]ãŠCƒAƒŠƒXŒ¶žÙ’c
+[process]th07.EXE
+[replace]0x00,touyou->touyou_ssg
+[/script]
+
+[script]
+[title]MELTY BLOOD -Re¥ACT-
+[creator]DANA
+[maker]“n•Ó»ìŠ^ƒtƒ‰ƒ“ƒXƒpƒ“ETYPE-MOON
+[process]mbr.EXE
+[replace]0x00,mbreact->mbreact_ssg
+[/script]
+
+[script]
+[title]Ž®_‚Ìé2
+[creator]DANA
+[maker]ƒAƒ‹ƒtƒ@EƒVƒXƒeƒ€
+[process]shiki2.exe
+[replace]0x00,siki2s->siki2s_ssg
+[/script]
+
+[script]
+[title]GUILTY GEAR XX # RELOAD
+[creator]DANA
+[maker]ƒƒfƒBƒAƒJƒCƒg
+[process]ggxx.exe
+[replace]0x00,GGXX#R->GGXX#R_ssg
+[/script]
+
+[script]
+[title]“Œ•û‰i–é´@` Imperishable Night
+[creator]DANA
+[maker]ãŠCƒAƒŠƒXŒ¶žÙ’c
+[process]th08.EXE
+[replace]0x00,touei->touei_ssg
+[/script]
+
+[script]
+[title]“Œ•ûg–‚‹½@` the Embodiment of Scarlet Devil.
+[creator]DANA
+[maker]ãŠCƒAƒŠƒXŒ¶žÙ’c
+[process]“Œ•ûg–‚‹½.exe
+[replace]0x00,toukou->toukou_ssg
+[/script]
