@@ -1,0 +1,10 @@
+[group]BSM_SSG
+[note]wordwrap
+現状、一面でしか動作確認していないため、通しで有効ではないかもしれません。
+[/note]
+
+[subject]無敵化/実行/_:toggle,0x4A247F,E9FF02000090,0F84FE020000
+[subject]ボム使用回数減らない/実行/_:toggle,0x495E2A,00,FF
+[subject]一瞬で溜め完了/実行/_:toggle,0x486590,B80000C84290,7B698B442410
+
+[/group]
