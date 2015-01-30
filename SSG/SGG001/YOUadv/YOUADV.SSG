@@ -1,0 +1,251 @@
+SSG for SpoilerAL ver 6.1
+
+[script] 
+[title]モエとら
+[creator]YouAdv 
+[maker]KeroQ
+[process]moetora.exe
+[note]wordwrap
+＜サーチ環境＞
+OS:WinXP
+Game ver:1.00
+初めてツクタ物です
+[/note] 
+[subject]コイン枚数:calc,0x7CB098,00,9998
+[/script] 
+
+
+
+[script] 
+[title]風来のシレン～月影村の怪物～ver1.0
+[creator]YouAdv 
+[maker]ChunSoft
+[process]shiren.exe
+[note]wordwrap
+＜サーチ環境＞
+OS:WinXP
+武器・防具・腕輪とかはまだ作ってません
+[/note] 
+[subject]HP	:calc,0x4DCA2A,00,250
+[subject]HPmax	:calc,0x4DCA2C,01,250
+[subject]経験値	:calc,0x4DCA8C,00,999999
+[subject]力	:calc,0x4DCA32,00,99
+[subject]力Max	:calc,0x4DCA34,08,99
+[subject]ギタン	:calc,0x4DCA90,00,99999990
+[/script] 
+
+
+
+[script] 
+[title]-蟲使い-XPver
+[creator]YouAdv 
+[maker]ブラックサイク
+[process]mushi.exe
+[note]wordwrap
+＜サーチ環境＞
+OS:WinXP	Game ver:1.00
+xenonさんのとは少し違います
+[/note] 
+[subject]日数	 :calc,0xAE09A8,01,30
+[subject]HP	 :calc,0xAE06F0,01,999
+[subject]所有ー刃:calc,0xAE0660,0,99
+[subject]所有ー鉄:calc,0xAE0664,0,99
+[subject]所有ー飛:calc,0xAE0668,0,99
+[subject]所有ー爆:calc,0xAE066C,0,99
+[subject]所有ー幻:calc,0xAE0670,0,99
+[subject]所有ー痺:calc,0xAE0674,0,99
+[subject]所有ー速:calc,0xAE0678,0,99
+[subject]所有ー強:calc,0xAE067C,0,99
+[subject]所有ー触:calc,0xAE0680,0,99
+[subject]所有ー粘:calc,0xAE0684,0,99
+[subject]所有ー変:calc,0xAE0688,0,99
+[subject]所有ー淫:calc,0xAE068C,0,99
+[/script] 
+
+
+
+[script] 
+[title]RagnarokBattleOffline
+[creator]YouAdv 
+[maker]フランスパン・春風亭攻防
+[process]rbo.exe
+[note]wordwrap
+＜サーチ環境＞
+OS:WinXP
+Game ver:1.00
+[/note] 
+[subject]ステータスポイント:calc,0x02659188,00,30000
+[subject]スキルポイント:calc,0x02659654,00,30000
+[/script] 
+
+
+
+[script] 
+[title]VM Japan
+[creator]YOUadv 
+[maker]日本FALCOM
+[process]VMJ.exe
+[note]wordwrap
+＜サーチ環境＞
+OS:WinXP
+Game ver:1.00
+『戦闘時に隙が0の場合、”誰か行動を起こした、すぐ後に自分が行動できる”ので注意が必要です。
+1対1の時には交互にターンが回るだけになってしまいます。弱い幻魔を次々と召喚すれば、大丈夫です。』
+『また、闇凧で値を固定にしておくと内部処理に関係して、敵の動きがアップします。
+隙を見て値を入力すれば・・・ってそんな暇後半にはありませんけど(笑)』
+『オセロで待った数を13にすると無限∞になります。』
+・・・VMJPKに続く
+[/note]
+
+[subject]主人公 術数	:calc,0x008F857C,00,308
+[subject]主人公 HP	:calc,0x00A6F0A0,00,10
+[subject]主人公 隙	:calc,0x00A6F0A8,00,999
+[subject]主人公 狼時間Max:toggle,0xA6F0B0,999,?
+[subject]一発勝利	:toggle,0xA6F13C,0,?
+
+[subject]オセロ 待った数:calc,0x00900828,00,13
+[subject]闇凧 クナイ数	:calc,0x00A75CE8,00,06
+[subject]闇凧 巻物数	:calc,0x00A75D80,00,17
+[subject]闇凧 得点数	:calc,0x00A74CD8,00,65535
+
+[subject]召喚幻魔:dir
+	[replace]0x00,VMJ->VMJUnit
+
+[/script] 
+
+
+
+[script] 
+[title]VM Japan PowerUpKit～富獄幻遊記～
+[creator]YOUadv 
+[maker]日本FALCOM
+[process]VMJP.exe
+[note]wordwrap
+＜サーチ環境＞
+OS:WinXP
+Game ver:1.00
+『狼状態は、一旦”鬼火”などを使ってからONにしてください。』
+『一発勝利は常時ONでは効果ありません。戦闘ごとにチェックを入れなおしてください。』
+『一匹目はこちらか相手のどちらかが先に召喚したものになります。』
+『幻魔の種類は、一旦替えた後、”待った”コマンドを使うと修正されます。』
+[/note]
+
+[subject]オセロ 待った数:calc,0x00908CC8,00,13
+[subject]主人公 術数	:calc,0x008FEB2C,00,308
+[subject]主人公 HP	:calc,0x00A84E34,00,10
+[subject]主人公 隙	:calc,0x00A84E3C,00,999
+[subject]主人公 狼時間Max:toggle,0xA84E44,999,?
+[subject]一発勝利	:toggle,0xA84ED4,0,?
+
+[subject]召喚幻魔:dir
+	[replace]0x00,VMJ->PKUnit
+[/script]
+
+
+
+[script] 
+[title]BaldrForce(+EXE) ALLver
+[creator]YOUadv 
+[maker]戯画
+[process]BaldrForce.exe
+[note]wordwrap
+＜サーチ環境＞
+OS:WinXP
+
+「サバイバルモードでONにしておくと、全部マスターになれます」
+「しかし、マスターした後には、なるべく解除するようにしてください。
+確認したところ、初期装備のローキックでグラフィックが表示されないバグが発生します。
+OFFにして、しばらくプレイしていると直るようです。
+それ以外はきちんと処理されていますが、嫌いならばローキックを使わないことをお勧めします(ぉぃ)」
+「また、必殺技の開発の解析はやっておりません。自分で好きなのを開発してください(ぉぃぉぃ)」
+「サバイバルのステージ数が試作なのは指定した面と±3ほどの誤差が生じることがあるためです。
+一旦値を変えても、ステージ数が変化するだけで正しく処理されません。(ぉぃ×3)
+中断して、コンテニューでやり直すとちゃんと処理されなおされます。でも、リプレイするとバグります。
+お勧めは525ステージを設定してからコンテニューです。正にサバイバルの名に相応しい鬼っぷりです」
+[/note]
+[subject]BaldrForce ver1.00:dir
+	[subject]全武器MASTER/On:b_toggle,0x007BEA24,BFexeWeapon,offset
+[back]
+
+[subject]BaldrForce ver1.04:dir
+	[subject]全武器MASTER/On:b_toggle,0x007BE54C,BFexeWeapon,offset
+[back]
+
+[subject]BaldrForce ver1.10:dir
+	[subject]全武器MASTER/On:b_toggle,0x007CA0BC,BFexeWeapon,offset
+	[subject]試作サバイバルステージ数/Stage:b_calc,0x00,BFsur_Stage,offset,1,60000
+
+[back]
+
+[subject]BaldrForceEXE ver1.00:dir
+	[subject]全武器MASTER/On:b_toggle,0x007CA0FC,BFexeWeapon,offset
+[back]
+
+[subject]BaldrForceEXE(HellCDアップデート版):dir
+	[subject]全武器MASTER/On:b_toggle,0x007c90ac,BFexeWeapon,offset
+[back]
+[/script] 
+
+
+
+[script] 
+[title]ｔｏ･･･
+[creator]YouAdv 
+[maker]あんく
+[process]to.exe
+[note]wordwrap
+＜サーチ環境＞
+OS:WinXP
+Game ver:1.00
+[/note] 
+[subject]CG&回想All/ON:b_toggle,0x00,to…,offset
+[/script] 
+
+
+
+[script] 
+[title]魔物ハンター舞
+[creator]YouAdv
+[maker]渡辺製作所
+[process]魔物ハンター舞.EXE
+[note]wordwrap
+＜サーチ環境＞
+OS:WinXP
+Game ver:1.00
+[/note] 
+[subject]HP･MP全回復:b_toggle,0x00,HunterMai,offset
+[/script]
+
+
+
+[script] 
+[title]ANGERAZE
+[creator]YouAdv
+[maker]OHBA堂
+[process]angeraze.exe
+[note]wordwrap
+＜サーチ環境＞
+OS:WinXP
+コードのチェックは、残機以外はキャラを決める前に入れて置いてください。途中で入れるとちゃんと働かないときがあります。
+オートボムで”ボムゲージ消費なし”にしておけば無敵なので、そっちのほうは作っていません。
+<-THETA-に続く>
+[/note] 
+[replace]0x00,Angerize->Angerize
+[/script]
+
+
+
+[script] 
+[title]ANGERAZE -THETA-
+[creator]YouAdv
+[maker]OHBA堂
+[process]theta.exe
+[note]wordwrap
+＜サーチ環境＞
+OS:WinXP
+<ANGERIZEの説明より>
+このコードを使ってネットランキングに登録はしないで下さい。
+また、TEHTA(シータ)を使っているときは他の三人のチェックを入れないようにしてください。もしかしたら誤作動を起こすかもしれませんので。
+[/note] 
+[replace]0x00,Angerize->theta
+[/script]
