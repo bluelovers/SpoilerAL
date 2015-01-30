@@ -1,0 +1,414 @@
+LastUpdate 2009/11/21 written by REDCAT
+
+<<<　御挨拶　>>>
+
+当SSGを作成しましたREDCATです。初めての方は、以後宜しくお願いします。
+御利用の際は、添付されたREDCATフォルダを本体のSSGフォルダに放りこんで下さい。
+また、これらは基本的に「パワープレイ」「徹底攻略」「攻略情報作成補助」
+を目的の要として作成したものなので、使用項目の是非は個人の裁量にお任せします。
+
+最後に、これらは学習と試行錯誤の段階における産物ですので、批評、批判は極力御遠慮
+下さい。＊代換案等の前進ある御助言は、ありがたく拝受させて頂きます。
+===================================================================================
+
+<<<　使用以前の確認事項　>>>
+
+１）SpoilerAL本体の動作環境を満たしているか確認して下さい。
+
+Windows95/98or98SE/ME：問題なく本体・SSG共に問題無く動作します。
+Windows2000/XP：管理者権限(administrators)付きでログインしていれば問題無いです。
+
+＊WindowsXP:98互換モードはAL本体の動作対象外のようです。
+
+２）対象ソフトのバージョンに厳重注意。修正パッチ等でアップデートして下さい。
+プログラムコード・ポインタ演算子活用コード類は、これが違っていると致命的な欠陥
+となります。対象アプリやOS破損の原因となる可能性も完全否定できません。
+
+３）御自身のPC環境とSSG作者の環境の差異に注意して下さい。
+基本仕様の同じ家庭用ゲーム機とは異なり、PCの改造コードは個々人のマシン環境
+の違いから、アドレス変動を生じる場合が多々あります。同じソフトでも、PSの
+改造コードがPS2で通用しないのとかとほぼ同じです。
+
+＊基本的に拙作SSGに関しては、使用者のOSや物理メモリ量等のマシン環境は問わない
+仕様にするよう心がけています。…完全では無いですが(^^;
+===================================================================================
+
+<<<　禁止事項　>>>
+
+１）使用者個人及び、その方の親しい友人・知人間でのゲーム環境の改善・任意変更以外
+のあらゆる目的に関して、コードの二次利用は御控え下さい。
+
+２）使用の是非は全て自己責任の範囲で行って下さい。
+改造コードを利用しないユーザー諸氏、及び対象ソフトの開発メーカー及び発売元に害意を
+与えるようなことは出来得る限りなさらぬよう御気をつけ下さい。
+===================================================================================
+
+<<<　付記　>>>
+
+このSSGは、あくまで「個人が自分にあったスタイルでゲームを楽しむため」に作成した
+ものです。以外の目的のための使用は極力なさらないで下さい。また、当SSGは利益要素
+を排し、無償で提供するものです。何らかの義務を強制的に請け負うことは承服しかねます。
+
+最後に、度重なる要望と動作報告に対し、常に紳士的な態度と真摯な姿勢で、意欲的な開発
+を進め、このような素晴らしいツールを開発して下さった作者のあつさんに、深く感謝致し
+ます。
+===================================================================================
+
+<<<　収録SSGの簡易説明　>>>
+
+内容に関して：
+[MA]…実行ファイルやライブラリ展開領域内のアセンブラコード編集を含むもの。
+[PR]…パラメータ・好感度等の任意編集を含むもの。所謂ワークコード系列。
+[F1]…ゲーム内容やシナリオ関係のフラグ編集を含むもの。
+[F2]…前者よりも、環境色の強いフラグ編集を含むもの。
+[CG]…CGやシナリオ回想のフル化、オフ化を含むもの。
+[EX]…直接ゲーム内容に影響しないだろうオマケ的要素を含むもの。
+
+同時利用可能な項目範囲について：
+基本的に理論上ありえないことを除けば、ほぼ全ての項目の同時使用が可能です。
+
+2009/11/21 の時点にて、発売日の新しい順（たぶん）です…
+＊SpoilerAL本体は最新verを御使用下さい。
+現在の拙作SSGに関する本体対応verは『ver6.1以降』です。
+
+【ver修正なし】に関して、製品同梱の修正パッチは充て済みであるのが前提です。
+『Heart of Hearts』の対応verは"特殊MIDI対応修正版「共通」"になります。
+『エーベンブルグの風（CD版）』は拡張パックインストール済みであるのが前提になります。
+
+『姫狩りダンジョンマイスター』 [MA][PR][F1][EX]      ver1.02　    エウシュリー
+『MapleColors2』               [MA][PR]              ver1.01      CROSSNET
+『真・恋姫†無双』             [MA][PR][F1]　　　　　ver1.02      BaseSon
+『ダンジョンクルセイダーズ２』 [MA][PR][F1][EX]      ver1.0.0.4   アトリエかぐや
+『戦極姫』                     [MA][PR][F1]          ver1.04      unicorn-α／げーせん18
+『闘神都市Ⅲ』                 [PR][F1]              ver1.03      アリスソフト
+『戦女神zero』　　　　　　　　 [PR][F1]              ver修正なし　エウシュリー
+『ウィザーズクライマー』       [MA][PR][F1][F2][CG]  ver1.01/1.10 ソフトハウスキャラ
+『超昂閃忍ハルカ』             [PR][F1]              ver修正なし  アリスソフト
+『聖なるかな』                 [MA][PR][F1][F2]      ver1.03-06   Xuse
+『永遠のアセリア-この大地の果てで-』[MA][PR][F1][CG] ver1.00-20   Xuse
+『ＩＺＵＭＯ３』               [MA][PR][F1]          ver1.00-1.03 Studio e.go!
+『王賊』                       [MA][PR][CG]          ver修正なし　ソフトハウスキャラ
+『みんな大好き子作りばんちょう』   [PR][F1]          ver修正なし　アナスタシア
+『あおぞらマジカ!!』           [MA][PR]              ver修正なし　Studio e.go!
+『ダンジョンクルセイダーズ』   [MA][PR][CG]          ver1.0.1-4   アトリエかぐや
+『戦国ランス』                 [PR][F1][F2][CG][EX]  ver1.00-04   アリスソフト
+『Men at Work 4』              [MA][PR][F1][F2][CG]  ver1.00-1.03 Studio e.go!
+『Men at Work 3 ver1.10』      [MA][PR][F1][CG][EX]  ver1.11      Studio e.go!
+『Men at Work 2 ver1.51』      [MA][PR][F2][CG]      ver修正なし　Studio e.go!
+『Men at Work ver1.21』        [MA][PR][F1][CG]      ver修正なし　Studio e.go!
+『峰深き瀬にたゆたう唄』       [PR][F1][F2]          ver1.00/1.01 エウシュリー
+『PRISM HEART DVD版』          [PR][F1][CG]          ver修正なし　ぱじゃまソフト
+『PRISM ARK』                  [MA][PR][F1][F2][CG]  ver1.00-1.02cぱじゃまソフト
+『天空のシンフォニア２』　　　 [MA][PR][F1][CG][EX]  ver1.00/1.01 F&C
+『グリンスヴァールの森の中』   [MA][PR][F1][F2][CG]  ver1.00/1.01 ソフトハウスキャラ
+『魔法が世界を救います！』     [PR][F1]              ver1.00/1.01 アナスタシア
+『夜が来る！廉価版』           [MA][PR][F1]          ver修正なし　アリスソフト
+『ﾌﾟﾘﾝｾｽｳｨｯﾁｨｽﾞexcellent』     [MA][PR][F1][F2][CG]  ver修正なし　ぱじゃまソフト
+『スピたん Spirits Expedition』[MA][PR][F2][CG]      ver1.00-10   Xuse
+『Piaｷｬﾛｯﾄへようこそ!!Ｇ.Ｏ.』 [PR][F1][CG]          ver1.00/01/02F&C
+『冥色の隷姫Ver2』             [PR][F1][F2]          ver修正なし　エウシュリー
+『でぼの巣箱』                 [MA][PR][F1][CG]      ver修正なし  Studio  e.go!
+『Blaze of Destiny Ⅲ』        [MA][PR][F1][CG][EX]  ver修正なし　タリスマン
+『ぱすちゃＣ＋＋』             [PR][F1]              ver修正なし  アリスソフト
+『GALZOOアイランド』           [PR][F1][F2][CG]      ver1.00/1.01 アリスソフト
+『部活規格』                   [PR][F1][F2][CG][EX]  ver修正なし  F&C
+『しろクロ』                   [MA][PR][F1][CG]      ver1.00/03   ALTERNA
+『シャングリラマルチパック』   [MA][PR][F2][CG]      ver修正なし　ELF
+『ダンシングクレイジーズ』     [MA][PR][F1][F2][CG]  ver1.00/1.02 ソフトハウスキャラ
+『IZUMO零』                    [MA][PR][F1][CG]      ver1.00/1.10+Studio e.go!
+『冥色の隷姫』                 [PR][F1][F2]          ver修正なし　エウシュリー
+『魔女っ娘ア・ラ・モードⅡ』   [MA][PR][F1]          ver1.00/1.01 F&C
+『ぱすてるチャイムContinue』   [PR][F1][F2][EX]      ver修正なし　AliceSoft
+『プリンセスうぃっちぃず』     [MA][PR][F1][F2][CG]  ver修正なし　ぱじゃまソフト
+『英雄×魔王』　　　　　　　　 [PR][F1][F2][CG]      ver1.10-30   Escude
+『戦火-IKUSABI-』              [MA][PR][F1][CG]      ver1.0/1.1   タリスマン
+『Tears to Tiara』　　　　　　 [MA][PR][F1][F2][CG]  ver1.00/1.01 Leaf/Aquaplus
+『夏神楽完全版』               [MA][PR][CG][EX]      ver修正なし  Studio e.go!
+『鬼神楽』                     [MA][PR][F1][CG][EX]  ver1.00/1.01 Studio e.go!
+『魔王と踊れ！』               [MA][PR][F1][F2][CG]  ver修正なし　CATWALK
+『南国ドミニオン』             [MA][PR][F1][F2][CG]  ver1.00/1.01 ソフトハウスキャラ
+『ひとがたルイン』　　　　　　 [MA][PR][F1][CG][EX]  ver1.00/1.01 Studio e.go!
+『Soul Link』                  [MA][PR][F1][F2][CG]  ver修正なし　Navel
+『空帝戦騎』　　　　　　　　　 [PR][F1][F2]          ver修正なし　エウシュリー
+『天空のシンフォニア』         [MA][PR][F1][CG]      ver修正なし  カクテルソフト
+『風の継承者』                 [MA][PR][F1][CG]      ver1.00/1.01 Studio e.go!
+『オーガストファンＢＯＸ』     [MA][PR][F2][CG]      ver修正なし  August
+『下級生２』                   [PR][F1][CG]      　　ver修正なし  ELF
+『永遠のアセリアEXPANSION』    [MA][PR][F1][F2][CG]  ver修正なし  Xuse
+『ＩＺＵＭＯ２』　　　　　　　 [MA][PR][F1][CG][EX]  ver1.00-1.05 Studio e.go!
+『ＩＺＵＭＯ完全版』　　　　　 [MA][PR][CG][EX]      ver1.10-1.14 Studio e.go!
+『巣作りドラゴン』             [MA][PR][F1][F2][CG]  ver1.00-2    ソフトハウスキャラ
+『幻燐の姫将軍２ver.２』　　　 [PR][F1][F2]          ver2.00      エウシュリー
+『D.C.P.C.』                   [PR][F1][F2][CG]      ver修正なし  Circus
+『まじぷり -wonder cradle-』   [MA][PR][F2][CG]      ver修正なし  Purple
+『Blaze of DestinyⅡ』　　　　 [MA][PR][F1][CG][EX]  ver1.11      タリスマン
+『憂ちゃんの新妻だいあり～』　 [F2][CG]              ver修正なし  Xuse
+『アルルゥとあそぼ!!』         [MA][PR][F1][F2][CG]  ver1.00/1.01 Leaf
+『魔王の娘達』　　　　　　　　 [PR][F1][F2][CG]      ver修正なし  Studio e.go!
+『魔女の贖罪』　　　　　　　　 [PR][F1][F2][CG]      ver修正なし  AliceSoft
+『ジュエルスオーシャン』　　　 [PR][F1][F2][CG]      ver1.01/1.02 Escude
+『バイナリィ・ポット通常版』   [MA][PR][F2][CG]      ver修正なし  August
+『エーベンブルグの風（DVD版）』[MA][PR][F1][CG][EX]  ver1.10      Studio e.go!
+『永遠のアセリアDVD版』　　　　　　 [MA][PR][F1][CG] ver1.180     Xuse 
+『フローラリア・プラス』　　　　　 [PR][F2][CG]      ver修正なし  Xuse
+『チェリッシュピザはいかがですか』 [PR][F2][CG]      ver修正なし  F&C
+『SHUFFLE!』                   [MA][PR][F2][CG]      ver1.00/1.10 Navel
+『ENSEMBLE』　　　　　　　　　 [F2][CG]              ver修正なし　F&C
+『プリいも』                   [F2][CG]              ver修正なし　ぷちぱじゃま
+『Card od Destiny alternative』[MA][PR][F1][F2][CG]  ver修正なし  AbelSoftware
+『VAGRANTS ベイグランツ』      [MA][PR][F1][F2][CG]  ver1.04/1.05 Studio e.go!
+『幻燐の姫将軍２』　　　　　　 [PR][F1]              ver1.00/1.04 エウシュリー
+『うたわれるものDVD版』　　　　[MA][PR][F1][F2][CG]  ver修正なし　Leaf/AQUAPLUS
+『レベルジャスティス』         [MA][PR][F1][F2][CG]  ver修正なし  ソフトハウスキャラ
+『あののの。』                 [F2][CG]              ver修正なし　SpiritSpeak
+『こなたよりかなたまで』　　　 [F2][CG]              ver修正なし　F&C
+『妹　わたしどんなことだって』 [CG]                  ver修正なし  MOONSTONE
+『永遠のアセリア』　　　　　　 [MA][PR][F1][CG]      ver1.180     Xuse 
+『夏恋-karen-』                [MA][PR][CG]          ver修正なし　Purple
+『幻燐の姫将軍 廉価版』        [PR][F1][CG]          ver修正なし　エウシュリー
+『月は東に日は西に』           [MA][PR][F2][CG]      ver修正なし  August 
+『Please teach! my Angel』     [F2][CG]              ver修正なし　ぷちぱじゃま
+『魔女っ娘ア・ラ・モード』     [PR][F1][CG]          ver修正なし　F&C
+『Apocalypse DEUS EX MACHINA』 [MA]                  ver修正なし  Tactics
+『Maple Colors』               [MA][PR][F1][F2][CG]  ver1.11      CROSSNET
+『すくみず』　　　　　　　　　 [PR][CG]              ver修正なし　Circus
+『お姉ちゃんの３乗』           [PR][F2][CG]          ver1.01      Marron
+『ＣＦ３エレンシア戦記Ｒ』　　 [MA][PR][F1][CG]　　　ver2.00/2.01 Studio e.go!
+『れすとあ』　　　　　　　　　 [CG]                  ver修正なし　D.O
+『６月の天使』                 [MA][PR][CG]          ver修正なし  LaLa
+『夏神楽』　　　　　　　　　　 [MA][PR][CG][EX]      ver1.02　　　Studio e.go!
+『CANDY TOYS』                 [PR][F1][CG]          ver修正なし　Janis/ivory
+『巫女みこナース』　　　　　　 [PR][F2][CG]          ver修正なし  PSYCHO
+『ONE2～永遠の約束～withVOICE』[F2][CG]              ver修正なし  Baseson
+『戦女神２』                   [PR][F1]              ver1.03      エウシュリー
+『ブラウン通り３番目』         [MA][PR][F1][F2][CG]  ver修正なし  ソフトハウスキャラ
+『パティシエなにゃんこ』　　　 [CG]                  ver修正なし　PajamaSoft
+『夏色小町』　　　　　　　　　 [PR][CG]              ver修正なし　Purple
+『虹の彼方に』　　　　　　　　 [PR][F1][F2][CG]      ver修正なし  F&C
+『ときどきシュガー』           [PR][F1][CG]          ver1.02    　Xuse
+『木漏れ日の並木道』           [PR][F2][CG]          ver修正なし　F&C
+『夏色の砂時計』               [F2][CG][EX]          ver1.04      Berries
+『Men at Work 3』              [MA][PR][F1][CG][EX]  ver1.02b     Studio e.go!
+『Men at Work 2 DVD版』        [MA][PR][F2][CG]      ver修正なし　Studio e.go!
+『Men at Work DVD版』          [MA][PR][F1][CG]      ver修正なし　Studio e.go!
+『D.C.WhiteSeason』            [MA][PR][CG]          ver1.02      Circus
+『勝 あしたの雪之丞２』        [F2][CG]              ver修正なし　ELF
+『Blue-Sky-Blue【s】』         [MA][PR][CG]          ver1.10      EMU
+『Princess Holiday』           [MA][PR][F2][CG]      ver修正なし  August    
+『しすこん～妹魂～』           [PR][CG][F2]          ver修正なし　Angelsmile
+『あいかぎ』　　　　　　　　　 [PR][CG]              ver修正なし  F&C
+『行殺☆新選組ＦＲＥＳＨ』     [MA][PR][CG]          ver3.0       Liar soft
+『先行遊撃桜花隊YURI』         [PR][F1][CG]          ver1.05      Ape&Frog
+『エーベンブルグの風』         [MA][PR][F1][CG][EX]  ver1.04      Studio e.go!
+『痕』　　　　　　　　　　　　 [MA][F1][F2][CG][EX]  ver修正なし  LEAF　
+『Milkyway2』                  [MA][PR][F2][CG][EX]  ver1.14a     Witch
+『それは舞い散る桜のように』   [MA][PR][F2][CG][EX]  ver1.004     BasiL
+『Ｄ.Ｃ. ～ダ・カーポ～』  [MA][PR][F1][F2][CG][EX]  ver1.01      Circus
+『フローラリア』               [PR][F2][CG]          ver1.02      XUSE
+『うたわれるもの』　　　　　　 [MA][PR][F1][CG]      ver修正なし  LEAF
+『水月』　　　　　　　　　　　 [F1][F2][CG][EX]      修正状態不問 F&C
+『雪のとける頃に…』           [MA][F2][CG][EX]      ver1.01      Studio e.go!
+『Wind -a breath of heart-』   [MA][CG]              ver1.04　    minori
+『パンドラのびっくり箱』       [MA][PR][F2][CG]      ver修正なし  PajamaSoft
+『ＳＫＹ』                     [MA][PR][F1][CG]      ver修正なし  CherrySoft
+『Raven～祈る少女を堕とす術～』[MA][PR][F1][CG]      ver1.01      AQUAHOUSE
+『flutter of birdsⅡ』　　　　 [MA][PR][F1][F2][CG]  ver修正なし  SILKY'S
+『ひまわりの咲くまち』         [MA][CG]              ver修正なし  F&C
+『めい☆ぷる』　　　　　　　　 [PR][F1][CG]          ver修正なし　SweetBasil
+『萌キュン！ゆにっ娘ま～じゃん』　 [MA][PR][F2][CG]  １／５修正版 UNISONSHIFT/SOFTPAL
+『Snowラディッシュバケーション!!』 [MA][PR][F1][EX]  ver修正なし  Overflow
+『ＩＺＵＭＯ』　　　　　　　　 [MA][PR][F1][CG][EX]  ver1.04a     Studio e.go!
+『淫獣幻夢３』　　　　　　　　 [MA][PR][CG]          ver1.01      RingerBell
+『アルキメデスのわすれもの』   [MA][PR][F1][CG][EX]  ver修正なし  Circus
+『Piaキャロットへようこそ３』  [MA][PR][F1][F2][CG]  ver1.00/1.01 F&C
+『メタモルファンタジー』   [MA][PR][F1][F2][CG][EX]  ver修正なし  Escude
+『パンドラの夢』　　　　　　　 [MA][F2][CG]          ver1.02/DVD  PajamaSoft
+『CanvasDVDセピア色のモチーフ』[PR][F2][CG]          ver修正なし　F&C
+『ぷちチェリー あなたといる季節』  [F2][CG]          ver1.08b     GIGA
+『家族計画』　　　　　　　　　 [PR][F2][CG]          ver修正なし　D.O　
+『わーきんぐＤＡＹＳ』         [MA][PR][F1][CG]      ver修正なし　BlueImpact
+『Beside～幸せはかたわらに～』 [PR][F1][F2][CG][EX]  ver修正なし　F&C
+『Ｔｒｏｉｓ～トロワ～』　　　 [MA][F2][CG]          ver修正なし　Remain
+『ツクヨミ～稀人の唄～』　　　 [PR][F1][F2][CG]      ver修正なし  Janis/ivory
+『ヒナ～いっぱい大好き～』     [MA][PR][F1][CG]      ver修正なし　Optim
+『イ号型局地迎撃天使ナナコ』　 [PR][F1][F2][CG]      ver1.00/1.50 Ape&Frog
+『未来にキスを』　　　　　　　 [MA][PR][F1][CG]      ver修正なし  Otherwise
+『リトルモニカ物語』　　　　　 [PR][F2][CG]          ver1.01b     RUNE
+『ヴェルベットエコー』         [F2][CG]              ver修正なし  Angelsmile
+『あしたの雪之丞』             [F2][CG]              ver修正なし　ELF
+『もっとＬＯＶＥちゅ！』　　　 [MA][PR][F1][CG]      ver修正なし  Saga planets
+『同窓会refrain』　　　　　　　[F1][F2][CG][EX]      ver修正なし　F&C
+『マッドサイエンス・ラヴ』　　 [MA][PR][F1][CG]      ver修正なし  GAZELLE
+『CAST! プライベートヒロイン』 [PR][F2][CG]          ver修正なし　BELLDA
+『秋桜の空に』　　　　　　　　 [PR][F2][CG]          ver1.0.0.3   Marron
+『ＣＯＮＣＥＲＴ.』            [PR][F1][F2][CG][EX]  ver修正なし  Succubus
+『Only You -リ・クルス-』　　　[PR][F1][F2][CG][EX]  ver修正なし　ALICESOFT
+『My fair Angel』          [MA][PR][F1][F2][CG][EX]  ver1.02      Studio e.go!
+『愛しの言霊』             [MA][PR][F2][CG]          ver修正なし　SILKY'S	
+『水夏～SUIKA～』          [MA][PR][F1][F2][CG][EX]  ver1.01　    Circus	
+『にゃんてＣＨＡＴＯＮ』　　　 [MA][PR][CG]          ver1.01      RUNE
+『胸キュン！はぁとふるCafe』   [PR][F1][CG]          ver1.0.0.5   UNISONSHIFT/SOFTPAL
+『ＴＨ３リリカルおもちゃ箱』   [MA][PR][F2][CG]      ver1.4.0.1　 JANIS/ivory
+『ＣＡＭＰＵＳ　ＮＥ』　　　　 [MA][PR][F1][F2][CG]  ver1.03      Ather/Assemblage
+『Railway～ここにある夢～』　　[MA][CG]              ver2.1b      EMU
+『ゆきうさぎ』                 [CG]                  ver修正なし  LILIM
+『ススキノハラの約束』　　　　 [MA][PR][CG][EX]      ver修正なし  Kur-Mar-Tel
+『うつくし姫～魔法調教物語～』 [MA][PR][F1][CG]      ver修正なし  Rouge
+『ＵＮＩＶ～恋はじまるよっ～』 [PR][CG]              ver修正なし  F&C
+『ＤＯＵＢＬＥ』　　　　　 [MA][PR][F1][F2][CG][EX]  ver修正なし　Cherry Soft
+『夜が来る！』　　　　         [MA][PR][F1][EX]      ver1.01      ALICE SOFT
+『風と大地のページェント』　　 [PR][F1][CG]          ver1.0.0.4   Xuse
+『蒼ざめた月の光』　　　　　　 [MA][F2][CG][EX]      ver修正なし　Studio e.go!
+『蒼き大地』　　　　　　　　　 [MA][F2][CG][EX]      ver1.0.1     Waffle 
+『みずいろ』　　　　　　　　　 [MA][PR][F2][EX]      ver最終版    NEKONEKO SOFT
+『HANDLE with CARE』　　　　　 [MA][F2][CG]          ver1.10      ETOILE
+『Alive RENEWAL』              [MA][F1][F2][CG][EX]  ver1.0.0.3   Witch
+『Heart of Hearts』　　　　　　[MA][PR][F1][CG]      ver01.03.30  doors
+『恋愛ＣＨＵ！』　　　　　　　 [MA][PR][CG][EX]      ver修正なし　Saga planets
+『Choir クァイア』　　　　　　 [MA][PR][F1][CG]      ver1.4　　   Rateblack
+『Wing & Wind』　　　　　　　　[MA][F1][F2][CG]　　　ver1.01b　   Clear
+『flutter of birds』　　　　　 [MA][PR][F1][CG][EX]  ver修正なし　SILKY'S
+『ぴヨナ＝ピコナ』             [PR][CG]              ver1.04　　　RUNE
+『￡ラグナ』                   [PR][F1][CG]          ver修正なし  にくきゅう
+『同窓会Again』　　　　　　　  [PR][F2][CG]          ver修正なし　F&C
+『Infantaria』　　　　　　　　 [MA][PR][F2][CG]      ver1.04      Circus
+『青い鳥 L'Oiseau Bleu』　　　 [F1][F2][CG]          ver修正なし  Panda House
+『ＣＦ２聖魔大戦リニューアル』 [MA][PR][F1][CG][EX]　ver1.01　　　Studio e.go!
+『とらいあんぐるハート３』　　 [MA][PR][F2][CG][EX]　ver1.03      JANIS/ivory
+『星空ぷらねっと』　　　　　　 [F2][CG]              ver1.2.0.1   D.O
+『懲らしめ』　　　　　　　　　 [MA][F1][CG]          ver修正なし  Blue Gale
+『PRISM HEART』                [PR][CG]              ver1.3       Pajama Soft
+『Men at Work 2』　　　　　　　[MA][PR][F2][CG][EX]  ver1.12      Studio e.go!
+『EXILE_BLOODROYAL2』　　　　　[MA][PR][F1][CG]　　　ver修正なし  Cherry Soft
+『Canvas セピア色のモチーフ』　[PR][F2][CG]        　ver修正なし　F&C
+『はんど☆メイド』             [MA][PR][F1][CG][EX]  ver修正なし  AIR PLANTS
+『恋ごころ』　　　　　　　　　 [MA][F1][F2][CG]      ver修正なし  RAM
+『innocent Eye's』　　　　　　 [PR][CG]              ver1.0.0.1   ユニゾンシフト
+『Milkyway』　　　　　　　　　 [MA][PR][F2][CG][EX]  ver1.0.1.0　 Witch
+『TWIN WAY』　　　　　　　　　 [MA][F1][CG][EX]      ver1.02      Studio e.go!
+『ＣＦ３ エレンシア戦記』　　　[MA][PR][F1][CG][EX]　ver1.02　　　Studio e.go!
+『紅涙　クレナイノナミダ』　　 [MA][PR][F1][F2][CG]  ver1.04      Studio e.go!
+『Men at Work!』               [MA][PR][F1][CG][EX]  ver1.06      Studio e.go!
+『まじかる☆アンティーク』　　 [MA][PR][F1][CG]      ver1.01a     Leaf
+『コミックパーティー』　　　　 [MA][PR][CG]　　　　　ver1.23      Leaf
+『ぱすてるチャイム』           [MA][PR][F1]          ver3.30      ALICESOFT
+
+
+『MysticalChain』　　　　　　　[MA][PR][F1]          ver1.12      LION HEART（同人）
+『冥宮惑星ですぱらいそ』　　　 [MA][PR][F1]          ver1.20      PlatineDispositif（同人）
+『東方活劇綺談』　　　　　　　 [MA][PR]              ver1.02      GATLING CAT（同人）
+『ディアボロの大冒険』         [MA][PR]              ver0.13      KMQ SOFT（同人）
+『紅魔城伝説 緋色の交響曲』　　[MA][PR][F1]          ver1.04      Frontier Aja（同人）
+『FavoriteDear』 　　　　　　　[MA][PR][F1]          ver修正なし　NECインターチャネル
+『杏奈ちゃん☆に…ウラーッ！』 [MA][PR][F1]          ver修正なし　すたじお緑茶
+『BattleMoonWars銀 ザ・ベスト』[MA][PR][F1]          090606版     Werk（同人）
+『東方冥異伝SB』               [PR][F1]              ver3.1.2     はちみつくまさん（同人）
+『突撃！人間戦車ALTeR』　　　　[PR][F1]              ver1.10      焼肉万歳（同人）
+『突撃！人間戦車』　　　　　　 [PR][F1]              アルタパッチ 焼肉万歳（同人）
+『まりさのかぎ＋plus』         [MA][PR][F1]          ver1.5       NRF（同人）
+『BattleMoonWars銀 第四部』    [MA][PR][F1]          081208版     Werk（同人）
+『東方冥異伝零』               [PR][F1]              ver2.1.14    はちみつくまさん（同人）
+『魔王物語物語』               [MA][PR][F1]          ver1.09/11   カタテマ（同人）
+『黄昏酒場』                   [MA]                  ver1.00a     呑んべぇ会（同人）
+『東方冥異伝』                 [PR][F1]              ver1.40      はちみつくまさん（同人）
+『TIGER QUEST 5 聖杯の花嫁』   [MA][PR]              ver1.11      無銭舞（同人）
+『英雄伝説Ⅵ 空の軌跡 The3rd』 [MA][PR][F1][EX]      ver1.00-1.02 日本ファルコム
+『BattleMoonWars銀 第三部』    [MA][PR][F1]          0517-1209版  Werk（同人）
+『イース２完全版』　　　　     [MA][PR][FA]          新ver1.24/旧ver1.13 日本ファルコム
+『イース１完全版』　　　　     [MA][PR]              新ver2.01/旧ver2.02 日本ファルコム
+『東方サッカー猛蹴伝』　　　　 [MA][PR][F1][EX]      ver2-13-18   はちみつくまさん（同人）
+『イース・オリジン』           [MA][PR][F1][F2][EX]  ver1.00-13   日本ファルコム
+『ティルキッス』               [MA][PR][F1]          ver修正なし  MIR_Rev.（同人）
+『チェルシーさんは（略』　　　 [MA][PR][F1]          REV060916    PlatineDispositif（同人）
+『幻想三國誌２』               [MA][PR][F1]          ver修正なし  日本ファルコム
+『BattleMoonWars銀 第二部』    [MA][PR][F1]          1118b版      Werk（同人）
+『Almagest -Overture-TE』      [PR][F1][F2][CG]      ver3.03      Serendipity（同人）
+『TIGER QUEST 4 FullMoonEd』   [MA][PR]              ver2.00      無銭舞（同人）
+『ひぐらしデイブレイク』　　　 [MA][PR]              ver1.00/03,05黄昏フロンティア（同人）
+『プリンセスメーカー４』　　　 [PR][F1][CG]          ver修正なし  サイバーフロント/GeneX
+『LA-MULANAラムラーナ完全版』　[MA][PR][F1][EX]      06/29-07/15  GR3 PROJECT（同人）
+『ガジェットトライアル』       [MA][PR][F2][CG]      ver1.00-1.02 工画堂
+『洞窟物語』　　　　　　　　　 [MA][PR]　　　　　　　ver1.006　　 開発室Ｐixel（同人）
+『みこみこ妖怪退治』　　　　　 [MA][PR]              ver修正なし  神奈川電子技術研究所（同人）
+『東方サッカー』               [PR][F1]              ver1-0-3～3-1はちみつくまさん（同人）
+『ﾗｸﾞﾅﾛｸﾊﾞﾄﾙｵﾌﾗｲﾝ追加ｼﾅﾘｵ３』  [MA][PR][F1]          ver修正なし  春風亭工房/フランスパン（同人）
+『ファンタジーナイトⅡ』 　　　[MA][PR]              ver修正なし　システムソフト・アルファー
+『SchwarzschildⅣ翳る銀河』　　[MA][PR][F1]          ver修正なし　工画堂
+『SchwarzschildⅢTRUTH』   　　[MA][PR][F1]          ver修正なし　工画堂
+『英雄伝説Ⅵ 空の軌跡ＳＣ』    [MA][PR][F1][EX]      ver1.00-1.021 日本ファルコム
+『GUNNERS HEART』              [MA][PR][F1]          ver1.02      EasyGameStation（同人）
+『パリティショット・インテグラル』 [MA][PR]          ver修正なし　Cranehouse（同人）
+『邪ノ嗤フ刻』                 [PR][F1][CG]          ver修正なし  猫丸堂（同人）
+『メイドさんを右に』           [MA][PR][F1]          ver1.07      Platine Dispositif（同人）
+『ﾗｸﾞﾅﾛｸﾊﾞﾄﾙｵﾌﾗｲﾝ追加ｼﾅﾘｵ２』  [MA][PR][F1]          ver修正なし  春風亭工房/フランスパン（同人）
+『山百合連弾』　　　　　　　　 [MA][PR][F1]          ver修正なし　フランスパン（同人）
+『XANADU NEXT』                [MA][PR][F1]          ver1.000-14  日本ファルコム
+『BattleMoonWars銀』　　　　　 [MA][PR][F1]          02/04b版     Werk（同人）
+『Almagest -Overture-SE』      [PR][F1][F2][CG]      ver2.06      Serendipity（同人）
+『フルメタルシスターマリル』   [MA][PR][F1]          ver修正なし  SHISUIHOUSE（同人）
+『ヒトガタハッパ』             [MA][PR]              ver1.03      PlatineDispositif（同人）
+『ElePaperAction』             [MA][PR][EX]          ver1.00/1.03 EasyGameStation（同人）
+『退魔塔神ハチクマTOK完全版』  [PR][F1][EX]          ver2.012     はちみつくまさん（同人）
+『MASTER BURNER COMPLETE』     [MA][PR]              C68/C68a     D.N.A. Softwares（同人）
+『ﾗｸﾞﾅﾛｸﾊﾞﾄﾙｵﾌﾗｲﾝ追加ｼﾅﾘｵ１』  [MA][PR][F1]          ver1.00-0822 春風亭工房/フランスパン（同人）
+『MELTYBLOOD ReACT FinalTuned』[MA][PR][F1][EX]      ver2.501/a/b フランスパン（同人）
+『イース フェルガナの誓い』　　[MA][PR][F1]          ver1.000-203 日本ファルコム
+『イース６ ナピシュテムの匣』  [MA][PR][F1]          ver1.109/1.202 日本ファルコム
+『信長の野望 革新』            [PR][F1][F2][EX]      ver1.00/1.01 コーエー
+『くらすぺ CLANNAD SPELUNKER』 [MA][PR][F1][F2]      ver1.00/3-5  ちんちらソフトハウス（同人）
+『Fate sword dance』　　　　　 [MA][PR][F2]          ver1.100-202 RAPID FIRE（同人）
+『Almagest -Overture-』        [PR][F1][F2][CG]      ver1.27      Serendipity（同人）
+『蒼い空のネオスフィア』       [MA][PR][F1][CG]      ver1.0/2/3　 工画堂
+『サクラ大戦4 恋せよ乙女』　　 [MA][PR][F1][F2][CG]  ver修正なし  SEGA
+『怪伝/怪伝EX』                [MA][PR][F1]          1/07-31修正  らふぁ園（同人）
+『ぐるみん』                   [MA][PR][F1]          ver1.0/1.2a　日本ファルコム
+『退魔塔神ハチクマＴＯＫ』     [PR][F1][EX]          ver1.200     はちみつくまさん（同人）
+『ラグナロクバトルオフライン』 [MA][PR][F1]          ver1.00-100  春風亭工房/フランスパン（同人）
+『東方萃夢想』                 [MA][PR][F1]          ver1.01-1.11 上海アリス幻樂団/黄昏フロンティア（同人）
+『幻想三國誌』                 [MA][PR][F1]          ver修正なし　日本ファルコム
+『碇シンジ育成計画』　　　　　 [PR][F1][F2][CG]      ver修正なし　GAINAX
+『英雄伝説Ⅵ 空の軌跡』        [MA][PR][F1][EX]      ver1.00-047  日本ファルコム
+『MELTY BLOOD Re・ACT』        [MA][PR][F1][EX]      ver2.000-09A フランスパン（2.05除外）
+『王子さまＬＶ２』             [MA][PR][F1][CG][EX]  ver修正なし　ALICEBLUE
+『ヒノカケラ』                 [MA][F2]              ver1.00-2.00aReddishRegion（同人）
+『シンフォニック＝レイン』     [F2][CG]              ver修正なし  KOGADO
+『太閤立志伝５』               [MA][PR][F1][F2][CG]  ver1.42      コーエー
+『プリンセスメーカー２リファイン版』 [MA][PR]        ver修正なし  GAINAX
+『サクラ大戦3巴里は燃えているか』[MA][PR][F1][F2][CG]ver修正なし  OVERWORKS/SEGA
+『デュオ・プリンセス』         [MA]                  ver1.03/1.04 EasyGameStation（同人）
+『Schwarzschild V 真皇誕生』　 [MA][PR][F1]          ver修正なし  KOGADO
+『AS DVD』                     [MA][PR][F2][CG]      ver修正なし  KOGADO
+『風の探索者2 ShadowKingdom』  [MA][PR]              ver修正なし　GruppoOne
+『REVIVE～蘇生～』             [MA][PR][F2][CG]      ver修正なし　Harvest
+『To Heart PSE』               [MA][PR][F1][F2][CG]  ver1.01      AQUAPLUS
+『こみっくパーティDCE』        [MA][PR][F1][CG]      ver修正なし  AQUAPLUS
+『英雄伝説３白き魔女ＸＰ』     [MA][PR]{F1]          ver1.00/1.04 日本ファルコム
+『フラン３～緋蒼の幻想曲～』   [MA][PR][F1][CG]      ver1.01      EXE CREATE
+『ダイナソア-リザレクション-』 [MA][PR][F1]          ver1.02      日本ファルコム
+『ビストロきゅーぴっと』　　　 [MA][PR][F1][CG][EX]  ver修正なし  火狗工房/サクセス
+『Piece of Wonder』            [MA][PR][CG]          ver1.03　    STUDIO CROSSFIRE（同人）
+『風の探索者～大陸編～』　　　 [MA][PR][EX]          ver修正なし  GruppoOne 
+『VAMPIRE HURTS』              [MA][PR][F1][CG][EX]  ver修正なし　EXE CREATE
+『ETERNAL FIGHTER ZERO』       [MA][PR][F1][EX]      ver1.20      黄昏フロンティア（同人）
+『桃太郎伝説』　　　　　　　　 [MA][PR][F1][CG]      ver修正なし  HUDSON/MEDIAKITE
+『エンジェリックセレナーデ』   [MA][PR][F2][CG][EX]  ver1.10      KOGADO
+『ファーランドシンフォニー』   [MA][PR][F1][CG]      ver1.09      TGL      
+『Schwartzshild F 光の邂逅』   [MA][PR][F1]          ver修正なし  KOGADO
+『源平討魔伝』                 [MA][PR][F1]          ver修正なし　NAMCO/MEDIAKITE
+『SchwartzshildGXR 時現の遣人』廉価版  [MA][PR][F1]  ver修正なし　KOGADO
+『えあふり 観鈴ちん危機一髪』  [MA][PR][F1][F2][EX]  ver修正なし  渡辺製作所（同人）
+『月華の鬼士』                 [PR][F2]              ver修正なし  いつものところ（同人）
+『AirRPG』　　　　　　　　　　 [MA][PR][F1]          ver2.25      はちみつくまさん（同人）
+『フラン２～聖界の奇跡～』     [MA][PR][F1][F2][CG]  ver修正なし  EXE CREATE
+『天下統一～相剋の果て～』　　 [MA][PR][F1]          ver修正なし　Systemsoft
+『Prism Palette』　            [PR][F1][F2][CG]      ver修正なし　Bloccori
+『ドルアーガの塔』　　　　　　 [MA][PR][F1][F2]      ver修正なし  NAMCO/MEDIAKITE
+『Schwarzshild N～未来への胎動～』 [MA][PR][F1]      ver修正なし　KOGADO
+『王子さまＬＶ１』　　　　　　 [MA][PR][F1][CG]      ver修正なし　ALICEBLUE
+『綾波育成計画』　　　　　　　 [PR][F1][CG][EX]      ver修正なし  GAINAX
+『三國志Ⅷ』　　　　　　　　　 [MA][PR][F1]          ver修正なし　KOEI　
+『グローランサー』             [MA][PR][F1][F2][CG]  ver修正なし　キャリアソフト
+『天下統一～乱世の覇者～』廉価版   [MA][PR][F1]      ver修正なし　Systemsoft
+『天下統一』復刻版             [MA][PR][F1]          ver修正なし　Systemsoft
+『ＺＡＶＡＳⅡ』(Neko Project2)[PR][F1]              ver0.29m     POPCOMSOFT/GLODIA
+===================================================================================
