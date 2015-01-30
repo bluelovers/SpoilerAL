@@ -1,0 +1,43 @@
+[group]OGB_SSG
+[note]wordwrap
+PCプリホリ→DCプリホリアップデータ付きで8.8kでも買ったかもw
+
+＊Windows2000でプロセス展開に失敗する場合
+１）実行ファイルをリネーム。"適当な２の倍数分の半角文字列"+".exe"（合計で半角15文字以内）
+２）SSGフォルダ内の"MAIN55.ssg"内の5748行目[process]以下を前項同様に変更する。
+
+ＣＧモードＡＬＬ：
+ＣＧモード用照合ルーチンをクラッキングしただけなので、セーブデータには反映されません。文字列補完は気力が出なかったので(^^;
+[/note]
+
+[subject]クイズ関連:dir
+	[subject]PLAYER'S LIFE/現在値/_:calc,0x5ABB04,0x01,0x06,unsigned
+	[subject]ENEMY'S LIFE/現在値/_:calc,0x5ABB0C,0x01,0x06,unsigned
+	[subject]正答ガイド機能/_:list,0x5ABB10,OGBLST->LST_a,0x01,0x01
+	[subject]クイズで必ず正解扱い/実行/_:toggle,_[:0x495138:]+0x0238A9,747275650A,66616C7365
+	[subject]１問正答でクイズ即勝利/実行/_:toggle,_[:0x495138:]+0x0238BE,6D6F7620257175697A5F6E6F726D612C30,73756220257175697A5F6E6F726D612C31
+[root]
+
+[subject]ＣＧモード関連:dir
+	[subject]クリアフラグＡＬＬ/ＯＮ／ＯＦＦ/_:toggle,0x5ABEF4,0x5ABEFF-01000000,00
+	[subject]ＣＧモードＡＬＬ/実行/_:toggle,0x40D678,EB00????EB,751C????74
+	[subject]回想モードＡＬＬ/ＯＮ／ＯＦＦ/_:b_toggle,0x5ABF1C,OGBLST->OGB_a,real
+[root]
+
+[/group]
+
+
+[group]LST_a
+１が正解
+２が正解
+３が正解
+[/group]
+
+
+[group]OGB_a
+0x5ABF1C,01000000,00000000
+0x5ABF28,01000000,00000000
+0x5ABF34,01000000,00000000
+0x5ABF38,01000000,00000000
+0x5ABF40,01000000,00000000
+[/group]
