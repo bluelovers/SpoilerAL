@@ -1,0 +1,1652 @@
+SSG for SpoilerAL ver 3.8
+
+文頭の//を削れば電卓、トグル、リスト、文字の各項目をプレビューできるよ。
+といってもそんなことするのはSSG作者だけだけど。
+//[script]
+//[title]テスト用
+//[process]TEST.EXE
+//[maker]あつ？
+//[creator]あつ
+//[special]謎
+//[note]
+//テストで項目の違い等を見るためだけに用意された
+//量産型ザクのようなSSG。（←ちと違う）
+//[/note]
+//[subject]階層項目:dir
+//	[subject]電卓項目:calc,0x0,0xFFFF0000,0xFFFFFFFF, unsigned,little_e
+//	[subject]トグル項目//Onにしっぱなし:toggle,0x0,01,00
+//	[subject]マスク付きトグル項目//Onにしっぱなし:toggle,0x0,??01,FF00
+//	[subject]リスト項目:list,0x0,test,0x0,0x1
+//	[subject]主人公名:string,0x468000, 0xF, null
+//[back]
+//[/script]
+
+[script]
+[title]戦巫女
+[process]SYSTEM35.EXE
+[maker]アリスソフト
+[creator]あつ
+[note]wordwrap
+アリスの一般向けフルボイスゲームですね。
+個人的にはおじいさんの性格が好きでした。
+
+時間帯は一遍いじると、そのサイクルでぐるぐる回るので、夕方に「一日が終わりました」とかいうメッセージを流すことも可能（してどーする）
+
+ただ背景は時間帯を基準に指定しているようなので、真夜中の修行なんてのも行えます。
+（違うのは背景だけだけど）
+
+自由行動は夜にならない限り終了しないので、夕方になったら朝に切り替えるなどすれば、その日のうちに全ての場所を探索することも可能です。
+[/note]
+[subject]時間帯:list,0x438B92,戦巫時間,1,1
+[subject]ちとせ:dir
+	[subject]体力:calc,0x438CDA,0x0,0x3E7,signed,little_e
+	[subject]ＨＰ:calc,0x438CDC,0x0,0x3E7,signed,little_e
+	[subject]強さ:calc,0x438CE2,0x0,0x3E7,signed,little_e
+	[subject]素早さ:calc,0x438CE4,0x0,0x3E7,signed,little_e
+	[subject]集中力:calc,0x438CE6,0x0,0x3E7,signed,little_e
+	[subject]精神力:calc,0x438CE8,0x0,0x3E7,signed,little_e
+	[subject]疲労:calc,0x438CEA,0x0,0x3E7,signed,little_e
+	[subject]剣:calc,0x438CEC,0x0,0x3E7,signed,little_e
+	[subject]鏡:calc,0x438CEE,0x0,0x3E7,signed,little_e
+	[subject]玉:calc,0x438CF0,0x0,0x3E7,signed,little_e
+[back]
+[subject]志狼:dir
+	[subject]体力:calc,0x438D0C,0x0,0x3E7,signed,little_e
+	[subject]ＨＰ:calc,0x438D0E,0x0,0x3E7,signed,little_e
+	[subject]強さ:calc,0x438D14,0x0,0x3E7,signed,little_e
+	[subject]素早さ:calc,0x438D16,0x0,0x3E7,signed,little_e
+	[subject]疲労:calc,0x438D18,0x0,0x3E7,signed,little_e
+[back]
+[/script]
+
+[script]
+[title]DALK
+[process]SYSTEM35.EXE
+[maker]アリスソフト
+[creator]あつ
+[note]wordwrap
+アリスの館４・５・６よりDALKです。
+現在は絶版(?)になったらしいですね。
+[/note]
+[subject]薬・所持金:dir
+	[subject]所持金:calc,0x693D16,0x0,0xFFFF,signed,little_e
+	[subject]ハースルの薬:calc,0x693ED2,0x0,0xFFFF,signed,little_e
+	[subject]カイトの薬:calc,0x693ED4,0x0,0xFFFF,signed,little_e
+	[subject]シーカの薬:calc,0x693ED6,0x0,0xFFFF,signed,little_e
+	[subject]ルナの薬:calc,0x693ED8,0x0,0xFFFF,signed,little_e
+	[subject]ホリュースの薬:calc,0x693EDA,0x0,0xFFFF,signed,little_e
+	[subject]ファントムの薬:calc,0x693EDC,0x0,0xFFFF,signed,little_e
+	[subject]ドーシの薬:calc,0x693EDE,0x0,0xFFFF,signed,little_e
+	[subject]ラアの薬:calc,0x693EE0,0x0,0xFFFF,signed,little_e
+	[subject]ファルクの薬:calc,0x693EE2,0x0,0xFFFF,signed,little_e
+	[subject]経験値の薬:calc,0x693EE4,0x0,0xFFFF,signed,little_e
+[back]
+[subject]一括最強！:dir
+	[subject]全員HPMAX:toggle,0x736656,0x736672-FFFF,0100
+	[subject]全員攻撃力MAX:toggle,0x736696,0x7366B2-FFFF,0100
+	[subject]全員命中値MAX:toggle,0x736616,0x736632-FFFF,0100
+	[subject]全員Ａ・ＣMAX:toggle,0x7365D6,0x7365F2-FFFF,0100
+	[subject]全員回避値MAX:toggle,0x736636,0x736652-FFFF,0100
+	[subject]全員移動力MAX:toggle,0x736676,0x736692-FFFF,0100
+	[subject]全員魔法抵抗値MAX:toggle,0x7365F6,0x736612-FFFF,0100
+	[subject]全員知力MAX:toggle,0x736656,0x7366D2-FFFF,0100
+	[subject]全員モンスターを倒した数MAX:toggle,0x7364F6,0x736512-FFFF,0100
+	[subject]全員経験値MAX:toggle,0x736436,0x736452-FFFF,0100
+	[subject]全員レベルMAX:toggle,0x736416,0x736432-FFFF,0100
+[back]
+[subject]セイル:dir
+	[subject]HP:calc,0x736656,0x0,0xFFFF,signed,little_e
+	[subject]攻撃力:calc,0x736696,0x0,0xFFFF,signed,little_e
+	[subject]命中値:calc,0x736616,0x0,0xFFFF,signed,little_e
+	[subject]Ａ・Ｃ:calc,0x7365D6,0x0,0xFFFF,signed,little_e
+	[subject]回避値:calc,0x736636,0x0,0xFFFF,signed,little_e
+	[subject]移動力:calc,0x736676,0x0,0xFFFF,signed,little_e
+	[subject]魔法抵抗値:calc,0x7365F6,0x0,0xFFFF,signed,little_e
+	[subject]知力:calc,0x7366B6,0x0,0xFFFF,signed,little_e
+	[subject]モンスターを倒した数:calc,0x7364F6,0x0,0xFFFF,signed,little_e
+	[subject]経験値:calc,0x736436,0x0,0xFFFF,signed,little_e
+	[subject]レベル:calc,0x736416,0x0,0xFFFF,signed,little_e
+[back]
+[subject]シグルーン:dir
+	[replace]0x736418,DALK,offset
+[subject]シルヴィア:dir
+	[replace]0x73641A,DALK,offset
+[subject]ティロル:dir
+	[replace]0x73641C,DALK,offset
+[subject]チョルラ:dir
+	[replace]0x73641E,DALK,offset
+[subject]ジーマ:dir
+	[replace]0x736420,DALK,offset
+[subject]アリーヌ:dir
+	[replace]0x736422,DALK,offset
+[subject]ミコ:dir
+	[replace]0x736424,DALK,offset
+[subject]ルー:dir
+	[replace]0x736426,DALK,offset
+[subject]エリスン:dir
+	[replace]0x736428,DALK,offset
+[subject]ファローラ:dir
+	[replace]0x73642A,DALK,offset
+[subject]アルビナ:dir
+	[replace]0x73642C,DALK,offset
+[subject]クウ:dir
+	[replace]0x73642E,DALK,offset
+[subject]リムリア:dir
+	[replace]0x736430,DALK,offset
+[subject]リンス:dir
+	[replace]0x736432,DALK,offset
+[/script]
+
+[script]
+[title]カスタム隷奴
+[process]REIDO.EXE
+[maker]Kiss
+[creator]あつ
+[note]wordwrap
+ver1.5（1999/03/29現在の最新版）でのコードです。
+古いバージョンの方は、Kissのホームページで落として下さい。
+http://www.iris.dti.ne.jp/~kisskiss/index2.html
+（ついでにプラグインも落としてくるべし(^^;)
+
+なお、このゲームは表示更新を行動時にしか行いません。
+よって、「書き換えても値が変わらないゾッ」とか言わないように。表示は変わらなくても、ちゃんとその値になってますから(^^;)
+[/note]
+[subject]死なない（笑)/全快/不死身:b_toggle,0x0,隷奴不死身,real
+[subject]体力:calc,0x4D2598,0x0,0x64,signed,little_e
+[subject]意識:calc,0x4D25A0,0x0,0x64,signed,little_e
+[subject]肉欲:calc,0x4D25B8,0x0,0xFFFF,signed,little_e
+[subject]理性:calc,0x4D25A8,0x0,0x64,signed,little_e
+[subject]技術:calc,0x4D25C4,0x0,0xFFFF,signed,little_e
+[subject]被虐:calc,0x4D25BC,0x0,0xFFFF,signed,little_e
+[subject]変態:calc,0x4D25C0,0x0,0xFFFF,signed,little_e
+[subject]気品:calc,0x4D25B0,0x0,0x64,signed,little_e
+[subject]忠誠:calc,0x4D25C8,0x0,0xC8,signed,little_e
+[subject]信頼:calc,0x4D25CC,0x0,0xC8,signed,little_e
+[subject]アナル:calc,0x4D25D4,0x0,0xFFFF,signed,little_e
+[subject]媚薬残数:calc,0x4D2610,0x0,0xFFFF,signed,little_e
+[subject]技能選択可能数:calc,0x4A2714,0x0,0x19,signed,little_e
+[subject]調教日数:calc,0x4AC0F8,0x0,0x1D,signed,little_e
+[/script]
+
+[script]
+[title]無人島物語XX
+[process]MJXX.EXE
+[maker]Pinpai
+[creator]あつ
+[note]wordwrap
+ver1.0でのコードです。
+（最新版があるなら教えてちょ。
+そっちの方でもサーチしますんで。）
+
+TIME（時間）は、
+0x00でAM00時。0x0cでPM00時。
+0x23でPM23時になります。
+
+各アイテムは0xFFFFで未所持になります。
+
+各ステータスは1増やすごとに約2.5増加します。
+（端数は切り捨て。それでも多少、表示とは微差がでるが、多くても2～3程度なので気にしないで下さい(^^;）
+[/note]
+[subject]全体:dir
+	[subject]DAYS:calc,0x4c600c,1,28,signed,little_e
+	[subject]TIME（時間）:calc,0x4c6010,0,0x23,signed,little_e
+	[subject]TIME（分数）:calc,0x4c6014,0,0x3B,signed,little_e
+	[subject]FOOD:calc,0x4c6018,0,999,signed,little_e
+	[subject]WATER:calc,0x4c601c,0,999,signed,little_e
+[back]
+[subject]アイテム所持数:dir
+	[subject]マンゴー:calc,0x4c6cd8,0,0xFFFF,signed,little_e
+	[subject]パパイヤ:calc,0x4c6cdc,0,0xFFFF,signed,little_e
+	[subject]バナナ:calc,0x4c6ce0,0,0xFFFF,signed,little_e
+	[subject]ドリアン:calc,0x4c6ce4,0,0xFFFF,signed,little_e
+	[subject]紫色の実:calc,0x4c6ce8,0,0xFFFF,signed,little_e
+	[subject]キノコ:calc,0x4c6cec,0,0xFFFF,signed,little_e
+	[subject]巻き貝:calc,0x4c6cf0,0,0xFFFF,signed,little_e
+	[subject]極彩色の魚:calc,0x4c6cf4,0,0xFFFF,signed,little_e
+	[subject]自生の芋:calc,0x4c6cf8,0,0xFFFF,signed,little_e
+	[subject]新鮮な卵:calc,0x4c6cfc,0,0xFFFF,signed,little_e
+	[subject]小さな蟹:calc,0x4c6d00,0,0xFFFF,signed,little_e
+	[subject]澄んだ水:calc,0x4c6d14,0,0xFFFF,signed,little_e
+	[subject]ペットポトル:calc,0x4c6d24,0,0xFFFF,signed,little_e
+	[subject]ポリタンク:calc,0x4c6d28,0,0xFFFF,signed,little_e
+	[subject]一斗缶:calc,0x4c6d2c,0,0xFFFF,signed,little_e
+	[subject]カンテラ:calc,0x4c6d30,0,0xFFFF,signed,little_e
+	[subject]手製のモリ:calc,0x4c6d34,0,0xFFFF,signed,little_e
+	[subject]サバイバルナイフ:calc,0x4c6d38,0,0xFFFF,signed,little_e
+	[subject]麻袋:calc,0x4c6d3c,0,0xFFFF,signed,little_e
+	[subject]古ぼけた人形:calc,0x4c6d40,0,0xFFFF,signed,little_e
+	[subject]鍵:calc,0x4c6d44,0,0xFFFF,signed,little_e
+	[subject]植物図鑑:calc,0x4c6d48,0,0xFFFF,signed,little_e
+	[subject]珊瑚のかけら:calc,0x4c6d4c,0,0xFFFF,signed,little_e
+	[subject]スニーカー:calc,0x4c6d50,0,0xFFFF,signed,little_e
+	[subject]白い錠剤:calc,0x4c6d54,0,0xFFFF,signed,little_e
+	[subject]聖書:calc,0x4c6d5c,0,0xFFFF,signed,little_e
+	[subject]瑠那への手紙:calc,0x4c6d60,0,0xFFFF,signed,little_e
+	[subject]写真:calc,0x4c6d64,0,0xFFFF,signed,little_e
+	[subject]ペンダント:calc,0x4c6d68,0,0xFFFF,signed,little_e
+	[subject]ボートの部品:calc,0x4c6d74,0,0xFFFF,signed,little_e
+	[subject]石鹸:calc,0x4c6d78,0,0xFFFF,signed,little_e
+	[subject]書き殴りのメモ:calc,0x4c6d7c,0,0xFFFF,signed,little_e
+	[subject]すり切れた毛布:calc,0x4c6d80,0,0xFFFF,signed,little_e
+	[subject]奇妙な植物:calc,0x4c6d84,0,0xFFFF,signed,little_e
+	[subject]レポートの束:calc,0x4c6d88,0,0xFFFF,signed,little_e
+	[subject]英文の書類:calc,0x4c6d8c,0,0xFFFF,signed,little_e
+	[subject]ガラス瓶:calc,0x4c6d90,0,0xFFFF,signed,little_e
+	[subject]ボートの設計図:calc,0x4c6d94,0,0xFFFF,signed,little_e
+	[subject]名前のない日記:calc,0x4c6d98,0,0xFFFF,signed,little_e
+	[subject]ノートの切れ端:calc,0x4c6d9c,0,0xFFFF,signed,little_e
+	[subject]黄ばんだノート:calc,0x4c6da0,0,0xFFFF,signed,little_e
+[back]
+[subject]キャラステータス:dir
+	[subject]主人公:dir
+		[subject]名字:string,0x4c5ff0,12,null
+		[subject]名前:string,0x4c5ffd,12,null
+		[subject]HP:calc,0x4c6109,0,0x28,signed,little_e
+		[subject]SURVIVAL:calc,0x4c610d,0,0x28,signed,little_e
+		[subject]MIND:calc,0x4c6115,0,0x28,signed,little_e
+		[subject]STRESS:calc,0x4c6119,0,0x28,signed,little_e
+	[back]
+	[subject]瑠那:dir
+		[replace]0x4C6159,無人XX,offset
+	[subject]菜々絵:dir
+		[replace]0x4C61A9,無人XX,offset
+	[subject]栞:dir
+		[replace]0x4C61F9,無人XX,offset
+	[subject]藍:dir
+		[replace]0x4C6249,無人XX,offset
+	[subject]美緒:dir
+		[replace]0x4C6299,無人XX,offset
+[back]
+[/script]
+
+[script]
+[title]Castle Fantasia～聖魔大戦～
+[process]CASTLE2.EXE
+[maker]Studio e・go!
+[creator]あつ
+[note]wordwrap
+「データ」階層以下の項目は、キャラクターリストの最上段にいるキャラクターのステータスを書き換えます。
+味方だろうが敵だろうが書き換えられるので、「値の固定」とかやっちゃうと、大変なことになるよ～(^^;
+
+「正体」を変更すると、古代魔法を使うハンナとかができあがります（笑）
+ただし、元々魔法の使えないキャラを魔法の使えるキャラに変更しても、魔力が足りないんで、意味ありません。
+
+もちろん敵にも適用できますが、仲間に変更した敵は、他の敵から袋叩きにあいます（笑）
+でもってその敵が死ぬとGAME OVER（だめじゃん！）
+でも敵もこちらの思い通りに動かせるからおもしろいかもね。
+（敵のターンはコロコロ変わるから、ロック項目の更新周期を短くしておかないと、タイミングを逃しちゃうよ！）
+[/note]
+[subject]ver1.00:dir
+	[subject]データ:dir
+		[subject]現在耐久力:calc,0x4500d8,0,999,signed,little_e
+		[subject]最大耐久力:calc,0x4500dc,0,999,signed,little_e
+		[subject]素早さ:calc,0x4500e0,1,999,signed,little_e
+		[subject]移動範囲:calc,0x4500e4,0,999,signed,little_e
+		[subject]攻撃力:calc,0x4500ec,0,999,signed,little_e
+		[subject]守備力:calc,0x4500f0,0,999,signed,little_e
+		[subject]攻撃射程:calc,0x4500f4,0,999,signed,little_e
+		[subject]X位置（＼線上）:calc,0x450108,0,80,signed,little_e
+		[subject]Y位置（／線上）:calc,0x45010c,0,80,signed,little_e
+		[subject]正体（笑）:list,0x4500cc,CF聖戦,0,1
+	[back]
+	[subject]愛情値:dir
+		[subject]アリア:calc,0x463cec,0,300,signed,little_e
+		[subject]ハンナ:calc,0x463cf0,0,300,signed,little_e
+		[subject]ティア:calc,0x463cf4,0,300,signed,little_e
+		[subject]ルナール:calc,0x463cf8,0,300,signed,little_e
+		[subject]セシル:calc,0x463cfc,0,300,signed,little_e
+		[subject]ジュディ:calc,0x463d00,0,300,signed,little_e
+		[subject]シルエラ:calc,0x463d04,0,300,signed,little_e
+[root]
+[subject]ver1.01:dir
+	[subject]データ:dir
+		[subject]現在耐久力:calc,0x4510f8,0,999,signed,little_e
+		[subject]最大耐久力:calc,0x4510fc,0,999,signed,little_e
+		[subject]素早さ:calc,    0x451100,1,999,signed,little_e
+		[subject]移動範囲:calc,  0x451104,0,999,signed,little_e
+		[subject]攻撃力:calc,    0x45110c,0,999,signed,little_e
+		[subject]守備力:calc,    0x451110,0,999,signed,little_e
+		[subject]攻撃射程:calc,  0x451114,0,999,signed,little_e
+		[subject]X位置（＼線上）:calc,0x451128,0,80,signed,little_e
+		[subject]Y位置（／線上）:calc,0x45112c,0,80,signed,little_e
+		[subject]正体（笑）:list,0x4510ec,CF聖戦,0,1
+	[back]
+	[subject]愛情値:dir
+		[subject]アリア:calc,0x464d0c,0,300,signed,little_e
+		[subject]ハンナ:calc,0x464d10,0,300,signed,little_e
+		[subject]ティア:calc,0x464d14,0,300,signed,little_e
+		[subject]ルナール:calc,0x464d18,0,300,signed,little_e
+		[subject]セシル:calc,0x464d2c,0,300,signed,little_e
+		[subject]ジュディ:calc,0x464d30,0,300,signed,little_e
+		[subject]シルエラ:calc,0x464d34,0,300,signed,little_e
+[root]
+[/script]
+
+[script]
+[title]ピュティア
+[process]PYTHIAN.EXE
+[maker]Studio e・go!
+[creator]あつ
+[note]wordwrap
+仲間キャラが８人に満たない場合、敵キャラを書き換えることができます。
+「私は味方（笑）」のチェックをつけてやれば、簡単にマリオネットになります(^^;)
+しかもそいつらが死んでもゲームオーバーにはなりません。
+敵陣で同士討ちをさせてから悠々と乗り込みましょう（鬼）
+
+向きは右下を向いている状態を「前」としますので、「右」向きは、こちら側に顔が向くことになります。
+
+ALT+TABで切り替えたら、画面真っ暗になるからＸ・Ｙ座標を変更する機会はないかも(^^;)
+[/note]
+[subject]１人目:dir
+	[replace]0x471450,PYTHIAN->パラメータ
+[subject]２人目:dir
+	[replace]0x4714CC,PYTHIAN->パラメータ
+[subject]３人目:dir
+	[replace]0x471548,PYTHIAN->パラメータ
+[subject]４人目:dir
+	[replace]0x4715C4,PYTHIAN->パラメータ
+[subject]５人目:dir
+	[replace]0x471640,PYTHIAN->パラメータ
+[subject]６人目:dir
+	[replace]0x4716BC,PYTHIAN->パラメータ
+[subject]７人目:dir
+	[replace]0x471738,PYTHIAN->パラメータ
+[subject]８人目:dir
+	[replace]0x4717B4,PYTHIAN->パラメータ
+[/script]
+
+[script]
+[title]BLOOD SEED2～第２次淫獣接触～
+[process]MAIN.EXE
+[maker]IMAGE CLUB
+[creator]あつ
+[note]wordwrap
+ステータスを変更した場合は、「STATUS」を。
+現在位置を変更した場合は、「MAP」を一度クリックして下さい。
+結果が反映されます。
+値を0xE803(59395)にすると、∞として扱われます。
+[/note]
+//**** 埋め込みファイル ****
+[involve]ファイル
+[group]向き
+上
+右
+下
+左
+[/group]
+[/involve]
+//**** **************** ****
+[subject]X位置:calc,0x45E55C,0x0,0xFF,signed,little_e
+[subject]Y位置:calc,0x45E560,0x0,0xFF,signed,little_e
+[subject]向き:list,0x45E564,ファイル->向き,0x0,0x1
+[subject]雑魚戦を拒否:toggle,0x45E568,00,01
+[subject]Level:calc,0x45E56C,0x0,0xE803,signed,little_e
+[subject]Life-p(現在値):calc,0x45E574,0x0,0xE803,signed,little_e
+[subject]Life-p(最大値):calc,0x45E578,0x0,0xE803,signed,little_e
+[subject]Attack-p(現在値):calc,0x45E57C,0x0,0xE803,signed,little_e
+[subject]Attack-p(最大値):calc,0x45E580,0x0,0xE803,signed,little_e
+[subject]Armor-p(現在値):calc,0x45E584,0x0,0xE803,signed,little_e
+[subject]Armor-p(最大値):calc,0x45E588,0x0,0xE803,signed,little_e
+[subject]Exp(現在値):calc,0x45E58C,0x0,0xE803,signed,little_e
+[subject]Exp(最大値):calc,0x45E590,0x0,0xE803,signed,little_e
+[/script]
+
+
+[script]
+[title]一罰百快
+[process]ICHIBATU.EXE
+[maker]IMASION
+[creator]あつ
+[note]wordwrap
+牌を変更してもすぐに画面には反映されません。
+が、内部的にはちゃんと書き変わっていますので、大三元ドラ３天和和了ってのも楽勝です(^^;)
+
+ちなみに河に何がどれだけ切られていようと、持ち牌を補正する必要はありません。
+つまり、河に一萬が４枚切られていても、手牌に一萬を持っていて良いわけです。
+一萬を５枚以上持っていても良いのかは、試してないので分からないけど(^^;)
+[/note]
+[subject]持ち点:calc,0x439BD0,0,0xFFFF,signed,little_e
+[subject]自牌01:list,0x495DD0,一罰牌,0,1
+[subject]自牌02:list,0x495DD4,一罰牌,0,1
+[subject]自牌03:list,0x495DD8,一罰牌,0,1
+[subject]自牌04:list,0x495DDC,一罰牌,0,1
+[subject]自牌05:list,0x495DE0,一罰牌,0,1
+[subject]自牌06:list,0x495DE4,一罰牌,0,1
+[subject]自牌07:list,0x495DE8,一罰牌,0,1
+[subject]自牌08:list,0x495DEC,一罰牌,0,1
+[subject]自牌09:list,0x495DF0,一罰牌,0,1
+[subject]自牌10:list,0x495DF4,一罰牌,0,1
+[subject]自牌11:list,0x495DF8,一罰牌,0,1
+[subject]自牌12:list,0x495DFC,一罰牌,0,1
+[subject]自牌13:list,0x495E00,一罰牌,0,1
+[subject]自牌14:list,0x495E04,一罰牌,0,1
+
+[/script]
+
+[script]
+[title]LOST MIND　～歪んだ世界～
+[process]LOSTMIND.EXE
+[maker]Active
+[creator]あつ
+[note]wordwrap
+全国（推定）１億人のメイド属性（ぉ
+が喜びそうなゲームですな。
+なんつーかもう、「雛鳥の囀」って感じ（マテ）
+
+つーかこのゲームのメモリ構造は面白いっすよ。
+CGIでよく使うPerlみたく、キーワード＝値　で格納してるんでしょうね。
+@_souzi　等がアスキーダンプに見られたので、一つ見つけたら芋蔓式でした(^^;)
+ちなみにミズキさんが下働きにやられちゃうと、@mizuki_mawashi っつーフラグが立ちます(笑)
+[/note]
+//**** 埋め込みファイル ****
+[involve]ファイル
+[group]時刻
+朝
+昼
+夕方
+夜
+深夜
+[/group]
+[/involve]
+//**** **************** ****
+[subject]時刻:list,0x462A72,ファイル->時刻,10,10
+[subject]日:calc,0x462A92,1,0xFFFF,signed,little_e
+[subject]週:calc,0x462592,1,0xFFFF,signed,little_e
+[subject]パラメータ:dir
+	[subject]掃除:calc,0x4626B2,0,999,signed,little_e
+	[subject]洗濯:calc,0x4626D2,0,999,signed,little_e
+	[subject]調理:calc,0x4626F2,0,999,signed,little_e
+	[subject]体力:calc,0x462712,0,100,signed,little_e
+	[subject]奉仕:calc,0x462732,0,999,signed,little_e
+	[subject]貢献度:calc,0x462752,0,100,signed,little_e
+[back]
+//ホントはこのパラメータのアドレスは表示用。
+//もう少し下の方に実値が格納されるようだが、
+//増減の際は、表示の方を所得して
+//実値を格納し治しているようなので、
+//問題ないと思われる。
+
+//キャラの居場所などを格納しているアドレスも分かったのだが、
+//イベントデータなどと組み合わせて並んでいるので
+//アドレスを特定できない。(TAT)
+[/script]
+
+[script]
+[title]絶望～青い果実の散花～
+[process]AVG3217D.EXE
+[maker]StudioMebius
+[creator]あつ
+[note]wordwrap
+初っぱなの、連続28人怒濤の人物紹介には参りました(^^;)
+あれ全て覚えられた人っているんかなぁ…いや、居たらどうってワケでもないんですが(^^;)
+[/note]
+[subject]時間:calc,0x4622F0,0,23
+[subject]分数:calc,0x4622F4,0,59
+[subject]日にち:list,0x4622EC,絶望日付,0xBD,1
+//4622EC-日
+//	ED-月
+//	F0-時
+//	F4-分
+[/script]
+
+[script]
+[title]コートの中の天使達
+[process]DSON.EXE
+[maker]Pinpai
+[creator]あつ
+[note]
+シナリオもテンポよく進む、結構良いゲームでしたね。
+能力値の上がりは早いけど、まぁ初心者向けってことでしょう。
+
+ちなみに、　　｜居残り｜信頼度｜愛情度
+－－－－－－－＋－－－＋－－－＋－－－－
+さげすんだ表情｜　－　｜　１　｜　－
+普通　の　表情｜　－　｜　２　｜　－
+にこやかな表情｜　－　｜　３　｜　－
+ほおが赤い表情｜　－　｜　４　｜４以上
+笑いつつ赤ら顔｜　４　｜４以上｜５以上
+トリップ系表情｜　５　｜５以上｜５以上
+
+となっています。
+[/note]
+[subject]円井　晶:dir
+	[replace]0x4B5CD0,コー天,offset
+[subject]円井　玖美:dir
+	[replace]0x4B5CF4,コー天,offset
+[subject]伊那部　尚:dir
+	[replace]0x4B5D18,コー天,offset
+[subject]喜多嶋　麻由美:dir
+	[replace]0x4B5D3C,コー天,offset
+[subject]音胡田　こずえ:dir
+	[replace]0x4B5D60,コー天,offset
+[subject]松田　未依:dir
+	[replace]0x4B5D84,コー天,offset
+[subject]潮之木　葛葉:dir
+	[replace]0x4B5DA8,コー天,offset
+[subject]白鳥ふみえ・木戸ひとみ:dir
+	[replace]0x4B5DCC,コー天,offset
+[root]
+[/script]
+
+[script]
+[title]つもバカ日誌
+[process]TUMO_WIN.EXE
+[maker]アボガドパワーズ
+[creator]あつ
+[note]wordwrap
+一応、所持金等の改造は行えるようにしましたが、ツモるか当てるかしないと、CGは見られないんですよね…。
+セーブデータはなんか挑戦状たたきつけてますし、ちょちサーチしてみた自牌も、どっか別の場所にも保持しているらしく、一時的に変更はされる物の、作用するには至りません。
+現状では、CGを見たい相手の点数を下げ、自分の点数を上げ、「タンヤオつみこみ」でも使って、取り合えず「上がる」ことが対処法ですかね…。
+[/note]
+[subject]所持金:calc,0x463198,0,0xFFFF
+[subject]１人目点数(x1000):calc,0x4636FE,-32767,32767
+[subject]２人目点数(x1000):calc,0x463CA2,-32767,32767
+[subject]３人目点数(x1000):calc,0x464246,-32767,32767
+[subject]自分点数(x1000):calc,0x4647EA,-32767,32767
+[/script]
+
+[script]
+[title]憧裸（どうら）
+[process]DORA.EXE
+[maker]すたじお実験室
+[creator]あつ
+[note]wordwrap
+育てゲーですね。
+ちょっと難しい字が多用されているので、一般受けはしないかもしれないけど…(^^;)
+[/note]
+[subject]愛情:calc,0x480174,0,100
+[subject]家事:calc,0x480175,0,100
+[subject]勉強:calc,0x480176,0,100
+[subject]色香:calc,0x480177,0,100
+[subject]実験回数:calc,0x480178,0,0xFF
+[subject]ペルネル貢献度:calc,0x480180,0,100
+[subject]ヤンブリコス貢献度:calc,0x480186,0,100
+[subject]ジャック貢献度:calc,0x48018C,0,100
+[subject]MONEY(x100):calc,0x48019A,0,0xFF
+[subject]DAY:calc,0x48019B,0,30
+[/script]
+
+[script]
+[title]たたかえ！プリンセス
+[process]BOP.EXE
+[maker]Triangle
+[creator]あつ
+[note]wordwrap
+セーブデータの解析はちょっち難易度が高いので、メモリに逃げました(^^;)
+[/note]
+[subject]CGAll:toggle,0x68099A,0x680A1D-0102040810204080,0000000000000000
+[subject]HSceanAll:toggle,0x680A1E,0x680A5B-0102040810204080,0000000000000000
+[/script]
+
+[script]
+[title]熱血！！最強部活宣言
+[process]DXBASE.EXE
+[maker]Passion
+[creator]あつ
+[note]wordwrap
+なんつーか…
+自分の体力MAX固定、相手の体力1にしておけば、カード集めなんかしなくてもいいんだよねぇ…(^^;)
+[/note]
+[subject]郁美体力:calc,0x470D80,0,100
+[subject]相手体力:calc,0x470D88,0,100
+[/script]
+
+[script]
+[title]ブレイブブレイド
+[process]BRAVEBLADE.EXE
+[maker]TO BE
+[creator]あつ
+[note]wordwrap
+フルインストにしないとボイスが鳴らないという、ちょっぴりHDに優しくないゲームです(^^;)
+まぁCD-DAで音楽を鳴らす以上、音声WAVまでCDから読んでたらコマ落ちしかねませんから当たり前か(^^;)
+ところでCD-DA再生中にタイトルバーをつかんでウィンドウを移動すると、画像処理は停止しますがCD-DAは止まりません。もし音楽と画面をシンクロさせているのなら、画像処理開始時や適時に「合わせる」作業が必要だと思うのですが、そこら辺を各ソフトウェアメーカー様は如何お考えでしょうか。
+
+しっかしダイスの偶発性があるとはいえ、一撃死亡は痛いですね(^^;)
+資金を増やして傭兵をガスガス置いて、「囲む」ことで楽になるでしょう。
+このゲームにおいて「囲む」ってのは非常に有利になる戦闘法なので、囲むためだけに「待機」するユニットも必須です。
+（好感度の絡みがあるので、お目当てキャラで囲むのも吉）
+ザコを大量の傭兵達で片づけて、ボスは主人公等で囲み殺すってのが定石かも。
+まぁ戦闘力＆移動力99にしたらソイツ一匹で完勝できますが(^^;)
+※戦闘開始時に通常値に戻されます
+
+会話中の選択肢は、新しいCGが出てきたら正解ルート(笑)
+だいたい進行度6が寸止め位置です。
+第一五章で、誰をパートナーにするかが決まってしまうので、
+八方美人は三人が限度かと思います(^^;)
+[/note]
+//**** 埋め込みファイル ****
+[involve]ファイル
+[group]向き
+左
+右
+下
+上
+[/group]
+[/involve]
+//**** **************** ****
+[subject]所持金:calc,0x456974,0,0xFFFF
+[subject]経過ターン:calc,0x59EB04,0,99
+[subject]カイ＝アーシュバット:dir
+	[replace]0x561A78,BraveB
+[subject]リルファ＝グランド:dir
+	[replace]0x561B18,BraveB
+[subject]レクリア＝ファインフォルス:dir
+	[replace]0x561BB8,BraveB
+[subject]ハーミス＝フィール:dir
+	[replace]0x561C58,BraveB
+[subject]サチコ＝ナミカワ:dir
+	[replace]0x561CF8,BraveB
+[subject]ピア＝ローラス:dir
+	[replace]0x561D98,BraveB
+[subject]CGAllOn:toggle,0x456764,0x456838-01000000,00000000
+[subject]会話進行状況:dir
+	[subject]リルファ＝グランド:calc,0x4569A8,0,9
+	[subject]レクリア＝ファインフォルス:calc,0x4569AC,0,9
+	[subject]ハーミス＝フィール:calc,0x4569B0,0,9
+	[subject]サチコ＝ナミカワ:calc,0x4569B4,0,9
+	[subject]イーリス＝ブレストレート:calc,0x4569B8,0,9
+	[subject]ピア＝ローラス:calc,0x4569C0,0,9
+	[subject]グライド（恋愛）:calc,0x4569C4,0,9
+	[subject]グライド（戦闘）:calc,0x4569C8,0,9
+[back]
+[/script]
+
+[script]
+[title]偏愛
+[process]偏愛.EXE
+[maker]バニラ
+[creator]あつ
+[note]wordwrap
+Macでも動かせるようにって考えは分かるけど…
+いくらなんでもこのシステムは酷いんじゃないッスか？(^^;)
+バニラのスタッフの皆さんは、「本当にこのゲームを全キャラクリアしたい」と思えたのでしょうか？疑問です。
+[/note]
+[subject]日数:calc,0x20A648C,0,14
+[subject]快感度:calc,0x20A5FEC,0,0xFF
+[/script]
+
+[script]
+[title]My★フェアりんく
+[process]FAIRY.EXE
+[maker]LightPlan
+[creator]あつ
+[note]wordwrap
+精神力・体型値は本来-100～+100の範囲ですが、内部的には4バイト使ってます。そのため、負値の書き込み・読み込みは上手くいかないと思います(^^;)
+つーかセーブ画面の出るのが遅いってのが痛いですね。何度セーブ１に上書きしてしまったことか…
+[/note]
+[subject]残日数/残り//日:calc,0x56AF38,0,41
+[subject]鱗粉:calc,0x56AF48,0,9999
+[subject]パラメータ:dir
+	[subject]マナ:calc,0x56ADD8,0,255
+	[subject]体力値:calc,0x56ADB8,0,255
+	[subject]精神力:calc,0x56ADC8,-100,100
+	[subject]耐久力:calc,0x56AE48,0,255
+	/[subject]耐久力:calc,0x56AE58,0,255
+	[subject]興奮度:calc,0x56AE38,0,999
+	[subject]体型値:calc,0x56ADE8,-100,100
+	[subject]快楽度:calc,0x56ADF8,0,999
+	[subject]被虐度:calc,0x56AE08,0,999
+	[subject]奉仕:calc,0x56AE18,0,999
+	[subject]羞恥度:calc,0x56AE28,0,999
+[back]
+[subject]素材:dir
+	[subject]ラベンダー:calc,0x56CBE8,0,999
+	[subject]にょき茸:calc,0x56CBF8,0,999
+	[subject]極楽草:calc,0x56CC08,0,999
+	[subject]砂金:calc,0x56CC18,0,999
+	[subject]アメジスト:calc,0x56CC28,0,999
+	[subject]エメラルド:calc,0x56CC38,0,999
+	[subject]ジジマンドラ:calc,0x56CC48,0,999
+	[subject]アダマンタイト:calc,0x56CC58,0,999
+[back]
+[subject]薬品:dir
+	[subject]ブルーベリー:calc,0x56CC68,0,999
+	[subject]ハチミツ:calc,0x56CC68,0,999
+	[subject]青汁:calc,0x56CC68,0,999
+	[subject]白夜の誘い:calc,0x56CC78,0,999
+	[subject]ロキの息吹:calc,0x56CC88,0,999
+	[subject]女神の情熱:calc,0x56CC98,0,999
+	[subject]赤銅の薬:calc,0x56CCA8,0,9999
+	[subject]青銅の薬:calc,0x56CCB8,0,9999
+[back]
+[subject]H系:dir
+	[subject]ディルドー:toggle,0x56CCE8,01,00
+	[subject]リボン:toggle,0x56CCF8,01,00
+	[subject]縄:toggle,0x56CD08,01,00
+	[subject]鞭:toggle,0x56CD18,01,00
+//	[subject]?:toggle,0x56CD28,01,00
+//	[subject]?:toggle,0x56CD38,01,00
+	[subject]植物図鑑:toggle,0x56CD48,01,00
+	[subject]鉱物図鑑:toggle,0x56CD58,01,00
+[back]
+[subject]衣類:dir
+	[subject]侍女服:toggle,0x56CD68,01,00
+	[subject]学校水着:toggle,0x56CD78,01,00
+	[subject]猫耳服:toggle,0x56CD88,01,00
+	[subject]巫女服:toggle,0x56CD98,01,00
+	[subject]看護服:toggle,0x56CDA8,01,00
+	[subject]中華服:toggle,0x56CDB8,01,00
+	[subject]拘束具:toggle,0x56CDC8,01,00
+	[subject]首輪:toggle,0x56CDD8,01,00
+[back]
+[/script]
+
+[script]
+[title]POW～捕獲～
+[process]POW.EXE
+[maker]r'uf
+[creator]あつ
+[note]wordwrap
+MENTALやVITAL、残り分数は表示とは異なりますが実際の値です。
+ためしにMENTAL・VITALを1にして行動すれば分かります。
+[/note]
+[subject]初戦:dir
+	[subject]UNNOWN 001エネルギー:calc,0x7C1A48,0,0xFF,unsigned
+	[subject]UNNOWN 002エネルギー:calc,0x7C1B1C,0,0xFF,unsigned
+	[subject]UNNOWN 003エネルギー:calc,0x7C1BF0,0,0xFF,unsigned
+[back]
+[subject]残り分数:calc,0x1273018,0,1140,unsigned
+[subject]クリス MENTAL:calc,0x127306C,0,100
+[subject]クリス VITAL:calc,0x127305C,0,100
+[subject]カレン MENTAL:calc,0x1273070,0,100
+[subject]カレン VITAL:calc,0x1273060,0,100
+[subject]ミリィ MENTAL:calc,0x1273074,0,100
+[subject]ミリィ VITAL:calc,0x1273064,0,100
+[subject]イセリナ MENTAL:calc,0x1273078,0,100
+[subject]イセリナ VITAL:calc,0x1273068,0,100
+[/script]
+
+[script]
+[title]白薔薇のなまえ～ハイパー・ジュエリー・スピリッツ～
+[process]WR.EXE
+[maker]GRANZ
+[creator]あつ
+[note]wordwrap
+画面モード32bitだと6万色以上と認めてくれず、24bitにすると透過色がうまく働いてくれない…(^^;)フルスクリーンだと画面切り替えると死ぬし…
+まぁうちの環境のせいってのもありますが。
+ところでこのゲームの選択肢って、結構難易度高くありません？(^^;)
+[/note]
+[subject]しずく:dir
+	[replace]0x42400E,白薔薇,offset
+[subject]２人目:dir
+	[replace]0x424378,白薔薇,offset
+[subject]３人目:dir
+	[replace]0x4246E2,白薔薇,offset
+[root]
+[/script]
+
+[script]
+[title]女の子どうし
+[process]NEKOW95.EXE
+[maker]Jam/StoneHeads
+[creator]あつ
+[note]wordwrap
+支配力は書き換えてすぐに画面上の反映されるわけではありません。
+内部的には書き変わっていますが、夜が明けるときなどリアクションが起こったあとにまとめて変化が起きます。
+[/note]
+//**** 埋め込みファイル ****
+[involve]ファイル
+[group]状態
+支配力限界
+限界迫る！
+支配力低下
+まだ大丈夫
+完全支配中
+[/group]
+[/involve]
+//**** **************** ****
+[subject]支配力:list,0x6898E0,ファイル->状態,0,30
+//[subject]支配力:list,0x689CD0,ファイル->状態,0,30
+//[subject]一人目不審度:calc,0x689CD8,0,80
+//[subject]二人目不審度:calc,0x689CE4,0,80
+[/script]
+
+[script]
+[title]魔法使いの♀弟子
+[process]AOW.EXE
+[maker]deeps
+[creator]あつ
+[note]wordwrap
+ダンジョン内のX,Y座標変更は、注意して行ってください。
+領域外や壁に埋めた場合の動作は不定です(^^;)移動後にSHIFTキーを押して確認すると良いでしょう。
+目的を達したあとのしちめんどくさいダンジョン脱出には便利ですな(笑)
+
+詠唱のシステムは結構面白かったんですけどねぇ…如何せん、回を重ねるたびにダルくなりますな(^^;)
+せめて詠唱時にリストくらいは表示してくれないと、暗記するのも辛いですし…敵の属性とか分かりにくい（というかあるのか？）ので光の魔法を使うか刺殺の魔法を使うか考える気が起こらないってのは仕様ミスでしょうなぁ…後半「P-I-3」とか定型詠唱ばっかになる…（￣▽￣；
+[/note]
+//**** 埋め込みファイル ****
+[involve]ファイル
+[group]向き
+上
+右
+下
+左
+[/group]
+[/involve]
+//**** **************** ****
+[subject]MONEY:calc,0xD9862C,0x0,0xFFFF
+[subject]ダンジョン内:dir
+	[subject]X位置:calc,0xD984A0,0x0,0xFF
+	[subject]Y位置:calc,0xD984A4,0x0,0xFF
+	[subject]向き:list,0xD9849C,ファイル->向き,0,1
+[back]
+[subject]ルフュールフュー:dir
+	[subject]最大HP:calc,0xD987BC,0x0,9999
+	[subject]現在HP:calc,0xD987C0,0x0,9999
+	[subject]最大MP:calc,0xD987C4,0x0,9999
+	[subject]現在MP:calc,0xD987C8,0x0,9999
+[back]
+[subject]魔法:dir
+	[subject]すべて	:toggle,0xD986F0,0xD9876C-01000000,00000000
+	[subject]A'anz	:toggle,0xD986F0,01,00
+	[subject]B'eton	:toggle,0xD986F4,01,00
+	[subject]C'odex	:toggle,0xD986F8,01,00
+	[subject]D'il	:toggle,0xD986FC,01,00
+	[subject]E'abel	:toggle,0xD98700,01,00
+	[subject]F'ax	:toggle,0xD98704,01,00
+	[subject]G'awin	:toggle,0xD98708,01,00
+	[subject]H'ien	:toggle,0xD9870C,01,00
+	[subject]I'ee	:toggle,0xD98710,01,00
+	[subject]J'orol	:toggle,0xD98714,01,00
+	[subject]K'atu	:toggle,0xD98718,01,00
+	[subject]L'uen	:toggle,0xD9871C,01,00
+	[subject]M'eff	:toggle,0xD98720,01,00
+	[subject]N'alow	:toggle,0xD98724,01,00
+	[subject]O'ol	:toggle,0xD98728,01,00
+	[subject]P'atsu	:toggle,0xD9872C,01,00
+	[subject]Q'aga	:toggle,0xD98730,01,00
+	[subject]R'utz	:toggle,0xD98734,01,00
+	[subject]S'omb	:toggle,0xD98738,01,00
+	[subject]T'aith	:toggle,0xD9873C,01,00
+	[subject]U'um	:toggle,0xD98740,01,00
+	[subject]V'uugt	:toggle,0xD98744,01,00
+	[subject]W'aqua	:toggle,0xD98748,01,00
+	[subject]X'iao	:toggle,0xD9874C,01,00
+	[subject]Y'iegh	:toggle,0xD98750,01,00
+	[subject]Z'od	:toggle,0xD98754,01,00
+	[subject]YA!	:toggle,0xD98758,01,00
+	[subject]KA!	:toggle,0xD9875C,01,00
+	[subject]MA!	:toggle,0xD98760,01,00
+	[subject]TA!	:toggle,0xD98764,01,00
+	[subject]LA!	:toggle,0xD98768,01,00
+	[subject]WA!	:toggle,0xD9876C,01,00
+[root]
+[/script]
+
+[script]
+[title]性奴手帳
+[process]性奴手帳.EXE
+[maker]WEAPON
+[creator]あつ
+[note]wordwrap
+着替えは調教ポイントを増やせば楽に全着揃うと思います。
+調教操作がメンドイ時は興奮度をMAXにすれば画面を戻した瞬間に調教終了です(笑)
+
+しっかし原画屋か塗り班かどちらのせいかは分かりませんが、出来上がりに凄い差が出てるぞ(^^;)
+こーいっちゃなんだが、多少のご都合主義に目をつぶったとしても、あーいう感情変化をするとは思えんのだが…
+んでもって音声がかなり収録スタジオでとったっぽく反響してます(^^;)舞台が密室ってので誤魔化せると思ったかもしれませんが、あんな風に反響する密室を一面平坦なコンクリートのカベで作れると思ってはいけません(笑)いや、あのテクスチャからすると壁面はかなりボコボコ（￣▽￣；反響どころか吸収・拡散するっての…
+CG/シナリオ/音声各部門にさらなる発展を期待します(爆)
+[/note]
+[subject]経過日数:calc,0x4D4D50,0,30
+[subject]体力:calc,0x4D1A78,0,0xFFFF
+[subject]従属度:calc,0x4D1A7C,0,0xFFFF
+[subject]快楽度:calc,0x4D1A80,0,0xFFFF
+[subject]被虐度:calc,0x4D1A84,0,0xFFFF
+[subject]羞恥度:calc,0x4D1A88,0,0xFFFF
+[subject]調教ポイント:calc,0x4D1A8C,0,0xFFFF
+[subject]興奮度（調教時）:calc,0x4D4DC0,0,1000
+[/script]
+
+[script]
+[title]ナイトワーク～夜蝶のイ・タ・ズ・ラ～
+[process]NIGHTWORK.EXE
+[maker]Mutation
+[creator]あつ
+[note]wordwrap
+はぅあ、地雷ゲーム…（￣▽￣；
+[/note]
+[subject]所持金(万単位):calc,0x4469B5,0,99
+[/script]
+
+[script]
+[title]Dolls Front
+[process]MAIN.EXE
+[maker]ZONBIES PARADIGM
+[creator]あつ
+[note]wordwrap
+部隊等は取りあえず10番目まで書き換えられるようにしていますが、前から順に詰めていけば20～30は入ると思います。拡張したい方は各自でお願いします(^^;)
+
+多分ロボット系の本格的なゲーム作りを目指してこの業界に入ったんでしょうなぁ…だが是もお仕事お仕事。
+あ、原画さん。アゴのバランス悪くないですか？
+[/note]
+//**** 埋め込みファイル ****
+[involve]ファイル
+[group]データ
+	[subject]開発レベル:calc,0,0,999999
+	[subject]生産レベル:calc,4,0,999999
+	[subject]国民総生産（mc）:calc,8,0,999999
+	[subject]税率（%）:calc,0x0C,0,100
+	[subject]民意:calc,0x10,0,100
+[back]
+
+[/group]
+[/involve]
+//**** **************** ****
+[subject]軍資金:calc,0x4B75E8,0,999999
+[subject]国データ:dir
+	[subject]タイランド:dir
+		[replace]0x4B75EC,ファイル->データ
+	[subject]クールズランド:dir
+		[replace]0x4B7640,ファイル->データ
+	[subject]アウラウネ:dir
+		[replace]0x4B7694,ファイル->データ
+	[subject]ウー:dir
+		[replace]0x4B76E8,ファイル->データ
+	[subject]ウエストサイド:dir
+		[replace]0x4B773C,ファイル->データ
+	[subject]バベロニア:dir
+		[replace]0x4B7790,ファイル->データ
+	[subject]サゥス:dir
+		[replace]0x4B7838,ファイル->データ
+	[subject]ヤマタイ:dir
+		[replace]0x4B788C,ファイル->データ
+	[subject]アーレン共和国:dir
+		[replace]0x4B78E0,ファイル->データ
+	[subject]デゼニス:dir
+		[replace]0x4B7934,ファイル->データ
+[back]
+[subject]行動:dir
+	[subject]武器取引/済み:toggle,0x4DB2A0,01,00
+	[subject]武器製造/済み:toggle,0x4DB2A1,01,00
+	[subject]武器編成/済み:toggle,0x4DB2A2,01,00
+	[subject]人事/済み:toggle,0x4DB2A3,01,00
+	[subject]内政/済み:toggle,0x4DB2A4,01,00
+	[subject]諜報/済み:toggle,0x4DB2A5,01,00
+	[subject]外交/済み:toggle,0x4DB2A6,01,00
+	[subject]投資/済み:toggle,0x4DB2A7,01,00
+	[subject]ハーレム/済み:toggle,0x4DB2A8,01,00
+[back]
+[subject]部隊:dir
+	[subject]1.:list,0x4B6326,DollsF,0,1
+	[subject]2.:list,0x4B6328,DollsF,0,1
+	[subject]3.:list,0x4B632A,DollsF,0,1
+	[subject]4.:list,0x4B632C,DollsF,0,1
+	[subject]5.:list,0x4B632E,DollsF,0,1
+	[subject]6.:list,0x4B6330,DollsF,0,1
+	[subject]7.:list,0x4B6332,DollsF,0,1
+	[subject]8.:list,0x4B6334,DollsF,0,1
+	[subject]9.:list,0x4B6336,DollsF,0,1
+	[subject]10.:list,0x4B6338,DollsF,0,1
+[back]
+[subject]諜報部:dir
+	//値は00~63
+	[subject]1.:list,0x4DA7EC,DollsF,0,1
+	[subject]2.:list,0x4DA7EE,DollsF,0,1
+	[subject]3.:list,0x4DA7F0,DollsF,0,1
+	[subject]4.:list,0x4DA7F2,DollsF,0,1
+	[subject]5.:list,0x4DA7F4,DollsF,0,1
+	[subject]6.:list,0x4DA7F6,DollsF,0,1
+	[subject]7.:list,0x4DA7F8,DollsF,0,1
+	[subject]8.:list,0x4DA7FA,DollsF,0,1
+	[subject]9.:list,0x4DA7FC,DollsF,0,1
+	[subject]10.:list,0x4DA7FE,DollsF,0,1
+[back]
+[subject]ハーレム:dir
+	[subject]1.:list,0x4DA8B4,DollsF,0,1
+	[subject]2.:list,0x4DA8B6,DollsF,0,1
+	[subject]3.:list,0x4DA8B8,DollsF,0,1
+	[subject]4.:list,0x4DA8BA,DollsF,0,1
+	[subject]5.:list,0x4DA8BC,DollsF,0,1
+	[subject]6.:list,0x4DA8BE,DollsF,0,1
+	[subject]7.:list,0x4DA8C0,DollsF,0,1
+	[subject]8.:list,0x4DA8C2,DollsF,0,1
+	[subject]9.:list,0x4DA8C4,DollsF,0,1
+	[subject]10.:list,0x4DA8C6,DollsF,0,1
+[back]
+[/script]
+
+[script]
+[title]Over the Rainbow
+[process]ASD4AVG.EXE
+[maker]
+[creator]あつ
+[note]wordwrap
+Over the Rainbow（虹の彼方に）といえば、オズの魔法使いの挿入歌を思い出しますね。あ、私だけですか？（￣▽￣；
+
+結構良いゲームだと思いますよん。
+キャラ切り替えにαブレンドを使う、最小インスト時もCD-DAで音楽を再生すると重い処理はやってますんで、できればHDの容量を空けて標準以上でプレイして欲しいですね。っていうか、CD読み込みがダルくなってきますんで標準以上必須。
+[/note]
+[subject]所持金:calc,0xED9F0B,-9999999,99999999
+[subject]レオン:dir
+	[replace]0xF14D1B,OverTheR,offset
+[subject]エリス:dir
+	[replace]0xF19EAB,OverTheR,offset
+[subject]モニカ:dir
+	[replace]0xF1F03B,OverTheR,offset
+[subject]レベッカ:dir
+	[replace]0xF241CB,OverTheR,offset
+[subject]セネカ:dir
+	[replace]0xF2935B,OverTheR,offset
+[subject]プレシア:dir
+	[replace]0xF2E4EB,OverTheR,offset
+[subject]ロザリー:dir
+	[replace]0xF3367B,OverTheR,offset
+[root]
+[/script]
+
+[script]
+[title]妖女乱舞2
+[process]RDA2X.EXE
+[maker]ZONE
+[creator]あつ
+[note]wordwrap
+アドバンスドねこつぼさんの要望により作成(笑)
+
+パーティー編成を変更した場合、キャンプコマンドから「道具の使用・装備」を選んで一旦キャラ画像を隠して下さい。で復帰すれば（何故か）マップデータを読み直して（たぶん、キャラデータと一緒くたにしてるんでしょうけど）反映されます。
+
+そういや当時はこのレートの低いWAV（と、さほど上手いとは言えない声優さん）だったんですよねぇ…
+[/note]
+//**** 埋め込みファイル ****
+[involve]ファイル
+[group]キャラ
+（不在）
+アダルク
+アル
+フィオラ
+オリンカ
+ラヴィスタ
+カルディス
+イファール
+[/group]
+[/involve]
+//**** **************** ****
+[subject]所持金:calc,0x52FBCC,-9999999,99999999
+[subject]パーティー編成:dir
+//一人目を「不在」にすると固まるので自主規制(笑)
+//	[subject]一人目:list,0x5304C0,ファイル->キャラ,0,1
+	[subject]二人目:list,0x5304C1,ファイル->キャラ,0,1
+	[subject]三人目:list,0x5304C2,ファイル->キャラ,0,1
+	[subject]四人目:list,0x5304C3,ファイル->キャラ,0,1
+[back]
+[subject]アダルク:dir
+	[replace]0x52FDFD,妖女2,offset
+[subject]アル:dir
+	[replace]0x52FEF9,妖女2,offset
+[subject]フィオラ:dir
+	[replace]0x52FFF5,妖女2,offset
+[subject]オリンカ:dir
+	[replace]0x5300F1,妖女2,offset
+[subject]ラヴィスタ:dir
+	[replace]0x5301ED,妖女2,offset
+[subject]カルディス:dir
+	[replace]0x5302E9,妖女2,offset
+[subject]イファール:dir
+	[replace]0x5303E5,妖女2,offset
+[root]
+[subject]スタート時のボーナスポイント:calc,0x7CFAC4,0,999
+[/script]
+
+[script]
+[title]ぐれえとハンティング
+[process]GHUNT.EXE
+[maker]大吟醸
+[creator]あつ
+[note]wordwrap
+日にちは0が1日目、4が5日目（最終日）です。
+時間は全て分数表示です。
+08:00からのスタートなので、480が最小です。
+原則として18:00で一日は終了なのですが、小マップ中の操作は時間外でも保証されるので、少々越えることも可能です(^^;)
+ただし行動は5分刻みで行われているため、中途半端な値を指定した場合の動作は不明です。
+なお、時間を変更すると「表示されている時間」がくるくるとループを繰り返しますが、気にしなくて結構です。正常に進行します(笑)
+
+やぁ、シュバイタル＆ファックくんのコンビは地球規模の問題発言連発ですね(^^;)小気味よいテンポで毒舌の舞うシナリオライターの腕には感服します。でもってスタッフの度胸にも感服します(笑)
+[/note]
+[subject]日にち:calc,0xD61E8E,0,4
+[subject]時間:calc,0xD61E94,480,1080
+[subject]所持金:calc,0xD61EBC,0,999999
+[subject]アイテム:dir
+	[subject]とらばさみ:calc,0xD61E96,0,9
+	[subject]つりあげ:calc,0xD61E97,0,9
+	[subject]おとしあな:calc,0xD61E98,0,9
+	[subject]強化パーツ:calc,0xD61E99,0,9
+	[subject]発煙筒:calc,0xD61E9A,0,9
+	[subject]スプレー:calc,0xD61E9B,0,9
+	[subject]ニンジン:calc,0xD61E9C,0,9
+	[subject]ティッシュ:calc,0xD61E9D,0,9
+	[subject]またたび:calc,0xD61E9E,0,9
+	[subject]たけのこ水煮:calc,0xD61E9F,0,9
+	[subject]稲荷寿司:calc,0xD61EA0,0,9
+	[subject]骨付き原始肉:calc,0xD61EA1,0,9
+	[subject]ミンクオイル:calc,0xD61EA2,0,9
+	[subject]奉仕チケット:calc,0xD61EA3,0,9
+	[subject]金塊:calc,0xD61EA4,0,9
+	[subject]発禁書籍:calc,0xD61EA5,0,9
+	[subject]宝の地図:calc,0xD61EA6,0,9
+	[subject]ギヤマンの鐘:calc,0xD61EA7,0,9
+[back]
+
+[/script]
+
+[script]
+[title]ファントムナイト～夢幻の迷宮2～
+[process]PKNIGHT.EXE
+[maker]SoftwareHouse Palsrey
+[creator]あつ
+[note]wordwrap
+X/Y座標が範囲外であったり、障害物にめり込んだ際の動作は不定です(^^;)
+
+う～っ、勿体ないっ！
+せっかくI'veSound使っているのなら、もちっとOPをビシっと極めて下さいよぉ…(^^;)
+プログラムでリアルタイムエフェクトをかける頑張りは凄いと思いますが、画像ケチりすぎて、少々ちゃちいです…
+文章が冗長だ…説明文が長ったらしくてオートスキップがないので飽きますな…
+あとウィンドウ外でクリックしたときも、選択肢を選択してしまうのは勘弁してください(T-T)一文一文ピリピリして読まねばならないなんて苦痛です。一度読んだ文章ならなおさら…
+あと何でもかんでもメモリに読み込まないでください。激重たいです…
+[/note]
+[subject]現在体力:calc,0x2B2CA08,0,300
+[subject]最大体力:calc,0x2B2CA10,0,300
+[subject]現在満腹度:calc,0x2B2CA30,0,99999
+[subject]最大満腹度:calc,0x2B2CA34,0,99999
+[subject]現在ちから:calc,0x2B2CA20,0,99999
+[subject]最大ちから:calc,0x2B2CA24,0,99999
+[subject]所持金:calc,0x2B2CA44,0,9999999
+[subject]経験値:calc,0x2B2CA04,0,8000000
+[subject]X座標:calc,0x2B2C9E4,0,0xFF
+[subject]Y座標:calc,0x2B2C9E8,0,0xFF
+[subject]サブキャラ:dir
+	[subject]現在体力:calc,0x2027DD4,0,255
+	[subject]最大体力:calc,0x2B27DDC,0,255
+[root]
+[subject]CG/ALL ON:toggle,0x7F255C,0x7F2608-01000000,00000000
+[/script]
+
+[script]
+[title]少女サーカス
+[process]MEGU.EXE
+[maker]Evolusion
+[creator]あつ
+[note]wordwrap
+からくり…はっ、いえ何も言ってませっん（￣▽￣；
+まして「カオラ」とか「しのぶ」とか分かる人もどうかと思うネタ、決して言ってませんっ(爆)
+[/note]
+//**** 埋め込みファイル ****
+[involve]ファイル
+[group]能力
+	[subject]技術:calc,0,0,999
+	[subject]性格:calc,4,0,999
+	[subject]信頼:calc,8,0,999
+[back]
+[/group]
+[/involve]
+//**** **************** ****
+[subject]所持金:calc,0x4D8D8C,0,999999999
+[subject]経過日数:calc,0x4D8D90,0,255
+[subject]此葉:dir
+	[replace]0x4D8DB4,ファイル->能力
+[subject]シルヴィア:dir
+	[replace]0x4D8DC0,ファイル->能力
+[subject]メイリン:dir
+	[replace]0x4D8DCC,ファイル->能力
+[subject]ミーナ:dir
+	[replace]0x4D8DD8,ファイル->能力
+[subject]CG/ALL ON:toggle,0x4D987C,0x4D9A04-01000000,00000000
+[subject]回想/ALL ON:toggle,0x4D9A84,0x4D9B78-01000000,00000000
+[/script]
+
+[script]
+[title]ギャンブル王～勝ってハーレム～
+[process]GAMBLE.EXE
+[maker]ハローたあとる
+[creator]あつ
+[note]wordwrap
+持久力はHシーン中でも変更可能ですが、シーン開始時の回数分しかCG用意されてないので、途中で増やすとバグります(^^;)
+
+HシーンがCGモードみたいですな…（￣▽￣；
+原画さんも大変だったろうなぁ…BMPだし(爆)
+
+つか、声アテなめてますね。ど素人？（￣▽￣；
+[/note]
+[subject]所持金（x100）:calc,0x10B1250,0,99999
+[subject]持久力:calc,0x10B1304,0,10
+[/script]
+
+[script]
+[title]アトリエ
+[process]AVG3217D.EXE
+[maker]雅
+[creator]あつ
+[note]wordwrap
+ん～、専門的な用語や人名が結構出て来ますんで、美術系の勉強したことのない人には取っつきにくい文章だろうなぁ…(^^;)
+経過日数の変更はシナリオを狂わせる可能性があるので、あまりお薦めできません(^^;)
+[/note]
+[subject]8月9日からの経過日数:calc,0x4A8898,0,21
+[subject]主人公:dir
+	[subject]基礎力:calc,0x4A88B8,0,999
+	[subject]実践力:calc,0x4A88BC,0,999
+	[subject]構図:calc,0x4A88C0,0,999
+	[subject]総合:calc,0x4A88C4,0,999
+[back]
+[subject]セリーヌ:calc,0x4A8908,0,999
+[subject]真美:calc,0x4A890C,0,999
+[subject]鈴:calc,0x4A8910,0,999
+[subject]瑞希:calc,0x4A8914,0,999
+[subject]梓:calc,0x4A8918,0,999
+[/script]
+
+[script]
+[title]三千年食堂
+[process]3000NEN.EXE
+[maker]psd
+[creator]あつ
+[note]wordwrap
+レイアウト等にかなり凝れるのは面白いんですが、食事時間帯はリアルタイムに苦労しますな(^^;
+この手のエンドレスゲームはあまり改造の意義を感じませんが、強いてやるとすれば元手である資金の増減ですか(^^;)
+[/note]
+[subject]総資金:calc,0x794C2C,0,999999999
+[subject]店名:string,0x8A2E5C,0,16,null
+[/script]
+
+[script]
+[title]カルマ
+[process]KARMA.EXE
+[maker]STAR★FISH
+[creator]あつ
+[note]wordwrap
+画面切り替え不可のゲームなので、あらかじめ値の固定でやるっきゃないです(^^;)
+HPは戦闘時のみの数値なので、マップ上のステータス画面には反映されません。
+[/note]
+//**** 埋め込みファイル ****
+[involve]ファイル
+[group]能力
+	[subject]現在HP:calc,0x4,0,9999
+	[subject]最大HP:calc,0x0,0,9999
+	[subject]攻撃力:calc,0x10,0,9999
+	[subject]対魔法力:calc,0x1C,0,9999
+	[subject]毒抵抗:calc,0x14,0,9999
+	[subject]守備力:calc,0x18,0,9999
+[back]
+[/group]
+[/involve]
+//**** **************** ****
+[subject]アレックス:dir
+	[replace]0x55471C,ファイル->能力
+[subject]バルガイザ:dir
+	[replace]0x5556D0,ファイル->能力
+[subject]イザベラ:dir
+	[replace]0x556684,ファイル->能力
+[root]
+[/script]
+
+[script]
+[title]バスターソード
+[process]A_RPG.EXE
+[maker]SOFTEC
+[creator]あつ
+[note]wordwrap
+画面切り替え不可のゲームなので、あらかじめ値の固定でやるっきゃないです(^^;)
+チェックサムの方もまとめて書き換えますので、タイミングによっては変化しない場合も…(^^;)
+確実に回復したい場合は、（値の固定を行っている状態で）コンフィグモードに入ってください。
+[/note]
+[subject]Life:b_calc,0,BastS_L,real
+[subject]MP:b_calc,0,BastS_M,real
+[/script]
+
+[script]
+[title]聖コスプレ学園～ゲーム分校～
+[process]NEKOW95.EXE
+[maker]STONE HEADS
+[creator]あつ
+[note]wordwrap
+所持金を最大にすると枠からはみ出しますが、特に問題ないようです(笑)
+インストールパターンによる物か分かりませんが、起動時にアドレスが変化する項目がありました。
+可能性1/2と分けてますので、画面に表示される値と違った場合は、もう一方の方も試してみてください。
+[/note]
+[subject]可能性1:dir
+	[subject]振り分けポイント:calc,0x11BF038,0,540
+	[subject]所持金:calc,0x790228,0,999999999
+[back]
+[subject]可能性2:dir
+	[subject]振り分けポイント:calc,0x11BF46C,0,540
+	[subject]所持金:calc,0x790208,0,999999999
+[back]
+[subject]主人公:dir
+	[subject]容姿:calc,0x687BE0,0,100
+	[subject]知性:calc,0x687BE2,0,100
+	[subject]運動:calc,0x687BE4,0,100
+	[subject]芸術:calc,0x687BE6,0,100
+	[subject]話術:calc,0x687BE8,0,100
+	[subject]根性:calc,0x687BEA,0,100
+	[subject]精力:calc,0x687BEC,0,100
+	[subject]宅度:calc,0x687BEE,0,100
+	[subject]幸運:calc,0x687BF0,0,100
+[back]
+[subject]好感度:dir
+	[subject]明緒:calc,0x687C18,0,100
+	[subject]ほのか:calc,0x687C40,0,100
+	[subject]マヤ:calc,0x687C68,0,100
+	[subject]せつな:calc,0x687C90,0,100
+	[subject]しの:calc,0x687CB8,0,100
+	[subject]ゆずりは:calc,0x687D08,0,100
+	[subject]ライラ:calc,0x687D30,0,100
+[back]
+[/script]
+
+[script]
+[title]微風の詩
+[process]SOYOKAZE.EXE
+[maker]Pinpai
+[creator]あつ
+[note]wordwrap
+いや、なかなか良いゲームですな。
+各キャラが上手く立っていて、見せ方が上手い。が、少々「こちら側」を意識したセリフが、一時的に感情移入を遮りますね。まぁそれが適度なアクセントになってますが(^^;)
+背景はキャラとマッチしていない気もしますが、油彩タッチの一つと言うことで慣れの問題でしょう。バランス的には上手いですし。つか、主人公のミニキャラはシンジ君(笑)
+でも赤▲で終了ってのは、マニュアル読んでないと気づきにくいよな(^^;)ALT+F4でも終われないから少々悩んでしまった(笑)
+なお、守君は殺して良いです。非生産的どころか人の脚まで引っ張る思いこみ系鬱ダニ野郎は、諌早湾の底に沈めてやるが吉。あ、それじゃ諌早湾に悪いか。
+[/note]
+[subject]所持金:calc,0x6EC5D4,0,999999999
+[subject]時間:calc,0x6EC08C,0,23
+[subject]分:calc,0x6EC090,0,59
+[/script]
+
+[script]
+[title]マテリアルガール
+[process]M_GIRL.EXE
+[maker]駒屋
+[creator]あつ
+[note]wordwrap
+愛は盲目…（￣▽￣；
+[/note]
+[subject]淫乱度:calc,0x7E11BC,0,120
+[subject]体力度:calc,0x7E11B4,0,30
+[subject]好感度:calc,0x7E11C0,0,120
+[/script]
+
+[script]
+[title]Top Breeder
+[process]TOPBREED.EXE
+[maker]Ange
+[creator]あつ
+[note]wordwrap
+個人的にメッセージスキップは付けて欲しかったなぁ…
+
+客観的に見て、この飼い主は下衆だと思う(笑)
+本物の犬や猫ならともかく、人語を解するような知的生物を養育するとなったら、飼い主は様々な点で立派な人であるべきだと思うのだが…（それこそ知識や倫理も十分あるべきで、愛おしかろうが店長から借りている動物を犯っちまうってのは如何なもんですかね？(笑)）
+[/note]
+[subject]愛情:calc,0x4155CA,0,100
+[subject]発情:calc,0x4155CC,0,100
+[subject]ストレス:calc,0x4155D6,0,100
+[subject]知識:calc,0x4155CE,0,500
+[subject]理性:calc,0x4155D0,0,500
+[subject]センス:calc,0x4155D2,0,500
+[subject]常識:calc,0x4155D4,0,500
+//[subject]月(9月／10月):calc,0x4155D8,000009,010000
+//[subject]日(2桁目):calc,0x4155DE,0,3
+//[subject]日(1桁目):calc,0x4155DE,0,9
+[/script]
+
+[script]
+[title]ING(陰具)
+[process]ING.EXE
+[maker]メルロー
+[creator]あつ
+[note]wordwrap
+アルバム等は一度クリアすることでタイトル画面から選択できますので、一度はキッチリプレーしましょう(笑)
+ま、「ゲーム開始直後に借金1にして能力値を上げ、陰具一つ作成してエンディング」という最短クリアもあるので贅沢言わないように(笑)
+能力はときおり変更しても戻されることがありますが、倉庫品全て手に入れて必要日数さえ費やせば、まず陰具作成に失敗することもないでしょう。
+
+通常、カタログALLONにしても「選択できないが文字は表示される」回想がありますよね？クリア時に表示されるパスワードをメルローのHPより「ダウンロード　ING(陰具)」で入力し、追加シナリオをダウンロード、解凍してsceneフォルダへ叩き込めば良い感じになります。（ってことは、インターネット環境にない人は切り捨てってことですか？メルローさん？(笑)）
+
+ところで、陰具CD内reame.txtのメルローホームページアドレスって、もう移転してますな（￣▽￣；2000/08/18現在は
+http://www.gesakuza.co.jp/
+です。
+[/note]
+[subject]基本:dir
+	[subject]月:calc,0x4B3A54,1,12
+	[subject]日:calc,0x4B3A58,1,31
+	[subject]借金残高（万円）:calc,0x4B3A64,0,999999
+	[subject]陰具カタログALLON:toggle,0x4B388F,0x4B38FA-01,00
+[back]
+[subject]ステータス:dir
+	[subject]経験:calc,0x4B42C8,0,999999
+	[subject]レベル:calc,0x4B42C4,0,9999
+	[subject]評判:calc,0x4B42CC,0,9999
+	[subject]器用さ:calc,0x4B42D0,0,9999
+	[subject]疲労度:calc,0x4B42D4,0,9999
+	[subject]集中度:calc,0x4B42D8,0,9999
+	[subject]幸運度:calc,0x4B42DC,0,9999
+[back]
+[subject]倉庫:dir
+	[subject]オシロスコープ/所持:toggle,0x4B42A0,01,00
+	[subject]マイコンチップ/所持:toggle,0x4B42A0,01,00
+	[subject]超音波診断機/所持:toggle,0x4B42A0,01,00
+	[subject]成分分析機/所持:toggle,0x4B42A0,01,00
+	[subject]立体裁断機/所持:toggle,0x4B42A0,01,00
+	[subject]研磨機/所持:toggle,0x4B42A0,01,00
+	[subject]鉄なべ/所持:toggle,0x4B42A0,01,00
+	[subject]工業用ミシン/所持:toggle,0x4B42A0,01,00
+	[subject]乾燥機/所持:toggle,0x4B42A0,01,00
+	[subject]金属工作機/所持:toggle,0x4B42A0,01,00
+	[subject]木工工作機/所持:toggle,0x4B42A0,01,00
+	[subject]化学工作機/所持:toggle,0x4B42A0,01,00
+	[subject]ガラス工作機/所持:toggle,0x4B42A0,01,00
+[back]
+[subject]メモ:dir
+	[subject]美晶:dir
+		[subject]ツィンコブラ/所持:toggle,0x4B39DC,01,00
+		[subject]ローター・シスターＸ/所持:toggle,0x4B39DD,01,00
+		[subject]媚薬オイル/所持:toggle,0x4B39DE,01,00
+		[subject]バイブ・シスターＸ/所持:toggle,0x4B39DF,01,00
+		[subject]尿道バイブシスターＸ/所持:toggle,0x4B39E0,01,00
+		[subject]両手足枷・シスターＸ/所持:toggle,0x4B39E1,01,00
+		[subject]皮紐拘束衣シスターＸ/所持:toggle,0x4B39E2,01,00
+		[subject]ラバースーツ/所持:toggle,0x4B39E3,01,00
+		[subject]洋ロープ・・シスターＸ/所持:toggle,0x4B39E4,01,00
+		[subject]ピアス・シスターＸ/所持:toggle,0x4B39E5,01,00
+		[subject]クスコ/所持:toggle,0x4B39E6,01,00
+		[subject]スパンキングラケット/所持:toggle,0x4B39E7,01,00
+		[subject]吊下げ用拘束具/所持:toggle,0x4B39E8,01,00
+		[subject]アナルパールＸ/所持:toggle,0x4B39E9,01,00
+		[subject]浣腸液お尻上手/所持:toggle,0x4B39EA,01,00
+		[subject]三角木馬/所持:toggle,0x4B39EB,01,00
+		[subject]レオタードシスターＸ/所持:toggle,0x4B39EC,01,00
+		[subject]スポイト・シスターＸ/所持:toggle,0x4B39ED,01,00
+	[back]
+	[subject]舞衣:dir
+		[subject]ディルド・シスターＭ/所持:toggle,0x4B39EE,01,00
+		[subject]ライトロータ/所持:toggle,0x4B39EF,01,00
+		[subject]媚薬粉末/所持:toggle,0x4B39F0,01,00
+		[subject]バイブ・シスターＭ/所持:toggle,0x4B39F1,01,00
+		[subject]尿道バイブシスターＭ/所持:toggle,0x4B39F2,01,00
+		[subject]背面手枷付き首輪/所持:toggle,0x4B39F3,01,00
+		[subject]拘束ベルトシスターＭ/所持:toggle,0x4B39F4,01,00
+		[subject]皮棒付き手・上腕枷/所持:toggle,0x4B39F5,01,00
+		[subject]洋ロープ・シスターＭ/所持:toggle,0x4B39F6,01,00
+		[subject]ピアス・シスターＭ/所持:toggle,0x4B39F7,01,00
+		[subject]和蝋燭/所持:toggle,0x4B39F8,01,00
+		[subject]バラ鞭/所持:toggle,0x4B39F9,01,00
+		[subject]天井つりと手足袋枷/所持:toggle,0x4B39FA,01,00
+		[subject]アナルボールＭ/所持:toggle,0x4B39FB,01,00
+		[subject]浣腸液お菊/所持:toggle,0x4B39FC,01,00
+		[subject]バイブスーツ/所持:toggle,0x4B39FD,01,00
+		[subject]バニースーツ/所持:toggle,0x4B39FE,01,00
+		[subject]スポイト・シスターＭ/所持:toggle,0x4B39FF,01,00
+	[back]
+	[subject]瑠璃:dir
+		[subject]ディルド・シスターＲ/所持:toggle,0x4B3A00,01,00
+		[subject]プチライトロータ/所持:toggle,0x4B3A01,01,00
+		[subject]催淫薬/所持:toggle,0x4B3A02,01,00
+		[subject]バイブ・シスターＲ/所持:toggle,0x4B3A03,01,00
+		[subject]尿道バイブシスターＲ/所持:toggle,0x4B3A04,01,00
+		[subject]木枷・シスターＲ/所持:toggle,0x4B3A05,01,00
+		[subject]ギャ具と手枷付もも枷/所持:toggle,0x4B3A06,01,00
+		[subject]手足枷・シスターＲ/所持:toggle,0x4B3A07,01,00
+		[subject]拘束椅子・シスターＲ/所持:toggle,0x4B3A08,01,00
+		[subject]ピアス・シスターＲ/所持:toggle,0x4B3A09,01,00
+		[subject]洋蝋燭/所持:toggle,0x4B3A0A,01,00
+		[subject]三弁鞭/所持:toggle,0x4B3A0B,01,00
+		[subject]天井つり・シスターＲ/所持:toggle,0x4B3A0C,01,00
+		[subject]裏の菊飾り/所持:toggle,0x4B3A0D,01,00
+		[subject]浣腸液・シスターＲ/所持:toggle,0x4B3A0E,01,00
+		[subject]自動木馬/所持:toggle,0x4B3A0F,01,00
+		[subject]メイド服・シスターＲ/所持:toggle,0x4B3A10,01,00
+		[subject]スポイト・シスターＲ/所持:toggle,0x4B3A11,01,00
+	[back]
+[back]
+[/script]
+
+//[script]
+[title]メイキックオンライン
+[process]NETGAME.EXE
+[maker]ZenoS
+[creator]あつ
+[note]wordwrap
+ネット対戦ONLYにつき、非公開ヽ(´ー｀)ノモラルは守ろうな。なお、ナゼニ非公開といいながらSSGに組み込んでいるかというと、少なくとも告知もされてないのに長ったらしーSSGを開いて読むような人ならば、ネット対戦物に改造するってことが相手に失礼なことだって理解しうるだろうという予測と、見る人は大抵メモリエディタ持ってますので、自分でもサーチできるだろうと思うからです(爆)
+それにしてもボリュームねぇよなぁ…このゲーム。
+[/note]
+[subject]作成時ボーナスポイント:calc,0x8BD6F8,0,9999
+[subject]所持金:calc,0x8AEF3C,0,999999
+[subject]ステータス:dir
+	[subject]キャラ名:string,0x8AEF20, 0xF, null
+	[subject]レベル:calc,0x8AEF36,0,9999
+	[subject]現在体力:calc,0x8AEF7C,0,9999
+	[subject]最大体力:calc,0x8AEF40,0,9999
+	[subject]現在精神力:calc,0x8AEF80,0,9999
+	[subject]最大精神力:calc,0x8AEF44,0,9999
+	[subject]愛情度:calc,0x8AEF48,0,9999
+	[subject]忠誠度:calc,0x8AEF4C,0,9999
+	[subject]攻撃力:calc,0x8AEF50,0,9999
+	[subject]防御力:calc,0x8AEF54,0,9999
+	[subject]敏捷力:calc,0x8AEF58,0,9999
+	[subject]魔力:calc,0x8AEF5C,0,9999
+[back]
+//[/script]
+
+[script]
+[title]幽世ノ門～かくりよのもん～
+[process]FIGHT.EXE
+[maker]AIR PLANTS
+[creator]あつ
+[note]wordwrap
+戦闘時のみ、別プロセス引っ張ってくるタイプだった…（￣▽￣；
+太陽も成長するらしく体力上限は毎回変わりますが、飛び越えた値でも問題なしなので999にしておきます(笑)
+敵の体力は、0にしてもその瞬間に死ぬというわけではありません。一つでよいので属性に勝ってください（相殺でも良いかな…）。すると即殺です(^^;)
+洞窟の脱出は、右まっすぐ左まっすぐ左まっすぐ右まっすぐ、で良かったハズ(爆)
+なお、見逃しやすいですが、▲▼を使えばセーブはNo100までできますよん♪
+
+いや、久しぶりに（一時期前の殆どのソフトに存在した）「目パチ」を見ました(^^;)作画枚数多くなりますからねぇ…でもウィンクしたまま残った目をぱちぱちする奴はいねぇだろ(笑)。背景の植物は、Painterのホースによる「ペタペタ」が多かったんでちとガッカリでしたが(笑)
+対戦シーンは慣れるまでは結構燃えますね。私は開始直後に頂点にある力は保留して、その一つ左から撃破照準を合わせました。マウス握りながら「水を堰き止めるは土っ！火をうち崩すは水っ！」とか勝つ要素を零しながらクリックする様（しかもマジ）は、端から見たら近寄りがたかったのだろうなと思ったり思わなかったり(爆)でも五行相克を覚えるには非常によいゲームですね(笑)＜ここに丙（火の兄）丁（火の弟）とか壬（水の兄）癸（水の弟）とか兄弟相関も含まれてたら、また違った難しさがあったでしょうね(^-^;)
+[/note]
+[subject]太陽体力:calc,0x40D9BC,0,999
+[subject]敵体力:calc,0x40D9C0,0,999
+[/script]
+
+[script]
+[title]カレンダーガール
+[process]CG.EXE
+[maker]Foster
+[creator]あつ
+[note]wordwrap
+このゲームはフルインストール専用です。
+っていうかフルインスト以外は重すぎ（￣▽￣；
+どういうルーチン組んでるんだよ…
+[/note]
+[subject]CG・回想ALL_ON:toggle,0x55E09C,0x55E184-01000000,00000000
+[subject]手帳:dir
+	[subject]知香:toggle,0x55E19C,0x55E1B0-01000000,00000000
+	[subject]葉月:toggle,0x55E1B4,0x55E1D0-01000000,00000000
+	[subject]弥生:toggle,0x55E1D4,0x55E1F0-01000000,00000000
+	[subject]智子:toggle,0x55E1F4,0x55E200-01000000,00000000
+	[subject]理恵:toggle,0x55E204,0x55E20C-01000000,00000000
+[back]
+[/script]
+
+[script]
+[title]ばらえてぃたくちくす！/脱衣2000
+[process]QUIZ.EXE
+[maker]Tactics
+[creator]あつ
+[note]wordwrap
+問題出題中に正解数を5にすると、正解しようが間違えようがクリアです(笑)
+
+う～ん、やっぱあきかんさんって作りが上手いわ。
+（ってゲスト壁紙褒めてどうすんねん…）
+[/note]
+[subject]正解数:calc,0xBAAC88,0,5
+[subject]誤答数:calc,0xBAAC80,0,3
+[/script]
+
+[script]
+[title]ばらえてぃたくちくす！/イニシャルTの伝説
+[process]RPG.EXE
+[maker]Tactics
+[creator]あつ
+[note]wordwrap
+敵体力は0でなくとも殺せます。
+逆に減らした状態で0以下に落ちるくらいダメージを与えると、大変体力満タンになります(笑)
+[/note]
+//**** 埋め込みファイル ****
+[involve]ファイル
+[group]中身
+いません
+いません
+天沢　郁未
+新条　七海
+岡田みつき
+七瀬　留美
+月城　蛍
+巳間　晴香
+一色　涼香
+すず
+川名みさき
+神楽　千夜
+新条　紫
+森小路ゆり
+[/group]
+[/involve]
+//**** **************** ****
+[subject]行動ポイント:calc,0x49E088,0,0xFF,unsigned
+[subject]アイテム:dir
+	[subject]タフサン:calc,0x49E194,0,99
+	[subject]ニュンケル:calc,0x49E196,0,99
+[back]
+[subject]敵体力:calc,0x49E094,0,0xFF,unsigned
+[subject]すてーたす:dir
+	[subject]鏡極　メイ:dir
+		[replace]0x49E0A4,ばらたく
+	[subject]二人目:dir
+		[subject]中身:list,0x49E18C,ファイル->中身,0,1
+		[replace]0x49E0C0,ばらたく
+	[subject]三人目:dir
+		[subject]中身:list,0x49E18E,ファイル->中身,0,1
+		[replace]0x49E0CE,ばらたく
+[root]
+[/script]
+
+[script]
+[title]星間女神戦記メタルドール
+[process]MTLDOLFINAL_WIN.EXE
+[maker]メディアバンク
+[creator]あつ
+[note]wordwrap
+※ウィンドウモード版です。
+　フルスクリーン版で書き換えたい場合は、
+　SSGを開いて[process]を
+　MTLDOLFINAL_WIN.EXEから
+　MTLDOLFINAL_FULL.EXEに書き換えてください。
+
+ん～、CD動作ってのは容量くわなくて嬉しいんですが、低速なドライブ使っている人には辛いですな(笑)
+
+ちなみに外観は、32x32と決まったサイズのアイコンを敷き詰めた一枚の画像ありまして、その描画開始X座標Y座標が格納されています。
+例えば、アスト(主人公-一機目)は 0x62CF64 に00、0x646CF68 に80 を指定すると「６」になります(笑)
+※画像位置は、各キャラ74バイト飛びです。
+[/note]
+[subject]出陣兵(中身):dir
+	[subject]1機目:list,0x6292C8,MD_中身,0,1
+	[subject]2機目:list,0x6292CC,MD_中身,0,1
+	[subject]3機目:list,0x6292D0,MD_中身,0,1
+	[subject]4機目:list,0x6292D4,MD_中身,0,1
+	[subject]5機目:list,0x6292D8,MD_中身,0,1
+	[subject]6機目:list,0x6292DC,MD_中身,0,1
+	[subject]7機目:list,0x6292E0,MD_中身,0,1
+	[subject]8機目:list,0x6292E4,MD_中身,0,1
+[back]
+[/script]
