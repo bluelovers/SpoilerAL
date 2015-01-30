@@ -1,0 +1,493 @@
+[group]YSF1_SSG
+[note]wordwrap
+※全コード使用状態でゲームクリアまで確認。虐殺モード化はしません。
+※ver1.203は通常仕様（メルマガ登録不要の方）対応。
+
+追記：メルマガ登録版も対応可能だそうです。
+情報提供／イントロンさん（ver1.202/3）
+
+ロングジャンプ化／移動速１.５倍化：
+データロード後等、ゲームプレイ中でなければ実行できません。
+[/note]
+
+[subject]DX8Mode:dir
+ [subject]完全無敵化/実行/_:b_toggle,0x00,YSFLST->YSF_c,offset
+ [subject]戦闘勝利後即LVMAX化/実行/_:toggle,0x486E94,C78780020000F0237449??????EB,83F847741483F848740F83F84974
+ [subject]戦闘勝利後即所持金MAX化/実行/_:toggle,0x486F79,EB00,7E08
+ [subject]武具を鍛えると鉱石MAX化/実行/_:toggle,0x4DECB2,B80F27000090,8B4C24302BC1
+ [subject]ブーストゲージ管理/_:d_toggle,0x00,YSFLST->LST_c,YSFLST->LST_d,offset
+ [subject]リングゲージ管理/_:d_toggle,0x00,YSFLST->LST_e,YSFLST->LST_f,offset
+ [subject]戦闘補助制限時間減らない/_:d_toggle,0x00,YSFLST->LST_a,YSFLST->LST_b,offset
+ [subject]無限多段ジャンプ化/実行/_:toggle,0x4335CA,EB00????????????EB00,7444????????????753C
+[enabled] [:0x5C9CFC:] != 0x00000000
+ [subject]ロングジャンプ化/実行/_:b_toggle,00,YSFLST->YSF_a,offset
+ [subject]移動速１.５倍化/実行/_:b_toggle,0x00,YSFLST->YSF_b,offset
+[/enabled]
+[back]
+
+[subject]DX8Mode ver1.1.0.1:dir
+ [subject]完全無敵化/実行/_:b_toggle,0x00,YSFLST->YSF_2c,offset
+ [subject]戦闘勝利後即LVMAX化/実行/_:toggle,0x487BA7,C78780020000F0237449??????EB,83F847741983F848741483F84974
+ [subject]戦闘勝利後即所持金MAX化/実行/_:toggle,0x487CA4,EB00,7E08
+ [subject]武具を鍛えると鉱石MAX化/実行/_:toggle,0x4E0152,B80F27000090,8B4C24302BC1
+ [subject]ブーストゲージ管理/_:d_toggle,0x00,YSFLST->LST_c,YSFLST->LST_2d,offset
+ [subject]リングゲージ管理/_:d_toggle,0x00,YSFLST->LST_e,YSFLST->LST_2f,offset
+ [subject]戦闘補助制限時間減らない/_:d_toggle,0x00,YSFLST->LST_a,YSFLST->LST_2b,offset
+ [subject]無限多段ジャンプ化/実行/_:toggle,0x433FAA,EB00????????????EB00,7444????????????753C
+[enabled] [:0x5CBF3C:] != 0x00000000
+ [subject]ロングジャンプ化/実行/_:b_toggle,0x00,YSFLST->YSF_2a,offset
+ [subject]移動速１.５倍化/実行/_:b_toggle,0x00,YSFLST->YSF_2b,offset
+[/enabled]
+[back]
+
+[subject]DX8Mode ver1.2.0.2:dir
+ [subject]完全無敵化/実行/_:b_toggle,0x00,YSFLST->YSF_3c,offset
+ [subject]戦闘勝利後即LVMAX化/実行/_:toggle,0x487F27,C78780020000F0237449??????EB,83F847741983F848741483F84974
+ [subject]戦闘勝利後即所持金MAX化/実行/_:toggle,0x488024,EB00,7E08
+ [subject]武具を鍛えると鉱石MAX化/実行/_:toggle,0x4E04C2,B80F27000090,8B4C24302BC1
+ [subject]ブーストゲージ管理/_:d_toggle,0x00,YSFLST->LST_c,YSFLST->LST_3d,offset
+ [subject]リングゲージ管理/_:d_toggle,0x00,YSFLST->LST_e,YSFLST->LST_3f,offset
+ [subject]戦闘補助制限時間減らない/_:d_toggle,0x00,YSFLST->LST_a,YSFLST->LST_3b,offset
+ [subject]無限多段ジャンプ化/実行/_:toggle,0x43328A,EB00????????????EB00,7444????????????753C
+[enabled] [:0x5CC134:] != 0x00000000
+ [subject]ロングジャンプ化/実行/_:b_toggle,0x00,YSFLST->YSF_3a,offset
+ [subject]移動速１.５倍化/実行/_:b_toggle,0x00,YSFLST->YSF_3b,offset
+[/enabled]
+[back]
+
+[subject]DX8Mode ver1.2.0.3:dir
+ [subject]完全無敵化/実行/_:b_toggle,0x0260,YSFLST->YSF_3c,offset
+ [subject]戦闘勝利後即LVMAX化/実行/_:toggle,0x488187,C78780020000F0237449??????EB,83F847741983F848741483F84974
+ [subject]戦闘勝利後即所持金MAX化/実行/_:toggle,0x488284,EB00,7E08
+ [subject]武具を鍛えると鉱石MAX化/実行/_:toggle,0x4E0722,B80F27000090,8B4C24302BC1
+ [subject]ブーストゲージ管理/_:d_toggle,0x0260,YSFLST->LST_c,YSFLST->LST_3d,offset
+ [subject]リングゲージ管理/_:d_toggle,0x0260,YSFLST->LST_e,YSFLST->LST_3f,offset
+ [subject]戦闘補助制限時間減らない/_:d_toggle,0x0260,YSFLST->LST_a,YSFLST->LST_3b,offset
+ [subject]無限多段ジャンプ化/実行/_:toggle,0x4334EA,EB00????????????EB00,7444????????????753C
+[enabled] [:0x5CC134:] != 0x00000000
+ [subject]ロングジャンプ化/実行/_:b_toggle,0x00,YSFLST->YSF_4a,offset
+ [subject]移動速１.５倍化/実行/_:b_toggle,0x00,YSFLST->YSF_4b,offset
+[/enabled]
+[back]
+
+[/group]
+
+
+[group]YSF2_SSG
+[note]wordwrap
+※全コード使用状態でゲームクリアまで確認。虐殺モード化はしません。
+※ver1.203は通常仕様（メルマガ登録不要の方）対応。
+
+追記：メルマガ登録版も対応可能だそうです。たぶんver1.203でもいけると思います。
+情報提供／イントロンさん（ver1.202）
+
+ロングジャンプ化／移動速１.５倍化：
+データロード後等、ゲームプレイ中でなければ実行できません。
+[/note]
+
+[subject]DX9Mode:dir
+ [subject]完全無敵化/実行/_:b_toggle,0x00,YSFLST->YSF_9c,offset
+ [subject]戦闘勝利後即LVMAX/実行/_:toggle,0x486F64,C78780020000F0237449??????EB0A,83F847741483F848740F83F84974
+ [subject]戦闘勝利後即所持金MAX/実行/_:toggle,0x487049,EB00,7E08
+ [subject]武具を鍛えると鉱石MAX化/実行/_:toggle,0x4DED22,B80F27000090,8B4C24302BC1
+ [subject]ブーストゲージ管理/_:d_toggle,0x00,YSFLST->LST_c,YSFLST->LST_9d,offset
+ [subject]リングゲージ管理/_:d_toggle,0x00,YSFLST->LST_e,YSFLST->LST_9f,offset
+ [subject]戦闘補助制限時間減らない/_:d_toggle,0x00,YSFLST->LST_a,YSFLST->LST_9b,offset
+ [subject]無限多段ジャンプ化/実行/_:toggle,0x43366A,EB00????????????EB00,7444????????????753C
+[enabled] [:0x5EE55C:] != 0x00000000
+ [subject]ロングジャンプ化/実行/_:b_toggle,00,YSFLST->YSF_9a,offset
+ [subject]移動速１.５倍化/実行/_:b_toggle,0x00,YSFLST->YSF_9b,offset
+[/enabled]
+[back]
+
+[subject]DX9Mode ver1.1.0.1:dir
+ [subject]完全無敵化/実行/_:b_toggle,0x00,YSFLST->YSF_92c,offset
+ [subject]戦闘勝利後即LVMAX/実行/_:toggle,0x487C17,C78780020000F0237449??????EB,83F847741983F848741483F84974
+ [subject]戦闘勝利後即所持金MAX/実行/_:toggle,0x487D14,EB00,7E08
+ [subject]武具を鍛えると鉱石MAX化/実行/_:toggle,0x4E01B2,B80F27000090,8B4C24302BC1
+ [subject]ブーストゲージ管理/_:d_toggle,0x00,YSFLST->LST_c,YSFLST->LST_92d,offset
+ [subject]リングゲージ管理/_:d_toggle,0x00,YSFLST->LST_e,YSFLST->LST_92f,offset
+ [subject]戦闘補助制限時間減らない/_:d_toggle,0x00,YSFLST->LST_a,YSFLST->LST_92b,offset
+ [subject]無限多段ジャンプ化/実行/_:toggle,0x433FCA,EB00????????????EB00,7444????????????753C
+[enabled] [:0x5F079C:] != 0x00000000
+ [subject]ロングジャンプ化/実行/_:b_toggle,00,YSFLST->YSF_92a,offset
+ [subject]移動速１.５倍化/実行/_:b_toggle,0x00,YSFLST->YSF_92b,offset
+[/enabled]
+[back]
+
+
+[subject]DX9Mode ver1.2.0.2:dir
+ [subject]完全無敵化/実行/_:b_toggle,0x00,YSFLST->YSF_93c,offset
+ [subject]戦闘勝利後即LVMAX/実行/_:toggle,0x487FD7,C78780020000F0237449??????EB,83F847741983F848741483F84974
+ [subject]戦闘勝利後即所持金MAX/実行/_:toggle,0x4880D4,EB00,7E08
+ [subject]武具を鍛えると鉱石MAX化/実行/_:toggle,0x4E05C2,B80F27000090,8B4C24302BC1
+ [subject]ブーストゲージ管理/_:d_toggle,0x00,YSFLST->LST_c,YSFLST->LST_93d,offset
+ [subject]リングゲージ管理/_:d_toggle,0x00,YSFLST->LST_e,YSFLST->LST_93f,offset
+ [subject]戦闘補助制限時間減らない/_:d_toggle,0x00,YSFLST->LST_a,YSFLST->LST_93b,offset
+ [subject]無限多段ジャンプ化/実行/_:toggle,0x43332A,EB00????????????EB00,7444????????????753C
+[enabled] [:0x5F1994:] != 0x00000000
+ [subject]ロングジャンプ化/実行/_:b_toggle,00,YSFLST->YSF_93a,offset
+ [subject]移動速１.５倍化/実行/_:b_toggle,0x00,YSFLST->YSF_93b,offset
+[/enabled]
+[back]
+
+
+[subject]DX9Mode ver1.2.0.3:dir
+ [subject]完全無敵化/実行/_:b_toggle,0x0260,YSFLST->YSF_93c,offset
+ [subject]戦闘勝利後即LVMAX/実行/_:toggle,0x488237,C78780020000F0237449??????EB,83F847741983F848741483F84974
+ [subject]戦闘勝利後即所持金MAX/実行/_:toggle,0x488334,EB00,7E08
+ [subject]武具を鍛えると鉱石MAX化/実行/_:toggle,0x4E0822,B80F27000090,8B4C24302BC1
+ [subject]ブーストゲージ管理/_:d_toggle,0x0260,YSFLST->LST_c,YSFLST->LST_93d,offset
+ [subject]リングゲージ管理/_:d_toggle,0x0260,YSFLST->LST_e,YSFLST->LST_93f,offset
+ [subject]戦闘補助制限時間減らない/_:d_toggle,0x0260,YSFLST->LST_a,YSFLST->LST_93b,offset
+ [subject]無限多段ジャンプ化/実行/_:toggle,0x43358A,EB00????????????EB00,7444????????????753C
+[enabled] [:0x5F1994:] != 0x00000000
+ [subject]ロングジャンプ化/実行/_:b_toggle,00,YSFLST->YSF_94a,offset
+ [subject]移動速１.５倍化/実行/_:b_toggle,0x00,YSFLST->YSF_94b,offset
+[/enabled]
+[back]
+
+[/group]
+
+
+[group]LST_a
+str add
+def add
+mp speed
+exp rate
+[/group]
+
+
+[group]LST_b
+0x432333=90/4E
+0x43237B=90/4E
+0x4323C3=90/4E
+0x4341ED=90/48
+[/group]
+
+
+[group]LST_2b
+0x432D13=90/4E
+0x432D5B=90/4E
+0x432DA3=90/4E
+0x434BCD=90/48
+[/group]
+
+
+[group]LST_3b
+0x431FF3=90/4E
+0x43203B=90/4E
+0x432083=90/4E
+0x433EAD=90/48
+[/group]
+
+
+[group]LST_9b
+0x4323D3=90/4E
+0x43241B=90/4E
+0x432463=90/4E
+0x43428D=90/48
+[/group]
+
+
+[group]LST_92b
+0x432D33=90/4E
+0x432D7B=90/4E
+0x432DC3=90/4E
+0x434BED=90/48
+[/group]
+
+
+[group]LST_93b
+0x432093=90/4E
+0x4320DB=90/4E
+0x432123=90/4E
+0x433F4D=90/48
+[/group]
+
+
+[group]LST_c
+ゲージ速攻回復
+持続時間100倍化
+[/group]
+
+
+[group]LST_d
+0x435F75=EB0490909090/0F859D010000
+0x432431=8C/60
+[/group]
+
+
+[group]LST_2d
+0x436955=EB0490909090/0F859D010000
+0x432E11=8C/60
+[/group]
+
+
+[group]LST_3d
+0x435C75=EB0490909090/0F859D010000
+0x4320F1=AC/80
+[/group]
+
+
+[group]LST_9d
+0x436015=EB0490909090/0F859D010000
+0x4324D1=AC/80
+[/group]
+
+
+[group]LST_92d
+0x436995=EB0490909090/0F859D010000
+0x432E31=AC/80
+[/group]
+
+
+[group]LST_93d
+0x435D15=EB0490909090/0F859D010000
+0x432191=CC/A0
+[/group]
+
+
+[group]LST_e
+ゲージ速攻回復
+ゲージ減らない
+溜め魔法速攻発動
+[/group]
+
+
+[group]LST_f
+0x43440B=65/6B,0x434473=7098/C895
+0x4372FD=33C990909090/8B8E2C070000
+0x43627C=02/01
+[/group]
+
+
+[group]LST_2f
+0x434DEB=65/6B,0x434E53=70B8/C8B5
+0x437CDD=33C990909090/8B8E2C070000
+0x436C5C=02/01
+[/group]
+
+
+[group]LST_3f
+0x4340CB=65/6B,0x434133=70B8/C8B5
+0x436FFD=33C990909090/8B8E2C070000
+0x435F7C=02/01
+[/group]
+
+
+[group]LST_9f
+0x4344AB=65/6B,0x434513=90A8/E8A5
+0x43739D=33C990909090/8B8E2C070000
+0x43631C=02/01
+[/group]
+
+
+[group]LST_92f
+0x434E0B=65/6B,0x434E73=90C8/E8C5
+0x437D1D=33C990909090/8B8E2C070000
+0x436C9C=02/01
+[/group]
+
+
+[group]LST_93f
+0x43416B=65/6B,0x4341D3=90D8/E8D5
+0x43709D=33C990909090/8B8E2C070000
+0x43601C=02/01
+[/group]
+
+
+[group]YSF_a
+0x42A393,E960C21E0090909090
+0x6165F8,B83333B33E,B885EB913E
+0x6165FD,894150
+0x616600,898504050000
+0x616606,E9913DE1FF90
+_[:0x5C9CFC:]+0x0504,3333B33E,85EB913E
+[/group]
+
+
+[group]YSF_2a
+0x42AD03,E9E0DD1E0090909090
+0x618AE8,B83333B33E,B885EB913E
+0x618AED,894150
+0x618AF0,898504050000
+0x618AF6,E91122E1FF90
+_[:0x5CBF3C:]+0x0504,3333B33E,85EB913E
+[/group]
+
+
+[group]YSF_3a
+0x42A3C4,E93FAB1E0090909090
+0x614F08,B83333B33E,B885EB913E
+0x614F0D,894150
+0x614F10,898504050000
+0x614F16,E9B254E1FF90
+_[:0x5CC134:]+0x0504,3333B33E,85EB913E
+[/group]
+
+
+[group]YSF_4a
+0x42A624,E98FA31E0090909090
+0x6149B8,B83333B33E,B885EB913E
+0x6149BD,894150
+0x6149C0,898504050000
+0x6149C6,E9625CE1FF90
+_[:0x5CC134:]+0x0504,3333B33E,85EB913E
+[/group]
+
+
+[group]YSF_9a
+0x42A433,E95053200090909090
+0x62F788,B83333B33E,B885EB913E
+0x62F78D,894150
+0x62F790,898504050000
+0x62F796,E9A1ACDFFF90
+_[:0x5EE55C:]+0x0504,3333B33E,85EB913E
+[/group]
+
+
+[group]YSF_92a
+0x42AD53,E9605A210090909090
+0x6407B8,B83333B33E,B885EB913E
+0x6407BD,894150
+0x6407C0,898504050000
+0x6407C6,E991A5DEFF90
+_[:0x5F079C:]+0x0504,3333B33E,85EB913E
+[/group]
+
+
+[group]YSF_93a
+0x42A464,E99F3A210090909090
+0x63DF08,B83333B33E,B885EB913E
+0x63DF0D,894150
+0x63DF10,898504050000
+0x63DF16,E952C5DEFF90
+_[:0x5F1994:]+0x0504,3333B33E,85EB913E
+[/group]
+
+
+[group]YSF_94a
+0x42A6C4,E9CF2F210090909090
+0x63D698,B83333B33E,B885EB913E
+0x63D69D,894150
+0x63D6A0,898504050000
+0x63D6A6,E922D0DEFF90
+_[:0x5F1994:]+0x0504,3333B33E,85EB913E
+[/group]
+
+
+[group]YSF_b
+0x42A38A,E951C21E0090909090
+0x6165E0,B833335340,B8CDCC0C40
+0x6165E5,89414C
+0x6165E8,89850C050000
+0x6165EE,E9A03DE1FF90
+_[:0x5C9CFC:]+0x050C,33335340,CDCC0C40
+[/group]
+
+
+[group]YSF_2b
+0x42ACFA,E9D1DD1E0090909090
+0x618AD0,B833335340,B8CDCC0C40
+0x618AD5,89414C
+0x618AD8,89850C050000
+0x618ADE,E92022E1FF90
+_[:0x5CBF3C:]+0x050C,33335340,CDCC0C40
+[/group]
+
+
+[group]YSF_3b
+0x42A3BB,E960AB1E0090909090
+0x614F20,B833335340,B8CDCC0C40
+0x614F25,89414C
+0x614F28,89850C050000
+0x614F2E,E99154E1FF90
+_[:0x5CC134:]+0x050C,33335340,CDCC0C40
+[/group]
+
+
+[group]YSF_4b
+0x42A61B,E970A31E0090909090
+0x614990,B833335340,B8CDCC0C40
+0x614995,89414C
+0x614998,89850C050000
+0x61499E,E9815CE1FF90
+_[:0x5CC134:]+0x050C,33335340,CDCC0C40
+[/group]
+
+
+[group]YSF_9b
+0x42A42A,E94153200090909090
+0x62F770,B833335340,B8CDCC0C40
+0x62F775,89414C
+0x62F778,89850C050000
+0x62F77E,E9B0ACDFFF90
+_[:0x5EE55C:]+0x050C,33335340,CDCC0C40
+[/group]
+
+
+[group]YSF_92b
+0x42AD4A,E9515A210090909090
+0x6407A0,B833335340,B8CDCC0C40
+0x6407A5,89414C
+0x6407A8,89850C050000
+0x6407AE,E9A0A5DEFF90
+_[:0x5F079C:]+0x050C,33335340,CDCC0C40
+[/group]
+
+
+[group]YSF_93b
+0x42A45B,E9C03A210090909090
+0x63DF20,B833335340,B8CDCC0C40
+0x63DF25,89414C
+0x63DF28,89850C050000
+0x63DF2E,E931C5DEFF90
+_[:0x5F1994:]+0x050C,33335340,CDCC0C40
+[/group]
+
+
+[group]YSF_94b
+0x42A6BB,E9B02F210090909090
+0x63D670,B833335340,B8CDCC0C40
+0x63D675,89414C
+0x63D678,89850C050000
+0x63D67E,E941D0DEFF90
+_[:0x5F1994:]+0x050C,33335340,CDCC0C40
+[/group]
+
+
+[group]YSF_c
+0x4882DF,EB00,7424
+0x4320D0,E9A701000090,0F85A6010000
+[/group]
+
+
+[group]YSF_2c
+0x48900F,EB00,7424
+0x432AB0,E9A701000090,0F85A6010000
+[/group]
+
+
+[group]YSF_3c
+0x48938F,EB00,7424
+0x431D90,E9A701000090,0F85A6010000
+[/group]
+
+
+[group]YSF_9c
+0x4883AF,EB00,7424
+0x432170,E9A701000090,0F85A6010000
+[/group]
+
+
+[group]YSF_92c
+0x48907F,EB00,7424
+0x432AD0,E9A701000090,0F85A6010000
+[/group]
+
+
+[group]YSF_93c
+0x48943F,EB00,7424
+0x431E30,E9A701000090,0F85A6010000
+[/group]
