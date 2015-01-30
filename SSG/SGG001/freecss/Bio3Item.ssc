@@ -1,0 +1,7 @@
+	[subject]アイテム種類:list,0x00,Bio3ItemName,0x01,0x01
+
+	[subject]数量:calc,0x01,0x00,0xFF,unsigned,little_e
+
+	[subject]単位:list,0x02,Bio3ItemUnit,0x00,0x01
+
+[back]
