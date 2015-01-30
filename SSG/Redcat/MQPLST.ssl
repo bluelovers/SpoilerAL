@@ -1,0 +1,131 @@
+[group]MQP_SSG
+[note]wordwrap
+10/30ˆÏ‘õ”ÅBver1.20‘Î‰žB“VŽ÷‰_–å-ˆëŽž“_‚Å‚Ì‰ðÍ‚Ì‚½‚ßAƒQ[ƒ€is‚É‚æ‚Á‚ÄŒø‰Ê‚ªo‚È‚¢‰Â”\«‚ª‚ ‚è‚Ü‚·B
+
+ƒ‰ƒ“ƒ_ƒ€ƒGƒ“ƒJƒEƒ“ƒ^[‰ñ”ðF‚S‚P‚U‚X‚³‚ñ‚É’ñ‹Ÿ‚µ‚Ä’¸‚«‚Ü‚µ‚½BŠ´ŽÓB
+
+¦SPECIALTHANKSF‚S‚P‚U‚X‚³‚ñ‚Í‚¶‚ßA“–ƒTƒCƒgƒTƒ|[ƒgŒfŽ¦”Â@¡ –»‹{˜f¯desParaiso(ƒfƒoƒbƒO”Å)@ƒXƒŒƒbƒh‚ÌŠF‚³‚ñ‚ÌŠñeƒf[ƒ^A‚²ˆÓŒ©‚ðŽQl‚É‚³‚¹‚Ä’¸‚«‚Ü‚µ‚½B‚ ‚è‚ª‚Æ‚¤‚²‚´‚¢‚Ü‚·B
+[/note]
+
+[subject]‹’“_ŠÖ˜A:dir
+ [subject]”ƒ‚¢•¨‚ÅMATCHESŒ¸‚ç‚È‚¢/ŽÀs/_:b_toggle,0x00,MQPLST->MQP_a,offset
+ [subject]”ƒ‚¢•¨‚·‚é‚Æ‚wMATCHES‘‚¦‚é/_:d_list,0x400000,MQPLST->LST_e,0,0xFFFFFFFF,MQPLST->LST_f,offset
+ [subject]–³ðŒ‚Å‘SƒAƒCƒeƒ€w“ü‰Â”\/ŽÀs/_:b_toggle,0x00,MQPLST->MQP_b,offset
+ [subject]CUSTOMiZEŽžCP•s—v/ŽÀs/_:b_toggle,0x00,MQPLST->MQP_c,offset
+ [subject]PARTYCOST999‰»/ŽÀs/_:b_toggle,0x00,MQPLST->MQP_g,offset
+[back]
+[subject]’TõŠÖ˜A:dir
+ [subject]SKiLLŽg—pŽžNPŒ¸‚ç‚È‚¢/ŽÀs/_:toggle,0x435190,33C0C3,558BEC
+ [subject]STEP‘‚¦‚È‚¢/ŽÀs/_:toggle,0x4419F2,00,01
+ [subject]ƒ_ƒ“ƒWƒ‡ƒ““à•Ç”²‚¯/ŽÀs/_:toggle,0x410C1F,E9B601000090,0F84B5010000
+ [subject]ƒ‰ƒ“ƒ_ƒ€ƒGƒ“ƒJƒEƒ“ƒ^[‰ñ”ð/ŽÀs/_:toggle,0x411E34,00,11
+[back]
+[subject]í“¬ŠÖ˜A:dir
+ [subject]ƒm[ƒ_ƒ[ƒW{ˆêŒ‚Ž€‰»/ŽÀs/_:b_toggle,0x00,MQPLST->MQP_e,offset
+ [subject]í“¬’†APŒ¸‚ç‚È‚¢/ŽÀs/_:b_toggle,0x00,MQPLST->MQP_d,offset
+ [subject]í“¬ŒoŒ±’l‚w”{‰»/_:d_list,0x400000,MQPLST->LST_a,0,0xFFFFFFFF,MQPLST->LST_b,offset
+ [subject]M—Š“xã¸‚w”{‰»/_:d_list,0x400000,MQPLST->LST_c,0,0xFFFFFFFF,MQPLST->LST_d,offset
+[back]
+
+[/group]
+
+
+[group]MQP_a
+0x42C61D,33C990,8B4D80
+0x42C63F,EB00,7429
+[/group]
+
+
+[group]MQP_b
+0x42C5A9,33C0409090,E8C2B50000
+0x42D97A,EB0490909090,0F8EC0000000
+0x446B12,EB,7F
+[/group]
+//0x42D9A2,EB,7E
+
+[group]MQP_c
+0x42F1EB,EB00,7F31
+0x42F282,EB00,7E38
+0x434B6E,EB,74
+0x434BB9,33C0909090,25FF000000
+[/group]
+
+
+[group]MQP_d
+0x4394E7,33C0,F7D8
+0x43DCA4,33C990909090,81E1FF000000
+[/group]
+
+
+[group]MQP_e
+0x43695E,EB31,6A5B
+0x436991,8B4DFC89148DE09F65006A5BEBC1,CCCCCCCCCCCCCCCCCCCCCCCCCCCC
+0x439758,8B4D08B8E09F6500833800740D3908740583C004EBF233C0EB05B80F2700008945FCEB1B,8B550C0355F88955FC817DFC0F2700007E09C745F40F270000EB1E817DFCF1D8FFFF7D09
+[/group]
+
+
+[group]MQP_f
+0x42C621,E9EAA01E00,6880000000
+0x616710,B8FFE0F505506A73E8C312E2FF83C4088B4424FC8945F833C9894D80516880000000E9EF5EE1FF,000000000000000000000000000000000000000000000000000000000000000000000000000000
+[/group]
+//error‚Ì‚½‚ßŒ©‘—‚è
+
+
+[group]MQP_g
+0x419C2B,B8E7030000,E8D0DD0100
+0x41A2B6,B8E7030000,E845D70100
+0x41FFBD,EB,7E
+[/group]
+//0x41A4F2,EB,7E
+
+
+[group]LST_a
+ƒfƒtƒHƒ‹ƒg
+‚P‚U”{‰»
+‚U‚S”{‰»
+‚Q‚T‚U”{‰»
+‚P‚O‚Q‚S”{‰»
+[/group]
+
+
+[group]LST_b
+,0x0443E4=89459C8B459C
+,0x0443E4=C1E00489459C
+,0x0443E4=C1E00689459C
+,0x0443E4=C1E00889459C
+,0x0443E4=C1E00A89459C
+[/group]
+
+
+[group]LST_c
+ƒfƒtƒHƒ‹ƒg
+‚W”{‰»
+‚P‚U”{‰»
+‚U‚S”{‰»
+‚Q‚T‚U”{‰»
+[/group]
+
+
+[group]LST_d
+,0x0354B2=8B4DF8894DD48B55D4
+,0x0354B2=8B55F8C1E2038955F8
+,0x0354B2=8B55F8C1E2048955F8
+,0x0354B2=8B55F8C1E2068955F8
+,0x0354B2=8B55F8C1E2088955F8
+[/group]
+
+
+[group]LST_e
+ƒfƒtƒHƒ‹ƒg
+‚P‚O‚O‚O‚O
+‚P‚O‚O‚O‚O‚O
+‚P‚O‚O‚O‚O‚O‚O
+[/group]
+
+
+[group]LST_f
+,0x02C582=25FF03000050E813C0000083C40C
+,0x02C582=B810270000F7D883C408EB029090
+,0x02C582=B8A0860100F7D883C408EB029090
+,0x02C582=B840420F00F7D883C408EB029090
+[/group]
