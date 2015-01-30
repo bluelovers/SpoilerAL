@@ -1,0 +1,508 @@
+SSG for SpoilerAL ver 4.2
+
+[script]
+[title]【VisualBoyAdvance】耽美夢想マイネリーベ(WindowsMe用)
+[process]VISUALBOYADVANCE.EXE
+[maker]モバイル21
+[creator]KEI
+//[adjustment]heap,heap2=0x6C0000>0x8CFFFF,heap3=0x8D0000>0xADFFFF,heap4=0xAE0000>0xCEFFFF
+//[adjustment]dialog, 0xAEDB24, マイネ,0xA00000, 0xBFFFFF, 0x01
+[adjustment]search, 0xAE0070, 41004849C84100A0, heap3, heap4, 0x08
+[note]wordwrap
+Windows Me（メモリ256MB)で確認しています。
+こちらで動かない場合は、Windows98用で試してみてください。
+VisualBoyAdvanceはバージョン0.2、0.3、0.4、0.5、0.5_JP、0.6、0.6.0.1、0.7a、0.71、0.8、0.9aで動作確認しています。
+これは補正値を自動でサーチするので、バージョンが上がっても使えると思います。
+WindowsMe用としてありますが、OSの違いではなく搭載メモリにデータ領域のアドレスが
+依存していると思われます。
+こちらはHeap3領域にデータのあるタイプです。
+Windows98用のはHeap2領域にデータのあるタイプです。
+●年について
+1935年が0、1936年が1、1937年が2です。
+●彼氏とデートのクリアについて。
+起動画面では有効になりませんので、通常ゲーム時にチェックを入れておき
+ゲームが自動セーブされると、次回起動時から有効になります。
+●彼氏とデート時のラブ度について
+クリア直後は0です。
+16進数で13のとき、次でプロポーズされます。
+承諾すると7Fになります。
+[/note]
+[subject]0.8以前:dir
+[subject]行動前に戻す:list,0xAEDB27,マイネ曜日,0,1
+[subject]爆弾封印/爆弾封印（固定推奨）:b_toggle,0xAEDB00,mine2,offset
+[subject]服装チェック無し/服装チェック無し（固定推奨）:toggle,0xAEDC60,0xAEDC68-00,??
+[subject]当日のデート相手:d_list,0xAEDA55,マイネ相手1,0x00,0xFF,マイネ相手2,offset
+[subject]当日のデート場所:list,0xAEDA54,マイネ場所,0,1
+[subject]所属部活:list,0xAEDC54,マイネ部活,0,1
+[subject]クリスマスエスコート:list,0xAEDC45,マイネ相手1,0,1
+[subject]元旦に外出可:toggle,0xAEDC47,01,00
+[subject]おまじないした人:list,0xAEDC55,マイネ呪1,0,1
+[subject]2年連続おまじないしたことにする:toggle,0xAEDC75,02,??
+[subject]全員登場:toggle,0xAEDC44,3E,??
+[subject]全員の情報聞く:toggle,0xAEDC4D,3E,??
+[subject]日付:dir
+	[subject]カレンダー:d_list,0xAEDB24,マイネ日付1,0x00,0xFFFFFFFF,マイネ日付2,offset
+	[subject]年:calc,0xAEDB24,0,2,signed,little_e
+	[subject]月:calc,0xAEDB25,0,12,signed,little_e
+	[subject]日:calc,0xAEDB26,0,31,signed,little_e
+[back]
+[subject]能力値:dir
+	[subject]体調:calc,0xAEDA34,0,255,signed,little_e
+	[subject]容姿:calc,0xAEDA35,0,255,signed,little_e
+	[subject]心労:calc,0xAEDA36,0,255,signed,little_e
+	[subject]学力:calc,0xAEDA37,0,255,signed,little_e
+	[subject]気品:calc,0xAEDA38,0,255,signed,little_e
+	[subject]芸術:calc,0xAEDA39,0,255,signed,little_e
+	[subject]家政:calc,0xAEDA3A,0,255,signed,little_e
+	[subject]運動:calc,0xAEDA3B,0,255,signed,little_e
+	[subject]雑学:calc,0xAEDA3C,0,255,signed,little_e
+[back]
+[subject]各キャラパラメータ:dir
+	[subject]ラブ度:dir
+		[replace]0xAEDB34,mine1
+	[subject]友好度:dir
+		[replace]0xAEDB35,mine1
+	[subject]傷心度:dir
+		[replace]0xAEDB36,mine1
+[back]
+[subject]彼氏とデート:dir
+	[subject]クリア済:dir
+		[subject]オルフェ:toggle,0xAEDC59,80,00
+		[subject]エド:toggle,0xAEDC5A,80,00
+		[subject]カミユ:toggle,0xAEDC5B,80,00
+		[subject]ルーイ:toggle,0xAEDC5C,80,00
+		[subject]ナオジ:toggle,0xAEDC5D,80,00
+		[subject]アイザック:toggle,0xAEDC5E,80,00
+	[back]
+	[subject]彼氏とデート時のラブ度:dir
+		[e_with],0x00,0x7F,unsigned,little_e
+		[subject]オルフェ:calc,0xAEDC69
+		[subject]エド:calc,0xAEDC6A
+		[subject]カミユ:calc,0xAEDC6B
+		[subject]ルーイ:calc,0xAEDC6C
+		[subject]ナオジ:calc,0xAEDC6D
+		[subject]アイザック:calc,0xAEDC6E
+		[/e_with] 
+		[back]
+[back]
+[back]
+[subject]0.9a以降:dir
+[replace] 0x40004,minead
+[/script]
+
+[script]
+[title]【VisualBoyAdvance】耽美夢想マイネリーベ(Windows98用)
+[process]VISUALBOYADVANCE.EXE
+[maker]モバイル21
+[creator]KEI
+//[adjustment]heap,heap2=0x7C0000>0x9CFFFF,heap3=0x9D0000>0xEDFFFF,heap4=0xEE0000>0x13EFFFF
+[adjustment]search, 0x7C0070, 41004849C84100A0, heap2, heap3, 8
+[note]wordwrap
+Windows 98SE（メモリ128MB）で確認しています。
+こちらで動かない場合は、WindowsMe用で試してみてください。
+VisualBoyAdvanceはバージョン0.2、0.3、0.4、0.5、0.5_JP、0.6、0.6.0.1、0.7a、0.71、0.8、0.9aで動作確認しています。
+これは補正値を自動でサーチするので、バージョンが上がっても使えると思います。
+Windows98用としてありますが、OSの違いではなく搭載メモリにデータ領域のアドレスが
+依存していると思われます。
+こちらはHeap2領域にデータのあるタイプです。
+WindowsMe用のはHeap4領域にデータのあるタイプです。
+●年について
+1935年が0、1936年が1、1937年が2です。
+●彼氏とデートのクリアについて。
+起動画面では有効になりませんので、通常ゲーム時にチェックを入れておき
+ゲームが自動セーブされると、次回起動時から有効になります。
+●彼氏とデート時のラブ度について
+クリア直後は0です。
+16進数で13のとき、次でプロポーズされます。
+承諾すると7Fになります。
+[/note]
+[subject]0.8以前:dir
+[subject]行動前に戻す:list,0x7CDB27,マイネ曜日,0,1
+[subject]爆弾封印/爆弾封印（固定推奨）:b_toggle,0x7CDB00,mine2,offset
+[subject]服装チェック無し/服装チェック無し（固定推奨）:toggle,0x7CDC60,000000000000000000,??
+[subject]当日のデート相手:d_list,0x7CDA55,マイネ相手1,0x00,0xFF,マイネ相手2,offset
+[subject]当日のデート場所:list,0x7CDA54,マイネ場所,0,1
+[subject]所属部活:list,0x7CDC54,マイネ部活,0,1
+[subject]クリスマスエスコート:list,0x7CDC45,マイネ相手1,0,1
+[subject]元旦に外出可:toggle,0x7CDC47,01,00
+[subject]おまじないした人:list,0x7CDC55,マイネ呪1,0,1
+[subject]2年連続おまじないしたことにする:toggle,0x7CDC75,02,??
+[subject]全員登場:toggle,0x7CDC44,3E,??
+[subject]全員の情報聞く:toggle,0x7CDC4D,3E,??
+[subject]全員フィルタ付:copy,0x7CDC55,0x7CDA55,1
+[subject]日付:dir
+	[subject]カレンダー:d_list,0x7CDB24,マイネ日付1,0x00,0xFFFFFFFF,マイネ日付2,offset
+	[subject]年:calc,0x7CDB24,0,2,signed,little_e
+	[subject]月:calc,0x7CDB25,0,12,signed,little_e
+	[subject]日:calc,0x7CDB26,0,31,signed,little_e
+[back]
+[subject]能力値:dir
+	[subject]体調:calc,0x7CDA34,0,255,signed,little_e
+	[subject]容姿:calc,0x7CDA35,0,255,signed,little_e
+	[subject]心労:calc,0x7CDA36,0,255,signed,little_e
+	[subject]学力:calc,0x7CDA37,0,255,signed,little_e
+	[subject]気品:calc,0x7CDA38,0,255,signed,little_e
+	[subject]芸術:calc,0x7CDA39,0,255,signed,little_e
+	[subject]家政:calc,0x7CDA3A,0,255,signed,little_e
+	[subject]運動:calc,0x7CDA3B,0,255,signed,little_e
+	[subject]雑学:calc,0x7CDA3C,0,255,signed,little_e
+[back]
+[subject]各キャラパラメータ:dir
+	[subject]ラブ度:dir
+		[replace]0x7CDB34,mine1
+	[subject]友好度:dir
+		[replace]0x7CDB35,mine1
+	[subject]傷心度:dir
+		[replace]0x7CDB36,mine1
+[back]
+[subject]彼氏とデート:dir
+	[subject]クリア済:dir
+		[subject]オルフェ:toggle,0x7CDC59,80,00
+		[subject]エド:toggle,0x7CDC5A,80,00
+		[subject]カミユ:toggle,0x7CDC5B,80,00
+		[subject]ルーイ:toggle,0x7CDC5C,80,00
+		[subject]ナオジ:toggle,0x7CDC5D,80,00
+		[subject]アイザック:toggle,0x7CDC5E,80,00
+	[back]
+	[subject]彼氏とデート時のラブ度:dir
+		[e_with],0x00,0x7F,unsigned,little_e
+		[subject]オルフェ:calc,0x7CDC69
+		[subject]エド:calc,0x7CDC6A
+		[subject]カミユ:calc,0x7CDC6B
+		[subject]ルーイ:calc,0x7CDC6C
+		[subject]ナオジ:calc,0x7CDC6D
+		[subject]アイザック:calc,0x7CDC6E
+		[/e_with] 
+		[back]
+[back]
+[back]
+[subject]0.9a以降:dir
+[replace] 0x40004,minead98,offset
+[/script]
+
+[script]
+[title]【BoycottAdvance】耽美夢想マイネリーベ(WindowsMe用)
+[process]BOYCOTTADVANCE.EXE
+[maker]モバイル21
+[creator]KEI
+//[adjustment]heap,heap2=0x6F0000>0x8FFFFF,heap3=0x900000>0xB0FFFF,heap4=0xB10000>0x101FFFF
+[adjustment]search, 0x900070, 41004849C84100A0, heap3, heap4, 0x08
+[note]wordwrap
+Windows Me（256MB)で確認しています。
+BoycottAdvanceはVERSION 0.22b、0.22bR3、0.23bで動作確認しています。
+これは補正値を自動でサーチするので、バージョンが上がっても使えると思います。
+もしバージョン違いなどで使えない場合はお知らせください。
+すぐに対応しようと思います。
+こちらで使えない場合はWindows98用を使ってみてください。
+WindowsMe用としてありますが、OSの違いではなく搭載メモリにデータ領域のアドレスが
+依存していると思われます。
+こちらはHeap3領域にデータのあるタイプです。
+Windows98用のはHeap2領域にデータのあるタイプです。
+●年について
+1935年が0、1936年が1、1937年が2です。
+●彼氏とデートのクリアについて。
+起動画面では有効になりませんので、通常ゲーム時にチェックを入れておき
+ゲームが自動セーブされると、次回起動時から有効になります。
+●彼氏とデート時のラブ度について
+クリア直後は0です。
+16進数で13のとき、次でプロポーズされます。
+承諾すると7Fになります。
+[/note]
+[subject]行動前に戻す:list,0x951B2F,マイネ曜日,0,1
+[subject]爆弾封印/爆弾封印（固定推奨）:b_toggle,0x951B08,mine2,offset
+[subject]服装チェック無し/服装チェック無し（固定推奨）:toggle,0x951C68,000000000000000000,??
+[subject]当日のデート相手:d_list,0x951A5D,マイネ相手1,0x00,0xFF,マイネ相手2,offset
+[subject]当日のデート場所:list,0x951A5C,マイネ場所,0,1
+[subject]所属部活:list,0x951C5C,マイネ部活,0,1
+[subject]クリスマスエスコート:list,0x951C4D,マイネ相手1,0,1
+[subject]元旦に外出可:toggle,0x951C4F,01,00
+[subject]おまじないした人:list,0x951C5D,マイネ呪1,0,1
+[subject]2年連続おまじないしたことにする:toggle,0x951C7D,02,??
+[subject]全員登場:toggle,0x951C4C,3E,??
+[subject]全員の情報聞く:toggle,0x951C55,3E,??
+[subject]日付:dir
+	[subject]カレンダー:d_list,0x951B2C,マイネ日付1,0x00,0xFFFFFFFF,マイネ日付2,offset
+	[subject]年:calc,0x951B2C,0,2,signed,little_e
+	[subject]月:calc,0x951B2D,0,12,signed,little_e
+	[subject]日:calc,0x951B2E,0,31,signed,little_e
+[back]
+[subject]能力値:dir
+	[subject]体調:calc,0x951A3C,0,255,signed,little_e
+	[subject]容姿:calc,0x951A3D,0,255,signed,little_e
+	[subject]心労:calc,0x951A3E,0,255,signed,little_e
+	[subject]学力:calc,0x951A3F,0,255,signed,little_e
+	[subject]気品:calc,0x951A40,0,255,signed,little_e
+	[subject]芸術:calc,0x951A41,0,255,signed,little_e
+	[subject]家政:calc,0x951A42,0,255,signed,little_e
+	[subject]運動:calc,0x951A43,0,255,signed,little_e
+	[subject]雑学:calc,0x951A44,0,255,signed,little_e
+[back]
+[subject]各キャラパラメータ:dir
+	[subject]ラブ度:dir
+		[replace]0x951B3C,mine1
+	[subject]友好度:dir
+		[replace]0x951B3D,mine1
+	[subject]傷心度:dir
+		[replace]0x951B3E,mine1
+[back]
+[subject]彼氏とデート:dir
+	[subject]クリア済:dir
+		[subject]オルフェ:toggle,0x951C61,80,00
+		[subject]エド:toggle,0x951C62,80,00
+		[subject]カミユ:toggle,0x951C63,80,00
+		[subject]ルーイ:toggle,0x951C64,80,00
+		[subject]ナオジ:toggle,0x951C65,80,00
+		[subject]アイザック:toggle,0x951C66,80,00
+	[back]
+	[subject]彼氏とデート時のラブ度:dir
+		[e_with],0x00,0x7F,unsigned,little_e
+		[subject]オルフェ:calc,0x951C71
+		[subject]エド:calc,0x951C72
+		[subject]カミユ:calc,0x951C73
+		[subject]ルーイ:calc,0x951C74
+		[subject]ナオジ:calc,0x951C75
+		[subject]アイザック:calc,0x951C76
+		[/e_with] 
+		[back]
+[back]
+[/script]
+
+[script]
+[title]【BoycottAdvance】耽美夢想マイネリーベ(Windows98用)
+[process]BOYCOTTADVANCE.EXE
+[maker]モバイル21
+[creator]KEI
+//[adjustment]heap,heap2=0x6F0000>0x8FFFFF,heap3=0x900000>0xE0FFFF,heap4=0xE10000>0x131FFFF
+[adjustment]search, 0x6F0070, 41004849C84100A0, heap2, heap3, 0x08
+[note]wordwrap
+Windows 98SE（128MB）で確認しています。
+BoycottAdvanceはVERSION 0.22b、0.22bR3、0.23bで動作確認しています。
+これは補正値を自動でサーチするので、バージョンが上がっても使えると思います。
+もしバージョン違いなどで使えない場合はお知らせください。
+すぐに対応しようと思います。
+こちらで使えない場合は、WindowsMe用を使ってみてください。
+Windows98用としてありますが、OSの違いではなく搭載メモリにデータ領域のアドレスが
+依存していると思われます。
+こちらはHeap2領域にデータのあるタイプです。
+WindowsMe用のはHeap3領域にデータのあるタイプです。
+●年について
+1935年が0、1936年が1、1937年が2です。
+●彼氏とデートのクリアについて。
+起動画面では有効になりませんので、通常ゲーム時にチェックを入れておき
+ゲームが自動セーブされると、次回起動時から有効になります。
+●彼氏とデート時のラブ度について
+クリア直後は0です。
+16進数で13のとき、次でプロポーズされます。
+承諾すると7Fになります。
+[/note]
+[subject]行動前に戻す:list,0x741B2F,マイネ曜日,0,1
+[subject]爆弾封印/爆弾封印（固定推奨）:b_toggle,0x741B08,mine2,offset
+[subject]服装チェック無し/服装チェック無し（固定推奨）:toggle,0x741C68,000000000000000000,??
+[subject]当日のデート相手:d_list,0x741A5D,マイネ相手1,0x00,0xFF,マイネ相手2,offset
+[subject]当日のデート場所:list,0x741A5C,マイネ場所,0,1
+[subject]所属部活:list,0x741C5C,マイネ部活,0,1
+[subject]クリスマスエスコート:list,0x741C4D,マイネ相手1,0,1
+[subject]元旦に外出可:toggle,0x741C4F,01,00
+[subject]おまじないした人:list,0x741C5D,マイネ呪1,0,1
+[subject]2年連続おまじないしたことにする:toggle,0x741C7D,02,??
+[subject]全員登場:toggle,0x741C4C,3E,??
+[subject]全員の情報聞く:toggle,0x741C55,3E,??
+[subject]日付:dir
+	[subject]カレンダー:d_list,0x741B2C,マイネ日付1,0x00,0xFFFFFFFF,マイネ日付2,offset
+	[subject]年:calc,0x741B2C,0,2,signed,little_e
+	[subject]月:calc,0x741B2D,0,12,signed,little_e
+	[subject]日:calc,0x741B2E,0,31,signed,little_e
+[back]
+[subject]能力値:dir
+	[subject]体調:calc,0x741A3C,0,255,signed,little_e
+	[subject]容姿:calc,0x741A3D,0,255,signed,little_e
+	[subject]心労:calc,0x741A3E,0,255,signed,little_e
+	[subject]学力:calc,0x741A3F,0,255,signed,little_e
+	[subject]気品:calc,0x741A40,0,255,signed,little_e
+	[subject]芸術:calc,0x741A41,0,255,signed,little_e
+	[subject]家政:calc,0x741A42,0,255,signed,little_e
+	[subject]運動:calc,0x741A43,0,255,signed,little_e
+	[subject]雑学:calc,0x741A44,0,255,signed,little_e
+[back]
+[subject]各キャラパラメータ:dir
+	[subject]ラブ度:dir
+		[replace]0x741B3C,mine1
+	[subject]友好度:dir
+		[replace]0x741B3D,mine1
+	[subject]傷心度:dir
+		[replace]0x741B3E,mine1
+[back]
+[subject]彼氏とデート:dir
+	[subject]クリア済:dir
+		[subject]オルフェ:toggle,0x741C61,80,00
+		[subject]エド:toggle,0x741C62,80,00
+		[subject]カミユ:toggle,0x741C63,80,00
+		[subject]ルーイ:toggle,0x741C64,80,00
+		[subject]ナオジ:toggle,0x741C65,80,00
+		[subject]アイザック:toggle,0x741C66,80,00
+	[back]
+	[subject]彼氏とデート時のラブ度:dir
+		[e_with],0x00,0x7F,unsigned,little_e
+		[subject]オルフェ:calc,0x741C71
+		[subject]エド:calc,0x741C72
+		[subject]カミユ:calc,0x741C73
+		[subject]ルーイ:calc,0x741C74
+		[subject]ナオジ:calc,0x741C75
+		[subject]アイザック:calc,0x741C76
+		[/e_with] 
+		[back]
+[back]
+[/script]
+
+[script]
+[title]【BoycottAdvance】逆転裁判(WindowsMe用)
+[process]BOYCOTTADVANCE.EXE
+[maker]CAPCOM
+[creator]KEI
+//[adjustment]heap,heap2=0x6F0000>0x8FFFFF,heap3=0x900000>0xB0FFFF,heap4=0xB10000>0x101FFFF
+[adjustment]search, 0x910070, 41004849C84100A0, heap3, heap4, 0x08
+[note]wordwrap
+Windows Me（256MB)で確認しています。
+BoycottAdvanceはVERSION 0.22b、0.22bR3、0.23bで動作確認しています。
+これは補正値を自動でサーチするので、バージョンが上がっても使えると思います。
+もしバージョン違いなどで使えない場合はお知らせください。
+すぐに対応しようと思います。
+こちらで使えない場合はWindows98用を使ってみてください。
+WindowsMe用としてありますが、OSの違いではなく搭載メモリにデータ領域のアドレスが
+依存していると思われます。
+こちらはHeap3領域にデータのあるタイプです。
+Windows98用のはHeap2領域にデータのあるタイプです。
+[/note]
+[subject]エピソード:bitlist,0x95FA0A,裁判,1
+[subject]残りペナルティ:calc,0x95FA0B,0,5,signed,little_e
+[/script]
+
+[script]
+[title]【BoycottAdvance】逆転裁判(Windows98用)
+[process]BOYCOTTADVANCE.EXE
+[maker]CAPCOM
+[creator]KEI
+//[adjustment]heap,heap2=0x6F0000>0x8FFFFF,heap3=0x900000>0xE0FFFF,heap4=0xE10000>0x131FFFF
+[adjustment]search, 0x6F0070, 41004849C84100A0, heap2, heap3, 0x08
+[note]wordwrap
+Windows 98SE（128MB）で確認しています。
+BoycottAdvanceはVERSION 0.22b、0.22bR3、0.23bで動作確認しています。
+これは補正値を自動でサーチするので、バージョンが上がっても使えると思います。
+もしバージョン違いなどで使えない場合はお知らせください。
+すぐに対応しようと思います。
+こちらで使えない場合は、WindowsMe用を使ってみてください。
+Windows98用としてありますが、OSの違いではなく搭載メモリにデータ領域のアドレスが
+依存していると思われます。
+こちらはHeap2領域にデータのあるタイプです。
+WindowsMe用のはHeap3領域にデータのあるタイプです。
+[/note]
+[subject]エピソード:bitlist,0x73FA0A,裁判,1
+[subject]残りペナルティ:calc,0x73FA0B,0,5,signed,little_e
+[/script]
+
+[script]
+[title]【VisualBoyAdvance】逆転裁判(Windows98用)
+[process]VISUALBOYADVANCE.EXE
+[maker]CAPCOM
+[creator]KEI
+//[adjustment]heap,heap2=0x7C0000>0x9CFFFF,heap3=0x9D0000>0xEDFFFF,heap4=0xEE0000>0x13EFFFF
+[adjustment]search, 0x910070, 41004849C84100A0, heap2, heap3, 8
+[note]wordwrap
+Windows 98SE（メモリ128MB）で確認しています。
+こちらで動かない場合は、WindowsMe用で試してみてください。
+VisualBoyAdvanceはバージョン0.2、0.3、0.4、0.5、0.5_JP、0.6、0.6.0.1、0.7a、0.71、0.8、0.9aで動作確認しています。
+これは補正値を自動でサーチするので、バージョンが上がっても使えると思います。
+Windows98用としてありますが、OSの違いではなく搭載メモリにデータ領域のアドレスが
+依存していると思われます。
+こちらはHeap2領域にデータのあるタイプです。
+WindowsMe用のはHeap4領域にデータのあるタイプです。
+[/note]
+[subject]0.8以前:dir
+[subject]エピソード:bitlist,0x91BA02,裁判,1
+[subject]残りペナルティ:calc,0x91BA03,0,5,signed,little_e
+[back]
+[subject]0.9a以降:dir
+[subject]エピソード:bitlist,0x95BA06,裁判,1
+[subject]残りペナルティ:calc,0x95BA07,0,5,signed,little_e
+[back]
+[/script]
+
+[script]
+[title]【VisualBoyAdvance】逆転裁判(WindowsMe用)
+[process]VISUALBOYADVANCE.EXE
+[maker]CAPCOM
+[creator]KEI
+//[adjustment]heap,heap2=0x6F0000>0x8FFFFF,heap3=0x900000>0xB0FFFF,heap4=0xB10000>0x101FFFF
+[adjustment]search, 0xB00070, 41004849C84100A0, heap3, heap4, 0x08
+[note]wordwrap
+Windows Me（256MB)で確認しています。
+VisualBoyAdvanceはバージョン0.2、0.3、0.4、0.5、0.5_JP、0.6、0.6.0.1、0.7a、0.71、0.8、0.9aで動作確認しています。
+これは補正値を自動でサーチするので、バージョンが上がっても使えると思います。
+もしバージョン違いなどで使えない場合はお知らせください。
+すぐに対応しようと思います。
+こちらで使えない場合はWindows98用を使ってみてください。
+WindowsMe用としてありますが、OSの違いではなく搭載メモリにデータ領域のアドレスが
+依存していると思われます。
+こちらはHeap3領域にデータのあるタイプです。
+Windows98用のはHeap2領域にデータのあるタイプです。
+[/note]
+[subject]0.8以前:dir
+[subject]エピソード:bitlist,0xB0BA02,裁判,1
+[subject]残りペナルティ:calc,0xB0BA03,0,5,signed,little_e
+[back]
+[subject]0.9a以降:dir
+[subject]エピソード:bitlist,0xB4BA06,裁判,1
+[subject]残りペナルティ:calc,0xB4BA07,0,5,signed,little_e
+[back]
+[/script]
+
+[script]
+[title]【VisualBoyAdvance】遙かなる時空の中で(WindowsMe用)
+[process]VISUALBOYADVANCE.EXE
+[maker]KOEI
+[creator]KEI
+//[adjustment]heap,heap2=0x6F0000>0x8FFFFF,heap3=0x900000>0xB0FFFF,heap4=0xB10000>0x101FFFF
+[adjustment]search, 0xB70070, 41004849C84100A0, heap2, heap4, 0x08
+[note]wordwrap
+Windows Me（256MB)で確認しています。
+VisualBoyAdvanceはバージョン0.2、0.3、0.4、0.5、0.5_JP、0.6、0.6.0.1、0.7a、0.71、0.8、0.9aで動作確認しています。
+これは補正値を自動でサーチするので、バージョンが上がっても使えると思います。
+もしバージョン違いなどで使えない場合はお知らせください。
+すぐに対応しようと思います。
+こちらで使えない場合はWindows98用を使ってみてください。
+WindowsMe用としてありますが、OSの違いではなく搭載メモリにデータ領域のアドレスが
+依存していると思われます。
+こちらはHeap3領域にデータのあるタイプです。
+Windows98用のはHeap2領域にデータのあるタイプです。
+[/note]
+[subject]五行の力99:toggle,0xBBB2EB,6363636363,??
+[subject]日程:calc,0xBBB2F0,0,255,signed,little_e
+[subject]時間:calc,0xBBB2F1,0,255,signed,little_e
+[subject]同行者:calc,0xBBB2F2,0,255,signed,little_e
+[subject]戦闘中:dir
+	[subject]神子:dir
+	[subject]五行の力99:toggle,0xBB8632,6363636363,??
+	[subject]状態異常にならない:toggle,0xBB862C,0000000000,??
+	[replace]0xBB8628, lib2->haruka_f
+	[subject]左側の八葉:dir
+	[subject]集中力:calc,0xBB865C,0,100,signed,little_e
+	[replace]0xBB8648, lib2->haruka_f
+	[subject]右側の八葉:dir
+	[subject]集中力:calc,0xBB867C,0,100,signed,little_e
+	[replace]0xBB8668, lib2->haruka_f
+	[subject]怨霊:dir
+	[subject]最大HP:calc,0xBB8688,0,65535,signed,little_e
+	[subject]現在HP:calc,0xBB868A,0,65535,signed,little_e
+	[subject]攻撃力:calc,0xBB868C,0,255,signed,little_e
+	[subject]耐久力:calc,0xBB868C,0,255,signed,little_e
+	[subject]霊力:calc,0xBB868C,0,255,signed,little_e
+[back]
+[back]
+//[enabled][:0xBBFFD5:3] == 0
+[subject]札何度でもめくれる:toggle,0xBBFFD4,*{ 02 :: 09 *},??
+//[/enabled] 
+[subject]時間経たない（固定推奨）:toggle,0xBBB2F1,*{ ?3 :: ?1 *},??
+[back]
+[/script]
+
+
