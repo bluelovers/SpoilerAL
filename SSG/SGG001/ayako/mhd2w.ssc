@@ -1,0 +1,5 @@
+[subject]所持金:calc,0x860BDA,0x00000000,0x3B9AC99C,signed
+[subject]極度額:calc,0x860BDE,0x00000000,0x3B9AC99C,unsigned
+[subject]バカコードショウ:dir
+	[subject]借金王（シャッキング）！:toggle,0x860BDA,000000F000000000,0000000040420F00
+[root]
