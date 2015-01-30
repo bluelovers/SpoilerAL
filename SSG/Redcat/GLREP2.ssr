@@ -1,0 +1,2 @@
+[subject][! @GLLST->LST_b,$Val !]:dir
+[replace]0x[! 0x54029A+$Val*0xB8 !],GL_d
