@@ -1,0 +1,8 @@
+[subject]体力/現在値:calc,0x00,0x000,0x100,unsigned,little_e
+[subject]理性/現在値:calc,0x02,0x000,0x100,unsigned,little_e
+[subject]憎悪/現在値:calc,0x04,0x000,0x100,unsigned,little_e
+[subject]気品/現在値:calc,0x06,0x000,0x100,unsigned,little_e
+[subject]従順/現在値:calc,0x08,0x000,0x100,unsigned,little_e
+[subject]性感/現在値:calc,0x0A,0x000,0x100,unsigned,little_e
+[subject]被虐/現在値:calc,0x0C,0x000,0x100,unsigned,little_e
+[back]
