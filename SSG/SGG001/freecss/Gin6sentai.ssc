@@ -1,0 +1,10 @@
+       [subject]í‘à–¼:string,0x00,0x30,null
+	[subject]ŠÍ‘àí—Ş:list,0x44,Gin6kansyu,0x0,0x1
+	[subject]ŠÍ”:calc,0x60,0x0000,0xFFFF,unsigned,little_e
+	[subject]m‹C:calc,0x64,0x0000,0xFFFF,unsigned,little_e
+	[subject]“‹Ú•¨‘:calc,0x68,0x00000000,0x0FFFFFFF,unsigned,little_e
+	[subject]ˆÚ“®—Í:calc,0x6C,0x00,0xFF,unsigned,little_e
+	[subject]ŠÍ‘àŒü‚«:list,0x88,Gin6muki,0x0,0x1
+       [subject]–¢s“®ON:toggle,0x98,00,90
+[back]
+
