@@ -1,0 +1,16 @@
+[subject]年月:dir
+[subject]西暦:calc,0x5D4BFE,0x60F,0x7CF,unsigned
+[subject]月:calc,0x5D4C06,0x1,0xC,unsigned
+[back]
+[subject]武将能力:dir
+[replace]0x5A98F0,n7busyouname,offset
+[replace]0x5A98F0,n7busyouname2,offset
+[back]
+[subject]城数値:dir
+[replace]0x600638,n7shironame,offset
+[root]
+[subject]架空シナリオ:dir
+[subject]佐渡金山:b_toggle,0x0,n7sado,offset
+[subject]佐渡要塞1551:b_toggle,0x0,n7sado2,offset
+[subject]佐渡要塞1551（コンピュータ用）:b_toggle,0x0,n7sado2c,offset
+[back]
