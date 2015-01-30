@@ -1,0 +1,2 @@
+[subject][! @SNLST->LST_a,$Val !]:dir
+[replace]0x[! 0x552D5C+$Val*0x38 !],SN_c
