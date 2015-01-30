@@ -70,37 +70,6 @@ claspe_ver10X.exe‚ğclaspe.exe‚ÉƒŠƒl[ƒ€‚·‚é‚©A–{‘Ìƒƒjƒ…[‚Ìƒƒ‚ƒŠEƒvƒƒZƒX¨‘
 
 [back]
 
-[subject]ver1.05:dir
-
-[subject]ƒAƒNƒVƒ‡ƒ“ƒp[ƒgŠÖ˜A:dir
- [subject]–³“G‰»/Às/_:toggle,0x4168D0,33C98BC18904B5843E6400B10690E9F200000090,8B04B5843E6400B9060000003BC10F85F1000000
- [subject]UŒ‚ˆĞ—ÍEË’ö‘å•‹­‰»/Às/_:toggle,0x416D87,33D2B2C833C9B1963E890C85186F6400B5FF,8B8C94800000008B549440890C85186F6400
- [subject]–³ŒÀ‘½’iƒWƒƒƒ“ƒv‰»/Às/_:b_toggle,0x00,CLSLST->CLS_2b,offset
- [subject]ƒƒ“ƒOƒWƒƒƒ“ƒv‰»/Às/_:toggle,0x43DCA0,0x43DCBF-04000000,0C000000
- [subject]“Áê’nŒ`‚©‚ç‚Å‚àƒWƒƒƒ“ƒv‰Â”\/Às/_:toggle,0x416794,EB0490909090,0F85E8000000
- [subject]ˆÚ“®‚Q”{‘¬‰»i‚±‚Æ‚İŠî€j/Às/_:toggle,0x415DB4,B80200000090,8B8054446600
- [subject]››Œ¸‚ç‚È‚¢/_:d_toggle,0x00,CLSLST->LST_a,CLSLST->LST_3b,offset
-[back]
-
-[subject]ƒpƒ‰ƒ[ƒ^ŠÖ˜A:dir
- [subject]‘Ì—Í/Œ»İ’l/_:calc,0x057474B0,0x0000,0x03E7,unsigned
- [e_with],0x0000,0x03E7,unsigned
-  [subject]”š’e/Œ»İ’l/_:calc,0x663F54
-  [subject]Ô‚¢Œ®/Œ»İ’l/_:calc,0x663F58
-  [subject]Â‚¢Œ®/Œ»İ’l/_:calc,0x663F5C
-  [subject]Æ–¾’e/Œ»İ’l/_:calc,0x663F64
-  [subject]ƒRƒCƒ“/Œ»İ’l/_:calc,0x663F80
- [/e_with]
-[back]
-
-[subject]ƒtƒ‰ƒOŠÖ˜A:dir
- [subject]‘S”\‘I‘ğˆoŒ»/Às/_:toggle,0x664FFC,01000000,00000000
- [subject]‘S•ó•¨oŒ»/Às/_:b_toggle,0x663FE4,CLSLST->CLS_2c,real
- [subject]‘S‰B‚µƒLƒƒƒ‰oŒ»/Às/_:toggle,0x66451C,0x664543-01000000
-[back]
-
-[back]
-
 [/group]
 
 
@@ -116,21 +85,9 @@ claspe_ver10X.exe‚ğclaspe.exe‚ÉƒŠƒl[ƒ€‚·‚é‚©A–{‘Ìƒƒjƒ…[‚Ìƒƒ‚ƒŠEƒvƒƒZƒX¨‘
 [/group]
 
 
-[group]CLS_2b
-0x4167D1,33C990909090,8B0DDCD08C05
-0x4167E5,EB0490909090,0F8C9C000000
-[/group]
-
-
 [group]CLS_c
 0x663FE4,0x6640A3-01000000,00
 0x664764,0x664823-01000000,00
-[/group]
-
-
-[group]CLS_2c
-0x663FA4,0x664063-01000000,00
-0x664724,0x664823-01000000,00
 [/group]
 
 
@@ -155,12 +112,4 @@ claspe_ver10X.exe‚ğclaspe.exe‚ÉƒŠƒl[ƒ€‚·‚é‚©A–{‘Ìƒƒjƒ…[‚Ìƒƒ‚ƒŠEƒvƒƒZƒX¨‘
 0x4181CC=90/4F
 0x41DF68=90/48
 0x41821C=90/48
-[/group]
-
-
-[group]LST_3b
-0x416929=90/49
-0x41809C=90/4F
-0x41DE08=90/48
-0x4180EC=90/48
 [/group]
