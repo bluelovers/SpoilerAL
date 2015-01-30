@@ -1,0 +1,290 @@
+[group]MJ2_SSG
+[note]wordwrap
+戦闘中魔法使用制限解除：
+初回戦闘からＳ級魔法も使用可能に。
+[/note]
+
+[subject]ver1.00:dir
+
+[subject]戦闘関連:dir
+ [subject]魔法でＭＰ減らない/実行/_:toggle,0x434250,70EB00,682BD1
+ [subject]味方無限行動可能化/実行/_:toggle,0x475BBA,33C0898194010000898198010000C20400,8B848194010000C2040090909090909090
+ [subject]味方ノーダメージ化/実行/_:toggle,0x417E97,807B1002900F8C,8B485885C90F84
+ [subject]戦闘中魔法使用制限解除/実行/_:toggle,0x43325A,EB,7D
+[back]
+
+[subject]パラメータ関連:dir
+[subject]鉱石の個数:dir
+ [repeat]MJ2LST->MJ2REP2,0,4,1
+[back]
+[subject]パーティパラメータ確認調整:dir
+ [repeat]MJ2LST->MJ2REP1,0,6,1
+[back]
+[subject]好感度確認調整:dir
+ [repeat]MJ2LST->MJ2REP3,1,4,1
+[back]
+[back]
+
+[subject]ＣＧモード関連:dir
+ [subject]おまけ要素出現/ＯＮ／ＯＦＦ/_:toggle,0x54C5E0,01000000,00000000
+ [subject]CG MODE ALL/ＯＮ／ＯＦＦ/_:toggle,0x57E5F4,FF7FFF3FFF1F3F000700FF07,000000000000000000000000
+ [subject]H REPLAY ALL/ＯＮ／ＯＦＦ/_:toggle,0x57E5E4,FF3F,0000
+[back]
+
+[back]
+
+[subject]ver1.01:dir
+
+[subject]戦闘関連:dir
+ [subject]魔法でＭＰ減らない/実行/_:toggle,0x4346C0,74EB00,6C2BD1
+ [subject]味方無限行動可能化/実行/_:toggle,0x4764DA,33C08981AC0100008981B0010000C20400,8B8481AC010000C2040090909090909090
+ [subject]味方ノーダメージ化/実行/_:toggle,0x4181E7,807B1002900F8C,8B485885C90F84
+ [subject]戦闘中魔法使用制限解除/実行/_:toggle,0x4336CA,EB,7D
+[back]
+
+[subject]パラメータ関連:dir
+[subject]鉱石の個数:dir
+ [repeat]MJ2LST->MJ2REP22,0,4,1
+[back]
+[subject]パーティパラメータ確認調整:dir
+ [repeat]MJ2LST->MJ2REP12,0,6,1
+[back]
+[subject]好感度確認調整:dir
+ [repeat]MJ2LST->MJ2REP32,1,4,1
+[back]
+[back]
+
+[subject]ＣＧモード関連:dir
+ [subject]おまけ要素出現/ＯＮ／ＯＦＦ/_:toggle,0x52A5F0,01000000,00000000
+ [subject]CG MODE ALL/ＯＮ／ＯＦＦ/_:toggle,0x55C604,FF7FFF3FFF1F3F000700FF07,000000000000000000000000
+ [subject]H REPLAY ALL/ＯＮ／ＯＦＦ/_:toggle,0x55C5F4,FF3F,0000
+[back]
+
+[back]
+
+[/group]
+
+
+[group]MJ2REP1
+[subject][! @MJ2LST->LST_a,$Val !]:dir
+ [replace]_0x5D49E0+0x[! 0x9C*$Val !],MJ2LST->MJ2_PR
+[back]
+[/group]
+
+
+[group]MJ2REP12
+[subject][! @MJ2LST->LST_a,$Val !]:dir
+ [replace]_0x5B29F0+0x[! 0x9C*$Val !],MJ2LST->MJ2_PR
+[back]
+[/group]
+
+
+[group]MJ2REP2
+[subject][! @MJ2LST->LST_b,$Val !]/現在値/_:calc,_0x5D4D88+0x[! 0x04*$Val !],0x0000,0x270F,unsigned
+[/group]
+
+
+[group]MJ2REP22
+[subject][! @MJ2LST->LST_b,$Val !]/現在値/_:calc,_0x5B2D98+0x[! 0x04*$Val !],0x0000,0x270F,unsigned
+[/group]
+
+
+[group]MJ2REP3
+[subject][! @MJ2LST->LST_a,$Val !]/現在値/_:calc,_0x54B540+0x[! 0x04*$Val !],0x0000,0x3E7,unsigned
+[/group]
+
+
+[group]MJ2REP32
+[subject][! @MJ2LST->LST_a,$Val !]/現在値/_:calc,_0x529550+0x[! 0x04*$Val !],0x0000,0x3E7,unsigned
+[/group]
+
+
+[group]MJ2_PR
+[subject]ＬＶ/現在値/_:calc,0x60,0x01,0x0A,unsigned
+[subject]熟練度/現在値/_:calc,0x64,0x000000,0x01869F,unsigned
+[subject]魔法習得:dir
+ [subject]魔法習得１/_:bitlist,0x40,MJ2LST->LST_c,4
+ [subject]魔法習得２/_:bitlist,0x44,MJ2LST->LST_2c,4
+ [subject]魔法習得３/_:bitlist,0x48,MJ2LST->LST_3c,4
+ [subject]魔法習得４/_:bitlist,0x4C,MJ2LST->LST_4c,3
+[back]
+ [e_with],0x0000,0x270F,unsigned
+  [subject]たいりょく（現在）/現在値/_:calc,0x70
+  [subject]まりょく（現在）/現在値/_:calc,0x74
+  [subject]たいりょく（最大）/現在値/_:calc,0x78
+  [subject]まりょく（最大）/現在値/_:calc,0x7C
+  [subject]こうげき/現在値/_:calc,0x80
+  [subject]ぼうぎょ/現在値/_:calc,0x84
+  [subject]びんしょう/現在値/_:calc,0x88
+  [subject]きよう/現在値/_:calc,0x8C
+  [subject]がまん/現在値/_:calc,0x90
+ [/e_with]
+[subject]うごく/現在値/_:calc,0x6C,0x00,0x63,unsigned
+[subject]まほうせき個数/現在値/_:calc,0x98,0x00,0x14,unsigned
+[subject]一括極大化/実行/_:b_toggle,0x00,MJ2LST->MJ2_a,offset
+[/group]
+
+
+[group]LST_a
+ライル
+ミント
+ミレイユ
+ジェシカ
+マリー
+レイス
+[/group]
+
+
+[group]LST_b
+ブレイズフレイム
+クリストン
+ノーミック
+ウェザークロック
+[/group]
+
+
+[group]MJ2_a
+0x6C,63000000
+0x70,0F270000
+0x74,0F270000
+0x78,0F270000
+0x7C,0F270000
+0x80,0F270000
+0x84,0F270000
+0x88,0F270000
+0x8C,0F270000
+0x90,0F270000
+0x98,14000000
+[/group]
+
+
+[group]LST_c
+フレイムスロー
+ファイアボール
+メガファイアボール
+フレイムトラスト
+ファイアスピア
+ファイアランス
+サークフレイム
+フェンスフレイム
+ファイアウォール
+フレイムシャワー
+ファイアストーム
+フレイムトルネード
+ファイアピラー
+フラムピラード
+ラバムピラー
+ヒートアロー
+フレイムアロー
+ブラストアロー
+エクスプロード
+フレイムブレイカー
+ヒートパワー
+ブラムパワー
+グランパワー
+ネクス
+ウィークネクス
+ヴァイルネクス
+ファイアストライク
+ウィル
+フリーズアロー
+フリーズアーチャー
+フリーズシュート
+アイスロック
+[/group]
+
+
+[group]LST_2c
+アイスブロック
+アイスマーシブ
+ウォーターヒール
+ウォーターヒーリング
+ウォータートリートメント
+ウォーターリストーション
+プルーラルヒール
+プルーラルヒーリング
+プルーラルトリートメント
+プルーラルリストーション
+マインドトランスファー
+スピリットチャージ
+キュアパラライズ
+キュアポイズン
+リフレッシュ
+アイスプロテクト
+アイスプロテクション
+アイスディフェンド
+トゥルーグ
+ピアーズ
+ペネトリート
+ディスリガード
+アブソリティ
+プレヴェントポイズン
+ストーンハンマー
+スレッジハンマー
+ラディカルハンマー
+ブレイクショット
+ブレイクキャノン
+バスターショット
+ストーンシャワー
+ストーンレイン
+[/group]
+
+
+[group]LST_3c
+ストーンサイクロン
+ギガノスレイト
+テラノスレイト
+ペタノスレイト
+グラビティ
+グラビトン
+グラビスフィア
+アースブレイク
+メテオインパクト
+アースエナジー
+アースヒール
+リカバリー
+スネア
+レイジング
+レジスター
+レジスタンス
+ペブルバイス
+ストーンバイス
+ボウルダーバイス
+セイクリッド
+アンチパラライズ
+エンバディ
+エアロ
+エアロレイザー
+エアロブレイド
+ライトニング
+パラライトニング
+プラズマライトニング
+ストーム
+シヴィアストーム
+テンペストストーム
+サンダーシャワー
+[/group]
+
+
+[group]LST_4c
+サンダースコール
+サンダーストーム
+ポイズンミスト
+グラビレイ
+ベノムマム
+パラライズ
+ディスペル
+ダッジ
+スキルダッジ
+マスターダッジ
+ウィンドシャックル
+ゲイルシャックル
+ストームシャックル
+フェザーステップ
+パーフェクトヒット
+リリーズ
+オールヒール
+レイズ
+デス
+ジオフィキューズ
+[/group]
