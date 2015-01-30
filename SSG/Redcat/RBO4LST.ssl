@@ -1,0 +1,51 @@
+[group]RBO4_SSG
+[note]wordwrap
+[/note]
+
+[subject]ver4.000:dir
+ [subject]操作キャラクタ無敵化/実行/_:b_toggle,0x00,RBO4LST->RBO4_d,offset
+ [subject]敵一撃死化/実行/_:toggle,0x44BA19,837EF00D7F1E8BC890,8B86140800008B4818
+ [subject]ＨＰ回復高速化/実行/_:b_toggle,0x00,RBO4LST->RBO4_c,offset
+ [subject]HP･SP一時極大化/実行/_:b_toggle,0x00,RBO4LST->RBO4_b,offset
+ [subject]タイムカウント停止/実行/_:toggle,0x436597,EB,74
+ [subject]無限多段ジャンプ化/実行/_:toggle,0x44533A,B10190,0F9EC1
+ [subject]無条件で隠し職選択可能/実行/_:toggle,0x409459,EB,75
+ [subject]振り分けポイント減らない+上限制限解除/実行/_:b_toggle,0x00,RBO4LST->RBO4_3a,offset
+ [subject]矢の数常にMAX/実行/_:toggle,0x435E10,B863000000A338EBAD00C3,A138EBAD00C39090909090
+ [subject]コインの数常にMAX/実行/_:toggle,0x435F80,B863000000A3D8FEAD00C3,A1D8FEAD00C39090909090
+ [subject]イグ葉の数常にMAX/実行/_:toggle,0x436BB0,B809000000A378FFAD00C3,A178FFAD00C39090909090
+[back]
+
+[/group]
+
+
+[group]RBO4_3a
+0x409556,EB,75
+0x40956F,EB00,2BC8
+0x409880,90,49
+[/group]
+
+
+[group]RBO4_b
+0x456049,B89F8601005EC3,03C65EC3909090
+0x4560F9,B89F8601005EC3,03C65EC3909090
+[/group]
+
+
+[group]RBO4_c
+0x452AFA,EB00,7E6C
+0x452B0B,EB00,7F5B
+0x452B1B,EB00,754B
+0x452B42,EB00,7E03
+[/group]
+
+
+[group]RBO4_d
+0x44C3FB,E9509A030090,8D9F50070000
+0x485E50,8B5C2404,00000000
+0x485E54,8B5BF0,000000
+0x485E57,83FB0E,000000
+0x485E5A,0F8C3B68FCFF,000000000000
+0x485E60,8D9F50070000,000000000000
+0x485E66,E99665FCFF,0000000000 
+[/group]
