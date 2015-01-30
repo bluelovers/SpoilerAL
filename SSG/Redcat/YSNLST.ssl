@@ -1,0 +1,392 @@
+[group]YSN_SSG
+[note]wordwrap
+エメル消費時即MAX：
+剣を鍛えると…という意味
+
+魔法ゲージ即回復：
+自動回復機能の無いLVの剣では然程意味無し
+
+無限多段ジャンプ化：
+ロングジャンプ化と併用することで進入禁止区域に入れてしまうことがあります。その場合正規のデバッグ処理による座標強制修復の対象となったり、そのまま進むことでシナリオが狂う可能性があります。ジャンプテクニックの負担軽減・クエストマップ内のショートカット用途に留めた方が賢明です。
+[/note]
+
+[subject]ver1.108:dir
+ [subject]完全無敵化/実行/_:b_toggle,0x00,YSNLST->ysn_c,offset
+ [subject]戦闘後即LVMAX/実行/_:b_toggle,0x00,YSNLST->ysn_a,offset
+ [subject]戦闘後即所持金MAX/実行/_:toggle,0x46735D,EB00,7E08
+ [subject]魔法ゲージ即回復/実行/_:toggle,0x4410F1,05271A480090,84B7B0080000
+ [subject]エメル消費時即MAX/実行/_:toggle,0x409A8B,BB3F420F00908B8C248C050000EB00,8B985C0400008B8C248C0500002BD9
+ [subject]移動速無条件２倍化/実行/_:b_toggle,0x00,YSNLST->ysn_b,offset
+ [subject]ロングジャンプ化/実行/_:toggle,0x440673,EB00A1BB74460090,75748B86CC040000
+ [subject]無限多段ジャンプ化/実行/_:toggle,0x440554,EB0490909090,0F84AA000000
+[back]
+
+[subject]ver1.109:dir
+ [subject]完全無敵化/実行/_:b_toggle,0x00,YSNLST->ysn_2c,offset
+ [subject]戦闘後即LVMAX/実行/_:b_toggle,0x00,YSNLST->ysn_2a,offset
+ [subject]戦闘後即所持金MAX/実行/_:toggle,0x46669D,EB00,7E08
+ [subject]魔法ゲージ即回復/実行/_:toggle,0x4403A1,05A70C480090,84B7B0080000
+ [subject]エメル消費時即MAX/実行/_:toggle,0x4095EB,BB3F420F00908B8C248C050000EB00,8B985C0400008B8C248C0500002BD9
+ [subject]移動速無条件２倍化/実行/_:b_toggle,0x00,YSNLST->ysn_2b,offset
+ [subject]ロングジャンプ化/実行/_:toggle,0x43F923,EB00A148E1440090,75748B86CC040000
+ [subject]無限多段ジャンプ化/実行/_:toggle,0x43F804,EB0490909090,0F84AA000000
+[back]
+
+[/group]
+
+
+[group]YS9N_SSG
+[note]wordwrap
+エメル消費時即MAX：
+剣を鍛えると…という意味
+
+魔法ゲージ即回復：
+自動回復機能の無いLVの剣では然程意味無し
+
+無限多段ジャンプ化：
+ロングジャンプ化と併用することで進入禁止区域に入れてしまうことがあります。その場合正規のデバッグ処理による座標強制修復の対象となったり、そのまま進むことでシナリオが狂う可能性があります。ジャンプテクニックの負担軽減・クエストマップ内のショートカット用途に留めた方が賢明です。
+[/note]
+
+[subject]ver1.108:dir
+ [subject]完全無敵化/実行/_:b_toggle,0x00,YSNLST->ysn_9c,offset
+ [subject]戦闘後即LVMAX/実行/_:b_toggle,0x00,YSNLST->ysn_9a,offset
+ [subject]戦闘後即所持金MAX/実行/_:toggle,0x4673FD,EB00,7E08
+ [subject]魔法ゲージ即回復/実行/_:toggle,0x441131,05071A480090,84B7B0080000
+ [subject]エメル消費時即MAX/実行/_:toggle,0x409A94,BB3F420F00908B8C248C050000EB00,8B985C0400008B8C248C0500002BD9
+ [subject]移動速無条件２倍化/実行/_:b_toggle,0x00,YSNLST->ysn_9b,offset
+ [subject]ロングジャンプ化/実行/_:toggle,0x4406B3,EB00A15B75460090,75748B86CC040000
+ [subject]無限多段ジャンプ化/実行/_:toggle,0x440594,EB0490909090,0F84AA000000
+[back]
+
+[subject]ver1.109:dir
+ [subject]完全無敵化/実行/_:b_toggle,0x00,YSNLST->ysn_92c,offset
+ [subject]戦闘後即LVMAX/実行/_:b_toggle,0x00,YSNLST->ysn_92a,offset
+ [subject]戦闘後即所持金MAX/実行/_:toggle,0x46677D,EB00,7E08
+ [subject]魔法ゲージ即回復/実行/_:toggle,0x440471,05970D480090,84B7B0080000
+ [subject]エメル消費時即MAX/実行/_:toggle,0x409604,BB3F420F00908B8C248C050000EB00,8B985C0400008B8C248C0500002BD9
+ [subject]移動速無条件２倍化/実行/_:b_toggle,0x00,YSNLST->ysn_92b,offset
+ [subject]ロングジャンプ化/実行/_:toggle,0x43F9F3,EB00A18681440090,75748B86CC040000
+ [subject]無限多段ジャンプ化/実行/_:toggle,0x43F8D4,EB0490909090,0F84AA000000
+[back]
+
+[/group]
+
+
+[group]YSTN_SSG
+[note]wordwrap
+エメル消費時即MAX：
+剣を鍛えると…という意味
+
+魔法ゲージ即回復：
+自動回復機能の無いLVの剣では然程意味無し
+
+無限多段ジャンプ化：
+ロングジャンプ化と併用することで進入禁止区域に入れてしまうことがあります。その場合正規のデバッグ処理による座標強制修復の対象となったり、そのまま進むことでシナリオが狂う可能性があります。ジャンプテクニックの負担軽減・クエストマップ内のショートカット用途に留めた方が賢明です。
+[/note]
+
+[subject]ver1.201:dir
+ [subject]完全無敵化/実行/_:b_toggle,0x00,YSNLST->ysn_tc,offset
+ [subject]戦闘後即LVMAX/実行/_:b_toggle,0x00,YSNLST->ysn_ta,offset
+ [subject]戦闘後即所持金MAX/実行/_:toggle,0x46812D,EB00,7E08
+ [subject]魔法ゲージ即回復/実行/_:toggle,0x441EC1,053727480090,84B7B0080000
+ [subject]エメル消費時即MAX/実行/_:toggle,0x409ABB,BB3F420F00908B8C248C050000EB00,8B985C0400008B8C248C0500002BD9
+ [subject]移動速無条件２倍化/実行/_:b_toggle,0x00,YSNLST->ysn_tb,offset
+ [subject]ロングジャンプ化/実行/_:toggle,0x441443,EB00A18B82460090,75748B86CC040000
+ [subject]無限多段ジャンプ化/実行/_:toggle,0x441324,EB0490909090,0F84AA000000
+[back]
+
+[subject]ver1.202:dir
+ [subject]完全無敵化/実行/_:b_toggle,0x00,YSNLST->ysn_2tc,offset
+ [subject]戦闘後即LVMAX/実行/_:b_toggle,0x00,YSNLST->ysn_2ta,offset
+ [subject]戦闘後即所持金MAX/実行/_:toggle,0x46722D,EB00,7E08
+ [subject]魔法ゲージ即回復/実行/_:toggle,0x440F21,053718480090,84B7B0080000
+ [subject]エメル消費時即MAX/実行/_:toggle,0x40959B,BB3F420F00908B8C248C050000EB00,8B985C0400008B8C248C0500002BD9
+ [subject]移動速無条件２倍化/実行/_:b_toggle,0x00,YSNLST->ysn_2tb,offset
+ [subject]ロングジャンプ化/実行/_:toggle,0x4404A3,EB00A1368C440090,75748B86CC040000
+ [subject]無限多段ジャンプ化/実行/_:toggle,0x440384,EB0490909090,0F84AA000000
+[back]
+
+[/group]
+
+
+[group]YS9TN_SSG
+[note]wordwrap
+エメル消費時即MAX：
+剣を鍛えると…という意味
+
+魔法ゲージ即回復：
+自動回復機能の無いLVの剣では然程意味無し
+
+無限多段ジャンプ化：
+ロングジャンプ化と併用することで進入禁止区域に入れてしまうことがあります。その場合正規のデバッグ処理による座標強制修復の対象となったり、そのまま進むことでシナリオが狂う可能性があります。ジャンプテクニックの負担軽減・クエストマップ内のショートカット用途に留めた方が賢明です。
+[/note]
+
+[subject]ver1.201:dir
+ [subject]完全無敵化/実行/_:b_toggle,0x00,YSNLST->ysn_t9c,offset
+ [subject]戦闘後即LVMAX/実行/_:b_toggle,0x00,YSNLST->ysn_t9a,offset
+ [subject]戦闘後即所持金MAX/実行/_:toggle,0x46824D,EB00,7E08
+ [subject]魔法ゲージ即回復/実行/_:toggle,0x441F81,055728480090,84B7B0080000
+ [subject]エメル消費時即MAX/実行/_:toggle,0x409A94,BB3F420F00908B8C248C050000EB00,8B985C0400008B8C248C0500002BD9
+ [subject]移動速無条件２倍化/実行/_:b_toggle,0x00,YSNLST->ysn_t9b,offset
+ [subject]ロングジャンプ化/実行/_:toggle,0x441503,EB00A1AB83460090,75748B86CC040000
+ [subject]無限多段ジャンプ化/実行/_:toggle,0x4413E4,EB0490909090,0F84AA000000
+[back]
+
+[subject]ver1.202:dir
+ [subject]完全無敵化/実行/_:b_toggle,0x00,YSNLST->ysn_2t9c,offset
+ [subject]戦闘後即LVMAX/実行/_:b_toggle,0x00,YSNLST->ysn_2t9a,offset
+ [subject]戦闘後即所持金MAX/実行/_:toggle,0x4672BD,EB00,7E08
+ [subject]魔法ゲージ即回復/実行/_:toggle,0x440FB1,05C718480090,84B7B0080000
+ [subject]エメル消費時即MAX/実行/_:toggle,0x409774,BB3F420F00908B8C248C050000EB00,8B985C0400008B8C248C0500002BD9
+ [subject]移動速無条件２倍化/実行/_:b_toggle,0x00,YSNLST->ysn_2t9b,offset
+ [subject]ロングジャンプ化/実行/_:toggle,0x440533,EB00A1C68C440090,75748B86CC040000
+ [subject]無限多段ジャンプ化/実行/_:toggle,0x440414,EB0490909090,0F84AA000000
+[back]
+
+[/group]
+
+
+[group]YSKN_SSG
+[note]wordwrap
+※ソフト自体を所持していないので動作確認はしておりません。ver違いにご注意を。
+
+エメル消費時即MAX：
+剣を鍛えると…という意味
+
+魔法ゲージ即回復：
+自動回復機能の無いLVの剣では然程意味無し
+
+無限多段ジャンプ化：
+ロングジャンプ化と併用することで進入禁止区域に入れてしまうことがあります。その場合正規のデバッグ処理による座標強制修復の対象となったり、そのまま進むことでシナリオが狂う可能性があります。ジャンプテクニックの負担軽減・クエストマップ内のショートカット用途に留めた方が賢明です。
+[/note]
+
+[subject]ver1.305:dir
+ [subject]完全無敵化/実行/_:b_toggle,0x00,YSNLST->ysn_kc,offset
+ [subject]戦闘後即LVMAX/実行/_:b_toggle,0x00,YSNLST->ysn_ka,offset
+ [subject]戦闘後即所持金MAX/実行/_:toggle,0x466FAD,EB00,7E08
+ [subject]魔法ゲージ即回復/実行/_:toggle,0x440D41,05B715480090,84B7B0080000
+ [subject]エメル消費時即MAX/実行/_:toggle,0x4095BB,BB3F420F00908B8C248C050000EB00,8B985C0400008B8C248C0500002BD9
+ [subject]移動速無条件２倍化/実行/_:b_toggle,0x00,YSNLST->ysn_kb,offset
+ [subject]ロングジャンプ化/実行/_:toggle,0x4402C3,EB00A1368C440090,75748B86CC040000
+ [subject]無限多段ジャンプ化/実行/_:toggle,0x4401A4,EB0490909090,0F84AA000000
+[back]
+
+[/group]
+
+
+[group]YS9KN_SSG
+[note]wordwrap
+※ソフト自体を所持していないので動作確認はしておりません。ver違いにご注意を。
+
+エメル消費時即MAX：
+剣を鍛えると…という意味
+
+魔法ゲージ即回復：
+自動回復機能の無いLVの剣では然程意味無し
+
+無限多段ジャンプ化：
+ロングジャンプ化と併用することで進入禁止区域に入れてしまうことがあります。その場合正規のデバッグ処理による座標強制修復の対象となったり、そのまま進むことでシナリオが狂う可能性があります。ジャンプテクニックの負担軽減・クエストマップ内のショートカット用途に留めた方が賢明です。
+[/note]
+
+[subject]ver1.305:dir
+ [subject]完全無敵化/実行/_:b_toggle,0x00,YSNLST->ysn_9kc,offset
+ [subject]戦闘後即LVMAX/実行/_:b_toggle,0x00,YSNLST->ysn_9ka,offset
+ [subject]戦闘後即所持金MAX/実行/_:toggle,0x46713D,EB00,7E08
+ [subject]魔法ゲージ即回復/実行/_:toggle,0x440EB1,055717480090,84B7B0080000
+ [subject]エメル消費時即MAX/実行/_:toggle,0x4095C4,BB3F420F00908B8C248C050000EB00,8B985C0400008B8C248C0500002BD9
+ [subject]移動速無条件２倍化/実行/_:b_toggle,0x00,YSNLST->ysn_9kb,offset
+ [subject]ロングジャンプ化/実行/_:toggle,0x440333,EB00A1368C440090,75748B86CC040000
+ [subject]無限多段ジャンプ化/実行/_:toggle,0x440314,EB0490909090,0F84AA000000
+[back]
+
+[/group]
+
+
+[group]ysn_a
+0x46727E,EB00,7A08
+0x467284,F0237449,0000803F
+0x4672C8,EB0490909090,D88164020000
+[/group]
+
+
+[group]ysn_2a
+0x4665BE,EB00,7A08
+0x4665C4,F0237449,0000803F
+0x466608,EB0490909090,D88164020000
+[/group]
+
+
+[group]ysn_9a
+0x46731E,EB00,7A08
+0x467324,F0237449,0000803F
+0x467368,EB0490909090,D88164020000
+[/group]
+
+
+[group]ysn_92a
+0x46669E,EB00,7A08
+0x4666A4,F0237449,0000803F
+0x4666E8,EB0490909090,D88164020000
+[/group]
+
+
+[group]ysn_ta
+0x46804E,EB00,7A08
+0x468054,F0237449,0000803F
+0x468098,EB0490909090,D88164020000
+[/group]
+
+
+[group]ysn_2ta
+0x46714E,EB00,7A08
+0x467154,F0237449,0000803F
+0x467198,EB0490909090,D88164020000
+[/group]
+
+
+[group]ysn_ka
+0x466ECE,EB00,7A08
+0x466ED4,F0237449,0000803F
+0x466F18,EB0490909090,D88164020000
+[/group]
+
+
+[group]ysn_9ka
+0x46705E,EB00,7A08
+0x467064,F0237449,0000803F
+0x4670A8,EB0490909090,D88164020000
+[/group]
+
+
+[group]ysn_t9a
+0x46816E,EB00,7A08
+0x468174,F0237449,0000803F
+0x4681B8,EB0490909090,D88164020000
+[/group]
+
+
+[group]ysn_2t9a
+0x4671DE,EB00,7A08
+0x4671E4,F0237449,0000803F
+0x467228,EB0490909090,D88164020000
+[/group]
+
+
+[group]ysn_b
+0x440903,0DAA094A,8ED40400
+0x440917,0DAA094A,8ED40400
+[/group]
+
+
+[group]ysn_2b
+0x43FBB3,0D8AFB49,8ED40400
+0x43FBC7,0D8AFB49,8ED40400
+[/group]
+
+
+[group]ysn_9b
+0x440943,0D4A0A4A,8ED40400
+0x440957,0D4A0A4A,8ED40400
+[/group]
+
+
+[group]ysn_92b
+0x43FC83,0D8AFC49,8ED40400
+0x43FC97,0D8AFC49,8ED40400
+[/group]
+
+
+[group]ysn_tb
+0x4416D3,0D5A274A,8ED40400
+0x4416E7,0D5A274A,8ED40400
+[/group]
+
+
+[group]ysn_2tb
+0x440733,0DDA164A,8ED40400
+0x440747,0DDA164A,8ED40400
+[/group]
+
+
+[group]ysn_kb
+0x440553,0DFE144A,8ED40400
+0x440567,0DFE144A,8ED40400
+[/group]
+
+
+[group]ysn_9kb
+0x4406C3,0D1A164A,8ED40400
+0x4406D7,0D1A164A,8ED40400
+[/group]
+
+
+[group]ysn_t9b
+0x441793,0DBA274A,8ED40400
+0x4417A7,0DBA274A,8ED40400
+[/group]
+
+
+[group]ysn_2t9b
+0x4407C3,0D8A174A,8ED40400
+0x4407D7,0D8A174A,8ED40400
+[/group]
+
+
+[group]ysn_c
+0x467E0F,EB00,7424
+0x43E728,E99A01000090,0F8499010000
+[/group]
+
+
+[group]ysn_2c
+0x46714F,EB00,7424
+0x43D9D8,E99A01000090,0F8499010000
+[/group]
+
+
+[group]ysn_9c
+0x43E768,E99A01000090,0F8499010000
+0x467EAF,EB00,7424
+[/group]
+
+
+[group]ysn_92c
+0x43DAA8,E99A01000090,0F8499010000
+0x46722F,EB00,7424
+[/group]
+
+
+[group]ysn_tc
+0x468BDF,EB00,7424
+0x43F4F8,E99A01000090,0F8499010000
+[/group]
+
+
+[group]ysn_2tc
+0x467CDF,EB00,7424
+0x43E558,E99A01000090,0F8499010000
+[/group]
+
+
+[group]ysn_kc
+0x467A5F,EB00,7424
+0x43E378,E99A01000090,0F8499010000
+[/group]
+
+
+[group]ysn_9kc
+0x467BDF,EB00,7424
+0x43E4E8,E99A01000090,0F8499010000
+[/group]
+
+
+[group]ysn_t9c
+0x468CFF,EB00,7424
+0x43F5B8,E99A01000090,0F8499010000
+[/group]
+
+
+[group]ysn_2t9c
+0x467D6F,EB00,7424
+0x43E5E8,E99A01000090,0F8499010000
+[/group]
