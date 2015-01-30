@@ -1,0 +1,276 @@
+[group]UTD_SSG
+[note]wordwrap
+これだけ充実した世界観で、一本道なのがやはり勿体無いかなと。
+
+以下、少々補足です。
+ver1.00-CRC32/
+UTAWARE-DVD.EXE=8D73289D
+EXDLL.DLL=C2D6356E
+ROOT.DLL=E154D8B4
+
+■■戦闘パート関連
+敵行動ターン封印化：
+敵ユニットの行動ターンを凍結します。
+
+移動＆攻撃範囲無条件拡大：
+味方ユニットの移動力と攻撃範囲が、機能実行時以降拡大されます。
+
+ターン毎ＨＰ回復：
+カーソルをあわせスタータスを表示させるとＨＰが最大回復します。味方のみ有効。
+
+■■パラメータ関連
+ＡＶＧパートの方は仲間になったキャラクターのみ対象となり、戦闘パート外で利用できます。また、戦闘パートの方は戦闘中のみ利用可。識別子変化項目のＯＮ／ＯＦＦによりステージ中に存在するキャラクターに関しては、任意に敵味方属性の変更ができます。
+
+■■おまけ関連
+新規スクリプト更新時、及び各シナリオ中に特定のＣＧが表示された場合等に、セーブデータからデータを復元してしまいます。が、これらの機能でフラグを変更させた後、すかさず任意のスロットにデータセーブしてしまえば反映可能です。
+[/note]
+
+[subject]ＳＬＧパート関連:dir
+	[replace]_(MName::EXDLL.DLL),UTDLST->UTD_MA
+[root]
+
+[subject]パラメータ・フラグ関連:dir
+	[replace]0x00,UTDLST->UTD_PR
+[root]
+
+[subject]ＣＧモード関連:dir
+	[replace]_[:[:(MName::ROOT.DLL)+0x5BEE4:]+0xAEF58:],UTDLST->UTD_CG
+[root]
+
+[/group]
+
+
+[group]UTD_MA
+[subject]敵行動ターン封印化/実行/_:b_toggle,0x00,UTDLST->UTD_c,offset
+[subject]味方移動力・攻撃距離無条件拡大/実行/_:b_toggle,0x00,UTDLST->UTD_d,offset
+[subject]ステータス表示時味方ＨＰ全快/実行/_:b_toggle,0x00,UTDLST->UTD_e,offset
+[subject]戦闘１回でＬＶＭＡＸ化/実行/_:b_toggle,0x00,UTDLST->UTD_f,offset
+[/group]
+
+
+[group]UTD_PR
+[subject]ＡＶＧパート時:dir
+	[repeat]UTDLST->UTDREP1,0,15,1
+[back]
+[subject]ＳＬＧパート時:dir	
+	[repeat]UTDLST->UTDREP2,0,20,1
+[/group]
+
+
+[group]UTDREP1
+[subject][! @UTDLST->LST_c,$Val !]:dir
+	[replace]_[:(MName::ROOT.DLL)+0x5B9D4:]+0x[! 0x8C*$Val !]+0x6898,UTDLST->PR1
+[/group]
+
+
+[group]UTDREP2
+[subject]_mem,_[\:(MName\:\:ROOT.DLL)+0x5B9D4\:]+0x[! 0x8C*$Val !]+0x450C,0x01,free_list,その他汎用,UTDLST->LST_b:dir
+	[replace]_[:(MName::ROOT.DLL)+0x5B9D4:]+0x[! 0x8C*$Val !]+0x450C,UTDLST->PR2
+[/group]
+
+
+[group]PR1
+[subject]ＬＶ/現在値/_:calc,0x0C,0x01,0x63,unsigned
+[subject]経験値/現在値/_:calc,0x0E,0x000000,0x030D3F,unsigned
+[subject]累計ポイント/現在値/_:calc,0x14,0x0000,0x270F,unsigned
+[subject]撃破数/現在値/_:calc,0x2C,0x0000,0x03E7,unsigned
+[subject]属性/_:list,0x1A,UTDLST->LST_a,0x00,0x01
+[subject]現在体力/現在値/_:calc,0x12,0x0000,0x270F,unsigned
+[subject]最大体力/現在値/_:calc,0x2A,0x0000,0x270F,unsigned
+[e_with],0x01,0x63,unsigned
+ [subject]攻撃力/現在値/_:calc,0x1E
+ [subject]技/現在値/_:calc,0x20
+ [subject]防御力/現在値/_:calc,0x22
+ [subject]術防御力/現在値/_:calc,0x24
+[/e_with]
+[back]
+[/group]
+
+
+[group]PR2
+[subject]ＬＶ/現在値/_:calc,0x0C,0x01,0x63,unsigned
+[subject]経験値/現在値/_:calc,0x0E,0x000000,0x030D3F,unsigned
+[subject]属性/_:list,0x1A,UTDLST->LST_a,0x00,0x01
+[subject]現在体力/現在値/_:calc,0x12,0x0000,0x270F,unsigned
+[subject]最大体力/現在値/_:calc,0x2A,0x0000,0x270F,unsigned
+[subject]気力/現在値/_:calc,0x0D,0x00,0x64,unsigned
+[e_with],0x01,0x63,unsigned
+ [subject]攻撃力/現在値/_:calc,0x1E
+ [subject]技/現在値/_:calc,0x20
+ [subject]防御力/現在値/_:calc,0x22
+ [subject]術防御力/現在値/_:calc,0x24
+[/e_with]
+[subject]撃破数/現在値/_:calc,0x3C,0x0000,0x03E7,unsigned
+[subject]ユニット識別子変化/味方ON／敵OFF/_:toggle,0x5C,00,01
+[back]
+[/group]
+
+
+[group]LST_a
+火
+雷
+風
+地
+光
+闇
+？
+無
+[/group]
+
+
+[group]LST_b
+0x01=エルルゥ
+0x02=アルルゥ
+0x03=テオロ
+0x04=オボロ
+0x05=ドリィ
+0x06=グラァ
+0x07=ベナウィ
+0x08=クロウ
+0x09=ウルトリィ
+0x0A=カミュ
+0x0B=カルラ
+0x0C=トウカ
+0x0D=デリホウライ
+0x0E=ゲンジマル
+0x0F=ハクオロ
+0x10=ハウエンクァ
+0x11=ディー
+0x12=ヌワンギ
+0x13=ササンテ
+0x14=ニウェ
+0x15=オリカカン
+0x16=スオンカス
+0x17=カンホルダリ
+0x18=クーヤ
+0x19=ムティカパ
+0x25=ムツミ
+0x27=ヒエン
+0x51=ウィツアルネミテア
+0x00=<NoCharacter>
+[/group]
+
+
+[group]LST_c
+エルルゥ
+アルルゥ
+テオロ
+オボロ
+ドリィ
+グラァ
+ベナウィ
+クロウ
+ウルトリィ
+カミュ
+カルラ
+トウカ
+デリホウライ
+ゲンジマル
+ハクオロ
+[/group]
+
+
+[group]UTD_CG
+[subject]画像鑑賞:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:b_toggle,0x00,UTDLST->UTD_a,offset
+	[subject]ＡＬＬ ＯＦＦ/実行/_:b_toggle,0x00,UTDLST->UTD_b,offset
+[back]
+[subject]音楽鑑賞:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x84,FFFFFF03
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x84,00000000
+[back]
+[subject]シーン回想:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x7C,FF01
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x7C,0000
+[back]
+[subject]戦闘練習:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0x8C,FFFFFF7F
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0x8C,00000000
+[back]
+[subject]称号:dir
+	[subject]ＡＬＬ ＯＮ/実行/_:toggle,0xBC,FF7F
+	[subject]ＡＬＬ ＯＦＦ/実行/_:toggle,0xBC,0000
+[back]
+[/group]
+
+
+[group]UTD_a
+0x94,FFFFFFFF
+0x9C,FFFFFFFF
+0xA4,FFFFFFFF
+0x114,703F4000
+0x11C,903F4000
+_0x403F70-[_0_],286329323030322C323030334C6561662F41515541504C555300
+_0x403F90-[_0_],82A482BD82ED82EA82E982E082CC44564494C500
+[/group]
+
+
+[group]UTD_b
+0x94,00000000
+0x9C,00000000
+0xA4,00000000
+0x114,703F4000
+0x11C,903F4000
+_0x403F70-[_0_],28814C996B814D2900
+_0x403F90-[_0_],28814C815B814D2900
+[/group]
+
+
+[group]UTD_c
+0x270E,E9DD2E01009090,66018258450000
+0x284E,E9712D01009090,66018A58450000
+0x155C4,6633C9,000000
+0x155C7,6681BA684500000100,000000000000000000
+0x155D0,7406,0000
+0x155D2,66B90001,00000000
+0x155D6,EB04,0000
+0x155D8,66B900FF,00000000
+0x155DC,66898A58450000,00000000000000
+0x155E3,E96DD2FEFF90,000000000000
+0x155F0,6633C0,000000
+0x155F3,6681BA684500000100,000000000000000000
+0x155FC,7406,0000
+0x155FE,66B80001,00000000
+0x15602,EB04,0000
+0x15604,66B800FF,00000000
+0x15608,66898258450000,00000000000000
+0x1560F,E901D1FEFF90,000000000000
+[/group]
+
+
+[group]UTD_d
+0xDB50,E9C37A0000909090,0FBF8C8332450000
+0x15618,6681BC83684500000100,00000000000000000000
+0x15622,7420,0000
+0x15624,66C78483324500001400,00000000000000000000
+0x1562E,6681BC830C4500000100,00000000000000000000
+0x15638,740A,0000
+0x1563A,66C78483344500000A00,00000000000000000000
+0x15644,0FBF8C8332450000,0000000000000000
+0x1564C,E90785FFFF90,000000000000
+[/group]
+
+
+[group]UTD_e
+0x18AF,E9B43D0100909090,668B4712663DE703
+0x15668,66837F5C01,0000000000
+0x1566D,740A,0000
+0x1566F,668B472A,00000000
+0x15673,66894712,00000000
+0x15677,EB04,0000
+0x15679,668B4712,00000000
+0x1567D,663DE703,00000000
+0x15681,E931C2FEFF90,000000000000
+[/group]
+
+
+[group]UTD_f
+0xE4FA,E98971000090,8984951A450000
+0x15688,6683BC956845000001,000000000000000000
+0x15691,740C,0000
+0x15693,3D3F0D0300,0000000000
+0x15698,7F05,0000
+0x1569A,B83F0D0300,0000000000
+0x1569F,8984951A450000,00000000000000
+0x156A6,E9568EFFFF90,000000000000
+[/group]
