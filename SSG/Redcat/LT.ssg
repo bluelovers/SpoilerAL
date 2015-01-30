@@ -1,0 +1,31 @@
+SSG for SpoilerAL ver 6.1
+
+[script]
+
+[title]Let's Trade!
+[process]System40.exe
+[maker]Akt.
+[creator]REDCAT
+
+[subject]総資金/現在値/固定:calc,_[:[:[:(MName::Sys42VM.dll)+0x060D28:]:]+0x10:]+0xBC,0x000000,0x77359400,unsigned
+[subject]全グループ出現/実行/_:toggle,_[:[:[:(MName::Sys42VM.dll)+0x060D28:]+0x0150:]+0x10:],_[:[:[:(MName::Sys42VM.dll)+0x060D28:]+0x0150:]+0x10:]+0x5F-01000000,00
+
+[/script]
+
+[script]
+
+[title]ひぐらしのなく頃に買
+[process]System40.exe
+[maker]Akt.
+[creator]REDCAT
+
+[involve]hk
+[group]lst
+[subject]総資金/現在値/固定:calc,0xC4,0x000000,0x77359400,unsigned
+[subject]経過日数/現在値/固定:calc,0x0228,0x01,0x63,unsigned
+[/group]
+[/involve]
+
+[replace]_[:[:[:(MName::Sys42VM.dll)+0x060D28:]:]+0x10:],hk->lst
+
+[/script]
