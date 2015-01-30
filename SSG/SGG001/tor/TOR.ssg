@@ -1,0 +1,20 @@
+SSG for SpoilerAL ver 6.1
+
+[script]
+[title]Ys Ⅰ Complete
+[process]YS1_WIN.EXE
+[maker]日本Falcom
+[creator]TOR
+[note]wordwrap
+初めて作った、簡単なものですが・・・
+もしお役に立てたなら幸いです。
+[/note]
+	[subject]Lv:calc,0x517264,0,10,unsigned,little_e
+	[subject]Exp:calc,0x517260,0,99999,unsigned,little_e
+	[subject]HP:calc,0x51724C,0,250,unsigned,little_e
+	[subject]MaxHP:calc,0x517250,0,250,unsigned,little_e
+	[subject]STR:calc,0x517254,0,999,unsigned,little_e
+	[subject]DEF:calc,0x517258,0,999,unsigned,little_e
+	[subject]Gold:calc,0x51725C,0,99999,unsigned,little_e
+[back]
+[/script]
