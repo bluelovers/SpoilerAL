@@ -1,0 +1,14 @@
+[subject]ŒR‘‹à:calc,0x8213CC,0x0,0x7FFFFF,unsigned
+[subject]ƒLƒƒƒ‰ƒNƒ^”\—Í:dir
+[subject]‘SˆõÅ‹­:b_toggle,0x73DA70,seÅ‹­,offset
+[subject]‘Sˆõ—VŒ‚:b_toggle,0x73DA94,se—VŒ‚,offset
+	[replace]0x73DA4C,se–¼‘O,offset
+[root]
+[subject]ƒoƒJƒR[ƒhƒVƒ‡ƒE:dir
+	[subject]’´‹óím’c:b_toggle,0x73DA88,se‰¹‘¬,offset
+	[subject]Šî–{‚Í‘fU‚èím’c:b_toggle,0x73DA98,se‘fU‚è,offset
+	[subject]’E“e˜”²‚¯ím’c:b_toggle,0x73DA9C,se˜”²‚¯,offset
+	[subject]“Ëi!!‹¶ím’c:b_toggle,0x73DA94,se—VŒ‚,offset
+	[subject]¢ŠEŠÛŒ©‚¦ím’c:toggle,0x73DA90,E803,0A00
+	[subject]–Ú‰B‚µ‚ ‚Á‚Ä‚Ì•ŸÎ‚¢ím’c:b_toggle,0x73DA90,se•ŸÎ‚¢,offset
+[root]
