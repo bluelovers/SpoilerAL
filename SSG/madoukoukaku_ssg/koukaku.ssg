@@ -1,0 +1,608 @@
+SSG for SpoilerAL ver 6.1
+
+[script]
+[title]魔導巧殻 ～闇の月女神は導国で詠う～
+[process]AGE.EXE
+[maker]Eushully
+[distinction]五十音順=ま
+[note]
+国力要件は一部の建築などで必要なフラグですが、
+折に触れて再計算されるので値の固定を利用し、
+間に合わなかった時はUI切り替えで対応して、
+普段は固定を解除しておくことをお奨めします。
+
+(これは森の建築条件をサーチして発見したフラグ周辺前後の
+連続して再計算されている領域のみ操作しています。
+この近辺にはイベントトリガーもあり、汎用領域と思われやや危険です)
+
+魔導巧殻の部品は所持フラグも所持数＞0に書き換えます。
+
+隊長EXPは経験成長フラグもEXP＞0に書き換えます。
+これは隊長ビットフラグに於ける1の位ですが、無理矢理onにしても
+ステータスが格納されず、自国しか参照しないフラグです。
+
+自国の予備役は仲間フラグも待機数＞0に書き換えます。
+これは隊長ビットフラグに於ける2の位です。
+
+自国の物品は所持フラグも所持数＞0に書き換えます。
+
+拠点ステータスは基礎ポイント操作のため、即座には反映されません。
+またゲーム上で表示される拠点情報とは配置物によって差違が出ます。
+
+配置物以下はセーブデータにあらずロード等によって初期化されます。
+
+一部項目では親ノード選択時に一括書き換えが可能になります。
+実行に際し「Not Defined Error!」と表示される場合がありますが、
+これは条件属性[enabled]が偽判定でも書き換えようとする為であり、
+その項目に到達するまでの書き換えは行われています。
+
+アドレスコーディングや有効条件属性を多用しているため、
+SSGデバッグモード、現在値もツリーに表示しての初心者モードは非推奨です。
+[/note]
+[involve]MAKO
+
+[group]GetBytes
+[val]*.
+[input]現在値:calc,no,0x80000000,0x7FFFFFFF
+[note]
+①ゲーム上の値を入力し、決定、OKします。(OKを押さないと反映されません)
+②対象が変動しない状況にして、サーチ開始を押し、検索の終了を待ちます。
+③ゲーム上で変動させ、値の再入力、絞り込みサーチ、これを繰り返します。
+
+絞り込めた補正値をアドレスとした項目を[group]Rootに追記すると良いでしょう。
+該当しない場合にはサーチ範囲を変更するでサーチ上限を増やしていくか、
+サーチ用バイト列を直接変更するのバイト列をメモリエディタで活用してください。
+このバイト列はSSG同様パースされます。前後を仮定出来ればより効率的に絞り込めます。
+[/note]
+[/group]
+
+[group]Value
+[subject]+[!$Val*4!]:calc,0x[!$Val*4!],0x80000000,0x7FFFFFFF
+[/group]
+
+[group]State
+[subject]資金:calc,0x0005C480,0,99999999
+[subject]兵糧:calc,0x0005C4F8,0,99999999
+[subject]偵察:toggle,0x0005C2A0,$4 [:[.0x0005C2A0.]:]=>i;[:[:0x00670818:]+0x0005E85C:]=>key;$i*0x00000800|$i/0x00200000^$key=>i;$i/0x02000000|$i*0x00000080=>i;$i|0x0100=>i;$i/0x00000080|$i*0x02000000^$key=>i;$i*0x00200000|$i/0x00000800 $$,$4 [:[.0x0005C2A0.]:]=>i;[:[:0x00670818:]+0x0005E85C:]=>key;$i*0x00000800|$i/0x00200000^$key=>i;$i/0x02000000|$i*0x00000080=>i;0xFFFFFFFF~0x0100&$i=>i;$i/0x00000080|$i*0x02000000^$key=>i;$i*0x00200000|$i/0x00000800 $$
+[/group]
+
+[group]Amity
+[subject]_mem,_[\:[.0x[!$Val*4+0x0005DA88!].]\:]=>i;[\:0x00670818\:]=>age;($i*0x00000800|$i\/0x00200000^([\:$age+0x0005E85C\:]))=>i;$i\/0x02000000|$i*0x00000080=>i;[\:$age+0x0005D3E0\:]+$i*0x1C+0x0011B1E0=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20'+'-'+'_mem,_[\:[\:0x00670818\:]+0x0005D3E0\:]+0x[!$Val*0x1C+0x0011B7E4!]=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20:dir
+	[enabled][:0x00670818:]=>age;[:[:$age+0x0005D3D0:]+0x[!$Val*4+0x0005C2A0!]:]=>i;($i*0x00000800|$i/0x00200000^([:$age+0x0005E85C:]))=>i;$i/0x02000000|$i*0x00000080=>i;$i&0x01
+	[subject]彼:calc,_[:[:0x00670818:]+0x0005D3D0:]=>ptr;[.0x00-$ptr.]/30+$ptr+0x[!$Val*4*30+0x0005CC78!],0,100
+	[subject]我:calc,0x[!$Val*4+0x0005CC78!],0,100
+	[/enabled]
+[back]
+[/group]
+
+[group]Amities
+[repeat]MAKO->Amity,1,17
+[/group]
+
+[group]Name
+[:[.0x000D4A20.]:]=>i;
+[:0x00670818:]=>age;
+[:$age+0x0005E85C:]=>key;
+$i*0x00000800|$i/0x00200000^$key=>i;
+$i/0x02000000|$i*0x00000080=>i;
+$i&0x01=>b;
+[:[.0x000D7DB0.]:]=>i;
+$i*0x00000800|$i/0x00200000^$key=>i;
+$i/0x02000000|$i*0x00000080=>i;
+[:$age+0x0005D3E0:]+$i*0x1C*2*$b+0x00043DA8=>ptr;
+[:$ptr+0x14:]<0x10=>buf;
+$buf~1=>ref;
+[:$ptr:]*$ref+$ptr*$buf
+[/group]
+
+[group]Maneuverable
+[subject]_mem,@MAKO->Name,0x20,null,-/可能:toggle,0x000D4A20,$4 [:[.0x000D4A20.]:]=>i;[:[:0x00670818:]+0x0005E85C:]=>key;$i*0x00000800|$i/0x00200000^$key=>i;$i/0x02000000|$i*0x00000080=>i;0xFFFFFFFF~0x0100&$i=>i;$i/0x00000080|$i*0x02000000^$key=>i;$i*0x00200000|$i/0x00000800 $$,$4 [:[.0x000D4A20.]:]=>i;[:[:0x00670818:]+0x0005E85C:]=>key;$i*0x00000800|$i/0x00200000^$key=>i;$i/0x02000000|$i*0x00000080=>i;$i|0x0100=>i;$i/0x00000080|$i*0x02000000^$key=>i;$i*0x00200000|$i/0x00000800 $$
+[/group]
+
+[group]Maneuvers
+[replace]0x[!$Val*4!],MAKO->Maneuverable
+[/group]
+
+[group]Allegiance
+[subject]_mem,@MAKO->Name,0x20,null,-:calc,0x000F1A30,0,100
+[/group]
+
+[group]Allegiances
+[replace]0x[!$Val*4!],MAKO->Allegiance
+[/group]
+
+[group]Experiencing
+($Val*0x00000800|$Val/0x00200000^([:[:0x00670818:]+0x0005E85C:]))=>i;$i/0x02000000|$i*0x00000080,_[:[.0x000D7DB0.]:]=>i;[:0x00670818:]=>age;($i*0x00000800|$i/0x00200000^([:$age+0x0005E85C:]))=>i;$i/0x02000000|$i*0x00000080=>i;[:$age+0x0005D3D0:]+$i*4+0x0003C20C,$4 [:[.0x000D7DB0.]:]=>i;[:0x00670818:]=>age;[:$age+0x0005E85C:]=>key;$i*0x00000800|$i/0x00200000^$key=>i;$i/0x02000000|$i*0x00000080=>i;[:[:$age+0x0005D3D0:]+$i*4+0x0003C20C:]=>i;$i*0x00000800|$i/0x00200000^$key=>i;$i/0x02000000|$i*0x00000080=>i;$i|0x01=>i;$i/0x00000080|$i*0x02000000^$key=>i;$i*0x00200000|$i/0x00000800 $$
+default,_[:[.0x000D7DB0.]:]=>i;[:0x00670818:]=>age;($i*0x00000800|$i/0x00200000^([:$age+0x0005E85C:]))=>i;$i/0x02000000|$i*0x00000080=>i;[:$age+0x0005D3D0:]+$i*4+0x0003C20C,$4 [:[.0x000D7DB0.]:]=>i;[:0x00670818:]=>age;[:$age+0x0005E85C:]=>key;$i*0x00000800|$i/0x00200000^$key=>i;$i/0x02000000|$i*0x00000080=>i;[:[:$age+0x0005D3D0:]+$i*4+0x0003C20C:]=>i;$i*0x00000800|$i/0x00200000^$key=>i;$i/0x02000000|$i*0x00000080=>i;0xFFFFFFFF~0x01&$i=>i;$i/0x00000080|$i*0x02000000^$key=>i;$i*0x00200000|$i/0x00000800 $$
+[/group]
+
+[group]Experience
+[funnel]MAKO->Experiencing
+[subject]_mem,@MAKO->Name,0x20,null,-:calc,_[:[.0x000D7DB0.]:]=>i;[:0x00670818:]=>age;($i*0x00000800|$i/0x00200000^([:$age+0x0005E85C:]))=>i;$i/0x02000000|$i*0x00000080=>i;[:$age+0x0005D3D0:]+$i*4+0x0003E14C,0,9900
+[/funnel]
+[/group]
+
+[group]Experiences
+[replace]0x[!$Val*4!],MAKO->Experience
+[/group]
+
+[group]Organize
+use,0x000D4A20,$4 [:[.0x000D7DB0.]:]=>i;[:0x00670818:]=>age;[:$age+0x0005E85C:]=>key;$i*0x00000800|$i/0x00200000^$key=>i;$i/0x02000000|$i*0x00000080=>i;[:[:$age+0x0005D3E0:]+$i*0x1C*2+0x10+0x00043DA8:]>0=>b;[:[.0x000D4A20.]:]=>i;$i*0x00000800|$i/0x00200000^$key=>i;$i/0x02000000|$i*0x00000080=>i;0xFFFFFFFF~0x01&$i|$b=>i;$i/0x00000080|$i*0x02000000^$key=>i;$i*0x00200000|$i/0x00000800 $$
+use,0x000F4DC0,$4 [:[.0x0002CA80.]:]=>i;[:0x00670818:]=>age;($i*0x00000800|$i/0x00200000^([:$age+0x0005E85C:]))=>i;$i/0x02000000|$i*0x00000080=>i;[:$age+0x0005D3D0:]=>ptr;[:[.($ptr~0xFFFFFFFF)+1.]/4/110*4*110+$ptr+$i*4+0x000F4DC0:] $$
+[/group]
+
+[group]Commando
+[funnel]MAKO->Organize
+[subject]＠'+'_mem,_[\:[.0x0002CA80.]\:]=>i;[\:0x00670818\:]=>age;[\:$age+0x0005E85C\:]=>key;$i*0x00000800|$i\/0x00200000^$key=>i;$i\/0x02000000|$i*0x00000080=>i;[\:$age+0x0005D3D0\:]=>ptr;[\:[.0x00-$ptr.]\/4\/110*4*110+$ptr+$i*4+0x000D7DB0\:]=>i;$i*0x00000800|$i\/0x00200000^$key=>i;$i\/0x02000000|$i*0x00000080=>i;[\:$age+0x0005D3E0\:]+$i*0x1C*2+0x00043DA8=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20,null,軍団:calc,0x0002CA80,0,99
+[subject]_mem,@MAKO->Name,0x20,null,隊長:calc,0x000D7DB0,0,999
+[/funnel]
+[enabled][:[.0x000D7DB0.]:]=>i;[:0x00670818:]=>age;($i*0x00000800|$i/0x00200000^([:$age+0x0005E85C:]))=>i;$i/0x02000000|$i*0x00000080=>i;[:[:$age+0x0005D3E0:]+$i*0x1C*2+0x10+0x00043DA8:]
+[subject]部隊ビットフラグ:calc,0x000D4A20,0,0x1FF,unsigned
+[enabled][:[.0x000D4A20.]:]=>i;($i*0x00000800|$i/0x00200000^([:[:0x00670818:]+0x0005E85C:]))=>i;$i/0x02000000|$i*0x00000080=>i;$i&0x01
+[subject]_mem,_[\:[.0x000F4DC0.]\:]=>i;[\:0x00670818\:]=>age;($i*0x00000800|$i\/0x00200000^([\:$age+0x0005E85C\:]))=>i;$i\/0x02000000|$i*0x00000080=>i;[\:$age+0x0005D3E0\:]+$i*0x1C+0x0011BB2C=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20,null,拠点:calc,0x000F4DC0,0,99
+[subject]隊長ビットフラグ:calc,_[:[.0x000D7DB0.]:]=>i;[:0x00670818:]=>age;($i*0x00000800|$i/0x00200000^([:$age+0x0005E85C:]))=>i;$i/0x02000000|$i*0x00000080=>i;[:$age+0x0005D3D0:]+$i*4+0x0003C20C,0,0x1FF,unsigned
+[subject]_mem,_[\:[.0x000EE6A0.]\:]=>i;[\:0x00670818\:]=>age;($i*0x00000800|$i\/0x00200000^([\:$age+0x0005E85C\:]))=>i;$i\/0x02000000|$i*0x00000080=>i;[\:$age+0x0005D3E0\:]+$i*0x1C+0x0005F328=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20,null,称号:calc,0x000EE6A0,0,999
+[subject]_mem,_[\:[.0x000E1860.]\:]=>i;[\:0x00670818\:]=>age;($i*0x00000800|$i\/0x00200000^([\:$age+0x0005E85C\:]))=>i;$i\/0x02000000|$i*0x00000080=>i;[\:$age+0x0005D3E0\:]+$i*0x1C+0x000E1148=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20,null,攻撃:calc,0x000E1860,0,999
+[subject]_mem,_[\:[.0x000E7F80.]\:]=>i;[\:0x00670818\:]=>age;($i*0x00000800|$i\/0x00200000^([\:$age+0x0005E85C\:]))=>i;$i\/0x02000000|$i*0x00000080=>i;[\:$age+0x0005D3E0\:]+$i*0x1C+0x000A38E8=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20,null,装備:calc,0x000E7F80,0,999
+[subject]_mem,_[\:[.0x000DB140.]\:]=>i;[\:0x00670818\:]=>age;($i*0x00000800|$i\/0x00200000^([\:$age+0x0005E85C\:]))=>i;$i\/0x02000000|$i*0x00000080=>i;[\:$age+0x0005D3E0\:]+$i*0x1C+0x00088368=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20,null,小隊:calc,0x000DB140,0,999
+[subject]_mem,_[\:[.0x000E4BF0.]\:]=>i;[\:0x00670818\:]=>age;($i*0x00000800|$i\/0x00200000^([\:$age+0x0005E85C\:]))=>i;$i\/0x02000000|$i*0x00000080=>i;[\:$age+0x0005D3E0\:]+$i*0x1C+0x000E1148=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20,null,攻撃:calc,0x000E4BF0,0,999
+[/enabled]
+[/enabled]
+[/group]
+
+[group]Commandos
+[subject][!L$Val!]='+'_mem,_[\:[.0x[!$Val*4+0x000D7DB0!].]\:]=>i;[\:0x00670818\:]=>age;($i*0x00000800|$i\/0x00200000^([\:$age+0x0005E85C\:]))=>i;$i\/0x02000000|$i*0x00000080=>i;[\:$age+0x0005D3E0\:]+$i*0x1C*2+0x00043DA8=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20:dir
+	[replace]0x[!$Val*4!],MAKO->Commando
+[back]
+[/group]
+
+[group]Corps
+[enabled][:[.0x000D4A20.]:]=>i;($i*0x00000800|$i/0x00200000^([:[:0x00670818:]+0x0005E85C:]))=>i;$i/0x02000000|$i*0x00000080=>i;$i&0x01
+[subject]行動:dir
+	[repeat]MAKO->Maneuvers,0,[!L$Val!]
+[back]
+[subject]忠誠:dir
+	[repeat]MAKO->Allegiances,0,[!L$Val!]
+[back]
+[subject]EXP:dir
+	[repeat]MAKO->Experiences,0,[!L$Val!]
+[back]
+[/enabled]
+#[subject]:split,line,0,90,10
+#[repeat]MAKO->Commandos,0,[!L$Val!]
+[/group]
+
+[group]Army
+[repeat]MAKO->Corps,100,101
+[/group]
+
+[group]Reserving
+[:0x00670818:]=>age;[:$age+0x0005D3D0:]=>ptr;[:$ptr+0x00018E7C:]=>i;($i*0x00000800|$i/0x00200000^([:$age+0x0005E85C:]))=>i;$i/0x02000000|$i*0x00000080=>i;[.0x00-$ptr.]/4/1000!=$i,0x00
+($Val*0x00000800|$Val/0x00200000^([:[:0x00670818:]+0x0005E85C:]))=>i;$i/0x02000000|$i*0x00000080,_[:[:0x00670818:]+0x0005D3D0:]=>ptr;[.0x00-$ptr.]/4%1000*4+$ptr+0x0003C20C,$4 [:0x00670818:]=>age;[:$age+0x0005D3D0:]=>ptr;[:[.($ptr~0xFFFFFFFF)+1.]/4%1000*4+$ptr+0x0003C20C:]=>i;[:$age+0x0005E85C:]=>key;$i*0x00000800|$i/0x00200000^$key=>i;$i/0x02000000|$i*0x00000080=>i;$i|0x02=>i;$i/0x00000080|$i*0x02000000^$key=>i;$i*0x00200000|$i/0x00000800 $$
+default,_[:[:0x00670818:]+0x0005D3D0:]=>ptr;[.0x00-$ptr.]/4%1000*4+$ptr+0x0003C20C,$4 [:0x00670818:]=>age;[:$age+0x0005D3D0:]=>ptr;[:[.($ptr~0xFFFFFFFF)+1.]/4%1000*4+$ptr+0x0003C20C:]=>i;[:$age+0x0005E85C:]=>key;$i*0x00000800|$i/0x00200000^$key=>i;$i/0x02000000|$i*0x00000080=>i;0xFFFFFFFF~0x02&$i=>i;$i/0x00000080|$i*0x02000000^$key=>i;$i*0x00200000|$i/0x00000800 $$
+[/group]
+
+[group]Reserve
+[funnel]MAKO->Reserving
+[subject]_mem,_[\:0x00670818\:]=>age;[\:$age+0x0005D3D0\:]=>ptr;[.0x00-$ptr.]\/4%1000=>i;[\:$age+0x0005D3E0\:]+$i*0x1C*2+0x00043DA8=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20,null,-:calc,0x0009A028,0,999
+[/funnel]
+#[subject]仲間:toggle,_[:[:0x00670818:]+0x0005D3D0:]=>ptr;[.0x00-$ptr.]/4%1000*4+$ptr+0x0003C20C,$4 [:0x00670818:]=>age;[:$age+0x0005D3D0:]=>ptr;[:[.($ptr~0xFFFFFFFF)+1.]/4%1000*4+$ptr+0x0003C20C:]=>i;[:$age+0x0005E85C:]=>key;$i*0x00000800|$i/0x00200000^$key=>i;$i/0x02000000|$i*0x00000080=>i;$i|0x02=>i;$i/0x00000080|$i*0x02000000^$key=>i;$i*0x00200000|$i/0x00000800 $$,$4 [:0x00670818:]=>age;[:$age+0x0005D3D0:]=>ptr;[:[.($ptr~0xFFFFFFFF)+1.]/4%1000*4+$ptr+0x0003C20C:]=>i;[:$age+0x0005E85C:]=>key;$i*0x00000800|$i/0x00200000^$key=>i;$i/0x02000000|$i*0x00000080=>i;0xFFFFFFFF~0x02&$i=>i;$i/0x00000080|$i*0x02000000^$key=>i;$i*0x00200000|$i/0x00000800 $$
+[/group]
+
+[group]Reserves
+#[subject]№:split,label,1,[!L$Val!]
+[enabled][:[:[:0x00670818:]+0x0005D3E0:]+0x[!$Val*0x1C*2+0x10+0x00043DA8!]:]
+[replace]0x[!$Val*4!],MAKO->Reserve
+[/enabled]
+[/group]
+
+[group]Commanders
+[repeat]MAKO->Reserves,File::koukaku->Commanders
+[/group]
+
+[group]Have
+[:0x00670818:]=>age;[:$age+0x0005D3D0:]=>ptr;[:$ptr+0x00018E7C:]=>i;($i*0x00000800|$i/0x00200000^([:$age+0x0005E85C:]))=>i;$i/0x02000000|$i*0x00000080=>i;[.0x00-$ptr.]/4/2000==$i,_[:[:0x00670818:]+0x0005D3D0:]=>ptr;[.0x00-$ptr.]/4%2000*4+$ptr+0x00683FA8,$4 [:[.0x0005F6A8.]:]=>i;[:[:0x00670818:]+0x0005E85C:]=>key;$i*0x00000800|$i/0x00200000^$key=>i;$i/0x02000000|$i*0x00000080=>i;$i>0=>i;$i/0x00000080|$i*0x02000000^$key=>i;$i*0x00200000|$i/0x00000800 $$
+[/group]
+
+[group]Item
+[funnel]MAKO->Have
+[subject]_mem,_[\:0x00670818\:]=>age;[\:$age+0x0005D3D0\:]=>ptr;[.0x00-$ptr.]\/4%2000=>i;[\:$age+0x0005D3E0\:]+$i*0x1C+0x000A38E8=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20,null,-:calc,0x0005F6A8,0,999
+[/funnel]
+#[subject]所持:toggle,_[:[:0x00670818:]+0x0005D3D0:]=>ptr;[.0x00-$ptr.]/4%2000*4+$ptr+0x00683FA8,$4 1=>i;($i/0x00000080|$i*0x02000000^([:[:0x00670818:]+0x0005E85C:]))=>i;$i*0x00200000|$i/0x00000800 $$,$4 0=>i;($i/0x00000080|$i*0x02000000^([:[:0x00670818:]+0x0005E85C:]))=>i;$i*0x00200000|$i/0x00000800 $$
+[/group]
+
+[group]Items
+#[subject]№:split,label,1,[!L$Val!]
+[enabled][:[:[:0x00670818:]+0x0005D3E0:]+0x[!$Val*0x1C+0x10+0x000A38E8!]:]
+[replace]0x[!$Val*4!],MAKO->Item
+[/enabled]
+[/group]
+
+[group]Inventory
+[subject]重要:dir
+	[repeat]MAKO->Items,File::koukaku->Importants
+[back]
+[subject]作戦:dir
+	[repeat]MAKO->Items,File::koukaku->Operations
+[back]
+[subject]装備:dir
+	[repeat]MAKO->Items,File::koukaku->Equipments
+[back]
+[subject]専用:dir
+	[repeat]MAKO->Items,File::koukaku->Privates
+[back]
+[subject]装飾:dir
+	[repeat]MAKO->Items,File::koukaku->Ornaments
+[back]
+[subject]資源:dir
+	[repeat]MAKO->Items,File::koukaku->Resources
+[back]
+[subject]収穫:dir
+	[repeat]MAKO->Items,File::koukaku->Harvests
+[back]
+[subject]畜産:dir
+	[repeat]MAKO->Items,File::koukaku->Animals
+[back]
+[subject]売却:dir
+	[repeat]MAKO->Items,File::koukaku->Sales
+[back]
+[subject]生産:dir
+	[repeat]MAKO->Items,File::koukaku->Makes
+[back]
+[/group]
+
+[group]Stock
+[enabled][:[:[:0x00670818:]+0x0005D3E0:]+0x[!$Val*0x1C+0x10+0x00088368!]:]
+[subject]_mem,_[\:[\:0x00670818\:]+0x0005D3E0\:]+0x[!$Val*0x1C+0x00088368!]=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20,null,-:calc,0x[!$Val*4+0x00B74E8!],0,999
+[/enabled]
+[/group]
+
+[group]Stocks
+[subject]小隊:dir
+	[repeat]MAKO->Stock,File::koukaku->Platoons
+[back]
+[/group]
+
+[group]States
+[subject][!L$Val!]='+'_mem,_[\:[\:0x00670818\:]+0x0005D3E0\:]+0x[!$Val*0x1C+0x0011B7E4!]=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20:dir
+	[enabled][:0x00670818:]=>age;[:[:$age+0x0005D3D0:]+0x[!$Val*4+0x0005C2A0!]:]=>i;($i*0x00000800|$i/0x00200000^([:$age+0x0005E85C:]))=>i;$i/0x02000000|$i*0x00000080=>i;$i&0x01
+	[replace]0x[!$Val*4!],MAKO->State
+	[subject]友好:dir
+		[replace]0x[!$Val*4*30!],MAKO->Amities
+	[back]
+	[subject]部隊:dir
+		[replace]0x[!$Val*4*110!],MAKO->Army
+	[back]
+	[subject]予備役:dir
+		[replace]0x[!$Val*4*1000!],MAKO->Commanders
+	[back]
+	[subject]物品:dir
+		[replace]0x[!$Val*4*2000!],MAKO->Inventory
+	[back]
+	#[replace]0x[!$Val*4*1000!],MAKO->Stocks
+	[/enabled]
+[back]
+[/group]
+
+[group]Environment
+[:[.0x000FB800.]:]==[:[:[:0x00670818:]+0x0005D3D0:]+0x00018E7C:],0x003BB9A0,$4 100=>i;($i/0x00000080|$i*0x02000000^([:[:0x00670818:]+0x0005E85C:]))=>i;$i*0x00200000|$i/0x00000800 $$
+[/group]
+
+[group]Population
+[funnel]MAKO->Environment
+[subject]_mem,_[\:0x00670818\:]=>age;[\:$age+0x0005D3D0\:]=>ptr;[.0x00-$ptr.]\/4=>i;[\:$age+0x0005D3E0\:]+$i*0x1C+0x0011BB2C=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20,null,-/自国最大:toggle,0x003BB680,$4 [:[:[:0x00670818:]+0x0005D3D0:]+0x00018E7C:]=>i;[:[.0x000FB800.]:]==$i=>i;[:[.($i~1)*0x003BB680+$i*0x023822A0.]:] $$
+[/funnel]
+[/group]
+
+[group]Maximizes
+[replace]0x[!$Val*4!],MAKO->Population
+[/group]
+
+[group]District
+[subject]人口最大:toggle,0x003BB680,$4 [:[.0x023822A0.]:] $$
+[subject]人口:calc,0x003BB680,0,999999
+[subject]環境:calc,0x003BB9A0,0,100
+[subject]:split,line,0,90,10
+[subject]_mem,_[\:[.0x003C0E00.]\:]=>i;[\:0x00670818\:]=>age;($i*0x00000800|$i\/0x00200000^([\:$age+0x0005E85C\:]))=>i;$i\/0x02000000|$i*0x00000080=>i;[\:$age+0x0005D3E0\:]+$i*0x1C*2+0x00043DA8=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20,null,領主:calc,0x003C0E00,0,999
+[subject]_mem,_[\:[.0x000FB800.]\:]=>i;[\:0x00670818\:]=>age;($i*0x00000800|$i\/0x00200000^([\:$age+0x0005E85C\:]))=>i;$i\/0x02000000|$i*0x00000080=>i;[\:$age+0x0005D3E0\:]+$i*0x1C+0x0011B7E4=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20,null,所属:calc,0x000FB800,0,29
+[subject]_mem,_[\:[.0x000FBE40.]\:]=>i;[\:0x00670818\:]=>age;($i*0x00000800|$i\/0x00200000^([\:$age+0x0005E85C\:]))=>i;$i\/0x02000000|$i*0x00000080=>i;[\:$age+0x0005D3E0\:]+$i*0x1C+0x0011BB2C=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20,null,首都:calc,0x000FBE40,0,99
+[/group]
+
+[group]Object
+[subject]№:calc,0x00282E80,0,999
+[enabled][:[.0x00282E80.]:]=>i;($i*0x00000800|$i/0x00200000^([:[:0x00670818:]+0x0005E85C:]))=>i;$i/0x02000000|$i*0x00000080
+[subject]LV:calc,0x002D1080,0,5
+[subject]耐久:calc,0x0036D480,0,9999
+[subject]完成予定:calc,0x0031F280,0,9999
+[/enabled]
+[/group]
+
+[group]Cell
+[subject]X=[!L$Val!]　'+'_mem,_[\:[.0x[!$Val*4+0x00282E80!].]\:]=>i;[\:0x00670818\:]=>age;($i*0x00000800|$i\/0x00200000^([\:$age+0x0005E85C\:]))=>i;$i\/0x02000000|$i*0x00000080=>i;[\:$age+0x0005D3E0\:]+$i*0x1C+0x00125F3C=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20:dir
+	[replace]0x[!$Val*4!],MAKO->Object
+[back]
+[/group]
+
+[group]Col
+[repeat]MAKO->Cell,0,20
+[/group]
+
+[group]Row
+[subject]Y=[!L$Val!]　'+'_mem,_[\:[.0x[!$Val*4*20+0x00282E80!].]\:]=>i;[\:0x00670818\:]=>age;($i*0x00000800|$i\/0x00200000^([\:$age+0x0005E85C\:]))=>i;$i\/0x02000000|$i*0x00000080=>i;[\:$age+0x0005D3E0\:]+$i*0x1C+0x00125F3C=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20:dir
+	[replace]0x[!$Val*4*20!],MAKO->Col
+[back]
+[/group]
+
+[group]Grid
+[repeat]MAKO->Row,0,20
+[/group]
+
+[group]Districts
+[subject][!L$Val!]='+'_mem,_[\:[\:0x00670818\:]+0x0005D3E0\:]+0x[!$Val*0x1C+0x0011BB2C!]=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20:dir
+	[enabled][:[:[:0x00670818:]+0x0005D3E0:]+0x[!$Val*0x1C+0x10+0x0011BB2C!]:]
+	[replace]0x[!$Val*4!],MAKO->District
+	#[replace]0x[!$Val*4*20*20!],MAKO->Grid
+	[/enabled]
+[back]
+[/group]
+
+[group]Winds
+無
+地
+冷
+火
+電
+[/group]
+
+[group]Wind
+,0x00=$4 0=>i;($i/0x00000080|$i*0x02000000^([:[:0x00670818:]+0x0005E85C:]))=>i;$i*0x00200000|$i/0x00000800 $$
+,0x00=$4 1=>i;($i/0x00000080|$i*0x02000000^([:[:0x00670818:]+0x0005E85C:]))=>i;$i*0x00200000|$i/0x00000800 $$
+,0x00=$4 2=>i;($i/0x00000080|$i*0x02000000^([:[:0x00670818:]+0x0005E85C:]))=>i;$i*0x00200000|$i/0x00000800 $$
+,0x00=$4 3=>i;($i/0x00000080|$i*0x02000000^([:[:0x00670818:]+0x0005E85C:]))=>i;$i*0x00200000|$i/0x00000800 $$
+,0x00=$4 4=>i;($i/0x00000080|$i*0x02000000^([:[:0x00670818:]+0x0005E85C:]))=>i;$i*0x00200000|$i/0x00000800 $$
+[/group]
+
+[group]Flag
+[subject]№[!L$Val!]/on:toggle,0x[!$Val*4+0x000031C4!],$4 1=>i;($i/0x00000080|$i*0x02000000^([:[:0x00670818:]+0x0005E85C:]))=>i;$i*0x00200000|$i/0x00000800 $$,$4 0=>i;($i/0x00000080|$i*0x02000000^([:[:0x00670818:]+0x0005E85C:]))=>i;$i*0x00200000|$i/0x00000800 $$
+[/group]
+
+[group]Offense
+[enabled][:[.0x00018E7C.]:]=>i;[:[:0x00670818:]+0x0005E85C:]=>key;$i*0x00000800|$i/0x00200000^$key=>i;$i/0x02000000|$i*0x00000080=>i;[:[.$i*4*110+0x[!$Val*4!].]+0x000D4A20:]=>i;$i*0x00000800|$i/0x00200000^$key=>i;$i/0x02000000|$i*0x00000080=>i;$i&0x01
+[subject]_mem,_[\:[.0x00018E7C.]\:]=>i;[\:0x00670818\:]=>age;[\:$age+0x0005E85C\:]=>key;$i*0x00000800|$i\/0x00200000^$key=>i;$i\/0x02000000|$i*0x00000080=>i;[.$i*4*110+0x[!$Val*4!].]=>ptr;[\:$ptr+0x000D4A20\:]=>i;$i*0x00000800|$i\/0x00200000^$key=>i;$i\/0x02000000|$i*0x00000080=>i;$i&0x01=>b;[\:$ptr+0x000D7DB0\:]=>i;$i*0x00000800|$i\/0x00200000^$key=>i;$i\/0x02000000|$i*0x00000080=>i;[\:$age+0x0005D3E0\:]+$i*0x1C*2*$b+0x00043DA8=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20,null,-:calc,0x[!$Val*4*2+0x0002C710!],0,0x1FF,unsigned
+[/enabled]
+[/group]
+
+[group]Defense
+[enabled][:[.0x00018E7C.]:]=>i;[:[:0x00670818:]+0x0005E85C:]=>key;$i*0x00000800|$i/0x00200000^$key=>i;$i/0x02000000|$i*0x00000080=>i;[:[.$i*4*110+0x[!$Val*4!].]+0x000D4A20:]=>i;$i*0x00000800|$i/0x00200000^$key=>i;$i/0x02000000|$i*0x00000080=>i;$i&0x01
+[subject]_mem,_[\:[.0x00018E7C.]\:]=>i;[\:0x00670818\:]=>age;[\:$age+0x0005E85C\:]=>key;$i*0x00000800|$i\/0x00200000^$key=>i;$i\/0x02000000|$i*0x00000080=>i;[.$i*4*110+0x[!$Val*4!].]=>ptr;[\:$ptr+0x000D4A20\:]=>i;$i*0x00000800|$i\/0x00200000^$key=>i;$i\/0x02000000|$i*0x00000080=>i;$i&0x01=>b;[\:$ptr+0x000D7DB0\:]=>i;$i*0x00000800|$i\/0x00200000^$key=>i;$i\/0x02000000|$i*0x00000080=>i;[\:$age+0x0005D3E0\:]+$i*0x1C*2*$b+0x00043DA8=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20,null,-:calc,0x[!$Val*4*2+4+0x0002C710!],0,0x1FF,unsigned
+[/enabled]
+[/group]
+
+[group]Avoid
+[subject]侵攻:dir
+	[repeat]MAKO->Offense,0,[!L$Val!]
+[back]
+[subject]防衛:dir
+	[repeat]MAKO->Defense,0,[!L$Val!]
+[back]
+[/group]
+
+[group]Make
+use,0x00685EE8,$4 [:[.0x0005B2EC.]:]=>i;[:[:0x00670818:]+0x0005E85C:]=>key;$i*0x00000800|$i/0x00200000^$key=>i;$i/0x02000000|$i*0x00000080=>i;$i>0=>i;$i/0x00000080|$i*0x02000000^$key=>i;$i*0x00200000|$i/0x00000800 $$
+[/group]
+
+[group]Part
+[funnel]MAKO->Make
+[subject]_mem,_[\:0x00670818\:]=>age;[\:$age+0x0005D3D0\:]=>ptr;[.0x00-$ptr.]\/4=>i;[\:$age+0x0005D3E0\:]+$i*0x1C+0x000CC928=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20,null,-:calc,0x0005B2EC,0,999
+[/funnel]
+#[subject]所持:toggle,0x00685EE8,$4 1=>i;($i/0x00000080|$i*0x02000000^([:[:0x00670818:]+0x0005E85C:]))=>i;$i*0x00200000|$i/0x00000800 $$,$4 0=>i;($i/0x00000080|$i*0x02000000^([:[:0x00670818:]+0x0005E85C:]))=>i;$i*0x00200000|$i/0x00000800 $$
+[/group]
+
+[group]Parts
+#[subject]№:split,label,1,[!L$Val!]
+[enabled][:[:[:0x00670818:]+0x0005D3E0:]+0x[!$Val*0x1C+0x10+0x000CC928!]:]
+[replace]0x[!$Val*4!],MAKO->Part
+[/enabled]
+[/group]
+
+[group]Costumes
+[enabled][:[:[:0x00670818:]+0x0005D3E0:]+0x[!$Val*0x1C+0x10+0x000CC928!]:]
+[subject][!L$Val!]='+'_mem,_[\:[\:0x00670818\:]+0x0005D3E0\:]+0x[!$Val*0x1C+0x000CC928!]=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20:calc,0x[!$Val*4+0x000588BC!],0,9900
+[/enabled]
+[/group]
+
+[group]Root
+[child_rw]false
+[subject]簡易検索:dir
+	[adjustment]dialog,_[:[:0x00670818:]+0x0005D3D0:],MAKO->GetBytes,_[:[:0x00670818:]+0x0005D3D0:],_[:[:0x00670818:]+0x0005D3D0:]+0x00800000,4
+	[repeat]MAKO->Value,0,4
+	[/adjustment]
+[back]
+[/child_rw]
+[subject]制限時間:calc,0x000301FC,0,999000
+[subject]士気:calc,0x000314E4,0,100
+[subject]敵士気:calc,0x000314E8,0,100
+[subject]週:calc,0x0005C290,1,9999
+[subject]戦風:d_list,0x0005C29C,MAKO->Winds,0,4,MAKO->Wind
+[enabled][:[.0x0005C294.]:]==[:[.0x00018E7C.]:]
+[subject]転移の城門/実行可能:toggle,0x00669B60,$4 0=>i;($i/0x00000080|$i*0x02000000^([:[:0x00670818:]+0x0005E85C:]))=>i;$i*0x00200000|$i/0x00000800 $$
+[subject]国力要件:toggle,0x0000B810,0x0000B8C7-$4 1=>i;($i/0x00000080|$i*0x02000000^([:[:0x00670818:]+0x0005E85C:]))=>i;$i*0x00200000|$i/0x00000800 $$,*+01 04
+#[subject]国力要件:dir
+#	[repeat]MAKO->Flag,8595,8641
+#[back]
+[/enabled]
+[subject]破壊設定(×ビットフラグ):dir
+	[repeat]MAKO->Avoid,100,101
+[back]
+[subject]魔導巧殻:dir
+	[subject]衣装:dir
+		[repeat]MAKO->Parts,File::koukaku->Costumes
+	[back]
+	[subject]EXP:dir
+		[repeat]MAKO->Costumes,File::koukaku->Costumes
+	[back]
+	[subject]頭:dir
+		[repeat]MAKO->Parts,File::koukaku->Heads
+	[back]
+	[subject]体:dir
+		[repeat]MAKO->Parts,File::koukaku->Bodies
+	[back]
+	[subject]腕:dir
+		[repeat]MAKO->Parts,File::koukaku->Arms
+	[back]
+	[subject]脚:dir
+		[repeat]MAKO->Parts,File::koukaku->Legs
+	[back]
+	[subject]他:dir
+		[repeat]MAKO->Parts,File::koukaku->Parts
+	[back]
+[back]
+[subject]国:dir
+	[repeat]MAKO->States,1,17
+[back]
+[subject]拠点(ライン以下非推奨):dir
+	[subject]人口・環境:dir
+		[repeat]MAKO->Maximizes,2,101
+	[back]
+	[repeat]MAKO->Districts,2,101
+[back]
+[/group]
+
+[group]Schedule
+[enabled][:[:[:0x00670818:]+0x0005D3E0:]+0x[!$Val*0x1C+0x10+0x00125F3C!]:]
+[subject][!L$Val!]='+'_mem,_[\:[\:0x00670818\:]+0x0005D3E0\:]+0x[!$Val*0x1C+0x00125F3C!]=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20:calc,0x[!$Val*4*10+0x027A678C!],0,9999
+[/enabled]
+[/group]
+
+[group]Material
+#[subject]№:calc,0x027BA018,0,1999
+[enabled][:[.0x027BA018.]:]=>i;($i*0x00000800|$i/0x00200000^([:[:0x00670818:]+0x0005E85C:]))=>i;$i/0x02000000|$i*0x00000080
+[subject]_mem,_[\:[.0x027BA018.]\:]=>i;[\:0x00670818\:]=>age;($i*0x00000800|$i\/0x00200000^([\:$age+0x0005E85C\:]))=>i;$i\/0x02000000|$i*0x00000080=>i;[\:$age+0x0005D3E0\:]+$i*0x1C+0x000A38E8=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20,null,-:calc,0x027E1118,0,999
+[/enabled]
+[/group]
+
+[group]Materials
+[replace]0x[!$Val*4!],MAKO->Material
+[/group]
+
+[group]Ingredient
+[subject]建材:dir
+	[repeat]MAKO->Materials,0,40
+[back]
+[/group]
+
+[group]Unconsumed
+[enabled][:[:[:0x00670818:]+0x0005D3E0:]+0x[!$Val*0x1C+0x10+0x00125F3C!]:]
+[subject]_mem,_[\:[\:0x00670818\:]+0x0005D3E0\:]+0x[!$Val*0x1C+0x00125F3C!]=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20,null,-/不要:toggle,0x[!$Val*4*40+0x027E1118!],0x[!$Val*4*40+4*4*5-1+0x027E1118!]-$4 0=>i;($i/0x00000080|$i*0x02000000^([:[:0x00670818:]+0x0005E85C:]))=>i;$i*0x00200000|$i/0x00000800 $$,*+01 04
+#[replace]0x[!$Val*4*40!],MAKO->Ingredient
+[/enabled]
+[/group]
+
+[group]Reduce
+0x027B03CC,0x027B03DF-$4 0=>i;($i/0x00000080|$i*0x02000000^([:[:0x00670818:]+0x0005E85C:]))=>i;$i*0x00200000|$i/0x00000800 $$,*+01 04
+0x0282F30C,0x0282F31F-$4 [:[.0x0282F30C.]:]=>i;[:[:0x00670818:]+0x0005E85C:]=>key;$i*0x00000800|$i/0x00200000^$key=>i;$i/0x02000000|$i*0x00000080=>i;$i>0=>i;$i/0x00000080|$i*0x02000000^$key=>i;$i*0x00200000|$i/0x00000800 $$,*+01 04
+[/group]
+
+[group]Expense
+[subject]_mem,_[\:0x00670818\:]=>age;[\:$age+0x0005D3D0\:]=>ptr;[.0x00-$ptr.]\/4\/10=>i;[\:$age+0x0005D3E0\:]+$i*0x1C+0x00125F3C=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20,null,-/建増築費0、解体費1:b_toggle,0x00,MAKO->Reduce
+[/group]
+
+[group]Expenses
+[enabled][:[:[:0x00670818:]+0x0005D3E0:]+0x[!$Val*0x1C+0x10+0x00125F3C!]:]
+[replace]0x[!$Val*4*10!],MAKO->Expense
+[/enabled]
+[/group]
+
+[group]Attack
+[subject]_mem,_[\:[.0x00.]\:]=>i;[\:0x00670818\:]=>age;($i*0x00000800|$i\/0x00200000^([\:$age+0x0005E85C\:]))=>i;$i\/0x02000000|$i*0x00000080=>i;[\:$age+0x0005D3E0\:]+$i*0x1C+0x000E1148=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20,null,攻撃:calc,0x00,0,999
+[subject]_mem,_[\:[.0x00.]\:]=>i;[\:0x00670818\:]=>age;($i*0x00000800|$i\/0x00200000^([\:$age+0x0005E85C\:]))=>i;$i\/0x02000000|$i*0x00000080=>i;[\:$age+0x0005D3E0\:]+$i*0x1C*2+0x000E7EA8=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x40'+'_mem,_[\:[.0x00.]\:]=>i;[\:0x00670818\:]=>age;($i*0x00000800|$i\/0x00200000^([\:$age+0x0005E85C\:]))=>i;$i\/0x02000000|$i*0x00000080=>i;[\:$age+0x0005D3E0\:]+$i*0x1C*2+0x1C+0x000E7EA8=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x40:trace
+[/group]
+
+[group]Attacks
+[replace]0x[!$Val*4!],MAKO->Attack
+[/group]
+
+[group]Assault
+[repeat]MAKO->Attacks,0,3
+[/group]
+
+[group]Skill
+[subject]_mem,_[\:[.0x00.]\:]=>i;[\:0x00670818\:]=>age;($i*0x00000800|$i\/0x00200000^([\:$age+0x0005E85C\:]))=>i;$i\/0x02000000|$i*0x00000080=>i;[\:$age+0x0005D3E0\:]+$i*0x1C+0x00100868=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20,null,スキル:calc,0x00,0,999
+[subject]_mem,_[\:[.0x00.]\:]=>i;[\:0x00670818\:]=>age;($i*0x00000800|$i\/0x00200000^([\:$age+0x0005E85C\:]))=>i;$i\/0x02000000|$i*0x00000080=>i;[\:$age+0x0005D3E0\:]+$i*0x1C*2+0x001075C8=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x40'+'_mem,_[\:[.0x00.]\:]=>i;[\:0x00670818\:]=>age;($i*0x00000800|$i\/0x00200000^([\:$age+0x0005E85C\:]))=>i;$i\/0x02000000|$i*0x00000080=>i;[\:$age+0x0005D3E0\:]+$i*0x1C*2+0x1C+0x001075C8=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x40:trace
+[/group]
+
+[group]Platoon
+[subject][!L$Val!]='+'_mem,_[\:[\:0x00670818\:]+0x0005D3E0\:]+0x[!$Val*0x1C+0x00088368!]=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20:dir
+	[enabled][:[:[:0x00670818:]+0x0005D3E0:]+0x[!$Val*0x1C+0x10+0x00088368!]:]
+	[subject]_mem,_[\:[\:0x00670818\:]+0x0005D3E0\:]+0x[!$Val*0x1C*3+0x0008F0C8!]=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x40:trace
+	[subject]_mem,_[\:[\:0x00670818\:]+0x0005D3E0\:]+0x[!$Val*0x1C*3+0x1C+0x0008F0C8!]=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x40'+'_mem,_[\:[\:0x00670818\:]+0x0005D3E0\:]+0x[!$Val*0x1C*3+0x1C*2+0x0008F0C8!]=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x40:trace
+	[replace]0x[!$Val*4+0x009601AC!],MAKO->Skill
+	[replace]0x[!$Val*4*3+0x0095D2CC!],MAKO->Assault
+	[/enabled]
+[back]
+[/group]
+
+[group]Special
+[subject]_mem,_[\:[.0x00.]\:]=>i;[\:0x00670818\:]=>age;($i*0x00000800|$i\/0x00200000^([\:$age+0x0005E85C\:]))=>i;$i\/0x02000000|$i*0x00000080=>i;[\:$age+0x0005D3E0\:]+$i*0x1C+0x000F5968=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20,null,必殺:calc,0x00,0,399
+[subject]_mem,_[\:[.0x00.]\:]=>i;[\:0x00670818\:]=>age;($i*0x00000800|$i\/0x00200000^([\:$age+0x0005E85C\:]))=>i;$i\/0x02000000|$i*0x00000080=>i;[\:$age+0x0005D3E0\:]+$i*0x1C+0x000F8528=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x40:trace
+[/group]
+
+[group]Skills
+[replace]0x[!$Val*4+0x00910064!],MAKO->Skill
+[/group]
+
+[group]Ability
+[repeat]MAKO->Skills,0,4
+[/group]
+
+[group]Formation
+[subject]_mem,_[\:[.0x00913EE4.]\:]=>i;[\:0x00670818\:]=>age;($i*0x00000800|$i\/0x00200000^([\:$age+0x0005E85C\:]))=>i;$i\/0x02000000|$i*0x00000080=>i;[\:$age+0x0005D3E0\:]+$i*0x1C+0x00115088=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20,null,陣形:calc,0x00913EE4,0,99
+[/group]
+
+[group]Title
+[subject][!L$Val!]='+'_mem,_[\:[\:0x00670818\:]+0x0005D3E0\:]+0x[!$Val*0x1C+0x0005F328!]=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20:dir
+	[enabled][:[:[:0x00670818:]+0x0005D3E0:]+0x[!$Val*0x1C+0x10+0x0005F328!]:]
+	[subject]_mem,_[\:[\:0x00670818\:]+0x0005D3E0\:]+0x[!$Val*0x1C*5+0x00066088!]=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x40:trace
+	[subject]_mem,_[\:[\:0x00670818\:]+0x0005D3E0\:]+0x[!$Val*0x1C*5+0x1C+0x00066088!]=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x40:trace
+	[subject]_mem,_[\:[\:0x00670818\:]+0x0005D3E0\:]+0x[!$Val*0x1C*5+0x1C*2+0x00066088!]=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x40'+'_mem,_[\:[\:0x00670818\:]+0x0005D3E0\:]+0x[!$Val*0x1C*5+0x1C*3+0x00066088!]=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x40:trace
+	[replace]0x[!$Val*4+0x0090F0C4!],MAKO->Special
+	[replace]0x[!$Val*4*3+0x0090C1E4!],MAKO->Assault
+	[replace]0x[!$Val*4*4!],MAKO->Ability
+	[replace]0x[!$Val*4*2!],MAKO->Formation
+	[replace]0x[!$Val*4*2+4!],MAKO->Formation
+	[/enabled]
+[back]
+[/group]
+
+[group]Static
+[subject]配置物:dir
+	[subject]_mem,_[\:[.0x023C2600.]\:]=>i;[\:0x00670818\:]=>age;($i*0x00000800|$i\/0x00200000^([\:$age+0x0005E85C\:]))=>i;$i\/0x02000000|$i*0x00000080=>i;[\:$age+0x0005D3E0\:]+$i*0x1C+0x00125F3C=>ptr;[\:$ptr+0x14\:]<0x10=>buf;$buf~1=>ref;[\:$ptr\:]*$ref+$ptr*$buf,0x20,null,配置物:calc,0x023C2600,0,999
+	[subject]工期:dir
+		[repeat]MAKO->Schedule,File::koukaku->Structures
+	[back]
+	[subject]建材:dir
+		[repeat]MAKO->Unconsumed,File::koukaku->Structures
+	[back]
+	[subject]工費:dir
+		[repeat]MAKO->Expenses,File::koukaku->Structures
+	[back]
+[back]
+#[subject]小隊:dir
+#	[repeat]MAKO->Platoon,File::koukaku->Platoons
+#[back]
+#[subject]称号:dir
+#	[repeat]MAKO->Title,File::koukaku->Titles
+#[back]
+[/group]
+
+[/involve]
+[size]4
+[subject]IsDebuggerPresent/NULL:toggle,_[:0x00670818:]+0x0005E868,$4 0x00000000 $$
+[io_fep]($Val/0x00000080|$Val*0x02000000^([:[:0x00670818:]+0x0005E85C:]))=>i;$i*0x00200000|$i/0x00000800,($Val*0x00000800|$Val/0x00200000^([:[:0x00670818:]+0x0005E85C:]))=>i;$i/0x02000000|$i*0x00000080
+[child_rw]
+[replace]_[:[:0x00670818:]+0x0005D3D0:],MAKO->Root
+[replace]_[:[:0x00670818:]+0x0005D3D0:],MAKO->Static
+[/child_rw]
+[/io_fep]
+[/size]
+[/script]
